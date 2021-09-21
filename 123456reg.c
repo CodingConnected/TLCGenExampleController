@@ -25,6 +25,7 @@
 
 #define REG (CIF_WPS[CIF_PROG_STATUS] == CIF_STAT_REG)
 #define NALOPEN
+#define NALOPEN2
 #define PRIO_ADDFILE
 
 /* include files */
