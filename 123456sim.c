@@ -20,7 +20,8 @@
  * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
- * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegeovoegd
+ * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
+ * 1.9.1    18-10-2021   Cyril       TAB.C: GK's tussen voedende richtingen als de nalopen met elkaar conflicteren en REG.C EXTRA_FUNC.H EXTRAFUN.C: testfaciliteiten voor interne koppelingen
  *
  ************************************************************************************/
 
@@ -690,25 +691,25 @@ void simulation_parameters(void)
     Q3[63] = 0;
     Q4[63] = 0;
 
-    LNK_code[64] = "84_1";
-    IS_nr[64] = d84_1;
-    FC_nr[64] = fc84;
+    LNK_code[64] = "81_1";
+    IS_nr[64] = d81_1;
+    FC_nr[64] = fc81;
     S_generator[64] = NG;
-    S_stopline[64] = 5000;
-    Q1[64] = 200;
-    Q2[64] = 50;
-    Q3[64] = 100;
-    Q4[64] = 2;
+    S_stopline[64] = 0;
+    Q1[64] = 0;
+    Q2[64] = 0;
+    Q3[64] = 0;
+    Q4[64] = 0;
 
-    LNK_code[65] = "k84";
-    IS_nr[65] = dk84;
-    FC_nr[65] = NG;
+    LNK_code[65] = "k81";
+    IS_nr[65] = dk81;
+    FC_nr[65] = fc81;
     S_generator[65] = NG;
-    S_stopline[65] = 5000;
-    Q1[65] = 200;
-    Q2[65] = 50;
-    Q3[65] = 100;
-    Q4[65] = 2;
+    S_stopline[65] = 0;
+    Q1[65] = 0;
+    Q2[65] = 0;
+    Q3[65] = 0;
+    Q4[65] = 0;
 
     LNK_code[66] = "82_1";
     IS_nr[66] = d82_1;
@@ -730,25 +731,25 @@ void simulation_parameters(void)
     Q3[67] = 0;
     Q4[67] = 0;
 
-    LNK_code[68] = "81_1";
-    IS_nr[68] = d81_1;
-    FC_nr[68] = fc81;
+    LNK_code[68] = "84_1";
+    IS_nr[68] = d84_1;
+    FC_nr[68] = fc84;
     S_generator[68] = NG;
-    S_stopline[68] = 0;
-    Q1[68] = 0;
-    Q2[68] = 0;
-    Q3[68] = 0;
-    Q4[68] = 0;
+    S_stopline[68] = 5000;
+    Q1[68] = 200;
+    Q2[68] = 50;
+    Q3[68] = 100;
+    Q4[68] = 2;
 
-    LNK_code[69] = "k81";
-    IS_nr[69] = dk81;
-    FC_nr[69] = fc81;
+    LNK_code[69] = "k84";
+    IS_nr[69] = dk84;
+    FC_nr[69] = NG;
     S_generator[69] = NG;
-    S_stopline[69] = 0;
-    Q1[69] = 0;
-    Q2[69] = 0;
-    Q3[69] = 0;
-    Q4[69] = 0;
+    S_stopline[69] = 5000;
+    Q1[69] = 200;
+    Q2[69] = 50;
+    Q3[69] = 100;
+    Q4[69] = 2;
 
 #if (!defined AUTOMAAT_TEST)
     LNK_code[70] = "dummykarin02bus";

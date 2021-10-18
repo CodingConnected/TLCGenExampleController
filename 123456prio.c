@@ -20,7 +20,8 @@
  * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
- * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegeovoegd
+ * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
+ * 1.9.1    18-10-2021   Cyril       TAB.C: GK's tussen voedende richtingen als de nalopen met elkaar conflicteren en REG.C EXTRA_FUNC.H EXTRAFUN.C: testfaciliteiten voor interne koppelingen
  *
  ************************************************************************************/
 
@@ -471,9 +472,9 @@ void PrioInstellingen(void)
     iMaximumWachtTijd[fc62] = PRM[prmmwta];
     iMaximumWachtTijd[fc67] = PRM[prmmwta];
     iMaximumWachtTijd[fc68] = PRM[prmmwta];
-    iMaximumWachtTijd[fc84] = PRM[prmmwtfts];
-    iMaximumWachtTijd[fc82] = PRM[prmmwtfts];
     iMaximumWachtTijd[fc81] = PRM[prmmwtfts];
+    iMaximumWachtTijd[fc82] = PRM[prmmwtfts];
+    iMaximumWachtTijd[fc84] = PRM[prmmwtfts];
 
     /* Als een richting minder groen heeft gehad door afkappen
        dan deze instelling, dan mag de richting nog een keer
@@ -498,9 +499,9 @@ void PrioInstellingen(void)
     iInstPercMaxGroenTijdTerugKomen[fc62] = PRM[prmpmgt62];
     iInstPercMaxGroenTijdTerugKomen[fc67] = PRM[prmpmgt67];
     iInstPercMaxGroenTijdTerugKomen[fc68] = PRM[prmpmgt68];
+    iInstPercMaxGroenTijdTerugKomen[fc81] = PRM[prmpmgt81];
     iInstPercMaxGroenTijdTerugKomen[fc82] = PRM[prmpmgt82];
     iInstPercMaxGroenTijdTerugKomen[fc84] = PRM[prmpmgt84];
-    iInstPercMaxGroenTijdTerugKomen[fc81] = PRM[prmpmgt81];
 
     /* De minimale groentijd die een richting krijgt als
        deze mag terugkomen. */
@@ -524,9 +525,9 @@ void PrioInstellingen(void)
     iInstMinTerugKomGroenTijd[fc62] = PRM[prmognt62];
     iInstMinTerugKomGroenTijd[fc67] = PRM[prmognt67];
     iInstMinTerugKomGroenTijd[fc68] = PRM[prmognt68];
+    iInstMinTerugKomGroenTijd[fc81] = PRM[prmognt81];
     iInstMinTerugKomGroenTijd[fc82] = PRM[prmognt82];
     iInstMinTerugKomGroenTijd[fc84] = PRM[prmognt84];
-    iInstMinTerugKomGroenTijd[fc81] = PRM[prmognt81];
 
     /* Aantal malen niet afkappen */
     iInstAantalMalenNietAfkappen[fc02] = PRM[prmnofm02];
@@ -544,9 +545,9 @@ void PrioInstellingen(void)
     iInstAantalMalenNietAfkappen[fc62] = PRM[prmnofm62];
     iInstAantalMalenNietAfkappen[fc67] = PRM[prmnofm67];
     iInstAantalMalenNietAfkappen[fc68] = PRM[prmnofm68];
+    iInstAantalMalenNietAfkappen[fc81] = PRM[prmnofm81];
     iInstAantalMalenNietAfkappen[fc82] = PRM[prmnofm82];
     iInstAantalMalenNietAfkappen[fc84] = PRM[prmnofm84];
-    iInstAantalMalenNietAfkappen[fc81] = PRM[prmnofm81];
 
     /* Onder deze groentijd mag een richting niet worden
        afgekapt, tenzij zich een nooddienst heeft ingemeld. */
@@ -570,9 +571,9 @@ void PrioInstellingen(void)
     iAfkapGroenTijd[fc62] = PRM[prmmgcov62];
     iAfkapGroenTijd[fc67] = PRM[prmmgcov67];
     iAfkapGroenTijd[fc68] = PRM[prmmgcov68];
+    iAfkapGroenTijd[fc81] = PRM[prmmgcov81];
     iAfkapGroenTijd[fc82] = PRM[prmmgcov82];
     iAfkapGroenTijd[fc84] = PRM[prmmgcov84];
-    iAfkapGroenTijd[fc81] = PRM[prmmgcov81];
 
     /* Als een richting minder groen heeft gehad dan
        dit percentage van de maximum groentijd, dan
@@ -598,9 +599,9 @@ void PrioInstellingen(void)
     iPercGroenTijd[fc62] = PRM[prmpmgcov62];
     iPercGroenTijd[fc67] = PRM[prmpmgcov67];
     iPercGroenTijd[fc68] = PRM[prmpmgcov68];
+    iPercGroenTijd[fc81] = PRM[prmpmgcov81];
     iPercGroenTijd[fc82] = PRM[prmpmgcov82];
     iPercGroenTijd[fc84] = PRM[prmpmgcov84];
-    iPercGroenTijd[fc81] = PRM[prmpmgcov81];
 
     /* Na te zijn afgekapt, wordt het percentage
        van de maximumgroentijd verhoogd met dit ophoogpercentage. */
@@ -624,9 +625,9 @@ void PrioInstellingen(void)
     iInstOphoogPercentageMG[fc62] = PRM[prmohpmg62];
     iInstOphoogPercentageMG[fc67] = PRM[prmohpmg67];
     iInstOphoogPercentageMG[fc68] = PRM[prmohpmg68];
+    iInstOphoogPercentageMG[fc81] = PRM[prmohpmg81];
     iInstOphoogPercentageMG[fc82] = PRM[prmohpmg82];
     iInstOphoogPercentageMG[fc84] = PRM[prmohpmg84];
-    iInstOphoogPercentageMG[fc81] = PRM[prmohpmg81];
 
     /* Benodigde ruimte voor alternatieve realisatie tijdens een OV ingreep */
     iPRM_ALTP[fc02] = PRM[prmaltp02];
@@ -649,9 +650,9 @@ void PrioInstellingen(void)
     iPRM_ALTP[fc62] = PRM[prmaltp62];
     iPRM_ALTP[fc67] = PRM[prmaltp67];
     iPRM_ALTP[fc68] = PRM[prmaltp68];
+    iPRM_ALTP[fc81] = PRM[prmaltp81];
     iPRM_ALTP[fc82] = PRM[prmaltp82];
     iPRM_ALTP[fc84] = PRM[prmaltp3384];
-    iPRM_ALTP[fc81] = PRM[prmaltp81];
 
     /* Richting mag alternatief realiseren tijdens een OV ingreep */
     iSCH_ALTG[fc02] = SCH[schaltg02];
@@ -674,9 +675,9 @@ void PrioInstellingen(void)
     iSCH_ALTG[fc62] = SCH[schaltg62];
     iSCH_ALTG[fc67] = SCH[schaltg67];
     iSCH_ALTG[fc68] = SCH[schaltg68];
+    iSCH_ALTG[fc81] = SCH[schaltg81];
     iSCH_ALTG[fc82] = SCH[schaltg82];
     iSCH_ALTG[fc84] = SCH[schaltg3384];
-    iSCH_ALTG[fc81] = SCH[schaltg81];
 
     /* Alternatieve realisatie mag worden
        afgekapt tijdens een OV ingreep als
@@ -701,9 +702,9 @@ void PrioInstellingen(void)
     iInstAfkapGroenAlt[fc62] = PRM[prmaltg62];
     iInstAfkapGroenAlt[fc67] = PRM[prmaltg67];
     iInstAfkapGroenAlt[fc68] = PRM[prmaltg68];
-    iInstAfkapGroenAlt[fc84] = PRM[prmaltg84];
-    iInstAfkapGroenAlt[fc82] = PRM[prmaltg82];
     iInstAfkapGroenAlt[fc81] = PRM[prmaltg81];
+    iInstAfkapGroenAlt[fc82] = PRM[prmaltg82];
+    iInstAfkapGroenAlt[fc84] = PRM[prmaltg84];
 
     /* definitie van de meerealisaties voor de hulpdiensten */
     iPrioMeeRealisatie[fc02][0] = fc03;
@@ -1354,7 +1355,7 @@ void PostAfhandelingPrio(void)
         RR[fc62] &= ~(BIT1|BIT2|BIT6);
         FM[fc62] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlfg0868] || T[tnlfg0868] || RT[tnleg0868] || T[tnleg0868])
+    if (RT[tnlfg0868] || T[tnlfg0868] || RT[tnleg0868] || T[tnleg0868] || RT[tnlfg1168] || T[tnlfg1168] || RT[tnlfgd1168] || T[tnlfgd1168] || RT[tnleg1168] || T[tnleg1168] || RT[tnlegd1168] || T[tnlegd1168])
     {
         Z[fc68] &= ~BIT6;
         RR[fc68] &= ~(BIT1|BIT2|BIT6);
@@ -1405,9 +1406,9 @@ void PrioPARCorrecties(void)
     if (!(PRM[prmaltb62] & (1 << ML))) PAR[fc62] = FALSE;
     if (!(PRM[prmaltb67] & (1 << ML))) PAR[fc67] = FALSE;
     if (!(PRM[prmaltb68] & (1 << ML))) PAR[fc68] = FALSE;
-    if (!(PRM[prmaltb84] & (1 << ML))) PAR[fc84] = FALSE;
-    if (!(PRM[prmaltb82] & (1 << ML))) PAR[fc82] = FALSE;
     if (!(PRM[prmaltb81] & (1 << ML))) PAR[fc81] = FALSE;
+    if (!(PRM[prmaltb82] & (1 << ML))) PAR[fc82] = FALSE;
+    if (!(PRM[prmaltb84] & (1 << ML))) PAR[fc84] = FALSE;
     #ifndef NO_TIMETOX
     if (SCH[schgs2232] && (P[fc22] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
     if (SCH[schgs2232] && (P[fc32] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }

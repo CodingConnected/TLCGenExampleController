@@ -20,7 +20,8 @@
  * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
- * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegeovoegd
+ * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
+ * 1.9.1    18-10-2021   Cyril       TAB.C: GK's tussen voedende richtingen als de nalopen met elkaar conflicteren en REG.C EXTRA_FUNC.H EXTRAFUN.C: testfaciliteiten voor interne koppelingen
  *
  ************************************************************************************/
 
@@ -96,6 +97,21 @@ void rgv_add(void)
         TO_ontwerp[fc08][fc22] = TO_max[fc68][fc22] + T_max[tnleg0868];
         TO_ontwerp[fc08][fc32] = TO_max[fc68][fc32] + T_max[tnleg0868];
         TO_ontwerp[fc08][fc81] = TO_max[fc68][fc81] + T_max[tnleg0868];
+    #endif
+
+    /* Fase 11 en conflicten van naloop 68 */
+    #if (CCOL_V >= 95) && !defined NO_TIGMAX
+        TIG_ontwerp[fc11][fc03] = TIG[fc68][fc03] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc05] = TIG[fc68][fc05] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc22] = TIG[fc68][fc22] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc32] = TIG[fc68][fc32] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc81] = TIG[fc68][fc81] + T_max[tnlegd1168];
+    #else
+        TO_ontwerp[fc11][fc03] = TO_max[fc68][fc03] + T_max[tnlegd1168];
+        TO_ontwerp[fc11][fc05] = TO_max[fc68][fc05] + T_max[tnlegd1168];
+        TO_ontwerp[fc11][fc22] = TO_max[fc68][fc22] + T_max[tnlegd1168];
+        TO_ontwerp[fc11][fc32] = TO_max[fc68][fc32] + T_max[tnlegd1168];
+        TO_ontwerp[fc11][fc81] = TO_max[fc68][fc81] + T_max[tnlegd1168];
     #endif
 
     /* Fase 22 en conflicten van naloop 21 */
