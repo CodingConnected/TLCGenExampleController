@@ -20,6 +20,7 @@
  * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
+ * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegeovoegd
  *
  ************************************************************************************/
 
@@ -88,11 +89,13 @@ void rgv_add(void)
         TIG_ontwerp[fc08][fc05] = TIG[fc68][fc05] + T_max[tnleg0868];
         TIG_ontwerp[fc08][fc22] = TIG[fc68][fc22] + T_max[tnleg0868];
         TIG_ontwerp[fc08][fc32] = TIG[fc68][fc32] + T_max[tnleg0868];
+        TIG_ontwerp[fc08][fc81] = TIG[fc68][fc81] + T_max[tnleg0868];
     #else
         TO_ontwerp[fc08][fc03] = TO_max[fc68][fc03] + T_max[tnleg0868];
         TO_ontwerp[fc08][fc05] = TO_max[fc68][fc05] + T_max[tnleg0868];
         TO_ontwerp[fc08][fc22] = TO_max[fc68][fc22] + T_max[tnleg0868];
         TO_ontwerp[fc08][fc32] = TO_max[fc68][fc32] + T_max[tnleg0868];
+        TO_ontwerp[fc08][fc81] = TO_max[fc68][fc81] + T_max[tnleg0868];
     #endif
 
     /* Fase 22 en conflicten van naloop 21 */
@@ -102,6 +105,15 @@ void rgv_add(void)
     #else
         TO_ontwerp[fc22][fc02] = TO_max[fc21][fc02] + T_max[tnlegd2221];
         TO_ontwerp[fc22][fc03] = TO_max[fc21][fc03] + T_max[tnlegd2221];
+    #endif
+
+    /* Fase 82 en conflicten van naloop 81 */
+    #if (CCOL_V >= 95) && !defined NO_TIGMAX
+        TIG_ontwerp[fc82][fc67] = TIG[fc81][fc67] + T_max[tnlegd8281];
+        TIG_ontwerp[fc82][fc68] = TIG[fc81][fc68] + T_max[tnlegd8281];
+    #else
+        TO_ontwerp[fc82][fc67] = TO_max[fc81][fc67] + T_max[tnlegd8281];
+        TO_ontwerp[fc82][fc68] = TO_max[fc81][fc68] + T_max[tnlegd8281];
     #endif
 
     /* intitieer waarden TGV_rgv */
@@ -164,6 +176,7 @@ void rgv_add(void)
         DD[fc08] = 
                    (CIF_IS[d08_1a] >= CIF_DET_STORING) || (CIF_IS[d08_1b] >= CIF_DET_STORING) || 
                    (CIF_IS[d08_2a] >= CIF_DET_STORING) || (CIF_IS[d08_2b] >= CIF_DET_STORING) || (CIF_IS[d08_3a] >= CIF_DET_STORING) || (CIF_IS[d08_3b] >= CIF_DET_STORING) || 
+                   (IH[hfileFile68af]) ||
                    (!T[tfd08_1a] && !T[tfd08_1b]);
         DD[fc09] = 
                    (CIF_IS[d09_1] >= CIF_DET_STORING) || 
@@ -172,6 +185,7 @@ void rgv_add(void)
         DD[fc11] = 
                    (CIF_IS[d11_1] >= CIF_DET_STORING) || 
                    (CIF_IS[d11_2] >= CIF_DET_STORING) || (CIF_IS[d11_3] >= CIF_DET_STORING) || 
+                   (IH[hfileFile68af]) ||
                    (!T[tfd11_1]);
         DD[fc22] = 
                    (CIF_IS[d22_1] >= CIF_DET_STORING) || 
@@ -189,9 +203,9 @@ void rgv_add(void)
         DD[fc02] = FALSE;
         DD[fc03] = FALSE;
         DD[fc05] = FALSE;
-        DD[fc08] = FALSE;
+        DD[fc08] = IH[hfileFile68af] ? TRUE : FALSE;
         DD[fc09] = FALSE;
-        DD[fc11] = FALSE;
+        DD[fc11] = IH[hfileFile68af] ? TRUE : FALSE;
         DD[fc22] = FALSE;
         DD[fc28] = FALSE;
         DD[fc68] = FALSE;

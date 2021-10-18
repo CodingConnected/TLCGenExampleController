@@ -20,6 +20,7 @@
  * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
+ * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegeovoegd
  *
  ************************************************************************************/
 
@@ -161,9 +162,19 @@ void Timings_Eventstate_Definition(void)
     CCOL_FC_EVENTSTATE[fc68][CIF_GROEN]= CIF_TIMING_GROEN;      /* Groen  */
     CCOL_FC_EVENTSTATE[fc68][CIF_GEEL]= CIF_TIMING_GEEL;       /* Geel   */
 
+/* Fase 81 */
+    CCOL_FC_EVENTSTATE[fc81][CIF_ROOD]= CIF_TIMING_ROOD;       /* Rood   */
+    CCOL_FC_EVENTSTATE[fc81][CIF_GROEN]= CIF_TIMING_GROEN;      /* Groen  */
+    CCOL_FC_EVENTSTATE[fc81][CIF_GEEL]= CIF_TIMING_GEEL;       /* Geel   */
+
 /* Fase 84 */
     CCOL_FC_EVENTSTATE[fc84][CIF_ROOD]= CIF_TIMING_ROOD;       /* Rood   */
     CCOL_FC_EVENTSTATE[fc84][CIF_GROEN]= CIF_TIMING_GROEN;      /* Groen  */
     CCOL_FC_EVENTSTATE[fc84][CIF_GEEL]= CIF_TIMING_GEEL;       /* Geel   */
+
+/* Fase 82 */
+    CCOL_FC_EVENTSTATE[fc82][CIF_ROOD]= CIF_TIMING_ROOD;       /* Rood   */
+    CCOL_FC_EVENTSTATE[fc82][CIF_GROEN]= CIF_TIMING_GROEN;      /* Groen  */
+    CCOL_FC_EVENTSTATE[fc82][CIF_GEEL]= CIF_TIMING_GEEL;       /* Geel   */
 
 }

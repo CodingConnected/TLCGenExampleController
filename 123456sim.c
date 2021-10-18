@@ -20,10 +20,11 @@
  * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
+ * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegeovoegd
  *
  ************************************************************************************/
 
-#define LNKMAX1 176 /* aantal links */
+#define LNKMAX1 182 /* aantal links */
 
 /* include files */
 /* ------------- */
@@ -669,109 +670,109 @@ void simulation_parameters(void)
     Q3[61] = 50;
     Q4[61] = 4;
 
-    LNK_code[62] = "84_1";
-    IS_nr[62] = d84_1;
-    FC_nr[62] = fc84;
+    LNK_code[62] = "68_9a";
+    IS_nr[62] = d68_9a;
+    FC_nr[62] = fc68;
     S_generator[62] = NG;
-    S_stopline[62] = 5000;
-    Q1[62] = 200;
-    Q2[62] = 50;
-    Q3[62] = 100;
-    Q4[62] = 2;
+    S_stopline[62] = 0;
+    Q1[62] = 0;
+    Q2[62] = 0;
+    Q3[62] = 0;
+    Q4[62] = 0;
 
-    LNK_code[63] = "k84";
-    IS_nr[63] = dk84;
-    FC_nr[63] = NG;
+    LNK_code[63] = "68_9b";
+    IS_nr[63] = d68_9b;
+    FC_nr[63] = fc68;
     S_generator[63] = NG;
-    S_stopline[63] = 5000;
-    Q1[63] = 200;
-    Q2[63] = 50;
-    Q3[63] = 100;
-    Q4[63] = 2;
+    S_stopline[63] = 0;
+    Q1[63] = 0;
+    Q2[63] = 0;
+    Q3[63] = 0;
+    Q4[63] = 0;
 
-#if (!defined AUTOMAAT_TEST)
-    LNK_code[64] = "dummykarin02bus";
-    IS_nr[64] = ddummykarin02bus;
-    FC_nr[64] = NG;
+    LNK_code[64] = "84_1";
+    IS_nr[64] = d84_1;
+    FC_nr[64] = fc84;
     S_generator[64] = NG;
-    S_stopline[64] = 1800;
-    Q1[64] = 1;
-    Q2[64] = 1;
-    Q3[64] = 2;
-    Q4[64] = 1;
+    S_stopline[64] = 5000;
+    Q1[64] = 200;
+    Q2[64] = 50;
+    Q3[64] = 100;
+    Q4[64] = 2;
 
-    LNK_code[65] = "dummykarin03bus";
-    IS_nr[65] = ddummykarin03bus;
+    LNK_code[65] = "k84";
+    IS_nr[65] = dk84;
     FC_nr[65] = NG;
     S_generator[65] = NG;
-    S_stopline[65] = 1800;
-    Q1[65] = 2;
-    Q2[65] = 1;
-    Q3[65] = 1;
+    S_stopline[65] = 5000;
+    Q1[65] = 200;
+    Q2[65] = 50;
+    Q3[65] = 100;
     Q4[65] = 2;
 
-    LNK_code[66] = "dummykarin05bus";
-    IS_nr[66] = ddummykarin05bus;
-    FC_nr[66] = NG;
+    LNK_code[66] = "82_1";
+    IS_nr[66] = d82_1;
+    FC_nr[66] = fc82;
     S_generator[66] = NG;
-    S_stopline[66] = 1800;
-    Q1[66] = 3;
-    Q2[66] = 5;
-    Q3[66] = 2;
-    Q4[66] = 1;
+    S_stopline[66] = 0;
+    Q1[66] = 0;
+    Q2[66] = 0;
+    Q3[66] = 0;
+    Q4[66] = 0;
 
-    LNK_code[67] = "dummykarin08bus";
-    IS_nr[67] = ddummykarin08bus;
-    FC_nr[67] = NG;
+    LNK_code[67] = "k82";
+    IS_nr[67] = dk82;
+    FC_nr[67] = fc82;
     S_generator[67] = NG;
-    S_stopline[67] = 1800;
-    Q1[67] = 3;
-    Q2[67] = 5;
-    Q3[67] = 2;
-    Q4[67] = 1;
+    S_stopline[67] = 0;
+    Q1[67] = 0;
+    Q2[67] = 0;
+    Q3[67] = 0;
+    Q4[67] = 0;
 
-    LNK_code[68] = "dummykarin09bus";
-    IS_nr[68] = ddummykarin09bus;
-    FC_nr[68] = NG;
+    LNK_code[68] = "81_1";
+    IS_nr[68] = d81_1;
+    FC_nr[68] = fc81;
     S_generator[68] = NG;
-    S_stopline[68] = 1800;
-    Q1[68] = 3;
-    Q2[68] = 5;
-    Q3[68] = 2;
-    Q4[68] = 1;
+    S_stopline[68] = 0;
+    Q1[68] = 0;
+    Q2[68] = 0;
+    Q3[68] = 0;
+    Q4[68] = 0;
 
-    LNK_code[69] = "dummykarin11bus";
-    IS_nr[69] = ddummykarin11bus;
-    FC_nr[69] = NG;
+    LNK_code[69] = "k81";
+    IS_nr[69] = dk81;
+    FC_nr[69] = fc81;
     S_generator[69] = NG;
-    S_stopline[69] = 1800;
-    Q1[69] = 3;
-    Q2[69] = 5;
-    Q3[69] = 2;
-    Q4[69] = 1;
+    S_stopline[69] = 0;
+    Q1[69] = 0;
+    Q2[69] = 0;
+    Q3[69] = 0;
+    Q4[69] = 0;
 
-    LNK_code[70] = "dummykarin61bus";
-    IS_nr[70] = ddummykarin61bus;
+#if (!defined AUTOMAAT_TEST)
+    LNK_code[70] = "dummykarin02bus";
+    IS_nr[70] = ddummykarin02bus;
     FC_nr[70] = NG;
     S_generator[70] = NG;
     S_stopline[70] = 1800;
-    Q1[70] = 3;
-    Q2[70] = 5;
+    Q1[70] = 1;
+    Q2[70] = 1;
     Q3[70] = 2;
     Q4[70] = 1;
 
-    LNK_code[71] = "dummykarin62bus";
-    IS_nr[71] = ddummykarin62bus;
+    LNK_code[71] = "dummykarin03bus";
+    IS_nr[71] = ddummykarin03bus;
     FC_nr[71] = NG;
     S_generator[71] = NG;
     S_stopline[71] = 1800;
-    Q1[71] = 3;
-    Q2[71] = 5;
-    Q3[71] = 2;
-    Q4[71] = 1;
+    Q1[71] = 2;
+    Q2[71] = 1;
+    Q3[71] = 1;
+    Q4[71] = 2;
 
-    LNK_code[72] = "dummykarin67bus";
-    IS_nr[72] = ddummykarin67bus;
+    LNK_code[72] = "dummykarin05bus";
+    IS_nr[72] = ddummykarin05bus;
     FC_nr[72] = NG;
     S_generator[72] = NG;
     S_stopline[72] = 1800;
@@ -780,8 +781,8 @@ void simulation_parameters(void)
     Q3[72] = 2;
     Q4[72] = 1;
 
-    LNK_code[73] = "dummykarin68bus";
-    IS_nr[73] = ddummykarin68bus;
+    LNK_code[73] = "dummykarin08bus";
+    IS_nr[73] = ddummykarin08bus;
     FC_nr[73] = NG;
     S_generator[73] = NG;
     S_stopline[73] = 1800;
@@ -790,68 +791,68 @@ void simulation_parameters(void)
     Q3[73] = 2;
     Q4[73] = 1;
 
-    LNK_code[74] = "dummykaruit02bus";
-    IS_nr[74] = ddummykaruit02bus;
+    LNK_code[74] = "dummykarin09bus";
+    IS_nr[74] = ddummykarin09bus;
     FC_nr[74] = NG;
     S_generator[74] = NG;
     S_stopline[74] = 1800;
-    Q1[74] = 200;
-    Q2[74] = 200;
-    Q3[74] = 200;
-    Q4[74] = 200;
+    Q1[74] = 3;
+    Q2[74] = 5;
+    Q3[74] = 2;
+    Q4[74] = 1;
 
-    LNK_code[75] = "dummykaruit03bus";
-    IS_nr[75] = ddummykaruit03bus;
+    LNK_code[75] = "dummykarin11bus";
+    IS_nr[75] = ddummykarin11bus;
     FC_nr[75] = NG;
     S_generator[75] = NG;
     S_stopline[75] = 1800;
-    Q1[75] = 200;
-    Q2[75] = 200;
-    Q3[75] = 200;
-    Q4[75] = 200;
+    Q1[75] = 3;
+    Q2[75] = 5;
+    Q3[75] = 2;
+    Q4[75] = 1;
 
-    LNK_code[76] = "dummykaruit05bus";
-    IS_nr[76] = ddummykaruit05bus;
+    LNK_code[76] = "dummykarin61bus";
+    IS_nr[76] = ddummykarin61bus;
     FC_nr[76] = NG;
     S_generator[76] = NG;
     S_stopline[76] = 1800;
-    Q1[76] = 200;
-    Q2[76] = 200;
-    Q3[76] = 200;
-    Q4[76] = 200;
+    Q1[76] = 3;
+    Q2[76] = 5;
+    Q3[76] = 2;
+    Q4[76] = 1;
 
-    LNK_code[77] = "dummykaruit08bus";
-    IS_nr[77] = ddummykaruit08bus;
+    LNK_code[77] = "dummykarin62bus";
+    IS_nr[77] = ddummykarin62bus;
     FC_nr[77] = NG;
     S_generator[77] = NG;
     S_stopline[77] = 1800;
-    Q1[77] = 200;
-    Q2[77] = 200;
-    Q3[77] = 200;
-    Q4[77] = 200;
+    Q1[77] = 3;
+    Q2[77] = 5;
+    Q3[77] = 2;
+    Q4[77] = 1;
 
-    LNK_code[78] = "dummykaruit09bus";
-    IS_nr[78] = ddummykaruit09bus;
+    LNK_code[78] = "dummykarin67bus";
+    IS_nr[78] = ddummykarin67bus;
     FC_nr[78] = NG;
     S_generator[78] = NG;
     S_stopline[78] = 1800;
-    Q1[78] = 200;
-    Q2[78] = 200;
-    Q3[78] = 200;
-    Q4[78] = 200;
+    Q1[78] = 3;
+    Q2[78] = 5;
+    Q3[78] = 2;
+    Q4[78] = 1;
 
-    LNK_code[79] = "dummykaruit11bus";
-    IS_nr[79] = ddummykaruit11bus;
+    LNK_code[79] = "dummykarin68bus";
+    IS_nr[79] = ddummykarin68bus;
     FC_nr[79] = NG;
     S_generator[79] = NG;
     S_stopline[79] = 1800;
-    Q1[79] = 200;
-    Q2[79] = 200;
-    Q3[79] = 200;
-    Q4[79] = 200;
+    Q1[79] = 3;
+    Q2[79] = 5;
+    Q3[79] = 2;
+    Q4[79] = 1;
 
-    LNK_code[80] = "dummykaruit61bus";
-    IS_nr[80] = ddummykaruit61bus;
+    LNK_code[80] = "dummykaruit02bus";
+    IS_nr[80] = ddummykaruit02bus;
     FC_nr[80] = NG;
     S_generator[80] = NG;
     S_stopline[80] = 1800;
@@ -860,8 +861,8 @@ void simulation_parameters(void)
     Q3[80] = 200;
     Q4[80] = 200;
 
-    LNK_code[81] = "dummykaruit62bus";
-    IS_nr[81] = ddummykaruit62bus;
+    LNK_code[81] = "dummykaruit03bus";
+    IS_nr[81] = ddummykaruit03bus;
     FC_nr[81] = NG;
     S_generator[81] = NG;
     S_stopline[81] = 1800;
@@ -870,8 +871,8 @@ void simulation_parameters(void)
     Q3[81] = 200;
     Q4[81] = 200;
 
-    LNK_code[82] = "dummykaruit67bus";
-    IS_nr[82] = ddummykaruit67bus;
+    LNK_code[82] = "dummykaruit05bus";
+    IS_nr[82] = ddummykaruit05bus;
     FC_nr[82] = NG;
     S_generator[82] = NG;
     S_stopline[82] = 1800;
@@ -880,8 +881,8 @@ void simulation_parameters(void)
     Q3[82] = 200;
     Q4[82] = 200;
 
-    LNK_code[83] = "dummykaruit68bus";
-    IS_nr[83] = ddummykaruit68bus;
+    LNK_code[83] = "dummykaruit08bus";
+    IS_nr[83] = ddummykaruit08bus;
     FC_nr[83] = NG;
     S_generator[83] = NG;
     S_stopline[83] = 1800;
@@ -890,18 +891,18 @@ void simulation_parameters(void)
     Q3[83] = 200;
     Q4[83] = 200;
 
-    LNK_code[84] = "dummyhdkarin02";
-    IS_nr[84] = ddummyhdkarin02;
+    LNK_code[84] = "dummykaruit09bus";
+    IS_nr[84] = ddummykaruit09bus;
     FC_nr[84] = NG;
     S_generator[84] = NG;
     S_stopline[84] = 1800;
-    Q1[84] = 3;
-    Q2[84] = 5;
-    Q3[84] = 2;
-    Q4[84] = 1;
+    Q1[84] = 200;
+    Q2[84] = 200;
+    Q3[84] = 200;
+    Q4[84] = 200;
 
-    LNK_code[85] = "dummyhdkaruit02";
-    IS_nr[85] = ddummyhdkaruit02;
+    LNK_code[85] = "dummykaruit11bus";
+    IS_nr[85] = ddummykaruit11bus;
     FC_nr[85] = NG;
     S_generator[85] = NG;
     S_stopline[85] = 1800;
@@ -910,18 +911,18 @@ void simulation_parameters(void)
     Q3[85] = 200;
     Q4[85] = 200;
 
-    LNK_code[86] = "dummyhdkarin03";
-    IS_nr[86] = ddummyhdkarin03;
+    LNK_code[86] = "dummykaruit61bus";
+    IS_nr[86] = ddummykaruit61bus;
     FC_nr[86] = NG;
     S_generator[86] = NG;
     S_stopline[86] = 1800;
-    Q1[86] = 3;
-    Q2[86] = 5;
-    Q3[86] = 2;
-    Q4[86] = 1;
+    Q1[86] = 200;
+    Q2[86] = 200;
+    Q3[86] = 200;
+    Q4[86] = 200;
 
-    LNK_code[87] = "dummyhdkaruit03";
-    IS_nr[87] = ddummyhdkaruit03;
+    LNK_code[87] = "dummykaruit62bus";
+    IS_nr[87] = ddummykaruit62bus;
     FC_nr[87] = NG;
     S_generator[87] = NG;
     S_stopline[87] = 1800;
@@ -930,18 +931,18 @@ void simulation_parameters(void)
     Q3[87] = 200;
     Q4[87] = 200;
 
-    LNK_code[88] = "dummyhdkarin05";
-    IS_nr[88] = ddummyhdkarin05;
+    LNK_code[88] = "dummykaruit67bus";
+    IS_nr[88] = ddummykaruit67bus;
     FC_nr[88] = NG;
     S_generator[88] = NG;
     S_stopline[88] = 1800;
-    Q1[88] = 3;
-    Q2[88] = 5;
-    Q3[88] = 2;
-    Q4[88] = 1;
+    Q1[88] = 200;
+    Q2[88] = 200;
+    Q3[88] = 200;
+    Q4[88] = 200;
 
-    LNK_code[89] = "dummyhdkaruit05";
-    IS_nr[89] = ddummyhdkaruit05;
+    LNK_code[89] = "dummykaruit68bus";
+    IS_nr[89] = ddummykaruit68bus;
     FC_nr[89] = NG;
     S_generator[89] = NG;
     S_stopline[89] = 1800;
@@ -950,8 +951,8 @@ void simulation_parameters(void)
     Q3[89] = 200;
     Q4[89] = 200;
 
-    LNK_code[90] = "dummyhdkarin08";
-    IS_nr[90] = ddummyhdkarin08;
+    LNK_code[90] = "dummyhdkarin02";
+    IS_nr[90] = ddummyhdkarin02;
     FC_nr[90] = NG;
     S_generator[90] = NG;
     S_stopline[90] = 1800;
@@ -960,8 +961,8 @@ void simulation_parameters(void)
     Q3[90] = 2;
     Q4[90] = 1;
 
-    LNK_code[91] = "dummyhdkaruit08";
-    IS_nr[91] = ddummyhdkaruit08;
+    LNK_code[91] = "dummyhdkaruit02";
+    IS_nr[91] = ddummyhdkaruit02;
     FC_nr[91] = NG;
     S_generator[91] = NG;
     S_stopline[91] = 1800;
@@ -970,8 +971,8 @@ void simulation_parameters(void)
     Q3[91] = 200;
     Q4[91] = 200;
 
-    LNK_code[92] = "dummyhdkarin09";
-    IS_nr[92] = ddummyhdkarin09;
+    LNK_code[92] = "dummyhdkarin03";
+    IS_nr[92] = ddummyhdkarin03;
     FC_nr[92] = NG;
     S_generator[92] = NG;
     S_stopline[92] = 1800;
@@ -980,8 +981,8 @@ void simulation_parameters(void)
     Q3[92] = 2;
     Q4[92] = 1;
 
-    LNK_code[93] = "dummyhdkaruit09";
-    IS_nr[93] = ddummyhdkaruit09;
+    LNK_code[93] = "dummyhdkaruit03";
+    IS_nr[93] = ddummyhdkaruit03;
     FC_nr[93] = NG;
     S_generator[93] = NG;
     S_stopline[93] = 1800;
@@ -990,8 +991,8 @@ void simulation_parameters(void)
     Q3[93] = 200;
     Q4[93] = 200;
 
-    LNK_code[94] = "dummyhdkarin11";
-    IS_nr[94] = ddummyhdkarin11;
+    LNK_code[94] = "dummyhdkarin05";
+    IS_nr[94] = ddummyhdkarin05;
     FC_nr[94] = NG;
     S_generator[94] = NG;
     S_stopline[94] = 1800;
@@ -1000,8 +1001,8 @@ void simulation_parameters(void)
     Q3[94] = 2;
     Q4[94] = 1;
 
-    LNK_code[95] = "dummyhdkaruit11";
-    IS_nr[95] = ddummyhdkaruit11;
+    LNK_code[95] = "dummyhdkaruit05";
+    IS_nr[95] = ddummyhdkaruit05;
     FC_nr[95] = NG;
     S_generator[95] = NG;
     S_stopline[95] = 1800;
@@ -1010,8 +1011,8 @@ void simulation_parameters(void)
     Q3[95] = 200;
     Q4[95] = 200;
 
-    LNK_code[96] = "dummyhdkarin61";
-    IS_nr[96] = ddummyhdkarin61;
+    LNK_code[96] = "dummyhdkarin08";
+    IS_nr[96] = ddummyhdkarin08;
     FC_nr[96] = NG;
     S_generator[96] = NG;
     S_stopline[96] = 1800;
@@ -1020,8 +1021,8 @@ void simulation_parameters(void)
     Q3[96] = 2;
     Q4[96] = 1;
 
-    LNK_code[97] = "dummyhdkaruit61";
-    IS_nr[97] = ddummyhdkaruit61;
+    LNK_code[97] = "dummyhdkaruit08";
+    IS_nr[97] = ddummyhdkaruit08;
     FC_nr[97] = NG;
     S_generator[97] = NG;
     S_stopline[97] = 1800;
@@ -1030,8 +1031,8 @@ void simulation_parameters(void)
     Q3[97] = 200;
     Q4[97] = 200;
 
-    LNK_code[98] = "dummyhdkarin62";
-    IS_nr[98] = ddummyhdkarin62;
+    LNK_code[98] = "dummyhdkarin09";
+    IS_nr[98] = ddummyhdkarin09;
     FC_nr[98] = NG;
     S_generator[98] = NG;
     S_stopline[98] = 1800;
@@ -1040,8 +1041,8 @@ void simulation_parameters(void)
     Q3[98] = 2;
     Q4[98] = 1;
 
-    LNK_code[99] = "dummyhdkaruit62";
-    IS_nr[99] = ddummyhdkaruit62;
+    LNK_code[99] = "dummyhdkaruit09";
+    IS_nr[99] = ddummyhdkaruit09;
     FC_nr[99] = NG;
     S_generator[99] = NG;
     S_stopline[99] = 1800;
@@ -1050,8 +1051,8 @@ void simulation_parameters(void)
     Q3[99] = 200;
     Q4[99] = 200;
 
-    LNK_code[100] = "dummyhdkarin67";
-    IS_nr[100] = ddummyhdkarin67;
+    LNK_code[100] = "dummyhdkarin11";
+    IS_nr[100] = ddummyhdkarin11;
     FC_nr[100] = NG;
     S_generator[100] = NG;
     S_stopline[100] = 1800;
@@ -1060,8 +1061,8 @@ void simulation_parameters(void)
     Q3[100] = 2;
     Q4[100] = 1;
 
-    LNK_code[101] = "dummyhdkaruit67";
-    IS_nr[101] = ddummyhdkaruit67;
+    LNK_code[101] = "dummyhdkaruit11";
+    IS_nr[101] = ddummyhdkaruit11;
     FC_nr[101] = NG;
     S_generator[101] = NG;
     S_stopline[101] = 1800;
@@ -1070,8 +1071,8 @@ void simulation_parameters(void)
     Q3[101] = 200;
     Q4[101] = 200;
 
-    LNK_code[102] = "dummyhdkarin68";
-    IS_nr[102] = ddummyhdkarin68;
+    LNK_code[102] = "dummyhdkarin61";
+    IS_nr[102] = ddummyhdkarin61;
     FC_nr[102] = NG;
     S_generator[102] = NG;
     S_stopline[102] = 1800;
@@ -1080,8 +1081,8 @@ void simulation_parameters(void)
     Q3[102] = 2;
     Q4[102] = 1;
 
-    LNK_code[103] = "dummyhdkaruit68";
-    IS_nr[103] = ddummyhdkaruit68;
+    LNK_code[103] = "dummyhdkaruit61";
+    IS_nr[103] = ddummyhdkaruit61;
     FC_nr[103] = NG;
     S_generator[103] = NG;
     S_stopline[103] = 1800;
@@ -1090,69 +1091,69 @@ void simulation_parameters(void)
     Q3[103] = 200;
     Q4[103] = 200;
 
-    LNK_code[104] = "ris021car";
-    IS_nr[104] = isris021car;
-    FC_nr[104] = fc02;
+    LNK_code[104] = "dummyhdkarin62";
+    IS_nr[104] = ddummyhdkarin62;
+    FC_nr[104] = NG;
     S_generator[104] = NG;
-    S_stopline[104] = 0;
-    Q1[104] = 0;
-    Q2[104] = 0;
-    Q3[104] = 0;
-    Q4[104] = 0;
+    S_stopline[104] = 1800;
+    Q1[104] = 3;
+    Q2[104] = 5;
+    Q3[104] = 2;
+    Q4[104] = 1;
 
-    LNK_code[105] = "ris021bus";
-    IS_nr[105] = isris021bus;
-    FC_nr[105] = fc02;
+    LNK_code[105] = "dummyhdkaruit62";
+    IS_nr[105] = ddummyhdkaruit62;
+    FC_nr[105] = NG;
     S_generator[105] = NG;
-    S_stopline[105] = 0;
-    Q1[105] = 0;
-    Q2[105] = 0;
-    Q3[105] = 0;
-    Q4[105] = 0;
+    S_stopline[105] = 1800;
+    Q1[105] = 200;
+    Q2[105] = 200;
+    Q3[105] = 200;
+    Q4[105] = 200;
 
-    LNK_code[106] = "ris021special";
-    IS_nr[106] = isris021special;
+    LNK_code[106] = "dummyhdkarin67";
+    IS_nr[106] = ddummyhdkarin67;
     FC_nr[106] = NG;
     S_generator[106] = NG;
-    S_stopline[106] = 0;
-    Q1[106] = 0;
-    Q2[106] = 0;
-    Q3[106] = 0;
-    Q4[106] = 0;
+    S_stopline[106] = 1800;
+    Q1[106] = 3;
+    Q2[106] = 5;
+    Q3[106] = 2;
+    Q4[106] = 1;
 
-    LNK_code[107] = "ris021heavytruck";
-    IS_nr[107] = isris021heavytruck;
-    FC_nr[107] = fc02;
+    LNK_code[107] = "dummyhdkaruit67";
+    IS_nr[107] = ddummyhdkaruit67;
+    FC_nr[107] = NG;
     S_generator[107] = NG;
-    S_stopline[107] = 0;
-    Q1[107] = 0;
-    Q2[107] = 0;
-    Q3[107] = 0;
-    Q4[107] = 0;
+    S_stopline[107] = 1800;
+    Q1[107] = 200;
+    Q2[107] = 200;
+    Q3[107] = 200;
+    Q4[107] = 200;
 
-    LNK_code[108] = "ris022car";
-    IS_nr[108] = isris022car;
-    FC_nr[108] = fc02;
+    LNK_code[108] = "dummyhdkarin68";
+    IS_nr[108] = ddummyhdkarin68;
+    FC_nr[108] = NG;
     S_generator[108] = NG;
-    S_stopline[108] = 0;
-    Q1[108] = 0;
-    Q2[108] = 0;
-    Q3[108] = 0;
-    Q4[108] = 0;
+    S_stopline[108] = 1800;
+    Q1[108] = 3;
+    Q2[108] = 5;
+    Q3[108] = 2;
+    Q4[108] = 1;
 
-    LNK_code[109] = "ris022bus";
-    IS_nr[109] = isris022bus;
-    FC_nr[109] = fc02;
+    LNK_code[109] = "dummyhdkaruit68";
+    IS_nr[109] = ddummyhdkaruit68;
+    FC_nr[109] = NG;
     S_generator[109] = NG;
-    S_stopline[109] = 0;
-    Q1[109] = 0;
-    Q2[109] = 0;
-    Q3[109] = 0;
-    Q4[109] = 0;
+    S_stopline[109] = 1800;
+    Q1[109] = 200;
+    Q2[109] = 200;
+    Q3[109] = 200;
+    Q4[109] = 200;
 
-    LNK_code[110] = "ris022special";
-    IS_nr[110] = isris022special;
-    FC_nr[110] = NG;
+    LNK_code[110] = "ris021car";
+    IS_nr[110] = isris021car;
+    FC_nr[110] = fc02;
     S_generator[110] = NG;
     S_stopline[110] = 0;
     Q1[110] = 0;
@@ -1160,8 +1161,8 @@ void simulation_parameters(void)
     Q3[110] = 0;
     Q4[110] = 0;
 
-    LNK_code[111] = "ris022heavytruck";
-    IS_nr[111] = isris022heavytruck;
+    LNK_code[111] = "ris021bus";
+    IS_nr[111] = isris021bus;
     FC_nr[111] = fc02;
     S_generator[111] = NG;
     S_stopline[111] = 0;
@@ -1170,9 +1171,9 @@ void simulation_parameters(void)
     Q3[111] = 0;
     Q4[111] = 0;
 
-    LNK_code[112] = "ris031car";
-    IS_nr[112] = isris031car;
-    FC_nr[112] = fc03;
+    LNK_code[112] = "ris021special";
+    IS_nr[112] = isris021special;
+    FC_nr[112] = NG;
     S_generator[112] = NG;
     S_stopline[112] = 0;
     Q1[112] = 0;
@@ -1180,9 +1181,9 @@ void simulation_parameters(void)
     Q3[112] = 0;
     Q4[112] = 0;
 
-    LNK_code[113] = "ris031bus";
-    IS_nr[113] = isris031bus;
-    FC_nr[113] = fc03;
+    LNK_code[113] = "ris021heavytruck";
+    IS_nr[113] = isris021heavytruck;
+    FC_nr[113] = fc02;
     S_generator[113] = NG;
     S_stopline[113] = 0;
     Q1[113] = 0;
@@ -1190,9 +1191,9 @@ void simulation_parameters(void)
     Q3[113] = 0;
     Q4[113] = 0;
 
-    LNK_code[114] = "ris031special";
-    IS_nr[114] = isris031special;
-    FC_nr[114] = NG;
+    LNK_code[114] = "ris022car";
+    IS_nr[114] = isris022car;
+    FC_nr[114] = fc02;
     S_generator[114] = NG;
     S_stopline[114] = 0;
     Q1[114] = 0;
@@ -1200,9 +1201,9 @@ void simulation_parameters(void)
     Q3[114] = 0;
     Q4[114] = 0;
 
-    LNK_code[115] = "ris031heavytruck";
-    IS_nr[115] = isris031heavytruck;
-    FC_nr[115] = fc03;
+    LNK_code[115] = "ris022bus";
+    IS_nr[115] = isris022bus;
+    FC_nr[115] = fc02;
     S_generator[115] = NG;
     S_stopline[115] = 0;
     Q1[115] = 0;
@@ -1210,9 +1211,9 @@ void simulation_parameters(void)
     Q3[115] = 0;
     Q4[115] = 0;
 
-    LNK_code[116] = "ris051car";
-    IS_nr[116] = isris051car;
-    FC_nr[116] = fc05;
+    LNK_code[116] = "ris022special";
+    IS_nr[116] = isris022special;
+    FC_nr[116] = NG;
     S_generator[116] = NG;
     S_stopline[116] = 0;
     Q1[116] = 0;
@@ -1220,9 +1221,9 @@ void simulation_parameters(void)
     Q3[116] = 0;
     Q4[116] = 0;
 
-    LNK_code[117] = "ris051bus";
-    IS_nr[117] = isris051bus;
-    FC_nr[117] = fc05;
+    LNK_code[117] = "ris022heavytruck";
+    IS_nr[117] = isris022heavytruck;
+    FC_nr[117] = fc02;
     S_generator[117] = NG;
     S_stopline[117] = 0;
     Q1[117] = 0;
@@ -1230,9 +1231,9 @@ void simulation_parameters(void)
     Q3[117] = 0;
     Q4[117] = 0;
 
-    LNK_code[118] = "ris051special";
-    IS_nr[118] = isris051special;
-    FC_nr[118] = NG;
+    LNK_code[118] = "ris031car";
+    IS_nr[118] = isris031car;
+    FC_nr[118] = fc03;
     S_generator[118] = NG;
     S_stopline[118] = 0;
     Q1[118] = 0;
@@ -1240,9 +1241,9 @@ void simulation_parameters(void)
     Q3[118] = 0;
     Q4[118] = 0;
 
-    LNK_code[119] = "ris051heavytruck";
-    IS_nr[119] = isris051heavytruck;
-    FC_nr[119] = fc05;
+    LNK_code[119] = "ris031bus";
+    IS_nr[119] = isris031bus;
+    FC_nr[119] = fc03;
     S_generator[119] = NG;
     S_stopline[119] = 0;
     Q1[119] = 0;
@@ -1250,9 +1251,9 @@ void simulation_parameters(void)
     Q3[119] = 0;
     Q4[119] = 0;
 
-    LNK_code[120] = "ris081car";
-    IS_nr[120] = isris081car;
-    FC_nr[120] = fc08;
+    LNK_code[120] = "ris031special";
+    IS_nr[120] = isris031special;
+    FC_nr[120] = NG;
     S_generator[120] = NG;
     S_stopline[120] = 0;
     Q1[120] = 0;
@@ -1260,9 +1261,9 @@ void simulation_parameters(void)
     Q3[120] = 0;
     Q4[120] = 0;
 
-    LNK_code[121] = "ris081bus";
-    IS_nr[121] = isris081bus;
-    FC_nr[121] = fc08;
+    LNK_code[121] = "ris031heavytruck";
+    IS_nr[121] = isris031heavytruck;
+    FC_nr[121] = fc03;
     S_generator[121] = NG;
     S_stopline[121] = 0;
     Q1[121] = 0;
@@ -1270,9 +1271,9 @@ void simulation_parameters(void)
     Q3[121] = 0;
     Q4[121] = 0;
 
-    LNK_code[122] = "ris081special";
-    IS_nr[122] = isris081special;
-    FC_nr[122] = NG;
+    LNK_code[122] = "ris051car";
+    IS_nr[122] = isris051car;
+    FC_nr[122] = fc05;
     S_generator[122] = NG;
     S_stopline[122] = 0;
     Q1[122] = 0;
@@ -1280,9 +1281,9 @@ void simulation_parameters(void)
     Q3[122] = 0;
     Q4[122] = 0;
 
-    LNK_code[123] = "ris081heavytruck";
-    IS_nr[123] = isris081heavytruck;
-    FC_nr[123] = fc08;
+    LNK_code[123] = "ris051bus";
+    IS_nr[123] = isris051bus;
+    FC_nr[123] = fc05;
     S_generator[123] = NG;
     S_stopline[123] = 0;
     Q1[123] = 0;
@@ -1290,9 +1291,9 @@ void simulation_parameters(void)
     Q3[123] = 0;
     Q4[123] = 0;
 
-    LNK_code[124] = "ris082car";
-    IS_nr[124] = isris082car;
-    FC_nr[124] = fc08;
+    LNK_code[124] = "ris051special";
+    IS_nr[124] = isris051special;
+    FC_nr[124] = NG;
     S_generator[124] = NG;
     S_stopline[124] = 0;
     Q1[124] = 0;
@@ -1300,9 +1301,9 @@ void simulation_parameters(void)
     Q3[124] = 0;
     Q4[124] = 0;
 
-    LNK_code[125] = "ris082bus";
-    IS_nr[125] = isris082bus;
-    FC_nr[125] = fc08;
+    LNK_code[125] = "ris051heavytruck";
+    IS_nr[125] = isris051heavytruck;
+    FC_nr[125] = fc05;
     S_generator[125] = NG;
     S_stopline[125] = 0;
     Q1[125] = 0;
@@ -1310,9 +1311,9 @@ void simulation_parameters(void)
     Q3[125] = 0;
     Q4[125] = 0;
 
-    LNK_code[126] = "ris082special";
-    IS_nr[126] = isris082special;
-    FC_nr[126] = NG;
+    LNK_code[126] = "ris081car";
+    IS_nr[126] = isris081car;
+    FC_nr[126] = fc08;
     S_generator[126] = NG;
     S_stopline[126] = 0;
     Q1[126] = 0;
@@ -1320,8 +1321,8 @@ void simulation_parameters(void)
     Q3[126] = 0;
     Q4[126] = 0;
 
-    LNK_code[127] = "ris082heavytruck";
-    IS_nr[127] = isris082heavytruck;
+    LNK_code[127] = "ris081bus";
+    IS_nr[127] = isris081bus;
     FC_nr[127] = fc08;
     S_generator[127] = NG;
     S_stopline[127] = 0;
@@ -1330,9 +1331,9 @@ void simulation_parameters(void)
     Q3[127] = 0;
     Q4[127] = 0;
 
-    LNK_code[128] = "ris091car";
-    IS_nr[128] = isris091car;
-    FC_nr[128] = fc09;
+    LNK_code[128] = "ris081special";
+    IS_nr[128] = isris081special;
+    FC_nr[128] = NG;
     S_generator[128] = NG;
     S_stopline[128] = 0;
     Q1[128] = 0;
@@ -1340,9 +1341,9 @@ void simulation_parameters(void)
     Q3[128] = 0;
     Q4[128] = 0;
 
-    LNK_code[129] = "ris091bus";
-    IS_nr[129] = isris091bus;
-    FC_nr[129] = fc09;
+    LNK_code[129] = "ris081heavytruck";
+    IS_nr[129] = isris081heavytruck;
+    FC_nr[129] = fc08;
     S_generator[129] = NG;
     S_stopline[129] = 0;
     Q1[129] = 0;
@@ -1350,9 +1351,9 @@ void simulation_parameters(void)
     Q3[129] = 0;
     Q4[129] = 0;
 
-    LNK_code[130] = "ris091special";
-    IS_nr[130] = isris091special;
-    FC_nr[130] = NG;
+    LNK_code[130] = "ris082car";
+    IS_nr[130] = isris082car;
+    FC_nr[130] = fc08;
     S_generator[130] = NG;
     S_stopline[130] = 0;
     Q1[130] = 0;
@@ -1360,9 +1361,9 @@ void simulation_parameters(void)
     Q3[130] = 0;
     Q4[130] = 0;
 
-    LNK_code[131] = "ris091heavytruck";
-    IS_nr[131] = isris091heavytruck;
-    FC_nr[131] = fc09;
+    LNK_code[131] = "ris082bus";
+    IS_nr[131] = isris082bus;
+    FC_nr[131] = fc08;
     S_generator[131] = NG;
     S_stopline[131] = 0;
     Q1[131] = 0;
@@ -1370,9 +1371,9 @@ void simulation_parameters(void)
     Q3[131] = 0;
     Q4[131] = 0;
 
-    LNK_code[132] = "ris111car";
-    IS_nr[132] = isris111car;
-    FC_nr[132] = fc11;
+    LNK_code[132] = "ris082special";
+    IS_nr[132] = isris082special;
+    FC_nr[132] = NG;
     S_generator[132] = NG;
     S_stopline[132] = 0;
     Q1[132] = 0;
@@ -1380,9 +1381,9 @@ void simulation_parameters(void)
     Q3[132] = 0;
     Q4[132] = 0;
 
-    LNK_code[133] = "ris111bus";
-    IS_nr[133] = isris111bus;
-    FC_nr[133] = fc11;
+    LNK_code[133] = "ris082heavytruck";
+    IS_nr[133] = isris082heavytruck;
+    FC_nr[133] = fc08;
     S_generator[133] = NG;
     S_stopline[133] = 0;
     Q1[133] = 0;
@@ -1390,9 +1391,9 @@ void simulation_parameters(void)
     Q3[133] = 0;
     Q4[133] = 0;
 
-    LNK_code[134] = "ris111special";
-    IS_nr[134] = isris111special;
-    FC_nr[134] = NG;
+    LNK_code[134] = "ris091car";
+    IS_nr[134] = isris091car;
+    FC_nr[134] = fc09;
     S_generator[134] = NG;
     S_stopline[134] = 0;
     Q1[134] = 0;
@@ -1400,9 +1401,9 @@ void simulation_parameters(void)
     Q3[134] = 0;
     Q4[134] = 0;
 
-    LNK_code[135] = "ris111heavytruck";
-    IS_nr[135] = isris111heavytruck;
-    FC_nr[135] = fc11;
+    LNK_code[135] = "ris091bus";
+    IS_nr[135] = isris091bus;
+    FC_nr[135] = fc09;
     S_generator[135] = NG;
     S_stopline[135] = 0;
     Q1[135] = 0;
@@ -1410,9 +1411,9 @@ void simulation_parameters(void)
     Q3[135] = 0;
     Q4[135] = 0;
 
-    LNK_code[136] = "ris211cyclist";
-    IS_nr[136] = isris211cyclist;
-    FC_nr[136] = fc21;
+    LNK_code[136] = "ris091special";
+    IS_nr[136] = isris091special;
+    FC_nr[136] = NG;
     S_generator[136] = NG;
     S_stopline[136] = 0;
     Q1[136] = 0;
@@ -1420,9 +1421,9 @@ void simulation_parameters(void)
     Q3[136] = 0;
     Q4[136] = 0;
 
-    LNK_code[137] = "ris221cyclist";
-    IS_nr[137] = isris221cyclist;
-    FC_nr[137] = fc22;
+    LNK_code[137] = "ris091heavytruck";
+    IS_nr[137] = isris091heavytruck;
+    FC_nr[137] = fc09;
     S_generator[137] = NG;
     S_stopline[137] = 0;
     Q1[137] = 0;
@@ -1430,9 +1431,9 @@ void simulation_parameters(void)
     Q3[137] = 0;
     Q4[137] = 0;
 
-    LNK_code[138] = "ris241cyclist";
-    IS_nr[138] = isris241cyclist;
-    FC_nr[138] = fc24;
+    LNK_code[138] = "ris111car";
+    IS_nr[138] = isris111car;
+    FC_nr[138] = fc11;
     S_generator[138] = NG;
     S_stopline[138] = 0;
     Q1[138] = 0;
@@ -1440,9 +1441,9 @@ void simulation_parameters(void)
     Q3[138] = 0;
     Q4[138] = 0;
 
-    LNK_code[139] = "ris261cyclist";
-    IS_nr[139] = isris261cyclist;
-    FC_nr[139] = fc26;
+    LNK_code[139] = "ris111bus";
+    IS_nr[139] = isris111bus;
+    FC_nr[139] = fc11;
     S_generator[139] = NG;
     S_stopline[139] = 0;
     Q1[139] = 0;
@@ -1450,9 +1451,9 @@ void simulation_parameters(void)
     Q3[139] = 0;
     Q4[139] = 0;
 
-    LNK_code[140] = "ris281cyclist";
-    IS_nr[140] = isris281cyclist;
-    FC_nr[140] = fc28;
+    LNK_code[140] = "ris111special";
+    IS_nr[140] = isris111special;
+    FC_nr[140] = NG;
     S_generator[140] = NG;
     S_stopline[140] = 0;
     Q1[140] = 0;
@@ -1460,9 +1461,9 @@ void simulation_parameters(void)
     Q3[140] = 0;
     Q4[140] = 0;
 
-    LNK_code[141] = "ris311pedestrian";
-    IS_nr[141] = isris311pedestrian;
-    FC_nr[141] = fc31;
+    LNK_code[141] = "ris111heavytruck";
+    IS_nr[141] = isris111heavytruck;
+    FC_nr[141] = fc11;
     S_generator[141] = NG;
     S_stopline[141] = 0;
     Q1[141] = 0;
@@ -1470,9 +1471,9 @@ void simulation_parameters(void)
     Q3[141] = 0;
     Q4[141] = 0;
 
-    LNK_code[142] = "ris312pedestrian";
-    IS_nr[142] = isris312pedestrian;
-    FC_nr[142] = fc31;
+    LNK_code[142] = "ris211cyclist";
+    IS_nr[142] = isris211cyclist;
+    FC_nr[142] = fc21;
     S_generator[142] = NG;
     S_stopline[142] = 0;
     Q1[142] = 0;
@@ -1480,9 +1481,9 @@ void simulation_parameters(void)
     Q3[142] = 0;
     Q4[142] = 0;
 
-    LNK_code[143] = "ris321pedestrian";
-    IS_nr[143] = isris321pedestrian;
-    FC_nr[143] = fc32;
+    LNK_code[143] = "ris221cyclist";
+    IS_nr[143] = isris221cyclist;
+    FC_nr[143] = fc22;
     S_generator[143] = NG;
     S_stopline[143] = 0;
     Q1[143] = 0;
@@ -1490,9 +1491,9 @@ void simulation_parameters(void)
     Q3[143] = 0;
     Q4[143] = 0;
 
-    LNK_code[144] = "ris322pedestrian";
-    IS_nr[144] = isris322pedestrian;
-    FC_nr[144] = fc32;
+    LNK_code[144] = "ris241cyclist";
+    IS_nr[144] = isris241cyclist;
+    FC_nr[144] = fc24;
     S_generator[144] = NG;
     S_stopline[144] = 0;
     Q1[144] = 0;
@@ -1500,9 +1501,9 @@ void simulation_parameters(void)
     Q3[144] = 0;
     Q4[144] = 0;
 
-    LNK_code[145] = "ris331pedestrian";
-    IS_nr[145] = isris331pedestrian;
-    FC_nr[145] = fc33;
+    LNK_code[145] = "ris261cyclist";
+    IS_nr[145] = isris261cyclist;
+    FC_nr[145] = fc26;
     S_generator[145] = NG;
     S_stopline[145] = 0;
     Q1[145] = 0;
@@ -1510,9 +1511,9 @@ void simulation_parameters(void)
     Q3[145] = 0;
     Q4[145] = 0;
 
-    LNK_code[146] = "ris332pedestrian";
-    IS_nr[146] = isris332pedestrian;
-    FC_nr[146] = fc33;
+    LNK_code[146] = "ris281cyclist";
+    IS_nr[146] = isris281cyclist;
+    FC_nr[146] = fc28;
     S_generator[146] = NG;
     S_stopline[146] = 0;
     Q1[146] = 0;
@@ -1520,9 +1521,9 @@ void simulation_parameters(void)
     Q3[146] = 0;
     Q4[146] = 0;
 
-    LNK_code[147] = "ris341pedestrian";
-    IS_nr[147] = isris341pedestrian;
-    FC_nr[147] = fc34;
+    LNK_code[147] = "ris311pedestrian";
+    IS_nr[147] = isris311pedestrian;
+    FC_nr[147] = fc31;
     S_generator[147] = NG;
     S_stopline[147] = 0;
     Q1[147] = 0;
@@ -1530,9 +1531,9 @@ void simulation_parameters(void)
     Q3[147] = 0;
     Q4[147] = 0;
 
-    LNK_code[148] = "ris342pedestrian";
-    IS_nr[148] = isris342pedestrian;
-    FC_nr[148] = fc34;
+    LNK_code[148] = "ris312pedestrian";
+    IS_nr[148] = isris312pedestrian;
+    FC_nr[148] = fc31;
     S_generator[148] = NG;
     S_stopline[148] = 0;
     Q1[148] = 0;
@@ -1540,9 +1541,9 @@ void simulation_parameters(void)
     Q3[148] = 0;
     Q4[148] = 0;
 
-    LNK_code[149] = "ris381pedestrian";
-    IS_nr[149] = isris381pedestrian;
-    FC_nr[149] = fc38;
+    LNK_code[149] = "ris321pedestrian";
+    IS_nr[149] = isris321pedestrian;
+    FC_nr[149] = fc32;
     S_generator[149] = NG;
     S_stopline[149] = 0;
     Q1[149] = 0;
@@ -1550,9 +1551,9 @@ void simulation_parameters(void)
     Q3[149] = 0;
     Q4[149] = 0;
 
-    LNK_code[150] = "ris382pedestrian";
-    IS_nr[150] = isris382pedestrian;
-    FC_nr[150] = fc38;
+    LNK_code[150] = "ris322pedestrian";
+    IS_nr[150] = isris322pedestrian;
+    FC_nr[150] = fc32;
     S_generator[150] = NG;
     S_stopline[150] = 0;
     Q1[150] = 0;
@@ -1560,9 +1561,9 @@ void simulation_parameters(void)
     Q3[150] = 0;
     Q4[150] = 0;
 
-    LNK_code[151] = "ris611car";
-    IS_nr[151] = isris611car;
-    FC_nr[151] = fc61;
+    LNK_code[151] = "ris331pedestrian";
+    IS_nr[151] = isris331pedestrian;
+    FC_nr[151] = fc33;
     S_generator[151] = NG;
     S_stopline[151] = 0;
     Q1[151] = 0;
@@ -1570,9 +1571,9 @@ void simulation_parameters(void)
     Q3[151] = 0;
     Q4[151] = 0;
 
-    LNK_code[152] = "ris611bus";
-    IS_nr[152] = isris611bus;
-    FC_nr[152] = fc61;
+    LNK_code[152] = "ris332pedestrian";
+    IS_nr[152] = isris332pedestrian;
+    FC_nr[152] = fc33;
     S_generator[152] = NG;
     S_stopline[152] = 0;
     Q1[152] = 0;
@@ -1580,9 +1581,9 @@ void simulation_parameters(void)
     Q3[152] = 0;
     Q4[152] = 0;
 
-    LNK_code[153] = "ris611special";
-    IS_nr[153] = isris611special;
-    FC_nr[153] = NG;
+    LNK_code[153] = "ris341pedestrian";
+    IS_nr[153] = isris341pedestrian;
+    FC_nr[153] = fc34;
     S_generator[153] = NG;
     S_stopline[153] = 0;
     Q1[153] = 0;
@@ -1590,9 +1591,9 @@ void simulation_parameters(void)
     Q3[153] = 0;
     Q4[153] = 0;
 
-    LNK_code[154] = "ris611heavytruck";
-    IS_nr[154] = isris611heavytruck;
-    FC_nr[154] = fc61;
+    LNK_code[154] = "ris342pedestrian";
+    IS_nr[154] = isris342pedestrian;
+    FC_nr[154] = fc34;
     S_generator[154] = NG;
     S_stopline[154] = 0;
     Q1[154] = 0;
@@ -1600,9 +1601,9 @@ void simulation_parameters(void)
     Q3[154] = 0;
     Q4[154] = 0;
 
-    LNK_code[155] = "ris621car";
-    IS_nr[155] = isris621car;
-    FC_nr[155] = fc62;
+    LNK_code[155] = "ris381pedestrian";
+    IS_nr[155] = isris381pedestrian;
+    FC_nr[155] = fc38;
     S_generator[155] = NG;
     S_stopline[155] = 0;
     Q1[155] = 0;
@@ -1610,9 +1611,9 @@ void simulation_parameters(void)
     Q3[155] = 0;
     Q4[155] = 0;
 
-    LNK_code[156] = "ris621bus";
-    IS_nr[156] = isris621bus;
-    FC_nr[156] = fc62;
+    LNK_code[156] = "ris382pedestrian";
+    IS_nr[156] = isris382pedestrian;
+    FC_nr[156] = fc38;
     S_generator[156] = NG;
     S_stopline[156] = 0;
     Q1[156] = 0;
@@ -1620,9 +1621,9 @@ void simulation_parameters(void)
     Q3[156] = 0;
     Q4[156] = 0;
 
-    LNK_code[157] = "ris621special";
-    IS_nr[157] = isris621special;
-    FC_nr[157] = NG;
+    LNK_code[157] = "ris611car";
+    IS_nr[157] = isris611car;
+    FC_nr[157] = fc61;
     S_generator[157] = NG;
     S_stopline[157] = 0;
     Q1[157] = 0;
@@ -1630,9 +1631,9 @@ void simulation_parameters(void)
     Q3[157] = 0;
     Q4[157] = 0;
 
-    LNK_code[158] = "ris621heavytruck";
-    IS_nr[158] = isris621heavytruck;
-    FC_nr[158] = fc62;
+    LNK_code[158] = "ris611bus";
+    IS_nr[158] = isris611bus;
+    FC_nr[158] = fc61;
     S_generator[158] = NG;
     S_stopline[158] = 0;
     Q1[158] = 0;
@@ -1640,9 +1641,9 @@ void simulation_parameters(void)
     Q3[158] = 0;
     Q4[158] = 0;
 
-    LNK_code[159] = "ris622car";
-    IS_nr[159] = isris622car;
-    FC_nr[159] = fc62;
+    LNK_code[159] = "ris611special";
+    IS_nr[159] = isris611special;
+    FC_nr[159] = NG;
     S_generator[159] = NG;
     S_stopline[159] = 0;
     Q1[159] = 0;
@@ -1650,9 +1651,9 @@ void simulation_parameters(void)
     Q3[159] = 0;
     Q4[159] = 0;
 
-    LNK_code[160] = "ris622bus";
-    IS_nr[160] = isris622bus;
-    FC_nr[160] = fc62;
+    LNK_code[160] = "ris611heavytruck";
+    IS_nr[160] = isris611heavytruck;
+    FC_nr[160] = fc61;
     S_generator[160] = NG;
     S_stopline[160] = 0;
     Q1[160] = 0;
@@ -1660,9 +1661,9 @@ void simulation_parameters(void)
     Q3[160] = 0;
     Q4[160] = 0;
 
-    LNK_code[161] = "ris622special";
-    IS_nr[161] = isris622special;
-    FC_nr[161] = NG;
+    LNK_code[161] = "ris621car";
+    IS_nr[161] = isris621car;
+    FC_nr[161] = fc62;
     S_generator[161] = NG;
     S_stopline[161] = 0;
     Q1[161] = 0;
@@ -1670,8 +1671,8 @@ void simulation_parameters(void)
     Q3[161] = 0;
     Q4[161] = 0;
 
-    LNK_code[162] = "ris622heavytruck";
-    IS_nr[162] = isris622heavytruck;
+    LNK_code[162] = "ris621bus";
+    IS_nr[162] = isris621bus;
     FC_nr[162] = fc62;
     S_generator[162] = NG;
     S_stopline[162] = 0;
@@ -1680,9 +1681,9 @@ void simulation_parameters(void)
     Q3[162] = 0;
     Q4[162] = 0;
 
-    LNK_code[163] = "ris671car";
-    IS_nr[163] = isris671car;
-    FC_nr[163] = fc67;
+    LNK_code[163] = "ris621special";
+    IS_nr[163] = isris621special;
+    FC_nr[163] = NG;
     S_generator[163] = NG;
     S_stopline[163] = 0;
     Q1[163] = 0;
@@ -1690,9 +1691,9 @@ void simulation_parameters(void)
     Q3[163] = 0;
     Q4[163] = 0;
 
-    LNK_code[164] = "ris671bus";
-    IS_nr[164] = isris671bus;
-    FC_nr[164] = fc67;
+    LNK_code[164] = "ris621heavytruck";
+    IS_nr[164] = isris621heavytruck;
+    FC_nr[164] = fc62;
     S_generator[164] = NG;
     S_stopline[164] = 0;
     Q1[164] = 0;
@@ -1700,9 +1701,9 @@ void simulation_parameters(void)
     Q3[164] = 0;
     Q4[164] = 0;
 
-    LNK_code[165] = "ris671special";
-    IS_nr[165] = isris671special;
-    FC_nr[165] = NG;
+    LNK_code[165] = "ris622car";
+    IS_nr[165] = isris622car;
+    FC_nr[165] = fc62;
     S_generator[165] = NG;
     S_stopline[165] = 0;
     Q1[165] = 0;
@@ -1710,9 +1711,9 @@ void simulation_parameters(void)
     Q3[165] = 0;
     Q4[165] = 0;
 
-    LNK_code[166] = "ris671heavytruck";
-    IS_nr[166] = isris671heavytruck;
-    FC_nr[166] = fc67;
+    LNK_code[166] = "ris622bus";
+    IS_nr[166] = isris622bus;
+    FC_nr[166] = fc62;
     S_generator[166] = NG;
     S_stopline[166] = 0;
     Q1[166] = 0;
@@ -1720,9 +1721,9 @@ void simulation_parameters(void)
     Q3[166] = 0;
     Q4[166] = 0;
 
-    LNK_code[167] = "ris681car";
-    IS_nr[167] = isris681car;
-    FC_nr[167] = fc68;
+    LNK_code[167] = "ris622special";
+    IS_nr[167] = isris622special;
+    FC_nr[167] = NG;
     S_generator[167] = NG;
     S_stopline[167] = 0;
     Q1[167] = 0;
@@ -1730,9 +1731,9 @@ void simulation_parameters(void)
     Q3[167] = 0;
     Q4[167] = 0;
 
-    LNK_code[168] = "ris681bus";
-    IS_nr[168] = isris681bus;
-    FC_nr[168] = fc68;
+    LNK_code[168] = "ris622heavytruck";
+    IS_nr[168] = isris622heavytruck;
+    FC_nr[168] = fc62;
     S_generator[168] = NG;
     S_stopline[168] = 0;
     Q1[168] = 0;
@@ -1740,9 +1741,9 @@ void simulation_parameters(void)
     Q3[168] = 0;
     Q4[168] = 0;
 
-    LNK_code[169] = "ris681special";
-    IS_nr[169] = isris681special;
-    FC_nr[169] = NG;
+    LNK_code[169] = "ris671car";
+    IS_nr[169] = isris671car;
+    FC_nr[169] = fc67;
     S_generator[169] = NG;
     S_stopline[169] = 0;
     Q1[169] = 0;
@@ -1750,9 +1751,9 @@ void simulation_parameters(void)
     Q3[169] = 0;
     Q4[169] = 0;
 
-    LNK_code[170] = "ris681heavytruck";
-    IS_nr[170] = isris681heavytruck;
-    FC_nr[170] = fc68;
+    LNK_code[170] = "ris671bus";
+    IS_nr[170] = isris671bus;
+    FC_nr[170] = fc67;
     S_generator[170] = NG;
     S_stopline[170] = 0;
     Q1[170] = 0;
@@ -1760,9 +1761,9 @@ void simulation_parameters(void)
     Q3[170] = 0;
     Q4[170] = 0;
 
-    LNK_code[171] = "ris682car";
-    IS_nr[171] = isris682car;
-    FC_nr[171] = fc68;
+    LNK_code[171] = "ris671special";
+    IS_nr[171] = isris671special;
+    FC_nr[171] = NG;
     S_generator[171] = NG;
     S_stopline[171] = 0;
     Q1[171] = 0;
@@ -1770,9 +1771,9 @@ void simulation_parameters(void)
     Q3[171] = 0;
     Q4[171] = 0;
 
-    LNK_code[172] = "ris682bus";
-    IS_nr[172] = isris682bus;
-    FC_nr[172] = fc68;
+    LNK_code[172] = "ris671heavytruck";
+    IS_nr[172] = isris671heavytruck;
+    FC_nr[172] = fc67;
     S_generator[172] = NG;
     S_stopline[172] = 0;
     Q1[172] = 0;
@@ -1780,9 +1781,9 @@ void simulation_parameters(void)
     Q3[172] = 0;
     Q4[172] = 0;
 
-    LNK_code[173] = "ris682special";
-    IS_nr[173] = isris682special;
-    FC_nr[173] = NG;
+    LNK_code[173] = "ris681car";
+    IS_nr[173] = isris681car;
+    FC_nr[173] = fc68;
     S_generator[173] = NG;
     S_stopline[173] = 0;
     Q1[173] = 0;
@@ -1790,8 +1791,8 @@ void simulation_parameters(void)
     Q3[173] = 0;
     Q4[173] = 0;
 
-    LNK_code[174] = "ris682heavytruck";
-    IS_nr[174] = isris682heavytruck;
+    LNK_code[174] = "ris681bus";
+    IS_nr[174] = isris681bus;
     FC_nr[174] = fc68;
     S_generator[174] = NG;
     S_stopline[174] = 0;
@@ -1800,15 +1801,75 @@ void simulation_parameters(void)
     Q3[174] = 0;
     Q4[174] = 0;
 
-    LNK_code[175] = "ris841cyclist";
-    IS_nr[175] = isris841cyclist;
-    FC_nr[175] = fc84;
+    LNK_code[175] = "ris681special";
+    IS_nr[175] = isris681special;
+    FC_nr[175] = NG;
     S_generator[175] = NG;
     S_stopline[175] = 0;
     Q1[175] = 0;
     Q2[175] = 0;
     Q3[175] = 0;
     Q4[175] = 0;
+
+    LNK_code[176] = "ris681heavytruck";
+    IS_nr[176] = isris681heavytruck;
+    FC_nr[176] = fc68;
+    S_generator[176] = NG;
+    S_stopline[176] = 0;
+    Q1[176] = 0;
+    Q2[176] = 0;
+    Q3[176] = 0;
+    Q4[176] = 0;
+
+    LNK_code[177] = "ris682car";
+    IS_nr[177] = isris682car;
+    FC_nr[177] = fc68;
+    S_generator[177] = NG;
+    S_stopline[177] = 0;
+    Q1[177] = 0;
+    Q2[177] = 0;
+    Q3[177] = 0;
+    Q4[177] = 0;
+
+    LNK_code[178] = "ris682bus";
+    IS_nr[178] = isris682bus;
+    FC_nr[178] = fc68;
+    S_generator[178] = NG;
+    S_stopline[178] = 0;
+    Q1[178] = 0;
+    Q2[178] = 0;
+    Q3[178] = 0;
+    Q4[178] = 0;
+
+    LNK_code[179] = "ris682special";
+    IS_nr[179] = isris682special;
+    FC_nr[179] = NG;
+    S_generator[179] = NG;
+    S_stopline[179] = 0;
+    Q1[179] = 0;
+    Q2[179] = 0;
+    Q3[179] = 0;
+    Q4[179] = 0;
+
+    LNK_code[180] = "ris682heavytruck";
+    IS_nr[180] = isris682heavytruck;
+    FC_nr[180] = fc68;
+    S_generator[180] = NG;
+    S_stopline[180] = 0;
+    Q1[180] = 0;
+    Q2[180] = 0;
+    Q3[180] = 0;
+    Q4[180] = 0;
+
+    LNK_code[181] = "ris841cyclist";
+    IS_nr[181] = isris841cyclist;
+    FC_nr[181] = fc84;
+    S_generator[181] = NG;
+    S_stopline[181] = 0;
+    Q1[181] = 0;
+    Q2[181] = 0;
+    Q3[181] = 0;
+    Q4[181] = 0;
 
 #endif
 

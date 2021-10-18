@@ -20,6 +20,7 @@
  * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
+ * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegeovoegd
  *
  ************************************************************************************/
 
@@ -62,9 +63,11 @@ void display_parameters(void)
     X_us[fc38] = 251; Y_us[fc38] = 454;
     X_us[fc61] = 299; Y_us[fc61] = 340;
     X_us[fc62] = 335; Y_us[fc62] = 389;
-    X_us[fc67] = 432; Y_us[fc67] = 403;
-    X_us[fc68] = 393; Y_us[fc68] = 348;
+    X_us[fc67] = 431; Y_us[fc67] = 418;
+    X_us[fc68] = 396; Y_us[fc68] = 361;
     X_us[fc84] = 469; Y_us[fc84] = 292;
+    X_us[fc82] = 342; Y_us[fc82] = 319;
+    X_us[fc81] = 439; Y_us[fc81] = 315;
 
     /* detectie */
     /* -------- */
@@ -124,14 +127,20 @@ void display_parameters(void)
     X_is[d62_1b] = 336; Y_is[d62_1b] = 423;
     X_is[d62_2a] = 319; Y_is[d62_2a] = 363;
     X_is[d62_2b] = 336; Y_is[d62_2b] = 365;
-    X_is[d67_1] = 439; Y_is[d67_1] = 332;
-    X_is[d67_2] = 438; Y_is[d67_2] = 362;
-    X_is[d68_1a] = 415; Y_is[d68_1a] = 316;
-    X_is[d68_1b] = 395; Y_is[d68_1b] = 318;
-    X_is[d68_2a] = 415; Y_is[d68_2a] = 372;
-    X_is[d68_2b] = 395; Y_is[d68_2b] = 377;
+    X_is[d67_1] = 435; Y_is[d67_1] = 349;
+    X_is[d67_2] = 437; Y_is[d67_2] = 379;
+    X_is[d68_1a] = 417; Y_is[d68_1a] = 337;
+    X_is[d68_1b] = 394; Y_is[d68_1b] = 337;
+    X_is[d68_2a] = 417; Y_is[d68_2a] = 405;
+    X_is[d68_2b] = 391; Y_is[d68_2b] = 410;
+    X_is[d68_9a] = 417; Y_is[d68_9a] = 158;
+    X_is[d68_9b] = 397; Y_is[d68_9b] = 162;
     X_is[d84_1] = 468; Y_is[d84_1] = 240;
     X_is[dk84] = 453; Y_is[dk84] = 239;
+    X_is[d82_1] = 290; Y_is[d82_1] = 316;
+    X_is[dk82] = 291; Y_is[dk82] = 331;
+    X_is[d81_1] = 378; Y_is[d81_1] = 316;
+    X_is[dk81] = 382; Y_is[dk81] = 327;
 #if (!defined AUTOMAAT_TEST)
     X_is[ddummykarin02bus] = 39; Y_is[ddummykarin02bus] = 150;
     X_is[ddummykarin03bus] = 39; Y_is[ddummykarin03bus] = 163;
@@ -188,6 +197,7 @@ void display_parameters(void)
     X_us[usML2] = 286; Y_us[usML2] = 26;
     X_us[usML3] = 285; Y_us[usML3] = 41;
     X_us[usML4] = 286; Y_us[usML4] = 53;
+    X_us[usfileFile68af] = 524; Y_us[usfileFile68af] = 101;
     X_us[usovtevroeg02] = 209; Y_us[usovtevroeg02] = 170;
     X_us[usovoptijd02] = 208; Y_us[usovoptijd02] = 183;
     X_us[usovtelaat02] = 208; Y_us[usovtelaat02] = 198;
@@ -265,6 +275,8 @@ void display_parameters(void)
     X_us[uswtk38a] = 249; Y_us[uswtk38a] = 441;
     X_us[uswtk38b] = 246; Y_us[uswtk38b] = 481;
     X_us[uswtk84] = 454; Y_us[uswtk84] = 237;
+    X_us[uswtk82] = 287; Y_us[uswtk82] = 331;
+    X_us[uswtk81] = 380; Y_us[uswtk81] = 327;
 
     /* overige ingangen */
     /* ---------------- */

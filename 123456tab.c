@@ -20,6 +20,7 @@
  * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
+ * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegeovoegd
  *
  ************************************************************************************/
 
@@ -121,12 +122,15 @@ void control_parameters(void)
    FC_code[fc67] = "67"; TRG_max[fc67] = 20; TRG_min[fc67] = 20; TGG_max[fc67] = 40; TGG_min[fc67] = 40; TFG_max[fc67] = 50; TGL_max[fc67] = 30; TGL_min[fc67] = 30; TMGL_max[fc67] = 30; TVGA_max[fc67] = 0;
    FC_code[fc68] = "68"; TRG_max[fc68] = 20; TRG_min[fc68] = 20; TGG_max[fc68] = 40; TGG_min[fc68] = 40; TFG_max[fc68] = 40; TGL_max[fc68] = 35; TGL_min[fc68] = 35; TMGL_max[fc68] = 35; TVGA_max[fc68] = 10;
    FC_code[fc84] = "84"; TRG_max[fc84] = 10; TRG_min[fc84] = 10; TGG_max[fc84] = 40; TGG_min[fc84] = 40; TFG_max[fc84] = 60; TGL_max[fc84] = 20; TGL_min[fc84] = 20; TMGL_max[fc84] = 20; TVGA_max[fc84] = 90;
+   FC_code[fc82] = "82"; TRG_max[fc82] = 10; TRG_min[fc82] = 10; TGG_max[fc82] = 40; TGG_min[fc82] = 40; TFG_max[fc82] = 60; TGL_max[fc82] = 20; TGL_min[fc82] = 20; TMGL_max[fc82] = 20; TVGA_max[fc82] = 90;
+   FC_code[fc81] = "81"; TRG_max[fc81] = 10; TRG_min[fc81] = 10; TGG_max[fc81] = 40; TGG_min[fc81] = 40; TFG_max[fc81] = 60; TGL_max[fc81] = 20; TGL_min[fc81] = 20; TMGL_max[fc81] = 20; TVGA_max[fc81] = 90;
 
 /* conflicten */
 /* ---------- */
     TIG_max[fc02][fc05] = 25;
     TIG_max[fc02][fc21] = 0;
     TIG_max[fc02][fc31] = 44;
+    TIG_max[fc02][fc82] = 30;
 
     TIG_max[fc03][fc05] = 44;
     TIG_max[fc03][fc21] = 10;
@@ -143,6 +147,7 @@ void control_parameters(void)
     TIG_max[fc05][fc33] = 50;
     TIG_max[fc05][fc68] = 47;
     TIG_max[fc05][fc84] = 56;
+    TIG_max[fc05][fc82] = 50;
 
     TIG_max[fc08][fc11] = 20;
     TIG_max[fc08][fc26] = 0;
@@ -203,15 +208,23 @@ void control_parameters(void)
     TIG_max[fc67][fc24] = 50;
     TIG_max[fc67][fc34] = 72;
     TIG_max[fc67][fc84] = 40;
+    TIG_max[fc67][fc81] = 0;
 
     TIG_max[fc68][fc03] = 31;
     TIG_max[fc68][fc05] = 34;
     TIG_max[fc68][fc22] = 54;
     TIG_max[fc68][fc32] = 64;
+    TIG_max[fc68][fc81] = 5;
 
     TIG_max[fc84][fc03] = 15;
     TIG_max[fc84][fc05] = 23;
     TIG_max[fc84][fc67] = 67;
+
+    TIG_max[fc82][fc02] = 4;
+    TIG_max[fc82][fc05] = 1;
+
+    TIG_max[fc81][fc67] = 30;
+    TIG_max[fc81][fc68] = 20;
 
     TIG_max[fc02][fc09] = GKL;
     TIG_max[fc02][fc11] = GKL;
@@ -232,6 +245,7 @@ void control_parameters(void)
     TIG_max[fc08][fc22] = GKL;
     TIG_max[fc08][fc31] = FK;
     TIG_max[fc08][fc32] = GKL;
+    TIG_max[fc08][fc81] = GKL;
 
     TIG_max[fc09][fc02] = GK;
 
@@ -256,14 +270,22 @@ void control_parameters(void)
     TIG_max[fc34][fc05] = FK;
 
     TIG_max[fc67][fc33] = FK;
+    TIG_max[fc67][fc82] = GK;
 
     TIG_max[fc68][fc31] = FK;
+    TIG_max[fc68][fc82] = GK;
+
+    TIG_max[fc82][fc67] = GKL;
+    TIG_max[fc82][fc68] = GKL;
+
+    TIG_max[fc81][fc08] = GK;
 
     default_tig_min(0);
 
     TIG_min[fc02][fc05] = 25;
     TIG_min[fc02][fc21] = 0;
     TIG_min[fc02][fc31] = 44;
+    TIG_min[fc02][fc82] = 30;
 
     TIG_min[fc03][fc05] = 44;
     TIG_min[fc03][fc21] = 10;
@@ -280,6 +302,7 @@ void control_parameters(void)
     TIG_min[fc05][fc33] = 50;
     TIG_min[fc05][fc68] = 47;
     TIG_min[fc05][fc84] = 56;
+    TIG_min[fc05][fc82] = 50;
 
     TIG_min[fc08][fc11] = 20;
     TIG_min[fc08][fc26] = 0;
@@ -340,106 +363,117 @@ void control_parameters(void)
     TIG_min[fc67][fc24] = 50;
     TIG_min[fc67][fc34] = 72;
     TIG_min[fc67][fc84] = 40;
+    TIG_min[fc67][fc81] = 0;
 
     TIG_min[fc68][fc03] = 31;
     TIG_min[fc68][fc05] = 34;
     TIG_min[fc68][fc22] = 54;
     TIG_min[fc68][fc32] = 64;
+    TIG_min[fc68][fc81] = 5;
 
     TIG_min[fc84][fc03] = 15;
     TIG_min[fc84][fc05] = 23;
     TIG_min[fc84][fc67] = 67;
 
+    TIG_min[fc82][fc02] = 4;
+    TIG_min[fc82][fc05] = 1;
+
+    TIG_min[fc81][fc67] = 30;
+    TIG_min[fc81][fc68] = 20;
+
 /* overige uitgangen */
 /* ----------------- */
-    US_code[ussegm1]       = "segm1";                               /* Aansturing segmenten display               */
-    US_code[ussegm2]       = "segm2";                               /* Aansturing segmenten display               */
-    US_code[ussegm3]       = "segm3";                               /* Aansturing segmenten display               */
-    US_code[ussegm4]       = "segm4";                               /* Aansturing segmenten display               */
-    US_code[ussegm5]       = "segm5";                               /* Aansturing segmenten display               */
-    US_code[ussegm6]       = "segm6";                               /* Aansturing segmenten display               */
-    US_code[ussegm7]       = "segm7";                               /* Aansturing segmenten display               */
-    US_code[usML1]         = "ML1";                                 /* Verklikken actief zijn ML1                 */
-    US_code[usML2]         = "ML2";                                 /* Verklikken actief zijn ML2                 */
-    US_code[usML3]         = "ML3";                                 /* Verklikken actief zijn ML3                 */
-    US_code[usML4]         = "ML4";                                 /* Verklikken actief zijn ML4                 */
-    US_code[usovtevroeg02] = "ovtevroeg02";                         /* Voorste OV voertuig bij 02 te vroeg        */
-    US_code[usovoptijd02]  = "ovoptijd02";                          /* Voorste OV voertuig bij 02 op tijd         */
-    US_code[usovtelaat02]  = "ovtelaat02";                          /* Voorste OV voertuig bij 02 te laat         */
-    US_code[usovtevroeg03] = "ovtevroeg03";                         /* Voorste OV voertuig bij 03 te vroeg        */
-    US_code[usovoptijd03]  = "ovoptijd03";                          /* Voorste OV voertuig bij 03 op tijd         */
-    US_code[usovtelaat03]  = "ovtelaat03";                          /* Voorste OV voertuig bij 03 te laat         */
-    US_code[usovtevroeg05] = "ovtevroeg05";                         /* Voorste OV voertuig bij 05 te vroeg        */
-    US_code[usovoptijd05]  = "ovoptijd05";                          /* Voorste OV voertuig bij 05 op tijd         */
-    US_code[usovtelaat05]  = "ovtelaat05";                          /* Voorste OV voertuig bij 05 te laat         */
-    US_code[usovtevroeg08] = "ovtevroeg08";                         /* Voorste OV voertuig bij 08 te vroeg        */
-    US_code[usovoptijd08]  = "ovoptijd08";                          /* Voorste OV voertuig bij 08 op tijd         */
-    US_code[usovtelaat08]  = "ovtelaat08";                          /* Voorste OV voertuig bij 08 te laat         */
-    US_code[usovtevroeg09] = "ovtevroeg09";                         /* Voorste OV voertuig bij 09 te vroeg        */
-    US_code[usovoptijd09]  = "ovoptijd09";                          /* Voorste OV voertuig bij 09 op tijd         */
-    US_code[usovtelaat09]  = "ovtelaat09";                          /* Voorste OV voertuig bij 09 te laat         */
-    US_code[usovtevroeg11] = "ovtevroeg11";                         /* Voorste OV voertuig bij 11 te vroeg        */
-    US_code[usovoptijd11]  = "ovoptijd11";                          /* Voorste OV voertuig bij 11 op tijd         */
-    US_code[usovtelaat11]  = "ovtelaat11";                          /* Voorste OV voertuig bij 11 te laat         */
-    US_code[usovtevroeg61] = "ovtevroeg61";                         /* Voorste OV voertuig bij 61 te vroeg        */
-    US_code[usovoptijd61]  = "ovoptijd61";                          /* Voorste OV voertuig bij 61 op tijd         */
-    US_code[usovtelaat61]  = "ovtelaat61";                          /* Voorste OV voertuig bij 61 te laat         */
-    US_code[usovtevroeg62] = "ovtevroeg62";                         /* Voorste OV voertuig bij 62 te vroeg        */
-    US_code[usovoptijd62]  = "ovoptijd62";                          /* Voorste OV voertuig bij 62 op tijd         */
-    US_code[usovtelaat62]  = "ovtelaat62";                          /* Voorste OV voertuig bij 62 te laat         */
-    US_code[usovtevroeg67] = "ovtevroeg67";                         /* Voorste OV voertuig bij 67 te vroeg        */
-    US_code[usovoptijd67]  = "ovoptijd67";                          /* Voorste OV voertuig bij 67 op tijd         */
-    US_code[usovtelaat67]  = "ovtelaat67";                          /* Voorste OV voertuig bij 67 te laat         */
-    US_code[usovtevroeg68] = "ovtevroeg68";                         /* Voorste OV voertuig bij 68 te vroeg        */
-    US_code[usovoptijd68]  = "ovoptijd68";                          /* Voorste OV voertuig bij 68 op tijd         */
-    US_code[usovtelaat68]  = "ovtelaat68";                          /* Voorste OV voertuig bij 68 te laat         */
-    US_code[usmaxwt]       = "maxwt";                               /* Verklikken maximale wachttijd overschreden */
-    US_code[uskarmelding]  = "karmelding";                          /* Verklikken ontvangst melding KAR           */
-    US_code[uskarog]       = "karog";                               /* Verklikken ondergedrag KAR                 */
-    US_code[usovinm02]     = "ovinm02";                             /* Verklikken inmelding OV fase 02            */
-    US_code[usovinm03]     = "ovinm03";                             /* Verklikken inmelding OV fase 03            */
-    US_code[usovinm05]     = "ovinm05";                             /* Verklikken inmelding OV fase 05            */
-    US_code[usovinm08]     = "ovinm08";                             /* Verklikken inmelding OV fase 08            */
-    US_code[usovinm09]     = "ovinm09";                             /* Verklikken inmelding OV fase 09            */
-    US_code[usovinm11]     = "ovinm11";                             /* Verklikken inmelding OV fase 11            */
-    US_code[usovinm61]     = "ovinm61";                             /* Verklikken inmelding OV fase 61            */
-    US_code[usovinm62]     = "ovinm62";                             /* Verklikken inmelding OV fase 62            */
-    US_code[usovinm67]     = "ovinm67";                             /* Verklikken inmelding OV fase 67            */
-    US_code[usovinm68]     = "ovinm68";                             /* Verklikken inmelding OV fase 68            */
-    US_code[ushdinm02]     = "hdinm02";                             /* Verklikken inmelding HD fase 02            */
-    US_code[ushdinm03]     = "hdinm03";                             /* Verklikken inmelding HD fase 03            */
-    US_code[ushdinm05]     = "hdinm05";                             /* Verklikken inmelding HD fase 05            */
-    US_code[ushdinm08]     = "hdinm08";                             /* Verklikken inmelding HD fase 08            */
-    US_code[ushdinm09]     = "hdinm09";                             /* Verklikken inmelding HD fase 09            */
-    US_code[ushdinm11]     = "hdinm11";                             /* Verklikken inmelding HD fase 11            */
-    US_code[ushdinm61]     = "hdinm61";                             /* Verklikken inmelding HD fase 61            */
-    US_code[ushdinm62]     = "hdinm62";                             /* Verklikken inmelding HD fase 62            */
-    US_code[ushdinm67]     = "hdinm67";                             /* Verklikken inmelding HD fase 67            */
-    US_code[ushdinm68]     = "hdinm68";                             /* Verklikken inmelding HD fase 68            */
-    US_code[usperdef]      = "perdef";                              /* Default periode actief                     */
-    US_code[usper1]        = "per1";                                /* Periode Dag periode actief                 */
-    US_code[usper2]        = "per2";                                /* Periode Ochtendspits actief                */
-    US_code[usper3]        = "per3";                                /* Periode Avondspits actief                  */
-    US_code[usper4]        = "per4";                                /* Periode Koopavond actief                   */
-    US_code[usper5]        = "per5";                                /* Periode Weekend actief                     */
-    US_code[usper6]        = "per6";                                /* Periode Reserve actief                     */
-    US_code[usrgv]         = "rgv";                                 /* Verklikken actief zijn RoBuGrover          */
-    US_code[uswtk21]       = "wtk21";                               /* Aansturing waitsignaal detector k21        */
-    US_code[uswtk22]       = "wtk22";                               /* Aansturing waitsignaal detector k22        */
-    US_code[uswtk24]       = "wtk24";                               /* Aansturing waitsignaal detector k24        */
-    US_code[uswtk26]       = "wtk26";                               /* Aansturing waitsignaal detector k26        */
-    US_code[uswtk28]       = "wtk28";                               /* Aansturing waitsignaal detector k28        */
-    US_code[uswtk31a]      = "wtk31a";                              /* Aansturing waitsignaal detector k31a       */
-    US_code[uswtk31b]      = "wtk31b";                              /* Aansturing waitsignaal detector k31b       */
-    US_code[uswtk32a]      = "wtk32a";                              /* Aansturing waitsignaal detector k32a       */
-    US_code[uswtk32b]      = "wtk32b";                              /* Aansturing waitsignaal detector k32b       */
-    US_code[uswtk33a]      = "wtk33a";                              /* Aansturing waitsignaal detector k33a       */
-    US_code[uswtk33b]      = "wtk33b";                              /* Aansturing waitsignaal detector k33b       */
-    US_code[uswtk34a]      = "wtk34a";                              /* Aansturing waitsignaal detector k34a       */
-    US_code[uswtk34b]      = "wtk34b";                              /* Aansturing waitsignaal detector k34b       */
-    US_code[uswtk38a]      = "wtk38a";                              /* Aansturing waitsignaal detector k38a       */
-    US_code[uswtk38b]      = "wtk38b";                              /* Aansturing waitsignaal detector k38b       */
-    US_code[uswtk84]       = "wtk84";                               /* Aansturing waitsignaal detector k84        */
+    US_code[ussegm1]        = "segm1";                                 /* Aansturing segmenten display               */
+    US_code[ussegm2]        = "segm2";                                 /* Aansturing segmenten display               */
+    US_code[ussegm3]        = "segm3";                                 /* Aansturing segmenten display               */
+    US_code[ussegm4]        = "segm4";                                 /* Aansturing segmenten display               */
+    US_code[ussegm5]        = "segm5";                                 /* Aansturing segmenten display               */
+    US_code[ussegm6]        = "segm6";                                 /* Aansturing segmenten display               */
+    US_code[ussegm7]        = "segm7";                                 /* Aansturing segmenten display               */
+    US_code[usML1]          = "ML1";                                   /* Verklikken actief zijn ML1                 */
+    US_code[usML2]          = "ML2";                                   /* Verklikken actief zijn ML2                 */
+    US_code[usML3]          = "ML3";                                   /* Verklikken actief zijn ML3                 */
+    US_code[usML4]          = "ML4";                                   /* Verklikken actief zijn ML4                 */
+    US_code[usfileFile68af] = "fileFile68af";                          /* File ingreep File68af actief               */
+    US_code[usovtevroeg02]  = "ovtevroeg02";                           /* Voorste OV voertuig bij 02 te vroeg        */
+    US_code[usovoptijd02]   = "ovoptijd02";                            /* Voorste OV voertuig bij 02 op tijd         */
+    US_code[usovtelaat02]   = "ovtelaat02";                            /* Voorste OV voertuig bij 02 te laat         */
+    US_code[usovtevroeg03]  = "ovtevroeg03";                           /* Voorste OV voertuig bij 03 te vroeg        */
+    US_code[usovoptijd03]   = "ovoptijd03";                            /* Voorste OV voertuig bij 03 op tijd         */
+    US_code[usovtelaat03]   = "ovtelaat03";                            /* Voorste OV voertuig bij 03 te laat         */
+    US_code[usovtevroeg05]  = "ovtevroeg05";                           /* Voorste OV voertuig bij 05 te vroeg        */
+    US_code[usovoptijd05]   = "ovoptijd05";                            /* Voorste OV voertuig bij 05 op tijd         */
+    US_code[usovtelaat05]   = "ovtelaat05";                            /* Voorste OV voertuig bij 05 te laat         */
+    US_code[usovtevroeg08]  = "ovtevroeg08";                           /* Voorste OV voertuig bij 08 te vroeg        */
+    US_code[usovoptijd08]   = "ovoptijd08";                            /* Voorste OV voertuig bij 08 op tijd         */
+    US_code[usovtelaat08]   = "ovtelaat08";                            /* Voorste OV voertuig bij 08 te laat         */
+    US_code[usovtevroeg09]  = "ovtevroeg09";                           /* Voorste OV voertuig bij 09 te vroeg        */
+    US_code[usovoptijd09]   = "ovoptijd09";                            /* Voorste OV voertuig bij 09 op tijd         */
+    US_code[usovtelaat09]   = "ovtelaat09";                            /* Voorste OV voertuig bij 09 te laat         */
+    US_code[usovtevroeg11]  = "ovtevroeg11";                           /* Voorste OV voertuig bij 11 te vroeg        */
+    US_code[usovoptijd11]   = "ovoptijd11";                            /* Voorste OV voertuig bij 11 op tijd         */
+    US_code[usovtelaat11]   = "ovtelaat11";                            /* Voorste OV voertuig bij 11 te laat         */
+    US_code[usovtevroeg61]  = "ovtevroeg61";                           /* Voorste OV voertuig bij 61 te vroeg        */
+    US_code[usovoptijd61]   = "ovoptijd61";                            /* Voorste OV voertuig bij 61 op tijd         */
+    US_code[usovtelaat61]   = "ovtelaat61";                            /* Voorste OV voertuig bij 61 te laat         */
+    US_code[usovtevroeg62]  = "ovtevroeg62";                           /* Voorste OV voertuig bij 62 te vroeg        */
+    US_code[usovoptijd62]   = "ovoptijd62";                            /* Voorste OV voertuig bij 62 op tijd         */
+    US_code[usovtelaat62]   = "ovtelaat62";                            /* Voorste OV voertuig bij 62 te laat         */
+    US_code[usovtevroeg67]  = "ovtevroeg67";                           /* Voorste OV voertuig bij 67 te vroeg        */
+    US_code[usovoptijd67]   = "ovoptijd67";                            /* Voorste OV voertuig bij 67 op tijd         */
+    US_code[usovtelaat67]   = "ovtelaat67";                            /* Voorste OV voertuig bij 67 te laat         */
+    US_code[usovtevroeg68]  = "ovtevroeg68";                           /* Voorste OV voertuig bij 68 te vroeg        */
+    US_code[usovoptijd68]   = "ovoptijd68";                            /* Voorste OV voertuig bij 68 op tijd         */
+    US_code[usovtelaat68]   = "ovtelaat68";                            /* Voorste OV voertuig bij 68 te laat         */
+    US_code[usmaxwt]        = "maxwt";                                 /* Verklikken maximale wachttijd overschreden */
+    US_code[uskarmelding]   = "karmelding";                            /* Verklikken ontvangst melding KAR           */
+    US_code[uskarog]        = "karog";                                 /* Verklikken ondergedrag KAR                 */
+    US_code[usovinm02]      = "ovinm02";                               /* Verklikken inmelding OV fase 02            */
+    US_code[usovinm03]      = "ovinm03";                               /* Verklikken inmelding OV fase 03            */
+    US_code[usovinm05]      = "ovinm05";                               /* Verklikken inmelding OV fase 05            */
+    US_code[usovinm08]      = "ovinm08";                               /* Verklikken inmelding OV fase 08            */
+    US_code[usovinm09]      = "ovinm09";                               /* Verklikken inmelding OV fase 09            */
+    US_code[usovinm11]      = "ovinm11";                               /* Verklikken inmelding OV fase 11            */
+    US_code[usovinm61]      = "ovinm61";                               /* Verklikken inmelding OV fase 61            */
+    US_code[usovinm62]      = "ovinm62";                               /* Verklikken inmelding OV fase 62            */
+    US_code[usovinm67]      = "ovinm67";                               /* Verklikken inmelding OV fase 67            */
+    US_code[usovinm68]      = "ovinm68";                               /* Verklikken inmelding OV fase 68            */
+    US_code[ushdinm02]      = "hdinm02";                               /* Verklikken inmelding HD fase 02            */
+    US_code[ushdinm03]      = "hdinm03";                               /* Verklikken inmelding HD fase 03            */
+    US_code[ushdinm05]      = "hdinm05";                               /* Verklikken inmelding HD fase 05            */
+    US_code[ushdinm08]      = "hdinm08";                               /* Verklikken inmelding HD fase 08            */
+    US_code[ushdinm09]      = "hdinm09";                               /* Verklikken inmelding HD fase 09            */
+    US_code[ushdinm11]      = "hdinm11";                               /* Verklikken inmelding HD fase 11            */
+    US_code[ushdinm61]      = "hdinm61";                               /* Verklikken inmelding HD fase 61            */
+    US_code[ushdinm62]      = "hdinm62";                               /* Verklikken inmelding HD fase 62            */
+    US_code[ushdinm67]      = "hdinm67";                               /* Verklikken inmelding HD fase 67            */
+    US_code[ushdinm68]      = "hdinm68";                               /* Verklikken inmelding HD fase 68            */
+    US_code[usperdef]       = "perdef";                                /* Default periode actief                     */
+    US_code[usper1]         = "per1";                                  /* Periode Dag periode actief                 */
+    US_code[usper2]         = "per2";                                  /* Periode Ochtendspits actief                */
+    US_code[usper3]         = "per3";                                  /* Periode Avondspits actief                  */
+    US_code[usper4]         = "per4";                                  /* Periode Koopavond actief                   */
+    US_code[usper5]         = "per5";                                  /* Periode Weekend actief                     */
+    US_code[usper6]         = "per6";                                  /* Periode Reserve actief                     */
+    US_code[usrgv]          = "rgv";                                   /* Verklikken actief zijn RoBuGrover          */
+    US_code[uswtk21]        = "wtk21";                                 /* Aansturing waitsignaal detector k21        */
+    US_code[uswtk22]        = "wtk22";                                 /* Aansturing waitsignaal detector k22        */
+    US_code[uswtk24]        = "wtk24";                                 /* Aansturing waitsignaal detector k24        */
+    US_code[uswtk26]        = "wtk26";                                 /* Aansturing waitsignaal detector k26        */
+    US_code[uswtk28]        = "wtk28";                                 /* Aansturing waitsignaal detector k28        */
+    US_code[uswtk31a]       = "wtk31a";                                /* Aansturing waitsignaal detector k31a       */
+    US_code[uswtk31b]       = "wtk31b";                                /* Aansturing waitsignaal detector k31b       */
+    US_code[uswtk32a]       = "wtk32a";                                /* Aansturing waitsignaal detector k32a       */
+    US_code[uswtk32b]       = "wtk32b";                                /* Aansturing waitsignaal detector k32b       */
+    US_code[uswtk33a]       = "wtk33a";                                /* Aansturing waitsignaal detector k33a       */
+    US_code[uswtk33b]       = "wtk33b";                                /* Aansturing waitsignaal detector k33b       */
+    US_code[uswtk34a]       = "wtk34a";                                /* Aansturing waitsignaal detector k34a       */
+    US_code[uswtk34b]       = "wtk34b";                                /* Aansturing waitsignaal detector k34b       */
+    US_code[uswtk38a]       = "wtk38a";                                /* Aansturing waitsignaal detector k38a       */
+    US_code[uswtk38b]       = "wtk38b";                                /* Aansturing waitsignaal detector k38b       */
+    US_code[uswtk84]        = "wtk84";                                 /* Aansturing waitsignaal detector k84        */
+    US_code[uswtk82]        = "wtk82";                                 /* Aansturing waitsignaal detector k82        */
+    US_code[uswtk81]        = "wtk81";                                 /* Aansturing waitsignaal detector k81        */
 
 /* detectie */
 /* -------- */
@@ -552,9 +586,19 @@ void control_parameters(void)
                               TBG_max[d68_2a] = 60; TOG_max[d68_2a] = 360;
     D_code[d68_2b] = "68_2b"; TDB_max[d68_2b] = 0;  TDH_max[d68_2b] = 5;
                               TBG_max[d68_2b] = 60; TOG_max[d68_2b] = 360;
+    D_code[d68_9a] = "68_9a"; TDB_max[d68_9a] = 0;  TDH_max[d68_9a] = 0;
+                              TBG_max[d68_9a] = 20; TOG_max[d68_9a] = 360;
+    D_code[d68_9b] = "68_9b"; TDB_max[d68_9b] = 0;  TDH_max[d68_9b] = 0;
+                              TBG_max[d68_9b] = 20; TOG_max[d68_9b] = 360;
     D_code[d84_1]  = "84_1";  TDB_max[d84_1]  = 15; TDH_max[d84_1]  = 30;
                               TBG_max[d84_1]  = 10; TOG_max[d84_1]  = 1440;
     D_code[dk84]   = "k84";   TBG_max[dk84]   = 10; TOG_max[dk84]   = 2880;
+    D_code[d82_1]  = "82_1";  TDB_max[d82_1]  = 15; TDH_max[d82_1]  = 30;
+                              TBG_max[d82_1]  = 10; TOG_max[d82_1]  = 1440;
+    D_code[dk82]   = "k82";   TBG_max[dk82]   = 10; TOG_max[dk82]   = 1440;
+    D_code[d81_1]  = "81_1";  TDB_max[d81_1]  = 15; TDH_max[d81_1]  = 30;
+                              TBG_max[d81_1]  = 10; TOG_max[d81_1]  = 1440;
+    D_code[dk81]   = "k81";   TBG_max[dk81]   = 10; TOG_max[dk81]   = 1440;
 #if !defined NO_DDFLUTTER
     TFL_max[d02_1a] = 60; CFL_max[d02_1a] = 45;
     TFL_max[d02_1b] = 60; CFL_max[d02_1b] = 45;
@@ -618,8 +662,14 @@ void control_parameters(void)
     TFL_max[d68_1b] = 60; CFL_max[d68_1b] = 45;
     TFL_max[d68_2a] = 60; CFL_max[d68_2a] = 45;
     TFL_max[d68_2b] = 60; CFL_max[d68_2b] = 45;
+    TFL_max[d68_9a] = 60; CFL_max[d68_9a] = 45;
+    TFL_max[d68_9b] = 60; CFL_max[d68_9b] = 45;
     TFL_max[d84_1] = 60;  CFL_max[d84_1] = 45;
     TFL_max[dk84] = 60;   CFL_max[dk84] = 45;
+    TFL_max[d82_1] = 60;  CFL_max[d82_1] = 45;
+    TFL_max[dk82] = 60;   CFL_max[dk82] = 45;
+    TFL_max[d81_1] = 60;  CFL_max[d81_1] = 45;
+    TFL_max[dk81] = 60;   CFL_max[dk81] = 45;
 #endif /* !defined NO_DDFLUTTER */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined PRACTICE_TEST
     D_code[ddummykarin02bus]  = "dummykarin02bus";  
@@ -744,189 +794,197 @@ void control_parameters(void)
 
 /* hulp elementen */
 /* -------------- */
-    H_code[hopdrempelen02]   = "opdrempelen02";                              /* Opdrempelen toepassen voor fase 02                                 */
-    H_code[hgeendynhiaat02]  = "geendynhiaat02";                             /* Tegenhouden toepassen dynamische hiaattijden voor fase 02          */
-    H_code[hverleng_02_1a]   = "verleng_02_1a";                              /* Instructie verlengen op detector 02_1a ongeacht dynamische hiaat   */
-    H_code[hverleng_02_1b]   = "verleng_02_1b";                              /* Instructie verlengen op detector 02_1b ongeacht dynamische hiaat   */
-    H_code[hverleng_02_2a]   = "verleng_02_2a";                              /* Instructie verlengen op detector 02_2a ongeacht dynamische hiaat   */
-    H_code[hverleng_02_2b]   = "verleng_02_2b";                              /* Instructie verlengen op detector 02_2b ongeacht dynamische hiaat   */
-    H_code[hverleng_02_3a]   = "verleng_02_3a";                              /* Instructie verlengen op detector 02_3a ongeacht dynamische hiaat   */
-    H_code[hverleng_02_3b]   = "verleng_02_3b";                              /* Instructie verlengen op detector 02_3b ongeacht dynamische hiaat   */
-    H_code[hverleng_02_4a]   = "verleng_02_4a";                              /* Instructie verlengen op detector 02_4a ongeacht dynamische hiaat   */
-    H_code[hverleng_02_4b]   = "verleng_02_4b";                              /* Instructie verlengen op detector 02_4b ongeacht dynamische hiaat   */
-    H_code[hopdrempelen08]   = "opdrempelen08";                              /* Opdrempelen toepassen voor fase 08                                 */
-    H_code[hgeendynhiaat08]  = "geendynhiaat08";                             /* Tegenhouden toepassen dynamische hiaattijden voor fase 08          */
-    H_code[hverleng_08_1a]   = "verleng_08_1a";                              /* Instructie verlengen op detector 08_1a ongeacht dynamische hiaat   */
-    H_code[hverleng_08_1b]   = "verleng_08_1b";                              /* Instructie verlengen op detector 08_1b ongeacht dynamische hiaat   */
-    H_code[hverleng_08_2a]   = "verleng_08_2a";                              /* Instructie verlengen op detector 08_2a ongeacht dynamische hiaat   */
-    H_code[hverleng_08_2b]   = "verleng_08_2b";                              /* Instructie verlengen op detector 08_2b ongeacht dynamische hiaat   */
-    H_code[hverleng_08_3a]   = "verleng_08_3a";                              /* Instructie verlengen op detector 08_3a ongeacht dynamische hiaat   */
-    H_code[hverleng_08_3b]   = "verleng_08_3b";                              /* Instructie verlengen op detector 08_3b ongeacht dynamische hiaat   */
-    H_code[hverleng_08_4a]   = "verleng_08_4a";                              /* Instructie verlengen op detector 08_4a ongeacht dynamische hiaat   */
-    H_code[hverleng_08_4b]   = "verleng_08_4b";                              /* Instructie verlengen op detector 08_4b ongeacht dynamische hiaat   */
-    H_code[hopdrempelen09]   = "opdrempelen09";                              /* Opdrempelen toepassen voor fase 09                                 */
-    H_code[hgeendynhiaat09]  = "geendynhiaat09";                             /* Tegenhouden toepassen dynamische hiaattijden voor fase 09          */
-    H_code[hverleng_09_1]    = "verleng_09_1";                               /* Instructie verlengen op detector 09_1 ongeacht dynamische hiaat    */
-    H_code[hverleng_09_2]    = "verleng_09_2";                               /* Instructie verlengen op detector 09_2 ongeacht dynamische hiaat    */
-    H_code[hverleng_09_3]    = "verleng_09_3";                               /* Instructie verlengen op detector 09_3 ongeacht dynamische hiaat    */
-    H_code[hopdrempelen11]   = "opdrempelen11";                              /* Opdrempelen toepassen voor fase 11                                 */
-    H_code[hgeendynhiaat11]  = "geendynhiaat11";                             /* Tegenhouden toepassen dynamische hiaattijden voor fase 11          */
-    H_code[hverleng_11_1]    = "verleng_11_1";                               /* Instructie verlengen op detector 11_1 ongeacht dynamische hiaat    */
-    H_code[hverleng_11_2]    = "verleng_11_2";                               /* Instructie verlengen op detector 11_2 ongeacht dynamische hiaat    */
-    H_code[hverleng_11_3]    = "verleng_11_3";                               /* Instructie verlengen op detector 11_3 ongeacht dynamische hiaat    */
-    H_code[hverleng_11_4]    = "verleng_11_4";                               /* Instructie verlengen op detector 11_4 ongeacht dynamische hiaat    */
-    H_code[hmadk31a]         = "madk31a";                                    /* Hulpelement onthouden melding meeaanvraag detector k31a            */
-    H_code[hmadk31b]         = "madk31b";                                    /* Hulpelement onthouden melding meeaanvraag detector k31b            */
-    H_code[hmadk32a]         = "madk32a";                                    /* Hulpelement onthouden melding meeaanvraag detector k32a            */
-    H_code[hmadk32b]         = "madk32b";                                    /* Hulpelement onthouden melding meeaanvraag detector k32b            */
-    H_code[hmadk33a]         = "madk33a";                                    /* Hulpelement onthouden melding meeaanvraag detector k33a            */
-    H_code[hmadk33b]         = "madk33b";                                    /* Hulpelement onthouden melding meeaanvraag detector k33b            */
-    H_code[hmadk34a]         = "madk34a";                                    /* Hulpelement onthouden melding meeaanvraag detector k34a            */
-    H_code[hmadk34b]         = "madk34b";                                    /* Hulpelement onthouden melding meeaanvraag detector k34b            */
-    H_code[hnla22_1]         = "nla22_1";                                    /* Onthouden detectiemelding detector 22_1 tbv naloop van 22 naar 21  */
-    H_code[hnlak31a]         = "nlak31a";                                    /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
-    H_code[hnlak32a]         = "nlak32a";                                    /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
-    H_code[hnlak33a]         = "nlak33a";                                    /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
-    H_code[hnlak34a]         = "nlak34a";                                    /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
-    H_code[hstp02bus]        = "stp02bus";                                   /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
-    H_code[hstp03bus]        = "stp03bus";                                   /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
-    H_code[hstp05bus]        = "stp05bus";                                   /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
-    H_code[hstp08bus]        = "stp08bus";                                   /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
-    H_code[hstp09bus]        = "stp09bus";                                   /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
-    H_code[hstp11bus]        = "stp11bus";                                   /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
-    H_code[hstp61bus]        = "stp61bus";                                   /* Geconditioneerde prio OV mogelijk bij 61 Bus                       */
-    H_code[hstp62bus]        = "stp62bus";                                   /* Geconditioneerde prio OV mogelijk bij 62 Bus                       */
-    H_code[hstp67bus]        = "stp67bus";                                   /* Geconditioneerde prio OV mogelijk bij 67 Bus                       */
-    H_code[hstp68bus]        = "stp68bus";                                   /* Geconditioneerde prio OV mogelijk bij 68 Bus                       */
-    H_code[hprio02bus]       = "prio02bus";                                  /* Bijhouden actief zijn prioriteit fase 02                           */
-    H_code[hprioin02bus]     = "prioin02bus";                                /* Prioriteit inmelding fase 02 Bus                                   */
-    H_code[hpriouit02bus]    = "priouit02bus";                               /* Prioriteit uitmelding 02 Bus                                       */
-    H_code[hprioin02buskar]  = "prioin02buskar";                             /* Prioriteit inmelding fase 02 Bus                                   */
-    H_code[hpriouit02buskar] = "priouit02buskar";                            /* Prioriteit uitmelding 02 Bus                                       */
-    H_code[hprio03bus]       = "prio03bus";                                  /* Bijhouden actief zijn prioriteit fase 03                           */
-    H_code[hprioin03bus]     = "prioin03bus";                                /* Prioriteit inmelding fase 03 Bus                                   */
-    H_code[hpriouit03bus]    = "priouit03bus";                               /* Prioriteit uitmelding 03 Bus                                       */
-    H_code[hprioin03buskar]  = "prioin03buskar";                             /* Prioriteit inmelding fase 03 Bus                                   */
-    H_code[hpriouit03buskar] = "priouit03buskar";                            /* Prioriteit uitmelding 03 Bus                                       */
-    H_code[hprio05bus]       = "prio05bus";                                  /* Bijhouden actief zijn prioriteit fase 05                           */
-    H_code[hprioin05bus]     = "prioin05bus";                                /* Prioriteit inmelding fase 05 Bus                                   */
-    H_code[hpriouit05bus]    = "priouit05bus";                               /* Prioriteit uitmelding 05 Bus                                       */
-    H_code[hprioin05buskar]  = "prioin05buskar";                             /* Prioriteit inmelding fase 05 Bus                                   */
-    H_code[hpriouit05buskar] = "priouit05buskar";                            /* Prioriteit uitmelding 05 Bus                                       */
-    H_code[hprio08bus]       = "prio08bus";                                  /* Bijhouden actief zijn prioriteit fase 08                           */
-    H_code[hprioin08bus]     = "prioin08bus";                                /* Prioriteit inmelding fase 08 Bus                                   */
-    H_code[hpriouit08bus]    = "priouit08bus";                               /* Prioriteit uitmelding 08 Bus                                       */
-    H_code[hprioin08buskar]  = "prioin08buskar";                             /* Prioriteit inmelding fase 08 Bus                                   */
-    H_code[hpriouit08buskar] = "priouit08buskar";                            /* Prioriteit uitmelding 08 Bus                                       */
-    H_code[hprio09bus]       = "prio09bus";                                  /* Bijhouden actief zijn prioriteit fase 09                           */
-    H_code[hprioin09bus]     = "prioin09bus";                                /* Prioriteit inmelding fase 09 Bus                                   */
-    H_code[hpriouit09bus]    = "priouit09bus";                               /* Prioriteit uitmelding 09 Bus                                       */
-    H_code[hprioin09buskar]  = "prioin09buskar";                             /* Prioriteit inmelding fase 09 Bus                                   */
-    H_code[hpriouit09buskar] = "priouit09buskar";                            /* Prioriteit uitmelding 09 Bus                                       */
-    H_code[hprio11bus]       = "prio11bus";                                  /* Bijhouden actief zijn prioriteit fase 11                           */
-    H_code[hprioin11bus]     = "prioin11bus";                                /* Prioriteit inmelding fase 11 Bus                                   */
-    H_code[hpriouit11bus]    = "priouit11bus";                               /* Prioriteit uitmelding 11 Bus                                       */
-    H_code[hprioin11buskar]  = "prioin11buskar";                             /* Prioriteit inmelding fase 11 Bus                                   */
-    H_code[hpriouit11buskar] = "priouit11buskar";                            /* Prioriteit uitmelding 11 Bus                                       */
-    H_code[hprio61bus]       = "prio61bus";                                  /* Bijhouden actief zijn prioriteit fase 61                           */
-    H_code[hprioin61bus]     = "prioin61bus";                                /* Prioriteit inmelding fase 61 Bus                                   */
-    H_code[hpriouit61bus]    = "priouit61bus";                               /* Prioriteit uitmelding 61 Bus                                       */
-    H_code[hprioin61buskar]  = "prioin61buskar";                             /* Prioriteit inmelding fase 61 Bus                                   */
-    H_code[hpriouit61buskar] = "priouit61buskar";                            /* Prioriteit uitmelding 61 Bus                                       */
-    H_code[hprio62bus]       = "prio62bus";                                  /* Bijhouden actief zijn prioriteit fase 62                           */
-    H_code[hprioin62bus]     = "prioin62bus";                                /* Prioriteit inmelding fase 62 Bus                                   */
-    H_code[hpriouit62bus]    = "priouit62bus";                               /* Prioriteit uitmelding 62 Bus                                       */
-    H_code[hprioin62buskar]  = "prioin62buskar";                             /* Prioriteit inmelding fase 62 Bus                                   */
-    H_code[hpriouit62buskar] = "priouit62buskar";                            /* Prioriteit uitmelding 62 Bus                                       */
-    H_code[hprio67bus]       = "prio67bus";                                  /* Bijhouden actief zijn prioriteit fase 67                           */
-    H_code[hprioin67bus]     = "prioin67bus";                                /* Prioriteit inmelding fase 67 Bus                                   */
-    H_code[hpriouit67bus]    = "priouit67bus";                               /* Prioriteit uitmelding 67 Bus                                       */
-    H_code[hprioin67buskar]  = "prioin67buskar";                             /* Prioriteit inmelding fase 67 Bus                                   */
-    H_code[hpriouit67buskar] = "priouit67buskar";                            /* Prioriteit uitmelding 67 Bus                                       */
-    H_code[hprio68bus]       = "prio68bus";                                  /* Bijhouden actief zijn prioriteit fase 68                           */
-    H_code[hprioin68bus]     = "prioin68bus";                                /* Prioriteit inmelding fase 68 Bus                                   */
-    H_code[hpriouit68bus]    = "priouit68bus";                               /* Prioriteit uitmelding 68 Bus                                       */
-    H_code[hprioin68buskar]  = "prioin68buskar";                             /* Prioriteit inmelding fase 68 Bus                                   */
-    H_code[hpriouit68buskar] = "priouit68buskar";                            /* Prioriteit uitmelding 68 Bus                                       */
-    H_code[hhd02]            = "hd02";                                       /* Bijhouden aanwezigheid HD fase 02                                  */
-    H_code[hhdin02]          = "hdin02";                                     /* HD inmelding 02                                                    */
-    H_code[hhduit02]         = "hduit02";                                    /* HD uitmelding 02                                                   */
-    H_code[hhdin02kar]       = "hdin02kar";                                  /* HD inmelding 02                                                    */
-    H_code[hhduit02kar]      = "hduit02kar";                                 /* HD uitmelding 02                                                   */
-    H_code[hhd03]            = "hd03";                                       /* Bijhouden aanwezigheid HD fase 03                                  */
-    H_code[hhdin03]          = "hdin03";                                     /* HD inmelding 03                                                    */
-    H_code[hhduit03]         = "hduit03";                                    /* HD uitmelding 03                                                   */
-    H_code[hhdin03kar]       = "hdin03kar";                                  /* HD inmelding 03                                                    */
-    H_code[hhduit03kar]      = "hduit03kar";                                 /* HD uitmelding 03                                                   */
-    H_code[hhd05]            = "hd05";                                       /* Bijhouden aanwezigheid HD fase 05                                  */
-    H_code[hhdin05]          = "hdin05";                                     /* HD inmelding 05                                                    */
-    H_code[hhduit05]         = "hduit05";                                    /* HD uitmelding 05                                                   */
-    H_code[hhdin05kar]       = "hdin05kar";                                  /* HD inmelding 05                                                    */
-    H_code[hhduit05kar]      = "hduit05kar";                                 /* HD uitmelding 05                                                   */
-    H_code[hhd08]            = "hd08";                                       /* Bijhouden aanwezigheid HD fase 08                                  */
-    H_code[hhdin08]          = "hdin08";                                     /* HD inmelding 08                                                    */
-    H_code[hhduit08]         = "hduit08";                                    /* HD uitmelding 08                                                   */
-    H_code[hhdin08kar]       = "hdin08kar";                                  /* HD inmelding 08                                                    */
-    H_code[hhduit08kar]      = "hduit08kar";                                 /* HD uitmelding 08                                                   */
-    H_code[hhd09]            = "hd09";                                       /* Bijhouden aanwezigheid HD fase 09                                  */
-    H_code[hhdin09]          = "hdin09";                                     /* HD inmelding 09                                                    */
-    H_code[hhduit09]         = "hduit09";                                    /* HD uitmelding 09                                                   */
-    H_code[hhdin09kar]       = "hdin09kar";                                  /* HD inmelding 09                                                    */
-    H_code[hhduit09kar]      = "hduit09kar";                                 /* HD uitmelding 09                                                   */
-    H_code[hhd11]            = "hd11";                                       /* Bijhouden aanwezigheid HD fase 11                                  */
-    H_code[hhdin11]          = "hdin11";                                     /* HD inmelding 11                                                    */
-    H_code[hhduit11]         = "hduit11";                                    /* HD uitmelding 11                                                   */
-    H_code[hhdin11kar]       = "hdin11kar";                                  /* HD inmelding 11                                                    */
-    H_code[hhduit11kar]      = "hduit11kar";                                 /* HD uitmelding 11                                                   */
-    H_code[hhd61]            = "hd61";                                       /* Bijhouden aanwezigheid HD fase 61                                  */
-    H_code[hhdin61]          = "hdin61";                                     /* HD inmelding 61                                                    */
-    H_code[hhduit61]         = "hduit61";                                    /* HD uitmelding 61                                                   */
-    H_code[hhdin61kar]       = "hdin61kar";                                  /* HD inmelding 61                                                    */
-    H_code[hhduit61kar]      = "hduit61kar";                                 /* HD uitmelding 61                                                   */
-    H_code[hhd62]            = "hd62";                                       /* Bijhouden aanwezigheid HD fase 62                                  */
-    H_code[hhdin62]          = "hdin62";                                     /* HD inmelding 62                                                    */
-    H_code[hhduit62]         = "hduit62";                                    /* HD uitmelding 62                                                   */
-    H_code[hhdin62kar]       = "hdin62kar";                                  /* HD inmelding 62                                                    */
-    H_code[hhduit62kar]      = "hduit62kar";                                 /* HD uitmelding 62                                                   */
-    H_code[hhd67]            = "hd67";                                       /* Bijhouden aanwezigheid HD fase 67                                  */
-    H_code[hhdin67]          = "hdin67";                                     /* HD inmelding 67                                                    */
-    H_code[hhduit67]         = "hduit67";                                    /* HD uitmelding 67                                                   */
-    H_code[hhdin67kar]       = "hdin67kar";                                  /* HD inmelding 67                                                    */
-    H_code[hhduit67kar]      = "hduit67kar";                                 /* HD uitmelding 67                                                   */
-    H_code[hhd68]            = "hd68";                                       /* Bijhouden aanwezigheid HD fase 68                                  */
-    H_code[hhdin68]          = "hdin68";                                     /* HD inmelding 68                                                    */
-    H_code[hhduit68]         = "hduit68";                                    /* HD uitmelding 68                                                   */
-    H_code[hhdin68kar]       = "hdin68kar";                                  /* HD inmelding 68                                                    */
-    H_code[hhduit68kar]      = "hduit68kar";                                 /* HD uitmelding 68                                                   */
-    H_code[hrgvd24_3_d24_2]  = "rgvd24_3_d24_2";                             /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
-    H_code[hrgvact]          = "rgvact";                                     /* Bijhouden actief zijn RoBuGrover                                   */
-    H_code[hprreal02]        = "prreal02";                                   /* Bijhouden primaire realisatie fase 02                              */
-    H_code[hprreal03]        = "prreal03";                                   /* Bijhouden primaire realisatie fase 03                              */
-    H_code[hprreal05]        = "prreal05";                                   /* Bijhouden primaire realisatie fase 05                              */
-    H_code[hprreal08]        = "prreal08";                                   /* Bijhouden primaire realisatie fase 08                              */
-    H_code[hprreal09]        = "prreal09";                                   /* Bijhouden primaire realisatie fase 09                              */
-    H_code[hprreal11]        = "prreal11";                                   /* Bijhouden primaire realisatie fase 11                              */
-    H_code[hprreal22]        = "prreal22";                                   /* Bijhouden primaire realisatie fase 22                              */
-    H_code[hprreal28]        = "prreal28";                                   /* Bijhouden primaire realisatie fase 28                              */
-    H_code[hprreal68]        = "prreal68";                                   /* Bijhouden primaire realisatie fase 68                              */
-    H_code[hnleg0262]        = "nleg0262";                                  
-    H_code[hnleg0868]        = "nleg0868";                                  
-    H_code[hnleg2221]        = "nleg2221";                                  
-    H_code[hnlsg3132]        = "nlsg3132";                                  
-    H_code[hnlsg3231]        = "nlsg3231";                                  
-    H_code[hnlsg3334]        = "nlsg3334";                                  
-    H_code[hnlsg3433]        = "nlsg3433";                                  
-    H_code[hinl32]           = "inl32";                                      /* Onthouden inlopen toestaan fase 32                                 */
-    H_code[hlos32]           = "los32";                                      /* Onthouden toestaan los realiseren fase 32                          */
-    H_code[hinl31]           = "inl31";                                      /* Onthouden inlopen toestaan fase 31                                 */
-    H_code[hlos31]           = "los31";                                      /* Onthouden toestaan los realiseren fase 31                          */
-    H_code[hinl34]           = "inl34";                                      /* Onthouden inlopen toestaan fase 34                                 */
-    H_code[hlos34]           = "los34";                                      /* Onthouden toestaan los realiseren fase 34                          */
-    H_code[hinl33]           = "inl33";                                      /* Onthouden inlopen toestaan fase 33                                 */
-    H_code[hlos33]           = "los33";                                      /* Onthouden toestaan los realiseren fase 33                          */
-    H_code[hlos62]           = "los62";                                      /* Onthouden toestaan los realiseren fase 62                          */
-    H_code[hlos68]           = "los68";                                      /* Onthouden toestaan los realiseren fase 68                          */
-    H_code[hlos21]           = "los21";                                      /* Onthouden toestaan los realiseren fase 21                          */
+    H_code[hopdrempelen02]     = "opdrempelen02";                                  /* Opdrempelen toepassen voor fase 02                                 */
+    H_code[hgeendynhiaat02]    = "geendynhiaat02";                                 /* Tegenhouden toepassen dynamische hiaattijden voor fase 02          */
+    H_code[hverleng_02_1a]     = "verleng_02_1a";                                  /* Instructie verlengen op detector 02_1a ongeacht dynamische hiaat   */
+    H_code[hverleng_02_1b]     = "verleng_02_1b";                                  /* Instructie verlengen op detector 02_1b ongeacht dynamische hiaat   */
+    H_code[hverleng_02_2a]     = "verleng_02_2a";                                  /* Instructie verlengen op detector 02_2a ongeacht dynamische hiaat   */
+    H_code[hverleng_02_2b]     = "verleng_02_2b";                                  /* Instructie verlengen op detector 02_2b ongeacht dynamische hiaat   */
+    H_code[hverleng_02_3a]     = "verleng_02_3a";                                  /* Instructie verlengen op detector 02_3a ongeacht dynamische hiaat   */
+    H_code[hverleng_02_3b]     = "verleng_02_3b";                                  /* Instructie verlengen op detector 02_3b ongeacht dynamische hiaat   */
+    H_code[hverleng_02_4a]     = "verleng_02_4a";                                  /* Instructie verlengen op detector 02_4a ongeacht dynamische hiaat   */
+    H_code[hverleng_02_4b]     = "verleng_02_4b";                                  /* Instructie verlengen op detector 02_4b ongeacht dynamische hiaat   */
+    H_code[hopdrempelen08]     = "opdrempelen08";                                  /* Opdrempelen toepassen voor fase 08                                 */
+    H_code[hgeendynhiaat08]    = "geendynhiaat08";                                 /* Tegenhouden toepassen dynamische hiaattijden voor fase 08          */
+    H_code[hverleng_08_1a]     = "verleng_08_1a";                                  /* Instructie verlengen op detector 08_1a ongeacht dynamische hiaat   */
+    H_code[hverleng_08_1b]     = "verleng_08_1b";                                  /* Instructie verlengen op detector 08_1b ongeacht dynamische hiaat   */
+    H_code[hverleng_08_2a]     = "verleng_08_2a";                                  /* Instructie verlengen op detector 08_2a ongeacht dynamische hiaat   */
+    H_code[hverleng_08_2b]     = "verleng_08_2b";                                  /* Instructie verlengen op detector 08_2b ongeacht dynamische hiaat   */
+    H_code[hverleng_08_3a]     = "verleng_08_3a";                                  /* Instructie verlengen op detector 08_3a ongeacht dynamische hiaat   */
+    H_code[hverleng_08_3b]     = "verleng_08_3b";                                  /* Instructie verlengen op detector 08_3b ongeacht dynamische hiaat   */
+    H_code[hverleng_08_4a]     = "verleng_08_4a";                                  /* Instructie verlengen op detector 08_4a ongeacht dynamische hiaat   */
+    H_code[hverleng_08_4b]     = "verleng_08_4b";                                  /* Instructie verlengen op detector 08_4b ongeacht dynamische hiaat   */
+    H_code[hopdrempelen09]     = "opdrempelen09";                                  /* Opdrempelen toepassen voor fase 09                                 */
+    H_code[hgeendynhiaat09]    = "geendynhiaat09";                                 /* Tegenhouden toepassen dynamische hiaattijden voor fase 09          */
+    H_code[hverleng_09_1]      = "verleng_09_1";                                   /* Instructie verlengen op detector 09_1 ongeacht dynamische hiaat    */
+    H_code[hverleng_09_2]      = "verleng_09_2";                                   /* Instructie verlengen op detector 09_2 ongeacht dynamische hiaat    */
+    H_code[hverleng_09_3]      = "verleng_09_3";                                   /* Instructie verlengen op detector 09_3 ongeacht dynamische hiaat    */
+    H_code[hopdrempelen11]     = "opdrempelen11";                                  /* Opdrempelen toepassen voor fase 11                                 */
+    H_code[hgeendynhiaat11]    = "geendynhiaat11";                                 /* Tegenhouden toepassen dynamische hiaattijden voor fase 11          */
+    H_code[hverleng_11_1]      = "verleng_11_1";                                   /* Instructie verlengen op detector 11_1 ongeacht dynamische hiaat    */
+    H_code[hverleng_11_2]      = "verleng_11_2";                                   /* Instructie verlengen op detector 11_2 ongeacht dynamische hiaat    */
+    H_code[hverleng_11_3]      = "verleng_11_3";                                   /* Instructie verlengen op detector 11_3 ongeacht dynamische hiaat    */
+    H_code[hverleng_11_4]      = "verleng_11_4";                                   /* Instructie verlengen op detector 11_4 ongeacht dynamische hiaat    */
+    H_code[hmadk31a]           = "madk31a";                                        /* Hulpelement onthouden melding meeaanvraag detector k31a            */
+    H_code[hmadk31b]           = "madk31b";                                        /* Hulpelement onthouden melding meeaanvraag detector k31b            */
+    H_code[hmadk32a]           = "madk32a";                                        /* Hulpelement onthouden melding meeaanvraag detector k32a            */
+    H_code[hmadk32b]           = "madk32b";                                        /* Hulpelement onthouden melding meeaanvraag detector k32b            */
+    H_code[hmadk33a]           = "madk33a";                                        /* Hulpelement onthouden melding meeaanvraag detector k33a            */
+    H_code[hmadk33b]           = "madk33b";                                        /* Hulpelement onthouden melding meeaanvraag detector k33b            */
+    H_code[hmadk34a]           = "madk34a";                                        /* Hulpelement onthouden melding meeaanvraag detector k34a            */
+    H_code[hmadk34b]           = "madk34b";                                        /* Hulpelement onthouden melding meeaanvraag detector k34b            */
+    H_code[hfileFile68af]      = "fileFile68af";                                   /* File File68af actief                                               */
+    H_code[hfile68_9a]         = "file68_9a";                                      /* File 68_9a actief                                                  */
+    H_code[hfile68_9b]         = "file68_9b";                                      /* File 68_9b actief                                                  */
+    H_code[hafk08fileFile68af] = "afk08fileFile68af";                              /* Onthouden afkappen fase 08 bij start file ingreep                  */
+    H_code[hafk11fileFile68af] = "afk11fileFile68af";                              /* Onthouden afkappen fase 11 bij start file ingreep                  */
+    H_code[hnla22_1]           = "nla22_1";                                        /* Onthouden detectiemelding detector 22_1 tbv naloop van 22 naar 21  */
+    H_code[hnlak31a]           = "nlak31a";                                        /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
+    H_code[hnlak32a]           = "nlak32a";                                        /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
+    H_code[hnlak33a]           = "nlak33a";                                        /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
+    H_code[hnlak34a]           = "nlak34a";                                        /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
+    H_code[hnla82_1]           = "nla82_1";                                        /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
+    H_code[hstp02bus]          = "stp02bus";                                       /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
+    H_code[hstp03bus]          = "stp03bus";                                       /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
+    H_code[hstp05bus]          = "stp05bus";                                       /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
+    H_code[hstp08bus]          = "stp08bus";                                       /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
+    H_code[hstp09bus]          = "stp09bus";                                       /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
+    H_code[hstp11bus]          = "stp11bus";                                       /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
+    H_code[hstp61bus]          = "stp61bus";                                       /* Geconditioneerde prio OV mogelijk bij 61 Bus                       */
+    H_code[hstp62bus]          = "stp62bus";                                       /* Geconditioneerde prio OV mogelijk bij 62 Bus                       */
+    H_code[hstp67bus]          = "stp67bus";                                       /* Geconditioneerde prio OV mogelijk bij 67 Bus                       */
+    H_code[hstp68bus]          = "stp68bus";                                       /* Geconditioneerde prio OV mogelijk bij 68 Bus                       */
+    H_code[hprio02bus]         = "prio02bus";                                      /* Bijhouden actief zijn prioriteit fase 02                           */
+    H_code[hprioin02bus]       = "prioin02bus";                                    /* Prioriteit inmelding fase 02 Bus                                   */
+    H_code[hpriouit02bus]      = "priouit02bus";                                   /* Prioriteit uitmelding 02 Bus                                       */
+    H_code[hprioin02buskar]    = "prioin02buskar";                                 /* Prioriteit inmelding fase 02 Bus                                   */
+    H_code[hpriouit02buskar]   = "priouit02buskar";                                /* Prioriteit uitmelding 02 Bus                                       */
+    H_code[hprio03bus]         = "prio03bus";                                      /* Bijhouden actief zijn prioriteit fase 03                           */
+    H_code[hprioin03bus]       = "prioin03bus";                                    /* Prioriteit inmelding fase 03 Bus                                   */
+    H_code[hpriouit03bus]      = "priouit03bus";                                   /* Prioriteit uitmelding 03 Bus                                       */
+    H_code[hprioin03buskar]    = "prioin03buskar";                                 /* Prioriteit inmelding fase 03 Bus                                   */
+    H_code[hpriouit03buskar]   = "priouit03buskar";                                /* Prioriteit uitmelding 03 Bus                                       */
+    H_code[hprio05bus]         = "prio05bus";                                      /* Bijhouden actief zijn prioriteit fase 05                           */
+    H_code[hprioin05bus]       = "prioin05bus";                                    /* Prioriteit inmelding fase 05 Bus                                   */
+    H_code[hpriouit05bus]      = "priouit05bus";                                   /* Prioriteit uitmelding 05 Bus                                       */
+    H_code[hprioin05buskar]    = "prioin05buskar";                                 /* Prioriteit inmelding fase 05 Bus                                   */
+    H_code[hpriouit05buskar]   = "priouit05buskar";                                /* Prioriteit uitmelding 05 Bus                                       */
+    H_code[hprio08bus]         = "prio08bus";                                      /* Bijhouden actief zijn prioriteit fase 08                           */
+    H_code[hprioin08bus]       = "prioin08bus";                                    /* Prioriteit inmelding fase 08 Bus                                   */
+    H_code[hpriouit08bus]      = "priouit08bus";                                   /* Prioriteit uitmelding 08 Bus                                       */
+    H_code[hprioin08buskar]    = "prioin08buskar";                                 /* Prioriteit inmelding fase 08 Bus                                   */
+    H_code[hpriouit08buskar]   = "priouit08buskar";                                /* Prioriteit uitmelding 08 Bus                                       */
+    H_code[hprio09bus]         = "prio09bus";                                      /* Bijhouden actief zijn prioriteit fase 09                           */
+    H_code[hprioin09bus]       = "prioin09bus";                                    /* Prioriteit inmelding fase 09 Bus                                   */
+    H_code[hpriouit09bus]      = "priouit09bus";                                   /* Prioriteit uitmelding 09 Bus                                       */
+    H_code[hprioin09buskar]    = "prioin09buskar";                                 /* Prioriteit inmelding fase 09 Bus                                   */
+    H_code[hpriouit09buskar]   = "priouit09buskar";                                /* Prioriteit uitmelding 09 Bus                                       */
+    H_code[hprio11bus]         = "prio11bus";                                      /* Bijhouden actief zijn prioriteit fase 11                           */
+    H_code[hprioin11bus]       = "prioin11bus";                                    /* Prioriteit inmelding fase 11 Bus                                   */
+    H_code[hpriouit11bus]      = "priouit11bus";                                   /* Prioriteit uitmelding 11 Bus                                       */
+    H_code[hprioin11buskar]    = "prioin11buskar";                                 /* Prioriteit inmelding fase 11 Bus                                   */
+    H_code[hpriouit11buskar]   = "priouit11buskar";                                /* Prioriteit uitmelding 11 Bus                                       */
+    H_code[hprio61bus]         = "prio61bus";                                      /* Bijhouden actief zijn prioriteit fase 61                           */
+    H_code[hprioin61bus]       = "prioin61bus";                                    /* Prioriteit inmelding fase 61 Bus                                   */
+    H_code[hpriouit61bus]      = "priouit61bus";                                   /* Prioriteit uitmelding 61 Bus                                       */
+    H_code[hprioin61buskar]    = "prioin61buskar";                                 /* Prioriteit inmelding fase 61 Bus                                   */
+    H_code[hpriouit61buskar]   = "priouit61buskar";                                /* Prioriteit uitmelding 61 Bus                                       */
+    H_code[hprio62bus]         = "prio62bus";                                      /* Bijhouden actief zijn prioriteit fase 62                           */
+    H_code[hprioin62bus]       = "prioin62bus";                                    /* Prioriteit inmelding fase 62 Bus                                   */
+    H_code[hpriouit62bus]      = "priouit62bus";                                   /* Prioriteit uitmelding 62 Bus                                       */
+    H_code[hprioin62buskar]    = "prioin62buskar";                                 /* Prioriteit inmelding fase 62 Bus                                   */
+    H_code[hpriouit62buskar]   = "priouit62buskar";                                /* Prioriteit uitmelding 62 Bus                                       */
+    H_code[hprio67bus]         = "prio67bus";                                      /* Bijhouden actief zijn prioriteit fase 67                           */
+    H_code[hprioin67bus]       = "prioin67bus";                                    /* Prioriteit inmelding fase 67 Bus                                   */
+    H_code[hpriouit67bus]      = "priouit67bus";                                   /* Prioriteit uitmelding 67 Bus                                       */
+    H_code[hprioin67buskar]    = "prioin67buskar";                                 /* Prioriteit inmelding fase 67 Bus                                   */
+    H_code[hpriouit67buskar]   = "priouit67buskar";                                /* Prioriteit uitmelding 67 Bus                                       */
+    H_code[hprio68bus]         = "prio68bus";                                      /* Bijhouden actief zijn prioriteit fase 68                           */
+    H_code[hprioin68bus]       = "prioin68bus";                                    /* Prioriteit inmelding fase 68 Bus                                   */
+    H_code[hpriouit68bus]      = "priouit68bus";                                   /* Prioriteit uitmelding 68 Bus                                       */
+    H_code[hprioin68buskar]    = "prioin68buskar";                                 /* Prioriteit inmelding fase 68 Bus                                   */
+    H_code[hpriouit68buskar]   = "priouit68buskar";                                /* Prioriteit uitmelding 68 Bus                                       */
+    H_code[hhd02]              = "hd02";                                           /* Bijhouden aanwezigheid HD fase 02                                  */
+    H_code[hhdin02]            = "hdin02";                                         /* HD inmelding 02                                                    */
+    H_code[hhduit02]           = "hduit02";                                        /* HD uitmelding 02                                                   */
+    H_code[hhdin02kar]         = "hdin02kar";                                      /* HD inmelding 02                                                    */
+    H_code[hhduit02kar]        = "hduit02kar";                                     /* HD uitmelding 02                                                   */
+    H_code[hhd03]              = "hd03";                                           /* Bijhouden aanwezigheid HD fase 03                                  */
+    H_code[hhdin03]            = "hdin03";                                         /* HD inmelding 03                                                    */
+    H_code[hhduit03]           = "hduit03";                                        /* HD uitmelding 03                                                   */
+    H_code[hhdin03kar]         = "hdin03kar";                                      /* HD inmelding 03                                                    */
+    H_code[hhduit03kar]        = "hduit03kar";                                     /* HD uitmelding 03                                                   */
+    H_code[hhd05]              = "hd05";                                           /* Bijhouden aanwezigheid HD fase 05                                  */
+    H_code[hhdin05]            = "hdin05";                                         /* HD inmelding 05                                                    */
+    H_code[hhduit05]           = "hduit05";                                        /* HD uitmelding 05                                                   */
+    H_code[hhdin05kar]         = "hdin05kar";                                      /* HD inmelding 05                                                    */
+    H_code[hhduit05kar]        = "hduit05kar";                                     /* HD uitmelding 05                                                   */
+    H_code[hhd08]              = "hd08";                                           /* Bijhouden aanwezigheid HD fase 08                                  */
+    H_code[hhdin08]            = "hdin08";                                         /* HD inmelding 08                                                    */
+    H_code[hhduit08]           = "hduit08";                                        /* HD uitmelding 08                                                   */
+    H_code[hhdin08kar]         = "hdin08kar";                                      /* HD inmelding 08                                                    */
+    H_code[hhduit08kar]        = "hduit08kar";                                     /* HD uitmelding 08                                                   */
+    H_code[hhd09]              = "hd09";                                           /* Bijhouden aanwezigheid HD fase 09                                  */
+    H_code[hhdin09]            = "hdin09";                                         /* HD inmelding 09                                                    */
+    H_code[hhduit09]           = "hduit09";                                        /* HD uitmelding 09                                                   */
+    H_code[hhdin09kar]         = "hdin09kar";                                      /* HD inmelding 09                                                    */
+    H_code[hhduit09kar]        = "hduit09kar";                                     /* HD uitmelding 09                                                   */
+    H_code[hhd11]              = "hd11";                                           /* Bijhouden aanwezigheid HD fase 11                                  */
+    H_code[hhdin11]            = "hdin11";                                         /* HD inmelding 11                                                    */
+    H_code[hhduit11]           = "hduit11";                                        /* HD uitmelding 11                                                   */
+    H_code[hhdin11kar]         = "hdin11kar";                                      /* HD inmelding 11                                                    */
+    H_code[hhduit11kar]        = "hduit11kar";                                     /* HD uitmelding 11                                                   */
+    H_code[hhd61]              = "hd61";                                           /* Bijhouden aanwezigheid HD fase 61                                  */
+    H_code[hhdin61]            = "hdin61";                                         /* HD inmelding 61                                                    */
+    H_code[hhduit61]           = "hduit61";                                        /* HD uitmelding 61                                                   */
+    H_code[hhdin61kar]         = "hdin61kar";                                      /* HD inmelding 61                                                    */
+    H_code[hhduit61kar]        = "hduit61kar";                                     /* HD uitmelding 61                                                   */
+    H_code[hhd62]              = "hd62";                                           /* Bijhouden aanwezigheid HD fase 62                                  */
+    H_code[hhdin62]            = "hdin62";                                         /* HD inmelding 62                                                    */
+    H_code[hhduit62]           = "hduit62";                                        /* HD uitmelding 62                                                   */
+    H_code[hhdin62kar]         = "hdin62kar";                                      /* HD inmelding 62                                                    */
+    H_code[hhduit62kar]        = "hduit62kar";                                     /* HD uitmelding 62                                                   */
+    H_code[hhd67]              = "hd67";                                           /* Bijhouden aanwezigheid HD fase 67                                  */
+    H_code[hhdin67]            = "hdin67";                                         /* HD inmelding 67                                                    */
+    H_code[hhduit67]           = "hduit67";                                        /* HD uitmelding 67                                                   */
+    H_code[hhdin67kar]         = "hdin67kar";                                      /* HD inmelding 67                                                    */
+    H_code[hhduit67kar]        = "hduit67kar";                                     /* HD uitmelding 67                                                   */
+    H_code[hhd68]              = "hd68";                                           /* Bijhouden aanwezigheid HD fase 68                                  */
+    H_code[hhdin68]            = "hdin68";                                         /* HD inmelding 68                                                    */
+    H_code[hhduit68]           = "hduit68";                                        /* HD uitmelding 68                                                   */
+    H_code[hhdin68kar]         = "hdin68kar";                                      /* HD inmelding 68                                                    */
+    H_code[hhduit68kar]        = "hduit68kar";                                     /* HD uitmelding 68                                                   */
+    H_code[hrgvd24_3_d24_2]    = "rgvd24_3_d24_2";                                 /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
+    H_code[hrgvact]            = "rgvact";                                         /* Bijhouden actief zijn RoBuGrover                                   */
+    H_code[hprreal02]          = "prreal02";                                       /* Bijhouden primaire realisatie fase 02                              */
+    H_code[hprreal03]          = "prreal03";                                       /* Bijhouden primaire realisatie fase 03                              */
+    H_code[hprreal05]          = "prreal05";                                       /* Bijhouden primaire realisatie fase 05                              */
+    H_code[hprreal08]          = "prreal08";                                       /* Bijhouden primaire realisatie fase 08                              */
+    H_code[hprreal09]          = "prreal09";                                       /* Bijhouden primaire realisatie fase 09                              */
+    H_code[hprreal11]          = "prreal11";                                       /* Bijhouden primaire realisatie fase 11                              */
+    H_code[hprreal22]          = "prreal22";                                       /* Bijhouden primaire realisatie fase 22                              */
+    H_code[hprreal28]          = "prreal28";                                       /* Bijhouden primaire realisatie fase 28                              */
+    H_code[hprreal68]          = "prreal68";                                       /* Bijhouden primaire realisatie fase 68                              */
+    H_code[hnleg0262]          = "nleg0262";                                      
+    H_code[hnleg0868]          = "nleg0868";                                      
+    H_code[hnleg2221]          = "nleg2221";                                      
+    H_code[hnlsg3132]          = "nlsg3132";                                      
+    H_code[hnlsg3231]          = "nlsg3231";                                      
+    H_code[hnlsg3334]          = "nlsg3334";                                      
+    H_code[hnlsg3433]          = "nlsg3433";                                      
+    H_code[hnleg8281]          = "nleg8281";                                      
+    H_code[hinl32]             = "inl32";                                          /* Onthouden inlopen toestaan fase 32                                 */
+    H_code[hlos32]             = "los32";                                          /* Onthouden toestaan los realiseren fase 32                          */
+    H_code[hinl31]             = "inl31";                                          /* Onthouden inlopen toestaan fase 31                                 */
+    H_code[hlos31]             = "los31";                                          /* Onthouden toestaan los realiseren fase 31                          */
+    H_code[hinl34]             = "inl34";                                          /* Onthouden inlopen toestaan fase 34                                 */
+    H_code[hlos34]             = "los34";                                          /* Onthouden toestaan los realiseren fase 34                          */
+    H_code[hinl33]             = "inl33";                                          /* Onthouden inlopen toestaan fase 33                                 */
+    H_code[hlos33]             = "los33";                                          /* Onthouden toestaan los realiseren fase 33                          */
+    H_code[hlos62]             = "los62";                                          /* Onthouden toestaan los realiseren fase 62                          */
+    H_code[hlos68]             = "los68";                                          /* Onthouden toestaan los realiseren fase 68                          */
+    H_code[hlos21]             = "los21";                                          /* Onthouden toestaan los realiseren fase 21                          */
+    H_code[hlos81]             = "los81";                                          /* Onthouden toestaan los realiseren fase 81                          */
 
 /* geheugen elementen */
 /* ------------------ */
@@ -972,6 +1030,8 @@ void control_parameters(void)
     MM_code[mrealtijd67]    = "realtijd67";                             /* Realisatie tijd fase 67                                      */
     MM_code[mrealtijd68]    = "realtijd68";                             /* Realisatie tijd fase 68                                      */
     MM_code[mrealtijd84]    = "realtijd84";                             /* Realisatie tijd fase 84                                      */
+    MM_code[mrealtijd82]    = "realtijd82";                             /* Realisatie tijd fase 82                                      */
+    MM_code[mrealtijd81]    = "realtijd81";                             /* Realisatie tijd fase 81                                      */
     MM_code[mrealtijdmin02] = "realtijdmin02";                          /* Realisatie minimum tijd fase 02                              */
     MM_code[mrealtijdmin03] = "realtijdmin03";                          /* Realisatie minimum tijd fase 03                              */
     MM_code[mrealtijdmin05] = "realtijdmin05";                          /* Realisatie minimum tijd fase 05                              */
@@ -993,6 +1053,8 @@ void control_parameters(void)
     MM_code[mrealtijdmin67] = "realtijdmin67";                          /* Realisatie minimum tijd fase 67                              */
     MM_code[mrealtijdmin68] = "realtijdmin68";                          /* Realisatie minimum tijd fase 68                              */
     MM_code[mrealtijdmin84] = "realtijdmin84";                          /* Realisatie minimum tijd fase 84                              */
+    MM_code[mrealtijdmin82] = "realtijdmin82";                          /* Realisatie minimum tijd fase 82                              */
+    MM_code[mrealtijdmin81] = "realtijdmin81";                          /* Realisatie minimum tijd fase 81                              */
     MM_code[mrealtijdmax02] = "realtijdmax02";                          /* Realisatie maximum tijd fase 02                              */
     MM_code[mrealtijdmax03] = "realtijdmax03";                          /* Realisatie maximum tijd fase 03                              */
     MM_code[mrealtijdmax05] = "realtijdmax05";                          /* Realisatie maximum tijd fase 05                              */
@@ -1014,6 +1076,8 @@ void control_parameters(void)
     MM_code[mrealtijdmax67] = "realtijdmax67";                          /* Realisatie maximum tijd fase 67                              */
     MM_code[mrealtijdmax68] = "realtijdmax68";                          /* Realisatie maximum tijd fase 68                              */
     MM_code[mrealtijdmax84] = "realtijdmax84";                          /* Realisatie maximum tijd fase 84                              */
+    MM_code[mrealtijdmax82] = "realtijdmax82";                          /* Realisatie maximum tijd fase 82                              */
+    MM_code[mrealtijdmax81] = "realtijdmax81";                          /* Realisatie maximum tijd fase 81                              */
     MM_code[mar02]          = "ar02";                                   /* Alternatieve ruimte fase 02                                  */
     MM_code[mar03]          = "ar03";                                   /* Alternatieve ruimte fase 03                                  */
     MM_code[mar05]          = "ar05";                                   /* Alternatieve ruimte fase 05                                  */
@@ -1035,366 +1099,390 @@ void control_parameters(void)
     MM_code[mar67]          = "ar67";                                   /* Alternatieve ruimte fase 67                                  */
     MM_code[mar68]          = "ar68";                                   /* Alternatieve ruimte fase 68                                  */
     MM_code[mar84]          = "ar84";                                   /* Alternatieve ruimte fase 84                                  */
+    MM_code[mar82]          = "ar82";                                   /* Alternatieve ruimte fase 82                                  */
+    MM_code[mar81]          = "ar81";                                   /* Alternatieve ruimte fase 81                                  */
 
 /* tijd elementen */
 /* -------------- */
-    T_code[t02_1a_1]        = "02_1a_1";        T_max[t02_1a_1]        = 0;    T_type[t02_1a_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_1a                                      */
-    T_code[t02_1a_2]        = "02_1a_2";        T_max[t02_1a_2]        = 0;    T_type[t02_1a_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_1a                                      */
-    T_code[ttdh_02_1a_1]    = "tdh_02_1a_1";    T_max[ttdh_02_1a_1]    = 0;    T_type[ttdh_02_1a_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_1a                                         */
-    T_code[ttdh_02_1a_2]    = "tdh_02_1a_2";    T_max[ttdh_02_1a_2]    = 0;    T_type[ttdh_02_1a_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_1a                                         */
-    T_code[tmax_02_1a]      = "max_02_1a";      T_max[tmax_02_1a]      = 80;   T_type[tmax_02_1a]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_1a                               */
-    T_code[t02_1b_1]        = "02_1b_1";        T_max[t02_1b_1]        = 0;    T_type[t02_1b_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_1b                                      */
-    T_code[t02_1b_2]        = "02_1b_2";        T_max[t02_1b_2]        = 0;    T_type[t02_1b_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_1b                                      */
-    T_code[ttdh_02_1b_1]    = "tdh_02_1b_1";    T_max[ttdh_02_1b_1]    = 0;    T_type[ttdh_02_1b_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_1b                                         */
-    T_code[ttdh_02_1b_2]    = "tdh_02_1b_2";    T_max[ttdh_02_1b_2]    = 0;    T_type[ttdh_02_1b_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_1b                                         */
-    T_code[tmax_02_1b]      = "max_02_1b";      T_max[tmax_02_1b]      = 80;   T_type[tmax_02_1b]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_1b                               */
-    T_code[t02_2a_1]        = "02_2a_1";        T_max[t02_2a_1]        = 0;    T_type[t02_2a_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_2a                                      */
-    T_code[t02_2a_2]        = "02_2a_2";        T_max[t02_2a_2]        = 0;    T_type[t02_2a_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_2a                                      */
-    T_code[ttdh_02_2a_1]    = "tdh_02_2a_1";    T_max[ttdh_02_2a_1]    = 1;    T_type[ttdh_02_2a_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_2a                                         */
-    T_code[ttdh_02_2a_2]    = "tdh_02_2a_2";    T_max[ttdh_02_2a_2]    = 1;    T_type[ttdh_02_2a_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_2a                                         */
-    T_code[tmax_02_2a]      = "max_02_2a";      T_max[tmax_02_2a]      = 100;  T_type[tmax_02_2a]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_2a                               */
-    T_code[t02_2b_1]        = "02_2b_1";        T_max[t02_2b_1]        = 0;    T_type[t02_2b_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_2b                                      */
-    T_code[t02_2b_2]        = "02_2b_2";        T_max[t02_2b_2]        = 0;    T_type[t02_2b_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_2b                                      */
-    T_code[ttdh_02_2b_1]    = "tdh_02_2b_1";    T_max[ttdh_02_2b_1]    = 1;    T_type[ttdh_02_2b_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_2b                                         */
-    T_code[ttdh_02_2b_2]    = "tdh_02_2b_2";    T_max[ttdh_02_2b_2]    = 1;    T_type[ttdh_02_2b_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_2b                                         */
-    T_code[tmax_02_2b]      = "max_02_2b";      T_max[tmax_02_2b]      = 100;  T_type[tmax_02_2b]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_2b                               */
-    T_code[t02_3a_1]        = "02_3a_1";        T_max[t02_3a_1]        = 100;  T_type[t02_3a_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_3a                                      */
-    T_code[t02_3a_2]        = "02_3a_2";        T_max[t02_3a_2]        = 220;  T_type[t02_3a_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_3a                                      */
-    T_code[ttdh_02_3a_1]    = "tdh_02_3a_1";    T_max[ttdh_02_3a_1]    = 8;    T_type[ttdh_02_3a_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_3a                                         */
-    T_code[ttdh_02_3a_2]    = "tdh_02_3a_2";    T_max[ttdh_02_3a_2]    = 0;    T_type[ttdh_02_3a_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_3a                                         */
-    T_code[tmax_02_3a]      = "max_02_3a";      T_max[tmax_02_3a]      = 0;    T_type[tmax_02_3a]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_3a                               */
-    T_code[t02_3b_1]        = "02_3b_1";        T_max[t02_3b_1]        = 100;  T_type[t02_3b_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_3b                                      */
-    T_code[t02_3b_2]        = "02_3b_2";        T_max[t02_3b_2]        = 220;  T_type[t02_3b_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_3b                                      */
-    T_code[ttdh_02_3b_1]    = "tdh_02_3b_1";    T_max[ttdh_02_3b_1]    = 8;    T_type[ttdh_02_3b_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_3b                                         */
-    T_code[ttdh_02_3b_2]    = "tdh_02_3b_2";    T_max[ttdh_02_3b_2]    = 0;    T_type[ttdh_02_3b_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_3b                                         */
-    T_code[tmax_02_3b]      = "max_02_3b";      T_max[tmax_02_3b]      = 0;    T_type[tmax_02_3b]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_3b                               */
-    T_code[t02_4a_1]        = "02_4a_1";        T_max[t02_4a_1]        = 0;    T_type[t02_4a_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_4a                                      */
-    T_code[t02_4a_2]        = "02_4a_2";        T_max[t02_4a_2]        = 0;    T_type[t02_4a_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_4a                                      */
-    T_code[ttdh_02_4a_1]    = "tdh_02_4a_1";    T_max[ttdh_02_4a_1]    = 25;   T_type[ttdh_02_4a_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_4a                                         */
-    T_code[ttdh_02_4a_2]    = "tdh_02_4a_2";    T_max[ttdh_02_4a_2]    = 25;   T_type[ttdh_02_4a_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_4a                                         */
-    T_code[tmax_02_4a]      = "max_02_4a";      T_max[tmax_02_4a]      = 0;    T_type[tmax_02_4a]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_4a                               */
-    T_code[t02_4b_1]        = "02_4b_1";        T_max[t02_4b_1]        = 0;    T_type[t02_4b_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_4b                                      */
-    T_code[t02_4b_2]        = "02_4b_2";        T_max[t02_4b_2]        = 0;    T_type[t02_4b_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_4b                                      */
-    T_code[ttdh_02_4b_1]    = "tdh_02_4b_1";    T_max[ttdh_02_4b_1]    = 25;   T_type[ttdh_02_4b_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_4b                                         */
-    T_code[ttdh_02_4b_2]    = "tdh_02_4b_2";    T_max[ttdh_02_4b_2]    = 25;   T_type[ttdh_02_4b_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_4b                                         */
-    T_code[tmax_02_4b]      = "max_02_4b";      T_max[tmax_02_4b]      = 0;    T_type[tmax_02_4b]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_4b                               */
-    T_code[t08_1a_1]        = "08_1a_1";        T_max[t08_1a_1]        = 0;    T_type[t08_1a_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_1a                                      */
-    T_code[t08_1a_2]        = "08_1a_2";        T_max[t08_1a_2]        = 0;    T_type[t08_1a_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_1a                                      */
-    T_code[ttdh_08_1a_1]    = "tdh_08_1a_1";    T_max[ttdh_08_1a_1]    = 0;    T_type[ttdh_08_1a_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_1a                                         */
-    T_code[ttdh_08_1a_2]    = "tdh_08_1a_2";    T_max[ttdh_08_1a_2]    = 0;    T_type[ttdh_08_1a_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_1a                                         */
-    T_code[tmax_08_1a]      = "max_08_1a";      T_max[tmax_08_1a]      = 80;   T_type[tmax_08_1a]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_1a                               */
-    T_code[t08_1b_1]        = "08_1b_1";        T_max[t08_1b_1]        = 0;    T_type[t08_1b_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_1b                                      */
-    T_code[t08_1b_2]        = "08_1b_2";        T_max[t08_1b_2]        = 0;    T_type[t08_1b_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_1b                                      */
-    T_code[ttdh_08_1b_1]    = "tdh_08_1b_1";    T_max[ttdh_08_1b_1]    = 0;    T_type[ttdh_08_1b_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_1b                                         */
-    T_code[ttdh_08_1b_2]    = "tdh_08_1b_2";    T_max[ttdh_08_1b_2]    = 0;    T_type[ttdh_08_1b_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_1b                                         */
-    T_code[tmax_08_1b]      = "max_08_1b";      T_max[tmax_08_1b]      = 80;   T_type[tmax_08_1b]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_1b                               */
-    T_code[t08_2a_1]        = "08_2a_1";        T_max[t08_2a_1]        = 0;    T_type[t08_2a_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_2a                                      */
-    T_code[t08_2a_2]        = "08_2a_2";        T_max[t08_2a_2]        = 0;    T_type[t08_2a_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_2a                                      */
-    T_code[ttdh_08_2a_1]    = "tdh_08_2a_1";    T_max[ttdh_08_2a_1]    = 1;    T_type[ttdh_08_2a_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_2a                                         */
-    T_code[ttdh_08_2a_2]    = "tdh_08_2a_2";    T_max[ttdh_08_2a_2]    = 1;    T_type[ttdh_08_2a_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_2a                                         */
-    T_code[tmax_08_2a]      = "max_08_2a";      T_max[tmax_08_2a]      = 100;  T_type[tmax_08_2a]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_2a                               */
-    T_code[t08_2b_1]        = "08_2b_1";        T_max[t08_2b_1]        = 0;    T_type[t08_2b_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_2b                                      */
-    T_code[t08_2b_2]        = "08_2b_2";        T_max[t08_2b_2]        = 0;    T_type[t08_2b_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_2b                                      */
-    T_code[ttdh_08_2b_1]    = "tdh_08_2b_1";    T_max[ttdh_08_2b_1]    = 1;    T_type[ttdh_08_2b_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_2b                                         */
-    T_code[ttdh_08_2b_2]    = "tdh_08_2b_2";    T_max[ttdh_08_2b_2]    = 1;    T_type[ttdh_08_2b_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_2b                                         */
-    T_code[tmax_08_2b]      = "max_08_2b";      T_max[tmax_08_2b]      = 100;  T_type[tmax_08_2b]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_2b                               */
-    T_code[t08_3a_1]        = "08_3a_1";        T_max[t08_3a_1]        = 100;  T_type[t08_3a_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_3a                                      */
-    T_code[t08_3a_2]        = "08_3a_2";        T_max[t08_3a_2]        = 220;  T_type[t08_3a_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_3a                                      */
-    T_code[ttdh_08_3a_1]    = "tdh_08_3a_1";    T_max[ttdh_08_3a_1]    = 8;    T_type[ttdh_08_3a_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_3a                                         */
-    T_code[ttdh_08_3a_2]    = "tdh_08_3a_2";    T_max[ttdh_08_3a_2]    = 0;    T_type[ttdh_08_3a_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_3a                                         */
-    T_code[tmax_08_3a]      = "max_08_3a";      T_max[tmax_08_3a]      = 0;    T_type[tmax_08_3a]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_3a                               */
-    T_code[t08_3b_1]        = "08_3b_1";        T_max[t08_3b_1]        = 100;  T_type[t08_3b_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_3b                                      */
-    T_code[t08_3b_2]        = "08_3b_2";        T_max[t08_3b_2]        = 220;  T_type[t08_3b_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_3b                                      */
-    T_code[ttdh_08_3b_1]    = "tdh_08_3b_1";    T_max[ttdh_08_3b_1]    = 8;    T_type[ttdh_08_3b_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_3b                                         */
-    T_code[ttdh_08_3b_2]    = "tdh_08_3b_2";    T_max[ttdh_08_3b_2]    = 0;    T_type[ttdh_08_3b_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_3b                                         */
-    T_code[tmax_08_3b]      = "max_08_3b";      T_max[tmax_08_3b]      = 0;    T_type[tmax_08_3b]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_3b                               */
-    T_code[t08_4a_1]        = "08_4a_1";        T_max[t08_4a_1]        = 0;    T_type[t08_4a_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_4a                                      */
-    T_code[t08_4a_2]        = "08_4a_2";        T_max[t08_4a_2]        = 0;    T_type[t08_4a_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_4a                                      */
-    T_code[ttdh_08_4a_1]    = "tdh_08_4a_1";    T_max[ttdh_08_4a_1]    = 25;   T_type[ttdh_08_4a_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_4a                                         */
-    T_code[ttdh_08_4a_2]    = "tdh_08_4a_2";    T_max[ttdh_08_4a_2]    = 25;   T_type[ttdh_08_4a_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_4a                                         */
-    T_code[tmax_08_4a]      = "max_08_4a";      T_max[tmax_08_4a]      = 0;    T_type[tmax_08_4a]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_4a                               */
-    T_code[t08_4b_1]        = "08_4b_1";        T_max[t08_4b_1]        = 0;    T_type[t08_4b_1]        = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_4b                                      */
-    T_code[t08_4b_2]        = "08_4b_2";        T_max[t08_4b_2]        = 0;    T_type[t08_4b_2]        = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_4b                                      */
-    T_code[ttdh_08_4b_1]    = "tdh_08_4b_1";    T_max[ttdh_08_4b_1]    = 2520; T_type[ttdh_08_4b_1]    = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_4b                                         */
-    T_code[ttdh_08_4b_2]    = "tdh_08_4b_2";    T_max[ttdh_08_4b_2]    = 25;   T_type[ttdh_08_4b_2]    = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_4b                                         */
-    T_code[tmax_08_4b]      = "max_08_4b";      T_max[tmax_08_4b]      = 0;    T_type[tmax_08_4b]      = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_4b                               */
-    T_code[t09_1_1]         = "09_1_1";         T_max[t09_1_1]         = 0;    T_type[t09_1_1]         = TE_type; /* Dynamische hiaattijden moment 1 voor detector 09_1                                       */
-    T_code[t09_1_2]         = "09_1_2";         T_max[t09_1_2]         = 0;    T_type[t09_1_2]         = TE_type; /* Dynamische hiaattijden moment 2 voor detector 09_1                                       */
-    T_code[ttdh_09_1_1]     = "tdh_09_1_1";     T_max[ttdh_09_1_1]     = 0;    T_type[ttdh_09_1_1]     = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_1                                          */
-    T_code[ttdh_09_1_2]     = "tdh_09_1_2";     T_max[ttdh_09_1_2]     = 0;    T_type[ttdh_09_1_2]     = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_1                                          */
-    T_code[tmax_09_1]       = "max_09_1";       T_max[tmax_09_1]       = 80;   T_type[tmax_09_1]       = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_1                                */
-    T_code[t09_2_1]         = "09_2_1";         T_max[t09_2_1]         = 0;    T_type[t09_2_1]         = TE_type; /* Dynamische hiaattijden moment 1 voor detector 09_2                                       */
-    T_code[t09_2_2]         = "09_2_2";         T_max[t09_2_2]         = 0;    T_type[t09_2_2]         = TE_type; /* Dynamische hiaattijden moment 2 voor detector 09_2                                       */
-    T_code[ttdh_09_2_1]     = "tdh_09_2_1";     T_max[ttdh_09_2_1]     = 1;    T_type[ttdh_09_2_1]     = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_2                                          */
-    T_code[ttdh_09_2_2]     = "tdh_09_2_2";     T_max[ttdh_09_2_2]     = 1;    T_type[ttdh_09_2_2]     = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_2                                          */
-    T_code[tmax_09_2]       = "max_09_2";       T_max[tmax_09_2]       = 100;  T_type[tmax_09_2]       = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_2                                */
-    T_code[t09_3_1]         = "09_3_1";         T_max[t09_3_1]         = 100;  T_type[t09_3_1]         = TE_type; /* Dynamische hiaattijden moment 1 voor detector 09_3                                       */
-    T_code[t09_3_2]         = "09_3_2";         T_max[t09_3_2]         = 220;  T_type[t09_3_2]         = TE_type; /* Dynamische hiaattijden moment 2 voor detector 09_3                                       */
-    T_code[ttdh_09_3_1]     = "tdh_09_3_1";     T_max[ttdh_09_3_1]     = 20;   T_type[ttdh_09_3_1]     = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_3                                          */
-    T_code[ttdh_09_3_2]     = "tdh_09_3_2";     T_max[ttdh_09_3_2]     = 8;    T_type[ttdh_09_3_2]     = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_3                                          */
-    T_code[tmax_09_3]       = "max_09_3";       T_max[tmax_09_3]       = 0;    T_type[tmax_09_3]       = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_3                                */
-    T_code[t11_1_1]         = "11_1_1";         T_max[t11_1_1]         = 0;    T_type[t11_1_1]         = TE_type; /* Dynamische hiaattijden moment 1 voor detector 11_1                                       */
-    T_code[t11_1_2]         = "11_1_2";         T_max[t11_1_2]         = 0;    T_type[t11_1_2]         = TE_type; /* Dynamische hiaattijden moment 2 voor detector 11_1                                       */
-    T_code[ttdh_11_1_1]     = "tdh_11_1_1";     T_max[ttdh_11_1_1]     = 0;    T_type[ttdh_11_1_1]     = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 11_1                                          */
-    T_code[ttdh_11_1_2]     = "tdh_11_1_2";     T_max[ttdh_11_1_2]     = 0;    T_type[ttdh_11_1_2]     = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 11_1                                          */
-    T_code[tmax_11_1]       = "max_11_1";       T_max[tmax_11_1]       = 80;   T_type[tmax_11_1]       = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 11_1                                */
-    T_code[t11_2_1]         = "11_2_1";         T_max[t11_2_1]         = 0;    T_type[t11_2_1]         = TE_type; /* Dynamische hiaattijden moment 1 voor detector 11_2                                       */
-    T_code[t11_2_2]         = "11_2_2";         T_max[t11_2_2]         = 0;    T_type[t11_2_2]         = TE_type; /* Dynamische hiaattijden moment 2 voor detector 11_2                                       */
-    T_code[ttdh_11_2_1]     = "tdh_11_2_1";     T_max[ttdh_11_2_1]     = 1;    T_type[ttdh_11_2_1]     = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 11_2                                          */
-    T_code[ttdh_11_2_2]     = "tdh_11_2_2";     T_max[ttdh_11_2_2]     = 1;    T_type[ttdh_11_2_2]     = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 11_2                                          */
-    T_code[tmax_11_2]       = "max_11_2";       T_max[tmax_11_2]       = 100;  T_type[tmax_11_2]       = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 11_2                                */
-    T_code[t11_3_1]         = "11_3_1";         T_max[t11_3_1]         = 100;  T_type[t11_3_1]         = TE_type; /* Dynamische hiaattijden moment 1 voor detector 11_3                                       */
-    T_code[t11_3_2]         = "11_3_2";         T_max[t11_3_2]         = 220;  T_type[t11_3_2]         = TE_type; /* Dynamische hiaattijden moment 2 voor detector 11_3                                       */
-    T_code[ttdh_11_3_1]     = "tdh_11_3_1";     T_max[ttdh_11_3_1]     = 20;   T_type[ttdh_11_3_1]     = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 11_3                                          */
-    T_code[ttdh_11_3_2]     = "tdh_11_3_2";     T_max[ttdh_11_3_2]     = 8;    T_type[ttdh_11_3_2]     = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 11_3                                          */
-    T_code[tmax_11_3]       = "max_11_3";       T_max[tmax_11_3]       = 0;    T_type[tmax_11_3]       = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 11_3                                */
-    T_code[t11_4_1]         = "11_4_1";         T_max[t11_4_1]         = 0;    T_type[t11_4_1]         = TE_type; /* Dynamische hiaattijden moment 1 voor detector 11_4                                       */
-    T_code[t11_4_2]         = "11_4_2";         T_max[t11_4_2]         = 0;    T_type[t11_4_2]         = TE_type; /* Dynamische hiaattijden moment 2 voor detector 11_4                                       */
-    T_code[ttdh_11_4_1]     = "tdh_11_4_1";     T_max[ttdh_11_4_1]     = 25;   T_type[ttdh_11_4_1]     = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 11_4                                          */
-    T_code[ttdh_11_4_2]     = "tdh_11_4_2";     T_max[ttdh_11_4_2]     = 25;   T_type[ttdh_11_4_2]     = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 11_4                                          */
-    T_code[tmax_11_4]       = "max_11_4";       T_max[tmax_11_4]       = 0;    T_type[tmax_11_4]       = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 11_4                                */
-    T_code[tav28_2]         = "av28_2";         T_max[tav28_2]         = 50;   T_type[tav28_2]         = TE_type; /* Tijd na afvallen detector 28_2 tbv verwijderen aanvraag                                  */
-    T_code[tkm02]           = "km02";           T_max[tkm02]           = 80;   T_type[tkm02]           = TE_type; /* Kop maximum voor detector 02                                                             */
-    T_code[tkm03]           = "km03";           T_max[tkm03]           = 80;   T_type[tkm03]           = TE_type; /* Kop maximum voor detector 03                                                             */
-    T_code[tkm05]           = "km05";           T_max[tkm05]           = 80;   T_type[tkm05]           = TE_type; /* Kop maximum voor detector 05                                                             */
-    T_code[tkm08]           = "km08";           T_max[tkm08]           = 80;   T_type[tkm08]           = TE_type; /* Kop maximum voor detector 08                                                             */
-    T_code[tkm09]           = "km09";           T_max[tkm09]           = 80;   T_type[tkm09]           = TE_type; /* Kop maximum voor detector 09                                                             */
-    T_code[tkm11]           = "km11";           T_max[tkm11]           = 80;   T_type[tkm11]           = TE_type; /* Kop maximum voor detector 11                                                             */
-    T_code[tkm21]           = "km21";           T_max[tkm21]           = 80;   T_type[tkm21]           = TE_type; /* Kop maximum voor detector 21                                                             */
-    T_code[tkm22]           = "km22";           T_max[tkm22]           = 60;   T_type[tkm22]           = TE_type; /* Kop maximum voor detector 22                                                             */
-    T_code[tkm24]           = "km24";           T_max[tkm24]           = 60;   T_type[tkm24]           = TE_type; /* Kop maximum voor detector 24                                                             */
-    T_code[tkm26]           = "km26";           T_max[tkm26]           = 80;   T_type[tkm26]           = TE_type; /* Kop maximum voor detector 26                                                             */
-    T_code[tkm28]           = "km28";           T_max[tkm28]           = 60;   T_type[tkm28]           = TE_type; /* Kop maximum voor detector 28                                                             */
-    T_code[tkm61]           = "km61";           T_max[tkm61]           = 80;   T_type[tkm61]           = TE_type; /* Kop maximum voor detector 61                                                             */
-    T_code[tkm62]           = "km62";           T_max[tkm62]           = 80;   T_type[tkm62]           = TE_type; /* Kop maximum voor detector 62                                                             */
-    T_code[tkm67]           = "km67";           T_max[tkm67]           = 80;   T_type[tkm67]           = TE_type; /* Kop maximum voor detector 67                                                             */
-    T_code[tkm68]           = "km68";           T_max[tkm68]           = 80;   T_type[tkm68]           = TE_type; /* Kop maximum voor detector 68                                                             */
-    T_code[tkm84]           = "km84";           T_max[tkm84]           = 60;   T_type[tkm84]           = TE_type; /* Kop maximum voor detector 84                                                             */
-    T_code[thdvd02_1a]      = "hdvd02_1a";      T_max[thdvd02_1a]      = 25;   T_type[thdvd02_1a]      = TE_type; /* Vervangend hiaat koplus fase 02 bij defect lange lus 02_1a                               */
-    T_code[thdvd02_1b]      = "hdvd02_1b";      T_max[thdvd02_1b]      = 25;   T_type[thdvd02_1b]      = TE_type; /* Vervangend hiaat koplus fase 02 bij defect lange lus 02_1b                               */
-    T_code[tdstvert02]      = "dstvert02";      T_max[tdstvert02]      = 100;  T_type[tdstvert02]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 02                      */
-    T_code[thdvd03_1]       = "hdvd03_1";       T_max[thdvd03_1]       = 25;   T_type[thdvd03_1]       = TE_type; /* Vervangend hiaat koplus fase 03 bij defect lange lus 03_1                                */
-    T_code[tdstvert03]      = "dstvert03";      T_max[tdstvert03]      = 100;  T_type[tdstvert03]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 03                      */
-    T_code[thdvd05_1]       = "hdvd05_1";       T_max[thdvd05_1]       = 25;   T_type[thdvd05_1]       = TE_type; /* Vervangend hiaat koplus fase 05 bij defect lange lus 05_1                                */
-    T_code[tdstvert05]      = "dstvert05";      T_max[tdstvert05]      = 100;  T_type[tdstvert05]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 05                      */
-    T_code[thdvd08_1a]      = "hdvd08_1a";      T_max[thdvd08_1a]      = 25;   T_type[thdvd08_1a]      = TE_type; /* Vervangend hiaat koplus fase 08 bij defect lange lus 08_1a                               */
-    T_code[thdvd08_1b]      = "hdvd08_1b";      T_max[thdvd08_1b]      = 25;   T_type[thdvd08_1b]      = TE_type; /* Vervangend hiaat koplus fase 08 bij defect lange lus 08_1b                               */
-    T_code[tdstvert08]      = "dstvert08";      T_max[tdstvert08]      = 100;  T_type[tdstvert08]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 08                      */
-    T_code[thdvd09_1]       = "hdvd09_1";       T_max[thdvd09_1]       = 25;   T_type[thdvd09_1]       = TE_type; /* Vervangend hiaat koplus fase 09 bij defect lange lus 09_1                                */
-    T_code[tdstvert09]      = "dstvert09";      T_max[tdstvert09]      = 100;  T_type[tdstvert09]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 09                      */
-    T_code[thdvd11_1]       = "hdvd11_1";       T_max[thdvd11_1]       = 25;   T_type[thdvd11_1]       = TE_type; /* Vervangend hiaat koplus fase 11 bij defect lange lus 11_1                                */
-    T_code[tdstvert11]      = "dstvert11";      T_max[tdstvert11]      = 100;  T_type[tdstvert11]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 11                      */
-    T_code[tdstvert21]      = "dstvert21";      T_max[tdstvert21]      = 200;  T_type[tdstvert21]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 21                      */
-    T_code[thdvd22_1]       = "hdvd22_1";       T_max[thdvd22_1]       = 35;   T_type[thdvd22_1]       = TE_type; /* Vervangend hiaat koplus fase 22 bij defect lange lus 22_1                                */
-    T_code[tdstvert22]      = "dstvert22";      T_max[tdstvert22]      = 200;  T_type[tdstvert22]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 22                      */
-    T_code[thdvd24_1]       = "hdvd24_1";       T_max[thdvd24_1]       = 35;   T_type[thdvd24_1]       = TE_type; /* Vervangend hiaat koplus fase 24 bij defect lange lus 24_1                                */
-    T_code[tdstvert24]      = "dstvert24";      T_max[tdstvert24]      = 200;  T_type[tdstvert24]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 24                      */
-    T_code[tdstvert26]      = "dstvert26";      T_max[tdstvert26]      = 200;  T_type[tdstvert26]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 26                      */
-    T_code[thdvd28_1]       = "hdvd28_1";       T_max[thdvd28_1]       = 35;   T_type[thdvd28_1]       = TE_type; /* Vervangend hiaat koplus fase 28 bij defect lange lus 28_1                                */
-    T_code[tdstvert28]      = "dstvert28";      T_max[tdstvert28]      = 200;  T_type[tdstvert28]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 28                      */
-    T_code[tdstvert31]      = "dstvert31";      T_max[tdstvert31]      = 300;  T_type[tdstvert31]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 31                      */
-    T_code[tdstvert32]      = "dstvert32";      T_max[tdstvert32]      = 300;  T_type[tdstvert32]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 32                      */
-    T_code[tdstvert33]      = "dstvert33";      T_max[tdstvert33]      = 300;  T_type[tdstvert33]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 33                      */
-    T_code[tdstvert34]      = "dstvert34";      T_max[tdstvert34]      = 300;  T_type[tdstvert34]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 34                      */
-    T_code[tdstvert38]      = "dstvert38";      T_max[tdstvert38]      = 300;  T_type[tdstvert38]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 38                      */
-    T_code[thdvd61_1]       = "hdvd61_1";       T_max[thdvd61_1]       = 25;   T_type[thdvd61_1]       = TE_type; /* Vervangend hiaat koplus fase 61 bij defect lange lus 61_1                                */
-    T_code[tdstvert61]      = "dstvert61";      T_max[tdstvert61]      = 200;  T_type[tdstvert61]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 61                      */
-    T_code[thdvd62_1a]      = "hdvd62_1a";      T_max[thdvd62_1a]      = 25;   T_type[thdvd62_1a]      = TE_type; /* Vervangend hiaat koplus fase 62 bij defect lange lus 62_1a                               */
-    T_code[thdvd62_1b]      = "hdvd62_1b";      T_max[thdvd62_1b]      = 25;   T_type[thdvd62_1b]      = TE_type; /* Vervangend hiaat koplus fase 62 bij defect lange lus 62_1b                               */
-    T_code[tdstvert62]      = "dstvert62";      T_max[tdstvert62]      = 200;  T_type[tdstvert62]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 62                      */
-    T_code[thdvd67_1]       = "hdvd67_1";       T_max[thdvd67_1]       = 25;   T_type[thdvd67_1]       = TE_type; /* Vervangend hiaat koplus fase 67 bij defect lange lus 67_1                                */
-    T_code[tdstvert67]      = "dstvert67";      T_max[tdstvert67]      = 200;  T_type[tdstvert67]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 67                      */
-    T_code[thdvd68_1a]      = "hdvd68_1a";      T_max[thdvd68_1a]      = 25;   T_type[thdvd68_1a]      = TE_type; /* Vervangend hiaat koplus fase 68 bij defect lange lus 68_1a                               */
-    T_code[thdvd68_1b]      = "hdvd68_1b";      T_max[thdvd68_1b]      = 25;   T_type[thdvd68_1b]      = TE_type; /* Vervangend hiaat koplus fase 68 bij defect lange lus 68_1b                               */
-    T_code[tdstvert68]      = "dstvert68";      T_max[tdstvert68]      = 200;  T_type[tdstvert68]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 68                      */
-    T_code[thdvd84_1]       = "hdvd84_1";       T_max[thdvd84_1]       = 35;   T_type[thdvd84_1]       = TE_type; /* Vervangend hiaat koplus fase 84 bij defect lange lus 84_1                                */
-    T_code[tdstvert84]      = "dstvert84";      T_max[tdstvert84]      = 200;  T_type[tdstvert84]      = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 84                      */
-    T_code[tnlfg0262]       = "nlfg0262";       T_max[tnlfg0262]       = 0;    T_type[tnlfg0262]       = TE_type; /* Naloop tijdens vastgroen van 02 naar 62                                                  */
-    T_code[tnleg0262]       = "nleg0262";       T_max[tnleg0262]       = 50;   T_type[tnleg0262]       = TE_type; /* Naloop op einde groen van 02 naar 62                                                     */
-    T_code[tnlfg0868]       = "nlfg0868";       T_max[tnlfg0868]       = 0;    T_type[tnlfg0868]       = TE_type; /* Naloop tijdens vastgroen van 08 naar 68                                                  */
-    T_code[tnleg0868]       = "nleg0868";       T_max[tnleg0868]       = 70;   T_type[tnleg0868]       = TE_type; /* Naloop op einde groen van 08 naar 68                                                     */
-    T_code[tnlfg2221]       = "nlfg2221";       T_max[tnlfg2221]       = 30;   T_type[tnlfg2221]       = TE_type; /* Naloop tijdens vastgroen van 22 naar 21                                                  */
-    T_code[tnlfgd2221]      = "nlfgd2221";      T_max[tnlfgd2221]      = 40;   T_type[tnlfgd2221]      = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 22 naar 21                             */
-    T_code[tnleg2221]       = "nleg2221";       T_max[tnleg2221]       = 40;   T_type[tnleg2221]       = TE_type; /* Naloop op einde groen van 22 naar 21                                                     */
-    T_code[tnlegd2221]      = "nlegd2221";      T_max[tnlegd2221]      = 50;   T_type[tnlegd2221]      = TE_type; /* Detectieafhankelijke naloop op einde groen van 22 naar 21                                */
-    T_code[tnlsgd3132]      = "nlsgd3132";      T_max[tnlsgd3132]      = 125;  T_type[tnlsgd3132]      = TE_type; /* Detectieafhankelijke naloop op start groen van 31 naar 32                                */
-    T_code[tnlsgd3231]      = "nlsgd3231";      T_max[tnlsgd3231]      = 115;  T_type[tnlsgd3231]      = TE_type; /* Detectieafhankelijke naloop op start groen van 32 naar 31                                */
-    T_code[tnlsgd3334]      = "nlsgd3334";      T_max[tnlsgd3334]      = 80;   T_type[tnlsgd3334]      = TE_type; /* Detectieafhankelijke naloop op start groen van 33 naar 34                                */
-    T_code[tnlsgd3433]      = "nlsgd3433";      T_max[tnlsgd3433]      = 95;   T_type[tnlsgd3433]      = TE_type; /* Detectieafhankelijke naloop op start groen van 34 naar 33                                */
-    T_code[tkarmelding]     = "karmelding";     T_max[tkarmelding]     = 15;   T_type[tkarmelding]     = TE_type; /* Duur verklikking ontvangst melding KAR                                                   */
-    T_code[tkarog]          = "karog";          T_max[tkarog]          = 1440; T_type[tkarog]          = TM_type; /* Ondergedrag KAR                                                                          */
-    T_code[tbtovg02bus]     = "btovg02bus";     T_max[tbtovg02bus]     = 0;    T_type[tbtovg02bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
-    T_code[trt02bus]        = "rt02bus";        T_max[trt02bus]        = 0;    T_type[trt02bus]        = TE_type; /* Actuele rijtijd prio fase 02                                                             */
-    T_code[tgb02bus]        = "gb02bus";        T_max[tgb02bus]        = 300;  T_type[tgb02bus]        = TE_type; /* Groenbewaking prioriteit fase 02                                                         */
-    T_code[tblk02bus]       = "blk02bus";       T_max[tblk02bus]       = 0;    T_type[tblk02bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 02                                               */
-    T_code[tbtovg03bus]     = "btovg03bus";     T_max[tbtovg03bus]     = 0;    T_type[tbtovg03bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
-    T_code[trt03bus]        = "rt03bus";        T_max[trt03bus]        = 0;    T_type[trt03bus]        = TE_type; /* Actuele rijtijd prio fase 03                                                             */
-    T_code[tgb03bus]        = "gb03bus";        T_max[tgb03bus]        = 300;  T_type[tgb03bus]        = TE_type; /* Groenbewaking prioriteit fase 03                                                         */
-    T_code[tblk03bus]       = "blk03bus";       T_max[tblk03bus]       = 0;    T_type[tblk03bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 03                                               */
-    T_code[tbtovg05bus]     = "btovg05bus";     T_max[tbtovg05bus]     = 0;    T_type[tbtovg05bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
-    T_code[trt05bus]        = "rt05bus";        T_max[trt05bus]        = 0;    T_type[trt05bus]        = TE_type; /* Actuele rijtijd prio fase 05                                                             */
-    T_code[tgb05bus]        = "gb05bus";        T_max[tgb05bus]        = 300;  T_type[tgb05bus]        = TE_type; /* Groenbewaking prioriteit fase 05                                                         */
-    T_code[tblk05bus]       = "blk05bus";       T_max[tblk05bus]       = 0;    T_type[tblk05bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 05                                               */
-    T_code[tbtovg08bus]     = "btovg08bus";     T_max[tbtovg08bus]     = 0;    T_type[tbtovg08bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
-    T_code[trt08bus]        = "rt08bus";        T_max[trt08bus]        = 0;    T_type[trt08bus]        = TE_type; /* Actuele rijtijd prio fase 08                                                             */
-    T_code[tgb08bus]        = "gb08bus";        T_max[tgb08bus]        = 300;  T_type[tgb08bus]        = TE_type; /* Groenbewaking prioriteit fase 08                                                         */
-    T_code[tblk08bus]       = "blk08bus";       T_max[tblk08bus]       = 0;    T_type[tblk08bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 08                                               */
-    T_code[tbtovg09bus]     = "btovg09bus";     T_max[tbtovg09bus]     = 0;    T_type[tbtovg09bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
-    T_code[trt09bus]        = "rt09bus";        T_max[trt09bus]        = 0;    T_type[trt09bus]        = TE_type; /* Actuele rijtijd prio fase 09                                                             */
-    T_code[tgb09bus]        = "gb09bus";        T_max[tgb09bus]        = 300;  T_type[tgb09bus]        = TE_type; /* Groenbewaking prioriteit fase 09                                                         */
-    T_code[tblk09bus]       = "blk09bus";       T_max[tblk09bus]       = 0;    T_type[tblk09bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 09                                               */
-    T_code[tbtovg11bus]     = "btovg11bus";     T_max[tbtovg11bus]     = 0;    T_type[tbtovg11bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
-    T_code[trt11bus]        = "rt11bus";        T_max[trt11bus]        = 0;    T_type[trt11bus]        = TE_type; /* Actuele rijtijd prio fase 11                                                             */
-    T_code[tgb11bus]        = "gb11bus";        T_max[tgb11bus]        = 300;  T_type[tgb11bus]        = TE_type; /* Groenbewaking prioriteit fase 11                                                         */
-    T_code[tblk11bus]       = "blk11bus";       T_max[tblk11bus]       = 0;    T_type[tblk11bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 11                                               */
-    T_code[tbtovg61bus]     = "btovg61bus";     T_max[tbtovg61bus]     = 0;    T_type[tbtovg61bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
-    T_code[trt61bus]        = "rt61bus";        T_max[trt61bus]        = 0;    T_type[trt61bus]        = TE_type; /* Actuele rijtijd prio fase 61                                                             */
-    T_code[tgb61bus]        = "gb61bus";        T_max[tgb61bus]        = 300;  T_type[tgb61bus]        = TE_type; /* Groenbewaking prioriteit fase 61                                                         */
-    T_code[tblk61bus]       = "blk61bus";       T_max[tblk61bus]       = 0;    T_type[tblk61bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 61                                               */
-    T_code[tbtovg62bus]     = "btovg62bus";     T_max[tbtovg62bus]     = 0;    T_type[tbtovg62bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
-    T_code[trt62bus]        = "rt62bus";        T_max[trt62bus]        = 0;    T_type[trt62bus]        = TE_type; /* Actuele rijtijd prio fase 62                                                             */
-    T_code[tgb62bus]        = "gb62bus";        T_max[tgb62bus]        = 300;  T_type[tgb62bus]        = TE_type; /* Groenbewaking prioriteit fase 62                                                         */
-    T_code[tblk62bus]       = "blk62bus";       T_max[tblk62bus]       = 0;    T_type[tblk62bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 62                                               */
-    T_code[tbtovg67bus]     = "btovg67bus";     T_max[tbtovg67bus]     = 0;    T_type[tbtovg67bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
-    T_code[trt67bus]        = "rt67bus";        T_max[trt67bus]        = 0;    T_type[trt67bus]        = TE_type; /* Actuele rijtijd prio fase 67                                                             */
-    T_code[tgb67bus]        = "gb67bus";        T_max[tgb67bus]        = 300;  T_type[tgb67bus]        = TE_type; /* Groenbewaking prioriteit fase 67                                                         */
-    T_code[tblk67bus]       = "blk67bus";       T_max[tblk67bus]       = 0;    T_type[tblk67bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 67                                               */
-    T_code[tprioin68buskar] = "prioin68buskar"; T_max[tprioin68buskar] = 15;   T_type[tprioin68buskar] = TE_type; /* Anti jutter tijd inmelden 68 Bus                                                         */
-    T_code[tbtovg68bus]     = "btovg68bus";     T_max[tbtovg68bus]     = 0;    T_type[tbtovg68bus]     = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
-    T_code[trt68bus]        = "rt68bus";        T_max[trt68bus]        = 0;    T_type[trt68bus]        = TE_type; /* Actuele rijtijd prio fase 68                                                             */
-    T_code[tgb68bus]        = "gb68bus";        T_max[tgb68bus]        = 300;  T_type[tgb68bus]        = TE_type; /* Groenbewaking prioriteit fase 68                                                         */
-    T_code[tblk68bus]       = "blk68bus";       T_max[tblk68bus]       = 0;    T_type[tblk68bus]       = TE_type; /* Blokkeertijd na prioriteitsingreep fase 68                                               */
-    T_code[tgbhd02]         = "gbhd02";         T_max[tgbhd02]         = 900;  T_type[tgbhd02]         = TE_type; /* Groenbewaking HD fase 02                                                                 */
-    T_code[trthd02]         = "rthd02";         T_max[trthd02]         = 0;    T_type[trthd02]         = TE_type; /* Actuele rijtijd HD fase 02                                                               */
-    T_code[tbtovg02hd]      = "btovg02hd";      T_max[tbtovg02hd]      = 0;    T_type[tbtovg02hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
-    T_code[thdin02kar]      = "hdin02kar";      T_max[thdin02kar]      = 15;   T_type[thdin02kar]      = TE_type; /* Anti jutter tijd inmelden HD 02 KAR                                                      */
-    T_code[thduit02kar]     = "hduit02kar";     T_max[thduit02kar]     = 15;   T_type[thduit02kar]     = TE_type; /* Anti jutter tijd uitmelden HD 02                                                         */
-    T_code[tgbhd03]         = "gbhd03";         T_max[tgbhd03]         = 900;  T_type[tgbhd03]         = TE_type; /* Groenbewaking HD fase 03                                                                 */
-    T_code[trthd03]         = "rthd03";         T_max[trthd03]         = 0;    T_type[trthd03]         = TE_type; /* Actuele rijtijd HD fase 03                                                               */
-    T_code[tbtovg03hd]      = "btovg03hd";      T_max[tbtovg03hd]      = 0;    T_type[tbtovg03hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
-    T_code[thdin03kar]      = "hdin03kar";      T_max[thdin03kar]      = 15;   T_type[thdin03kar]      = TE_type; /* Anti jutter tijd inmelden HD 03 KAR                                                      */
-    T_code[thduit03kar]     = "hduit03kar";     T_max[thduit03kar]     = 15;   T_type[thduit03kar]     = TE_type; /* Anti jutter tijd uitmelden HD 03                                                         */
-    T_code[tgbhd05]         = "gbhd05";         T_max[tgbhd05]         = 900;  T_type[tgbhd05]         = TE_type; /* Groenbewaking HD fase 05                                                                 */
-    T_code[trthd05]         = "rthd05";         T_max[trthd05]         = 0;    T_type[trthd05]         = TE_type; /* Actuele rijtijd HD fase 05                                                               */
-    T_code[tbtovg05hd]      = "btovg05hd";      T_max[tbtovg05hd]      = 0;    T_type[tbtovg05hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
-    T_code[thdin05kar]      = "hdin05kar";      T_max[thdin05kar]      = 15;   T_type[thdin05kar]      = TE_type; /* Anti jutter tijd inmelden HD 05 KAR                                                      */
-    T_code[thduit05kar]     = "hduit05kar";     T_max[thduit05kar]     = 15;   T_type[thduit05kar]     = TE_type; /* Anti jutter tijd uitmelden HD 05                                                         */
-    T_code[tgbhd08]         = "gbhd08";         T_max[tgbhd08]         = 900;  T_type[tgbhd08]         = TE_type; /* Groenbewaking HD fase 08                                                                 */
-    T_code[trthd08]         = "rthd08";         T_max[trthd08]         = 0;    T_type[trthd08]         = TE_type; /* Actuele rijtijd HD fase 08                                                               */
-    T_code[tbtovg08hd]      = "btovg08hd";      T_max[tbtovg08hd]      = 0;    T_type[tbtovg08hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
-    T_code[thdin08kar]      = "hdin08kar";      T_max[thdin08kar]      = 15;   T_type[thdin08kar]      = TE_type; /* Anti jutter tijd inmelden HD 08 KAR                                                      */
-    T_code[thduit08kar]     = "hduit08kar";     T_max[thduit08kar]     = 15;   T_type[thduit08kar]     = TE_type; /* Anti jutter tijd uitmelden HD 08                                                         */
-    T_code[tgbhd09]         = "gbhd09";         T_max[tgbhd09]         = 900;  T_type[tgbhd09]         = TE_type; /* Groenbewaking HD fase 09                                                                 */
-    T_code[trthd09]         = "rthd09";         T_max[trthd09]         = 0;    T_type[trthd09]         = TE_type; /* Actuele rijtijd HD fase 09                                                               */
-    T_code[tbtovg09hd]      = "btovg09hd";      T_max[tbtovg09hd]      = 0;    T_type[tbtovg09hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
-    T_code[thdin09kar]      = "hdin09kar";      T_max[thdin09kar]      = 15;   T_type[thdin09kar]      = TE_type; /* Anti jutter tijd inmelden HD 09 KAR                                                      */
-    T_code[thduit09kar]     = "hduit09kar";     T_max[thduit09kar]     = 15;   T_type[thduit09kar]     = TE_type; /* Anti jutter tijd uitmelden HD 09                                                         */
-    T_code[tgbhd11]         = "gbhd11";         T_max[tgbhd11]         = 900;  T_type[tgbhd11]         = TE_type; /* Groenbewaking HD fase 11                                                                 */
-    T_code[trthd11]         = "rthd11";         T_max[trthd11]         = 0;    T_type[trthd11]         = TE_type; /* Actuele rijtijd HD fase 11                                                               */
-    T_code[tbtovg11hd]      = "btovg11hd";      T_max[tbtovg11hd]      = 0;    T_type[tbtovg11hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
-    T_code[thdin11kar]      = "hdin11kar";      T_max[thdin11kar]      = 15;   T_type[thdin11kar]      = TE_type; /* Anti jutter tijd inmelden HD 11 KAR                                                      */
-    T_code[thduit11kar]     = "hduit11kar";     T_max[thduit11kar]     = 15;   T_type[thduit11kar]     = TE_type; /* Anti jutter tijd uitmelden HD 11                                                         */
-    T_code[tgbhd61]         = "gbhd61";         T_max[tgbhd61]         = 900;  T_type[tgbhd61]         = TE_type; /* Groenbewaking HD fase 61                                                                 */
-    T_code[trthd61]         = "rthd61";         T_max[trthd61]         = 0;    T_type[trthd61]         = TE_type; /* Actuele rijtijd HD fase 61                                                               */
-    T_code[tbtovg61hd]      = "btovg61hd";      T_max[tbtovg61hd]      = 0;    T_type[tbtovg61hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
-    T_code[thdin61kar]      = "hdin61kar";      T_max[thdin61kar]      = 15;   T_type[thdin61kar]      = TE_type; /* Anti jutter tijd inmelden HD 61 KAR                                                      */
-    T_code[thduit61kar]     = "hduit61kar";     T_max[thduit61kar]     = 15;   T_type[thduit61kar]     = TE_type; /* Anti jutter tijd uitmelden HD 61                                                         */
-    T_code[tgbhd62]         = "gbhd62";         T_max[tgbhd62]         = 900;  T_type[tgbhd62]         = TE_type; /* Groenbewaking HD fase 62                                                                 */
-    T_code[trthd62]         = "rthd62";         T_max[trthd62]         = 0;    T_type[trthd62]         = TE_type; /* Actuele rijtijd HD fase 62                                                               */
-    T_code[tbtovg62hd]      = "btovg62hd";      T_max[tbtovg62hd]      = 0;    T_type[tbtovg62hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
-    T_code[thdin62kar]      = "hdin62kar";      T_max[thdin62kar]      = 15;   T_type[thdin62kar]      = TE_type; /* Anti jutter tijd inmelden HD 62 KAR                                                      */
-    T_code[thduit62kar]     = "hduit62kar";     T_max[thduit62kar]     = 15;   T_type[thduit62kar]     = TE_type; /* Anti jutter tijd uitmelden HD 62                                                         */
-    T_code[tgbhd67]         = "gbhd67";         T_max[tgbhd67]         = 900;  T_type[tgbhd67]         = TE_type; /* Groenbewaking HD fase 67                                                                 */
-    T_code[trthd67]         = "rthd67";         T_max[trthd67]         = 0;    T_type[trthd67]         = TE_type; /* Actuele rijtijd HD fase 67                                                               */
-    T_code[tbtovg67hd]      = "btovg67hd";      T_max[tbtovg67hd]      = 0;    T_type[tbtovg67hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
-    T_code[thdin67kar]      = "hdin67kar";      T_max[thdin67kar]      = 15;   T_type[thdin67kar]      = TE_type; /* Anti jutter tijd inmelden HD 67 KAR                                                      */
-    T_code[thduit67kar]     = "hduit67kar";     T_max[thduit67kar]     = 15;   T_type[thduit67kar]     = TE_type; /* Anti jutter tijd uitmelden HD 67                                                         */
-    T_code[tgbhd68]         = "gbhd68";         T_max[tgbhd68]         = 900;  T_type[tgbhd68]         = TE_type; /* Groenbewaking HD fase 68                                                                 */
-    T_code[trthd68]         = "rthd68";         T_max[trthd68]         = 0;    T_type[trthd68]         = TE_type; /* Actuele rijtijd HD fase 68                                                               */
-    T_code[tbtovg68hd]      = "btovg68hd";      T_max[tbtovg68hd]      = 0;    T_type[tbtovg68hd]      = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
-    T_code[thdin68kar]      = "hdin68kar";      T_max[thdin68kar]      = 15;   T_type[thdin68kar]      = TE_type; /* Anti jutter tijd inmelden HD 68 KAR                                                      */
-    T_code[thduit68kar]     = "hduit68kar";     T_max[thduit68kar]     = 15;   T_type[thduit68kar]     = TE_type; /* Anti jutter tijd uitmelden HD 68                                                         */
-    T_code[trgad24_3]       = "rgad24_3";       T_max[trgad24_3]       = 10;   T_type[trgad24_3]       = TE_type; /* Richtinggevoelige aanvraag rijtijd fase 24 van 24_3 naar 24_2                            */
-    T_code[trgavd24_3]      = "rgavd24_3";      T_max[trgavd24_3]      = 60;   T_type[trgavd24_3]      = TE_type; /* Timer reset richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2                        */
-    T_code[trgrd24_3_d24_2] = "rgrd24_3_d24_2"; T_max[trgrd24_3_d24_2] = 10;   T_type[trgrd24_3_d24_2] = TE_type; /* Richtinggevoelig verlengen rijtijd fase 24 van 24_3 naar 24_2                            */
-    T_code[trgvd24_3_d24_2] = "rgvd24_3_d24_2"; T_max[trgvd24_3_d24_2] = 50;   T_type[trgvd24_3_d24_2] = TE_type; /* Richtinggevoelig verlengen hiaattijd fase 24 van 24_3 naar 24_2                          */
-    T_code[tfd02_1a]        = "fd02_1a";        T_max[tfd02_1a]        = 60;   T_type[tfd02_1a]        = TE_type; /* File meting RoBuGrover fase 02 detector 02_1a                                            */
-    T_code[tfd02_1b]        = "fd02_1b";        T_max[tfd02_1b]        = 60;   T_type[tfd02_1b]        = TE_type; /* File meting RoBuGrover fase 02 detector 02_1b                                            */
-    T_code[thd02_2a]        = "hd02_2a";        T_max[thd02_2a]        = 10;   T_type[thd02_2a]        = TE_type; /* RoBuGrover hiaat meting fase 02 detector 02_2a                                           */
-    T_code[thd02_2b]        = "hd02_2b";        T_max[thd02_2b]        = 10;   T_type[thd02_2b]        = TE_type; /* RoBuGrover hiaat meting fase 02 detector 02_2b                                           */
-    T_code[thd02_3a]        = "hd02_3a";        T_max[thd02_3a]        = 10;   T_type[thd02_3a]        = TE_type; /* RoBuGrover hiaat meting fase 02 detector 02_3a                                           */
-    T_code[thd02_3b]        = "hd02_3b";        T_max[thd02_3b]        = 10;   T_type[thd02_3b]        = TE_type; /* RoBuGrover hiaat meting fase 02 detector 02_3b                                           */
-    T_code[tfd03_1]         = "fd03_1";         T_max[tfd03_1]         = 60;   T_type[tfd03_1]         = TE_type; /* File meting RoBuGrover fase 03 detector 03_1                                             */
-    T_code[thd03_2]         = "hd03_2";         T_max[thd03_2]         = 10;   T_type[thd03_2]         = TE_type; /* RoBuGrover hiaat meting fase 03 detector 03_2                                            */
-    T_code[tfd05_1]         = "fd05_1";         T_max[tfd05_1]         = 60;   T_type[tfd05_1]         = TE_type; /* File meting RoBuGrover fase 05 detector 05_1                                             */
-    T_code[thd05_2]         = "hd05_2";         T_max[thd05_2]         = 10;   T_type[thd05_2]         = TE_type; /* RoBuGrover hiaat meting fase 05 detector 05_2                                            */
-    T_code[tfd08_1a]        = "fd08_1a";        T_max[tfd08_1a]        = 60;   T_type[tfd08_1a]        = TE_type; /* File meting RoBuGrover fase 08 detector 08_1a                                            */
-    T_code[tfd08_1b]        = "fd08_1b";        T_max[tfd08_1b]        = 60;   T_type[tfd08_1b]        = TE_type; /* File meting RoBuGrover fase 08 detector 08_1b                                            */
-    T_code[thd08_2a]        = "hd08_2a";        T_max[thd08_2a]        = 10;   T_type[thd08_2a]        = TE_type; /* RoBuGrover hiaat meting fase 08 detector 08_2a                                           */
-    T_code[thd08_2b]        = "hd08_2b";        T_max[thd08_2b]        = 10;   T_type[thd08_2b]        = TE_type; /* RoBuGrover hiaat meting fase 08 detector 08_2b                                           */
-    T_code[thd08_3a]        = "hd08_3a";        T_max[thd08_3a]        = 10;   T_type[thd08_3a]        = TE_type; /* RoBuGrover hiaat meting fase 08 detector 08_3a                                           */
-    T_code[thd08_3b]        = "hd08_3b";        T_max[thd08_3b]        = 10;   T_type[thd08_3b]        = TE_type; /* RoBuGrover hiaat meting fase 08 detector 08_3b                                           */
-    T_code[tfd09_1]         = "fd09_1";         T_max[tfd09_1]         = 60;   T_type[tfd09_1]         = TE_type; /* File meting RoBuGrover fase 09 detector 09_1                                             */
-    T_code[thd09_2]         = "hd09_2";         T_max[thd09_2]         = 10;   T_type[thd09_2]         = TE_type; /* RoBuGrover hiaat meting fase 09 detector 09_2                                            */
-    T_code[thd09_3]         = "hd09_3";         T_max[thd09_3]         = 10;   T_type[thd09_3]         = TE_type; /* RoBuGrover hiaat meting fase 09 detector 09_3                                            */
-    T_code[tfd11_1]         = "fd11_1";         T_max[tfd11_1]         = 60;   T_type[tfd11_1]         = TE_type; /* File meting RoBuGrover fase 11 detector 11_1                                             */
-    T_code[thd11_2]         = "hd11_2";         T_max[thd11_2]         = 10;   T_type[thd11_2]         = TE_type; /* RoBuGrover hiaat meting fase 11 detector 11_2                                            */
-    T_code[thd11_3]         = "hd11_3";         T_max[thd11_3]         = 10;   T_type[thd11_3]         = TE_type; /* RoBuGrover hiaat meting fase 11 detector 11_3                                            */
-    T_code[tfd22_1]         = "fd22_1";         T_max[tfd22_1]         = 60;   T_type[tfd22_1]         = TE_type; /* File meting RoBuGrover fase 22 detector 22_1                                             */
-    T_code[thd22_1]         = "hd22_1";         T_max[thd22_1]         = 10;   T_type[thd22_1]         = TE_type; /* RoBuGrover hiaat meting fase 22 detector 22_1                                            */
-    T_code[tfd28_1]         = "fd28_1";         T_max[tfd28_1]         = 60;   T_type[tfd28_1]         = TE_type; /* File meting RoBuGrover fase 28 detector 28_1                                             */
-    T_code[thd28_1]         = "hd28_1";         T_max[thd28_1]         = 10;   T_type[thd28_1]         = TE_type; /* RoBuGrover hiaat meting fase 28 detector 28_1                                            */
-    T_code[tfd68_1a]        = "fd68_1a";        T_max[tfd68_1a]        = 60;   T_type[tfd68_1a]        = TE_type; /* File meting RoBuGrover fase 68 detector 68_1a                                            */
-    T_code[tfd68_1b]        = "fd68_1b";        T_max[tfd68_1b]        = 60;   T_type[tfd68_1b]        = TE_type; /* File meting RoBuGrover fase 68 detector 68_1b                                            */
-    T_code[thd68_2a]        = "hd68_2a";        T_max[thd68_2a]        = 10;   T_type[thd68_2a]        = TE_type; /* RoBuGrover hiaat meting fase 68 detector 68_2a                                           */
-    T_code[thd68_2b]        = "hd68_2b";        T_max[thd68_2b]        = 10;   T_type[thd68_2b]        = TE_type; /* RoBuGrover hiaat meting fase 68 detector 68_2b                                           */
-    T_code[tuitgestca02]    = "uitgestca02";    T_max[tuitgestca02]    = 100;  T_type[tuitgestca02]    = TE_type; /* Uitgestelde cyclische aanvraag fase 02                                                   */
-    T_code[tuitgestca03]    = "uitgestca03";    T_max[tuitgestca03]    = 100;  T_type[tuitgestca03]    = TE_type; /* Uitgestelde cyclische aanvraag fase 03                                                   */
-    T_code[tuitgestca05]    = "uitgestca05";    T_max[tuitgestca05]    = 100;  T_type[tuitgestca05]    = TE_type; /* Uitgestelde cyclische aanvraag fase 05                                                   */
-    T_code[tuitgestca08]    = "uitgestca08";    T_max[tuitgestca08]    = 100;  T_type[tuitgestca08]    = TE_type; /* Uitgestelde cyclische aanvraag fase 08                                                   */
-    T_code[tuitgestca09]    = "uitgestca09";    T_max[tuitgestca09]    = 100;  T_type[tuitgestca09]    = TE_type; /* Uitgestelde cyclische aanvraag fase 09                                                   */
-    T_code[tuitgestca11]    = "uitgestca11";    T_max[tuitgestca11]    = 100;  T_type[tuitgestca11]    = TE_type; /* Uitgestelde cyclische aanvraag fase 11                                                   */
-    T_code[tuitgestca21]    = "uitgestca21";    T_max[tuitgestca21]    = 200;  T_type[tuitgestca21]    = TE_type; /* Uitgestelde cyclische aanvraag fase 21                                                   */
-    T_code[tuitgestca22]    = "uitgestca22";    T_max[tuitgestca22]    = 200;  T_type[tuitgestca22]    = TE_type; /* Uitgestelde cyclische aanvraag fase 22                                                   */
-    T_code[tuitgestca24]    = "uitgestca24";    T_max[tuitgestca24]    = 200;  T_type[tuitgestca24]    = TE_type; /* Uitgestelde cyclische aanvraag fase 24                                                   */
-    T_code[tuitgestca26]    = "uitgestca26";    T_max[tuitgestca26]    = 200;  T_type[tuitgestca26]    = TE_type; /* Uitgestelde cyclische aanvraag fase 26                                                   */
-    T_code[tuitgestca28]    = "uitgestca28";    T_max[tuitgestca28]    = 200;  T_type[tuitgestca28]    = TE_type; /* Uitgestelde cyclische aanvraag fase 28                                                   */
-    T_code[tuitgestca31]    = "uitgestca31";    T_max[tuitgestca31]    = 300;  T_type[tuitgestca31]    = TE_type; /* Uitgestelde cyclische aanvraag fase 31                                                   */
-    T_code[tuitgestca32]    = "uitgestca32";    T_max[tuitgestca32]    = 300;  T_type[tuitgestca32]    = TE_type; /* Uitgestelde cyclische aanvraag fase 32                                                   */
-    T_code[tuitgestca33]    = "uitgestca33";    T_max[tuitgestca33]    = 300;  T_type[tuitgestca33]    = TE_type; /* Uitgestelde cyclische aanvraag fase 33                                                   */
-    T_code[tuitgestca34]    = "uitgestca34";    T_max[tuitgestca34]    = 300;  T_type[tuitgestca34]    = TE_type; /* Uitgestelde cyclische aanvraag fase 34                                                   */
-    T_code[tuitgestca38]    = "uitgestca38";    T_max[tuitgestca38]    = 300;  T_type[tuitgestca38]    = TE_type; /* Uitgestelde cyclische aanvraag fase 38                                                   */
-    T_code[tuitgestca61]    = "uitgestca61";    T_max[tuitgestca61]    = 100;  T_type[tuitgestca61]    = TE_type; /* Uitgestelde cyclische aanvraag fase 61                                                   */
-    T_code[tuitgestca62]    = "uitgestca62";    T_max[tuitgestca62]    = 100;  T_type[tuitgestca62]    = TE_type; /* Uitgestelde cyclische aanvraag fase 62                                                   */
-    T_code[tuitgestca67]    = "uitgestca67";    T_max[tuitgestca67]    = 100;  T_type[tuitgestca67]    = TE_type; /* Uitgestelde cyclische aanvraag fase 67                                                   */
-    T_code[tuitgestca68]    = "uitgestca68";    T_max[tuitgestca68]    = 100;  T_type[tuitgestca68]    = TE_type; /* Uitgestelde cyclische aanvraag fase 68                                                   */
-    T_code[tuitgestca84]    = "uitgestca84";    T_max[tuitgestca84]    = 200;  T_type[tuitgestca84]    = TE_type; /* Uitgestelde cyclische aanvraag fase 84                                                   */
-    T_code[tvgmax02]        = "vgmax02";        T_max[tvgmax02]        = 80;   T_type[tvgmax02]        = TE_type; /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
-    T_code[tvgvolg02_4a]    = "vgvolg02_4a";    T_max[tvgvolg02_4a]    = 25;   T_type[tvgvolg02_4a]    = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4a van fase 02 */
-    T_code[tvghiaat02_4a]   = "vghiaat02_4a";   T_max[tvghiaat02_4a]   = 20;   T_type[tvghiaat02_4a]   = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4a van fase 02                    */
-    T_code[tvgvolg02_4b]    = "vgvolg02_4b";    T_max[tvgvolg02_4b]    = 25;   T_type[tvgvolg02_4b]    = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4b van fase 02 */
-    T_code[tvghiaat02_4b]   = "vghiaat02_4b";   T_max[tvghiaat02_4b]   = 20;   T_type[tvghiaat02_4b]   = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4b van fase 02                    */
-    T_code[tvgmax08]        = "vgmax08";        T_max[tvgmax08]        = 80;   T_type[tvgmax08]        = TE_type; /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
-    T_code[tvgvolg08_4a]    = "vgvolg08_4a";    T_max[tvgvolg08_4a]    = 25;   T_type[tvgvolg08_4a]    = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4a van fase 08 */
-    T_code[tvghiaat08_4a]   = "vghiaat08_4a";   T_max[tvghiaat08_4a]   = 20;   T_type[tvghiaat08_4a]   = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4a van fase 08                    */
-    T_code[tvgvolg08_4b]    = "vgvolg08_4b";    T_max[tvgvolg08_4b]    = 25;   T_type[tvgvolg08_4b]    = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4b van fase 08 */
-    T_code[tvghiaat08_4b]   = "vghiaat08_4b";   T_max[tvghiaat08_4b]   = 20;   T_type[tvghiaat08_4b]   = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4b van fase 08                    */
-    T_code[tvgmax11]        = "vgmax11";        T_max[tvgmax11]        = 80;   T_type[tvgmax11]        = TE_type; /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
-    T_code[tvgvolg11_4]     = "vgvolg11_4";     T_max[tvgvolg11_4]     = 25;   T_type[tvgvolg11_4]     = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 11_4 van fase 11  */
-    T_code[tvghiaat11_4]    = "vghiaat11_4";    T_max[tvghiaat11_4]    = 20;   T_type[tvghiaat11_4]    = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 11_4 van fase 11                     */
-    T_code[tvs2205]         = "vs2205";         T_max[tvs2205]         = 20;   T_type[tvs2205]         = TE_type; /* Voorstarttijd fase 22 op fase 05                                                         */
-    T_code[tvs3205]         = "vs3205";         T_max[tvs3205]         = 20;   T_type[tvs3205]         = TE_type; /* Voorstarttijd fase 32 op fase 05                                                         */
-    T_code[tlr2611]         = "lr2611";         T_max[tlr2611]         = 20;   T_type[tlr2611]         = TE_type; /* Late release tijd fase 26 naar fase 11                                                   */
-    T_code[tlr6202]         = "lr6202";         T_max[tlr6202]         = 30;   T_type[tlr6202]         = TE_type; /* Late release tijd fase 62 naar fase 02                                                   */
-    T_code[tlr6808]         = "lr6808";         T_max[tlr6808]         = 30;   T_type[tlr6808]         = TE_type; /* Late release tijd fase 68 naar fase 08                                                   */
-    T_code[tlr2122]         = "lr2122";         T_max[tlr2122]         = 20;   T_type[tlr2122]         = TE_type; /* Late release tijd fase 21 naar fase 22                                                   */
-    T_code[tinl3231]        = "inl3231";        T_max[tinl3231]        = 30;   T_type[tinl3231]        = TE_type; /* Inloop tijd fase 32                                                                      */
-    T_code[tinl3132]        = "inl3132";        T_max[tinl3132]        = 30;   T_type[tinl3132]        = TE_type; /* Inloop tijd fase 31                                                                      */
-    T_code[tinl3433]        = "inl3433";        T_max[tinl3433]        = 30;   T_type[tinl3433]        = TE_type; /* Inloop tijd fase 34                                                                      */
-    T_code[tinl3334]        = "inl3334";        T_max[tinl3334]        = 30;   T_type[tinl3334]        = TE_type; /* Inloop tijd fase 33                                                                      */
-    T_code[tfo0522]         = "fo0522";         T_max[tfo0522]         = 40;   T_type[tfo0522]         = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
-    T_code[tfo0532]         = "fo0532";         T_max[tfo0532]         = 50;   T_type[tfo0532]         = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
-    T_code[tfo1126]         = "fo1126";         T_max[tfo1126]         = 20;   T_type[tfo1126]         = TE_type; /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
+    T_code[t02_1a_1]                   = "02_1a_1";                   T_max[t02_1a_1]                   = 0;    T_type[t02_1a_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_1a                                      */
+    T_code[t02_1a_2]                   = "02_1a_2";                   T_max[t02_1a_2]                   = 0;    T_type[t02_1a_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_1a                                      */
+    T_code[ttdh_02_1a_1]               = "tdh_02_1a_1";               T_max[ttdh_02_1a_1]               = 0;    T_type[ttdh_02_1a_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_1a                                         */
+    T_code[ttdh_02_1a_2]               = "tdh_02_1a_2";               T_max[ttdh_02_1a_2]               = 0;    T_type[ttdh_02_1a_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_1a                                         */
+    T_code[tmax_02_1a]                 = "max_02_1a";                 T_max[tmax_02_1a]                 = 80;   T_type[tmax_02_1a]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_1a                               */
+    T_code[t02_1b_1]                   = "02_1b_1";                   T_max[t02_1b_1]                   = 0;    T_type[t02_1b_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_1b                                      */
+    T_code[t02_1b_2]                   = "02_1b_2";                   T_max[t02_1b_2]                   = 0;    T_type[t02_1b_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_1b                                      */
+    T_code[ttdh_02_1b_1]               = "tdh_02_1b_1";               T_max[ttdh_02_1b_1]               = 0;    T_type[ttdh_02_1b_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_1b                                         */
+    T_code[ttdh_02_1b_2]               = "tdh_02_1b_2";               T_max[ttdh_02_1b_2]               = 0;    T_type[ttdh_02_1b_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_1b                                         */
+    T_code[tmax_02_1b]                 = "max_02_1b";                 T_max[tmax_02_1b]                 = 80;   T_type[tmax_02_1b]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_1b                               */
+    T_code[t02_2a_1]                   = "02_2a_1";                   T_max[t02_2a_1]                   = 0;    T_type[t02_2a_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_2a                                      */
+    T_code[t02_2a_2]                   = "02_2a_2";                   T_max[t02_2a_2]                   = 0;    T_type[t02_2a_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_2a                                      */
+    T_code[ttdh_02_2a_1]               = "tdh_02_2a_1";               T_max[ttdh_02_2a_1]               = 1;    T_type[ttdh_02_2a_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_2a                                         */
+    T_code[ttdh_02_2a_2]               = "tdh_02_2a_2";               T_max[ttdh_02_2a_2]               = 1;    T_type[ttdh_02_2a_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_2a                                         */
+    T_code[tmax_02_2a]                 = "max_02_2a";                 T_max[tmax_02_2a]                 = 100;  T_type[tmax_02_2a]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_2a                               */
+    T_code[t02_2b_1]                   = "02_2b_1";                   T_max[t02_2b_1]                   = 0;    T_type[t02_2b_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_2b                                      */
+    T_code[t02_2b_2]                   = "02_2b_2";                   T_max[t02_2b_2]                   = 0;    T_type[t02_2b_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_2b                                      */
+    T_code[ttdh_02_2b_1]               = "tdh_02_2b_1";               T_max[ttdh_02_2b_1]               = 1;    T_type[ttdh_02_2b_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_2b                                         */
+    T_code[ttdh_02_2b_2]               = "tdh_02_2b_2";               T_max[ttdh_02_2b_2]               = 1;    T_type[ttdh_02_2b_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_2b                                         */
+    T_code[tmax_02_2b]                 = "max_02_2b";                 T_max[tmax_02_2b]                 = 100;  T_type[tmax_02_2b]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_2b                               */
+    T_code[t02_3a_1]                   = "02_3a_1";                   T_max[t02_3a_1]                   = 100;  T_type[t02_3a_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_3a                                      */
+    T_code[t02_3a_2]                   = "02_3a_2";                   T_max[t02_3a_2]                   = 220;  T_type[t02_3a_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_3a                                      */
+    T_code[ttdh_02_3a_1]               = "tdh_02_3a_1";               T_max[ttdh_02_3a_1]               = 8;    T_type[ttdh_02_3a_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_3a                                         */
+    T_code[ttdh_02_3a_2]               = "tdh_02_3a_2";               T_max[ttdh_02_3a_2]               = 0;    T_type[ttdh_02_3a_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_3a                                         */
+    T_code[tmax_02_3a]                 = "max_02_3a";                 T_max[tmax_02_3a]                 = 0;    T_type[tmax_02_3a]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_3a                               */
+    T_code[t02_3b_1]                   = "02_3b_1";                   T_max[t02_3b_1]                   = 100;  T_type[t02_3b_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_3b                                      */
+    T_code[t02_3b_2]                   = "02_3b_2";                   T_max[t02_3b_2]                   = 220;  T_type[t02_3b_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_3b                                      */
+    T_code[ttdh_02_3b_1]               = "tdh_02_3b_1";               T_max[ttdh_02_3b_1]               = 8;    T_type[ttdh_02_3b_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_3b                                         */
+    T_code[ttdh_02_3b_2]               = "tdh_02_3b_2";               T_max[ttdh_02_3b_2]               = 0;    T_type[ttdh_02_3b_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_3b                                         */
+    T_code[tmax_02_3b]                 = "max_02_3b";                 T_max[tmax_02_3b]                 = 0;    T_type[tmax_02_3b]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_3b                               */
+    T_code[t02_4a_1]                   = "02_4a_1";                   T_max[t02_4a_1]                   = 0;    T_type[t02_4a_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_4a                                      */
+    T_code[t02_4a_2]                   = "02_4a_2";                   T_max[t02_4a_2]                   = 0;    T_type[t02_4a_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_4a                                      */
+    T_code[ttdh_02_4a_1]               = "tdh_02_4a_1";               T_max[ttdh_02_4a_1]               = 25;   T_type[ttdh_02_4a_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_4a                                         */
+    T_code[ttdh_02_4a_2]               = "tdh_02_4a_2";               T_max[ttdh_02_4a_2]               = 25;   T_type[ttdh_02_4a_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_4a                                         */
+    T_code[tmax_02_4a]                 = "max_02_4a";                 T_max[tmax_02_4a]                 = 0;    T_type[tmax_02_4a]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_4a                               */
+    T_code[t02_4b_1]                   = "02_4b_1";                   T_max[t02_4b_1]                   = 0;    T_type[t02_4b_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 02_4b                                      */
+    T_code[t02_4b_2]                   = "02_4b_2";                   T_max[t02_4b_2]                   = 0;    T_type[t02_4b_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 02_4b                                      */
+    T_code[ttdh_02_4b_1]               = "tdh_02_4b_1";               T_max[ttdh_02_4b_1]               = 25;   T_type[ttdh_02_4b_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 02_4b                                         */
+    T_code[ttdh_02_4b_2]               = "tdh_02_4b_2";               T_max[ttdh_02_4b_2]               = 25;   T_type[ttdh_02_4b_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 02_4b                                         */
+    T_code[tmax_02_4b]                 = "max_02_4b";                 T_max[tmax_02_4b]                 = 0;    T_type[tmax_02_4b]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 02_4b                               */
+    T_code[t08_1a_1]                   = "08_1a_1";                   T_max[t08_1a_1]                   = 0;    T_type[t08_1a_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_1a                                      */
+    T_code[t08_1a_2]                   = "08_1a_2";                   T_max[t08_1a_2]                   = 0;    T_type[t08_1a_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_1a                                      */
+    T_code[ttdh_08_1a_1]               = "tdh_08_1a_1";               T_max[ttdh_08_1a_1]               = 0;    T_type[ttdh_08_1a_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_1a                                         */
+    T_code[ttdh_08_1a_2]               = "tdh_08_1a_2";               T_max[ttdh_08_1a_2]               = 0;    T_type[ttdh_08_1a_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_1a                                         */
+    T_code[tmax_08_1a]                 = "max_08_1a";                 T_max[tmax_08_1a]                 = 80;   T_type[tmax_08_1a]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_1a                               */
+    T_code[t08_1b_1]                   = "08_1b_1";                   T_max[t08_1b_1]                   = 0;    T_type[t08_1b_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_1b                                      */
+    T_code[t08_1b_2]                   = "08_1b_2";                   T_max[t08_1b_2]                   = 0;    T_type[t08_1b_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_1b                                      */
+    T_code[ttdh_08_1b_1]               = "tdh_08_1b_1";               T_max[ttdh_08_1b_1]               = 0;    T_type[ttdh_08_1b_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_1b                                         */
+    T_code[ttdh_08_1b_2]               = "tdh_08_1b_2";               T_max[ttdh_08_1b_2]               = 0;    T_type[ttdh_08_1b_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_1b                                         */
+    T_code[tmax_08_1b]                 = "max_08_1b";                 T_max[tmax_08_1b]                 = 80;   T_type[tmax_08_1b]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_1b                               */
+    T_code[t08_2a_1]                   = "08_2a_1";                   T_max[t08_2a_1]                   = 0;    T_type[t08_2a_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_2a                                      */
+    T_code[t08_2a_2]                   = "08_2a_2";                   T_max[t08_2a_2]                   = 0;    T_type[t08_2a_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_2a                                      */
+    T_code[ttdh_08_2a_1]               = "tdh_08_2a_1";               T_max[ttdh_08_2a_1]               = 1;    T_type[ttdh_08_2a_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_2a                                         */
+    T_code[ttdh_08_2a_2]               = "tdh_08_2a_2";               T_max[ttdh_08_2a_2]               = 1;    T_type[ttdh_08_2a_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_2a                                         */
+    T_code[tmax_08_2a]                 = "max_08_2a";                 T_max[tmax_08_2a]                 = 100;  T_type[tmax_08_2a]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_2a                               */
+    T_code[t08_2b_1]                   = "08_2b_1";                   T_max[t08_2b_1]                   = 0;    T_type[t08_2b_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_2b                                      */
+    T_code[t08_2b_2]                   = "08_2b_2";                   T_max[t08_2b_2]                   = 0;    T_type[t08_2b_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_2b                                      */
+    T_code[ttdh_08_2b_1]               = "tdh_08_2b_1";               T_max[ttdh_08_2b_1]               = 1;    T_type[ttdh_08_2b_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_2b                                         */
+    T_code[ttdh_08_2b_2]               = "tdh_08_2b_2";               T_max[ttdh_08_2b_2]               = 1;    T_type[ttdh_08_2b_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_2b                                         */
+    T_code[tmax_08_2b]                 = "max_08_2b";                 T_max[tmax_08_2b]                 = 100;  T_type[tmax_08_2b]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_2b                               */
+    T_code[t08_3a_1]                   = "08_3a_1";                   T_max[t08_3a_1]                   = 100;  T_type[t08_3a_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_3a                                      */
+    T_code[t08_3a_2]                   = "08_3a_2";                   T_max[t08_3a_2]                   = 220;  T_type[t08_3a_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_3a                                      */
+    T_code[ttdh_08_3a_1]               = "tdh_08_3a_1";               T_max[ttdh_08_3a_1]               = 8;    T_type[ttdh_08_3a_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_3a                                         */
+    T_code[ttdh_08_3a_2]               = "tdh_08_3a_2";               T_max[ttdh_08_3a_2]               = 0;    T_type[ttdh_08_3a_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_3a                                         */
+    T_code[tmax_08_3a]                 = "max_08_3a";                 T_max[tmax_08_3a]                 = 0;    T_type[tmax_08_3a]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_3a                               */
+    T_code[t08_3b_1]                   = "08_3b_1";                   T_max[t08_3b_1]                   = 100;  T_type[t08_3b_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_3b                                      */
+    T_code[t08_3b_2]                   = "08_3b_2";                   T_max[t08_3b_2]                   = 220;  T_type[t08_3b_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_3b                                      */
+    T_code[ttdh_08_3b_1]               = "tdh_08_3b_1";               T_max[ttdh_08_3b_1]               = 8;    T_type[ttdh_08_3b_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_3b                                         */
+    T_code[ttdh_08_3b_2]               = "tdh_08_3b_2";               T_max[ttdh_08_3b_2]               = 0;    T_type[ttdh_08_3b_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_3b                                         */
+    T_code[tmax_08_3b]                 = "max_08_3b";                 T_max[tmax_08_3b]                 = 0;    T_type[tmax_08_3b]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_3b                               */
+    T_code[t08_4a_1]                   = "08_4a_1";                   T_max[t08_4a_1]                   = 0;    T_type[t08_4a_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_4a                                      */
+    T_code[t08_4a_2]                   = "08_4a_2";                   T_max[t08_4a_2]                   = 0;    T_type[t08_4a_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_4a                                      */
+    T_code[ttdh_08_4a_1]               = "tdh_08_4a_1";               T_max[ttdh_08_4a_1]               = 25;   T_type[ttdh_08_4a_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_4a                                         */
+    T_code[ttdh_08_4a_2]               = "tdh_08_4a_2";               T_max[ttdh_08_4a_2]               = 25;   T_type[ttdh_08_4a_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_4a                                         */
+    T_code[tmax_08_4a]                 = "max_08_4a";                 T_max[tmax_08_4a]                 = 0;    T_type[tmax_08_4a]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_4a                               */
+    T_code[t08_4b_1]                   = "08_4b_1";                   T_max[t08_4b_1]                   = 0;    T_type[t08_4b_1]                   = TE_type; /* Dynamische hiaattijden moment 1 voor detector 08_4b                                      */
+    T_code[t08_4b_2]                   = "08_4b_2";                   T_max[t08_4b_2]                   = 0;    T_type[t08_4b_2]                   = TE_type; /* Dynamische hiaattijden moment 2 voor detector 08_4b                                      */
+    T_code[ttdh_08_4b_1]               = "tdh_08_4b_1";               T_max[ttdh_08_4b_1]               = 2520; T_type[ttdh_08_4b_1]               = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 08_4b                                         */
+    T_code[ttdh_08_4b_2]               = "tdh_08_4b_2";               T_max[ttdh_08_4b_2]               = 25;   T_type[ttdh_08_4b_2]               = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 08_4b                                         */
+    T_code[tmax_08_4b]                 = "max_08_4b";                 T_max[tmax_08_4b]                 = 0;    T_type[tmax_08_4b]                 = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 08_4b                               */
+    T_code[t09_1_1]                    = "09_1_1";                    T_max[t09_1_1]                    = 0;    T_type[t09_1_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 09_1                                       */
+    T_code[t09_1_2]                    = "09_1_2";                    T_max[t09_1_2]                    = 0;    T_type[t09_1_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 09_1                                       */
+    T_code[ttdh_09_1_1]                = "tdh_09_1_1";                T_max[ttdh_09_1_1]                = 0;    T_type[ttdh_09_1_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_1                                          */
+    T_code[ttdh_09_1_2]                = "tdh_09_1_2";                T_max[ttdh_09_1_2]                = 0;    T_type[ttdh_09_1_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_1                                          */
+    T_code[tmax_09_1]                  = "max_09_1";                  T_max[tmax_09_1]                  = 80;   T_type[tmax_09_1]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_1                                */
+    T_code[t09_2_1]                    = "09_2_1";                    T_max[t09_2_1]                    = 0;    T_type[t09_2_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 09_2                                       */
+    T_code[t09_2_2]                    = "09_2_2";                    T_max[t09_2_2]                    = 0;    T_type[t09_2_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 09_2                                       */
+    T_code[ttdh_09_2_1]                = "tdh_09_2_1";                T_max[ttdh_09_2_1]                = 1;    T_type[ttdh_09_2_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_2                                          */
+    T_code[ttdh_09_2_2]                = "tdh_09_2_2";                T_max[ttdh_09_2_2]                = 1;    T_type[ttdh_09_2_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_2                                          */
+    T_code[tmax_09_2]                  = "max_09_2";                  T_max[tmax_09_2]                  = 100;  T_type[tmax_09_2]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_2                                */
+    T_code[t09_3_1]                    = "09_3_1";                    T_max[t09_3_1]                    = 100;  T_type[t09_3_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 09_3                                       */
+    T_code[t09_3_2]                    = "09_3_2";                    T_max[t09_3_2]                    = 220;  T_type[t09_3_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 09_3                                       */
+    T_code[ttdh_09_3_1]                = "tdh_09_3_1";                T_max[ttdh_09_3_1]                = 20;   T_type[ttdh_09_3_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_3                                          */
+    T_code[ttdh_09_3_2]                = "tdh_09_3_2";                T_max[ttdh_09_3_2]                = 8;    T_type[ttdh_09_3_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_3                                          */
+    T_code[tmax_09_3]                  = "max_09_3";                  T_max[tmax_09_3]                  = 0;    T_type[tmax_09_3]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_3                                */
+    T_code[t11_1_1]                    = "11_1_1";                    T_max[t11_1_1]                    = 0;    T_type[t11_1_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 11_1                                       */
+    T_code[t11_1_2]                    = "11_1_2";                    T_max[t11_1_2]                    = 0;    T_type[t11_1_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 11_1                                       */
+    T_code[ttdh_11_1_1]                = "tdh_11_1_1";                T_max[ttdh_11_1_1]                = 0;    T_type[ttdh_11_1_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 11_1                                          */
+    T_code[ttdh_11_1_2]                = "tdh_11_1_2";                T_max[ttdh_11_1_2]                = 0;    T_type[ttdh_11_1_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 11_1                                          */
+    T_code[tmax_11_1]                  = "max_11_1";                  T_max[tmax_11_1]                  = 80;   T_type[tmax_11_1]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 11_1                                */
+    T_code[t11_2_1]                    = "11_2_1";                    T_max[t11_2_1]                    = 0;    T_type[t11_2_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 11_2                                       */
+    T_code[t11_2_2]                    = "11_2_2";                    T_max[t11_2_2]                    = 0;    T_type[t11_2_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 11_2                                       */
+    T_code[ttdh_11_2_1]                = "tdh_11_2_1";                T_max[ttdh_11_2_1]                = 1;    T_type[ttdh_11_2_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 11_2                                          */
+    T_code[ttdh_11_2_2]                = "tdh_11_2_2";                T_max[ttdh_11_2_2]                = 1;    T_type[ttdh_11_2_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 11_2                                          */
+    T_code[tmax_11_2]                  = "max_11_2";                  T_max[tmax_11_2]                  = 100;  T_type[tmax_11_2]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 11_2                                */
+    T_code[t11_3_1]                    = "11_3_1";                    T_max[t11_3_1]                    = 100;  T_type[t11_3_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 11_3                                       */
+    T_code[t11_3_2]                    = "11_3_2";                    T_max[t11_3_2]                    = 220;  T_type[t11_3_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 11_3                                       */
+    T_code[ttdh_11_3_1]                = "tdh_11_3_1";                T_max[ttdh_11_3_1]                = 20;   T_type[ttdh_11_3_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 11_3                                          */
+    T_code[ttdh_11_3_2]                = "tdh_11_3_2";                T_max[ttdh_11_3_2]                = 8;    T_type[ttdh_11_3_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 11_3                                          */
+    T_code[tmax_11_3]                  = "max_11_3";                  T_max[tmax_11_3]                  = 0;    T_type[tmax_11_3]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 11_3                                */
+    T_code[t11_4_1]                    = "11_4_1";                    T_max[t11_4_1]                    = 0;    T_type[t11_4_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 11_4                                       */
+    T_code[t11_4_2]                    = "11_4_2";                    T_max[t11_4_2]                    = 0;    T_type[t11_4_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 11_4                                       */
+    T_code[ttdh_11_4_1]                = "tdh_11_4_1";                T_max[ttdh_11_4_1]                = 25;   T_type[ttdh_11_4_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 11_4                                          */
+    T_code[ttdh_11_4_2]                = "tdh_11_4_2";                T_max[ttdh_11_4_2]                = 25;   T_type[ttdh_11_4_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 11_4                                          */
+    T_code[tmax_11_4]                  = "max_11_4";                  T_max[tmax_11_4]                  = 0;    T_type[tmax_11_4]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 11_4                                */
+    T_code[tav28_2]                    = "av28_2";                    T_max[tav28_2]                    = 50;   T_type[tav28_2]                    = TE_type; /* Tijd na afvallen detector 28_2 tbv verwijderen aanvraag                                  */
+    T_code[tkm02]                      = "km02";                      T_max[tkm02]                      = 80;   T_type[tkm02]                      = TE_type; /* Kop maximum voor detector 02                                                             */
+    T_code[tkm03]                      = "km03";                      T_max[tkm03]                      = 80;   T_type[tkm03]                      = TE_type; /* Kop maximum voor detector 03                                                             */
+    T_code[tkm05]                      = "km05";                      T_max[tkm05]                      = 80;   T_type[tkm05]                      = TE_type; /* Kop maximum voor detector 05                                                             */
+    T_code[tkm08]                      = "km08";                      T_max[tkm08]                      = 80;   T_type[tkm08]                      = TE_type; /* Kop maximum voor detector 08                                                             */
+    T_code[tkm09]                      = "km09";                      T_max[tkm09]                      = 80;   T_type[tkm09]                      = TE_type; /* Kop maximum voor detector 09                                                             */
+    T_code[tkm11]                      = "km11";                      T_max[tkm11]                      = 80;   T_type[tkm11]                      = TE_type; /* Kop maximum voor detector 11                                                             */
+    T_code[tkm21]                      = "km21";                      T_max[tkm21]                      = 80;   T_type[tkm21]                      = TE_type; /* Kop maximum voor detector 21                                                             */
+    T_code[tkm22]                      = "km22";                      T_max[tkm22]                      = 60;   T_type[tkm22]                      = TE_type; /* Kop maximum voor detector 22                                                             */
+    T_code[tkm24]                      = "km24";                      T_max[tkm24]                      = 60;   T_type[tkm24]                      = TE_type; /* Kop maximum voor detector 24                                                             */
+    T_code[tkm26]                      = "km26";                      T_max[tkm26]                      = 80;   T_type[tkm26]                      = TE_type; /* Kop maximum voor detector 26                                                             */
+    T_code[tkm28]                      = "km28";                      T_max[tkm28]                      = 60;   T_type[tkm28]                      = TE_type; /* Kop maximum voor detector 28                                                             */
+    T_code[tkm61]                      = "km61";                      T_max[tkm61]                      = 80;   T_type[tkm61]                      = TE_type; /* Kop maximum voor detector 61                                                             */
+    T_code[tkm62]                      = "km62";                      T_max[tkm62]                      = 80;   T_type[tkm62]                      = TE_type; /* Kop maximum voor detector 62                                                             */
+    T_code[tkm67]                      = "km67";                      T_max[tkm67]                      = 80;   T_type[tkm67]                      = TE_type; /* Kop maximum voor detector 67                                                             */
+    T_code[tkm68]                      = "km68";                      T_max[tkm68]                      = 80;   T_type[tkm68]                      = TE_type; /* Kop maximum voor detector 68                                                             */
+    T_code[tkm84]                      = "km84";                      T_max[tkm84]                      = 60;   T_type[tkm84]                      = TE_type; /* Kop maximum voor detector 84                                                             */
+    T_code[tkm82]                      = "km82";                      T_max[tkm82]                      = 80;   T_type[tkm82]                      = TE_type; /* Kop maximum voor detector 82                                                             */
+    T_code[tkm81]                      = "km81";                      T_max[tkm81]                      = 80;   T_type[tkm81]                      = TE_type; /* Kop maximum voor detector 81                                                             */
+    T_code[thdvd02_1a]                 = "hdvd02_1a";                 T_max[thdvd02_1a]                 = 25;   T_type[thdvd02_1a]                 = TE_type; /* Vervangend hiaat koplus fase 02 bij defect lange lus 02_1a                               */
+    T_code[thdvd02_1b]                 = "hdvd02_1b";                 T_max[thdvd02_1b]                 = 25;   T_type[thdvd02_1b]                 = TE_type; /* Vervangend hiaat koplus fase 02 bij defect lange lus 02_1b                               */
+    T_code[tdstvert02]                 = "dstvert02";                 T_max[tdstvert02]                 = 100;  T_type[tdstvert02]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 02                      */
+    T_code[thdvd03_1]                  = "hdvd03_1";                  T_max[thdvd03_1]                  = 25;   T_type[thdvd03_1]                  = TE_type; /* Vervangend hiaat koplus fase 03 bij defect lange lus 03_1                                */
+    T_code[tdstvert03]                 = "dstvert03";                 T_max[tdstvert03]                 = 100;  T_type[tdstvert03]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 03                      */
+    T_code[thdvd05_1]                  = "hdvd05_1";                  T_max[thdvd05_1]                  = 25;   T_type[thdvd05_1]                  = TE_type; /* Vervangend hiaat koplus fase 05 bij defect lange lus 05_1                                */
+    T_code[tdstvert05]                 = "dstvert05";                 T_max[tdstvert05]                 = 100;  T_type[tdstvert05]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 05                      */
+    T_code[thdvd08_1a]                 = "hdvd08_1a";                 T_max[thdvd08_1a]                 = 25;   T_type[thdvd08_1a]                 = TE_type; /* Vervangend hiaat koplus fase 08 bij defect lange lus 08_1a                               */
+    T_code[thdvd08_1b]                 = "hdvd08_1b";                 T_max[thdvd08_1b]                 = 25;   T_type[thdvd08_1b]                 = TE_type; /* Vervangend hiaat koplus fase 08 bij defect lange lus 08_1b                               */
+    T_code[tdstvert08]                 = "dstvert08";                 T_max[tdstvert08]                 = 100;  T_type[tdstvert08]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 08                      */
+    T_code[thdvd09_1]                  = "hdvd09_1";                  T_max[thdvd09_1]                  = 25;   T_type[thdvd09_1]                  = TE_type; /* Vervangend hiaat koplus fase 09 bij defect lange lus 09_1                                */
+    T_code[tdstvert09]                 = "dstvert09";                 T_max[tdstvert09]                 = 100;  T_type[tdstvert09]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 09                      */
+    T_code[thdvd11_1]                  = "hdvd11_1";                  T_max[thdvd11_1]                  = 25;   T_type[thdvd11_1]                  = TE_type; /* Vervangend hiaat koplus fase 11 bij defect lange lus 11_1                                */
+    T_code[tdstvert11]                 = "dstvert11";                 T_max[tdstvert11]                 = 100;  T_type[tdstvert11]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 11                      */
+    T_code[tdstvert21]                 = "dstvert21";                 T_max[tdstvert21]                 = 200;  T_type[tdstvert21]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 21                      */
+    T_code[thdvd22_1]                  = "hdvd22_1";                  T_max[thdvd22_1]                  = 35;   T_type[thdvd22_1]                  = TE_type; /* Vervangend hiaat koplus fase 22 bij defect lange lus 22_1                                */
+    T_code[tdstvert22]                 = "dstvert22";                 T_max[tdstvert22]                 = 200;  T_type[tdstvert22]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 22                      */
+    T_code[thdvd24_1]                  = "hdvd24_1";                  T_max[thdvd24_1]                  = 35;   T_type[thdvd24_1]                  = TE_type; /* Vervangend hiaat koplus fase 24 bij defect lange lus 24_1                                */
+    T_code[tdstvert24]                 = "dstvert24";                 T_max[tdstvert24]                 = 200;  T_type[tdstvert24]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 24                      */
+    T_code[tdstvert26]                 = "dstvert26";                 T_max[tdstvert26]                 = 200;  T_type[tdstvert26]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 26                      */
+    T_code[thdvd28_1]                  = "hdvd28_1";                  T_max[thdvd28_1]                  = 35;   T_type[thdvd28_1]                  = TE_type; /* Vervangend hiaat koplus fase 28 bij defect lange lus 28_1                                */
+    T_code[tdstvert28]                 = "dstvert28";                 T_max[tdstvert28]                 = 200;  T_type[tdstvert28]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 28                      */
+    T_code[tdstvert31]                 = "dstvert31";                 T_max[tdstvert31]                 = 300;  T_type[tdstvert31]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 31                      */
+    T_code[tdstvert32]                 = "dstvert32";                 T_max[tdstvert32]                 = 300;  T_type[tdstvert32]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 32                      */
+    T_code[tdstvert33]                 = "dstvert33";                 T_max[tdstvert33]                 = 300;  T_type[tdstvert33]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 33                      */
+    T_code[tdstvert34]                 = "dstvert34";                 T_max[tdstvert34]                 = 300;  T_type[tdstvert34]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 34                      */
+    T_code[tdstvert38]                 = "dstvert38";                 T_max[tdstvert38]                 = 300;  T_type[tdstvert38]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 38                      */
+    T_code[thdvd61_1]                  = "hdvd61_1";                  T_max[thdvd61_1]                  = 25;   T_type[thdvd61_1]                  = TE_type; /* Vervangend hiaat koplus fase 61 bij defect lange lus 61_1                                */
+    T_code[tdstvert61]                 = "dstvert61";                 T_max[tdstvert61]                 = 200;  T_type[tdstvert61]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 61                      */
+    T_code[thdvd62_1a]                 = "hdvd62_1a";                 T_max[thdvd62_1a]                 = 25;   T_type[thdvd62_1a]                 = TE_type; /* Vervangend hiaat koplus fase 62 bij defect lange lus 62_1a                               */
+    T_code[thdvd62_1b]                 = "hdvd62_1b";                 T_max[thdvd62_1b]                 = 25;   T_type[thdvd62_1b]                 = TE_type; /* Vervangend hiaat koplus fase 62 bij defect lange lus 62_1b                               */
+    T_code[tdstvert62]                 = "dstvert62";                 T_max[tdstvert62]                 = 200;  T_type[tdstvert62]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 62                      */
+    T_code[thdvd67_1]                  = "hdvd67_1";                  T_max[thdvd67_1]                  = 25;   T_type[thdvd67_1]                  = TE_type; /* Vervangend hiaat koplus fase 67 bij defect lange lus 67_1                                */
+    T_code[tdstvert67]                 = "dstvert67";                 T_max[tdstvert67]                 = 200;  T_type[tdstvert67]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 67                      */
+    T_code[thdvd68_1a]                 = "hdvd68_1a";                 T_max[thdvd68_1a]                 = 25;   T_type[thdvd68_1a]                 = TE_type; /* Vervangend hiaat koplus fase 68 bij defect lange lus 68_1a                               */
+    T_code[thdvd68_1b]                 = "hdvd68_1b";                 T_max[thdvd68_1b]                 = 25;   T_type[thdvd68_1b]                 = TE_type; /* Vervangend hiaat koplus fase 68 bij defect lange lus 68_1b                               */
+    T_code[tdstvert68]                 = "dstvert68";                 T_max[tdstvert68]                 = 200;  T_type[tdstvert68]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 68                      */
+    T_code[thdvd84_1]                  = "hdvd84_1";                  T_max[thdvd84_1]                  = 35;   T_type[thdvd84_1]                  = TE_type; /* Vervangend hiaat koplus fase 84 bij defect lange lus 84_1                                */
+    T_code[tdstvert84]                 = "dstvert84";                 T_max[tdstvert84]                 = 200;  T_type[tdstvert84]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 84                      */
+    T_code[tdstvert82]                 = "dstvert82";                 T_max[tdstvert82]                 = 200;  T_type[tdstvert82]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 82                      */
+    T_code[tdstvert81]                 = "dstvert81";                 T_max[tdstvert81]                 = 200;  T_type[tdstvert81]                 = TE_type; /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 81                      */
+    T_code[tafvFile68af]               = "afvFile68af";               T_max[tafvFile68af]               = 600;  T_type[tafvFile68af]               = TE_type; /* Afval vertraging file File68af                                                           */
+    T_code[tafv68_9a]                  = "afv68_9a";                  T_max[tafv68_9a]                  = 35;   T_type[tafv68_9a]                  = TE_type; /* Afval vertraging file 68_9a                                                              */
+    T_code[tbz68_9a]                   = "bz68_9a";                   T_max[tbz68_9a]                   = 35;   T_type[tbz68_9a]                   = TE_type; /* Bezettijd file detector 68_9a                                                            */
+    T_code[trij68_9a]                  = "rij68_9a";                  T_max[trij68_9a]                  = 20;   T_type[trij68_9a]                  = TE_type; /* Rijtijd file detector 68_9a                                                              */
+    T_code[tafv68_9b]                  = "afv68_9b";                  T_max[tafv68_9b]                  = 35;   T_type[tafv68_9b]                  = TE_type; /* Afval vertraging file 68_9b                                                              */
+    T_code[tbz68_9b]                   = "bz68_9b";                   T_max[tbz68_9b]                   = 35;   T_type[tbz68_9b]                   = TE_type; /* Bezettijd file detector 68_9b                                                            */
+    T_code[trij68_9b]                  = "rij68_9b";                  T_max[trij68_9b]                  = 20;   T_type[trij68_9b]                  = TE_type; /* Rijtijd file detector 68_9b                                                              */
+    T_code[tafkmingroen08fileFile68af] = "afkmingroen08fileFile68af"; T_max[tafkmingroen08fileFile68af] = 100;  T_type[tafkmingroen08fileFile68af] = TE_type; /* Minimale groentijd fase 08 vooraf aan afkappen bij start file ingreep                    */
+    T_code[tafkmingroen11fileFile68af] = "afkmingroen11fileFile68af"; T_max[tafkmingroen11fileFile68af] = 100;  T_type[tafkmingroen11fileFile68af] = TE_type; /* Minimale groentijd fase 11 vooraf aan afkappen bij start file ingreep                    */
+    T_code[tminrood08fileFile68af]     = "minrood08fileFile68af";     T_max[tminrood08fileFile68af]     = 0;    T_type[tminrood08fileFile68af]     = TE_type; /* Minimale roodtijd bij fase 08 voor file ingreep                                          */
+    T_code[tminrood11fileFile68af]     = "minrood11fileFile68af";     T_max[tminrood11fileFile68af]     = 0;    T_type[tminrood11fileFile68af]     = TE_type; /* Minimale roodtijd bij fase 11 voor file ingreep                                          */
+    T_code[tnlfg0262]                  = "nlfg0262";                  T_max[tnlfg0262]                  = 0;    T_type[tnlfg0262]                  = TE_type; /* Naloop tijdens vastgroen van 02 naar 62                                                  */
+    T_code[tnleg0262]                  = "nleg0262";                  T_max[tnleg0262]                  = 50;   T_type[tnleg0262]                  = TE_type; /* Naloop op einde groen van 02 naar 62                                                     */
+    T_code[tnlfg0868]                  = "nlfg0868";                  T_max[tnlfg0868]                  = 0;    T_type[tnlfg0868]                  = TE_type; /* Naloop tijdens vastgroen van 08 naar 68                                                  */
+    T_code[tnleg0868]                  = "nleg0868";                  T_max[tnleg0868]                  = 70;   T_type[tnleg0868]                  = TE_type; /* Naloop op einde groen van 08 naar 68                                                     */
+    T_code[tnlfg2221]                  = "nlfg2221";                  T_max[tnlfg2221]                  = 30;   T_type[tnlfg2221]                  = TE_type; /* Naloop tijdens vastgroen van 22 naar 21                                                  */
+    T_code[tnlfgd2221]                 = "nlfgd2221";                 T_max[tnlfgd2221]                 = 40;   T_type[tnlfgd2221]                 = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 22 naar 21                             */
+    T_code[tnleg2221]                  = "nleg2221";                  T_max[tnleg2221]                  = 40;   T_type[tnleg2221]                  = TE_type; /* Naloop op einde groen van 22 naar 21                                                     */
+    T_code[tnlegd2221]                 = "nlegd2221";                 T_max[tnlegd2221]                 = 50;   T_type[tnlegd2221]                 = TE_type; /* Detectieafhankelijke naloop op einde groen van 22 naar 21                                */
+    T_code[tnlsgd3132]                 = "nlsgd3132";                 T_max[tnlsgd3132]                 = 125;  T_type[tnlsgd3132]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 31 naar 32                                */
+    T_code[tnlsgd3231]                 = "nlsgd3231";                 T_max[tnlsgd3231]                 = 115;  T_type[tnlsgd3231]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 32 naar 31                                */
+    T_code[tnlsgd3334]                 = "nlsgd3334";                 T_max[tnlsgd3334]                 = 80;   T_type[tnlsgd3334]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 33 naar 34                                */
+    T_code[tnlsgd3433]                 = "nlsgd3433";                 T_max[tnlsgd3433]                 = 95;   T_type[tnlsgd3433]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 34 naar 33                                */
+    T_code[tnlfg8281]                  = "nlfg8281";                  T_max[tnlfg8281]                  = 50;   T_type[tnlfg8281]                  = TE_type; /* Naloop tijdens vastgroen van 82 naar 81                                                  */
+    T_code[tnlfgd8281]                 = "nlfgd8281";                 T_max[tnlfgd8281]                 = 50;   T_type[tnlfgd8281]                 = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 82 naar 81                             */
+    T_code[tnleg8281]                  = "nleg8281";                  T_max[tnleg8281]                  = 60;   T_type[tnleg8281]                  = TE_type; /* Naloop op einde groen van 82 naar 81                                                     */
+    T_code[tnlegd8281]                 = "nlegd8281";                 T_max[tnlegd8281]                 = 70;   T_type[tnlegd8281]                 = TE_type; /* Detectieafhankelijke naloop op einde groen van 82 naar 81                                */
+    T_code[tkarmelding]                = "karmelding";                T_max[tkarmelding]                = 15;   T_type[tkarmelding]                = TE_type; /* Duur verklikking ontvangst melding KAR                                                   */
+    T_code[tkarog]                     = "karog";                     T_max[tkarog]                     = 1440; T_type[tkarog]                     = TM_type; /* Ondergedrag KAR                                                                          */
+    T_code[tbtovg02bus]                = "btovg02bus";                T_max[tbtovg02bus]                = 0;    T_type[tbtovg02bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
+    T_code[trt02bus]                   = "rt02bus";                   T_max[trt02bus]                   = 0;    T_type[trt02bus]                   = TE_type; /* Actuele rijtijd prio fase 02                                                             */
+    T_code[tgb02bus]                   = "gb02bus";                   T_max[tgb02bus]                   = 300;  T_type[tgb02bus]                   = TE_type; /* Groenbewaking prioriteit fase 02                                                         */
+    T_code[tblk02bus]                  = "blk02bus";                  T_max[tblk02bus]                  = 0;    T_type[tblk02bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 02                                               */
+    T_code[tbtovg03bus]                = "btovg03bus";                T_max[tbtovg03bus]                = 0;    T_type[tbtovg03bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
+    T_code[trt03bus]                   = "rt03bus";                   T_max[trt03bus]                   = 0;    T_type[trt03bus]                   = TE_type; /* Actuele rijtijd prio fase 03                                                             */
+    T_code[tgb03bus]                   = "gb03bus";                   T_max[tgb03bus]                   = 300;  T_type[tgb03bus]                   = TE_type; /* Groenbewaking prioriteit fase 03                                                         */
+    T_code[tblk03bus]                  = "blk03bus";                  T_max[tblk03bus]                  = 0;    T_type[tblk03bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 03                                               */
+    T_code[tbtovg05bus]                = "btovg05bus";                T_max[tbtovg05bus]                = 0;    T_type[tbtovg05bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
+    T_code[trt05bus]                   = "rt05bus";                   T_max[trt05bus]                   = 0;    T_type[trt05bus]                   = TE_type; /* Actuele rijtijd prio fase 05                                                             */
+    T_code[tgb05bus]                   = "gb05bus";                   T_max[tgb05bus]                   = 300;  T_type[tgb05bus]                   = TE_type; /* Groenbewaking prioriteit fase 05                                                         */
+    T_code[tblk05bus]                  = "blk05bus";                  T_max[tblk05bus]                  = 0;    T_type[tblk05bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 05                                               */
+    T_code[tbtovg08bus]                = "btovg08bus";                T_max[tbtovg08bus]                = 0;    T_type[tbtovg08bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
+    T_code[trt08bus]                   = "rt08bus";                   T_max[trt08bus]                   = 0;    T_type[trt08bus]                   = TE_type; /* Actuele rijtijd prio fase 08                                                             */
+    T_code[tgb08bus]                   = "gb08bus";                   T_max[tgb08bus]                   = 300;  T_type[tgb08bus]                   = TE_type; /* Groenbewaking prioriteit fase 08                                                         */
+    T_code[tblk08bus]                  = "blk08bus";                  T_max[tblk08bus]                  = 0;    T_type[tblk08bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 08                                               */
+    T_code[tbtovg09bus]                = "btovg09bus";                T_max[tbtovg09bus]                = 0;    T_type[tbtovg09bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
+    T_code[trt09bus]                   = "rt09bus";                   T_max[trt09bus]                   = 0;    T_type[trt09bus]                   = TE_type; /* Actuele rijtijd prio fase 09                                                             */
+    T_code[tgb09bus]                   = "gb09bus";                   T_max[tgb09bus]                   = 300;  T_type[tgb09bus]                   = TE_type; /* Groenbewaking prioriteit fase 09                                                         */
+    T_code[tblk09bus]                  = "blk09bus";                  T_max[tblk09bus]                  = 0;    T_type[tblk09bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 09                                               */
+    T_code[tbtovg11bus]                = "btovg11bus";                T_max[tbtovg11bus]                = 0;    T_type[tbtovg11bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
+    T_code[trt11bus]                   = "rt11bus";                   T_max[trt11bus]                   = 0;    T_type[trt11bus]                   = TE_type; /* Actuele rijtijd prio fase 11                                                             */
+    T_code[tgb11bus]                   = "gb11bus";                   T_max[tgb11bus]                   = 300;  T_type[tgb11bus]                   = TE_type; /* Groenbewaking prioriteit fase 11                                                         */
+    T_code[tblk11bus]                  = "blk11bus";                  T_max[tblk11bus]                  = 0;    T_type[tblk11bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 11                                               */
+    T_code[tbtovg61bus]                = "btovg61bus";                T_max[tbtovg61bus]                = 0;    T_type[tbtovg61bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
+    T_code[trt61bus]                   = "rt61bus";                   T_max[trt61bus]                   = 0;    T_type[trt61bus]                   = TE_type; /* Actuele rijtijd prio fase 61                                                             */
+    T_code[tgb61bus]                   = "gb61bus";                   T_max[tgb61bus]                   = 300;  T_type[tgb61bus]                   = TE_type; /* Groenbewaking prioriteit fase 61                                                         */
+    T_code[tblk61bus]                  = "blk61bus";                  T_max[tblk61bus]                  = 0;    T_type[tblk61bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 61                                               */
+    T_code[tbtovg62bus]                = "btovg62bus";                T_max[tbtovg62bus]                = 0;    T_type[tbtovg62bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
+    T_code[trt62bus]                   = "rt62bus";                   T_max[trt62bus]                   = 0;    T_type[trt62bus]                   = TE_type; /* Actuele rijtijd prio fase 62                                                             */
+    T_code[tgb62bus]                   = "gb62bus";                   T_max[tgb62bus]                   = 300;  T_type[tgb62bus]                   = TE_type; /* Groenbewaking prioriteit fase 62                                                         */
+    T_code[tblk62bus]                  = "blk62bus";                  T_max[tblk62bus]                  = 0;    T_type[tblk62bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 62                                               */
+    T_code[tbtovg67bus]                = "btovg67bus";                T_max[tbtovg67bus]                = 0;    T_type[tbtovg67bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
+    T_code[trt67bus]                   = "rt67bus";                   T_max[trt67bus]                   = 0;    T_type[trt67bus]                   = TE_type; /* Actuele rijtijd prio fase 67                                                             */
+    T_code[tgb67bus]                   = "gb67bus";                   T_max[tgb67bus]                   = 300;  T_type[tgb67bus]                   = TE_type; /* Groenbewaking prioriteit fase 67                                                         */
+    T_code[tblk67bus]                  = "blk67bus";                  T_max[tblk67bus]                  = 0;    T_type[tblk67bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 67                                               */
+    T_code[tprioin68buskar]            = "prioin68buskar";            T_max[tprioin68buskar]            = 15;   T_type[tprioin68buskar]            = TE_type; /* Anti jutter tijd inmelden 68 Bus                                                         */
+    T_code[tbtovg68bus]                = "btovg68bus";                T_max[tbtovg68bus]                = 0;    T_type[tbtovg68bus]                = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
+    T_code[trt68bus]                   = "rt68bus";                   T_max[trt68bus]                   = 0;    T_type[trt68bus]                   = TE_type; /* Actuele rijtijd prio fase 68                                                             */
+    T_code[tgb68bus]                   = "gb68bus";                   T_max[tgb68bus]                   = 300;  T_type[tgb68bus]                   = TE_type; /* Groenbewaking prioriteit fase 68                                                         */
+    T_code[tblk68bus]                  = "blk68bus";                  T_max[tblk68bus]                  = 0;    T_type[tblk68bus]                  = TE_type; /* Blokkeertijd na prioriteitsingreep fase 68                                               */
+    T_code[tgbhd02]                    = "gbhd02";                    T_max[tgbhd02]                    = 900;  T_type[tgbhd02]                    = TE_type; /* Groenbewaking HD fase 02                                                                 */
+    T_code[trthd02]                    = "rthd02";                    T_max[trthd02]                    = 0;    T_type[trthd02]                    = TE_type; /* Actuele rijtijd HD fase 02                                                               */
+    T_code[tbtovg02hd]                 = "btovg02hd";                 T_max[tbtovg02hd]                 = 0;    T_type[tbtovg02hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
+    T_code[thdin02kar]                 = "hdin02kar";                 T_max[thdin02kar]                 = 15;   T_type[thdin02kar]                 = TE_type; /* Anti jutter tijd inmelden HD 02 KAR                                                      */
+    T_code[thduit02kar]                = "hduit02kar";                T_max[thduit02kar]                = 15;   T_type[thduit02kar]                = TE_type; /* Anti jutter tijd uitmelden HD 02                                                         */
+    T_code[tgbhd03]                    = "gbhd03";                    T_max[tgbhd03]                    = 900;  T_type[tgbhd03]                    = TE_type; /* Groenbewaking HD fase 03                                                                 */
+    T_code[trthd03]                    = "rthd03";                    T_max[trthd03]                    = 0;    T_type[trthd03]                    = TE_type; /* Actuele rijtijd HD fase 03                                                               */
+    T_code[tbtovg03hd]                 = "btovg03hd";                 T_max[tbtovg03hd]                 = 0;    T_type[tbtovg03hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
+    T_code[thdin03kar]                 = "hdin03kar";                 T_max[thdin03kar]                 = 15;   T_type[thdin03kar]                 = TE_type; /* Anti jutter tijd inmelden HD 03 KAR                                                      */
+    T_code[thduit03kar]                = "hduit03kar";                T_max[thduit03kar]                = 15;   T_type[thduit03kar]                = TE_type; /* Anti jutter tijd uitmelden HD 03                                                         */
+    T_code[tgbhd05]                    = "gbhd05";                    T_max[tgbhd05]                    = 900;  T_type[tgbhd05]                    = TE_type; /* Groenbewaking HD fase 05                                                                 */
+    T_code[trthd05]                    = "rthd05";                    T_max[trthd05]                    = 0;    T_type[trthd05]                    = TE_type; /* Actuele rijtijd HD fase 05                                                               */
+    T_code[tbtovg05hd]                 = "btovg05hd";                 T_max[tbtovg05hd]                 = 0;    T_type[tbtovg05hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
+    T_code[thdin05kar]                 = "hdin05kar";                 T_max[thdin05kar]                 = 15;   T_type[thdin05kar]                 = TE_type; /* Anti jutter tijd inmelden HD 05 KAR                                                      */
+    T_code[thduit05kar]                = "hduit05kar";                T_max[thduit05kar]                = 15;   T_type[thduit05kar]                = TE_type; /* Anti jutter tijd uitmelden HD 05                                                         */
+    T_code[tgbhd08]                    = "gbhd08";                    T_max[tgbhd08]                    = 900;  T_type[tgbhd08]                    = TE_type; /* Groenbewaking HD fase 08                                                                 */
+    T_code[trthd08]                    = "rthd08";                    T_max[trthd08]                    = 0;    T_type[trthd08]                    = TE_type; /* Actuele rijtijd HD fase 08                                                               */
+    T_code[tbtovg08hd]                 = "btovg08hd";                 T_max[tbtovg08hd]                 = 0;    T_type[tbtovg08hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
+    T_code[thdin08kar]                 = "hdin08kar";                 T_max[thdin08kar]                 = 15;   T_type[thdin08kar]                 = TE_type; /* Anti jutter tijd inmelden HD 08 KAR                                                      */
+    T_code[thduit08kar]                = "hduit08kar";                T_max[thduit08kar]                = 15;   T_type[thduit08kar]                = TE_type; /* Anti jutter tijd uitmelden HD 08                                                         */
+    T_code[tgbhd09]                    = "gbhd09";                    T_max[tgbhd09]                    = 900;  T_type[tgbhd09]                    = TE_type; /* Groenbewaking HD fase 09                                                                 */
+    T_code[trthd09]                    = "rthd09";                    T_max[trthd09]                    = 0;    T_type[trthd09]                    = TE_type; /* Actuele rijtijd HD fase 09                                                               */
+    T_code[tbtovg09hd]                 = "btovg09hd";                 T_max[tbtovg09hd]                 = 0;    T_type[tbtovg09hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
+    T_code[thdin09kar]                 = "hdin09kar";                 T_max[thdin09kar]                 = 15;   T_type[thdin09kar]                 = TE_type; /* Anti jutter tijd inmelden HD 09 KAR                                                      */
+    T_code[thduit09kar]                = "hduit09kar";                T_max[thduit09kar]                = 15;   T_type[thduit09kar]                = TE_type; /* Anti jutter tijd uitmelden HD 09                                                         */
+    T_code[tgbhd11]                    = "gbhd11";                    T_max[tgbhd11]                    = 900;  T_type[tgbhd11]                    = TE_type; /* Groenbewaking HD fase 11                                                                 */
+    T_code[trthd11]                    = "rthd11";                    T_max[trthd11]                    = 0;    T_type[trthd11]                    = TE_type; /* Actuele rijtijd HD fase 11                                                               */
+    T_code[tbtovg11hd]                 = "btovg11hd";                 T_max[tbtovg11hd]                 = 0;    T_type[tbtovg11hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
+    T_code[thdin11kar]                 = "hdin11kar";                 T_max[thdin11kar]                 = 15;   T_type[thdin11kar]                 = TE_type; /* Anti jutter tijd inmelden HD 11 KAR                                                      */
+    T_code[thduit11kar]                = "hduit11kar";                T_max[thduit11kar]                = 15;   T_type[thduit11kar]                = TE_type; /* Anti jutter tijd uitmelden HD 11                                                         */
+    T_code[tgbhd61]                    = "gbhd61";                    T_max[tgbhd61]                    = 900;  T_type[tgbhd61]                    = TE_type; /* Groenbewaking HD fase 61                                                                 */
+    T_code[trthd61]                    = "rthd61";                    T_max[trthd61]                    = 0;    T_type[trthd61]                    = TE_type; /* Actuele rijtijd HD fase 61                                                               */
+    T_code[tbtovg61hd]                 = "btovg61hd";                 T_max[tbtovg61hd]                 = 0;    T_type[tbtovg61hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
+    T_code[thdin61kar]                 = "hdin61kar";                 T_max[thdin61kar]                 = 15;   T_type[thdin61kar]                 = TE_type; /* Anti jutter tijd inmelden HD 61 KAR                                                      */
+    T_code[thduit61kar]                = "hduit61kar";                T_max[thduit61kar]                = 15;   T_type[thduit61kar]                = TE_type; /* Anti jutter tijd uitmelden HD 61                                                         */
+    T_code[tgbhd62]                    = "gbhd62";                    T_max[tgbhd62]                    = 900;  T_type[tgbhd62]                    = TE_type; /* Groenbewaking HD fase 62                                                                 */
+    T_code[trthd62]                    = "rthd62";                    T_max[trthd62]                    = 0;    T_type[trthd62]                    = TE_type; /* Actuele rijtijd HD fase 62                                                               */
+    T_code[tbtovg62hd]                 = "btovg62hd";                 T_max[tbtovg62hd]                 = 0;    T_type[tbtovg62hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
+    T_code[thdin62kar]                 = "hdin62kar";                 T_max[thdin62kar]                 = 15;   T_type[thdin62kar]                 = TE_type; /* Anti jutter tijd inmelden HD 62 KAR                                                      */
+    T_code[thduit62kar]                = "hduit62kar";                T_max[thduit62kar]                = 15;   T_type[thduit62kar]                = TE_type; /* Anti jutter tijd uitmelden HD 62                                                         */
+    T_code[tgbhd67]                    = "gbhd67";                    T_max[tgbhd67]                    = 900;  T_type[tgbhd67]                    = TE_type; /* Groenbewaking HD fase 67                                                                 */
+    T_code[trthd67]                    = "rthd67";                    T_max[trthd67]                    = 0;    T_type[trthd67]                    = TE_type; /* Actuele rijtijd HD fase 67                                                               */
+    T_code[tbtovg67hd]                 = "btovg67hd";                 T_max[tbtovg67hd]                 = 0;    T_type[tbtovg67hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
+    T_code[thdin67kar]                 = "hdin67kar";                 T_max[thdin67kar]                 = 15;   T_type[thdin67kar]                 = TE_type; /* Anti jutter tijd inmelden HD 67 KAR                                                      */
+    T_code[thduit67kar]                = "hduit67kar";                T_max[thduit67kar]                = 15;   T_type[thduit67kar]                = TE_type; /* Anti jutter tijd uitmelden HD 67                                                         */
+    T_code[tgbhd68]                    = "gbhd68";                    T_max[tgbhd68]                    = 900;  T_type[tgbhd68]                    = TE_type; /* Groenbewaking HD fase 68                                                                 */
+    T_code[trthd68]                    = "rthd68";                    T_max[trthd68]                    = 0;    T_type[trthd68]                    = TE_type; /* Actuele rijtijd HD fase 68                                                               */
+    T_code[tbtovg68hd]                 = "btovg68hd";                 T_max[tbtovg68hd]                 = 0;    T_type[tbtovg68hd]                 = TE_type; /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
+    T_code[thdin68kar]                 = "hdin68kar";                 T_max[thdin68kar]                 = 15;   T_type[thdin68kar]                 = TE_type; /* Anti jutter tijd inmelden HD 68 KAR                                                      */
+    T_code[thduit68kar]                = "hduit68kar";                T_max[thduit68kar]                = 15;   T_type[thduit68kar]                = TE_type; /* Anti jutter tijd uitmelden HD 68                                                         */
+    T_code[trgad24_3]                  = "rgad24_3";                  T_max[trgad24_3]                  = 10;   T_type[trgad24_3]                  = TE_type; /* Richtinggevoelige aanvraag rijtijd fase 24 van 24_3 naar 24_2                            */
+    T_code[trgavd24_3]                 = "rgavd24_3";                 T_max[trgavd24_3]                 = 60;   T_type[trgavd24_3]                 = TE_type; /* Timer reset richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2                        */
+    T_code[trgrd24_3_d24_2]            = "rgrd24_3_d24_2";            T_max[trgrd24_3_d24_2]            = 10;   T_type[trgrd24_3_d24_2]            = TE_type; /* Richtinggevoelig verlengen rijtijd fase 24 van 24_3 naar 24_2                            */
+    T_code[trgvd24_3_d24_2]            = "rgvd24_3_d24_2";            T_max[trgvd24_3_d24_2]            = 50;   T_type[trgvd24_3_d24_2]            = TE_type; /* Richtinggevoelig verlengen hiaattijd fase 24 van 24_3 naar 24_2                          */
+    T_code[tfd02_1a]                   = "fd02_1a";                   T_max[tfd02_1a]                   = 60;   T_type[tfd02_1a]                   = TE_type; /* File meting RoBuGrover fase 02 detector 02_1a                                            */
+    T_code[tfd02_1b]                   = "fd02_1b";                   T_max[tfd02_1b]                   = 60;   T_type[tfd02_1b]                   = TE_type; /* File meting RoBuGrover fase 02 detector 02_1b                                            */
+    T_code[thd02_2a]                   = "hd02_2a";                   T_max[thd02_2a]                   = 10;   T_type[thd02_2a]                   = TE_type; /* RoBuGrover hiaat meting fase 02 detector 02_2a                                           */
+    T_code[thd02_2b]                   = "hd02_2b";                   T_max[thd02_2b]                   = 10;   T_type[thd02_2b]                   = TE_type; /* RoBuGrover hiaat meting fase 02 detector 02_2b                                           */
+    T_code[thd02_3a]                   = "hd02_3a";                   T_max[thd02_3a]                   = 10;   T_type[thd02_3a]                   = TE_type; /* RoBuGrover hiaat meting fase 02 detector 02_3a                                           */
+    T_code[thd02_3b]                   = "hd02_3b";                   T_max[thd02_3b]                   = 10;   T_type[thd02_3b]                   = TE_type; /* RoBuGrover hiaat meting fase 02 detector 02_3b                                           */
+    T_code[tfd03_1]                    = "fd03_1";                    T_max[tfd03_1]                    = 60;   T_type[tfd03_1]                    = TE_type; /* File meting RoBuGrover fase 03 detector 03_1                                             */
+    T_code[thd03_2]                    = "hd03_2";                    T_max[thd03_2]                    = 10;   T_type[thd03_2]                    = TE_type; /* RoBuGrover hiaat meting fase 03 detector 03_2                                            */
+    T_code[tfd05_1]                    = "fd05_1";                    T_max[tfd05_1]                    = 60;   T_type[tfd05_1]                    = TE_type; /* File meting RoBuGrover fase 05 detector 05_1                                             */
+    T_code[thd05_2]                    = "hd05_2";                    T_max[thd05_2]                    = 10;   T_type[thd05_2]                    = TE_type; /* RoBuGrover hiaat meting fase 05 detector 05_2                                            */
+    T_code[tfd08_1a]                   = "fd08_1a";                   T_max[tfd08_1a]                   = 60;   T_type[tfd08_1a]                   = TE_type; /* File meting RoBuGrover fase 08 detector 08_1a                                            */
+    T_code[tfd08_1b]                   = "fd08_1b";                   T_max[tfd08_1b]                   = 60;   T_type[tfd08_1b]                   = TE_type; /* File meting RoBuGrover fase 08 detector 08_1b                                            */
+    T_code[thd08_2a]                   = "hd08_2a";                   T_max[thd08_2a]                   = 10;   T_type[thd08_2a]                   = TE_type; /* RoBuGrover hiaat meting fase 08 detector 08_2a                                           */
+    T_code[thd08_2b]                   = "hd08_2b";                   T_max[thd08_2b]                   = 10;   T_type[thd08_2b]                   = TE_type; /* RoBuGrover hiaat meting fase 08 detector 08_2b                                           */
+    T_code[thd08_3a]                   = "hd08_3a";                   T_max[thd08_3a]                   = 10;   T_type[thd08_3a]                   = TE_type; /* RoBuGrover hiaat meting fase 08 detector 08_3a                                           */
+    T_code[thd08_3b]                   = "hd08_3b";                   T_max[thd08_3b]                   = 10;   T_type[thd08_3b]                   = TE_type; /* RoBuGrover hiaat meting fase 08 detector 08_3b                                           */
+    T_code[tfd09_1]                    = "fd09_1";                    T_max[tfd09_1]                    = 60;   T_type[tfd09_1]                    = TE_type; /* File meting RoBuGrover fase 09 detector 09_1                                             */
+    T_code[thd09_2]                    = "hd09_2";                    T_max[thd09_2]                    = 10;   T_type[thd09_2]                    = TE_type; /* RoBuGrover hiaat meting fase 09 detector 09_2                                            */
+    T_code[thd09_3]                    = "hd09_3";                    T_max[thd09_3]                    = 10;   T_type[thd09_3]                    = TE_type; /* RoBuGrover hiaat meting fase 09 detector 09_3                                            */
+    T_code[tfd11_1]                    = "fd11_1";                    T_max[tfd11_1]                    = 60;   T_type[tfd11_1]                    = TE_type; /* File meting RoBuGrover fase 11 detector 11_1                                             */
+    T_code[thd11_2]                    = "hd11_2";                    T_max[thd11_2]                    = 10;   T_type[thd11_2]                    = TE_type; /* RoBuGrover hiaat meting fase 11 detector 11_2                                            */
+    T_code[thd11_3]                    = "hd11_3";                    T_max[thd11_3]                    = 10;   T_type[thd11_3]                    = TE_type; /* RoBuGrover hiaat meting fase 11 detector 11_3                                            */
+    T_code[tfd22_1]                    = "fd22_1";                    T_max[tfd22_1]                    = 60;   T_type[tfd22_1]                    = TE_type; /* File meting RoBuGrover fase 22 detector 22_1                                             */
+    T_code[thd22_1]                    = "hd22_1";                    T_max[thd22_1]                    = 10;   T_type[thd22_1]                    = TE_type; /* RoBuGrover hiaat meting fase 22 detector 22_1                                            */
+    T_code[tfd28_1]                    = "fd28_1";                    T_max[tfd28_1]                    = 60;   T_type[tfd28_1]                    = TE_type; /* File meting RoBuGrover fase 28 detector 28_1                                             */
+    T_code[thd28_1]                    = "hd28_1";                    T_max[thd28_1]                    = 10;   T_type[thd28_1]                    = TE_type; /* RoBuGrover hiaat meting fase 28 detector 28_1                                            */
+    T_code[tfd68_1a]                   = "fd68_1a";                   T_max[tfd68_1a]                   = 60;   T_type[tfd68_1a]                   = TE_type; /* File meting RoBuGrover fase 68 detector 68_1a                                            */
+    T_code[tfd68_1b]                   = "fd68_1b";                   T_max[tfd68_1b]                   = 60;   T_type[tfd68_1b]                   = TE_type; /* File meting RoBuGrover fase 68 detector 68_1b                                            */
+    T_code[thd68_2a]                   = "hd68_2a";                   T_max[thd68_2a]                   = 10;   T_type[thd68_2a]                   = TE_type; /* RoBuGrover hiaat meting fase 68 detector 68_2a                                           */
+    T_code[thd68_2b]                   = "hd68_2b";                   T_max[thd68_2b]                   = 10;   T_type[thd68_2b]                   = TE_type; /* RoBuGrover hiaat meting fase 68 detector 68_2b                                           */
+    T_code[tuitgestca02]               = "uitgestca02";               T_max[tuitgestca02]               = 100;  T_type[tuitgestca02]               = TE_type; /* Uitgestelde cyclische aanvraag fase 02                                                   */
+    T_code[tuitgestca03]               = "uitgestca03";               T_max[tuitgestca03]               = 100;  T_type[tuitgestca03]               = TE_type; /* Uitgestelde cyclische aanvraag fase 03                                                   */
+    T_code[tuitgestca05]               = "uitgestca05";               T_max[tuitgestca05]               = 100;  T_type[tuitgestca05]               = TE_type; /* Uitgestelde cyclische aanvraag fase 05                                                   */
+    T_code[tuitgestca08]               = "uitgestca08";               T_max[tuitgestca08]               = 100;  T_type[tuitgestca08]               = TE_type; /* Uitgestelde cyclische aanvraag fase 08                                                   */
+    T_code[tuitgestca09]               = "uitgestca09";               T_max[tuitgestca09]               = 100;  T_type[tuitgestca09]               = TE_type; /* Uitgestelde cyclische aanvraag fase 09                                                   */
+    T_code[tuitgestca11]               = "uitgestca11";               T_max[tuitgestca11]               = 100;  T_type[tuitgestca11]               = TE_type; /* Uitgestelde cyclische aanvraag fase 11                                                   */
+    T_code[tuitgestca21]               = "uitgestca21";               T_max[tuitgestca21]               = 200;  T_type[tuitgestca21]               = TE_type; /* Uitgestelde cyclische aanvraag fase 21                                                   */
+    T_code[tuitgestca22]               = "uitgestca22";               T_max[tuitgestca22]               = 200;  T_type[tuitgestca22]               = TE_type; /* Uitgestelde cyclische aanvraag fase 22                                                   */
+    T_code[tuitgestca24]               = "uitgestca24";               T_max[tuitgestca24]               = 200;  T_type[tuitgestca24]               = TE_type; /* Uitgestelde cyclische aanvraag fase 24                                                   */
+    T_code[tuitgestca26]               = "uitgestca26";               T_max[tuitgestca26]               = 200;  T_type[tuitgestca26]               = TE_type; /* Uitgestelde cyclische aanvraag fase 26                                                   */
+    T_code[tuitgestca28]               = "uitgestca28";               T_max[tuitgestca28]               = 200;  T_type[tuitgestca28]               = TE_type; /* Uitgestelde cyclische aanvraag fase 28                                                   */
+    T_code[tuitgestca31]               = "uitgestca31";               T_max[tuitgestca31]               = 300;  T_type[tuitgestca31]               = TE_type; /* Uitgestelde cyclische aanvraag fase 31                                                   */
+    T_code[tuitgestca32]               = "uitgestca32";               T_max[tuitgestca32]               = 300;  T_type[tuitgestca32]               = TE_type; /* Uitgestelde cyclische aanvraag fase 32                                                   */
+    T_code[tuitgestca33]               = "uitgestca33";               T_max[tuitgestca33]               = 300;  T_type[tuitgestca33]               = TE_type; /* Uitgestelde cyclische aanvraag fase 33                                                   */
+    T_code[tuitgestca34]               = "uitgestca34";               T_max[tuitgestca34]               = 300;  T_type[tuitgestca34]               = TE_type; /* Uitgestelde cyclische aanvraag fase 34                                                   */
+    T_code[tuitgestca38]               = "uitgestca38";               T_max[tuitgestca38]               = 300;  T_type[tuitgestca38]               = TE_type; /* Uitgestelde cyclische aanvraag fase 38                                                   */
+    T_code[tuitgestca61]               = "uitgestca61";               T_max[tuitgestca61]               = 100;  T_type[tuitgestca61]               = TE_type; /* Uitgestelde cyclische aanvraag fase 61                                                   */
+    T_code[tuitgestca62]               = "uitgestca62";               T_max[tuitgestca62]               = 100;  T_type[tuitgestca62]               = TE_type; /* Uitgestelde cyclische aanvraag fase 62                                                   */
+    T_code[tuitgestca67]               = "uitgestca67";               T_max[tuitgestca67]               = 100;  T_type[tuitgestca67]               = TE_type; /* Uitgestelde cyclische aanvraag fase 67                                                   */
+    T_code[tuitgestca68]               = "uitgestca68";               T_max[tuitgestca68]               = 100;  T_type[tuitgestca68]               = TE_type; /* Uitgestelde cyclische aanvraag fase 68                                                   */
+    T_code[tuitgestca84]               = "uitgestca84";               T_max[tuitgestca84]               = 200;  T_type[tuitgestca84]               = TE_type; /* Uitgestelde cyclische aanvraag fase 84                                                   */
+    T_code[tuitgestca82]               = "uitgestca82";               T_max[tuitgestca82]               = 200;  T_type[tuitgestca82]               = TE_type; /* Uitgestelde cyclische aanvraag fase 82                                                   */
+    T_code[tuitgestca81]               = "uitgestca81";               T_max[tuitgestca81]               = 200;  T_type[tuitgestca81]               = TE_type; /* Uitgestelde cyclische aanvraag fase 81                                                   */
+    T_code[tvgmax02]                   = "vgmax02";                   T_max[tvgmax02]                   = 80;   T_type[tvgmax02]                   = TE_type; /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
+    T_code[tvgvolg02_4a]               = "vgvolg02_4a";               T_max[tvgvolg02_4a]               = 25;   T_type[tvgvolg02_4a]               = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4a van fase 02 */
+    T_code[tvghiaat02_4a]              = "vghiaat02_4a";              T_max[tvghiaat02_4a]              = 20;   T_type[tvghiaat02_4a]              = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4a van fase 02                    */
+    T_code[tvgvolg02_4b]               = "vgvolg02_4b";               T_max[tvgvolg02_4b]               = 25;   T_type[tvgvolg02_4b]               = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4b van fase 02 */
+    T_code[tvghiaat02_4b]              = "vghiaat02_4b";              T_max[tvghiaat02_4b]              = 20;   T_type[tvghiaat02_4b]              = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4b van fase 02                    */
+    T_code[tvgmax08]                   = "vgmax08";                   T_max[tvgmax08]                   = 80;   T_type[tvgmax08]                   = TE_type; /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
+    T_code[tvgvolg08_4a]               = "vgvolg08_4a";               T_max[tvgvolg08_4a]               = 25;   T_type[tvgvolg08_4a]               = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4a van fase 08 */
+    T_code[tvghiaat08_4a]              = "vghiaat08_4a";              T_max[tvghiaat08_4a]              = 20;   T_type[tvghiaat08_4a]              = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4a van fase 08                    */
+    T_code[tvgvolg08_4b]               = "vgvolg08_4b";               T_max[tvgvolg08_4b]               = 25;   T_type[tvgvolg08_4b]               = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4b van fase 08 */
+    T_code[tvghiaat08_4b]              = "vghiaat08_4b";              T_max[tvghiaat08_4b]              = 20;   T_type[tvghiaat08_4b]              = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4b van fase 08                    */
+    T_code[tvgmax11]                   = "vgmax11";                   T_max[tvgmax11]                   = 80;   T_type[tvgmax11]                   = TE_type; /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
+    T_code[tvgvolg11_4]                = "vgvolg11_4";                T_max[tvgvolg11_4]                = 25;   T_type[tvgvolg11_4]                = TE_type; /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 11_4 van fase 11  */
+    T_code[tvghiaat11_4]               = "vghiaat11_4";               T_max[tvghiaat11_4]               = 20;   T_type[tvghiaat11_4]               = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 11_4 van fase 11                     */
+    T_code[tvs2205]                    = "vs2205";                    T_max[tvs2205]                    = 20;   T_type[tvs2205]                    = TE_type; /* Voorstarttijd fase 22 op fase 05                                                         */
+    T_code[tvs3205]                    = "vs3205";                    T_max[tvs3205]                    = 20;   T_type[tvs3205]                    = TE_type; /* Voorstarttijd fase 32 op fase 05                                                         */
+    T_code[tlr2611]                    = "lr2611";                    T_max[tlr2611]                    = 20;   T_type[tlr2611]                    = TE_type; /* Late release tijd fase 26 naar fase 11                                                   */
+    T_code[tlr6202]                    = "lr6202";                    T_max[tlr6202]                    = 30;   T_type[tlr6202]                    = TE_type; /* Late release tijd fase 62 naar fase 02                                                   */
+    T_code[tlr6808]                    = "lr6808";                    T_max[tlr6808]                    = 30;   T_type[tlr6808]                    = TE_type; /* Late release tijd fase 68 naar fase 08                                                   */
+    T_code[tlr2122]                    = "lr2122";                    T_max[tlr2122]                    = 20;   T_type[tlr2122]                    = TE_type; /* Late release tijd fase 21 naar fase 22                                                   */
+    T_code[tlr8182]                    = "lr8182";                    T_max[tlr8182]                    = 30;   T_type[tlr8182]                    = TE_type; /* Late release tijd fase 81 naar fase 82                                                   */
+    T_code[tinl3231]                   = "inl3231";                   T_max[tinl3231]                   = 30;   T_type[tinl3231]                   = TE_type; /* Inloop tijd fase 32                                                                      */
+    T_code[tinl3132]                   = "inl3132";                   T_max[tinl3132]                   = 30;   T_type[tinl3132]                   = TE_type; /* Inloop tijd fase 31                                                                      */
+    T_code[tinl3433]                   = "inl3433";                   T_max[tinl3433]                   = 30;   T_type[tinl3433]                   = TE_type; /* Inloop tijd fase 34                                                                      */
+    T_code[tinl3334]                   = "inl3334";                   T_max[tinl3334]                   = 30;   T_type[tinl3334]                   = TE_type; /* Inloop tijd fase 33                                                                      */
+    T_code[tfo0522]                    = "fo0522";                    T_max[tfo0522]                    = 40;   T_type[tfo0522]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
+    T_code[tfo0532]                    = "fo0532";                    T_max[tfo0532]                    = 50;   T_type[tfo0532]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
+    T_code[tfo1126]                    = "fo1126";                    T_max[tfo1126]                    = 20;   T_type[tfo1126]                    = TE_type; /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
 
 /* teller elementen */
 /* ---------------- */
@@ -1421,251 +1509,265 @@ void control_parameters(void)
 
 /* schakelaars */
 /* ----------- */
-    SCH_code[schdynhiaat02]       = "dynhiaat02";       SCH[schdynhiaat02]       = 1;                                   /* Toepassen dynamsich hiaat bij fase 02                          */
-    SCH_code[schopdrempelen02]    = "opdrempelen02";    SCH[schopdrempelen02]    = 1;                                   /* Opdrempelen toepassen voor fase 02                             */
-    SCH_code[schedkop_02]         = "edkop_02";         SCH[schedkop_02]         = 1;                                   /* Start timers dynamische hiaat fase 02 op einde detectie koplus */
-    SCH_code[schdynhiaat08]       = "dynhiaat08";       SCH[schdynhiaat08]       = 1;                                   /* Toepassen dynamsich hiaat bij fase 08                          */
-    SCH_code[schopdrempelen08]    = "opdrempelen08";    SCH[schopdrempelen08]    = 1;                                   /* Opdrempelen toepassen voor fase 08                             */
-    SCH_code[schedkop_08]         = "edkop_08";         SCH[schedkop_08]         = 1;                                   /* Start timers dynamische hiaat fase 08 op einde detectie koplus */
-    SCH_code[schdynhiaat09]       = "dynhiaat09";       SCH[schdynhiaat09]       = 1;                                   /* Toepassen dynamsich hiaat bij fase 09                          */
-    SCH_code[schopdrempelen09]    = "opdrempelen09";    SCH[schopdrempelen09]    = 0;                                   /* Opdrempelen toepassen voor fase 09                             */
-    SCH_code[schedkop_09]         = "edkop_09";         SCH[schedkop_09]         = 1;                                   /* Start timers dynamische hiaat fase 09 op einde detectie koplus */
-    SCH_code[schdynhiaat11]       = "dynhiaat11";       SCH[schdynhiaat11]       = 1;                                   /* Toepassen dynamsich hiaat bij fase 11                          */
-    SCH_code[schopdrempelen11]    = "opdrempelen11";    SCH[schopdrempelen11]    = 0;                                   /* Opdrempelen toepassen voor fase 11                             */
-    SCH_code[schedkop_11]         = "edkop_11";         SCH[schedkop_11]         = 1;                                   /* Start timers dynamische hiaat fase 11 op einde detectie koplus */
-    SCH_code[schconfidence15fix]  = "confidence15fix";  SCH[schconfidence15fix]  = 0;                                  
-    SCH_code[schtxconfidence15ar] = "txconfidence15ar"; SCH[schtxconfidence15ar] = 1;                                  
-    SCH_code[schspatconfidence1]  = "spatconfidence1";  SCH[schspatconfidence1]  = 0;                                  
-    SCH_code[schspatconfidence3]  = "spatconfidence3";  SCH[schspatconfidence3]  = 0;                                  
-    SCH_code[schspatconfidence6]  = "spatconfidence6";  SCH[schspatconfidence6]  = 0;                                  
-    SCH_code[schspatconfidence9]  = "spatconfidence9";  SCH[schspatconfidence9]  = 0;                                  
-    SCH_code[schspatconfidence12] = "spatconfidence12"; SCH[schspatconfidence12] = 0;                                  
-    SCH_code[schspatconfidence15] = "spatconfidence15"; SCH[schspatconfidence15] = 1;                                  
-    SCH_code[schtimings02]        = "timings02";        SCH[schtimings02]        = 0;                                  
-    SCH_code[schtimings03]        = "timings03";        SCH[schtimings03]        = 0;                                  
-    SCH_code[schtimings05]        = "timings05";        SCH[schtimings05]        = 0;                                  
-    SCH_code[schtimings08]        = "timings08";        SCH[schtimings08]        = 0;                                  
-    SCH_code[schtimings09]        = "timings09";        SCH[schtimings09]        = 0;                                  
-    SCH_code[schtimings11]        = "timings11";        SCH[schtimings11]        = 0;                                  
-    SCH_code[schtimings21]        = "timings21";        SCH[schtimings21]        = 0;                                  
-    SCH_code[schtimings22]        = "timings22";        SCH[schtimings22]        = 0;                                  
-    SCH_code[schtimings24]        = "timings24";        SCH[schtimings24]        = 0;                                  
-    SCH_code[schtimings26]        = "timings26";        SCH[schtimings26]        = 0;                                  
-    SCH_code[schtimings28]        = "timings28";        SCH[schtimings28]        = 0;                                  
-    SCH_code[schtimings31]        = "timings31";        SCH[schtimings31]        = 0;                                  
-    SCH_code[schtimings32]        = "timings32";        SCH[schtimings32]        = 0;                                  
-    SCH_code[schtimings33]        = "timings33";        SCH[schtimings33]        = 0;                                  
-    SCH_code[schtimings34]        = "timings34";        SCH[schtimings34]        = 0;                                  
-    SCH_code[schtimings38]        = "timings38";        SCH[schtimings38]        = 0;                                  
-    SCH_code[schtimings61]        = "timings61";        SCH[schtimings61]        = 0;                                  
-    SCH_code[schtimings62]        = "timings62";        SCH[schtimings62]        = 0;                                  
-    SCH_code[schtimings67]        = "timings67";        SCH[schtimings67]        = 0;                                  
-    SCH_code[schtimings68]        = "timings68";        SCH[schtimings68]        = 0;                                  
-    SCH_code[schtimings84]        = "timings84";        SCH[schtimings84]        = 0;                                  
-    SCH_code[schbmfix]            = "bmfix";            SCH[schbmfix]            = 0;                                   /* Bijkomen tijdens fixatie mogelijk                              */
-    SCH_code[schma0261]           = "ma0261";           SCH[schma0261]           = 0;                                   /* Meeaanvraag van 02 naar 61 actief                              */
-    SCH_code[schma0262]           = "ma0262";           SCH[schma0262]           = 1;                                   /* Meeaanvraag van 02 naar 62 actief                              */
-    SCH_code[schma0521]           = "ma0521";           SCH[schma0521]           = 1;                                   /* Meeaanvraag van 05 naar 21 actief                              */
-    SCH_code[schma0522]           = "ma0522";           SCH[schma0522]           = 1;                                   /* Meeaanvraag van 05 naar 22 actief                              */
-    SCH_code[schma0532]           = "ma0532";           SCH[schma0532]           = 1;                                   /* Meeaanvraag van 05 naar 32 actief                              */
-    SCH_code[schma0868]           = "ma0868";           SCH[schma0868]           = 1;                                   /* Meeaanvraag van 08 naar 68 actief                              */
-    SCH_code[schma1126]           = "ma1126";           SCH[schma1126]           = 1;                                   /* Meeaanvraag van 11 naar 26 actief                              */
-    SCH_code[schma2221]           = "ma2221";           SCH[schma2221]           = 1;                                   /* Meeaanvraag van 22 naar 21 actief                              */
-    SCH_code[schma3122]           = "ma3122";           SCH[schma3122]           = 0;                                   /* Meeaanvraag van 31 naar 22 actief                              */
-    SCH_code[schma3132]           = "ma3132";           SCH[schma3132]           = 1;                                   /* Meeaanvraag van 31 naar 32 actief                              */
-    SCH_code[schma3222]           = "ma3222";           SCH[schma3222]           = 1;                                   /* Meeaanvraag van 32 naar 22 actief                              */
-    SCH_code[schma3231]           = "ma3231";           SCH[schma3231]           = 1;                                   /* Meeaanvraag van 32 naar 31 actief                              */
-    SCH_code[schma3324]           = "ma3324";           SCH[schma3324]           = 0;                                   /* Meeaanvraag van 33 naar 24 actief                              */
-    SCH_code[schma3334]           = "ma3334";           SCH[schma3334]           = 1;                                   /* Meeaanvraag van 33 naar 34 actief                              */
-    SCH_code[schma3384]           = "ma3384";           SCH[schma3384]           = 0;                                   /* Meeaanvraag van 33 naar 84 actief                              */
-    SCH_code[schma3424]           = "ma3424";           SCH[schma3424]           = 0;                                   /* Meeaanvraag van 34 naar 24 actief                              */
-    SCH_code[schma3433]           = "ma3433";           SCH[schma3433]           = 1;                                   /* Meeaanvraag van 34 naar 33 actief                              */
-    SCH_code[schma3484]           = "ma3484";           SCH[schma3484]           = 0;                                   /* Meeaanvraag van 34 naar 84 actief                              */
-    SCH_code[schmv02]             = "mv02";             SCH[schmv02]             = 1;                                   /* Meeverlengen fase 02                                           */
-    SCH_code[schmv03]             = "mv03";             SCH[schmv03]             = 1;                                   /* Meeverlengen fase 03                                           */
-    SCH_code[schmv05]             = "mv05";             SCH[schmv05]             = 1;                                   /* Meeverlengen fase 05                                           */
-    SCH_code[schmv08]             = "mv08";             SCH[schmv08]             = 1;                                   /* Meeverlengen fase 08                                           */
-    SCH_code[schmv09]             = "mv09";             SCH[schmv09]             = 1;                                   /* Meeverlengen fase 09                                           */
-    SCH_code[schmv11]             = "mv11";             SCH[schmv11]             = 1;                                   /* Meeverlengen fase 11                                           */
-    SCH_code[schmv21]             = "mv21";             SCH[schmv21]             = 1;                                   /* Meeverlengen fase 21                                           */
-    SCH_code[schmv22]             = "mv22";             SCH[schmv22]             = 1;                                   /* Meeverlengen fase 22                                           */
-    SCH_code[schmv24]             = "mv24";             SCH[schmv24]             = 1;                                   /* Meeverlengen fase 24                                           */
-    SCH_code[schmv26]             = "mv26";             SCH[schmv26]             = 1;                                   /* Meeverlengen fase 26                                           */
-    SCH_code[schmv28]             = "mv28";             SCH[schmv28]             = 1;                                   /* Meeverlengen fase 28                                           */
-    SCH_code[schmv31]             = "mv31";             SCH[schmv31]             = 0;                                   /* Meeverlengen fase 31                                           */
-    SCH_code[schmv32]             = "mv32";             SCH[schmv32]             = 0;                                   /* Meeverlengen fase 32                                           */
-    SCH_code[schmv33]             = "mv33";             SCH[schmv33]             = 0;                                   /* Meeverlengen fase 33                                           */
-    SCH_code[schmv34]             = "mv34";             SCH[schmv34]             = 0;                                   /* Meeverlengen fase 34                                           */
-    SCH_code[schmv38]             = "mv38";             SCH[schmv38]             = 0;                                   /* Meeverlengen fase 38                                           */
-    SCH_code[schmv61]             = "mv61";             SCH[schmv61]             = 0;                                   /* Meeverlengen fase 61                                           */
-    SCH_code[schmv62]             = "mv62";             SCH[schmv62]             = 0;                                   /* Meeverlengen fase 62                                           */
-    SCH_code[schmv67]             = "mv67";             SCH[schmv67]             = 1;                                   /* Meeverlengen fase 67                                           */
-    SCH_code[schmv68]             = "mv68";             SCH[schmv68]             = 0;                                   /* Meeverlengen fase 68                                           */
-    SCH_code[schmv84]             = "mv84";             SCH[schmv84]             = 1;                                   /* Meeverlengen fase 84                                           */
-    SCH_code[schmlprm]            = "mlprm";            SCH[schmlprm]            = 0;                                   /* Toepassen parametriseerbare modulestructuur                    */
-    SCH_code[schovstipt02bus]     = "ovstipt02bus";     SCH[schovstipt02bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 02 Bus                   */
-    SCH_code[schovstipt03bus]     = "ovstipt03bus";     SCH[schovstipt03bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 03 Bus                   */
-    SCH_code[schovstipt05bus]     = "ovstipt05bus";     SCH[schovstipt05bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 05 Bus                   */
-    SCH_code[schovstipt08bus]     = "ovstipt08bus";     SCH[schovstipt08bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 08 Bus                   */
-    SCH_code[schovstipt09bus]     = "ovstipt09bus";     SCH[schovstipt09bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 09 Bus                   */
-    SCH_code[schovstipt11bus]     = "ovstipt11bus";     SCH[schovstipt11bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 11 Bus                   */
-    SCH_code[schovstipt61bus]     = "ovstipt61bus";     SCH[schovstipt61bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 61 Bus                   */
-    SCH_code[schovstipt62bus]     = "ovstipt62bus";     SCH[schovstipt62bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 62 Bus                   */
-    SCH_code[schovstipt67bus]     = "ovstipt67bus";     SCH[schovstipt67bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 67 Bus                   */
-    SCH_code[schovstipt68bus]     = "ovstipt68bus";     SCH[schovstipt68bus]     = 1;                                   /* Geconditioneerde prioteit voor OV bij 68 Bus                   */
-    SCH_code[schcovuber]          = "covuber";          SCH[schcovuber]          = 1;                                   /* Weergeven wijzigingen PRIO_teller via CIF_UBER                 */
-    SCH_code[schcheckdstype]      = "checkdstype";      SCH[schcheckdstype]      = 0;                                   /* Check type DSI bericht bij VECOM                               */
-    SCH_code[schprioin02buskar]   = "prioin02buskar";   SCH[schprioin02buskar]   = 1;                                   /* Inmelden 02 via Bus toestaan                                   */
-    SCH_code[schpriouit02buskar]  = "priouit02buskar";  SCH[schpriouit02buskar]  = 1;                                   /* Uitmelden 02 via Bus toestaan                                  */
-    SCH_code[schupinagb02bus]     = "upinagb02bus";     SCH[schupinagb02bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02  */
-    SCH_code[schprioin03buskar]   = "prioin03buskar";   SCH[schprioin03buskar]   = 1;                                   /* Inmelden 03 via Bus toestaan                                   */
-    SCH_code[schpriouit03buskar]  = "priouit03buskar";  SCH[schpriouit03buskar]  = 1;                                   /* Uitmelden 03 via Bus toestaan                                  */
-    SCH_code[schupinagb03bus]     = "upinagb03bus";     SCH[schupinagb03bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03  */
-    SCH_code[schprioin05buskar]   = "prioin05buskar";   SCH[schprioin05buskar]   = 1;                                   /* Inmelden 05 via Bus toestaan                                   */
-    SCH_code[schpriouit05buskar]  = "priouit05buskar";  SCH[schpriouit05buskar]  = 1;                                   /* Uitmelden 05 via Bus toestaan                                  */
-    SCH_code[schupinagb05bus]     = "upinagb05bus";     SCH[schupinagb05bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05  */
-    SCH_code[schprioin08buskar]   = "prioin08buskar";   SCH[schprioin08buskar]   = 1;                                   /* Inmelden 08 via Bus toestaan                                   */
-    SCH_code[schpriouit08buskar]  = "priouit08buskar";  SCH[schpriouit08buskar]  = 1;                                   /* Uitmelden 08 via Bus toestaan                                  */
-    SCH_code[schupinagb08bus]     = "upinagb08bus";     SCH[schupinagb08bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08  */
-    SCH_code[schprioin09buskar]   = "prioin09buskar";   SCH[schprioin09buskar]   = 1;                                   /* Inmelden 09 via Bus toestaan                                   */
-    SCH_code[schpriouit09buskar]  = "priouit09buskar";  SCH[schpriouit09buskar]  = 1;                                   /* Uitmelden 09 via Bus toestaan                                  */
-    SCH_code[schupinagb09bus]     = "upinagb09bus";     SCH[schupinagb09bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09  */
-    SCH_code[schprioin11buskar]   = "prioin11buskar";   SCH[schprioin11buskar]   = 1;                                   /* Inmelden 11 via Bus toestaan                                   */
-    SCH_code[schpriouit11buskar]  = "priouit11buskar";  SCH[schpriouit11buskar]  = 1;                                   /* Uitmelden 11 via Bus toestaan                                  */
-    SCH_code[schupinagb11bus]     = "upinagb11bus";     SCH[schupinagb11bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11  */
-    SCH_code[schprioin61buskar]   = "prioin61buskar";   SCH[schprioin61buskar]   = 1;                                   /* Inmelden 61 via Bus toestaan                                   */
-    SCH_code[schpriouit61buskar]  = "priouit61buskar";  SCH[schpriouit61buskar]  = 1;                                   /* Uitmelden 61 via Bus toestaan                                  */
-    SCH_code[schupinagb61bus]     = "upinagb61bus";     SCH[schupinagb61bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61  */
-    SCH_code[schprioin62buskar]   = "prioin62buskar";   SCH[schprioin62buskar]   = 1;                                   /* Inmelden 62 via Bus toestaan                                   */
-    SCH_code[schpriouit62buskar]  = "priouit62buskar";  SCH[schpriouit62buskar]  = 1;                                   /* Uitmelden 62 via Bus toestaan                                  */
-    SCH_code[schupinagb62bus]     = "upinagb62bus";     SCH[schupinagb62bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62  */
-    SCH_code[schprioin67buskar]   = "prioin67buskar";   SCH[schprioin67buskar]   = 1;                                   /* Inmelden 67 via Bus toestaan                                   */
-    SCH_code[schpriouit67buskar]  = "priouit67buskar";  SCH[schpriouit67buskar]  = 1;                                   /* Uitmelden 67 via Bus toestaan                                  */
-    SCH_code[schupinagb67bus]     = "upinagb67bus";     SCH[schupinagb67bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67  */
-    SCH_code[schprioin68buskar]   = "prioin68buskar";   SCH[schprioin68buskar]   = 1;                                   /* Inmelden 68 via Bus toestaan                                   */
-    SCH_code[schpriouit68buskar]  = "priouit68buskar";  SCH[schpriouit68buskar]  = 1;                                   /* Uitmelden 68 via Bus toestaan                                  */
-    SCH_code[schupinagb68bus]     = "upinagb68bus";     SCH[schupinagb68bus]     = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68  */
-    SCH_code[schupinagbhd02]      = "upinagbhd02";      SCH[schupinagbhd02]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 02  */
-    SCH_code[schhdin02kar]        = "hdin02kar";        SCH[schhdin02kar]        = 1;                                   /* Inmelden 02 via KAR HD toestaan                                */
-    SCH_code[schhduit02kar]       = "hduit02kar";       SCH[schhduit02kar]       = 1;                                   /* Uitmelden 02 via KAR HD toestaan                               */
-    SCH_code[schchecksirene02]    = "checksirene02";    SCH[schchecksirene02]    = 1;                                   /* Bij HD meldingen bij 02 via DSI controleren op CIF_SIR         */
-    SCH_code[schupinagbhd03]      = "upinagbhd03";      SCH[schupinagbhd03]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 03  */
-    SCH_code[schhdin03kar]        = "hdin03kar";        SCH[schhdin03kar]        = 1;                                   /* Inmelden 03 via KAR HD toestaan                                */
-    SCH_code[schhduit03kar]       = "hduit03kar";       SCH[schhduit03kar]       = 1;                                   /* Uitmelden 03 via KAR HD toestaan                               */
-    SCH_code[schchecksirene03]    = "checksirene03";    SCH[schchecksirene03]    = 1;                                   /* Bij HD meldingen bij 03 via DSI controleren op CIF_SIR         */
-    SCH_code[schupinagbhd05]      = "upinagbhd05";      SCH[schupinagbhd05]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 05  */
-    SCH_code[schhdin05kar]        = "hdin05kar";        SCH[schhdin05kar]        = 1;                                   /* Inmelden 05 via KAR HD toestaan                                */
-    SCH_code[schhduit05kar]       = "hduit05kar";       SCH[schhduit05kar]       = 1;                                   /* Uitmelden 05 via KAR HD toestaan                               */
-    SCH_code[schchecksirene05]    = "checksirene05";    SCH[schchecksirene05]    = 1;                                   /* Bij HD meldingen bij 05 via DSI controleren op CIF_SIR         */
-    SCH_code[schupinagbhd08]      = "upinagbhd08";      SCH[schupinagbhd08]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 08  */
-    SCH_code[schhdin08kar]        = "hdin08kar";        SCH[schhdin08kar]        = 1;                                   /* Inmelden 08 via KAR HD toestaan                                */
-    SCH_code[schhduit08kar]       = "hduit08kar";       SCH[schhduit08kar]       = 1;                                   /* Uitmelden 08 via KAR HD toestaan                               */
-    SCH_code[schchecksirene08]    = "checksirene08";    SCH[schchecksirene08]    = 1;                                   /* Bij HD meldingen bij 08 via DSI controleren op CIF_SIR         */
-    SCH_code[schupinagbhd09]      = "upinagbhd09";      SCH[schupinagbhd09]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 09  */
-    SCH_code[schhdin09kar]        = "hdin09kar";        SCH[schhdin09kar]        = 1;                                   /* Inmelden 09 via KAR HD toestaan                                */
-    SCH_code[schhduit09kar]       = "hduit09kar";       SCH[schhduit09kar]       = 1;                                   /* Uitmelden 09 via KAR HD toestaan                               */
-    SCH_code[schchecksirene09]    = "checksirene09";    SCH[schchecksirene09]    = 1;                                   /* Bij HD meldingen bij 09 via DSI controleren op CIF_SIR         */
-    SCH_code[schupinagbhd11]      = "upinagbhd11";      SCH[schupinagbhd11]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 11  */
-    SCH_code[schhdin11kar]        = "hdin11kar";        SCH[schhdin11kar]        = 1;                                   /* Inmelden 11 via KAR HD toestaan                                */
-    SCH_code[schhduit11kar]       = "hduit11kar";       SCH[schhduit11kar]       = 1;                                   /* Uitmelden 11 via KAR HD toestaan                               */
-    SCH_code[schchecksirene11]    = "checksirene11";    SCH[schchecksirene11]    = 1;                                   /* Bij HD meldingen bij 11 via DSI controleren op CIF_SIR         */
-    SCH_code[schupinagbhd61]      = "upinagbhd61";      SCH[schupinagbhd61]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 61  */
-    SCH_code[schhdin61kar]        = "hdin61kar";        SCH[schhdin61kar]        = 1;                                   /* Inmelden 61 via KAR HD toestaan                                */
-    SCH_code[schhduit61kar]       = "hduit61kar";       SCH[schhduit61kar]       = 1;                                   /* Uitmelden 61 via KAR HD toestaan                               */
-    SCH_code[schchecksirene61]    = "checksirene61";    SCH[schchecksirene61]    = 1;                                   /* Bij HD meldingen bij 61 via DSI controleren op CIF_SIR         */
-    SCH_code[schupinagbhd62]      = "upinagbhd62";      SCH[schupinagbhd62]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 62  */
-    SCH_code[schhdin62kar]        = "hdin62kar";        SCH[schhdin62kar]        = 1;                                   /* Inmelden 62 via KAR HD toestaan                                */
-    SCH_code[schhduit62kar]       = "hduit62kar";       SCH[schhduit62kar]       = 1;                                   /* Uitmelden 62 via KAR HD toestaan                               */
-    SCH_code[schchecksirene62]    = "checksirene62";    SCH[schchecksirene62]    = 1;                                   /* Bij HD meldingen bij 62 via DSI controleren op CIF_SIR         */
-    SCH_code[schupinagbhd67]      = "upinagbhd67";      SCH[schupinagbhd67]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 67  */
-    SCH_code[schhdin67kar]        = "hdin67kar";        SCH[schhdin67kar]        = 1;                                   /* Inmelden 67 via KAR HD toestaan                                */
-    SCH_code[schhduit67kar]       = "hduit67kar";       SCH[schhduit67kar]       = 1;                                   /* Uitmelden 67 via KAR HD toestaan                               */
-    SCH_code[schchecksirene67]    = "checksirene67";    SCH[schchecksirene67]    = 1;                                   /* Bij HD meldingen bij 67 via DSI controleren op CIF_SIR         */
-    SCH_code[schupinagbhd68]      = "upinagbhd68";      SCH[schupinagbhd68]      = 0;                                   /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 68  */
-    SCH_code[schhdin68kar]        = "hdin68kar";        SCH[schhdin68kar]        = 1;                                   /* Inmelden 68 via KAR HD toestaan                                */
-    SCH_code[schhduit68kar]       = "hduit68kar";       SCH[schhduit68kar]       = 1;                                   /* Uitmelden 68 via KAR HD toestaan                               */
-    SCH_code[schchecksirene68]    = "checksirene68";    SCH[schchecksirene68]    = 1;                                   /* Bij HD meldingen bij 68 via DSI controleren op CIF_SIR         */
-    SCH_code[schrisgeencheckopsg] = "risgeencheckopsg"; SCH[schrisgeencheckopsg] = 0;                                   /* Niet checken op signaalgroep bij RIS aanvragen en verlengen    */
-    SCH_code[schrgadd24_3]        = "rgadd24_3";        SCH[schrgadd24_3]        = 1;                                   /* Type richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2     */
-    SCH_code[schrgv]              = "rgv";              SCH[schrgv]              = 0;                                   /* RoBuGrover aan of uit                                          */
-    SCH_code[schrgv_snel]         = "rgv_snel";         SCH[schrgv_snel]         = 0;                                   /* RoBuGrover versneld ophogen of verlagen                        */
-    SCH_code[schca02]             = "ca02";             SCH[schca02]             = 0;                                   /* Cyclische aanvraag fase 02                                     */
-    SCH_code[schca03]             = "ca03";             SCH[schca03]             = 0;                                   /* Cyclische aanvraag fase 03                                     */
-    SCH_code[schca05]             = "ca05";             SCH[schca05]             = 0;                                   /* Cyclische aanvraag fase 05                                     */
-    SCH_code[schca08]             = "ca08";             SCH[schca08]             = 0;                                   /* Cyclische aanvraag fase 08                                     */
-    SCH_code[schca09]             = "ca09";             SCH[schca09]             = 0;                                   /* Cyclische aanvraag fase 09                                     */
-    SCH_code[schca11]             = "ca11";             SCH[schca11]             = 0;                                   /* Cyclische aanvraag fase 11                                     */
-    SCH_code[schca21]             = "ca21";             SCH[schca21]             = 0;                                   /* Cyclische aanvraag fase 21                                     */
-    SCH_code[schca22]             = "ca22";             SCH[schca22]             = 0;                                   /* Cyclische aanvraag fase 22                                     */
-    SCH_code[schca24]             = "ca24";             SCH[schca24]             = 0;                                   /* Cyclische aanvraag fase 24                                     */
-    SCH_code[schca26]             = "ca26";             SCH[schca26]             = 0;                                   /* Cyclische aanvraag fase 26                                     */
-    SCH_code[schca28]             = "ca28";             SCH[schca28]             = 0;                                   /* Cyclische aanvraag fase 28                                     */
-    SCH_code[schca31]             = "ca31";             SCH[schca31]             = 0;                                   /* Cyclische aanvraag fase 31                                     */
-    SCH_code[schca32]             = "ca32";             SCH[schca32]             = 0;                                   /* Cyclische aanvraag fase 32                                     */
-    SCH_code[schca33]             = "ca33";             SCH[schca33]             = 0;                                   /* Cyclische aanvraag fase 33                                     */
-    SCH_code[schca34]             = "ca34";             SCH[schca34]             = 0;                                   /* Cyclische aanvraag fase 34                                     */
-    SCH_code[schca38]             = "ca38";             SCH[schca38]             = 0;                                   /* Cyclische aanvraag fase 38                                     */
-    SCH_code[schca61]             = "ca61";             SCH[schca61]             = 0;                                   /* Cyclische aanvraag fase 61                                     */
-    SCH_code[schca62]             = "ca62";             SCH[schca62]             = 0;                                   /* Cyclische aanvraag fase 62                                     */
-    SCH_code[schca67]             = "ca67";             SCH[schca67]             = 0;                                   /* Cyclische aanvraag fase 67                                     */
-    SCH_code[schca68]             = "ca68";             SCH[schca68]             = 0;                                   /* Cyclische aanvraag fase 68                                     */
-    SCH_code[schca84]             = "ca84";             SCH[schca84]             = 0;                                   /* Cyclische aanvraag fase 84                                     */
-    SCH_code[schvg02_4a]          = "vg02_4a";          SCH[schvg02_4a]          = 0;                                   /* Veiligheidsgroen detector 02_4a fase 02                        */
-    SCH_code[schvg02_4b]          = "vg02_4b";          SCH[schvg02_4b]          = 0;                                   /* Veiligheidsgroen detector 02_4b fase 02                        */
-    SCH_code[schvg08_4a]          = "vg08_4a";          SCH[schvg08_4a]          = 0;                                   /* Veiligheidsgroen detector 08_4a fase 08                        */
-    SCH_code[schvg08_4b]          = "vg08_4b";          SCH[schvg08_4b]          = 0;                                   /* Veiligheidsgroen detector 08_4b fase 08                        */
-    SCH_code[schvg11_4]           = "vg11_4";           SCH[schvg11_4]           = 0;                                   /* Veiligheidsgroen detector 11_4 fase 11                         */
-    SCH_code[schaltg02]           = "altg02";           SCH[schaltg02]           = 1;                                   /* Alternatieve realisatie toestaan fase 02                       */
-    SCH_code[schaltg03]           = "altg03";           SCH[schaltg03]           = 1;                                   /* Alternatieve realisatie toestaan fase 03                       */
-    SCH_code[schaltg05]           = "altg05";           SCH[schaltg05]           = 1;                                   /* Alternatieve realisatie toestaan fase 05                       */
-    SCH_code[schaltg08]           = "altg08";           SCH[schaltg08]           = 1;                                   /* Alternatieve realisatie toestaan fase 08                       */
-    SCH_code[schaltg09]           = "altg09";           SCH[schaltg09]           = 1;                                   /* Alternatieve realisatie toestaan fase 09                       */
-    SCH_code[schaltg11]           = "altg11";           SCH[schaltg11]           = 1;                                   /* Alternatieve realisatie toestaan fase 11                       */
-    SCH_code[schaltg21]           = "altg21";           SCH[schaltg21]           = 1;                                   /* Alternatieve realisatie toestaan fase 21                       */
-    SCH_code[schaltg2232]         = "altg2232";         SCH[schaltg2232]         = 1;                                   /* Alternatieve realisatie toestaan fasen 22, 32                  */
-    SCH_code[schaltg2434]         = "altg2434";         SCH[schaltg2434]         = 1;                                   /* Alternatieve realisatie toestaan fasen 24, 34                  */
-    SCH_code[schaltg26]           = "altg26";           SCH[schaltg26]           = 1;                                   /* Alternatieve realisatie toestaan fase 26                       */
-    SCH_code[schaltg28]           = "altg28";           SCH[schaltg28]           = 1;                                   /* Alternatieve realisatie toestaan fase 28                       */
-    SCH_code[schaltg31]           = "altg31";           SCH[schaltg31]           = 1;                                   /* Alternatieve realisatie toestaan fase 31                       */
-    SCH_code[schaltg3384]         = "altg3384";         SCH[schaltg3384]         = 1;                                   /* Alternatieve realisatie toestaan fasen 33, 84                  */
-    SCH_code[schaltg38]           = "altg38";           SCH[schaltg38]           = 1;                                   /* Alternatieve realisatie toestaan fase 38                       */
-    SCH_code[schaltg61]           = "altg61";           SCH[schaltg61]           = 1;                                   /* Alternatieve realisatie toestaan fase 61                       */
-    SCH_code[schaltg62]           = "altg62";           SCH[schaltg62]           = 1;                                   /* Alternatieve realisatie toestaan fase 62                       */
-    SCH_code[schaltg67]           = "altg67";           SCH[schaltg67]           = 1;                                   /* Alternatieve realisatie toestaan fase 67                       */
-    SCH_code[schaltg68]           = "altg68";           SCH[schaltg68]           = 1;                                   /* Alternatieve realisatie toestaan fase 68                       */
-    SCH_code[schwg02]             = "wg02";             SCH[schwg02]             = 0;                                   /* Wachtstand groen fase 02                                       */
-    SCH_code[schwg03]             = "wg03";             SCH[schwg03]             = 0;                                   /* Wachtstand groen fase 03                                       */
-    SCH_code[schwg05]             = "wg05";             SCH[schwg05]             = 0;                                   /* Wachtstand groen fase 05                                       */
-    SCH_code[schwg08]             = "wg08";             SCH[schwg08]             = 0;                                   /* Wachtstand groen fase 08                                       */
-    SCH_code[schwg09]             = "wg09";             SCH[schwg09]             = 0;                                   /* Wachtstand groen fase 09                                       */
-    SCH_code[schwg11]             = "wg11";             SCH[schwg11]             = 0;                                   /* Wachtstand groen fase 11                                       */
-    SCH_code[schwg21]             = "wg21";             SCH[schwg21]             = 0;                                   /* Wachtstand groen fase 21                                       */
-    SCH_code[schwg22]             = "wg22";             SCH[schwg22]             = 0;                                   /* Wachtstand groen fase 22                                       */
-    SCH_code[schwg24]             = "wg24";             SCH[schwg24]             = 0;                                   /* Wachtstand groen fase 24                                       */
-    SCH_code[schwg26]             = "wg26";             SCH[schwg26]             = 0;                                   /* Wachtstand groen fase 26                                       */
-    SCH_code[schwg28]             = "wg28";             SCH[schwg28]             = 0;                                   /* Wachtstand groen fase 28                                       */
-    SCH_code[schwg31]             = "wg31";             SCH[schwg31]             = 0;                                   /* Wachtstand groen fase 31                                       */
-    SCH_code[schwg32]             = "wg32";             SCH[schwg32]             = 0;                                   /* Wachtstand groen fase 32                                       */
-    SCH_code[schwg33]             = "wg33";             SCH[schwg33]             = 0;                                   /* Wachtstand groen fase 33                                       */
-    SCH_code[schwg34]             = "wg34";             SCH[schwg34]             = 0;                                   /* Wachtstand groen fase 34                                       */
-    SCH_code[schwg38]             = "wg38";             SCH[schwg38]             = 0;                                   /* Wachtstand groen fase 38                                       */
-    SCH_code[schwg61]             = "wg61";             SCH[schwg61]             = 0;                                   /* Wachtstand groen fase 61                                       */
-    SCH_code[schwg62]             = "wg62";             SCH[schwg62]             = 0;                                   /* Wachtstand groen fase 62                                       */
-    SCH_code[schwg67]             = "wg67";             SCH[schwg67]             = 0;                                   /* Wachtstand groen fase 67                                       */
-    SCH_code[schwg68]             = "wg68";             SCH[schwg68]             = 0;                                   /* Wachtstand groen fase 68                                       */
-    SCH_code[schwg84]             = "wg84";             SCH[schwg84]             = 0;                                   /* Wachtstand groen fase 84                                       */
-    SCH_code[schgs2232]           = "gs2232";           SCH[schgs2232]           = 1;                                   /* Schakelbare gelijkstart tussen fase 32 en 22                   */
-    SCH_code[schgs2434]           = "gs2434";           SCH[schgs2434]           = 1;                                   /* Schakelbare gelijkstart tussen fase 34 en 24                   */
-    SCH_code[schgs3384]           = "gs3384";           SCH[schgs3384]           = 1;                                   /* Schakelbare gelijkstart tussen fase 84 en 33                   */
-    SCH_code[schlos32_1]          = "los32_1";          SCH[schlos32_1]          = 0;                                   /* Toestaan los realiseren fase 32                                */
-    SCH_code[schlos32_2]          = "los32_2";          SCH[schlos32_2]          = 0;                                   /* Toestaan los realiseren fase 32                                */
-    SCH_code[schlos31_1]          = "los31_1";          SCH[schlos31_1]          = 0;                                   /* Toestaan los realiseren fase 31                                */
-    SCH_code[schlos31_2]          = "los31_2";          SCH[schlos31_2]          = 0;                                   /* Toestaan los realiseren fase 31                                */
-    SCH_code[schlos34_1]          = "los34_1";          SCH[schlos34_1]          = 0;                                   /* Toestaan los realiseren fase 34                                */
-    SCH_code[schlos34_2]          = "los34_2";          SCH[schlos34_2]          = 0;                                   /* Toestaan los realiseren fase 34                                */
-    SCH_code[schlos33_1]          = "los33_1";          SCH[schlos33_1]          = 0;                                   /* Toestaan los realiseren fase 33                                */
-    SCH_code[schlos33_2]          = "los33_2";          SCH[schlos33_2]          = 0;                                   /* Toestaan los realiseren fase 33                                */
-    SCH_code[schgsbeidedkb]       = "gsbeidedkb";       SCH[schgsbeidedkb]       = 0;                                  
+    SCH_code[schdynhiaat02]            = "dynhiaat02";            SCH[schdynhiaat02]            = 1;                                        /* Toepassen dynamsich hiaat bij fase 02                          */
+    SCH_code[schopdrempelen02]         = "opdrempelen02";         SCH[schopdrempelen02]         = 1;                                        /* Opdrempelen toepassen voor fase 02                             */
+    SCH_code[schedkop_02]              = "edkop_02";              SCH[schedkop_02]              = 1;                                        /* Start timers dynamische hiaat fase 02 op einde detectie koplus */
+    SCH_code[schdynhiaat08]            = "dynhiaat08";            SCH[schdynhiaat08]            = 1;                                        /* Toepassen dynamsich hiaat bij fase 08                          */
+    SCH_code[schopdrempelen08]         = "opdrempelen08";         SCH[schopdrempelen08]         = 1;                                        /* Opdrempelen toepassen voor fase 08                             */
+    SCH_code[schedkop_08]              = "edkop_08";              SCH[schedkop_08]              = 1;                                        /* Start timers dynamische hiaat fase 08 op einde detectie koplus */
+    SCH_code[schdynhiaat09]            = "dynhiaat09";            SCH[schdynhiaat09]            = 1;                                        /* Toepassen dynamsich hiaat bij fase 09                          */
+    SCH_code[schopdrempelen09]         = "opdrempelen09";         SCH[schopdrempelen09]         = 0;                                        /* Opdrempelen toepassen voor fase 09                             */
+    SCH_code[schedkop_09]              = "edkop_09";              SCH[schedkop_09]              = 1;                                        /* Start timers dynamische hiaat fase 09 op einde detectie koplus */
+    SCH_code[schdynhiaat11]            = "dynhiaat11";            SCH[schdynhiaat11]            = 1;                                        /* Toepassen dynamsich hiaat bij fase 11                          */
+    SCH_code[schopdrempelen11]         = "opdrempelen11";         SCH[schopdrempelen11]         = 0;                                        /* Opdrempelen toepassen voor fase 11                             */
+    SCH_code[schedkop_11]              = "edkop_11";              SCH[schedkop_11]              = 1;                                        /* Start timers dynamische hiaat fase 11 op einde detectie koplus */
+    SCH_code[schconfidence15fix]       = "confidence15fix";       SCH[schconfidence15fix]       = 0;                                       
+    SCH_code[schtxconfidence15ar]      = "txconfidence15ar";      SCH[schtxconfidence15ar]      = 1;                                       
+    SCH_code[schspatconfidence1]       = "spatconfidence1";       SCH[schspatconfidence1]       = 0;                                       
+    SCH_code[schspatconfidence3]       = "spatconfidence3";       SCH[schspatconfidence3]       = 0;                                       
+    SCH_code[schspatconfidence6]       = "spatconfidence6";       SCH[schspatconfidence6]       = 0;                                       
+    SCH_code[schspatconfidence9]       = "spatconfidence9";       SCH[schspatconfidence9]       = 0;                                       
+    SCH_code[schspatconfidence12]      = "spatconfidence12";      SCH[schspatconfidence12]      = 0;                                       
+    SCH_code[schspatconfidence15]      = "spatconfidence15";      SCH[schspatconfidence15]      = 1;                                       
+    SCH_code[schtimings02]             = "timings02";             SCH[schtimings02]             = 0;                                       
+    SCH_code[schtimings03]             = "timings03";             SCH[schtimings03]             = 0;                                       
+    SCH_code[schtimings05]             = "timings05";             SCH[schtimings05]             = 0;                                       
+    SCH_code[schtimings08]             = "timings08";             SCH[schtimings08]             = 0;                                       
+    SCH_code[schtimings09]             = "timings09";             SCH[schtimings09]             = 0;                                       
+    SCH_code[schtimings11]             = "timings11";             SCH[schtimings11]             = 0;                                       
+    SCH_code[schtimings21]             = "timings21";             SCH[schtimings21]             = 0;                                       
+    SCH_code[schtimings22]             = "timings22";             SCH[schtimings22]             = 0;                                       
+    SCH_code[schtimings24]             = "timings24";             SCH[schtimings24]             = 0;                                       
+    SCH_code[schtimings26]             = "timings26";             SCH[schtimings26]             = 0;                                       
+    SCH_code[schtimings28]             = "timings28";             SCH[schtimings28]             = 0;                                       
+    SCH_code[schtimings31]             = "timings31";             SCH[schtimings31]             = 0;                                       
+    SCH_code[schtimings32]             = "timings32";             SCH[schtimings32]             = 0;                                       
+    SCH_code[schtimings33]             = "timings33";             SCH[schtimings33]             = 0;                                       
+    SCH_code[schtimings34]             = "timings34";             SCH[schtimings34]             = 0;                                       
+    SCH_code[schtimings38]             = "timings38";             SCH[schtimings38]             = 0;                                       
+    SCH_code[schtimings61]             = "timings61";             SCH[schtimings61]             = 0;                                       
+    SCH_code[schtimings62]             = "timings62";             SCH[schtimings62]             = 0;                                       
+    SCH_code[schtimings67]             = "timings67";             SCH[schtimings67]             = 0;                                       
+    SCH_code[schtimings68]             = "timings68";             SCH[schtimings68]             = 0;                                       
+    SCH_code[schtimings84]             = "timings84";             SCH[schtimings84]             = 0;                                       
+    SCH_code[schtimings82]             = "timings82";             SCH[schtimings82]             = 0;                                       
+    SCH_code[schtimings81]             = "timings81";             SCH[schtimings81]             = 0;                                       
+    SCH_code[schfileFile68af]          = "fileFile68af";          SCH[schfileFile68af]          = 1;                                        /* File ingreep File68af toepassen                                */
+    SCH_code[schfiledoserenFile68af]   = "filedoserenFile68af";   SCH[schfiledoserenFile68af]   = 1;                                        /* Toepassen doseerpercentages voor fileingreep File68af          */
+    SCH_code[schfileFile68afparstrook] = "fileFile68afparstrook"; SCH[schfileFile68afparstrook] = 0;                                        /* Parallele file meldingen per strook file ingreep File68af      */
+    SCH_code[schbmfix]                 = "bmfix";                 SCH[schbmfix]                 = 0;                                        /* Bijkomen tijdens fixatie mogelijk                              */
+    SCH_code[schma0261]                = "ma0261";                SCH[schma0261]                = 0;                                        /* Meeaanvraag van 02 naar 61 actief                              */
+    SCH_code[schma0262]                = "ma0262";                SCH[schma0262]                = 1;                                        /* Meeaanvraag van 02 naar 62 actief                              */
+    SCH_code[schma0521]                = "ma0521";                SCH[schma0521]                = 1;                                        /* Meeaanvraag van 05 naar 21 actief                              */
+    SCH_code[schma0522]                = "ma0522";                SCH[schma0522]                = 1;                                        /* Meeaanvraag van 05 naar 22 actief                              */
+    SCH_code[schma0532]                = "ma0532";                SCH[schma0532]                = 1;                                        /* Meeaanvraag van 05 naar 32 actief                              */
+    SCH_code[schma0868]                = "ma0868";                SCH[schma0868]                = 1;                                        /* Meeaanvraag van 08 naar 68 actief                              */
+    SCH_code[schma1126]                = "ma1126";                SCH[schma1126]                = 1;                                        /* Meeaanvraag van 11 naar 26 actief                              */
+    SCH_code[schma2221]                = "ma2221";                SCH[schma2221]                = 1;                                        /* Meeaanvraag van 22 naar 21 actief                              */
+    SCH_code[schma3122]                = "ma3122";                SCH[schma3122]                = 0;                                        /* Meeaanvraag van 31 naar 22 actief                              */
+    SCH_code[schma3132]                = "ma3132";                SCH[schma3132]                = 1;                                        /* Meeaanvraag van 31 naar 32 actief                              */
+    SCH_code[schma3222]                = "ma3222";                SCH[schma3222]                = 1;                                        /* Meeaanvraag van 32 naar 22 actief                              */
+    SCH_code[schma3231]                = "ma3231";                SCH[schma3231]                = 1;                                        /* Meeaanvraag van 32 naar 31 actief                              */
+    SCH_code[schma3324]                = "ma3324";                SCH[schma3324]                = 0;                                        /* Meeaanvraag van 33 naar 24 actief                              */
+    SCH_code[schma3334]                = "ma3334";                SCH[schma3334]                = 1;                                        /* Meeaanvraag van 33 naar 34 actief                              */
+    SCH_code[schma3384]                = "ma3384";                SCH[schma3384]                = 0;                                        /* Meeaanvraag van 33 naar 84 actief                              */
+    SCH_code[schma3424]                = "ma3424";                SCH[schma3424]                = 0;                                        /* Meeaanvraag van 34 naar 24 actief                              */
+    SCH_code[schma3433]                = "ma3433";                SCH[schma3433]                = 1;                                        /* Meeaanvraag van 34 naar 33 actief                              */
+    SCH_code[schma3484]                = "ma3484";                SCH[schma3484]                = 0;                                        /* Meeaanvraag van 34 naar 84 actief                              */
+    SCH_code[schma8281]                = "ma8281";                SCH[schma8281]                = 1;                                        /* Meeaanvraag van 82 naar 81 actief                              */
+    SCH_code[schmv02]                  = "mv02";                  SCH[schmv02]                  = 1;                                        /* Meeverlengen fase 02                                           */
+    SCH_code[schmv03]                  = "mv03";                  SCH[schmv03]                  = 1;                                        /* Meeverlengen fase 03                                           */
+    SCH_code[schmv05]                  = "mv05";                  SCH[schmv05]                  = 1;                                        /* Meeverlengen fase 05                                           */
+    SCH_code[schmv08]                  = "mv08";                  SCH[schmv08]                  = 1;                                        /* Meeverlengen fase 08                                           */
+    SCH_code[schmv09]                  = "mv09";                  SCH[schmv09]                  = 1;                                        /* Meeverlengen fase 09                                           */
+    SCH_code[schmv11]                  = "mv11";                  SCH[schmv11]                  = 1;                                        /* Meeverlengen fase 11                                           */
+    SCH_code[schmv21]                  = "mv21";                  SCH[schmv21]                  = 1;                                        /* Meeverlengen fase 21                                           */
+    SCH_code[schmv22]                  = "mv22";                  SCH[schmv22]                  = 1;                                        /* Meeverlengen fase 22                                           */
+    SCH_code[schmv24]                  = "mv24";                  SCH[schmv24]                  = 1;                                        /* Meeverlengen fase 24                                           */
+    SCH_code[schmv26]                  = "mv26";                  SCH[schmv26]                  = 1;                                        /* Meeverlengen fase 26                                           */
+    SCH_code[schmv28]                  = "mv28";                  SCH[schmv28]                  = 1;                                        /* Meeverlengen fase 28                                           */
+    SCH_code[schmv31]                  = "mv31";                  SCH[schmv31]                  = 0;                                        /* Meeverlengen fase 31                                           */
+    SCH_code[schmv32]                  = "mv32";                  SCH[schmv32]                  = 0;                                        /* Meeverlengen fase 32                                           */
+    SCH_code[schmv33]                  = "mv33";                  SCH[schmv33]                  = 0;                                        /* Meeverlengen fase 33                                           */
+    SCH_code[schmv34]                  = "mv34";                  SCH[schmv34]                  = 0;                                        /* Meeverlengen fase 34                                           */
+    SCH_code[schmv38]                  = "mv38";                  SCH[schmv38]                  = 0;                                        /* Meeverlengen fase 38                                           */
+    SCH_code[schmv61]                  = "mv61";                  SCH[schmv61]                  = 0;                                        /* Meeverlengen fase 61                                           */
+    SCH_code[schmv62]                  = "mv62";                  SCH[schmv62]                  = 0;                                        /* Meeverlengen fase 62                                           */
+    SCH_code[schmv67]                  = "mv67";                  SCH[schmv67]                  = 1;                                        /* Meeverlengen fase 67                                           */
+    SCH_code[schmv68]                  = "mv68";                  SCH[schmv68]                  = 0;                                        /* Meeverlengen fase 68                                           */
+    SCH_code[schmv84]                  = "mv84";                  SCH[schmv84]                  = 1;                                        /* Meeverlengen fase 84                                           */
+    SCH_code[schmv82]                  = "mv82";                  SCH[schmv82]                  = 1;                                        /* Meeverlengen fase 82                                           */
+    SCH_code[schmv81]                  = "mv81";                  SCH[schmv81]                  = 1;                                        /* Meeverlengen fase 81                                           */
+    SCH_code[schmlprm]                 = "mlprm";                 SCH[schmlprm]                 = 0;                                        /* Toepassen parametriseerbare modulestructuur                    */
+    SCH_code[schovstipt02bus]          = "ovstipt02bus";          SCH[schovstipt02bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 02 Bus                   */
+    SCH_code[schovstipt03bus]          = "ovstipt03bus";          SCH[schovstipt03bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 03 Bus                   */
+    SCH_code[schovstipt05bus]          = "ovstipt05bus";          SCH[schovstipt05bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 05 Bus                   */
+    SCH_code[schovstipt08bus]          = "ovstipt08bus";          SCH[schovstipt08bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 08 Bus                   */
+    SCH_code[schovstipt09bus]          = "ovstipt09bus";          SCH[schovstipt09bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 09 Bus                   */
+    SCH_code[schovstipt11bus]          = "ovstipt11bus";          SCH[schovstipt11bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 11 Bus                   */
+    SCH_code[schovstipt61bus]          = "ovstipt61bus";          SCH[schovstipt61bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 61 Bus                   */
+    SCH_code[schovstipt62bus]          = "ovstipt62bus";          SCH[schovstipt62bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 62 Bus                   */
+    SCH_code[schovstipt67bus]          = "ovstipt67bus";          SCH[schovstipt67bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 67 Bus                   */
+    SCH_code[schovstipt68bus]          = "ovstipt68bus";          SCH[schovstipt68bus]          = 1;                                        /* Geconditioneerde prioteit voor OV bij 68 Bus                   */
+    SCH_code[schcovuber]               = "covuber";               SCH[schcovuber]               = 1;                                        /* Weergeven wijzigingen PRIO_teller via CIF_UBER                 */
+    SCH_code[schcheckdstype]           = "checkdstype";           SCH[schcheckdstype]           = 0;                                        /* Check type DSI bericht bij VECOM                               */
+    SCH_code[schprioin02buskar]        = "prioin02buskar";        SCH[schprioin02buskar]        = 1;                                        /* Inmelden 02 via Bus toestaan                                   */
+    SCH_code[schpriouit02buskar]       = "priouit02buskar";       SCH[schpriouit02buskar]       = 1;                                        /* Uitmelden 02 via Bus toestaan                                  */
+    SCH_code[schupinagb02bus]          = "upinagb02bus";          SCH[schupinagb02bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02  */
+    SCH_code[schprioin03buskar]        = "prioin03buskar";        SCH[schprioin03buskar]        = 1;                                        /* Inmelden 03 via Bus toestaan                                   */
+    SCH_code[schpriouit03buskar]       = "priouit03buskar";       SCH[schpriouit03buskar]       = 1;                                        /* Uitmelden 03 via Bus toestaan                                  */
+    SCH_code[schupinagb03bus]          = "upinagb03bus";          SCH[schupinagb03bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03  */
+    SCH_code[schprioin05buskar]        = "prioin05buskar";        SCH[schprioin05buskar]        = 1;                                        /* Inmelden 05 via Bus toestaan                                   */
+    SCH_code[schpriouit05buskar]       = "priouit05buskar";       SCH[schpriouit05buskar]       = 1;                                        /* Uitmelden 05 via Bus toestaan                                  */
+    SCH_code[schupinagb05bus]          = "upinagb05bus";          SCH[schupinagb05bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05  */
+    SCH_code[schprioin08buskar]        = "prioin08buskar";        SCH[schprioin08buskar]        = 1;                                        /* Inmelden 08 via Bus toestaan                                   */
+    SCH_code[schpriouit08buskar]       = "priouit08buskar";       SCH[schpriouit08buskar]       = 1;                                        /* Uitmelden 08 via Bus toestaan                                  */
+    SCH_code[schupinagb08bus]          = "upinagb08bus";          SCH[schupinagb08bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08  */
+    SCH_code[schprioin09buskar]        = "prioin09buskar";        SCH[schprioin09buskar]        = 1;                                        /* Inmelden 09 via Bus toestaan                                   */
+    SCH_code[schpriouit09buskar]       = "priouit09buskar";       SCH[schpriouit09buskar]       = 1;                                        /* Uitmelden 09 via Bus toestaan                                  */
+    SCH_code[schupinagb09bus]          = "upinagb09bus";          SCH[schupinagb09bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09  */
+    SCH_code[schprioin11buskar]        = "prioin11buskar";        SCH[schprioin11buskar]        = 1;                                        /* Inmelden 11 via Bus toestaan                                   */
+    SCH_code[schpriouit11buskar]       = "priouit11buskar";       SCH[schpriouit11buskar]       = 1;                                        /* Uitmelden 11 via Bus toestaan                                  */
+    SCH_code[schupinagb11bus]          = "upinagb11bus";          SCH[schupinagb11bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11  */
+    SCH_code[schprioin61buskar]        = "prioin61buskar";        SCH[schprioin61buskar]        = 1;                                        /* Inmelden 61 via Bus toestaan                                   */
+    SCH_code[schpriouit61buskar]       = "priouit61buskar";       SCH[schpriouit61buskar]       = 1;                                        /* Uitmelden 61 via Bus toestaan                                  */
+    SCH_code[schupinagb61bus]          = "upinagb61bus";          SCH[schupinagb61bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61  */
+    SCH_code[schprioin62buskar]        = "prioin62buskar";        SCH[schprioin62buskar]        = 1;                                        /* Inmelden 62 via Bus toestaan                                   */
+    SCH_code[schpriouit62buskar]       = "priouit62buskar";       SCH[schpriouit62buskar]       = 1;                                        /* Uitmelden 62 via Bus toestaan                                  */
+    SCH_code[schupinagb62bus]          = "upinagb62bus";          SCH[schupinagb62bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62  */
+    SCH_code[schprioin67buskar]        = "prioin67buskar";        SCH[schprioin67buskar]        = 1;                                        /* Inmelden 67 via Bus toestaan                                   */
+    SCH_code[schpriouit67buskar]       = "priouit67buskar";       SCH[schpriouit67buskar]       = 1;                                        /* Uitmelden 67 via Bus toestaan                                  */
+    SCH_code[schupinagb67bus]          = "upinagb67bus";          SCH[schupinagb67bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67  */
+    SCH_code[schprioin68buskar]        = "prioin68buskar";        SCH[schprioin68buskar]        = 1;                                        /* Inmelden 68 via Bus toestaan                                   */
+    SCH_code[schpriouit68buskar]       = "priouit68buskar";       SCH[schpriouit68buskar]       = 1;                                        /* Uitmelden 68 via Bus toestaan                                  */
+    SCH_code[schupinagb68bus]          = "upinagb68bus";          SCH[schupinagb68bus]          = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68  */
+    SCH_code[schupinagbhd02]           = "upinagbhd02";           SCH[schupinagbhd02]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 02  */
+    SCH_code[schhdin02kar]             = "hdin02kar";             SCH[schhdin02kar]             = 1;                                        /* Inmelden 02 via KAR HD toestaan                                */
+    SCH_code[schhduit02kar]            = "hduit02kar";            SCH[schhduit02kar]            = 1;                                        /* Uitmelden 02 via KAR HD toestaan                               */
+    SCH_code[schchecksirene02]         = "checksirene02";         SCH[schchecksirene02]         = 1;                                        /* Bij HD meldingen bij 02 via DSI controleren op CIF_SIR         */
+    SCH_code[schupinagbhd03]           = "upinagbhd03";           SCH[schupinagbhd03]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 03  */
+    SCH_code[schhdin03kar]             = "hdin03kar";             SCH[schhdin03kar]             = 1;                                        /* Inmelden 03 via KAR HD toestaan                                */
+    SCH_code[schhduit03kar]            = "hduit03kar";            SCH[schhduit03kar]            = 1;                                        /* Uitmelden 03 via KAR HD toestaan                               */
+    SCH_code[schchecksirene03]         = "checksirene03";         SCH[schchecksirene03]         = 1;                                        /* Bij HD meldingen bij 03 via DSI controleren op CIF_SIR         */
+    SCH_code[schupinagbhd05]           = "upinagbhd05";           SCH[schupinagbhd05]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 05  */
+    SCH_code[schhdin05kar]             = "hdin05kar";             SCH[schhdin05kar]             = 1;                                        /* Inmelden 05 via KAR HD toestaan                                */
+    SCH_code[schhduit05kar]            = "hduit05kar";            SCH[schhduit05kar]            = 1;                                        /* Uitmelden 05 via KAR HD toestaan                               */
+    SCH_code[schchecksirene05]         = "checksirene05";         SCH[schchecksirene05]         = 1;                                        /* Bij HD meldingen bij 05 via DSI controleren op CIF_SIR         */
+    SCH_code[schupinagbhd08]           = "upinagbhd08";           SCH[schupinagbhd08]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 08  */
+    SCH_code[schhdin08kar]             = "hdin08kar";             SCH[schhdin08kar]             = 1;                                        /* Inmelden 08 via KAR HD toestaan                                */
+    SCH_code[schhduit08kar]            = "hduit08kar";            SCH[schhduit08kar]            = 1;                                        /* Uitmelden 08 via KAR HD toestaan                               */
+    SCH_code[schchecksirene08]         = "checksirene08";         SCH[schchecksirene08]         = 1;                                        /* Bij HD meldingen bij 08 via DSI controleren op CIF_SIR         */
+    SCH_code[schupinagbhd09]           = "upinagbhd09";           SCH[schupinagbhd09]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 09  */
+    SCH_code[schhdin09kar]             = "hdin09kar";             SCH[schhdin09kar]             = 1;                                        /* Inmelden 09 via KAR HD toestaan                                */
+    SCH_code[schhduit09kar]            = "hduit09kar";            SCH[schhduit09kar]            = 1;                                        /* Uitmelden 09 via KAR HD toestaan                               */
+    SCH_code[schchecksirene09]         = "checksirene09";         SCH[schchecksirene09]         = 1;                                        /* Bij HD meldingen bij 09 via DSI controleren op CIF_SIR         */
+    SCH_code[schupinagbhd11]           = "upinagbhd11";           SCH[schupinagbhd11]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 11  */
+    SCH_code[schhdin11kar]             = "hdin11kar";             SCH[schhdin11kar]             = 1;                                        /* Inmelden 11 via KAR HD toestaan                                */
+    SCH_code[schhduit11kar]            = "hduit11kar";            SCH[schhduit11kar]            = 1;                                        /* Uitmelden 11 via KAR HD toestaan                               */
+    SCH_code[schchecksirene11]         = "checksirene11";         SCH[schchecksirene11]         = 1;                                        /* Bij HD meldingen bij 11 via DSI controleren op CIF_SIR         */
+    SCH_code[schupinagbhd61]           = "upinagbhd61";           SCH[schupinagbhd61]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 61  */
+    SCH_code[schhdin61kar]             = "hdin61kar";             SCH[schhdin61kar]             = 1;                                        /* Inmelden 61 via KAR HD toestaan                                */
+    SCH_code[schhduit61kar]            = "hduit61kar";            SCH[schhduit61kar]            = 1;                                        /* Uitmelden 61 via KAR HD toestaan                               */
+    SCH_code[schchecksirene61]         = "checksirene61";         SCH[schchecksirene61]         = 1;                                        /* Bij HD meldingen bij 61 via DSI controleren op CIF_SIR         */
+    SCH_code[schupinagbhd62]           = "upinagbhd62";           SCH[schupinagbhd62]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 62  */
+    SCH_code[schhdin62kar]             = "hdin62kar";             SCH[schhdin62kar]             = 1;                                        /* Inmelden 62 via KAR HD toestaan                                */
+    SCH_code[schhduit62kar]            = "hduit62kar";            SCH[schhduit62kar]            = 1;                                        /* Uitmelden 62 via KAR HD toestaan                               */
+    SCH_code[schchecksirene62]         = "checksirene62";         SCH[schchecksirene62]         = 1;                                        /* Bij HD meldingen bij 62 via DSI controleren op CIF_SIR         */
+    SCH_code[schupinagbhd67]           = "upinagbhd67";           SCH[schupinagbhd67]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 67  */
+    SCH_code[schhdin67kar]             = "hdin67kar";             SCH[schhdin67kar]             = 1;                                        /* Inmelden 67 via KAR HD toestaan                                */
+    SCH_code[schhduit67kar]            = "hduit67kar";            SCH[schhduit67kar]            = 1;                                        /* Uitmelden 67 via KAR HD toestaan                               */
+    SCH_code[schchecksirene67]         = "checksirene67";         SCH[schchecksirene67]         = 1;                                        /* Bij HD meldingen bij 67 via DSI controleren op CIF_SIR         */
+    SCH_code[schupinagbhd68]           = "upinagbhd68";           SCH[schupinagbhd68]           = 0;                                        /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 68  */
+    SCH_code[schhdin68kar]             = "hdin68kar";             SCH[schhdin68kar]             = 1;                                        /* Inmelden 68 via KAR HD toestaan                                */
+    SCH_code[schhduit68kar]            = "hduit68kar";            SCH[schhduit68kar]            = 1;                                        /* Uitmelden 68 via KAR HD toestaan                               */
+    SCH_code[schchecksirene68]         = "checksirene68";         SCH[schchecksirene68]         = 1;                                        /* Bij HD meldingen bij 68 via DSI controleren op CIF_SIR         */
+    SCH_code[schrisgeencheckopsg]      = "risgeencheckopsg";      SCH[schrisgeencheckopsg]      = 0;                                        /* Niet checken op signaalgroep bij RIS aanvragen en verlengen    */
+    SCH_code[schrgadd24_3]             = "rgadd24_3";             SCH[schrgadd24_3]             = 1;                                        /* Type richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2     */
+    SCH_code[schrgv]                   = "rgv";                   SCH[schrgv]                   = 0;                                        /* RoBuGrover aan of uit                                          */
+    SCH_code[schrgv_snel]              = "rgv_snel";              SCH[schrgv_snel]              = 0;                                        /* RoBuGrover versneld ophogen of verlagen                        */
+    SCH_code[schca02]                  = "ca02";                  SCH[schca02]                  = 0;                                        /* Cyclische aanvraag fase 02                                     */
+    SCH_code[schca03]                  = "ca03";                  SCH[schca03]                  = 0;                                        /* Cyclische aanvraag fase 03                                     */
+    SCH_code[schca05]                  = "ca05";                  SCH[schca05]                  = 0;                                        /* Cyclische aanvraag fase 05                                     */
+    SCH_code[schca08]                  = "ca08";                  SCH[schca08]                  = 0;                                        /* Cyclische aanvraag fase 08                                     */
+    SCH_code[schca09]                  = "ca09";                  SCH[schca09]                  = 0;                                        /* Cyclische aanvraag fase 09                                     */
+    SCH_code[schca11]                  = "ca11";                  SCH[schca11]                  = 0;                                        /* Cyclische aanvraag fase 11                                     */
+    SCH_code[schca21]                  = "ca21";                  SCH[schca21]                  = 0;                                        /* Cyclische aanvraag fase 21                                     */
+    SCH_code[schca22]                  = "ca22";                  SCH[schca22]                  = 0;                                        /* Cyclische aanvraag fase 22                                     */
+    SCH_code[schca24]                  = "ca24";                  SCH[schca24]                  = 0;                                        /* Cyclische aanvraag fase 24                                     */
+    SCH_code[schca26]                  = "ca26";                  SCH[schca26]                  = 0;                                        /* Cyclische aanvraag fase 26                                     */
+    SCH_code[schca28]                  = "ca28";                  SCH[schca28]                  = 0;                                        /* Cyclische aanvraag fase 28                                     */
+    SCH_code[schca31]                  = "ca31";                  SCH[schca31]                  = 0;                                        /* Cyclische aanvraag fase 31                                     */
+    SCH_code[schca32]                  = "ca32";                  SCH[schca32]                  = 0;                                        /* Cyclische aanvraag fase 32                                     */
+    SCH_code[schca33]                  = "ca33";                  SCH[schca33]                  = 0;                                        /* Cyclische aanvraag fase 33                                     */
+    SCH_code[schca34]                  = "ca34";                  SCH[schca34]                  = 0;                                        /* Cyclische aanvraag fase 34                                     */
+    SCH_code[schca38]                  = "ca38";                  SCH[schca38]                  = 0;                                        /* Cyclische aanvraag fase 38                                     */
+    SCH_code[schca61]                  = "ca61";                  SCH[schca61]                  = 0;                                        /* Cyclische aanvraag fase 61                                     */
+    SCH_code[schca62]                  = "ca62";                  SCH[schca62]                  = 0;                                        /* Cyclische aanvraag fase 62                                     */
+    SCH_code[schca67]                  = "ca67";                  SCH[schca67]                  = 0;                                        /* Cyclische aanvraag fase 67                                     */
+    SCH_code[schca68]                  = "ca68";                  SCH[schca68]                  = 0;                                        /* Cyclische aanvraag fase 68                                     */
+    SCH_code[schca84]                  = "ca84";                  SCH[schca84]                  = 0;                                        /* Cyclische aanvraag fase 84                                     */
+    SCH_code[schca82]                  = "ca82";                  SCH[schca82]                  = 0;                                        /* Cyclische aanvraag fase 82                                     */
+    SCH_code[schca81]                  = "ca81";                  SCH[schca81]                  = 0;                                        /* Cyclische aanvraag fase 81                                     */
+    SCH_code[schvg02_4a]               = "vg02_4a";               SCH[schvg02_4a]               = 0;                                        /* Veiligheidsgroen detector 02_4a fase 02                        */
+    SCH_code[schvg02_4b]               = "vg02_4b";               SCH[schvg02_4b]               = 0;                                        /* Veiligheidsgroen detector 02_4b fase 02                        */
+    SCH_code[schvg08_4a]               = "vg08_4a";               SCH[schvg08_4a]               = 0;                                        /* Veiligheidsgroen detector 08_4a fase 08                        */
+    SCH_code[schvg08_4b]               = "vg08_4b";               SCH[schvg08_4b]               = 0;                                        /* Veiligheidsgroen detector 08_4b fase 08                        */
+    SCH_code[schvg11_4]                = "vg11_4";                SCH[schvg11_4]                = 0;                                        /* Veiligheidsgroen detector 11_4 fase 11                         */
+    SCH_code[schaltg02]                = "altg02";                SCH[schaltg02]                = 1;                                        /* Alternatieve realisatie toestaan fase 02                       */
+    SCH_code[schaltg03]                = "altg03";                SCH[schaltg03]                = 1;                                        /* Alternatieve realisatie toestaan fase 03                       */
+    SCH_code[schaltg05]                = "altg05";                SCH[schaltg05]                = 1;                                        /* Alternatieve realisatie toestaan fase 05                       */
+    SCH_code[schaltg08]                = "altg08";                SCH[schaltg08]                = 1;                                        /* Alternatieve realisatie toestaan fase 08                       */
+    SCH_code[schaltg09]                = "altg09";                SCH[schaltg09]                = 1;                                        /* Alternatieve realisatie toestaan fase 09                       */
+    SCH_code[schaltg11]                = "altg11";                SCH[schaltg11]                = 1;                                        /* Alternatieve realisatie toestaan fase 11                       */
+    SCH_code[schaltg21]                = "altg21";                SCH[schaltg21]                = 1;                                        /* Alternatieve realisatie toestaan fase 21                       */
+    SCH_code[schaltg2232]              = "altg2232";              SCH[schaltg2232]              = 1;                                        /* Alternatieve realisatie toestaan fasen 22, 32                  */
+    SCH_code[schaltg2434]              = "altg2434";              SCH[schaltg2434]              = 1;                                        /* Alternatieve realisatie toestaan fasen 24, 34                  */
+    SCH_code[schaltg26]                = "altg26";                SCH[schaltg26]                = 1;                                        /* Alternatieve realisatie toestaan fase 26                       */
+    SCH_code[schaltg28]                = "altg28";                SCH[schaltg28]                = 1;                                        /* Alternatieve realisatie toestaan fase 28                       */
+    SCH_code[schaltg31]                = "altg31";                SCH[schaltg31]                = 1;                                        /* Alternatieve realisatie toestaan fase 31                       */
+    SCH_code[schaltg3384]              = "altg3384";              SCH[schaltg3384]              = 1;                                        /* Alternatieve realisatie toestaan fasen 33, 84                  */
+    SCH_code[schaltg38]                = "altg38";                SCH[schaltg38]                = 1;                                        /* Alternatieve realisatie toestaan fase 38                       */
+    SCH_code[schaltg61]                = "altg61";                SCH[schaltg61]                = 1;                                        /* Alternatieve realisatie toestaan fase 61                       */
+    SCH_code[schaltg62]                = "altg62";                SCH[schaltg62]                = 1;                                        /* Alternatieve realisatie toestaan fase 62                       */
+    SCH_code[schaltg67]                = "altg67";                SCH[schaltg67]                = 1;                                        /* Alternatieve realisatie toestaan fase 67                       */
+    SCH_code[schaltg68]                = "altg68";                SCH[schaltg68]                = 1;                                        /* Alternatieve realisatie toestaan fase 68                       */
+    SCH_code[schaltg82]                = "altg82";                SCH[schaltg82]                = 1;                                        /* Alternatieve realisatie toestaan fase 82                       */
+    SCH_code[schaltg81]                = "altg81";                SCH[schaltg81]                = 1;                                        /* Alternatieve realisatie toestaan fase 81                       */
+    SCH_code[schwg02]                  = "wg02";                  SCH[schwg02]                  = 0;                                        /* Wachtstand groen fase 02                                       */
+    SCH_code[schwg03]                  = "wg03";                  SCH[schwg03]                  = 0;                                        /* Wachtstand groen fase 03                                       */
+    SCH_code[schwg05]                  = "wg05";                  SCH[schwg05]                  = 0;                                        /* Wachtstand groen fase 05                                       */
+    SCH_code[schwg08]                  = "wg08";                  SCH[schwg08]                  = 0;                                        /* Wachtstand groen fase 08                                       */
+    SCH_code[schwg09]                  = "wg09";                  SCH[schwg09]                  = 0;                                        /* Wachtstand groen fase 09                                       */
+    SCH_code[schwg11]                  = "wg11";                  SCH[schwg11]                  = 0;                                        /* Wachtstand groen fase 11                                       */
+    SCH_code[schwg21]                  = "wg21";                  SCH[schwg21]                  = 0;                                        /* Wachtstand groen fase 21                                       */
+    SCH_code[schwg22]                  = "wg22";                  SCH[schwg22]                  = 0;                                        /* Wachtstand groen fase 22                                       */
+    SCH_code[schwg24]                  = "wg24";                  SCH[schwg24]                  = 0;                                        /* Wachtstand groen fase 24                                       */
+    SCH_code[schwg26]                  = "wg26";                  SCH[schwg26]                  = 0;                                        /* Wachtstand groen fase 26                                       */
+    SCH_code[schwg28]                  = "wg28";                  SCH[schwg28]                  = 0;                                        /* Wachtstand groen fase 28                                       */
+    SCH_code[schwg31]                  = "wg31";                  SCH[schwg31]                  = 0;                                        /* Wachtstand groen fase 31                                       */
+    SCH_code[schwg32]                  = "wg32";                  SCH[schwg32]                  = 0;                                        /* Wachtstand groen fase 32                                       */
+    SCH_code[schwg33]                  = "wg33";                  SCH[schwg33]                  = 0;                                        /* Wachtstand groen fase 33                                       */
+    SCH_code[schwg34]                  = "wg34";                  SCH[schwg34]                  = 0;                                        /* Wachtstand groen fase 34                                       */
+    SCH_code[schwg38]                  = "wg38";                  SCH[schwg38]                  = 0;                                        /* Wachtstand groen fase 38                                       */
+    SCH_code[schwg61]                  = "wg61";                  SCH[schwg61]                  = 0;                                        /* Wachtstand groen fase 61                                       */
+    SCH_code[schwg62]                  = "wg62";                  SCH[schwg62]                  = 0;                                        /* Wachtstand groen fase 62                                       */
+    SCH_code[schwg67]                  = "wg67";                  SCH[schwg67]                  = 0;                                        /* Wachtstand groen fase 67                                       */
+    SCH_code[schwg68]                  = "wg68";                  SCH[schwg68]                  = 0;                                        /* Wachtstand groen fase 68                                       */
+    SCH_code[schwg84]                  = "wg84";                  SCH[schwg84]                  = 0;                                        /* Wachtstand groen fase 84                                       */
+    SCH_code[schwg82]                  = "wg82";                  SCH[schwg82]                  = 0;                                        /* Wachtstand groen fase 82                                       */
+    SCH_code[schwg81]                  = "wg81";                  SCH[schwg81]                  = 0;                                        /* Wachtstand groen fase 81                                       */
+    SCH_code[schgs2232]                = "gs2232";                SCH[schgs2232]                = 1;                                        /* Schakelbare gelijkstart tussen fase 32 en 22                   */
+    SCH_code[schgs2434]                = "gs2434";                SCH[schgs2434]                = 1;                                        /* Schakelbare gelijkstart tussen fase 34 en 24                   */
+    SCH_code[schgs3384]                = "gs3384";                SCH[schgs3384]                = 1;                                        /* Schakelbare gelijkstart tussen fase 84 en 33                   */
+    SCH_code[schlos32_1]               = "los32_1";               SCH[schlos32_1]               = 0;                                        /* Toestaan los realiseren fase 32                                */
+    SCH_code[schlos32_2]               = "los32_2";               SCH[schlos32_2]               = 0;                                        /* Toestaan los realiseren fase 32                                */
+    SCH_code[schlos31_1]               = "los31_1";               SCH[schlos31_1]               = 0;                                        /* Toestaan los realiseren fase 31                                */
+    SCH_code[schlos31_2]               = "los31_2";               SCH[schlos31_2]               = 0;                                        /* Toestaan los realiseren fase 31                                */
+    SCH_code[schlos34_1]               = "los34_1";               SCH[schlos34_1]               = 0;                                        /* Toestaan los realiseren fase 34                                */
+    SCH_code[schlos34_2]               = "los34_2";               SCH[schlos34_2]               = 0;                                        /* Toestaan los realiseren fase 34                                */
+    SCH_code[schlos33_1]               = "los33_1";               SCH[schlos33_1]               = 0;                                        /* Toestaan los realiseren fase 33                                */
+    SCH_code[schlos33_2]               = "los33_2";               SCH[schlos33_2]               = 0;                                        /* Toestaan los realiseren fase 33                                */
+    SCH_code[schgsbeidedkb]            = "gsbeidedkb";            SCH[schgsbeidedkb]            = 0;                                       
 
 /* parameters */
 /* ---------- */
@@ -1719,7 +1821,7 @@ void control_parameters(void)
     PRM_code[prmlatencyminendsg]     = "latencyminendsg";     PRM[prmlatencyminendsg]     = 3;    PRM_type[prmlatencyminendsg]     = TE_type;
     PRM_code[prmfb]                  = "fb";                  PRM[prmfb]                  = 240;  PRM_type[prmfb]                  = TS_type; /* Instelling fasebewaking                                                                                                        */
     PRM_code[prmxx]                  = "xx";                  PRM[prmxx]                  = 1;                                                /* Versiebeheer xx                                                                                                                */
-    PRM_code[prmyy]                  = "yy";                  PRM[prmyy]                  = 6;                                                /* Versiebeheer yy                                                                                                                */
+    PRM_code[prmyy]                  = "yy";                  PRM[prmyy]                  = 9;                                                /* Versiebeheer yy                                                                                                                */
     PRM_code[prmzz]                  = "zz";                  PRM[prmzz]                  = 0;                                                /* Versiebeheer zz                                                                                                                */
     PRM_code[prmovmextragroen_02]    = "ovmextragroen_02";    PRM[prmovmextragroen_02]    = 0;    PRM_type[prmovmextragroen_02]    = TE_type;
     PRM_code[prmovmmindergroen_02]   = "ovmmindergroen_02";   PRM[prmovmmindergroen_02]   = 0;    PRM_type[prmovmmindergroen_02]   = TE_type;
@@ -1762,6 +1864,8 @@ void control_parameters(void)
     PRM_code[prmaltb67]              = "altb67";              PRM[prmaltb67]              = 15;                                               /* Alternatief per blok voor fase 67                                                                                              */
     PRM_code[prmaltb68]              = "altb68";              PRM[prmaltb68]              = 15;                                               /* Alternatief per blok voor fase 68                                                                                              */
     PRM_code[prmaltb84]              = "altb84";              PRM[prmaltb84]              = 15;                                               /* Alternatief per blok voor fase 84                                                                                              */
+    PRM_code[prmaltb82]              = "altb82";              PRM[prmaltb82]              = 1023;                                             /* Alternatief per blok voor fase 82                                                                                              */
+    PRM_code[prmaltb81]              = "altb81";              PRM[prmaltb81]              = 1023;                                             /* Alternatief per blok voor fase 81                                                                                              */
     PRM_code[prmda02_1a]             = "da02_1a";             PRM[prmda02_1a]             = 1;                                                /* Aanvraag functie voor detector 02_1a                                                                                           */
     PRM_code[prmda02_1b]             = "da02_1b";             PRM[prmda02_1b]             = 1;                                                /* Aanvraag functie voor detector 02_1b                                                                                           */
     PRM_code[prmda02_2a]             = "da02_2a";             PRM[prmda02_2a]             = 1;                                                /* Aanvraag functie voor detector 02_2a                                                                                           */
@@ -1824,8 +1928,14 @@ void control_parameters(void)
     PRM_code[prmda68_1b]             = "da68_1b";             PRM[prmda68_1b]             = 1;                                                /* Aanvraag functie voor detector 68_1b                                                                                           */
     PRM_code[prmda68_2a]             = "da68_2a";             PRM[prmda68_2a]             = 1;                                                /* Aanvraag functie voor detector 68_2a                                                                                           */
     PRM_code[prmda68_2b]             = "da68_2b";             PRM[prmda68_2b]             = 1;                                                /* Aanvraag functie voor detector 68_2b                                                                                           */
+    PRM_code[prmda68_9a]             = "da68_9a";             PRM[prmda68_9a]             = 0;                                                /* Aanvraag functie voor detector 68_9a                                                                                           */
+    PRM_code[prmda68_9b]             = "da68_9b";             PRM[prmda68_9b]             = 0;                                                /* Aanvraag functie voor detector 68_9b                                                                                           */
     PRM_code[prmda84_1]              = "da84_1";              PRM[prmda84_1]              = 1;                                                /* Aanvraag functie voor detector 84_1                                                                                            */
     PRM_code[prmdak84]               = "dak84";               PRM[prmdak84]               = 2;                                                /* Aanvraag functie voor detector k84                                                                                             */
+    PRM_code[prmda82_1]              = "da82_1";              PRM[prmda82_1]              = 1;                                                /* Aanvraag functie voor detector 82_1                                                                                            */
+    PRM_code[prmdak82]               = "dak82";               PRM[prmdak82]               = 2;                                                /* Aanvraag functie voor detector k82                                                                                             */
+    PRM_code[prmda81_1]              = "da81_1";              PRM[prmda81_1]              = 1;                                                /* Aanvraag functie voor detector 81_1                                                                                            */
+    PRM_code[prmdak81]               = "dak81";               PRM[prmdak81]               = 2;                                                /* Aanvraag functie voor detector k81                                                                                             */
     PRM_code[prmmk02_1a]             = "mk02_1a";             PRM[prmmk02_1a]             = 1;                                                /* Meetkriterium type voor detector 02_1a                                                                                         */
     PRM_code[prmmk02_1b]             = "mk02_1b";             PRM[prmmk02_1b]             = 1;                                                /* Meetkriterium type voor detector 02_1b                                                                                         */
     PRM_code[prmmk02_2a]             = "mk02_2a";             PRM[prmmk02_2a]             = 3;                                                /* Meetkriterium type voor detector 02_2a                                                                                         */
@@ -1873,7 +1983,11 @@ void control_parameters(void)
     PRM_code[prmmk68_1b]             = "mk68_1b";             PRM[prmmk68_1b]             = 1;                                                /* Meetkriterium type voor detector 68_1b                                                                                         */
     PRM_code[prmmk68_2a]             = "mk68_2a";             PRM[prmmk68_2a]             = 3;                                                /* Meetkriterium type voor detector 68_2a                                                                                         */
     PRM_code[prmmk68_2b]             = "mk68_2b";             PRM[prmmk68_2b]             = 7;                                                /* Meetkriterium type voor detector 68_2b                                                                                         */
+    PRM_code[prmmk68_9a]             = "mk68_9a";             PRM[prmmk68_9a]             = 0;                                                /* Meetkriterium type voor detector 68_9a                                                                                         */
+    PRM_code[prmmk68_9b]             = "mk68_9b";             PRM[prmmk68_9b]             = 4;                                                /* Meetkriterium type voor detector 68_9b                                                                                         */
     PRM_code[prmmk84_1]              = "mk84_1";              PRM[prmmk84_1]              = 1;                                                /* Meetkriterium type voor detector 84_1                                                                                          */
+    PRM_code[prmmk82_1]              = "mk82_1";              PRM[prmmk82_1]              = 1;                                                /* Meetkriterium type voor detector 82_1                                                                                          */
+    PRM_code[prmmk81_1]              = "mk81_1";              PRM[prmmk81_1]              = 1;                                                /* Meetkriterium type voor detector 81_1                                                                                          */
     PRM_code[prmperc02]              = "perc02";              PRM[prmperc02]              = 65;                                               /* Percentage groentijd fase 02 bij defect kop en lange lus                                                                       */
     PRM_code[prmperc03]              = "perc03";              PRM[prmperc03]              = 65;                                               /* Percentage groentijd fase 03 bij defect kop en lange lus                                                                       */
     PRM_code[prmperc05]              = "perc05";              PRM[prmperc05]              = 65;                                               /* Percentage groentijd fase 05 bij defect kop en lange lus                                                                       */
@@ -1884,6 +1998,8 @@ void control_parameters(void)
     PRM_code[prmperc62]              = "perc62";              PRM[prmperc62]              = 65;                                               /* Percentage groentijd fase 62 bij defect kop en lange lus                                                                       */
     PRM_code[prmperc67]              = "perc67";              PRM[prmperc67]              = 65;                                               /* Percentage groentijd fase 67 bij defect kop en lange lus                                                                       */
     PRM_code[prmperc68]              = "perc68";              PRM[prmperc68]              = 65;                                               /* Percentage groentijd fase 68 bij defect kop en lange lus                                                                       */
+    PRM_code[prmfpercFile68af08]     = "fpercFile68af08";     PRM[prmfpercFile68af08]     = 50;                                               /* Doseerpercentage 08                                                                                                            */
+    PRM_code[prmfpercFile68af11]     = "fpercFile68af11";     PRM[prmfpercFile68af11]     = 50;                                               /* Doseerpercentage 11                                                                                                            */
     PRM_code[prmtypema0261]          = "typema0261";          PRM[prmtypema0261]          = 2;                                                /* Type meeaanvraag van 02 naar 61                                                                                                */
     PRM_code[prmtypema0262]          = "typema0262";          PRM[prmtypema0262]          = 2;                                                /* Type meeaanvraag van 02 naar 62                                                                                                */
     PRM_code[prmtypema0521]          = "typema0521";          PRM[prmtypema0521]          = 1;                                                /* Type meeaanvraag van 05 naar 21                                                                                                */
@@ -1903,6 +2019,7 @@ void control_parameters(void)
     PRM_code[prmtypema3433]          = "typema3433";          PRM[prmtypema3433]          = 1;                                                /* Type meeaanvraag van 34 naar 33                                                                                                */
     PRM_code[prmtypema3484]          = "typema3484";          PRM[prmtypema3484]          = 2;                                                /* Type meeaanvraag van 34 naar 84                                                                                                */
     PRM_code[prmtypema3828]          = "typema3828";          PRM[prmtypema3828]          = 2;                                                /* Type meeaanvraag van 38 naar 28                                                                                                */
+    PRM_code[prmtypema8281]          = "typema8281";          PRM[prmtypema8281]          = 1;                                                /* Type meeaanvraag van 82 naar 81                                                                                                */
     PRM_code[prmmv02]                = "mv02";                PRM[prmmv02]                = 1;                                                /* Type meeverlengen fase 02 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
     PRM_code[prmmv03]                = "mv03";                PRM[prmmv03]                = 1;                                                /* Type meeverlengen fase 03 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
     PRM_code[prmmv05]                = "mv05";                PRM[prmmv05]                = 1;                                                /* Type meeverlengen fase 05 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
@@ -1924,6 +2041,8 @@ void control_parameters(void)
     PRM_code[prmmv67]                = "mv67";                PRM[prmmv67]                = 1;                                                /* Type meeverlengen fase 67 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
     PRM_code[prmmv68]                = "mv68";                PRM[prmmv68]                = 1;                                                /* Type meeverlengen fase 68 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
     PRM_code[prmmv84]                = "mv84";                PRM[prmmv84]                = 1;                                                /* Type meeverlengen fase 84 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    PRM_code[prmmv82]                = "mv82";                PRM[prmmv82]                = 1;                                                /* Type meeverlengen fase 82 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    PRM_code[prmmv81]                = "mv81";                PRM[prmmv81]                = 1;                                                /* Type meeverlengen fase 81 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
     PRM_code[prmprml02]              = "prml02";              PRM[prmprml02]              = 1;                                                /* Toewijzen PRML voor fase 02 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
     PRM_code[prmprml03]              = "prml03";              PRM[prmprml03]              = 2;                                                /* Toewijzen PRML voor fase 03 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
     PRM_code[prmprml05]              = "prml05";              PRM[prmprml05]              = 8;                                                /* Toewijzen PRML voor fase 05 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
@@ -1945,6 +2064,8 @@ void control_parameters(void)
     PRM_code[prmprml67]              = "prml67";              PRM[prmprml67]              = 8;                                                /* Toewijzen PRML voor fase 67 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
     PRM_code[prmprml68]              = "prml68";              PRM[prmprml68]              = 1;                                                /* Toewijzen PRML voor fase 68 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
     PRM_code[prmprml84]              = "prml84";              PRM[prmprml84]              = 1;                                                /* Toewijzen PRML voor fase 84 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    PRM_code[prmprml82]              = "prml82";              PRM[prmprml82]              = 2;                                                /* Toewijzen PRML voor fase 82 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    PRM_code[prmprml81]              = "prml81";              PRM[prmprml81]              = 2;                                                /* Toewijzen PRML voor fase 81 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
     PRM_code[prmxnl0262]             = "xnl0262";             PRM[prmxnl0262]             = 30;   PRM_type[prmxnl0262]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
     PRM_code[prmxnl0868]             = "xnl0868";             PRM[prmxnl0868]             = 30;   PRM_type[prmxnl0868]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
     PRM_code[prmxnl2221]             = "xnl2221";             PRM[prmxnl2221]             = 20;   PRM_type[prmxnl2221]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
@@ -1952,6 +2073,7 @@ void control_parameters(void)
     PRM_code[prmxnl3231]             = "xnl3231";             PRM[prmxnl3231]             = 30;   PRM_type[prmxnl3231]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
     PRM_code[prmxnl3334]             = "xnl3334";             PRM[prmxnl3334]             = 30;   PRM_type[prmxnl3334]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
     PRM_code[prmxnl3433]             = "xnl3433";             PRM[prmxnl3433]             = 30;   PRM_type[prmxnl3433]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
+    PRM_code[prmxnl8281]             = "xnl8281";             PRM[prmxnl8281]             = 30;   PRM_type[prmxnl8281]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
     PRM_code[prmOVtstpgrensvroeg]    = "OVtstpgrensvroeg";    PRM[prmOVtstpgrensvroeg]    = 60;   PRM_type[prmOVtstpgrensvroeg]    = TS_type; /* Grens waarboven een OV voertuig als te vroeg wordt aangemerkt                                                                  */
     PRM_code[prmOVtstpgrenslaat]     = "OVtstpgrenslaat";     PRM[prmOVtstpgrenslaat]     = 120;  PRM_type[prmOVtstpgrenslaat]     = TS_type; /* Grens waarboven een OV voertuig als te laat wordt aangemerkt                                                                   */
     PRM_code[prmovstipttevroeg02bus] = "ovstipttevroeg02bus"; PRM[prmovstipttevroeg02bus] = 2;                                                /* Prioriteitsnveau OV te vroeg bij 02 Bus                                                                                        */
@@ -2087,12 +2209,24 @@ void control_parameters(void)
     PRM_code[prmmgcov68]             = "mgcov68";             PRM[prmmgcov68]             = 0;    PRM_type[prmmgcov68]             = TE_type; /* Minimum groentijd waarna fase 68 afgkapt mag worden door OV ingreep                                                            */
     PRM_code[prmpmgcov68]            = "pmgcov68";            PRM[prmpmgcov68]            = 0;                                                /* Minimum percentage groentijd waarna fase 68 afgkapt mag worden door OV ingreep                                                 */
     PRM_code[prmohpmg68]             = "ohpmg68";             PRM[prmohpmg68]             = 0;                                                /* Percentage ophogen groentijd na afkappen fase 68                                                                               */
+    PRM_code[prmpmgt82]              = "pmgt82";              PRM[prmpmgt82]              = 0;                                                /* Minimaal percentage groentijd primair tbv. terugkomen fase 82                                                                  */
+    PRM_code[prmognt82]              = "ognt82";              PRM[prmognt82]              = 0;    PRM_type[prmognt82]              = TE_type; /* Minimale groentijd bij terugkomen fase 82                                                                                      */
+    PRM_code[prmnofm82]              = "nofm82";              PRM[prmnofm82]              = 0;    PRM_type[prmnofm82]              = TE_type; /* Aantal malen niet afkappen na OV ingreep fase 82                                                                               */
+    PRM_code[prmmgcov82]             = "mgcov82";             PRM[prmmgcov82]             = 0;    PRM_type[prmmgcov82]             = TE_type; /* Minimum groentijd waarna fase 82 afgkapt mag worden door OV ingreep                                                            */
+    PRM_code[prmpmgcov82]            = "pmgcov82";            PRM[prmpmgcov82]            = 0;                                                /* Minimum percentage groentijd waarna fase 82 afgkapt mag worden door OV ingreep                                                 */
+    PRM_code[prmohpmg82]             = "ohpmg82";             PRM[prmohpmg82]             = 0;                                                /* Percentage ophogen groentijd na afkappen fase 82                                                                               */
     PRM_code[prmpmgt84]              = "pmgt84";              PRM[prmpmgt84]              = 100;                                              /* Minimaal percentage groentijd primair tbv. terugkomen fase 84                                                                  */
     PRM_code[prmognt84]              = "ognt84";              PRM[prmognt84]              = 60;   PRM_type[prmognt84]              = TE_type; /* Minimale groentijd bij terugkomen fase 84                                                                                      */
     PRM_code[prmnofm84]              = "nofm84";              PRM[prmnofm84]              = 0;    PRM_type[prmnofm84]              = TE_type; /* Aantal malen niet afkappen na OV ingreep fase 84                                                                               */
     PRM_code[prmmgcov84]             = "mgcov84";             PRM[prmmgcov84]             = 0;    PRM_type[prmmgcov84]             = TE_type; /* Minimum groentijd waarna fase 84 afgkapt mag worden door OV ingreep                                                            */
     PRM_code[prmpmgcov84]            = "pmgcov84";            PRM[prmpmgcov84]            = 0;                                                /* Minimum percentage groentijd waarna fase 84 afgkapt mag worden door OV ingreep                                                 */
     PRM_code[prmohpmg84]             = "ohpmg84";             PRM[prmohpmg84]             = 0;                                                /* Percentage ophogen groentijd na afkappen fase 84                                                                               */
+    PRM_code[prmpmgt81]              = "pmgt81";              PRM[prmpmgt81]              = 0;                                                /* Minimaal percentage groentijd primair tbv. terugkomen fase 81                                                                  */
+    PRM_code[prmognt81]              = "ognt81";              PRM[prmognt81]              = 0;    PRM_type[prmognt81]              = TE_type; /* Minimale groentijd bij terugkomen fase 81                                                                                      */
+    PRM_code[prmnofm81]              = "nofm81";              PRM[prmnofm81]              = 0;    PRM_type[prmnofm81]              = TE_type; /* Aantal malen niet afkappen na OV ingreep fase 81                                                                               */
+    PRM_code[prmmgcov81]             = "mgcov81";             PRM[prmmgcov81]             = 0;    PRM_type[prmmgcov81]             = TE_type; /* Minimum groentijd waarna fase 81 afgkapt mag worden door OV ingreep                                                            */
+    PRM_code[prmpmgcov81]            = "pmgcov81";            PRM[prmpmgcov81]            = 0;                                                /* Minimum percentage groentijd waarna fase 81 afgkapt mag worden door OV ingreep                                                 */
+    PRM_code[prmohpmg81]             = "ohpmg81";             PRM[prmohpmg81]             = 0;                                                /* Percentage ophogen groentijd na afkappen fase 81                                                                               */
     PRM_code[prmrto02bus]            = "rto02bus";            PRM[prmrto02bus]            = 140;  PRM_type[prmrto02bus]            = TE_type; /* Ongehinderde rijtijd prioriteit fase 02                                                                                        */
     PRM_code[prmrtbg02bus]           = "rtbg02bus";           PRM[prmrtbg02bus]           = 100;  PRM_type[prmrtbg02bus]           = TE_type; /* Beperkt gehinderde rijtijd prioriteit fase 02                                                                                  */
     PRM_code[prmrtg02bus]            = "rtg02bus";            PRM[prmrtg02bus]            = 60;   PRM_type[prmrtg02bus]            = TE_type; /* Gehinderde rijtijd prioriteit fase 02                                                                                          */
@@ -2236,6 +2370,8 @@ void control_parameters(void)
     PRM_code[prmmg1_62]              = "mg1_62";              PRM[prmmg1_62]              = 50;   PRM_type[prmmg1_62]              = TE_type; /* Maximale groentijd MG1 62                                                                                                      */
     PRM_code[prmmg1_67]              = "mg1_67";              PRM[prmmg1_67]              = 50;   PRM_type[prmmg1_67]              = TE_type; /* Maximale groentijd MG1 67                                                                                                      */
     PRM_code[prmmg1_68]              = "mg1_68";              PRM[prmmg1_68]              = 50;   PRM_type[prmmg1_68]              = TE_type; /* Maximale groentijd MG1 68                                                                                                      */
+    PRM_code[prmmg1_81]              = "mg1_81";              PRM[prmmg1_81]              = 150;  PRM_type[prmmg1_81]              = TE_type; /* Maximale groentijd MG1 81                                                                                                      */
+    PRM_code[prmmg1_82]              = "mg1_82";              PRM[prmmg1_82]              = 150;  PRM_type[prmmg1_82]              = TE_type; /* Maximale groentijd MG1 82                                                                                                      */
     PRM_code[prmmg1_84]              = "mg1_84";              PRM[prmmg1_84]              = 150;  PRM_type[prmmg1_84]              = TE_type; /* Maximale groentijd MG1 84                                                                                                      */
     PRM_code[prmmg2_02]              = "mg2_02";              PRM[prmmg2_02]              = 200;  PRM_type[prmmg2_02]              = TE_type; /* Maximale groentijd MG2 02                                                                                                      */
     PRM_code[prmmg2_03]              = "mg2_03";              PRM[prmmg2_03]              = 150;  PRM_type[prmmg2_03]              = TE_type; /* Maximale groentijd MG2 03                                                                                                      */
@@ -2252,6 +2388,8 @@ void control_parameters(void)
     PRM_code[prmmg2_62]              = "mg2_62";              PRM[prmmg2_62]              = 50;   PRM_type[prmmg2_62]              = TE_type; /* Maximale groentijd MG2 62                                                                                                      */
     PRM_code[prmmg2_67]              = "mg2_67";              PRM[prmmg2_67]              = 50;   PRM_type[prmmg2_67]              = TE_type; /* Maximale groentijd MG2 67                                                                                                      */
     PRM_code[prmmg2_68]              = "mg2_68";              PRM[prmmg2_68]              = 50;   PRM_type[prmmg2_68]              = TE_type; /* Maximale groentijd MG2 68                                                                                                      */
+    PRM_code[prmmg2_81]              = "mg2_81";              PRM[prmmg2_81]              = 150;  PRM_type[prmmg2_81]              = TE_type; /* Maximale groentijd MG2 81                                                                                                      */
+    PRM_code[prmmg2_82]              = "mg2_82";              PRM[prmmg2_82]              = 150;  PRM_type[prmmg2_82]              = TE_type; /* Maximale groentijd MG2 82                                                                                                      */
     PRM_code[prmmg2_84]              = "mg2_84";              PRM[prmmg2_84]              = 150;  PRM_type[prmmg2_84]              = TE_type; /* Maximale groentijd MG2 84                                                                                                      */
     PRM_code[prmmg3_02]              = "mg3_02";              PRM[prmmg3_02]              = 200;  PRM_type[prmmg3_02]              = TE_type; /* Maximale groentijd MG3 02                                                                                                      */
     PRM_code[prmmg3_03]              = "mg3_03";              PRM[prmmg3_03]              = 150;  PRM_type[prmmg3_03]              = TE_type; /* Maximale groentijd MG3 03                                                                                                      */
@@ -2268,6 +2406,8 @@ void control_parameters(void)
     PRM_code[prmmg3_62]              = "mg3_62";              PRM[prmmg3_62]              = 50;   PRM_type[prmmg3_62]              = TE_type; /* Maximale groentijd MG3 62                                                                                                      */
     PRM_code[prmmg3_67]              = "mg3_67";              PRM[prmmg3_67]              = 50;   PRM_type[prmmg3_67]              = TE_type; /* Maximale groentijd MG3 67                                                                                                      */
     PRM_code[prmmg3_68]              = "mg3_68";              PRM[prmmg3_68]              = 50;   PRM_type[prmmg3_68]              = TE_type; /* Maximale groentijd MG3 68                                                                                                      */
+    PRM_code[prmmg3_81]              = "mg3_81";              PRM[prmmg3_81]              = 150;  PRM_type[prmmg3_81]              = TE_type; /* Maximale groentijd MG3 81                                                                                                      */
+    PRM_code[prmmg3_82]              = "mg3_82";              PRM[prmmg3_82]              = 150;  PRM_type[prmmg3_82]              = TE_type; /* Maximale groentijd MG3 82                                                                                                      */
     PRM_code[prmmg3_84]              = "mg3_84";              PRM[prmmg3_84]              = 150;  PRM_type[prmmg3_84]              = TE_type; /* Maximale groentijd MG3 84                                                                                                      */
     PRM_code[prmmg4_02]              = "mg4_02";              PRM[prmmg4_02]              = 300;  PRM_type[prmmg4_02]              = TE_type; /* Maximale groentijd MG4 02                                                                                                      */
     PRM_code[prmmg4_03]              = "mg4_03";              PRM[prmmg4_03]              = 150;  PRM_type[prmmg4_03]              = TE_type; /* Maximale groentijd MG4 03                                                                                                      */
@@ -2284,6 +2424,8 @@ void control_parameters(void)
     PRM_code[prmmg4_62]              = "mg4_62";              PRM[prmmg4_62]              = 50;   PRM_type[prmmg4_62]              = TE_type; /* Maximale groentijd MG4 62                                                                                                      */
     PRM_code[prmmg4_67]              = "mg4_67";              PRM[prmmg4_67]              = 50;   PRM_type[prmmg4_67]              = TE_type; /* Maximale groentijd MG4 67                                                                                                      */
     PRM_code[prmmg4_68]              = "mg4_68";              PRM[prmmg4_68]              = 50;   PRM_type[prmmg4_68]              = TE_type; /* Maximale groentijd MG4 68                                                                                                      */
+    PRM_code[prmmg4_81]              = "mg4_81";              PRM[prmmg4_81]              = 150;  PRM_type[prmmg4_81]              = TE_type; /* Maximale groentijd MG4 81                                                                                                      */
+    PRM_code[prmmg4_82]              = "mg4_82";              PRM[prmmg4_82]              = 150;  PRM_type[prmmg4_82]              = TE_type; /* Maximale groentijd MG4 82                                                                                                      */
     PRM_code[prmmg4_84]              = "mg4_84";              PRM[prmmg4_84]              = 150;  PRM_type[prmmg4_84]              = TE_type; /* Maximale groentijd MG4 84                                                                                                      */
     PRM_code[prmmg5_02]              = "mg5_02";              PRM[prmmg5_02]              = 300;  PRM_type[prmmg5_02]              = TE_type; /* Maximale groentijd MG5 02                                                                                                      */
     PRM_code[prmmg5_03]              = "mg5_03";              PRM[prmmg5_03]              = 150;  PRM_type[prmmg5_03]              = TE_type; /* Maximale groentijd MG5 03                                                                                                      */
@@ -2300,6 +2442,8 @@ void control_parameters(void)
     PRM_code[prmmg5_62]              = "mg5_62";              PRM[prmmg5_62]              = 50;   PRM_type[prmmg5_62]              = TE_type; /* Maximale groentijd MG5 62                                                                                                      */
     PRM_code[prmmg5_67]              = "mg5_67";              PRM[prmmg5_67]              = 50;   PRM_type[prmmg5_67]              = TE_type; /* Maximale groentijd MG5 67                                                                                                      */
     PRM_code[prmmg5_68]              = "mg5_68";              PRM[prmmg5_68]              = 50;   PRM_type[prmmg5_68]              = TE_type; /* Maximale groentijd MG5 68                                                                                                      */
+    PRM_code[prmmg5_81]              = "mg5_81";              PRM[prmmg5_81]              = 150;  PRM_type[prmmg5_81]              = TE_type; /* Maximale groentijd MG5 81                                                                                                      */
+    PRM_code[prmmg5_82]              = "mg5_82";              PRM[prmmg5_82]              = 150;  PRM_type[prmmg5_82]              = TE_type; /* Maximale groentijd MG5 82                                                                                                      */
     PRM_code[prmmg5_84]              = "mg5_84";              PRM[prmmg5_84]              = 150;  PRM_type[prmmg5_84]              = TE_type; /* Maximale groentijd MG5 84                                                                                                      */
     PRM_code[prmmg6_02]              = "mg6_02";              PRM[prmmg6_02]              = 300;  PRM_type[prmmg6_02]              = TE_type; /* Maximale groentijd MG6 02                                                                                                      */
     PRM_code[prmmg6_03]              = "mg6_03";              PRM[prmmg6_03]              = 150;  PRM_type[prmmg6_03]              = TE_type; /* Maximale groentijd MG6 03                                                                                                      */
@@ -2316,6 +2460,8 @@ void control_parameters(void)
     PRM_code[prmmg6_62]              = "mg6_62";              PRM[prmmg6_62]              = 50;   PRM_type[prmmg6_62]              = TE_type; /* Maximale groentijd MG6 62                                                                                                      */
     PRM_code[prmmg6_67]              = "mg6_67";              PRM[prmmg6_67]              = 50;   PRM_type[prmmg6_67]              = TE_type; /* Maximale groentijd MG6 67                                                                                                      */
     PRM_code[prmmg6_68]              = "mg6_68";              PRM[prmmg6_68]              = 50;   PRM_type[prmmg6_68]              = TE_type; /* Maximale groentijd MG6 68                                                                                                      */
+    PRM_code[prmmg6_81]              = "mg6_81";              PRM[prmmg6_81]              = 150;  PRM_type[prmmg6_81]              = TE_type; /* Maximale groentijd MG6 81                                                                                                      */
+    PRM_code[prmmg6_82]              = "mg6_82";              PRM[prmmg6_82]              = 150;  PRM_type[prmmg6_82]              = TE_type; /* Maximale groentijd MG6 82                                                                                                      */
     PRM_code[prmmg6_84]              = "mg6_84";              PRM[prmmg6_84]              = 150;  PRM_type[prmmg6_84]              = TE_type; /* Maximale groentijd MG6 84                                                                                                      */
     PRM_code[prmmg7_02]              = "mg7_02";              PRM[prmmg7_02]              = 300;  PRM_type[prmmg7_02]              = TE_type; /* Maximale groentijd MG7 02                                                                                                      */
     PRM_code[prmmg7_03]              = "mg7_03";              PRM[prmmg7_03]              = 150;  PRM_type[prmmg7_03]              = TE_type; /* Maximale groentijd MG7 03                                                                                                      */
@@ -2332,6 +2478,8 @@ void control_parameters(void)
     PRM_code[prmmg7_62]              = "mg7_62";              PRM[prmmg7_62]              = 50;   PRM_type[prmmg7_62]              = TE_type; /* Maximale groentijd MG7 62                                                                                                      */
     PRM_code[prmmg7_67]              = "mg7_67";              PRM[prmmg7_67]              = 50;   PRM_type[prmmg7_67]              = TE_type; /* Maximale groentijd MG7 67                                                                                                      */
     PRM_code[prmmg7_68]              = "mg7_68";              PRM[prmmg7_68]              = 50;   PRM_type[prmmg7_68]              = TE_type; /* Maximale groentijd MG7 68                                                                                                      */
+    PRM_code[prmmg7_81]              = "mg7_81";              PRM[prmmg7_81]              = 150;  PRM_type[prmmg7_81]              = TE_type; /* Maximale groentijd MG7 81                                                                                                      */
+    PRM_code[prmmg7_82]              = "mg7_82";              PRM[prmmg7_82]              = 150;  PRM_type[prmmg7_82]              = TE_type; /* Maximale groentijd MG7 82                                                                                                      */
     PRM_code[prmmg7_84]              = "mg7_84";              PRM[prmmg7_84]              = 150;  PRM_type[prmmg7_84]              = TE_type; /* Maximale groentijd MG7 84                                                                                                      */
     PRM_code[prmrisapproachid02]     = "risapproachid02";     PRM[prmrisapproachid02]     = 0;                                                /* Approach id voor fase 02                                                                                                       */
     PRM_code[prmrisapproachid03]     = "risapproachid03";     PRM[prmrisapproachid03]     = 0;                                                /* Approach id voor fase 03                                                                                                       */
@@ -2353,7 +2501,9 @@ void control_parameters(void)
     PRM_code[prmrisapproachid62]     = "risapproachid62";     PRM[prmrisapproachid62]     = 0;                                                /* Approach id voor fase 62                                                                                                       */
     PRM_code[prmrisapproachid67]     = "risapproachid67";     PRM[prmrisapproachid67]     = 0;                                                /* Approach id voor fase 67                                                                                                       */
     PRM_code[prmrisapproachid68]     = "risapproachid68";     PRM[prmrisapproachid68]     = 0;                                                /* Approach id voor fase 68                                                                                                       */
+    PRM_code[prmrisapproachid81]     = "risapproachid81";     PRM[prmrisapproachid81]     = 0;                                                /* Approach id voor fase 81                                                                                                       */
     PRM_code[prmrisapproachid84]     = "risapproachid84";     PRM[prmrisapproachid84]     = 0;                                                /* Approach id voor fase 84                                                                                                       */
+    PRM_code[prmrisapproachid82]     = "risapproachid82";     PRM[prmrisapproachid82]     = 0;                                                /* Approach id voor fase 82                                                                                                       */
     PRM_code[prmrislaneid02_1]       = "rislaneid02_1";       PRM[prmrislaneid02_1]       = 1;                                                /* Lane id voor lane met index 1 bij fase 02                                                                                      */
     PRM_code[prmrislaneid02_2]       = "rislaneid02_2";       PRM[prmrislaneid02_2]       = 2;                                                /* Lane id voor lane met index 2 bij fase 02                                                                                      */
     PRM_code[prmrislaneid03_1]       = "rislaneid03_1";       PRM[prmrislaneid03_1]       = 3;                                                /* Lane id voor lane met index 1 bij fase 03                                                                                      */
@@ -2383,7 +2533,9 @@ void control_parameters(void)
     PRM_code[prmrislaneid67_1]       = "rislaneid67_1";       PRM[prmrislaneid67_1]       = 27;                                               /* Lane id voor lane met index 1 bij fase 67                                                                                      */
     PRM_code[prmrislaneid68_1]       = "rislaneid68_1";       PRM[prmrislaneid68_1]       = 28;                                               /* Lane id voor lane met index 1 bij fase 68                                                                                      */
     PRM_code[prmrislaneid68_2]       = "rislaneid68_2";       PRM[prmrislaneid68_2]       = 29;                                               /* Lane id voor lane met index 2 bij fase 68                                                                                      */
+    PRM_code[prmrislaneid81_1]       = "rislaneid81_1";       PRM[prmrislaneid81_1]       = 0;                                                /* Lane id voor lane met index 1 bij fase 81                                                                                      */
     PRM_code[prmrislaneid84_1]       = "rislaneid84_1";       PRM[prmrislaneid84_1]       = 30;                                               /* Lane id voor lane met index 1 bij fase 84                                                                                      */
+    PRM_code[prmrislaneid82_1]       = "rislaneid82_1";       PRM[prmrislaneid82_1]       = 0;                                                /* Lane id voor lane met index 1 bij fase 82                                                                                      */
     PRM_code[prmrisastart02mveh1]    = "risastart02mveh1";    PRM[prmrisastart02mveh1]    = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 02                                                                   */
     PRM_code[prmrisastart02mveh2]    = "risastart02mveh2";    PRM[prmrisastart02mveh2]    = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 02                                                                   */
     PRM_code[prmrisastart03mveh1]    = "risastart03mveh1";    PRM[prmrisastart03mveh1]    = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 03                                                                   */
@@ -2395,7 +2547,13 @@ void control_parameters(void)
     PRM_code[prmrisastart21fts1]     = "risastart21fts1";     PRM[prmrisastart21fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 21                                                                   */
     PRM_code[prmrisastart22fts1]     = "risastart22fts1";     PRM[prmrisastart22fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 22                                                                   */
     PRM_code[prmrisastart24fts1]     = "risastart24fts1";     PRM[prmrisastart24fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 24                                                                   */
+    PRM_code[prmrisastart26fts1]     = "risastart26fts1";     PRM[prmrisastart26fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 26                                                                   */
+    PRM_code[prmrisastart28fts1]     = "risastart28fts1";     PRM[prmrisastart28fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 28                                                                   */
+    PRM_code[prmrisastart31vtg1]     = "risastart31vtg1";     PRM[prmrisastart31vtg1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
+    PRM_code[prmrisastart31vtg2]     = "risastart31vtg2";     PRM[prmrisastart31vtg2]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
+    PRM_code[prmrisastart81fts1]     = "risastart81fts1";     PRM[prmrisastart81fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 81                                                                   */
     PRM_code[prmrisastart84fts1]     = "risastart84fts1";     PRM[prmrisastart84fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 84                                                                   */
+    PRM_code[prmrisastart82fts1]     = "risastart82fts1";     PRM[prmrisastart82fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 82                                                                   */
     PRM_code[prmrisastart68mveh2]    = "risastart68mveh2";    PRM[prmrisastart68mveh2]    = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
     PRM_code[prmrisastart68mveh1]    = "risastart68mveh1";    PRM[prmrisastart68mveh1]    = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
     PRM_code[prmrisastart67mveh1]    = "risastart67mveh1";    PRM[prmrisastart67mveh1]    = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 67                                                                   */
@@ -2410,10 +2568,6 @@ void control_parameters(void)
     PRM_code[prmrisastart33vtg1]     = "risastart33vtg1";     PRM[prmrisastart33vtg1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
     PRM_code[prmrisastart32vtg2]     = "risastart32vtg2";     PRM[prmrisastart32vtg2]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
     PRM_code[prmrisastart32vtg1]     = "risastart32vtg1";     PRM[prmrisastart32vtg1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
-    PRM_code[prmrisastart31vtg2]     = "risastart31vtg2";     PRM[prmrisastart31vtg2]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
-    PRM_code[prmrisastart31vtg1]     = "risastart31vtg1";     PRM[prmrisastart31vtg1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
-    PRM_code[prmrisastart28fts1]     = "risastart28fts1";     PRM[prmrisastart28fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 28                                                                   */
-    PRM_code[prmrisastart26fts1]     = "risastart26fts1";     PRM[prmrisastart26fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 26                                                                   */
     PRM_code[prmrisaend02mveh1]      = "risaend02mveh1";      PRM[prmrisaend02mveh1]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
     PRM_code[prmrisaend02mveh2]      = "risaend02mveh2";      PRM[prmrisaend02mveh2]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
     PRM_code[prmrisaend03mveh1]      = "risaend03mveh1";      PRM[prmrisaend03mveh1]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 03                                                                   */
@@ -2425,7 +2579,13 @@ void control_parameters(void)
     PRM_code[prmrisaend21fts1]       = "risaend21fts1";       PRM[prmrisaend21fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 21                                                                   */
     PRM_code[prmrisaend22fts1]       = "risaend22fts1";       PRM[prmrisaend22fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 22                                                                   */
     PRM_code[prmrisaend24fts1]       = "risaend24fts1";       PRM[prmrisaend24fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 24                                                                   */
+    PRM_code[prmrisaend26fts1]       = "risaend26fts1";       PRM[prmrisaend26fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 26                                                                   */
+    PRM_code[prmrisaend28fts1]       = "risaend28fts1";       PRM[prmrisaend28fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 28                                                                   */
+    PRM_code[prmrisaend31vtg1]       = "risaend31vtg1";       PRM[prmrisaend31vtg1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
+    PRM_code[prmrisaend31vtg2]       = "risaend31vtg2";       PRM[prmrisaend31vtg2]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
+    PRM_code[prmrisaend81fts1]       = "risaend81fts1";       PRM[prmrisaend81fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 81                                                                   */
     PRM_code[prmrisaend84fts1]       = "risaend84fts1";       PRM[prmrisaend84fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 84                                                                   */
+    PRM_code[prmrisaend82fts1]       = "risaend82fts1";       PRM[prmrisaend82fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 82                                                                   */
     PRM_code[prmrisaend68mveh2]      = "risaend68mveh2";      PRM[prmrisaend68mveh2]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
     PRM_code[prmrisaend68mveh1]      = "risaend68mveh1";      PRM[prmrisaend68mveh1]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
     PRM_code[prmrisaend67mveh1]      = "risaend67mveh1";      PRM[prmrisaend67mveh1]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 67                                                                   */
@@ -2440,10 +2600,6 @@ void control_parameters(void)
     PRM_code[prmrisaend33vtg1]       = "risaend33vtg1";       PRM[prmrisaend33vtg1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
     PRM_code[prmrisaend32vtg2]       = "risaend32vtg2";       PRM[prmrisaend32vtg2]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
     PRM_code[prmrisaend32vtg1]       = "risaend32vtg1";       PRM[prmrisaend32vtg1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
-    PRM_code[prmrisaend31vtg2]       = "risaend31vtg2";       PRM[prmrisaend31vtg2]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
-    PRM_code[prmrisaend31vtg1]       = "risaend31vtg1";       PRM[prmrisaend31vtg1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
-    PRM_code[prmrisaend28fts1]       = "risaend28fts1";       PRM[prmrisaend28fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 28                                                                   */
-    PRM_code[prmrisaend26fts1]       = "risaend26fts1";       PRM[prmrisaend26fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 26                                                                   */
     PRM_code[prmrisvstart02mveh1]    = "risvstart02mveh1";    PRM[prmrisvstart02mveh1]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
     PRM_code[prmrisvstart02mveh2]    = "risvstart02mveh2";    PRM[prmrisvstart02mveh2]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
     PRM_code[prmrisvstart03mveh1]    = "risvstart03mveh1";    PRM[prmrisvstart03mveh1]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 03                                                                    */
@@ -2455,7 +2611,13 @@ void control_parameters(void)
     PRM_code[prmrisvstart21fts1]     = "risvstart21fts1";     PRM[prmrisvstart21fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 21                                                                    */
     PRM_code[prmrisvstart22fts1]     = "risvstart22fts1";     PRM[prmrisvstart22fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 22                                                                    */
     PRM_code[prmrisvstart24fts1]     = "risvstart24fts1";     PRM[prmrisvstart24fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 24                                                                    */
+    PRM_code[prmrisvstart26fts1]     = "risvstart26fts1";     PRM[prmrisvstart26fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 26                                                                    */
+    PRM_code[prmrisvstart28fts1]     = "risvstart28fts1";     PRM[prmrisvstart28fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 28                                                                    */
+    PRM_code[prmrisvstart31vtg1]     = "risvstart31vtg1";     PRM[prmrisvstart31vtg1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
+    PRM_code[prmrisvstart31vtg2]     = "risvstart31vtg2";     PRM[prmrisvstart31vtg2]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
+    PRM_code[prmrisvstart81fts1]     = "risvstart81fts1";     PRM[prmrisvstart81fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 81                                                                    */
     PRM_code[prmrisvstart84fts1]     = "risvstart84fts1";     PRM[prmrisvstart84fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 84                                                                    */
+    PRM_code[prmrisvstart82fts1]     = "risvstart82fts1";     PRM[prmrisvstart82fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 82                                                                    */
     PRM_code[prmrisvstart68mveh2]    = "risvstart68mveh2";    PRM[prmrisvstart68mveh2]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
     PRM_code[prmrisvstart68mveh1]    = "risvstart68mveh1";    PRM[prmrisvstart68mveh1]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
     PRM_code[prmrisvstart67mveh1]    = "risvstart67mveh1";    PRM[prmrisvstart67mveh1]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 67                                                                    */
@@ -2470,10 +2632,6 @@ void control_parameters(void)
     PRM_code[prmrisvstart33vtg1]     = "risvstart33vtg1";     PRM[prmrisvstart33vtg1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
     PRM_code[prmrisvstart32vtg2]     = "risvstart32vtg2";     PRM[prmrisvstart32vtg2]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
     PRM_code[prmrisvstart32vtg1]     = "risvstart32vtg1";     PRM[prmrisvstart32vtg1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
-    PRM_code[prmrisvstart31vtg2]     = "risvstart31vtg2";     PRM[prmrisvstart31vtg2]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
-    PRM_code[prmrisvstart31vtg1]     = "risvstart31vtg1";     PRM[prmrisvstart31vtg1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
-    PRM_code[prmrisvstart28fts1]     = "risvstart28fts1";     PRM[prmrisvstart28fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 28                                                                    */
-    PRM_code[prmrisvstart26fts1]     = "risvstart26fts1";     PRM[prmrisvstart26fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 26                                                                    */
     PRM_code[prmrisvend02mveh1]      = "risvend02mveh1";      PRM[prmrisvend02mveh1]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
     PRM_code[prmrisvend02mveh2]      = "risvend02mveh2";      PRM[prmrisvend02mveh2]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
     PRM_code[prmrisvend03mveh1]      = "risvend03mveh1";      PRM[prmrisvend03mveh1]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 03                                                                    */
@@ -2485,7 +2643,13 @@ void control_parameters(void)
     PRM_code[prmrisvend21fts1]       = "risvend21fts1";       PRM[prmrisvend21fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 21                                                                    */
     PRM_code[prmrisvend22fts1]       = "risvend22fts1";       PRM[prmrisvend22fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 22                                                                    */
     PRM_code[prmrisvend24fts1]       = "risvend24fts1";       PRM[prmrisvend24fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 24                                                                    */
+    PRM_code[prmrisvend26fts1]       = "risvend26fts1";       PRM[prmrisvend26fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 26                                                                    */
+    PRM_code[prmrisvend28fts1]       = "risvend28fts1";       PRM[prmrisvend28fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 28                                                                    */
+    PRM_code[prmrisvend31vtg1]       = "risvend31vtg1";       PRM[prmrisvend31vtg1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
+    PRM_code[prmrisvend31vtg2]       = "risvend31vtg2";       PRM[prmrisvend31vtg2]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
+    PRM_code[prmrisvend81fts1]       = "risvend81fts1";       PRM[prmrisvend81fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 81                                                                    */
     PRM_code[prmrisvend84fts1]       = "risvend84fts1";       PRM[prmrisvend84fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 84                                                                    */
+    PRM_code[prmrisvend82fts1]       = "risvend82fts1";       PRM[prmrisvend82fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 82                                                                    */
     PRM_code[prmrisvend68mveh2]      = "risvend68mveh2";      PRM[prmrisvend68mveh2]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
     PRM_code[prmrisvend68mveh1]      = "risvend68mveh1";      PRM[prmrisvend68mveh1]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
     PRM_code[prmrisvend67mveh1]      = "risvend67mveh1";      PRM[prmrisvend67mveh1]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 67                                                                    */
@@ -2500,10 +2664,6 @@ void control_parameters(void)
     PRM_code[prmrisvend33vtg1]       = "risvend33vtg1";       PRM[prmrisvend33vtg1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
     PRM_code[prmrisvend32vtg2]       = "risvend32vtg2";       PRM[prmrisvend32vtg2]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
     PRM_code[prmrisvend32vtg1]       = "risvend32vtg1";       PRM[prmrisvend32vtg1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
-    PRM_code[prmrisvend31vtg2]       = "risvend31vtg2";       PRM[prmrisvend31vtg2]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
-    PRM_code[prmrisvend31vtg1]       = "risvend31vtg1";       PRM[prmrisvend31vtg1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
-    PRM_code[prmrisvend28fts1]       = "risvend28fts1";       PRM[prmrisvend28fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 28                                                                    */
-    PRM_code[prmrisvend26fts1]       = "risvend26fts1";       PRM[prmrisvend26fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 26                                                                    */
     PRM_code[prmmkrgd24_3]           = "mkrgd24_3";           PRM[prmmkrgd24_3]           = 3;                                                /* Type verlengen tbv richtinggevoelig verlengen fase 24                                                                          */
     PRM_code[prmrgv]                 = "rgv";                 PRM[prmrgv]                 = 2;                                                /* Type RoBuGrover                                                                                                                */
     PRM_code[prmmin_tcyclus]         = "min_tcyclus";         PRM[prmmin_tcyclus]         = 900;  PRM_type[prmmin_tcyclus]         = TE_type; /* Minimale cyclustijd                                                                                                            */
@@ -2552,7 +2712,9 @@ void control_parameters(void)
     PRM_code[prmmlfpr62]             = "mlfpr62";             PRM[prmmlfpr62]             = 1;                                                /* Maximaal aantal modules vooruit fase 62                                                                                        */
     PRM_code[prmmlfpr67]             = "mlfpr67";             PRM[prmmlfpr67]             = 1;                                                /* Maximaal aantal modules vooruit fase 67                                                                                        */
     PRM_code[prmmlfpr68]             = "mlfpr68";             PRM[prmmlfpr68]             = 1;                                                /* Maximaal aantal modules vooruit fase 68                                                                                        */
+    PRM_code[prmmlfpr82]             = "mlfpr82";             PRM[prmmlfpr82]             = 1;                                                /* Maximaal aantal modules vooruit fase 82                                                                                        */
     PRM_code[prmmlfpr84]             = "mlfpr84";             PRM[prmmlfpr84]             = 1;                                                /* Maximaal aantal modules vooruit fase 84                                                                                        */
+    PRM_code[prmmlfpr81]             = "mlfpr81";             PRM[prmmlfpr81]             = 1;                                                /* Maximaal aantal modules vooruit fase 81                                                                                        */
     PRM_code[prmaltg02]              = "altg02";              PRM[prmaltg02]              = 60;   PRM_type[prmaltg02]              = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 02                                                                         */
     PRM_code[prmaltp02]              = "altp02";              PRM[prmaltp02]              = 60;   PRM_type[prmaltp02]              = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 02                                                                            */
     PRM_code[prmaltg03]              = "altg03";              PRM[prmaltg03]              = 60;   PRM_type[prmaltg03]              = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 03                                                                         */
@@ -2591,7 +2753,11 @@ void control_parameters(void)
     PRM_code[prmaltp67]              = "altp67";              PRM[prmaltp67]              = 60;   PRM_type[prmaltp67]              = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 67                                                                            */
     PRM_code[prmaltg68]              = "altg68";              PRM[prmaltg68]              = 60;   PRM_type[prmaltg68]              = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 68                                                                         */
     PRM_code[prmaltp68]              = "altp68";              PRM[prmaltp68]              = 60;   PRM_type[prmaltp68]              = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 68                                                                            */
+    PRM_code[prmaltg82]              = "altg82";              PRM[prmaltg82]              = 60;   PRM_type[prmaltg82]              = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
+    PRM_code[prmaltp82]              = "altp82";              PRM[prmaltp82]              = 60;   PRM_type[prmaltp82]              = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
     PRM_code[prmaltg84]              = "altg84";              PRM[prmaltg84]              = 60;   PRM_type[prmaltg84]              = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
+    PRM_code[prmaltg81]              = "altg81";              PRM[prmaltg81]              = 60;   PRM_type[prmaltg81]              = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 81                                                                         */
+    PRM_code[prmaltp81]              = "altp81";              PRM[prmaltp81]              = 60;   PRM_type[prmaltp81]              = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 81                                                                            */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     PRM_code[prmtestdsivert]         = "testdsivert";         PRM[prmtestdsivert]         = 120;  PRM_type[prmtestdsivert]         = TS_type; /* Testen vertraging in DSI bericht in testomgeving                                                                               */
     PRM_code[prmtestdsilyn]          = "testdsilyn";          PRM[prmtestdsilyn]          = 0;                                     /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
@@ -2621,6 +2787,8 @@ void control_parameters(void)
     FC_type[fc67] = MVT_type;
     FC_type[fc68] = MVT_type;
     FC_type[fc84] = FTS_type;
+    FC_type[fc82] = FTS_type;
+    FC_type[fc81] = FTS_type;
 
 /* Selectieve detectie */
 /* ------------------- */
@@ -2642,6 +2810,8 @@ void control_parameters(void)
     PRML[ML2][fc03] = PRIMAIR;
     PRML[ML2][fc28] = PRIMAIR;
     PRML[ML2][fc38] = PRIMAIR;
+    PRML[ML2][fc81] = PRIMAIR;
+    PRML[ML2][fc82] = PRIMAIR;
 
     PRML[ML3][fc09] = PRIMAIR;
     PRML[ML3][fc21] = PRIMAIR;
@@ -2761,8 +2931,14 @@ void control_parameters(void)
     IS_type[d68_1b] = DKOP_type;
     IS_type[d68_2a] = DLNG_type;
     IS_type[d68_2b] = DLNG_type;
+    IS_type[d68_9a] = DVER_type;
+    IS_type[d68_9b] = DVER_type;
     IS_type[d84_1] = DKOP_type;
     IS_type[dk84] = DK_type;
+    IS_type[d82_1] = DKOP_type;
+    IS_type[dk82] = DK_type;
+    IS_type[d81_1] = DKOP_type;
+    IS_type[dk81] = DK_type;
 
 /* Typen uitgangen */
 /* --------------- */
@@ -2787,6 +2963,8 @@ void control_parameters(void)
     US_type[fc67] = MVT_type;
     US_type[fc68] = MVT_type;
     US_type[fc84] = FTS_type;
+    US_type[fc82] = FTS_type;
+    US_type[fc81] = FTS_type;
 
 #ifdef VISSIM
     D_code[d02_1a] = "0211";
@@ -2851,8 +3029,14 @@ void control_parameters(void)
     D_code[d68_1b] = "6812";
     D_code[d68_2a] = "6821";
     D_code[d68_2b] = "6822";
+    D_code[d68_9a] = "681";
+    D_code[d68_9b] = "682";
     D_code[d84_1] = "8410";
     D_code[dk84] = "8401";
+    D_code[d82_1] = "821";
+    D_code[dk82] = "822";
+    D_code[d81_1] = "811";
+    D_code[dk81] = "812";
 #endif
 
     Timings_Eventstate_Definition();

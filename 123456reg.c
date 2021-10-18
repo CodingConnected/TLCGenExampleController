@@ -20,6 +20,7 @@
  * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
+ * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegeovoegd
  *
  ************************************************************************************/
 
@@ -300,10 +301,20 @@ void Aanvragen(void)
         (va_count) d68_1b, (va_mulv) PRM[prmda68_1b], 
         (va_count) d68_2a, (va_mulv) PRM[prmda68_2a], 
         (va_count) d68_2b, (va_mulv) PRM[prmda68_2b], 
+        (va_count) d68_9a, (va_mulv) PRM[prmda68_9a], 
+        (va_count) d68_9b, (va_mulv) PRM[prmda68_9b], 
         (va_count) END);
     aanvraag_detectie_prm_va_arg((count) fc84, 
         (va_count) d84_1, (va_mulv) PRM[prmda84_1], 
         (va_count) dk84, (va_mulv) PRM[prmdak84], 
+        (va_count) END);
+    aanvraag_detectie_prm_va_arg((count) fc82, 
+        (va_count) d82_1, (va_mulv) PRM[prmda82_1], 
+        (va_count) dk82, (va_mulv) PRM[prmdak82], 
+        (va_count) END);
+    aanvraag_detectie_prm_va_arg((count) fc81, 
+        (va_count) d81_1, (va_mulv) PRM[prmda81_1], 
+        (va_count) dk81, (va_mulv) PRM[prmdak81], 
         (va_count) END);
 
 
@@ -324,6 +335,8 @@ void Aanvragen(void)
     if (PRM[prmda67_1] != 0) AanvraagSnelV2(fc67, d67_1);
     if (PRM[prmda68_1a] != 0) AanvraagSnelV2(fc68, d68_1a);
     if (PRM[prmda84_1] != 0) AanvraagSnelV2(fc84, d84_1);
+    if (PRM[prmda82_1] != 0) AanvraagSnelV2(fc82, d82_1);
+    if (PRM[prmda81_1] != 0) AanvraagSnelV2(fc81, d81_1);
 
     /* Meeaanvragen */
     /* ------------ */
@@ -401,6 +414,10 @@ void Aanvragen(void)
         mee_aanvraag_prm(fc84, fc34, prmtypema3484, (boolv)(H[hmadk34a]));
     }
     mee_aanvraag_prm(fc28, fc38, prmtypema3828, (boolv)(TRUE));
+    if (SCH[schma8281])
+    {
+        mee_aanvraag_prm(fc81, fc82, prmtypema8281, (boolv)(TRUE));
+    }
 
     /* Richtinggevoelige aanvragen */
     /* --------------------------- */
@@ -516,6 +533,16 @@ void Aanvragen(void)
         RT[tuitgestca84] = !T[tuitgestca84] && !ET[tuitgestca84] && R[fc84] && !A[fc84];
         if (ET[tuitgestca84]) vaste_aanvraag(fc84);
     }
+    if (SCH[schca82])
+    {
+        RT[tuitgestca82] = !T[tuitgestca82] && !ET[tuitgestca82] && R[fc82] && !A[fc82];
+        if (ET[tuitgestca82]) vaste_aanvraag(fc82);
+    }
+    if (SCH[schca81])
+    {
+        RT[tuitgestca81] = !T[tuitgestca81] && !ET[tuitgestca81] && R[fc81] && !A[fc81];
+        if (ET[tuitgestca81]) vaste_aanvraag(fc81);
+    }
 
     /* Wachtstand groen aanvragen */
     /* -------------------------- */
@@ -540,6 +567,8 @@ void Aanvragen(void)
     aanvraag_wachtstand_exp(fc67, (boolv) (SCH[schwg67]));
     aanvraag_wachtstand_exp(fc68, (boolv) (SCH[schwg68]));
     aanvraag_wachtstand_exp(fc84, (boolv) (SCH[schwg84]));
+    aanvraag_wachtstand_exp(fc82, (boolv) (SCH[schwg82]));
+    aanvraag_wachtstand_exp(fc81, (boolv) (SCH[schwg81]));
 
     /* Bewaar meldingen van detectie (bv. voor het zetten van een meeaanvraag) */
     IH[hmadk31a] = G[fc31] && !SG[fc31] ? FALSE : IH[hmadk31a] || D[dk31a] && A[fc31];
@@ -564,7 +593,13 @@ void Aanvragen(void)
         if (ris_aanvraag(fc21, SYSTEM_ITF, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisastart21fts1], PRM[prmrisaend21fts1], SCH[schrisgeencheckopsg])) A[fc21] |= BIT10;
         if (ris_aanvraag(fc22, SYSTEM_ITF, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisastart22fts1], PRM[prmrisaend22fts1], SCH[schrisgeencheckopsg])) A[fc22] |= BIT10;
         if (ris_aanvraag(fc24, SYSTEM_ITF, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisastart24fts1], PRM[prmrisaend24fts1], SCH[schrisgeencheckopsg])) A[fc24] |= BIT10;
+        if (ris_aanvraag(fc26, SYSTEM_ITF, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisastart26fts1], PRM[prmrisaend26fts1], SCH[schrisgeencheckopsg])) A[fc26] |= BIT10;
+        if (ris_aanvraag(fc28, SYSTEM_ITF, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisastart28fts1], PRM[prmrisaend28fts1], SCH[schrisgeencheckopsg])) A[fc28] |= BIT10;
+        if (ris_aanvraag(fc31, SYSTEM_ITF, PRM[prmrislaneid31_1], RIS_PEDESTRIAN, PRM[prmrisastart31vtg1], PRM[prmrisaend31vtg1], SCH[schrisgeencheckopsg])) A[fc31] |= BIT10;
+        if (ris_aanvraag(fc31, SYSTEM_ITF, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisastart31vtg2], PRM[prmrisaend31vtg2], SCH[schrisgeencheckopsg])) A[fc31] |= BIT10;
+        if (ris_aanvraag(fc81, SYSTEM_ITF, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisastart81fts1], PRM[prmrisaend81fts1], SCH[schrisgeencheckopsg])) A[fc81] |= BIT10;
         if (ris_aanvraag(fc84, SYSTEM_ITF, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg])) A[fc84] |= BIT10;
+        if (ris_aanvraag(fc82, SYSTEM_ITF, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisastart82fts1], PRM[prmrisaend82fts1], SCH[schrisgeencheckopsg])) A[fc82] |= BIT10;
         if (ris_aanvraag(fc68, SYSTEM_ITF, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh2], PRM[prmrisaend68mveh2], SCH[schrisgeencheckopsg])) A[fc68] |= BIT10;
         if (ris_aanvraag(fc68, SYSTEM_ITF, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh1], PRM[prmrisaend68mveh1], SCH[schrisgeencheckopsg])) A[fc68] |= BIT10;
         if (ris_aanvraag(fc67, SYSTEM_ITF, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisastart67mveh1], PRM[prmrisaend67mveh1], SCH[schrisgeencheckopsg])) A[fc67] |= BIT10;
@@ -579,10 +614,6 @@ void Aanvragen(void)
         if (ris_aanvraag(fc33, SYSTEM_ITF, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisastart33vtg1], PRM[prmrisaend33vtg1], SCH[schrisgeencheckopsg])) A[fc33] |= BIT10;
         if (ris_aanvraag(fc32, SYSTEM_ITF, PRM[prmrislaneid32_2], RIS_PEDESTRIAN, PRM[prmrisastart32vtg2], PRM[prmrisaend32vtg2], SCH[schrisgeencheckopsg])) A[fc32] |= BIT10;
         if (ris_aanvraag(fc32, SYSTEM_ITF, PRM[prmrislaneid32_1], RIS_PEDESTRIAN, PRM[prmrisastart32vtg1], PRM[prmrisaend32vtg1], SCH[schrisgeencheckopsg])) A[fc32] |= BIT10;
-        if (ris_aanvraag(fc31, SYSTEM_ITF, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisastart31vtg2], PRM[prmrisaend31vtg2], SCH[schrisgeencheckopsg])) A[fc31] |= BIT10;
-        if (ris_aanvraag(fc31, SYSTEM_ITF, PRM[prmrislaneid31_1], RIS_PEDESTRIAN, PRM[prmrisastart31vtg1], PRM[prmrisaend31vtg1], SCH[schrisgeencheckopsg])) A[fc31] |= BIT10;
-        if (ris_aanvraag(fc28, SYSTEM_ITF, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisastart28fts1], PRM[prmrisaend28fts1], SCH[schrisgeencheckopsg])) A[fc28] |= BIT10;
-        if (ris_aanvraag(fc26, SYSTEM_ITF, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisastart26fts1], PRM[prmrisaend26fts1], SCH[schrisgeencheckopsg])) A[fc26] |= BIT10;
     #endif
 
     Aanvragen_Add();
@@ -625,6 +656,7 @@ void BepaalRealisatieTijden(void)
         wijziging |= Corr_Min(fc62, fc02, T_max[tlr6202], TRUE);
         wijziging |= Corr_Min(fc68, fc08, T_max[tlr6808], TRUE);
         wijziging |= Corr_Min(fc21, fc22, T_max[tlr2122], TRUE);
+        wijziging |= Corr_Min(fc81, fc82, T_max[tlr8182], TRUE);
         if (SCH[schgs2232]) wijziging |= Corr_Gel(fc22, fc32, TRUE);
         if (SCH[schgs2434]) wijziging |= Corr_Gel(fc24, fc34, TRUE);
         if (SCH[schgs3384]) wijziging |= Corr_Gel(fc33, fc84, TRUE);
@@ -637,6 +669,7 @@ void BepaalRealisatieTijden(void)
         wijziging |= Real_Los(fc02, fc62, 0, hlos62, FALSE);
         wijziging |= Real_Los(fc08, fc68, 0, hlos68, FALSE);
         wijziging |= Real_Los(fc22, fc21, 0, hlos21, FALSE);
+        wijziging |= Real_Los(fc82, fc81, 0, hlos81, FALSE);
         /* Fictieve ontruiming */
         wijziging |= Corr_FOT(fc05, fc22, tfo0522, 0, TRUE);
         wijziging |= Corr_FOT(fc05, fc32, tfo0532, 0, TRUE);
@@ -806,6 +839,22 @@ void Maxgroen(void)
                               (va_mulv) PRM[prmmg6_84], (va_mulv) (MM[mperiod] == 5),
                               (va_mulv) PRM[prmmg7_84], (va_mulv) (MM[mperiod] == 6),
                               (va_mulv) PRM[prmmg1_84], (va_count) END);
+    maximumgroentijden_va_arg((count) fc82,
+                              (va_mulv) PRM[prmmg2_82], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmmg3_82], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmmg4_82], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmmg5_82], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmmg6_82], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmmg7_82], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmmg1_82], (va_count) END);
+    maximumgroentijden_va_arg((count) fc81,
+                              (va_mulv) PRM[prmmg2_81], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmmg3_81], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmmg4_81], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmmg5_81], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmmg6_81], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmmg7_81], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmmg1_81], (va_count) END);
 
     /* Nalopen */
     /* ------- */
@@ -829,6 +878,10 @@ void Maxgroen(void)
     NaloopVtgDet(fc32, fc31, dk32a, hnlak32a, tnlsgd3231);
     NaloopVtgDet(fc33, fc34, dk33a, hnlak33a, tnlsgd3334);
     NaloopVtgDet(fc34, fc33, dk34a, hnlak34a, tnlsgd3433);
+    NaloopFG(fc82, fc81, tnlfg8281);
+    NaloopEG(fc82, fc81, tnleg8281);
+    NaloopFGDet(fc82, fc81, tnlfgd8281, d82_1, END);
+    NaloopEGDet(fc82, fc81, tnlegd8281, d82_1, END);
 
 
     /* AANROEP EN RAPPOTEREN ROBUGROVER */
@@ -920,6 +973,8 @@ void Wachtgroen(void)
     RW[fc67] |= (SCH[schwg67] && yws_groen(fc67)) && !fka(fc67) ? BIT4 : 0;
     RW[fc68] |= (SCH[schwg68] && yws_groen(fc68)) && !fka(fc68) ? BIT4 : 0;
     RW[fc84] |= (SCH[schwg84] && yws_groen(fc84)) && !fka(fc84) ? BIT4 : 0;
+    RW[fc82] |= (SCH[schwg82] && yws_groen(fc82)) && !fka(fc82) ? BIT4 : 0;
+    RW[fc81] |= (SCH[schwg81] && yws_groen(fc81)) && !fka(fc81) ? BIT4 : 0;
 
     for (fc = 0; fc < FCMAX; ++fc)
     {
@@ -951,6 +1006,12 @@ void Wachtgroen(void)
     WS[fc67] |= (WG[fc67] && SCH[schwg67] && yws_groen(fc67)) ? BIT1 : 0;
     WS[fc68] |= (WG[fc68] && SCH[schwg68] && yws_groen(fc68)) ? BIT1 : 0;
     WS[fc84] |= (WG[fc84] && SCH[schwg84] && yws_groen(fc84)) ? BIT1 : 0;
+    WS[fc82] |= (WG[fc82] && SCH[schwg82] && yws_groen(fc82)) ? BIT1 : 0;
+    WS[fc81] |= (WG[fc81] && SCH[schwg81] && yws_groen(fc81)) ? BIT1 : 0;
+
+    /* Niet in wachtgroen vasthouden tijdens file */
+    if (IH[hfileFile68af]) RW[fc08] &= ~BIT4;
+    if (IH[hfileFile68af]) RW[fc11] &= ~BIT4;
 
     Wachtgroen_Add();
 }
@@ -1044,9 +1105,17 @@ void Meetkriterium(void)
                              (va_boolv)TDH[d68_1b], (va_mulv)PRM[prmmk68_1b],
                              (va_boolv)TDH[d68_2a], (va_mulv)PRM[prmmk68_2a],
                              (va_boolv)TDH[d68_2b], (va_mulv)PRM[prmmk68_2b],
+                             (va_boolv)TDH[d68_9a], (va_mulv)PRM[prmmk68_9a],
+                             (va_boolv)TDH[d68_9b], (va_mulv)PRM[prmmk68_9b],
                              (va_count)END);
     meetkriterium_prm_va_arg((count)fc84, (count)tkm84, 
                              (va_count)d84_1, (va_mulv)PRM[prmmk84_1],
+                             (va_count)END);
+    meetkriterium_prm_va_arg((count)fc82, (count)tkm82, 
+                             (va_count)d82_1, (va_mulv)PRM[prmmk82_1],
+                             (va_count)END);
+    meetkriterium_prm_va_arg((count)fc81, (count)tkm81, 
+                             (va_count)d81_1, (va_mulv)PRM[prmmk81_1],
                              (va_count)END);
 
 
@@ -1074,7 +1143,13 @@ void Meetkriterium(void)
         if (ris_verlengen(fc21, SYSTEM_ITF, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisvstart21fts1], PRM[prmrisvend21fts1], SCH[schrisgeencheckopsg])) MK[fc21] |= BIT10;
         if (ris_verlengen(fc22, SYSTEM_ITF, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstart22fts1], PRM[prmrisvend22fts1], SCH[schrisgeencheckopsg])) MK[fc22] |= BIT10;
         if (ris_verlengen(fc24, SYSTEM_ITF, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisvstart24fts1], PRM[prmrisvend24fts1], SCH[schrisgeencheckopsg])) MK[fc24] |= BIT10;
+        if (ris_verlengen(fc26, SYSTEM_ITF, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisvstart26fts1], PRM[prmrisvend26fts1], SCH[schrisgeencheckopsg])) MK[fc26] |= BIT10;
+        if (ris_verlengen(fc28, SYSTEM_ITF, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisvstart28fts1], PRM[prmrisvend28fts1], SCH[schrisgeencheckopsg])) MK[fc28] |= BIT10;
+        if (ris_verlengen(fc31, SYSTEM_ITF, PRM[prmrislaneid31_1], RIS_PEDESTRIAN, PRM[prmrisvstart31vtg1], PRM[prmrisvend31vtg1], SCH[schrisgeencheckopsg])) MK[fc31] |= BIT10;
+        if (ris_verlengen(fc31, SYSTEM_ITF, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisvstart31vtg2], PRM[prmrisvend31vtg2], SCH[schrisgeencheckopsg])) MK[fc31] |= BIT10;
+        if (ris_verlengen(fc81, SYSTEM_ITF, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisvstart81fts1], PRM[prmrisvend81fts1], SCH[schrisgeencheckopsg])) MK[fc81] |= BIT10;
         if (ris_verlengen(fc84, SYSTEM_ITF, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg])) MK[fc84] |= BIT10;
+        if (ris_verlengen(fc82, SYSTEM_ITF, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisvstart82fts1], PRM[prmrisvend82fts1], SCH[schrisgeencheckopsg])) MK[fc82] |= BIT10;
         if (ris_verlengen(fc68, SYSTEM_ITF, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh2], PRM[prmrisvend68mveh2], SCH[schrisgeencheckopsg])) MK[fc68] |= BIT10;
         if (ris_verlengen(fc68, SYSTEM_ITF, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh1], PRM[prmrisvend68mveh1], SCH[schrisgeencheckopsg])) MK[fc68] |= BIT10;
         if (ris_verlengen(fc67, SYSTEM_ITF, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisvstart67mveh1], PRM[prmrisvend67mveh1], SCH[schrisgeencheckopsg])) MK[fc67] |= BIT10;
@@ -1089,10 +1164,6 @@ void Meetkriterium(void)
         if (ris_verlengen(fc33, SYSTEM_ITF, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisvstart33vtg1], PRM[prmrisvend33vtg1], SCH[schrisgeencheckopsg])) MK[fc33] |= BIT10;
         if (ris_verlengen(fc32, SYSTEM_ITF, PRM[prmrislaneid32_2], RIS_PEDESTRIAN, PRM[prmrisvstart32vtg2], PRM[prmrisvend32vtg2], SCH[schrisgeencheckopsg])) MK[fc32] |= BIT10;
         if (ris_verlengen(fc32, SYSTEM_ITF, PRM[prmrislaneid32_1], RIS_PEDESTRIAN, PRM[prmrisvstart32vtg1], PRM[prmrisvend32vtg1], SCH[schrisgeencheckopsg])) MK[fc32] |= BIT10;
-        if (ris_verlengen(fc31, SYSTEM_ITF, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisvstart31vtg2], PRM[prmrisvend31vtg2], SCH[schrisgeencheckopsg])) MK[fc31] |= BIT10;
-        if (ris_verlengen(fc31, SYSTEM_ITF, PRM[prmrislaneid31_1], RIS_PEDESTRIAN, PRM[prmrisvstart31vtg1], PRM[prmrisvend31vtg1], SCH[schrisgeencheckopsg])) MK[fc31] |= BIT10;
-        if (ris_verlengen(fc28, SYSTEM_ITF, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisvstart28fts1], PRM[prmrisvend28fts1], SCH[schrisgeencheckopsg])) MK[fc28] |= BIT10;
-        if (ris_verlengen(fc26, SYSTEM_ITF, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisvstart26fts1], PRM[prmrisvend26fts1], SCH[schrisgeencheckopsg])) MK[fc26] |= BIT10;
     #endif
 
     hiaattijden_verlenging(IH[hgeendynhiaat02], SCH[schedkop_02], FALSE, mmk02, IH[hopdrempelen02], fc02, 
@@ -1160,6 +1231,12 @@ void Meeverlengen(void)
     YM[fc67] |= SCH[schmv67] && ym_max_prmV1(fc67, prmmv67, NG) && hf_wsg() ? BIT4 : 0;
     YM[fc68] |= SCH[schmv68] && ym_max_prmV1(fc68, prmmv68, NG) && hf_wsg() ? BIT4 : 0;
     YM[fc84] |= SCH[schmv84] && ym_max_prmV1(fc84, prmmv84, NG) && hf_wsg() ? BIT4 : 0;
+    YM[fc82] |= SCH[schmv82] && ym_max_prmV1(fc82, prmmv82, NG) && hf_wsg_nl() ? BIT4 : 0;
+    YM[fc81] |= SCH[schmv81] && ym_max_prmV1(fc81, prmmv81, NG) && hf_wsg() ? BIT4 : 0;
+
+    /* Niet meeverlengen tijdens file (meting na ss) */
+    if (IH[hfileFile68af]) YM[fc08] &= ~BIT4;
+    if (IH[hfileFile68af]) YM[fc11] &= ~BIT4;
 
     /* Veiligheidsgroen */
     /* ---------------- */
@@ -1221,7 +1298,9 @@ void RealisatieAfhandeling(void)
     PFPR[fc62] = ml_fpr(fc62, PRM[prmmlfpr62], PRML, ML, MLMAX);
     PFPR[fc67] = ml_fpr(fc67, PRM[prmmlfpr67], PRML, ML, MLMAX);
     PFPR[fc68] = ml_fpr(fc68, PRM[prmmlfpr68], PRML, ML, MLMAX);
+    PFPR[fc82] = ml_fpr(fc82, PRM[prmmlfpr82], PRML, ML, MLMAX);
     PFPR[fc84] = ml_fpr(fc84, PRM[prmmlfpr84], PRML, ML, MLMAX);
+    PFPR[fc81] = ml_fpr(fc81, PRM[prmmlfpr81], PRML, ML, MLMAX);
 
     VersneldPrimair_Add();
 
@@ -1263,7 +1342,9 @@ void RealisatieAfhandeling(void)
     RR[fc62] |= R[fc62] && AR[fc62] && (!PAR[fc62] || ERA[fc62]) ? BIT5 : 0;
     RR[fc67] |= R[fc67] && AR[fc67] && (!PAR[fc67] || ERA[fc67]) ? BIT5 : 0;
     RR[fc68] |= R[fc68] && AR[fc68] && (!PAR[fc68] || ERA[fc68]) ? BIT5 : 0;
+    RR[fc82] |= R[fc82] && AR[fc82] && (!PAR[fc82] || ERA[fc82]) ? BIT5 : 0;
     RR[fc84] |= R[fc84] && AR[fc84] && (!PAR[fc84] || ERA[fc84]) ? BIT5 : 0;
+    RR[fc81] |= R[fc81] && AR[fc81] && (!PAR[fc81] || ERA[fc81]) ? BIT5 : 0;
 
 
     /* Niet intrekken alternatief nalooprichting tijdens inlopen voedende richting */
@@ -1295,6 +1376,10 @@ void RealisatieAfhandeling(void)
     {
         RR[fc68] &= ~BIT5;
     }
+    if (RT[tnlfg8281] || T[tnlfg8281] || RT[tnlfgd8281] || T[tnlfgd8281] || RT[tnleg8281] || T[tnleg8281] || RT[tnlegd8281] || T[tnlegd8281])
+    {
+        RR[fc81] &= ~BIT5;
+    }
     FM[fc02] |= (fm_ar_kpr(fc02, PRM[prmaltg02])) ? BIT5 : 0;
     FM[fc03] |= (fm_ar_kpr(fc03, PRM[prmaltg03])) ? BIT5 : 0;
     FM[fc05] |= (fm_ar_kpr(fc05, PRM[prmaltg05])) ? BIT5 : 0;
@@ -1315,13 +1400,16 @@ void RealisatieAfhandeling(void)
     FM[fc62] |= (fm_ar_kpr(fc62, PRM[prmaltg62])) ? BIT5 : 0;
     FM[fc67] |= (fm_ar_kpr(fc67, PRM[prmaltg67])) ? BIT5 : 0;
     FM[fc68] |= (fm_ar_kpr(fc68, PRM[prmaltg68])) ? BIT5 : 0;
+    FM[fc82] |= (fm_ar_kpr(fc82, PRM[prmaltg82])) ? BIT5 : 0;
     FM[fc84] |= (fm_ar_kpr(fc84, PRM[prmaltg84])) ? BIT5 : 0;
+    FM[fc81] |= (fm_ar_kpr(fc81, PRM[prmaltg81])) ? BIT5 : 0;
 
     /* Bij nalopen op EG mag de volgrichting niet RR en FM
        gestuurd worden indien de voedende richting groen is */
     if (!R[fc02] || TNL[fc62]) { RR[fc62] &= ~BIT5; FM[fc62] &= ~BIT5; }
     if (!R[fc08] || TNL[fc68]) { RR[fc68] &= ~BIT5; FM[fc68] &= ~BIT5; }
     if (!R[fc22] || TNL[fc21]) { RR[fc21] &= ~BIT5; FM[fc21] &= ~BIT5; }
+    if (!R[fc82] || TNL[fc81]) { RR[fc81] &= ~BIT5; FM[fc81] &= ~BIT5; }
 
     PAR[fc02] = (Real_Ruimte(fc02, mar02) >= PRM[prmaltp02]) && SCH[schaltg02];
     PAR[fc03] = (Real_Ruimte(fc03, mar03) >= PRM[prmaltp03]) && SCH[schaltg03];
@@ -1343,7 +1431,9 @@ void RealisatieAfhandeling(void)
     PAR[fc62] = (Real_Ruimte(fc62, mar62) >= PRM[prmaltp62]) && SCH[schaltg62];
     PAR[fc67] = (Real_Ruimte(fc67, mar67) >= PRM[prmaltp67]) && SCH[schaltg67];
     PAR[fc68] = (Real_Ruimte(fc68, mar68) >= PRM[prmaltp68]) && SCH[schaltg68];
+    PAR[fc82] = (Real_Ruimte(fc82, mar82) >= PRM[prmaltp82]) && SCH[schaltg82];
     PAR[fc84] = (Real_Ruimte(fc84, mar84) >= PRM[prmaltp3384]) && SCH[schaltg3384];
+    PAR[fc81] = (Real_Ruimte(fc81, mar81) >= PRM[prmaltp81]) && SCH[schaltg81];
 
      /* Bepaal naloop voetgangers wel/niet toegestaan */
     IH[hnlsg3132] = Naloop_OK(fc31, mar32, tnlsgd3132);
@@ -1373,6 +1463,7 @@ void RealisatieAfhandeling(void)
         PAR[fc02] = PAR[fc02] && PAR[fc62];
         PAR[fc08] = PAR[fc08] && PAR[fc68];
         PAR[fc22] = PAR[fc22] && PAR[fc21];
+        PAR[fc82] = PAR[fc82] && PAR[fc81];
 
         /* PAR correcties gelijkstart synchronisaties */
         if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && (PAR[fc32] || !A[fc32]);
@@ -1382,6 +1473,11 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
     }
+
+    /* Niet alternatief komen tijdens file */
+    if (IH[hfileFile68af]) PAR[fc08] = FALSE;
+    if (IH[hfileFile68af]) PAR[fc11] = FALSE;
+
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
     set_MRLW(fc62, fc02, (boolv) (SG[fc02] && A[fc62] && !kcv(fc62)));
@@ -1391,6 +1487,7 @@ void RealisatieAfhandeling(void)
     set_MRLW(fc31, fc32, (boolv) (SG[fc32] && A[fc31] && (IH[hnlak32a]) && !kcv(fc31)));
     set_MRLW(fc34, fc33, (boolv) (SG[fc33] && A[fc34] && (IH[hnlak33a]) && !kcv(fc34)));
     set_MRLW(fc33, fc34, (boolv) (SG[fc34] && A[fc33] && (IH[hnlak34a]) && !kcv(fc33)));
+    set_MRLW(fc81, fc82, (boolv) (SG[fc82] && A[fc81] && !kcv(fc81)));
 
     /* set meerealisatie voor gelijk- of voorstartende richtingen */
     /* ---------------------------------------------------------- */
@@ -1432,6 +1529,8 @@ void RealisatieAfhandeling(void)
     if (!(PRM[prmaltb67] & (1 << ML))) PAR[fc67] = FALSE;
     if (!(PRM[prmaltb68] & (1 << ML))) PAR[fc68] = FALSE;
     if (!(PRM[prmaltb84] & (1 << ML))) PAR[fc84] = FALSE;
+    if (!(PRM[prmaltb82] & (1 << ML))) PAR[fc82] = FALSE;
+    if (!(PRM[prmaltb81] & (1 << ML))) PAR[fc81] = FALSE;
 
     #ifndef NO_TIMETOX
     if (SCH[schgs2232] && (P[fc22] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
@@ -1459,6 +1558,8 @@ void RealisatieAfhandeling(void)
         (G[fc05] || !(YV[fc05] & PRIO_YV_BIT))) RR[fc08] &= ~BIT10;
     if ((G[fc02] || !(YV[fc02] & PRIO_YV_BIT)) &&
         (G[fc03] || !(YV[fc03] & PRIO_YV_BIT))) RR[fc22] &= ~BIT10;
+    if ((G[fc67] || !(YV[fc67] & PRIO_YV_BIT)) &&
+        (G[fc68] || !(YV[fc68] & PRIO_YV_BIT))) RR[fc82] &= ~BIT10;
 
     /* Opzetten RR */
     if (((Z[fc02] & PRIO_Z_BIT) && (YV[fc09] & PRIO_YV_BIT) && !G[fc09]) ||
@@ -1467,6 +1568,8 @@ void RealisatieAfhandeling(void)
         ((Z[fc08] & PRIO_Z_BIT) && (YV[fc05] & PRIO_YV_BIT) && !G[fc05])) RR[fc08] |= BIT10;
     if (((Z[fc22] & PRIO_Z_BIT) && (YV[fc02] & PRIO_YV_BIT) && !G[fc02]) ||
         ((Z[fc22] & PRIO_Z_BIT) && (YV[fc03] & PRIO_YV_BIT) && !G[fc03])) RR[fc22] |= BIT10;
+    if (((Z[fc82] & PRIO_Z_BIT) && (YV[fc67] & PRIO_YV_BIT) && !G[fc67]) ||
+        ((Z[fc82] & PRIO_Z_BIT) && (YV[fc68] & PRIO_YV_BIT) && !G[fc68])) RR[fc82] |= BIT10;
 
     YML[ML] = yml_cv_pr_nl(PRML, ML, ML_MAX);
 
@@ -1510,6 +1613,8 @@ void RealisatieAfhandeling(void)
         if (R[fc67] && (P[fc67] & BIT11)) set_rr_gk(fc67, BIT11);
         if (R[fc68] && (P[fc68] & BIT11)) set_rr_gk(fc68, BIT11);
         if (R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc84, BIT11);
+        if (R[fc82] && (P[fc82] & BIT11)) set_rr_gk(fc82, BIT11);
+        if (R[fc81] && (P[fc81] & BIT11)) set_rr_gk(fc81, BIT11);
         if (SCH[schgs2232] && R[fc22] && (P[fc22] & BIT11)) set_rr_gk(fc32, BIT11);
         if (SCH[schgs2232] && R[fc32] && (P[fc32] & BIT11)) set_rr_gk(fc22, BIT11);
         if (SCH[schgs2434] && R[fc24] && (P[fc24] & BIT11)) set_rr_gk(fc34, BIT11);
@@ -1540,6 +1645,8 @@ void RealisatieAfhandeling(void)
         if (R[fc67] && (P[fc67] & BIT11)) A[fc67] |= BIT11;
         if (R[fc68] && (P[fc68] & BIT11)) A[fc68] |= BIT11;
         if (R[fc84] && (P[fc84] & BIT11)) A[fc84] |= BIT11;
+        if (R[fc82] && (P[fc82] & BIT11)) A[fc82] |= BIT11;
+        if (R[fc81] && (P[fc81] & BIT11)) A[fc81] |= BIT11;
         if (R[fc02] && (P[fc02] & BIT11) && !RA[fc02] && !kaa(fc02)) AA[fc02] |= BIT11;
         if (R[fc03] && (P[fc03] & BIT11) && !RA[fc03] && !kaa(fc03)) AA[fc03] |= BIT11;
         if (R[fc05] && (P[fc05] & BIT11) && !RA[fc05] && !kaa(fc05)) AA[fc05] |= BIT11;
@@ -1561,6 +1668,8 @@ void RealisatieAfhandeling(void)
         if (R[fc67] && (P[fc67] & BIT11) && !RA[fc67] && !kaa(fc67)) AA[fc67] |= BIT11;
         if (R[fc68] && (P[fc68] & BIT11) && !RA[fc68] && !kaa(fc68)) AA[fc68] |= BIT11;
         if (R[fc84] && (P[fc84] & BIT11) && !RA[fc84] && !kaa(fc84)) AA[fc84] |= BIT11;
+        if (R[fc82] && (P[fc82] & BIT11) && !RA[fc82] && !kaa(fc82)) AA[fc82] |= BIT11;
+        if (R[fc81] && (P[fc81] & BIT11) && !RA[fc81] && !kaa(fc81)) AA[fc81] |= BIT11;
 
         for (fc = 0; fc < FCMAX; ++fc) YM[fc] &= ~BIT11;
 
@@ -1595,6 +1704,70 @@ void RealisatieAfhandeling(void)
 
 void FileVerwerking(void)
 {
+    int fc;
+
+    /* File afhandeling */
+    /* ---------------- */
+
+    /* reset bitsturing */
+    for (fc = 0; fc < FCMAX; ++fc)
+    {
+        Z[fc] &= ~BIT5;
+        X[fc] &= ~BIT5;
+    }
+
+    /* File ingreep File68af */
+
+    FileMeldingV2(d68_9a, tbz68_9a, trij68_9a, tafv68_9a, hfile68_9a);
+    FileMeldingV2(d68_9b, tbz68_9b, trij68_9b, tafv68_9b, hfile68_9b);
+    RT[tafvFile68af] = D[d68_9a] || D[d68_9b];
+    if (!(T[tafvFile68af] || RT[tafvFile68af]))
+    {
+        IH[hfile68_9a] = FALSE;
+        IH[hfile68_9b] = FALSE;
+    }
+        /* strook parallel: file bij melding op 1 strook */
+    if(SCH[schfileFile68afparstrook])
+    {
+        IH[hfileFile68af] = IH[hfile68_9a] || IH[hfile68_9b];
+    }
+    /* niet parallel: file bij melding van alle lussen */
+    else
+    {
+        IH[hfileFile68af] = IH[hfile68_9a] && IH[hfile68_9b];
+    }
+
+    /* percentage MG bij filemelding */
+    if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
+    {
+        PercentageMaxGroenTijden(fc08, mperiod, prmfpercFile68af08,
+                                 7, prmmg1_08, prmmg2_08, prmmg3_08, prmmg4_08, prmmg5_08, prmmg6_08, prmmg7_08);
+        PercentageMaxGroenTijden(fc11, mperiod, prmfpercFile68af11,
+                                 7, prmmg1_11, prmmg2_11, prmmg3_11, prmmg4_11, prmmg5_11, prmmg6_11, prmmg7_11);
+    }
+
+    /* Eenmalige afkappen op start file ingreep File68af */
+    /* Eenmalige afkappen fase 08 */
+    RT[tafkmingroen08fileFile68af] = ER[fc08] && T_max[tafkmingroen08fileFile68af];
+    if (SH[hfileFile68af] && G[fc08]) IH[hafk08fileFile68af] = TRUE;
+    if (EG[fc08]) IH[hafk08fileFile68af] = FALSE;
+    if (IH[hafk08fileFile68af] && G[fc08] && !T[tafkmingroen08fileFile68af] && T_max[tafkmingroen08fileFile68af] && !(MK[fc08] & BIT6)) Z[fc08] |= BIT5;
+    /* Eenmalige afkappen fase 11 */
+    RT[tafkmingroen11fileFile68af] = ER[fc11] && T_max[tafkmingroen11fileFile68af];
+    if (SH[hfileFile68af] && G[fc11]) IH[hafk11fileFile68af] = TRUE;
+    if (EG[fc11]) IH[hafk11fileFile68af] = FALSE;
+    if (IH[hafk11fileFile68af] && G[fc11] && !T[tafkmingroen11fileFile68af] && T_max[tafkmingroen11fileFile68af] && !(MK[fc11] & BIT6)) Z[fc11] |= BIT5;
+
+    /* Afkappen op bereiken maximaal groen tijdens file ingreep File68af */
+
+    /* Minimale roodtijden tijdens file ingreep File68af */
+    /* Minimale roodtijd fase 08 */
+    RT[tminrood08fileFile68af] = EGL[fc08] && T_max[tminrood08fileFile68af] && IH[hfileFile68af];
+    if (R[fc08] && T[tminrood08fileFile68af]) X[fc08] |= BIT5;
+    /* Minimale roodtijd fase 11 */
+    RT[tminrood11fileFile68af] = EGL[fc11] && T_max[tminrood11fileFile68af] && IH[hfileFile68af];
+    if (R[fc11] && T[tminrood11fileFile68af]) X[fc11] |= BIT5;
+
     FileVerwerking_Add();
 }
 
@@ -1683,10 +1856,17 @@ void DetectieStoring(void)
                      (CIF_IS[d68_2a] >= CIF_DET_STORING || PRM[prmda68_2a] == 0) &&
                      !(PRM[prmda68_1a] == 0 && PRM[prmda68_1b] == 0 && PRM[prmda68_2a] == 0) ||
                      (CIF_IS[d68_2b] >= CIF_DET_STORING || PRM[prmda68_2b] == 0) &&
-                     !(PRM[prmda68_2b] == 0));
+                     (CIF_IS[d68_9b] >= CIF_DET_STORING || PRM[prmda68_9b] == 0) &&
+                     !(PRM[prmda68_2b] == 0 && PRM[prmda68_9b] == 0));
     RT[tdstvert84] = !T[tdstvert84] && R[fc84] && !A[fc84] && ((CIF_IS[d84_1] >= CIF_DET_STORING || PRM[prmda84_1] == 0) &&
                      (CIF_IS[dk84] >= CIF_DET_STORING || PRM[prmdak84] == 0) &&
                      !(PRM[prmda84_1] == 0 && PRM[prmdak84] == 0));
+    RT[tdstvert82] = !T[tdstvert82] && R[fc82] && !A[fc82] && ((CIF_IS[d82_1] >= CIF_DET_STORING || PRM[prmda82_1] == 0) &&
+                     (CIF_IS[dk82] >= CIF_DET_STORING || PRM[prmdak82] == 0) &&
+                     !(PRM[prmda82_1] == 0 && PRM[prmdak82] == 0));
+    RT[tdstvert81] = !T[tdstvert81] && R[fc81] && !A[fc81] && ((CIF_IS[d81_1] >= CIF_DET_STORING || PRM[prmda81_1] == 0) &&
+                     (CIF_IS[dk81] >= CIF_DET_STORING || PRM[prmdak81] == 0) &&
+                     !(PRM[prmda81_1] == 0 && PRM[prmdak81] == 0));
     A[fc02] |= ET[tdstvert02];
     A[fc03] |= ET[tdstvert03];
     A[fc05] |= ET[tdstvert05];
@@ -1708,6 +1888,8 @@ void DetectieStoring(void)
     A[fc67] |= ET[tdstvert67];
     A[fc68] |= ET[tdstvert68];
     A[fc84] |= ET[tdstvert84];
+    A[fc82] |= ET[tdstvert82];
+    A[fc81] |= ET[tdstvert81];
 
     /* hiaattijd op koplus bij defect lange lus */
     /* ---------------------------------------- */
@@ -1985,6 +2167,10 @@ void system_application(void)
 
     pre_system_application();
 
+    /* file verklikking */
+    /* ---------------- */
+    CIF_GUS[usfileFile68af] = IH[hfileFile68af];
+
     /* PRIO verklikking */
     /* ---------------- */
     CIF_GUS[usovinm02] = C[cvc02bus];
@@ -2045,6 +2231,8 @@ void system_application(void)
     CIF_GUS[uswtk38a] = (D[dk38a] && !SD[dk38a] || ED[dk38a]) && A[fc38] && !G[fc38] && REG ? TRUE : CIF_GUS[uswtk38a] && !G[fc38] && REG;
     CIF_GUS[uswtk38b] = (D[dk38b] && !SD[dk38b] || ED[dk38b]) && A[fc38] && !G[fc38] && REG ? TRUE : CIF_GUS[uswtk38b] && !G[fc38] && REG;
     CIF_GUS[uswtk84] = (D[dk84] && !SD[dk84] || ED[dk84]) && A[fc84] && !G[fc84] && REG ? TRUE : CIF_GUS[uswtk84] && !G[fc84] && REG;
+    CIF_GUS[uswtk82] = (D[dk82] && !SD[dk82] || ED[dk82]) && A[fc82] && !G[fc82] && REG ? TRUE : CIF_GUS[uswtk82] && !G[fc82] && REG;
+    CIF_GUS[uswtk81] = (D[dk81] && !SD[dk81] || ED[dk81]) && A[fc81] && !G[fc81] && REG ? TRUE : CIF_GUS[uswtk81] && !G[fc81] && REG;
 
     /* minimumtijden */
     /* ------------- */
