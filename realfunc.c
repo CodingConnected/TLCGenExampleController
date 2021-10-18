@@ -20,7 +20,9 @@ BESTAND:   realfunc.c
 *                                                         Bugfix REALTIJD[fc2] ivm voorstart > 0, regel 217(11112020)
 *                                                         Bij realtijd<=1 geen sync als RV[fc1] , regel 204 (07122020) 
 *                                                         VTG3_Real_Los gewijzigd                                                   
-*                                                          Minder argumenten voetgangersfuncties + detailwijzigingen (10032021) 
+*                                                         Minder argumenten voetgangersfuncties + detailwijzigingen (10032021) 
+* 3.1     16-10-2021                - CCA       Corr_Min_nl gemaakt waarniet naar de aanwezigheid voor A voor de naloop wordt gekeken
+*                                               _temp interne variabelen verwijderd (CCA/Ddo 07032021)
 ************************************************************************************/
 
 mulv REALTIJD[FCMAX];
@@ -28,10 +30,10 @@ mulv REALTIJD_uncorrected[FCMAX];
 mulv REALTIJD_max[FCMAX];
 mulv REALTIJD_min[FCMAX];
 boolv REAL_SYN[FCMAX][FCMAX];  /* Vlag tbv synchronisatie      obv REALTIJD */
-                              /* BIT1 TRUE/FALSE                           */
-                              /* BIT2 correctie gelijk (extra info)        */
-                              /* BIT3 correctie plus   (extra info)        */
-                              /* BIT4 correctie min    (extra info)        */
+                               /* BIT1 TRUE/FALSE                           */
+                               /* BIT2 correctie gelijk (extra info)        */
+                               /* BIT3 correctie plus   (extra info)        */
+                               /* BIT4 correctie min    (extra info)        */
 boolv REAL_FOT[FCMAX][FCMAX];  /* Vlag tbv fictieve ontruiming obv REALTIJD */
 mulv TIME_FOT[FCMAX][FCMAX];   /* Timer tbv fictieve ontruiming, FOT loopt, resterende tijd */
 
@@ -341,9 +343,6 @@ boolv Corr_Real(count fc1,        /* fasecyclus 1                               
                boolv  period)     /* extra voorwaarde                                   */
 {
   boolv result = 0;
-  mulv REALTIJD_temp;      /* CCA/DDo: tijdelijke waarden om alleen verhogingen te bepalen al er meerdere gelijk- en/of voorstarts zijn @@nodig ?*/
-  mulv REALTIJD_min_temp;  /* CCA/DDo: tijdelijke waarden om alleen verhogingen te bepalen al er meerdere gelijk- en/of voorstarts zijn @@nodig ? */
-  mulv REALTIJD_max_temp;  /* CCA/DDo: tijdelijke waarden om alleen verhogingen te bepalen al er meerdere gelijk- en/of voorstarts zijn @@nodig ? */
   /* --------------------------------------------------------------------------------------------- */
   /* Bepaal synchronisatie ongewenst                                                               */
   /* --------------------------------------------------------------------------------------------- */
@@ -362,17 +361,24 @@ boolv Corr_Real(count fc1,        /* fasecyclus 1                               
   /* - FC2 MOET DAN NIET SYNCHRONISEREN MET FC1, WANT DIE IS AL GEWEEST!!!!!                       */
   /* - FC2 MOET NOG WEL PRIMAIR REALISEREN.                                                        */
   /* --------------------------------------------------------------------------------------------- */
-  /* - Bij een realtijd van <= 1 hoeft er geen synchronisatie plaats te vinden, als RV[fc1].       */
-  /*   Fc1 had op dat moment al in RA moeten staan, er kan niet langer gewacht worden op fc1.      */
-  /*   Dus dan geen correcties/synchronisaties obv fc1. De regeling moet door.                     */
-  /* --------------------------------------------------------------------------------------------- */
   if (PG[fc1] && RV[fc1] && !TRG[fc1] && PR[fc2] && !PG[fc2]
   #if CCOL_V >= 110 
       && !((P[fc1] & BIT11) || (P[fc2] & BIT11)) /* CCA/DDo 08032021: && !(P[fc1] || P[fc2]) toegevoegd om synchroniseren af te dwingen als richtingen moeten komen */
   #endif
-            || RV[fc1] && (REALTIJD[fc1] <= 1))
+     )
   {
-    REAL_SYN[fc1][fc2] = FALSE;
+     REAL_SYN[fc1][fc2] = period;
+     PG[fc1] &= ~PRIMAIR_OVERSLAG; 
+  }
+
+  /* --------------------------------------------------------------------------------------------- */
+  /* - Bij een realtijd van <= 1 hoeft er geen synchronisatie plaats te vinden, als RV[fc1].       */
+  /*   Fc1 had op dat moment al in RA moeten staan, er kan niet langer gewacht worden op fc1.      */
+  /*   Dus dan geen correcties/synchronisaties obv fc1. De regeling moet door.                     */
+  /* --------------------------------------------------------------------------------------------- */
+  if (RV[fc1] && (REALTIJD[fc1] <= 1))
+  {
+     REAL_SYN[fc1][fc2] = FALSE;
   }
   /* --------------------------------------------------------------------------------------------- */
   /* Bepaal synchronisatie gewenst                                                                 */
@@ -391,22 +397,22 @@ boolv Corr_Real(count fc1,        /* fasecyclus 1                               
   /* - realtijd fc2 kleiner dan die van fc1 + correctie                                            */
   if (REAL_SYN[fc1][fc2] && !G[fc2] && (A[fc1] || GL[fc1] || TRG[fc1]) && (REALTIJD[fc2] < (REALTIJD[fc1] + t1_t2)))
   {
-     REALTIJD_temp =   !G[fc1] && REALTIJD[fc1] == 9999 ? 9999 :
+     REALTIJD[fc2] =   !G[fc1] && REALTIJD[fc1] == 9999 ? 9999 :
                        !G[fc1] ? REALTIJD[fc1] + t1_t2 :
                        TGG[fc1] && (t1_t2 > TGG_timer[fc1]) ? t1_t2 - TGG_timer[fc1] : REALTIJD[fc2];               /* Geen aanpassing als garantiegroen[fc1] verstreken is    */
                                                                                                                     /* of als voorstarttijd verstreken.                        */
-     if (REALTIJD_temp > REALTIJD[fc2]) REALTIJD[fc2] = REALTIJD_temp; /* alleen maar ophogen */                    /* Voorstarttijd groter dan TGG_max wordt niet ondersteund */
+                                                                                                                    /* Voorstarttijd groter dan TGG_max wordt niet ondersteund */
      result = TRUE;                                                                                           
   }
 
   /* CCA/PSN: toevoeging ophoging minend tijd */
   if (REAL_SYN[fc1][fc2] && !G[fc2] && (A[fc1] || GL[fc1] || TRG[fc1]) && (REALTIJD_min[fc2] < (REALTIJD_min[fc1] + t1_t2)))
   {
-     REALTIJD_min_temp =  !G[fc1] && REALTIJD_min[fc1] == 9999 ? 9999 :
+     REALTIJD_min[fc2] =  !G[fc1] && REALTIJD_min[fc1] == 9999 ? 9999 :
                           !G[fc1] ? REALTIJD_min[fc1] + t1_t2 :
                           TGG[fc1] && (t1_t2 > TGG_timer[fc1]) ? t1_t2 - TGG_timer[fc1] : REALTIJD_min[fc2];        /* Geen aanpassing als garantiegroen[fc1] verstreken is    */
                                                                                                                     /* of als voorstarttijd verstreken.                        */
-     if (REALTIJD_min_temp > REALTIJD_min[fc2]) REALTIJD_min[fc2] = REALTIJD_min_temp; /* alleen maar ophogen */    /* Voorstarttijd groter dan TGG_max wordt niet ondersteund */
+                                                                                                                    /* Voorstarttijd groter dan TGG_max wordt niet ondersteund */
      result = TRUE;                                                                                           
   }
 
@@ -415,11 +421,113 @@ boolv Corr_Real(count fc1,        /* fasecyclus 1                               
     /* CCA: alleen gelijkstartende richting RR krijgt dan geen 9999 overnemen */
     if (REAL_SYN[fc1][fc2] && !G[fc2] && /* (A[fc1] || !PG[fc1] || GL[fc1] || TRG[fc1]) &&*/ (REALTIJD_max[fc2] < (REALTIJD_max[fc1] + t1_t2)) && (REALTIJD_max[fc1]!=9999))
     {  
-     REALTIJD_max_temp =  !G[fc1] && REALTIJD_max[fc1] == 9999 ? 9999 :  
+     REALTIJD_max[fc2] =  !G[fc1] && REALTIJD_max[fc1] == 9999 ? 9999 :  
                           !G[fc1] ? REALTIJD_max[fc1] + t1_t2 :
                           TGG[fc1] && (t1_t2 > TGG_timer[fc1]) ? t1_t2 - TGG_timer[fc1] : REALTIJD_max[fc2];        /* Geen aanpassing als garantiegroen[fc1] verstreken is    */
                                                                                                                     /* of als voorstarttijd verstreken.                        */
-     if (REALTIJD_max_temp > REALTIJD_max[fc2]) REALTIJD_max[fc2] = REALTIJD_max_temp; /* alleen maar ophogen */    /* Voorstarttijd groter dan TGG_max wordt niet ondersteund */
+                                                                                                                    /* Voorstarttijd groter dan TGG_max wordt niet ondersteund */
+     result = TRUE;                                                                                           
+  }
+
+  /* --------------------------------- */
+  /* Wijzigingen aangeven via result   */
+  /* --------------------------------- */
+  return result;
+}
+
+
+/* ================================================================================================================================================================================== */
+/* REALISATIETIJD CORRECTIE - NEW !!! - eenzijdig gemaakt - negatieve waarden kunnen als argument worden meegegeven                                                                   */
+/* ================================================================================================================================================================================== */
+boolv Corr_Real_nl(count fc1,        /* fasecyclus 1                                       */
+               count fc2,        /* fasecyclus 2                                       */
+               mulv  t1_t2,      /* correctiewaarde van fc1 naar fc2                   */
+               boolv  period)     /* extra voorwaarde                                   */
+{
+  boolv result = 0;
+  /* --------------------------------------------------------------------------------------------- */
+  /* Bepaal synchronisatie ongewenst                                                               */
+  /* --------------------------------------------------------------------------------------------- */
+  /* Beveiliging tegen ongewenste synchronsiatie als:                                              */
+  /* - fc1 RV blijft, na TRG                                                                       */
+  /* - fc1 PG heeft                                                                                */
+  /* - fc2 PR heeft, maar PG nog niet                                                              */
+  /* Bovenstaande kan voorkomen als:                                                               */
+  /* - fc1 alternatief realiseert en groen wordt                                                   */
+  /* - fc2 alternatief realiseert en nog in RA blijft (vanwege lopend conflict)                    */
+  /* - modulemolen doorschiet naar eigen blok                                                      */
+  /* - fc1 dan direct een PG krijgt (groen in eigen blok)                                          */
+  /* - fc2 dan direct een PR krijgt (RA    in eigen blok), maar moet nog groen worden              */
+  /* - fc1 naar geel/rood gaat en weer een aanvraag heeft, voordat fc2 groen is                    */
+  /* - fc1 een FK heeft die aanvraag heeft en eerder aan de beurt is                               */
+  /* - FC2 MOET DAN NIET SYNCHRONISEREN MET FC1, WANT DIE IS AL GEWEEST!!!!!                       */
+  /* - FC2 MOET NOG WEL PRIMAIR REALISEREN.                                                        */
+  /* --------------------------------------------------------------------------------------------- */
+  if (PG[fc1] && RV[fc1] && !TRG[fc1] && PR[fc2] && !PG[fc2]
+  #if CCOL_V >= 110 
+      && !((P[fc1] & BIT11) || (P[fc2] & BIT11)) /* CCA/DDo 08032021: && !(P[fc1] || P[fc2]) toegevoegd om synchroniseren af te dwingen als richtingen moeten komen */
+  #endif
+     )
+  {
+     REAL_SYN[fc1][fc2] = period;
+     PG[fc1] &= ~PRIMAIR_OVERSLAG; 
+  }
+
+  /* --------------------------------------------------------------------------------------------- */
+  /* - Bij een realtijd van <= 1 hoeft er geen synchronisatie plaats te vinden, als RV[fc1].       */
+  /*   Fc1 had op dat moment al in RA moeten staan, er kan niet langer gewacht worden op fc1.      */
+  /*   Dus dan geen correcties/synchronisaties obv fc1. De regeling moet door.                     */
+  /* --------------------------------------------------------------------------------------------- */
+  if (RV[fc1] && (REALTIJD[fc1] <= 1))
+  {
+     REAL_SYN[fc1][fc2] = FALSE;
+  }
+  /* --------------------------------------------------------------------------------------------- */
+  /* Bepaal synchronisatie gewenst                                                                 */
+  /* --------------------------------------------------------------------------------------------- */
+  else
+  {
+    REAL_SYN[fc1][fc2] = period;
+  }
+
+  /* --------------------------------------------------------------------------------------------- */
+  /* Realisatietijd fc2 wijzigen, mits:                                                            */
+  /* --------------------------------------------------------------------------------------------- */
+  /* - synchronisatie gewenst                                                                      */
+  /* - fc2 geen groen                                                                              */
+  /* - fc1 ALTIJD                                                                        */
+  /* - realtijd fc2 kleiner dan die van fc1 + correctie                                            */
+  if (REAL_SYN[fc1][fc2] && !G[fc2] /*&& (A[fc1] || GL[fc1] || TRG[fc1])*/ && (REALTIJD[fc2] < (REALTIJD[fc1] + t1_t2)))
+  {
+     REALTIJD[fc2] =   !G[fc1] && REALTIJD[fc1] == 9999 ? 9999 :
+                       !G[fc1] ? REALTIJD[fc1] + t1_t2 :
+                       TGG[fc1] && (t1_t2 > TGG_timer[fc1]) ? t1_t2 - TGG_timer[fc1] : REALTIJD[fc2];               /* Geen aanpassing als garantiegroen[fc1] verstreken is    */
+                                                                                                                    /* of als voorstarttijd verstreken.                        */
+                                                                                                                    /* Voorstarttijd groter dan TGG_max wordt niet ondersteund */
+     result = TRUE;                                                                                           
+  }
+
+  /* CCA/PSN: toevoeging ophoging minend tijd */
+  if (REAL_SYN[fc1][fc2] && !G[fc2] /*&& (A[fc1] || GL[fc1] || TRG[fc1])*/ && (REALTIJD_min[fc2] < (REALTIJD_min[fc1] + t1_t2)))
+  {
+     REALTIJD_min[fc2] =  !G[fc1] && REALTIJD_min[fc1] == 9999 ? 9999 :
+                     !     G[fc1] ? REALTIJD_min[fc1] + t1_t2 :
+                         TGG[fc1] && (t1_t2 > TGG_timer[fc1]) ? t1_t2 - TGG_timer[fc1] : REALTIJD_min[fc2];        /* Geen aanpassing als garantiegroen[fc1] verstreken is    */
+                                                                                                                   /* of als voorstarttijd verstreken.                        */
+                                                                                                                   /* Voorstarttijd groter dan TGG_max wordt niet ondersteund */
+     result = TRUE;                                                                                           
+  }
+
+    /* CCA/PSN: toevoeging ophoging maxend tijd */
+    /* CCA: aanvraag etc. niet van belang voor de max. end tijd */
+    /* CCA: alleen gelijkstartende richting RR krijgt dan geen 9999 overnemen */
+    if (REAL_SYN[fc1][fc2] && !G[fc2] && /* (A[fc1] || !PG[fc1] || GL[fc1] || TRG[fc1]) &&*/ (REALTIJD_max[fc2] < (REALTIJD_max[fc1] + t1_t2)) && (REALTIJD_max[fc1]!=9999))
+    {  
+       REALTIJD_max[fc2] =  !G[fc1] && REALTIJD_max[fc1] == 9999 ? 9999 :  
+                            !G[fc1] ? REALTIJD_max[fc1] + t1_t2 :
+                           TGG[fc1] && (t1_t2 > TGG_timer[fc1]) ? t1_t2 - TGG_timer[fc1] : REALTIJD_max[fc2];        /* Geen aanpassing als garantiegroen[fc1] verstreken is    */
+                                                                                                                     /* of als voorstarttijd verstreken.                        */
+                                                                                                                     /* Voorstarttijd groter dan TGG_max wordt niet ondersteund */
      result = TRUE;                                                                                           
   }
 
@@ -489,6 +597,26 @@ boolv Corr_Min( count fc1,        /* fasecyclus 1                               
   REAL_SYN[fc1][fc2] |= result ? BIT4 : 0;
 
   return result;
+}
+
+/* ================================================================================================================================================================================== */
+/* REALISATIETIJD CORRECTIE - MIN (fc2 dus eerder groen dan fc1)                                                                                                                      */
+/* ================================================================================================================================================================================== */
+boolv Corr_Min_nl( count fc1,        /* fasecyclus 1                                       */
+   count fc2,        /* fasecyclus 2                                       */
+   mulv  t1_t2,      /* correctiewaarde fc1 obv fc2                        */
+   boolv  period)     /* extra voorwaarde                                   */
+{
+   boolv result = 0;
+
+   result |= Corr_Real_nl(fc1, fc2, -t1_t2, period);
+
+   /* --------------------------------- */
+   /* Wijzigingen aangeven via result   */
+   /* --------------------------------- */
+   REAL_SYN[fc1][fc2] |= result ? BIT4 : 0;
+
+   return result;
 }
 
 /* ================================================================================================================================================================================== */

@@ -654,12 +654,12 @@ void BepaalRealisatieTijden(void)
         /* Gelijkstart / voorstart / late release */
         wijziging |= Corr_Pls(fc22, fc05, T_max[tvs2205], TRUE);
         wijziging |= Corr_Pls(fc32, fc05, T_max[tvs3205], TRUE);
-        wijziging |= Corr_Min(fc26, fc11, T_max[tlr2611], TRUE);
-        wijziging |= Corr_Min(fc62, fc02, T_max[tlr6202], TRUE);
-        wijziging |= Corr_Min(fc68, fc08, T_max[tlr6808], TRUE);
-        wijziging |= Corr_Min(fc68, fc11, T_max[tlr6811], TRUE);
-        wijziging |= Corr_Min(fc21, fc22, T_max[tlr2122], TRUE);
-        wijziging |= Corr_Min(fc81, fc82, T_max[tlr8182], TRUE);
+        wijziging |= Corr_Min_nl(fc26, fc11, T_max[tlr2611], TRUE);
+        wijziging |= Corr_Min_nl(fc62, fc02, T_max[tlr6202], TRUE);
+        wijziging |= Corr_Min_nl(fc68, fc08, T_max[tlr6808], TRUE);
+        wijziging |= Corr_Min_nl(fc68, fc11, T_max[tlr6811], TRUE);
+        wijziging |= Corr_Min_nl(fc21, fc22, T_max[tlr2122], TRUE);
+        wijziging |= Corr_Min_nl(fc81, fc82, T_max[tlr8182], TRUE);
         if (SCH[schgs2232]) wijziging |= Corr_Gel(fc22, fc32, TRUE);
         if (SCH[schgs2434]) wijziging |= Corr_Gel(fc24, fc34, TRUE);
         if (SCH[schgs3384]) wijziging |= Corr_Gel(fc33, fc84, TRUE);
@@ -668,12 +668,6 @@ void BepaalRealisatieTijden(void)
         wijziging |= VTG2_Real_Los(fc32, fc31, T_max[tinl3231], T_max[tinl3132], hinl32, hinl31, hlos32, hlos31, FALSE);
         wijziging |= VTG2_Real_Los(fc34, fc33, T_max[tinl3433], T_max[tinl3334], hinl34, hinl33, hlos34, hlos33, FALSE);
 
-        /* Inrijden */
-        wijziging |= Real_Los(fc02, fc62, 0, hlos62, FALSE);
-        wijziging |= Real_Los(fc08, fc68, 0, hlos68, FALSE);
-        wijziging |= Real_Los(fc11, fc68, 0, hlos68, FALSE);
-        wijziging |= Real_Los(fc22, fc21, 0, hlos21, FALSE);
-        wijziging |= Real_Los(fc82, fc81, 0, hlos81, FALSE);
         /* Fictieve ontruiming */
         wijziging |= Corr_FOT(fc05, fc22, tfo0522, 0, TRUE);
         wijziging |= Corr_FOT(fc05, fc32, tfo0532, 0, TRUE);
@@ -1490,15 +1484,15 @@ void RealisatieAfhandeling(void)
 
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
-    set_MRLW(fc62, fc02, (boolv) (SG[fc02] && A[fc62] && !kcv(fc62)));
-    set_MRLW(fc68, fc08, (boolv) (SG[fc08] && A[fc68] && !kcv(fc68)));
-    set_MRLW(fc68, fc11, (boolv) (SG[fc11] && A[fc68] && !kcv(fc68)));
-    set_MRLW(fc21, fc22, (boolv) (SG[fc22] && A[fc21] && !kcv(fc21)));
+    set_MRLW(fc62, fc02, (boolv) (G[fc02] && !G[fc62] && A[fc62] && !kcv(fc62)));
+    set_MRLW(fc68, fc08, (boolv) (G[fc08] && !G[fc68] && A[fc68] && !kcv(fc68)));
+    set_MRLW(fc68, fc11, (boolv) (G[fc11] && !G[fc68] && A[fc68] && !kcv(fc68)));
+    set_MRLW(fc21, fc22, (boolv) (G[fc22] && !G[fc21] && A[fc21] && !kcv(fc21)));
     set_MRLW(fc32, fc31, (boolv) (SG[fc31] && A[fc32] && (IH[hnlak31a]) && !kcv(fc32)));
     set_MRLW(fc31, fc32, (boolv) (SG[fc32] && A[fc31] && (IH[hnlak32a]) && !kcv(fc31)));
     set_MRLW(fc34, fc33, (boolv) (SG[fc33] && A[fc34] && (IH[hnlak33a]) && !kcv(fc34)));
     set_MRLW(fc33, fc34, (boolv) (SG[fc34] && A[fc33] && (IH[hnlak34a]) && !kcv(fc33)));
-    set_MRLW(fc81, fc82, (boolv) (SG[fc82] && A[fc81] && !kcv(fc81)));
+    set_MRLW(fc81, fc82, (boolv) (G[fc82] && !G[fc81] && A[fc81] && !kcv(fc81)));
 
     /* set meerealisatie voor gelijk- of voorstartende richtingen */
     /* ---------------------------------------------------------- */
