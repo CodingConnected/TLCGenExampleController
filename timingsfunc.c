@@ -1,4 +1,4 @@
-/* timingsfunc.c - gegenereerd met TLCGen 0.9.10.0 */
+/* timingsfunc.c - gegenereerd met TLCGen 0.10.2.0 */
 
 /* timingsfunc.c - gegenereerd met TLCGen 0.9.1.0 */
 

@@ -8,8 +8,8 @@
 
    BESTAND:   123456sys.h
       CCOL:   11.0
-    TLCGEN:   0.9.10.0
-   CCOLGEN:   0.9.10.0
+    TLCGEN:   0.10.2.0
+   CCOLGEN:   0.10.2.0
 */
 
 /****************************** Versie commentaar ***********************************
@@ -1994,26 +1994,26 @@
     #define prmrisastart11mveh1    722 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 11                                                                   */
     #define prmrisastart21fts1     723 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 21                                                                   */
     #define prmrisastart22fts1     724 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 22                                                                   */
-    #define prmrisastart84fts1     725 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 84                                                                   */
-    #define prmrisastart68mveh2    726 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisastart68mveh1    727 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisastart67mveh1    728 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 67                                                                   */
-    #define prmrisastart62mveh2    729 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisastart62mveh1    730 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisastart61mveh1    731 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 61                                                                   */
-    #define prmrisastart38vtg2     732 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisastart38vtg1     733 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisastart34vtg2     734 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisastart34vtg1     735 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisastart33vtg2     736 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisastart33vtg1     737 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisastart32vtg2     738 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisastart32vtg1     739 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisastart31vtg2     740 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisastart31vtg1     741 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisastart28fts1     742 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 28                                                                   */
-    #define prmrisastart26fts1     743 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 26                                                                   */
-    #define prmrisastart24fts1     744 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 24                                                                   */
+    #define prmrisastart24fts1     725 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 24                                                                   */
+    #define prmrisastart84fts1     726 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 84                                                                   */
+    #define prmrisastart68mveh2    727 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisastart68mveh1    728 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisastart67mveh1    729 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 67                                                                   */
+    #define prmrisastart62mveh2    730 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisastart62mveh1    731 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisastart61mveh1    732 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 61                                                                   */
+    #define prmrisastart38vtg2     733 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisastart38vtg1     734 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisastart34vtg2     735 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisastart34vtg1     736 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisastart33vtg2     737 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisastart33vtg1     738 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisastart32vtg2     739 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisastart32vtg1     740 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisastart31vtg2     741 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisastart31vtg1     742 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisastart28fts1     743 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 28                                                                   */
+    #define prmrisastart26fts1     744 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 26                                                                   */
     #define prmrisaend02mveh1      745 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
     #define prmrisaend02mveh2      746 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
     #define prmrisaend03mveh1      747 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 03                                                                   */
@@ -2024,26 +2024,26 @@
     #define prmrisaend11mveh1      752 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 11                                                                   */
     #define prmrisaend21fts1       753 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 21                                                                   */
     #define prmrisaend22fts1       754 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 22                                                                   */
-    #define prmrisaend84fts1       755 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 84                                                                   */
-    #define prmrisaend68mveh2      756 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisaend68mveh1      757 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisaend67mveh1      758 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 67                                                                   */
-    #define prmrisaend62mveh2      759 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisaend62mveh1      760 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisaend61mveh1      761 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 61                                                                   */
-    #define prmrisaend38vtg2       762 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisaend38vtg1       763 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisaend34vtg2       764 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisaend34vtg1       765 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisaend33vtg2       766 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisaend33vtg1       767 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisaend32vtg2       768 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisaend32vtg1       769 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisaend31vtg2       770 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisaend31vtg1       771 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisaend28fts1       772 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 28                                                                   */
-    #define prmrisaend26fts1       773 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 26                                                                   */
-    #define prmrisaend24fts1       774 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 24                                                                   */
+    #define prmrisaend24fts1       755 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 24                                                                   */
+    #define prmrisaend84fts1       756 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 84                                                                   */
+    #define prmrisaend68mveh2      757 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisaend68mveh1      758 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisaend67mveh1      759 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 67                                                                   */
+    #define prmrisaend62mveh2      760 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisaend62mveh1      761 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisaend61mveh1      762 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 61                                                                   */
+    #define prmrisaend38vtg2       763 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisaend38vtg1       764 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisaend34vtg2       765 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisaend34vtg1       766 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisaend33vtg2       767 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisaend33vtg1       768 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisaend32vtg2       769 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisaend32vtg1       770 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisaend31vtg2       771 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisaend31vtg1       772 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisaend28fts1       773 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 28                                                                   */
+    #define prmrisaend26fts1       774 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 26                                                                   */
     #define prmrisvstart02mveh1    775 /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
     #define prmrisvstart02mveh2    776 /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
     #define prmrisvstart03mveh1    777 /* Afstand van stopstreep tot start verleng gebied RIS fase 03                                                                    */
@@ -2054,26 +2054,26 @@
     #define prmrisvstart11mveh1    782 /* Afstand van stopstreep tot start verleng gebied RIS fase 11                                                                    */
     #define prmrisvstart21fts1     783 /* Afstand van stopstreep tot start verleng gebied RIS fase 21                                                                    */
     #define prmrisvstart22fts1     784 /* Afstand van stopstreep tot start verleng gebied RIS fase 22                                                                    */
-    #define prmrisvstart84fts1     785 /* Afstand van stopstreep tot start verleng gebied RIS fase 84                                                                    */
-    #define prmrisvstart68mveh2    786 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
-    #define prmrisvstart68mveh1    787 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
-    #define prmrisvstart67mveh1    788 /* Afstand van stopstreep tot start verleng gebied RIS fase 67                                                                    */
-    #define prmrisvstart62mveh2    789 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
-    #define prmrisvstart62mveh1    790 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
-    #define prmrisvstart61mveh1    791 /* Afstand van stopstreep tot start verleng gebied RIS fase 61                                                                    */
-    #define prmrisvstart38vtg2     792 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
-    #define prmrisvstart38vtg1     793 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
-    #define prmrisvstart34vtg2     794 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
-    #define prmrisvstart34vtg1     795 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
-    #define prmrisvstart33vtg2     796 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
-    #define prmrisvstart33vtg1     797 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
-    #define prmrisvstart32vtg2     798 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
-    #define prmrisvstart32vtg1     799 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
-    #define prmrisvstart31vtg2     800 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
-    #define prmrisvstart31vtg1     801 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
-    #define prmrisvstart28fts1     802 /* Afstand van stopstreep tot start verleng gebied RIS fase 28                                                                    */
-    #define prmrisvstart26fts1     803 /* Afstand van stopstreep tot start verleng gebied RIS fase 26                                                                    */
-    #define prmrisvstart24fts1     804 /* Afstand van stopstreep tot start verleng gebied RIS fase 24                                                                    */
+    #define prmrisvstart24fts1     785 /* Afstand van stopstreep tot start verleng gebied RIS fase 24                                                                    */
+    #define prmrisvstart84fts1     786 /* Afstand van stopstreep tot start verleng gebied RIS fase 84                                                                    */
+    #define prmrisvstart68mveh2    787 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
+    #define prmrisvstart68mveh1    788 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
+    #define prmrisvstart67mveh1    789 /* Afstand van stopstreep tot start verleng gebied RIS fase 67                                                                    */
+    #define prmrisvstart62mveh2    790 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
+    #define prmrisvstart62mveh1    791 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
+    #define prmrisvstart61mveh1    792 /* Afstand van stopstreep tot start verleng gebied RIS fase 61                                                                    */
+    #define prmrisvstart38vtg2     793 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
+    #define prmrisvstart38vtg1     794 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
+    #define prmrisvstart34vtg2     795 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
+    #define prmrisvstart34vtg1     796 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
+    #define prmrisvstart33vtg2     797 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
+    #define prmrisvstart33vtg1     798 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
+    #define prmrisvstart32vtg2     799 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
+    #define prmrisvstart32vtg1     800 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
+    #define prmrisvstart31vtg2     801 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
+    #define prmrisvstart31vtg1     802 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
+    #define prmrisvstart28fts1     803 /* Afstand van stopstreep tot start verleng gebied RIS fase 28                                                                    */
+    #define prmrisvstart26fts1     804 /* Afstand van stopstreep tot start verleng gebied RIS fase 26                                                                    */
     #define prmrisvend02mveh1      805 /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
     #define prmrisvend02mveh2      806 /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
     #define prmrisvend03mveh1      807 /* Afstand van stopstreep tot einde verleng gebied RIS fase 03                                                                    */
@@ -2084,26 +2084,26 @@
     #define prmrisvend11mveh1      812 /* Afstand van stopstreep tot einde verleng gebied RIS fase 11                                                                    */
     #define prmrisvend21fts1       813 /* Afstand van stopstreep tot einde verleng gebied RIS fase 21                                                                    */
     #define prmrisvend22fts1       814 /* Afstand van stopstreep tot einde verleng gebied RIS fase 22                                                                    */
-    #define prmrisvend84fts1       815 /* Afstand van stopstreep tot einde verleng gebied RIS fase 84                                                                    */
-    #define prmrisvend68mveh2      816 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
-    #define prmrisvend68mveh1      817 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
-    #define prmrisvend67mveh1      818 /* Afstand van stopstreep tot einde verleng gebied RIS fase 67                                                                    */
-    #define prmrisvend62mveh2      819 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
-    #define prmrisvend62mveh1      820 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
-    #define prmrisvend61mveh1      821 /* Afstand van stopstreep tot einde verleng gebied RIS fase 61                                                                    */
-    #define prmrisvend38vtg2       822 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
-    #define prmrisvend38vtg1       823 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
-    #define prmrisvend34vtg2       824 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
-    #define prmrisvend34vtg1       825 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
-    #define prmrisvend33vtg2       826 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
-    #define prmrisvend33vtg1       827 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
-    #define prmrisvend32vtg2       828 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
-    #define prmrisvend32vtg1       829 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
-    #define prmrisvend31vtg2       830 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
-    #define prmrisvend31vtg1       831 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
-    #define prmrisvend28fts1       832 /* Afstand van stopstreep tot einde verleng gebied RIS fase 28                                                                    */
-    #define prmrisvend26fts1       833 /* Afstand van stopstreep tot einde verleng gebied RIS fase 26                                                                    */
-    #define prmrisvend24fts1       834 /* Afstand van stopstreep tot einde verleng gebied RIS fase 24                                                                    */
+    #define prmrisvend24fts1       815 /* Afstand van stopstreep tot einde verleng gebied RIS fase 24                                                                    */
+    #define prmrisvend84fts1       816 /* Afstand van stopstreep tot einde verleng gebied RIS fase 84                                                                    */
+    #define prmrisvend68mveh2      817 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
+    #define prmrisvend68mveh1      818 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
+    #define prmrisvend67mveh1      819 /* Afstand van stopstreep tot einde verleng gebied RIS fase 67                                                                    */
+    #define prmrisvend62mveh2      820 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
+    #define prmrisvend62mveh1      821 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
+    #define prmrisvend61mveh1      822 /* Afstand van stopstreep tot einde verleng gebied RIS fase 61                                                                    */
+    #define prmrisvend38vtg2       823 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
+    #define prmrisvend38vtg1       824 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
+    #define prmrisvend34vtg2       825 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
+    #define prmrisvend34vtg1       826 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
+    #define prmrisvend33vtg2       827 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
+    #define prmrisvend33vtg1       828 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
+    #define prmrisvend32vtg2       829 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
+    #define prmrisvend32vtg1       830 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
+    #define prmrisvend31vtg2       831 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
+    #define prmrisvend31vtg1       832 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
+    #define prmrisvend28fts1       833 /* Afstand van stopstreep tot einde verleng gebied RIS fase 28                                                                    */
+    #define prmrisvend26fts1       834 /* Afstand van stopstreep tot einde verleng gebied RIS fase 26                                                                    */
     #define prmmkrgd24_3           835 /* Type verlengen tbv richtinggevoelig verlengen fase 24                                                                          */
     #define prmrgv                 836 /* Type RoBuGrover                                                                                                                */
     #define prmmin_tcyclus         837 /* Minimale cyclustijd                                                                                                            */
@@ -2194,7 +2194,7 @@
     #define prmaltg84              922 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     #define prmtestdsivert         923 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
-    #define prmtestdsilijn         924 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
+    #define prmtestdsilyn          924 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
     #define prmtestdsicat          925 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
     #define PRMMAX1                926
 #else

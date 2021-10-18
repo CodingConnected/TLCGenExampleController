@@ -8,8 +8,8 @@
 
    BESTAND:   123456rissim.c
       CCOL:   11.0
-    TLCGEN:   0.9.10.0
-   CCOLGEN:   0.9.10.0
+    TLCGEN:   0.10.2.0
+   CCOLGEN:   0.10.2.0
 */
 
 /****************************** Versie commentaar ***********************************

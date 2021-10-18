@@ -8,8 +8,8 @@
 
    BESTAND:   123456prio.c
       CCOL:   11.0
-    TLCGEN:   0.9.10.0
-   CCOLGEN:   0.9.10.0
+    TLCGEN:   0.10.2.0
+   CCOLGEN:   0.10.2.0
 */
 
 /****************************** Versie commentaar ***********************************
@@ -1429,26 +1429,26 @@ void PrioSpecialSignals(void)
     #endif
 
     /* Prioriteit ingrepen */
-    if (SD[ddummykarin02bus]) set_DSI_message(NG, CIF_BUS, 2, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit02bus]) set_DSI_message(NG, CIF_BUS, 2, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin03bus]) set_DSI_message(NG, CIF_BUS, 3, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit03bus]) set_DSI_message(NG, CIF_BUS, 3, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin05bus]) set_DSI_message(NG, CIF_BUS, 5, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit05bus]) set_DSI_message(NG, CIF_BUS, 5, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin08bus]) set_DSI_message(NG, CIF_BUS, 8, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit08bus]) set_DSI_message(NG, CIF_BUS, 8, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin09bus]) set_DSI_message(NG, CIF_BUS, 9, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit09bus]) set_DSI_message(NG, CIF_BUS, 9, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin11bus]) set_DSI_message(NG, CIF_BUS, 11, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit11bus]) set_DSI_message(NG, CIF_BUS, 11, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin61bus]) set_DSI_message(NG, CIF_BUS, 61, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit61bus]) set_DSI_message(NG, CIF_BUS, 61, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin62bus]) set_DSI_message(NG, CIF_BUS, 62, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit62bus]) set_DSI_message(NG, CIF_BUS, 62, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin67bus]) set_DSI_message(NG, CIF_BUS, 67, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit67bus]) set_DSI_message(NG, CIF_BUS, 67, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin68bus]) set_DSI_message(NG, CIF_BUS, 68, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit68bus]) set_DSI_message(NG, CIF_BUS, 68, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilijn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin02bus]) set_DSI_message(NG, CIF_BUS, 2, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit02bus]) set_DSI_message(NG, CIF_BUS, 2, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin03bus]) set_DSI_message(NG, CIF_BUS, 3, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit03bus]) set_DSI_message(NG, CIF_BUS, 3, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin05bus]) set_DSI_message(NG, CIF_BUS, 5, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit05bus]) set_DSI_message(NG, CIF_BUS, 5, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin08bus]) set_DSI_message(NG, CIF_BUS, 8, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit08bus]) set_DSI_message(NG, CIF_BUS, 8, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin09bus]) set_DSI_message(NG, CIF_BUS, 9, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit09bus]) set_DSI_message(NG, CIF_BUS, 9, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin11bus]) set_DSI_message(NG, CIF_BUS, 11, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit11bus]) set_DSI_message(NG, CIF_BUS, 11, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin61bus]) set_DSI_message(NG, CIF_BUS, 61, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit61bus]) set_DSI_message(NG, CIF_BUS, 61, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin62bus]) set_DSI_message(NG, CIF_BUS, 62, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit62bus]) set_DSI_message(NG, CIF_BUS, 62, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin67bus]) set_DSI_message(NG, CIF_BUS, 67, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit67bus]) set_DSI_message(NG, CIF_BUS, 67, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin68bus]) set_DSI_message(NG, CIF_BUS, 68, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit68bus]) set_DSI_message(NG, CIF_BUS, 68, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
 
     /* HD ingrepen */
     if (SD[ddummyhdkarin02]) set_DSI_message(0, CIF_POL, 2, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);

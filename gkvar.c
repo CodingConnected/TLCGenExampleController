@@ -1,4 +1,4 @@
-/* gkvar.c - gegenereerd met TLCGen 0.9.10.0 */
+/* gkvar.c - gegenereerd met TLCGen 0.10.2.0 */
 
 #include "gkvar.h"
 
