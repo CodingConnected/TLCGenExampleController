@@ -100,3 +100,5 @@ extern int Knipper_2Hz;
    boolv ControleerNaloopEG(count voedend, count volg, count tnlfg, count tnleg, count tnldet, boolv halt);
    boolv ControleerInrijden(count voedend, count volg, boolv tinr, boolv halt);
 #endif 
+
+boolv set_MRLW_nl(count i, count j, boolv period);

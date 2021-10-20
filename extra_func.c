@@ -1543,7 +1543,7 @@ boolv ControleerVS(count fc1, count fc2, boolv cond, boolv halt)
 
       if (cond)
       {
-         if ((EVS[fc1] && ! (G[fc2]||GL[fc2])))
+         if ((EVS[fc1] && !(G[fc2]||GL[fc2]) && !RR[fc2]&BIT6))
          {
             /* Schrijf naar de CCOL-terminal */
             code helpstr[30];  /* help string */
@@ -1576,3 +1576,26 @@ boolv ControleerVS(count fc1, count fc2, boolv cond, boolv halt)
 }
 
 #endif
+
+
+boolv set_MRLW_nl(count i, count j, boolv period)
+/* meerealisatie uitgebreid */
+/* Als de voedende richting niet primair komt ten gevolge van een ov ingreep (BIT6), 
+ * sturen wij de naloop middels een aangepast set_MRLW (zonder !fkaa) naar RA.
+ * set_MRLW volstaat niet omdat hier op !fkaa wordt getest. 
+ * i=naloop, j=voedend, period=voorwaarde 
+ */
+{
+   if (AA[j] && period /* && RV[i] */ && !AA[i] && (!RR[i] || P[i]) && !BL[i] && !kaa(i) /* !fkaa */ 
+      && (!RR[j] || P[j]) && !BL[j]) {
+      PR[i] = AR[i] = BR[i] = MR[i] = FALSE;  /* reset old realizationtype   */
+      AA[i] = MR[i] = TRUE;                   /* set actuation               */
+      A[i] |= BIT4;                           /* set demand                  */
+      if (PR[j])  PR[i] = PR[j];              /* set primary realization     */
+      if (AR[j])  AR[i] = AR[j];              /* set alternative realization */
+      if (BR[j])  BR[i] = BR[j];              /* set priority realization    */
+      return (TRUE);
+   }
+   return (FALSE);
+}
+

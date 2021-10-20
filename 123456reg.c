@@ -22,6 +22,8 @@
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
  * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
  * 1.9.1    18-10-2021   Cyril       TAB.C: GK's tussen voedende richtingen als de nalopen met elkaar conflicteren en REG.C EXTRA_FUNC.H EXTRAFUN.C: testfaciliteiten voor interne koppelingen
+ * 1.9.2    18-10-2021   Cyril       REALFUNC/REG.C: Corr_min_nl en verwijderen _temp PRIO.C: PAR_correcties synchronisaties ook tijdens prio REG.C set_MRLW G[vd] && !G[nl] ipv SG[vd]
+ * 1.9.3    19-10-2021   Cyril       REG.C set_MRLW_nl
  *
  ************************************************************************************/
 
@@ -1251,7 +1253,6 @@ void Meeverlengen(void)
 void Synchronisaties(void)
 {
     int fc;
-    int i;
 
     /* Reset synchronisatie BITs */
     for (fc = 0; fc < FCMAX; ++fc)
@@ -1484,15 +1485,15 @@ void RealisatieAfhandeling(void)
 
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
-    set_MRLW(fc62, fc02, (boolv) (G[fc02] && !G[fc62] && A[fc62] && !kcv(fc62)));
-    set_MRLW(fc68, fc08, (boolv) (G[fc08] && !G[fc68] && A[fc68] && !kcv(fc68)));
-    set_MRLW(fc68, fc11, (boolv) (G[fc11] && !G[fc68] && A[fc68] && !kcv(fc68)));
-    set_MRLW(fc21, fc22, (boolv) (G[fc22] && !G[fc21] && A[fc21] && !kcv(fc21)));
+    set_MRLW_nl(fc62, fc02, (boolv) (G[fc02] && !G[fc62] && A[fc62]));
+    set_MRLW_nl(fc68, fc08, (boolv) (G[fc08] && !G[fc68] && A[fc68]));
+    set_MRLW_nl(fc68, fc11, (boolv) (G[fc11] && !G[fc68] && A[fc68]));
+    set_MRLW_nl(fc21, fc22, (boolv) (G[fc22] && !G[fc21] && A[fc21]));
     set_MRLW(fc32, fc31, (boolv) (SG[fc31] && A[fc32] && (IH[hnlak31a]) && !kcv(fc32)));
     set_MRLW(fc31, fc32, (boolv) (SG[fc32] && A[fc31] && (IH[hnlak32a]) && !kcv(fc31)));
     set_MRLW(fc34, fc33, (boolv) (SG[fc33] && A[fc34] && (IH[hnlak33a]) && !kcv(fc34)));
     set_MRLW(fc33, fc34, (boolv) (SG[fc34] && A[fc33] && (IH[hnlak34a]) && !kcv(fc33)));
-    set_MRLW(fc81, fc82, (boolv) (G[fc82] && !G[fc81] && A[fc81] && !kcv(fc81)));
+    set_MRLW_nl(fc81, fc82, (boolv) (G[fc82] && !G[fc81] && A[fc81]));
 
     /* set meerealisatie voor gelijk- of voorstartende richtingen */
     /* ---------------------------------------------------------- */
@@ -2104,11 +2105,11 @@ void PostApplication(void)
     #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
         if (TS &&
             (CIF_KLOK[CIF_JAAR] == 2099) &&
-            (CIF_KLOK[CIF_MAAND] == 1) &&
+            (CIF_KLOK[CIF_MAAND] == 2) &&
             (CIF_KLOK[CIF_DAG] == 1) &&
-            (CIF_KLOK[CIF_UUR] == 1) &&
-            (CIF_KLOK[CIF_MINUUT] == 1) &&
-            (CIF_KLOK[CIF_SECONDE] == 1))
+            (CIF_KLOK[CIF_UUR] == 5) &&
+            (CIF_KLOK[CIF_MINUUT] == 49) &&
+            (CIF_KLOK[CIF_SECONDE] == 13)) //23
         {
             stuffkey(F3KEY);
             stuffkey(F5KEY);
