@@ -21,9 +21,7 @@
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
  * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
- * 1.9.1    18-10-2021   Cyril       TAB.C: GK's tussen voedende richtingen als de nalopen met elkaar conflicteren en REG.C EXTRA_FUNC.H EXTRAFUN.C: testfaciliteiten voor interne koppelingen
- * 1.9.2    18-10-2021   Cyril       REALFUNC/REG.C: Corr_min_nl en verwijderen _temp PRIO.C: PAR_correcties synchronisaties ook tijdens prio REG.C set_MRLW G[vd] && !G[nl] ipv SG[vd]
- * 1.9.3    19-10-2021   Cyril       REG.C set_MRLW_nl
+ * 1.10.0   18-10-2021   Cyril       Interne koppeling geoptimaliseerd
  *
  ************************************************************************************/
 
@@ -372,7 +370,10 @@ void Aanvragen(void)
     {
         mee_aanvraag_prm(fc26, fc11, prmtypema1126, (boolv)(TRUE));
     }
-    mee_aanvraag_prm(fc68, fc11, prmtypema1168, (boolv)(TRUE));
+    if (SCH[schma1168])
+    {
+        mee_aanvraag_prm(fc68, fc11, prmtypema1168, (boolv)(TRUE));
+    }
     if (SCH[schma2221])
     {
         mee_aanvraag_prm(fc21, fc22, prmtypema2221, (boolv)(TRUE));
@@ -603,6 +604,9 @@ void Aanvragen(void)
         if (ris_aanvraag(fc31, SYSTEM_ITF, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisastart31vtg2], PRM[prmrisaend31vtg2], SCH[schrisgeencheckopsg])) A[fc31] |= BIT10;
         if (ris_aanvraag(fc32, SYSTEM_ITF, PRM[prmrislaneid32_1], RIS_PEDESTRIAN, PRM[prmrisastart32vtg1], PRM[prmrisaend32vtg1], SCH[schrisgeencheckopsg])) A[fc32] |= BIT10;
         if (ris_aanvraag(fc32, SYSTEM_ITF, PRM[prmrislaneid32_2], RIS_PEDESTRIAN, PRM[prmrisastart32vtg2], PRM[prmrisaend32vtg2], SCH[schrisgeencheckopsg])) A[fc32] |= BIT10;
+        if (ris_aanvraag(fc33, SYSTEM_ITF, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisastart33vtg1], PRM[prmrisaend33vtg1], SCH[schrisgeencheckopsg])) A[fc33] |= BIT10;
+        if (ris_aanvraag(fc33, SYSTEM_ITF, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisastart33vtg2], PRM[prmrisaend33vtg2], SCH[schrisgeencheckopsg])) A[fc33] |= BIT10;
+        if (ris_aanvraag(fc34, SYSTEM_ITF, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisastart34vtg1], PRM[prmrisaend34vtg1], SCH[schrisgeencheckopsg])) A[fc34] |= BIT10;
         if (ris_aanvraag(fc84, SYSTEM_ITF, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg])) A[fc84] |= BIT10;
         if (ris_aanvraag(fc82, SYSTEM_ITF, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisastart82fts1], PRM[prmrisaend82fts1], SCH[schrisgeencheckopsg])) A[fc82] |= BIT10;
         if (ris_aanvraag(fc81, SYSTEM_ITF, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisastart81fts1], PRM[prmrisaend81fts1], SCH[schrisgeencheckopsg])) A[fc81] |= BIT10;
@@ -615,9 +619,6 @@ void Aanvragen(void)
         if (ris_aanvraag(fc38, SYSTEM_ITF, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisastart38vtg2], PRM[prmrisaend38vtg2], SCH[schrisgeencheckopsg])) A[fc38] |= BIT10;
         if (ris_aanvraag(fc38, SYSTEM_ITF, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisastart38vtg1], PRM[prmrisaend38vtg1], SCH[schrisgeencheckopsg])) A[fc38] |= BIT10;
         if (ris_aanvraag(fc34, SYSTEM_ITF, PRM[prmrislaneid34_2], RIS_PEDESTRIAN, PRM[prmrisastart34vtg2], PRM[prmrisaend34vtg2], SCH[schrisgeencheckopsg])) A[fc34] |= BIT10;
-        if (ris_aanvraag(fc34, SYSTEM_ITF, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisastart34vtg1], PRM[prmrisaend34vtg1], SCH[schrisgeencheckopsg])) A[fc34] |= BIT10;
-        if (ris_aanvraag(fc33, SYSTEM_ITF, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisastart33vtg2], PRM[prmrisaend33vtg2], SCH[schrisgeencheckopsg])) A[fc33] |= BIT10;
-        if (ris_aanvraag(fc33, SYSTEM_ITF, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisastart33vtg1], PRM[prmrisaend33vtg1], SCH[schrisgeencheckopsg])) A[fc33] |= BIT10;
     #endif
 
     Aanvragen_Add();
@@ -1153,6 +1154,9 @@ void Meetkriterium(void)
         if (ris_verlengen(fc31, SYSTEM_ITF, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisvstart31vtg2], PRM[prmrisvend31vtg2], SCH[schrisgeencheckopsg])) MK[fc31] |= BIT10;
         if (ris_verlengen(fc32, SYSTEM_ITF, PRM[prmrislaneid32_1], RIS_PEDESTRIAN, PRM[prmrisvstart32vtg1], PRM[prmrisvend32vtg1], SCH[schrisgeencheckopsg])) MK[fc32] |= BIT10;
         if (ris_verlengen(fc32, SYSTEM_ITF, PRM[prmrislaneid32_2], RIS_PEDESTRIAN, PRM[prmrisvstart32vtg2], PRM[prmrisvend32vtg2], SCH[schrisgeencheckopsg])) MK[fc32] |= BIT10;
+        if (ris_verlengen(fc33, SYSTEM_ITF, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisvstart33vtg1], PRM[prmrisvend33vtg1], SCH[schrisgeencheckopsg])) MK[fc33] |= BIT10;
+        if (ris_verlengen(fc33, SYSTEM_ITF, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisvstart33vtg2], PRM[prmrisvend33vtg2], SCH[schrisgeencheckopsg])) MK[fc33] |= BIT10;
+        if (ris_verlengen(fc34, SYSTEM_ITF, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisvstart34vtg1], PRM[prmrisvend34vtg1], SCH[schrisgeencheckopsg])) MK[fc34] |= BIT10;
         if (ris_verlengen(fc84, SYSTEM_ITF, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg])) MK[fc84] |= BIT10;
         if (ris_verlengen(fc82, SYSTEM_ITF, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisvstart82fts1], PRM[prmrisvend82fts1], SCH[schrisgeencheckopsg])) MK[fc82] |= BIT10;
         if (ris_verlengen(fc81, SYSTEM_ITF, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisvstart81fts1], PRM[prmrisvend81fts1], SCH[schrisgeencheckopsg])) MK[fc81] |= BIT10;
@@ -1165,9 +1169,6 @@ void Meetkriterium(void)
         if (ris_verlengen(fc38, SYSTEM_ITF, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg2], PRM[prmrisvend38vtg2], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
         if (ris_verlengen(fc38, SYSTEM_ITF, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg1], PRM[prmrisvend38vtg1], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
         if (ris_verlengen(fc34, SYSTEM_ITF, PRM[prmrislaneid34_2], RIS_PEDESTRIAN, PRM[prmrisvstart34vtg2], PRM[prmrisvend34vtg2], SCH[schrisgeencheckopsg])) MK[fc34] |= BIT10;
-        if (ris_verlengen(fc34, SYSTEM_ITF, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisvstart34vtg1], PRM[prmrisvend34vtg1], SCH[schrisgeencheckopsg])) MK[fc34] |= BIT10;
-        if (ris_verlengen(fc33, SYSTEM_ITF, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisvstart33vtg2], PRM[prmrisvend33vtg2], SCH[schrisgeencheckopsg])) MK[fc33] |= BIT10;
-        if (ris_verlengen(fc33, SYSTEM_ITF, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisvstart33vtg1], PRM[prmrisvend33vtg1], SCH[schrisgeencheckopsg])) MK[fc33] |= BIT10;
     #endif
 
     hiaattijden_verlenging(IH[hgeendynhiaat02], SCH[schedkop_02], FALSE, mmk02, IH[hopdrempelen02], fc02, 
@@ -2105,11 +2106,11 @@ void PostApplication(void)
     #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
         if (TS &&
             (CIF_KLOK[CIF_JAAR] == 2099) &&
-            (CIF_KLOK[CIF_MAAND] == 2) &&
+            (CIF_KLOK[CIF_MAAND] == 1) &&
             (CIF_KLOK[CIF_DAG] == 1) &&
-            (CIF_KLOK[CIF_UUR] == 5) &&
-            (CIF_KLOK[CIF_MINUUT] == 49) &&
-            (CIF_KLOK[CIF_SECONDE] == 13)) //23
+            (CIF_KLOK[CIF_UUR] == 1) &&
+            (CIF_KLOK[CIF_MINUUT] == 1) &&
+            (CIF_KLOK[CIF_SECONDE] == 1))
         {
             stuffkey(F3KEY);
             stuffkey(F5KEY);
@@ -2146,25 +2147,6 @@ void PostApplication(void)
     {
         if (BL[fc] & BIT10) A[fc] = FALSE;
     }
-
-#ifndef AUTOMAAT
-    /* TESTOMGEVING */
-    /* ============ */
-    ControleerNaloopEG(fc22, fc21, tnlfg2221, tnleg2221, NG, TRUE);
-    ControleerNaloopEG(fc82, fc81, tnlfg8281, tnleg8281, NG, TRUE);
-    ControleerNaloopEG(fc02, fc62, tnlfg0262, tnleg0262, NG, TRUE);
-    ControleerNaloopEG(fc11, fc68, tnlfg1168, tnleg1168, NG, TRUE);
-    ControleerNaloopEG(fc08, fc68, tnlfg0868, tnleg0868, NG, TRUE);
-
-    ControleerInrijden(fc22, fc21, tlr2122, TRUE);
-    ControleerInrijden(fc82, fc81, tlr8182, TRUE);
-    ControleerInrijden(fc02, fc62, tlr6202, TRUE);
-    ControleerInrijden(fc08, fc68, tlr6808, TRUE);
-    ControleerInrijden(fc11, fc68, tlr6811, TRUE);
-
-    ControleerVS(fc05, fc22, TRUE, TRUE);
-    ControleerVS(fc05, fc32, TRUE, TRUE);
-#endif
 
     PostApplication_Add();
 }

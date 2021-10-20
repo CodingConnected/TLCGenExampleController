@@ -21,9 +21,7 @@
  * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
  * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
  * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
- * 1.9.1    18-10-2021   Cyril       TAB.C: GK's tussen voedende richtingen als de nalopen met elkaar conflicteren en REG.C EXTRA_FUNC.H EXTRAFUN.C: testfaciliteiten voor interne koppelingen
- * 1.9.2    18-10-2021   Cyril       REALFUNC/REG.C: Corr_min_nl en verwijderen _temp PRIO.C: PAR_correcties synchronisaties ook tijdens prio REG.C set_MRLW G[vd] && !G[nl] ipv SG[vd]
- * 1.9.3    19-10-2021   Cyril       REG.C set_MRLW_nl
+ * 1.10.0   18-10-2021   Cyril       Interne koppeling geoptimaliseerd
  *
  ************************************************************************************/
 
@@ -1301,7 +1299,6 @@ void PrioriteitsToekenningExtra(void)
    ------------------------------------ */
 void TegenhoudenConflictenExtra(void)
 {
-   
 #ifndef NO_TIMETOX
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc22] & BIT11)) { RR[fc32] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc32] & BIT11)) { RR[fc22] &= ~PRIO_RR_BIT; }
@@ -1377,45 +1374,40 @@ void PostAfhandelingPrio(void)
    --------------------------------------- */
 void PrioPARCorrecties(void)
 {
-   int fc;
+    int fc;
+     /* PAR-correcties nalopen voetgagners stap 1: naloop past of los OK */
+    PAR[fc31] = PAR[fc31] && (IH[hnlsg3132] || IH[hlos31]);
+    PAR[fc32] = PAR[fc32] && (IH[hnlsg3231] || IH[hlos32]);
+    PAR[fc33] = PAR[fc33] && (IH[hnlsg3334] || IH[hlos33]);
+    PAR[fc34] = PAR[fc34] && (IH[hnlsg3433] || IH[hlos34]);
 
-   /* PAR-correcties nalopen voetgagners stap 1: naloop past of los OK */
-   PAR[fc31] = PAR[fc31] && (IH[hnlsg3132] || IH[hlos31]);
-   PAR[fc32] = PAR[fc32] && (IH[hnlsg3231] || IH[hlos32]);
-   PAR[fc33] = PAR[fc33] && (IH[hnlsg3334] || IH[hlos33]);
-   PAR[fc34] = PAR[fc34] && (IH[hnlsg3433] || IH[hlos34]);
+    /* PAR-correcties 10 keer checken ivm onderlinge afhankelijkheden */
+    for (fc = 0; fc < 10; ++fc)
+    {
+        /* PAR-correcties nalopen voetgagners stap 2: beide PAR of los OK */
+        PAR[fc31] = PAR[fc31] && (PAR[fc32] || IH[hlos31]);
+        PAR[fc32] = PAR[fc32] && (PAR[fc31] || IH[hlos32]);
+        PAR[fc33] = PAR[fc33] && (PAR[fc34] || IH[hlos33]);
+        PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
 
-   /* PAR-correcties 10 keer checken ivm onderlinge afhankelijkheden */
-   for (fc = 0; fc < 10; ++fc)
-   {
-      /* PAR-correcties nalopen voetgagners stap 2: beide PAR of los OK */
-      PAR[fc31] = PAR[fc31] && (PAR[fc32] || IH[hlos31]);
-      PAR[fc32] = PAR[fc32] && (PAR[fc31] || IH[hlos32]);
-      PAR[fc33] = PAR[fc33] && (PAR[fc34] || IH[hlos33]);
-      PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
+        /* PAR correcties eenzijdige synchronisaties */
+        PAR[fc05] = PAR[fc05] && PAR[fc22];
+        PAR[fc05] = PAR[fc05] && PAR[fc32];
+        PAR[fc11] = PAR[fc11] && PAR[fc26];
+        PAR[fc02] = PAR[fc02] && PAR[fc62];
+        PAR[fc08] = PAR[fc08] && PAR[fc68];
+        PAR[fc11] = PAR[fc11] && PAR[fc68];
+        PAR[fc22] = PAR[fc22] && PAR[fc21];
+        PAR[fc82] = PAR[fc82] && PAR[fc81];
 
-      /* PAR correcties eenzijdige synchronisaties */
-      PAR[fc05] = PAR[fc05] && PAR[fc22];
-      PAR[fc05] = PAR[fc05] && PAR[fc32];
-      PAR[fc11] = PAR[fc11] && PAR[fc26];
-      PAR[fc02] = PAR[fc02] && PAR[fc62];
-      PAR[fc08] = PAR[fc08] && PAR[fc68];
-      PAR[fc11] = PAR[fc11] && PAR[fc68];
-      PAR[fc22] = PAR[fc22] && PAR[fc21];
-      PAR[fc82] = PAR[fc82] && PAR[fc81];
-
-      /* PAR correcties gelijkstart synchronisaties */
-      if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && (PAR[fc32] || !A[fc32]);
-      if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && (PAR[fc22] || !A[fc22]);
-      if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && (PAR[fc34] || !A[fc34]);
-      if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
-      if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
-      if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
-   }
-
-   /* Niet alternatief komen tijdens file */
-   if (IH[hfileFile68af]) PAR[fc08] = FALSE;
-   if (IH[hfileFile68af]) PAR[fc11] = FALSE;
+        /* PAR correcties gelijkstart synchronisaties */
+        if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && (PAR[fc32] || !A[fc32]);
+        if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && (PAR[fc22] || !A[fc22]);
+        if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && (PAR[fc34] || !A[fc34]);
+        if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
+        if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
+        if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
+    }
 
     /* Niet alternatief komen tijdens file (meting na ss) */
     if (IH[hfileFile68af]) PAR[fc08] = FALSE;

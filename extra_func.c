@@ -1400,7 +1400,6 @@ boolv kp(count i)
 }
 #endif
 
-
 #ifndef AUTOMAAT
 
 /* Controleer of de naloop er niet eerder uit gaat dan de voedende richting.
@@ -1576,7 +1575,6 @@ boolv ControleerVS(count fc1, count fc2, boolv cond, boolv halt)
 }
 
 #endif
-
 
 boolv set_MRLW_nl(count i, count j, boolv period)
 /* meerealisatie uitgebreid */
