@@ -1369,10 +1369,9 @@ void maximumgroentijden_va_arg(count fc, ...)
    va_start(argpt, fc);			/* start var. argumentenlijst	*/
    do
    {
-      prmmg= va_arg(argpt, va_mulv);	/* lees max. verlenggroentijd	*/
-      hklok= va_arg(argpt, va_mulv);	/* lees klokperiode		*/
-   }
-   while (hklok == 0);
+      prmmg = va_arg(argpt, va_mulv);	/* lees max. verlenggroentijd	*/
+      hklok = va_arg(argpt, va_mulv);	/* lees klokperiode		*/
+   } while (hklok == 0);
 
    va_end(argpt);			/* maak var. arg-lijst leeg	*/
 

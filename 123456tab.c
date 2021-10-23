@@ -70,7 +70,7 @@ void control_defaults(void)
     TGL_defmax = NG;
     TFG_defmax = NG;
     TVG_defmax = NG;
-
+    
     TRG_type    |= RO_type; /* Garantieroodtijden  read-only */
     TGG_type    |= RO_type; /* Garantiegroentijden read-only */
     TVG_deftype |= RO_type; /* Verlenggroentijden  read-only */
@@ -495,79 +495,79 @@ void control_parameters(void)
 
 /* detectie */
 /* -------- */
-    D_code[d02_1a] = "02_1a"; TDB_max[d02_1a] = 20; TDH_max[d02_1a] = 25;
+    D_code[d02_1a] = "02_1a"; TDB_max[d02_1a] = 20; TDHA_max[d02_1a] = 25;
                               TBG_max[d02_1a] = 20; TOG_max[d02_1a] = 360;
-    D_code[d02_1b] = "02_1b"; TDB_max[d02_1b] = 20; TDH_max[d02_1b] = 25;
+    D_code[d02_1b] = "02_1b"; TDB_max[d02_1b] = 20; TDHA_max[d02_1b] = 25;
                               TBG_max[d02_1b] = 20; TOG_max[d02_1b] = 360;
-    D_code[d02_2a] = "02_2a"; TDB_max[d02_2a] = 0;  TDH_max[d02_2a] = 5;
+    D_code[d02_2a] = "02_2a"; TDB_max[d02_2a] = 0;  TDHA_max[d02_2a] = 5;
                               TBG_max[d02_2a] = 60; TOG_max[d02_2a] = 360;
-    D_code[d02_2b] = "02_2b"; TDB_max[d02_2b] = 0;  TDH_max[d02_2b] = 5;
+    D_code[d02_2b] = "02_2b"; TDB_max[d02_2b] = 0;  TDHA_max[d02_2b] = 5;
                               TBG_max[d02_2b] = 60; TOG_max[d02_2b] = 360;
-    D_code[d02_3a] = "02_3a"; TDB_max[d02_3a] = 0;  TDH_max[d02_3a] = 20;
+    D_code[d02_3a] = "02_3a"; TDB_max[d02_3a] = 0;  TDHA_max[d02_3a] = 20;
                               TBG_max[d02_3a] = 60; TOG_max[d02_3a] = 360;
-    D_code[d02_3b] = "02_3b"; TDB_max[d02_3b] = 0;  TDH_max[d02_3b] = 20;
+    D_code[d02_3b] = "02_3b"; TDB_max[d02_3b] = 0;  TDHA_max[d02_3b] = 20;
                               TBG_max[d02_3b] = 60; TOG_max[d02_3b] = 360;
-    D_code[d02_4a] = "02_4a"; TDB_max[d02_4a] = 0;  TDH_max[d02_4a] = 25;
+    D_code[d02_4a] = "02_4a"; TDB_max[d02_4a] = 0;  TDHA_max[d02_4a] = 25;
                               TBG_max[d02_4a] = 60; TOG_max[d02_4a] = 360;
-    D_code[d02_4b] = "02_4b"; TDB_max[d02_4b] = 0;  TDH_max[d02_4b] = 25;
+    D_code[d02_4b] = "02_4b"; TDB_max[d02_4b] = 0;  TDHA_max[d02_4b] = 25;
                               TBG_max[d02_4b] = 60; TOG_max[d02_4b] = 360;
-    D_code[d03_1]  = "03_1";  TDB_max[d03_1]  = 20; TDH_max[d03_1]  = 0;
+    D_code[d03_1]  = "03_1";  TDB_max[d03_1]  = 20; TDHA_max[d03_1]  = 0;
                               TBG_max[d03_1]  = 20; TOG_max[d03_1]  = 360;
-    D_code[d03_2]  = "03_2";  TDB_max[d03_2]  = 0;  TDH_max[d03_2]  = 5;
+    D_code[d03_2]  = "03_2";  TDB_max[d03_2]  = 0;  TDHA_max[d03_2]  = 5;
                               TBG_max[d03_2]  = 60; TOG_max[d03_2]  = 360;
-    D_code[d05_1]  = "05_1";  TDB_max[d05_1]  = 20; TDH_max[d05_1]  = 0;
+    D_code[d05_1]  = "05_1";  TDB_max[d05_1]  = 20; TDHA_max[d05_1]  = 0;
                               TBG_max[d05_1]  = 20; TOG_max[d05_1]  = 360;
-    D_code[d05_2]  = "05_2";  TDB_max[d05_2]  = 0;  TDH_max[d05_2]  = 5;
+    D_code[d05_2]  = "05_2";  TDB_max[d05_2]  = 0;  TDHA_max[d05_2]  = 5;
                               TBG_max[d05_2]  = 60; TOG_max[d05_2]  = 360;
-    D_code[d08_1a] = "08_1a"; TDB_max[d08_1a] = 20; TDH_max[d08_1a] = 25;
+    D_code[d08_1a] = "08_1a"; TDB_max[d08_1a] = 20; TDHA_max[d08_1a] = 25;
                               TBG_max[d08_1a] = 20; TOG_max[d08_1a] = 360;
-    D_code[d08_1b] = "08_1b"; TDB_max[d08_1b] = 20; TDH_max[d08_1b] = 25;
+    D_code[d08_1b] = "08_1b"; TDB_max[d08_1b] = 20; TDHA_max[d08_1b] = 25;
                               TBG_max[d08_1b] = 20; TOG_max[d08_1b] = 360;
-    D_code[d08_2a] = "08_2a"; TDB_max[d08_2a] = 0;  TDH_max[d08_2a] = 5;
+    D_code[d08_2a] = "08_2a"; TDB_max[d08_2a] = 0;  TDHA_max[d08_2a] = 5;
                               TBG_max[d08_2a] = 60; TOG_max[d08_2a] = 360;
-    D_code[d08_2b] = "08_2b"; TDB_max[d08_2b] = 0;  TDH_max[d08_2b] = 5;
+    D_code[d08_2b] = "08_2b"; TDB_max[d08_2b] = 0;  TDHA_max[d08_2b] = 5;
                               TBG_max[d08_2b] = 60; TOG_max[d08_2b] = 360;
-    D_code[d08_3a] = "08_3a"; TDB_max[d08_3a] = 0;  TDH_max[d08_3a] = 20;
+    D_code[d08_3a] = "08_3a"; TDB_max[d08_3a] = 0;  TDHA_max[d08_3a] = 20;
                               TBG_max[d08_3a] = 60; TOG_max[d08_3a] = 360;
-    D_code[d08_3b] = "08_3b"; TDB_max[d08_3b] = 0;  TDH_max[d08_3b] = 20;
+    D_code[d08_3b] = "08_3b"; TDB_max[d08_3b] = 0;  TDHA_max[d08_3b] = 20;
                               TBG_max[d08_3b] = 60; TOG_max[d08_3b] = 360;
-    D_code[d08_4a] = "08_4a"; TDB_max[d08_4a] = 0;  TDH_max[d08_4a] = 25;
+    D_code[d08_4a] = "08_4a"; TDB_max[d08_4a] = 0;  TDHA_max[d08_4a] = 25;
                               TBG_max[d08_4a] = 60; TOG_max[d08_4a] = 360;
-    D_code[d08_4b] = "08_4b"; TDB_max[d08_4b] = 0;  TDH_max[d08_4b] = 25;
+    D_code[d08_4b] = "08_4b"; TDB_max[d08_4b] = 0;  TDHA_max[d08_4b] = 25;
                               TBG_max[d08_4b] = 60; TOG_max[d08_4b] = 360;
-    D_code[d09_1]  = "09_1";  TDB_max[d09_1]  = 20; TDH_max[d09_1]  = 25;
+    D_code[d09_1]  = "09_1";  TDB_max[d09_1]  = 20; TDHA_max[d09_1]  = 25;
                               TBG_max[d09_1]  = 20; TOG_max[d09_1]  = 360;
-    D_code[d09_2]  = "09_2";  TDB_max[d09_2]  = 0;  TDH_max[d09_2]  = 5;
+    D_code[d09_2]  = "09_2";  TDB_max[d09_2]  = 0;  TDHA_max[d09_2]  = 5;
                               TBG_max[d09_2]  = 60; TOG_max[d09_2]  = 360;
-    D_code[d09_3]  = "09_3";  TDB_max[d09_3]  = 0;  TDH_max[d09_3]  = 15;
+    D_code[d09_3]  = "09_3";  TDB_max[d09_3]  = 0;  TDHA_max[d09_3]  = 15;
                               TBG_max[d09_3]  = 60; TOG_max[d09_3]  = 360;
-    D_code[d11_1]  = "11_1";  TDB_max[d11_1]  = 20; TDH_max[d11_1]  = 25;
+    D_code[d11_1]  = "11_1";  TDB_max[d11_1]  = 20; TDHA_max[d11_1]  = 25;
                               TBG_max[d11_1]  = 20; TOG_max[d11_1]  = 360;
-    D_code[d11_2]  = "11_2";  TDB_max[d11_2]  = 0;  TDH_max[d11_2]  = 5;
+    D_code[d11_2]  = "11_2";  TDB_max[d11_2]  = 0;  TDHA_max[d11_2]  = 5;
                               TBG_max[d11_2]  = 60; TOG_max[d11_2]  = 360;
-    D_code[d11_3]  = "11_3";  TDB_max[d11_3]  = 0;  TDH_max[d11_3]  = 15;
+    D_code[d11_3]  = "11_3";  TDB_max[d11_3]  = 0;  TDHA_max[d11_3]  = 15;
                               TBG_max[d11_3]  = 60; TOG_max[d11_3]  = 360;
-    D_code[d11_4]  = "11_4";  TDB_max[d11_4]  = 0;  TDH_max[d11_4]  = 10;
+    D_code[d11_4]  = "11_4";  TDB_max[d11_4]  = 0;  TDHA_max[d11_4]  = 10;
                               TBG_max[d11_4]  = 60; TOG_max[d11_4]  = 360;
-    D_code[d211]   = "211";   TDB_max[d211]   = 15; TDH_max[d211]   = 30;
+    D_code[d211]   = "211";   TDB_max[d211]   = 15; TDHA_max[d211]   = 30;
                               TBG_max[d211]   = 10; TOG_max[d211]   = 1440;
     D_code[dk21]   = "k21";   TBG_max[dk21]   = 10; TOG_max[dk21]   = 1440;
-    D_code[d22_1]  = "22_1";  TDB_max[d22_1]  = 15; TDH_max[d22_1]  = 30;
+    D_code[d22_1]  = "22_1";  TDB_max[d22_1]  = 15; TDHA_max[d22_1]  = 30;
                               TBG_max[d22_1]  = 10; TOG_max[d22_1]  = 1440;
     D_code[dk22]   = "k22";   TBG_max[dk22]   = 10; TOG_max[dk22]   = 2880;
-    D_code[d24_1]  = "24_1";  TDB_max[d24_1]  = 15; TDH_max[d24_1]  = 30;
+    D_code[d24_1]  = "24_1";  TDB_max[d24_1]  = 15; TDHA_max[d24_1]  = 30;
                               TBG_max[d24_1]  = 10; TOG_max[d24_1]  = 1440;
-    D_code[d24_2]  = "24_2";  TDB_max[d24_2]  = 0;  TDH_max[d24_2]  = 50;
+    D_code[d24_2]  = "24_2";  TDB_max[d24_2]  = 0;  TDHA_max[d24_2]  = 50;
                               TBG_max[d24_2]  = 30; TOG_max[d24_2]  = 1440;
-    D_code[d24_3]  = "24_3";  TDB_max[d24_3]  = 0;  TDH_max[d24_3]  = 50;
+    D_code[d24_3]  = "24_3";  TDB_max[d24_3]  = 0;  TDHA_max[d24_3]  = 50;
                               TBG_max[d24_3]  = 30; TOG_max[d24_3]  = 1440;
     D_code[dk24]   = "k24";   TBG_max[dk24]   = 10; TOG_max[dk24]   = 2880;
-    D_code[d261]   = "261";   TDB_max[d261]   = 15; TDH_max[d261]   = 30;
+    D_code[d261]   = "261";   TDB_max[d261]   = 15; TDHA_max[d261]   = 30;
                               TBG_max[d261]   = 10; TOG_max[d261]   = 1440;
     D_code[dk26]   = "k26";   TBG_max[dk26]   = 10; TOG_max[dk26]   = 1440;
-    D_code[d28_1]  = "28_1";  TDB_max[d28_1]  = 15; TDH_max[d28_1]  = 30;
+    D_code[d28_1]  = "28_1";  TDB_max[d28_1]  = 15; TDHA_max[d28_1]  = 30;
                               TBG_max[d28_1]  = 10; TOG_max[d28_1]  = 1440;
-    D_code[d28_2]  = "28_2";  TDB_max[d28_2]  = 0;  TDH_max[d28_2]  = 50;
+    D_code[d28_2]  = "28_2";  TDB_max[d28_2]  = 0;  TDHA_max[d28_2]  = 50;
                               TBG_max[d28_2]  = 30; TOG_max[d28_2]  = 1440;
     D_code[dk28]   = "k28";   TBG_max[dk28]   = 10; TOG_max[dk28]   = 2880;
     D_code[dk31a]  = "k31a";  TBG_max[dk31a]  = 10; TOG_max[dk31a]  = 1440;
@@ -580,41 +580,41 @@ void control_parameters(void)
     D_code[dk34b]  = "k34b";  TBG_max[dk34b]  = 10; TOG_max[dk34b]  = 0;
     D_code[dk38a]  = "k38a";  TBG_max[dk38a]  = 10; TOG_max[dk38a]  = 1440;
     D_code[dk38b]  = "k38b";  TBG_max[dk38b]  = 10; TOG_max[dk38b]  = 0;
-    D_code[d61_1]  = "61_1";  TDB_max[d61_1]  = 20; TDH_max[d61_1]  = 0;
+    D_code[d61_1]  = "61_1";  TDB_max[d61_1]  = 20; TDHA_max[d61_1]  = 0;
                               TBG_max[d61_1]  = 20; TOG_max[d61_1]  = 360;
-    D_code[d61_2]  = "61_2";  TDB_max[d61_2]  = 0;  TDH_max[d61_2]  = 5;
+    D_code[d61_2]  = "61_2";  TDB_max[d61_2]  = 0;  TDHA_max[d61_2]  = 5;
                               TBG_max[d61_2]  = 60; TOG_max[d61_2]  = 360;
-    D_code[d62_1a] = "62_1a"; TDB_max[d62_1a] = 20; TDH_max[d62_1a] = 25;
+    D_code[d62_1a] = "62_1a"; TDB_max[d62_1a] = 20; TDHA_max[d62_1a] = 25;
                               TBG_max[d62_1a] = 20; TOG_max[d62_1a] = 360;
-    D_code[d62_1b] = "62_1b"; TDB_max[d62_1b] = 20; TDH_max[d62_1b] = 25;
+    D_code[d62_1b] = "62_1b"; TDB_max[d62_1b] = 20; TDHA_max[d62_1b] = 25;
                               TBG_max[d62_1b] = 20; TOG_max[d62_1b] = 360;
-    D_code[d62_2a] = "62_2a"; TDB_max[d62_2a] = 0;  TDH_max[d62_2a] = 10;
+    D_code[d62_2a] = "62_2a"; TDB_max[d62_2a] = 0;  TDHA_max[d62_2a] = 10;
                               TBG_max[d62_2a] = 60; TOG_max[d62_2a] = 360;
-    D_code[d62_2b] = "62_2b"; TDB_max[d62_2b] = 0;  TDH_max[d62_2b] = 10;
+    D_code[d62_2b] = "62_2b"; TDB_max[d62_2b] = 0;  TDHA_max[d62_2b] = 10;
                               TBG_max[d62_2b] = 60; TOG_max[d62_2b] = 360;
-    D_code[d67_1]  = "67_1";  TDB_max[d67_1]  = 20; TDH_max[d67_1]  = 0;
+    D_code[d67_1]  = "67_1";  TDB_max[d67_1]  = 20; TDHA_max[d67_1]  = 0;
                               TBG_max[d67_1]  = 20; TOG_max[d67_1]  = 360;
-    D_code[d67_2]  = "67_2";  TDB_max[d67_2]  = 0;  TDH_max[d67_2]  = 5;
+    D_code[d67_2]  = "67_2";  TDB_max[d67_2]  = 0;  TDHA_max[d67_2]  = 5;
                               TBG_max[d67_2]  = 60; TOG_max[d67_2]  = 360;
-    D_code[d68_1a] = "68_1a"; TDB_max[d68_1a] = 20; TDH_max[d68_1a] = 25;
+    D_code[d68_1a] = "68_1a"; TDB_max[d68_1a] = 20; TDHA_max[d68_1a] = 25;
                               TBG_max[d68_1a] = 20; TOG_max[d68_1a] = 360;
-    D_code[d68_1b] = "68_1b"; TDB_max[d68_1b] = 20; TDH_max[d68_1b] = 25;
+    D_code[d68_1b] = "68_1b"; TDB_max[d68_1b] = 20; TDHA_max[d68_1b] = 25;
                               TBG_max[d68_1b] = 20; TOG_max[d68_1b] = 360;
-    D_code[d68_2a] = "68_2a"; TDB_max[d68_2a] = 0;  TDH_max[d68_2a] = 10;
+    D_code[d68_2a] = "68_2a"; TDB_max[d68_2a] = 0;  TDHA_max[d68_2a] = 10;
                               TBG_max[d68_2a] = 60; TOG_max[d68_2a] = 360;
-    D_code[d68_2b] = "68_2b"; TDB_max[d68_2b] = 0;  TDH_max[d68_2b] = 5;
+    D_code[d68_2b] = "68_2b"; TDB_max[d68_2b] = 0;  TDHA_max[d68_2b] = 5;
                               TBG_max[d68_2b] = 60; TOG_max[d68_2b] = 360;
-    D_code[d68_9a] = "68_9a"; TDB_max[d68_9a] = 0;  TDH_max[d68_9a] = 0;
+    D_code[d68_9a] = "68_9a"; TDB_max[d68_9a] = 0;  TDHA_max[d68_9a] = 0;
                               TBG_max[d68_9a] = 20; TOG_max[d68_9a] = 360;
-    D_code[d68_9b] = "68_9b"; TDB_max[d68_9b] = 0;  TDH_max[d68_9b] = 0;
+    D_code[d68_9b] = "68_9b"; TDB_max[d68_9b] = 0;  TDHA_max[d68_9b] = 0;
                               TBG_max[d68_9b] = 20; TOG_max[d68_9b] = 360;
-    D_code[d81_1]  = "81_1";  TDB_max[d81_1]  = 15; TDH_max[d81_1]  = 30;
+    D_code[d81_1]  = "81_1";  TDB_max[d81_1]  = 15; TDHA_max[d81_1]  = 30;
                               TBG_max[d81_1]  = 10; TOG_max[d81_1]  = 1440;
     D_code[dk81]   = "k81";   TBG_max[dk81]   = 10; TOG_max[dk81]   = 1440;
-    D_code[d82_1]  = "82_1";  TDB_max[d82_1]  = 15; TDH_max[d82_1]  = 30;
+    D_code[d82_1]  = "82_1";  TDB_max[d82_1]  = 15; TDHA_max[d82_1]  = 30;
                               TBG_max[d82_1]  = 10; TOG_max[d82_1]  = 1440;
     D_code[dk82]   = "k82";   TBG_max[dk82]   = 10; TOG_max[dk82]   = 1440;
-    D_code[d84_1]  = "84_1";  TDB_max[d84_1]  = 15; TDH_max[d84_1]  = 30;
+    D_code[d84_1]  = "84_1";  TDB_max[d84_1]  = 15; TDHA_max[d84_1]  = 30;
                               TBG_max[d84_1]  = 10; TOG_max[d84_1]  = 1440;
     D_code[dk84]   = "k84";   TBG_max[dk84]   = 10; TOG_max[dk84]   = 2880;
 #if !defined NO_DDFLUTTER
@@ -2393,24 +2393,6 @@ void control_parameters(void)
     PRM_code[prmstkp6]               = "stkp6";               PRM[prmstkp6]               = 0;    PRM_type[prmstkp6]               = TI_type; /* Start klokperiode reserve                                                                                                      */
     PRM_code[prmetkp6]               = "etkp6";               PRM[prmetkp6]               = 0;    PRM_type[prmetkp6]               = TI_type; /* Einde klokperiode reserve                                                                                                      */
     PRM_code[prmdckp6]               = "dckp6";               PRM[prmdckp6]               = 10;                                               /* Dagsoort klokperiode reserve                                                                                                   */
-    PRM_code[prmmg1_02]              = "mg1_02";              PRM[prmmg1_02]              = 200;  PRM_type[prmmg1_02]              = TE_type; /* Maximale groentijd MG1 02                                                                                                      */
-    PRM_code[prmmg1_03]              = "mg1_03";              PRM[prmmg1_03]              = 150;  PRM_type[prmmg1_03]              = TE_type; /* Maximale groentijd MG1 03                                                                                                      */
-    PRM_code[prmmg1_05]              = "mg1_05";              PRM[prmmg1_05]              = 250;  PRM_type[prmmg1_05]              = TE_type; /* Maximale groentijd MG1 05                                                                                                      */
-    PRM_code[prmmg1_08]              = "mg1_08";              PRM[prmmg1_08]              = 200;  PRM_type[prmmg1_08]              = TE_type; /* Maximale groentijd MG1 08                                                                                                      */
-    PRM_code[prmmg1_09]              = "mg1_09";              PRM[prmmg1_09]              = 150;  PRM_type[prmmg1_09]              = TE_type; /* Maximale groentijd MG1 09                                                                                                      */
-    PRM_code[prmmg1_11]              = "mg1_11";              PRM[prmmg1_11]              = 150;  PRM_type[prmmg1_11]              = TE_type; /* Maximale groentijd MG1 11                                                                                                      */
-    PRM_code[prmmg1_21]              = "mg1_21";              PRM[prmmg1_21]              = 150;  PRM_type[prmmg1_21]              = TE_type; /* Maximale groentijd MG1 21                                                                                                      */
-    PRM_code[prmmg1_22]              = "mg1_22";              PRM[prmmg1_22]              = 150;  PRM_type[prmmg1_22]              = TE_type; /* Maximale groentijd MG1 22                                                                                                      */
-    PRM_code[prmmg1_24]              = "mg1_24";              PRM[prmmg1_24]              = 150;  PRM_type[prmmg1_24]              = TE_type; /* Maximale groentijd MG1 24                                                                                                      */
-    PRM_code[prmmg1_26]              = "mg1_26";              PRM[prmmg1_26]              = 150;  PRM_type[prmmg1_26]              = TE_type; /* Maximale groentijd MG1 26                                                                                                      */
-    PRM_code[prmmg1_28]              = "mg1_28";              PRM[prmmg1_28]              = 150;  PRM_type[prmmg1_28]              = TE_type; /* Maximale groentijd MG1 28                                                                                                      */
-    PRM_code[prmmg1_61]              = "mg1_61";              PRM[prmmg1_61]              = 50;   PRM_type[prmmg1_61]              = TE_type; /* Maximale groentijd MG1 61                                                                                                      */
-    PRM_code[prmmg1_62]              = "mg1_62";              PRM[prmmg1_62]              = 50;   PRM_type[prmmg1_62]              = TE_type; /* Maximale groentijd MG1 62                                                                                                      */
-    PRM_code[prmmg1_67]              = "mg1_67";              PRM[prmmg1_67]              = 50;   PRM_type[prmmg1_67]              = TE_type; /* Maximale groentijd MG1 67                                                                                                      */
-    PRM_code[prmmg1_68]              = "mg1_68";              PRM[prmmg1_68]              = 50;   PRM_type[prmmg1_68]              = TE_type; /* Maximale groentijd MG1 68                                                                                                      */
-    PRM_code[prmmg1_81]              = "mg1_81";              PRM[prmmg1_81]              = 150;  PRM_type[prmmg1_81]              = TE_type; /* Maximale groentijd MG1 81                                                                                                      */
-    PRM_code[prmmg1_82]              = "mg1_82";              PRM[prmmg1_82]              = 150;  PRM_type[prmmg1_82]              = TE_type; /* Maximale groentijd MG1 82                                                                                                      */
-    PRM_code[prmmg1_84]              = "mg1_84";              PRM[prmmg1_84]              = 150;  PRM_type[prmmg1_84]              = TE_type; /* Maximale groentijd MG1 84                                                                                                      */
     PRM_code[prmmg2_02]              = "mg2_02";              PRM[prmmg2_02]              = 200;  PRM_type[prmmg2_02]              = TE_type; /* Maximale groentijd MG2 02                                                                                                      */
     PRM_code[prmmg2_03]              = "mg2_03";              PRM[prmmg2_03]              = 150;  PRM_type[prmmg2_03]              = TE_type; /* Maximale groentijd MG2 03                                                                                                      */
     PRM_code[prmmg2_05]              = "mg2_05";              PRM[prmmg2_05]              = 250;  PRM_type[prmmg2_05]              = TE_type; /* Maximale groentijd MG2 05                                                                                                      */
@@ -2594,6 +2576,7 @@ void control_parameters(void)
     PRM_code[prmrisastart33vtg1]     = "risastart33vtg1";     PRM[prmrisastart33vtg1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
     PRM_code[prmrisastart33vtg2]     = "risastart33vtg2";     PRM[prmrisastart33vtg2]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
     PRM_code[prmrisastart34vtg1]     = "risastart34vtg1";     PRM[prmrisastart34vtg1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
+    PRM_code[prmrisastart34vtg2]     = "risastart34vtg2";     PRM[prmrisastart34vtg2]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
     PRM_code[prmrisastart84fts1]     = "risastart84fts1";     PRM[prmrisastart84fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 84                                                                   */
     PRM_code[prmrisastart82fts1]     = "risastart82fts1";     PRM[prmrisastart82fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 82                                                                   */
     PRM_code[prmrisastart81fts1]     = "risastart81fts1";     PRM[prmrisastart81fts1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 81                                                                   */
@@ -2605,7 +2588,6 @@ void control_parameters(void)
     PRM_code[prmrisastart61mveh1]    = "risastart61mveh1";    PRM[prmrisastart61mveh1]    = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 61                                                                   */
     PRM_code[prmrisastart38vtg2]     = "risastart38vtg2";     PRM[prmrisastart38vtg2]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
     PRM_code[prmrisastart38vtg1]     = "risastart38vtg1";     PRM[prmrisastart38vtg1]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
-    PRM_code[prmrisastart34vtg2]     = "risastart34vtg2";     PRM[prmrisastart34vtg2]     = 0;                                                /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
     PRM_code[prmrisaend02mveh1]      = "risaend02mveh1";      PRM[prmrisaend02mveh1]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
     PRM_code[prmrisaend02mveh2]      = "risaend02mveh2";      PRM[prmrisaend02mveh2]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
     PRM_code[prmrisaend03mveh1]      = "risaend03mveh1";      PRM[prmrisaend03mveh1]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 03                                                                   */
@@ -2626,6 +2608,7 @@ void control_parameters(void)
     PRM_code[prmrisaend33vtg1]       = "risaend33vtg1";       PRM[prmrisaend33vtg1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
     PRM_code[prmrisaend33vtg2]       = "risaend33vtg2";       PRM[prmrisaend33vtg2]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
     PRM_code[prmrisaend34vtg1]       = "risaend34vtg1";       PRM[prmrisaend34vtg1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
+    PRM_code[prmrisaend34vtg2]       = "risaend34vtg2";       PRM[prmrisaend34vtg2]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
     PRM_code[prmrisaend84fts1]       = "risaend84fts1";       PRM[prmrisaend84fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 84                                                                   */
     PRM_code[prmrisaend82fts1]       = "risaend82fts1";       PRM[prmrisaend82fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 82                                                                   */
     PRM_code[prmrisaend81fts1]       = "risaend81fts1";       PRM[prmrisaend81fts1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 81                                                                   */
@@ -2637,7 +2620,6 @@ void control_parameters(void)
     PRM_code[prmrisaend61mveh1]      = "risaend61mveh1";      PRM[prmrisaend61mveh1]      = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 61                                                                   */
     PRM_code[prmrisaend38vtg2]       = "risaend38vtg2";       PRM[prmrisaend38vtg2]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
     PRM_code[prmrisaend38vtg1]       = "risaend38vtg1";       PRM[prmrisaend38vtg1]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
-    PRM_code[prmrisaend34vtg2]       = "risaend34vtg2";       PRM[prmrisaend34vtg2]       = 0;                                                /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
     PRM_code[prmrisvstart02mveh1]    = "risvstart02mveh1";    PRM[prmrisvstart02mveh1]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
     PRM_code[prmrisvstart02mveh2]    = "risvstart02mveh2";    PRM[prmrisvstart02mveh2]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
     PRM_code[prmrisvstart03mveh1]    = "risvstart03mveh1";    PRM[prmrisvstart03mveh1]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 03                                                                    */
@@ -2658,6 +2640,7 @@ void control_parameters(void)
     PRM_code[prmrisvstart33vtg1]     = "risvstart33vtg1";     PRM[prmrisvstart33vtg1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
     PRM_code[prmrisvstart33vtg2]     = "risvstart33vtg2";     PRM[prmrisvstart33vtg2]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
     PRM_code[prmrisvstart34vtg1]     = "risvstart34vtg1";     PRM[prmrisvstart34vtg1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
+    PRM_code[prmrisvstart34vtg2]     = "risvstart34vtg2";     PRM[prmrisvstart34vtg2]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
     PRM_code[prmrisvstart84fts1]     = "risvstart84fts1";     PRM[prmrisvstart84fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 84                                                                    */
     PRM_code[prmrisvstart82fts1]     = "risvstart82fts1";     PRM[prmrisvstart82fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 82                                                                    */
     PRM_code[prmrisvstart81fts1]     = "risvstart81fts1";     PRM[prmrisvstart81fts1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 81                                                                    */
@@ -2669,7 +2652,6 @@ void control_parameters(void)
     PRM_code[prmrisvstart61mveh1]    = "risvstart61mveh1";    PRM[prmrisvstart61mveh1]    = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 61                                                                    */
     PRM_code[prmrisvstart38vtg2]     = "risvstart38vtg2";     PRM[prmrisvstart38vtg2]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
     PRM_code[prmrisvstart38vtg1]     = "risvstart38vtg1";     PRM[prmrisvstart38vtg1]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
-    PRM_code[prmrisvstart34vtg2]     = "risvstart34vtg2";     PRM[prmrisvstart34vtg2]     = 0;                                                /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
     PRM_code[prmrisvend02mveh1]      = "risvend02mveh1";      PRM[prmrisvend02mveh1]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
     PRM_code[prmrisvend02mveh2]      = "risvend02mveh2";      PRM[prmrisvend02mveh2]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
     PRM_code[prmrisvend03mveh1]      = "risvend03mveh1";      PRM[prmrisvend03mveh1]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 03                                                                    */
@@ -2690,6 +2672,7 @@ void control_parameters(void)
     PRM_code[prmrisvend33vtg1]       = "risvend33vtg1";       PRM[prmrisvend33vtg1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
     PRM_code[prmrisvend33vtg2]       = "risvend33vtg2";       PRM[prmrisvend33vtg2]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
     PRM_code[prmrisvend34vtg1]       = "risvend34vtg1";       PRM[prmrisvend34vtg1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
+    PRM_code[prmrisvend34vtg2]       = "risvend34vtg2";       PRM[prmrisvend34vtg2]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
     PRM_code[prmrisvend84fts1]       = "risvend84fts1";       PRM[prmrisvend84fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 84                                                                    */
     PRM_code[prmrisvend82fts1]       = "risvend82fts1";       PRM[prmrisvend82fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 82                                                                    */
     PRM_code[prmrisvend81fts1]       = "risvend81fts1";       PRM[prmrisvend81fts1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 81                                                                    */
@@ -2701,7 +2684,6 @@ void control_parameters(void)
     PRM_code[prmrisvend61mveh1]      = "risvend61mveh1";      PRM[prmrisvend61mveh1]      = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 61                                                                    */
     PRM_code[prmrisvend38vtg2]       = "risvend38vtg2";       PRM[prmrisvend38vtg2]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
     PRM_code[prmrisvend38vtg1]       = "risvend38vtg1";       PRM[prmrisvend38vtg1]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
-    PRM_code[prmrisvend34vtg2]       = "risvend34vtg2";       PRM[prmrisvend34vtg2]       = 0;                                                /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
     PRM_code[prmmkrgd24_3]           = "mkrgd24_3";           PRM[prmmkrgd24_3]           = 3;                                                /* Type verlengen tbv richtinggevoelig verlengen fase 24                                                                          */
     PRM_code[prmrgv]                 = "rgv";                 PRM[prmrgv]                 = 2;                                                /* Type RoBuGrover                                                                                                                */
     PRM_code[prmmin_tcyclus]         = "min_tcyclus";         PRM[prmmin_tcyclus]         = 900;  PRM_type[prmmin_tcyclus]         = TE_type; /* Minimale cyclustijd                                                                                                            */
