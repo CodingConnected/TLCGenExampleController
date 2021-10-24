@@ -1184,35 +1184,35 @@ void Meetkriterium(void)
     #endif
 
     hiaattijden_verlenging(IH[hgeendynhiaat02], SCH[schedkop_02], FALSE, mmk02, IH[hopdrempelen02], fc02, 
-        1, d02_1a, t02_1a_1, t02_1a_2, ttdh_02_1a_1, ttdh_02_1a_2, tmax_02_1a, prmspringverleng_02_1a, hverleng_02_1a, prmTDHstd02_1a, 
-        1, d02_1b, t02_1b_1, t02_1b_2, ttdh_02_1b_1, ttdh_02_1b_2, tmax_02_1b, prmspringverleng_02_1b, hverleng_02_1b, prmTDHstd02_1b, 
-        1, d02_2a, t02_2a_1, t02_2a_2, ttdh_02_2a_1, ttdh_02_2a_2, tmax_02_2a, prmspringverleng_02_2a, hverleng_02_2a, prmTDHstd02_2a, 
-        1, d02_3a, t02_3a_1, t02_3a_2, ttdh_02_3a_1, ttdh_02_3a_2, tmax_02_3a, prmspringverleng_02_3a, hverleng_02_3a, prmTDHstd02_3a, 
-        1, d02_4a, t02_4a_1, t02_4a_2, ttdh_02_4a_1, ttdh_02_4a_2, tmax_02_4a, prmspringverleng_02_4a, hverleng_02_4a, prmTDHstd02_4a, 
-        2, d02_2b, t02_2b_1, t02_2b_2, ttdh_02_2b_1, ttdh_02_2b_2, tmax_02_2b, prmspringverleng_02_2b, hverleng_02_2b, prmTDHstd02_2b, 
-        2, d02_3b, t02_3b_1, t02_3b_2, ttdh_02_3b_1, ttdh_02_3b_2, tmax_02_3b, prmspringverleng_02_3b, hverleng_02_3b, prmTDHstd02_3b, 
-        2, d02_4b, t02_4b_1, t02_4b_2, ttdh_02_4b_1, ttdh_02_4b_2, tmax_02_4b, prmspringverleng_02_4b, hverleng_02_4b, prmTDHstd02_4b, 
+        1, d02_1a, t02_1a_1, t02_1a_2, ttdh_02_1a_1, ttdh_02_1a_2, tmax_02_1a, prmspringverleng_02_1a, hverleng_02_1a, 
+        1, d02_1b, t02_1b_1, t02_1b_2, ttdh_02_1b_1, ttdh_02_1b_2, tmax_02_1b, prmspringverleng_02_1b, hverleng_02_1b, 
+        1, d02_2a, t02_2a_1, t02_2a_2, ttdh_02_2a_1, ttdh_02_2a_2, tmax_02_2a, prmspringverleng_02_2a, hverleng_02_2a, 
+        1, d02_3a, t02_3a_1, t02_3a_2, ttdh_02_3a_1, ttdh_02_3a_2, tmax_02_3a, prmspringverleng_02_3a, hverleng_02_3a, 
+        1, d02_4a, t02_4a_1, t02_4a_2, ttdh_02_4a_1, ttdh_02_4a_2, tmax_02_4a, prmspringverleng_02_4a, hverleng_02_4a, 
+        2, d02_2b, t02_2b_1, t02_2b_2, ttdh_02_2b_1, ttdh_02_2b_2, tmax_02_2b, prmspringverleng_02_2b, hverleng_02_2b, 
+        2, d02_3b, t02_3b_1, t02_3b_2, ttdh_02_3b_1, ttdh_02_3b_2, tmax_02_3b, prmspringverleng_02_3b, hverleng_02_3b, 
+        2, d02_4b, t02_4b_1, t02_4b_2, ttdh_02_4b_1, ttdh_02_4b_2, tmax_02_4b, prmspringverleng_02_4b, hverleng_02_4b, 
         END);
     hiaattijden_verlenging(IH[hgeendynhiaat08], SCH[schedkop_08], FALSE, mmk08, IH[hopdrempelen08], fc08, 
-        1, d08_1a, t08_1a_1, t08_1a_2, ttdh_08_1a_1, ttdh_08_1a_2, tmax_08_1a, prmspringverleng_08_1a, hverleng_08_1a, prmTDHstd08_1a, 
-        1, d08_1b, t08_1b_1, t08_1b_2, ttdh_08_1b_1, ttdh_08_1b_2, tmax_08_1b, prmspringverleng_08_1b, hverleng_08_1b, prmTDHstd08_1b, 
-        1, d08_2a, t08_2a_1, t08_2a_2, ttdh_08_2a_1, ttdh_08_2a_2, tmax_08_2a, prmspringverleng_08_2a, hverleng_08_2a, prmTDHstd08_2a, 
-        1, d08_3a, t08_3a_1, t08_3a_2, ttdh_08_3a_1, ttdh_08_3a_2, tmax_08_3a, prmspringverleng_08_3a, hverleng_08_3a, prmTDHstd08_3a, 
-        1, d08_4a, t08_4a_1, t08_4a_2, ttdh_08_4a_1, ttdh_08_4a_2, tmax_08_4a, prmspringverleng_08_4a, hverleng_08_4a, prmTDHstd08_4a, 
-        2, d08_2b, t08_2b_1, t08_2b_2, ttdh_08_2b_1, ttdh_08_2b_2, tmax_08_2b, prmspringverleng_08_2b, hverleng_08_2b, prmTDHstd08_2b, 
-        2, d08_3b, t08_3b_1, t08_3b_2, ttdh_08_3b_1, ttdh_08_3b_2, tmax_08_3b, prmspringverleng_08_3b, hverleng_08_3b, prmTDHstd08_3b, 
-        2, d08_4b, t08_4b_1, t08_4b_2, ttdh_08_4b_1, ttdh_08_4b_2, tmax_08_4b, prmspringverleng_08_4b, hverleng_08_4b, prmTDHstd08_4b, 
+        1, d08_1a, t08_1a_1, t08_1a_2, ttdh_08_1a_1, ttdh_08_1a_2, tmax_08_1a, prmspringverleng_08_1a, hverleng_08_1a, 
+        1, d08_1b, t08_1b_1, t08_1b_2, ttdh_08_1b_1, ttdh_08_1b_2, tmax_08_1b, prmspringverleng_08_1b, hverleng_08_1b, 
+        1, d08_2a, t08_2a_1, t08_2a_2, ttdh_08_2a_1, ttdh_08_2a_2, tmax_08_2a, prmspringverleng_08_2a, hverleng_08_2a, 
+        1, d08_3a, t08_3a_1, t08_3a_2, ttdh_08_3a_1, ttdh_08_3a_2, tmax_08_3a, prmspringverleng_08_3a, hverleng_08_3a, 
+        1, d08_4a, t08_4a_1, t08_4a_2, ttdh_08_4a_1, ttdh_08_4a_2, tmax_08_4a, prmspringverleng_08_4a, hverleng_08_4a, 
+        2, d08_2b, t08_2b_1, t08_2b_2, ttdh_08_2b_1, ttdh_08_2b_2, tmax_08_2b, prmspringverleng_08_2b, hverleng_08_2b, 
+        2, d08_3b, t08_3b_1, t08_3b_2, ttdh_08_3b_1, ttdh_08_3b_2, tmax_08_3b, prmspringverleng_08_3b, hverleng_08_3b, 
+        2, d08_4b, t08_4b_1, t08_4b_2, ttdh_08_4b_1, ttdh_08_4b_2, tmax_08_4b, prmspringverleng_08_4b, hverleng_08_4b, 
         END);
     hiaattijden_verlenging(IH[hgeendynhiaat09], SCH[schedkop_09], FALSE, mmk09, IH[hopdrempelen09], fc09, 
-        1, d09_1, t09_1_1, t09_1_2, ttdh_09_1_1, ttdh_09_1_2, tmax_09_1, prmspringverleng_09_1, hverleng_09_1, prmTDHstd09_1, 
-        1, d09_2, t09_2_1, t09_2_2, ttdh_09_2_1, ttdh_09_2_2, tmax_09_2, prmspringverleng_09_2, hverleng_09_2, prmTDHstd09_2, 
-        1, d09_3, t09_3_1, t09_3_2, ttdh_09_3_1, ttdh_09_3_2, tmax_09_3, prmspringverleng_09_3, hverleng_09_3, prmTDHstd09_3, 
+        1, d09_1, t09_1_1, t09_1_2, ttdh_09_1_1, ttdh_09_1_2, tmax_09_1, prmspringverleng_09_1, hverleng_09_1,
+        1, d09_2, t09_2_1, t09_2_2, ttdh_09_2_1, ttdh_09_2_2, tmax_09_2, prmspringverleng_09_2, hverleng_09_2,
+        1, d09_3, t09_3_1, t09_3_2, ttdh_09_3_1, ttdh_09_3_2, tmax_09_3, prmspringverleng_09_3, hverleng_09_3,
         END);
     hiaattijden_verlenging(IH[hgeendynhiaat11], SCH[schedkop_11], FALSE, mmk11, IH[hopdrempelen11], fc11, 
-        1, d11_1, t11_1_1, t11_1_2, ttdh_11_1_1, ttdh_11_1_2, tmax_11_1, prmspringverleng_11_1, hverleng_11_1, prmTDHstd11_1, 
-        1, d11_2, t11_2_1, t11_2_2, ttdh_11_2_1, ttdh_11_2_2, tmax_11_2, prmspringverleng_11_2, hverleng_11_2, prmTDHstd11_2, 
-        1, d11_3, t11_3_1, t11_3_2, ttdh_11_3_1, ttdh_11_3_2, tmax_11_3, prmspringverleng_11_3, hverleng_11_3, prmTDHstd11_3, 
-        1, d11_4, t11_4_1, t11_4_2, ttdh_11_4_1, ttdh_11_4_2, tmax_11_4, prmspringverleng_11_4, hverleng_11_4, prmTDHstd11_4, 
+        1, d11_1, t11_1_1, t11_1_2, ttdh_11_1_1, ttdh_11_1_2, tmax_11_1, prmspringverleng_11_1, hverleng_11_1,
+        1, d11_2, t11_2_1, t11_2_2, ttdh_11_2_1, ttdh_11_2_2, tmax_11_2, prmspringverleng_11_2, hverleng_11_2,
+        1, d11_3, t11_3_1, t11_3_2, ttdh_11_3_1, ttdh_11_3_2, tmax_11_3, prmspringverleng_11_3, hverleng_11_3,
+        1, d11_4, t11_4_1, t11_4_2, ttdh_11_4_1, ttdh_11_4_2, tmax_11_4, prmspringverleng_11_4, hverleng_11_4,
         END);
 
     Meetkriterium_Add();
@@ -2060,12 +2060,6 @@ void init_application(void)
             RIS_DIPRM[RIS_DIPRM_ALL] = 1;
         #endif
     #endif
-
-    /* Dynamische hiaattijden: initialiseren oorspronkelijke statische hiaattijden */
-    if (!SAPPLPROG)
-    {
-        InitTDHstdtijden();
-    }
 
     post_init_application();
 }
