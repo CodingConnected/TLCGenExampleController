@@ -1346,8 +1346,10 @@
     #define schlos34_2               256 /* Toestaan los realiseren fase 34                                */
     #define schlos33_1               257 /* Toestaan los realiseren fase 33                                */
     #define schlos33_2               258 /* Toestaan los realiseren fase 33                                */
-    #define schgsbeidedkb            259
-    #define SCHMAX1                  260
+    #define schris_aanvraag          259 /* Aanvragen op basis van RIS toegestaan                          */
+    #define schris_verlengen         260 /* Verlengen op basis van RIS toegestaan                          */
+    #define schgsbeidedkb            260
+    #define SCHMAX1                  261
 
 /* parameters */
 /* ---------- */

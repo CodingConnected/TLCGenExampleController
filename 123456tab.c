@@ -1793,7 +1793,9 @@ void control_parameters(void)
     SCH_code[schlos34_2]               = "los34_2";               SCH[schlos34_2]               = 0;                                        /* Toestaan los realiseren fase 34                                */
     SCH_code[schlos33_1]               = "los33_1";               SCH[schlos33_1]               = 0;                                        /* Toestaan los realiseren fase 33                                */
     SCH_code[schlos33_2]               = "los33_2";               SCH[schlos33_2]               = 0;                                        /* Toestaan los realiseren fase 33                                */
-    SCH_code[schgsbeidedkb]            = "gsbeidedkb";            SCH[schgsbeidedkb]            = 0;                                       
+    SCH_code[schris_aanvraag]          = "ris_aanvraag";          SCH[schris_aanvraag]          = 1;                                        /* Aanvragen op basis van RIS toegestaan                          */
+    SCH_code[schris_verlengen]         = "ris_verlengen";         SCH[schris_verlengen]         = 1;                                        /* Verlengen op basis van RIS toegestaan                          */
+    SCH_code[schgsbeidedkb]            = "gsbeidedkb";            SCH[schgsbeidedkb]            = 0;
 
 /* parameters */
 /* ---------- */

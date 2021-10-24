@@ -193,7 +193,8 @@ void KlokPerioden(void)
 
 void Aanvragen(void)
 {
-    int fc;
+   int i; 
+   int fc;
 
     for (fc = 0; fc < FCMAX; ++fc)
         RR[fc] &= ~BIT8;  /* reset BIT-sturing t.b.v. reset A */
@@ -622,6 +623,23 @@ void Aanvragen(void)
         if (ris_aanvraag(fc38, SYSTEM_ITF, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisastart38vtg1], PRM[prmrisaend38vtg1], SCH[schrisgeencheckopsg])) A[fc38] |= BIT10;
     #endif
 
+        /* aanvragen RIS schakelbaar, 1 schakelaar voor het schakelen van alle aanvragen */
+        if (!SCH[schris_aanvraag])
+        {
+           for (i = 0; i < FCMAX; ++i)
+           {
+              A[i] &= ~BIT10;
+           }
+        }
+
+        /* geen wachtstand aanvraag bij file stroomafwaarts */
+        if (IH[hfileFile68af] && !G[fc08]) A[fc08] &= ~BIT2;
+        if (IH[hfileFile68af] && !G[fc11]) A[fc11] &= ~BIT2;
+
+        /* geen mee aanvraag bij file stroomafwaarts */
+        if (IH[hfileFile68af] && !G[fc08]) A[fc08] &= ~BIT4;
+        if (IH[hfileFile68af] && !G[fc11]) A[fc11] &= ~BIT4;
+
     Aanvragen_Add();
 }
 
@@ -1019,10 +1037,15 @@ void Wachtgroen(void)
     if (IH[hfileFile68af]) RW[fc08] &= ~BIT4;
     if (IH[hfileFile68af]) RW[fc11] &= ~BIT4;
 
+    /* geen wachtstand bij file stroomafwaarts */
+    if (IH[hfileFile68af]) WS[fc08] &= ~BIT4;
+    if (IH[hfileFile68af]) WS[fc11] &= ~BIT4;
+ 
     Wachtgroen_Add();
 }
 void Meetkriterium(void)
 {
+   int i;
    int fc;
 #ifdef TDHAMAX
    int d;
@@ -1182,6 +1205,15 @@ void Meetkriterium(void)
         if (ris_verlengen(fc38, SYSTEM_ITF, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg2], PRM[prmrisvend38vtg2], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
         if (ris_verlengen(fc38, SYSTEM_ITF, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg1], PRM[prmrisvend38vtg1], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
     #endif
+
+        /* verlengen RIS schakelbaar, 1 schakelaar voor het schakelen van alle verlengfuncties */
+        if (!SCH[schris_verlengen])
+        {
+           for (i = 0; i < FCMAX; ++i)
+           {
+              MK[i] &= ~BIT10;
+           }
+        }
 
     hiaattijden_verlenging(IH[hgeendynhiaat02], SCH[schedkop_02], FALSE, mmk02, IH[hopdrempelen02], fc02, 
         1, d02_1a, t02_1a_1, t02_1a_2, ttdh_02_1a_1, ttdh_02_1a_2, tmax_02_1a, prmspringverleng_02_1a, hverleng_02_1a, 
@@ -1735,8 +1767,8 @@ void FileVerwerking(void)
     /* reset bitsturing */
     for (fc = 0; fc < FCMAX; ++fc)
     {
-        Z[fc] &= ~BIT5;
-        X[fc] &= ~BIT5;
+        Z[fc]  &= ~BIT5;
+        BL[fc] &= ~BIT5;
     }
 
     /* File ingreep File68af */
@@ -1769,27 +1801,54 @@ void FileVerwerking(void)
                                  7, TVGA_max[fc11], PRM[prmmg2_11], PRM[prmmg3_11], PRM[prmmg4_11], PRM[prmmg5_11], PRM[prmmg6_11], PRM[prmmg7_11]);
     }
 
-    /* Eenmalige afkappen op start file ingreep File68af */
-    /* Eenmalige afkappen fase 08 */
-    RT[tafkmingroen08fileFile68af] = ER[fc08] && T_max[tafkmingroen08fileFile68af];
-    if (SH[hfileFile68af] && G[fc08]) IH[hafk08fileFile68af] = TRUE;
-    if (EG[fc08]) IH[hafk08fileFile68af] = FALSE;
-    if (IH[hafk08fileFile68af] && G[fc08] && !T[tafkmingroen08fileFile68af] && T_max[tafkmingroen08fileFile68af] && !(MK[fc08] & BIT6)) Z[fc08] |= BIT5;
-    /* Eenmalige afkappen fase 11 */
-    RT[tafkmingroen11fileFile68af] = ER[fc11] && T_max[tafkmingroen11fileFile68af];
-    if (SH[hfileFile68af] && G[fc11]) IH[hafk11fileFile68af] = TRUE;
-    if (EG[fc11]) IH[hafk11fileFile68af] = FALSE;
-    if (IH[hafk11fileFile68af] && G[fc11] && !T[tafkmingroen11fileFile68af] && T_max[tafkmingroen11fileFile68af] && !(MK[fc11] & BIT6)) Z[fc11] |= BIT5;
+    /* Afkappen op tijdens file ingreep File68af */
+    /* afkappen fase 08 */
+    RT[tafkmingroen08fileFile68af] = SH[hfileFile68af] && T_max[tafkmingroen08fileFile68af];
+    //DEZE ALS MAXGROEN IS AANGEVINKT RT[tmaxgroen08fileFile68af] = SG[fc08] && T_max[tmaxgroen08fileFile68af];
 
-    /* Afkappen op bereiken maximaal groen tijdens file ingreep File68af */
+    if (G[fc08] && IH[hfileFile68af])
+    {
+       if (!RT[tafkmingroen08fileFile68af] && !T[tafkmingroen08fileFile68af] /*//DEZE ALS MAXGROEN IS AANGEVINKT && !RT[tmaxgroen08fileFile68af] && !T[tmaxgroen08fileFile68af]*/) Z[fc08] |= BIT5;
+    }
+
+    /* Afkappen op tijdens file ingreep File68af */
+    /* afkappen fase 11 */
+    RT[tafkmingroen11fileFile68af] = SH[hfileFile68af] && T_max[tafkmingroen11fileFile68af];
+    //DEZE ALS MAXGROEN IS AANGEVINKT RT[tmaxgroen08fileFile68af] = SG[fc11] && T_max[tmaxgroen11fileFile68af];
+
+    if (G[fc11] && IH[hfileFile68af])
+    {
+       if (!RT[tafkmingroen11fileFile68af] && !T[tafkmingroen11fileFile68af] /*//DEZE ALS MAXGROEN IS AANGEVINKT && !RT[tmaxgroen11fileFile68af] && !T[tmaxgroen11fileFile68af]*/) Z[fc11] |= BIT5;
+    }
 
     /* Minimale roodtijden tijdens file ingreep File68af */
     /* Minimale roodtijd fase 08 */
-    RT[tminrood08fileFile68af] = EGL[fc08] && T_max[tminrood08fileFile68af] && IH[hfileFile68af];
-    if (R[fc08] && T[tminrood08fileFile68af]) X[fc08] |= BIT5;
+    RT[tminrood08fileFile68af] = EGL[fc08] && T_max[tminrood08fileFile68af];
+    if (R[fc08] && T[tminrood08fileFile68af] && IH[hfileFile68af])
+    {
+       BL[fc08] |= BIT5;
+    }
+
+    /* Minimale roodtijden tijdens file ingreep File68af */
     /* Minimale roodtijd fase 11 */
-    RT[tminrood11fileFile68af] = EGL[fc11] && T_max[tminrood11fileFile68af] && IH[hfileFile68af];
-    if (R[fc11] && T[tminrood11fileFile68af]) X[fc11] |= BIT5;
+    RT[tminrood11fileFile68af] = EGL[fc11] && T_max[tminrood11fileFile68af];
+    if (R[fc11] && T[tminrood11fileFile68af] && IH[hfileFile68af])
+    {
+       BL[fc11] |= BIT5;
+    }
+
+    /* als hulpdienst ingreep aktief is op kruispunt arm dan nooit uitstel of afbreken als gevolg van file stroomafwaarts */
+    if (IH[hhd08])
+    {
+       Z[fc08] &= ~BIT5;
+       BL[fc08] &= ~BIT5;
+    }
+
+    if (IH[hhd11])
+    {
+       Z[fc11] &= ~BIT5;
+       BL[fc11] &= ~BIT5;
+    }
 
     FileVerwerking_Add();
 }
@@ -2000,6 +2059,7 @@ void DetectieStoring(void)
 
 void init_application(void)
 {
+
 #if (defined AUTOMAAT || defined AUTOMAAT_TEST)
     int i;
 #endif
