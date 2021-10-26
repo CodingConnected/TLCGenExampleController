@@ -29,13 +29,6 @@
 #define SYSTEM "123456"
 #define VERSION "1.11.0 20211021"
 #define TVGAMAX /* gebruik van TVGA_max[] */
- /* ONDERSTAANDE CODE: alleen gebruiken vanaf CCOL110                                                                                                              */
- /* ONDERSTAANDE CODE: activer met een aparte button in de TLCGen (net onder TVGA max als default groentijden set); naamgeving: TDHA_max gebruikt voor hiaatijden  */
- /* ONDERSTAANDE CODE: Button alleen te activeren vanaf CCOL110;default AAN voor nieuwe projecten                                                                  */
- /* ONDERSTAANDE CODE: als dit wordt gebruikt moeten we tevens de hiaatijden opslaan in parameters (zie andere wijzigingen)                                        */
- /* BEGIN AANPASSING                                                                                                                                               */
-#define TDHAMAX /* gebruik van TDHA_max[] */
-/* EINDE AANPASSING                                                                                                                                               */
 
  /* ONDERSTAANDE CODE: alleen gebruiken vanaf CCOL110                                                                                                              */
  /* ONDERSTAANDE CODE: activer met een aparte button in de TLCGen (net onder TVGA max als default groentijden set); naamgeving: TDHA_max gebruikt voor hiaatijden  */

@@ -1795,10 +1795,20 @@ void FileVerwerking(void)
     /* percentage MG bij filemelding */
     if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
     {
-        PercentageMaxGroenTijden(fc08, mperiod, prmfpercFile68af08,
-                                 7, prmmg1_08, prmmg2_08, prmmg3_08, prmmg4_08, prmmg5_08, prmmg6_08, prmmg7_08);
-        PercentageMaxGroenTijden(fc11, mperiod, prmfpercFile68af11,
-                                 7, prmmg1_11, prmmg2_11, prmmg3_11, prmmg4_11, prmmg5_11, prmmg6_11, prmmg7_11);
+        PercentageMaxGroenTijden(fc08, mperiod, PRM[prmfpercFile68af08],
+                                 7, TVGA_max[fc08], PRM[prmmg2_08], PRM[prmmg3_08], PRM[prmmg4_08], PRM[prmmg5_08], PRM[prmmg6_08], PRM[prmmg7_08]);
+        PercentageMaxGroenTijden(fc11, mperiod, PRM[prmfpercFile68af11],
+                                 7, TVGA_max[fc11], PRM[prmmg2_11], PRM[prmmg3_11], PRM[prmmg4_11], PRM[prmmg5_11], PRM[prmmg6_11], PRM[prmmg7_11]);
+    }
+
+    /* Afkappen op tijdens file ingreep File68af */
+    /* afkappen fase 08 */
+    RT[tafkmingroen08fileFile68af] = SH[hfileFile68af] && T_max[tafkmingroen08fileFile68af];
+    //DEZE ALS MAXGROEN IS AANGEVINKT RT[tmaxgroen08fileFile68af] = SG[fc08] && T_max[tmaxgroen08fileFile68af];
+
+    if (G[fc08] && IH[hfileFile68af])
+    {
+       if (!RT[tafkmingroen08fileFile68af] && !T[tafkmingroen08fileFile68af] /*//DEZE ALS MAXGROEN IS AANGEVINKT && !RT[tmaxgroen08fileFile68af] && !T[tmaxgroen08fileFile68af]*/) Z[fc08] |= BIT5;
     }
 
     /* Afkappen op tijdens file ingreep File68af */
