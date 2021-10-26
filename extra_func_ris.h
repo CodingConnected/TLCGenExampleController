@@ -18,6 +18,10 @@
    #include "rif.inc"   /* declaratie RIS Interface         */
 
 
+/* Dedicated variabelen */
+/* ==================== */
+   mulv granted_verstrekt[FCMAX];  /* granted via SSM verstrekt, richting mag niet naar rood gestuurd worden       */
+
 
 /* declaratie functies */
 /* =================== */
@@ -28,6 +32,8 @@
    rif_int ris_srm_put_signalgroup(count fc, rif_int approach_id, rif_int role_bits, rif_int subrole_bits, count prm_line_first, count prm_line_max);
 
    rif_int ris_verstuur_ssm(rif_int priotypefc_id);
+
+   void Bepaal_Granted_Verstrekt(void);
 
 #endif /* __EXTRA_FUNC_RIS_H  */
 

@@ -66,6 +66,8 @@
 extern mulv DB_old[];
 extern mulv TDH_old[];
 
+mulv granted_verstrekt[FCMAX];
+
 #include "prio.c"
 
 /* Variabele tbv start KAR ondergedrag timer bij starten regeling */
@@ -173,6 +175,14 @@ int iKARInSTP68bus[MAX_AANTAL_INMELDINGEN] = { 0 }; int iAantInm68bus = 0;
 
 void PrioInitExtra(void) 
 {
+   int i; 
+
+   /* initialisatie variabelen granted_verstrekt */
+   /* ------------------------------------------ */
+   for (i = 0; i < FCMAX; ++i)
+   {
+      granted_verstrekt[i] = 0;
+   }
 
 }
 
@@ -1184,6 +1194,32 @@ void InUitMelden(void)
     IH[hhdin61] |= IH[hhdin62]; IH[hhduit61] |= IH[hhduit62];
     IH[hhdin68] |= IH[hhdin67]; IH[hhduit68] |= IH[hhduit67];
     IH[hhdin67] |= IH[hhdin68]; IH[hhduit67] |= IH[hhduit68];
+
+
+    /* Bijhouden granted verstrekt */
+    Bepaal_Granted_Verstrekt();
+
+    if (granted_verstrekt[fc03] == 2) granted_verstrekt[fc02] = 2;
+    if (granted_verstrekt[fc61] == 2) granted_verstrekt[fc02] = 2;
+    if (granted_verstrekt[fc62] == 2) granted_verstrekt[fc02] = 2;
+    if (granted_verstrekt[fc02] == 2) granted_verstrekt[fc03] = 2;
+    if (granted_verstrekt[fc61] == 2) granted_verstrekt[fc03] = 2;
+    if (granted_verstrekt[fc62] == 2) granted_verstrekt[fc03] = 2;
+    if (granted_verstrekt[fc61] == 2) granted_verstrekt[fc05] = 2;
+    if (granted_verstrekt[fc62] == 2) granted_verstrekt[fc05] = 2;
+    if (granted_verstrekt[fc09] == 2) granted_verstrekt[fc08] = 2;
+    if (granted_verstrekt[fc67] == 2) granted_verstrekt[fc08] = 2;
+    if (granted_verstrekt[fc68] == 2) granted_verstrekt[fc08] = 2;
+    if (granted_verstrekt[fc08] == 2) granted_verstrekt[fc09] = 2;
+    if (granted_verstrekt[fc67] == 2) granted_verstrekt[fc09] = 2;
+    if (granted_verstrekt[fc68] == 2) granted_verstrekt[fc09] = 2;
+    if (granted_verstrekt[fc67] == 2) granted_verstrekt[fc11] = 2;
+    if (granted_verstrekt[fc68] == 2) granted_verstrekt[fc11] = 2;
+    if (granted_verstrekt[fc62] == 2) granted_verstrekt[fc61] = 2;
+    if (granted_verstrekt[fc61] == 2) granted_verstrekt[fc62] = 2;
+    if (granted_verstrekt[fc68] == 2) granted_verstrekt[fc67] = 2;
+    if (granted_verstrekt[fc67] == 2) granted_verstrekt[fc68] = 2;
+
 }
 
 void OnderMaximumExtra(void)
@@ -1239,7 +1275,20 @@ void PrioMeetKriteriumExtra(void)
    ------------------------------------ */
 void PrioriteitsOpties(void)
 {
-    /* Geconditioneerde prioriteit instellen */
+
+   /* Geen prioriteit bij file stroom afwaarts */
+   if (IH[hfileFile68af])
+   {
+      iInstPrioriteitsOpties[prioFC11bus] = poGeenPrioriteit;
+      /* @Menno geldt voor alle prioriteiten in de regeling (zit in deze regeling er nog maar een): zoals ook iInstPrioriteitsOpties[prioFC11busris] = poGeenPrioriteit; */
+      /* @Menno geldt voor alle prioriteiten in de regeling (zit in deze regeling er nog maar een): zoals ook  iInstPrioriteitsOpties[prioFC11vwris] = poGeenPrioriteit; */
+      iInstPrioriteitsOpties[prioFC08bus] = poGeenPrioriteit;
+      /* @Menno geldt voor alle prioriteiten in de regeling (zit in deze regeling er nog maar een): zoals ook iInstPrioriteitsOpties[prioFC08busris] = poGeenPrioriteit; */
+      /* @Menno geldt voor alle prioriteiten in de regeling (zit in deze regeling er nog maar een): zoals ook  iInstPrioriteitsOpties[prioFC08vwris] = poGeenPrioriteit; */
+   }
+
+   
+   /* Geconditioneerde prioriteit instellen */
     IH[hstp02bus] = !C[cvchd02] && !C[cvchd03] && !C[cvchd61] && !C[cvchd62] && SCH[schovstipt02bus];
     IH[hstp03bus] = !C[cvchd03] && !C[cvchd02] && !C[cvchd61] && !C[cvchd62] && SCH[schovstipt03bus];
     IH[hstp05bus] = !C[cvchd05] && !C[cvchd61] && !C[cvchd62] && SCH[schovstipt05bus];
@@ -1318,6 +1367,7 @@ void TegenhoudenConflictenExtra(void)
    --------------------------- */
 void PostAfhandelingPrio(void)
 {
+   int i;
 
     /* Niet afkappen naloop richtingen wanneer een naloop tijd nog loopt */
     if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
@@ -1368,6 +1418,20 @@ void PostAfhandelingPrio(void)
         RR[fc81] &= ~(BIT1|BIT2|BIT6);
         FM[fc81] &= ~PRIO_FM_BIT;
     }
+
+
+    /* nooit einde groen als granted verstrekt */
+    /* --------------------------------------- */
+    for (i = 0; i < FCMAX; ++i)
+    {
+       if (granted_verstrekt[i] > 0)     /* als granted is verstrekt dan altijd groen aanhouden */
+       {
+          if (G[i] && !MG[i]) YV[i] |= PRIO_YV_BIT;
+          YM[i] |= PRIO_YM_BIT;
+          Z[i] = FALSE;
+       }
+    }
+
 }
 /* ---------------------------------------
    PrioPARCorrecties corrigeert de PAR van

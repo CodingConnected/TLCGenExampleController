@@ -37,6 +37,14 @@
 #define TDHAMAX /* gebruik van TDHA_max[] */
 /* EINDE AANPASSING                                                                                                                                               */
 
+ /* ONDERSTAANDE CODE: alleen gebruiken vanaf CCOL110                                                                                                              */
+ /* ONDERSTAANDE CODE: activer met een aparte button in de TLCGen (net onder TVGA max als default groentijden set); naamgeving: TDHA_max gebruikt voor hiaatijden  */
+ /* ONDERSTAANDE CODE: Button alleen te activeren vanaf CCOL110;default AAN voor nieuwe projecten                                                                  */
+ /* ONDERSTAANDE CODE: als dit wordt gebruikt moeten we tevens de hiaatijden opslaan in parameters (zie andere wijzigingen)                                        */
+ /* BEGIN AANPASSING                                                                                                                                               */
+#define TDHAMAX /* gebruik van TDHA_max[] */
+/* EINDE AANPASSING                                                                                                                                               */
+
 /* fasecycli */
 /* --------- */
     #define fc02   0
@@ -1345,56 +1353,35 @@
     #define schlos34_2               256 /* Toestaan los realiseren fase 34                                */
     #define schlos33_1               257 /* Toestaan los realiseren fase 33                                */
     #define schlos33_2               258 /* Toestaan los realiseren fase 33                                */
-    #define schgsbeidedkb            259
-    #define SCHMAX1                  260
+    #define schris_aanvraag          259 /* Aanvragen op basis van RIS toegestaan                          */
+    #define schris_verlengen         260 /* Verlengen op basis van RIS toegestaan                          */
+    #define schgsbeidedkb            260
+    #define SCHMAX1                  261
 
 /* parameters */
 /* ---------- */
-    #define prmTDHstd02_1a           0 /* Onthouden oorspronkelijke TDH voor detector 02_1a                                                                              */
     #define prmspringverleng_02_1a   1 /* Dyn. hiaattij instelling voor det. 02_1a (via bitsturing)                                                                      */
-    #define prmTDHstd02_1b           2 /* Onthouden oorspronkelijke TDH voor detector 02_1b                                                                              */
     #define prmspringverleng_02_1b   3 /* Dyn. hiaattij instelling voor det. 02_1b (via bitsturing)                                                                      */
-    #define prmTDHstd02_2a           4 /* Onthouden oorspronkelijke TDH voor detector 02_2a                                                                              */
     #define prmspringverleng_02_2a   5 /* Dyn. hiaattij instelling voor det. 02_2a (via bitsturing)                                                                      */
-    #define prmTDHstd02_2b           6 /* Onthouden oorspronkelijke TDH voor detector 02_2b                                                                              */
     #define prmspringverleng_02_2b   7 /* Dyn. hiaattij instelling voor det. 02_2b (via bitsturing)                                                                      */
-    #define prmTDHstd02_3a           8 /* Onthouden oorspronkelijke TDH voor detector 02_3a                                                                              */
     #define prmspringverleng_02_3a   9 /* Dyn. hiaattij instelling voor det. 02_3a (via bitsturing)                                                                      */
-    #define prmTDHstd02_3b          10 /* Onthouden oorspronkelijke TDH voor detector 02_3b                                                                              */
     #define prmspringverleng_02_3b  11 /* Dyn. hiaattij instelling voor det. 02_3b (via bitsturing)                                                                      */
-    #define prmTDHstd02_4a          12 /* Onthouden oorspronkelijke TDH voor detector 02_4a                                                                              */
     #define prmspringverleng_02_4a  13 /* Dyn. hiaattij instelling voor det. 02_4a (via bitsturing)                                                                      */
-    #define prmTDHstd02_4b          14 /* Onthouden oorspronkelijke TDH voor detector 02_4b                                                                              */
     #define prmspringverleng_02_4b  15 /* Dyn. hiaattij instelling voor det. 02_4b (via bitsturing)                                                                      */
-    #define prmTDHstd08_1a          16 /* Onthouden oorspronkelijke TDH voor detector 08_1a                                                                              */
     #define prmspringverleng_08_1a  17 /* Dyn. hiaattij instelling voor det. 08_1a (via bitsturing)                                                                      */
-    #define prmTDHstd08_1b          18 /* Onthouden oorspronkelijke TDH voor detector 08_1b                                                                              */
     #define prmspringverleng_08_1b  19 /* Dyn. hiaattij instelling voor det. 08_1b (via bitsturing)                                                                      */
-    #define prmTDHstd08_2a          20 /* Onthouden oorspronkelijke TDH voor detector 08_2a                                                                              */
     #define prmspringverleng_08_2a  21 /* Dyn. hiaattij instelling voor det. 08_2a (via bitsturing)                                                                      */
-    #define prmTDHstd08_2b          22 /* Onthouden oorspronkelijke TDH voor detector 08_2b                                                                              */
     #define prmspringverleng_08_2b  23 /* Dyn. hiaattij instelling voor det. 08_2b (via bitsturing)                                                                      */
-    #define prmTDHstd08_3a          24 /* Onthouden oorspronkelijke TDH voor detector 08_3a                                                                              */
     #define prmspringverleng_08_3a  25 /* Dyn. hiaattij instelling voor det. 08_3a (via bitsturing)                                                                      */
-    #define prmTDHstd08_3b          26 /* Onthouden oorspronkelijke TDH voor detector 08_3b                                                                              */
     #define prmspringverleng_08_3b  27 /* Dyn. hiaattij instelling voor det. 08_3b (via bitsturing)                                                                      */
-    #define prmTDHstd08_4a          28 /* Onthouden oorspronkelijke TDH voor detector 08_4a                                                                              */
     #define prmspringverleng_08_4a  29 /* Dyn. hiaattij instelling voor det. 08_4a (via bitsturing)                                                                      */
-    #define prmTDHstd08_4b          30 /* Onthouden oorspronkelijke TDH voor detector 08_4b                                                                              */
     #define prmspringverleng_08_4b  31 /* Dyn. hiaattij instelling voor det. 08_4b (via bitsturing)                                                                      */
-    #define prmTDHstd09_1           32 /* Onthouden oorspronkelijke TDH voor detector 09_1                                                                               */
     #define prmspringverleng_09_1   33 /* Dyn. hiaattij instelling voor det. 09_1 (via bitsturing)                                                                       */
-    #define prmTDHstd09_2           34 /* Onthouden oorspronkelijke TDH voor detector 09_2                                                                               */
     #define prmspringverleng_09_2   35 /* Dyn. hiaattij instelling voor det. 09_2 (via bitsturing)                                                                       */
-    #define prmTDHstd09_3           36 /* Onthouden oorspronkelijke TDH voor detector 09_3                                                                               */
     #define prmspringverleng_09_3   37 /* Dyn. hiaattij instelling voor det. 09_3 (via bitsturing)                                                                       */
-    #define prmTDHstd11_1           38 /* Onthouden oorspronkelijke TDH voor detector 11_1                                                                               */
     #define prmspringverleng_11_1   39 /* Dyn. hiaattij instelling voor det. 11_1 (via bitsturing)                                                                       */
-    #define prmTDHstd11_2           40 /* Onthouden oorspronkelijke TDH voor detector 11_2                                                                               */
     #define prmspringverleng_11_2   41 /* Dyn. hiaattij instelling voor det. 11_2 (via bitsturing)                                                                       */
-    #define prmTDHstd11_3           42 /* Onthouden oorspronkelijke TDH voor detector 11_3                                                                               */
     #define prmspringverleng_11_3   43 /* Dyn. hiaattij instelling voor det. 11_3 (via bitsturing)                                                                       */
-    #define prmTDHstd11_4           44 /* Onthouden oorspronkelijke TDH voor detector 11_4                                                                               */
     #define prmspringverleng_11_4   45 /* Dyn. hiaattij instelling voor det. 11_4 (via bitsturing)                                                                       */
     #define prmttxconfidence15      46
     #define prmlatencyminendsg      47
