@@ -15,6 +15,7 @@
    * 2.6.0    21-10-2021   ddo         Fix voor 'nietToepassen' (else toegevoegd)
    * 3.0.0    23-10-2021   ddo         Toevoegen en gebruiken TDHA / TDHDYN ter voorkoming van stortvloed aan wijzigingen op
    *                                      de CVN-C interface, alsmede verwijderen van de wijzigingen onder 2.3.0 en 2.6.0
+   * 3.0.1    27-10-2021   ddo         Fix bij niettoepassen waar een accolade verkeerd stond
    *
    ***********************************************************************************************************
 
@@ -383,36 +384,36 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
       } while (rijstrook>=0);
       va_end(argpt);                     /* maak var. arg-lijst leeg */
     }
-  }
 
-  hulp_bit3 = FALSE;
-  for (rijstrook=1; rijstrook<=max_rijstrook; rijstrook++)   /* voor alle rijstroken van de betreffende signaalgroep */
-  {
-    if ((verlengen[rijstrook] || detstor[fc])      /* zolang er verlengd wordt, of bij een aanwezige detectiestoring */
-       || (!(verlengen[rijstrook] || detstor[fc])  /*       of                                                       */
-		   && !fka(fc) && (MG[fc] ||               /* bij geen (fictieve) conflictaanvraag en MG[]                   */
-		   WG[fc] && extra_in_wg))) {              /* danwel bij geen fict.confl.aanvr en WG[] en meeverlengen in WG */
-      hulp_bit3 = TRUE;                            /* blijft hulp_bit 3 waar en wordt dus MK[] BIT3 niet af gezet    */
-    }
-    else {
-      switch (rijstrook) {
-        case 1 :
-          MM[mmk] &= ~(BIT1|BIT2);    /* reset meetkriterium rijstrook 1 */  /*-*/ /* MM[mmk] ipv MK[fc] */
-          break;
-        case 2 :
-          MM[mmk] &= ~(BIT4|BIT5);    /* reset meetkriterium rijstrook 2 */  /*-*/
-          break;
-        case 3 :
-          MM[mmk] &= ~(BIT6|BIT7);    /* reset meetkriterium rijstrook 3 */  /*-*/
-          break;
-        case 4 :
-          MM[mmk] &= ~(BIT8|BIT9);    /* reset meetkriterium rijstrook 4 */  /*-*/
-          break;
+    hulp_bit3 = FALSE;
+    for (rijstrook=1; rijstrook<=max_rijstrook; rijstrook++)   /* voor alle rijstroken van de betreffende signaalgroep */
+    {
+      if ((verlengen[rijstrook] || detstor[fc])      /* zolang er verlengd wordt, of bij een aanwezige detectiestoring */
+         || (!(verlengen[rijstrook] || detstor[fc])  /*       of                                                       */
+  		   && !fka(fc) && (MG[fc] ||               /* bij geen (fictieve) conflictaanvraag en MG[]                   */
+  		   WG[fc] && extra_in_wg))) {              /* danwel bij geen fict.confl.aanvr en WG[] en meeverlengen in WG */
+        hulp_bit3 = TRUE;                            /* blijft hulp_bit 3 waar en wordt dus MK[] BIT3 niet af gezet    */
+      }
+      else {
+        switch (rijstrook) {
+          case 1 :
+            MM[mmk] &= ~(BIT1|BIT2);    /* reset meetkriterium rijstrook 1 */  /*-*/ /* MM[mmk] ipv MK[fc] */
+            break;
+          case 2 :
+            MM[mmk] &= ~(BIT4|BIT5);    /* reset meetkriterium rijstrook 2 */  /*-*/
+            break;
+          case 3 :
+            MM[mmk] &= ~(BIT6|BIT7);    /* reset meetkriterium rijstrook 3 */  /*-*/
+            break;
+          case 4 :
+            MM[mmk] &= ~(BIT8|BIT9);    /* reset meetkriterium rijstrook 4 */  /*-*/
+            break;
+        }
       }
     }
-  }
-
-  if (!hulp_bit3) {                  /* als er geen enkele strook is waarop verlengd mag worden, ook BIT3 resetten */
-    MK[fc] &= ~BIT3;                 /* reset meetkriterium BIT 3 */
+    
+    if (!hulp_bit3) {                  /* als er geen enkele strook is waarop verlengd mag worden, ook BIT3 resetten */
+      MK[fc] &= ~BIT3;                 /* reset meetkriterium BIT 3 */
+    }
   }
 }
