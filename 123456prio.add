@@ -85,14 +85,14 @@ void BlokkeringsTijd_Add(void) {
 void PrioriteitsOpties_Add(void) {
   /* ------------------------------------------------
      Pas hier zonodig de PrioriteitsOpties aan, bijv:
-     iPrioriteitsOpties[prioFC02] = poGeenPrioriteit;
+     iInstPrioriteitsOpties[prioFC02] = poGeenPrioriteit;
      ------------------------------------------------ */
 }
 
 void PrioriteitsNiveau_Add(void) {
   /* ---------------------------------------------------
      Pas hier zonodig het PrioriteitsNiveau aan, bijv:
-     iPrioriteitsNiveau[prioFC02] = 0;
+     iInstPrioriteitsNiveau[prioFC02] = 0;
      ---------------------------------------------------
      Houdt hier zonodig tijdelijk de prioteitstoekenning
      tegen, door gebruik te maken van iXPrio[fc], bijv:
