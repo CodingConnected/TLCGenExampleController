@@ -543,11 +543,8 @@ rif_int ris_verstuur_ssm(rif_int priotypefc_id) {
    return (number);
 }
 
-
 void Bepaal_Granted_Verstrekt(void)
 {
-
-
    count    fc, i;
    rif_int  priotypefc_id;
    register rif_int r = 0;

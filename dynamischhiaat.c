@@ -1,4 +1,6 @@
-ï»¿/* 
+/* dynamischhiaat.c - gegenereerd met TLCGen 0.10.2.0 */
+
+/* 
    BESTAND:   dynamischhiaat.c
 
    ****************************** Versie commentaar **********************************************************
@@ -16,13 +18,14 @@
    * 3.0.0    23-10-2021   ddo         Toevoegen en gebruiken TDHA / TDHDYN ter voorkoming van stortvloed aan wijzigingen op
    *                                      de CVN-C interface, alsmede verwijderen van de wijzigingen onder 2.3.0 en 2.6.0
    * 3.0.1    27-10-2021   ddo         Fix bij niettoepassen waar een accolade verkeerd stond
+   * 3.1.0    28-10-2021   ddo         Verplaatsen !nietToepassen zodat timers altijd berekend worden tijdens groen
    *
    ***********************************************************************************************************
 
    Zowel bij de IVER detectieconfiguratie uit 2018 (IVER'18) als bij Groen Op Maat (GOM) wordt gebruik gemaakt
    van dynamische hiaattijden. Met onderstaande code kunnen beide detectieconfiguraties worden bediend.
    
-   Dynamische hiaattijden zijn bedoeld om op efficiÃ«nte wijze groen te verlengen, waarbij aan de 'voorkant'
+   Dynamische hiaattijden zijn bedoeld om op efficiënte wijze groen te verlengen, waarbij aan de 'voorkant'
    minder vastgroen en geen koplusmaximum* nodig zijn, en aan de 'achterkant' gebruik gemaakt kan worden
    van een deel van de geeltijd. Daarbij wordt gebruik gemaakt van een specifieke detectie configuratie. 
 
@@ -53,7 +56,7 @@
    
    De code is vermoedelijk nog voor verbetering vatbaar; feedback wordt gewaardeerd op d.denouden@ll-t.nl 
 
-   EÃ©n van de verbeteringen is dat sinds versie 3.0.0 geen wijzigingen in TDH_max[] worden aangebracht; het
+   Eén van de verbeteringen is dat sinds versie 3.0.0 geen wijzigingen in TDH_max[] worden aangebracht; het
    grote aantal wijzigingen veroorzaakte een veelheid aan parameterwijzigingen op de CVN-C interface.
    Om dit te bereiken wordt gebruik gemaakt van een (voor dit doel toegevoegde) TDHDYN[], TDHDYN_max[] en 
    TDHDYN_timer[] voor CCOL versies onder de 11, en TDHA voor CCOL versies vanaf 11.
@@ -99,7 +102,7 @@
       de verlengfunctie UITschakelen)
    -- extra verlengvoorwaarde (bij TRUE altijd verlengen op deze lus; bijvoorbeeld bij permanente aanwezigheid
       deelconflict (G[fc11] && G[fc36]) )
-   -- aftelvoorwaarde (tijdens groen, als er wÃ©l hiaatmeting is op deze lus maar niet op de stroomafwaartse 
+   -- aftelvoorwaarde (tijdens groen, als er wél hiaatmeting is op deze lus maar niet op de stroomafwaartse 
       lussen, meteen TDH_max[] gaan aftellen) 
    -- spring-tijdens-groen voorwaarde (wanneer tijdens G[] het hiaat valt, wordt de volgende detector 
       stroomopwaarts de aktieve verlenglus)
@@ -114,7 +117,7 @@
 
    In de parameter 'detectorvoorwaarden' worden de springvoorwaarde, verlengvoorwaarde, extra 
    verlengvoorwaarde, aftelvoorwaarde en spring-tijdens-groen voorwaarde bitsgewijs opgeslagen in 
-   Ã©Ã©n parameter; de instellingen zijn daardoor ook op straat te wijzigen:
+   één parameter; de instellingen zijn daardoor ook op straat te wijzigen:
    BIT    dec.   betekenis                          optie in TLCGen 
    BIT0 =  1  -  springvoorwaarde                 - 'SpringStart' 
    BIT1 =  2  -  verlengvoorwaarde                - 'VerlengNiet'
@@ -122,12 +125,12 @@
    BIT3 =  8  -- aftelvoorwaarde                  - 'DirectAftel'  
    BIT4 = 16  -- spring-tijdens-groen voorwaarde  - 'SpringGroen'  
 
-   De waardes kunnen worden opgeteld, bijvoorbeeld verlengvoorwaarde Ã©n aftelvoorwaarde voor dezelfde detector
+   De waardes kunnen worden opgeteld, bijvoorbeeld verlengvoorwaarde én aftelvoorwaarde voor dezelfde detector
    maakt waarde 10.
    Het aktief worden extra verlengvoorwaarde kan tevens worden aangestuurd vanuit het regelprogramma 
    via een hulpelement (IH[] = G[fc1] && G[fc2]).
    
-   Er wordt verlengd op de aktieve lus Ã©n op de lussen stroomopwaarts van de aktieve lus.
+   Er wordt verlengd op de aktieve lus én op de lussen stroomopwaarts van de aktieve lus.
    
    De functie hiaattijden_verlenging wordt niet doorlopen (en dus de hiaattijden niet aangepast) wanneer een 
    detectiestoring is geconstateerd. In dat geval wordt de statische hiaattijd gebruikt en dient de gebruiker 
@@ -152,7 +155,7 @@
    ======================================================================================================== */
 
 
-#if !((CCOL_V >= 110) && defined TDHAMAX) || defined NO_TDHAMAX
+#if (CCOL_V >= 110 && !defined TDHAMAX) || (CCOL_V < 110)
 
    /* TDHDYN variabelen */
    boolv TDHDYN[DPMAX];        /* dynamische hiaattijd - logische waarde */
@@ -223,175 +226,174 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
   boolv svw, vvw, evlvw, daft, svwG, hulp_bit3, verlengen[5], tdh_saw[5];
   count dp_teller=0;                                /* telt aantal lussen vanaf stopstreep op bepaalde rijstrook */
 
-  if (!nietToepassen) {
-
-    /* initialisatie */
-    for (rijstrook=0; rijstrook<5; rijstrook++)
-    {
-      verlengen[rijstrook] = FALSE;
-      tdh_saw[rijstrook]   = FALSE;                 /* hiaattijd stroomafwaarts aktief                           */
-      eavl[fc][rijstrook]  = 0;                     /* eerste aktieve verlenglus (1 = eerste lus)                */
-    }
-    
-    if (TRG[fc])  detstor[fc] = FALSE;              /* reset aanwezigheid detectiestoring voor deze fc bij TRG[] */ /*-*/
-    
-    /* vaststellen detectiestoring, alleen tijdens RV[], eens per seconde ivm beperken rekentijd */ /*-*/
-    if (RV[fc] && TS) {
-      va_start(argpt, fc);                          /* start var. argumentenlijst                                */
-      do {
-        rijstrook = va_arg(argpt, va_count);        /* lees rijstrooknummer                                      */
-        if (rijstrook>=0) {																	            
-          dpnr       = va_arg(argpt, va_count);     /* lees array-nummer detectie                                */
-          t1         = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
-          t2         = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
-          tdh1       = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
-          tdh2       = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
-          tmax       = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
-          prmdetvw   = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
-          hevlvw     = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
-    
-          if (!TRG[fc] && !ERV[fc]) {
-    #if defined (DL_type) && !defined (NO_DDFLUTTER) /* CCOL7 of hoger */  
-            if (CIF_IS[dpnr] >= CIF_DET_STORING /*|| OG[dpnr]*/ || BG[dpnr] || FL[dpnr])   detstor[fc] |= TRUE;
-    #else
-            if (CIF_IS[dpnr] >= CIF_DET_STORING /*|| OG[dpnr]*/ || BG[dpnr])               detstor[fc] |= TRUE;
-    #endif
-           }
-        }
-      } while (rijstrook>=0);
-      va_end(argpt);                     /* maak var. arg-lijst leeg */
-    }
-    
-    if (RA[fc] && !SRA[fc] || G[fc] || GL[fc]) {        /*-*/ 
-      va_start(argpt, fc);                              /* start var. argumentenlijst                              */
-      do {
-        rijstrook = va_arg(argpt, va_count);            /* lees rijstrooknummer                                    */
-        if (rijstrook>=0 && (detstor[fc] != TRUE)) {	/*-*/
-          dpnr       = va_arg(argpt, va_count);         /* lees array-nummer detectie                              */
-          t1         = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - moment 1                */
-          t2         = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - moment 2                */
-          tdh1       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - hiaattijd 1             */
-          tdh2       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - hiaattijd 2             */
-          tmax       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - maximum groentijd       */
-          prmdetvw   = va_arg(argpt, va_count);         /* lees array-nummer parameter   - detectorvoorwaarden     */
-          hevlvw     = va_arg(argpt, va_count);         /* lees array-nummer hulpelement - extra verlengvoorwaarde */
-          
-          /* omzetten parameter verlengvoorwaarden naar booleanse criteria */           /*-*/
-          svw   =  PRM[prmdetvw]&BIT0;                  /* springvoorwaarde  (op SG[])     */
-          vvw   =  PRM[prmdetvw]&BIT1;                  /* verlengvoorwaarde (op SG[])     */
-          evlvw = (PRM[prmdetvw]&BIT2 || IH[hevlvw]);   /* extra verlengvoorwaarde         */
-          daft  =  PRM[prmdetvw]&BIT3;                  /* direct aftelen voorwaarde       */
-          svwG  =  PRM[prmdetvw]&BIT4;                  /* spring-tijdens-groen voorwaarde */
-         
-          /* afbreken lopende hiaattimers op start geel */
-          AT[t1]=AT[t2]=AT[tmax] = SGL[fc];              
-          
-#if !((CCOL_V >= 110) && defined TDHAMAX) || defined NO_TDHAMAX
-          /* bijwerken TDHDYN[dpnr] en TDHDYN_timer[dpnr] */  /*--*/
-          tdhdyn(dpnr);
+  /* initialisatie */
+  for (rijstrook=0; rijstrook<5; rijstrook++)
+  {
+    verlengen[rijstrook] = FALSE;
+    tdh_saw[rijstrook]   = FALSE;                 /* hiaattijd stroomafwaarts aktief                           */
+    eavl[fc][rijstrook]  = 0;                     /* eerste aktieve verlenglus (1 = eerste lus)                */
+  }
+  
+  if (TRG[fc])  detstor[fc] = FALSE;              /* reset aanwezigheid detectiestoring voor deze fc bij TRG[] */ /*-*/
+  
+  /* vaststellen detectiestoring, alleen tijdens RV[], eens per seconde ivm beperken rekentijd */ /*-*/
+  if (RV[fc] && TS) {
+    va_start(argpt, fc);                          /* start var. argumentenlijst                                */
+    do {
+      rijstrook = va_arg(argpt, va_count);        /* lees rijstrooknummer                                      */
+      if (rijstrook>=0) {																	            
+        dpnr       = va_arg(argpt, va_count);     /* lees array-nummer detectie                                */
+        t1         = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
+        t2         = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
+        tdh1       = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
+        tdh2       = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
+        tmax       = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
+        prmdetvw   = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
+        hevlvw     = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
+  
+        if (!TRG[fc] && !ERV[fc]) {
+  #if defined (DL_type) && !defined (NO_DDFLUTTER) /* CCOL7 of hoger */  
+          if (CIF_IS[dpnr] >= CIF_DET_STORING /*|| OG[dpnr]*/ || BG[dpnr] || FL[dpnr])   detstor[fc] |= TRUE;
+  #else
+          if (CIF_IS[dpnr] >= CIF_DET_STORING /*|| OG[dpnr]*/ || BG[dpnr])               detstor[fc] |= TRUE;
+  #endif
+         }
+      }
+    } while (rijstrook>=0);
+    va_end(argpt);                     /* maak var. arg-lijst leeg */
+  }
+  
+  if (RA[fc] && !SRA[fc] || G[fc] || GL[fc]) {        /*-*/ 
+    va_start(argpt, fc);                              /* start var. argumentenlijst                              */
+    do {
+      rijstrook = va_arg(argpt, va_count);            /* lees rijstrooknummer                                    */
+      if (rijstrook>=0 && (detstor[fc] != TRUE)) {	/*-*/
+        dpnr       = va_arg(argpt, va_count);         /* lees array-nummer detectie                              */
+        t1         = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - moment 1                */
+        t2         = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - moment 2                */
+        tdh1       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - hiaattijd 1             */
+        tdh2       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - hiaattijd 2             */
+        tmax       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - maximum groentijd       */
+        prmdetvw   = va_arg(argpt, va_count);         /* lees array-nummer parameter   - detectorvoorwaarden     */
+        hevlvw     = va_arg(argpt, va_count);         /* lees array-nummer hulpelement - extra verlengvoorwaarde */
+        
+        /* omzetten parameter verlengvoorwaarden naar booleanse criteria */           /*-*/
+        svw   =  PRM[prmdetvw]&BIT0;                  /* springvoorwaarde  (op SG[])     */
+        vvw   =  PRM[prmdetvw]&BIT1;                  /* verlengvoorwaarde (op SG[])     */
+        evlvw = (PRM[prmdetvw]&BIT2 || IH[hevlvw]);   /* extra verlengvoorwaarde         */
+        daft  =  PRM[prmdetvw]&BIT3;                  /* direct aftelen voorwaarde       */
+        svwG  =  PRM[prmdetvw]&BIT4;                  /* spring-tijdens-groen voorwaarde */
+       
+        /* afbreken lopende hiaattimers op start geel */
+        AT[t1]=AT[t2]=AT[tmax] = SGL[fc];              
+        
+#if (CCOL_V >= 110 && !defined TDHAMAX) || (CCOL_V < 110)
+        /* bijwerken TDHDYN[dpnr] en TDHDYN_timer[dpnr] */  /*--*/
+        tdhdyn(dpnr);
 #endif
 
-          max_rijstrook = rijstrook;                    /* onthoud hoogste rijstrooknummer                                  */
-          if (rijstrook != rijstrook_old) {
-            eavl[fc][rijstrook] = 0;
-            dp_teller = 0;
-          }
-          dp_teller++;
-          rijstrook_old = rijstrook;
-          
-          if (T_max[tmax]==0)       T_max[tmax] = (TFG_max[fc]+TVG_max[fc]);          /*-*/ /* overnemen max groentijd      */ 
-          
-          /* actuele hiaattijd bepalen */
-          RT[t1]   =
-          RT[t2]   =
-          RT[tmax] = SG[fc] 
-                     || (vrijkomkop && eavl[fc][rijstrook]==1 && (T_timer[tmax]==0)); /*-*/ 
-          
-          if (ERA[fc])             TDHDYN_max[dpnr] = T_max[tdh1];                       /*-*/ /* ERA[] ipv !G[]               */
-          if (  G[fc] &&  ET[t2])  TDHDYN_max[dpnr] = T_max[tdh2];
-          if (  G[fc] && !RT[t1] && !T[t1] && T[t2]) {
-            /* hiaattijd wijzigt tussen t1 en t2 lineair, van tdh1 naar tdh2 */
-            /* -------y------- = -------------x----------- * -----------------richtingscoÃ«fficiÃ«nt=a-------------- + ----b------ */
-              TDHDYN_max[dpnr] = (T_timer[t2] - T_max[t1]) * (T_max[tdh2] - T_max[tdh1]) / (T_max[t2] - T_max[t1]) + T_max[tdh1];
-          }
-          
-          /* bepalen of er stroomafwaarts van een lus hiaattijden lopen */  /*-*/ /* locatie aangepast (vÃ³Ã³r bepaling of meteen naar 2e hiaattijd gesprongen wordt) */
-          if (TDHDYN[dpnr]) {
-            tdh_saw[rijstrook] = TRUE;
-          }
-
-          /* Als er geen verkeer is op de lus en de lussen ervoor bij start groen, meteen naar de 2e hiaattijd springen */
-          if (SG[fc] && !tdh_saw[rijstrook] && dp_teller>1 && svw) {     
-            RT[t1] =
-            RT[t2] = FALSE;
-            TDHDYN_max[dpnr] = T_max[tdh2];
-            if (vvw) {
-              RT[tmax] = FALSE;
-            }
-          }
+        max_rijstrook = rijstrook;                    /* onthoud hoogste rijstrooknummer                                  */
+        if (rijstrook != rijstrook_old) {
+          eavl[fc][rijstrook] = 0;
+          dp_teller = 0;
+        }
+        dp_teller++;
+        rijstrook_old = rijstrook;
         
-          /* Er mag verlengd worden op deze lus tot de timer is afgelopen     */           
-          /* of wanneer extra verlengvoorwaarde evlvw aanwezig is             */
-          if ((RT[tmax] || T[tmax] || evlvw) && G[fc] && TDHDYN[dpnr]) {                                /*-*/ /* evlvw toegevoegd            */
-            verlengen[rijstrook] = TRUE;
-          }
-         
-          /* Bepaal eerste actieve verlenglus, vanaf de stopstreep gerekend   */
-          if ((RT[tmax] || T[tmax]            /* maximum tijd loopt nog voor deze detector                         */
-               || evlvw )              &&     /* of extra verlengvoorwaarde is aktief                              */ /*-*/ 
-              G[fc]                    &&     /* signaalgroep is groen                                             */
-/*            TDHDYN[dpnr]             && */  /* hiaattijd van de detector loopt                                   */ /* uitgecommentaard in Goudappel code */
-              eavl[fc][rijstrook] == 0   ) {  /* eerste actieve verlenglus is op deze rijstrook nog niet ingesteld */
-              eavl[fc][rijstrook] = dp_teller;
-          }
-          
-          /* afkappen maxtimer t.b.v. springen naar eerstvolgende lus stroomopwaarts*/ /*-*/
-          if (G[fc] &&
-             ((dp_teller == 1) && vrijkomkop && !TDHDYN[dpnr])  /* voor koplus bij niet (meer) aanwezig zijn van hiaat                    */                   
-              ||
-             ((dp_teller != 1) && svwG && !TDHDYN[dpnr] &&      /* voor overige lussen indien spring-tijdens-groen voor deze lus waar is, */ 
-             (eavl[fc][rijstrook] == dp_teller)))         {   /* en de lus aktief is, en het hiaat voor de eerste keer gevallen is      */                    
-                 RT[tmax] = FALSE;
-                 AT[tmax] = TRUE;
-          }
-          
-          /* Tijdens groen, als deze lus is de aktieve verlenglus, en stroomafwaarts lopen geen hiaattijden, en de t1 timer */ /*-*/
-          /* loopt nog, dan meteen hiaattijd laten aftellen door timers t1 en t2 gelijk te maken aan T_max[t1]              */
-          /* Aftellen gebeurt via eerdere formule y = x * a + b                                                             */
-          if (daft && G[fc] && tdh_saw[rijstrook] && (eavl[fc][rijstrook] == dp_teller) && (T_timer[t1] < T_max[t1]) && TDHDYN[dpnr]) { /*-*/ 
-          	T_timer[t1] = T_max[t1];
-          	T_timer[t2] = T_max[t1];
-          }
-          
-          /* Correctie MM[mmk] bij opdrempelen toegestaan; andere aanroep van meetkriterium2 niet nodig */   /*-*/
-          if (opdr) {
-            switch (rijstrook) {
-              case 1:
-                if ((eavl[fc][rijstrook] == dp_teller) && TDHDYN[dpnr])      MM[mmk] |= BIT2;
-                break;                                                   
-              case 2:                                                    
-                if ((eavl[fc][rijstrook] == dp_teller) && TDHDYN[dpnr])      MM[mmk] |= BIT5;
-                break;                                                   
-              case 3:                                                    
-                if ((eavl[fc][rijstrook] == dp_teller) && TDHDYN[dpnr])      MM[mmk] |= BIT7;
-                break;                                                   
-              case 4:                                                    
-                if ((eavl[fc][rijstrook] == dp_teller) && TDHDYN[dpnr])      MM[mmk] |= BIT9;
-                break;
-            }
+        if (T_max[tmax]==0)       T_max[tmax] = (TFG_max[fc]+TVG_max[fc]);          /*-*/ /* overnemen max groentijd      */ 
+        
+        /* actuele hiaattijd bepalen */
+        RT[t1]   =
+        RT[t2]   =
+        RT[tmax] = SG[fc] 
+                   || (vrijkomkop && eavl[fc][rijstrook]==1 && (T_timer[tmax]==0)); /*-*/ 
+        
+        if (ERA[fc])             TDHDYN_max[dpnr] = T_max[tdh1];                       /*-*/ /* ERA[] ipv !G[]               */
+        if (  G[fc] &&  ET[t2])  TDHDYN_max[dpnr] = T_max[tdh2];
+        if (  G[fc] && !RT[t1] && !T[t1] && T[t2]) {
+          /* hiaattijd wijzigt tussen t1 en t2 lineair, van tdh1 naar tdh2 */
+          /* -------y------- = -------------x----------- * -----------------richtingscoëfficiënt=a-------------- + ----b------ */
+            TDHDYN_max[dpnr] = (T_timer[t2] - T_max[t1]) * (T_max[tdh2] - T_max[tdh1]) / (T_max[t2] - T_max[t1]) + T_max[tdh1];
+        }
+        
+        /* bepalen of er stroomafwaarts van een lus hiaattijden lopen */  /*-*/ /* locatie aangepast (vóór bepaling of meteen naar 2e hiaattijd gesprongen wordt) */
+        if (TDHDYN[dpnr]) {
+          tdh_saw[rijstrook] = TRUE;
+        }
+
+        /* Als er geen verkeer is op de lus en de lussen ervoor bij start groen, meteen naar de 2e hiaattijd springen */
+        if (SG[fc] && !tdh_saw[rijstrook] && dp_teller>1 && svw) {     
+          RT[t1] =
+          RT[t2] = FALSE;
+          TDHDYN_max[dpnr] = T_max[tdh2];
+          if (vvw) {
+            RT[tmax] = FALSE;
           }
         }
-      } while (rijstrook>=0);
-      va_end(argpt);                     /* maak var. arg-lijst leeg */
-    }
+      
+        /* Er mag verlengd worden op deze lus tot de timer is afgelopen     */           
+        /* of wanneer extra verlengvoorwaarde evlvw aanwezig is             */
+        if ((RT[tmax] || T[tmax] || evlvw) && G[fc] && TDHDYN[dpnr]) {                                /*-*/ /* evlvw toegevoegd            */
+          verlengen[rijstrook] = TRUE;
+        }
+       
+        /* Bepaal eerste actieve verlenglus, vanaf de stopstreep gerekend   */
+        if ((RT[tmax] || T[tmax]            /* maximum tijd loopt nog voor deze detector                         */
+             || evlvw )              &&     /* of extra verlengvoorwaarde is aktief                              */ /*-*/ 
+            G[fc]                    &&     /* signaalgroep is groen                                             */
+/*          TDHDYN[dpnr]             && */  /* hiaattijd van de detector loopt                                   */ /* uitgecommentaard in Goudappel code */
+            eavl[fc][rijstrook] == 0   ) {  /* eerste actieve verlenglus is op deze rijstrook nog niet ingesteld */
+            eavl[fc][rijstrook] = dp_teller;
+        }
+        
+        /* afkappen maxtimer t.b.v. springen naar eerstvolgende lus stroomopwaarts*/ /*-*/
+        if (G[fc] &&
+           ((dp_teller == 1) && vrijkomkop && !TDHDYN[dpnr])  /* voor koplus bij niet (meer) aanwezig zijn van hiaat                    */                   
+            ||
+           ((dp_teller != 1) && svwG && !TDHDYN[dpnr] &&      /* voor overige lussen indien spring-tijdens-groen voor deze lus waar is, */ 
+           (eavl[fc][rijstrook] == dp_teller)))         {     /* en de lus aktief is, en het hiaat voor de eerste keer gevallen is      */                    
+               RT[tmax] = FALSE;
+               AT[tmax] = TRUE;
+        }
+        
+        /* Tijdens groen, als deze lus is de aktieve verlenglus, en stroomafwaarts lopen geen hiaattijden, en de t1 timer */ /*-*/
+        /* loopt nog, dan meteen hiaattijd laten aftellen door timers t1 en t2 gelijk te maken aan T_max[t1]              */
+        /* Aftellen gebeurt via eerdere formule y = x * a + b                                                             */
+        if (daft && G[fc] && tdh_saw[rijstrook] && (eavl[fc][rijstrook] == dp_teller) && (T_timer[t1] < T_max[t1]) && TDHDYN[dpnr]) { /*-*/ 
+        	T_timer[t1] = T_max[t1];
+        	T_timer[t2] = T_max[t1];
+        }
+        
+        /* Correctie MM[mmk] bij opdrempelen toegestaan; andere aanroep van meetkriterium2 niet nodig */   /*-*/
+        if (opdr && !nietToepassen) {
+          switch (rijstrook) {
+            case 1:
+              if ((eavl[fc][rijstrook] == dp_teller) && TDHDYN[dpnr])      MM[mmk] |= BIT2;
+              break;                                                   
+            case 2:                                                    
+              if ((eavl[fc][rijstrook] == dp_teller) && TDHDYN[dpnr])      MM[mmk] |= BIT5;
+              break;                                                   
+            case 3:                                                    
+              if ((eavl[fc][rijstrook] == dp_teller) && TDHDYN[dpnr])      MM[mmk] |= BIT7;
+              break;                                                   
+            case 4:                                                    
+              if ((eavl[fc][rijstrook] == dp_teller) && TDHDYN[dpnr])      MM[mmk] |= BIT9;
+              break;
+          }
+        }
+      }
+    } while (rijstrook>=0);
+    va_end(argpt);                     /* maak var. arg-lijst leeg */
+  }
 
+  if (!nietToepassen) {
     hulp_bit3 = FALSE;
     for (rijstrook=1; rijstrook<=max_rijstrook; rijstrook++)   /* voor alle rijstroken van de betreffende signaalgroep */
     {
       if ((verlengen[rijstrook] || detstor[fc])      /* zolang er verlengd wordt, of bij een aanwezige detectiestoring */
          || (!(verlengen[rijstrook] || detstor[fc])  /*       of                                                       */
-  		   && !fka(fc) && (MG[fc] ||               /* bij geen (fictieve) conflictaanvraag en MG[]                   */
-  		   WG[fc] && extra_in_wg))) {              /* danwel bij geen fict.confl.aanvr en WG[] en meeverlengen in WG */
+  		   && !fka(fc) && (MG[fc] ||                   /* bij geen (fictieve) conflictaanvraag en MG[]                   */
+  		   WG[fc] && extra_in_wg))) {                  /* danwel bij geen fict.confl.aanvr en WG[] en meeverlengen in WG */
         hulp_bit3 = TRUE;                            /* blijft hulp_bit 3 waar en wordt dus MK[] BIT3 niet af gezet    */
       }
       else {

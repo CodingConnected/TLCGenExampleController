@@ -23,6 +23,7 @@
  * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
  * 1.10.0   18-10-2021   Cyril       Interne koppeling geoptimaliseerd
  * 1.11.0   21-10-2021   Cyril       Nieuwe versie TLCGen (21102021 beta)
+ * 1.12.0   02-11-2021   Cyril       Nieuwe versie TLCGen (01112021 beta)
  *
  ************************************************************************************/
 

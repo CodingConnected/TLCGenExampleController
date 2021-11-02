@@ -39,7 +39,6 @@ void VervangendHiaatKoplus( count fcnr, count koplus, count langelus, count hiti
  *    Deze functie kan worden aangeroepen voor file of voor detectiefouten.
  *  Functie aanroep: PercentageMaxGroenTijden(fc, periode, perc, n, ...);
  ****************************************************************************/
-
 void PercentageMaxGroenTijden(count fc, count periode, mulv percentage, count n, ...)
 {
     va_list argp;
@@ -50,7 +49,7 @@ void PercentageMaxGroenTijden(count fc, count periode, mulv percentage, count n,
 
     /* eerst overbodige parameters inlezen */
     /* ----------------------------------- */
-    for (i=0; (i<= MM[periode]) && (i < n); i++)
+    for (i = 0; i <= MM[periode] && i < n; i++)
         mgnr = va_arg(argp, va_mulv);
 
     /* nu staat in mgnr de parameter index waarin je geinteresseerd bent */
@@ -76,18 +75,18 @@ void PercentageVerlengGroenTijden(count fc, count periode, mulv percentage, coun
 {
     va_list argp;
     mulv  i;
-    count mgnr;
+    mulv mgnr;
 
     va_start(argp, n);
 
     /* eerst overbodige parameters inlezen */
     /* ----------------------------------- */
-    for (i=0; i<= MM[periode]; i++)
-        mgnr = va_arg(argp, va_count);
+    for (i = 0; i <= MM[periode] && i < n; i++)
+        mgnr = va_arg(argp, va_mulv);
 
     /* nu staat in mgnr de parameter index waarin je geinteresseerd bent */
     /* ----------------------------------------------------------------- */
-    TVG_max[fc] = (mulv)(((long)PRM[percentage] * (long)PRM[mgnr])/100);
+    TVG_max[fc] = (mulv)(((long)percentage * (long)mgnr)/100);
     va_end(argp);
 }
 

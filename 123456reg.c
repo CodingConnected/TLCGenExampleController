@@ -23,6 +23,7 @@
  * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
  * 1.10.0   18-10-2021   Cyril       Interne koppeling geoptimaliseerd
  * 1.11.0   21-10-2021   Cyril       Nieuwe versie TLCGen (21102021 beta)
+ * 1.12.0   02-11-2021   Cyril       Nieuwe versie TLCGen (01112021 beta)
  *
  ************************************************************************************/
 
@@ -193,8 +194,7 @@ void KlokPerioden(void)
 
 void Aanvragen(void)
 {
-   int i; 
-   int fc;
+    int fc;
 
     for (fc = 0; fc < FCMAX; ++fc)
         RR[fc] &= ~BIT8;  /* reset BIT-sturing t.b.v. reset A */
@@ -577,6 +577,13 @@ void Aanvragen(void)
     aanvraag_wachtstand_exp(fc82, (boolv) (SCH[schwg82]));
     aanvraag_wachtstand_exp(fc84, (boolv) (SCH[schwg84]));
 
+    /* Geen wachtstand aanvraag bij file stroomafwaarts */
+    if (IH[hfileFile68af] && !G[fc08]) A[fc08] &= ~BIT2;
+    if (IH[hfileFile68af] && !G[fc11]) A[fc11] &= ~BIT2;
+    /* Geen mee aanvraag bij file stroomafwaarts */
+    if (IH[hfileFile68af] && !G[fc08]) A[fc08] &= ~BIT4;
+    if (IH[hfileFile68af] && !G[fc11]) A[fc11] &= ~BIT4;
+
     /* Bewaar meldingen van detectie (bv. voor het zetten van een meeaanvraag) */
     IH[hmadk31a] = G[fc31] && !SG[fc31] ? FALSE : IH[hmadk31a] || D[dk31a] && A[fc31];
     IH[hmadk31b] = G[fc31] && !SG[fc31] ? FALSE : IH[hmadk31b] || D[dk31b] && A[fc31];
@@ -610,35 +617,26 @@ void Aanvragen(void)
         if (ris_aanvraag(fc33, SYSTEM_ITF, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisastart33vtg2], PRM[prmrisaend33vtg2], SCH[schrisgeencheckopsg])) A[fc33] |= BIT10;
         if (ris_aanvraag(fc34, SYSTEM_ITF, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisastart34vtg1], PRM[prmrisaend34vtg1], SCH[schrisgeencheckopsg])) A[fc34] |= BIT10;
         if (ris_aanvraag(fc34, SYSTEM_ITF, PRM[prmrislaneid34_2], RIS_PEDESTRIAN, PRM[prmrisastart34vtg2], PRM[prmrisaend34vtg2], SCH[schrisgeencheckopsg])) A[fc34] |= BIT10;
+        if (ris_aanvraag(fc38, SYSTEM_ITF, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisastart38vtg1], PRM[prmrisaend38vtg1], SCH[schrisgeencheckopsg])) A[fc38] |= BIT10;
+        if (ris_aanvraag(fc38, SYSTEM_ITF, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisastart38vtg2], PRM[prmrisaend38vtg2], SCH[schrisgeencheckopsg])) A[fc38] |= BIT10;
+        if (ris_aanvraag(fc61, SYSTEM_ITF, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisastart61mveh1], PRM[prmrisaend61mveh1], SCH[schrisgeencheckopsg])) A[fc61] |= BIT10;
+        if (ris_aanvraag(fc62, SYSTEM_ITF, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh1], PRM[prmrisaend62mveh1], SCH[schrisgeencheckopsg])) A[fc62] |= BIT10;
+        if (ris_aanvraag(fc62, SYSTEM_ITF, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh2], PRM[prmrisaend62mveh2], SCH[schrisgeencheckopsg])) A[fc62] |= BIT10;
+        if (ris_aanvraag(fc67, SYSTEM_ITF, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisastart67mveh1], PRM[prmrisaend67mveh1], SCH[schrisgeencheckopsg])) A[fc67] |= BIT10;
+        if (ris_aanvraag(fc68, SYSTEM_ITF, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh1], PRM[prmrisaend68mveh1], SCH[schrisgeencheckopsg])) A[fc68] |= BIT10;
         if (ris_aanvraag(fc84, SYSTEM_ITF, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg])) A[fc84] |= BIT10;
         if (ris_aanvraag(fc82, SYSTEM_ITF, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisastart82fts1], PRM[prmrisaend82fts1], SCH[schrisgeencheckopsg])) A[fc82] |= BIT10;
         if (ris_aanvraag(fc81, SYSTEM_ITF, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisastart81fts1], PRM[prmrisaend81fts1], SCH[schrisgeencheckopsg])) A[fc81] |= BIT10;
         if (ris_aanvraag(fc68, SYSTEM_ITF, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh2], PRM[prmrisaend68mveh2], SCH[schrisgeencheckopsg])) A[fc68] |= BIT10;
-        if (ris_aanvraag(fc68, SYSTEM_ITF, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh1], PRM[prmrisaend68mveh1], SCH[schrisgeencheckopsg])) A[fc68] |= BIT10;
-        if (ris_aanvraag(fc67, SYSTEM_ITF, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisastart67mveh1], PRM[prmrisaend67mveh1], SCH[schrisgeencheckopsg])) A[fc67] |= BIT10;
-        if (ris_aanvraag(fc62, SYSTEM_ITF, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh2], PRM[prmrisaend62mveh2], SCH[schrisgeencheckopsg])) A[fc62] |= BIT10;
-        if (ris_aanvraag(fc62, SYSTEM_ITF, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh1], PRM[prmrisaend62mveh1], SCH[schrisgeencheckopsg])) A[fc62] |= BIT10;
-        if (ris_aanvraag(fc61, SYSTEM_ITF, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisastart61mveh1], PRM[prmrisaend61mveh1], SCH[schrisgeencheckopsg])) A[fc61] |= BIT10;
-        if (ris_aanvraag(fc38, SYSTEM_ITF, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisastart38vtg2], PRM[prmrisaend38vtg2], SCH[schrisgeencheckopsg])) A[fc38] |= BIT10;
-        if (ris_aanvraag(fc38, SYSTEM_ITF, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisastart38vtg1], PRM[prmrisaend38vtg1], SCH[schrisgeencheckopsg])) A[fc38] |= BIT10;
-    #endif
-
-        /* aanvragen RIS schakelbaar, 1 schakelaar voor het schakelen van alle aanvragen */
-        if (!SCH[schris_aanvraag])
+    /* aanvragen RIS schakelbaar, 1 schakelaar voor het schakelen van alle aanvragen */
+    if (!SCH[schrisaanvraag])
+    {
+        for (fc = 0; fc < FCMAX; ++fc)
         {
-           for (i = 0; i < FCMAX; ++i)
-           {
-              A[i] &= ~BIT10;
-           }
+            A[fc] &= ~BIT10;
         }
-
-        /* geen wachtstand aanvraag bij file stroomafwaarts */
-        if (IH[hfileFile68af] && !G[fc08]) A[fc08] &= ~BIT2;
-        if (IH[hfileFile68af] && !G[fc11]) A[fc11] &= ~BIT2;
-
-        /* geen mee aanvraag bij file stroomafwaarts */
-        if (IH[hfileFile68af] && !G[fc08]) A[fc08] &= ~BIT4;
-        if (IH[hfileFile68af] && !G[fc11]) A[fc11] &= ~BIT4;
+    }
+    #endif
 
     Aanvragen_Add();
 }
@@ -1037,27 +1035,26 @@ void Wachtgroen(void)
     if (IH[hfileFile68af]) RW[fc08] &= ~BIT4;
     if (IH[hfileFile68af]) RW[fc11] &= ~BIT4;
 
-    /* geen wachtstand bij file stroomafwaarts */
+    /* Geen wachtstand bij file stroomafwaarts */
     if (IH[hfileFile68af]) WS[fc08] &= ~BIT4;
     if (IH[hfileFile68af]) WS[fc11] &= ~BIT4;
- 
+
     Wachtgroen_Add();
 }
 void Meetkriterium(void)
 {
-   int i;
-   int fc;
-#ifdef TDHAMAX
-   int d;
+#if (defined TDHAMAX)
+    int d;
 #endif
+    int fc;
 
 #ifdef TDHAMAX
-      /* TDH_max vullen bij gebruik van TDHAMAX */
-      for (d = 0; d < DP_MAX; ++d)
-      {
-         TDH_max[d] = TDHA_max[d];
-      }
-#endif
+    /* TDH_max vullen bij gebruik van TDHAMAX */
+    for (d = 0; d < DP_MAX; ++d)
+    {
+        TDH_max[d] = TDHA_max[d];
+    }
+#endif // TDHAMAX
 
     meetkriterium2_prm_va_arg((count)fc02, (count)tkm02, (count)mmk02, 
                              (va_boolv)TDH[d02_1a], (va_mulv)PRM[prmmk02_1a],
@@ -1193,27 +1190,31 @@ void Meetkriterium(void)
         if (ris_verlengen(fc33, SYSTEM_ITF, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisvstart33vtg2], PRM[prmrisvend33vtg2], SCH[schrisgeencheckopsg])) MK[fc33] |= BIT10;
         if (ris_verlengen(fc34, SYSTEM_ITF, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisvstart34vtg1], PRM[prmrisvend34vtg1], SCH[schrisgeencheckopsg])) MK[fc34] |= BIT10;
         if (ris_verlengen(fc34, SYSTEM_ITF, PRM[prmrislaneid34_2], RIS_PEDESTRIAN, PRM[prmrisvstart34vtg2], PRM[prmrisvend34vtg2], SCH[schrisgeencheckopsg])) MK[fc34] |= BIT10;
+        if (ris_verlengen(fc38, SYSTEM_ITF, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg1], PRM[prmrisvend38vtg1], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
+        if (ris_verlengen(fc38, SYSTEM_ITF, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg2], PRM[prmrisvend38vtg2], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
+        if (ris_verlengen(fc61, SYSTEM_ITF, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisvstart61mveh1], PRM[prmrisvend61mveh1], SCH[schrisgeencheckopsg])) MK[fc61] |= BIT10;
+        if (ris_verlengen(fc62, SYSTEM_ITF, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh1], PRM[prmrisvend62mveh1], SCH[schrisgeencheckopsg])) MK[fc62] |= BIT10;
+        if (ris_verlengen(fc62, SYSTEM_ITF, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh2], PRM[prmrisvend62mveh2], SCH[schrisgeencheckopsg])) MK[fc62] |= BIT10;
+        if (ris_verlengen(fc67, SYSTEM_ITF, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisvstart67mveh1], PRM[prmrisvend67mveh1], SCH[schrisgeencheckopsg])) MK[fc67] |= BIT10;
+        if (ris_verlengen(fc68, SYSTEM_ITF, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh1], PRM[prmrisvend68mveh1], SCH[schrisgeencheckopsg])) MK[fc68] |= BIT10;
         if (ris_verlengen(fc84, SYSTEM_ITF, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg])) MK[fc84] |= BIT10;
         if (ris_verlengen(fc82, SYSTEM_ITF, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisvstart82fts1], PRM[prmrisvend82fts1], SCH[schrisgeencheckopsg])) MK[fc82] |= BIT10;
         if (ris_verlengen(fc81, SYSTEM_ITF, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisvstart81fts1], PRM[prmrisvend81fts1], SCH[schrisgeencheckopsg])) MK[fc81] |= BIT10;
         if (ris_verlengen(fc68, SYSTEM_ITF, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh2], PRM[prmrisvend68mveh2], SCH[schrisgeencheckopsg])) MK[fc68] |= BIT10;
-        if (ris_verlengen(fc68, SYSTEM_ITF, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh1], PRM[prmrisvend68mveh1], SCH[schrisgeencheckopsg])) MK[fc68] |= BIT10;
-        if (ris_verlengen(fc67, SYSTEM_ITF, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisvstart67mveh1], PRM[prmrisvend67mveh1], SCH[schrisgeencheckopsg])) MK[fc67] |= BIT10;
-        if (ris_verlengen(fc62, SYSTEM_ITF, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh2], PRM[prmrisvend62mveh2], SCH[schrisgeencheckopsg])) MK[fc62] |= BIT10;
-        if (ris_verlengen(fc62, SYSTEM_ITF, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh1], PRM[prmrisvend62mveh1], SCH[schrisgeencheckopsg])) MK[fc62] |= BIT10;
-        if (ris_verlengen(fc61, SYSTEM_ITF, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisvstart61mveh1], PRM[prmrisvend61mveh1], SCH[schrisgeencheckopsg])) MK[fc61] |= BIT10;
-        if (ris_verlengen(fc38, SYSTEM_ITF, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg2], PRM[prmrisvend38vtg2], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
-        if (ris_verlengen(fc38, SYSTEM_ITF, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg1], PRM[prmrisvend38vtg1], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
     #endif
 
-        /* verlengen RIS schakelbaar, 1 schakelaar voor het schakelen van alle verlengfuncties */
-        if (!SCH[schris_verlengen])
+    /* verlengen RIS schakelbaar, 1 schakelaar voor het schakelen van alle verlengfuncties */
+    if (!SCH[schrisverlengen])
+    {
+        for (fc = 0; fc < FCMAX; ++fc)
         {
-           for (i = 0; i < FCMAX; ++i)
-           {
-              MK[i] &= ~BIT10;
-           }
+            MK[fc] &= ~BIT10;
         }
+    }
+    
+    
+    
+    
 
     hiaattijden_verlenging(IH[hgeendynhiaat02], SCH[schedkop_02], FALSE, mmk02, IH[hopdrempelen02], fc02, 
         1, d02_1a, t02_1a_1, t02_1a_2, ttdh_02_1a_1, ttdh_02_1a_2, tmax_02_1a, prmspringverleng_02_1a, hverleng_02_1a, 
@@ -1236,15 +1237,15 @@ void Meetkriterium(void)
         2, d08_4b, t08_4b_1, t08_4b_2, ttdh_08_4b_1, ttdh_08_4b_2, tmax_08_4b, prmspringverleng_08_4b, hverleng_08_4b, 
         END);
     hiaattijden_verlenging(IH[hgeendynhiaat09], SCH[schedkop_09], FALSE, mmk09, IH[hopdrempelen09], fc09, 
-        1, d09_1, t09_1_1, t09_1_2, ttdh_09_1_1, ttdh_09_1_2, tmax_09_1, prmspringverleng_09_1, hverleng_09_1,
-        1, d09_2, t09_2_1, t09_2_2, ttdh_09_2_1, ttdh_09_2_2, tmax_09_2, prmspringverleng_09_2, hverleng_09_2,
-        1, d09_3, t09_3_1, t09_3_2, ttdh_09_3_1, ttdh_09_3_2, tmax_09_3, prmspringverleng_09_3, hverleng_09_3,
+        1, d09_1, t09_1_1, t09_1_2, ttdh_09_1_1, ttdh_09_1_2, tmax_09_1, prmspringverleng_09_1, hverleng_09_1, 
+        1, d09_2, t09_2_1, t09_2_2, ttdh_09_2_1, ttdh_09_2_2, tmax_09_2, prmspringverleng_09_2, hverleng_09_2, 
+        1, d09_3, t09_3_1, t09_3_2, ttdh_09_3_1, ttdh_09_3_2, tmax_09_3, prmspringverleng_09_3, hverleng_09_3, 
         END);
     hiaattijden_verlenging(IH[hgeendynhiaat11], SCH[schedkop_11], FALSE, mmk11, IH[hopdrempelen11], fc11, 
-        1, d11_1, t11_1_1, t11_1_2, ttdh_11_1_1, ttdh_11_1_2, tmax_11_1, prmspringverleng_11_1, hverleng_11_1,
-        1, d11_2, t11_2_1, t11_2_2, ttdh_11_2_1, ttdh_11_2_2, tmax_11_2, prmspringverleng_11_2, hverleng_11_2,
-        1, d11_3, t11_3_1, t11_3_2, ttdh_11_3_1, ttdh_11_3_2, tmax_11_3, prmspringverleng_11_3, hverleng_11_3,
-        1, d11_4, t11_4_1, t11_4_2, ttdh_11_4_1, ttdh_11_4_2, tmax_11_4, prmspringverleng_11_4, hverleng_11_4,
+        1, d11_1, t11_1_1, t11_1_2, ttdh_11_1_1, ttdh_11_1_2, tmax_11_1, prmspringverleng_11_1, hverleng_11_1, 
+        1, d11_2, t11_2_1, t11_2_2, ttdh_11_2_1, ttdh_11_2_2, tmax_11_2, prmspringverleng_11_2, hverleng_11_2, 
+        1, d11_3, t11_3_1, t11_3_2, ttdh_11_3_1, ttdh_11_3_2, tmax_11_3, prmspringverleng_11_3, hverleng_11_3, 
+        1, d11_4, t11_4_1, t11_4_2, ttdh_11_4_1, ttdh_11_4_2, tmax_11_4, prmspringverleng_11_4, hverleng_11_4, 
         END);
 
     Meetkriterium_Add();
@@ -1767,7 +1768,7 @@ void FileVerwerking(void)
     /* reset bitsturing */
     for (fc = 0; fc < FCMAX; ++fc)
     {
-        Z[fc]  &= ~BIT5;
+        Z[fc] &= ~BIT5;
         BL[fc] &= ~BIT5;
     }
 
@@ -1801,24 +1802,22 @@ void FileVerwerking(void)
                                  7, TVGA_max[fc11], PRM[prmmg2_11], PRM[prmmg3_11], PRM[prmmg4_11], PRM[prmmg5_11], PRM[prmmg6_11], PRM[prmmg7_11]);
     }
 
-    /* Afkappen op tijdens file ingreep File68af */
-    /* afkappen fase 08 */
+    /* Afkappen tijdens file ingreep File68af */
+    /* Eenmalige afkappen fase 08 op start file ingreep */
     RT[tafkmingroen08fileFile68af] = SH[hfileFile68af] && T_max[tafkmingroen08fileFile68af];
-    //DEZE ALS MAXGROEN IS AANGEVINKT RT[tmaxgroen08fileFile68af] = SG[fc08] && T_max[tmaxgroen08fileFile68af];
-
+    /* Afkappen fase 08 op max. groentijd tijdens file ingreep */
+    RT[tmaxgroen08fileFile68af] = SG[fc08] && T_max[tmaxgroen08fileFile68af];
     if (G[fc08] && IH[hfileFile68af])
     {
-       if (!RT[tafkmingroen08fileFile68af] && !T[tafkmingroen08fileFile68af] /*//DEZE ALS MAXGROEN IS AANGEVINKT && !RT[tmaxgroen08fileFile68af] && !T[tmaxgroen08fileFile68af]*/) Z[fc08] |= BIT5;
+        if (!RT[tafkmingroen08fileFile68af] && !T[tafkmingroen08fileFile68af] || !RT[tmaxgroen08fileFile68af] && !T[tmaxgroen08fileFile68af]) Z[fc08] |= BIT5;
     }
-
-    /* Afkappen op tijdens file ingreep File68af */
-    /* afkappen fase 11 */
+    /* Eenmalige afkappen fase 11 op start file ingreep */
     RT[tafkmingroen11fileFile68af] = SH[hfileFile68af] && T_max[tafkmingroen11fileFile68af];
-    //DEZE ALS MAXGROEN IS AANGEVINKT RT[tmaxgroen08fileFile68af] = SG[fc11] && T_max[tmaxgroen11fileFile68af];
-
+    /* Afkappen fase 11 op max. groentijd tijdens file ingreep */
+    RT[tmaxgroen11fileFile68af] = SG[fc11] && T_max[tmaxgroen11fileFile68af];
     if (G[fc11] && IH[hfileFile68af])
     {
-       if (!RT[tafkmingroen11fileFile68af] && !T[tafkmingroen11fileFile68af] /*//DEZE ALS MAXGROEN IS AANGEVINKT && !RT[tmaxgroen11fileFile68af] && !T[tmaxgroen11fileFile68af]*/) Z[fc11] |= BIT5;
+        if (!RT[tafkmingroen11fileFile68af] && !T[tafkmingroen11fileFile68af] || !RT[tmaxgroen11fileFile68af] && !T[tmaxgroen11fileFile68af]) Z[fc11] |= BIT5;
     }
 
     /* Minimale roodtijden tijdens file ingreep File68af */
@@ -1826,28 +1825,25 @@ void FileVerwerking(void)
     RT[tminrood08fileFile68af] = EGL[fc08] && T_max[tminrood08fileFile68af];
     if (R[fc08] && T[tminrood08fileFile68af] && IH[hfileFile68af])
     {
-       BL[fc08] |= BIT5;
+        BL[fc08] |= BIT5;
     }
-
-    /* Minimale roodtijden tijdens file ingreep File68af */
     /* Minimale roodtijd fase 11 */
     RT[tminrood11fileFile68af] = EGL[fc11] && T_max[tminrood11fileFile68af];
     if (R[fc11] && T[tminrood11fileFile68af] && IH[hfileFile68af])
     {
-       BL[fc11] |= BIT5;
+        BL[fc11] |= BIT5;
     }
 
-    /* als hulpdienst ingreep aktief is op kruispunt arm dan nooit uitstel of afbreken als gevolg van file stroomafwaarts */
+    /* Als hulpdienst ingreep aktief is op kruispunt arm dan nooit uitstel of afbreken als gevolg van file stroomafwaarts */
     if (IH[hhd08])
     {
-       Z[fc08] &= ~BIT5;
-       BL[fc08] &= ~BIT5;
+        Z[fc08] &= ~BIT5;
+        BL[fc08] &= ~BIT5;
     }
-
     if (IH[hhd11])
     {
-       Z[fc11] &= ~BIT5;
-       BL[fc11] &= ~BIT5;
+        Z[fc11] &= ~BIT5;
+        BL[fc11] &= ~BIT5;
     }
 
     FileVerwerking_Add();
@@ -2059,7 +2055,6 @@ void DetectieStoring(void)
 
 void init_application(void)
 {
-
 #if (defined AUTOMAAT || defined AUTOMAAT_TEST)
     int i;
 #endif
@@ -2119,6 +2114,10 @@ void init_application(void)
             /* ---------------------------------------------------- */
             RIS_DIPRM[RIS_DIPRM_ALL] = 1;
         #endif
+    #endif
+
+    #if (CCOL_V >= 110 && !defined TDHAMAX) || (CCOL_V < 110)
+        init_tdhdyn();
     #endif
 
     post_init_application();
