@@ -15,22 +15,24 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    06-07-2021   Cyril       basisversie
- * 1.1.0    27-07-2021   Peter       TISG-matrix toegevoegd
- * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
- * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
- * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
- * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
- * 1.10.0   18-10-2021   Cyril       Interne koppeling geoptimaliseerd
- * 1.11.0   21-10-2021   Cyril       Nieuwe versie TLCGen (21102021 beta)
- * 1.12.0   02-11-2021   Cyril       Nieuwe versie TLCGen (01112021 beta)
+ * 2.0.0    05-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
  *
  ************************************************************************************/
 
 /* aantal ingangs-/uitgangs signalen */
 /* --------------------------------- */
+    #define ushdinm02_1 (USMAX + 0)
+    #define ushdinm03_1 (USMAX + 1)
+    #define ushdinm05_1 (USMAX + 2)
+    #define ushdinm08_1 (USMAX + 3)
+    #define ushdinm09_1 (USMAX + 4)
+    #define ushdinm11_1 (USMAX + 5)
+    #define ushdinm61_1 (USMAX + 6)
+    #define ushdinm62_1 (USMAX + 7)
+    #define ushdinm67_1 (USMAX + 8)
+    #define ushdinm68_1 (USMAX + 9)
 
-    #define USDPLMAX (USMAX + 0)
+    #define USDPLMAX (USMAX + 10)
     #define ISDPLMAX (ISMAX + 0)
 
 /* include files */
@@ -145,46 +147,46 @@ void display_parameters(void)
     X_is[d84_1] = 468; Y_is[d84_1] = 240;
     X_is[dk84] = 453; Y_is[dk84] = 239;
 #if (!defined AUTOMAAT_TEST)
-    X_is[ddummykarin02bus] = 39; Y_is[ddummykarin02bus] = 150;
-    X_is[ddummykarin03bus] = 39; Y_is[ddummykarin03bus] = 163;
-    X_is[ddummykarin05bus] = 39; Y_is[ddummykarin05bus] = 178;
-    X_is[ddummykarin08bus] = 38; Y_is[ddummykarin08bus] = 193;
-    X_is[ddummykarin09bus] = 39; Y_is[ddummykarin09bus] = 205;
-    X_is[ddummykarin11bus] = 39; Y_is[ddummykarin11bus] = 219;
-    X_is[ddummykarin61bus] = 39; Y_is[ddummykarin61bus] = 233;
-    X_is[ddummykarin62bus] = 38; Y_is[ddummykarin62bus] = 247;
-    X_is[ddummykarin67bus] = 39; Y_is[ddummykarin67bus] = 261;
-    X_is[ddummykarin68bus] = 39; Y_is[ddummykarin68bus] = 275;
-    X_is[ddummykaruit02bus] = 51; Y_is[ddummykaruit02bus] = 150;
-    X_is[ddummykaruit03bus] = 51; Y_is[ddummykaruit03bus] = 165;
-    X_is[ddummykaruit05bus] = 53; Y_is[ddummykaruit05bus] = 179;
-    X_is[ddummykaruit08bus] = 50; Y_is[ddummykaruit08bus] = 192;
-    X_is[ddummykaruit09bus] = 51; Y_is[ddummykaruit09bus] = 205;
-    X_is[ddummykaruit11bus] = 52; Y_is[ddummykaruit11bus] = 221;
-    X_is[ddummykaruit61bus] = 51; Y_is[ddummykaruit61bus] = 233;
-    X_is[ddummykaruit62bus] = 50; Y_is[ddummykaruit62bus] = 246;
-    X_is[ddummykaruit67bus] = 53; Y_is[ddummykaruit67bus] = 262;
-    X_is[ddummykaruit68bus] = 52; Y_is[ddummykaruit68bus] = 275;
-    X_is[ddummyhdkarin02] = 87; Y_is[ddummyhdkarin02] = 151;
-    X_is[ddummyhdkaruit02] = 100; Y_is[ddummyhdkaruit02] = 150;
-    X_is[ddummyhdkarin03] = 86; Y_is[ddummyhdkarin03] = 164;
-    X_is[ddummyhdkaruit03] = 101; Y_is[ddummyhdkaruit03] = 164;
-    X_is[ddummyhdkarin05] = 87; Y_is[ddummyhdkarin05] = 179;
-    X_is[ddummyhdkaruit05] = 102; Y_is[ddummyhdkaruit05] = 177;
-    X_is[ddummyhdkarin08] = 86; Y_is[ddummyhdkarin08] = 193;
-    X_is[ddummyhdkaruit08] = 99; Y_is[ddummyhdkaruit08] = 191;
-    X_is[ddummyhdkarin09] = 89; Y_is[ddummyhdkarin09] = 206;
-    X_is[ddummyhdkaruit09] = 102; Y_is[ddummyhdkaruit09] = 207;
-    X_is[ddummyhdkarin11] = 86; Y_is[ddummyhdkarin11] = 220;
-    X_is[ddummyhdkaruit11] = 101; Y_is[ddummyhdkaruit11] = 220;
-    X_is[ddummyhdkarin61] = 86; Y_is[ddummyhdkarin61] = 234;
-    X_is[ddummyhdkaruit61] = 99; Y_is[ddummyhdkaruit61] = 234;
-    X_is[ddummyhdkarin62] = 89; Y_is[ddummyhdkarin62] = 248;
-    X_is[ddummyhdkaruit62] = 100; Y_is[ddummyhdkaruit62] = 249;
-    X_is[ddummyhdkarin67] = 88; Y_is[ddummyhdkarin67] = 263;
-    X_is[ddummyhdkaruit67] = 100; Y_is[ddummyhdkaruit67] = 262;
-    X_is[ddummyhdkarin68] = 87; Y_is[ddummyhdkarin68] = 276;
-    X_is[ddummyhdkaruit68] = 100; Y_is[ddummyhdkaruit68] = 276;
+    X_is[ddummykarin02bus] = 781; Y_is[ddummykarin02bus] = 32;
+    X_is[ddummykarin03bus] = 781; Y_is[ddummykarin03bus] = 46;
+    X_is[ddummykarin05bus] = 784; Y_is[ddummykarin05bus] = 59;
+    X_is[ddummykarin08bus] = 779; Y_is[ddummykarin08bus] = 72;
+    X_is[ddummykarin09bus] = 782; Y_is[ddummykarin09bus] = 84;
+    X_is[ddummykarin11bus] = 782; Y_is[ddummykarin11bus] = 99;
+    X_is[ddummykarin61bus] = 782; Y_is[ddummykarin61bus] = 112;
+    X_is[ddummykarin62bus] = 778; Y_is[ddummykarin62bus] = 123;
+    X_is[ddummykarin67bus] = 779; Y_is[ddummykarin67bus] = 136;
+    X_is[ddummykarin68bus] = 784; Y_is[ddummykarin68bus] = 152;
+    X_is[ddummykaruit02bus] = 796; Y_is[ddummykaruit02bus] = 33;
+    X_is[ddummykaruit03bus] = 796; Y_is[ddummykaruit03bus] = 45;
+    X_is[ddummykaruit05bus] = 793; Y_is[ddummykaruit05bus] = 60;
+    X_is[ddummykaruit08bus] = 799; Y_is[ddummykaruit08bus] = 72;
+    X_is[ddummykaruit09bus] = 794; Y_is[ddummykaruit09bus] = 85;
+    X_is[ddummykaruit11bus] = 799; Y_is[ddummykaruit11bus] = 100;
+    X_is[ddummykaruit61bus] = 801; Y_is[ddummykaruit61bus] = 114;
+    X_is[ddummykaruit62bus] = 798; Y_is[ddummykaruit62bus] = 125;
+    X_is[ddummykaruit67bus] = 796; Y_is[ddummykaruit67bus] = 137;
+    X_is[ddummykaruit68bus] = 796; Y_is[ddummykaruit68bus] = 149;
+    X_is[ddummyhdkarin02] = 815; Y_is[ddummyhdkarin02] = 32;
+    X_is[ddummyhdkaruit02] = 826; Y_is[ddummyhdkaruit02] = 32;
+    X_is[ddummyhdkarin03] = 816; Y_is[ddummyhdkarin03] = 44;
+    X_is[ddummyhdkaruit03] = 827; Y_is[ddummyhdkaruit03] = 45;
+    X_is[ddummyhdkarin05] = 809; Y_is[ddummyhdkarin05] = 61;
+    X_is[ddummyhdkaruit05] = 830; Y_is[ddummyhdkaruit05] = 60;
+    X_is[ddummyhdkarin08] = 815; Y_is[ddummyhdkarin08] = 73;
+    X_is[ddummyhdkaruit08] = 829; Y_is[ddummyhdkaruit08] = 73;
+    X_is[ddummyhdkarin09] = 815; Y_is[ddummyhdkarin09] = 88;
+    X_is[ddummyhdkaruit09] = 834; Y_is[ddummyhdkaruit09] = 88;
+    X_is[ddummyhdkarin11] = 815; Y_is[ddummyhdkarin11] = 99;
+    X_is[ddummyhdkaruit11] = 827; Y_is[ddummyhdkaruit11] = 98;
+    X_is[ddummyhdkarin61] = 814; Y_is[ddummyhdkarin61] = 112;
+    X_is[ddummyhdkaruit61] = 827; Y_is[ddummyhdkaruit61] = 112;
+    X_is[ddummyhdkarin62] = 817; Y_is[ddummyhdkarin62] = 125;
+    X_is[ddummyhdkaruit62] = 831; Y_is[ddummyhdkaruit62] = 124;
+    X_is[ddummyhdkarin67] = 816; Y_is[ddummyhdkarin67] = 139;
+    X_is[ddummyhdkaruit67] = 830; Y_is[ddummyhdkaruit67] = 137;
+    X_is[ddummyhdkarin68] = 814; Y_is[ddummyhdkarin68] = 150;
+    X_is[ddummyhdkaruit68] = 830; Y_is[ddummyhdkaruit68] = 150;
 #endif
 
     /* overige uitgangen */
@@ -196,64 +198,106 @@ void display_parameters(void)
     X_us[ussegm5] = 393; Y_us[ussegm5] = 38;
     X_us[ussegm6] = 413; Y_us[ussegm6] = 38;
     X_us[ussegm7] = 403; Y_us[ussegm7] = 49;
-    X_us[usML1] = 286; Y_us[usML1] = 12;
-    X_us[usML2] = 286; Y_us[usML2] = 26;
-    X_us[usML3] = 285; Y_us[usML3] = 41;
-    X_us[usML4] = 286; Y_us[usML4] = 53;
+    X_us[usML1] = 574; Y_us[usML1] = 143;
+    X_us[usML2] = 574; Y_us[usML2] = 156;
+    X_us[usML3] = 572; Y_us[usML3] = 170;
+    X_us[usML4] = 572; Y_us[usML4] = 185;
+    X_us[usML5] = 573; Y_us[usML5] = 197;
     X_us[usfileFile68af] = 524; Y_us[usfileFile68af] = 101;
-    X_us[usovtevroeg02] = 209; Y_us[usovtevroeg02] = 170;
-    X_us[usovoptijd02] = 208; Y_us[usovoptijd02] = 183;
-    X_us[usovtelaat02] = 208; Y_us[usovtelaat02] = 198;
-    X_us[usovtevroeg03] = 207; Y_us[usovtevroeg03] = 168;
-    X_us[usovoptijd03] = 208; Y_us[usovoptijd03] = 183;
-    X_us[usovtelaat03] = 209; Y_us[usovtelaat03] = 197;
-    X_us[usovtevroeg05] = 207; Y_us[usovtevroeg05] = 169;
-    X_us[usovoptijd05] = 208; Y_us[usovoptijd05] = 184;
-    X_us[usovtelaat05] = 207; Y_us[usovtelaat05] = 197;
-    X_us[usovtevroeg08] = 207; Y_us[usovtevroeg08] = 170;
-    X_us[usovoptijd08] = 207; Y_us[usovoptijd08] = 183;
-    X_us[usovtelaat08] = 209; Y_us[usovtelaat08] = 197;
-    X_us[usovtevroeg09] = 207; Y_us[usovtevroeg09] = 169;
-    X_us[usovoptijd09] = 208; Y_us[usovoptijd09] = 184;
-    X_us[usovtelaat09] = 208; Y_us[usovtelaat09] = 197;
-    X_us[usovtevroeg11] = 207; Y_us[usovtevroeg11] = 169;
-    X_us[usovoptijd11] = 207; Y_us[usovoptijd11] = 183;
-    X_us[usovtelaat11] = 207; Y_us[usovtelaat11] = 198;
-    X_us[usovtevroeg61] = 207; Y_us[usovtevroeg61] = 170;
-    X_us[usovoptijd61] = 208; Y_us[usovoptijd61] = 183;
-    X_us[usovtelaat61] = 208; Y_us[usovtelaat61] = 198;
-    X_us[usovtevroeg62] = 207; Y_us[usovtevroeg62] = 170;
-    X_us[usovoptijd62] = 208; Y_us[usovoptijd62] = 184;
-    X_us[usovtelaat62] = 208; Y_us[usovtelaat62] = 198;
-    X_us[usovtevroeg67] = 208; Y_us[usovtevroeg67] = 170;
-    X_us[usovoptijd67] = 209; Y_us[usovoptijd67] = 184;
-    X_us[usovtelaat67] = 208; Y_us[usovtelaat67] = 198;
-    X_us[usovtevroeg68] = 209; Y_us[usovtevroeg68] = 169;
-    X_us[usovoptijd68] = 208; Y_us[usovoptijd68] = 183;
-    X_us[usovtelaat68] = 208; Y_us[usovtelaat68] = 197;
-    X_us[usmaxwt] = 209; Y_us[usmaxwt] = 149;
-    X_us[uskarmelding] = 206; Y_us[uskarmelding] = 125;
-    X_us[uskarog] = 207; Y_us[uskarog] = 138;
-    X_us[usovinm02] = 62; Y_us[usovinm02] = 149;
-    X_us[usovinm03] = 65; Y_us[usovinm03] = 164;
-    X_us[usovinm05] = 64; Y_us[usovinm05] = 178;
-    X_us[usovinm08] = 63; Y_us[usovinm08] = 191;
-    X_us[usovinm09] = 65; Y_us[usovinm09] = 206;
-    X_us[usovinm11] = 63; Y_us[usovinm11] = 220;
-    X_us[usovinm61] = 63; Y_us[usovinm61] = 234;
-    X_us[usovinm62] = 64; Y_us[usovinm62] = 248;
-    X_us[usovinm67] = 64; Y_us[usovinm67] = 261;
-    X_us[usovinm68] = 63; Y_us[usovinm68] = 275;
-    X_us[ushdinm02] = 110; Y_us[ushdinm02] = 150;
-    X_us[ushdinm03] = 112; Y_us[ushdinm03] = 163;
-    X_us[ushdinm05] = 112; Y_us[ushdinm05] = 177;
-    X_us[ushdinm08] = 112; Y_us[ushdinm08] = 190;
-    X_us[ushdinm09] = 111; Y_us[ushdinm09] = 206;
-    X_us[ushdinm11] = 112; Y_us[ushdinm11] = 218;
-    X_us[ushdinm61] = 112; Y_us[ushdinm61] = 236;
-    X_us[ushdinm62] = 112; Y_us[ushdinm62] = 247;
-    X_us[ushdinm67] = 112; Y_us[ushdinm67] = 263;
-    X_us[ushdinm68] = 111; Y_us[ushdinm68] = 275;
+    X_us[usplact] = 167; Y_us[usplact] = 205;
+    X_us[uskpact] = NG; Y_us[uskpact] = NG;
+    X_us[usmlact] = 167; Y_us[usmlact] = 191;
+    X_us[usmlpl] = NG; Y_us[usmlpl] = NG;
+    X_us[ustxtimer] = NG; Y_us[ustxtimer] = NG;
+    X_us[usklok] = NG; Y_us[usklok] = NG;
+    X_us[ushand] = NG; Y_us[ushand] = NG;
+    X_us[usplPL1] = 166; Y_us[usplPL1] = 221;
+    X_us[usplPL2] = 171; Y_us[usplPL2] = 232;
+    X_us[usplPL3] = 167; Y_us[usplPL3] = 245;
+    X_us[usovtevroeg02bus] = NG; Y_us[usovtevroeg02bus] = NG;
+    X_us[usovoptijd02bus] = NG; Y_us[usovoptijd02bus] = NG;
+    X_us[usovtelaat02bus] = NG; Y_us[usovtelaat02bus] = NG;
+    X_us[usovtevroeg03bus] = NG; Y_us[usovtevroeg03bus] = NG;
+    X_us[usovoptijd03bus] = NG; Y_us[usovoptijd03bus] = NG;
+    X_us[usovtelaat03bus] = NG; Y_us[usovtelaat03bus] = NG;
+    X_us[usovtevroeg05bus] = NG; Y_us[usovtevroeg05bus] = NG;
+    X_us[usovoptijd05bus] = NG; Y_us[usovoptijd05bus] = NG;
+    X_us[usovtelaat05bus] = NG; Y_us[usovtelaat05bus] = NG;
+    X_us[usovtevroeg08bus] = NG; Y_us[usovtevroeg08bus] = NG;
+    X_us[usovoptijd08bus] = NG; Y_us[usovoptijd08bus] = NG;
+    X_us[usovtelaat08bus] = NG; Y_us[usovtelaat08bus] = NG;
+    X_us[usovtevroeg09bus] = NG; Y_us[usovtevroeg09bus] = NG;
+    X_us[usovoptijd09bus] = NG; Y_us[usovoptijd09bus] = NG;
+    X_us[usovtelaat09bus] = NG; Y_us[usovtelaat09bus] = NG;
+    X_us[usovtevroeg11bus] = NG; Y_us[usovtevroeg11bus] = NG;
+    X_us[usovoptijd11bus] = NG; Y_us[usovoptijd11bus] = NG;
+    X_us[usovtelaat11bus] = NG; Y_us[usovtelaat11bus] = NG;
+    X_us[usovtevroeg61bus] = NG; Y_us[usovtevroeg61bus] = NG;
+    X_us[usovoptijd61bus] = NG; Y_us[usovoptijd61bus] = NG;
+    X_us[usovtelaat61bus] = NG; Y_us[usovtelaat61bus] = NG;
+    X_us[usovtevroeg62bus] = NG; Y_us[usovtevroeg62bus] = NG;
+    X_us[usovoptijd62bus] = NG; Y_us[usovoptijd62bus] = NG;
+    X_us[usovtelaat62bus] = NG; Y_us[usovtelaat62bus] = NG;
+    X_us[usovtevroeg67bus] = NG; Y_us[usovtevroeg67bus] = NG;
+    X_us[usovoptijd67bus] = NG; Y_us[usovoptijd67bus] = NG;
+    X_us[usovtelaat67bus] = NG; Y_us[usovtelaat67bus] = NG;
+    X_us[usovtevroeg68bus] = NG; Y_us[usovtevroeg68bus] = NG;
+    X_us[usovoptijd68bus] = NG; Y_us[usovoptijd68bus] = NG;
+    X_us[usovtelaat68bus] = NG; Y_us[usovtelaat68bus] = NG;
+    X_us[usmaxwt] = 275; Y_us[usmaxwt] = 36;
+    X_us[uskarmelding] = 276; Y_us[uskarmelding] = 11;
+    X_us[uskarog] = 277; Y_us[uskarog] = 24;
+    X_us[usovinm02bus] = 151; Y_us[usovinm02bus] = 30;
+    X_us[usovinm02risov] = 50; Y_us[usovinm02risov] = 33;
+    X_us[usovinm02risvrw] = 84; Y_us[usovinm02risvrw] = 34;
+    X_us[usovinm03bus] = 149; Y_us[usovinm03bus] = 44;
+    X_us[usovinm03risov] = 52; Y_us[usovinm03risov] = 45;
+    X_us[usovinm03risvrw] = 83; Y_us[usovinm03risvrw] = 45;
+    X_us[usovinm05bus] = 152; Y_us[usovinm05bus] = 59;
+    X_us[usovinm05risov] = 52; Y_us[usovinm05risov] = 59;
+    X_us[usovinm05risvrw] = 82; Y_us[usovinm05risvrw] = 60;
+    X_us[usovinm08bus] = 152; Y_us[usovinm08bus] = 72;
+    X_us[usovinm08risov] = 54; Y_us[usovinm08risov] = 72;
+    X_us[usovinm08risvrw] = 83; Y_us[usovinm08risvrw] = 72;
+    X_us[usovinm09bus] = 149; Y_us[usovinm09bus] = 84;
+    X_us[usovinm09risov] = 53; Y_us[usovinm09risov] = 87;
+    X_us[usovinm09risvrw] = 85; Y_us[usovinm09risvrw] = 84;
+    X_us[usovinm11bus] = 151; Y_us[usovinm11bus] = 98;
+    X_us[usovinm11risov] = 52; Y_us[usovinm11risov] = 98;
+    X_us[usovinm11risvrw] = 86; Y_us[usovinm11risvrw] = 96;
+    X_us[usovinm22fiets] = 277; Y_us[usovinm22fiets] = 144;
+    X_us[usovinm61bus] = 153; Y_us[usovinm61bus] = 108;
+    X_us[usovinm61risov] = 50; Y_us[usovinm61risov] = 110;
+    X_us[usovinm61risvrw] = 85; Y_us[usovinm61risvrw] = 108;
+    X_us[usovinm62bus] = 153; Y_us[usovinm62bus] = 122;
+    X_us[usovinm62risov] = 49; Y_us[usovinm62risov] = 123;
+    X_us[usovinm62risvrw] = 85; Y_us[usovinm62risvrw] = 123;
+    X_us[usovinm67bus] = 152; Y_us[usovinm67bus] = 137;
+    X_us[usovinm67risov] = 51; Y_us[usovinm67risov] = 137;
+    X_us[usovinm67risvrw] = 84; Y_us[usovinm67risvrw] = 136;
+    X_us[usovinm68bus] = 154; Y_us[usovinm68bus] = 152;
+    X_us[usovinm68risov] = 52; Y_us[usovinm68risov] = 149;
+    X_us[usovinm68risvrw] = 85; Y_us[usovinm68risvrw] = 150;
+    X_us[ushdinm02] = 66; Y_us[ushdinm02] = 31;
+    X_us[ushdinm02_1] = 167; Y_us[ushdinm02_1] = 29; NR_us[ushdinm02_1] = ushdinm02;
+    X_us[ushdinm03] = 70; Y_us[ushdinm03] = 44;
+    X_us[ushdinm03_1] = 167; Y_us[ushdinm03_1] = 45; NR_us[ushdinm03_1] = ushdinm03;
+    X_us[ushdinm05] = 67; Y_us[ushdinm05] = 58;
+    X_us[ushdinm05_1] = 169; Y_us[ushdinm05_1] = 59; NR_us[ushdinm05_1] = ushdinm05;
+    X_us[ushdinm08] = 68; Y_us[ushdinm08] = 70;
+    X_us[ushdinm08_1] = 169; Y_us[ushdinm08_1] = 71; NR_us[ushdinm08_1] = ushdinm08;
+    X_us[ushdinm09] = 66; Y_us[ushdinm09] = 85;
+    X_us[ushdinm09_1] = 166; Y_us[ushdinm09_1] = 85; NR_us[ushdinm09_1] = ushdinm09;
+    X_us[ushdinm11] = 71; Y_us[ushdinm11] = 99;
+    X_us[ushdinm11_1] = 168; Y_us[ushdinm11_1] = 98; NR_us[ushdinm11_1] = ushdinm11;
+    X_us[ushdinm61] = 66; Y_us[ushdinm61] = 112;
+    X_us[ushdinm61_1] = 172; Y_us[ushdinm61_1] = 110; NR_us[ushdinm61_1] = ushdinm61;
+    X_us[ushdinm62] = 65; Y_us[ushdinm62] = 124;
+    X_us[ushdinm62_1] = 166; Y_us[ushdinm62_1] = 122; NR_us[ushdinm62_1] = ushdinm62;
+    X_us[ushdinm67] = 68; Y_us[ushdinm67] = 134;
+    X_us[ushdinm67_1] = 167; Y_us[ushdinm67_1] = 136; NR_us[ushdinm67_1] = ushdinm67;
+    X_us[ushdinm68] = 66; Y_us[ushdinm68] = 148;
+    X_us[ushdinm68_1] = 168; Y_us[ushdinm68_1] = 147; NR_us[ushdinm68_1] = ushdinm68;
     X_us[usperdef] = 625; Y_us[usperdef] = 13;
     X_us[usper1] = 625; Y_us[usper1] = 28;
     X_us[usper2] = 625; Y_us[usper2] = 42;
@@ -261,7 +305,7 @@ void display_parameters(void)
     X_us[usper4] = 624; Y_us[usper4] = 69;
     X_us[usper5] = 624; Y_us[usper5] = 84;
     X_us[usper6] = 625; Y_us[usper6] = 97;
-    X_us[usrgv] = 207; Y_us[usrgv] = 223;
+    X_us[usrgv] = 275; Y_us[usrgv] = 107;
     X_us[uswtk21] = 376; Y_us[uswtk21] = 219;
     X_us[uswtk22] = 434; Y_us[uswtk22] = 214;
     X_us[uswtk24] = 504; Y_us[uswtk24] = 301;
@@ -277,86 +321,91 @@ void display_parameters(void)
     X_us[uswtk34b] = 521; Y_us[uswtk34b] = 274;
     X_us[uswtk38a] = 249; Y_us[uswtk38a] = 441;
     X_us[uswtk38b] = 246; Y_us[uswtk38b] = 481;
-    X_us[uswtk81] = 380; Y_us[uswtk81] = 327;
+    X_us[uswtk81] = 381; Y_us[uswtk81] = 330;
     X_us[uswtk82] = 287; Y_us[uswtk82] = 331;
     X_us[uswtk84] = 454; Y_us[uswtk84] = 237;
+    X_us[usstarprogwissel] = NG; Y_us[usstarprogwissel] = NG;
+    X_us[usstarstar01] = 168; Y_us[usstarstar01] = 255;
 
     /* overige ingangen */
     /* ---------------- */
     X_is[isfix] = 625; Y_is[isfix] = 121;
+    X_is[isstar] = 154; Y_is[isstar] = 256;
 #if (!defined AUTOMAAT_TEST)
-    X_is[isris021car] = NG; Y_is[isris021car] = NG;
-    X_is[isris021bus] = NG; Y_is[isris021bus] = NG;
-    X_is[isris021special] = NG; Y_is[isris021special] = NG;
-    X_is[isris021heavytruck] = NG; Y_is[isris021heavytruck] = NG;
-    X_is[isris022car] = NG; Y_is[isris022car] = NG;
-    X_is[isris022bus] = NG; Y_is[isris022bus] = NG;
-    X_is[isris022special] = NG; Y_is[isris022special] = NG;
-    X_is[isris022heavytruck] = NG; Y_is[isris022heavytruck] = NG;
-    X_is[isris031car] = NG; Y_is[isris031car] = NG;
-    X_is[isris031bus] = NG; Y_is[isris031bus] = NG;
-    X_is[isris031special] = NG; Y_is[isris031special] = NG;
-    X_is[isris031heavytruck] = NG; Y_is[isris031heavytruck] = NG;
-    X_is[isris051car] = NG; Y_is[isris051car] = NG;
-    X_is[isris051bus] = NG; Y_is[isris051bus] = NG;
-    X_is[isris051special] = NG; Y_is[isris051special] = NG;
-    X_is[isris051heavytruck] = NG; Y_is[isris051heavytruck] = NG;
-    X_is[isris081car] = NG; Y_is[isris081car] = NG;
-    X_is[isris081bus] = NG; Y_is[isris081bus] = NG;
-    X_is[isris081special] = NG; Y_is[isris081special] = NG;
-    X_is[isris081heavytruck] = NG; Y_is[isris081heavytruck] = NG;
-    X_is[isris082car] = NG; Y_is[isris082car] = NG;
-    X_is[isris082bus] = NG; Y_is[isris082bus] = NG;
-    X_is[isris082special] = NG; Y_is[isris082special] = NG;
-    X_is[isris082heavytruck] = NG; Y_is[isris082heavytruck] = NG;
-    X_is[isris091car] = NG; Y_is[isris091car] = NG;
-    X_is[isris091bus] = NG; Y_is[isris091bus] = NG;
-    X_is[isris091special] = NG; Y_is[isris091special] = NG;
-    X_is[isris091heavytruck] = NG; Y_is[isris091heavytruck] = NG;
-    X_is[isris111car] = NG; Y_is[isris111car] = NG;
-    X_is[isris111bus] = NG; Y_is[isris111bus] = NG;
-    X_is[isris111special] = NG; Y_is[isris111special] = NG;
-    X_is[isris111heavytruck] = NG; Y_is[isris111heavytruck] = NG;
-    X_is[isris211cyclist] = NG; Y_is[isris211cyclist] = NG;
-    X_is[isris221cyclist] = NG; Y_is[isris221cyclist] = NG;
-    X_is[isris241cyclist] = NG; Y_is[isris241cyclist] = NG;
-    X_is[isris261cyclist] = NG; Y_is[isris261cyclist] = NG;
-    X_is[isris281cyclist] = NG; Y_is[isris281cyclist] = NG;
-    X_is[isris311pedestrian] = NG; Y_is[isris311pedestrian] = NG;
-    X_is[isris312pedestrian] = NG; Y_is[isris312pedestrian] = NG;
-    X_is[isris321pedestrian] = NG; Y_is[isris321pedestrian] = NG;
-    X_is[isris322pedestrian] = NG; Y_is[isris322pedestrian] = NG;
-    X_is[isris331pedestrian] = NG; Y_is[isris331pedestrian] = NG;
-    X_is[isris332pedestrian] = NG; Y_is[isris332pedestrian] = NG;
-    X_is[isris341pedestrian] = NG; Y_is[isris341pedestrian] = NG;
-    X_is[isris342pedestrian] = NG; Y_is[isris342pedestrian] = NG;
-    X_is[isris381pedestrian] = NG; Y_is[isris381pedestrian] = NG;
-    X_is[isris382pedestrian] = NG; Y_is[isris382pedestrian] = NG;
-    X_is[isris611car] = NG; Y_is[isris611car] = NG;
-    X_is[isris611bus] = NG; Y_is[isris611bus] = NG;
-    X_is[isris611special] = NG; Y_is[isris611special] = NG;
-    X_is[isris611heavytruck] = NG; Y_is[isris611heavytruck] = NG;
-    X_is[isris621car] = NG; Y_is[isris621car] = NG;
-    X_is[isris621bus] = NG; Y_is[isris621bus] = NG;
-    X_is[isris621special] = NG; Y_is[isris621special] = NG;
-    X_is[isris621heavytruck] = NG; Y_is[isris621heavytruck] = NG;
-    X_is[isris622car] = NG; Y_is[isris622car] = NG;
-    X_is[isris622bus] = NG; Y_is[isris622bus] = NG;
-    X_is[isris622special] = NG; Y_is[isris622special] = NG;
-    X_is[isris622heavytruck] = NG; Y_is[isris622heavytruck] = NG;
-    X_is[isris671car] = NG; Y_is[isris671car] = NG;
-    X_is[isris671bus] = NG; Y_is[isris671bus] = NG;
-    X_is[isris671special] = NG; Y_is[isris671special] = NG;
-    X_is[isris671heavytruck] = NG; Y_is[isris671heavytruck] = NG;
-    X_is[isris681car] = NG; Y_is[isris681car] = NG;
-    X_is[isris681bus] = NG; Y_is[isris681bus] = NG;
-    X_is[isris681special] = NG; Y_is[isris681special] = NG;
-    X_is[isris681heavytruck] = NG; Y_is[isris681heavytruck] = NG;
-    X_is[isris682car] = NG; Y_is[isris682car] = NG;
-    X_is[isris682bus] = NG; Y_is[isris682bus] = NG;
-    X_is[isris682special] = NG; Y_is[isris682special] = NG;
-    X_is[isris682heavytruck] = NG; Y_is[isris682heavytruck] = NG;
-    X_is[isris841cyclist] = NG; Y_is[isris841cyclist] = NG;
+    X_is[isris021car] = 680; Y_is[isris021car] = 35;
+    X_is[isris021bus] = 698; Y_is[isris021bus] = 34;
+    X_is[isris021special] = 711; Y_is[isris021special] = 34;
+    X_is[isris021heavytruck] = 729; Y_is[isris021heavytruck] = 31;
+    X_is[isris022car] = 677; Y_is[isris022car] = 45;
+    X_is[isris022bus] = 698; Y_is[isris022bus] = 47;
+    X_is[isris022special] = 710; Y_is[isris022special] = 45;
+    X_is[isris022heavytruck] = 728; Y_is[isris022heavytruck] = 45;
+    X_is[isris031car] = 680; Y_is[isris031car] = 59;
+    X_is[isris031bus] = 696; Y_is[isris031bus] = 59;
+    X_is[isris031special] = 708; Y_is[isris031special] = 59;
+    X_is[isris031heavytruck] = 727; Y_is[isris031heavytruck] = 57;
+    X_is[isris051car] = 679; Y_is[isris051car] = 72;
+    X_is[isris051bus] = 695; Y_is[isris051bus] = 72;
+    X_is[isris051special] = 712; Y_is[isris051special] = 73;
+    X_is[isris051heavytruck] = 727; Y_is[isris051heavytruck] = 73;
+    X_is[isris081car] = 679; Y_is[isris081car] = 87;
+    X_is[isris081bus] = 695; Y_is[isris081bus] = 86;
+    X_is[isris081special] = 714; Y_is[isris081special] = 86;
+    X_is[isris081heavytruck] = 730; Y_is[isris081heavytruck] = 85;
+    X_is[isris082car] = 679; Y_is[isris082car] = 99;
+    X_is[isris082bus] = 698; Y_is[isris082bus] = 99;
+    X_is[isris082special] = 711; Y_is[isris082special] = 99;
+    X_is[isris082heavytruck] = 732; Y_is[isris082heavytruck] = 99;
+    X_is[isris091car] = 679; Y_is[isris091car] = 111;
+    X_is[isris091bus] = 691; Y_is[isris091bus] = 109;
+    X_is[isris091special] = 711; Y_is[isris091special] = 111;
+    X_is[isris091heavytruck] = 727; Y_is[isris091heavytruck] = 112;
+    X_is[isris111car] = 679; Y_is[isris111car] = 124;
+    X_is[isris111bus] = 693; Y_is[isris111bus] = 124;
+    X_is[isris111special] = 707; Y_is[isris111special] = 124;
+    X_is[isris111heavytruck] = 726; Y_is[isris111heavytruck] = 124;
+    X_is[isris211cyclist] = 678; Y_is[isris211cyclist] = 137;
+    X_is[isris221cyclist] = 681; Y_is[isris221cyclist] = 150;
+    X_is[isris241cyclist] = 679; Y_is[isris241cyclist] = 163;
+    X_is[isris261cyclist] = 679; Y_is[isris261cyclist] = 178;
+    X_is[isris281cyclist] = 682; Y_is[isris281cyclist] = 191;
+    X_is[isris311pedestrian] = 679; Y_is[isris311pedestrian] = 200;
+    X_is[isris312pedestrian] = 680; Y_is[isris312pedestrian] = 216;
+    X_is[isris321pedestrian] = 678; Y_is[isris321pedestrian] = 229;
+    X_is[isris322pedestrian] = 678; Y_is[isris322pedestrian] = 243;
+    X_is[isris331pedestrian] = 679; Y_is[isris331pedestrian] = 254;
+    X_is[isris332pedestrian] = 679; Y_is[isris332pedestrian] = 268;
+    X_is[isris341pedestrian] = 678; Y_is[isris341pedestrian] = 282;
+    X_is[isris342pedestrian] = 681; Y_is[isris342pedestrian] = 293;
+    X_is[isris381pedestrian] = 679; Y_is[isris381pedestrian] = 305;
+    X_is[isris382pedestrian] = 679; Y_is[isris382pedestrian] = 319;
+    X_is[isris611car] = 679; Y_is[isris611car] = 334;
+    X_is[isris611bus] = 694; Y_is[isris611bus] = 332;
+    X_is[isris611special] = 708; Y_is[isris611special] = 331;
+    X_is[isris611heavytruck] = 728; Y_is[isris611heavytruck] = 333;
+    X_is[isris621car] = 681; Y_is[isris621car] = 342;
+    X_is[isris621bus] = 697; Y_is[isris621bus] = 346;
+    X_is[isris621special] = 710; Y_is[isris621special] = 346;
+    X_is[isris621heavytruck] = 732; Y_is[isris621heavytruck] = 344;
+    X_is[isris622car] = 680; Y_is[isris622car] = 360;
+    X_is[isris622bus] = 694; Y_is[isris622bus] = 360;
+    X_is[isris622special] = 711; Y_is[isris622special] = 360;
+    X_is[isris622heavytruck] = 728; Y_is[isris622heavytruck] = 359;
+    X_is[isris671car] = 677; Y_is[isris671car] = 372;
+    X_is[isris671bus] = 696; Y_is[isris671bus] = 372;
+    X_is[isris671special] = 711; Y_is[isris671special] = 371;
+    X_is[isris671heavytruck] = 728; Y_is[isris671heavytruck] = 371;
+    X_is[isris681car] = 675; Y_is[isris681car] = 383;
+    X_is[isris681bus] = 697; Y_is[isris681bus] = 384;
+    X_is[isris681special] = 714; Y_is[isris681special] = 382;
+    X_is[isris681heavytruck] = 726; Y_is[isris681heavytruck] = 382;
+    X_is[isris682car] = 681; Y_is[isris682car] = 395;
+    X_is[isris682bus] = 697; Y_is[isris682bus] = 395;
+    X_is[isris682special] = 711; Y_is[isris682special] = 396;
+    X_is[isris682heavytruck] = 732; Y_is[isris682heavytruck] = 398;
+    X_is[isris811cyclist] = 676; Y_is[isris811cyclist] = 411;
+    X_is[isris821cyclist] = 680; Y_is[isris821cyclist] = 423;
+    X_is[isris841cyclist] = 679; Y_is[isris841cyclist] = 435;
 #endif
 
     /* Gebruikers toevoegingen file includen */

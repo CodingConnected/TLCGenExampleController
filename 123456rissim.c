@@ -15,15 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    06-07-2021   Cyril       basisversie
- * 1.1.0    27-07-2021   Peter       TISG-matrix toegevoegd
- * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
- * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
- * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
- * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
- * 1.10.0   18-10-2021   Cyril       Interne koppeling geoptimaliseerd
- * 1.11.0   21-10-2021   Cyril       Nieuwe versie TLCGen (21102021 beta)
- * 1.12.0   02-11-2021   Cyril       Nieuwe versie TLCGen (01112021 beta)
+ * 2.0.0    05-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
  *
  ************************************************************************************/
 
@@ -127,6 +119,8 @@ void ris_simulation_parameters(void)
     ris_simulation_itsstation_parameters(SYSTEM_ITF, PRM[prmrislaneid68_2], fc68, RIF_STATIONTYPE_BUS, 0, 1, 0, 50, 10, 300, 10, 1);
     ris_simulation_itsstation_parameters(SYSTEM_ITF, PRM[prmrislaneid68_2], fc68, RIF_STATIONTYPE_SPECIALVEHICLES, 0, 1, 0, 50, 10, 300, 10, 1);
     ris_simulation_itsstation_parameters(SYSTEM_ITF, PRM[prmrislaneid68_2], fc68, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, 0, 50, 10, 300, 10, 1);
+    ris_simulation_itsstation_parameters(SYSTEM_ITF, PRM[prmrislaneid81_1], fc81, RIF_STATIONTYPE_CYCLIST, 0, 1, 0, 15, 10, 100, 10, 1);
+    ris_simulation_itsstation_parameters(SYSTEM_ITF, PRM[prmrislaneid82_1], fc82, RIF_STATIONTYPE_CYCLIST, 0, 1, 0, 15, 10, 100, 10, 1);
     ris_simulation_itsstation_parameters(SYSTEM_ITF, PRM[prmrislaneid84_1], fc84, RIF_STATIONTYPE_CYCLIST, 0, 1, 0, 15, 10, 100, 10, 1);
     #endif /* RISSIMULATIE */
 
@@ -201,6 +195,8 @@ void ris_simulation_parameters(void)
     ris_display_lane_parameters(SYSTEM_ITF, PRM[prmrislaneid68_2], "68-2", 6, 300);
     ris_display_lane_parameters(SYSTEM_ITF, PRM[prmrislaneid68_2], "68-2", 6, 300);
     ris_display_lane_parameters(SYSTEM_ITF, PRM[prmrislaneid68_2], "68-2", 6, 300);
+    ris_display_lane_parameters(SYSTEM_ITF, PRM[prmrislaneid81_1], "81-1", 2, 100);
+    ris_display_lane_parameters(SYSTEM_ITF, PRM[prmrislaneid82_1], "82-1", 2, 100);
     ris_display_lane_parameters(SYSTEM_ITF, PRM[prmrislaneid84_1], "84-1", 2, 100);
 }
 
@@ -395,6 +391,8 @@ void ris_simulation_application(void)
         sprintf(buffer, "");
         ris_simulation_put_itsstation_pb_ex(SYSTEM_ITF, PRM[prmrislaneid68_2], fc68, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, 50, 300, 1,RIF_VEHICLEROLE_COMMERCIAL,RIF_VEHICLESUBROLE_EXPRESSTRANSIT,25,fc68,PRM[prmrisapproachid68],buffer,123,11);
     }
+    if (SIS(isris811cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF, PRM[prmrislaneid81_1], fc81, RIF_STATIONTYPE_CYCLIST, 0, 1, 15, 100, 1);
+    if (SIS(isris821cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF, PRM[prmrislaneid82_1], fc82, RIF_STATIONTYPE_CYCLIST, 0, 1, 15, 100, 1);
     if (SIS(isris841cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF, PRM[prmrislaneid84_1], fc84, RIF_STATIONTYPE_CYCLIST, 0, 1, 15, 100, 1);
 
     /* Display ris_lanes met ItsStations */
@@ -429,14 +427,16 @@ void ris_simulation_application(void)
         xyprintf(32, 42, "%s", RIS_DISPLAY_LANE_STRING[PRM[prmrislaneid67_1]]);
         xyprintf(32, 43, "%s", RIS_DISPLAY_LANE_STRING[PRM[prmrislaneid68_1]]);
         xyprintf(32, 44, "%s", RIS_DISPLAY_LANE_STRING[PRM[prmrislaneid68_2]]);
-        xyprintf(32, 45, "%s", RIS_DISPLAY_LANE_STRING[PRM[prmrislaneid84_1]]);
+        xyprintf(32, 45, "%s", RIS_DISPLAY_LANE_STRING[PRM[prmrislaneid81_1]]);
+        xyprintf(32, 46, "%s", RIS_DISPLAY_LANE_STRING[PRM[prmrislaneid82_1]]);
+        xyprintf(32, 47, "%s", RIS_DISPLAY_LANE_STRING[PRM[prmrislaneid84_1]]);
     }
 
     /* Display aantal ItsStations en PrioRequests */
     /* ------------------------------------------ */  
     if (display) {
-        xyprintf(32, 47, "ItsStation  =% -3d ItsStation - Ex =% -3d", RIS_ITSSTATION_AP_NUMBER,  RIS_ITSSTATION_EX_AP_NUMBER);
-        xyprintf(32, 48, "PrioRequest =% -3d PrioRequest_Ex  =% -3d", RIS_PRIOREQUEST_AP_NUMBER, RIS_PRIOREQUEST_EX_AP_NUMBER);
+        xyprintf(32, 49, "ItsStation  =% -3d ItsStation - Ex =% -3d", RIS_ITSSTATION_AP_NUMBER,  RIS_ITSSTATION_EX_AP_NUMBER);
+        xyprintf(32, 50, "PrioRequest =% -3d PrioRequest_Ex  =% -3d", RIS_PRIOREQUEST_AP_NUMBER, RIS_PRIOREQUEST_EX_AP_NUMBER);
     }
     #endif
 }

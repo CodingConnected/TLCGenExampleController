@@ -15,15 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    06-07-2021   Cyril       basisversie
- * 1.1.0    27-07-2021   Peter       TISG-matrix toegevoegd
- * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
- * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
- * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
- * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
- * 1.10.0   18-10-2021   Cyril       Interne koppeling geoptimaliseerd
- * 1.11.0   21-10-2021   Cyril       Nieuwe versie TLCGen (21102021 beta)
- * 1.12.0   02-11-2021   Cyril       Nieuwe versie TLCGen (01112021 beta)
+ * 2.0.0    05-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
  *
  ************************************************************************************/
 

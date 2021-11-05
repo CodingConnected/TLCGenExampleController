@@ -15,19 +15,11 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    06-07-2021   Cyril       basisversie
- * 1.1.0    27-07-2021   Peter       TISG-matrix toegevoegd
- * 1.4.0    19-08-2021   Cyril       TLCGen0.9.10.0; fc21+fc67 toegeveogd
- * 1.5.0    14-09-2021   Peter       Kleine aanpassingen m.b.t. TISG-matrix
- * 1.6.0    20-09-2021   Cyril       Nieuwe versie TLCGen (20092021 beta); handmatig Real_los + F11
- * 1.9.0    18-10-2021   Cyril       Filelussen en fc82 fc81 toegevoegd
- * 1.10.0   18-10-2021   Cyril       Interne koppeling geoptimaliseerd
- * 1.11.0   21-10-2021   Cyril       Nieuwe versie TLCGen (21102021 beta)
- * 1.12.0   02-11-2021   Cyril       Nieuwe versie TLCGen (01112021 beta)
+ * 2.0.0    05-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
  *
  ************************************************************************************/
 
-#define LNKMAX1 182 /* aantal links */
+#define LNKMAX1 184 /* aantal links */
 
 /* include files */
 /* ------------- */
@@ -1864,15 +1856,35 @@ void simulation_parameters(void)
     Q3[180] = 0;
     Q4[180] = 0;
 
-    LNK_code[181] = "ris841cyclist";
-    IS_nr[181] = isris841cyclist;
-    FC_nr[181] = fc84;
+    LNK_code[181] = "ris811cyclist";
+    IS_nr[181] = isris811cyclist;
+    FC_nr[181] = fc81;
     S_generator[181] = NG;
     S_stopline[181] = 0;
     Q1[181] = 0;
     Q2[181] = 0;
     Q3[181] = 0;
     Q4[181] = 0;
+
+    LNK_code[182] = "ris821cyclist";
+    IS_nr[182] = isris821cyclist;
+    FC_nr[182] = fc82;
+    S_generator[182] = NG;
+    S_stopline[182] = 0;
+    Q1[182] = 0;
+    Q2[182] = 0;
+    Q3[182] = 0;
+    Q4[182] = 0;
+
+    LNK_code[183] = "ris841cyclist";
+    IS_nr[183] = isris841cyclist;
+    FC_nr[183] = fc84;
+    S_generator[183] = NG;
+    S_stopline[183] = 0;
+    Q1[183] = 0;
+    Q2[183] = 0;
+    Q3[183] = 0;
+    Q4[183] = 0;
 
 #endif
 
