@@ -2500,6 +2500,52 @@ void PostAfhandelingPrio(void)
         RR[fc81] &= ~(BIT1|BIT2|BIT6);
         FM[fc81] &= ~PRIO_FM_BIT;
     }
+
+    /* Niet afkappen naloop richtingen wanneer voedende een P[]&BIT11 heeft */
+    if (P[fc02] & BIT11) {
+        Z[fc62] &= ~BIT6;
+       RR[fc62] &= ~(BIT1 | BIT2 | BIT6);
+       FM[fc62] &= ~PRIO_FM_BIT;
+    }
+    if (P[fc08] & BIT11) {
+        Z[fc68] &= ~BIT6;
+       RR[fc68] &= ~(BIT1 | BIT2 | BIT6);
+       FM[fc68] &= ~PRIO_FM_BIT;
+    }
+    if (P[fc11] & BIT11) {
+        Z[fc68] &= ~BIT6;
+       RR[fc68] &= ~(BIT1 | BIT2 | BIT6);
+       FM[fc68] &= ~PRIO_FM_BIT;
+    }
+    if (P[fc22] & BIT11) {
+        Z[fc21] &= ~BIT6;
+       RR[fc21] &= ~(BIT1 | BIT2 | BIT6);
+       FM[fc21] &= ~PRIO_FM_BIT;
+    }
+    if (P[fc82] & BIT11) {
+        Z[fc81] &= ~BIT6;
+       RR[fc81] &= ~(BIT1 | BIT2 | BIT6);
+       FM[fc81] &= ~PRIO_FM_BIT;
+    }
+
+    /* Niet afkappen voorstartende richting wanneer voedende een P[]&BIT11 heeft */
+   if (P[fc05] & BIT11) {
+       Z[fc22] &= ~BIT6;
+      RR[fc22] &= ~(BIT1 | BIT2 | BIT6);
+      FM[fc22] &= ~PRIO_FM_BIT;
+   }
+   if (P[fc05] & BIT11) {
+       Z[fc32] &= ~BIT6;
+      RR[fc32] &= ~(BIT1 | BIT2 | BIT6);
+      FM[fc32] &= ~PRIO_FM_BIT;
+   }
+   if (P[fc11] & BIT11) {
+       Z[fc26] &= ~BIT6;
+      RR[fc26] &= ~(BIT1 | BIT2 | BIT6);
+      FM[fc26] &= ~PRIO_FM_BIT;
+   }
+
+
     /* nooit einde groen als granted verstrekt */
     /* --------------------------------------- */
     for (i = 0; i < FCMAX; ++i)
