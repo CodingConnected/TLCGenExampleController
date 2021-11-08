@@ -83,7 +83,7 @@
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm1</Naam>
+          <Naam>1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -97,7 +97,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm2</Naam>
+          <Naam>2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -111,7 +111,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm3</Naam>
+          <Naam>3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -125,7 +125,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm4</Naam>
+          <Naam>4</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -139,7 +139,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm5</Naam>
+          <Naam>5</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -153,7 +153,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm6</Naam>
+          <Naam>6</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -167,7 +167,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm7</Naam>
+          <Naam>7</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -6165,13 +6165,13 @@
         <FaseVan>21</FaseVan>
         <FaseNaar>02</FaseNaar>
         <GarantieWaarde>30</GarantieWaarde>
-        <Waarde>30</Waarde>
+        <Waarde>35</Waarde>
       </Conflict>
       <Conflict>
         <FaseVan>21</FaseVan>
         <FaseNaar>03</FaseNaar>
         <GarantieWaarde>14</GarantieWaarde>
-        <Waarde>14</Waarde>
+        <Waarde>35</Waarde>
       </Conflict>
       <Conflict>
         <FaseVan>22</FaseVan>
@@ -6387,13 +6387,13 @@
         <FaseVan>81</FaseVan>
         <FaseNaar>67</FaseNaar>
         <GarantieWaarde>30</GarantieWaarde>
-        <Waarde>30</Waarde>
+        <Waarde>35</Waarde>
       </Conflict>
       <Conflict>
         <FaseVan>81</FaseVan>
         <FaseNaar>68</FaseNaar>
         <GarantieWaarde>20</GarantieWaarde>
-        <Waarde>20</Waarde>
+        <Waarde>35</Waarde>
       </Conflict>
       <Conflict>
         <FaseVan>82</FaseVan>
@@ -21036,6 +21036,20 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit11</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit61</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k84</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
@@ -21307,20 +21321,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkaruit62</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit61</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

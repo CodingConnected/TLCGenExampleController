@@ -125,6 +125,38 @@ void DetectieStoring_Add(void)
 void PostApplication_Add(void)
 {
 
+#ifndef AUTOMAAT
+    /* TESTOMGEVING */
+    /* ============ */
+
+    if (!CIF_GUS[usstarstar01]) { 
+    ControleerNaloopEG(fc22, fc21, tnlfg2221, tnleg2221, NG, TRUE);
+    ControleerNaloopEG(fc82, fc81, tnlfg8281, tnleg8281, NG, TRUE);
+    ControleerNaloopEG(fc02, fc62, tnlfg0262, tnleg0262, NG, TRUE);
+    ControleerNaloopEG(fc11, fc68, tnlfg1168, tnleg1168, NG, TRUE);
+    ControleerNaloopEG(fc08, fc68, tnlfg0868, tnleg0868, NG, TRUE);
+
+    ControleerInrijden(fc22, fc21, tlr2122, TRUE);
+    ControleerInrijden(fc82, fc81, tlr8182, TRUE);
+    ControleerInrijden(fc02, fc62, tlr6202, TRUE);
+    ControleerInrijden(fc08, fc68, tlr6808, TRUE);
+    ControleerInrijden(fc11, fc68, tlr6811, TRUE);
+
+    ControleerVS(fc05, fc22, TRUE, TRUE);
+    ControleerVS(fc05, fc32, TRUE, TRUE);
+   }
+#endif
+
+
+#ifndef AUTOMAAT
+    xyprintf(92, 0, "  d     Hm   Ht   Am   Dm");
+    xyprintf(92, 1, "%s:  %3d  %3d  %3d  %3d", D_code[d11_1], TDH_max[d11_1], TDH_timer[d11_1], TDHA_max[d11_1], TDHDYN_max[d11_1]);
+    xyprintf(92, 2, "%s:  %3d  %3d  %3d  %3d", D_code[d11_2], TDH_max[d11_2], TDH_timer[d11_2], TDHA_max[d11_2], TDHDYN_max[d11_2]);
+    xyprintf(92, 3, "%s:  %3d  %3d  %3d  %3d", D_code[d11_3], TDH_max[d11_3], TDH_timer[d11_3], TDHA_max[d11_3], TDHDYN_max[d11_3]);
+    xyprintf(92, 4, "%s:  %3d  %3d  %3d  %3d", D_code[d11_4], TDH_max[d11_4], TDH_timer[d11_4], TDHA_max[d11_4], TDHDYN_max[d11_4]);
+#endif	
+
+
 }
 
 void pre_system_application(void)

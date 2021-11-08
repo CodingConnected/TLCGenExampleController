@@ -22,7 +22,7 @@
 #define SYSTEM "123456"
 #define VERSION "2.0.0 20211105"
 #define TVGAMAX /* gebruik van TVGA_max[] */
-#define TDHAMAX /* gebruik van TDHA_max[] */
+//#define TDHAMAX /* gebruik van TDHA_max[] */ SVP TDHA_max verwijderen @@Menno. Voor nu even goed.Mag door alleen het vinkje weg te halen ? 
 
 /* fasecycli */
 /* --------- */

@@ -2665,7 +2665,7 @@ void system_application2(void)
         /* eigenlijk nog per richting een schakelaar of er altijd NG moet worden gestuurd (nu is het een algemene schakelaar) */
         for (i = 0; i < FCMAX; ++i)
         {
-            timings_uc4(fc02 + i, mrealtijdmin02 + i, mrealtijdmax02 + i, prmttxconfidence15, schtxconfidence15ar, schtimings02 + i);
+            timings_uc4(fc02 + i, mrealtijd02 + i, mrealtijdmin02 + i, mrealtijdmax02 + i, prmttxconfidence15, schtxconfidence15ar, schtimings02 + i);
         }
         if (!SCH[schconfidence15fix])
         {

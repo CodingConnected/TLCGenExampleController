@@ -168,8 +168,8 @@ void control_parameters(void)
     TIG_max[fc11][fc38] = 29;
     TIG_max[fc11][fc62] = 47;
 
-    TIG_max[fc21][fc02] = 30;
-    TIG_max[fc21][fc03] = 14;
+    TIG_max[fc21][fc02] = 35;
+    TIG_max[fc21][fc03] = 35;
 
     TIG_max[fc22][fc68] = 17;
 
@@ -219,8 +219,8 @@ void control_parameters(void)
     TIG_max[fc68][fc32] = 64;
     TIG_max[fc68][fc81] = 5;
 
-    TIG_max[fc81][fc67] = 30;
-    TIG_max[fc81][fc68] = 20;
+    TIG_max[fc81][fc67] = 35;
+    TIG_max[fc81][fc68] = 35;
 
     TIG_max[fc82][fc02] = 4;
     TIG_max[fc82][fc05] = 1;
