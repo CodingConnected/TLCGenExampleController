@@ -18,7 +18,7 @@ void signaalplan_instellingen(void);
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    05-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
  *
  ************************************************************************************/
 
@@ -530,79 +530,79 @@ void control_parameters(void)
 
 /* detectie */
 /* -------- */
-    D_code[d02_1a] = "02_1a"; TDB_max[d02_1a] = 20; TDHA_max[d02_1a] = 25;
+    D_code[d02_1a] = "02_1a"; TDB_max[d02_1a] = 20; TDH_max[d02_1a] = 25;
                               TBG_max[d02_1a] = 20; TOG_max[d02_1a] = 360;
-    D_code[d02_1b] = "02_1b"; TDB_max[d02_1b] = 20; TDHA_max[d02_1b] = 25;
+    D_code[d02_1b] = "02_1b"; TDB_max[d02_1b] = 20; TDH_max[d02_1b] = 25;
                               TBG_max[d02_1b] = 20; TOG_max[d02_1b] = 360;
-    D_code[d02_2a] = "02_2a"; TDB_max[d02_2a] = 0;  TDHA_max[d02_2a] = 5;
+    D_code[d02_2a] = "02_2a"; TDB_max[d02_2a] = 0;  TDH_max[d02_2a] = 5;
                               TBG_max[d02_2a] = 60; TOG_max[d02_2a] = 360;
-    D_code[d02_2b] = "02_2b"; TDB_max[d02_2b] = 0;  TDHA_max[d02_2b] = 5;
+    D_code[d02_2b] = "02_2b"; TDB_max[d02_2b] = 0;  TDH_max[d02_2b] = 5;
                               TBG_max[d02_2b] = 60; TOG_max[d02_2b] = 360;
-    D_code[d02_3a] = "02_3a"; TDB_max[d02_3a] = 0;  TDHA_max[d02_3a] = 20;
+    D_code[d02_3a] = "02_3a"; TDB_max[d02_3a] = 0;  TDH_max[d02_3a] = 20;
                               TBG_max[d02_3a] = 60; TOG_max[d02_3a] = 360;
-    D_code[d02_3b] = "02_3b"; TDB_max[d02_3b] = 0;  TDHA_max[d02_3b] = 20;
+    D_code[d02_3b] = "02_3b"; TDB_max[d02_3b] = 0;  TDH_max[d02_3b] = 20;
                               TBG_max[d02_3b] = 60; TOG_max[d02_3b] = 360;
-    D_code[d02_4a] = "02_4a"; TDB_max[d02_4a] = 0;  TDHA_max[d02_4a] = 25;
+    D_code[d02_4a] = "02_4a"; TDB_max[d02_4a] = 0;  TDH_max[d02_4a] = 25;
                               TBG_max[d02_4a] = 60; TOG_max[d02_4a] = 360;
-    D_code[d02_4b] = "02_4b"; TDB_max[d02_4b] = 0;  TDHA_max[d02_4b] = 25;
+    D_code[d02_4b] = "02_4b"; TDB_max[d02_4b] = 0;  TDH_max[d02_4b] = 25;
                               TBG_max[d02_4b] = 60; TOG_max[d02_4b] = 360;
-    D_code[d03_1]  = "03_1";  TDB_max[d03_1]  = 20; TDHA_max[d03_1] = 0;
+    D_code[d03_1]  = "03_1";  TDB_max[d03_1]  = 20; TDH_max[d03_1]  = 0;
                               TBG_max[d03_1]  = 20; TOG_max[d03_1]  = 360;
-    D_code[d03_2]  = "03_2";  TDB_max[d03_2]  = 0;  TDHA_max[d03_2] = 5;
+    D_code[d03_2]  = "03_2";  TDB_max[d03_2]  = 0;  TDH_max[d03_2]  = 5;
                               TBG_max[d03_2]  = 60; TOG_max[d03_2]  = 360;
-    D_code[d05_1]  = "05_1";  TDB_max[d05_1]  = 20; TDHA_max[d05_1] = 0;
+    D_code[d05_1]  = "05_1";  TDB_max[d05_1]  = 20; TDH_max[d05_1]  = 0;
                               TBG_max[d05_1]  = 20; TOG_max[d05_1]  = 360;
-    D_code[d05_2]  = "05_2";  TDB_max[d05_2]  = 0;  TDHA_max[d05_2] = 5;
+    D_code[d05_2]  = "05_2";  TDB_max[d05_2]  = 0;  TDH_max[d05_2]  = 5;
                               TBG_max[d05_2]  = 60; TOG_max[d05_2]  = 360;
-    D_code[d08_1a] = "08_1a"; TDB_max[d08_1a] = 20; TDHA_max[d08_1a] = 25;
+    D_code[d08_1a] = "08_1a"; TDB_max[d08_1a] = 20; TDH_max[d08_1a] = 25;
                               TBG_max[d08_1a] = 20; TOG_max[d08_1a] = 360;
-    D_code[d08_1b] = "08_1b"; TDB_max[d08_1b] = 20; TDHA_max[d08_1b] = 25;
+    D_code[d08_1b] = "08_1b"; TDB_max[d08_1b] = 20; TDH_max[d08_1b] = 25;
                               TBG_max[d08_1b] = 20; TOG_max[d08_1b] = 360;
-    D_code[d08_2a] = "08_2a"; TDB_max[d08_2a] = 0;  TDHA_max[d08_2a] = 5;
+    D_code[d08_2a] = "08_2a"; TDB_max[d08_2a] = 0;  TDH_max[d08_2a] = 5;
                               TBG_max[d08_2a] = 60; TOG_max[d08_2a] = 360;
-    D_code[d08_2b] = "08_2b"; TDB_max[d08_2b] = 0;  TDHA_max[d08_2b] = 5;
+    D_code[d08_2b] = "08_2b"; TDB_max[d08_2b] = 0;  TDH_max[d08_2b] = 5;
                               TBG_max[d08_2b] = 60; TOG_max[d08_2b] = 360;
-    D_code[d08_3a] = "08_3a"; TDB_max[d08_3a] = 0;  TDHA_max[d08_3a] = 20;
+    D_code[d08_3a] = "08_3a"; TDB_max[d08_3a] = 0;  TDH_max[d08_3a] = 20;
                               TBG_max[d08_3a] = 60; TOG_max[d08_3a] = 360;
-    D_code[d08_3b] = "08_3b"; TDB_max[d08_3b] = 0;  TDHA_max[d08_3b] = 20;
+    D_code[d08_3b] = "08_3b"; TDB_max[d08_3b] = 0;  TDH_max[d08_3b] = 20;
                               TBG_max[d08_3b] = 60; TOG_max[d08_3b] = 360;
-    D_code[d08_4a] = "08_4a"; TDB_max[d08_4a] = 0;  TDHA_max[d08_4a] = 25;
+    D_code[d08_4a] = "08_4a"; TDB_max[d08_4a] = 0;  TDH_max[d08_4a] = 25;
                               TBG_max[d08_4a] = 60; TOG_max[d08_4a] = 360;
-    D_code[d08_4b] = "08_4b"; TDB_max[d08_4b] = 0;  TDHA_max[d08_4b] = 25;
+    D_code[d08_4b] = "08_4b"; TDB_max[d08_4b] = 0;  TDH_max[d08_4b] = 25;
                               TBG_max[d08_4b] = 60; TOG_max[d08_4b] = 360;
-    D_code[d09_1]  = "09_1";  TDB_max[d09_1]  = 20; TDHA_max[d09_1] = 25;
+    D_code[d09_1]  = "09_1";  TDB_max[d09_1]  = 20; TDH_max[d09_1]  = 25;
                               TBG_max[d09_1]  = 20; TOG_max[d09_1]  = 360;
-    D_code[d09_2]  = "09_2";  TDB_max[d09_2]  = 0;  TDHA_max[d09_2] = 5;
+    D_code[d09_2]  = "09_2";  TDB_max[d09_2]  = 0;  TDH_max[d09_2]  = 5;
                               TBG_max[d09_2]  = 60; TOG_max[d09_2]  = 360;
-    D_code[d09_3]  = "09_3";  TDB_max[d09_3]  = 0;  TDHA_max[d09_3] = 15;
+    D_code[d09_3]  = "09_3";  TDB_max[d09_3]  = 0;  TDH_max[d09_3]  = 15;
                               TBG_max[d09_3]  = 60; TOG_max[d09_3]  = 360;
-    D_code[d11_1]  = "11_1";  TDB_max[d11_1]  = 20; TDHA_max[d11_1] = 25;
+    D_code[d11_1]  = "11_1";  TDB_max[d11_1]  = 20; TDH_max[d11_1]  = 25;
                               TBG_max[d11_1]  = 20; TOG_max[d11_1]  = 360;
-    D_code[d11_2]  = "11_2";  TDB_max[d11_2]  = 0;  TDHA_max[d11_2] = 5;
+    D_code[d11_2]  = "11_2";  TDB_max[d11_2]  = 0;  TDH_max[d11_2]  = 5;
                               TBG_max[d11_2]  = 60; TOG_max[d11_2]  = 360;
-    D_code[d11_3]  = "11_3";  TDB_max[d11_3]  = 0;  TDHA_max[d11_3] = 15;
+    D_code[d11_3]  = "11_3";  TDB_max[d11_3]  = 0;  TDH_max[d11_3]  = 15;
                               TBG_max[d11_3]  = 60; TOG_max[d11_3]  = 360;
-    D_code[d11_4]  = "11_4";  TDB_max[d11_4]  = 0;  TDHA_max[d11_4] = 10;
+    D_code[d11_4]  = "11_4";  TDB_max[d11_4]  = 0;  TDH_max[d11_4]  = 10;
                               TBG_max[d11_4]  = 60; TOG_max[d11_4]  = 360;
-    D_code[d211]   = "211";   TDB_max[d211]   = 15; TDHA_max[d211]  = 30;
+    D_code[d211]   = "211";   TDB_max[d211]   = 15; TDH_max[d211]   = 30;
                               TBG_max[d211]   = 10; TOG_max[d211]   = 1440;
     D_code[dk21]   = "k21";   TBG_max[dk21]   = 10; TOG_max[dk21]   = 1440;
-    D_code[d22_1]  = "22_1";  TDB_max[d22_1]  = 15; TDHA_max[d22_1] = 30;
+    D_code[d22_1]  = "22_1";  TDB_max[d22_1]  = 15; TDH_max[d22_1]  = 30;
                               TBG_max[d22_1]  = 10; TOG_max[d22_1]  = 1440;
     D_code[dk22]   = "k22";   TBG_max[dk22]   = 10; TOG_max[dk22]   = 2880;
-    D_code[d24_1]  = "24_1";  TDB_max[d24_1]  = 15; TDHA_max[d24_1] = 30;
+    D_code[d24_1]  = "24_1";  TDB_max[d24_1]  = 15; TDH_max[d24_1]  = 30;
                               TBG_max[d24_1]  = 10; TOG_max[d24_1]  = 1440;
-    D_code[d24_2]  = "24_2";  TDB_max[d24_2]  = 0;  TDHA_max[d24_2] = 50;
+    D_code[d24_2]  = "24_2";  TDB_max[d24_2]  = 0;  TDH_max[d24_2]  = 50;
                               TBG_max[d24_2]  = 30; TOG_max[d24_2]  = 1440;
-    D_code[d24_3]  = "24_3";  TDB_max[d24_3]  = 0;  TDHA_max[d24_3] = 50;
+    D_code[d24_3]  = "24_3";  TDB_max[d24_3]  = 0;  TDH_max[d24_3]  = 50;
                               TBG_max[d24_3]  = 30; TOG_max[d24_3]  = 1440;
     D_code[dk24]   = "k24";   TBG_max[dk24]   = 10; TOG_max[dk24]   = 2880;
-    D_code[d261]   = "261";   TDB_max[d261]   = 15; TDHA_max[d261]  = 30;
+    D_code[d261]   = "261";   TDB_max[d261]   = 15; TDH_max[d261]   = 30;
                               TBG_max[d261]   = 10; TOG_max[d261]   = 1440;
     D_code[dk26]   = "k26";   TBG_max[dk26]   = 10; TOG_max[dk26]   = 1440;
-    D_code[d28_1]  = "28_1";  TDB_max[d28_1]  = 15; TDHA_max[d28_1] = 30;
+    D_code[d28_1]  = "28_1";  TDB_max[d28_1]  = 15; TDH_max[d28_1]  = 30;
                               TBG_max[d28_1]  = 10; TOG_max[d28_1]  = 1440;
-    D_code[d28_2]  = "28_2";  TDB_max[d28_2]  = 0;  TDHA_max[d28_2] = 50;
+    D_code[d28_2]  = "28_2";  TDB_max[d28_2]  = 0;  TDH_max[d28_2]  = 50;
                               TBG_max[d28_2]  = 30; TOG_max[d28_2]  = 1440;
     D_code[dk28]   = "k28";   TBG_max[dk28]   = 10; TOG_max[dk28]   = 2880;
     D_code[dk31a]  = "k31a";  TBG_max[dk31a]  = 10; TOG_max[dk31a]  = 1440;
@@ -615,41 +615,41 @@ void control_parameters(void)
     D_code[dk34b]  = "k34b";  TBG_max[dk34b]  = 10; TOG_max[dk34b]  = 0;
     D_code[dk38a]  = "k38a";  TBG_max[dk38a]  = 10; TOG_max[dk38a]  = 1440;
     D_code[dk38b]  = "k38b";  TBG_max[dk38b]  = 10; TOG_max[dk38b]  = 0;
-    D_code[d61_1]  = "61_1";  TDB_max[d61_1]  = 20; TDHA_max[d61_1] = 0;
+    D_code[d61_1]  = "61_1";  TDB_max[d61_1]  = 20; TDH_max[d61_1]  = 0;
                               TBG_max[d61_1]  = 20; TOG_max[d61_1]  = 360;
-    D_code[d61_2]  = "61_2";  TDB_max[d61_2]  = 0;  TDHA_max[d61_2] = 5;
+    D_code[d61_2]  = "61_2";  TDB_max[d61_2]  = 0;  TDH_max[d61_2]  = 5;
                               TBG_max[d61_2]  = 60; TOG_max[d61_2]  = 360;
-    D_code[d62_1a] = "62_1a"; TDB_max[d62_1a] = 20; TDHA_max[d62_1a] = 25;
+    D_code[d62_1a] = "62_1a"; TDB_max[d62_1a] = 20; TDH_max[d62_1a] = 25;
                               TBG_max[d62_1a] = 20; TOG_max[d62_1a] = 360;
-    D_code[d62_1b] = "62_1b"; TDB_max[d62_1b] = 20; TDHA_max[d62_1b] = 25;
+    D_code[d62_1b] = "62_1b"; TDB_max[d62_1b] = 20; TDH_max[d62_1b] = 25;
                               TBG_max[d62_1b] = 20; TOG_max[d62_1b] = 360;
-    D_code[d62_2a] = "62_2a"; TDB_max[d62_2a] = 0;  TDHA_max[d62_2a] = 10;
+    D_code[d62_2a] = "62_2a"; TDB_max[d62_2a] = 0;  TDH_max[d62_2a] = 10;
                               TBG_max[d62_2a] = 60; TOG_max[d62_2a] = 360;
-    D_code[d62_2b] = "62_2b"; TDB_max[d62_2b] = 0;  TDHA_max[d62_2b] = 10;
+    D_code[d62_2b] = "62_2b"; TDB_max[d62_2b] = 0;  TDH_max[d62_2b] = 10;
                               TBG_max[d62_2b] = 60; TOG_max[d62_2b] = 360;
-    D_code[d67_1]  = "67_1";  TDB_max[d67_1]  = 20; TDHA_max[d67_1] = 0;
+    D_code[d67_1]  = "67_1";  TDB_max[d67_1]  = 20; TDH_max[d67_1]  = 0;
                               TBG_max[d67_1]  = 20; TOG_max[d67_1]  = 360;
-    D_code[d67_2]  = "67_2";  TDB_max[d67_2]  = 0;  TDHA_max[d67_2] = 5;
+    D_code[d67_2]  = "67_2";  TDB_max[d67_2]  = 0;  TDH_max[d67_2]  = 5;
                               TBG_max[d67_2]  = 60; TOG_max[d67_2]  = 360;
-    D_code[d68_1a] = "68_1a"; TDB_max[d68_1a] = 20; TDHA_max[d68_1a] = 25;
+    D_code[d68_1a] = "68_1a"; TDB_max[d68_1a] = 20; TDH_max[d68_1a] = 25;
                               TBG_max[d68_1a] = 20; TOG_max[d68_1a] = 360;
-    D_code[d68_1b] = "68_1b"; TDB_max[d68_1b] = 20; TDHA_max[d68_1b] = 25;
+    D_code[d68_1b] = "68_1b"; TDB_max[d68_1b] = 20; TDH_max[d68_1b] = 25;
                               TBG_max[d68_1b] = 20; TOG_max[d68_1b] = 360;
-    D_code[d68_2a] = "68_2a"; TDB_max[d68_2a] = 0;  TDHA_max[d68_2a] = 10;
+    D_code[d68_2a] = "68_2a"; TDB_max[d68_2a] = 0;  TDH_max[d68_2a] = 10;
                               TBG_max[d68_2a] = 60; TOG_max[d68_2a] = 360;
-    D_code[d68_2b] = "68_2b"; TDB_max[d68_2b] = 0;  TDHA_max[d68_2b] = 5;
+    D_code[d68_2b] = "68_2b"; TDB_max[d68_2b] = 0;  TDH_max[d68_2b] = 5;
                               TBG_max[d68_2b] = 60; TOG_max[d68_2b] = 360;
-    D_code[d68_9a] = "68_9a"; TDB_max[d68_9a] = 0;  TDHA_max[d68_9a] = 0;
+    D_code[d68_9a] = "68_9a"; TDB_max[d68_9a] = 0;  TDH_max[d68_9a] = 0;
                               TBG_max[d68_9a] = 20; TOG_max[d68_9a] = 360;
-    D_code[d68_9b] = "68_9b"; TDB_max[d68_9b] = 0;  TDHA_max[d68_9b] = 0;
+    D_code[d68_9b] = "68_9b"; TDB_max[d68_9b] = 0;  TDH_max[d68_9b] = 0;
                               TBG_max[d68_9b] = 20; TOG_max[d68_9b] = 360;
-    D_code[d81_1]  = "81_1";  TDB_max[d81_1]  = 15; TDHA_max[d81_1] = 30;
+    D_code[d81_1]  = "81_1";  TDB_max[d81_1]  = 15; TDH_max[d81_1]  = 30;
                               TBG_max[d81_1]  = 10; TOG_max[d81_1]  = 1440;
     D_code[dk81]   = "k81";   TBG_max[dk81]   = 10; TOG_max[dk81]   = 1440;
-    D_code[d82_1]  = "82_1";  TDB_max[d82_1]  = 15; TDHA_max[d82_1] = 30;
+    D_code[d82_1]  = "82_1";  TDB_max[d82_1]  = 15; TDH_max[d82_1]  = 30;
                               TBG_max[d82_1]  = 10; TOG_max[d82_1]  = 1440;
     D_code[dk82]   = "k82";   TBG_max[dk82]   = 10; TOG_max[dk82]   = 1440;
-    D_code[d84_1]  = "84_1";  TDB_max[d84_1]  = 15; TDHA_max[d84_1] = 30;
+    D_code[d84_1]  = "84_1";  TDB_max[d84_1]  = 15; TDH_max[d84_1]  = 30;
                               TBG_max[d84_1]  = 10; TOG_max[d84_1]  = 1440;
     D_code[dk84]   = "k84";   TBG_max[dk84]   = 10; TOG_max[dk84]   = 2880;
 #if !defined NO_DDFLUTTER
@@ -771,7 +771,7 @@ void control_parameters(void)
 /* ---------------- */
     IS_code[isfix]              = "fix";                                           /* Fixatie regeling                                            */
     IS_code[isstar]             = "star";                                          /* Star programma inschakelen zoals ingesteld via PRM starprog */
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
     IS_code[isris021car]        = "ris021car";                            
     IS_code[isris021bus]        = "ris021bus";                            
     IS_code[isris021special]    = "ris021special";                        
@@ -4407,7 +4407,7 @@ void control_parameters(void)
     PRM_code[prmaltp82]                   = "altp82";                   PRM[prmaltp82]                   = 60;   PRM_type[prmaltp82]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
     PRM_code[prmaltg84]                   = "altg84";                   PRM[prmaltg84]                   = 60;   PRM_type[prmaltg84]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
     PRM_code[prmstarprogdef]              = "starprogdef";              PRM[prmstarprogdef]              = 1;    PRM_type[prmstarprogdef]              = SCH_type; /* Default star programma                                                                                                         */
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
     PRM_code[prmtestdsivert]              = "testdsivert";              PRM[prmtestdsivert]              = 120;  PRM_type[prmtestdsivert]              = TS_type; /* Testen vertraging in DSI bericht in testomgeving                                                                               */
     PRM_code[prmtestdsilyn]               = "testdsilyn";               PRM[prmtestdsilyn]               = 0;                                          /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
     PRM_code[prmtestdsicat]               = "testdsicat";               PRM[prmtestdsicat]               = 10;                                         /* Testen ritcategorie DSI bericht in testomgeving                                                                                */

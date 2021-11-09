@@ -276,7 +276,7 @@
     </FixatieData>
     <Versie>
       <Versie>2.0.0</Versie>
-      <Datum>2021-11-05T00:00:00</Datum>
+      <Datum>2021-11-09T00:00:00</Datum>
       <Ontwerper>Cyril</Ontwerper>
       <Commentaar>Nieuwe versie TLCGen (05112021 beta)</Commentaar>
     </Versie>
@@ -21050,6 +21050,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit62</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k84</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
@@ -21314,13 +21321,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkaruit67</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit62</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

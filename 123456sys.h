@@ -15,14 +15,13 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    05-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "2.0.0 20211105"
+#define VERSION "2.0.0 20211109"
 #define TVGAMAX /* gebruik van TVGA_max[] */
-//#define TDHAMAX /* gebruik van TDHA_max[] */ SVP TDHA_max verwijderen @@Menno. Voor nu even goed.Mag door alleen het vinkje weg te halen ? 
 
 /* fasecycli */
 /* --------- */
@@ -302,7 +301,7 @@
 /* ---------------- */
     #define isfix              (DPMAX +  0) /* Fixatie regeling                                            */
     #define isstar             (DPMAX +  1) /* Star programma inschakelen zoals ingesteld via PRM starprog */
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
     #define isris021car        (DPMAX +  2)
     #define isris021bus        (DPMAX +  3)
     #define isris021special    (DPMAX +  4)
@@ -3946,7 +3945,7 @@
     #define prmaltp82                   2097 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
     #define prmaltg84                   2098 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
     #define prmstarprogdef              2099 /* Default star programma                                                                                                         */
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
     #define prmtestdsivert              2100 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
     #define prmtestdsilyn               2101 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
     #define prmtestdsicat               2102 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */

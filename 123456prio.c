@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    05-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
  *
  ************************************************************************************/
 
@@ -2451,6 +2451,7 @@ void PostAfhandelingPrio(void)
 {
     int i;
 
+
     /* Niet afkappen naloop richtingen wanneer een naloop tijd nog loopt */
     if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
     {
@@ -2501,51 +2502,6 @@ void PostAfhandelingPrio(void)
         FM[fc81] &= ~PRIO_FM_BIT;
     }
 
-    /* Niet afkappen naloop richtingen wanneer voedende een P[]&BIT11 heeft */
-    if (P[fc02] & BIT11) {
-        Z[fc62] &= ~BIT6;
-       RR[fc62] &= ~(BIT1 | BIT2 | BIT6);
-       FM[fc62] &= ~PRIO_FM_BIT;
-    }
-    if (P[fc08] & BIT11) {
-        Z[fc68] &= ~BIT6;
-       RR[fc68] &= ~(BIT1 | BIT2 | BIT6);
-       FM[fc68] &= ~PRIO_FM_BIT;
-    }
-    if (P[fc11] & BIT11) {
-        Z[fc68] &= ~BIT6;
-       RR[fc68] &= ~(BIT1 | BIT2 | BIT6);
-       FM[fc68] &= ~PRIO_FM_BIT;
-    }
-    if (P[fc22] & BIT11) {
-        Z[fc21] &= ~BIT6;
-       RR[fc21] &= ~(BIT1 | BIT2 | BIT6);
-       FM[fc21] &= ~PRIO_FM_BIT;
-    }
-    if (P[fc82] & BIT11) {
-        Z[fc81] &= ~BIT6;
-       RR[fc81] &= ~(BIT1 | BIT2 | BIT6);
-       FM[fc81] &= ~PRIO_FM_BIT;
-    }
-
-    /* Niet afkappen voorstartende richting wanneer voedende een P[]&BIT11 heeft */
-   if (P[fc05] & BIT11) {
-       Z[fc22] &= ~BIT6;
-      RR[fc22] &= ~(BIT1 | BIT2 | BIT6);
-      FM[fc22] &= ~PRIO_FM_BIT;
-   }
-   if (P[fc05] & BIT11) {
-       Z[fc32] &= ~BIT6;
-      RR[fc32] &= ~(BIT1 | BIT2 | BIT6);
-      FM[fc32] &= ~PRIO_FM_BIT;
-   }
-   if (P[fc11] & BIT11) {
-       Z[fc26] &= ~BIT6;
-      RR[fc26] &= ~(BIT1 | BIT2 | BIT6);
-      FM[fc26] &= ~PRIO_FM_BIT;
-   }
-
-
     /* nooit einde groen als granted verstrekt */
     /* --------------------------------------- */
     for (i = 0; i < FCMAX; ++i)
@@ -2557,6 +2513,91 @@ void PostAfhandelingPrio(void)
             Z[i] = FALSE;
         }
     }
+
+    #ifndef NO_TIMETOX
+    /* Niet afkappen naloop richtingen wanneer voedende een P[]&BIT11 heeft */
+    if (P[fc02] & BIT11) {
+         Z[fc62] &= ~BIT6;
+        RR[fc62] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc62] &= ~PRIO_FM_BIT;
+    }
+
+    if (P[fc08] & BIT11) {
+         Z[fc68] &= ~BIT6;
+        RR[fc68] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc68] &= ~PRIO_FM_BIT;
+    }
+
+    if (P[fc11] & BIT11) {
+         Z[fc68] &= ~BIT6;
+        RR[fc68] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc68] &= ~PRIO_FM_BIT;
+    }
+
+    if (P[fc22] & BIT11) {
+         Z[fc21] &= ~BIT6;
+        RR[fc21] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc21] &= ~PRIO_FM_BIT;
+    }
+
+    if (P[fc31] & BIT11) {
+         Z[fc32] &= ~BIT6;
+        RR[fc32] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc32] &= ~PRIO_FM_BIT;
+    }
+
+    if (P[fc32] & BIT11) {
+         Z[fc31] &= ~BIT6;
+        RR[fc31] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc31] &= ~PRIO_FM_BIT;
+    }
+
+    if (P[fc33] & BIT11) {
+         Z[fc34] &= ~BIT6;
+        RR[fc34] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc34] &= ~PRIO_FM_BIT;
+    }
+
+    if (P[fc34] & BIT11) {
+         Z[fc33] &= ~BIT6;
+        RR[fc33] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc33] &= ~PRIO_FM_BIT;
+    }
+
+    if (P[fc82] & BIT11) {
+         Z[fc81] &= ~BIT6;
+        RR[fc81] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc81] &= ~PRIO_FM_BIT;
+    }
+
+    #endif // NO_TIMETOX
+
+    #ifndef NO_TIMETOX
+    /* Niet afkappen voorstartende richting wanneer voedende een P[]&BIT11 heeft */
+    if (P[fc05] & BIT11) {
+         Z[fc22] &= ~BIT6;
+        RR[fc22] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc22] &= ~PRIO_FM_BIT;
+    }
+
+    if (P[fc05] & BIT11) {
+         Z[fc32] &= ~BIT6;
+        RR[fc32] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc32] &= ~PRIO_FM_BIT;
+    }
+
+    #endif // NO_TIMETOX
+
+    #ifndef NO_TIMETOX
+    /* Niet afkappen laterelease richting wanneer voedende een P[]&BIT11 heeft */
+    if (P[fc11] & BIT11) {
+         Z[fc26] &= ~BIT6;
+        RR[fc26] &= ~(BIT1 | BIT2 | BIT6);
+        FM[fc26] &= ~PRIO_FM_BIT;
+    }
+
+    #endif // NO_TIMETOX
+
 }
 /* ---------------------------------------
    PrioPARCorrecties corrigeert de PAR van

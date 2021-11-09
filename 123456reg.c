@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    05-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
  *
  ************************************************************************************/
 
@@ -69,7 +69,6 @@
     #include "prsvar.c"   /* parameters parser                 */
     #include "control.c"  /* controller interface              */
     #include "rtappl.h"   /* applicatie routines               */
-    #include "realfunc.c"
     #define PRIO_CHECK_WAGENNMR /* check op wagendienstnummer          */
     #include "extra_func_prio.c" /* extra standaard functies OV     */
     #include "extra_func.c" /* extra standaard functies        */
@@ -84,6 +83,7 @@
 
     #include "detectie.c"
     #include "ccolfunc.c"
+    #include "realfunc.c"
     #include "fixatie.c"
     #include "123456hst.c"
 #ifdef MIRMON
@@ -1151,14 +1151,6 @@ void Meetkriterium(void)
     int d;
 #endif
     int fc;
-
-#ifdef TDHAMAX
-    /* TDH_max vullen bij gebruik van TDHAMAX */
-    for (d = 0; d < DP_MAX; ++d)
-    {
-        TDH_max[d] = TDHA_max[d];
-    }
-#endif // TDHAMAX
 
     meetkriterium2_prm_va_arg((count)fc02, (count)tkm02, (count)mmk02, 
                              (va_boolv)TDH[d02_1a], (va_mulv)PRM[prmmk02_1a],
@@ -2266,7 +2258,7 @@ void init_application(void)
             //stuffkey(F5KEY);
             stuffkey(ALTF9KEY);
             stuffkey(F2KEY);
-            stuffkey(CTRLF3KEY);
+            stuffkey(ALTCTRLF3KEY);
             stuffkey(F4KEY);
             //stuffkey(F10KEY);
             //stuffkey(F11KEY);
@@ -2674,16 +2666,13 @@ void system_application2(void)
                 P[fc02 + i] &= ~BIT11;
             }
         }
-    #endif
 
-        /* Geen P[]&BIT11 als fictieve ontruiming nog loopt */
         if (RT[tfo0522] || T[tfo0522]) P[fc22] &= ~BIT11;
         if (RT[tfo0532] || T[tfo0532]) P[fc32] &= ~BIT11;
         if (RT[tfo1126] || T[tfo1126]) P[fc26] &= ~BIT11;
-
+    #endif
 
     msg_fctiming(PRM[prmlatencyminendsg]);
-
 #if !(defined NO_TIMETOX) && !defined NO_TIMINGS_PRINT && (!defined (AUTOMAAT) || defined (VISSIM)) && !defined AUTOMAAT_TEST
     if (display) {
         xyprintf( 92, 8 + FC_MAX,"-----");

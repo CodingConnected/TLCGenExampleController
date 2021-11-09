@@ -227,4 +227,3 @@ static void timings_uc4(count fc, count mrealtijd, count mrealtijdmin, count mre
    }
 #endif
 }
-
