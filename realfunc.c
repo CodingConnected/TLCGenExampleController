@@ -265,8 +265,8 @@ void Realisatietijd_min(count fc, count hsignaalplan, mulv correctie_sp)
          else if((TO_max[k][fc]>=0))
 #endif
          {
-         conflicttijd = ( G[k] && !MG[k])    ? TFG_max[k] - TFG_timer[k] +                                         /* conflict G (uitgezonderd MG) */
-                                               TVG_max[k] - TVG_timer[k] +
+         conflicttijd = ( G[k] && !MG[k])    ? TFG_max[k] - TFG_timer[k] +
+
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
                                                 TIG_max[k][fc]                               :
                           (MG[k] && !TGG[k]) ?  TIG_max[k][fc]                               :                     /* conflict MG !TGG */
