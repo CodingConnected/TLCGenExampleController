@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (12112021 beta)
  *
  ************************************************************************************/
 
@@ -1708,10 +1708,12 @@ void RealisatieAfhandeling(void)
         (G[fc11] || !(YV[fc11] & PRIO_YV_BIT))) RR[fc02] &= ~BIT10;
     if ((G[fc03] || !(YV[fc03] & PRIO_YV_BIT)) &&
         (G[fc05] || !(YV[fc05] & PRIO_YV_BIT)) &&
-        (G[fc22] || !(YV[fc22] & PRIO_YV_BIT))) RR[fc08] &= ~BIT10;
+        (G[fc22] || !(YV[fc22] & PRIO_YV_BIT)) &&
+        (G[fc32] || !(YV[fc32] & PRIO_YV_BIT))) RR[fc08] &= ~BIT10;
     if ((G[fc03] || !(YV[fc03] & PRIO_YV_BIT)) &&
         (G[fc05] || !(YV[fc05] & PRIO_YV_BIT)) &&
-        (G[fc22] || !(YV[fc22] & PRIO_YV_BIT))) RR[fc11] &= ~BIT10;
+        (G[fc22] || !(YV[fc22] & PRIO_YV_BIT)) &&
+        (G[fc32] || !(YV[fc32] & PRIO_YV_BIT))) RR[fc11] &= ~BIT10;
     if ((G[fc02] || !(YV[fc02] & PRIO_YV_BIT)) &&
         (G[fc03] || !(YV[fc03] & PRIO_YV_BIT))) RR[fc22] &= ~BIT10;
     if ((G[fc67] || !(YV[fc67] & PRIO_YV_BIT)) &&
@@ -1722,10 +1724,12 @@ void RealisatieAfhandeling(void)
         ((Z[fc02] & PRIO_Z_BIT) && (YV[fc11] & PRIO_YV_BIT) && !G[fc11])) RR[fc02] |= BIT10;
     if (((Z[fc08] & PRIO_Z_BIT) && (YV[fc03] & PRIO_YV_BIT) && !G[fc03]) ||
         ((Z[fc08] & PRIO_Z_BIT) && (YV[fc05] & PRIO_YV_BIT) && !G[fc05]) ||
-        ((Z[fc08] & PRIO_Z_BIT) && (YV[fc22] & PRIO_YV_BIT) && !G[fc22])) RR[fc08] |= BIT10;
+        ((Z[fc08] & PRIO_Z_BIT) && (YV[fc22] & PRIO_YV_BIT) && !G[fc22]) ||
+        ((Z[fc08] & PRIO_Z_BIT) && (YV[fc32] & PRIO_YV_BIT) && !G[fc32])) RR[fc08] |= BIT10;
     if (((Z[fc11] & PRIO_Z_BIT) && (YV[fc03] & PRIO_YV_BIT) && !G[fc03]) ||
         ((Z[fc11] & PRIO_Z_BIT) && (YV[fc05] & PRIO_YV_BIT) && !G[fc05]) ||
-        ((Z[fc11] & PRIO_Z_BIT) && (YV[fc22] & PRIO_YV_BIT) && !G[fc22])) RR[fc11] |= BIT10;
+        ((Z[fc11] & PRIO_Z_BIT) && (YV[fc22] & PRIO_YV_BIT) && !G[fc22]) ||
+        ((Z[fc11] & PRIO_Z_BIT) && (YV[fc32] & PRIO_YV_BIT) && !G[fc32])) RR[fc11] |= BIT10;
     if (((Z[fc22] & PRIO_Z_BIT) && (YV[fc02] & PRIO_YV_BIT) && !G[fc02]) ||
         ((Z[fc22] & PRIO_Z_BIT) && (YV[fc03] & PRIO_YV_BIT) && !G[fc03])) RR[fc22] |= BIT10;
     if (((Z[fc82] & PRIO_Z_BIT) && (YV[fc67] & PRIO_YV_BIT) && !G[fc67]) ||
@@ -1920,16 +1924,16 @@ void FileVerwerking(void)
     }
 
     /* Afkappen tijdens file ingreep File68af */
-    /* Eenmalige afkappen fase 08 op start file ingreep */
-    RT[tafkmingroen08fileFile68af] = SH[hfileFile68af] && T_max[tafkmingroen08fileFile68af];
+    /* Eenmalig afkappen fase 08 op start file ingreep */
+    RT[tafkmingroen08fileFile68af] = ER[fc08] && T_max[tafkmingroen08fileFile68af];
     /* Afkappen fase 08 op max. groentijd tijdens file ingreep */
     RT[tmaxgroen08fileFile68af] = SG[fc08] && T_max[tmaxgroen08fileFile68af];
     if (G[fc08] && IH[hfileFile68af])
     {
         if (!RT[tafkmingroen08fileFile68af] && !T[tafkmingroen08fileFile68af] || !RT[tmaxgroen08fileFile68af] && !T[tmaxgroen08fileFile68af]) Z[fc08] |= BIT5;
     }
-    /* Eenmalige afkappen fase 11 op start file ingreep */
-    RT[tafkmingroen11fileFile68af] = SH[hfileFile68af] && T_max[tafkmingroen11fileFile68af];
+    /* Eenmalig afkappen fase 11 op start file ingreep */
+    RT[tafkmingroen11fileFile68af] = ER[fc11] && T_max[tafkmingroen11fileFile68af];
     /* Afkappen fase 11 op max. groentijd tijdens file ingreep */
     RT[tmaxgroen11fileFile68af] = SG[fc11] && T_max[tmaxgroen11fileFile68af];
     if (G[fc11] && IH[hfileFile68af])
@@ -2499,6 +2503,8 @@ void system_application(void)
     CIF_GUS[usovinm11risov] = C[cvc11risov];
     CIF_GUS[usovinm11risvrw] = C[cvc11risvrw];
     CIF_GUS[usovinm22fiets] = C[cvc22fiets];
+    CIF_GUS[usovinm31fietsprio] = C[cvc31fietsprio];
+    CIF_GUS[usovinm32fietsprio] = C[cvc32fietsprio];
     CIF_GUS[usovinm61bus] = C[cvc61bus];
     CIF_GUS[usovinm61risov] = C[cvc61risov];
     CIF_GUS[usovinm61risvrw] = C[cvc61risvrw];
@@ -2598,6 +2604,8 @@ void system_application(void)
     PRIO_teller(cvc11risov, schcovuber);
     PRIO_teller(cvc11risvrw, schcovuber);
     PRIO_teller(cvc22fiets, schcovuber);
+    PRIO_teller(cvc31fietsprio, schcovuber);
+    PRIO_teller(cvc32fietsprio, schcovuber);
     PRIO_teller(cvc61bus, schcovuber);
     PRIO_teller(cvc61risov, schcovuber);
     PRIO_teller(cvc61risvrw, schcovuber);

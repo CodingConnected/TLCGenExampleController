@@ -1,5 +1,5 @@
 /* BEGIN GEGENEREERDE HEADER */
-/* DISPLAY BESTAND, GEBRUIKERS TOEVOEGINGEN            */
+/* INSTELLINGEN BESTAND, GEBRUIKERS TOEVOEGINGEN       */
 /* --------------------------------------------------- */
 
 /* KRUISPUNT: 123456
@@ -7,7 +7,7 @@
               123456
               123456
 
-   BESTAND:   123456sim.add
+   BESTAND:   123456tab.add
       CCOL:   11.0
     TLCGEN:   0.10.2.0
    CCOLGEN:   0.10.2.0
@@ -25,3 +25,8 @@
 /* dit is een placeholder */
 /* ---------------------- */
 
+TIG_max[fc08][fc82] = GKL;
+TIG_max[fc11][fc82] = GKL;
+
+TIG_max[fc82][fc08] = GKL;
+TIG_max[fc82][fc11] = GKL;

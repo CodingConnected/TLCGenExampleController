@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (12112021 beta)
  *
  ************************************************************************************/
 

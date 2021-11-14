@@ -16,7 +16,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (12112021 beta)
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
@@ -36,7 +36,11 @@ void post_init_application()
 
 void PreApplication_Add(void)
 {
-
+#ifndef AUTOMAAT
+   #ifdef DUURTEST
+      SCH[schcovuber] = 0;
+   #endif
+#endif
 }
 
 void KlokPerioden_Add(void)
@@ -124,6 +128,25 @@ void DetectieStoring_Add(void)
 
 void PostApplication_Add(void)
 {
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
+   /* TESTOMGEVING */
+   /* ============ */
+
+
+   if (TS &&
+      (CIF_KLOK[CIF_JAAR] == 2001) && 
+      (CIF_KLOK[CIF_MAAND] == 1) &&
+      (CIF_KLOK[CIF_DAG] == 1) &&
+      (CIF_KLOK[CIF_UUR] == 1) &&
+      (CIF_KLOK[CIF_MINUUT] == 1) &&
+      (CIF_KLOK[CIF_SECONDE] == 1)) 
+   {
+      stuffkey(F3KEY);
+      stuffkey(F5KEY);
+      stuffkey(F4KEY);
+      //stuffkey(F10KEY); 
+   }
+#endif
 
 #ifndef AUTOMAAT
     /* TESTOMGEVING */

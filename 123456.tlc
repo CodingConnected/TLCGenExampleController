@@ -65,11 +65,12 @@
     <WachttijdvoorspellerAansturenBusHD>false</WachttijdvoorspellerAansturenBusHD>
     <Intergroen>true</Intergroen>
     <PracticeOmgeving>false</PracticeOmgeving>
+    <ParameterwijzigingPBBijTVGMax>false</ParameterwijzigingPBBijTVGMax>
     <NietGebruikenBitmap>false</NietGebruikenBitmap>
     <CCOLCodeCase>OriginalCase</CCOLCodeCase>
     <CCOLMulti>false</CCOLMulti>
     <CCOLMultiSlave>0</CCOLMultiSlave>
-    <HuidigeVersieMajor>2</HuidigeVersieMajor>
+    <HuidigeVersieMajor>1</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
     <HuidigeVersieRevision>0</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
@@ -83,7 +84,7 @@
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>1</Naam>
+          <Naam>segm1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -97,7 +98,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>2</Naam>
+          <Naam>segm2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -111,7 +112,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>3</Naam>
+          <Naam>segm3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -125,7 +126,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>4</Naam>
+          <Naam>segm4</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -139,7 +140,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>5</Naam>
+          <Naam>segm5</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -153,7 +154,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>6</Naam>
+          <Naam>segm6</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -167,7 +168,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>7</Naam>
+          <Naam>segm7</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <BitmapCoordinaten>
@@ -275,10 +276,10 @@
       </FixatieBitmapData>
     </FixatieData>
     <Versie>
-      <Versie>2.0.0</Versie>
-      <Datum>2021-11-09T00:00:00</Datum>
+      <Versie>1.0.0</Versie>
+      <Datum>2021-11-14T00:00:00</Datum>
       <Ontwerper>Cyril</Ontwerper>
-      <Commentaar>Nieuwe versie TLCGen (05112021 beta)</Commentaar>
+      <Commentaar>Nieuwe versie TLCGen (12112021 beta)</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -6779,7 +6780,7 @@
       <Meeaanvraag>
         <FaseVan>11</FaseVan>
         <FaseNaar>26</FaseNaar>
-        <Type>Aanvraag</Type>
+        <Type>Startgroen</Type>
         <AanUit>SchAan</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
         <DetectieAfhankelijk>false</DetectieAfhankelijk>
@@ -11049,6 +11050,152 @@
               <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
             </Uitmelding>
           </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>15</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>true</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>15</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>fietsprio</Naam>
+        <FaseCyclus>31</FaseCyclus>
+        <Type>Fiets</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>100</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm31fietsprio</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen />
+          <Uitmeldingen />
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>15</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>true</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>15</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>fietsprio</Naam>
+        <FaseCyclus>32</FaseCyclus>
+        <Type>Fiets</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>100</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm32fietsprio</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen />
+          <Uitmeldingen />
           <Wissel1>false</Wissel1>
           <Wissel1Type>Ingang</Wissel1Type>
           <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
@@ -17992,19 +18139,15 @@
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
-            <FaseCyclus>84</FaseCyclus>
+            <FaseCyclus>24</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
-            <FaseCyclus>68</FaseCyclus>
+            <FaseCyclus>08</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
-            <FaseCyclus>62</FaseCyclus>
-            <Alternatieven />
-          </FaseCyclus>
-          <FaseCyclus>
-            <FaseCyclus>61</FaseCyclus>
+            <FaseCyclus>28</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
@@ -18016,11 +18159,19 @@
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
-            <FaseCyclus>24</FaseCyclus>
+            <FaseCyclus>38</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
-            <FaseCyclus>08</FaseCyclus>
+            <FaseCyclus>84</FaseCyclus>
+            <Alternatieven />
+          </FaseCyclus>
+          <FaseCyclus>
+            <FaseCyclus>68</FaseCyclus>
+            <Alternatieven />
+          </FaseCyclus>
+          <FaseCyclus>
+            <FaseCyclus>62</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
         </Fasen>
@@ -18033,19 +18184,15 @@
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
-            <FaseCyclus>28</FaseCyclus>
-            <Alternatieven />
-          </FaseCyclus>
-          <FaseCyclus>
-            <FaseCyclus>38</FaseCyclus>
-            <Alternatieven />
-          </FaseCyclus>
-          <FaseCyclus>
-            <FaseCyclus>81</FaseCyclus>
+            <FaseCyclus>09</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
             <FaseCyclus>82</FaseCyclus>
+            <Alternatieven />
+          </FaseCyclus>
+          <FaseCyclus>
+            <FaseCyclus>81</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
         </Fasen>
@@ -18054,11 +18201,7 @@
         <Naam>ML3</Naam>
         <Fasen>
           <FaseCyclus>
-            <FaseCyclus>09</FaseCyclus>
-            <Alternatieven />
-          </FaseCyclus>
-          <FaseCyclus>
-            <FaseCyclus>21</FaseCyclus>
+            <FaseCyclus>05</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
@@ -18073,25 +18216,29 @@
             <FaseCyclus>22</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
+          <FaseCyclus>
+            <FaseCyclus>21</FaseCyclus>
+            <Alternatieven />
+          </FaseCyclus>
+          <FaseCyclus>
+            <FaseCyclus>61</FaseCyclus>
+            <Alternatieven />
+          </FaseCyclus>
+          <FaseCyclus>
+            <FaseCyclus>67</FaseCyclus>
+            <Alternatieven />
+          </FaseCyclus>
         </Fasen>
       </Module>
       <Module>
         <Naam>ML4</Naam>
         <Fasen>
           <FaseCyclus>
-            <FaseCyclus>05</FaseCyclus>
-            <Alternatieven />
-          </FaseCyclus>
-          <FaseCyclus>
             <FaseCyclus>11</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
             <FaseCyclus>26</FaseCyclus>
-            <Alternatieven />
-          </FaseCyclus>
-          <FaseCyclus>
-            <FaseCyclus>67</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
         </Fasen>
@@ -21057,6 +21204,27 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit67</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit68</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin02bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin02bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k84</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
@@ -21302,27 +21470,6 @@
         <Naam>dummykarin03bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin03bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin02bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin02bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit68</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit67</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

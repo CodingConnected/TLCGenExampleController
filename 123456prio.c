@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (12112021 beta)
  *
  ************************************************************************************/
 
@@ -219,6 +219,8 @@ void PrioInstellingen(void)
     iFC_PRIOix[prioFC11risov] = fc11;
     iFC_PRIOix[prioFC11risvrw] = fc11;
     iFC_PRIOix[prioFC22fiets] = fc22;
+    iFC_PRIOix[prioFC31fietsprio] = fc31;
+    iFC_PRIOix[prioFC32fietsprio] = fc32;
     iFC_PRIOix[prioFC61bus] = fc61;
     iFC_PRIOix[prioFC61risov] = fc61;
     iFC_PRIOix[prioFC61risvrw] = fc61;
@@ -262,6 +264,8 @@ void PrioInstellingen(void)
     iT_GBix[prioFC11risov] = tgb11risov;
     iT_GBix[prioFC11risvrw] = tgb11risvrw;
     iT_GBix[prioFC22fiets] = tgb22fiets;
+    iT_GBix[prioFC31fietsprio] = tgb31fietsprio;
+    iT_GBix[prioFC32fietsprio] = tgb32fietsprio;
     iT_GBix[prioFC61bus] = tgb61bus;
     iT_GBix[prioFC61risov] = tgb61risov;
     iT_GBix[prioFC61risvrw] = tgb61risvrw;
@@ -305,6 +309,8 @@ void PrioInstellingen(void)
     iH_PRIOix[prioFC11risov] = hprio11risov;
     iH_PRIOix[prioFC11risvrw] = hprio11risvrw;
     iH_PRIOix[prioFC22fiets] = hprio22fiets;
+    iH_PRIOix[prioFC31fietsprio] = hprio31fietsprio;
+    iH_PRIOix[prioFC32fietsprio] = hprio32fietsprio;
     iH_PRIOix[prioFC61bus] = hprio61bus;
     iH_PRIOix[prioFC61risov] = hprio61risov;
     iH_PRIOix[prioFC61risvrw] = hprio61risvrw;
@@ -348,6 +354,8 @@ void PrioInstellingen(void)
     iInstPrioriteitsNiveau[prioFC11risov] = PRM[prmprio11risov]/1000L;
     iInstPrioriteitsNiveau[prioFC11risvrw] = PRM[prmprio11risvrw]/1000L;
     iInstPrioriteitsNiveau[prioFC22fiets] = PRM[prmprio22fiets]/1000L;
+    iInstPrioriteitsNiveau[prioFC31fietsprio] = PRM[prmprio31fietsprio]/1000L;
+    iInstPrioriteitsNiveau[prioFC32fietsprio] = PRM[prmprio32fietsprio]/1000L;
     iInstPrioriteitsNiveau[prioFC61bus] = PRM[prmprio61bus]/1000L;
     iInstPrioriteitsNiveau[prioFC61risov] = PRM[prmprio61risov]/1000L;
     iInstPrioriteitsNiveau[prioFC61risvrw] = PRM[prmprio61risvrw]/1000L;
@@ -391,6 +399,8 @@ void PrioInstellingen(void)
     iInstPrioriteitsOpties[prioFC11risov] = BepaalPrioriteitsOpties(prmprio11risov);
     iInstPrioriteitsOpties[prioFC11risvrw] = BepaalPrioriteitsOpties(prmprio11risvrw);
     iInstPrioriteitsOpties[prioFC22fiets] = BepaalPrioriteitsOpties(prmprio22fiets);
+    iInstPrioriteitsOpties[prioFC31fietsprio] = BepaalPrioriteitsOpties(prmprio31fietsprio);
+    iInstPrioriteitsOpties[prioFC32fietsprio] = BepaalPrioriteitsOpties(prmprio32fietsprio);
     iInstPrioriteitsOpties[prioFC61bus] = BepaalPrioriteitsOpties(prmprio61bus);
     iInstPrioriteitsOpties[prioFC61risov] = BepaalPrioriteitsOpties(prmprio61risov);
     iInstPrioriteitsOpties[prioFC61risvrw] = BepaalPrioriteitsOpties(prmprio61risvrw);
@@ -434,6 +444,8 @@ void PrioInstellingen(void)
     iGroenBewakingsTijd[prioFC11risov] = T_max[tgb11risov];
     iGroenBewakingsTijd[prioFC11risvrw] = T_max[tgb11risvrw];
     iGroenBewakingsTijd[prioFC22fiets] = T_max[tgb22fiets];
+    iGroenBewakingsTijd[prioFC31fietsprio] = T_max[tgb31fietsprio];
+    iGroenBewakingsTijd[prioFC32fietsprio] = T_max[tgb32fietsprio];
     iGroenBewakingsTijd[prioFC61bus] = T_max[tgb61bus];
     iGroenBewakingsTijd[prioFC61risov] = T_max[tgb61risov];
     iGroenBewakingsTijd[prioFC61risvrw] = T_max[tgb61risvrw];
@@ -477,6 +489,8 @@ void PrioInstellingen(void)
     iRTSOngehinderd[prioFC11risov] = PRM[prmrto11risov];
     iRTSOngehinderd[prioFC11risvrw] = PRM[prmrto11risvrw];
     iRTSOngehinderd[prioFC22fiets] = PRM[prmrto22fiets];
+    iRTSOngehinderd[prioFC31fietsprio] = PRM[prmrto31fietsprio];
+    iRTSOngehinderd[prioFC32fietsprio] = PRM[prmrto32fietsprio];
     iRTSOngehinderd[prioFC61bus] = PRM[prmrto61bus];
     iRTSOngehinderd[prioFC61risov] = PRM[prmrto61risov];
     iRTSOngehinderd[prioFC61risvrw] = PRM[prmrto61risvrw];
@@ -520,6 +534,8 @@ void PrioInstellingen(void)
     iRTSBeperktGehinderd[prioFC11risov] = PRM[prmrtbg11risov];
     iRTSBeperktGehinderd[prioFC11risvrw] = PRM[prmrtbg11risvrw];
     iRTSBeperktGehinderd[prioFC22fiets] = PRM[prmrtbg22fiets];
+    iRTSBeperktGehinderd[prioFC31fietsprio] = PRM[prmrtbg31fietsprio];
+    iRTSBeperktGehinderd[prioFC32fietsprio] = PRM[prmrtbg32fietsprio];
     iRTSBeperktGehinderd[prioFC61bus] = PRM[prmrtbg61bus];
     iRTSBeperktGehinderd[prioFC61risov] = PRM[prmrtbg61risov];
     iRTSBeperktGehinderd[prioFC61risvrw] = PRM[prmrtbg61risvrw];
@@ -563,6 +579,8 @@ void PrioInstellingen(void)
     iRTSGehinderd[prioFC11risov] = PRM[prmrtg11risov];
     iRTSGehinderd[prioFC11risvrw] = PRM[prmrtg11risvrw];
     iRTSGehinderd[prioFC22fiets] = PRM[prmrtg22fiets];
+    iRTSGehinderd[prioFC31fietsprio] = PRM[prmrtg31fietsprio];
+    iRTSGehinderd[prioFC32fietsprio] = PRM[prmrtg32fietsprio];
     iRTSGehinderd[prioFC61bus] = PRM[prmrtg61bus];
     iRTSGehinderd[prioFC61risov] = PRM[prmrtg61risov];
     iRTSGehinderd[prioFC61risvrw] = PRM[prmrtg61risvrw];
@@ -606,6 +624,8 @@ void PrioInstellingen(void)
     iOnderMaximum[prioFC11risov] = PRM[prmomx11risov];
     iOnderMaximum[prioFC11risvrw] = PRM[prmomx11risvrw];
     iOnderMaximum[prioFC22fiets] = PRM[prmomx22fiets];
+    iOnderMaximum[prioFC31fietsprio] = PRM[prmomx31fietsprio];
+    iOnderMaximum[prioFC32fietsprio] = PRM[prmomx32fietsprio];
     iOnderMaximum[prioFC61bus] = PRM[prmomx61bus];
     iOnderMaximum[prioFC61risov] = PRM[prmomx61risov];
     iOnderMaximum[prioFC61risvrw] = PRM[prmomx61risvrw];
@@ -649,6 +669,8 @@ void PrioInstellingen(void)
     iBlokkeringsTijd[prioFC11risov] = T_max[tblk11risov];
     iBlokkeringsTijd[prioFC11risvrw] = T_max[tblk11risvrw];
     iBlokkeringsTijd[prioFC22fiets] = T_max[tblk22fiets];
+    iBlokkeringsTijd[prioFC31fietsprio] = T_max[tblk31fietsprio];
+    iBlokkeringsTijd[prioFC32fietsprio] = T_max[tblk32fietsprio];
     iBlokkeringsTijd[prioFC61bus] = T_max[tblk61bus];
     iBlokkeringsTijd[prioFC61risov] = T_max[tblk61risov];
     iBlokkeringsTijd[prioFC61risvrw] = T_max[tblk61risvrw];
@@ -693,6 +715,8 @@ void PrioInstellingen(void)
     iSelDetFoutNaGB[prioFC11risov] = SCH[schupinagb11risov];
     iSelDetFoutNaGB[prioFC11risvrw] = SCH[schupinagb11risvrw];
     iSelDetFoutNaGB[prioFC22fiets] = SCH[schupinagb22fiets];
+    iSelDetFoutNaGB[prioFC31fietsprio] = SCH[schupinagb31fietsprio];
+    iSelDetFoutNaGB[prioFC32fietsprio] = SCH[schupinagb32fietsprio];
     iSelDetFoutNaGB[prioFC61bus] = SCH[schupinagb61bus];
     iSelDetFoutNaGB[prioFC61risov] = SCH[schupinagb61risov];
     iSelDetFoutNaGB[prioFC61risvrw] = SCH[schupinagb61risvrw];
@@ -1105,6 +1129,8 @@ void RijTijdScenario(void)
 
     PrioRijTijdScenario(prioFC22fiets, d22_1, NG, NG);
 
+    PrioRijTijdScenario(prioFC31fietsprio, NG, NG, NG);
+    PrioRijTijdScenario(prioFC32fietsprio, NG, NG, NG);
     PrioRijTijdScenario(prioFC61bus, d61_1, d61_2, tbtovg61bus);
 
     PrioRijTijdScenario(prioFC61risov, d61_1, d61_2, tbtovg61risov);
@@ -1177,6 +1203,8 @@ void RijTijdScenario(void)
     if ((P[fc11] & BIT11) && C[cvc11risov] && (iRijTimer[prioFC11risov] < iRijTijd[prioFC11risov])) iRijTijd[prioFC11risov] = 0;
     if ((P[fc11] & BIT11) && C[cvc11risvrw] && (iRijTimer[prioFC11risvrw] < iRijTijd[prioFC11risvrw])) iRijTijd[prioFC11risvrw] = 0;
     if ((P[fc22] & BIT11) && C[cvc22fiets] && (iRijTimer[prioFC22fiets] < iRijTijd[prioFC22fiets])) iRijTijd[prioFC22fiets] = 0;
+    if ((P[fc31] & BIT11) && C[cvc31fietsprio] && (iRijTimer[prioFC31fietsprio] < iRijTijd[prioFC31fietsprio])) iRijTijd[prioFC31fietsprio] = 0;
+    if ((P[fc32] & BIT11) && C[cvc32fietsprio] && (iRijTimer[prioFC32fietsprio] < iRijTijd[prioFC32fietsprio])) iRijTijd[prioFC32fietsprio] = 0;
     if ((P[fc61] & BIT11) && C[cvc61bus] && (iRijTimer[prioFC61bus] < iRijTijd[prioFC61bus])) iRijTijd[prioFC61bus] = 0;
     if ((P[fc61] & BIT11) && C[cvc61risov] && (iRijTimer[prioFC61risov] < iRijTijd[prioFC61risov])) iRijTijd[prioFC61risov] = 0;
     if ((P[fc61] & BIT11) && C[cvc61risvrw] && (iRijTimer[prioFC61risvrw] < iRijTijd[prioFC61risvrw])) iRijTijd[prioFC61risvrw] = 0;
@@ -1238,6 +1266,8 @@ void InUitMelden(void)
     PrioInmelden(prioFC11risov, SH[hprioin11risov], iInstPrioriteitsNiveau[prioFC11risov], iInstPrioriteitsOpties[prioFC11risov], 0, 0);
     PrioInmelden(prioFC11risvrw, SH[hprioin11risvrw], iInstPrioriteitsNiveau[prioFC11risvrw], iInstPrioriteitsOpties[prioFC11risvrw], 0, 0);
     PrioInmelden(prioFC22fiets, SH[hprioin22fiets], iInstPrioriteitsNiveau[prioFC22fiets], iInstPrioriteitsOpties[prioFC22fiets], 0, 0);
+    PrioInmelden(prioFC31fietsprio, SH[hprioin31fietsprio], iInstPrioriteitsNiveau[prioFC31fietsprio], iInstPrioriteitsOpties[prioFC31fietsprio], 0, 0);
+    PrioInmelden(prioFC32fietsprio, SH[hprioin32fietsprio], iInstPrioriteitsNiveau[prioFC32fietsprio], iInstPrioriteitsOpties[prioFC32fietsprio], 0, 0);
     PrioInmelden(prioFC61bus, SH[hprioin61bus], iInstPrioriteitsNiveau[prioFC61bus], iInstPrioriteitsOpties[prioFC61bus], 0, 0);
     PrioInmelden(prioFC61risov, SH[hprioin61risov], iInstPrioriteitsNiveau[prioFC61risov], iInstPrioriteitsOpties[prioFC61risov], 0, 0);
     PrioInmelden(prioFC61risvrw, SH[hprioin61risvrw], iInstPrioriteitsNiveau[prioFC61risvrw], iInstPrioriteitsOpties[prioFC61risvrw], 0, 0);
@@ -1271,6 +1301,8 @@ void InUitMelden(void)
     PrioUitmelden(prioFC11risov, SH[hpriouit11risov]);
     PrioUitmelden(prioFC11risvrw, SH[hpriouit11risvrw]);
     PrioUitmelden(prioFC22fiets, SH[hpriouit22fiets]);
+    PrioUitmelden(prioFC31fietsprio, SH[hpriouit31fietsprio]);
+    PrioUitmelden(prioFC32fietsprio, SH[hpriouit32fietsprio]);
     PrioUitmelden(prioFC61bus, SH[hpriouit61bus]);
     PrioUitmelden(prioFC61risov, SH[hpriouit61risov]);
     PrioUitmelden(prioFC61risvrw, SH[hpriouit61risvrw]);
@@ -2372,6 +2404,8 @@ void PrioriteitsOpties(void)
         iPrioriteitsOpties[prioFC11risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst11risov);
         iPrioriteitsOpties[prioFC11risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst11risvrw);
         iPrioriteitsOpties[prioFC22fiets] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst22fiets);
+        iPrioriteitsOpties[prioFC31fietsprio] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst31fietsprio);
+        iPrioriteitsOpties[prioFC32fietsprio] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst32fietsprio);
         iPrioriteitsOpties[prioFC61bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst61bus);
         iPrioriteitsOpties[prioFC61risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst61risov);
         iPrioriteitsOpties[prioFC61risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst61risvrw);
@@ -2453,52 +2487,52 @@ void PostAfhandelingPrio(void)
 
 
     /* Niet afkappen naloop richtingen wanneer een naloop tijd nog loopt */
-    if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
+    if (RA[fc22] || RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
     {
         Z[fc21] &= ~BIT6;
-        RR[fc21] &= ~(BIT1|BIT2|BIT6);
+        RR[fc21] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc21] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlsgd3231] || T[tnlsgd3231])
+    if (RA[fc32] || RT[tnlsgd3231] || T[tnlsgd3231])
     {
         Z[fc31] &= ~BIT6;
-        RR[fc31] &= ~(BIT1|BIT2|BIT6);
+        RR[fc31] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc31] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlsgd3132] || T[tnlsgd3132])
+    if (RA[fc31] || RT[tnlsgd3132] || T[tnlsgd3132])
     {
         Z[fc32] &= ~BIT6;
-        RR[fc32] &= ~(BIT1|BIT2|BIT6);
+        RR[fc32] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc32] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlsgd3433] || T[tnlsgd3433])
+    if (RA[fc34] || RT[tnlsgd3433] || T[tnlsgd3433])
     {
         Z[fc33] &= ~BIT6;
-        RR[fc33] &= ~(BIT1|BIT2|BIT6);
+        RR[fc33] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc33] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlsgd3334] || T[tnlsgd3334])
+    if (RA[fc33] || RT[tnlsgd3334] || T[tnlsgd3334])
     {
         Z[fc34] &= ~BIT6;
-        RR[fc34] &= ~(BIT1|BIT2|BIT6);
+        RR[fc34] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc34] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlfg0262] || T[tnlfg0262] || RT[tnleg0262] || T[tnleg0262])
+    if (RA[fc02] || RT[tnlfg0262] || T[tnlfg0262] || RT[tnleg0262] || T[tnleg0262])
     {
         Z[fc62] &= ~BIT6;
-        RR[fc62] &= ~(BIT1|BIT2|BIT6);
+        RR[fc62] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc62] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlfg0868] || T[tnlfg0868] || RT[tnleg0868] || T[tnleg0868] || RT[tnlfg1168] || T[tnlfg1168] || RT[tnlfgd1168] || T[tnlfgd1168] || RT[tnleg1168] || T[tnleg1168] || RT[tnlegd1168] || T[tnlegd1168])
+    if (RA[fc08] || RT[tnlfg0868] || T[tnlfg0868] || RT[tnleg0868] || T[tnleg0868] || RT[tnlfg1168] || T[tnlfg1168] || RT[tnlfgd1168] || T[tnlfgd1168] || RT[tnleg1168] || T[tnleg1168] || RT[tnlegd1168] || T[tnlegd1168])
     {
         Z[fc68] &= ~BIT6;
-        RR[fc68] &= ~(BIT1|BIT2|BIT6);
+        RR[fc68] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc68] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlfg8281] || T[tnlfg8281] || RT[tnlfgd8281] || T[tnlfgd8281] || RT[tnleg8281] || T[tnleg8281] || RT[tnlegd8281] || T[tnlegd8281])
+    if (RA[fc82] || RT[tnlfg8281] || T[tnlfg8281] || RT[tnlfgd8281] || T[tnlfgd8281] || RT[tnleg8281] || T[tnleg8281] || RT[tnlegd8281] || T[tnlegd8281])
     {
         Z[fc81] &= ~BIT6;
-        RR[fc81] &= ~(BIT1|BIT2|BIT6);
+        RR[fc81] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc81] &= ~PRIO_FM_BIT;
     }
 
@@ -2518,55 +2552,55 @@ void PostAfhandelingPrio(void)
     /* Niet afkappen naloop richtingen wanneer voedende een P[]&BIT11 heeft */
     if (P[fc02] & BIT11) {
          Z[fc62] &= ~BIT6;
-        RR[fc62] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc62] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc62] &= ~PRIO_FM_BIT;
     }
 
     if (P[fc08] & BIT11) {
          Z[fc68] &= ~BIT6;
-        RR[fc68] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc68] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc68] &= ~PRIO_FM_BIT;
     }
 
     if (P[fc11] & BIT11) {
          Z[fc68] &= ~BIT6;
-        RR[fc68] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc68] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc68] &= ~PRIO_FM_BIT;
     }
 
     if (P[fc22] & BIT11) {
          Z[fc21] &= ~BIT6;
-        RR[fc21] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc21] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc21] &= ~PRIO_FM_BIT;
     }
 
     if (P[fc31] & BIT11) {
          Z[fc32] &= ~BIT6;
-        RR[fc32] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc32] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc32] &= ~PRIO_FM_BIT;
     }
 
     if (P[fc32] & BIT11) {
          Z[fc31] &= ~BIT6;
-        RR[fc31] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc31] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc31] &= ~PRIO_FM_BIT;
     }
 
     if (P[fc33] & BIT11) {
          Z[fc34] &= ~BIT6;
-        RR[fc34] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc34] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc34] &= ~PRIO_FM_BIT;
     }
 
     if (P[fc34] & BIT11) {
          Z[fc33] &= ~BIT6;
-        RR[fc33] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc33] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc33] &= ~PRIO_FM_BIT;
     }
 
     if (P[fc82] & BIT11) {
          Z[fc81] &= ~BIT6;
-        RR[fc81] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc81] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc81] &= ~PRIO_FM_BIT;
     }
 
@@ -2576,13 +2610,13 @@ void PostAfhandelingPrio(void)
     /* Niet afkappen voorstartende richting wanneer voedende een P[]&BIT11 heeft */
     if (P[fc05] & BIT11) {
          Z[fc22] &= ~BIT6;
-        RR[fc22] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc22] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc22] &= ~PRIO_FM_BIT;
     }
 
     if (P[fc05] & BIT11) {
          Z[fc32] &= ~BIT6;
-        RR[fc32] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc32] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc32] &= ~PRIO_FM_BIT;
     }
 
@@ -2592,7 +2626,7 @@ void PostAfhandelingPrio(void)
     /* Niet afkappen laterelease richting wanneer voedende een P[]&BIT11 heeft */
     if (P[fc11] & BIT11) {
          Z[fc26] &= ~BIT6;
-        RR[fc26] &= ~(BIT1 | BIT2 | BIT6);
+        RR[fc26] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc26] &= ~PRIO_FM_BIT;
     }
 
@@ -2711,6 +2745,8 @@ void PrioCcol(void) {
     PrioCcolElementen(prioFC11risov, tgb11risov, trt11risov, hprio11risov, cvc11risov, tblk11risov);
     PrioCcolElementen(prioFC11risvrw, tgb11risvrw, trt11risvrw, hprio11risvrw, cvc11risvrw, tblk11risvrw);
     PrioCcolElementen(prioFC22fiets, tgb22fiets, trt22fiets, hprio22fiets, cvc22fiets, tblk22fiets);
+    PrioCcolElementen(prioFC31fietsprio, tgb31fietsprio, trt31fietsprio, hprio31fietsprio, cvc31fietsprio, tblk31fietsprio);
+    PrioCcolElementen(prioFC32fietsprio, tgb32fietsprio, trt32fietsprio, hprio32fietsprio, cvc32fietsprio, tblk32fietsprio);
     PrioCcolElementen(prioFC61bus, tgb61bus, trt61bus, hprio61bus, cvc61bus, tblk61bus);
     PrioCcolElementen(prioFC61risov, tgb61risov, trt61risov, hprio61risov, cvc61risov, tblk61risov);
     PrioCcolElementen(prioFC61risvrw, tgb61risvrw, trt61risvrw, hprio61risvrw, cvc61risvrw, tblk61risvrw);

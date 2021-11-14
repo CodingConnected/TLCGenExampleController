@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (12112021 beta)
  *
  ************************************************************************************/
 
@@ -299,6 +299,8 @@ void Meetkriterium_halfstar(void)
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risov]);
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risvrw]);
         yv_PRIO_pl_halfstar(fc22, BIT7, C[cvc22fiets]);
+        yv_PRIO_pl_halfstar(fc31, BIT7, C[cvc31fietsprio]);
+        yv_PRIO_pl_halfstar(fc32, BIT7, C[cvc32fietsprio]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61bus]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61risov]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61risvrw]);
@@ -689,6 +691,8 @@ void PrioHalfstarSettings(void)
     iExtraGroenNaTXD[prioFC11risov] = PRM[prmnatxdhst11risov];
     iExtraGroenNaTXD[prioFC11risvrw] = PRM[prmnatxdhst11risvrw];
     iExtraGroenNaTXD[prioFC22fiets] = PRM[prmnatxdhst22fiets];
+    iExtraGroenNaTXD[prioFC31fietsprio] = PRM[prmnatxdhst31fietsprio];
+    iExtraGroenNaTXD[prioFC32fietsprio] = PRM[prmnatxdhst32fietsprio];
     iExtraGroenNaTXD[prioFC61bus] = PRM[prmnatxdhst61bus];
     iExtraGroenNaTXD[prioFC61risov] = PRM[prmnatxdhst61risov];
     iExtraGroenNaTXD[prioFC61risvrw] = PRM[prmnatxdhst61risvrw];

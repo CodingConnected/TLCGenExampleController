@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 2.0.0    09-11-2021   Cyril       Nieuwe versie TLCGen (05112021 beta)
+ * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (12112021 beta)
  *
  ************************************************************************************/
 
@@ -266,6 +266,8 @@ void display_parameters(void)
     X_us[usovinm11risov] = 52; Y_us[usovinm11risov] = 98;
     X_us[usovinm11risvrw] = 86; Y_us[usovinm11risvrw] = 96;
     X_us[usovinm22fiets] = 277; Y_us[usovinm22fiets] = 144;
+    X_us[usovinm31fietsprio] = NG; Y_us[usovinm31fietsprio] = NG;
+    X_us[usovinm32fietsprio] = NG; Y_us[usovinm32fietsprio] = NG;
     X_us[usovinm61bus] = 153; Y_us[usovinm61bus] = 108;
     X_us[usovinm61risov] = 50; Y_us[usovinm61risov] = 110;
     X_us[usovinm61risvrw] = 85; Y_us[usovinm61risvrw] = 108;
