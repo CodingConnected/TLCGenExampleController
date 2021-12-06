@@ -11,14 +11,14 @@ void signaalplan_instellingen(void);
 
    BESTAND:   123456tab.c
       CCOL:   11.0
-    TLCGEN:   0.10.2.0
-   CCOLGEN:   0.10.2.0
+    TLCGEN:   0.10.4.0
+   CCOLGEN:   0.10.4.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (12112021 beta)
+ * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0)
  *
  ************************************************************************************/
 

@@ -8,14 +8,14 @@
 
    BESTAND:   123456reg.c
       CCOL:   11.0
-    TLCGEN:   0.10.2.0
-   CCOLGEN:   0.10.2.0
+    TLCGEN:   0.10.4.0
+   CCOLGEN:   0.10.4.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (12112021 beta)
+ * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0)
  *
  ************************************************************************************/
 
@@ -2678,9 +2678,10 @@ void system_application2(void)
         if (RT[tfo0522] || T[tfo0522]) P[fc22] &= ~BIT11;
         if (RT[tfo0532] || T[tfo0532]) P[fc32] &= ~BIT11;
         if (RT[tfo1126] || T[tfo1126]) P[fc26] &= ~BIT11;
+
+        msg_fctiming(PRM[prmlatencyminendsg]);
     #endif
 
-    msg_fctiming(PRM[prmlatencyminendsg]);
 #if !(defined NO_TIMETOX) && !defined NO_TIMINGS_PRINT && (!defined (AUTOMAAT) || defined (VISSIM)) && !defined AUTOMAAT_TEST
     if (display) {
         xyprintf( 92, 8 + FC_MAX,"-----");
