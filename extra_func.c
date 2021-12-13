@@ -1576,15 +1576,16 @@ boolv ControleerVS(count fc1, count fc2, boolv cond, boolv halt)
 
 boolv set_MRLW_nl(count i, count j, boolv period)
 /* meerealisatie uitgebreid */
-/* Als de voedende richting niet primair komt ten gevolge van een ov ingreep (BIT6), 
+/* Als de voedende richting niet primair komt ten gevolge , 
  * sturen wij de naloop middels een aangepast set_MRLW (zonder !fkaa) naar RA.
- * set_MRLW volstaat niet omdat hier op !fkaa wordt getest. 
+ * set_MRLW volstaat niet omdat hier op !fkaa wordt getest en 
+ * de naloop ook moet komen als de voedende richting groen is of RR heeft. 
  * i=naloop, j=voedend, period=voorwaarde 
  */
 {
 #if CCOL_V >= 110
    if (AA[j] && period /* && RV[i] */ && !AA[i] && (!RR[i] || P[i]) && !BL[i] && !kaa(i) /* !fkaa */
-      && (!RR[j] || P[j]) && !BL[j]) {         
+      && (!RR[j] || G[j]) && !BL[j]) {
 #else
    if (AA[j] && period /* && RV[i] */ && !AA[i] && !RR[i] && !BL[i] && !kaa(i) /* !fkaa */
       && !RR[j] && !BL[j]) {         

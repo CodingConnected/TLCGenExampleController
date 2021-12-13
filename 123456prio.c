@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    13-12-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0) beta 13122021
+ * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0)
  *
  ************************************************************************************/
 
@@ -2283,16 +2283,37 @@ void PrioAfkappenExtra(void)
 #ifndef NO_TIMETOX
 if (SCH[schconfidence15fix])
     {
-        if (SCH[schgs2232] && (P[fc22] & BIT11)) { Z[fc32] &= ~PRIO_Z_BIT; }
-        if (SCH[schgs2232] && (P[fc32] & BIT11)) { Z[fc22] &= ~PRIO_Z_BIT; }
-        if (SCH[schgs2434] && (P[fc24] & BIT11)) { Z[fc34] &= ~PRIO_Z_BIT; }
-        if (SCH[schgs2434] && (P[fc34] & BIT11)) { Z[fc24] &= ~PRIO_Z_BIT; }
-        if (SCH[schgs3384] && (P[fc33] & BIT11)) { Z[fc84] &= ~PRIO_Z_BIT; }
-        if (SCH[schgs3384] && (P[fc84] & BIT11)) { Z[fc33] &= ~PRIO_Z_BIT; }
-        if ((P[fc05] & BIT11)) { Z[fc22] &= ~PRIO_Z_BIT; }
+   if (SCH[schgs2232] && (P[fc22] & BIT11)) { Z[fc32] &= ~PRIO_Z_BIT; }
+   if (SCH[schgs2232] && (P[fc32] & BIT11)) { Z[fc22] &= ~PRIO_Z_BIT; }
+   if (SCH[schgs2434] && (P[fc24] & BIT11)) { Z[fc34] &= ~PRIO_Z_BIT; }
+   if (SCH[schgs2434] && (P[fc34] & BIT11)) { Z[fc24] &= ~PRIO_Z_BIT; }
+   if ((P[fc31] & BIT11)) { Z[fc32] &= ~PRIO_Z_BIT; }
+   if ((P[fc32] & BIT11)) { Z[fc31] &= ~PRIO_Z_BIT; }
+   if ((P[fc33] & BIT11)) { Z[fc34] &= ~PRIO_Z_BIT; }
+   if ((P[fc34] & BIT11)) { Z[fc33] &= ~PRIO_Z_BIT; }
+   if (SCH[schgs3384] && (P[fc33] & BIT11)) { Z[fc84] &= ~PRIO_Z_BIT; }
+   if (SCH[schgs3384] && (P[fc84] & BIT11)) { Z[fc33] &= ~PRIO_Z_BIT; }
+   if ((P[fc05] & BIT11)) { Z[fc22] &= ~PRIO_Z_BIT; }
         if ((P[fc05] & BIT11)) { Z[fc32] &= ~PRIO_Z_BIT; }
         if ((P[fc11] & BIT11)) { Z[fc26] &= ~PRIO_Z_BIT; }
-    }
+        /* Correctie gelijkstart <> gelijkstart
+         * Bij een gelijkstart die een fase deelt met een andere gelijsktart
+         * kan de max-end tijd worden verhoogd op start-geel, daarom wordt
+         * start geel uitgesteld.
+         */
+        if (SCH[schgs2232] && G[fc22] && R[fc31] && (P[fc31] & BIT11)) Z[fc22] &= ~PRIO_Z_BIT;
+        if (SCH[schgs2232] && G[fc31] && R[fc22] && (P[fc22] & BIT11)) Z[fc31] &= ~PRIO_Z_BIT;
+        if (SCH[schgs2434] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) Z[fc24] &= ~PRIO_Z_BIT;
+        if (SCH[schgs2434] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) Z[fc33] &= ~PRIO_Z_BIT;
+        if (SCH[schgs2232] && G[fc31] && R[fc22] && (P[fc22] & BIT11)) Z[fc31] &= ~PRIO_Z_BIT;
+        if (SCH[schgs2232] && G[fc22] && R[fc31] && (P[fc31] & BIT11)) Z[fc22] &= ~PRIO_Z_BIT;
+        if (SCH[schgs2434] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) Z[fc33] &= ~PRIO_Z_BIT;
+        if (SCH[schgs2434] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) Z[fc24] &= ~PRIO_Z_BIT;
+        if (SCH[schgs3384] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) Z[fc34] &= ~PRIO_Z_BIT;
+        if (SCH[schgs3384] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) Z[fc84] &= ~PRIO_Z_BIT;
+        if (SCH[schgs3384] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) Z[fc84] &= ~PRIO_Z_BIT;
+        if (SCH[schgs3384] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) Z[fc34] &= ~PRIO_Z_BIT;
+}
 #endif
 
     /* Niet afkappen tijdens fixeren */
@@ -2490,51 +2511,106 @@ void PostAfhandelingPrio(void)
     if (RA[fc22] || RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
     {
         Z[fc21] &= ~BIT6;
-        RR[fc21] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
+        RR[fc21] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc21] &= ~PRIO_FM_BIT;
     }
     if (RA[fc32] || RT[tnlsgd3231] || T[tnlsgd3231])
     {
         Z[fc31] &= ~BIT6;
-        RR[fc31] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
+        RR[fc31] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc31] &= ~PRIO_FM_BIT;
     }
     if (RA[fc31] || RT[tnlsgd3132] || T[tnlsgd3132])
     {
         Z[fc32] &= ~BIT6;
-        RR[fc32] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
+        RR[fc32] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc32] &= ~PRIO_FM_BIT;
     }
     if (RA[fc34] || RT[tnlsgd3433] || T[tnlsgd3433])
     {
         Z[fc33] &= ~BIT6;
-        RR[fc33] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
+        RR[fc33] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc33] &= ~PRIO_FM_BIT;
     }
     if (RA[fc33] || RT[tnlsgd3334] || T[tnlsgd3334])
     {
         Z[fc34] &= ~BIT6;
-        RR[fc34] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
+        RR[fc34] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc34] &= ~PRIO_FM_BIT;
     }
     if (RA[fc02] || RT[tnlfg0262] || T[tnlfg0262] || RT[tnleg0262] || T[tnleg0262])
     {
         Z[fc62] &= ~BIT6;
-        RR[fc62] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
+        RR[fc62] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc62] &= ~PRIO_FM_BIT;
     }
     if (RA[fc08] || RT[tnlfg0868] || T[tnlfg0868] || RT[tnleg0868] || T[tnleg0868] || RT[tnlfg1168] || T[tnlfg1168] || RT[tnlfgd1168] || T[tnlfgd1168] || RT[tnleg1168] || T[tnleg1168] || RT[tnlegd1168] || T[tnlegd1168])
     {
         Z[fc68] &= ~BIT6;
-        RR[fc68] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
+        RR[fc68] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc68] &= ~PRIO_FM_BIT;
     }
     if (RA[fc82] || RT[tnlfg8281] || T[tnlfg8281] || RT[tnlfgd8281] || T[tnlfgd8281] || RT[tnleg8281] || T[tnleg8281] || RT[tnlegd8281] || T[tnlegd8281])
     {
         Z[fc81] &= ~BIT6;
-        RR[fc81] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
+        RR[fc81] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc81] &= ~PRIO_FM_BIT;
     }
+
+    /* Niet afkappen late release richtingen wanneer de laterelease tijd nog loopt */
+    RT[tlr2611] = ER[fc11];
+    if (RT[tlr2611] || T[tlr2611])
+    {
+       Z[fc26] &= ~BIT6;
+       RR[fc26] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+       FM[fc26] &= ~PRIO_FM_BIT;
+    }
+
+    /* Niet afkappen late release richtingen wanneer de laterelease tijd nog loopt */
+    RT[tlr6202] = ER[fc02];
+    if (RT[tlr6202] || T[tlr6202])
+    {
+       Z[fc62] &= ~BIT6;
+       RR[fc62] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+       FM[fc62] &= ~PRIO_FM_BIT;
+    }
+
+    /* Niet afkappen late release richtingen wanneer de laterelease tijd nog loopt */
+    RT[tlr6808] = ER[fc08];
+    if (RT[tlr6808] || T[tlr6808])
+    {
+       Z[fc68] &= ~BIT6;
+       RR[fc68] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+       FM[fc68] &= ~PRIO_FM_BIT;
+    }
+
+    /* Niet afkappen late release richtingen wanneer de laterelease tijd nog loopt */
+    RT[tlr6811] = ER[fc11];
+    if (RT[tlr6811] || T[tlr6811])
+    {
+       Z[fc68] &= ~BIT6;
+       RR[fc68] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+       FM[fc68] &= ~PRIO_FM_BIT;
+    }
+
+    /* Niet afkappen late release richtingen wanneer de laterelease tijd nog loopt */
+    RT[tlr2122] = ER[fc22];
+    if (RT[tlr2122] || T[tlr2122])
+    {
+       Z[fc21] &= ~BIT6;
+       RR[fc21] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+       FM[fc21] &= ~PRIO_FM_BIT;
+    }
+
+    /* Niet afkappen late release richtingen wanneer de laterelease tijd nog loopt */
+    RT[tlr8182] = ER[fc82];
+    if (RT[tlr8182] || T[tlr8182])
+    {
+       Z[fc81] &= ~BIT6;
+       RR[fc81] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+       FM[fc81] &= ~PRIO_FM_BIT;
+    }
+
 
     /* nooit einde groen als granted verstrekt */
     /* --------------------------------------- */
