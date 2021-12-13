@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0)
+ * 1.0.0    13-12-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0) beta 13122021
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "1.0.0 20211114"
+#define VERSION "1.0.0 20211213"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
 
@@ -1486,383 +1486,383 @@
     #define schdynhiaat11              9 /* Toepassen dynamsich hiaat bij fase 11                                 */
     #define schopdrempelen11          10 /* Opdrempelen toepassen voor fase 11                                    */
     #define schedkop_11               11 /* Start timers dynamische hiaat fase 11 op einde detectie koplus        */
-    #define schconfidence15fix        12
-    #define schtxconfidence15ar       13
-    #define schspatconfidence1        14
-    #define schspatconfidence3        15
-    #define schspatconfidence6        16
-    #define schspatconfidence9        17
-    #define schspatconfidence12       18
-    #define schspatconfidence15       19
-    #define schtimings02              20
-    #define schtimings03              21
-    #define schtimings05              22
-    #define schtimings08              23
-    #define schtimings09              24
-    #define schtimings11              25
-    #define schtimings21              26
-    #define schtimings22              27
-    #define schtimings24              28
-    #define schtimings26              29
-    #define schtimings28              30
-    #define schtimings31              31
-    #define schtimings32              32
-    #define schtimings33              33
-    #define schtimings34              34
-    #define schtimings38              35
-    #define schtimings61              36
-    #define schtimings62              37
-    #define schtimings67              38
-    #define schtimings68              39
-    #define schtimings81              40
-    #define schtimings82              41
-    #define schtimings84              42
-    #define schfileFile68af           43 /* File ingreep File68af toepassen                                       */
-    #define schfiledoserenFile68af    44 /* Toepassen doseerpercentages voor fileingreep File68af                 */
-    #define schfileFile68afparstrook  45 /* Parallele file meldingen per strook file ingreep File68af             */
-    #define schbmfix                  46 /* Bijkomen tijdens fixatie mogelijk                                     */
-    #define schaltghst02              47 /* Alternatief realiseren fase 02 toestaan tijdens halfstar regelen      */
-    #define schaltghst03              48 /* Alternatief realiseren fase 03 toestaan tijdens halfstar regelen      */
-    #define schaltghst05              49 /* Alternatief realiseren fase 05 toestaan tijdens halfstar regelen      */
-    #define schaltghst08              50 /* Alternatief realiseren fase 08 toestaan tijdens halfstar regelen      */
-    #define schaltghst09              51 /* Alternatief realiseren fase 09 toestaan tijdens halfstar regelen      */
-    #define schaltghst11              52 /* Alternatief realiseren fase 11 toestaan tijdens halfstar regelen      */
-    #define schaltghst21              53 /* Alternatief realiseren fase 21 toestaan tijdens halfstar regelen      */
-    #define schaltghst2232            54 /* Alternatief realiseren fasen 22, 32 toestaan tijdens halfstar regelen */
-    #define schaltghst2434            55 /* Alternatief realiseren fasen 24, 34 toestaan tijdens halfstar regelen */
-    #define schaltghst81              56 /* Alternatief realiseren fase 81 toestaan tijdens halfstar regelen      */
-    #define schaltghst88              57 /* Alternatief realiseren fase 88 toestaan tijdens halfstar regelen      */
-    #define schaltghst3384            58 /* Alternatief realiseren fasen 33, 84 toestaan tijdens halfstar regelen */
-    #define schaltghst68              59 /* Alternatief realiseren fase 68 toestaan tijdens halfstar regelen      */
-    #define schaltghst82              60 /* Alternatief realiseren fase 82 toestaan tijdens halfstar regelen      */
-    #define schaltghst67              61 /* Alternatief realiseren fase 67 toestaan tijdens halfstar regelen      */
-    #define schaltghst62              62 /* Alternatief realiseren fase 62 toestaan tijdens halfstar regelen      */
-    #define schaltghst61              63 /* Alternatief realiseren fase 61 toestaan tijdens halfstar regelen      */
-    #define schaltghst38              64 /* Alternatief realiseren fase 38 toestaan tijdens halfstar regelen      */
-    #define schaltghst31              65 /* Alternatief realiseren fase 31 toestaan tijdens halfstar regelen      */
-    #define schaltghst28              66 /* Alternatief realiseren fase 28 toestaan tijdens halfstar regelen      */
-    #define schaltghst26              67 /* Alternatief realiseren fase 26 toestaan tijdens halfstar regelen      */
-    #define schinstprm                68 /* Eenmalig kopieren signaalplan parameters naar signaalplannen          */
-    #define schinst                   69 /* Eenmalig instellen signaalplannen na wijziging                        */
-    #define schvaml                   70 /* Indien VA regelen, ML-bedrijf (1) of versneld PL-bedrijf (0)          */
-    #define schvar                    71 /* VA regelen aan of uit                                                 */
-    #define scharh                    72 /* Toestaan alternatieven voor hoofdrichtingen                           */
-    #define schvarstreng              73 /* VA regelen aan of uit voor gehele streng                              */
-    #define schpervardef              74 /* VA regelen periode default                                            */
-    #define schpervar1                75 /* VA regelen periode dag                                                */
-    #define schpervar2                76 /* VA regelen periode ochtend                                            */
-    #define schpervar3                77 /* VA regelen periode avond                                              */
-    #define schpervar4                78 /* VA regelen periode koopavond                                          */
-    #define schpervar5                79 /* VA regelen periode weekend                                            */
-    #define schpervar6                80 /* VA regelen periode reserve                                            */
-    #define schperarhdef              81 /* Alternatieven voor hoofdrichtingen periode default                    */
-    #define schperarh1                82 /* Alternatieven voor hoofdrichtingen periode dag                        */
-    #define schperarh2                83 /* Alternatieven voor hoofdrichtingen periode ochtend                    */
-    #define schperarh3                84 /* Alternatieven voor hoofdrichtingen periode avond                      */
-    #define schperarh4                85 /* Alternatieven voor hoofdrichtingen periode koopavond                  */
-    #define schperarh5                86 /* Alternatieven voor hoofdrichtingen periode weekend                    */
-    #define schperarh6                87 /* Alternatieven voor hoofdrichtingen periode reserve                    */
-    #define schovpriople              88 /* Wel of niet toepassen prioriteit OV tijdens PL-bedrijf                */
-    #define schma0261                 89 /* Meeaanvraag van 02 naar 61 actief                                     */
-    #define schma0262                 90 /* Meeaanvraag van 02 naar 62 actief                                     */
-    #define schma0521                 91 /* Meeaanvraag van 05 naar 21 actief                                     */
-    #define schma0522                 92 /* Meeaanvraag van 05 naar 22 actief                                     */
-    #define schma0532                 93 /* Meeaanvraag van 05 naar 32 actief                                     */
-    #define schma0868                 94 /* Meeaanvraag van 08 naar 68 actief                                     */
-    #define schma1126                 95 /* Meeaanvraag van 11 naar 26 actief                                     */
-    #define schma1168                 96 /* Meeaanvraag van 11 naar 68 actief                                     */
-    #define schma2221                 97 /* Meeaanvraag van 22 naar 21 actief                                     */
-    #define schma3122                 98 /* Meeaanvraag van 31 naar 22 actief                                     */
-    #define schma3132                 99 /* Meeaanvraag van 31 naar 32 actief                                     */
-    #define schma3222                100 /* Meeaanvraag van 32 naar 22 actief                                     */
-    #define schma3231                101 /* Meeaanvraag van 32 naar 31 actief                                     */
-    #define schma3324                102 /* Meeaanvraag van 33 naar 24 actief                                     */
-    #define schma3334                103 /* Meeaanvraag van 33 naar 34 actief                                     */
-    #define schma3384                104 /* Meeaanvraag van 33 naar 84 actief                                     */
-    #define schma3424                105 /* Meeaanvraag van 34 naar 24 actief                                     */
-    #define schma3433                106 /* Meeaanvraag van 34 naar 33 actief                                     */
-    #define schma3484                107 /* Meeaanvraag van 34 naar 84 actief                                     */
-    #define schma8281                108 /* Meeaanvraag van 82 naar 81 actief                                     */
-    #define schmv02                  109 /* Meeverlengen fase 02                                                  */
-    #define schmv03                  110 /* Meeverlengen fase 03                                                  */
-    #define schmv05                  111 /* Meeverlengen fase 05                                                  */
-    #define schmv08                  112 /* Meeverlengen fase 08                                                  */
-    #define schmv09                  113 /* Meeverlengen fase 09                                                  */
-    #define schmv11                  114 /* Meeverlengen fase 11                                                  */
-    #define schmv21                  115 /* Meeverlengen fase 21                                                  */
-    #define schmv22                  116 /* Meeverlengen fase 22                                                  */
-    #define schmv24                  117 /* Meeverlengen fase 24                                                  */
-    #define schmv26                  118 /* Meeverlengen fase 26                                                  */
-    #define schmv28                  119 /* Meeverlengen fase 28                                                  */
-    #define schmv31                  120 /* Meeverlengen fase 31                                                  */
-    #define schmv32                  121 /* Meeverlengen fase 32                                                  */
-    #define schmv33                  122 /* Meeverlengen fase 33                                                  */
-    #define schmv34                  123 /* Meeverlengen fase 34                                                  */
-    #define schmv38                  124 /* Meeverlengen fase 38                                                  */
-    #define schmv61                  125 /* Meeverlengen fase 61                                                  */
-    #define schmv62                  126 /* Meeverlengen fase 62                                                  */
-    #define schmv67                  127 /* Meeverlengen fase 67                                                  */
-    #define schmv68                  128 /* Meeverlengen fase 68                                                  */
-    #define schmv81                  129 /* Meeverlengen fase 81                                                  */
-    #define schmv82                  130 /* Meeverlengen fase 82                                                  */
-    #define schmv84                  131 /* Meeverlengen fase 84                                                  */
-    #define schmlprm                 132 /* Toepassen parametriseerbare modulestructuur                           */
-    #define schovstipt02bus          133 /* Geconditioneerde prioteit voor OV bij 02 Bus                          */
-    #define schovstipt03bus          134 /* Geconditioneerde prioteit voor OV bij 03 Bus                          */
-    #define schovstipt05bus          135 /* Geconditioneerde prioteit voor OV bij 05 Bus                          */
-    #define schovstipt08bus          136 /* Geconditioneerde prioteit voor OV bij 08 Bus                          */
-    #define schovstipt09bus          137 /* Geconditioneerde prioteit voor OV bij 09 Bus                          */
-    #define schovstipt11bus          138 /* Geconditioneerde prioteit voor OV bij 11 Bus                          */
-    #define schovstipt61bus          139 /* Geconditioneerde prioteit voor OV bij 61 Bus                          */
-    #define schovstipt62bus          140 /* Geconditioneerde prioteit voor OV bij 62 Bus                          */
-    #define schovstipt67bus          141 /* Geconditioneerde prioteit voor OV bij 67 Bus                          */
-    #define schovstipt68bus          142 /* Geconditioneerde prioteit voor OV bij 68 Bus                          */
-    #define schcovuber               143 /* Weergeven wijzigingen PRIO_teller via CIF_UBER                        */
-    #define schcheckdstype           144 /* Check type DSI bericht bij VECOM                                      */
-    #define schprioin02buskar        145 /* Inmelden 02 via Bus toestaan                                          */
-    #define schpriouit02buskar       146 /* Uitmelden 02 via Bus toestaan                                         */
-    #define schupinagb02bus          147 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02         */
-    #define schprioin02risovris      148 /* Inmelden 02 via Bus toestaan                                          */
-    #define schpriouit02risovris     149 /* Uitmelden 02 via Bus toestaan                                         */
-    #define schupinagb02risov        150 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02         */
-    #define schprioin02risvrwris     151 /* Inmelden 02 via Vrachtwagen toestaan                                  */
-    #define schpriouit02risvrwris    152 /* Uitmelden 02 via Vrachtwagen toestaan                                 */
-    #define schupinagb02risvrw       153 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02         */
-    #define schprioin03buskar        154 /* Inmelden 03 via Bus toestaan                                          */
-    #define schpriouit03buskar       155 /* Uitmelden 03 via Bus toestaan                                         */
-    #define schupinagb03bus          156 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03         */
-    #define schprioin03risovris      157 /* Inmelden 03 via Bus toestaan                                          */
-    #define schpriouit03risovris     158 /* Uitmelden 03 via Bus toestaan                                         */
-    #define schupinagb03risov        159 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03         */
-    #define schprioin03risvrwris     160 /* Inmelden 03 via Vrachtwagen toestaan                                  */
-    #define schpriouit03risvrwris    161 /* Uitmelden 03 via Vrachtwagen toestaan                                 */
-    #define schupinagb03risvrw       162 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03         */
-    #define schprioin05buskar        163 /* Inmelden 05 via Bus toestaan                                          */
-    #define schpriouit05buskar       164 /* Uitmelden 05 via Bus toestaan                                         */
-    #define schupinagb05bus          165 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05         */
-    #define schprioin05risovris      166 /* Inmelden 05 via Bus toestaan                                          */
-    #define schpriouit05risovris     167 /* Uitmelden 05 via Bus toestaan                                         */
-    #define schupinagb05risov        168 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05         */
-    #define schprioin05risvrwris     169 /* Inmelden 05 via Vrachtwagen toestaan                                  */
-    #define schpriouit05risvrwris    170 /* Uitmelden 05 via Vrachtwagen toestaan                                 */
-    #define schupinagb05risvrw       171 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05         */
-    #define schprioin08buskar        172 /* Inmelden 08 via Bus toestaan                                          */
-    #define schpriouit08buskar       173 /* Uitmelden 08 via Bus toestaan                                         */
-    #define schupinagb08bus          174 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08         */
-    #define schprioin08risovris      175 /* Inmelden 08 via Bus toestaan                                          */
-    #define schpriouit08risovris     176 /* Uitmelden 08 via Bus toestaan                                         */
-    #define schupinagb08risov        177 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08         */
-    #define schprioin08risvrwris     178 /* Inmelden 08 via Vrachtwagen toestaan                                  */
-    #define schpriouit08risvrwris    179 /* Uitmelden 08 via Vrachtwagen toestaan                                 */
-    #define schupinagb08risvrw       180 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08         */
-    #define schprioin09buskar        181 /* Inmelden 09 via Bus toestaan                                          */
-    #define schpriouit09buskar       182 /* Uitmelden 09 via Bus toestaan                                         */
-    #define schupinagb09bus          183 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09         */
-    #define schprioin09risovris      184 /* Inmelden 09 via Bus toestaan                                          */
-    #define schpriouit09risovris     185 /* Uitmelden 09 via Bus toestaan                                         */
-    #define schupinagb09risov        186 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09         */
-    #define schprioin09risvrwris     187 /* Inmelden 09 via Vrachtwagen toestaan                                  */
-    #define schpriouit09risvrwris    188 /* Uitmelden 09 via Vrachtwagen toestaan                                 */
-    #define schupinagb09risvrw       189 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09         */
-    #define schprioin11buskar        190 /* Inmelden 11 via Bus toestaan                                          */
-    #define schpriouit11buskar       191 /* Uitmelden 11 via Bus toestaan                                         */
-    #define schupinagb11bus          192 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11         */
-    #define schprioin11risovris      193 /* Inmelden 11 via Bus toestaan                                          */
-    #define schpriouit11risovris     194 /* Uitmelden 11 via Bus toestaan                                         */
-    #define schupinagb11risov        195 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11         */
-    #define schprioin11risvrwris     196 /* Inmelden 11 via Vrachtwagen toestaan                                  */
-    #define schpriouit11risvrwris    197 /* Uitmelden 11 via Vrachtwagen toestaan                                 */
-    #define schupinagb11risvrw       198 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11         */
-    #define schprioin22fietsfiets    199 /* Inmelden 22 via Fiets toestaan                                        */
-    #define schpriouit22fietsfiets   200 /* Uitmelden 22 via Fiets toestaan                                       */
-    #define schupinagb22fiets        201 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 22         */
-    #define schupinagb31fietsprio    202 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 31         */
-    #define schupinagb32fietsprio    203 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 32         */
-    #define schprioin61buskar        204 /* Inmelden 61 via Bus toestaan                                          */
-    #define schpriouit61buskar       205 /* Uitmelden 61 via Bus toestaan                                         */
-    #define schupinagb61bus          206 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61         */
-    #define schprioin61risovris      207 /* Inmelden 61 via Bus toestaan                                          */
-    #define schpriouit61risovris     208 /* Uitmelden 61 via Bus toestaan                                         */
-    #define schupinagb61risov        209 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61         */
-    #define schprioin61risvrwris     210 /* Inmelden 61 via Vrachtwagen toestaan                                  */
-    #define schpriouit61risvrwris    211 /* Uitmelden 61 via Vrachtwagen toestaan                                 */
-    #define schupinagb61risvrw       212 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61         */
-    #define schprioin62buskar        213 /* Inmelden 62 via Bus toestaan                                          */
-    #define schpriouit62buskar       214 /* Uitmelden 62 via Bus toestaan                                         */
-    #define schupinagb62bus          215 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62         */
-    #define schprioin62risovris      216 /* Inmelden 62 via Bus toestaan                                          */
-    #define schpriouit62risovris     217 /* Uitmelden 62 via Bus toestaan                                         */
-    #define schupinagb62risov        218 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62         */
-    #define schprioin62risvrwris     219 /* Inmelden 62 via Vrachtwagen toestaan                                  */
-    #define schpriouit62risvrwris    220 /* Uitmelden 62 via Vrachtwagen toestaan                                 */
-    #define schupinagb62risvrw       221 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62         */
-    #define schprioin67buskar        222 /* Inmelden 67 via Bus toestaan                                          */
-    #define schpriouit67buskar       223 /* Uitmelden 67 via Bus toestaan                                         */
-    #define schupinagb67bus          224 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67         */
-    #define schprioin67risovris      225 /* Inmelden 67 via Bus toestaan                                          */
-    #define schpriouit67risovris     226 /* Uitmelden 67 via Bus toestaan                                         */
-    #define schupinagb67risov        227 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67         */
-    #define schprioin67risvrwris     228 /* Inmelden 67 via Vrachtwagen toestaan                                  */
-    #define schpriouit67risvrwris    229 /* Uitmelden 67 via Vrachtwagen toestaan                                 */
-    #define schupinagb67risvrw       230 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67         */
-    #define schprioin68buskar        231 /* Inmelden 68 via Bus toestaan                                          */
-    #define schpriouit68buskar       232 /* Uitmelden 68 via Bus toestaan                                         */
-    #define schupinagb68bus          233 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68         */
-    #define schprioin68risovris      234 /* Inmelden 68 via Bus toestaan                                          */
-    #define schpriouit68risovris     235 /* Uitmelden 68 via Bus toestaan                                         */
-    #define schupinagb68risov        236 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68         */
-    #define schprioin68risvrwris     237 /* Inmelden 68 via Vrachtwagen toestaan                                  */
-    #define schpriouit68risvrwris    238 /* Uitmelden 68 via Vrachtwagen toestaan                                 */
-    #define schupinagb68risvrw       239 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68         */
-    #define schupinagbhd02           240 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 02         */
-    #define schhdin02kar             241 /* Inmelden 02 via KAR HD toestaan                                       */
-    #define schhduit02kar            242 /* Uitmelden 02 via KAR HD toestaan                                      */
-    #define schchecksirene02         243 /* Bij HD meldingen bij 02 via DSI controleren op CIF_SIR                */
-    #define schhdin02ris             244 /* Inmelden 02 via RIS HD toestaan                                       */
-    #define schhduit02ris            245 /* Uitmelden 02 via RIS HD toestaan                                      */
-    #define schupinagbhd03           246 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 03         */
-    #define schhdin03kar             247 /* Inmelden 03 via KAR HD toestaan                                       */
-    #define schhduit03kar            248 /* Uitmelden 03 via KAR HD toestaan                                      */
-    #define schchecksirene03         249 /* Bij HD meldingen bij 03 via DSI controleren op CIF_SIR                */
-    #define schhdin03ris             250 /* Inmelden 03 via RIS HD toestaan                                       */
-    #define schhduit03ris            251 /* Uitmelden 03 via RIS HD toestaan                                      */
-    #define schupinagbhd05           252 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 05         */
-    #define schhdin05kar             253 /* Inmelden 05 via KAR HD toestaan                                       */
-    #define schhduit05kar            254 /* Uitmelden 05 via KAR HD toestaan                                      */
-    #define schchecksirene05         255 /* Bij HD meldingen bij 05 via DSI controleren op CIF_SIR                */
-    #define schhdin05ris             256 /* Inmelden 05 via RIS HD toestaan                                       */
-    #define schhduit05ris            257 /* Uitmelden 05 via RIS HD toestaan                                      */
-    #define schupinagbhd08           258 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 08         */
-    #define schhdin08kar             259 /* Inmelden 08 via KAR HD toestaan                                       */
-    #define schhduit08kar            260 /* Uitmelden 08 via KAR HD toestaan                                      */
-    #define schchecksirene08         261 /* Bij HD meldingen bij 08 via DSI controleren op CIF_SIR                */
-    #define schhdin08ris             262 /* Inmelden 08 via RIS HD toestaan                                       */
-    #define schhduit08ris            263 /* Uitmelden 08 via RIS HD toestaan                                      */
-    #define schupinagbhd09           264 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 09         */
-    #define schhdin09kar             265 /* Inmelden 09 via KAR HD toestaan                                       */
-    #define schhduit09kar            266 /* Uitmelden 09 via KAR HD toestaan                                      */
-    #define schchecksirene09         267 /* Bij HD meldingen bij 09 via DSI controleren op CIF_SIR                */
-    #define schhdin09ris             268 /* Inmelden 09 via RIS HD toestaan                                       */
-    #define schhduit09ris            269 /* Uitmelden 09 via RIS HD toestaan                                      */
-    #define schupinagbhd11           270 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 11         */
-    #define schhdin11kar             271 /* Inmelden 11 via KAR HD toestaan                                       */
-    #define schhduit11kar            272 /* Uitmelden 11 via KAR HD toestaan                                      */
-    #define schchecksirene11         273 /* Bij HD meldingen bij 11 via DSI controleren op CIF_SIR                */
-    #define schhdin11ris             274 /* Inmelden 11 via RIS HD toestaan                                       */
-    #define schhduit11ris            275 /* Uitmelden 11 via RIS HD toestaan                                      */
-    #define schupinagbhd61           276 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 61         */
-    #define schhdin61kar             277 /* Inmelden 61 via KAR HD toestaan                                       */
-    #define schhduit61kar            278 /* Uitmelden 61 via KAR HD toestaan                                      */
-    #define schchecksirene61         279 /* Bij HD meldingen bij 61 via DSI controleren op CIF_SIR                */
-    #define schhdin61ris             280 /* Inmelden 61 via RIS HD toestaan                                       */
-    #define schhduit61ris            281 /* Uitmelden 61 via RIS HD toestaan                                      */
-    #define schupinagbhd62           282 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 62         */
-    #define schhdin62kar             283 /* Inmelden 62 via KAR HD toestaan                                       */
-    #define schhduit62kar            284 /* Uitmelden 62 via KAR HD toestaan                                      */
-    #define schchecksirene62         285 /* Bij HD meldingen bij 62 via DSI controleren op CIF_SIR                */
-    #define schhdin62ris             286 /* Inmelden 62 via RIS HD toestaan                                       */
-    #define schhduit62ris            287 /* Uitmelden 62 via RIS HD toestaan                                      */
-    #define schupinagbhd67           288 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 67         */
-    #define schhdin67kar             289 /* Inmelden 67 via KAR HD toestaan                                       */
-    #define schhduit67kar            290 /* Uitmelden 67 via KAR HD toestaan                                      */
-    #define schchecksirene67         291 /* Bij HD meldingen bij 67 via DSI controleren op CIF_SIR                */
-    #define schhdin67ris             292 /* Inmelden 67 via RIS HD toestaan                                       */
-    #define schhduit67ris            293 /* Uitmelden 67 via RIS HD toestaan                                      */
-    #define schupinagbhd68           294 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 68         */
-    #define schhdin68kar             295 /* Inmelden 68 via KAR HD toestaan                                       */
-    #define schhduit68kar            296 /* Uitmelden 68 via KAR HD toestaan                                      */
-    #define schchecksirene68         297 /* Bij HD meldingen bij 68 via DSI controleren op CIF_SIR                */
-    #define schhdin68ris             298 /* Inmelden 68 via RIS HD toestaan                                       */
-    #define schhduit68ris            299 /* Uitmelden 68 via RIS HD toestaan                                      */
-    #define schrisgeencheckopsg      300 /* Niet checken op signaalgroep bij RIS aanvragen en verlengen           */
-    #define schrisaanvraag           301 /* Globaal in of uitschakelen aanvragen via RIS                          */
-    #define schrisverlengen          302 /* Globaal in of uitschakelen verlengen via RIS                          */
-    #define schrgadd24_3             303 /* Type richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2            */
-    #define schrgv                   304 /* RoBuGrover aan of uit                                                 */
-    #define schrgv_snel              305 /* RoBuGrover versneld ophogen of verlagen                               */
-    #define schca02                  306 /* Cyclische aanvraag fase 02                                            */
-    #define schca03                  307 /* Cyclische aanvraag fase 03                                            */
-    #define schca05                  308 /* Cyclische aanvraag fase 05                                            */
-    #define schca08                  309 /* Cyclische aanvraag fase 08                                            */
-    #define schca09                  310 /* Cyclische aanvraag fase 09                                            */
-    #define schca11                  311 /* Cyclische aanvraag fase 11                                            */
-    #define schca21                  312 /* Cyclische aanvraag fase 21                                            */
-    #define schca22                  313 /* Cyclische aanvraag fase 22                                            */
-    #define schca24                  314 /* Cyclische aanvraag fase 24                                            */
-    #define schca26                  315 /* Cyclische aanvraag fase 26                                            */
-    #define schca28                  316 /* Cyclische aanvraag fase 28                                            */
-    #define schca31                  317 /* Cyclische aanvraag fase 31                                            */
-    #define schca32                  318 /* Cyclische aanvraag fase 32                                            */
-    #define schca33                  319 /* Cyclische aanvraag fase 33                                            */
-    #define schca34                  320 /* Cyclische aanvraag fase 34                                            */
-    #define schca38                  321 /* Cyclische aanvraag fase 38                                            */
-    #define schca61                  322 /* Cyclische aanvraag fase 61                                            */
-    #define schca62                  323 /* Cyclische aanvraag fase 62                                            */
-    #define schca67                  324 /* Cyclische aanvraag fase 67                                            */
-    #define schca68                  325 /* Cyclische aanvraag fase 68                                            */
-    #define schca81                  326 /* Cyclische aanvraag fase 81                                            */
-    #define schca82                  327 /* Cyclische aanvraag fase 82                                            */
-    #define schca84                  328 /* Cyclische aanvraag fase 84                                            */
-    #define schvg02_4a               329 /* Veiligheidsgroen detector 02_4a fase 02                               */
-    #define schvg02_4b               330 /* Veiligheidsgroen detector 02_4b fase 02                               */
-    #define schvg08_4a               331 /* Veiligheidsgroen detector 08_4a fase 08                               */
-    #define schvg08_4b               332 /* Veiligheidsgroen detector 08_4b fase 08                               */
-    #define schvg11_4                333 /* Veiligheidsgroen detector 11_4 fase 11                                */
-    #define schaltg02                334 /* Alternatieve realisatie toestaan fase 02                              */
-    #define schaltg03                335 /* Alternatieve realisatie toestaan fase 03                              */
-    #define schaltg05                336 /* Alternatieve realisatie toestaan fase 05                              */
-    #define schaltg08                337 /* Alternatieve realisatie toestaan fase 08                              */
-    #define schaltg09                338 /* Alternatieve realisatie toestaan fase 09                              */
-    #define schaltg11                339 /* Alternatieve realisatie toestaan fase 11                              */
-    #define schaltg21                340 /* Alternatieve realisatie toestaan fase 21                              */
-    #define schaltg2232              341 /* Alternatieve realisatie toestaan fasen 22, 32                         */
-    #define schaltg2434              342 /* Alternatieve realisatie toestaan fasen 24, 34                         */
-    #define schaltg26                343 /* Alternatieve realisatie toestaan fase 26                              */
-    #define schaltg28                344 /* Alternatieve realisatie toestaan fase 28                              */
-    #define schaltg31                345 /* Alternatieve realisatie toestaan fase 31                              */
-    #define schaltg3384              346 /* Alternatieve realisatie toestaan fasen 33, 84                         */
-    #define schaltg38                347 /* Alternatieve realisatie toestaan fase 38                              */
-    #define schaltg61                348 /* Alternatieve realisatie toestaan fase 61                              */
-    #define schaltg62                349 /* Alternatieve realisatie toestaan fase 62                              */
-    #define schaltg67                350 /* Alternatieve realisatie toestaan fase 67                              */
-    #define schaltg68                351 /* Alternatieve realisatie toestaan fase 68                              */
-    #define schaltg81                352 /* Alternatieve realisatie toestaan fase 81                              */
-    #define schaltg82                353 /* Alternatieve realisatie toestaan fase 82                              */
-    #define schwg02                  354 /* Wachtstand groen fase 02                                              */
-    #define schwg03                  355 /* Wachtstand groen fase 03                                              */
-    #define schwg05                  356 /* Wachtstand groen fase 05                                              */
-    #define schwg08                  357 /* Wachtstand groen fase 08                                              */
-    #define schwg09                  358 /* Wachtstand groen fase 09                                              */
-    #define schwg11                  359 /* Wachtstand groen fase 11                                              */
-    #define schwg21                  360 /* Wachtstand groen fase 21                                              */
-    #define schwg22                  361 /* Wachtstand groen fase 22                                              */
-    #define schwg24                  362 /* Wachtstand groen fase 24                                              */
-    #define schwg26                  363 /* Wachtstand groen fase 26                                              */
-    #define schwg28                  364 /* Wachtstand groen fase 28                                              */
-    #define schwg31                  365 /* Wachtstand groen fase 31                                              */
-    #define schwg32                  366 /* Wachtstand groen fase 32                                              */
-    #define schwg33                  367 /* Wachtstand groen fase 33                                              */
-    #define schwg34                  368 /* Wachtstand groen fase 34                                              */
-    #define schwg38                  369 /* Wachtstand groen fase 38                                              */
-    #define schwg61                  370 /* Wachtstand groen fase 61                                              */
-    #define schwg62                  371 /* Wachtstand groen fase 62                                              */
-    #define schwg67                  372 /* Wachtstand groen fase 67                                              */
-    #define schwg68                  373 /* Wachtstand groen fase 68                                              */
-    #define schwg81                  374 /* Wachtstand groen fase 81                                              */
-    #define schwg82                  375 /* Wachtstand groen fase 82                                              */
-    #define schwg84                  376 /* Wachtstand groen fase 84                                              */
-    #define schstar                  377 /* Inschakelen star programma                                            */
-    #define schgs2232                378 /* Schakelbare gelijkstart tussen fase 32 en 22                          */
-    #define schgs2434                379 /* Schakelbare gelijkstart tussen fase 34 en 24                          */
-    #define schgs3384                380 /* Schakelbare gelijkstart tussen fase 84 en 33                          */
-    #define schlos32_1               381 /* Toestaan los realiseren fase 32                                       */
-    #define schlos32_2               382 /* Toestaan los realiseren fase 32                                       */
-    #define schlos31_1               383 /* Toestaan los realiseren fase 31                                       */
-    #define schlos31_2               384 /* Toestaan los realiseren fase 31                                       */
-    #define schlos34_1               385 /* Toestaan los realiseren fase 34                                       */
-    #define schlos34_2               386 /* Toestaan los realiseren fase 34                                       */
-    #define schlos33_1               387 /* Toestaan los realiseren fase 33                                       */
-    #define schlos33_2               388 /* Toestaan los realiseren fase 33                                       */
+    #define schfileFile68af           12 /* File ingreep File68af toepassen                                       */
+    #define schfiledoserenFile68af    13 /* Toepassen doseerpercentages voor fileingreep File68af                 */
+    #define schfileFile68afparstrook  14 /* Parallele file meldingen per strook file ingreep File68af             */
+    #define schbmfix                  15 /* Bijkomen tijdens fixatie mogelijk                                     */
+    #define schaltghst02              16 /* Alternatief realiseren fase 02 toestaan tijdens halfstar regelen      */
+    #define schaltghst03              17 /* Alternatief realiseren fase 03 toestaan tijdens halfstar regelen      */
+    #define schaltghst05              18 /* Alternatief realiseren fase 05 toestaan tijdens halfstar regelen      */
+    #define schaltghst08              19 /* Alternatief realiseren fase 08 toestaan tijdens halfstar regelen      */
+    #define schaltghst09              20 /* Alternatief realiseren fase 09 toestaan tijdens halfstar regelen      */
+    #define schaltghst11              21 /* Alternatief realiseren fase 11 toestaan tijdens halfstar regelen      */
+    #define schaltghst21              22 /* Alternatief realiseren fase 21 toestaan tijdens halfstar regelen      */
+    #define schaltghst2232            23 /* Alternatief realiseren fasen 22, 32 toestaan tijdens halfstar regelen */
+    #define schaltghst2434            24 /* Alternatief realiseren fasen 24, 34 toestaan tijdens halfstar regelen */
+    #define schaltghst81              25 /* Alternatief realiseren fase 81 toestaan tijdens halfstar regelen      */
+    #define schaltghst88              26 /* Alternatief realiseren fase 88 toestaan tijdens halfstar regelen      */
+    #define schaltghst3384            27 /* Alternatief realiseren fasen 33, 84 toestaan tijdens halfstar regelen */
+    #define schaltghst68              28 /* Alternatief realiseren fase 68 toestaan tijdens halfstar regelen      */
+    #define schaltghst82              29 /* Alternatief realiseren fase 82 toestaan tijdens halfstar regelen      */
+    #define schaltghst67              30 /* Alternatief realiseren fase 67 toestaan tijdens halfstar regelen      */
+    #define schaltghst62              31 /* Alternatief realiseren fase 62 toestaan tijdens halfstar regelen      */
+    #define schaltghst61              32 /* Alternatief realiseren fase 61 toestaan tijdens halfstar regelen      */
+    #define schaltghst38              33 /* Alternatief realiseren fase 38 toestaan tijdens halfstar regelen      */
+    #define schaltghst31              34 /* Alternatief realiseren fase 31 toestaan tijdens halfstar regelen      */
+    #define schaltghst28              35 /* Alternatief realiseren fase 28 toestaan tijdens halfstar regelen      */
+    #define schaltghst26              36 /* Alternatief realiseren fase 26 toestaan tijdens halfstar regelen      */
+    #define schinstprm                37 /* Eenmalig kopieren signaalplan parameters naar signaalplannen          */
+    #define schinst                   38 /* Eenmalig instellen signaalplannen na wijziging                        */
+    #define schvaml                   39 /* Indien VA regelen, ML-bedrijf (1) of versneld PL-bedrijf (0)          */
+    #define schvar                    40 /* VA regelen aan of uit                                                 */
+    #define scharh                    41 /* Toestaan alternatieven voor hoofdrichtingen                           */
+    #define schvarstreng              42 /* VA regelen aan of uit voor gehele streng                              */
+    #define schpervardef              43 /* VA regelen periode default                                            */
+    #define schpervar1                44 /* VA regelen periode dag                                                */
+    #define schpervar2                45 /* VA regelen periode ochtend                                            */
+    #define schpervar3                46 /* VA regelen periode avond                                              */
+    #define schpervar4                47 /* VA regelen periode koopavond                                          */
+    #define schpervar5                48 /* VA regelen periode weekend                                            */
+    #define schpervar6                49 /* VA regelen periode reserve                                            */
+    #define schperarhdef              50 /* Alternatieven voor hoofdrichtingen periode default                    */
+    #define schperarh1                51 /* Alternatieven voor hoofdrichtingen periode dag                        */
+    #define schperarh2                52 /* Alternatieven voor hoofdrichtingen periode ochtend                    */
+    #define schperarh3                53 /* Alternatieven voor hoofdrichtingen periode avond                      */
+    #define schperarh4                54 /* Alternatieven voor hoofdrichtingen periode koopavond                  */
+    #define schperarh5                55 /* Alternatieven voor hoofdrichtingen periode weekend                    */
+    #define schperarh6                56 /* Alternatieven voor hoofdrichtingen periode reserve                    */
+    #define schovpriople              57 /* Wel of niet toepassen prioriteit OV tijdens PL-bedrijf                */
+    #define schma0261                 58 /* Meeaanvraag van 02 naar 61 actief                                     */
+    #define schma0262                 59 /* Meeaanvraag van 02 naar 62 actief                                     */
+    #define schma0521                 60 /* Meeaanvraag van 05 naar 21 actief                                     */
+    #define schma0522                 61 /* Meeaanvraag van 05 naar 22 actief                                     */
+    #define schma0532                 62 /* Meeaanvraag van 05 naar 32 actief                                     */
+    #define schma0868                 63 /* Meeaanvraag van 08 naar 68 actief                                     */
+    #define schma1126                 64 /* Meeaanvraag van 11 naar 26 actief                                     */
+    #define schma1168                 65 /* Meeaanvraag van 11 naar 68 actief                                     */
+    #define schma2221                 66 /* Meeaanvraag van 22 naar 21 actief                                     */
+    #define schma3122                 67 /* Meeaanvraag van 31 naar 22 actief                                     */
+    #define schma3132                 68 /* Meeaanvraag van 31 naar 32 actief                                     */
+    #define schma3222                 69 /* Meeaanvraag van 32 naar 22 actief                                     */
+    #define schma3231                 70 /* Meeaanvraag van 32 naar 31 actief                                     */
+    #define schma3324                 71 /* Meeaanvraag van 33 naar 24 actief                                     */
+    #define schma3334                 72 /* Meeaanvraag van 33 naar 34 actief                                     */
+    #define schma3384                 73 /* Meeaanvraag van 33 naar 84 actief                                     */
+    #define schma3424                 74 /* Meeaanvraag van 34 naar 24 actief                                     */
+    #define schma3433                 75 /* Meeaanvraag van 34 naar 33 actief                                     */
+    #define schma3484                 76 /* Meeaanvraag van 34 naar 84 actief                                     */
+    #define schma8281                 77 /* Meeaanvraag van 82 naar 81 actief                                     */
+    #define schmv02                   78 /* Meeverlengen fase 02                                                  */
+    #define schmv03                   79 /* Meeverlengen fase 03                                                  */
+    #define schmv05                   80 /* Meeverlengen fase 05                                                  */
+    #define schmv08                   81 /* Meeverlengen fase 08                                                  */
+    #define schmv09                   82 /* Meeverlengen fase 09                                                  */
+    #define schmv11                   83 /* Meeverlengen fase 11                                                  */
+    #define schmv21                   84 /* Meeverlengen fase 21                                                  */
+    #define schmv22                   85 /* Meeverlengen fase 22                                                  */
+    #define schmv24                   86 /* Meeverlengen fase 24                                                  */
+    #define schmv26                   87 /* Meeverlengen fase 26                                                  */
+    #define schmv28                   88 /* Meeverlengen fase 28                                                  */
+    #define schmv31                   89 /* Meeverlengen fase 31                                                  */
+    #define schmv32                   90 /* Meeverlengen fase 32                                                  */
+    #define schmv33                   91 /* Meeverlengen fase 33                                                  */
+    #define schmv34                   92 /* Meeverlengen fase 34                                                  */
+    #define schmv38                   93 /* Meeverlengen fase 38                                                  */
+    #define schmv61                   94 /* Meeverlengen fase 61                                                  */
+    #define schmv62                   95 /* Meeverlengen fase 62                                                  */
+    #define schmv67                   96 /* Meeverlengen fase 67                                                  */
+    #define schmv68                   97 /* Meeverlengen fase 68                                                  */
+    #define schmv81                   98 /* Meeverlengen fase 81                                                  */
+    #define schmv82                   99 /* Meeverlengen fase 82                                                  */
+    #define schmv84                  100 /* Meeverlengen fase 84                                                  */
+    #define schmlprm                 101 /* Toepassen parametriseerbare modulestructuur                           */
+    #define schovstipt02bus          102 /* Geconditioneerde prioteit voor OV bij 02 Bus                          */
+    #define schovstipt03bus          103 /* Geconditioneerde prioteit voor OV bij 03 Bus                          */
+    #define schovstipt05bus          104 /* Geconditioneerde prioteit voor OV bij 05 Bus                          */
+    #define schovstipt08bus          105 /* Geconditioneerde prioteit voor OV bij 08 Bus                          */
+    #define schovstipt09bus          106 /* Geconditioneerde prioteit voor OV bij 09 Bus                          */
+    #define schovstipt11bus          107 /* Geconditioneerde prioteit voor OV bij 11 Bus                          */
+    #define schovstipt61bus          108 /* Geconditioneerde prioteit voor OV bij 61 Bus                          */
+    #define schovstipt62bus          109 /* Geconditioneerde prioteit voor OV bij 62 Bus                          */
+    #define schovstipt67bus          110 /* Geconditioneerde prioteit voor OV bij 67 Bus                          */
+    #define schovstipt68bus          111 /* Geconditioneerde prioteit voor OV bij 68 Bus                          */
+    #define schcovuber               112 /* Weergeven wijzigingen PRIO_teller via CIF_UBER                        */
+    #define schcheckdstype           113 /* Check type DSI bericht bij VECOM                                      */
+    #define schprioin02buskar        114 /* Inmelden 02 via Bus toestaan                                          */
+    #define schpriouit02buskar       115 /* Uitmelden 02 via Bus toestaan                                         */
+    #define schupinagb02bus          116 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02         */
+    #define schprioin02risovris      117 /* Inmelden 02 via Bus toestaan                                          */
+    #define schpriouit02risovris     118 /* Uitmelden 02 via Bus toestaan                                         */
+    #define schupinagb02risov        119 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02         */
+    #define schprioin02risvrwris     120 /* Inmelden 02 via Vrachtwagen toestaan                                  */
+    #define schpriouit02risvrwris    121 /* Uitmelden 02 via Vrachtwagen toestaan                                 */
+    #define schupinagb02risvrw       122 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02         */
+    #define schprioin03buskar        123 /* Inmelden 03 via Bus toestaan                                          */
+    #define schpriouit03buskar       124 /* Uitmelden 03 via Bus toestaan                                         */
+    #define schupinagb03bus          125 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03         */
+    #define schprioin03risovris      126 /* Inmelden 03 via Bus toestaan                                          */
+    #define schpriouit03risovris     127 /* Uitmelden 03 via Bus toestaan                                         */
+    #define schupinagb03risov        128 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03         */
+    #define schprioin03risvrwris     129 /* Inmelden 03 via Vrachtwagen toestaan                                  */
+    #define schpriouit03risvrwris    130 /* Uitmelden 03 via Vrachtwagen toestaan                                 */
+    #define schupinagb03risvrw       131 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03         */
+    #define schprioin05buskar        132 /* Inmelden 05 via Bus toestaan                                          */
+    #define schpriouit05buskar       133 /* Uitmelden 05 via Bus toestaan                                         */
+    #define schupinagb05bus          134 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05         */
+    #define schprioin05risovris      135 /* Inmelden 05 via Bus toestaan                                          */
+    #define schpriouit05risovris     136 /* Uitmelden 05 via Bus toestaan                                         */
+    #define schupinagb05risov        137 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05         */
+    #define schprioin05risvrwris     138 /* Inmelden 05 via Vrachtwagen toestaan                                  */
+    #define schpriouit05risvrwris    139 /* Uitmelden 05 via Vrachtwagen toestaan                                 */
+    #define schupinagb05risvrw       140 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05         */
+    #define schprioin08buskar        141 /* Inmelden 08 via Bus toestaan                                          */
+    #define schpriouit08buskar       142 /* Uitmelden 08 via Bus toestaan                                         */
+    #define schupinagb08bus          143 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08         */
+    #define schprioin08risovris      144 /* Inmelden 08 via Bus toestaan                                          */
+    #define schpriouit08risovris     145 /* Uitmelden 08 via Bus toestaan                                         */
+    #define schupinagb08risov        146 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08         */
+    #define schprioin08risvrwris     147 /* Inmelden 08 via Vrachtwagen toestaan                                  */
+    #define schpriouit08risvrwris    148 /* Uitmelden 08 via Vrachtwagen toestaan                                 */
+    #define schupinagb08risvrw       149 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08         */
+    #define schprioin09buskar        150 /* Inmelden 09 via Bus toestaan                                          */
+    #define schpriouit09buskar       151 /* Uitmelden 09 via Bus toestaan                                         */
+    #define schupinagb09bus          152 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09         */
+    #define schprioin09risovris      153 /* Inmelden 09 via Bus toestaan                                          */
+    #define schpriouit09risovris     154 /* Uitmelden 09 via Bus toestaan                                         */
+    #define schupinagb09risov        155 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09         */
+    #define schprioin09risvrwris     156 /* Inmelden 09 via Vrachtwagen toestaan                                  */
+    #define schpriouit09risvrwris    157 /* Uitmelden 09 via Vrachtwagen toestaan                                 */
+    #define schupinagb09risvrw       158 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09         */
+    #define schprioin11buskar        159 /* Inmelden 11 via Bus toestaan                                          */
+    #define schpriouit11buskar       160 /* Uitmelden 11 via Bus toestaan                                         */
+    #define schupinagb11bus          161 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11         */
+    #define schprioin11risovris      162 /* Inmelden 11 via Bus toestaan                                          */
+    #define schpriouit11risovris     163 /* Uitmelden 11 via Bus toestaan                                         */
+    #define schupinagb11risov        164 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11         */
+    #define schprioin11risvrwris     165 /* Inmelden 11 via Vrachtwagen toestaan                                  */
+    #define schpriouit11risvrwris    166 /* Uitmelden 11 via Vrachtwagen toestaan                                 */
+    #define schupinagb11risvrw       167 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11         */
+    #define schprioin22fietsfiets    168 /* Inmelden 22 via Fiets toestaan                                        */
+    #define schpriouit22fietsfiets   169 /* Uitmelden 22 via Fiets toestaan                                       */
+    #define schupinagb22fiets        170 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 22         */
+    #define schupinagb31fietsprio    171 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 31         */
+    #define schupinagb32fietsprio    172 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 32         */
+    #define schprioin61buskar        173 /* Inmelden 61 via Bus toestaan                                          */
+    #define schpriouit61buskar       174 /* Uitmelden 61 via Bus toestaan                                         */
+    #define schupinagb61bus          175 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61         */
+    #define schprioin61risovris      176 /* Inmelden 61 via Bus toestaan                                          */
+    #define schpriouit61risovris     177 /* Uitmelden 61 via Bus toestaan                                         */
+    #define schupinagb61risov        178 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61         */
+    #define schprioin61risvrwris     179 /* Inmelden 61 via Vrachtwagen toestaan                                  */
+    #define schpriouit61risvrwris    180 /* Uitmelden 61 via Vrachtwagen toestaan                                 */
+    #define schupinagb61risvrw       181 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61         */
+    #define schprioin62buskar        182 /* Inmelden 62 via Bus toestaan                                          */
+    #define schpriouit62buskar       183 /* Uitmelden 62 via Bus toestaan                                         */
+    #define schupinagb62bus          184 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62         */
+    #define schprioin62risovris      185 /* Inmelden 62 via Bus toestaan                                          */
+    #define schpriouit62risovris     186 /* Uitmelden 62 via Bus toestaan                                         */
+    #define schupinagb62risov        187 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62         */
+    #define schprioin62risvrwris     188 /* Inmelden 62 via Vrachtwagen toestaan                                  */
+    #define schpriouit62risvrwris    189 /* Uitmelden 62 via Vrachtwagen toestaan                                 */
+    #define schupinagb62risvrw       190 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62         */
+    #define schprioin67buskar        191 /* Inmelden 67 via Bus toestaan                                          */
+    #define schpriouit67buskar       192 /* Uitmelden 67 via Bus toestaan                                         */
+    #define schupinagb67bus          193 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67         */
+    #define schprioin67risovris      194 /* Inmelden 67 via Bus toestaan                                          */
+    #define schpriouit67risovris     195 /* Uitmelden 67 via Bus toestaan                                         */
+    #define schupinagb67risov        196 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67         */
+    #define schprioin67risvrwris     197 /* Inmelden 67 via Vrachtwagen toestaan                                  */
+    #define schpriouit67risvrwris    198 /* Uitmelden 67 via Vrachtwagen toestaan                                 */
+    #define schupinagb67risvrw       199 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67         */
+    #define schprioin68buskar        200 /* Inmelden 68 via Bus toestaan                                          */
+    #define schpriouit68buskar       201 /* Uitmelden 68 via Bus toestaan                                         */
+    #define schupinagb68bus          202 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68         */
+    #define schprioin68risovris      203 /* Inmelden 68 via Bus toestaan                                          */
+    #define schpriouit68risovris     204 /* Uitmelden 68 via Bus toestaan                                         */
+    #define schupinagb68risov        205 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68         */
+    #define schprioin68risvrwris     206 /* Inmelden 68 via Vrachtwagen toestaan                                  */
+    #define schpriouit68risvrwris    207 /* Uitmelden 68 via Vrachtwagen toestaan                                 */
+    #define schupinagb68risvrw       208 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68         */
+    #define schupinagbhd02           209 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 02         */
+    #define schhdin02kar             210 /* Inmelden 02 via KAR HD toestaan                                       */
+    #define schhduit02kar            211 /* Uitmelden 02 via KAR HD toestaan                                      */
+    #define schchecksirene02         212 /* Bij HD meldingen bij 02 via DSI controleren op CIF_SIR                */
+    #define schhdin02ris             213 /* Inmelden 02 via RIS HD toestaan                                       */
+    #define schhduit02ris            214 /* Uitmelden 02 via RIS HD toestaan                                      */
+    #define schupinagbhd03           215 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 03         */
+    #define schhdin03kar             216 /* Inmelden 03 via KAR HD toestaan                                       */
+    #define schhduit03kar            217 /* Uitmelden 03 via KAR HD toestaan                                      */
+    #define schchecksirene03         218 /* Bij HD meldingen bij 03 via DSI controleren op CIF_SIR                */
+    #define schhdin03ris             219 /* Inmelden 03 via RIS HD toestaan                                       */
+    #define schhduit03ris            220 /* Uitmelden 03 via RIS HD toestaan                                      */
+    #define schupinagbhd05           221 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 05         */
+    #define schhdin05kar             222 /* Inmelden 05 via KAR HD toestaan                                       */
+    #define schhduit05kar            223 /* Uitmelden 05 via KAR HD toestaan                                      */
+    #define schchecksirene05         224 /* Bij HD meldingen bij 05 via DSI controleren op CIF_SIR                */
+    #define schhdin05ris             225 /* Inmelden 05 via RIS HD toestaan                                       */
+    #define schhduit05ris            226 /* Uitmelden 05 via RIS HD toestaan                                      */
+    #define schupinagbhd08           227 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 08         */
+    #define schhdin08kar             228 /* Inmelden 08 via KAR HD toestaan                                       */
+    #define schhduit08kar            229 /* Uitmelden 08 via KAR HD toestaan                                      */
+    #define schchecksirene08         230 /* Bij HD meldingen bij 08 via DSI controleren op CIF_SIR                */
+    #define schhdin08ris             231 /* Inmelden 08 via RIS HD toestaan                                       */
+    #define schhduit08ris            232 /* Uitmelden 08 via RIS HD toestaan                                      */
+    #define schupinagbhd09           233 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 09         */
+    #define schhdin09kar             234 /* Inmelden 09 via KAR HD toestaan                                       */
+    #define schhduit09kar            235 /* Uitmelden 09 via KAR HD toestaan                                      */
+    #define schchecksirene09         236 /* Bij HD meldingen bij 09 via DSI controleren op CIF_SIR                */
+    #define schhdin09ris             237 /* Inmelden 09 via RIS HD toestaan                                       */
+    #define schhduit09ris            238 /* Uitmelden 09 via RIS HD toestaan                                      */
+    #define schupinagbhd11           239 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 11         */
+    #define schhdin11kar             240 /* Inmelden 11 via KAR HD toestaan                                       */
+    #define schhduit11kar            241 /* Uitmelden 11 via KAR HD toestaan                                      */
+    #define schchecksirene11         242 /* Bij HD meldingen bij 11 via DSI controleren op CIF_SIR                */
+    #define schhdin11ris             243 /* Inmelden 11 via RIS HD toestaan                                       */
+    #define schhduit11ris            244 /* Uitmelden 11 via RIS HD toestaan                                      */
+    #define schupinagbhd61           245 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 61         */
+    #define schhdin61kar             246 /* Inmelden 61 via KAR HD toestaan                                       */
+    #define schhduit61kar            247 /* Uitmelden 61 via KAR HD toestaan                                      */
+    #define schchecksirene61         248 /* Bij HD meldingen bij 61 via DSI controleren op CIF_SIR                */
+    #define schhdin61ris             249 /* Inmelden 61 via RIS HD toestaan                                       */
+    #define schhduit61ris            250 /* Uitmelden 61 via RIS HD toestaan                                      */
+    #define schupinagbhd62           251 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 62         */
+    #define schhdin62kar             252 /* Inmelden 62 via KAR HD toestaan                                       */
+    #define schhduit62kar            253 /* Uitmelden 62 via KAR HD toestaan                                      */
+    #define schchecksirene62         254 /* Bij HD meldingen bij 62 via DSI controleren op CIF_SIR                */
+    #define schhdin62ris             255 /* Inmelden 62 via RIS HD toestaan                                       */
+    #define schhduit62ris            256 /* Uitmelden 62 via RIS HD toestaan                                      */
+    #define schupinagbhd67           257 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 67         */
+    #define schhdin67kar             258 /* Inmelden 67 via KAR HD toestaan                                       */
+    #define schhduit67kar            259 /* Uitmelden 67 via KAR HD toestaan                                      */
+    #define schchecksirene67         260 /* Bij HD meldingen bij 67 via DSI controleren op CIF_SIR                */
+    #define schhdin67ris             261 /* Inmelden 67 via RIS HD toestaan                                       */
+    #define schhduit67ris            262 /* Uitmelden 67 via RIS HD toestaan                                      */
+    #define schupinagbhd68           263 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 68         */
+    #define schhdin68kar             264 /* Inmelden 68 via KAR HD toestaan                                       */
+    #define schhduit68kar            265 /* Uitmelden 68 via KAR HD toestaan                                      */
+    #define schchecksirene68         266 /* Bij HD meldingen bij 68 via DSI controleren op CIF_SIR                */
+    #define schhdin68ris             267 /* Inmelden 68 via RIS HD toestaan                                       */
+    #define schhduit68ris            268 /* Uitmelden 68 via RIS HD toestaan                                      */
+    #define schrisgeencheckopsg      269 /* Niet checken op signaalgroep bij RIS aanvragen en verlengen           */
+    #define schrisaanvraag           270 /* Globaal in of uitschakelen aanvragen via RIS                          */
+    #define schrisverlengen          271 /* Globaal in of uitschakelen verlengen via RIS                          */
+    #define schrgadd24_3             272 /* Type richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2            */
+    #define schrgv                   273 /* RoBuGrover aan of uit                                                 */
+    #define schrgv_snel              274 /* RoBuGrover versneld ophogen of verlagen                               */
+    #define schca02                  275 /* Cyclische aanvraag fase 02                                            */
+    #define schca03                  276 /* Cyclische aanvraag fase 03                                            */
+    #define schca05                  277 /* Cyclische aanvraag fase 05                                            */
+    #define schca08                  278 /* Cyclische aanvraag fase 08                                            */
+    #define schca09                  279 /* Cyclische aanvraag fase 09                                            */
+    #define schca11                  280 /* Cyclische aanvraag fase 11                                            */
+    #define schca21                  281 /* Cyclische aanvraag fase 21                                            */
+    #define schca22                  282 /* Cyclische aanvraag fase 22                                            */
+    #define schca24                  283 /* Cyclische aanvraag fase 24                                            */
+    #define schca26                  284 /* Cyclische aanvraag fase 26                                            */
+    #define schca28                  285 /* Cyclische aanvraag fase 28                                            */
+    #define schca31                  286 /* Cyclische aanvraag fase 31                                            */
+    #define schca32                  287 /* Cyclische aanvraag fase 32                                            */
+    #define schca33                  288 /* Cyclische aanvraag fase 33                                            */
+    #define schca34                  289 /* Cyclische aanvraag fase 34                                            */
+    #define schca38                  290 /* Cyclische aanvraag fase 38                                            */
+    #define schca61                  291 /* Cyclische aanvraag fase 61                                            */
+    #define schca62                  292 /* Cyclische aanvraag fase 62                                            */
+    #define schca67                  293 /* Cyclische aanvraag fase 67                                            */
+    #define schca68                  294 /* Cyclische aanvraag fase 68                                            */
+    #define schca81                  295 /* Cyclische aanvraag fase 81                                            */
+    #define schca82                  296 /* Cyclische aanvraag fase 82                                            */
+    #define schca84                  297 /* Cyclische aanvraag fase 84                                            */
+    #define schvg02_4a               298 /* Veiligheidsgroen detector 02_4a fase 02                               */
+    #define schvg02_4b               299 /* Veiligheidsgroen detector 02_4b fase 02                               */
+    #define schvg08_4a               300 /* Veiligheidsgroen detector 08_4a fase 08                               */
+    #define schvg08_4b               301 /* Veiligheidsgroen detector 08_4b fase 08                               */
+    #define schvg11_4                302 /* Veiligheidsgroen detector 11_4 fase 11                                */
+    #define schaltg02                303 /* Alternatieve realisatie toestaan fase 02                              */
+    #define schaltg03                304 /* Alternatieve realisatie toestaan fase 03                              */
+    #define schaltg05                305 /* Alternatieve realisatie toestaan fase 05                              */
+    #define schaltg08                306 /* Alternatieve realisatie toestaan fase 08                              */
+    #define schaltg09                307 /* Alternatieve realisatie toestaan fase 09                              */
+    #define schaltg11                308 /* Alternatieve realisatie toestaan fase 11                              */
+    #define schaltg21                309 /* Alternatieve realisatie toestaan fase 21                              */
+    #define schaltg2232              310 /* Alternatieve realisatie toestaan fasen 22, 32                         */
+    #define schaltg2434              311 /* Alternatieve realisatie toestaan fasen 24, 34                         */
+    #define schaltg26                312 /* Alternatieve realisatie toestaan fase 26                              */
+    #define schaltg28                313 /* Alternatieve realisatie toestaan fase 28                              */
+    #define schaltg31                314 /* Alternatieve realisatie toestaan fase 31                              */
+    #define schaltg3384              315 /* Alternatieve realisatie toestaan fasen 33, 84                         */
+    #define schaltg38                316 /* Alternatieve realisatie toestaan fase 38                              */
+    #define schaltg61                317 /* Alternatieve realisatie toestaan fase 61                              */
+    #define schaltg62                318 /* Alternatieve realisatie toestaan fase 62                              */
+    #define schaltg67                319 /* Alternatieve realisatie toestaan fase 67                              */
+    #define schaltg68                320 /* Alternatieve realisatie toestaan fase 68                              */
+    #define schaltg81                321 /* Alternatieve realisatie toestaan fase 81                              */
+    #define schaltg82                322 /* Alternatieve realisatie toestaan fase 82                              */
+    #define schwg02                  323 /* Wachtstand groen fase 02                                              */
+    #define schwg03                  324 /* Wachtstand groen fase 03                                              */
+    #define schwg05                  325 /* Wachtstand groen fase 05                                              */
+    #define schwg08                  326 /* Wachtstand groen fase 08                                              */
+    #define schwg09                  327 /* Wachtstand groen fase 09                                              */
+    #define schwg11                  328 /* Wachtstand groen fase 11                                              */
+    #define schwg21                  329 /* Wachtstand groen fase 21                                              */
+    #define schwg22                  330 /* Wachtstand groen fase 22                                              */
+    #define schwg24                  331 /* Wachtstand groen fase 24                                              */
+    #define schwg26                  332 /* Wachtstand groen fase 26                                              */
+    #define schwg28                  333 /* Wachtstand groen fase 28                                              */
+    #define schwg31                  334 /* Wachtstand groen fase 31                                              */
+    #define schwg32                  335 /* Wachtstand groen fase 32                                              */
+    #define schwg33                  336 /* Wachtstand groen fase 33                                              */
+    #define schwg34                  337 /* Wachtstand groen fase 34                                              */
+    #define schwg38                  338 /* Wachtstand groen fase 38                                              */
+    #define schwg61                  339 /* Wachtstand groen fase 61                                              */
+    #define schwg62                  340 /* Wachtstand groen fase 62                                              */
+    #define schwg67                  341 /* Wachtstand groen fase 67                                              */
+    #define schwg68                  342 /* Wachtstand groen fase 68                                              */
+    #define schwg81                  343 /* Wachtstand groen fase 81                                              */
+    #define schwg82                  344 /* Wachtstand groen fase 82                                              */
+    #define schwg84                  345 /* Wachtstand groen fase 84                                              */
+    #define schstar                  346 /* Inschakelen star programma                                            */
+    #define schgs2232                347 /* Schakelbare gelijkstart tussen fase 32 en 22                          */
+    #define schgs2434                348 /* Schakelbare gelijkstart tussen fase 34 en 24                          */
+    #define schgs3384                349 /* Schakelbare gelijkstart tussen fase 84 en 33                          */
+    #define schlos32_1               350 /* Toestaan los realiseren fase 32                                       */
+    #define schlos32_2               351 /* Toestaan los realiseren fase 32                                       */
+    #define schlos31_1               352 /* Toestaan los realiseren fase 31                                       */
+    #define schlos31_2               353 /* Toestaan los realiseren fase 31                                       */
+    #define schlos34_1               354 /* Toestaan los realiseren fase 34                                       */
+    #define schlos34_2               355 /* Toestaan los realiseren fase 34                                       */
+    #define schlos33_1               356 /* Toestaan los realiseren fase 33                                       */
+    #define schlos33_2               357 /* Toestaan los realiseren fase 33                                       */
+    #define schconfidence15fix       358
+    #define schtxconfidence15ar      359
+    #define schspatconfidence1       360
+    #define schspatconfidence3       361
+    #define schspatconfidence6       362
+    #define schspatconfidence9       363
+    #define schspatconfidence12      364
+    #define schspatconfidence15      365
+    #define schtimings02             366
+    #define schtimings03             367
+    #define schtimings05             368
+    #define schtimings08             369
+    #define schtimings09             370
+    #define schtimings11             371
+    #define schtimings21             372
+    #define schtimings22             373
+    #define schtimings24             374
+    #define schtimings26             375
+    #define schtimings28             376
+    #define schtimings31             377
+    #define schtimings32             378
+    #define schtimings33             379
+    #define schtimings34             380
+    #define schtimings38             381
+    #define schtimings61             382
+    #define schtimings62             383
+    #define schtimings67             384
+    #define schtimings68             385
+    #define schtimings81             386
+    #define schtimings82             387
+    #define schtimings84             388
     #define schgsbeidedkb            389
     #define SCHMAX1                  390
 
@@ -1891,2097 +1891,2097 @@
     #define prmspringverleng_11_2         20 /* Dyn. hiaattij instelling voor det. 11_2 (via bitsturing)                                                                       */
     #define prmspringverleng_11_3         21 /* Dyn. hiaattij instelling voor det. 11_3 (via bitsturing)                                                                       */
     #define prmspringverleng_11_4         22 /* Dyn. hiaattij instelling voor det. 11_4 (via bitsturing)                                                                       */
-    #define prmttxconfidence15            23
-    #define prmlatencyminendsg            24
-    #define prmfb                         25 /* Instelling fasebewaking                                                                                                        */
-    #define prmxx                         26 /* Versiebeheer xx                                                                                                                */
-    #define prmyy                         27 /* Versiebeheer yy                                                                                                                */
-    #define prmzz                         28 /* Versiebeheer zz                                                                                                                */
-    #define prmovmextragroen_02           29
-    #define prmovmmindergroen_02          30
-    #define prmovmextragroen_03           31
-    #define prmovmmindergroen_03          32
-    #define prmovmextragroen_05           33
-    #define prmovmmindergroen_05          34
-    #define prmovmextragroen_08           35
-    #define prmovmmindergroen_08          36
-    #define prmovmextragroen_09           37
-    #define prmovmmindergroen_09          38
-    #define prmovmextragroen_11           39
-    #define prmovmmindergroen_11          40
-    #define prmovmextragroen_61           41
-    #define prmovmmindergroen_61          42
-    #define prmovmextragroen_62           43
-    #define prmovmmindergroen_62          44
-    #define prmovmextragroen_67           45
-    #define prmovmmindergroen_67          46
-    #define prmovmextragroen_68           47
-    #define prmovmmindergroen_68          48
-    #define prmaltb02                     49 /* Alternatief per blok voor fase 02                                                                                              */
-    #define prmaltb03                     50 /* Alternatief per blok voor fase 03                                                                                              */
-    #define prmaltb05                     51 /* Alternatief per blok voor fase 05                                                                                              */
-    #define prmaltb08                     52 /* Alternatief per blok voor fase 08                                                                                              */
-    #define prmaltb09                     53 /* Alternatief per blok voor fase 09                                                                                              */
-    #define prmaltb11                     54 /* Alternatief per blok voor fase 11                                                                                              */
-    #define prmaltb21                     55 /* Alternatief per blok voor fase 21                                                                                              */
-    #define prmaltb22                     56 /* Alternatief per blok voor fase 22                                                                                              */
-    #define prmaltb24                     57 /* Alternatief per blok voor fase 24                                                                                              */
-    #define prmaltb26                     58 /* Alternatief per blok voor fase 26                                                                                              */
-    #define prmaltb28                     59 /* Alternatief per blok voor fase 28                                                                                              */
-    #define prmaltb31                     60 /* Alternatief per blok voor fase 31                                                                                              */
-    #define prmaltb32                     61 /* Alternatief per blok voor fase 32                                                                                              */
-    #define prmaltb33                     62 /* Alternatief per blok voor fase 33                                                                                              */
-    #define prmaltb34                     63 /* Alternatief per blok voor fase 34                                                                                              */
-    #define prmaltb38                     64 /* Alternatief per blok voor fase 38                                                                                              */
-    #define prmaltb61                     65 /* Alternatief per blok voor fase 61                                                                                              */
-    #define prmaltb62                     66 /* Alternatief per blok voor fase 62                                                                                              */
-    #define prmaltb67                     67 /* Alternatief per blok voor fase 67                                                                                              */
-    #define prmaltb68                     68 /* Alternatief per blok voor fase 68                                                                                              */
-    #define prmaltb81                     69 /* Alternatief per blok voor fase 81                                                                                              */
-    #define prmaltb82                     70 /* Alternatief per blok voor fase 82                                                                                              */
-    #define prmaltb84                     71 /* Alternatief per blok voor fase 84                                                                                              */
-    #define prmda02_1a                    72 /* Aanvraag functie voor detector 02_1a                                                                                           */
-    #define prmda02_1b                    73 /* Aanvraag functie voor detector 02_1b                                                                                           */
-    #define prmda02_2a                    74 /* Aanvraag functie voor detector 02_2a                                                                                           */
-    #define prmda02_2b                    75 /* Aanvraag functie voor detector 02_2b                                                                                           */
-    #define prmda02_3a                    76 /* Aanvraag functie voor detector 02_3a                                                                                           */
-    #define prmda02_3b                    77 /* Aanvraag functie voor detector 02_3b                                                                                           */
-    #define prmda02_4a                    78 /* Aanvraag functie voor detector 02_4a                                                                                           */
-    #define prmda02_4b                    79 /* Aanvraag functie voor detector 02_4b                                                                                           */
-    #define prmda03_1                     80 /* Aanvraag functie voor detector 03_1                                                                                            */
-    #define prmda03_2                     81 /* Aanvraag functie voor detector 03_2                                                                                            */
-    #define prmda05_1                     82 /* Aanvraag functie voor detector 05_1                                                                                            */
-    #define prmda05_2                     83 /* Aanvraag functie voor detector 05_2                                                                                            */
-    #define prmda08_1a                    84 /* Aanvraag functie voor detector 08_1a                                                                                           */
-    #define prmda08_1b                    85 /* Aanvraag functie voor detector 08_1b                                                                                           */
-    #define prmda08_2a                    86 /* Aanvraag functie voor detector 08_2a                                                                                           */
-    #define prmda08_2b                    87 /* Aanvraag functie voor detector 08_2b                                                                                           */
-    #define prmda08_3a                    88 /* Aanvraag functie voor detector 08_3a                                                                                           */
-    #define prmda08_3b                    89 /* Aanvraag functie voor detector 08_3b                                                                                           */
-    #define prmda08_4a                    90 /* Aanvraag functie voor detector 08_4a                                                                                           */
-    #define prmda08_4b                    91 /* Aanvraag functie voor detector 08_4b                                                                                           */
-    #define prmda09_1                     92 /* Aanvraag functie voor detector 09_1                                                                                            */
-    #define prmda09_2                     93 /* Aanvraag functie voor detector 09_2                                                                                            */
-    #define prmda09_3                     94 /* Aanvraag functie voor detector 09_3                                                                                            */
-    #define prmda11_1                     95 /* Aanvraag functie voor detector 11_1                                                                                            */
-    #define prmda11_2                     96 /* Aanvraag functie voor detector 11_2                                                                                            */
-    #define prmda11_3                     97 /* Aanvraag functie voor detector 11_3                                                                                            */
-    #define prmda11_4                     98 /* Aanvraag functie voor detector 11_4                                                                                            */
-    #define prmda211                      99 /* Aanvraag functie voor detector 211                                                                                             */
-    #define prmdak21                     100 /* Aanvraag functie voor detector k21                                                                                             */
-    #define prmda22_1                    101 /* Aanvraag functie voor detector 22_1                                                                                            */
-    #define prmdak22                     102 /* Aanvraag functie voor detector k22                                                                                             */
-    #define prmda24_1                    103 /* Aanvraag functie voor detector 24_1                                                                                            */
-    #define prmda24_2                    104 /* Aanvraag functie voor detector 24_2                                                                                            */
-    #define prmda24_3                    105 /* Aanvraag functie voor detector 24_3                                                                                            */
-    #define prmdak24                     106 /* Aanvraag functie voor detector k24                                                                                             */
-    #define prmda261                     107 /* Aanvraag functie voor detector 261                                                                                             */
-    #define prmdak26                     108 /* Aanvraag functie voor detector k26                                                                                             */
-    #define prmda28_1                    109 /* Aanvraag functie voor detector 28_1                                                                                            */
-    #define prmda28_2                    110 /* Aanvraag functie voor detector 28_2                                                                                            */
-    #define prmdak28                     111 /* Aanvraag functie voor detector k28                                                                                             */
-    #define prmdak31a                    112 /* Aanvraag functie voor detector k31a                                                                                            */
-    #define prmdak31b                    113 /* Aanvraag functie voor detector k31b                                                                                            */
-    #define prmdak32a                    114 /* Aanvraag functie voor detector k32a                                                                                            */
-    #define prmdak32b                    115 /* Aanvraag functie voor detector k32b                                                                                            */
-    #define prmdak33a                    116 /* Aanvraag functie voor detector k33a                                                                                            */
-    #define prmdak33b                    117 /* Aanvraag functie voor detector k33b                                                                                            */
-    #define prmdak34a                    118 /* Aanvraag functie voor detector k34a                                                                                            */
-    #define prmdak34b                    119 /* Aanvraag functie voor detector k34b                                                                                            */
-    #define prmdak38a                    120 /* Aanvraag functie voor detector k38a                                                                                            */
-    #define prmdak38b                    121 /* Aanvraag functie voor detector k38b                                                                                            */
-    #define prmda61_1                    122 /* Aanvraag functie voor detector 61_1                                                                                            */
-    #define prmda61_2                    123 /* Aanvraag functie voor detector 61_2                                                                                            */
-    #define prmda62_1a                   124 /* Aanvraag functie voor detector 62_1a                                                                                           */
-    #define prmda62_1b                   125 /* Aanvraag functie voor detector 62_1b                                                                                           */
-    #define prmda62_2a                   126 /* Aanvraag functie voor detector 62_2a                                                                                           */
-    #define prmda62_2b                   127 /* Aanvraag functie voor detector 62_2b                                                                                           */
-    #define prmda67_1                    128 /* Aanvraag functie voor detector 67_1                                                                                            */
-    #define prmda67_2                    129 /* Aanvraag functie voor detector 67_2                                                                                            */
-    #define prmda68_1a                   130 /* Aanvraag functie voor detector 68_1a                                                                                           */
-    #define prmda68_1b                   131 /* Aanvraag functie voor detector 68_1b                                                                                           */
-    #define prmda68_2a                   132 /* Aanvraag functie voor detector 68_2a                                                                                           */
-    #define prmda68_2b                   133 /* Aanvraag functie voor detector 68_2b                                                                                           */
-    #define prmda68_9a                   134 /* Aanvraag functie voor detector 68_9a                                                                                           */
-    #define prmda68_9b                   135 /* Aanvraag functie voor detector 68_9b                                                                                           */
-    #define prmda81_1                    136 /* Aanvraag functie voor detector 81_1                                                                                            */
-    #define prmdak81                     137 /* Aanvraag functie voor detector k81                                                                                             */
-    #define prmda82_1                    138 /* Aanvraag functie voor detector 82_1                                                                                            */
-    #define prmdak82                     139 /* Aanvraag functie voor detector k82                                                                                             */
-    #define prmda84_1                    140 /* Aanvraag functie voor detector 84_1                                                                                            */
-    #define prmdak84                     141 /* Aanvraag functie voor detector k84                                                                                             */
-    #define prmmk02_1a                   142 /* Meetkriterium type voor detector 02_1a                                                                                         */
-    #define prmmk02_1b                   143 /* Meetkriterium type voor detector 02_1b                                                                                         */
-    #define prmmk02_2a                   144 /* Meetkriterium type voor detector 02_2a                                                                                         */
-    #define prmmk02_2b                   145 /* Meetkriterium type voor detector 02_2b                                                                                         */
-    #define prmmk02_3a                   146 /* Meetkriterium type voor detector 02_3a                                                                                         */
-    #define prmmk02_3b                   147 /* Meetkriterium type voor detector 02_3b                                                                                         */
-    #define prmmk02_4a                   148 /* Meetkriterium type voor detector 02_4a                                                                                         */
-    #define prmmk02_4b                   149 /* Meetkriterium type voor detector 02_4b                                                                                         */
-    #define prmmk03_1                    150 /* Meetkriterium type voor detector 03_1                                                                                          */
-    #define prmmk03_2                    151 /* Meetkriterium type voor detector 03_2                                                                                          */
-    #define prmmk05_1                    152 /* Meetkriterium type voor detector 05_1                                                                                          */
-    #define prmmk05_2                    153 /* Meetkriterium type voor detector 05_2                                                                                          */
-    #define prmmk08_1a                   154 /* Meetkriterium type voor detector 08_1a                                                                                         */
-    #define prmmk08_1b                   155 /* Meetkriterium type voor detector 08_1b                                                                                         */
-    #define prmmk08_2a                   156 /* Meetkriterium type voor detector 08_2a                                                                                         */
-    #define prmmk08_2b                   157 /* Meetkriterium type voor detector 08_2b                                                                                         */
-    #define prmmk08_3a                   158 /* Meetkriterium type voor detector 08_3a                                                                                         */
-    #define prmmk08_3b                   159 /* Meetkriterium type voor detector 08_3b                                                                                         */
-    #define prmmk08_4a                   160 /* Meetkriterium type voor detector 08_4a                                                                                         */
-    #define prmmk08_4b                   161 /* Meetkriterium type voor detector 08_4b                                                                                         */
-    #define prmmk09_1                    162 /* Meetkriterium type voor detector 09_1                                                                                          */
-    #define prmmk09_2                    163 /* Meetkriterium type voor detector 09_2                                                                                          */
-    #define prmmk09_3                    164 /* Meetkriterium type voor detector 09_3                                                                                          */
-    #define prmmk11_1                    165 /* Meetkriterium type voor detector 11_1                                                                                          */
-    #define prmmk11_2                    166 /* Meetkriterium type voor detector 11_2                                                                                          */
-    #define prmmk11_3                    167 /* Meetkriterium type voor detector 11_3                                                                                          */
-    #define prmmk11_4                    168 /* Meetkriterium type voor detector 11_4                                                                                          */
-    #define prmmk211                     169 /* Meetkriterium type voor detector 211                                                                                           */
-    #define prmmk22_1                    170 /* Meetkriterium type voor detector 22_1                                                                                          */
-    #define prmmk24_1                    171 /* Meetkriterium type voor detector 24_1                                                                                          */
-    #define prmmk24_2                    172 /* Meetkriterium type voor detector 24_2                                                                                          */
-    #define prmmk24_3                    173 /* Meetkriterium type voor detector 24_3                                                                                          */
-    #define prmmk261                     174 /* Meetkriterium type voor detector 261                                                                                           */
-    #define prmmk28_1                    175 /* Meetkriterium type voor detector 28_1                                                                                          */
-    #define prmmk28_2                    176 /* Meetkriterium type voor detector 28_2                                                                                          */
-    #define prmmk61_1                    177 /* Meetkriterium type voor detector 61_1                                                                                          */
-    #define prmmk61_2                    178 /* Meetkriterium type voor detector 61_2                                                                                          */
-    #define prmmk62_1a                   179 /* Meetkriterium type voor detector 62_1a                                                                                         */
-    #define prmmk62_1b                   180 /* Meetkriterium type voor detector 62_1b                                                                                         */
-    #define prmmk62_2a                   181 /* Meetkriterium type voor detector 62_2a                                                                                         */
-    #define prmmk62_2b                   182 /* Meetkriterium type voor detector 62_2b                                                                                         */
-    #define prmmk67_1                    183 /* Meetkriterium type voor detector 67_1                                                                                          */
-    #define prmmk67_2                    184 /* Meetkriterium type voor detector 67_2                                                                                          */
-    #define prmmk68_1a                   185 /* Meetkriterium type voor detector 68_1a                                                                                         */
-    #define prmmk68_1b                   186 /* Meetkriterium type voor detector 68_1b                                                                                         */
-    #define prmmk68_2a                   187 /* Meetkriterium type voor detector 68_2a                                                                                         */
-    #define prmmk68_2b                   188 /* Meetkriterium type voor detector 68_2b                                                                                         */
-    #define prmmk68_9a                   189 /* Meetkriterium type voor detector 68_9a                                                                                         */
-    #define prmmk68_9b                   190 /* Meetkriterium type voor detector 68_9b                                                                                         */
-    #define prmmk81_1                    191 /* Meetkriterium type voor detector 81_1                                                                                          */
-    #define prmmk82_1                    192 /* Meetkriterium type voor detector 82_1                                                                                          */
-    #define prmmk84_1                    193 /* Meetkriterium type voor detector 84_1                                                                                          */
-    #define prmperc02                    194 /* Percentage groentijd fase 02 bij defect kop en lange lus                                                                       */
-    #define prmperc03                    195 /* Percentage groentijd fase 03 bij defect kop en lange lus                                                                       */
-    #define prmperc05                    196 /* Percentage groentijd fase 05 bij defect kop en lange lus                                                                       */
-    #define prmperc08                    197 /* Percentage groentijd fase 08 bij defect kop en lange lus                                                                       */
-    #define prmperc09                    198 /* Percentage groentijd fase 09 bij defect kop en lange lus                                                                       */
-    #define prmperc11                    199 /* Percentage groentijd fase 11 bij defect kop en lange lus                                                                       */
-    #define prmperc61                    200 /* Percentage groentijd fase 61 bij defect kop en lange lus                                                                       */
-    #define prmperc62                    201 /* Percentage groentijd fase 62 bij defect kop en lange lus                                                                       */
-    #define prmperc67                    202 /* Percentage groentijd fase 67 bij defect kop en lange lus                                                                       */
-    #define prmperc68                    203 /* Percentage groentijd fase 68 bij defect kop en lange lus                                                                       */
-    #define prmfpercFile68af08           204 /* Doseerpercentage 08                                                                                                            */
-    #define prmfpercFile68af11           205 /* Doseerpercentage 11                                                                                                            */
-    #define prmaltphst02                 206 /* Alternatieve ruimte fase 02 tijdens halfstar regelen                                                                           */
-    #define prmaltphst03                 207 /* Alternatieve ruimte fase 03 tijdens halfstar regelen                                                                           */
-    #define prmaltphst05                 208 /* Alternatieve ruimte fase 05 tijdens halfstar regelen                                                                           */
-    #define prmaltphst08                 209 /* Alternatieve ruimte fase 08 tijdens halfstar regelen                                                                           */
-    #define prmaltphst09                 210 /* Alternatieve ruimte fase 09 tijdens halfstar regelen                                                                           */
-    #define prmaltphst11                 211 /* Alternatieve ruimte fase 11 tijdens halfstar regelen                                                                           */
-    #define prmaltphst21                 212 /* Alternatieve ruimte fase 21 tijdens halfstar regelen                                                                           */
-    #define prmaltphst2232               213 /* Alternatieve ruimte fasen 22, 32 tijdens halfstar regelen                                                                      */
-    #define prmaltphst2434               214 /* Alternatieve ruimte fasen 24, 34 tijdens halfstar regelen                                                                      */
-    #define prmaltphst81                 215 /* Alternatieve ruimte fase 81 tijdens halfstar regelen                                                                           */
-    #define prmaltphst88                 216 /* Alternatieve ruimte fase 88 tijdens halfstar regelen                                                                           */
-    #define prmaltphst3384               217 /* Alternatieve ruimte fasen 33, 84 tijdens halfstar regelen                                                                      */
-    #define prmaltphst68                 218 /* Alternatieve ruimte fase 68 tijdens halfstar regelen                                                                           */
-    #define prmaltphst82                 219 /* Alternatieve ruimte fase 82 tijdens halfstar regelen                                                                           */
-    #define prmaltphst67                 220 /* Alternatieve ruimte fase 67 tijdens halfstar regelen                                                                           */
-    #define prmaltphst62                 221 /* Alternatieve ruimte fase 62 tijdens halfstar regelen                                                                           */
-    #define prmaltphst61                 222 /* Alternatieve ruimte fase 61 tijdens halfstar regelen                                                                           */
-    #define prmaltphst38                 223 /* Alternatieve ruimte fase 38 tijdens halfstar regelen                                                                           */
-    #define prmaltphst31                 224 /* Alternatieve ruimte fase 31 tijdens halfstar regelen                                                                           */
-    #define prmaltphst28                 225 /* Alternatieve ruimte fase 28 tijdens halfstar regelen                                                                           */
-    #define prmaltphst26                 226 /* Alternatieve ruimte fase 26 tijdens halfstar regelen                                                                           */
-    #define prmpriohst02bus              227 /* Prioriteit fase 02 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst02risov            228 /* Prioriteit fase 02 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst02risvrw           229 /* Prioriteit fase 02 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmpriohst03bus              230 /* Prioriteit fase 03 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst03risov            231 /* Prioriteit fase 03 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst03risvrw           232 /* Prioriteit fase 03 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmpriohst05bus              233 /* Prioriteit fase 05 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst05risov            234 /* Prioriteit fase 05 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst05risvrw           235 /* Prioriteit fase 05 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmpriohst08bus              236 /* Prioriteit fase 08 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst08risov            237 /* Prioriteit fase 08 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst08risvrw           238 /* Prioriteit fase 08 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmpriohst09bus              239 /* Prioriteit fase 09 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst09risov            240 /* Prioriteit fase 09 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst09risvrw           241 /* Prioriteit fase 09 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmpriohst11bus              242 /* Prioriteit fase 11 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst11risov            243 /* Prioriteit fase 11 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst11risvrw           244 /* Prioriteit fase 11 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmpriohst22fiets            245 /* Prioriteit fase 22 tijdens halfstar regelen Fiets                                                                              */
-    #define prmpriohst31fietsprio        246 /* Prioriteit fase 31 tijdens halfstar regelen Fiets                                                                              */
-    #define prmpriohst32fietsprio        247 /* Prioriteit fase 32 tijdens halfstar regelen Fiets                                                                              */
-    #define prmpriohst61bus              248 /* Prioriteit fase 61 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst61risov            249 /* Prioriteit fase 61 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst61risvrw           250 /* Prioriteit fase 61 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmpriohst62bus              251 /* Prioriteit fase 62 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst62risov            252 /* Prioriteit fase 62 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst62risvrw           253 /* Prioriteit fase 62 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmpriohst67bus              254 /* Prioriteit fase 67 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst67risov            255 /* Prioriteit fase 67 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst67risvrw           256 /* Prioriteit fase 67 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmpriohst68bus              257 /* Prioriteit fase 68 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst68risov            258 /* Prioriteit fase 68 tijdens halfstar regelen Bus                                                                                */
-    #define prmpriohst68risvrw           259 /* Prioriteit fase 68 tijdens halfstar regelen Vrachtwagen                                                                        */
-    #define prmnatxdhst02bus             260 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 02                                                                */
-    #define prmnatxdhst02risov           261 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 02                                                                */
-    #define prmnatxdhst02risvrw          262 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 02                                                                */
-    #define prmnatxdhst03bus             263 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 03                                                                */
-    #define prmnatxdhst03risov           264 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 03                                                                */
-    #define prmnatxdhst03risvrw          265 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 03                                                                */
-    #define prmnatxdhst05bus             266 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 05                                                                */
-    #define prmnatxdhst05risov           267 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 05                                                                */
-    #define prmnatxdhst05risvrw          268 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 05                                                                */
-    #define prmnatxdhst08bus             269 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 08                                                                */
-    #define prmnatxdhst08risov           270 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 08                                                                */
-    #define prmnatxdhst08risvrw          271 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 08                                                                */
-    #define prmnatxdhst09bus             272 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 09                                                                */
-    #define prmnatxdhst09risov           273 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 09                                                                */
-    #define prmnatxdhst09risvrw          274 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 09                                                                */
-    #define prmnatxdhst11bus             275 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 11                                                                */
-    #define prmnatxdhst11risov           276 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 11                                                                */
-    #define prmnatxdhst11risvrw          277 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 11                                                                */
-    #define prmnatxdhst22fiets           278 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 22                                                                */
-    #define prmnatxdhst31fietsprio       279 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 31                                                                */
-    #define prmnatxdhst32fietsprio       280 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 32                                                                */
-    #define prmnatxdhst61bus             281 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 61                                                                */
-    #define prmnatxdhst61risov           282 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 61                                                                */
-    #define prmnatxdhst61risvrw          283 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 61                                                                */
-    #define prmnatxdhst62bus             284 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 62                                                                */
-    #define prmnatxdhst62risov           285 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 62                                                                */
-    #define prmnatxdhst62risvrw          286 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 62                                                                */
-    #define prmnatxdhst67bus             287 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 67                                                                */
-    #define prmnatxdhst67risov           288 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 67                                                                */
-    #define prmnatxdhst67risvrw          289 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 67                                                                */
-    #define prmnatxdhst68bus             290 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 68                                                                */
-    #define prmnatxdhst68risov           291 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 68                                                                */
-    #define prmnatxdhst68risvrw          292 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 68                                                                */
-    #define prmtxA1PL1_02                293 /* Eerste realisatie PL1 fc02 A-moment                                                                                            */
-    #define prmtxB1PL1_02                294 /* Eerste realisatie PL1 fc02 B-moment                                                                                            */
-    #define prmtxC1PL1_02                295 /* Eerste realisatie PL1 fc02 C-moment                                                                                            */
-    #define prmtxD1PL1_02                296 /* Eerste realisatie PL1 fc02 D-moment                                                                                            */
-    #define prmtxE1PL1_02                297 /* Eerste realisatie PL1 fc02 E-moment                                                                                            */
-    #define prmtxA2PL1_02                298 /* Tweede realisatie PL1 fc02 A-moment                                                                                            */
-    #define prmtxB2PL1_02                299 /* Tweede realisatie PL1 fc02 B-moment                                                                                            */
-    #define prmtxC2PL1_02                300 /* Tweede realisatie PL1 fc02 C-moment                                                                                            */
-    #define prmtxD2PL1_02                301 /* Tweede realisatie PL1 fc02 D-moment                                                                                            */
-    #define prmtxE2PL1_02                302 /* Tweede realisatie PL1 fc02 E-moment                                                                                            */
-    #define prmtxA1PL1_03                303 /* Eerste realisatie PL1 fc03 A-moment                                                                                            */
-    #define prmtxB1PL1_03                304 /* Eerste realisatie PL1 fc03 B-moment                                                                                            */
-    #define prmtxC1PL1_03                305 /* Eerste realisatie PL1 fc03 C-moment                                                                                            */
-    #define prmtxD1PL1_03                306 /* Eerste realisatie PL1 fc03 D-moment                                                                                            */
-    #define prmtxE1PL1_03                307 /* Eerste realisatie PL1 fc03 E-moment                                                                                            */
-    #define prmtxA2PL1_03                308 /* Tweede realisatie PL1 fc03 A-moment                                                                                            */
-    #define prmtxB2PL1_03                309 /* Tweede realisatie PL1 fc03 B-moment                                                                                            */
-    #define prmtxC2PL1_03                310 /* Tweede realisatie PL1 fc03 C-moment                                                                                            */
-    #define prmtxD2PL1_03                311 /* Tweede realisatie PL1 fc03 D-moment                                                                                            */
-    #define prmtxE2PL1_03                312 /* Tweede realisatie PL1 fc03 E-moment                                                                                            */
-    #define prmtxA1PL1_05                313 /* Eerste realisatie PL1 fc05 A-moment                                                                                            */
-    #define prmtxB1PL1_05                314 /* Eerste realisatie PL1 fc05 B-moment                                                                                            */
-    #define prmtxC1PL1_05                315 /* Eerste realisatie PL1 fc05 C-moment                                                                                            */
-    #define prmtxD1PL1_05                316 /* Eerste realisatie PL1 fc05 D-moment                                                                                            */
-    #define prmtxE1PL1_05                317 /* Eerste realisatie PL1 fc05 E-moment                                                                                            */
-    #define prmtxA2PL1_05                318 /* Tweede realisatie PL1 fc05 A-moment                                                                                            */
-    #define prmtxB2PL1_05                319 /* Tweede realisatie PL1 fc05 B-moment                                                                                            */
-    #define prmtxC2PL1_05                320 /* Tweede realisatie PL1 fc05 C-moment                                                                                            */
-    #define prmtxD2PL1_05                321 /* Tweede realisatie PL1 fc05 D-moment                                                                                            */
-    #define prmtxE2PL1_05                322 /* Tweede realisatie PL1 fc05 E-moment                                                                                            */
-    #define prmtxA1PL1_08                323 /* Eerste realisatie PL1 fc08 A-moment                                                                                            */
-    #define prmtxB1PL1_08                324 /* Eerste realisatie PL1 fc08 B-moment                                                                                            */
-    #define prmtxC1PL1_08                325 /* Eerste realisatie PL1 fc08 C-moment                                                                                            */
-    #define prmtxD1PL1_08                326 /* Eerste realisatie PL1 fc08 D-moment                                                                                            */
-    #define prmtxE1PL1_08                327 /* Eerste realisatie PL1 fc08 E-moment                                                                                            */
-    #define prmtxA2PL1_08                328 /* Tweede realisatie PL1 fc08 A-moment                                                                                            */
-    #define prmtxB2PL1_08                329 /* Tweede realisatie PL1 fc08 B-moment                                                                                            */
-    #define prmtxC2PL1_08                330 /* Tweede realisatie PL1 fc08 C-moment                                                                                            */
-    #define prmtxD2PL1_08                331 /* Tweede realisatie PL1 fc08 D-moment                                                                                            */
-    #define prmtxE2PL1_08                332 /* Tweede realisatie PL1 fc08 E-moment                                                                                            */
-    #define prmtxA1PL1_09                333 /* Eerste realisatie PL1 fc09 A-moment                                                                                            */
-    #define prmtxB1PL1_09                334 /* Eerste realisatie PL1 fc09 B-moment                                                                                            */
-    #define prmtxC1PL1_09                335 /* Eerste realisatie PL1 fc09 C-moment                                                                                            */
-    #define prmtxD1PL1_09                336 /* Eerste realisatie PL1 fc09 D-moment                                                                                            */
-    #define prmtxE1PL1_09                337 /* Eerste realisatie PL1 fc09 E-moment                                                                                            */
-    #define prmtxA2PL1_09                338 /* Tweede realisatie PL1 fc09 A-moment                                                                                            */
-    #define prmtxB2PL1_09                339 /* Tweede realisatie PL1 fc09 B-moment                                                                                            */
-    #define prmtxC2PL1_09                340 /* Tweede realisatie PL1 fc09 C-moment                                                                                            */
-    #define prmtxD2PL1_09                341 /* Tweede realisatie PL1 fc09 D-moment                                                                                            */
-    #define prmtxE2PL1_09                342 /* Tweede realisatie PL1 fc09 E-moment                                                                                            */
-    #define prmtxA1PL1_11                343 /* Eerste realisatie PL1 fc11 A-moment                                                                                            */
-    #define prmtxB1PL1_11                344 /* Eerste realisatie PL1 fc11 B-moment                                                                                            */
-    #define prmtxC1PL1_11                345 /* Eerste realisatie PL1 fc11 C-moment                                                                                            */
-    #define prmtxD1PL1_11                346 /* Eerste realisatie PL1 fc11 D-moment                                                                                            */
-    #define prmtxE1PL1_11                347 /* Eerste realisatie PL1 fc11 E-moment                                                                                            */
-    #define prmtxA2PL1_11                348 /* Tweede realisatie PL1 fc11 A-moment                                                                                            */
-    #define prmtxB2PL1_11                349 /* Tweede realisatie PL1 fc11 B-moment                                                                                            */
-    #define prmtxC2PL1_11                350 /* Tweede realisatie PL1 fc11 C-moment                                                                                            */
-    #define prmtxD2PL1_11                351 /* Tweede realisatie PL1 fc11 D-moment                                                                                            */
-    #define prmtxE2PL1_11                352 /* Tweede realisatie PL1 fc11 E-moment                                                                                            */
-    #define prmtxA1PL1_21                353 /* Eerste realisatie PL1 fc21 A-moment                                                                                            */
-    #define prmtxB1PL1_21                354 /* Eerste realisatie PL1 fc21 B-moment                                                                                            */
-    #define prmtxC1PL1_21                355 /* Eerste realisatie PL1 fc21 C-moment                                                                                            */
-    #define prmtxD1PL1_21                356 /* Eerste realisatie PL1 fc21 D-moment                                                                                            */
-    #define prmtxE1PL1_21                357 /* Eerste realisatie PL1 fc21 E-moment                                                                                            */
-    #define prmtxA2PL1_21                358 /* Tweede realisatie PL1 fc21 A-moment                                                                                            */
-    #define prmtxB2PL1_21                359 /* Tweede realisatie PL1 fc21 B-moment                                                                                            */
-    #define prmtxC2PL1_21                360 /* Tweede realisatie PL1 fc21 C-moment                                                                                            */
-    #define prmtxD2PL1_21                361 /* Tweede realisatie PL1 fc21 D-moment                                                                                            */
-    #define prmtxE2PL1_21                362 /* Tweede realisatie PL1 fc21 E-moment                                                                                            */
-    #define prmtxA1PL1_22                363 /* Eerste realisatie PL1 fc22 A-moment                                                                                            */
-    #define prmtxB1PL1_22                364 /* Eerste realisatie PL1 fc22 B-moment                                                                                            */
-    #define prmtxC1PL1_22                365 /* Eerste realisatie PL1 fc22 C-moment                                                                                            */
-    #define prmtxD1PL1_22                366 /* Eerste realisatie PL1 fc22 D-moment                                                                                            */
-    #define prmtxE1PL1_22                367 /* Eerste realisatie PL1 fc22 E-moment                                                                                            */
-    #define prmtxA2PL1_22                368 /* Tweede realisatie PL1 fc22 A-moment                                                                                            */
-    #define prmtxB2PL1_22                369 /* Tweede realisatie PL1 fc22 B-moment                                                                                            */
-    #define prmtxC2PL1_22                370 /* Tweede realisatie PL1 fc22 C-moment                                                                                            */
-    #define prmtxD2PL1_22                371 /* Tweede realisatie PL1 fc22 D-moment                                                                                            */
-    #define prmtxE2PL1_22                372 /* Tweede realisatie PL1 fc22 E-moment                                                                                            */
-    #define prmtxA1PL1_24                373 /* Eerste realisatie PL1 fc24 A-moment                                                                                            */
-    #define prmtxB1PL1_24                374 /* Eerste realisatie PL1 fc24 B-moment                                                                                            */
-    #define prmtxC1PL1_24                375 /* Eerste realisatie PL1 fc24 C-moment                                                                                            */
-    #define prmtxD1PL1_24                376 /* Eerste realisatie PL1 fc24 D-moment                                                                                            */
-    #define prmtxE1PL1_24                377 /* Eerste realisatie PL1 fc24 E-moment                                                                                            */
-    #define prmtxA2PL1_24                378 /* Tweede realisatie PL1 fc24 A-moment                                                                                            */
-    #define prmtxB2PL1_24                379 /* Tweede realisatie PL1 fc24 B-moment                                                                                            */
-    #define prmtxC2PL1_24                380 /* Tweede realisatie PL1 fc24 C-moment                                                                                            */
-    #define prmtxD2PL1_24                381 /* Tweede realisatie PL1 fc24 D-moment                                                                                            */
-    #define prmtxE2PL1_24                382 /* Tweede realisatie PL1 fc24 E-moment                                                                                            */
-    #define prmtxA1PL1_26                383 /* Eerste realisatie PL1 fc26 A-moment                                                                                            */
-    #define prmtxB1PL1_26                384 /* Eerste realisatie PL1 fc26 B-moment                                                                                            */
-    #define prmtxC1PL1_26                385 /* Eerste realisatie PL1 fc26 C-moment                                                                                            */
-    #define prmtxD1PL1_26                386 /* Eerste realisatie PL1 fc26 D-moment                                                                                            */
-    #define prmtxE1PL1_26                387 /* Eerste realisatie PL1 fc26 E-moment                                                                                            */
-    #define prmtxA2PL1_26                388 /* Tweede realisatie PL1 fc26 A-moment                                                                                            */
-    #define prmtxB2PL1_26                389 /* Tweede realisatie PL1 fc26 B-moment                                                                                            */
-    #define prmtxC2PL1_26                390 /* Tweede realisatie PL1 fc26 C-moment                                                                                            */
-    #define prmtxD2PL1_26                391 /* Tweede realisatie PL1 fc26 D-moment                                                                                            */
-    #define prmtxE2PL1_26                392 /* Tweede realisatie PL1 fc26 E-moment                                                                                            */
-    #define prmtxA1PL1_28                393 /* Eerste realisatie PL1 fc28 A-moment                                                                                            */
-    #define prmtxB1PL1_28                394 /* Eerste realisatie PL1 fc28 B-moment                                                                                            */
-    #define prmtxC1PL1_28                395 /* Eerste realisatie PL1 fc28 C-moment                                                                                            */
-    #define prmtxD1PL1_28                396 /* Eerste realisatie PL1 fc28 D-moment                                                                                            */
-    #define prmtxE1PL1_28                397 /* Eerste realisatie PL1 fc28 E-moment                                                                                            */
-    #define prmtxA2PL1_28                398 /* Tweede realisatie PL1 fc28 A-moment                                                                                            */
-    #define prmtxB2PL1_28                399 /* Tweede realisatie PL1 fc28 B-moment                                                                                            */
-    #define prmtxC2PL1_28                400 /* Tweede realisatie PL1 fc28 C-moment                                                                                            */
-    #define prmtxD2PL1_28                401 /* Tweede realisatie PL1 fc28 D-moment                                                                                            */
-    #define prmtxE2PL1_28                402 /* Tweede realisatie PL1 fc28 E-moment                                                                                            */
-    #define prmtxA1PL1_31                403 /* Eerste realisatie PL1 fc31 A-moment                                                                                            */
-    #define prmtxB1PL1_31                404 /* Eerste realisatie PL1 fc31 B-moment                                                                                            */
-    #define prmtxC1PL1_31                405 /* Eerste realisatie PL1 fc31 C-moment                                                                                            */
-    #define prmtxD1PL1_31                406 /* Eerste realisatie PL1 fc31 D-moment                                                                                            */
-    #define prmtxE1PL1_31                407 /* Eerste realisatie PL1 fc31 E-moment                                                                                            */
-    #define prmtxA2PL1_31                408 /* Tweede realisatie PL1 fc31 A-moment                                                                                            */
-    #define prmtxB2PL1_31                409 /* Tweede realisatie PL1 fc31 B-moment                                                                                            */
-    #define prmtxC2PL1_31                410 /* Tweede realisatie PL1 fc31 C-moment                                                                                            */
-    #define prmtxD2PL1_31                411 /* Tweede realisatie PL1 fc31 D-moment                                                                                            */
-    #define prmtxE2PL1_31                412 /* Tweede realisatie PL1 fc31 E-moment                                                                                            */
-    #define prmtxA1PL1_32                413 /* Eerste realisatie PL1 fc32 A-moment                                                                                            */
-    #define prmtxB1PL1_32                414 /* Eerste realisatie PL1 fc32 B-moment                                                                                            */
-    #define prmtxC1PL1_32                415 /* Eerste realisatie PL1 fc32 C-moment                                                                                            */
-    #define prmtxD1PL1_32                416 /* Eerste realisatie PL1 fc32 D-moment                                                                                            */
-    #define prmtxE1PL1_32                417 /* Eerste realisatie PL1 fc32 E-moment                                                                                            */
-    #define prmtxA2PL1_32                418 /* Tweede realisatie PL1 fc32 A-moment                                                                                            */
-    #define prmtxB2PL1_32                419 /* Tweede realisatie PL1 fc32 B-moment                                                                                            */
-    #define prmtxC2PL1_32                420 /* Tweede realisatie PL1 fc32 C-moment                                                                                            */
-    #define prmtxD2PL1_32                421 /* Tweede realisatie PL1 fc32 D-moment                                                                                            */
-    #define prmtxE2PL1_32                422 /* Tweede realisatie PL1 fc32 E-moment                                                                                            */
-    #define prmtxA1PL1_33                423 /* Eerste realisatie PL1 fc33 A-moment                                                                                            */
-    #define prmtxB1PL1_33                424 /* Eerste realisatie PL1 fc33 B-moment                                                                                            */
-    #define prmtxC1PL1_33                425 /* Eerste realisatie PL1 fc33 C-moment                                                                                            */
-    #define prmtxD1PL1_33                426 /* Eerste realisatie PL1 fc33 D-moment                                                                                            */
-    #define prmtxE1PL1_33                427 /* Eerste realisatie PL1 fc33 E-moment                                                                                            */
-    #define prmtxA2PL1_33                428 /* Tweede realisatie PL1 fc33 A-moment                                                                                            */
-    #define prmtxB2PL1_33                429 /* Tweede realisatie PL1 fc33 B-moment                                                                                            */
-    #define prmtxC2PL1_33                430 /* Tweede realisatie PL1 fc33 C-moment                                                                                            */
-    #define prmtxD2PL1_33                431 /* Tweede realisatie PL1 fc33 D-moment                                                                                            */
-    #define prmtxE2PL1_33                432 /* Tweede realisatie PL1 fc33 E-moment                                                                                            */
-    #define prmtxA1PL1_34                433 /* Eerste realisatie PL1 fc34 A-moment                                                                                            */
-    #define prmtxB1PL1_34                434 /* Eerste realisatie PL1 fc34 B-moment                                                                                            */
-    #define prmtxC1PL1_34                435 /* Eerste realisatie PL1 fc34 C-moment                                                                                            */
-    #define prmtxD1PL1_34                436 /* Eerste realisatie PL1 fc34 D-moment                                                                                            */
-    #define prmtxE1PL1_34                437 /* Eerste realisatie PL1 fc34 E-moment                                                                                            */
-    #define prmtxA2PL1_34                438 /* Tweede realisatie PL1 fc34 A-moment                                                                                            */
-    #define prmtxB2PL1_34                439 /* Tweede realisatie PL1 fc34 B-moment                                                                                            */
-    #define prmtxC2PL1_34                440 /* Tweede realisatie PL1 fc34 C-moment                                                                                            */
-    #define prmtxD2PL1_34                441 /* Tweede realisatie PL1 fc34 D-moment                                                                                            */
-    #define prmtxE2PL1_34                442 /* Tweede realisatie PL1 fc34 E-moment                                                                                            */
-    #define prmtxA1PL1_38                443 /* Eerste realisatie PL1 fc38 A-moment                                                                                            */
-    #define prmtxB1PL1_38                444 /* Eerste realisatie PL1 fc38 B-moment                                                                                            */
-    #define prmtxC1PL1_38                445 /* Eerste realisatie PL1 fc38 C-moment                                                                                            */
-    #define prmtxD1PL1_38                446 /* Eerste realisatie PL1 fc38 D-moment                                                                                            */
-    #define prmtxE1PL1_38                447 /* Eerste realisatie PL1 fc38 E-moment                                                                                            */
-    #define prmtxA2PL1_38                448 /* Tweede realisatie PL1 fc38 A-moment                                                                                            */
-    #define prmtxB2PL1_38                449 /* Tweede realisatie PL1 fc38 B-moment                                                                                            */
-    #define prmtxC2PL1_38                450 /* Tweede realisatie PL1 fc38 C-moment                                                                                            */
-    #define prmtxD2PL1_38                451 /* Tweede realisatie PL1 fc38 D-moment                                                                                            */
-    #define prmtxE2PL1_38                452 /* Tweede realisatie PL1 fc38 E-moment                                                                                            */
-    #define prmtxA1PL1_61                453 /* Eerste realisatie PL1 fc61 A-moment                                                                                            */
-    #define prmtxB1PL1_61                454 /* Eerste realisatie PL1 fc61 B-moment                                                                                            */
-    #define prmtxC1PL1_61                455 /* Eerste realisatie PL1 fc61 C-moment                                                                                            */
-    #define prmtxD1PL1_61                456 /* Eerste realisatie PL1 fc61 D-moment                                                                                            */
-    #define prmtxE1PL1_61                457 /* Eerste realisatie PL1 fc61 E-moment                                                                                            */
-    #define prmtxA2PL1_61                458 /* Tweede realisatie PL1 fc61 A-moment                                                                                            */
-    #define prmtxB2PL1_61                459 /* Tweede realisatie PL1 fc61 B-moment                                                                                            */
-    #define prmtxC2PL1_61                460 /* Tweede realisatie PL1 fc61 C-moment                                                                                            */
-    #define prmtxD2PL1_61                461 /* Tweede realisatie PL1 fc61 D-moment                                                                                            */
-    #define prmtxE2PL1_61                462 /* Tweede realisatie PL1 fc61 E-moment                                                                                            */
-    #define prmtxA1PL1_62                463 /* Eerste realisatie PL1 fc62 A-moment                                                                                            */
-    #define prmtxB1PL1_62                464 /* Eerste realisatie PL1 fc62 B-moment                                                                                            */
-    #define prmtxC1PL1_62                465 /* Eerste realisatie PL1 fc62 C-moment                                                                                            */
-    #define prmtxD1PL1_62                466 /* Eerste realisatie PL1 fc62 D-moment                                                                                            */
-    #define prmtxE1PL1_62                467 /* Eerste realisatie PL1 fc62 E-moment                                                                                            */
-    #define prmtxA2PL1_62                468 /* Tweede realisatie PL1 fc62 A-moment                                                                                            */
-    #define prmtxB2PL1_62                469 /* Tweede realisatie PL1 fc62 B-moment                                                                                            */
-    #define prmtxC2PL1_62                470 /* Tweede realisatie PL1 fc62 C-moment                                                                                            */
-    #define prmtxD2PL1_62                471 /* Tweede realisatie PL1 fc62 D-moment                                                                                            */
-    #define prmtxE2PL1_62                472 /* Tweede realisatie PL1 fc62 E-moment                                                                                            */
-    #define prmtxA1PL1_67                473 /* Eerste realisatie PL1 fc67 A-moment                                                                                            */
-    #define prmtxB1PL1_67                474 /* Eerste realisatie PL1 fc67 B-moment                                                                                            */
-    #define prmtxC1PL1_67                475 /* Eerste realisatie PL1 fc67 C-moment                                                                                            */
-    #define prmtxD1PL1_67                476 /* Eerste realisatie PL1 fc67 D-moment                                                                                            */
-    #define prmtxE1PL1_67                477 /* Eerste realisatie PL1 fc67 E-moment                                                                                            */
-    #define prmtxA2PL1_67                478 /* Tweede realisatie PL1 fc67 A-moment                                                                                            */
-    #define prmtxB2PL1_67                479 /* Tweede realisatie PL1 fc67 B-moment                                                                                            */
-    #define prmtxC2PL1_67                480 /* Tweede realisatie PL1 fc67 C-moment                                                                                            */
-    #define prmtxD2PL1_67                481 /* Tweede realisatie PL1 fc67 D-moment                                                                                            */
-    #define prmtxE2PL1_67                482 /* Tweede realisatie PL1 fc67 E-moment                                                                                            */
-    #define prmtxA1PL1_68                483 /* Eerste realisatie PL1 fc68 A-moment                                                                                            */
-    #define prmtxB1PL1_68                484 /* Eerste realisatie PL1 fc68 B-moment                                                                                            */
-    #define prmtxC1PL1_68                485 /* Eerste realisatie PL1 fc68 C-moment                                                                                            */
-    #define prmtxD1PL1_68                486 /* Eerste realisatie PL1 fc68 D-moment                                                                                            */
-    #define prmtxE1PL1_68                487 /* Eerste realisatie PL1 fc68 E-moment                                                                                            */
-    #define prmtxA2PL1_68                488 /* Tweede realisatie PL1 fc68 A-moment                                                                                            */
-    #define prmtxB2PL1_68                489 /* Tweede realisatie PL1 fc68 B-moment                                                                                            */
-    #define prmtxC2PL1_68                490 /* Tweede realisatie PL1 fc68 C-moment                                                                                            */
-    #define prmtxD2PL1_68                491 /* Tweede realisatie PL1 fc68 D-moment                                                                                            */
-    #define prmtxE2PL1_68                492 /* Tweede realisatie PL1 fc68 E-moment                                                                                            */
-    #define prmtxA1PL1_81                493 /* Eerste realisatie PL1 fc81 A-moment                                                                                            */
-    #define prmtxB1PL1_81                494 /* Eerste realisatie PL1 fc81 B-moment                                                                                            */
-    #define prmtxC1PL1_81                495 /* Eerste realisatie PL1 fc81 C-moment                                                                                            */
-    #define prmtxD1PL1_81                496 /* Eerste realisatie PL1 fc81 D-moment                                                                                            */
-    #define prmtxE1PL1_81                497 /* Eerste realisatie PL1 fc81 E-moment                                                                                            */
-    #define prmtxA2PL1_81                498 /* Tweede realisatie PL1 fc81 A-moment                                                                                            */
-    #define prmtxB2PL1_81                499 /* Tweede realisatie PL1 fc81 B-moment                                                                                            */
-    #define prmtxC2PL1_81                500 /* Tweede realisatie PL1 fc81 C-moment                                                                                            */
-    #define prmtxD2PL1_81                501 /* Tweede realisatie PL1 fc81 D-moment                                                                                            */
-    #define prmtxE2PL1_81                502 /* Tweede realisatie PL1 fc81 E-moment                                                                                            */
-    #define prmtxA1PL1_82                503 /* Eerste realisatie PL1 fc82 A-moment                                                                                            */
-    #define prmtxB1PL1_82                504 /* Eerste realisatie PL1 fc82 B-moment                                                                                            */
-    #define prmtxC1PL1_82                505 /* Eerste realisatie PL1 fc82 C-moment                                                                                            */
-    #define prmtxD1PL1_82                506 /* Eerste realisatie PL1 fc82 D-moment                                                                                            */
-    #define prmtxE1PL1_82                507 /* Eerste realisatie PL1 fc82 E-moment                                                                                            */
-    #define prmtxA2PL1_82                508 /* Tweede realisatie PL1 fc82 A-moment                                                                                            */
-    #define prmtxB2PL1_82                509 /* Tweede realisatie PL1 fc82 B-moment                                                                                            */
-    #define prmtxC2PL1_82                510 /* Tweede realisatie PL1 fc82 C-moment                                                                                            */
-    #define prmtxD2PL1_82                511 /* Tweede realisatie PL1 fc82 D-moment                                                                                            */
-    #define prmtxE2PL1_82                512 /* Tweede realisatie PL1 fc82 E-moment                                                                                            */
-    #define prmtxA1PL1_84                513 /* Eerste realisatie PL1 fc84 A-moment                                                                                            */
-    #define prmtxB1PL1_84                514 /* Eerste realisatie PL1 fc84 B-moment                                                                                            */
-    #define prmtxC1PL1_84                515 /* Eerste realisatie PL1 fc84 C-moment                                                                                            */
-    #define prmtxD1PL1_84                516 /* Eerste realisatie PL1 fc84 D-moment                                                                                            */
-    #define prmtxE1PL1_84                517 /* Eerste realisatie PL1 fc84 E-moment                                                                                            */
-    #define prmtxA2PL1_84                518 /* Tweede realisatie PL1 fc84 A-moment                                                                                            */
-    #define prmtxB2PL1_84                519 /* Tweede realisatie PL1 fc84 B-moment                                                                                            */
-    #define prmtxC2PL1_84                520 /* Tweede realisatie PL1 fc84 C-moment                                                                                            */
-    #define prmtxD2PL1_84                521 /* Tweede realisatie PL1 fc84 D-moment                                                                                            */
-    #define prmtxE2PL1_84                522 /* Tweede realisatie PL1 fc84 E-moment                                                                                            */
-    #define prmtxA1PL2_02                523 /* Eerste realisatie PL2 fc02 A-moment                                                                                            */
-    #define prmtxB1PL2_02                524 /* Eerste realisatie PL2 fc02 B-moment                                                                                            */
-    #define prmtxC1PL2_02                525 /* Eerste realisatie PL2 fc02 C-moment                                                                                            */
-    #define prmtxD1PL2_02                526 /* Eerste realisatie PL2 fc02 D-moment                                                                                            */
-    #define prmtxE1PL2_02                527 /* Eerste realisatie PL2 fc02 E-moment                                                                                            */
-    #define prmtxA2PL2_02                528 /* Tweede realisatie PL2 fc02 A-moment                                                                                            */
-    #define prmtxB2PL2_02                529 /* Tweede realisatie PL2 fc02 B-moment                                                                                            */
-    #define prmtxC2PL2_02                530 /* Tweede realisatie PL2 fc02 C-moment                                                                                            */
-    #define prmtxD2PL2_02                531 /* Tweede realisatie PL2 fc02 D-moment                                                                                            */
-    #define prmtxE2PL2_02                532 /* Tweede realisatie PL2 fc02 E-moment                                                                                            */
-    #define prmtxA1PL2_03                533 /* Eerste realisatie PL2 fc03 A-moment                                                                                            */
-    #define prmtxB1PL2_03                534 /* Eerste realisatie PL2 fc03 B-moment                                                                                            */
-    #define prmtxC1PL2_03                535 /* Eerste realisatie PL2 fc03 C-moment                                                                                            */
-    #define prmtxD1PL2_03                536 /* Eerste realisatie PL2 fc03 D-moment                                                                                            */
-    #define prmtxE1PL2_03                537 /* Eerste realisatie PL2 fc03 E-moment                                                                                            */
-    #define prmtxA2PL2_03                538 /* Tweede realisatie PL2 fc03 A-moment                                                                                            */
-    #define prmtxB2PL2_03                539 /* Tweede realisatie PL2 fc03 B-moment                                                                                            */
-    #define prmtxC2PL2_03                540 /* Tweede realisatie PL2 fc03 C-moment                                                                                            */
-    #define prmtxD2PL2_03                541 /* Tweede realisatie PL2 fc03 D-moment                                                                                            */
-    #define prmtxE2PL2_03                542 /* Tweede realisatie PL2 fc03 E-moment                                                                                            */
-    #define prmtxA1PL2_05                543 /* Eerste realisatie PL2 fc05 A-moment                                                                                            */
-    #define prmtxB1PL2_05                544 /* Eerste realisatie PL2 fc05 B-moment                                                                                            */
-    #define prmtxC1PL2_05                545 /* Eerste realisatie PL2 fc05 C-moment                                                                                            */
-    #define prmtxD1PL2_05                546 /* Eerste realisatie PL2 fc05 D-moment                                                                                            */
-    #define prmtxE1PL2_05                547 /* Eerste realisatie PL2 fc05 E-moment                                                                                            */
-    #define prmtxA2PL2_05                548 /* Tweede realisatie PL2 fc05 A-moment                                                                                            */
-    #define prmtxB2PL2_05                549 /* Tweede realisatie PL2 fc05 B-moment                                                                                            */
-    #define prmtxC2PL2_05                550 /* Tweede realisatie PL2 fc05 C-moment                                                                                            */
-    #define prmtxD2PL2_05                551 /* Tweede realisatie PL2 fc05 D-moment                                                                                            */
-    #define prmtxE2PL2_05                552 /* Tweede realisatie PL2 fc05 E-moment                                                                                            */
-    #define prmtxA1PL2_08                553 /* Eerste realisatie PL2 fc08 A-moment                                                                                            */
-    #define prmtxB1PL2_08                554 /* Eerste realisatie PL2 fc08 B-moment                                                                                            */
-    #define prmtxC1PL2_08                555 /* Eerste realisatie PL2 fc08 C-moment                                                                                            */
-    #define prmtxD1PL2_08                556 /* Eerste realisatie PL2 fc08 D-moment                                                                                            */
-    #define prmtxE1PL2_08                557 /* Eerste realisatie PL2 fc08 E-moment                                                                                            */
-    #define prmtxA2PL2_08                558 /* Tweede realisatie PL2 fc08 A-moment                                                                                            */
-    #define prmtxB2PL2_08                559 /* Tweede realisatie PL2 fc08 B-moment                                                                                            */
-    #define prmtxC2PL2_08                560 /* Tweede realisatie PL2 fc08 C-moment                                                                                            */
-    #define prmtxD2PL2_08                561 /* Tweede realisatie PL2 fc08 D-moment                                                                                            */
-    #define prmtxE2PL2_08                562 /* Tweede realisatie PL2 fc08 E-moment                                                                                            */
-    #define prmtxA1PL2_09                563 /* Eerste realisatie PL2 fc09 A-moment                                                                                            */
-    #define prmtxB1PL2_09                564 /* Eerste realisatie PL2 fc09 B-moment                                                                                            */
-    #define prmtxC1PL2_09                565 /* Eerste realisatie PL2 fc09 C-moment                                                                                            */
-    #define prmtxD1PL2_09                566 /* Eerste realisatie PL2 fc09 D-moment                                                                                            */
-    #define prmtxE1PL2_09                567 /* Eerste realisatie PL2 fc09 E-moment                                                                                            */
-    #define prmtxA2PL2_09                568 /* Tweede realisatie PL2 fc09 A-moment                                                                                            */
-    #define prmtxB2PL2_09                569 /* Tweede realisatie PL2 fc09 B-moment                                                                                            */
-    #define prmtxC2PL2_09                570 /* Tweede realisatie PL2 fc09 C-moment                                                                                            */
-    #define prmtxD2PL2_09                571 /* Tweede realisatie PL2 fc09 D-moment                                                                                            */
-    #define prmtxE2PL2_09                572 /* Tweede realisatie PL2 fc09 E-moment                                                                                            */
-    #define prmtxA1PL2_11                573 /* Eerste realisatie PL2 fc11 A-moment                                                                                            */
-    #define prmtxB1PL2_11                574 /* Eerste realisatie PL2 fc11 B-moment                                                                                            */
-    #define prmtxC1PL2_11                575 /* Eerste realisatie PL2 fc11 C-moment                                                                                            */
-    #define prmtxD1PL2_11                576 /* Eerste realisatie PL2 fc11 D-moment                                                                                            */
-    #define prmtxE1PL2_11                577 /* Eerste realisatie PL2 fc11 E-moment                                                                                            */
-    #define prmtxA2PL2_11                578 /* Tweede realisatie PL2 fc11 A-moment                                                                                            */
-    #define prmtxB2PL2_11                579 /* Tweede realisatie PL2 fc11 B-moment                                                                                            */
-    #define prmtxC2PL2_11                580 /* Tweede realisatie PL2 fc11 C-moment                                                                                            */
-    #define prmtxD2PL2_11                581 /* Tweede realisatie PL2 fc11 D-moment                                                                                            */
-    #define prmtxE2PL2_11                582 /* Tweede realisatie PL2 fc11 E-moment                                                                                            */
-    #define prmtxA1PL2_21                583 /* Eerste realisatie PL2 fc21 A-moment                                                                                            */
-    #define prmtxB1PL2_21                584 /* Eerste realisatie PL2 fc21 B-moment                                                                                            */
-    #define prmtxC1PL2_21                585 /* Eerste realisatie PL2 fc21 C-moment                                                                                            */
-    #define prmtxD1PL2_21                586 /* Eerste realisatie PL2 fc21 D-moment                                                                                            */
-    #define prmtxE1PL2_21                587 /* Eerste realisatie PL2 fc21 E-moment                                                                                            */
-    #define prmtxA2PL2_21                588 /* Tweede realisatie PL2 fc21 A-moment                                                                                            */
-    #define prmtxB2PL2_21                589 /* Tweede realisatie PL2 fc21 B-moment                                                                                            */
-    #define prmtxC2PL2_21                590 /* Tweede realisatie PL2 fc21 C-moment                                                                                            */
-    #define prmtxD2PL2_21                591 /* Tweede realisatie PL2 fc21 D-moment                                                                                            */
-    #define prmtxE2PL2_21                592 /* Tweede realisatie PL2 fc21 E-moment                                                                                            */
-    #define prmtxA1PL2_22                593 /* Eerste realisatie PL2 fc22 A-moment                                                                                            */
-    #define prmtxB1PL2_22                594 /* Eerste realisatie PL2 fc22 B-moment                                                                                            */
-    #define prmtxC1PL2_22                595 /* Eerste realisatie PL2 fc22 C-moment                                                                                            */
-    #define prmtxD1PL2_22                596 /* Eerste realisatie PL2 fc22 D-moment                                                                                            */
-    #define prmtxE1PL2_22                597 /* Eerste realisatie PL2 fc22 E-moment                                                                                            */
-    #define prmtxA2PL2_22                598 /* Tweede realisatie PL2 fc22 A-moment                                                                                            */
-    #define prmtxB2PL2_22                599 /* Tweede realisatie PL2 fc22 B-moment                                                                                            */
-    #define prmtxC2PL2_22                600 /* Tweede realisatie PL2 fc22 C-moment                                                                                            */
-    #define prmtxD2PL2_22                601 /* Tweede realisatie PL2 fc22 D-moment                                                                                            */
-    #define prmtxE2PL2_22                602 /* Tweede realisatie PL2 fc22 E-moment                                                                                            */
-    #define prmtxA1PL2_24                603 /* Eerste realisatie PL2 fc24 A-moment                                                                                            */
-    #define prmtxB1PL2_24                604 /* Eerste realisatie PL2 fc24 B-moment                                                                                            */
-    #define prmtxC1PL2_24                605 /* Eerste realisatie PL2 fc24 C-moment                                                                                            */
-    #define prmtxD1PL2_24                606 /* Eerste realisatie PL2 fc24 D-moment                                                                                            */
-    #define prmtxE1PL2_24                607 /* Eerste realisatie PL2 fc24 E-moment                                                                                            */
-    #define prmtxA2PL2_24                608 /* Tweede realisatie PL2 fc24 A-moment                                                                                            */
-    #define prmtxB2PL2_24                609 /* Tweede realisatie PL2 fc24 B-moment                                                                                            */
-    #define prmtxC2PL2_24                610 /* Tweede realisatie PL2 fc24 C-moment                                                                                            */
-    #define prmtxD2PL2_24                611 /* Tweede realisatie PL2 fc24 D-moment                                                                                            */
-    #define prmtxE2PL2_24                612 /* Tweede realisatie PL2 fc24 E-moment                                                                                            */
-    #define prmtxA1PL2_26                613 /* Eerste realisatie PL2 fc26 A-moment                                                                                            */
-    #define prmtxB1PL2_26                614 /* Eerste realisatie PL2 fc26 B-moment                                                                                            */
-    #define prmtxC1PL2_26                615 /* Eerste realisatie PL2 fc26 C-moment                                                                                            */
-    #define prmtxD1PL2_26                616 /* Eerste realisatie PL2 fc26 D-moment                                                                                            */
-    #define prmtxE1PL2_26                617 /* Eerste realisatie PL2 fc26 E-moment                                                                                            */
-    #define prmtxA2PL2_26                618 /* Tweede realisatie PL2 fc26 A-moment                                                                                            */
-    #define prmtxB2PL2_26                619 /* Tweede realisatie PL2 fc26 B-moment                                                                                            */
-    #define prmtxC2PL2_26                620 /* Tweede realisatie PL2 fc26 C-moment                                                                                            */
-    #define prmtxD2PL2_26                621 /* Tweede realisatie PL2 fc26 D-moment                                                                                            */
-    #define prmtxE2PL2_26                622 /* Tweede realisatie PL2 fc26 E-moment                                                                                            */
-    #define prmtxA1PL2_28                623 /* Eerste realisatie PL2 fc28 A-moment                                                                                            */
-    #define prmtxB1PL2_28                624 /* Eerste realisatie PL2 fc28 B-moment                                                                                            */
-    #define prmtxC1PL2_28                625 /* Eerste realisatie PL2 fc28 C-moment                                                                                            */
-    #define prmtxD1PL2_28                626 /* Eerste realisatie PL2 fc28 D-moment                                                                                            */
-    #define prmtxE1PL2_28                627 /* Eerste realisatie PL2 fc28 E-moment                                                                                            */
-    #define prmtxA2PL2_28                628 /* Tweede realisatie PL2 fc28 A-moment                                                                                            */
-    #define prmtxB2PL2_28                629 /* Tweede realisatie PL2 fc28 B-moment                                                                                            */
-    #define prmtxC2PL2_28                630 /* Tweede realisatie PL2 fc28 C-moment                                                                                            */
-    #define prmtxD2PL2_28                631 /* Tweede realisatie PL2 fc28 D-moment                                                                                            */
-    #define prmtxE2PL2_28                632 /* Tweede realisatie PL2 fc28 E-moment                                                                                            */
-    #define prmtxA1PL2_31                633 /* Eerste realisatie PL2 fc31 A-moment                                                                                            */
-    #define prmtxB1PL2_31                634 /* Eerste realisatie PL2 fc31 B-moment                                                                                            */
-    #define prmtxC1PL2_31                635 /* Eerste realisatie PL2 fc31 C-moment                                                                                            */
-    #define prmtxD1PL2_31                636 /* Eerste realisatie PL2 fc31 D-moment                                                                                            */
-    #define prmtxE1PL2_31                637 /* Eerste realisatie PL2 fc31 E-moment                                                                                            */
-    #define prmtxA2PL2_31                638 /* Tweede realisatie PL2 fc31 A-moment                                                                                            */
-    #define prmtxB2PL2_31                639 /* Tweede realisatie PL2 fc31 B-moment                                                                                            */
-    #define prmtxC2PL2_31                640 /* Tweede realisatie PL2 fc31 C-moment                                                                                            */
-    #define prmtxD2PL2_31                641 /* Tweede realisatie PL2 fc31 D-moment                                                                                            */
-    #define prmtxE2PL2_31                642 /* Tweede realisatie PL2 fc31 E-moment                                                                                            */
-    #define prmtxA1PL2_32                643 /* Eerste realisatie PL2 fc32 A-moment                                                                                            */
-    #define prmtxB1PL2_32                644 /* Eerste realisatie PL2 fc32 B-moment                                                                                            */
-    #define prmtxC1PL2_32                645 /* Eerste realisatie PL2 fc32 C-moment                                                                                            */
-    #define prmtxD1PL2_32                646 /* Eerste realisatie PL2 fc32 D-moment                                                                                            */
-    #define prmtxE1PL2_32                647 /* Eerste realisatie PL2 fc32 E-moment                                                                                            */
-    #define prmtxA2PL2_32                648 /* Tweede realisatie PL2 fc32 A-moment                                                                                            */
-    #define prmtxB2PL2_32                649 /* Tweede realisatie PL2 fc32 B-moment                                                                                            */
-    #define prmtxC2PL2_32                650 /* Tweede realisatie PL2 fc32 C-moment                                                                                            */
-    #define prmtxD2PL2_32                651 /* Tweede realisatie PL2 fc32 D-moment                                                                                            */
-    #define prmtxE2PL2_32                652 /* Tweede realisatie PL2 fc32 E-moment                                                                                            */
-    #define prmtxA1PL2_33                653 /* Eerste realisatie PL2 fc33 A-moment                                                                                            */
-    #define prmtxB1PL2_33                654 /* Eerste realisatie PL2 fc33 B-moment                                                                                            */
-    #define prmtxC1PL2_33                655 /* Eerste realisatie PL2 fc33 C-moment                                                                                            */
-    #define prmtxD1PL2_33                656 /* Eerste realisatie PL2 fc33 D-moment                                                                                            */
-    #define prmtxE1PL2_33                657 /* Eerste realisatie PL2 fc33 E-moment                                                                                            */
-    #define prmtxA2PL2_33                658 /* Tweede realisatie PL2 fc33 A-moment                                                                                            */
-    #define prmtxB2PL2_33                659 /* Tweede realisatie PL2 fc33 B-moment                                                                                            */
-    #define prmtxC2PL2_33                660 /* Tweede realisatie PL2 fc33 C-moment                                                                                            */
-    #define prmtxD2PL2_33                661 /* Tweede realisatie PL2 fc33 D-moment                                                                                            */
-    #define prmtxE2PL2_33                662 /* Tweede realisatie PL2 fc33 E-moment                                                                                            */
-    #define prmtxA1PL2_34                663 /* Eerste realisatie PL2 fc34 A-moment                                                                                            */
-    #define prmtxB1PL2_34                664 /* Eerste realisatie PL2 fc34 B-moment                                                                                            */
-    #define prmtxC1PL2_34                665 /* Eerste realisatie PL2 fc34 C-moment                                                                                            */
-    #define prmtxD1PL2_34                666 /* Eerste realisatie PL2 fc34 D-moment                                                                                            */
-    #define prmtxE1PL2_34                667 /* Eerste realisatie PL2 fc34 E-moment                                                                                            */
-    #define prmtxA2PL2_34                668 /* Tweede realisatie PL2 fc34 A-moment                                                                                            */
-    #define prmtxB2PL2_34                669 /* Tweede realisatie PL2 fc34 B-moment                                                                                            */
-    #define prmtxC2PL2_34                670 /* Tweede realisatie PL2 fc34 C-moment                                                                                            */
-    #define prmtxD2PL2_34                671 /* Tweede realisatie PL2 fc34 D-moment                                                                                            */
-    #define prmtxE2PL2_34                672 /* Tweede realisatie PL2 fc34 E-moment                                                                                            */
-    #define prmtxA1PL2_38                673 /* Eerste realisatie PL2 fc38 A-moment                                                                                            */
-    #define prmtxB1PL2_38                674 /* Eerste realisatie PL2 fc38 B-moment                                                                                            */
-    #define prmtxC1PL2_38                675 /* Eerste realisatie PL2 fc38 C-moment                                                                                            */
-    #define prmtxD1PL2_38                676 /* Eerste realisatie PL2 fc38 D-moment                                                                                            */
-    #define prmtxE1PL2_38                677 /* Eerste realisatie PL2 fc38 E-moment                                                                                            */
-    #define prmtxA2PL2_38                678 /* Tweede realisatie PL2 fc38 A-moment                                                                                            */
-    #define prmtxB2PL2_38                679 /* Tweede realisatie PL2 fc38 B-moment                                                                                            */
-    #define prmtxC2PL2_38                680 /* Tweede realisatie PL2 fc38 C-moment                                                                                            */
-    #define prmtxD2PL2_38                681 /* Tweede realisatie PL2 fc38 D-moment                                                                                            */
-    #define prmtxE2PL2_38                682 /* Tweede realisatie PL2 fc38 E-moment                                                                                            */
-    #define prmtxA1PL2_61                683 /* Eerste realisatie PL2 fc61 A-moment                                                                                            */
-    #define prmtxB1PL2_61                684 /* Eerste realisatie PL2 fc61 B-moment                                                                                            */
-    #define prmtxC1PL2_61                685 /* Eerste realisatie PL2 fc61 C-moment                                                                                            */
-    #define prmtxD1PL2_61                686 /* Eerste realisatie PL2 fc61 D-moment                                                                                            */
-    #define prmtxE1PL2_61                687 /* Eerste realisatie PL2 fc61 E-moment                                                                                            */
-    #define prmtxA2PL2_61                688 /* Tweede realisatie PL2 fc61 A-moment                                                                                            */
-    #define prmtxB2PL2_61                689 /* Tweede realisatie PL2 fc61 B-moment                                                                                            */
-    #define prmtxC2PL2_61                690 /* Tweede realisatie PL2 fc61 C-moment                                                                                            */
-    #define prmtxD2PL2_61                691 /* Tweede realisatie PL2 fc61 D-moment                                                                                            */
-    #define prmtxE2PL2_61                692 /* Tweede realisatie PL2 fc61 E-moment                                                                                            */
-    #define prmtxA1PL2_62                693 /* Eerste realisatie PL2 fc62 A-moment                                                                                            */
-    #define prmtxB1PL2_62                694 /* Eerste realisatie PL2 fc62 B-moment                                                                                            */
-    #define prmtxC1PL2_62                695 /* Eerste realisatie PL2 fc62 C-moment                                                                                            */
-    #define prmtxD1PL2_62                696 /* Eerste realisatie PL2 fc62 D-moment                                                                                            */
-    #define prmtxE1PL2_62                697 /* Eerste realisatie PL2 fc62 E-moment                                                                                            */
-    #define prmtxA2PL2_62                698 /* Tweede realisatie PL2 fc62 A-moment                                                                                            */
-    #define prmtxB2PL2_62                699 /* Tweede realisatie PL2 fc62 B-moment                                                                                            */
-    #define prmtxC2PL2_62                700 /* Tweede realisatie PL2 fc62 C-moment                                                                                            */
-    #define prmtxD2PL2_62                701 /* Tweede realisatie PL2 fc62 D-moment                                                                                            */
-    #define prmtxE2PL2_62                702 /* Tweede realisatie PL2 fc62 E-moment                                                                                            */
-    #define prmtxA1PL2_67                703 /* Eerste realisatie PL2 fc67 A-moment                                                                                            */
-    #define prmtxB1PL2_67                704 /* Eerste realisatie PL2 fc67 B-moment                                                                                            */
-    #define prmtxC1PL2_67                705 /* Eerste realisatie PL2 fc67 C-moment                                                                                            */
-    #define prmtxD1PL2_67                706 /* Eerste realisatie PL2 fc67 D-moment                                                                                            */
-    #define prmtxE1PL2_67                707 /* Eerste realisatie PL2 fc67 E-moment                                                                                            */
-    #define prmtxA2PL2_67                708 /* Tweede realisatie PL2 fc67 A-moment                                                                                            */
-    #define prmtxB2PL2_67                709 /* Tweede realisatie PL2 fc67 B-moment                                                                                            */
-    #define prmtxC2PL2_67                710 /* Tweede realisatie PL2 fc67 C-moment                                                                                            */
-    #define prmtxD2PL2_67                711 /* Tweede realisatie PL2 fc67 D-moment                                                                                            */
-    #define prmtxE2PL2_67                712 /* Tweede realisatie PL2 fc67 E-moment                                                                                            */
-    #define prmtxA1PL2_68                713 /* Eerste realisatie PL2 fc68 A-moment                                                                                            */
-    #define prmtxB1PL2_68                714 /* Eerste realisatie PL2 fc68 B-moment                                                                                            */
-    #define prmtxC1PL2_68                715 /* Eerste realisatie PL2 fc68 C-moment                                                                                            */
-    #define prmtxD1PL2_68                716 /* Eerste realisatie PL2 fc68 D-moment                                                                                            */
-    #define prmtxE1PL2_68                717 /* Eerste realisatie PL2 fc68 E-moment                                                                                            */
-    #define prmtxA2PL2_68                718 /* Tweede realisatie PL2 fc68 A-moment                                                                                            */
-    #define prmtxB2PL2_68                719 /* Tweede realisatie PL2 fc68 B-moment                                                                                            */
-    #define prmtxC2PL2_68                720 /* Tweede realisatie PL2 fc68 C-moment                                                                                            */
-    #define prmtxD2PL2_68                721 /* Tweede realisatie PL2 fc68 D-moment                                                                                            */
-    #define prmtxE2PL2_68                722 /* Tweede realisatie PL2 fc68 E-moment                                                                                            */
-    #define prmtxA1PL2_81                723 /* Eerste realisatie PL2 fc81 A-moment                                                                                            */
-    #define prmtxB1PL2_81                724 /* Eerste realisatie PL2 fc81 B-moment                                                                                            */
-    #define prmtxC1PL2_81                725 /* Eerste realisatie PL2 fc81 C-moment                                                                                            */
-    #define prmtxD1PL2_81                726 /* Eerste realisatie PL2 fc81 D-moment                                                                                            */
-    #define prmtxE1PL2_81                727 /* Eerste realisatie PL2 fc81 E-moment                                                                                            */
-    #define prmtxA2PL2_81                728 /* Tweede realisatie PL2 fc81 A-moment                                                                                            */
-    #define prmtxB2PL2_81                729 /* Tweede realisatie PL2 fc81 B-moment                                                                                            */
-    #define prmtxC2PL2_81                730 /* Tweede realisatie PL2 fc81 C-moment                                                                                            */
-    #define prmtxD2PL2_81                731 /* Tweede realisatie PL2 fc81 D-moment                                                                                            */
-    #define prmtxE2PL2_81                732 /* Tweede realisatie PL2 fc81 E-moment                                                                                            */
-    #define prmtxA1PL2_82                733 /* Eerste realisatie PL2 fc82 A-moment                                                                                            */
-    #define prmtxB1PL2_82                734 /* Eerste realisatie PL2 fc82 B-moment                                                                                            */
-    #define prmtxC1PL2_82                735 /* Eerste realisatie PL2 fc82 C-moment                                                                                            */
-    #define prmtxD1PL2_82                736 /* Eerste realisatie PL2 fc82 D-moment                                                                                            */
-    #define prmtxE1PL2_82                737 /* Eerste realisatie PL2 fc82 E-moment                                                                                            */
-    #define prmtxA2PL2_82                738 /* Tweede realisatie PL2 fc82 A-moment                                                                                            */
-    #define prmtxB2PL2_82                739 /* Tweede realisatie PL2 fc82 B-moment                                                                                            */
-    #define prmtxC2PL2_82                740 /* Tweede realisatie PL2 fc82 C-moment                                                                                            */
-    #define prmtxD2PL2_82                741 /* Tweede realisatie PL2 fc82 D-moment                                                                                            */
-    #define prmtxE2PL2_82                742 /* Tweede realisatie PL2 fc82 E-moment                                                                                            */
-    #define prmtxA1PL2_84                743 /* Eerste realisatie PL2 fc84 A-moment                                                                                            */
-    #define prmtxB1PL2_84                744 /* Eerste realisatie PL2 fc84 B-moment                                                                                            */
-    #define prmtxC1PL2_84                745 /* Eerste realisatie PL2 fc84 C-moment                                                                                            */
-    #define prmtxD1PL2_84                746 /* Eerste realisatie PL2 fc84 D-moment                                                                                            */
-    #define prmtxE1PL2_84                747 /* Eerste realisatie PL2 fc84 E-moment                                                                                            */
-    #define prmtxA2PL2_84                748 /* Tweede realisatie PL2 fc84 A-moment                                                                                            */
-    #define prmtxB2PL2_84                749 /* Tweede realisatie PL2 fc84 B-moment                                                                                            */
-    #define prmtxC2PL2_84                750 /* Tweede realisatie PL2 fc84 C-moment                                                                                            */
-    #define prmtxD2PL2_84                751 /* Tweede realisatie PL2 fc84 D-moment                                                                                            */
-    #define prmtxE2PL2_84                752 /* Tweede realisatie PL2 fc84 E-moment                                                                                            */
-    #define prmtxA1PL3_02                753 /* Eerste realisatie PL3 fc02 A-moment                                                                                            */
-    #define prmtxB1PL3_02                754 /* Eerste realisatie PL3 fc02 B-moment                                                                                            */
-    #define prmtxC1PL3_02                755 /* Eerste realisatie PL3 fc02 C-moment                                                                                            */
-    #define prmtxD1PL3_02                756 /* Eerste realisatie PL3 fc02 D-moment                                                                                            */
-    #define prmtxE1PL3_02                757 /* Eerste realisatie PL3 fc02 E-moment                                                                                            */
-    #define prmtxA2PL3_02                758 /* Tweede realisatie PL3 fc02 A-moment                                                                                            */
-    #define prmtxB2PL3_02                759 /* Tweede realisatie PL3 fc02 B-moment                                                                                            */
-    #define prmtxC2PL3_02                760 /* Tweede realisatie PL3 fc02 C-moment                                                                                            */
-    #define prmtxD2PL3_02                761 /* Tweede realisatie PL3 fc02 D-moment                                                                                            */
-    #define prmtxE2PL3_02                762 /* Tweede realisatie PL3 fc02 E-moment                                                                                            */
-    #define prmtxA1PL3_03                763 /* Eerste realisatie PL3 fc03 A-moment                                                                                            */
-    #define prmtxB1PL3_03                764 /* Eerste realisatie PL3 fc03 B-moment                                                                                            */
-    #define prmtxC1PL3_03                765 /* Eerste realisatie PL3 fc03 C-moment                                                                                            */
-    #define prmtxD1PL3_03                766 /* Eerste realisatie PL3 fc03 D-moment                                                                                            */
-    #define prmtxE1PL3_03                767 /* Eerste realisatie PL3 fc03 E-moment                                                                                            */
-    #define prmtxA2PL3_03                768 /* Tweede realisatie PL3 fc03 A-moment                                                                                            */
-    #define prmtxB2PL3_03                769 /* Tweede realisatie PL3 fc03 B-moment                                                                                            */
-    #define prmtxC2PL3_03                770 /* Tweede realisatie PL3 fc03 C-moment                                                                                            */
-    #define prmtxD2PL3_03                771 /* Tweede realisatie PL3 fc03 D-moment                                                                                            */
-    #define prmtxE2PL3_03                772 /* Tweede realisatie PL3 fc03 E-moment                                                                                            */
-    #define prmtxA1PL3_05                773 /* Eerste realisatie PL3 fc05 A-moment                                                                                            */
-    #define prmtxB1PL3_05                774 /* Eerste realisatie PL3 fc05 B-moment                                                                                            */
-    #define prmtxC1PL3_05                775 /* Eerste realisatie PL3 fc05 C-moment                                                                                            */
-    #define prmtxD1PL3_05                776 /* Eerste realisatie PL3 fc05 D-moment                                                                                            */
-    #define prmtxE1PL3_05                777 /* Eerste realisatie PL3 fc05 E-moment                                                                                            */
-    #define prmtxA2PL3_05                778 /* Tweede realisatie PL3 fc05 A-moment                                                                                            */
-    #define prmtxB2PL3_05                779 /* Tweede realisatie PL3 fc05 B-moment                                                                                            */
-    #define prmtxC2PL3_05                780 /* Tweede realisatie PL3 fc05 C-moment                                                                                            */
-    #define prmtxD2PL3_05                781 /* Tweede realisatie PL3 fc05 D-moment                                                                                            */
-    #define prmtxE2PL3_05                782 /* Tweede realisatie PL3 fc05 E-moment                                                                                            */
-    #define prmtxA1PL3_08                783 /* Eerste realisatie PL3 fc08 A-moment                                                                                            */
-    #define prmtxB1PL3_08                784 /* Eerste realisatie PL3 fc08 B-moment                                                                                            */
-    #define prmtxC1PL3_08                785 /* Eerste realisatie PL3 fc08 C-moment                                                                                            */
-    #define prmtxD1PL3_08                786 /* Eerste realisatie PL3 fc08 D-moment                                                                                            */
-    #define prmtxE1PL3_08                787 /* Eerste realisatie PL3 fc08 E-moment                                                                                            */
-    #define prmtxA2PL3_08                788 /* Tweede realisatie PL3 fc08 A-moment                                                                                            */
-    #define prmtxB2PL3_08                789 /* Tweede realisatie PL3 fc08 B-moment                                                                                            */
-    #define prmtxC2PL3_08                790 /* Tweede realisatie PL3 fc08 C-moment                                                                                            */
-    #define prmtxD2PL3_08                791 /* Tweede realisatie PL3 fc08 D-moment                                                                                            */
-    #define prmtxE2PL3_08                792 /* Tweede realisatie PL3 fc08 E-moment                                                                                            */
-    #define prmtxA1PL3_09                793 /* Eerste realisatie PL3 fc09 A-moment                                                                                            */
-    #define prmtxB1PL3_09                794 /* Eerste realisatie PL3 fc09 B-moment                                                                                            */
-    #define prmtxC1PL3_09                795 /* Eerste realisatie PL3 fc09 C-moment                                                                                            */
-    #define prmtxD1PL3_09                796 /* Eerste realisatie PL3 fc09 D-moment                                                                                            */
-    #define prmtxE1PL3_09                797 /* Eerste realisatie PL3 fc09 E-moment                                                                                            */
-    #define prmtxA2PL3_09                798 /* Tweede realisatie PL3 fc09 A-moment                                                                                            */
-    #define prmtxB2PL3_09                799 /* Tweede realisatie PL3 fc09 B-moment                                                                                            */
-    #define prmtxC2PL3_09                800 /* Tweede realisatie PL3 fc09 C-moment                                                                                            */
-    #define prmtxD2PL3_09                801 /* Tweede realisatie PL3 fc09 D-moment                                                                                            */
-    #define prmtxE2PL3_09                802 /* Tweede realisatie PL3 fc09 E-moment                                                                                            */
-    #define prmtxA1PL3_11                803 /* Eerste realisatie PL3 fc11 A-moment                                                                                            */
-    #define prmtxB1PL3_11                804 /* Eerste realisatie PL3 fc11 B-moment                                                                                            */
-    #define prmtxC1PL3_11                805 /* Eerste realisatie PL3 fc11 C-moment                                                                                            */
-    #define prmtxD1PL3_11                806 /* Eerste realisatie PL3 fc11 D-moment                                                                                            */
-    #define prmtxE1PL3_11                807 /* Eerste realisatie PL3 fc11 E-moment                                                                                            */
-    #define prmtxA2PL3_11                808 /* Tweede realisatie PL3 fc11 A-moment                                                                                            */
-    #define prmtxB2PL3_11                809 /* Tweede realisatie PL3 fc11 B-moment                                                                                            */
-    #define prmtxC2PL3_11                810 /* Tweede realisatie PL3 fc11 C-moment                                                                                            */
-    #define prmtxD2PL3_11                811 /* Tweede realisatie PL3 fc11 D-moment                                                                                            */
-    #define prmtxE2PL3_11                812 /* Tweede realisatie PL3 fc11 E-moment                                                                                            */
-    #define prmtxA1PL3_21                813 /* Eerste realisatie PL3 fc21 A-moment                                                                                            */
-    #define prmtxB1PL3_21                814 /* Eerste realisatie PL3 fc21 B-moment                                                                                            */
-    #define prmtxC1PL3_21                815 /* Eerste realisatie PL3 fc21 C-moment                                                                                            */
-    #define prmtxD1PL3_21                816 /* Eerste realisatie PL3 fc21 D-moment                                                                                            */
-    #define prmtxE1PL3_21                817 /* Eerste realisatie PL3 fc21 E-moment                                                                                            */
-    #define prmtxA2PL3_21                818 /* Tweede realisatie PL3 fc21 A-moment                                                                                            */
-    #define prmtxB2PL3_21                819 /* Tweede realisatie PL3 fc21 B-moment                                                                                            */
-    #define prmtxC2PL3_21                820 /* Tweede realisatie PL3 fc21 C-moment                                                                                            */
-    #define prmtxD2PL3_21                821 /* Tweede realisatie PL3 fc21 D-moment                                                                                            */
-    #define prmtxE2PL3_21                822 /* Tweede realisatie PL3 fc21 E-moment                                                                                            */
-    #define prmtxA1PL3_22                823 /* Eerste realisatie PL3 fc22 A-moment                                                                                            */
-    #define prmtxB1PL3_22                824 /* Eerste realisatie PL3 fc22 B-moment                                                                                            */
-    #define prmtxC1PL3_22                825 /* Eerste realisatie PL3 fc22 C-moment                                                                                            */
-    #define prmtxD1PL3_22                826 /* Eerste realisatie PL3 fc22 D-moment                                                                                            */
-    #define prmtxE1PL3_22                827 /* Eerste realisatie PL3 fc22 E-moment                                                                                            */
-    #define prmtxA2PL3_22                828 /* Tweede realisatie PL3 fc22 A-moment                                                                                            */
-    #define prmtxB2PL3_22                829 /* Tweede realisatie PL3 fc22 B-moment                                                                                            */
-    #define prmtxC2PL3_22                830 /* Tweede realisatie PL3 fc22 C-moment                                                                                            */
-    #define prmtxD2PL3_22                831 /* Tweede realisatie PL3 fc22 D-moment                                                                                            */
-    #define prmtxE2PL3_22                832 /* Tweede realisatie PL3 fc22 E-moment                                                                                            */
-    #define prmtxA1PL3_24                833 /* Eerste realisatie PL3 fc24 A-moment                                                                                            */
-    #define prmtxB1PL3_24                834 /* Eerste realisatie PL3 fc24 B-moment                                                                                            */
-    #define prmtxC1PL3_24                835 /* Eerste realisatie PL3 fc24 C-moment                                                                                            */
-    #define prmtxD1PL3_24                836 /* Eerste realisatie PL3 fc24 D-moment                                                                                            */
-    #define prmtxE1PL3_24                837 /* Eerste realisatie PL3 fc24 E-moment                                                                                            */
-    #define prmtxA2PL3_24                838 /* Tweede realisatie PL3 fc24 A-moment                                                                                            */
-    #define prmtxB2PL3_24                839 /* Tweede realisatie PL3 fc24 B-moment                                                                                            */
-    #define prmtxC2PL3_24                840 /* Tweede realisatie PL3 fc24 C-moment                                                                                            */
-    #define prmtxD2PL3_24                841 /* Tweede realisatie PL3 fc24 D-moment                                                                                            */
-    #define prmtxE2PL3_24                842 /* Tweede realisatie PL3 fc24 E-moment                                                                                            */
-    #define prmtxA1PL3_26                843 /* Eerste realisatie PL3 fc26 A-moment                                                                                            */
-    #define prmtxB1PL3_26                844 /* Eerste realisatie PL3 fc26 B-moment                                                                                            */
-    #define prmtxC1PL3_26                845 /* Eerste realisatie PL3 fc26 C-moment                                                                                            */
-    #define prmtxD1PL3_26                846 /* Eerste realisatie PL3 fc26 D-moment                                                                                            */
-    #define prmtxE1PL3_26                847 /* Eerste realisatie PL3 fc26 E-moment                                                                                            */
-    #define prmtxA2PL3_26                848 /* Tweede realisatie PL3 fc26 A-moment                                                                                            */
-    #define prmtxB2PL3_26                849 /* Tweede realisatie PL3 fc26 B-moment                                                                                            */
-    #define prmtxC2PL3_26                850 /* Tweede realisatie PL3 fc26 C-moment                                                                                            */
-    #define prmtxD2PL3_26                851 /* Tweede realisatie PL3 fc26 D-moment                                                                                            */
-    #define prmtxE2PL3_26                852 /* Tweede realisatie PL3 fc26 E-moment                                                                                            */
-    #define prmtxA1PL3_28                853 /* Eerste realisatie PL3 fc28 A-moment                                                                                            */
-    #define prmtxB1PL3_28                854 /* Eerste realisatie PL3 fc28 B-moment                                                                                            */
-    #define prmtxC1PL3_28                855 /* Eerste realisatie PL3 fc28 C-moment                                                                                            */
-    #define prmtxD1PL3_28                856 /* Eerste realisatie PL3 fc28 D-moment                                                                                            */
-    #define prmtxE1PL3_28                857 /* Eerste realisatie PL3 fc28 E-moment                                                                                            */
-    #define prmtxA2PL3_28                858 /* Tweede realisatie PL3 fc28 A-moment                                                                                            */
-    #define prmtxB2PL3_28                859 /* Tweede realisatie PL3 fc28 B-moment                                                                                            */
-    #define prmtxC2PL3_28                860 /* Tweede realisatie PL3 fc28 C-moment                                                                                            */
-    #define prmtxD2PL3_28                861 /* Tweede realisatie PL3 fc28 D-moment                                                                                            */
-    #define prmtxE2PL3_28                862 /* Tweede realisatie PL3 fc28 E-moment                                                                                            */
-    #define prmtxA1PL3_31                863 /* Eerste realisatie PL3 fc31 A-moment                                                                                            */
-    #define prmtxB1PL3_31                864 /* Eerste realisatie PL3 fc31 B-moment                                                                                            */
-    #define prmtxC1PL3_31                865 /* Eerste realisatie PL3 fc31 C-moment                                                                                            */
-    #define prmtxD1PL3_31                866 /* Eerste realisatie PL3 fc31 D-moment                                                                                            */
-    #define prmtxE1PL3_31                867 /* Eerste realisatie PL3 fc31 E-moment                                                                                            */
-    #define prmtxA2PL3_31                868 /* Tweede realisatie PL3 fc31 A-moment                                                                                            */
-    #define prmtxB2PL3_31                869 /* Tweede realisatie PL3 fc31 B-moment                                                                                            */
-    #define prmtxC2PL3_31                870 /* Tweede realisatie PL3 fc31 C-moment                                                                                            */
-    #define prmtxD2PL3_31                871 /* Tweede realisatie PL3 fc31 D-moment                                                                                            */
-    #define prmtxE2PL3_31                872 /* Tweede realisatie PL3 fc31 E-moment                                                                                            */
-    #define prmtxA1PL3_32                873 /* Eerste realisatie PL3 fc32 A-moment                                                                                            */
-    #define prmtxB1PL3_32                874 /* Eerste realisatie PL3 fc32 B-moment                                                                                            */
-    #define prmtxC1PL3_32                875 /* Eerste realisatie PL3 fc32 C-moment                                                                                            */
-    #define prmtxD1PL3_32                876 /* Eerste realisatie PL3 fc32 D-moment                                                                                            */
-    #define prmtxE1PL3_32                877 /* Eerste realisatie PL3 fc32 E-moment                                                                                            */
-    #define prmtxA2PL3_32                878 /* Tweede realisatie PL3 fc32 A-moment                                                                                            */
-    #define prmtxB2PL3_32                879 /* Tweede realisatie PL3 fc32 B-moment                                                                                            */
-    #define prmtxC2PL3_32                880 /* Tweede realisatie PL3 fc32 C-moment                                                                                            */
-    #define prmtxD2PL3_32                881 /* Tweede realisatie PL3 fc32 D-moment                                                                                            */
-    #define prmtxE2PL3_32                882 /* Tweede realisatie PL3 fc32 E-moment                                                                                            */
-    #define prmtxA1PL3_33                883 /* Eerste realisatie PL3 fc33 A-moment                                                                                            */
-    #define prmtxB1PL3_33                884 /* Eerste realisatie PL3 fc33 B-moment                                                                                            */
-    #define prmtxC1PL3_33                885 /* Eerste realisatie PL3 fc33 C-moment                                                                                            */
-    #define prmtxD1PL3_33                886 /* Eerste realisatie PL3 fc33 D-moment                                                                                            */
-    #define prmtxE1PL3_33                887 /* Eerste realisatie PL3 fc33 E-moment                                                                                            */
-    #define prmtxA2PL3_33                888 /* Tweede realisatie PL3 fc33 A-moment                                                                                            */
-    #define prmtxB2PL3_33                889 /* Tweede realisatie PL3 fc33 B-moment                                                                                            */
-    #define prmtxC2PL3_33                890 /* Tweede realisatie PL3 fc33 C-moment                                                                                            */
-    #define prmtxD2PL3_33                891 /* Tweede realisatie PL3 fc33 D-moment                                                                                            */
-    #define prmtxE2PL3_33                892 /* Tweede realisatie PL3 fc33 E-moment                                                                                            */
-    #define prmtxA1PL3_34                893 /* Eerste realisatie PL3 fc34 A-moment                                                                                            */
-    #define prmtxB1PL3_34                894 /* Eerste realisatie PL3 fc34 B-moment                                                                                            */
-    #define prmtxC1PL3_34                895 /* Eerste realisatie PL3 fc34 C-moment                                                                                            */
-    #define prmtxD1PL3_34                896 /* Eerste realisatie PL3 fc34 D-moment                                                                                            */
-    #define prmtxE1PL3_34                897 /* Eerste realisatie PL3 fc34 E-moment                                                                                            */
-    #define prmtxA2PL3_34                898 /* Tweede realisatie PL3 fc34 A-moment                                                                                            */
-    #define prmtxB2PL3_34                899 /* Tweede realisatie PL3 fc34 B-moment                                                                                            */
-    #define prmtxC2PL3_34                900 /* Tweede realisatie PL3 fc34 C-moment                                                                                            */
-    #define prmtxD2PL3_34                901 /* Tweede realisatie PL3 fc34 D-moment                                                                                            */
-    #define prmtxE2PL3_34                902 /* Tweede realisatie PL3 fc34 E-moment                                                                                            */
-    #define prmtxA1PL3_38                903 /* Eerste realisatie PL3 fc38 A-moment                                                                                            */
-    #define prmtxB1PL3_38                904 /* Eerste realisatie PL3 fc38 B-moment                                                                                            */
-    #define prmtxC1PL3_38                905 /* Eerste realisatie PL3 fc38 C-moment                                                                                            */
-    #define prmtxD1PL3_38                906 /* Eerste realisatie PL3 fc38 D-moment                                                                                            */
-    #define prmtxE1PL3_38                907 /* Eerste realisatie PL3 fc38 E-moment                                                                                            */
-    #define prmtxA2PL3_38                908 /* Tweede realisatie PL3 fc38 A-moment                                                                                            */
-    #define prmtxB2PL3_38                909 /* Tweede realisatie PL3 fc38 B-moment                                                                                            */
-    #define prmtxC2PL3_38                910 /* Tweede realisatie PL3 fc38 C-moment                                                                                            */
-    #define prmtxD2PL3_38                911 /* Tweede realisatie PL3 fc38 D-moment                                                                                            */
-    #define prmtxE2PL3_38                912 /* Tweede realisatie PL3 fc38 E-moment                                                                                            */
-    #define prmtxA1PL3_61                913 /* Eerste realisatie PL3 fc61 A-moment                                                                                            */
-    #define prmtxB1PL3_61                914 /* Eerste realisatie PL3 fc61 B-moment                                                                                            */
-    #define prmtxC1PL3_61                915 /* Eerste realisatie PL3 fc61 C-moment                                                                                            */
-    #define prmtxD1PL3_61                916 /* Eerste realisatie PL3 fc61 D-moment                                                                                            */
-    #define prmtxE1PL3_61                917 /* Eerste realisatie PL3 fc61 E-moment                                                                                            */
-    #define prmtxA2PL3_61                918 /* Tweede realisatie PL3 fc61 A-moment                                                                                            */
-    #define prmtxB2PL3_61                919 /* Tweede realisatie PL3 fc61 B-moment                                                                                            */
-    #define prmtxC2PL3_61                920 /* Tweede realisatie PL3 fc61 C-moment                                                                                            */
-    #define prmtxD2PL3_61                921 /* Tweede realisatie PL3 fc61 D-moment                                                                                            */
-    #define prmtxE2PL3_61                922 /* Tweede realisatie PL3 fc61 E-moment                                                                                            */
-    #define prmtxA1PL3_62                923 /* Eerste realisatie PL3 fc62 A-moment                                                                                            */
-    #define prmtxB1PL3_62                924 /* Eerste realisatie PL3 fc62 B-moment                                                                                            */
-    #define prmtxC1PL3_62                925 /* Eerste realisatie PL3 fc62 C-moment                                                                                            */
-    #define prmtxD1PL3_62                926 /* Eerste realisatie PL3 fc62 D-moment                                                                                            */
-    #define prmtxE1PL3_62                927 /* Eerste realisatie PL3 fc62 E-moment                                                                                            */
-    #define prmtxA2PL3_62                928 /* Tweede realisatie PL3 fc62 A-moment                                                                                            */
-    #define prmtxB2PL3_62                929 /* Tweede realisatie PL3 fc62 B-moment                                                                                            */
-    #define prmtxC2PL3_62                930 /* Tweede realisatie PL3 fc62 C-moment                                                                                            */
-    #define prmtxD2PL3_62                931 /* Tweede realisatie PL3 fc62 D-moment                                                                                            */
-    #define prmtxE2PL3_62                932 /* Tweede realisatie PL3 fc62 E-moment                                                                                            */
-    #define prmtxA1PL3_67                933 /* Eerste realisatie PL3 fc67 A-moment                                                                                            */
-    #define prmtxB1PL3_67                934 /* Eerste realisatie PL3 fc67 B-moment                                                                                            */
-    #define prmtxC1PL3_67                935 /* Eerste realisatie PL3 fc67 C-moment                                                                                            */
-    #define prmtxD1PL3_67                936 /* Eerste realisatie PL3 fc67 D-moment                                                                                            */
-    #define prmtxE1PL3_67                937 /* Eerste realisatie PL3 fc67 E-moment                                                                                            */
-    #define prmtxA2PL3_67                938 /* Tweede realisatie PL3 fc67 A-moment                                                                                            */
-    #define prmtxB2PL3_67                939 /* Tweede realisatie PL3 fc67 B-moment                                                                                            */
-    #define prmtxC2PL3_67                940 /* Tweede realisatie PL3 fc67 C-moment                                                                                            */
-    #define prmtxD2PL3_67                941 /* Tweede realisatie PL3 fc67 D-moment                                                                                            */
-    #define prmtxE2PL3_67                942 /* Tweede realisatie PL3 fc67 E-moment                                                                                            */
-    #define prmtxA1PL3_68                943 /* Eerste realisatie PL3 fc68 A-moment                                                                                            */
-    #define prmtxB1PL3_68                944 /* Eerste realisatie PL3 fc68 B-moment                                                                                            */
-    #define prmtxC1PL3_68                945 /* Eerste realisatie PL3 fc68 C-moment                                                                                            */
-    #define prmtxD1PL3_68                946 /* Eerste realisatie PL3 fc68 D-moment                                                                                            */
-    #define prmtxE1PL3_68                947 /* Eerste realisatie PL3 fc68 E-moment                                                                                            */
-    #define prmtxA2PL3_68                948 /* Tweede realisatie PL3 fc68 A-moment                                                                                            */
-    #define prmtxB2PL3_68                949 /* Tweede realisatie PL3 fc68 B-moment                                                                                            */
-    #define prmtxC2PL3_68                950 /* Tweede realisatie PL3 fc68 C-moment                                                                                            */
-    #define prmtxD2PL3_68                951 /* Tweede realisatie PL3 fc68 D-moment                                                                                            */
-    #define prmtxE2PL3_68                952 /* Tweede realisatie PL3 fc68 E-moment                                                                                            */
-    #define prmtxA1PL3_81                953 /* Eerste realisatie PL3 fc81 A-moment                                                                                            */
-    #define prmtxB1PL3_81                954 /* Eerste realisatie PL3 fc81 B-moment                                                                                            */
-    #define prmtxC1PL3_81                955 /* Eerste realisatie PL3 fc81 C-moment                                                                                            */
-    #define prmtxD1PL3_81                956 /* Eerste realisatie PL3 fc81 D-moment                                                                                            */
-    #define prmtxE1PL3_81                957 /* Eerste realisatie PL3 fc81 E-moment                                                                                            */
-    #define prmtxA2PL3_81                958 /* Tweede realisatie PL3 fc81 A-moment                                                                                            */
-    #define prmtxB2PL3_81                959 /* Tweede realisatie PL3 fc81 B-moment                                                                                            */
-    #define prmtxC2PL3_81                960 /* Tweede realisatie PL3 fc81 C-moment                                                                                            */
-    #define prmtxD2PL3_81                961 /* Tweede realisatie PL3 fc81 D-moment                                                                                            */
-    #define prmtxE2PL3_81                962 /* Tweede realisatie PL3 fc81 E-moment                                                                                            */
-    #define prmtxA1PL3_82                963 /* Eerste realisatie PL3 fc82 A-moment                                                                                            */
-    #define prmtxB1PL3_82                964 /* Eerste realisatie PL3 fc82 B-moment                                                                                            */
-    #define prmtxC1PL3_82                965 /* Eerste realisatie PL3 fc82 C-moment                                                                                            */
-    #define prmtxD1PL3_82                966 /* Eerste realisatie PL3 fc82 D-moment                                                                                            */
-    #define prmtxE1PL3_82                967 /* Eerste realisatie PL3 fc82 E-moment                                                                                            */
-    #define prmtxA2PL3_82                968 /* Tweede realisatie PL3 fc82 A-moment                                                                                            */
-    #define prmtxB2PL3_82                969 /* Tweede realisatie PL3 fc82 B-moment                                                                                            */
-    #define prmtxC2PL3_82                970 /* Tweede realisatie PL3 fc82 C-moment                                                                                            */
-    #define prmtxD2PL3_82                971 /* Tweede realisatie PL3 fc82 D-moment                                                                                            */
-    #define prmtxE2PL3_82                972 /* Tweede realisatie PL3 fc82 E-moment                                                                                            */
-    #define prmtxA1PL3_84                973 /* Eerste realisatie PL3 fc84 A-moment                                                                                            */
-    #define prmtxB1PL3_84                974 /* Eerste realisatie PL3 fc84 B-moment                                                                                            */
-    #define prmtxC1PL3_84                975 /* Eerste realisatie PL3 fc84 C-moment                                                                                            */
-    #define prmtxD1PL3_84                976 /* Eerste realisatie PL3 fc84 D-moment                                                                                            */
-    #define prmtxE1PL3_84                977 /* Eerste realisatie PL3 fc84 E-moment                                                                                            */
-    #define prmtxA2PL3_84                978 /* Tweede realisatie PL3 fc84 A-moment                                                                                            */
-    #define prmtxB2PL3_84                979 /* Tweede realisatie PL3 fc84 B-moment                                                                                            */
-    #define prmtxC2PL3_84                980 /* Tweede realisatie PL3 fc84 C-moment                                                                                            */
-    #define prmtxD2PL3_84                981 /* Tweede realisatie PL3 fc84 D-moment                                                                                            */
-    #define prmtxE2PL3_84                982 /* Tweede realisatie PL3 fc84 E-moment                                                                                            */
-    #define prmrstotxa                   983 /* Tijd tot xa dat RS opgezet wordt (anti-flitsgroen)                                                                             */
-    #define prmplxperdef                 984 /* Plan voor periode default                                                                                                      */
-    #define prmplxper1                   985 /* Plan voor periode dag                                                                                                          */
-    #define prmplxper2                   986 /* Plan voor periode ochtend                                                                                                      */
-    #define prmplxper3                   987 /* Plan voor periode avond                                                                                                        */
-    #define prmplxper4                   988 /* Plan voor periode koopavond                                                                                                    */
-    #define prmplxper5                   989 /* Plan voor periode weekend                                                                                                      */
-    #define prmplxper6                   990 /* Plan voor periode reserve                                                                                                      */
-    #define prmtypema0261                991 /* Type meeaanvraag van 02 naar 61                                                                                                */
-    #define prmtypema0262                992 /* Type meeaanvraag van 02 naar 62                                                                                                */
-    #define prmtypema0521                993 /* Type meeaanvraag van 05 naar 21                                                                                                */
-    #define prmtypema0522                994 /* Type meeaanvraag van 05 naar 22                                                                                                */
-    #define prmtypema0532                995 /* Type meeaanvraag van 05 naar 32                                                                                                */
-    #define prmtypema0868                996 /* Type meeaanvraag van 08 naar 68                                                                                                */
-    #define prmtypema1126                997 /* Type meeaanvraag van 11 naar 26                                                                                                */
-    #define prmtypema1168                998 /* Type meeaanvraag van 11 naar 68                                                                                                */
-    #define prmtypema2221                999 /* Type meeaanvraag van 22 naar 21                                                                                                */
-    #define prmtypema3122               1000 /* Type meeaanvraag van 31 naar 22                                                                                                */
-    #define prmtypema3132               1001 /* Type meeaanvraag van 31 naar 32                                                                                                */
-    #define prmtypema3222               1002 /* Type meeaanvraag van 32 naar 22                                                                                                */
-    #define prmtypema3231               1003 /* Type meeaanvraag van 32 naar 31                                                                                                */
-    #define prmtypema3324               1004 /* Type meeaanvraag van 33 naar 24                                                                                                */
-    #define prmtypema3334               1005 /* Type meeaanvraag van 33 naar 34                                                                                                */
-    #define prmtypema3384               1006 /* Type meeaanvraag van 33 naar 84                                                                                                */
-    #define prmtypema3424               1007 /* Type meeaanvraag van 34 naar 24                                                                                                */
-    #define prmtypema3433               1008 /* Type meeaanvraag van 34 naar 33                                                                                                */
-    #define prmtypema3484               1009 /* Type meeaanvraag van 34 naar 84                                                                                                */
-    #define prmtypema3828               1010 /* Type meeaanvraag van 38 naar 28                                                                                                */
-    #define prmtypema8281               1011 /* Type meeaanvraag van 82 naar 81                                                                                                */
-    #define prmmv02                     1012 /* Type meeverlengen fase 02 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv03                     1013 /* Type meeverlengen fase 03 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv05                     1014 /* Type meeverlengen fase 05 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv08                     1015 /* Type meeverlengen fase 08 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv09                     1016 /* Type meeverlengen fase 09 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv11                     1017 /* Type meeverlengen fase 11 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv21                     1018 /* Type meeverlengen fase 21 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv22                     1019 /* Type meeverlengen fase 22 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv24                     1020 /* Type meeverlengen fase 24 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv26                     1021 /* Type meeverlengen fase 26 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv28                     1022 /* Type meeverlengen fase 28 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv31                     1023 /* Type meeverlengen fase 31 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv32                     1024 /* Type meeverlengen fase 32 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv33                     1025 /* Type meeverlengen fase 33 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv34                     1026 /* Type meeverlengen fase 34 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv38                     1027 /* Type meeverlengen fase 38 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv61                     1028 /* Type meeverlengen fase 61 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv62                     1029 /* Type meeverlengen fase 62 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv67                     1030 /* Type meeverlengen fase 67 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv68                     1031 /* Type meeverlengen fase 68 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv81                     1032 /* Type meeverlengen fase 81 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv82                     1033 /* Type meeverlengen fase 82 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmmv84                     1034 /* Type meeverlengen fase 84 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
-    #define prmprml02                   1035 /* Toewijzen PRML voor fase 02 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml03                   1036 /* Toewijzen PRML voor fase 03 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml05                   1037 /* Toewijzen PRML voor fase 05 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml08                   1038 /* Toewijzen PRML voor fase 08 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml09                   1039 /* Toewijzen PRML voor fase 09 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml11                   1040 /* Toewijzen PRML voor fase 11 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml21                   1041 /* Toewijzen PRML voor fase 21 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml22                   1042 /* Toewijzen PRML voor fase 22 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml24                   1043 /* Toewijzen PRML voor fase 24 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml26                   1044 /* Toewijzen PRML voor fase 26 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml28                   1045 /* Toewijzen PRML voor fase 28 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml31                   1046 /* Toewijzen PRML voor fase 31 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml32                   1047 /* Toewijzen PRML voor fase 32 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml33                   1048 /* Toewijzen PRML voor fase 33 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml34                   1049 /* Toewijzen PRML voor fase 34 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml38                   1050 /* Toewijzen PRML voor fase 38 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml61                   1051 /* Toewijzen PRML voor fase 61 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml62                   1052 /* Toewijzen PRML voor fase 62 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml67                   1053 /* Toewijzen PRML voor fase 67 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml68                   1054 /* Toewijzen PRML voor fase 68 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml81                   1055 /* Toewijzen PRML voor fase 81 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml82                   1056 /* Toewijzen PRML voor fase 82 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmprml84                   1057 /* Toewijzen PRML voor fase 84 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
-    #define prmxnl0262                  1058 /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
-    #define prmxnl0868                  1059 /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
-    #define prmxnl1168                  1060 /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
-    #define prmxnl2221                  1061 /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
-    #define prmxnl3132                  1062 /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
-    #define prmxnl3231                  1063 /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
-    #define prmxnl3334                  1064 /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
-    #define prmxnl3433                  1065 /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
-    #define prmxnl8281                  1066 /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
-    #define prmOVtstpgrensvroeg         1067 /* Grens waarboven een OV voertuig als te vroeg wordt aangemerkt                                                                  */
-    #define prmOVtstpgrenslaat          1068 /* Grens waarboven een OV voertuig als te laat wordt aangemerkt                                                                   */
-    #define prmovstipttevroeg02bus      1069 /* Prioriteitsnveau OV te vroeg bij 02 Bus                                                                                        */
-    #define prmovstiptoptijd02bus       1070 /* Prioriteitsnveau OV op tijd bij 02 Bus                                                                                         */
-    #define prmovstipttelaat02bus       1071 /* Prioriteitsnveau OV te laat bij 02 Bus                                                                                         */
-    #define prmovstipttevroeg03bus      1072 /* Prioriteitsnveau OV te vroeg bij 03 Bus                                                                                        */
-    #define prmovstiptoptijd03bus       1073 /* Prioriteitsnveau OV op tijd bij 03 Bus                                                                                         */
-    #define prmovstipttelaat03bus       1074 /* Prioriteitsnveau OV te laat bij 03 Bus                                                                                         */
-    #define prmovstipttevroeg05bus      1075 /* Prioriteitsnveau OV te vroeg bij 05 Bus                                                                                        */
-    #define prmovstiptoptijd05bus       1076 /* Prioriteitsnveau OV op tijd bij 05 Bus                                                                                         */
-    #define prmovstipttelaat05bus       1077 /* Prioriteitsnveau OV te laat bij 05 Bus                                                                                         */
-    #define prmovstipttevroeg08bus      1078 /* Prioriteitsnveau OV te vroeg bij 08 Bus                                                                                        */
-    #define prmovstiptoptijd08bus       1079 /* Prioriteitsnveau OV op tijd bij 08 Bus                                                                                         */
-    #define prmovstipttelaat08bus       1080 /* Prioriteitsnveau OV te laat bij 08 Bus                                                                                         */
-    #define prmovstipttevroeg09bus      1081 /* Prioriteitsnveau OV te vroeg bij 09 Bus                                                                                        */
-    #define prmovstiptoptijd09bus       1082 /* Prioriteitsnveau OV op tijd bij 09 Bus                                                                                         */
-    #define prmovstipttelaat09bus       1083 /* Prioriteitsnveau OV te laat bij 09 Bus                                                                                         */
-    #define prmovstipttevroeg11bus      1084 /* Prioriteitsnveau OV te vroeg bij 11 Bus                                                                                        */
-    #define prmovstiptoptijd11bus       1085 /* Prioriteitsnveau OV op tijd bij 11 Bus                                                                                         */
-    #define prmovstipttelaat11bus       1086 /* Prioriteitsnveau OV te laat bij 11 Bus                                                                                         */
-    #define prmovstipttevroeg61bus      1087 /* Prioriteitsnveau OV te vroeg bij 61 Bus                                                                                        */
-    #define prmovstiptoptijd61bus       1088 /* Prioriteitsnveau OV op tijd bij 61 Bus                                                                                         */
-    #define prmovstipttelaat61bus       1089 /* Prioriteitsnveau OV te laat bij 61 Bus                                                                                         */
-    #define prmovstipttevroeg62bus      1090 /* Prioriteitsnveau OV te vroeg bij 62 Bus                                                                                        */
-    #define prmovstiptoptijd62bus       1091 /* Prioriteitsnveau OV op tijd bij 62 Bus                                                                                         */
-    #define prmovstipttelaat62bus       1092 /* Prioriteitsnveau OV te laat bij 62 Bus                                                                                         */
-    #define prmovstipttevroeg67bus      1093 /* Prioriteitsnveau OV te vroeg bij 67 Bus                                                                                        */
-    #define prmovstiptoptijd67bus       1094 /* Prioriteitsnveau OV op tijd bij 67 Bus                                                                                         */
-    #define prmovstipttelaat67bus       1095 /* Prioriteitsnveau OV te laat bij 67 Bus                                                                                         */
-    #define prmovstipttevroeg68bus      1096 /* Prioriteitsnveau OV te vroeg bij 68 Bus                                                                                        */
-    #define prmovstiptoptijd68bus       1097 /* Prioriteitsnveau OV op tijd bij 68 Bus                                                                                         */
-    #define prmovstipttelaat68bus       1098 /* Prioriteitsnveau OV te laat bij 68 Bus                                                                                         */
-    #define prmmwta                     1099 /* Maximale wachttijd autoverkeer                                                                                                 */
-    #define prmmwtfts                   1100 /* Maximale wachttijd fiets                                                                                                       */
-    #define prmmwtvtg                   1101 /* Maximale wachttijd voetgangers                                                                                                 */
-    #define prmpmgt02                   1102 /* Minimaal percentage groentijd primair tbv. terugkomen fase 02                                                                  */
-    #define prmognt02                   1103 /* Minimale groentijd bij terugkomen fase 02                                                                                      */
-    #define prmnofm02                   1104 /* Aantal malen niet afkappen na OV ingreep fase 02                                                                               */
-    #define prmmgcov02                  1105 /* Minimum groentijd waarna fase 02 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov02                 1106 /* Minimum percentage groentijd waarna fase 02 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg02                  1107 /* Percentage ophogen groentijd na afkappen fase 02                                                                               */
-    #define prmpmgt03                   1108 /* Minimaal percentage groentijd primair tbv. terugkomen fase 03                                                                  */
-    #define prmognt03                   1109 /* Minimale groentijd bij terugkomen fase 03                                                                                      */
-    #define prmnofm03                   1110 /* Aantal malen niet afkappen na OV ingreep fase 03                                                                               */
-    #define prmmgcov03                  1111 /* Minimum groentijd waarna fase 03 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov03                 1112 /* Minimum percentage groentijd waarna fase 03 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg03                  1113 /* Percentage ophogen groentijd na afkappen fase 03                                                                               */
-    #define prmpmgt05                   1114 /* Minimaal percentage groentijd primair tbv. terugkomen fase 05                                                                  */
-    #define prmognt05                   1115 /* Minimale groentijd bij terugkomen fase 05                                                                                      */
-    #define prmnofm05                   1116 /* Aantal malen niet afkappen na OV ingreep fase 05                                                                               */
-    #define prmmgcov05                  1117 /* Minimum groentijd waarna fase 05 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov05                 1118 /* Minimum percentage groentijd waarna fase 05 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg05                  1119 /* Percentage ophogen groentijd na afkappen fase 05                                                                               */
-    #define prmpmgt08                   1120 /* Minimaal percentage groentijd primair tbv. terugkomen fase 08                                                                  */
-    #define prmognt08                   1121 /* Minimale groentijd bij terugkomen fase 08                                                                                      */
-    #define prmnofm08                   1122 /* Aantal malen niet afkappen na OV ingreep fase 08                                                                               */
-    #define prmmgcov08                  1123 /* Minimum groentijd waarna fase 08 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov08                 1124 /* Minimum percentage groentijd waarna fase 08 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg08                  1125 /* Percentage ophogen groentijd na afkappen fase 08                                                                               */
-    #define prmpmgt09                   1126 /* Minimaal percentage groentijd primair tbv. terugkomen fase 09                                                                  */
-    #define prmognt09                   1127 /* Minimale groentijd bij terugkomen fase 09                                                                                      */
-    #define prmnofm09                   1128 /* Aantal malen niet afkappen na OV ingreep fase 09                                                                               */
-    #define prmmgcov09                  1129 /* Minimum groentijd waarna fase 09 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov09                 1130 /* Minimum percentage groentijd waarna fase 09 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg09                  1131 /* Percentage ophogen groentijd na afkappen fase 09                                                                               */
-    #define prmpmgt11                   1132 /* Minimaal percentage groentijd primair tbv. terugkomen fase 11                                                                  */
-    #define prmognt11                   1133 /* Minimale groentijd bij terugkomen fase 11                                                                                      */
-    #define prmnofm11                   1134 /* Aantal malen niet afkappen na OV ingreep fase 11                                                                               */
-    #define prmmgcov11                  1135 /* Minimum groentijd waarna fase 11 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov11                 1136 /* Minimum percentage groentijd waarna fase 11 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg11                  1137 /* Percentage ophogen groentijd na afkappen fase 11                                                                               */
-    #define prmpmgt21                   1138 /* Minimaal percentage groentijd primair tbv. terugkomen fase 21                                                                  */
-    #define prmognt21                   1139 /* Minimale groentijd bij terugkomen fase 21                                                                                      */
-    #define prmnofm21                   1140 /* Aantal malen niet afkappen na OV ingreep fase 21                                                                               */
-    #define prmmgcov21                  1141 /* Minimum groentijd waarna fase 21 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov21                 1142 /* Minimum percentage groentijd waarna fase 21 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg21                  1143 /* Percentage ophogen groentijd na afkappen fase 21                                                                               */
-    #define prmpmgt22                   1144 /* Minimaal percentage groentijd primair tbv. terugkomen fase 22                                                                  */
-    #define prmognt22                   1145 /* Minimale groentijd bij terugkomen fase 22                                                                                      */
-    #define prmnofm22                   1146 /* Aantal malen niet afkappen na OV ingreep fase 22                                                                               */
-    #define prmmgcov22                  1147 /* Minimum groentijd waarna fase 22 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov22                 1148 /* Minimum percentage groentijd waarna fase 22 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg22                  1149 /* Percentage ophogen groentijd na afkappen fase 22                                                                               */
-    #define prmpmgt24                   1150 /* Minimaal percentage groentijd primair tbv. terugkomen fase 24                                                                  */
-    #define prmognt24                   1151 /* Minimale groentijd bij terugkomen fase 24                                                                                      */
-    #define prmnofm24                   1152 /* Aantal malen niet afkappen na OV ingreep fase 24                                                                               */
-    #define prmmgcov24                  1153 /* Minimum groentijd waarna fase 24 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov24                 1154 /* Minimum percentage groentijd waarna fase 24 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg24                  1155 /* Percentage ophogen groentijd na afkappen fase 24                                                                               */
-    #define prmpmgt26                   1156 /* Minimaal percentage groentijd primair tbv. terugkomen fase 26                                                                  */
-    #define prmognt26                   1157 /* Minimale groentijd bij terugkomen fase 26                                                                                      */
-    #define prmnofm26                   1158 /* Aantal malen niet afkappen na OV ingreep fase 26                                                                               */
-    #define prmmgcov26                  1159 /* Minimum groentijd waarna fase 26 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov26                 1160 /* Minimum percentage groentijd waarna fase 26 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg26                  1161 /* Percentage ophogen groentijd na afkappen fase 26                                                                               */
-    #define prmpmgt28                   1162 /* Minimaal percentage groentijd primair tbv. terugkomen fase 28                                                                  */
-    #define prmognt28                   1163 /* Minimale groentijd bij terugkomen fase 28                                                                                      */
-    #define prmnofm28                   1164 /* Aantal malen niet afkappen na OV ingreep fase 28                                                                               */
-    #define prmmgcov28                  1165 /* Minimum groentijd waarna fase 28 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov28                 1166 /* Minimum percentage groentijd waarna fase 28 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg28                  1167 /* Percentage ophogen groentijd na afkappen fase 28                                                                               */
-    #define prmpmgt31                   1168 /* Minimaal percentage groentijd primair tbv. terugkomen fase 31                                                                  */
-    #define prmognt31                   1169 /* Minimale groentijd bij terugkomen fase 31                                                                                      */
-    #define prmpmgt32                   1170 /* Minimaal percentage groentijd primair tbv. terugkomen fase 32                                                                  */
-    #define prmognt32                   1171 /* Minimale groentijd bij terugkomen fase 32                                                                                      */
-    #define prmpmgt33                   1172 /* Minimaal percentage groentijd primair tbv. terugkomen fase 33                                                                  */
-    #define prmognt33                   1173 /* Minimale groentijd bij terugkomen fase 33                                                                                      */
-    #define prmpmgt34                   1174 /* Minimaal percentage groentijd primair tbv. terugkomen fase 34                                                                  */
-    #define prmognt34                   1175 /* Minimale groentijd bij terugkomen fase 34                                                                                      */
-    #define prmpmgt38                   1176 /* Minimaal percentage groentijd primair tbv. terugkomen fase 38                                                                  */
-    #define prmognt38                   1177 /* Minimale groentijd bij terugkomen fase 38                                                                                      */
-    #define prmpmgt61                   1178 /* Minimaal percentage groentijd primair tbv. terugkomen fase 61                                                                  */
-    #define prmognt61                   1179 /* Minimale groentijd bij terugkomen fase 61                                                                                      */
-    #define prmnofm61                   1180 /* Aantal malen niet afkappen na OV ingreep fase 61                                                                               */
-    #define prmmgcov61                  1181 /* Minimum groentijd waarna fase 61 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov61                 1182 /* Minimum percentage groentijd waarna fase 61 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg61                  1183 /* Percentage ophogen groentijd na afkappen fase 61                                                                               */
-    #define prmpmgt62                   1184 /* Minimaal percentage groentijd primair tbv. terugkomen fase 62                                                                  */
-    #define prmognt62                   1185 /* Minimale groentijd bij terugkomen fase 62                                                                                      */
-    #define prmnofm62                   1186 /* Aantal malen niet afkappen na OV ingreep fase 62                                                                               */
-    #define prmmgcov62                  1187 /* Minimum groentijd waarna fase 62 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov62                 1188 /* Minimum percentage groentijd waarna fase 62 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg62                  1189 /* Percentage ophogen groentijd na afkappen fase 62                                                                               */
-    #define prmpmgt67                   1190 /* Minimaal percentage groentijd primair tbv. terugkomen fase 67                                                                  */
-    #define prmognt67                   1191 /* Minimale groentijd bij terugkomen fase 67                                                                                      */
-    #define prmnofm67                   1192 /* Aantal malen niet afkappen na OV ingreep fase 67                                                                               */
-    #define prmmgcov67                  1193 /* Minimum groentijd waarna fase 67 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov67                 1194 /* Minimum percentage groentijd waarna fase 67 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg67                  1195 /* Percentage ophogen groentijd na afkappen fase 67                                                                               */
-    #define prmpmgt68                   1196 /* Minimaal percentage groentijd primair tbv. terugkomen fase 68                                                                  */
-    #define prmognt68                   1197 /* Minimale groentijd bij terugkomen fase 68                                                                                      */
-    #define prmnofm68                   1198 /* Aantal malen niet afkappen na OV ingreep fase 68                                                                               */
-    #define prmmgcov68                  1199 /* Minimum groentijd waarna fase 68 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov68                 1200 /* Minimum percentage groentijd waarna fase 68 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg68                  1201 /* Percentage ophogen groentijd na afkappen fase 68                                                                               */
-    #define prmpmgt81                   1202 /* Minimaal percentage groentijd primair tbv. terugkomen fase 81                                                                  */
-    #define prmognt81                   1203 /* Minimale groentijd bij terugkomen fase 81                                                                                      */
-    #define prmnofm81                   1204 /* Aantal malen niet afkappen na OV ingreep fase 81                                                                               */
-    #define prmmgcov81                  1205 /* Minimum groentijd waarna fase 81 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov81                 1206 /* Minimum percentage groentijd waarna fase 81 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg81                  1207 /* Percentage ophogen groentijd na afkappen fase 81                                                                               */
-    #define prmpmgt82                   1208 /* Minimaal percentage groentijd primair tbv. terugkomen fase 82                                                                  */
-    #define prmognt82                   1209 /* Minimale groentijd bij terugkomen fase 82                                                                                      */
-    #define prmnofm82                   1210 /* Aantal malen niet afkappen na OV ingreep fase 82                                                                               */
-    #define prmmgcov82                  1211 /* Minimum groentijd waarna fase 82 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov82                 1212 /* Minimum percentage groentijd waarna fase 82 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg82                  1213 /* Percentage ophogen groentijd na afkappen fase 82                                                                               */
-    #define prmpmgt84                   1214 /* Minimaal percentage groentijd primair tbv. terugkomen fase 84                                                                  */
-    #define prmognt84                   1215 /* Minimale groentijd bij terugkomen fase 84                                                                                      */
-    #define prmnofm84                   1216 /* Aantal malen niet afkappen na OV ingreep fase 84                                                                               */
-    #define prmmgcov84                  1217 /* Minimum groentijd waarna fase 84 afgkapt mag worden door OV ingreep                                                            */
-    #define prmpmgcov84                 1218 /* Minimum percentage groentijd waarna fase 84 afgkapt mag worden door OV ingreep                                                 */
-    #define prmohpmg84                  1219 /* Percentage ophogen groentijd na afkappen fase 84                                                                               */
-    #define prmrto02bus                 1220 /* Ongehinderde rijtijd prioriteit fase 02                                                                                        */
-    #define prmrtbg02bus                1221 /* Beperkt gehinderde rijtijd prioriteit fase 02                                                                                  */
-    #define prmrtg02bus                 1222 /* Gehinderde rijtijd prioriteit fase 02                                                                                          */
-    #define prmomx02bus                 1223 /* Ondermaximum OV fase 02                                                                                                        */
-    #define prmvtgcat02bus              1224 /* Voertuigcategorie DSI voor prio ingreep 02bus                                                                                  */
-    #define prmprio02bus                1225 /* Prioriteitsinstelling OV fase 02                                                                                               */
-    #define prmrto02risov               1226 /* Ongehinderde rijtijd prioriteit fase 02                                                                                        */
-    #define prmrtbg02risov              1227 /* Beperkt gehinderde rijtijd prioriteit fase 02                                                                                  */
-    #define prmrtg02risov               1228 /* Gehinderde rijtijd prioriteit fase 02                                                                                          */
-    #define prmomx02risov               1229 /* Ondermaximum OV fase 02                                                                                                        */
-    #define prmprio02risov              1230 /* Prioriteitsinstelling OV fase 02                                                                                               */
-    #define prmrisstart02risov          1231
-    #define prmrisend02risov            1232
-    #define prmriseta02risov            1233
-    #define prmrisrole02risov           1234
-    #define prmrissubrole02risov        1235
-    #define prmrisstationtype02risov    1236
-    #define prmrisapproachid02risov     1237
-    #define prmrislaneid02risov_1       1238
-    #define prmrislaneid02risov_2       1239
-    #define prmrto02risvrw              1240 /* Ongehinderde rijtijd prioriteit fase 02                                                                                        */
-    #define prmrtbg02risvrw             1241 /* Beperkt gehinderde rijtijd prioriteit fase 02                                                                                  */
-    #define prmrtg02risvrw              1242 /* Gehinderde rijtijd prioriteit fase 02                                                                                          */
-    #define prmomx02risvrw              1243 /* Ondermaximum OV fase 02                                                                                                        */
-    #define prmprio02risvrw             1244 /* Prioriteitsinstelling OV fase 02                                                                                               */
-    #define prmrisstart02risvrw         1245
-    #define prmrisend02risvrw           1246
-    #define prmriseta02risvrw           1247
-    #define prmrisrole02risvrw          1248
-    #define prmrissubrole02risvrw       1249
-    #define prmrisstationtype02risvrw   1250
-    #define prmrisapproachid02risvrw    1251
-    #define prmrislaneid02risvrw_1      1252
-    #define prmrislaneid02risvrw_2      1253
-    #define prmrto03bus                 1254 /* Ongehinderde rijtijd prioriteit fase 03                                                                                        */
-    #define prmrtbg03bus                1255 /* Beperkt gehinderde rijtijd prioriteit fase 03                                                                                  */
-    #define prmrtg03bus                 1256 /* Gehinderde rijtijd prioriteit fase 03                                                                                          */
-    #define prmomx03bus                 1257 /* Ondermaximum OV fase 03                                                                                                        */
-    #define prmvtgcat03bus              1258 /* Voertuigcategorie DSI voor prio ingreep 03bus                                                                                  */
-    #define prmprio03bus                1259 /* Prioriteitsinstelling OV fase 03                                                                                               */
-    #define prmrto03risov               1260 /* Ongehinderde rijtijd prioriteit fase 03                                                                                        */
-    #define prmrtbg03risov              1261 /* Beperkt gehinderde rijtijd prioriteit fase 03                                                                                  */
-    #define prmrtg03risov               1262 /* Gehinderde rijtijd prioriteit fase 03                                                                                          */
-    #define prmomx03risov               1263 /* Ondermaximum OV fase 03                                                                                                        */
-    #define prmprio03risov              1264 /* Prioriteitsinstelling OV fase 03                                                                                               */
-    #define prmrisstart03risov          1265
-    #define prmrisend03risov            1266
-    #define prmriseta03risov            1267
-    #define prmrisrole03risov           1268
-    #define prmrissubrole03risov        1269
-    #define prmrisstationtype03risov    1270
-    #define prmrisapproachid03risov     1271
-    #define prmrislaneid03risov_1       1272
-    #define prmrto03risvrw              1273 /* Ongehinderde rijtijd prioriteit fase 03                                                                                        */
-    #define prmrtbg03risvrw             1274 /* Beperkt gehinderde rijtijd prioriteit fase 03                                                                                  */
-    #define prmrtg03risvrw              1275 /* Gehinderde rijtijd prioriteit fase 03                                                                                          */
-    #define prmomx03risvrw              1276 /* Ondermaximum OV fase 03                                                                                                        */
-    #define prmprio03risvrw             1277 /* Prioriteitsinstelling OV fase 03                                                                                               */
-    #define prmrisstart03risvrw         1278
-    #define prmrisend03risvrw           1279
-    #define prmriseta03risvrw           1280
-    #define prmrisrole03risvrw          1281
-    #define prmrissubrole03risvrw       1282
-    #define prmrisstationtype03risvrw   1283
-    #define prmrisapproachid03risvrw    1284
-    #define prmrislaneid03risvrw_1      1285
-    #define prmrto05bus                 1286 /* Ongehinderde rijtijd prioriteit fase 05                                                                                        */
-    #define prmrtbg05bus                1287 /* Beperkt gehinderde rijtijd prioriteit fase 05                                                                                  */
-    #define prmrtg05bus                 1288 /* Gehinderde rijtijd prioriteit fase 05                                                                                          */
-    #define prmomx05bus                 1289 /* Ondermaximum OV fase 05                                                                                                        */
-    #define prmvtgcat05bus              1290 /* Voertuigcategorie DSI voor prio ingreep 05bus                                                                                  */
-    #define prmprio05bus                1291 /* Prioriteitsinstelling OV fase 05                                                                                               */
-    #define prmrto05risov               1292 /* Ongehinderde rijtijd prioriteit fase 05                                                                                        */
-    #define prmrtbg05risov              1293 /* Beperkt gehinderde rijtijd prioriteit fase 05                                                                                  */
-    #define prmrtg05risov               1294 /* Gehinderde rijtijd prioriteit fase 05                                                                                          */
-    #define prmomx05risov               1295 /* Ondermaximum OV fase 05                                                                                                        */
-    #define prmprio05risov              1296 /* Prioriteitsinstelling OV fase 05                                                                                               */
-    #define prmrisstart05risov          1297
-    #define prmrisend05risov            1298
-    #define prmriseta05risov            1299
-    #define prmrisrole05risov           1300
-    #define prmrissubrole05risov        1301
-    #define prmrisstationtype05risov    1302
-    #define prmrisapproachid05risov     1303
-    #define prmrislaneid05risov_1       1304
-    #define prmrto05risvrw              1305 /* Ongehinderde rijtijd prioriteit fase 05                                                                                        */
-    #define prmrtbg05risvrw             1306 /* Beperkt gehinderde rijtijd prioriteit fase 05                                                                                  */
-    #define prmrtg05risvrw              1307 /* Gehinderde rijtijd prioriteit fase 05                                                                                          */
-    #define prmomx05risvrw              1308 /* Ondermaximum OV fase 05                                                                                                        */
-    #define prmprio05risvrw             1309 /* Prioriteitsinstelling OV fase 05                                                                                               */
-    #define prmrisstart05risvrw         1310
-    #define prmrisend05risvrw           1311
-    #define prmriseta05risvrw           1312
-    #define prmrisrole05risvrw          1313
-    #define prmrissubrole05risvrw       1314
-    #define prmrisstationtype05risvrw   1315
-    #define prmrisapproachid05risvrw    1316
-    #define prmrislaneid05risvrw_1      1317
-    #define prmrto08bus                 1318 /* Ongehinderde rijtijd prioriteit fase 08                                                                                        */
-    #define prmrtbg08bus                1319 /* Beperkt gehinderde rijtijd prioriteit fase 08                                                                                  */
-    #define prmrtg08bus                 1320 /* Gehinderde rijtijd prioriteit fase 08                                                                                          */
-    #define prmomx08bus                 1321 /* Ondermaximum OV fase 08                                                                                                        */
-    #define prmvtgcat08bus              1322 /* Voertuigcategorie DSI voor prio ingreep 08bus                                                                                  */
-    #define prmprio08bus                1323 /* Prioriteitsinstelling OV fase 08                                                                                               */
-    #define prmrto08risov               1324 /* Ongehinderde rijtijd prioriteit fase 08                                                                                        */
-    #define prmrtbg08risov              1325 /* Beperkt gehinderde rijtijd prioriteit fase 08                                                                                  */
-    #define prmrtg08risov               1326 /* Gehinderde rijtijd prioriteit fase 08                                                                                          */
-    #define prmomx08risov               1327 /* Ondermaximum OV fase 08                                                                                                        */
-    #define prmprio08risov              1328 /* Prioriteitsinstelling OV fase 08                                                                                               */
-    #define prmrisstart08risov          1329
-    #define prmrisend08risov            1330
-    #define prmriseta08risov            1331
-    #define prmrisrole08risov           1332
-    #define prmrissubrole08risov        1333
-    #define prmrisstationtype08risov    1334
-    #define prmrisapproachid08risov     1335
-    #define prmrislaneid08risov_1       1336
-    #define prmrislaneid08risov_2       1337
-    #define prmrto08risvrw              1338 /* Ongehinderde rijtijd prioriteit fase 08                                                                                        */
-    #define prmrtbg08risvrw             1339 /* Beperkt gehinderde rijtijd prioriteit fase 08                                                                                  */
-    #define prmrtg08risvrw              1340 /* Gehinderde rijtijd prioriteit fase 08                                                                                          */
-    #define prmomx08risvrw              1341 /* Ondermaximum OV fase 08                                                                                                        */
-    #define prmprio08risvrw             1342 /* Prioriteitsinstelling OV fase 08                                                                                               */
-    #define prmrisstart08risvrw         1343
-    #define prmrisend08risvrw           1344
-    #define prmriseta08risvrw           1345
-    #define prmrisrole08risvrw          1346
-    #define prmrissubrole08risvrw       1347
-    #define prmrisstationtype08risvrw   1348
-    #define prmrisapproachid08risvrw    1349
-    #define prmrislaneid08risvrw_1      1350
-    #define prmrislaneid08risvrw_2      1351
-    #define prmrto09bus                 1352 /* Ongehinderde rijtijd prioriteit fase 09                                                                                        */
-    #define prmrtbg09bus                1353 /* Beperkt gehinderde rijtijd prioriteit fase 09                                                                                  */
-    #define prmrtg09bus                 1354 /* Gehinderde rijtijd prioriteit fase 09                                                                                          */
-    #define prmomx09bus                 1355 /* Ondermaximum OV fase 09                                                                                                        */
-    #define prmvtgcat09bus              1356 /* Voertuigcategorie DSI voor prio ingreep 09bus                                                                                  */
-    #define prmprio09bus                1357 /* Prioriteitsinstelling OV fase 09                                                                                               */
-    #define prmrto09risov               1358 /* Ongehinderde rijtijd prioriteit fase 09                                                                                        */
-    #define prmrtbg09risov              1359 /* Beperkt gehinderde rijtijd prioriteit fase 09                                                                                  */
-    #define prmrtg09risov               1360 /* Gehinderde rijtijd prioriteit fase 09                                                                                          */
-    #define prmomx09risov               1361 /* Ondermaximum OV fase 09                                                                                                        */
-    #define prmprio09risov              1362 /* Prioriteitsinstelling OV fase 09                                                                                               */
-    #define prmrisstart09risov          1363
-    #define prmrisend09risov            1364
-    #define prmriseta09risov            1365
-    #define prmrisrole09risov           1366
-    #define prmrissubrole09risov        1367
-    #define prmrisstationtype09risov    1368
-    #define prmrisapproachid09risov     1369
-    #define prmrislaneid09risov_1       1370
-    #define prmrto09risvrw              1371 /* Ongehinderde rijtijd prioriteit fase 09                                                                                        */
-    #define prmrtbg09risvrw             1372 /* Beperkt gehinderde rijtijd prioriteit fase 09                                                                                  */
-    #define prmrtg09risvrw              1373 /* Gehinderde rijtijd prioriteit fase 09                                                                                          */
-    #define prmomx09risvrw              1374 /* Ondermaximum OV fase 09                                                                                                        */
-    #define prmprio09risvrw             1375 /* Prioriteitsinstelling OV fase 09                                                                                               */
-    #define prmrisstart09risvrw         1376
-    #define prmrisend09risvrw           1377
-    #define prmriseta09risvrw           1378
-    #define prmrisrole09risvrw          1379
-    #define prmrissubrole09risvrw       1380
-    #define prmrisstationtype09risvrw   1381
-    #define prmrisapproachid09risvrw    1382
-    #define prmrislaneid09risvrw_1      1383
-    #define prmrto11bus                 1384 /* Ongehinderde rijtijd prioriteit fase 11                                                                                        */
-    #define prmrtbg11bus                1385 /* Beperkt gehinderde rijtijd prioriteit fase 11                                                                                  */
-    #define prmrtg11bus                 1386 /* Gehinderde rijtijd prioriteit fase 11                                                                                          */
-    #define prmomx11bus                 1387 /* Ondermaximum OV fase 11                                                                                                        */
-    #define prmvtgcat11bus              1388 /* Voertuigcategorie DSI voor prio ingreep 11bus                                                                                  */
-    #define prmprio11bus                1389 /* Prioriteitsinstelling OV fase 11                                                                                               */
-    #define prmrto11risov               1390 /* Ongehinderde rijtijd prioriteit fase 11                                                                                        */
-    #define prmrtbg11risov              1391 /* Beperkt gehinderde rijtijd prioriteit fase 11                                                                                  */
-    #define prmrtg11risov               1392 /* Gehinderde rijtijd prioriteit fase 11                                                                                          */
-    #define prmomx11risov               1393 /* Ondermaximum OV fase 11                                                                                                        */
-    #define prmprio11risov              1394 /* Prioriteitsinstelling OV fase 11                                                                                               */
-    #define prmrisstart11risov          1395
-    #define prmrisend11risov            1396
-    #define prmriseta11risov            1397
-    #define prmrisrole11risov           1398
-    #define prmrissubrole11risov        1399
-    #define prmrisstationtype11risov    1400
-    #define prmrisapproachid11risov     1401
-    #define prmrislaneid11risov_1       1402
-    #define prmrto11risvrw              1403 /* Ongehinderde rijtijd prioriteit fase 11                                                                                        */
-    #define prmrtbg11risvrw             1404 /* Beperkt gehinderde rijtijd prioriteit fase 11                                                                                  */
-    #define prmrtg11risvrw              1405 /* Gehinderde rijtijd prioriteit fase 11                                                                                          */
-    #define prmomx11risvrw              1406 /* Ondermaximum OV fase 11                                                                                                        */
-    #define prmprio11risvrw             1407 /* Prioriteitsinstelling OV fase 11                                                                                               */
-    #define prmrisstart11risvrw         1408
-    #define prmrisend11risvrw           1409
-    #define prmriseta11risvrw           1410
-    #define prmrisrole11risvrw          1411
-    #define prmrissubrole11risvrw       1412
-    #define prmrisstationtype11risvrw   1413
-    #define prmrisapproachid11risvrw    1414
-    #define prmrislaneid11risvrw_1      1415
-    #define prmftsblok22fietsfiets      1416 /* Blokken waarin fiets peloton prio actief mag zijn voor fase 22                                                                 */
-    #define prmftsmaxpercyc22fietsfiets 1417 /* Maximaal aantal keer fiets peloton prio per cyclus voor fase 22                                                                */
-    #define prmftsminwt22fietsfiets     1418 /* Minimale wachttijd tbv peloton prio voor fase 22                                                                               */
-    #define prmrto22fiets               1419 /* Ongehinderde rijtijd prioriteit fase 22                                                                                        */
-    #define prmrtbg22fiets              1420 /* Beperkt gehinderde rijtijd prioriteit fase 22                                                                                  */
-    #define prmrtg22fiets               1421 /* Gehinderde rijtijd prioriteit fase 22                                                                                          */
-    #define prmomx22fiets               1422 /* Ondermaximum OV fase 22                                                                                                        */
-    #define prmprio22fiets              1423 /* Prioriteitsinstelling OV fase 22                                                                                               */
-    #define prmrto31fietsprio           1424 /* Ongehinderde rijtijd prioriteit fase 31                                                                                        */
-    #define prmrtbg31fietsprio          1425 /* Beperkt gehinderde rijtijd prioriteit fase 31                                                                                  */
-    #define prmrtg31fietsprio           1426 /* Gehinderde rijtijd prioriteit fase 31                                                                                          */
-    #define prmomx31fietsprio           1427 /* Ondermaximum OV fase 31                                                                                                        */
-    #define prmprio31fietsprio          1428 /* Prioriteitsinstelling OV fase 31                                                                                               */
-    #define prmrto32fietsprio           1429 /* Ongehinderde rijtijd prioriteit fase 32                                                                                        */
-    #define prmrtbg32fietsprio          1430 /* Beperkt gehinderde rijtijd prioriteit fase 32                                                                                  */
-    #define prmrtg32fietsprio           1431 /* Gehinderde rijtijd prioriteit fase 32                                                                                          */
-    #define prmomx32fietsprio           1432 /* Ondermaximum OV fase 32                                                                                                        */
-    #define prmprio32fietsprio          1433 /* Prioriteitsinstelling OV fase 32                                                                                               */
-    #define prmrto61bus                 1434 /* Ongehinderde rijtijd prioriteit fase 61                                                                                        */
-    #define prmrtbg61bus                1435 /* Beperkt gehinderde rijtijd prioriteit fase 61                                                                                  */
-    #define prmrtg61bus                 1436 /* Gehinderde rijtijd prioriteit fase 61                                                                                          */
-    #define prmomx61bus                 1437 /* Ondermaximum OV fase 61                                                                                                        */
-    #define prmvtgcat61bus              1438 /* Voertuigcategorie DSI voor prio ingreep 61bus                                                                                  */
-    #define prmprio61bus                1439 /* Prioriteitsinstelling OV fase 61                                                                                               */
-    #define prmrto61risov               1440 /* Ongehinderde rijtijd prioriteit fase 61                                                                                        */
-    #define prmrtbg61risov              1441 /* Beperkt gehinderde rijtijd prioriteit fase 61                                                                                  */
-    #define prmrtg61risov               1442 /* Gehinderde rijtijd prioriteit fase 61                                                                                          */
-    #define prmomx61risov               1443 /* Ondermaximum OV fase 61                                                                                                        */
-    #define prmprio61risov              1444 /* Prioriteitsinstelling OV fase 61                                                                                               */
-    #define prmrisstart61risov          1445
-    #define prmrisend61risov            1446
-    #define prmriseta61risov            1447
-    #define prmrisrole61risov           1448
-    #define prmrissubrole61risov        1449
-    #define prmrisstationtype61risov    1450
-    #define prmrisapproachid61risov     1451
-    #define prmrislaneid61risov_1       1452
-    #define prmrto61risvrw              1453 /* Ongehinderde rijtijd prioriteit fase 61                                                                                        */
-    #define prmrtbg61risvrw             1454 /* Beperkt gehinderde rijtijd prioriteit fase 61                                                                                  */
-    #define prmrtg61risvrw              1455 /* Gehinderde rijtijd prioriteit fase 61                                                                                          */
-    #define prmomx61risvrw              1456 /* Ondermaximum OV fase 61                                                                                                        */
-    #define prmprio61risvrw             1457 /* Prioriteitsinstelling OV fase 61                                                                                               */
-    #define prmrisstart61risvrw         1458
-    #define prmrisend61risvrw           1459
-    #define prmriseta61risvrw           1460
-    #define prmrisrole61risvrw          1461
-    #define prmrissubrole61risvrw       1462
-    #define prmrisstationtype61risvrw   1463
-    #define prmrisapproachid61risvrw    1464
-    #define prmrislaneid61risvrw_1      1465
-    #define prmrto62bus                 1466 /* Ongehinderde rijtijd prioriteit fase 62                                                                                        */
-    #define prmrtbg62bus                1467 /* Beperkt gehinderde rijtijd prioriteit fase 62                                                                                  */
-    #define prmrtg62bus                 1468 /* Gehinderde rijtijd prioriteit fase 62                                                                                          */
-    #define prmomx62bus                 1469 /* Ondermaximum OV fase 62                                                                                                        */
-    #define prmvtgcat62bus              1470 /* Voertuigcategorie DSI voor prio ingreep 62bus                                                                                  */
-    #define prmprio62bus                1471 /* Prioriteitsinstelling OV fase 62                                                                                               */
-    #define prmrto62risov               1472 /* Ongehinderde rijtijd prioriteit fase 62                                                                                        */
-    #define prmrtbg62risov              1473 /* Beperkt gehinderde rijtijd prioriteit fase 62                                                                                  */
-    #define prmrtg62risov               1474 /* Gehinderde rijtijd prioriteit fase 62                                                                                          */
-    #define prmomx62risov               1475 /* Ondermaximum OV fase 62                                                                                                        */
-    #define prmprio62risov              1476 /* Prioriteitsinstelling OV fase 62                                                                                               */
-    #define prmrisstart62risov          1477
-    #define prmrisend62risov            1478
-    #define prmriseta62risov            1479
-    #define prmrisrole62risov           1480
-    #define prmrissubrole62risov        1481
-    #define prmrisstationtype62risov    1482
-    #define prmrisapproachid62risov     1483
-    #define prmrislaneid62risov_1       1484
-    #define prmrislaneid62risov_2       1485
-    #define prmrto62risvrw              1486 /* Ongehinderde rijtijd prioriteit fase 62                                                                                        */
-    #define prmrtbg62risvrw             1487 /* Beperkt gehinderde rijtijd prioriteit fase 62                                                                                  */
-    #define prmrtg62risvrw              1488 /* Gehinderde rijtijd prioriteit fase 62                                                                                          */
-    #define prmomx62risvrw              1489 /* Ondermaximum OV fase 62                                                                                                        */
-    #define prmprio62risvrw             1490 /* Prioriteitsinstelling OV fase 62                                                                                               */
-    #define prmrisstart62risvrw         1491
-    #define prmrisend62risvrw           1492
-    #define prmriseta62risvrw           1493
-    #define prmrisrole62risvrw          1494
-    #define prmrissubrole62risvrw       1495
-    #define prmrisstationtype62risvrw   1496
-    #define prmrisapproachid62risvrw    1497
-    #define prmrislaneid62risvrw_1      1498
-    #define prmrislaneid62risvrw_2      1499
-    #define prmrto67bus                 1500 /* Ongehinderde rijtijd prioriteit fase 67                                                                                        */
-    #define prmrtbg67bus                1501 /* Beperkt gehinderde rijtijd prioriteit fase 67                                                                                  */
-    #define prmrtg67bus                 1502 /* Gehinderde rijtijd prioriteit fase 67                                                                                          */
-    #define prmomx67bus                 1503 /* Ondermaximum OV fase 67                                                                                                        */
-    #define prmvtgcat67bus              1504 /* Voertuigcategorie DSI voor prio ingreep 67bus                                                                                  */
-    #define prmprio67bus                1505 /* Prioriteitsinstelling OV fase 67                                                                                               */
-    #define prmrto67risov               1506 /* Ongehinderde rijtijd prioriteit fase 67                                                                                        */
-    #define prmrtbg67risov              1507 /* Beperkt gehinderde rijtijd prioriteit fase 67                                                                                  */
-    #define prmrtg67risov               1508 /* Gehinderde rijtijd prioriteit fase 67                                                                                          */
-    #define prmomx67risov               1509 /* Ondermaximum OV fase 67                                                                                                        */
-    #define prmprio67risov              1510 /* Prioriteitsinstelling OV fase 67                                                                                               */
-    #define prmrisstart67risov          1511
-    #define prmrisend67risov            1512
-    #define prmriseta67risov            1513
-    #define prmrisrole67risov           1514
-    #define prmrissubrole67risov        1515
-    #define prmrisstationtype67risov    1516
-    #define prmrisapproachid67risov     1517
-    #define prmrislaneid67risov_1       1518
-    #define prmrto67risvrw              1519 /* Ongehinderde rijtijd prioriteit fase 67                                                                                        */
-    #define prmrtbg67risvrw             1520 /* Beperkt gehinderde rijtijd prioriteit fase 67                                                                                  */
-    #define prmrtg67risvrw              1521 /* Gehinderde rijtijd prioriteit fase 67                                                                                          */
-    #define prmomx67risvrw              1522 /* Ondermaximum OV fase 67                                                                                                        */
-    #define prmprio67risvrw             1523 /* Prioriteitsinstelling OV fase 67                                                                                               */
-    #define prmrisstart67risvrw         1524
-    #define prmrisend67risvrw           1525
-    #define prmriseta67risvrw           1526
-    #define prmrisrole67risvrw          1527
-    #define prmrissubrole67risvrw       1528
-    #define prmrisstationtype67risvrw   1529
-    #define prmrisapproachid67risvrw    1530
-    #define prmrislaneid67risvrw_1      1531
-    #define prmrto68bus                 1532 /* Ongehinderde rijtijd prioriteit fase 68                                                                                        */
-    #define prmrtbg68bus                1533 /* Beperkt gehinderde rijtijd prioriteit fase 68                                                                                  */
-    #define prmrtg68bus                 1534 /* Gehinderde rijtijd prioriteit fase 68                                                                                          */
-    #define prmomx68bus                 1535 /* Ondermaximum OV fase 68                                                                                                        */
-    #define prmvtgcat68bus              1536 /* Voertuigcategorie DSI voor prio ingreep 68bus                                                                                  */
-    #define prmprio68bus                1537 /* Prioriteitsinstelling OV fase 68                                                                                               */
-    #define prmrto68risov               1538 /* Ongehinderde rijtijd prioriteit fase 68                                                                                        */
-    #define prmrtbg68risov              1539 /* Beperkt gehinderde rijtijd prioriteit fase 68                                                                                  */
-    #define prmrtg68risov               1540 /* Gehinderde rijtijd prioriteit fase 68                                                                                          */
-    #define prmomx68risov               1541 /* Ondermaximum OV fase 68                                                                                                        */
-    #define prmprio68risov              1542 /* Prioriteitsinstelling OV fase 68                                                                                               */
-    #define prmrisstart68risov          1543
-    #define prmrisend68risov            1544
-    #define prmriseta68risov            1545
-    #define prmrisrole68risov           1546
-    #define prmrissubrole68risov        1547
-    #define prmrisstationtype68risov    1548
-    #define prmrisapproachid68risov     1549
-    #define prmrislaneid68risov_1       1550
-    #define prmrislaneid68risov_2       1551
-    #define prmrto68risvrw              1552 /* Ongehinderde rijtijd prioriteit fase 68                                                                                        */
-    #define prmrtbg68risvrw             1553 /* Beperkt gehinderde rijtijd prioriteit fase 68                                                                                  */
-    #define prmrtg68risvrw              1554 /* Gehinderde rijtijd prioriteit fase 68                                                                                          */
-    #define prmomx68risvrw              1555 /* Ondermaximum OV fase 68                                                                                                        */
-    #define prmprio68risvrw             1556 /* Prioriteitsinstelling OV fase 68                                                                                               */
-    #define prmrisstart68risvrw         1557
-    #define prmrisend68risvrw           1558
-    #define prmriseta68risvrw           1559
-    #define prmrisrole68risvrw          1560
-    #define prmrissubrole68risvrw       1561
-    #define prmrisstationtype68risvrw   1562
-    #define prmrisapproachid68risvrw    1563
-    #define prmrislaneid68risvrw_1      1564
-    #define prmrislaneid68risvrw_2      1565
-    #define prmpriohd02                 1566 /* Prioriteitsinstelling HD fase 02                                                                                               */
-    #define prmrtohd02                  1567 /* Ongehinderde rijtijd HD fase 02                                                                                                */
-    #define prmrtbghd02                 1568 /* Beperkt gehinderde rijtijd HD fase 02                                                                                          */
-    #define prmrtghd02                  1569 /* Gehinderde rijtijd HD fase 02                                                                                                  */
-    #define prmrisstart02hd             1570
-    #define prmrisend02hd               1571
-    #define prmriseta02hd               1572
-    #define prmrisrole02hd              1573
-    #define prmrissubrole02hd           1574
-    #define prmrisstationtype02hd       1575
-    #define prmrisapproachid02hd        1576
-    #define prmrislaneid02hd_1          1577
-    #define prmrislaneid02hd_2          1578
-    #define prmpriohd03                 1579 /* Prioriteitsinstelling HD fase 03                                                                                               */
-    #define prmrtohd03                  1580 /* Ongehinderde rijtijd HD fase 03                                                                                                */
-    #define prmrtbghd03                 1581 /* Beperkt gehinderde rijtijd HD fase 03                                                                                          */
-    #define prmrtghd03                  1582 /* Gehinderde rijtijd HD fase 03                                                                                                  */
-    #define prmrisstart03hd             1583
-    #define prmrisend03hd               1584
-    #define prmriseta03hd               1585
-    #define prmrisrole03hd              1586
-    #define prmrissubrole03hd           1587
-    #define prmrisstationtype03hd       1588
-    #define prmrisapproachid03hd        1589
-    #define prmrislaneid03hd_1          1590
-    #define prmpriohd05                 1591 /* Prioriteitsinstelling HD fase 05                                                                                               */
-    #define prmrtohd05                  1592 /* Ongehinderde rijtijd HD fase 05                                                                                                */
-    #define prmrtbghd05                 1593 /* Beperkt gehinderde rijtijd HD fase 05                                                                                          */
-    #define prmrtghd05                  1594 /* Gehinderde rijtijd HD fase 05                                                                                                  */
-    #define prmrisstart05hd             1595
-    #define prmrisend05hd               1596
-    #define prmriseta05hd               1597
-    #define prmrisrole05hd              1598
-    #define prmrissubrole05hd           1599
-    #define prmrisstationtype05hd       1600
-    #define prmrisapproachid05hd        1601
-    #define prmrislaneid05hd_1          1602
-    #define prmpriohd08                 1603 /* Prioriteitsinstelling HD fase 08                                                                                               */
-    #define prmrtohd08                  1604 /* Ongehinderde rijtijd HD fase 08                                                                                                */
-    #define prmrtbghd08                 1605 /* Beperkt gehinderde rijtijd HD fase 08                                                                                          */
-    #define prmrtghd08                  1606 /* Gehinderde rijtijd HD fase 08                                                                                                  */
-    #define prmrisstart08hd             1607
-    #define prmrisend08hd               1608
-    #define prmriseta08hd               1609
-    #define prmrisrole08hd              1610
-    #define prmrissubrole08hd           1611
-    #define prmrisstationtype08hd       1612
-    #define prmrisapproachid08hd        1613
-    #define prmrislaneid08hd_1          1614
-    #define prmrislaneid08hd_2          1615
-    #define prmpriohd09                 1616 /* Prioriteitsinstelling HD fase 09                                                                                               */
-    #define prmrtohd09                  1617 /* Ongehinderde rijtijd HD fase 09                                                                                                */
-    #define prmrtbghd09                 1618 /* Beperkt gehinderde rijtijd HD fase 09                                                                                          */
-    #define prmrtghd09                  1619 /* Gehinderde rijtijd HD fase 09                                                                                                  */
-    #define prmrisstart09hd             1620
-    #define prmrisend09hd               1621
-    #define prmriseta09hd               1622
-    #define prmrisrole09hd              1623
-    #define prmrissubrole09hd           1624
-    #define prmrisstationtype09hd       1625
-    #define prmrisapproachid09hd        1626
-    #define prmrislaneid09hd_1          1627
-    #define prmpriohd11                 1628 /* Prioriteitsinstelling HD fase 11                                                                                               */
-    #define prmrtohd11                  1629 /* Ongehinderde rijtijd HD fase 11                                                                                                */
-    #define prmrtbghd11                 1630 /* Beperkt gehinderde rijtijd HD fase 11                                                                                          */
-    #define prmrtghd11                  1631 /* Gehinderde rijtijd HD fase 11                                                                                                  */
-    #define prmrisstart11hd             1632
-    #define prmrisend11hd               1633
-    #define prmriseta11hd               1634
-    #define prmrisrole11hd              1635
-    #define prmrissubrole11hd           1636
-    #define prmrisstationtype11hd       1637
-    #define prmrisapproachid11hd        1638
-    #define prmrislaneid11hd_1          1639
-    #define prmpriohd61                 1640 /* Prioriteitsinstelling HD fase 61                                                                                               */
-    #define prmrtohd61                  1641 /* Ongehinderde rijtijd HD fase 61                                                                                                */
-    #define prmrtbghd61                 1642 /* Beperkt gehinderde rijtijd HD fase 61                                                                                          */
-    #define prmrtghd61                  1643 /* Gehinderde rijtijd HD fase 61                                                                                                  */
-    #define prmrisstart61hd             1644
-    #define prmrisend61hd               1645
-    #define prmriseta61hd               1646
-    #define prmrisrole61hd              1647
-    #define prmrissubrole61hd           1648
-    #define prmrisstationtype61hd       1649
-    #define prmrisapproachid61hd        1650
-    #define prmrislaneid61hd_1          1651
-    #define prmpriohd62                 1652 /* Prioriteitsinstelling HD fase 62                                                                                               */
-    #define prmrtohd62                  1653 /* Ongehinderde rijtijd HD fase 62                                                                                                */
-    #define prmrtbghd62                 1654 /* Beperkt gehinderde rijtijd HD fase 62                                                                                          */
-    #define prmrtghd62                  1655 /* Gehinderde rijtijd HD fase 62                                                                                                  */
-    #define prmrisstart62hd             1656
-    #define prmrisend62hd               1657
-    #define prmriseta62hd               1658
-    #define prmrisrole62hd              1659
-    #define prmrissubrole62hd           1660
-    #define prmrisstationtype62hd       1661
-    #define prmrisapproachid62hd        1662
-    #define prmrislaneid62hd_1          1663
-    #define prmrislaneid62hd_2          1664
-    #define prmpriohd67                 1665 /* Prioriteitsinstelling HD fase 67                                                                                               */
-    #define prmrtohd67                  1666 /* Ongehinderde rijtijd HD fase 67                                                                                                */
-    #define prmrtbghd67                 1667 /* Beperkt gehinderde rijtijd HD fase 67                                                                                          */
-    #define prmrtghd67                  1668 /* Gehinderde rijtijd HD fase 67                                                                                                  */
-    #define prmrisstart67hd             1669
-    #define prmrisend67hd               1670
-    #define prmriseta67hd               1671
-    #define prmrisrole67hd              1672
-    #define prmrissubrole67hd           1673
-    #define prmrisstationtype67hd       1674
-    #define prmrisapproachid67hd        1675
-    #define prmrislaneid67hd_1          1676
-    #define prmpriohd68                 1677 /* Prioriteitsinstelling HD fase 68                                                                                               */
-    #define prmrtohd68                  1678 /* Ongehinderde rijtijd HD fase 68                                                                                                */
-    #define prmrtbghd68                 1679 /* Beperkt gehinderde rijtijd HD fase 68                                                                                          */
-    #define prmrtghd68                  1680 /* Gehinderde rijtijd HD fase 68                                                                                                  */
-    #define prmrisstart68hd             1681
-    #define prmrisend68hd               1682
-    #define prmriseta68hd               1683
-    #define prmrisrole68hd              1684
-    #define prmrissubrole68hd           1685
-    #define prmrisstationtype68hd       1686
-    #define prmrisapproachid68hd        1687
-    #define prmrislaneid68hd_1          1688
-    #define prmrislaneid68hd_2          1689
-    #define prmkarsg02                  1690 /* Signaalgroep nummer voor fase 02 bij inmelding via DSI                                                                         */
-    #define prmkarsg03                  1691 /* Signaalgroep nummer voor fase 03 bij inmelding via DSI                                                                         */
-    #define prmkarsg05                  1692 /* Signaalgroep nummer voor fase 05 bij inmelding via DSI                                                                         */
-    #define prmkarsg08                  1693 /* Signaalgroep nummer voor fase 08 bij inmelding via DSI                                                                         */
-    #define prmkarsg09                  1694 /* Signaalgroep nummer voor fase 09 bij inmelding via DSI                                                                         */
-    #define prmkarsg11                  1695 /* Signaalgroep nummer voor fase 11 bij inmelding via DSI                                                                         */
-    #define prmkarsg61                  1696 /* Signaalgroep nummer voor fase 61 bij inmelding via DSI                                                                         */
-    #define prmkarsg62                  1697 /* Signaalgroep nummer voor fase 62 bij inmelding via DSI                                                                         */
-    #define prmkarsg67                  1698 /* Signaalgroep nummer voor fase 67 bij inmelding via DSI                                                                         */
-    #define prmkarsg68                  1699 /* Signaalgroep nummer voor fase 68 bij inmelding via DSI                                                                         */
-    #define prmkarsghd02                1700 /* Signaalgroep nummer voor fase 02 bij inmelding HD via DSI                                                                      */
-    #define prmkarsghd03                1701 /* Signaalgroep nummer voor fase 03 bij inmelding HD via DSI                                                                      */
-    #define prmkarsghd05                1702 /* Signaalgroep nummer voor fase 05 bij inmelding HD via DSI                                                                      */
-    #define prmkarsghd08                1703 /* Signaalgroep nummer voor fase 08 bij inmelding HD via DSI                                                                      */
-    #define prmkarsghd09                1704 /* Signaalgroep nummer voor fase 09 bij inmelding HD via DSI                                                                      */
-    #define prmkarsghd11                1705 /* Signaalgroep nummer voor fase 11 bij inmelding HD via DSI                                                                      */
-    #define prmkarsghd61                1706 /* Signaalgroep nummer voor fase 61 bij inmelding HD via DSI                                                                      */
-    #define prmkarsghd62                1707 /* Signaalgroep nummer voor fase 62 bij inmelding HD via DSI                                                                      */
-    #define prmkarsghd67                1708 /* Signaalgroep nummer voor fase 67 bij inmelding HD via DSI                                                                      */
-    #define prmkarsghd68                1709 /* Signaalgroep nummer voor fase 68 bij inmelding HD via DSI                                                                      */
-    #define prmstkp1                    1710 /* Start klokperiode dag                                                                                                          */
-    #define prmetkp1                    1711 /* Einde klokperiode dag                                                                                                          */
-    #define prmdckp1                    1712 /* Dagsoort klokperiode dag                                                                                                       */
-    #define prmstkp2                    1713 /* Start klokperiode ochtend                                                                                                      */
-    #define prmetkp2                    1714 /* Einde klokperiode ochtend                                                                                                      */
-    #define prmdckp2                    1715 /* Dagsoort klokperiode ochtend                                                                                                   */
-    #define prmstkp3                    1716 /* Start klokperiode avond                                                                                                        */
-    #define prmetkp3                    1717 /* Einde klokperiode avond                                                                                                        */
-    #define prmdckp3                    1718 /* Dagsoort klokperiode avond                                                                                                     */
-    #define prmstkp4                    1719 /* Start klokperiode koopavond                                                                                                    */
-    #define prmetkp4                    1720 /* Einde klokperiode koopavond                                                                                                    */
-    #define prmdckp4                    1721 /* Dagsoort klokperiode koopavond                                                                                                 */
-    #define prmstkp5                    1722 /* Start klokperiode weekend                                                                                                      */
-    #define prmetkp5                    1723 /* Einde klokperiode weekend                                                                                                      */
-    #define prmdckp5                    1724 /* Dagsoort klokperiode weekend                                                                                                   */
-    #define prmstkp6                    1725 /* Start klokperiode reserve                                                                                                      */
-    #define prmetkp6                    1726 /* Einde klokperiode reserve                                                                                                      */
-    #define prmdckp6                    1727 /* Dagsoort klokperiode reserve                                                                                                   */
-    #define prmmg2_02                   1728 /* Maximale groentijd MG2 02                                                                                                      */
-    #define prmmg2_03                   1729 /* Maximale groentijd MG2 03                                                                                                      */
-    #define prmmg2_05                   1730 /* Maximale groentijd MG2 05                                                                                                      */
-    #define prmmg2_08                   1731 /* Maximale groentijd MG2 08                                                                                                      */
-    #define prmmg2_09                   1732 /* Maximale groentijd MG2 09                                                                                                      */
-    #define prmmg2_11                   1733 /* Maximale groentijd MG2 11                                                                                                      */
-    #define prmmg2_21                   1734 /* Maximale groentijd MG2 21                                                                                                      */
-    #define prmmg2_22                   1735 /* Maximale groentijd MG2 22                                                                                                      */
-    #define prmmg2_24                   1736 /* Maximale groentijd MG2 24                                                                                                      */
-    #define prmmg2_26                   1737 /* Maximale groentijd MG2 26                                                                                                      */
-    #define prmmg2_28                   1738 /* Maximale groentijd MG2 28                                                                                                      */
-    #define prmmg2_61                   1739 /* Maximale groentijd MG2 61                                                                                                      */
-    #define prmmg2_62                   1740 /* Maximale groentijd MG2 62                                                                                                      */
-    #define prmmg2_67                   1741 /* Maximale groentijd MG2 67                                                                                                      */
-    #define prmmg2_68                   1742 /* Maximale groentijd MG2 68                                                                                                      */
-    #define prmmg2_81                   1743 /* Maximale groentijd MG2 81                                                                                                      */
-    #define prmmg2_82                   1744 /* Maximale groentijd MG2 82                                                                                                      */
-    #define prmmg2_84                   1745 /* Maximale groentijd MG2 84                                                                                                      */
-    #define prmmg3_02                   1746 /* Maximale groentijd MG3 02                                                                                                      */
-    #define prmmg3_03                   1747 /* Maximale groentijd MG3 03                                                                                                      */
-    #define prmmg3_05                   1748 /* Maximale groentijd MG3 05                                                                                                      */
-    #define prmmg3_08                   1749 /* Maximale groentijd MG3 08                                                                                                      */
-    #define prmmg3_09                   1750 /* Maximale groentijd MG3 09                                                                                                      */
-    #define prmmg3_11                   1751 /* Maximale groentijd MG3 11                                                                                                      */
-    #define prmmg3_21                   1752 /* Maximale groentijd MG3 21                                                                                                      */
-    #define prmmg3_22                   1753 /* Maximale groentijd MG3 22                                                                                                      */
-    #define prmmg3_24                   1754 /* Maximale groentijd MG3 24                                                                                                      */
-    #define prmmg3_26                   1755 /* Maximale groentijd MG3 26                                                                                                      */
-    #define prmmg3_28                   1756 /* Maximale groentijd MG3 28                                                                                                      */
-    #define prmmg3_61                   1757 /* Maximale groentijd MG3 61                                                                                                      */
-    #define prmmg3_62                   1758 /* Maximale groentijd MG3 62                                                                                                      */
-    #define prmmg3_67                   1759 /* Maximale groentijd MG3 67                                                                                                      */
-    #define prmmg3_68                   1760 /* Maximale groentijd MG3 68                                                                                                      */
-    #define prmmg3_81                   1761 /* Maximale groentijd MG3 81                                                                                                      */
-    #define prmmg3_82                   1762 /* Maximale groentijd MG3 82                                                                                                      */
-    #define prmmg3_84                   1763 /* Maximale groentijd MG3 84                                                                                                      */
-    #define prmmg4_02                   1764 /* Maximale groentijd MG4 02                                                                                                      */
-    #define prmmg4_03                   1765 /* Maximale groentijd MG4 03                                                                                                      */
-    #define prmmg4_05                   1766 /* Maximale groentijd MG4 05                                                                                                      */
-    #define prmmg4_08                   1767 /* Maximale groentijd MG4 08                                                                                                      */
-    #define prmmg4_09                   1768 /* Maximale groentijd MG4 09                                                                                                      */
-    #define prmmg4_11                   1769 /* Maximale groentijd MG4 11                                                                                                      */
-    #define prmmg4_21                   1770 /* Maximale groentijd MG4 21                                                                                                      */
-    #define prmmg4_22                   1771 /* Maximale groentijd MG4 22                                                                                                      */
-    #define prmmg4_24                   1772 /* Maximale groentijd MG4 24                                                                                                      */
-    #define prmmg4_26                   1773 /* Maximale groentijd MG4 26                                                                                                      */
-    #define prmmg4_28                   1774 /* Maximale groentijd MG4 28                                                                                                      */
-    #define prmmg4_61                   1775 /* Maximale groentijd MG4 61                                                                                                      */
-    #define prmmg4_62                   1776 /* Maximale groentijd MG4 62                                                                                                      */
-    #define prmmg4_67                   1777 /* Maximale groentijd MG4 67                                                                                                      */
-    #define prmmg4_68                   1778 /* Maximale groentijd MG4 68                                                                                                      */
-    #define prmmg4_81                   1779 /* Maximale groentijd MG4 81                                                                                                      */
-    #define prmmg4_82                   1780 /* Maximale groentijd MG4 82                                                                                                      */
-    #define prmmg4_84                   1781 /* Maximale groentijd MG4 84                                                                                                      */
-    #define prmmg5_02                   1782 /* Maximale groentijd MG5 02                                                                                                      */
-    #define prmmg5_03                   1783 /* Maximale groentijd MG5 03                                                                                                      */
-    #define prmmg5_05                   1784 /* Maximale groentijd MG5 05                                                                                                      */
-    #define prmmg5_08                   1785 /* Maximale groentijd MG5 08                                                                                                      */
-    #define prmmg5_09                   1786 /* Maximale groentijd MG5 09                                                                                                      */
-    #define prmmg5_11                   1787 /* Maximale groentijd MG5 11                                                                                                      */
-    #define prmmg5_21                   1788 /* Maximale groentijd MG5 21                                                                                                      */
-    #define prmmg5_22                   1789 /* Maximale groentijd MG5 22                                                                                                      */
-    #define prmmg5_24                   1790 /* Maximale groentijd MG5 24                                                                                                      */
-    #define prmmg5_26                   1791 /* Maximale groentijd MG5 26                                                                                                      */
-    #define prmmg5_28                   1792 /* Maximale groentijd MG5 28                                                                                                      */
-    #define prmmg5_61                   1793 /* Maximale groentijd MG5 61                                                                                                      */
-    #define prmmg5_62                   1794 /* Maximale groentijd MG5 62                                                                                                      */
-    #define prmmg5_67                   1795 /* Maximale groentijd MG5 67                                                                                                      */
-    #define prmmg5_68                   1796 /* Maximale groentijd MG5 68                                                                                                      */
-    #define prmmg5_81                   1797 /* Maximale groentijd MG5 81                                                                                                      */
-    #define prmmg5_82                   1798 /* Maximale groentijd MG5 82                                                                                                      */
-    #define prmmg5_84                   1799 /* Maximale groentijd MG5 84                                                                                                      */
-    #define prmmg6_02                   1800 /* Maximale groentijd MG6 02                                                                                                      */
-    #define prmmg6_03                   1801 /* Maximale groentijd MG6 03                                                                                                      */
-    #define prmmg6_05                   1802 /* Maximale groentijd MG6 05                                                                                                      */
-    #define prmmg6_08                   1803 /* Maximale groentijd MG6 08                                                                                                      */
-    #define prmmg6_09                   1804 /* Maximale groentijd MG6 09                                                                                                      */
-    #define prmmg6_11                   1805 /* Maximale groentijd MG6 11                                                                                                      */
-    #define prmmg6_21                   1806 /* Maximale groentijd MG6 21                                                                                                      */
-    #define prmmg6_22                   1807 /* Maximale groentijd MG6 22                                                                                                      */
-    #define prmmg6_24                   1808 /* Maximale groentijd MG6 24                                                                                                      */
-    #define prmmg6_26                   1809 /* Maximale groentijd MG6 26                                                                                                      */
-    #define prmmg6_28                   1810 /* Maximale groentijd MG6 28                                                                                                      */
-    #define prmmg6_61                   1811 /* Maximale groentijd MG6 61                                                                                                      */
-    #define prmmg6_62                   1812 /* Maximale groentijd MG6 62                                                                                                      */
-    #define prmmg6_67                   1813 /* Maximale groentijd MG6 67                                                                                                      */
-    #define prmmg6_68                   1814 /* Maximale groentijd MG6 68                                                                                                      */
-    #define prmmg6_81                   1815 /* Maximale groentijd MG6 81                                                                                                      */
-    #define prmmg6_82                   1816 /* Maximale groentijd MG6 82                                                                                                      */
-    #define prmmg6_84                   1817 /* Maximale groentijd MG6 84                                                                                                      */
-    #define prmmg7_02                   1818 /* Maximale groentijd MG7 02                                                                                                      */
-    #define prmmg7_03                   1819 /* Maximale groentijd MG7 03                                                                                                      */
-    #define prmmg7_05                   1820 /* Maximale groentijd MG7 05                                                                                                      */
-    #define prmmg7_08                   1821 /* Maximale groentijd MG7 08                                                                                                      */
-    #define prmmg7_09                   1822 /* Maximale groentijd MG7 09                                                                                                      */
-    #define prmmg7_11                   1823 /* Maximale groentijd MG7 11                                                                                                      */
-    #define prmmg7_21                   1824 /* Maximale groentijd MG7 21                                                                                                      */
-    #define prmmg7_22                   1825 /* Maximale groentijd MG7 22                                                                                                      */
-    #define prmmg7_24                   1826 /* Maximale groentijd MG7 24                                                                                                      */
-    #define prmmg7_26                   1827 /* Maximale groentijd MG7 26                                                                                                      */
-    #define prmmg7_28                   1828 /* Maximale groentijd MG7 28                                                                                                      */
-    #define prmmg7_61                   1829 /* Maximale groentijd MG7 61                                                                                                      */
-    #define prmmg7_62                   1830 /* Maximale groentijd MG7 62                                                                                                      */
-    #define prmmg7_67                   1831 /* Maximale groentijd MG7 67                                                                                                      */
-    #define prmmg7_68                   1832 /* Maximale groentijd MG7 68                                                                                                      */
-    #define prmmg7_81                   1833 /* Maximale groentijd MG7 81                                                                                                      */
-    #define prmmg7_82                   1834 /* Maximale groentijd MG7 82                                                                                                      */
-    #define prmmg7_84                   1835 /* Maximale groentijd MG7 84                                                                                                      */
-    #define prmrisapproachid02          1836 /* Approach id voor fase 02                                                                                                       */
-    #define prmrisapproachid03          1837 /* Approach id voor fase 03                                                                                                       */
-    #define prmrisapproachid05          1838 /* Approach id voor fase 05                                                                                                       */
-    #define prmrisapproachid08          1839 /* Approach id voor fase 08                                                                                                       */
-    #define prmrisapproachid09          1840 /* Approach id voor fase 09                                                                                                       */
-    #define prmrisapproachid11          1841 /* Approach id voor fase 11                                                                                                       */
-    #define prmrisapproachid21          1842 /* Approach id voor fase 21                                                                                                       */
-    #define prmrisapproachid22          1843 /* Approach id voor fase 22                                                                                                       */
-    #define prmrisapproachid24          1844 /* Approach id voor fase 24                                                                                                       */
-    #define prmrisapproachid26          1845 /* Approach id voor fase 26                                                                                                       */
-    #define prmrisapproachid28          1846 /* Approach id voor fase 28                                                                                                       */
-    #define prmrisapproachid31          1847 /* Approach id voor fase 31                                                                                                       */
-    #define prmrisapproachid32          1848 /* Approach id voor fase 32                                                                                                       */
-    #define prmrisapproachid33          1849 /* Approach id voor fase 33                                                                                                       */
-    #define prmrisapproachid34          1850 /* Approach id voor fase 34                                                                                                       */
-    #define prmrisapproachid38          1851 /* Approach id voor fase 38                                                                                                       */
-    #define prmrisapproachid61          1852 /* Approach id voor fase 61                                                                                                       */
-    #define prmrisapproachid62          1853 /* Approach id voor fase 62                                                                                                       */
-    #define prmrisapproachid67          1854 /* Approach id voor fase 67                                                                                                       */
-    #define prmrisapproachid68          1855 /* Approach id voor fase 68                                                                                                       */
-    #define prmrisapproachid81          1856 /* Approach id voor fase 81                                                                                                       */
-    #define prmrisapproachid82          1857 /* Approach id voor fase 82                                                                                                       */
-    #define prmrisapproachid84          1858 /* Approach id voor fase 84                                                                                                       */
-    #define prmrislaneid02_1            1859 /* Lane id voor lane met index 1 bij fase 02                                                                                      */
-    #define prmrislaneid02_2            1860 /* Lane id voor lane met index 2 bij fase 02                                                                                      */
-    #define prmrislaneid03_1            1861 /* Lane id voor lane met index 1 bij fase 03                                                                                      */
-    #define prmrislaneid05_1            1862 /* Lane id voor lane met index 1 bij fase 05                                                                                      */
-    #define prmrislaneid08_1            1863 /* Lane id voor lane met index 1 bij fase 08                                                                                      */
-    #define prmrislaneid08_2            1864 /* Lane id voor lane met index 2 bij fase 08                                                                                      */
-    #define prmrislaneid09_1            1865 /* Lane id voor lane met index 1 bij fase 09                                                                                      */
-    #define prmrislaneid11_1            1866 /* Lane id voor lane met index 1 bij fase 11                                                                                      */
-    #define prmrislaneid21_1            1867 /* Lane id voor lane met index 1 bij fase 21                                                                                      */
-    #define prmrislaneid22_1            1868 /* Lane id voor lane met index 1 bij fase 22                                                                                      */
-    #define prmrislaneid24_1            1869 /* Lane id voor lane met index 1 bij fase 24                                                                                      */
-    #define prmrislaneid26_1            1870 /* Lane id voor lane met index 1 bij fase 26                                                                                      */
-    #define prmrislaneid28_1            1871 /* Lane id voor lane met index 1 bij fase 28                                                                                      */
-    #define prmrislaneid31_1            1872 /* Lane id voor lane met index 1 bij fase 31                                                                                      */
-    #define prmrislaneid31_2            1873 /* Lane id voor lane met index 2 bij fase 31                                                                                      */
-    #define prmrislaneid32_1            1874 /* Lane id voor lane met index 1 bij fase 32                                                                                      */
-    #define prmrislaneid32_2            1875 /* Lane id voor lane met index 2 bij fase 32                                                                                      */
-    #define prmrislaneid33_1            1876 /* Lane id voor lane met index 1 bij fase 33                                                                                      */
-    #define prmrislaneid33_2            1877 /* Lane id voor lane met index 2 bij fase 33                                                                                      */
-    #define prmrislaneid34_1            1878 /* Lane id voor lane met index 1 bij fase 34                                                                                      */
-    #define prmrislaneid34_2            1879 /* Lane id voor lane met index 2 bij fase 34                                                                                      */
-    #define prmrislaneid38_1            1880 /* Lane id voor lane met index 1 bij fase 38                                                                                      */
-    #define prmrislaneid38_2            1881 /* Lane id voor lane met index 2 bij fase 38                                                                                      */
-    #define prmrislaneid61_1            1882 /* Lane id voor lane met index 1 bij fase 61                                                                                      */
-    #define prmrislaneid62_1            1883 /* Lane id voor lane met index 1 bij fase 62                                                                                      */
-    #define prmrislaneid62_2            1884 /* Lane id voor lane met index 2 bij fase 62                                                                                      */
-    #define prmrislaneid67_1            1885 /* Lane id voor lane met index 1 bij fase 67                                                                                      */
-    #define prmrislaneid68_1            1886 /* Lane id voor lane met index 1 bij fase 68                                                                                      */
-    #define prmrislaneid68_2            1887 /* Lane id voor lane met index 2 bij fase 68                                                                                      */
-    #define prmrislaneid81_1            1888 /* Lane id voor lane met index 1 bij fase 81                                                                                      */
-    #define prmrislaneid82_1            1889 /* Lane id voor lane met index 1 bij fase 82                                                                                      */
-    #define prmrislaneid84_1            1890 /* Lane id voor lane met index 1 bij fase 84                                                                                      */
-    #define prmrisastart02mveh1         1891 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 02                                                                   */
-    #define prmrisastart02mveh2         1892 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 02                                                                   */
-    #define prmrisastart03mveh1         1893 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 03                                                                   */
-    #define prmrisastart05mveh1         1894 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 05                                                                   */
-    #define prmrisastart08mveh1         1895 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 08                                                                   */
-    #define prmrisastart08mveh2         1896 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 08                                                                   */
-    #define prmrisastart09mveh1         1897 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 09                                                                   */
-    #define prmrisastart11mveh1         1898 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 11                                                                   */
-    #define prmrisastart21fts1          1899 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 21                                                                   */
-    #define prmrisastart22fts1          1900 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 22                                                                   */
-    #define prmrisastart24fts1          1901 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 24                                                                   */
-    #define prmrisastart26fts1          1902 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 26                                                                   */
-    #define prmrisastart28fts1          1903 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 28                                                                   */
-    #define prmrisastart31vtg1          1904 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisastart31vtg2          1905 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisastart32vtg1          1906 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisastart32vtg2          1907 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisastart33vtg1          1908 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisastart33vtg2          1909 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisastart34vtg1          1910 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisastart34vtg2          1911 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisastart38vtg1          1912 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisastart38vtg2          1913 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisastart61mveh1         1914 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 61                                                                   */
-    #define prmrisastart62mveh1         1915 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisastart62mveh2         1916 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisastart67mveh1         1917 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 67                                                                   */
-    #define prmrisastart68mveh1         1918 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisastart68mveh2         1919 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisastart81fts1          1920 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 81                                                                   */
-    #define prmrisastart82fts1          1921 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 82                                                                   */
-    #define prmrisastart84fts1          1922 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 84                                                                   */
-    #define prmrisaend02mveh1           1923 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
-    #define prmrisaend02mveh2           1924 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
-    #define prmrisaend03mveh1           1925 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 03                                                                   */
-    #define prmrisaend05mveh1           1926 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 05                                                                   */
-    #define prmrisaend08mveh1           1927 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 08                                                                   */
-    #define prmrisaend08mveh2           1928 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 08                                                                   */
-    #define prmrisaend09mveh1           1929 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 09                                                                   */
-    #define prmrisaend11mveh1           1930 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 11                                                                   */
-    #define prmrisaend21fts1            1931 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 21                                                                   */
-    #define prmrisaend22fts1            1932 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 22                                                                   */
-    #define prmrisaend24fts1            1933 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 24                                                                   */
-    #define prmrisaend26fts1            1934 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 26                                                                   */
-    #define prmrisaend28fts1            1935 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 28                                                                   */
-    #define prmrisaend31vtg1            1936 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisaend31vtg2            1937 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisaend32vtg1            1938 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisaend32vtg2            1939 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisaend33vtg1            1940 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisaend33vtg2            1941 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisaend34vtg1            1942 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisaend34vtg2            1943 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisaend38vtg1            1944 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisaend38vtg2            1945 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisaend61mveh1           1946 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 61                                                                   */
-    #define prmrisaend62mveh1           1947 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisaend62mveh2           1948 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisaend67mveh1           1949 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 67                                                                   */
-    #define prmrisaend68mveh1           1950 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisaend68mveh2           1951 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisaend81fts1            1952 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 81                                                                   */
-    #define prmrisaend82fts1            1953 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 82                                                                   */
-    #define prmrisaend84fts1            1954 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 84                                                                   */
-    #define prmrisvstart02mveh1         1955 /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
-    #define prmrisvstart02mveh2         1956 /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
-    #define prmrisvstart03mveh1         1957 /* Afstand van stopstreep tot start verleng gebied RIS fase 03                                                                    */
-    #define prmrisvstart05mveh1         1958 /* Afstand van stopstreep tot start verleng gebied RIS fase 05                                                                    */
-    #define prmrisvstart08mveh1         1959 /* Afstand van stopstreep tot start verleng gebied RIS fase 08                                                                    */
-    #define prmrisvstart08mveh2         1960 /* Afstand van stopstreep tot start verleng gebied RIS fase 08                                                                    */
-    #define prmrisvstart09mveh1         1961 /* Afstand van stopstreep tot start verleng gebied RIS fase 09                                                                    */
-    #define prmrisvstart11mveh1         1962 /* Afstand van stopstreep tot start verleng gebied RIS fase 11                                                                    */
-    #define prmrisvstart21fts1          1963 /* Afstand van stopstreep tot start verleng gebied RIS fase 21                                                                    */
-    #define prmrisvstart22fts1          1964 /* Afstand van stopstreep tot start verleng gebied RIS fase 22                                                                    */
-    #define prmrisvstart24fts1          1965 /* Afstand van stopstreep tot start verleng gebied RIS fase 24                                                                    */
-    #define prmrisvstart26fts1          1966 /* Afstand van stopstreep tot start verleng gebied RIS fase 26                                                                    */
-    #define prmrisvstart28fts1          1967 /* Afstand van stopstreep tot start verleng gebied RIS fase 28                                                                    */
-    #define prmrisvstart31vtg1          1968 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
-    #define prmrisvstart31vtg2          1969 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
-    #define prmrisvstart32vtg1          1970 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
-    #define prmrisvstart32vtg2          1971 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
-    #define prmrisvstart33vtg1          1972 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
-    #define prmrisvstart33vtg2          1973 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
-    #define prmrisvstart34vtg1          1974 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
-    #define prmrisvstart34vtg2          1975 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
-    #define prmrisvstart38vtg1          1976 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
-    #define prmrisvstart38vtg2          1977 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
-    #define prmrisvstart61mveh1         1978 /* Afstand van stopstreep tot start verleng gebied RIS fase 61                                                                    */
-    #define prmrisvstart62mveh1         1979 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
-    #define prmrisvstart62mveh2         1980 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
-    #define prmrisvstart67mveh1         1981 /* Afstand van stopstreep tot start verleng gebied RIS fase 67                                                                    */
-    #define prmrisvstart68mveh1         1982 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
-    #define prmrisvstart68mveh2         1983 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
-    #define prmrisvstart81fts1          1984 /* Afstand van stopstreep tot start verleng gebied RIS fase 81                                                                    */
-    #define prmrisvstart82fts1          1985 /* Afstand van stopstreep tot start verleng gebied RIS fase 82                                                                    */
-    #define prmrisvstart84fts1          1986 /* Afstand van stopstreep tot start verleng gebied RIS fase 84                                                                    */
-    #define prmrisvend02mveh1           1987 /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
-    #define prmrisvend02mveh2           1988 /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
-    #define prmrisvend03mveh1           1989 /* Afstand van stopstreep tot einde verleng gebied RIS fase 03                                                                    */
-    #define prmrisvend05mveh1           1990 /* Afstand van stopstreep tot einde verleng gebied RIS fase 05                                                                    */
-    #define prmrisvend08mveh1           1991 /* Afstand van stopstreep tot einde verleng gebied RIS fase 08                                                                    */
-    #define prmrisvend08mveh2           1992 /* Afstand van stopstreep tot einde verleng gebied RIS fase 08                                                                    */
-    #define prmrisvend09mveh1           1993 /* Afstand van stopstreep tot einde verleng gebied RIS fase 09                                                                    */
-    #define prmrisvend11mveh1           1994 /* Afstand van stopstreep tot einde verleng gebied RIS fase 11                                                                    */
-    #define prmrisvend21fts1            1995 /* Afstand van stopstreep tot einde verleng gebied RIS fase 21                                                                    */
-    #define prmrisvend22fts1            1996 /* Afstand van stopstreep tot einde verleng gebied RIS fase 22                                                                    */
-    #define prmrisvend24fts1            1997 /* Afstand van stopstreep tot einde verleng gebied RIS fase 24                                                                    */
-    #define prmrisvend26fts1            1998 /* Afstand van stopstreep tot einde verleng gebied RIS fase 26                                                                    */
-    #define prmrisvend28fts1            1999 /* Afstand van stopstreep tot einde verleng gebied RIS fase 28                                                                    */
-    #define prmrisvend31vtg1            2000 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
-    #define prmrisvend31vtg2            2001 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
-    #define prmrisvend32vtg1            2002 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
-    #define prmrisvend32vtg2            2003 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
-    #define prmrisvend33vtg1            2004 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
-    #define prmrisvend33vtg2            2005 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
-    #define prmrisvend34vtg1            2006 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
-    #define prmrisvend34vtg2            2007 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
-    #define prmrisvend38vtg1            2008 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
-    #define prmrisvend38vtg2            2009 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
-    #define prmrisvend61mveh1           2010 /* Afstand van stopstreep tot einde verleng gebied RIS fase 61                                                                    */
-    #define prmrisvend62mveh1           2011 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
-    #define prmrisvend62mveh2           2012 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
-    #define prmrisvend67mveh1           2013 /* Afstand van stopstreep tot einde verleng gebied RIS fase 67                                                                    */
-    #define prmrisvend68mveh1           2014 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
-    #define prmrisvend68mveh2           2015 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
-    #define prmrisvend81fts1            2016 /* Afstand van stopstreep tot einde verleng gebied RIS fase 81                                                                    */
-    #define prmrisvend82fts1            2017 /* Afstand van stopstreep tot einde verleng gebied RIS fase 82                                                                    */
-    #define prmrisvend84fts1            2018 /* Afstand van stopstreep tot einde verleng gebied RIS fase 84                                                                    */
-    #define prmmkrgd24_3                2019 /* Type verlengen tbv richtinggevoelig verlengen fase 24                                                                          */
-    #define prmrgv                      2020 /* Type RoBuGrover                                                                                                                */
-    #define prmmin_tcyclus              2021 /* Minimale cyclustijd                                                                                                            */
-    #define prmmax_tcyclus              2022 /* Maximale cyclustijd                                                                                                            */
-    #define prmtvg_omhoog               2023 /* Hoeveelheid ophogen TVG                                                                                                        */
-    #define prmtvg_omlaag               2024 /* Hoeveelheid verlagen TVG                                                                                                       */
-    #define prmtvg_verschil             2025 /* Parameter verschil                                                                                                             */
-    #define prmtvg_npr_omlaag           2026 /* Hoeveelheid verlagen TVG bij niet primair                                                                                      */
-    #define prmmintvg_02                2027 /* Minimale verlenggroentijd fase 02                                                                                              */
-    #define prmmaxtvg_02                2028 /* Maximale verlenggroentijd fase 02                                                                                              */
-    #define prmmintvg_03                2029 /* Minimale verlenggroentijd fase 03                                                                                              */
-    #define prmmaxtvg_03                2030 /* Maximale verlenggroentijd fase 03                                                                                              */
-    #define prmmintvg_05                2031 /* Minimale verlenggroentijd fase 05                                                                                              */
-    #define prmmaxtvg_05                2032 /* Maximale verlenggroentijd fase 05                                                                                              */
-    #define prmmintvg_08                2033 /* Minimale verlenggroentijd fase 08                                                                                              */
-    #define prmmaxtvg_08                2034 /* Maximale verlenggroentijd fase 08                                                                                              */
-    #define prmmintvg_09                2035 /* Minimale verlenggroentijd fase 09                                                                                              */
-    #define prmmaxtvg_09                2036 /* Maximale verlenggroentijd fase 09                                                                                              */
-    #define prmmintvg_11                2037 /* Minimale verlenggroentijd fase 11                                                                                              */
-    #define prmmaxtvg_11                2038 /* Maximale verlenggroentijd fase 11                                                                                              */
-    #define prmmintvg_22                2039 /* Minimale verlenggroentijd fase 22                                                                                              */
-    #define prmmaxtvg_22                2040 /* Maximale verlenggroentijd fase 22                                                                                              */
-    #define prmmintvg_28                2041 /* Minimale verlenggroentijd fase 28                                                                                              */
-    #define prmmaxtvg_28                2042 /* Maximale verlenggroentijd fase 28                                                                                              */
-    #define prmmintvg_68                2043 /* Minimale verlenggroentijd fase 68                                                                                              */
-    #define prmmaxtvg_68                2044 /* Maximale verlenggroentijd fase 68                                                                                              */
-    #define prmmaxtvgvlog               2045 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
-    #define prmmaxtfbvlog               2046 /* Parameter VLOG max. wachttijd na aanvraag                                                                                      */
-    #define prmmlfpr02                  2047 /* Maximaal aantal modules vooruit fase 02                                                                                        */
-    #define prmmlfpr03                  2048 /* Maximaal aantal modules vooruit fase 03                                                                                        */
-    #define prmmlfpr05                  2049 /* Maximaal aantal modules vooruit fase 05                                                                                        */
-    #define prmmlfpr08                  2050 /* Maximaal aantal modules vooruit fase 08                                                                                        */
-    #define prmmlfpr09                  2051 /* Maximaal aantal modules vooruit fase 09                                                                                        */
-    #define prmmlfpr11                  2052 /* Maximaal aantal modules vooruit fase 11                                                                                        */
-    #define prmmlfpr21                  2053 /* Maximaal aantal modules vooruit fase 21                                                                                        */
-    #define prmmlfpr22                  2054 /* Maximaal aantal modules vooruit fase 22                                                                                        */
-    #define prmmlfpr24                  2055 /* Maximaal aantal modules vooruit fase 24                                                                                        */
-    #define prmmlfpr26                  2056 /* Maximaal aantal modules vooruit fase 26                                                                                        */
-    #define prmmlfpr28                  2057 /* Maximaal aantal modules vooruit fase 28                                                                                        */
-    #define prmmlfpr31                  2058 /* Maximaal aantal modules vooruit fase 31                                                                                        */
-    #define prmmlfpr32                  2059 /* Maximaal aantal modules vooruit fase 32                                                                                        */
-    #define prmmlfpr33                  2060 /* Maximaal aantal modules vooruit fase 33                                                                                        */
-    #define prmmlfpr34                  2061 /* Maximaal aantal modules vooruit fase 34                                                                                        */
-    #define prmmlfpr38                  2062 /* Maximaal aantal modules vooruit fase 38                                                                                        */
-    #define prmmlfpr61                  2063 /* Maximaal aantal modules vooruit fase 61                                                                                        */
-    #define prmmlfpr62                  2064 /* Maximaal aantal modules vooruit fase 62                                                                                        */
-    #define prmmlfpr67                  2065 /* Maximaal aantal modules vooruit fase 67                                                                                        */
-    #define prmmlfpr68                  2066 /* Maximaal aantal modules vooruit fase 68                                                                                        */
-    #define prmmlfpr81                  2067 /* Maximaal aantal modules vooruit fase 81                                                                                        */
-    #define prmmlfpr82                  2068 /* Maximaal aantal modules vooruit fase 82                                                                                        */
-    #define prmmlfpr84                  2069 /* Maximaal aantal modules vooruit fase 84                                                                                        */
-    #define prmaltg02                   2070 /* Minimale groentijd bij alternatieve realisatie fase 02                                                                         */
-    #define prmaltp02                   2071 /* Minimale ruimte tbv alternatieve realisatie fase 02                                                                            */
-    #define prmaltg03                   2072 /* Minimale groentijd bij alternatieve realisatie fase 03                                                                         */
-    #define prmaltp03                   2073 /* Minimale ruimte tbv alternatieve realisatie fase 03                                                                            */
-    #define prmaltg05                   2074 /* Minimale groentijd bij alternatieve realisatie fase 05                                                                         */
-    #define prmaltp05                   2075 /* Minimale ruimte tbv alternatieve realisatie fase 05                                                                            */
-    #define prmaltg08                   2076 /* Minimale groentijd bij alternatieve realisatie fase 08                                                                         */
-    #define prmaltp08                   2077 /* Minimale ruimte tbv alternatieve realisatie fase 08                                                                            */
-    #define prmaltg09                   2078 /* Minimale groentijd bij alternatieve realisatie fase 09                                                                         */
-    #define prmaltp09                   2079 /* Minimale ruimte tbv alternatieve realisatie fase 09                                                                            */
-    #define prmaltg11                   2080 /* Minimale groentijd bij alternatieve realisatie fase 11                                                                         */
-    #define prmaltp11                   2081 /* Minimale ruimte tbv alternatieve realisatie fase 11                                                                            */
-    #define prmaltg21                   2082 /* Minimale groentijd bij alternatieve realisatie fase 21                                                                         */
-    #define prmaltp21                   2083 /* Minimale ruimte tbv alternatieve realisatie fase 21                                                                            */
-    #define prmaltg22                   2084 /* Minimale groentijd bij alternatieve realisatie fase 22                                                                         */
-    #define prmaltp2232                 2085 /* Minimale ruimte tbv alternatieve realisatie fasen 22, 32                                                                       */
-    #define prmaltg24                   2086 /* Minimale groentijd bij alternatieve realisatie fase 24                                                                         */
-    #define prmaltp2434                 2087 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
-    #define prmaltg26                   2088 /* Minimale groentijd bij alternatieve realisatie fase 26                                                                         */
-    #define prmaltp26                   2089 /* Minimale ruimte tbv alternatieve realisatie fase 26                                                                            */
-    #define prmaltg28                   2090 /* Minimale groentijd bij alternatieve realisatie fase 28                                                                         */
-    #define prmaltp28                   2091 /* Minimale ruimte tbv alternatieve realisatie fase 28                                                                            */
-    #define prmaltg31                   2092 /* Minimale groentijd bij alternatieve realisatie fase 31                                                                         */
-    #define prmaltp31                   2093 /* Minimale ruimte tbv alternatieve realisatie fase 31                                                                            */
-    #define prmaltg32                   2094 /* Minimale groentijd bij alternatieve realisatie fase 32                                                                         */
-    #define prmaltg33                   2095 /* Minimale groentijd bij alternatieve realisatie fase 33                                                                         */
-    #define prmaltp3384                 2096 /* Minimale ruimte tbv alternatieve realisatie fasen 33, 84                                                                       */
-    #define prmaltg34                   2097 /* Minimale groentijd bij alternatieve realisatie fase 34                                                                         */
-    #define prmaltg38                   2098 /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
-    #define prmaltp38                   2099 /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
-    #define prmaltg61                   2100 /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
-    #define prmaltp61                   2101 /* Minimale ruimte tbv alternatieve realisatie fase 61                                                                            */
-    #define prmaltg62                   2102 /* Minimale groentijd bij alternatieve realisatie fase 62                                                                         */
-    #define prmaltp62                   2103 /* Minimale ruimte tbv alternatieve realisatie fase 62                                                                            */
-    #define prmaltg67                   2104 /* Minimale groentijd bij alternatieve realisatie fase 67                                                                         */
-    #define prmaltp67                   2105 /* Minimale ruimte tbv alternatieve realisatie fase 67                                                                            */
-    #define prmaltg68                   2106 /* Minimale groentijd bij alternatieve realisatie fase 68                                                                         */
-    #define prmaltp68                   2107 /* Minimale ruimte tbv alternatieve realisatie fase 68                                                                            */
-    #define prmaltg81                   2108 /* Minimale groentijd bij alternatieve realisatie fase 81                                                                         */
-    #define prmaltp81                   2109 /* Minimale ruimte tbv alternatieve realisatie fase 81                                                                            */
-    #define prmaltg82                   2110 /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
-    #define prmaltp82                   2111 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
-    #define prmaltg84                   2112 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
-    #define prmstarprogdef              2113 /* Default star programma                                                                                                         */
+    #define prmfb                         23 /* Instelling fasebewaking                                                                                                        */
+    #define prmxx                         24 /* Versiebeheer xx                                                                                                                */
+    #define prmyy                         25 /* Versiebeheer yy                                                                                                                */
+    #define prmzz                         26 /* Versiebeheer zz                                                                                                                */
+    #define prmovmextragroen_02           27
+    #define prmovmmindergroen_02          28
+    #define prmovmextragroen_03           29
+    #define prmovmmindergroen_03          30
+    #define prmovmextragroen_05           31
+    #define prmovmmindergroen_05          32
+    #define prmovmextragroen_08           33
+    #define prmovmmindergroen_08          34
+    #define prmovmextragroen_09           35
+    #define prmovmmindergroen_09          36
+    #define prmovmextragroen_11           37
+    #define prmovmmindergroen_11          38
+    #define prmovmextragroen_61           39
+    #define prmovmmindergroen_61          40
+    #define prmovmextragroen_62           41
+    #define prmovmmindergroen_62          42
+    #define prmovmextragroen_67           43
+    #define prmovmmindergroen_67          44
+    #define prmovmextragroen_68           45
+    #define prmovmmindergroen_68          46
+    #define prmaltb02                     47 /* Alternatief per blok voor fase 02                                                                                              */
+    #define prmaltb03                     48 /* Alternatief per blok voor fase 03                                                                                              */
+    #define prmaltb05                     49 /* Alternatief per blok voor fase 05                                                                                              */
+    #define prmaltb08                     50 /* Alternatief per blok voor fase 08                                                                                              */
+    #define prmaltb09                     51 /* Alternatief per blok voor fase 09                                                                                              */
+    #define prmaltb11                     52 /* Alternatief per blok voor fase 11                                                                                              */
+    #define prmaltb21                     53 /* Alternatief per blok voor fase 21                                                                                              */
+    #define prmaltb22                     54 /* Alternatief per blok voor fase 22                                                                                              */
+    #define prmaltb24                     55 /* Alternatief per blok voor fase 24                                                                                              */
+    #define prmaltb26                     56 /* Alternatief per blok voor fase 26                                                                                              */
+    #define prmaltb28                     57 /* Alternatief per blok voor fase 28                                                                                              */
+    #define prmaltb31                     58 /* Alternatief per blok voor fase 31                                                                                              */
+    #define prmaltb32                     59 /* Alternatief per blok voor fase 32                                                                                              */
+    #define prmaltb33                     60 /* Alternatief per blok voor fase 33                                                                                              */
+    #define prmaltb34                     61 /* Alternatief per blok voor fase 34                                                                                              */
+    #define prmaltb38                     62 /* Alternatief per blok voor fase 38                                                                                              */
+    #define prmaltb61                     63 /* Alternatief per blok voor fase 61                                                                                              */
+    #define prmaltb62                     64 /* Alternatief per blok voor fase 62                                                                                              */
+    #define prmaltb67                     65 /* Alternatief per blok voor fase 67                                                                                              */
+    #define prmaltb68                     66 /* Alternatief per blok voor fase 68                                                                                              */
+    #define prmaltb81                     67 /* Alternatief per blok voor fase 81                                                                                              */
+    #define prmaltb82                     68 /* Alternatief per blok voor fase 82                                                                                              */
+    #define prmaltb84                     69 /* Alternatief per blok voor fase 84                                                                                              */
+    #define prmda02_1a                    70 /* Aanvraag functie voor detector 02_1a                                                                                           */
+    #define prmda02_1b                    71 /* Aanvraag functie voor detector 02_1b                                                                                           */
+    #define prmda02_2a                    72 /* Aanvraag functie voor detector 02_2a                                                                                           */
+    #define prmda02_2b                    73 /* Aanvraag functie voor detector 02_2b                                                                                           */
+    #define prmda02_3a                    74 /* Aanvraag functie voor detector 02_3a                                                                                           */
+    #define prmda02_3b                    75 /* Aanvraag functie voor detector 02_3b                                                                                           */
+    #define prmda02_4a                    76 /* Aanvraag functie voor detector 02_4a                                                                                           */
+    #define prmda02_4b                    77 /* Aanvraag functie voor detector 02_4b                                                                                           */
+    #define prmda03_1                     78 /* Aanvraag functie voor detector 03_1                                                                                            */
+    #define prmda03_2                     79 /* Aanvraag functie voor detector 03_2                                                                                            */
+    #define prmda05_1                     80 /* Aanvraag functie voor detector 05_1                                                                                            */
+    #define prmda05_2                     81 /* Aanvraag functie voor detector 05_2                                                                                            */
+    #define prmda08_1a                    82 /* Aanvraag functie voor detector 08_1a                                                                                           */
+    #define prmda08_1b                    83 /* Aanvraag functie voor detector 08_1b                                                                                           */
+    #define prmda08_2a                    84 /* Aanvraag functie voor detector 08_2a                                                                                           */
+    #define prmda08_2b                    85 /* Aanvraag functie voor detector 08_2b                                                                                           */
+    #define prmda08_3a                    86 /* Aanvraag functie voor detector 08_3a                                                                                           */
+    #define prmda08_3b                    87 /* Aanvraag functie voor detector 08_3b                                                                                           */
+    #define prmda08_4a                    88 /* Aanvraag functie voor detector 08_4a                                                                                           */
+    #define prmda08_4b                    89 /* Aanvraag functie voor detector 08_4b                                                                                           */
+    #define prmda09_1                     90 /* Aanvraag functie voor detector 09_1                                                                                            */
+    #define prmda09_2                     91 /* Aanvraag functie voor detector 09_2                                                                                            */
+    #define prmda09_3                     92 /* Aanvraag functie voor detector 09_3                                                                                            */
+    #define prmda11_1                     93 /* Aanvraag functie voor detector 11_1                                                                                            */
+    #define prmda11_2                     94 /* Aanvraag functie voor detector 11_2                                                                                            */
+    #define prmda11_3                     95 /* Aanvraag functie voor detector 11_3                                                                                            */
+    #define prmda11_4                     96 /* Aanvraag functie voor detector 11_4                                                                                            */
+    #define prmda211                      97 /* Aanvraag functie voor detector 211                                                                                             */
+    #define prmdak21                      98 /* Aanvraag functie voor detector k21                                                                                             */
+    #define prmda22_1                     99 /* Aanvraag functie voor detector 22_1                                                                                            */
+    #define prmdak22                     100 /* Aanvraag functie voor detector k22                                                                                             */
+    #define prmda24_1                    101 /* Aanvraag functie voor detector 24_1                                                                                            */
+    #define prmda24_2                    102 /* Aanvraag functie voor detector 24_2                                                                                            */
+    #define prmda24_3                    103 /* Aanvraag functie voor detector 24_3                                                                                            */
+    #define prmdak24                     104 /* Aanvraag functie voor detector k24                                                                                             */
+    #define prmda261                     105 /* Aanvraag functie voor detector 261                                                                                             */
+    #define prmdak26                     106 /* Aanvraag functie voor detector k26                                                                                             */
+    #define prmda28_1                    107 /* Aanvraag functie voor detector 28_1                                                                                            */
+    #define prmda28_2                    108 /* Aanvraag functie voor detector 28_2                                                                                            */
+    #define prmdak28                     109 /* Aanvraag functie voor detector k28                                                                                             */
+    #define prmdak31a                    110 /* Aanvraag functie voor detector k31a                                                                                            */
+    #define prmdak31b                    111 /* Aanvraag functie voor detector k31b                                                                                            */
+    #define prmdak32a                    112 /* Aanvraag functie voor detector k32a                                                                                            */
+    #define prmdak32b                    113 /* Aanvraag functie voor detector k32b                                                                                            */
+    #define prmdak33a                    114 /* Aanvraag functie voor detector k33a                                                                                            */
+    #define prmdak33b                    115 /* Aanvraag functie voor detector k33b                                                                                            */
+    #define prmdak34a                    116 /* Aanvraag functie voor detector k34a                                                                                            */
+    #define prmdak34b                    117 /* Aanvraag functie voor detector k34b                                                                                            */
+    #define prmdak38a                    118 /* Aanvraag functie voor detector k38a                                                                                            */
+    #define prmdak38b                    119 /* Aanvraag functie voor detector k38b                                                                                            */
+    #define prmda61_1                    120 /* Aanvraag functie voor detector 61_1                                                                                            */
+    #define prmda61_2                    121 /* Aanvraag functie voor detector 61_2                                                                                            */
+    #define prmda62_1a                   122 /* Aanvraag functie voor detector 62_1a                                                                                           */
+    #define prmda62_1b                   123 /* Aanvraag functie voor detector 62_1b                                                                                           */
+    #define prmda62_2a                   124 /* Aanvraag functie voor detector 62_2a                                                                                           */
+    #define prmda62_2b                   125 /* Aanvraag functie voor detector 62_2b                                                                                           */
+    #define prmda67_1                    126 /* Aanvraag functie voor detector 67_1                                                                                            */
+    #define prmda67_2                    127 /* Aanvraag functie voor detector 67_2                                                                                            */
+    #define prmda68_1a                   128 /* Aanvraag functie voor detector 68_1a                                                                                           */
+    #define prmda68_1b                   129 /* Aanvraag functie voor detector 68_1b                                                                                           */
+    #define prmda68_2a                   130 /* Aanvraag functie voor detector 68_2a                                                                                           */
+    #define prmda68_2b                   131 /* Aanvraag functie voor detector 68_2b                                                                                           */
+    #define prmda68_9a                   132 /* Aanvraag functie voor detector 68_9a                                                                                           */
+    #define prmda68_9b                   133 /* Aanvraag functie voor detector 68_9b                                                                                           */
+    #define prmda81_1                    134 /* Aanvraag functie voor detector 81_1                                                                                            */
+    #define prmdak81                     135 /* Aanvraag functie voor detector k81                                                                                             */
+    #define prmda82_1                    136 /* Aanvraag functie voor detector 82_1                                                                                            */
+    #define prmdak82                     137 /* Aanvraag functie voor detector k82                                                                                             */
+    #define prmda84_1                    138 /* Aanvraag functie voor detector 84_1                                                                                            */
+    #define prmdak84                     139 /* Aanvraag functie voor detector k84                                                                                             */
+    #define prmmk02_1a                   140 /* Meetkriterium type voor detector 02_1a                                                                                         */
+    #define prmmk02_1b                   141 /* Meetkriterium type voor detector 02_1b                                                                                         */
+    #define prmmk02_2a                   142 /* Meetkriterium type voor detector 02_2a                                                                                         */
+    #define prmmk02_2b                   143 /* Meetkriterium type voor detector 02_2b                                                                                         */
+    #define prmmk02_3a                   144 /* Meetkriterium type voor detector 02_3a                                                                                         */
+    #define prmmk02_3b                   145 /* Meetkriterium type voor detector 02_3b                                                                                         */
+    #define prmmk02_4a                   146 /* Meetkriterium type voor detector 02_4a                                                                                         */
+    #define prmmk02_4b                   147 /* Meetkriterium type voor detector 02_4b                                                                                         */
+    #define prmmk03_1                    148 /* Meetkriterium type voor detector 03_1                                                                                          */
+    #define prmmk03_2                    149 /* Meetkriterium type voor detector 03_2                                                                                          */
+    #define prmmk05_1                    150 /* Meetkriterium type voor detector 05_1                                                                                          */
+    #define prmmk05_2                    151 /* Meetkriterium type voor detector 05_2                                                                                          */
+    #define prmmk08_1a                   152 /* Meetkriterium type voor detector 08_1a                                                                                         */
+    #define prmmk08_1b                   153 /* Meetkriterium type voor detector 08_1b                                                                                         */
+    #define prmmk08_2a                   154 /* Meetkriterium type voor detector 08_2a                                                                                         */
+    #define prmmk08_2b                   155 /* Meetkriterium type voor detector 08_2b                                                                                         */
+    #define prmmk08_3a                   156 /* Meetkriterium type voor detector 08_3a                                                                                         */
+    #define prmmk08_3b                   157 /* Meetkriterium type voor detector 08_3b                                                                                         */
+    #define prmmk08_4a                   158 /* Meetkriterium type voor detector 08_4a                                                                                         */
+    #define prmmk08_4b                   159 /* Meetkriterium type voor detector 08_4b                                                                                         */
+    #define prmmk09_1                    160 /* Meetkriterium type voor detector 09_1                                                                                          */
+    #define prmmk09_2                    161 /* Meetkriterium type voor detector 09_2                                                                                          */
+    #define prmmk09_3                    162 /* Meetkriterium type voor detector 09_3                                                                                          */
+    #define prmmk11_1                    163 /* Meetkriterium type voor detector 11_1                                                                                          */
+    #define prmmk11_2                    164 /* Meetkriterium type voor detector 11_2                                                                                          */
+    #define prmmk11_3                    165 /* Meetkriterium type voor detector 11_3                                                                                          */
+    #define prmmk11_4                    166 /* Meetkriterium type voor detector 11_4                                                                                          */
+    #define prmmk211                     167 /* Meetkriterium type voor detector 211                                                                                           */
+    #define prmmk22_1                    168 /* Meetkriterium type voor detector 22_1                                                                                          */
+    #define prmmk24_1                    169 /* Meetkriterium type voor detector 24_1                                                                                          */
+    #define prmmk24_2                    170 /* Meetkriterium type voor detector 24_2                                                                                          */
+    #define prmmk24_3                    171 /* Meetkriterium type voor detector 24_3                                                                                          */
+    #define prmmk261                     172 /* Meetkriterium type voor detector 261                                                                                           */
+    #define prmmk28_1                    173 /* Meetkriterium type voor detector 28_1                                                                                          */
+    #define prmmk28_2                    174 /* Meetkriterium type voor detector 28_2                                                                                          */
+    #define prmmk61_1                    175 /* Meetkriterium type voor detector 61_1                                                                                          */
+    #define prmmk61_2                    176 /* Meetkriterium type voor detector 61_2                                                                                          */
+    #define prmmk62_1a                   177 /* Meetkriterium type voor detector 62_1a                                                                                         */
+    #define prmmk62_1b                   178 /* Meetkriterium type voor detector 62_1b                                                                                         */
+    #define prmmk62_2a                   179 /* Meetkriterium type voor detector 62_2a                                                                                         */
+    #define prmmk62_2b                   180 /* Meetkriterium type voor detector 62_2b                                                                                         */
+    #define prmmk67_1                    181 /* Meetkriterium type voor detector 67_1                                                                                          */
+    #define prmmk67_2                    182 /* Meetkriterium type voor detector 67_2                                                                                          */
+    #define prmmk68_1a                   183 /* Meetkriterium type voor detector 68_1a                                                                                         */
+    #define prmmk68_1b                   184 /* Meetkriterium type voor detector 68_1b                                                                                         */
+    #define prmmk68_2a                   185 /* Meetkriterium type voor detector 68_2a                                                                                         */
+    #define prmmk68_2b                   186 /* Meetkriterium type voor detector 68_2b                                                                                         */
+    #define prmmk68_9a                   187 /* Meetkriterium type voor detector 68_9a                                                                                         */
+    #define prmmk68_9b                   188 /* Meetkriterium type voor detector 68_9b                                                                                         */
+    #define prmmk81_1                    189 /* Meetkriterium type voor detector 81_1                                                                                          */
+    #define prmmk82_1                    190 /* Meetkriterium type voor detector 82_1                                                                                          */
+    #define prmmk84_1                    191 /* Meetkriterium type voor detector 84_1                                                                                          */
+    #define prmperc02                    192 /* Percentage groentijd fase 02 bij defect kop en lange lus                                                                       */
+    #define prmperc03                    193 /* Percentage groentijd fase 03 bij defect kop en lange lus                                                                       */
+    #define prmperc05                    194 /* Percentage groentijd fase 05 bij defect kop en lange lus                                                                       */
+    #define prmperc08                    195 /* Percentage groentijd fase 08 bij defect kop en lange lus                                                                       */
+    #define prmperc09                    196 /* Percentage groentijd fase 09 bij defect kop en lange lus                                                                       */
+    #define prmperc11                    197 /* Percentage groentijd fase 11 bij defect kop en lange lus                                                                       */
+    #define prmperc61                    198 /* Percentage groentijd fase 61 bij defect kop en lange lus                                                                       */
+    #define prmperc62                    199 /* Percentage groentijd fase 62 bij defect kop en lange lus                                                                       */
+    #define prmperc67                    200 /* Percentage groentijd fase 67 bij defect kop en lange lus                                                                       */
+    #define prmperc68                    201 /* Percentage groentijd fase 68 bij defect kop en lange lus                                                                       */
+    #define prmfpercFile68af08           202 /* Doseerpercentage 08                                                                                                            */
+    #define prmfpercFile68af11           203 /* Doseerpercentage 11                                                                                                            */
+    #define prmaltphst02                 204 /* Alternatieve ruimte fase 02 tijdens halfstar regelen                                                                           */
+    #define prmaltphst03                 205 /* Alternatieve ruimte fase 03 tijdens halfstar regelen                                                                           */
+    #define prmaltphst05                 206 /* Alternatieve ruimte fase 05 tijdens halfstar regelen                                                                           */
+    #define prmaltphst08                 207 /* Alternatieve ruimte fase 08 tijdens halfstar regelen                                                                           */
+    #define prmaltphst09                 208 /* Alternatieve ruimte fase 09 tijdens halfstar regelen                                                                           */
+    #define prmaltphst11                 209 /* Alternatieve ruimte fase 11 tijdens halfstar regelen                                                                           */
+    #define prmaltphst21                 210 /* Alternatieve ruimte fase 21 tijdens halfstar regelen                                                                           */
+    #define prmaltphst2232               211 /* Alternatieve ruimte fasen 22, 32 tijdens halfstar regelen                                                                      */
+    #define prmaltphst2434               212 /* Alternatieve ruimte fasen 24, 34 tijdens halfstar regelen                                                                      */
+    #define prmaltphst81                 213 /* Alternatieve ruimte fase 81 tijdens halfstar regelen                                                                           */
+    #define prmaltphst88                 214 /* Alternatieve ruimte fase 88 tijdens halfstar regelen                                                                           */
+    #define prmaltphst3384               215 /* Alternatieve ruimte fasen 33, 84 tijdens halfstar regelen                                                                      */
+    #define prmaltphst68                 216 /* Alternatieve ruimte fase 68 tijdens halfstar regelen                                                                           */
+    #define prmaltphst82                 217 /* Alternatieve ruimte fase 82 tijdens halfstar regelen                                                                           */
+    #define prmaltphst67                 218 /* Alternatieve ruimte fase 67 tijdens halfstar regelen                                                                           */
+    #define prmaltphst62                 219 /* Alternatieve ruimte fase 62 tijdens halfstar regelen                                                                           */
+    #define prmaltphst61                 220 /* Alternatieve ruimte fase 61 tijdens halfstar regelen                                                                           */
+    #define prmaltphst38                 221 /* Alternatieve ruimte fase 38 tijdens halfstar regelen                                                                           */
+    #define prmaltphst31                 222 /* Alternatieve ruimte fase 31 tijdens halfstar regelen                                                                           */
+    #define prmaltphst28                 223 /* Alternatieve ruimte fase 28 tijdens halfstar regelen                                                                           */
+    #define prmaltphst26                 224 /* Alternatieve ruimte fase 26 tijdens halfstar regelen                                                                           */
+    #define prmpriohst02bus              225 /* Prioriteit fase 02 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst02risov            226 /* Prioriteit fase 02 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst02risvrw           227 /* Prioriteit fase 02 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmpriohst03bus              228 /* Prioriteit fase 03 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst03risov            229 /* Prioriteit fase 03 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst03risvrw           230 /* Prioriteit fase 03 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmpriohst05bus              231 /* Prioriteit fase 05 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst05risov            232 /* Prioriteit fase 05 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst05risvrw           233 /* Prioriteit fase 05 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmpriohst08bus              234 /* Prioriteit fase 08 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst08risov            235 /* Prioriteit fase 08 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst08risvrw           236 /* Prioriteit fase 08 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmpriohst09bus              237 /* Prioriteit fase 09 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst09risov            238 /* Prioriteit fase 09 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst09risvrw           239 /* Prioriteit fase 09 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmpriohst11bus              240 /* Prioriteit fase 11 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst11risov            241 /* Prioriteit fase 11 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst11risvrw           242 /* Prioriteit fase 11 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmpriohst22fiets            243 /* Prioriteit fase 22 tijdens halfstar regelen Fiets                                                                              */
+    #define prmpriohst31fietsprio        244 /* Prioriteit fase 31 tijdens halfstar regelen Fiets                                                                              */
+    #define prmpriohst32fietsprio        245 /* Prioriteit fase 32 tijdens halfstar regelen Fiets                                                                              */
+    #define prmpriohst61bus              246 /* Prioriteit fase 61 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst61risov            247 /* Prioriteit fase 61 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst61risvrw           248 /* Prioriteit fase 61 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmpriohst62bus              249 /* Prioriteit fase 62 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst62risov            250 /* Prioriteit fase 62 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst62risvrw           251 /* Prioriteit fase 62 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmpriohst67bus              252 /* Prioriteit fase 67 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst67risov            253 /* Prioriteit fase 67 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst67risvrw           254 /* Prioriteit fase 67 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmpriohst68bus              255 /* Prioriteit fase 68 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst68risov            256 /* Prioriteit fase 68 tijdens halfstar regelen Bus                                                                                */
+    #define prmpriohst68risvrw           257 /* Prioriteit fase 68 tijdens halfstar regelen Vrachtwagen                                                                        */
+    #define prmnatxdhst02bus             258 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 02                                                                */
+    #define prmnatxdhst02risov           259 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 02                                                                */
+    #define prmnatxdhst02risvrw          260 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 02                                                                */
+    #define prmnatxdhst03bus             261 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 03                                                                */
+    #define prmnatxdhst03risov           262 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 03                                                                */
+    #define prmnatxdhst03risvrw          263 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 03                                                                */
+    #define prmnatxdhst05bus             264 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 05                                                                */
+    #define prmnatxdhst05risov           265 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 05                                                                */
+    #define prmnatxdhst05risvrw          266 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 05                                                                */
+    #define prmnatxdhst08bus             267 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 08                                                                */
+    #define prmnatxdhst08risov           268 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 08                                                                */
+    #define prmnatxdhst08risvrw          269 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 08                                                                */
+    #define prmnatxdhst09bus             270 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 09                                                                */
+    #define prmnatxdhst09risov           271 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 09                                                                */
+    #define prmnatxdhst09risvrw          272 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 09                                                                */
+    #define prmnatxdhst11bus             273 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 11                                                                */
+    #define prmnatxdhst11risov           274 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 11                                                                */
+    #define prmnatxdhst11risvrw          275 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 11                                                                */
+    #define prmnatxdhst22fiets           276 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 22                                                                */
+    #define prmnatxdhst31fietsprio       277 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 31                                                                */
+    #define prmnatxdhst32fietsprio       278 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 32                                                                */
+    #define prmnatxdhst61bus             279 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 61                                                                */
+    #define prmnatxdhst61risov           280 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 61                                                                */
+    #define prmnatxdhst61risvrw          281 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 61                                                                */
+    #define prmnatxdhst62bus             282 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 62                                                                */
+    #define prmnatxdhst62risov           283 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 62                                                                */
+    #define prmnatxdhst62risvrw          284 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 62                                                                */
+    #define prmnatxdhst67bus             285 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 67                                                                */
+    #define prmnatxdhst67risov           286 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 67                                                                */
+    #define prmnatxdhst67risvrw          287 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 67                                                                */
+    #define prmnatxdhst68bus             288 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 68                                                                */
+    #define prmnatxdhst68risov           289 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 68                                                                */
+    #define prmnatxdhst68risvrw          290 /* Maximale tijd na TXD tbv. verlengen voor OV ingreep bij fase 68                                                                */
+    #define prmtxA1PL1_02                291 /* Eerste realisatie PL1 fc02 A-moment                                                                                            */
+    #define prmtxB1PL1_02                292 /* Eerste realisatie PL1 fc02 B-moment                                                                                            */
+    #define prmtxC1PL1_02                293 /* Eerste realisatie PL1 fc02 C-moment                                                                                            */
+    #define prmtxD1PL1_02                294 /* Eerste realisatie PL1 fc02 D-moment                                                                                            */
+    #define prmtxE1PL1_02                295 /* Eerste realisatie PL1 fc02 E-moment                                                                                            */
+    #define prmtxA2PL1_02                296 /* Tweede realisatie PL1 fc02 A-moment                                                                                            */
+    #define prmtxB2PL1_02                297 /* Tweede realisatie PL1 fc02 B-moment                                                                                            */
+    #define prmtxC2PL1_02                298 /* Tweede realisatie PL1 fc02 C-moment                                                                                            */
+    #define prmtxD2PL1_02                299 /* Tweede realisatie PL1 fc02 D-moment                                                                                            */
+    #define prmtxE2PL1_02                300 /* Tweede realisatie PL1 fc02 E-moment                                                                                            */
+    #define prmtxA1PL1_03                301 /* Eerste realisatie PL1 fc03 A-moment                                                                                            */
+    #define prmtxB1PL1_03                302 /* Eerste realisatie PL1 fc03 B-moment                                                                                            */
+    #define prmtxC1PL1_03                303 /* Eerste realisatie PL1 fc03 C-moment                                                                                            */
+    #define prmtxD1PL1_03                304 /* Eerste realisatie PL1 fc03 D-moment                                                                                            */
+    #define prmtxE1PL1_03                305 /* Eerste realisatie PL1 fc03 E-moment                                                                                            */
+    #define prmtxA2PL1_03                306 /* Tweede realisatie PL1 fc03 A-moment                                                                                            */
+    #define prmtxB2PL1_03                307 /* Tweede realisatie PL1 fc03 B-moment                                                                                            */
+    #define prmtxC2PL1_03                308 /* Tweede realisatie PL1 fc03 C-moment                                                                                            */
+    #define prmtxD2PL1_03                309 /* Tweede realisatie PL1 fc03 D-moment                                                                                            */
+    #define prmtxE2PL1_03                310 /* Tweede realisatie PL1 fc03 E-moment                                                                                            */
+    #define prmtxA1PL1_05                311 /* Eerste realisatie PL1 fc05 A-moment                                                                                            */
+    #define prmtxB1PL1_05                312 /* Eerste realisatie PL1 fc05 B-moment                                                                                            */
+    #define prmtxC1PL1_05                313 /* Eerste realisatie PL1 fc05 C-moment                                                                                            */
+    #define prmtxD1PL1_05                314 /* Eerste realisatie PL1 fc05 D-moment                                                                                            */
+    #define prmtxE1PL1_05                315 /* Eerste realisatie PL1 fc05 E-moment                                                                                            */
+    #define prmtxA2PL1_05                316 /* Tweede realisatie PL1 fc05 A-moment                                                                                            */
+    #define prmtxB2PL1_05                317 /* Tweede realisatie PL1 fc05 B-moment                                                                                            */
+    #define prmtxC2PL1_05                318 /* Tweede realisatie PL1 fc05 C-moment                                                                                            */
+    #define prmtxD2PL1_05                319 /* Tweede realisatie PL1 fc05 D-moment                                                                                            */
+    #define prmtxE2PL1_05                320 /* Tweede realisatie PL1 fc05 E-moment                                                                                            */
+    #define prmtxA1PL1_08                321 /* Eerste realisatie PL1 fc08 A-moment                                                                                            */
+    #define prmtxB1PL1_08                322 /* Eerste realisatie PL1 fc08 B-moment                                                                                            */
+    #define prmtxC1PL1_08                323 /* Eerste realisatie PL1 fc08 C-moment                                                                                            */
+    #define prmtxD1PL1_08                324 /* Eerste realisatie PL1 fc08 D-moment                                                                                            */
+    #define prmtxE1PL1_08                325 /* Eerste realisatie PL1 fc08 E-moment                                                                                            */
+    #define prmtxA2PL1_08                326 /* Tweede realisatie PL1 fc08 A-moment                                                                                            */
+    #define prmtxB2PL1_08                327 /* Tweede realisatie PL1 fc08 B-moment                                                                                            */
+    #define prmtxC2PL1_08                328 /* Tweede realisatie PL1 fc08 C-moment                                                                                            */
+    #define prmtxD2PL1_08                329 /* Tweede realisatie PL1 fc08 D-moment                                                                                            */
+    #define prmtxE2PL1_08                330 /* Tweede realisatie PL1 fc08 E-moment                                                                                            */
+    #define prmtxA1PL1_09                331 /* Eerste realisatie PL1 fc09 A-moment                                                                                            */
+    #define prmtxB1PL1_09                332 /* Eerste realisatie PL1 fc09 B-moment                                                                                            */
+    #define prmtxC1PL1_09                333 /* Eerste realisatie PL1 fc09 C-moment                                                                                            */
+    #define prmtxD1PL1_09                334 /* Eerste realisatie PL1 fc09 D-moment                                                                                            */
+    #define prmtxE1PL1_09                335 /* Eerste realisatie PL1 fc09 E-moment                                                                                            */
+    #define prmtxA2PL1_09                336 /* Tweede realisatie PL1 fc09 A-moment                                                                                            */
+    #define prmtxB2PL1_09                337 /* Tweede realisatie PL1 fc09 B-moment                                                                                            */
+    #define prmtxC2PL1_09                338 /* Tweede realisatie PL1 fc09 C-moment                                                                                            */
+    #define prmtxD2PL1_09                339 /* Tweede realisatie PL1 fc09 D-moment                                                                                            */
+    #define prmtxE2PL1_09                340 /* Tweede realisatie PL1 fc09 E-moment                                                                                            */
+    #define prmtxA1PL1_11                341 /* Eerste realisatie PL1 fc11 A-moment                                                                                            */
+    #define prmtxB1PL1_11                342 /* Eerste realisatie PL1 fc11 B-moment                                                                                            */
+    #define prmtxC1PL1_11                343 /* Eerste realisatie PL1 fc11 C-moment                                                                                            */
+    #define prmtxD1PL1_11                344 /* Eerste realisatie PL1 fc11 D-moment                                                                                            */
+    #define prmtxE1PL1_11                345 /* Eerste realisatie PL1 fc11 E-moment                                                                                            */
+    #define prmtxA2PL1_11                346 /* Tweede realisatie PL1 fc11 A-moment                                                                                            */
+    #define prmtxB2PL1_11                347 /* Tweede realisatie PL1 fc11 B-moment                                                                                            */
+    #define prmtxC2PL1_11                348 /* Tweede realisatie PL1 fc11 C-moment                                                                                            */
+    #define prmtxD2PL1_11                349 /* Tweede realisatie PL1 fc11 D-moment                                                                                            */
+    #define prmtxE2PL1_11                350 /* Tweede realisatie PL1 fc11 E-moment                                                                                            */
+    #define prmtxA1PL1_21                351 /* Eerste realisatie PL1 fc21 A-moment                                                                                            */
+    #define prmtxB1PL1_21                352 /* Eerste realisatie PL1 fc21 B-moment                                                                                            */
+    #define prmtxC1PL1_21                353 /* Eerste realisatie PL1 fc21 C-moment                                                                                            */
+    #define prmtxD1PL1_21                354 /* Eerste realisatie PL1 fc21 D-moment                                                                                            */
+    #define prmtxE1PL1_21                355 /* Eerste realisatie PL1 fc21 E-moment                                                                                            */
+    #define prmtxA2PL1_21                356 /* Tweede realisatie PL1 fc21 A-moment                                                                                            */
+    #define prmtxB2PL1_21                357 /* Tweede realisatie PL1 fc21 B-moment                                                                                            */
+    #define prmtxC2PL1_21                358 /* Tweede realisatie PL1 fc21 C-moment                                                                                            */
+    #define prmtxD2PL1_21                359 /* Tweede realisatie PL1 fc21 D-moment                                                                                            */
+    #define prmtxE2PL1_21                360 /* Tweede realisatie PL1 fc21 E-moment                                                                                            */
+    #define prmtxA1PL1_22                361 /* Eerste realisatie PL1 fc22 A-moment                                                                                            */
+    #define prmtxB1PL1_22                362 /* Eerste realisatie PL1 fc22 B-moment                                                                                            */
+    #define prmtxC1PL1_22                363 /* Eerste realisatie PL1 fc22 C-moment                                                                                            */
+    #define prmtxD1PL1_22                364 /* Eerste realisatie PL1 fc22 D-moment                                                                                            */
+    #define prmtxE1PL1_22                365 /* Eerste realisatie PL1 fc22 E-moment                                                                                            */
+    #define prmtxA2PL1_22                366 /* Tweede realisatie PL1 fc22 A-moment                                                                                            */
+    #define prmtxB2PL1_22                367 /* Tweede realisatie PL1 fc22 B-moment                                                                                            */
+    #define prmtxC2PL1_22                368 /* Tweede realisatie PL1 fc22 C-moment                                                                                            */
+    #define prmtxD2PL1_22                369 /* Tweede realisatie PL1 fc22 D-moment                                                                                            */
+    #define prmtxE2PL1_22                370 /* Tweede realisatie PL1 fc22 E-moment                                                                                            */
+    #define prmtxA1PL1_24                371 /* Eerste realisatie PL1 fc24 A-moment                                                                                            */
+    #define prmtxB1PL1_24                372 /* Eerste realisatie PL1 fc24 B-moment                                                                                            */
+    #define prmtxC1PL1_24                373 /* Eerste realisatie PL1 fc24 C-moment                                                                                            */
+    #define prmtxD1PL1_24                374 /* Eerste realisatie PL1 fc24 D-moment                                                                                            */
+    #define prmtxE1PL1_24                375 /* Eerste realisatie PL1 fc24 E-moment                                                                                            */
+    #define prmtxA2PL1_24                376 /* Tweede realisatie PL1 fc24 A-moment                                                                                            */
+    #define prmtxB2PL1_24                377 /* Tweede realisatie PL1 fc24 B-moment                                                                                            */
+    #define prmtxC2PL1_24                378 /* Tweede realisatie PL1 fc24 C-moment                                                                                            */
+    #define prmtxD2PL1_24                379 /* Tweede realisatie PL1 fc24 D-moment                                                                                            */
+    #define prmtxE2PL1_24                380 /* Tweede realisatie PL1 fc24 E-moment                                                                                            */
+    #define prmtxA1PL1_26                381 /* Eerste realisatie PL1 fc26 A-moment                                                                                            */
+    #define prmtxB1PL1_26                382 /* Eerste realisatie PL1 fc26 B-moment                                                                                            */
+    #define prmtxC1PL1_26                383 /* Eerste realisatie PL1 fc26 C-moment                                                                                            */
+    #define prmtxD1PL1_26                384 /* Eerste realisatie PL1 fc26 D-moment                                                                                            */
+    #define prmtxE1PL1_26                385 /* Eerste realisatie PL1 fc26 E-moment                                                                                            */
+    #define prmtxA2PL1_26                386 /* Tweede realisatie PL1 fc26 A-moment                                                                                            */
+    #define prmtxB2PL1_26                387 /* Tweede realisatie PL1 fc26 B-moment                                                                                            */
+    #define prmtxC2PL1_26                388 /* Tweede realisatie PL1 fc26 C-moment                                                                                            */
+    #define prmtxD2PL1_26                389 /* Tweede realisatie PL1 fc26 D-moment                                                                                            */
+    #define prmtxE2PL1_26                390 /* Tweede realisatie PL1 fc26 E-moment                                                                                            */
+    #define prmtxA1PL1_28                391 /* Eerste realisatie PL1 fc28 A-moment                                                                                            */
+    #define prmtxB1PL1_28                392 /* Eerste realisatie PL1 fc28 B-moment                                                                                            */
+    #define prmtxC1PL1_28                393 /* Eerste realisatie PL1 fc28 C-moment                                                                                            */
+    #define prmtxD1PL1_28                394 /* Eerste realisatie PL1 fc28 D-moment                                                                                            */
+    #define prmtxE1PL1_28                395 /* Eerste realisatie PL1 fc28 E-moment                                                                                            */
+    #define prmtxA2PL1_28                396 /* Tweede realisatie PL1 fc28 A-moment                                                                                            */
+    #define prmtxB2PL1_28                397 /* Tweede realisatie PL1 fc28 B-moment                                                                                            */
+    #define prmtxC2PL1_28                398 /* Tweede realisatie PL1 fc28 C-moment                                                                                            */
+    #define prmtxD2PL1_28                399 /* Tweede realisatie PL1 fc28 D-moment                                                                                            */
+    #define prmtxE2PL1_28                400 /* Tweede realisatie PL1 fc28 E-moment                                                                                            */
+    #define prmtxA1PL1_31                401 /* Eerste realisatie PL1 fc31 A-moment                                                                                            */
+    #define prmtxB1PL1_31                402 /* Eerste realisatie PL1 fc31 B-moment                                                                                            */
+    #define prmtxC1PL1_31                403 /* Eerste realisatie PL1 fc31 C-moment                                                                                            */
+    #define prmtxD1PL1_31                404 /* Eerste realisatie PL1 fc31 D-moment                                                                                            */
+    #define prmtxE1PL1_31                405 /* Eerste realisatie PL1 fc31 E-moment                                                                                            */
+    #define prmtxA2PL1_31                406 /* Tweede realisatie PL1 fc31 A-moment                                                                                            */
+    #define prmtxB2PL1_31                407 /* Tweede realisatie PL1 fc31 B-moment                                                                                            */
+    #define prmtxC2PL1_31                408 /* Tweede realisatie PL1 fc31 C-moment                                                                                            */
+    #define prmtxD2PL1_31                409 /* Tweede realisatie PL1 fc31 D-moment                                                                                            */
+    #define prmtxE2PL1_31                410 /* Tweede realisatie PL1 fc31 E-moment                                                                                            */
+    #define prmtxA1PL1_32                411 /* Eerste realisatie PL1 fc32 A-moment                                                                                            */
+    #define prmtxB1PL1_32                412 /* Eerste realisatie PL1 fc32 B-moment                                                                                            */
+    #define prmtxC1PL1_32                413 /* Eerste realisatie PL1 fc32 C-moment                                                                                            */
+    #define prmtxD1PL1_32                414 /* Eerste realisatie PL1 fc32 D-moment                                                                                            */
+    #define prmtxE1PL1_32                415 /* Eerste realisatie PL1 fc32 E-moment                                                                                            */
+    #define prmtxA2PL1_32                416 /* Tweede realisatie PL1 fc32 A-moment                                                                                            */
+    #define prmtxB2PL1_32                417 /* Tweede realisatie PL1 fc32 B-moment                                                                                            */
+    #define prmtxC2PL1_32                418 /* Tweede realisatie PL1 fc32 C-moment                                                                                            */
+    #define prmtxD2PL1_32                419 /* Tweede realisatie PL1 fc32 D-moment                                                                                            */
+    #define prmtxE2PL1_32                420 /* Tweede realisatie PL1 fc32 E-moment                                                                                            */
+    #define prmtxA1PL1_33                421 /* Eerste realisatie PL1 fc33 A-moment                                                                                            */
+    #define prmtxB1PL1_33                422 /* Eerste realisatie PL1 fc33 B-moment                                                                                            */
+    #define prmtxC1PL1_33                423 /* Eerste realisatie PL1 fc33 C-moment                                                                                            */
+    #define prmtxD1PL1_33                424 /* Eerste realisatie PL1 fc33 D-moment                                                                                            */
+    #define prmtxE1PL1_33                425 /* Eerste realisatie PL1 fc33 E-moment                                                                                            */
+    #define prmtxA2PL1_33                426 /* Tweede realisatie PL1 fc33 A-moment                                                                                            */
+    #define prmtxB2PL1_33                427 /* Tweede realisatie PL1 fc33 B-moment                                                                                            */
+    #define prmtxC2PL1_33                428 /* Tweede realisatie PL1 fc33 C-moment                                                                                            */
+    #define prmtxD2PL1_33                429 /* Tweede realisatie PL1 fc33 D-moment                                                                                            */
+    #define prmtxE2PL1_33                430 /* Tweede realisatie PL1 fc33 E-moment                                                                                            */
+    #define prmtxA1PL1_34                431 /* Eerste realisatie PL1 fc34 A-moment                                                                                            */
+    #define prmtxB1PL1_34                432 /* Eerste realisatie PL1 fc34 B-moment                                                                                            */
+    #define prmtxC1PL1_34                433 /* Eerste realisatie PL1 fc34 C-moment                                                                                            */
+    #define prmtxD1PL1_34                434 /* Eerste realisatie PL1 fc34 D-moment                                                                                            */
+    #define prmtxE1PL1_34                435 /* Eerste realisatie PL1 fc34 E-moment                                                                                            */
+    #define prmtxA2PL1_34                436 /* Tweede realisatie PL1 fc34 A-moment                                                                                            */
+    #define prmtxB2PL1_34                437 /* Tweede realisatie PL1 fc34 B-moment                                                                                            */
+    #define prmtxC2PL1_34                438 /* Tweede realisatie PL1 fc34 C-moment                                                                                            */
+    #define prmtxD2PL1_34                439 /* Tweede realisatie PL1 fc34 D-moment                                                                                            */
+    #define prmtxE2PL1_34                440 /* Tweede realisatie PL1 fc34 E-moment                                                                                            */
+    #define prmtxA1PL1_38                441 /* Eerste realisatie PL1 fc38 A-moment                                                                                            */
+    #define prmtxB1PL1_38                442 /* Eerste realisatie PL1 fc38 B-moment                                                                                            */
+    #define prmtxC1PL1_38                443 /* Eerste realisatie PL1 fc38 C-moment                                                                                            */
+    #define prmtxD1PL1_38                444 /* Eerste realisatie PL1 fc38 D-moment                                                                                            */
+    #define prmtxE1PL1_38                445 /* Eerste realisatie PL1 fc38 E-moment                                                                                            */
+    #define prmtxA2PL1_38                446 /* Tweede realisatie PL1 fc38 A-moment                                                                                            */
+    #define prmtxB2PL1_38                447 /* Tweede realisatie PL1 fc38 B-moment                                                                                            */
+    #define prmtxC2PL1_38                448 /* Tweede realisatie PL1 fc38 C-moment                                                                                            */
+    #define prmtxD2PL1_38                449 /* Tweede realisatie PL1 fc38 D-moment                                                                                            */
+    #define prmtxE2PL1_38                450 /* Tweede realisatie PL1 fc38 E-moment                                                                                            */
+    #define prmtxA1PL1_61                451 /* Eerste realisatie PL1 fc61 A-moment                                                                                            */
+    #define prmtxB1PL1_61                452 /* Eerste realisatie PL1 fc61 B-moment                                                                                            */
+    #define prmtxC1PL1_61                453 /* Eerste realisatie PL1 fc61 C-moment                                                                                            */
+    #define prmtxD1PL1_61                454 /* Eerste realisatie PL1 fc61 D-moment                                                                                            */
+    #define prmtxE1PL1_61                455 /* Eerste realisatie PL1 fc61 E-moment                                                                                            */
+    #define prmtxA2PL1_61                456 /* Tweede realisatie PL1 fc61 A-moment                                                                                            */
+    #define prmtxB2PL1_61                457 /* Tweede realisatie PL1 fc61 B-moment                                                                                            */
+    #define prmtxC2PL1_61                458 /* Tweede realisatie PL1 fc61 C-moment                                                                                            */
+    #define prmtxD2PL1_61                459 /* Tweede realisatie PL1 fc61 D-moment                                                                                            */
+    #define prmtxE2PL1_61                460 /* Tweede realisatie PL1 fc61 E-moment                                                                                            */
+    #define prmtxA1PL1_62                461 /* Eerste realisatie PL1 fc62 A-moment                                                                                            */
+    #define prmtxB1PL1_62                462 /* Eerste realisatie PL1 fc62 B-moment                                                                                            */
+    #define prmtxC1PL1_62                463 /* Eerste realisatie PL1 fc62 C-moment                                                                                            */
+    #define prmtxD1PL1_62                464 /* Eerste realisatie PL1 fc62 D-moment                                                                                            */
+    #define prmtxE1PL1_62                465 /* Eerste realisatie PL1 fc62 E-moment                                                                                            */
+    #define prmtxA2PL1_62                466 /* Tweede realisatie PL1 fc62 A-moment                                                                                            */
+    #define prmtxB2PL1_62                467 /* Tweede realisatie PL1 fc62 B-moment                                                                                            */
+    #define prmtxC2PL1_62                468 /* Tweede realisatie PL1 fc62 C-moment                                                                                            */
+    #define prmtxD2PL1_62                469 /* Tweede realisatie PL1 fc62 D-moment                                                                                            */
+    #define prmtxE2PL1_62                470 /* Tweede realisatie PL1 fc62 E-moment                                                                                            */
+    #define prmtxA1PL1_67                471 /* Eerste realisatie PL1 fc67 A-moment                                                                                            */
+    #define prmtxB1PL1_67                472 /* Eerste realisatie PL1 fc67 B-moment                                                                                            */
+    #define prmtxC1PL1_67                473 /* Eerste realisatie PL1 fc67 C-moment                                                                                            */
+    #define prmtxD1PL1_67                474 /* Eerste realisatie PL1 fc67 D-moment                                                                                            */
+    #define prmtxE1PL1_67                475 /* Eerste realisatie PL1 fc67 E-moment                                                                                            */
+    #define prmtxA2PL1_67                476 /* Tweede realisatie PL1 fc67 A-moment                                                                                            */
+    #define prmtxB2PL1_67                477 /* Tweede realisatie PL1 fc67 B-moment                                                                                            */
+    #define prmtxC2PL1_67                478 /* Tweede realisatie PL1 fc67 C-moment                                                                                            */
+    #define prmtxD2PL1_67                479 /* Tweede realisatie PL1 fc67 D-moment                                                                                            */
+    #define prmtxE2PL1_67                480 /* Tweede realisatie PL1 fc67 E-moment                                                                                            */
+    #define prmtxA1PL1_68                481 /* Eerste realisatie PL1 fc68 A-moment                                                                                            */
+    #define prmtxB1PL1_68                482 /* Eerste realisatie PL1 fc68 B-moment                                                                                            */
+    #define prmtxC1PL1_68                483 /* Eerste realisatie PL1 fc68 C-moment                                                                                            */
+    #define prmtxD1PL1_68                484 /* Eerste realisatie PL1 fc68 D-moment                                                                                            */
+    #define prmtxE1PL1_68                485 /* Eerste realisatie PL1 fc68 E-moment                                                                                            */
+    #define prmtxA2PL1_68                486 /* Tweede realisatie PL1 fc68 A-moment                                                                                            */
+    #define prmtxB2PL1_68                487 /* Tweede realisatie PL1 fc68 B-moment                                                                                            */
+    #define prmtxC2PL1_68                488 /* Tweede realisatie PL1 fc68 C-moment                                                                                            */
+    #define prmtxD2PL1_68                489 /* Tweede realisatie PL1 fc68 D-moment                                                                                            */
+    #define prmtxE2PL1_68                490 /* Tweede realisatie PL1 fc68 E-moment                                                                                            */
+    #define prmtxA1PL1_81                491 /* Eerste realisatie PL1 fc81 A-moment                                                                                            */
+    #define prmtxB1PL1_81                492 /* Eerste realisatie PL1 fc81 B-moment                                                                                            */
+    #define prmtxC1PL1_81                493 /* Eerste realisatie PL1 fc81 C-moment                                                                                            */
+    #define prmtxD1PL1_81                494 /* Eerste realisatie PL1 fc81 D-moment                                                                                            */
+    #define prmtxE1PL1_81                495 /* Eerste realisatie PL1 fc81 E-moment                                                                                            */
+    #define prmtxA2PL1_81                496 /* Tweede realisatie PL1 fc81 A-moment                                                                                            */
+    #define prmtxB2PL1_81                497 /* Tweede realisatie PL1 fc81 B-moment                                                                                            */
+    #define prmtxC2PL1_81                498 /* Tweede realisatie PL1 fc81 C-moment                                                                                            */
+    #define prmtxD2PL1_81                499 /* Tweede realisatie PL1 fc81 D-moment                                                                                            */
+    #define prmtxE2PL1_81                500 /* Tweede realisatie PL1 fc81 E-moment                                                                                            */
+    #define prmtxA1PL1_82                501 /* Eerste realisatie PL1 fc82 A-moment                                                                                            */
+    #define prmtxB1PL1_82                502 /* Eerste realisatie PL1 fc82 B-moment                                                                                            */
+    #define prmtxC1PL1_82                503 /* Eerste realisatie PL1 fc82 C-moment                                                                                            */
+    #define prmtxD1PL1_82                504 /* Eerste realisatie PL1 fc82 D-moment                                                                                            */
+    #define prmtxE1PL1_82                505 /* Eerste realisatie PL1 fc82 E-moment                                                                                            */
+    #define prmtxA2PL1_82                506 /* Tweede realisatie PL1 fc82 A-moment                                                                                            */
+    #define prmtxB2PL1_82                507 /* Tweede realisatie PL1 fc82 B-moment                                                                                            */
+    #define prmtxC2PL1_82                508 /* Tweede realisatie PL1 fc82 C-moment                                                                                            */
+    #define prmtxD2PL1_82                509 /* Tweede realisatie PL1 fc82 D-moment                                                                                            */
+    #define prmtxE2PL1_82                510 /* Tweede realisatie PL1 fc82 E-moment                                                                                            */
+    #define prmtxA1PL1_84                511 /* Eerste realisatie PL1 fc84 A-moment                                                                                            */
+    #define prmtxB1PL1_84                512 /* Eerste realisatie PL1 fc84 B-moment                                                                                            */
+    #define prmtxC1PL1_84                513 /* Eerste realisatie PL1 fc84 C-moment                                                                                            */
+    #define prmtxD1PL1_84                514 /* Eerste realisatie PL1 fc84 D-moment                                                                                            */
+    #define prmtxE1PL1_84                515 /* Eerste realisatie PL1 fc84 E-moment                                                                                            */
+    #define prmtxA2PL1_84                516 /* Tweede realisatie PL1 fc84 A-moment                                                                                            */
+    #define prmtxB2PL1_84                517 /* Tweede realisatie PL1 fc84 B-moment                                                                                            */
+    #define prmtxC2PL1_84                518 /* Tweede realisatie PL1 fc84 C-moment                                                                                            */
+    #define prmtxD2PL1_84                519 /* Tweede realisatie PL1 fc84 D-moment                                                                                            */
+    #define prmtxE2PL1_84                520 /* Tweede realisatie PL1 fc84 E-moment                                                                                            */
+    #define prmtxA1PL2_02                521 /* Eerste realisatie PL2 fc02 A-moment                                                                                            */
+    #define prmtxB1PL2_02                522 /* Eerste realisatie PL2 fc02 B-moment                                                                                            */
+    #define prmtxC1PL2_02                523 /* Eerste realisatie PL2 fc02 C-moment                                                                                            */
+    #define prmtxD1PL2_02                524 /* Eerste realisatie PL2 fc02 D-moment                                                                                            */
+    #define prmtxE1PL2_02                525 /* Eerste realisatie PL2 fc02 E-moment                                                                                            */
+    #define prmtxA2PL2_02                526 /* Tweede realisatie PL2 fc02 A-moment                                                                                            */
+    #define prmtxB2PL2_02                527 /* Tweede realisatie PL2 fc02 B-moment                                                                                            */
+    #define prmtxC2PL2_02                528 /* Tweede realisatie PL2 fc02 C-moment                                                                                            */
+    #define prmtxD2PL2_02                529 /* Tweede realisatie PL2 fc02 D-moment                                                                                            */
+    #define prmtxE2PL2_02                530 /* Tweede realisatie PL2 fc02 E-moment                                                                                            */
+    #define prmtxA1PL2_03                531 /* Eerste realisatie PL2 fc03 A-moment                                                                                            */
+    #define prmtxB1PL2_03                532 /* Eerste realisatie PL2 fc03 B-moment                                                                                            */
+    #define prmtxC1PL2_03                533 /* Eerste realisatie PL2 fc03 C-moment                                                                                            */
+    #define prmtxD1PL2_03                534 /* Eerste realisatie PL2 fc03 D-moment                                                                                            */
+    #define prmtxE1PL2_03                535 /* Eerste realisatie PL2 fc03 E-moment                                                                                            */
+    #define prmtxA2PL2_03                536 /* Tweede realisatie PL2 fc03 A-moment                                                                                            */
+    #define prmtxB2PL2_03                537 /* Tweede realisatie PL2 fc03 B-moment                                                                                            */
+    #define prmtxC2PL2_03                538 /* Tweede realisatie PL2 fc03 C-moment                                                                                            */
+    #define prmtxD2PL2_03                539 /* Tweede realisatie PL2 fc03 D-moment                                                                                            */
+    #define prmtxE2PL2_03                540 /* Tweede realisatie PL2 fc03 E-moment                                                                                            */
+    #define prmtxA1PL2_05                541 /* Eerste realisatie PL2 fc05 A-moment                                                                                            */
+    #define prmtxB1PL2_05                542 /* Eerste realisatie PL2 fc05 B-moment                                                                                            */
+    #define prmtxC1PL2_05                543 /* Eerste realisatie PL2 fc05 C-moment                                                                                            */
+    #define prmtxD1PL2_05                544 /* Eerste realisatie PL2 fc05 D-moment                                                                                            */
+    #define prmtxE1PL2_05                545 /* Eerste realisatie PL2 fc05 E-moment                                                                                            */
+    #define prmtxA2PL2_05                546 /* Tweede realisatie PL2 fc05 A-moment                                                                                            */
+    #define prmtxB2PL2_05                547 /* Tweede realisatie PL2 fc05 B-moment                                                                                            */
+    #define prmtxC2PL2_05                548 /* Tweede realisatie PL2 fc05 C-moment                                                                                            */
+    #define prmtxD2PL2_05                549 /* Tweede realisatie PL2 fc05 D-moment                                                                                            */
+    #define prmtxE2PL2_05                550 /* Tweede realisatie PL2 fc05 E-moment                                                                                            */
+    #define prmtxA1PL2_08                551 /* Eerste realisatie PL2 fc08 A-moment                                                                                            */
+    #define prmtxB1PL2_08                552 /* Eerste realisatie PL2 fc08 B-moment                                                                                            */
+    #define prmtxC1PL2_08                553 /* Eerste realisatie PL2 fc08 C-moment                                                                                            */
+    #define prmtxD1PL2_08                554 /* Eerste realisatie PL2 fc08 D-moment                                                                                            */
+    #define prmtxE1PL2_08                555 /* Eerste realisatie PL2 fc08 E-moment                                                                                            */
+    #define prmtxA2PL2_08                556 /* Tweede realisatie PL2 fc08 A-moment                                                                                            */
+    #define prmtxB2PL2_08                557 /* Tweede realisatie PL2 fc08 B-moment                                                                                            */
+    #define prmtxC2PL2_08                558 /* Tweede realisatie PL2 fc08 C-moment                                                                                            */
+    #define prmtxD2PL2_08                559 /* Tweede realisatie PL2 fc08 D-moment                                                                                            */
+    #define prmtxE2PL2_08                560 /* Tweede realisatie PL2 fc08 E-moment                                                                                            */
+    #define prmtxA1PL2_09                561 /* Eerste realisatie PL2 fc09 A-moment                                                                                            */
+    #define prmtxB1PL2_09                562 /* Eerste realisatie PL2 fc09 B-moment                                                                                            */
+    #define prmtxC1PL2_09                563 /* Eerste realisatie PL2 fc09 C-moment                                                                                            */
+    #define prmtxD1PL2_09                564 /* Eerste realisatie PL2 fc09 D-moment                                                                                            */
+    #define prmtxE1PL2_09                565 /* Eerste realisatie PL2 fc09 E-moment                                                                                            */
+    #define prmtxA2PL2_09                566 /* Tweede realisatie PL2 fc09 A-moment                                                                                            */
+    #define prmtxB2PL2_09                567 /* Tweede realisatie PL2 fc09 B-moment                                                                                            */
+    #define prmtxC2PL2_09                568 /* Tweede realisatie PL2 fc09 C-moment                                                                                            */
+    #define prmtxD2PL2_09                569 /* Tweede realisatie PL2 fc09 D-moment                                                                                            */
+    #define prmtxE2PL2_09                570 /* Tweede realisatie PL2 fc09 E-moment                                                                                            */
+    #define prmtxA1PL2_11                571 /* Eerste realisatie PL2 fc11 A-moment                                                                                            */
+    #define prmtxB1PL2_11                572 /* Eerste realisatie PL2 fc11 B-moment                                                                                            */
+    #define prmtxC1PL2_11                573 /* Eerste realisatie PL2 fc11 C-moment                                                                                            */
+    #define prmtxD1PL2_11                574 /* Eerste realisatie PL2 fc11 D-moment                                                                                            */
+    #define prmtxE1PL2_11                575 /* Eerste realisatie PL2 fc11 E-moment                                                                                            */
+    #define prmtxA2PL2_11                576 /* Tweede realisatie PL2 fc11 A-moment                                                                                            */
+    #define prmtxB2PL2_11                577 /* Tweede realisatie PL2 fc11 B-moment                                                                                            */
+    #define prmtxC2PL2_11                578 /* Tweede realisatie PL2 fc11 C-moment                                                                                            */
+    #define prmtxD2PL2_11                579 /* Tweede realisatie PL2 fc11 D-moment                                                                                            */
+    #define prmtxE2PL2_11                580 /* Tweede realisatie PL2 fc11 E-moment                                                                                            */
+    #define prmtxA1PL2_21                581 /* Eerste realisatie PL2 fc21 A-moment                                                                                            */
+    #define prmtxB1PL2_21                582 /* Eerste realisatie PL2 fc21 B-moment                                                                                            */
+    #define prmtxC1PL2_21                583 /* Eerste realisatie PL2 fc21 C-moment                                                                                            */
+    #define prmtxD1PL2_21                584 /* Eerste realisatie PL2 fc21 D-moment                                                                                            */
+    #define prmtxE1PL2_21                585 /* Eerste realisatie PL2 fc21 E-moment                                                                                            */
+    #define prmtxA2PL2_21                586 /* Tweede realisatie PL2 fc21 A-moment                                                                                            */
+    #define prmtxB2PL2_21                587 /* Tweede realisatie PL2 fc21 B-moment                                                                                            */
+    #define prmtxC2PL2_21                588 /* Tweede realisatie PL2 fc21 C-moment                                                                                            */
+    #define prmtxD2PL2_21                589 /* Tweede realisatie PL2 fc21 D-moment                                                                                            */
+    #define prmtxE2PL2_21                590 /* Tweede realisatie PL2 fc21 E-moment                                                                                            */
+    #define prmtxA1PL2_22                591 /* Eerste realisatie PL2 fc22 A-moment                                                                                            */
+    #define prmtxB1PL2_22                592 /* Eerste realisatie PL2 fc22 B-moment                                                                                            */
+    #define prmtxC1PL2_22                593 /* Eerste realisatie PL2 fc22 C-moment                                                                                            */
+    #define prmtxD1PL2_22                594 /* Eerste realisatie PL2 fc22 D-moment                                                                                            */
+    #define prmtxE1PL2_22                595 /* Eerste realisatie PL2 fc22 E-moment                                                                                            */
+    #define prmtxA2PL2_22                596 /* Tweede realisatie PL2 fc22 A-moment                                                                                            */
+    #define prmtxB2PL2_22                597 /* Tweede realisatie PL2 fc22 B-moment                                                                                            */
+    #define prmtxC2PL2_22                598 /* Tweede realisatie PL2 fc22 C-moment                                                                                            */
+    #define prmtxD2PL2_22                599 /* Tweede realisatie PL2 fc22 D-moment                                                                                            */
+    #define prmtxE2PL2_22                600 /* Tweede realisatie PL2 fc22 E-moment                                                                                            */
+    #define prmtxA1PL2_24                601 /* Eerste realisatie PL2 fc24 A-moment                                                                                            */
+    #define prmtxB1PL2_24                602 /* Eerste realisatie PL2 fc24 B-moment                                                                                            */
+    #define prmtxC1PL2_24                603 /* Eerste realisatie PL2 fc24 C-moment                                                                                            */
+    #define prmtxD1PL2_24                604 /* Eerste realisatie PL2 fc24 D-moment                                                                                            */
+    #define prmtxE1PL2_24                605 /* Eerste realisatie PL2 fc24 E-moment                                                                                            */
+    #define prmtxA2PL2_24                606 /* Tweede realisatie PL2 fc24 A-moment                                                                                            */
+    #define prmtxB2PL2_24                607 /* Tweede realisatie PL2 fc24 B-moment                                                                                            */
+    #define prmtxC2PL2_24                608 /* Tweede realisatie PL2 fc24 C-moment                                                                                            */
+    #define prmtxD2PL2_24                609 /* Tweede realisatie PL2 fc24 D-moment                                                                                            */
+    #define prmtxE2PL2_24                610 /* Tweede realisatie PL2 fc24 E-moment                                                                                            */
+    #define prmtxA1PL2_26                611 /* Eerste realisatie PL2 fc26 A-moment                                                                                            */
+    #define prmtxB1PL2_26                612 /* Eerste realisatie PL2 fc26 B-moment                                                                                            */
+    #define prmtxC1PL2_26                613 /* Eerste realisatie PL2 fc26 C-moment                                                                                            */
+    #define prmtxD1PL2_26                614 /* Eerste realisatie PL2 fc26 D-moment                                                                                            */
+    #define prmtxE1PL2_26                615 /* Eerste realisatie PL2 fc26 E-moment                                                                                            */
+    #define prmtxA2PL2_26                616 /* Tweede realisatie PL2 fc26 A-moment                                                                                            */
+    #define prmtxB2PL2_26                617 /* Tweede realisatie PL2 fc26 B-moment                                                                                            */
+    #define prmtxC2PL2_26                618 /* Tweede realisatie PL2 fc26 C-moment                                                                                            */
+    #define prmtxD2PL2_26                619 /* Tweede realisatie PL2 fc26 D-moment                                                                                            */
+    #define prmtxE2PL2_26                620 /* Tweede realisatie PL2 fc26 E-moment                                                                                            */
+    #define prmtxA1PL2_28                621 /* Eerste realisatie PL2 fc28 A-moment                                                                                            */
+    #define prmtxB1PL2_28                622 /* Eerste realisatie PL2 fc28 B-moment                                                                                            */
+    #define prmtxC1PL2_28                623 /* Eerste realisatie PL2 fc28 C-moment                                                                                            */
+    #define prmtxD1PL2_28                624 /* Eerste realisatie PL2 fc28 D-moment                                                                                            */
+    #define prmtxE1PL2_28                625 /* Eerste realisatie PL2 fc28 E-moment                                                                                            */
+    #define prmtxA2PL2_28                626 /* Tweede realisatie PL2 fc28 A-moment                                                                                            */
+    #define prmtxB2PL2_28                627 /* Tweede realisatie PL2 fc28 B-moment                                                                                            */
+    #define prmtxC2PL2_28                628 /* Tweede realisatie PL2 fc28 C-moment                                                                                            */
+    #define prmtxD2PL2_28                629 /* Tweede realisatie PL2 fc28 D-moment                                                                                            */
+    #define prmtxE2PL2_28                630 /* Tweede realisatie PL2 fc28 E-moment                                                                                            */
+    #define prmtxA1PL2_31                631 /* Eerste realisatie PL2 fc31 A-moment                                                                                            */
+    #define prmtxB1PL2_31                632 /* Eerste realisatie PL2 fc31 B-moment                                                                                            */
+    #define prmtxC1PL2_31                633 /* Eerste realisatie PL2 fc31 C-moment                                                                                            */
+    #define prmtxD1PL2_31                634 /* Eerste realisatie PL2 fc31 D-moment                                                                                            */
+    #define prmtxE1PL2_31                635 /* Eerste realisatie PL2 fc31 E-moment                                                                                            */
+    #define prmtxA2PL2_31                636 /* Tweede realisatie PL2 fc31 A-moment                                                                                            */
+    #define prmtxB2PL2_31                637 /* Tweede realisatie PL2 fc31 B-moment                                                                                            */
+    #define prmtxC2PL2_31                638 /* Tweede realisatie PL2 fc31 C-moment                                                                                            */
+    #define prmtxD2PL2_31                639 /* Tweede realisatie PL2 fc31 D-moment                                                                                            */
+    #define prmtxE2PL2_31                640 /* Tweede realisatie PL2 fc31 E-moment                                                                                            */
+    #define prmtxA1PL2_32                641 /* Eerste realisatie PL2 fc32 A-moment                                                                                            */
+    #define prmtxB1PL2_32                642 /* Eerste realisatie PL2 fc32 B-moment                                                                                            */
+    #define prmtxC1PL2_32                643 /* Eerste realisatie PL2 fc32 C-moment                                                                                            */
+    #define prmtxD1PL2_32                644 /* Eerste realisatie PL2 fc32 D-moment                                                                                            */
+    #define prmtxE1PL2_32                645 /* Eerste realisatie PL2 fc32 E-moment                                                                                            */
+    #define prmtxA2PL2_32                646 /* Tweede realisatie PL2 fc32 A-moment                                                                                            */
+    #define prmtxB2PL2_32                647 /* Tweede realisatie PL2 fc32 B-moment                                                                                            */
+    #define prmtxC2PL2_32                648 /* Tweede realisatie PL2 fc32 C-moment                                                                                            */
+    #define prmtxD2PL2_32                649 /* Tweede realisatie PL2 fc32 D-moment                                                                                            */
+    #define prmtxE2PL2_32                650 /* Tweede realisatie PL2 fc32 E-moment                                                                                            */
+    #define prmtxA1PL2_33                651 /* Eerste realisatie PL2 fc33 A-moment                                                                                            */
+    #define prmtxB1PL2_33                652 /* Eerste realisatie PL2 fc33 B-moment                                                                                            */
+    #define prmtxC1PL2_33                653 /* Eerste realisatie PL2 fc33 C-moment                                                                                            */
+    #define prmtxD1PL2_33                654 /* Eerste realisatie PL2 fc33 D-moment                                                                                            */
+    #define prmtxE1PL2_33                655 /* Eerste realisatie PL2 fc33 E-moment                                                                                            */
+    #define prmtxA2PL2_33                656 /* Tweede realisatie PL2 fc33 A-moment                                                                                            */
+    #define prmtxB2PL2_33                657 /* Tweede realisatie PL2 fc33 B-moment                                                                                            */
+    #define prmtxC2PL2_33                658 /* Tweede realisatie PL2 fc33 C-moment                                                                                            */
+    #define prmtxD2PL2_33                659 /* Tweede realisatie PL2 fc33 D-moment                                                                                            */
+    #define prmtxE2PL2_33                660 /* Tweede realisatie PL2 fc33 E-moment                                                                                            */
+    #define prmtxA1PL2_34                661 /* Eerste realisatie PL2 fc34 A-moment                                                                                            */
+    #define prmtxB1PL2_34                662 /* Eerste realisatie PL2 fc34 B-moment                                                                                            */
+    #define prmtxC1PL2_34                663 /* Eerste realisatie PL2 fc34 C-moment                                                                                            */
+    #define prmtxD1PL2_34                664 /* Eerste realisatie PL2 fc34 D-moment                                                                                            */
+    #define prmtxE1PL2_34                665 /* Eerste realisatie PL2 fc34 E-moment                                                                                            */
+    #define prmtxA2PL2_34                666 /* Tweede realisatie PL2 fc34 A-moment                                                                                            */
+    #define prmtxB2PL2_34                667 /* Tweede realisatie PL2 fc34 B-moment                                                                                            */
+    #define prmtxC2PL2_34                668 /* Tweede realisatie PL2 fc34 C-moment                                                                                            */
+    #define prmtxD2PL2_34                669 /* Tweede realisatie PL2 fc34 D-moment                                                                                            */
+    #define prmtxE2PL2_34                670 /* Tweede realisatie PL2 fc34 E-moment                                                                                            */
+    #define prmtxA1PL2_38                671 /* Eerste realisatie PL2 fc38 A-moment                                                                                            */
+    #define prmtxB1PL2_38                672 /* Eerste realisatie PL2 fc38 B-moment                                                                                            */
+    #define prmtxC1PL2_38                673 /* Eerste realisatie PL2 fc38 C-moment                                                                                            */
+    #define prmtxD1PL2_38                674 /* Eerste realisatie PL2 fc38 D-moment                                                                                            */
+    #define prmtxE1PL2_38                675 /* Eerste realisatie PL2 fc38 E-moment                                                                                            */
+    #define prmtxA2PL2_38                676 /* Tweede realisatie PL2 fc38 A-moment                                                                                            */
+    #define prmtxB2PL2_38                677 /* Tweede realisatie PL2 fc38 B-moment                                                                                            */
+    #define prmtxC2PL2_38                678 /* Tweede realisatie PL2 fc38 C-moment                                                                                            */
+    #define prmtxD2PL2_38                679 /* Tweede realisatie PL2 fc38 D-moment                                                                                            */
+    #define prmtxE2PL2_38                680 /* Tweede realisatie PL2 fc38 E-moment                                                                                            */
+    #define prmtxA1PL2_61                681 /* Eerste realisatie PL2 fc61 A-moment                                                                                            */
+    #define prmtxB1PL2_61                682 /* Eerste realisatie PL2 fc61 B-moment                                                                                            */
+    #define prmtxC1PL2_61                683 /* Eerste realisatie PL2 fc61 C-moment                                                                                            */
+    #define prmtxD1PL2_61                684 /* Eerste realisatie PL2 fc61 D-moment                                                                                            */
+    #define prmtxE1PL2_61                685 /* Eerste realisatie PL2 fc61 E-moment                                                                                            */
+    #define prmtxA2PL2_61                686 /* Tweede realisatie PL2 fc61 A-moment                                                                                            */
+    #define prmtxB2PL2_61                687 /* Tweede realisatie PL2 fc61 B-moment                                                                                            */
+    #define prmtxC2PL2_61                688 /* Tweede realisatie PL2 fc61 C-moment                                                                                            */
+    #define prmtxD2PL2_61                689 /* Tweede realisatie PL2 fc61 D-moment                                                                                            */
+    #define prmtxE2PL2_61                690 /* Tweede realisatie PL2 fc61 E-moment                                                                                            */
+    #define prmtxA1PL2_62                691 /* Eerste realisatie PL2 fc62 A-moment                                                                                            */
+    #define prmtxB1PL2_62                692 /* Eerste realisatie PL2 fc62 B-moment                                                                                            */
+    #define prmtxC1PL2_62                693 /* Eerste realisatie PL2 fc62 C-moment                                                                                            */
+    #define prmtxD1PL2_62                694 /* Eerste realisatie PL2 fc62 D-moment                                                                                            */
+    #define prmtxE1PL2_62                695 /* Eerste realisatie PL2 fc62 E-moment                                                                                            */
+    #define prmtxA2PL2_62                696 /* Tweede realisatie PL2 fc62 A-moment                                                                                            */
+    #define prmtxB2PL2_62                697 /* Tweede realisatie PL2 fc62 B-moment                                                                                            */
+    #define prmtxC2PL2_62                698 /* Tweede realisatie PL2 fc62 C-moment                                                                                            */
+    #define prmtxD2PL2_62                699 /* Tweede realisatie PL2 fc62 D-moment                                                                                            */
+    #define prmtxE2PL2_62                700 /* Tweede realisatie PL2 fc62 E-moment                                                                                            */
+    #define prmtxA1PL2_67                701 /* Eerste realisatie PL2 fc67 A-moment                                                                                            */
+    #define prmtxB1PL2_67                702 /* Eerste realisatie PL2 fc67 B-moment                                                                                            */
+    #define prmtxC1PL2_67                703 /* Eerste realisatie PL2 fc67 C-moment                                                                                            */
+    #define prmtxD1PL2_67                704 /* Eerste realisatie PL2 fc67 D-moment                                                                                            */
+    #define prmtxE1PL2_67                705 /* Eerste realisatie PL2 fc67 E-moment                                                                                            */
+    #define prmtxA2PL2_67                706 /* Tweede realisatie PL2 fc67 A-moment                                                                                            */
+    #define prmtxB2PL2_67                707 /* Tweede realisatie PL2 fc67 B-moment                                                                                            */
+    #define prmtxC2PL2_67                708 /* Tweede realisatie PL2 fc67 C-moment                                                                                            */
+    #define prmtxD2PL2_67                709 /* Tweede realisatie PL2 fc67 D-moment                                                                                            */
+    #define prmtxE2PL2_67                710 /* Tweede realisatie PL2 fc67 E-moment                                                                                            */
+    #define prmtxA1PL2_68                711 /* Eerste realisatie PL2 fc68 A-moment                                                                                            */
+    #define prmtxB1PL2_68                712 /* Eerste realisatie PL2 fc68 B-moment                                                                                            */
+    #define prmtxC1PL2_68                713 /* Eerste realisatie PL2 fc68 C-moment                                                                                            */
+    #define prmtxD1PL2_68                714 /* Eerste realisatie PL2 fc68 D-moment                                                                                            */
+    #define prmtxE1PL2_68                715 /* Eerste realisatie PL2 fc68 E-moment                                                                                            */
+    #define prmtxA2PL2_68                716 /* Tweede realisatie PL2 fc68 A-moment                                                                                            */
+    #define prmtxB2PL2_68                717 /* Tweede realisatie PL2 fc68 B-moment                                                                                            */
+    #define prmtxC2PL2_68                718 /* Tweede realisatie PL2 fc68 C-moment                                                                                            */
+    #define prmtxD2PL2_68                719 /* Tweede realisatie PL2 fc68 D-moment                                                                                            */
+    #define prmtxE2PL2_68                720 /* Tweede realisatie PL2 fc68 E-moment                                                                                            */
+    #define prmtxA1PL2_81                721 /* Eerste realisatie PL2 fc81 A-moment                                                                                            */
+    #define prmtxB1PL2_81                722 /* Eerste realisatie PL2 fc81 B-moment                                                                                            */
+    #define prmtxC1PL2_81                723 /* Eerste realisatie PL2 fc81 C-moment                                                                                            */
+    #define prmtxD1PL2_81                724 /* Eerste realisatie PL2 fc81 D-moment                                                                                            */
+    #define prmtxE1PL2_81                725 /* Eerste realisatie PL2 fc81 E-moment                                                                                            */
+    #define prmtxA2PL2_81                726 /* Tweede realisatie PL2 fc81 A-moment                                                                                            */
+    #define prmtxB2PL2_81                727 /* Tweede realisatie PL2 fc81 B-moment                                                                                            */
+    #define prmtxC2PL2_81                728 /* Tweede realisatie PL2 fc81 C-moment                                                                                            */
+    #define prmtxD2PL2_81                729 /* Tweede realisatie PL2 fc81 D-moment                                                                                            */
+    #define prmtxE2PL2_81                730 /* Tweede realisatie PL2 fc81 E-moment                                                                                            */
+    #define prmtxA1PL2_82                731 /* Eerste realisatie PL2 fc82 A-moment                                                                                            */
+    #define prmtxB1PL2_82                732 /* Eerste realisatie PL2 fc82 B-moment                                                                                            */
+    #define prmtxC1PL2_82                733 /* Eerste realisatie PL2 fc82 C-moment                                                                                            */
+    #define prmtxD1PL2_82                734 /* Eerste realisatie PL2 fc82 D-moment                                                                                            */
+    #define prmtxE1PL2_82                735 /* Eerste realisatie PL2 fc82 E-moment                                                                                            */
+    #define prmtxA2PL2_82                736 /* Tweede realisatie PL2 fc82 A-moment                                                                                            */
+    #define prmtxB2PL2_82                737 /* Tweede realisatie PL2 fc82 B-moment                                                                                            */
+    #define prmtxC2PL2_82                738 /* Tweede realisatie PL2 fc82 C-moment                                                                                            */
+    #define prmtxD2PL2_82                739 /* Tweede realisatie PL2 fc82 D-moment                                                                                            */
+    #define prmtxE2PL2_82                740 /* Tweede realisatie PL2 fc82 E-moment                                                                                            */
+    #define prmtxA1PL2_84                741 /* Eerste realisatie PL2 fc84 A-moment                                                                                            */
+    #define prmtxB1PL2_84                742 /* Eerste realisatie PL2 fc84 B-moment                                                                                            */
+    #define prmtxC1PL2_84                743 /* Eerste realisatie PL2 fc84 C-moment                                                                                            */
+    #define prmtxD1PL2_84                744 /* Eerste realisatie PL2 fc84 D-moment                                                                                            */
+    #define prmtxE1PL2_84                745 /* Eerste realisatie PL2 fc84 E-moment                                                                                            */
+    #define prmtxA2PL2_84                746 /* Tweede realisatie PL2 fc84 A-moment                                                                                            */
+    #define prmtxB2PL2_84                747 /* Tweede realisatie PL2 fc84 B-moment                                                                                            */
+    #define prmtxC2PL2_84                748 /* Tweede realisatie PL2 fc84 C-moment                                                                                            */
+    #define prmtxD2PL2_84                749 /* Tweede realisatie PL2 fc84 D-moment                                                                                            */
+    #define prmtxE2PL2_84                750 /* Tweede realisatie PL2 fc84 E-moment                                                                                            */
+    #define prmtxA1PL3_02                751 /* Eerste realisatie PL3 fc02 A-moment                                                                                            */
+    #define prmtxB1PL3_02                752 /* Eerste realisatie PL3 fc02 B-moment                                                                                            */
+    #define prmtxC1PL3_02                753 /* Eerste realisatie PL3 fc02 C-moment                                                                                            */
+    #define prmtxD1PL3_02                754 /* Eerste realisatie PL3 fc02 D-moment                                                                                            */
+    #define prmtxE1PL3_02                755 /* Eerste realisatie PL3 fc02 E-moment                                                                                            */
+    #define prmtxA2PL3_02                756 /* Tweede realisatie PL3 fc02 A-moment                                                                                            */
+    #define prmtxB2PL3_02                757 /* Tweede realisatie PL3 fc02 B-moment                                                                                            */
+    #define prmtxC2PL3_02                758 /* Tweede realisatie PL3 fc02 C-moment                                                                                            */
+    #define prmtxD2PL3_02                759 /* Tweede realisatie PL3 fc02 D-moment                                                                                            */
+    #define prmtxE2PL3_02                760 /* Tweede realisatie PL3 fc02 E-moment                                                                                            */
+    #define prmtxA1PL3_03                761 /* Eerste realisatie PL3 fc03 A-moment                                                                                            */
+    #define prmtxB1PL3_03                762 /* Eerste realisatie PL3 fc03 B-moment                                                                                            */
+    #define prmtxC1PL3_03                763 /* Eerste realisatie PL3 fc03 C-moment                                                                                            */
+    #define prmtxD1PL3_03                764 /* Eerste realisatie PL3 fc03 D-moment                                                                                            */
+    #define prmtxE1PL3_03                765 /* Eerste realisatie PL3 fc03 E-moment                                                                                            */
+    #define prmtxA2PL3_03                766 /* Tweede realisatie PL3 fc03 A-moment                                                                                            */
+    #define prmtxB2PL3_03                767 /* Tweede realisatie PL3 fc03 B-moment                                                                                            */
+    #define prmtxC2PL3_03                768 /* Tweede realisatie PL3 fc03 C-moment                                                                                            */
+    #define prmtxD2PL3_03                769 /* Tweede realisatie PL3 fc03 D-moment                                                                                            */
+    #define prmtxE2PL3_03                770 /* Tweede realisatie PL3 fc03 E-moment                                                                                            */
+    #define prmtxA1PL3_05                771 /* Eerste realisatie PL3 fc05 A-moment                                                                                            */
+    #define prmtxB1PL3_05                772 /* Eerste realisatie PL3 fc05 B-moment                                                                                            */
+    #define prmtxC1PL3_05                773 /* Eerste realisatie PL3 fc05 C-moment                                                                                            */
+    #define prmtxD1PL3_05                774 /* Eerste realisatie PL3 fc05 D-moment                                                                                            */
+    #define prmtxE1PL3_05                775 /* Eerste realisatie PL3 fc05 E-moment                                                                                            */
+    #define prmtxA2PL3_05                776 /* Tweede realisatie PL3 fc05 A-moment                                                                                            */
+    #define prmtxB2PL3_05                777 /* Tweede realisatie PL3 fc05 B-moment                                                                                            */
+    #define prmtxC2PL3_05                778 /* Tweede realisatie PL3 fc05 C-moment                                                                                            */
+    #define prmtxD2PL3_05                779 /* Tweede realisatie PL3 fc05 D-moment                                                                                            */
+    #define prmtxE2PL3_05                780 /* Tweede realisatie PL3 fc05 E-moment                                                                                            */
+    #define prmtxA1PL3_08                781 /* Eerste realisatie PL3 fc08 A-moment                                                                                            */
+    #define prmtxB1PL3_08                782 /* Eerste realisatie PL3 fc08 B-moment                                                                                            */
+    #define prmtxC1PL3_08                783 /* Eerste realisatie PL3 fc08 C-moment                                                                                            */
+    #define prmtxD1PL3_08                784 /* Eerste realisatie PL3 fc08 D-moment                                                                                            */
+    #define prmtxE1PL3_08                785 /* Eerste realisatie PL3 fc08 E-moment                                                                                            */
+    #define prmtxA2PL3_08                786 /* Tweede realisatie PL3 fc08 A-moment                                                                                            */
+    #define prmtxB2PL3_08                787 /* Tweede realisatie PL3 fc08 B-moment                                                                                            */
+    #define prmtxC2PL3_08                788 /* Tweede realisatie PL3 fc08 C-moment                                                                                            */
+    #define prmtxD2PL3_08                789 /* Tweede realisatie PL3 fc08 D-moment                                                                                            */
+    #define prmtxE2PL3_08                790 /* Tweede realisatie PL3 fc08 E-moment                                                                                            */
+    #define prmtxA1PL3_09                791 /* Eerste realisatie PL3 fc09 A-moment                                                                                            */
+    #define prmtxB1PL3_09                792 /* Eerste realisatie PL3 fc09 B-moment                                                                                            */
+    #define prmtxC1PL3_09                793 /* Eerste realisatie PL3 fc09 C-moment                                                                                            */
+    #define prmtxD1PL3_09                794 /* Eerste realisatie PL3 fc09 D-moment                                                                                            */
+    #define prmtxE1PL3_09                795 /* Eerste realisatie PL3 fc09 E-moment                                                                                            */
+    #define prmtxA2PL3_09                796 /* Tweede realisatie PL3 fc09 A-moment                                                                                            */
+    #define prmtxB2PL3_09                797 /* Tweede realisatie PL3 fc09 B-moment                                                                                            */
+    #define prmtxC2PL3_09                798 /* Tweede realisatie PL3 fc09 C-moment                                                                                            */
+    #define prmtxD2PL3_09                799 /* Tweede realisatie PL3 fc09 D-moment                                                                                            */
+    #define prmtxE2PL3_09                800 /* Tweede realisatie PL3 fc09 E-moment                                                                                            */
+    #define prmtxA1PL3_11                801 /* Eerste realisatie PL3 fc11 A-moment                                                                                            */
+    #define prmtxB1PL3_11                802 /* Eerste realisatie PL3 fc11 B-moment                                                                                            */
+    #define prmtxC1PL3_11                803 /* Eerste realisatie PL3 fc11 C-moment                                                                                            */
+    #define prmtxD1PL3_11                804 /* Eerste realisatie PL3 fc11 D-moment                                                                                            */
+    #define prmtxE1PL3_11                805 /* Eerste realisatie PL3 fc11 E-moment                                                                                            */
+    #define prmtxA2PL3_11                806 /* Tweede realisatie PL3 fc11 A-moment                                                                                            */
+    #define prmtxB2PL3_11                807 /* Tweede realisatie PL3 fc11 B-moment                                                                                            */
+    #define prmtxC2PL3_11                808 /* Tweede realisatie PL3 fc11 C-moment                                                                                            */
+    #define prmtxD2PL3_11                809 /* Tweede realisatie PL3 fc11 D-moment                                                                                            */
+    #define prmtxE2PL3_11                810 /* Tweede realisatie PL3 fc11 E-moment                                                                                            */
+    #define prmtxA1PL3_21                811 /* Eerste realisatie PL3 fc21 A-moment                                                                                            */
+    #define prmtxB1PL3_21                812 /* Eerste realisatie PL3 fc21 B-moment                                                                                            */
+    #define prmtxC1PL3_21                813 /* Eerste realisatie PL3 fc21 C-moment                                                                                            */
+    #define prmtxD1PL3_21                814 /* Eerste realisatie PL3 fc21 D-moment                                                                                            */
+    #define prmtxE1PL3_21                815 /* Eerste realisatie PL3 fc21 E-moment                                                                                            */
+    #define prmtxA2PL3_21                816 /* Tweede realisatie PL3 fc21 A-moment                                                                                            */
+    #define prmtxB2PL3_21                817 /* Tweede realisatie PL3 fc21 B-moment                                                                                            */
+    #define prmtxC2PL3_21                818 /* Tweede realisatie PL3 fc21 C-moment                                                                                            */
+    #define prmtxD2PL3_21                819 /* Tweede realisatie PL3 fc21 D-moment                                                                                            */
+    #define prmtxE2PL3_21                820 /* Tweede realisatie PL3 fc21 E-moment                                                                                            */
+    #define prmtxA1PL3_22                821 /* Eerste realisatie PL3 fc22 A-moment                                                                                            */
+    #define prmtxB1PL3_22                822 /* Eerste realisatie PL3 fc22 B-moment                                                                                            */
+    #define prmtxC1PL3_22                823 /* Eerste realisatie PL3 fc22 C-moment                                                                                            */
+    #define prmtxD1PL3_22                824 /* Eerste realisatie PL3 fc22 D-moment                                                                                            */
+    #define prmtxE1PL3_22                825 /* Eerste realisatie PL3 fc22 E-moment                                                                                            */
+    #define prmtxA2PL3_22                826 /* Tweede realisatie PL3 fc22 A-moment                                                                                            */
+    #define prmtxB2PL3_22                827 /* Tweede realisatie PL3 fc22 B-moment                                                                                            */
+    #define prmtxC2PL3_22                828 /* Tweede realisatie PL3 fc22 C-moment                                                                                            */
+    #define prmtxD2PL3_22                829 /* Tweede realisatie PL3 fc22 D-moment                                                                                            */
+    #define prmtxE2PL3_22                830 /* Tweede realisatie PL3 fc22 E-moment                                                                                            */
+    #define prmtxA1PL3_24                831 /* Eerste realisatie PL3 fc24 A-moment                                                                                            */
+    #define prmtxB1PL3_24                832 /* Eerste realisatie PL3 fc24 B-moment                                                                                            */
+    #define prmtxC1PL3_24                833 /* Eerste realisatie PL3 fc24 C-moment                                                                                            */
+    #define prmtxD1PL3_24                834 /* Eerste realisatie PL3 fc24 D-moment                                                                                            */
+    #define prmtxE1PL3_24                835 /* Eerste realisatie PL3 fc24 E-moment                                                                                            */
+    #define prmtxA2PL3_24                836 /* Tweede realisatie PL3 fc24 A-moment                                                                                            */
+    #define prmtxB2PL3_24                837 /* Tweede realisatie PL3 fc24 B-moment                                                                                            */
+    #define prmtxC2PL3_24                838 /* Tweede realisatie PL3 fc24 C-moment                                                                                            */
+    #define prmtxD2PL3_24                839 /* Tweede realisatie PL3 fc24 D-moment                                                                                            */
+    #define prmtxE2PL3_24                840 /* Tweede realisatie PL3 fc24 E-moment                                                                                            */
+    #define prmtxA1PL3_26                841 /* Eerste realisatie PL3 fc26 A-moment                                                                                            */
+    #define prmtxB1PL3_26                842 /* Eerste realisatie PL3 fc26 B-moment                                                                                            */
+    #define prmtxC1PL3_26                843 /* Eerste realisatie PL3 fc26 C-moment                                                                                            */
+    #define prmtxD1PL3_26                844 /* Eerste realisatie PL3 fc26 D-moment                                                                                            */
+    #define prmtxE1PL3_26                845 /* Eerste realisatie PL3 fc26 E-moment                                                                                            */
+    #define prmtxA2PL3_26                846 /* Tweede realisatie PL3 fc26 A-moment                                                                                            */
+    #define prmtxB2PL3_26                847 /* Tweede realisatie PL3 fc26 B-moment                                                                                            */
+    #define prmtxC2PL3_26                848 /* Tweede realisatie PL3 fc26 C-moment                                                                                            */
+    #define prmtxD2PL3_26                849 /* Tweede realisatie PL3 fc26 D-moment                                                                                            */
+    #define prmtxE2PL3_26                850 /* Tweede realisatie PL3 fc26 E-moment                                                                                            */
+    #define prmtxA1PL3_28                851 /* Eerste realisatie PL3 fc28 A-moment                                                                                            */
+    #define prmtxB1PL3_28                852 /* Eerste realisatie PL3 fc28 B-moment                                                                                            */
+    #define prmtxC1PL3_28                853 /* Eerste realisatie PL3 fc28 C-moment                                                                                            */
+    #define prmtxD1PL3_28                854 /* Eerste realisatie PL3 fc28 D-moment                                                                                            */
+    #define prmtxE1PL3_28                855 /* Eerste realisatie PL3 fc28 E-moment                                                                                            */
+    #define prmtxA2PL3_28                856 /* Tweede realisatie PL3 fc28 A-moment                                                                                            */
+    #define prmtxB2PL3_28                857 /* Tweede realisatie PL3 fc28 B-moment                                                                                            */
+    #define prmtxC2PL3_28                858 /* Tweede realisatie PL3 fc28 C-moment                                                                                            */
+    #define prmtxD2PL3_28                859 /* Tweede realisatie PL3 fc28 D-moment                                                                                            */
+    #define prmtxE2PL3_28                860 /* Tweede realisatie PL3 fc28 E-moment                                                                                            */
+    #define prmtxA1PL3_31                861 /* Eerste realisatie PL3 fc31 A-moment                                                                                            */
+    #define prmtxB1PL3_31                862 /* Eerste realisatie PL3 fc31 B-moment                                                                                            */
+    #define prmtxC1PL3_31                863 /* Eerste realisatie PL3 fc31 C-moment                                                                                            */
+    #define prmtxD1PL3_31                864 /* Eerste realisatie PL3 fc31 D-moment                                                                                            */
+    #define prmtxE1PL3_31                865 /* Eerste realisatie PL3 fc31 E-moment                                                                                            */
+    #define prmtxA2PL3_31                866 /* Tweede realisatie PL3 fc31 A-moment                                                                                            */
+    #define prmtxB2PL3_31                867 /* Tweede realisatie PL3 fc31 B-moment                                                                                            */
+    #define prmtxC2PL3_31                868 /* Tweede realisatie PL3 fc31 C-moment                                                                                            */
+    #define prmtxD2PL3_31                869 /* Tweede realisatie PL3 fc31 D-moment                                                                                            */
+    #define prmtxE2PL3_31                870 /* Tweede realisatie PL3 fc31 E-moment                                                                                            */
+    #define prmtxA1PL3_32                871 /* Eerste realisatie PL3 fc32 A-moment                                                                                            */
+    #define prmtxB1PL3_32                872 /* Eerste realisatie PL3 fc32 B-moment                                                                                            */
+    #define prmtxC1PL3_32                873 /* Eerste realisatie PL3 fc32 C-moment                                                                                            */
+    #define prmtxD1PL3_32                874 /* Eerste realisatie PL3 fc32 D-moment                                                                                            */
+    #define prmtxE1PL3_32                875 /* Eerste realisatie PL3 fc32 E-moment                                                                                            */
+    #define prmtxA2PL3_32                876 /* Tweede realisatie PL3 fc32 A-moment                                                                                            */
+    #define prmtxB2PL3_32                877 /* Tweede realisatie PL3 fc32 B-moment                                                                                            */
+    #define prmtxC2PL3_32                878 /* Tweede realisatie PL3 fc32 C-moment                                                                                            */
+    #define prmtxD2PL3_32                879 /* Tweede realisatie PL3 fc32 D-moment                                                                                            */
+    #define prmtxE2PL3_32                880 /* Tweede realisatie PL3 fc32 E-moment                                                                                            */
+    #define prmtxA1PL3_33                881 /* Eerste realisatie PL3 fc33 A-moment                                                                                            */
+    #define prmtxB1PL3_33                882 /* Eerste realisatie PL3 fc33 B-moment                                                                                            */
+    #define prmtxC1PL3_33                883 /* Eerste realisatie PL3 fc33 C-moment                                                                                            */
+    #define prmtxD1PL3_33                884 /* Eerste realisatie PL3 fc33 D-moment                                                                                            */
+    #define prmtxE1PL3_33                885 /* Eerste realisatie PL3 fc33 E-moment                                                                                            */
+    #define prmtxA2PL3_33                886 /* Tweede realisatie PL3 fc33 A-moment                                                                                            */
+    #define prmtxB2PL3_33                887 /* Tweede realisatie PL3 fc33 B-moment                                                                                            */
+    #define prmtxC2PL3_33                888 /* Tweede realisatie PL3 fc33 C-moment                                                                                            */
+    #define prmtxD2PL3_33                889 /* Tweede realisatie PL3 fc33 D-moment                                                                                            */
+    #define prmtxE2PL3_33                890 /* Tweede realisatie PL3 fc33 E-moment                                                                                            */
+    #define prmtxA1PL3_34                891 /* Eerste realisatie PL3 fc34 A-moment                                                                                            */
+    #define prmtxB1PL3_34                892 /* Eerste realisatie PL3 fc34 B-moment                                                                                            */
+    #define prmtxC1PL3_34                893 /* Eerste realisatie PL3 fc34 C-moment                                                                                            */
+    #define prmtxD1PL3_34                894 /* Eerste realisatie PL3 fc34 D-moment                                                                                            */
+    #define prmtxE1PL3_34                895 /* Eerste realisatie PL3 fc34 E-moment                                                                                            */
+    #define prmtxA2PL3_34                896 /* Tweede realisatie PL3 fc34 A-moment                                                                                            */
+    #define prmtxB2PL3_34                897 /* Tweede realisatie PL3 fc34 B-moment                                                                                            */
+    #define prmtxC2PL3_34                898 /* Tweede realisatie PL3 fc34 C-moment                                                                                            */
+    #define prmtxD2PL3_34                899 /* Tweede realisatie PL3 fc34 D-moment                                                                                            */
+    #define prmtxE2PL3_34                900 /* Tweede realisatie PL3 fc34 E-moment                                                                                            */
+    #define prmtxA1PL3_38                901 /* Eerste realisatie PL3 fc38 A-moment                                                                                            */
+    #define prmtxB1PL3_38                902 /* Eerste realisatie PL3 fc38 B-moment                                                                                            */
+    #define prmtxC1PL3_38                903 /* Eerste realisatie PL3 fc38 C-moment                                                                                            */
+    #define prmtxD1PL3_38                904 /* Eerste realisatie PL3 fc38 D-moment                                                                                            */
+    #define prmtxE1PL3_38                905 /* Eerste realisatie PL3 fc38 E-moment                                                                                            */
+    #define prmtxA2PL3_38                906 /* Tweede realisatie PL3 fc38 A-moment                                                                                            */
+    #define prmtxB2PL3_38                907 /* Tweede realisatie PL3 fc38 B-moment                                                                                            */
+    #define prmtxC2PL3_38                908 /* Tweede realisatie PL3 fc38 C-moment                                                                                            */
+    #define prmtxD2PL3_38                909 /* Tweede realisatie PL3 fc38 D-moment                                                                                            */
+    #define prmtxE2PL3_38                910 /* Tweede realisatie PL3 fc38 E-moment                                                                                            */
+    #define prmtxA1PL3_61                911 /* Eerste realisatie PL3 fc61 A-moment                                                                                            */
+    #define prmtxB1PL3_61                912 /* Eerste realisatie PL3 fc61 B-moment                                                                                            */
+    #define prmtxC1PL3_61                913 /* Eerste realisatie PL3 fc61 C-moment                                                                                            */
+    #define prmtxD1PL3_61                914 /* Eerste realisatie PL3 fc61 D-moment                                                                                            */
+    #define prmtxE1PL3_61                915 /* Eerste realisatie PL3 fc61 E-moment                                                                                            */
+    #define prmtxA2PL3_61                916 /* Tweede realisatie PL3 fc61 A-moment                                                                                            */
+    #define prmtxB2PL3_61                917 /* Tweede realisatie PL3 fc61 B-moment                                                                                            */
+    #define prmtxC2PL3_61                918 /* Tweede realisatie PL3 fc61 C-moment                                                                                            */
+    #define prmtxD2PL3_61                919 /* Tweede realisatie PL3 fc61 D-moment                                                                                            */
+    #define prmtxE2PL3_61                920 /* Tweede realisatie PL3 fc61 E-moment                                                                                            */
+    #define prmtxA1PL3_62                921 /* Eerste realisatie PL3 fc62 A-moment                                                                                            */
+    #define prmtxB1PL3_62                922 /* Eerste realisatie PL3 fc62 B-moment                                                                                            */
+    #define prmtxC1PL3_62                923 /* Eerste realisatie PL3 fc62 C-moment                                                                                            */
+    #define prmtxD1PL3_62                924 /* Eerste realisatie PL3 fc62 D-moment                                                                                            */
+    #define prmtxE1PL3_62                925 /* Eerste realisatie PL3 fc62 E-moment                                                                                            */
+    #define prmtxA2PL3_62                926 /* Tweede realisatie PL3 fc62 A-moment                                                                                            */
+    #define prmtxB2PL3_62                927 /* Tweede realisatie PL3 fc62 B-moment                                                                                            */
+    #define prmtxC2PL3_62                928 /* Tweede realisatie PL3 fc62 C-moment                                                                                            */
+    #define prmtxD2PL3_62                929 /* Tweede realisatie PL3 fc62 D-moment                                                                                            */
+    #define prmtxE2PL3_62                930 /* Tweede realisatie PL3 fc62 E-moment                                                                                            */
+    #define prmtxA1PL3_67                931 /* Eerste realisatie PL3 fc67 A-moment                                                                                            */
+    #define prmtxB1PL3_67                932 /* Eerste realisatie PL3 fc67 B-moment                                                                                            */
+    #define prmtxC1PL3_67                933 /* Eerste realisatie PL3 fc67 C-moment                                                                                            */
+    #define prmtxD1PL3_67                934 /* Eerste realisatie PL3 fc67 D-moment                                                                                            */
+    #define prmtxE1PL3_67                935 /* Eerste realisatie PL3 fc67 E-moment                                                                                            */
+    #define prmtxA2PL3_67                936 /* Tweede realisatie PL3 fc67 A-moment                                                                                            */
+    #define prmtxB2PL3_67                937 /* Tweede realisatie PL3 fc67 B-moment                                                                                            */
+    #define prmtxC2PL3_67                938 /* Tweede realisatie PL3 fc67 C-moment                                                                                            */
+    #define prmtxD2PL3_67                939 /* Tweede realisatie PL3 fc67 D-moment                                                                                            */
+    #define prmtxE2PL3_67                940 /* Tweede realisatie PL3 fc67 E-moment                                                                                            */
+    #define prmtxA1PL3_68                941 /* Eerste realisatie PL3 fc68 A-moment                                                                                            */
+    #define prmtxB1PL3_68                942 /* Eerste realisatie PL3 fc68 B-moment                                                                                            */
+    #define prmtxC1PL3_68                943 /* Eerste realisatie PL3 fc68 C-moment                                                                                            */
+    #define prmtxD1PL3_68                944 /* Eerste realisatie PL3 fc68 D-moment                                                                                            */
+    #define prmtxE1PL3_68                945 /* Eerste realisatie PL3 fc68 E-moment                                                                                            */
+    #define prmtxA2PL3_68                946 /* Tweede realisatie PL3 fc68 A-moment                                                                                            */
+    #define prmtxB2PL3_68                947 /* Tweede realisatie PL3 fc68 B-moment                                                                                            */
+    #define prmtxC2PL3_68                948 /* Tweede realisatie PL3 fc68 C-moment                                                                                            */
+    #define prmtxD2PL3_68                949 /* Tweede realisatie PL3 fc68 D-moment                                                                                            */
+    #define prmtxE2PL3_68                950 /* Tweede realisatie PL3 fc68 E-moment                                                                                            */
+    #define prmtxA1PL3_81                951 /* Eerste realisatie PL3 fc81 A-moment                                                                                            */
+    #define prmtxB1PL3_81                952 /* Eerste realisatie PL3 fc81 B-moment                                                                                            */
+    #define prmtxC1PL3_81                953 /* Eerste realisatie PL3 fc81 C-moment                                                                                            */
+    #define prmtxD1PL3_81                954 /* Eerste realisatie PL3 fc81 D-moment                                                                                            */
+    #define prmtxE1PL3_81                955 /* Eerste realisatie PL3 fc81 E-moment                                                                                            */
+    #define prmtxA2PL3_81                956 /* Tweede realisatie PL3 fc81 A-moment                                                                                            */
+    #define prmtxB2PL3_81                957 /* Tweede realisatie PL3 fc81 B-moment                                                                                            */
+    #define prmtxC2PL3_81                958 /* Tweede realisatie PL3 fc81 C-moment                                                                                            */
+    #define prmtxD2PL3_81                959 /* Tweede realisatie PL3 fc81 D-moment                                                                                            */
+    #define prmtxE2PL3_81                960 /* Tweede realisatie PL3 fc81 E-moment                                                                                            */
+    #define prmtxA1PL3_82                961 /* Eerste realisatie PL3 fc82 A-moment                                                                                            */
+    #define prmtxB1PL3_82                962 /* Eerste realisatie PL3 fc82 B-moment                                                                                            */
+    #define prmtxC1PL3_82                963 /* Eerste realisatie PL3 fc82 C-moment                                                                                            */
+    #define prmtxD1PL3_82                964 /* Eerste realisatie PL3 fc82 D-moment                                                                                            */
+    #define prmtxE1PL3_82                965 /* Eerste realisatie PL3 fc82 E-moment                                                                                            */
+    #define prmtxA2PL3_82                966 /* Tweede realisatie PL3 fc82 A-moment                                                                                            */
+    #define prmtxB2PL3_82                967 /* Tweede realisatie PL3 fc82 B-moment                                                                                            */
+    #define prmtxC2PL3_82                968 /* Tweede realisatie PL3 fc82 C-moment                                                                                            */
+    #define prmtxD2PL3_82                969 /* Tweede realisatie PL3 fc82 D-moment                                                                                            */
+    #define prmtxE2PL3_82                970 /* Tweede realisatie PL3 fc82 E-moment                                                                                            */
+    #define prmtxA1PL3_84                971 /* Eerste realisatie PL3 fc84 A-moment                                                                                            */
+    #define prmtxB1PL3_84                972 /* Eerste realisatie PL3 fc84 B-moment                                                                                            */
+    #define prmtxC1PL3_84                973 /* Eerste realisatie PL3 fc84 C-moment                                                                                            */
+    #define prmtxD1PL3_84                974 /* Eerste realisatie PL3 fc84 D-moment                                                                                            */
+    #define prmtxE1PL3_84                975 /* Eerste realisatie PL3 fc84 E-moment                                                                                            */
+    #define prmtxA2PL3_84                976 /* Tweede realisatie PL3 fc84 A-moment                                                                                            */
+    #define prmtxB2PL3_84                977 /* Tweede realisatie PL3 fc84 B-moment                                                                                            */
+    #define prmtxC2PL3_84                978 /* Tweede realisatie PL3 fc84 C-moment                                                                                            */
+    #define prmtxD2PL3_84                979 /* Tweede realisatie PL3 fc84 D-moment                                                                                            */
+    #define prmtxE2PL3_84                980 /* Tweede realisatie PL3 fc84 E-moment                                                                                            */
+    #define prmrstotxa                   981 /* Tijd tot xa dat RS opgezet wordt (anti-flitsgroen)                                                                             */
+    #define prmplxperdef                 982 /* Plan voor periode default                                                                                                      */
+    #define prmplxper1                   983 /* Plan voor periode dag                                                                                                          */
+    #define prmplxper2                   984 /* Plan voor periode ochtend                                                                                                      */
+    #define prmplxper3                   985 /* Plan voor periode avond                                                                                                        */
+    #define prmplxper4                   986 /* Plan voor periode koopavond                                                                                                    */
+    #define prmplxper5                   987 /* Plan voor periode weekend                                                                                                      */
+    #define prmplxper6                   988 /* Plan voor periode reserve                                                                                                      */
+    #define prmtypema0261                989 /* Type meeaanvraag van 02 naar 61                                                                                                */
+    #define prmtypema0262                990 /* Type meeaanvraag van 02 naar 62                                                                                                */
+    #define prmtypema0521                991 /* Type meeaanvraag van 05 naar 21                                                                                                */
+    #define prmtypema0522                992 /* Type meeaanvraag van 05 naar 22                                                                                                */
+    #define prmtypema0532                993 /* Type meeaanvraag van 05 naar 32                                                                                                */
+    #define prmtypema0868                994 /* Type meeaanvraag van 08 naar 68                                                                                                */
+    #define prmtypema1126                995 /* Type meeaanvraag van 11 naar 26                                                                                                */
+    #define prmtypema1168                996 /* Type meeaanvraag van 11 naar 68                                                                                                */
+    #define prmtypema2221                997 /* Type meeaanvraag van 22 naar 21                                                                                                */
+    #define prmtypema3122                998 /* Type meeaanvraag van 31 naar 22                                                                                                */
+    #define prmtypema3132                999 /* Type meeaanvraag van 31 naar 32                                                                                                */
+    #define prmtypema3222               1000 /* Type meeaanvraag van 32 naar 22                                                                                                */
+    #define prmtypema3231               1001 /* Type meeaanvraag van 32 naar 31                                                                                                */
+    #define prmtypema3324               1002 /* Type meeaanvraag van 33 naar 24                                                                                                */
+    #define prmtypema3334               1003 /* Type meeaanvraag van 33 naar 34                                                                                                */
+    #define prmtypema3384               1004 /* Type meeaanvraag van 33 naar 84                                                                                                */
+    #define prmtypema3424               1005 /* Type meeaanvraag van 34 naar 24                                                                                                */
+    #define prmtypema3433               1006 /* Type meeaanvraag van 34 naar 33                                                                                                */
+    #define prmtypema3484               1007 /* Type meeaanvraag van 34 naar 84                                                                                                */
+    #define prmtypema3828               1008 /* Type meeaanvraag van 38 naar 28                                                                                                */
+    #define prmtypema8281               1009 /* Type meeaanvraag van 82 naar 81                                                                                                */
+    #define prmmv02                     1010 /* Type meeverlengen fase 02 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv03                     1011 /* Type meeverlengen fase 03 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv05                     1012 /* Type meeverlengen fase 05 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv08                     1013 /* Type meeverlengen fase 08 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv09                     1014 /* Type meeverlengen fase 09 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv11                     1015 /* Type meeverlengen fase 11 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv21                     1016 /* Type meeverlengen fase 21 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv22                     1017 /* Type meeverlengen fase 22 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv24                     1018 /* Type meeverlengen fase 24 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv26                     1019 /* Type meeverlengen fase 26 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv28                     1020 /* Type meeverlengen fase 28 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv31                     1021 /* Type meeverlengen fase 31 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv32                     1022 /* Type meeverlengen fase 32 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv33                     1023 /* Type meeverlengen fase 33 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv34                     1024 /* Type meeverlengen fase 34 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv38                     1025 /* Type meeverlengen fase 38 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv61                     1026 /* Type meeverlengen fase 61 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv62                     1027 /* Type meeverlengen fase 62 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv67                     1028 /* Type meeverlengen fase 67 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv68                     1029 /* Type meeverlengen fase 68 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv81                     1030 /* Type meeverlengen fase 81 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv82                     1031 /* Type meeverlengen fase 82 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmmv84                     1032 /* Type meeverlengen fase 84 (0=uit,1=ymmaxV1,2=ymmaxtoV1,3=ymmaxV1|MK&ymmaxtoV1,4=ymmaxvtg,5=ymmax,6=ymmaxto,7=ymmax|MK&ymmaxto) */
+    #define prmprml02                   1033 /* Toewijzen PRML voor fase 02 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml03                   1034 /* Toewijzen PRML voor fase 03 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml05                   1035 /* Toewijzen PRML voor fase 05 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml08                   1036 /* Toewijzen PRML voor fase 08 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml09                   1037 /* Toewijzen PRML voor fase 09 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml11                   1038 /* Toewijzen PRML voor fase 11 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml21                   1039 /* Toewijzen PRML voor fase 21 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml22                   1040 /* Toewijzen PRML voor fase 22 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml24                   1041 /* Toewijzen PRML voor fase 24 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml26                   1042 /* Toewijzen PRML voor fase 26 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml28                   1043 /* Toewijzen PRML voor fase 28 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml31                   1044 /* Toewijzen PRML voor fase 31 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml32                   1045 /* Toewijzen PRML voor fase 32 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml33                   1046 /* Toewijzen PRML voor fase 33 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml34                   1047 /* Toewijzen PRML voor fase 34 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml38                   1048 /* Toewijzen PRML voor fase 38 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml61                   1049 /* Toewijzen PRML voor fase 61 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml62                   1050 /* Toewijzen PRML voor fase 62 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml67                   1051 /* Toewijzen PRML voor fase 67 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml68                   1052 /* Toewijzen PRML voor fase 68 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml81                   1053 /* Toewijzen PRML voor fase 81 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml82                   1054 /* Toewijzen PRML voor fase 82 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmprml84                   1055 /* Toewijzen PRML voor fase 84 (bitwise BIT0 tot en met BIT14; gebruik BIT15 indien niet toegewezen)                              */
+    #define prmxnl0262                  1056 /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
+    #define prmxnl0868                  1057 /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
+    #define prmxnl1168                  1058 /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
+    #define prmxnl2221                  1059 /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
+    #define prmxnl3132                  1060 /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
+    #define prmxnl3231                  1061 /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
+    #define prmxnl3334                  1062 /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
+    #define prmxnl3433                  1063 /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
+    #define prmxnl8281                  1064 /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
+    #define prmOVtstpgrensvroeg         1065 /* Grens waarboven een OV voertuig als te vroeg wordt aangemerkt                                                                  */
+    #define prmOVtstpgrenslaat          1066 /* Grens waarboven een OV voertuig als te laat wordt aangemerkt                                                                   */
+    #define prmovstipttevroeg02bus      1067 /* Prioriteitsnveau OV te vroeg bij 02 Bus                                                                                        */
+    #define prmovstiptoptijd02bus       1068 /* Prioriteitsnveau OV op tijd bij 02 Bus                                                                                         */
+    #define prmovstipttelaat02bus       1069 /* Prioriteitsnveau OV te laat bij 02 Bus                                                                                         */
+    #define prmovstipttevroeg03bus      1070 /* Prioriteitsnveau OV te vroeg bij 03 Bus                                                                                        */
+    #define prmovstiptoptijd03bus       1071 /* Prioriteitsnveau OV op tijd bij 03 Bus                                                                                         */
+    #define prmovstipttelaat03bus       1072 /* Prioriteitsnveau OV te laat bij 03 Bus                                                                                         */
+    #define prmovstipttevroeg05bus      1073 /* Prioriteitsnveau OV te vroeg bij 05 Bus                                                                                        */
+    #define prmovstiptoptijd05bus       1074 /* Prioriteitsnveau OV op tijd bij 05 Bus                                                                                         */
+    #define prmovstipttelaat05bus       1075 /* Prioriteitsnveau OV te laat bij 05 Bus                                                                                         */
+    #define prmovstipttevroeg08bus      1076 /* Prioriteitsnveau OV te vroeg bij 08 Bus                                                                                        */
+    #define prmovstiptoptijd08bus       1077 /* Prioriteitsnveau OV op tijd bij 08 Bus                                                                                         */
+    #define prmovstipttelaat08bus       1078 /* Prioriteitsnveau OV te laat bij 08 Bus                                                                                         */
+    #define prmovstipttevroeg09bus      1079 /* Prioriteitsnveau OV te vroeg bij 09 Bus                                                                                        */
+    #define prmovstiptoptijd09bus       1080 /* Prioriteitsnveau OV op tijd bij 09 Bus                                                                                         */
+    #define prmovstipttelaat09bus       1081 /* Prioriteitsnveau OV te laat bij 09 Bus                                                                                         */
+    #define prmovstipttevroeg11bus      1082 /* Prioriteitsnveau OV te vroeg bij 11 Bus                                                                                        */
+    #define prmovstiptoptijd11bus       1083 /* Prioriteitsnveau OV op tijd bij 11 Bus                                                                                         */
+    #define prmovstipttelaat11bus       1084 /* Prioriteitsnveau OV te laat bij 11 Bus                                                                                         */
+    #define prmovstipttevroeg61bus      1085 /* Prioriteitsnveau OV te vroeg bij 61 Bus                                                                                        */
+    #define prmovstiptoptijd61bus       1086 /* Prioriteitsnveau OV op tijd bij 61 Bus                                                                                         */
+    #define prmovstipttelaat61bus       1087 /* Prioriteitsnveau OV te laat bij 61 Bus                                                                                         */
+    #define prmovstipttevroeg62bus      1088 /* Prioriteitsnveau OV te vroeg bij 62 Bus                                                                                        */
+    #define prmovstiptoptijd62bus       1089 /* Prioriteitsnveau OV op tijd bij 62 Bus                                                                                         */
+    #define prmovstipttelaat62bus       1090 /* Prioriteitsnveau OV te laat bij 62 Bus                                                                                         */
+    #define prmovstipttevroeg67bus      1091 /* Prioriteitsnveau OV te vroeg bij 67 Bus                                                                                        */
+    #define prmovstiptoptijd67bus       1092 /* Prioriteitsnveau OV op tijd bij 67 Bus                                                                                         */
+    #define prmovstipttelaat67bus       1093 /* Prioriteitsnveau OV te laat bij 67 Bus                                                                                         */
+    #define prmovstipttevroeg68bus      1094 /* Prioriteitsnveau OV te vroeg bij 68 Bus                                                                                        */
+    #define prmovstiptoptijd68bus       1095 /* Prioriteitsnveau OV op tijd bij 68 Bus                                                                                         */
+    #define prmovstipttelaat68bus       1096 /* Prioriteitsnveau OV te laat bij 68 Bus                                                                                         */
+    #define prmmwta                     1097 /* Maximale wachttijd autoverkeer                                                                                                 */
+    #define prmmwtfts                   1098 /* Maximale wachttijd fiets                                                                                                       */
+    #define prmmwtvtg                   1099 /* Maximale wachttijd voetgangers                                                                                                 */
+    #define prmpmgt02                   1100 /* Minimaal percentage groentijd primair tbv. terugkomen fase 02                                                                  */
+    #define prmognt02                   1101 /* Minimale groentijd bij terugkomen fase 02                                                                                      */
+    #define prmnofm02                   1102 /* Aantal malen niet afkappen na OV ingreep fase 02                                                                               */
+    #define prmmgcov02                  1103 /* Minimum groentijd waarna fase 02 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov02                 1104 /* Minimum percentage groentijd waarna fase 02 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg02                  1105 /* Percentage ophogen groentijd na afkappen fase 02                                                                               */
+    #define prmpmgt03                   1106 /* Minimaal percentage groentijd primair tbv. terugkomen fase 03                                                                  */
+    #define prmognt03                   1107 /* Minimale groentijd bij terugkomen fase 03                                                                                      */
+    #define prmnofm03                   1108 /* Aantal malen niet afkappen na OV ingreep fase 03                                                                               */
+    #define prmmgcov03                  1109 /* Minimum groentijd waarna fase 03 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov03                 1110 /* Minimum percentage groentijd waarna fase 03 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg03                  1111 /* Percentage ophogen groentijd na afkappen fase 03                                                                               */
+    #define prmpmgt05                   1112 /* Minimaal percentage groentijd primair tbv. terugkomen fase 05                                                                  */
+    #define prmognt05                   1113 /* Minimale groentijd bij terugkomen fase 05                                                                                      */
+    #define prmnofm05                   1114 /* Aantal malen niet afkappen na OV ingreep fase 05                                                                               */
+    #define prmmgcov05                  1115 /* Minimum groentijd waarna fase 05 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov05                 1116 /* Minimum percentage groentijd waarna fase 05 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg05                  1117 /* Percentage ophogen groentijd na afkappen fase 05                                                                               */
+    #define prmpmgt08                   1118 /* Minimaal percentage groentijd primair tbv. terugkomen fase 08                                                                  */
+    #define prmognt08                   1119 /* Minimale groentijd bij terugkomen fase 08                                                                                      */
+    #define prmnofm08                   1120 /* Aantal malen niet afkappen na OV ingreep fase 08                                                                               */
+    #define prmmgcov08                  1121 /* Minimum groentijd waarna fase 08 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov08                 1122 /* Minimum percentage groentijd waarna fase 08 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg08                  1123 /* Percentage ophogen groentijd na afkappen fase 08                                                                               */
+    #define prmpmgt09                   1124 /* Minimaal percentage groentijd primair tbv. terugkomen fase 09                                                                  */
+    #define prmognt09                   1125 /* Minimale groentijd bij terugkomen fase 09                                                                                      */
+    #define prmnofm09                   1126 /* Aantal malen niet afkappen na OV ingreep fase 09                                                                               */
+    #define prmmgcov09                  1127 /* Minimum groentijd waarna fase 09 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov09                 1128 /* Minimum percentage groentijd waarna fase 09 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg09                  1129 /* Percentage ophogen groentijd na afkappen fase 09                                                                               */
+    #define prmpmgt11                   1130 /* Minimaal percentage groentijd primair tbv. terugkomen fase 11                                                                  */
+    #define prmognt11                   1131 /* Minimale groentijd bij terugkomen fase 11                                                                                      */
+    #define prmnofm11                   1132 /* Aantal malen niet afkappen na OV ingreep fase 11                                                                               */
+    #define prmmgcov11                  1133 /* Minimum groentijd waarna fase 11 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov11                 1134 /* Minimum percentage groentijd waarna fase 11 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg11                  1135 /* Percentage ophogen groentijd na afkappen fase 11                                                                               */
+    #define prmpmgt21                   1136 /* Minimaal percentage groentijd primair tbv. terugkomen fase 21                                                                  */
+    #define prmognt21                   1137 /* Minimale groentijd bij terugkomen fase 21                                                                                      */
+    #define prmnofm21                   1138 /* Aantal malen niet afkappen na OV ingreep fase 21                                                                               */
+    #define prmmgcov21                  1139 /* Minimum groentijd waarna fase 21 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov21                 1140 /* Minimum percentage groentijd waarna fase 21 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg21                  1141 /* Percentage ophogen groentijd na afkappen fase 21                                                                               */
+    #define prmpmgt22                   1142 /* Minimaal percentage groentijd primair tbv. terugkomen fase 22                                                                  */
+    #define prmognt22                   1143 /* Minimale groentijd bij terugkomen fase 22                                                                                      */
+    #define prmnofm22                   1144 /* Aantal malen niet afkappen na OV ingreep fase 22                                                                               */
+    #define prmmgcov22                  1145 /* Minimum groentijd waarna fase 22 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov22                 1146 /* Minimum percentage groentijd waarna fase 22 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg22                  1147 /* Percentage ophogen groentijd na afkappen fase 22                                                                               */
+    #define prmpmgt24                   1148 /* Minimaal percentage groentijd primair tbv. terugkomen fase 24                                                                  */
+    #define prmognt24                   1149 /* Minimale groentijd bij terugkomen fase 24                                                                                      */
+    #define prmnofm24                   1150 /* Aantal malen niet afkappen na OV ingreep fase 24                                                                               */
+    #define prmmgcov24                  1151 /* Minimum groentijd waarna fase 24 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov24                 1152 /* Minimum percentage groentijd waarna fase 24 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg24                  1153 /* Percentage ophogen groentijd na afkappen fase 24                                                                               */
+    #define prmpmgt26                   1154 /* Minimaal percentage groentijd primair tbv. terugkomen fase 26                                                                  */
+    #define prmognt26                   1155 /* Minimale groentijd bij terugkomen fase 26                                                                                      */
+    #define prmnofm26                   1156 /* Aantal malen niet afkappen na OV ingreep fase 26                                                                               */
+    #define prmmgcov26                  1157 /* Minimum groentijd waarna fase 26 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov26                 1158 /* Minimum percentage groentijd waarna fase 26 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg26                  1159 /* Percentage ophogen groentijd na afkappen fase 26                                                                               */
+    #define prmpmgt28                   1160 /* Minimaal percentage groentijd primair tbv. terugkomen fase 28                                                                  */
+    #define prmognt28                   1161 /* Minimale groentijd bij terugkomen fase 28                                                                                      */
+    #define prmnofm28                   1162 /* Aantal malen niet afkappen na OV ingreep fase 28                                                                               */
+    #define prmmgcov28                  1163 /* Minimum groentijd waarna fase 28 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov28                 1164 /* Minimum percentage groentijd waarna fase 28 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg28                  1165 /* Percentage ophogen groentijd na afkappen fase 28                                                                               */
+    #define prmpmgt31                   1166 /* Minimaal percentage groentijd primair tbv. terugkomen fase 31                                                                  */
+    #define prmognt31                   1167 /* Minimale groentijd bij terugkomen fase 31                                                                                      */
+    #define prmpmgt32                   1168 /* Minimaal percentage groentijd primair tbv. terugkomen fase 32                                                                  */
+    #define prmognt32                   1169 /* Minimale groentijd bij terugkomen fase 32                                                                                      */
+    #define prmpmgt33                   1170 /* Minimaal percentage groentijd primair tbv. terugkomen fase 33                                                                  */
+    #define prmognt33                   1171 /* Minimale groentijd bij terugkomen fase 33                                                                                      */
+    #define prmpmgt34                   1172 /* Minimaal percentage groentijd primair tbv. terugkomen fase 34                                                                  */
+    #define prmognt34                   1173 /* Minimale groentijd bij terugkomen fase 34                                                                                      */
+    #define prmpmgt38                   1174 /* Minimaal percentage groentijd primair tbv. terugkomen fase 38                                                                  */
+    #define prmognt38                   1175 /* Minimale groentijd bij terugkomen fase 38                                                                                      */
+    #define prmpmgt61                   1176 /* Minimaal percentage groentijd primair tbv. terugkomen fase 61                                                                  */
+    #define prmognt61                   1177 /* Minimale groentijd bij terugkomen fase 61                                                                                      */
+    #define prmnofm61                   1178 /* Aantal malen niet afkappen na OV ingreep fase 61                                                                               */
+    #define prmmgcov61                  1179 /* Minimum groentijd waarna fase 61 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov61                 1180 /* Minimum percentage groentijd waarna fase 61 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg61                  1181 /* Percentage ophogen groentijd na afkappen fase 61                                                                               */
+    #define prmpmgt62                   1182 /* Minimaal percentage groentijd primair tbv. terugkomen fase 62                                                                  */
+    #define prmognt62                   1183 /* Minimale groentijd bij terugkomen fase 62                                                                                      */
+    #define prmnofm62                   1184 /* Aantal malen niet afkappen na OV ingreep fase 62                                                                               */
+    #define prmmgcov62                  1185 /* Minimum groentijd waarna fase 62 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov62                 1186 /* Minimum percentage groentijd waarna fase 62 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg62                  1187 /* Percentage ophogen groentijd na afkappen fase 62                                                                               */
+    #define prmpmgt67                   1188 /* Minimaal percentage groentijd primair tbv. terugkomen fase 67                                                                  */
+    #define prmognt67                   1189 /* Minimale groentijd bij terugkomen fase 67                                                                                      */
+    #define prmnofm67                   1190 /* Aantal malen niet afkappen na OV ingreep fase 67                                                                               */
+    #define prmmgcov67                  1191 /* Minimum groentijd waarna fase 67 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov67                 1192 /* Minimum percentage groentijd waarna fase 67 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg67                  1193 /* Percentage ophogen groentijd na afkappen fase 67                                                                               */
+    #define prmpmgt68                   1194 /* Minimaal percentage groentijd primair tbv. terugkomen fase 68                                                                  */
+    #define prmognt68                   1195 /* Minimale groentijd bij terugkomen fase 68                                                                                      */
+    #define prmnofm68                   1196 /* Aantal malen niet afkappen na OV ingreep fase 68                                                                               */
+    #define prmmgcov68                  1197 /* Minimum groentijd waarna fase 68 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov68                 1198 /* Minimum percentage groentijd waarna fase 68 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg68                  1199 /* Percentage ophogen groentijd na afkappen fase 68                                                                               */
+    #define prmpmgt81                   1200 /* Minimaal percentage groentijd primair tbv. terugkomen fase 81                                                                  */
+    #define prmognt81                   1201 /* Minimale groentijd bij terugkomen fase 81                                                                                      */
+    #define prmnofm81                   1202 /* Aantal malen niet afkappen na OV ingreep fase 81                                                                               */
+    #define prmmgcov81                  1203 /* Minimum groentijd waarna fase 81 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov81                 1204 /* Minimum percentage groentijd waarna fase 81 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg81                  1205 /* Percentage ophogen groentijd na afkappen fase 81                                                                               */
+    #define prmpmgt82                   1206 /* Minimaal percentage groentijd primair tbv. terugkomen fase 82                                                                  */
+    #define prmognt82                   1207 /* Minimale groentijd bij terugkomen fase 82                                                                                      */
+    #define prmnofm82                   1208 /* Aantal malen niet afkappen na OV ingreep fase 82                                                                               */
+    #define prmmgcov82                  1209 /* Minimum groentijd waarna fase 82 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov82                 1210 /* Minimum percentage groentijd waarna fase 82 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg82                  1211 /* Percentage ophogen groentijd na afkappen fase 82                                                                               */
+    #define prmpmgt84                   1212 /* Minimaal percentage groentijd primair tbv. terugkomen fase 84                                                                  */
+    #define prmognt84                   1213 /* Minimale groentijd bij terugkomen fase 84                                                                                      */
+    #define prmnofm84                   1214 /* Aantal malen niet afkappen na OV ingreep fase 84                                                                               */
+    #define prmmgcov84                  1215 /* Minimum groentijd waarna fase 84 afgkapt mag worden door OV ingreep                                                            */
+    #define prmpmgcov84                 1216 /* Minimum percentage groentijd waarna fase 84 afgkapt mag worden door OV ingreep                                                 */
+    #define prmohpmg84                  1217 /* Percentage ophogen groentijd na afkappen fase 84                                                                               */
+    #define prmrto02bus                 1218 /* Ongehinderde rijtijd prioriteit fase 02                                                                                        */
+    #define prmrtbg02bus                1219 /* Beperkt gehinderde rijtijd prioriteit fase 02                                                                                  */
+    #define prmrtg02bus                 1220 /* Gehinderde rijtijd prioriteit fase 02                                                                                          */
+    #define prmomx02bus                 1221 /* Ondermaximum OV fase 02                                                                                                        */
+    #define prmvtgcat02bus              1222 /* Voertuigcategorie DSI voor prio ingreep 02bus                                                                                  */
+    #define prmprio02bus                1223 /* Prioriteitsinstelling OV fase 02                                                                                               */
+    #define prmrto02risov               1224 /* Ongehinderde rijtijd prioriteit fase 02                                                                                        */
+    #define prmrtbg02risov              1225 /* Beperkt gehinderde rijtijd prioriteit fase 02                                                                                  */
+    #define prmrtg02risov               1226 /* Gehinderde rijtijd prioriteit fase 02                                                                                          */
+    #define prmomx02risov               1227 /* Ondermaximum OV fase 02                                                                                                        */
+    #define prmprio02risov              1228 /* Prioriteitsinstelling OV fase 02                                                                                               */
+    #define prmrisstart02risov          1229
+    #define prmrisend02risov            1230
+    #define prmriseta02risov            1231
+    #define prmrisrole02risov           1232
+    #define prmrissubrole02risov        1233
+    #define prmrisstationtype02risov    1234
+    #define prmrisapproachid02risov     1235
+    #define prmrislaneid02risov_1       1236
+    #define prmrislaneid02risov_2       1237
+    #define prmrto02risvrw              1238 /* Ongehinderde rijtijd prioriteit fase 02                                                                                        */
+    #define prmrtbg02risvrw             1239 /* Beperkt gehinderde rijtijd prioriteit fase 02                                                                                  */
+    #define prmrtg02risvrw              1240 /* Gehinderde rijtijd prioriteit fase 02                                                                                          */
+    #define prmomx02risvrw              1241 /* Ondermaximum OV fase 02                                                                                                        */
+    #define prmprio02risvrw             1242 /* Prioriteitsinstelling OV fase 02                                                                                               */
+    #define prmrisstart02risvrw         1243
+    #define prmrisend02risvrw           1244
+    #define prmriseta02risvrw           1245
+    #define prmrisrole02risvrw          1246
+    #define prmrissubrole02risvrw       1247
+    #define prmrisstationtype02risvrw   1248
+    #define prmrisapproachid02risvrw    1249
+    #define prmrislaneid02risvrw_1      1250
+    #define prmrislaneid02risvrw_2      1251
+    #define prmrto03bus                 1252 /* Ongehinderde rijtijd prioriteit fase 03                                                                                        */
+    #define prmrtbg03bus                1253 /* Beperkt gehinderde rijtijd prioriteit fase 03                                                                                  */
+    #define prmrtg03bus                 1254 /* Gehinderde rijtijd prioriteit fase 03                                                                                          */
+    #define prmomx03bus                 1255 /* Ondermaximum OV fase 03                                                                                                        */
+    #define prmvtgcat03bus              1256 /* Voertuigcategorie DSI voor prio ingreep 03bus                                                                                  */
+    #define prmprio03bus                1257 /* Prioriteitsinstelling OV fase 03                                                                                               */
+    #define prmrto03risov               1258 /* Ongehinderde rijtijd prioriteit fase 03                                                                                        */
+    #define prmrtbg03risov              1259 /* Beperkt gehinderde rijtijd prioriteit fase 03                                                                                  */
+    #define prmrtg03risov               1260 /* Gehinderde rijtijd prioriteit fase 03                                                                                          */
+    #define prmomx03risov               1261 /* Ondermaximum OV fase 03                                                                                                        */
+    #define prmprio03risov              1262 /* Prioriteitsinstelling OV fase 03                                                                                               */
+    #define prmrisstart03risov          1263
+    #define prmrisend03risov            1264
+    #define prmriseta03risov            1265
+    #define prmrisrole03risov           1266
+    #define prmrissubrole03risov        1267
+    #define prmrisstationtype03risov    1268
+    #define prmrisapproachid03risov     1269
+    #define prmrislaneid03risov_1       1270
+    #define prmrto03risvrw              1271 /* Ongehinderde rijtijd prioriteit fase 03                                                                                        */
+    #define prmrtbg03risvrw             1272 /* Beperkt gehinderde rijtijd prioriteit fase 03                                                                                  */
+    #define prmrtg03risvrw              1273 /* Gehinderde rijtijd prioriteit fase 03                                                                                          */
+    #define prmomx03risvrw              1274 /* Ondermaximum OV fase 03                                                                                                        */
+    #define prmprio03risvrw             1275 /* Prioriteitsinstelling OV fase 03                                                                                               */
+    #define prmrisstart03risvrw         1276
+    #define prmrisend03risvrw           1277
+    #define prmriseta03risvrw           1278
+    #define prmrisrole03risvrw          1279
+    #define prmrissubrole03risvrw       1280
+    #define prmrisstationtype03risvrw   1281
+    #define prmrisapproachid03risvrw    1282
+    #define prmrislaneid03risvrw_1      1283
+    #define prmrto05bus                 1284 /* Ongehinderde rijtijd prioriteit fase 05                                                                                        */
+    #define prmrtbg05bus                1285 /* Beperkt gehinderde rijtijd prioriteit fase 05                                                                                  */
+    #define prmrtg05bus                 1286 /* Gehinderde rijtijd prioriteit fase 05                                                                                          */
+    #define prmomx05bus                 1287 /* Ondermaximum OV fase 05                                                                                                        */
+    #define prmvtgcat05bus              1288 /* Voertuigcategorie DSI voor prio ingreep 05bus                                                                                  */
+    #define prmprio05bus                1289 /* Prioriteitsinstelling OV fase 05                                                                                               */
+    #define prmrto05risov               1290 /* Ongehinderde rijtijd prioriteit fase 05                                                                                        */
+    #define prmrtbg05risov              1291 /* Beperkt gehinderde rijtijd prioriteit fase 05                                                                                  */
+    #define prmrtg05risov               1292 /* Gehinderde rijtijd prioriteit fase 05                                                                                          */
+    #define prmomx05risov               1293 /* Ondermaximum OV fase 05                                                                                                        */
+    #define prmprio05risov              1294 /* Prioriteitsinstelling OV fase 05                                                                                               */
+    #define prmrisstart05risov          1295
+    #define prmrisend05risov            1296
+    #define prmriseta05risov            1297
+    #define prmrisrole05risov           1298
+    #define prmrissubrole05risov        1299
+    #define prmrisstationtype05risov    1300
+    #define prmrisapproachid05risov     1301
+    #define prmrislaneid05risov_1       1302
+    #define prmrto05risvrw              1303 /* Ongehinderde rijtijd prioriteit fase 05                                                                                        */
+    #define prmrtbg05risvrw             1304 /* Beperkt gehinderde rijtijd prioriteit fase 05                                                                                  */
+    #define prmrtg05risvrw              1305 /* Gehinderde rijtijd prioriteit fase 05                                                                                          */
+    #define prmomx05risvrw              1306 /* Ondermaximum OV fase 05                                                                                                        */
+    #define prmprio05risvrw             1307 /* Prioriteitsinstelling OV fase 05                                                                                               */
+    #define prmrisstart05risvrw         1308
+    #define prmrisend05risvrw           1309
+    #define prmriseta05risvrw           1310
+    #define prmrisrole05risvrw          1311
+    #define prmrissubrole05risvrw       1312
+    #define prmrisstationtype05risvrw   1313
+    #define prmrisapproachid05risvrw    1314
+    #define prmrislaneid05risvrw_1      1315
+    #define prmrto08bus                 1316 /* Ongehinderde rijtijd prioriteit fase 08                                                                                        */
+    #define prmrtbg08bus                1317 /* Beperkt gehinderde rijtijd prioriteit fase 08                                                                                  */
+    #define prmrtg08bus                 1318 /* Gehinderde rijtijd prioriteit fase 08                                                                                          */
+    #define prmomx08bus                 1319 /* Ondermaximum OV fase 08                                                                                                        */
+    #define prmvtgcat08bus              1320 /* Voertuigcategorie DSI voor prio ingreep 08bus                                                                                  */
+    #define prmprio08bus                1321 /* Prioriteitsinstelling OV fase 08                                                                                               */
+    #define prmrto08risov               1322 /* Ongehinderde rijtijd prioriteit fase 08                                                                                        */
+    #define prmrtbg08risov              1323 /* Beperkt gehinderde rijtijd prioriteit fase 08                                                                                  */
+    #define prmrtg08risov               1324 /* Gehinderde rijtijd prioriteit fase 08                                                                                          */
+    #define prmomx08risov               1325 /* Ondermaximum OV fase 08                                                                                                        */
+    #define prmprio08risov              1326 /* Prioriteitsinstelling OV fase 08                                                                                               */
+    #define prmrisstart08risov          1327
+    #define prmrisend08risov            1328
+    #define prmriseta08risov            1329
+    #define prmrisrole08risov           1330
+    #define prmrissubrole08risov        1331
+    #define prmrisstationtype08risov    1332
+    #define prmrisapproachid08risov     1333
+    #define prmrislaneid08risov_1       1334
+    #define prmrislaneid08risov_2       1335
+    #define prmrto08risvrw              1336 /* Ongehinderde rijtijd prioriteit fase 08                                                                                        */
+    #define prmrtbg08risvrw             1337 /* Beperkt gehinderde rijtijd prioriteit fase 08                                                                                  */
+    #define prmrtg08risvrw              1338 /* Gehinderde rijtijd prioriteit fase 08                                                                                          */
+    #define prmomx08risvrw              1339 /* Ondermaximum OV fase 08                                                                                                        */
+    #define prmprio08risvrw             1340 /* Prioriteitsinstelling OV fase 08                                                                                               */
+    #define prmrisstart08risvrw         1341
+    #define prmrisend08risvrw           1342
+    #define prmriseta08risvrw           1343
+    #define prmrisrole08risvrw          1344
+    #define prmrissubrole08risvrw       1345
+    #define prmrisstationtype08risvrw   1346
+    #define prmrisapproachid08risvrw    1347
+    #define prmrislaneid08risvrw_1      1348
+    #define prmrislaneid08risvrw_2      1349
+    #define prmrto09bus                 1350 /* Ongehinderde rijtijd prioriteit fase 09                                                                                        */
+    #define prmrtbg09bus                1351 /* Beperkt gehinderde rijtijd prioriteit fase 09                                                                                  */
+    #define prmrtg09bus                 1352 /* Gehinderde rijtijd prioriteit fase 09                                                                                          */
+    #define prmomx09bus                 1353 /* Ondermaximum OV fase 09                                                                                                        */
+    #define prmvtgcat09bus              1354 /* Voertuigcategorie DSI voor prio ingreep 09bus                                                                                  */
+    #define prmprio09bus                1355 /* Prioriteitsinstelling OV fase 09                                                                                               */
+    #define prmrto09risov               1356 /* Ongehinderde rijtijd prioriteit fase 09                                                                                        */
+    #define prmrtbg09risov              1357 /* Beperkt gehinderde rijtijd prioriteit fase 09                                                                                  */
+    #define prmrtg09risov               1358 /* Gehinderde rijtijd prioriteit fase 09                                                                                          */
+    #define prmomx09risov               1359 /* Ondermaximum OV fase 09                                                                                                        */
+    #define prmprio09risov              1360 /* Prioriteitsinstelling OV fase 09                                                                                               */
+    #define prmrisstart09risov          1361
+    #define prmrisend09risov            1362
+    #define prmriseta09risov            1363
+    #define prmrisrole09risov           1364
+    #define prmrissubrole09risov        1365
+    #define prmrisstationtype09risov    1366
+    #define prmrisapproachid09risov     1367
+    #define prmrislaneid09risov_1       1368
+    #define prmrto09risvrw              1369 /* Ongehinderde rijtijd prioriteit fase 09                                                                                        */
+    #define prmrtbg09risvrw             1370 /* Beperkt gehinderde rijtijd prioriteit fase 09                                                                                  */
+    #define prmrtg09risvrw              1371 /* Gehinderde rijtijd prioriteit fase 09                                                                                          */
+    #define prmomx09risvrw              1372 /* Ondermaximum OV fase 09                                                                                                        */
+    #define prmprio09risvrw             1373 /* Prioriteitsinstelling OV fase 09                                                                                               */
+    #define prmrisstart09risvrw         1374
+    #define prmrisend09risvrw           1375
+    #define prmriseta09risvrw           1376
+    #define prmrisrole09risvrw          1377
+    #define prmrissubrole09risvrw       1378
+    #define prmrisstationtype09risvrw   1379
+    #define prmrisapproachid09risvrw    1380
+    #define prmrislaneid09risvrw_1      1381
+    #define prmrto11bus                 1382 /* Ongehinderde rijtijd prioriteit fase 11                                                                                        */
+    #define prmrtbg11bus                1383 /* Beperkt gehinderde rijtijd prioriteit fase 11                                                                                  */
+    #define prmrtg11bus                 1384 /* Gehinderde rijtijd prioriteit fase 11                                                                                          */
+    #define prmomx11bus                 1385 /* Ondermaximum OV fase 11                                                                                                        */
+    #define prmvtgcat11bus              1386 /* Voertuigcategorie DSI voor prio ingreep 11bus                                                                                  */
+    #define prmprio11bus                1387 /* Prioriteitsinstelling OV fase 11                                                                                               */
+    #define prmrto11risov               1388 /* Ongehinderde rijtijd prioriteit fase 11                                                                                        */
+    #define prmrtbg11risov              1389 /* Beperkt gehinderde rijtijd prioriteit fase 11                                                                                  */
+    #define prmrtg11risov               1390 /* Gehinderde rijtijd prioriteit fase 11                                                                                          */
+    #define prmomx11risov               1391 /* Ondermaximum OV fase 11                                                                                                        */
+    #define prmprio11risov              1392 /* Prioriteitsinstelling OV fase 11                                                                                               */
+    #define prmrisstart11risov          1393
+    #define prmrisend11risov            1394
+    #define prmriseta11risov            1395
+    #define prmrisrole11risov           1396
+    #define prmrissubrole11risov        1397
+    #define prmrisstationtype11risov    1398
+    #define prmrisapproachid11risov     1399
+    #define prmrislaneid11risov_1       1400
+    #define prmrto11risvrw              1401 /* Ongehinderde rijtijd prioriteit fase 11                                                                                        */
+    #define prmrtbg11risvrw             1402 /* Beperkt gehinderde rijtijd prioriteit fase 11                                                                                  */
+    #define prmrtg11risvrw              1403 /* Gehinderde rijtijd prioriteit fase 11                                                                                          */
+    #define prmomx11risvrw              1404 /* Ondermaximum OV fase 11                                                                                                        */
+    #define prmprio11risvrw             1405 /* Prioriteitsinstelling OV fase 11                                                                                               */
+    #define prmrisstart11risvrw         1406
+    #define prmrisend11risvrw           1407
+    #define prmriseta11risvrw           1408
+    #define prmrisrole11risvrw          1409
+    #define prmrissubrole11risvrw       1410
+    #define prmrisstationtype11risvrw   1411
+    #define prmrisapproachid11risvrw    1412
+    #define prmrislaneid11risvrw_1      1413
+    #define prmftsblok22fietsfiets      1414 /* Blokken waarin fiets peloton prio actief mag zijn voor fase 22                                                                 */
+    #define prmftsmaxpercyc22fietsfiets 1415 /* Maximaal aantal keer fiets peloton prio per cyclus voor fase 22                                                                */
+    #define prmftsminwt22fietsfiets     1416 /* Minimale wachttijd tbv peloton prio voor fase 22                                                                               */
+    #define prmrto22fiets               1417 /* Ongehinderde rijtijd prioriteit fase 22                                                                                        */
+    #define prmrtbg22fiets              1418 /* Beperkt gehinderde rijtijd prioriteit fase 22                                                                                  */
+    #define prmrtg22fiets               1419 /* Gehinderde rijtijd prioriteit fase 22                                                                                          */
+    #define prmomx22fiets               1420 /* Ondermaximum OV fase 22                                                                                                        */
+    #define prmprio22fiets              1421 /* Prioriteitsinstelling OV fase 22                                                                                               */
+    #define prmrto31fietsprio           1422 /* Ongehinderde rijtijd prioriteit fase 31                                                                                        */
+    #define prmrtbg31fietsprio          1423 /* Beperkt gehinderde rijtijd prioriteit fase 31                                                                                  */
+    #define prmrtg31fietsprio           1424 /* Gehinderde rijtijd prioriteit fase 31                                                                                          */
+    #define prmomx31fietsprio           1425 /* Ondermaximum OV fase 31                                                                                                        */
+    #define prmprio31fietsprio          1426 /* Prioriteitsinstelling OV fase 31                                                                                               */
+    #define prmrto32fietsprio           1427 /* Ongehinderde rijtijd prioriteit fase 32                                                                                        */
+    #define prmrtbg32fietsprio          1428 /* Beperkt gehinderde rijtijd prioriteit fase 32                                                                                  */
+    #define prmrtg32fietsprio           1429 /* Gehinderde rijtijd prioriteit fase 32                                                                                          */
+    #define prmomx32fietsprio           1430 /* Ondermaximum OV fase 32                                                                                                        */
+    #define prmprio32fietsprio          1431 /* Prioriteitsinstelling OV fase 32                                                                                               */
+    #define prmrto61bus                 1432 /* Ongehinderde rijtijd prioriteit fase 61                                                                                        */
+    #define prmrtbg61bus                1433 /* Beperkt gehinderde rijtijd prioriteit fase 61                                                                                  */
+    #define prmrtg61bus                 1434 /* Gehinderde rijtijd prioriteit fase 61                                                                                          */
+    #define prmomx61bus                 1435 /* Ondermaximum OV fase 61                                                                                                        */
+    #define prmvtgcat61bus              1436 /* Voertuigcategorie DSI voor prio ingreep 61bus                                                                                  */
+    #define prmprio61bus                1437 /* Prioriteitsinstelling OV fase 61                                                                                               */
+    #define prmrto61risov               1438 /* Ongehinderde rijtijd prioriteit fase 61                                                                                        */
+    #define prmrtbg61risov              1439 /* Beperkt gehinderde rijtijd prioriteit fase 61                                                                                  */
+    #define prmrtg61risov               1440 /* Gehinderde rijtijd prioriteit fase 61                                                                                          */
+    #define prmomx61risov               1441 /* Ondermaximum OV fase 61                                                                                                        */
+    #define prmprio61risov              1442 /* Prioriteitsinstelling OV fase 61                                                                                               */
+    #define prmrisstart61risov          1443
+    #define prmrisend61risov            1444
+    #define prmriseta61risov            1445
+    #define prmrisrole61risov           1446
+    #define prmrissubrole61risov        1447
+    #define prmrisstationtype61risov    1448
+    #define prmrisapproachid61risov     1449
+    #define prmrislaneid61risov_1       1450
+    #define prmrto61risvrw              1451 /* Ongehinderde rijtijd prioriteit fase 61                                                                                        */
+    #define prmrtbg61risvrw             1452 /* Beperkt gehinderde rijtijd prioriteit fase 61                                                                                  */
+    #define prmrtg61risvrw              1453 /* Gehinderde rijtijd prioriteit fase 61                                                                                          */
+    #define prmomx61risvrw              1454 /* Ondermaximum OV fase 61                                                                                                        */
+    #define prmprio61risvrw             1455 /* Prioriteitsinstelling OV fase 61                                                                                               */
+    #define prmrisstart61risvrw         1456
+    #define prmrisend61risvrw           1457
+    #define prmriseta61risvrw           1458
+    #define prmrisrole61risvrw          1459
+    #define prmrissubrole61risvrw       1460
+    #define prmrisstationtype61risvrw   1461
+    #define prmrisapproachid61risvrw    1462
+    #define prmrislaneid61risvrw_1      1463
+    #define prmrto62bus                 1464 /* Ongehinderde rijtijd prioriteit fase 62                                                                                        */
+    #define prmrtbg62bus                1465 /* Beperkt gehinderde rijtijd prioriteit fase 62                                                                                  */
+    #define prmrtg62bus                 1466 /* Gehinderde rijtijd prioriteit fase 62                                                                                          */
+    #define prmomx62bus                 1467 /* Ondermaximum OV fase 62                                                                                                        */
+    #define prmvtgcat62bus              1468 /* Voertuigcategorie DSI voor prio ingreep 62bus                                                                                  */
+    #define prmprio62bus                1469 /* Prioriteitsinstelling OV fase 62                                                                                               */
+    #define prmrto62risov               1470 /* Ongehinderde rijtijd prioriteit fase 62                                                                                        */
+    #define prmrtbg62risov              1471 /* Beperkt gehinderde rijtijd prioriteit fase 62                                                                                  */
+    #define prmrtg62risov               1472 /* Gehinderde rijtijd prioriteit fase 62                                                                                          */
+    #define prmomx62risov               1473 /* Ondermaximum OV fase 62                                                                                                        */
+    #define prmprio62risov              1474 /* Prioriteitsinstelling OV fase 62                                                                                               */
+    #define prmrisstart62risov          1475
+    #define prmrisend62risov            1476
+    #define prmriseta62risov            1477
+    #define prmrisrole62risov           1478
+    #define prmrissubrole62risov        1479
+    #define prmrisstationtype62risov    1480
+    #define prmrisapproachid62risov     1481
+    #define prmrislaneid62risov_1       1482
+    #define prmrislaneid62risov_2       1483
+    #define prmrto62risvrw              1484 /* Ongehinderde rijtijd prioriteit fase 62                                                                                        */
+    #define prmrtbg62risvrw             1485 /* Beperkt gehinderde rijtijd prioriteit fase 62                                                                                  */
+    #define prmrtg62risvrw              1486 /* Gehinderde rijtijd prioriteit fase 62                                                                                          */
+    #define prmomx62risvrw              1487 /* Ondermaximum OV fase 62                                                                                                        */
+    #define prmprio62risvrw             1488 /* Prioriteitsinstelling OV fase 62                                                                                               */
+    #define prmrisstart62risvrw         1489
+    #define prmrisend62risvrw           1490
+    #define prmriseta62risvrw           1491
+    #define prmrisrole62risvrw          1492
+    #define prmrissubrole62risvrw       1493
+    #define prmrisstationtype62risvrw   1494
+    #define prmrisapproachid62risvrw    1495
+    #define prmrislaneid62risvrw_1      1496
+    #define prmrislaneid62risvrw_2      1497
+    #define prmrto67bus                 1498 /* Ongehinderde rijtijd prioriteit fase 67                                                                                        */
+    #define prmrtbg67bus                1499 /* Beperkt gehinderde rijtijd prioriteit fase 67                                                                                  */
+    #define prmrtg67bus                 1500 /* Gehinderde rijtijd prioriteit fase 67                                                                                          */
+    #define prmomx67bus                 1501 /* Ondermaximum OV fase 67                                                                                                        */
+    #define prmvtgcat67bus              1502 /* Voertuigcategorie DSI voor prio ingreep 67bus                                                                                  */
+    #define prmprio67bus                1503 /* Prioriteitsinstelling OV fase 67                                                                                               */
+    #define prmrto67risov               1504 /* Ongehinderde rijtijd prioriteit fase 67                                                                                        */
+    #define prmrtbg67risov              1505 /* Beperkt gehinderde rijtijd prioriteit fase 67                                                                                  */
+    #define prmrtg67risov               1506 /* Gehinderde rijtijd prioriteit fase 67                                                                                          */
+    #define prmomx67risov               1507 /* Ondermaximum OV fase 67                                                                                                        */
+    #define prmprio67risov              1508 /* Prioriteitsinstelling OV fase 67                                                                                               */
+    #define prmrisstart67risov          1509
+    #define prmrisend67risov            1510
+    #define prmriseta67risov            1511
+    #define prmrisrole67risov           1512
+    #define prmrissubrole67risov        1513
+    #define prmrisstationtype67risov    1514
+    #define prmrisapproachid67risov     1515
+    #define prmrislaneid67risov_1       1516
+    #define prmrto67risvrw              1517 /* Ongehinderde rijtijd prioriteit fase 67                                                                                        */
+    #define prmrtbg67risvrw             1518 /* Beperkt gehinderde rijtijd prioriteit fase 67                                                                                  */
+    #define prmrtg67risvrw              1519 /* Gehinderde rijtijd prioriteit fase 67                                                                                          */
+    #define prmomx67risvrw              1520 /* Ondermaximum OV fase 67                                                                                                        */
+    #define prmprio67risvrw             1521 /* Prioriteitsinstelling OV fase 67                                                                                               */
+    #define prmrisstart67risvrw         1522
+    #define prmrisend67risvrw           1523
+    #define prmriseta67risvrw           1524
+    #define prmrisrole67risvrw          1525
+    #define prmrissubrole67risvrw       1526
+    #define prmrisstationtype67risvrw   1527
+    #define prmrisapproachid67risvrw    1528
+    #define prmrislaneid67risvrw_1      1529
+    #define prmrto68bus                 1530 /* Ongehinderde rijtijd prioriteit fase 68                                                                                        */
+    #define prmrtbg68bus                1531 /* Beperkt gehinderde rijtijd prioriteit fase 68                                                                                  */
+    #define prmrtg68bus                 1532 /* Gehinderde rijtijd prioriteit fase 68                                                                                          */
+    #define prmomx68bus                 1533 /* Ondermaximum OV fase 68                                                                                                        */
+    #define prmvtgcat68bus              1534 /* Voertuigcategorie DSI voor prio ingreep 68bus                                                                                  */
+    #define prmprio68bus                1535 /* Prioriteitsinstelling OV fase 68                                                                                               */
+    #define prmrto68risov               1536 /* Ongehinderde rijtijd prioriteit fase 68                                                                                        */
+    #define prmrtbg68risov              1537 /* Beperkt gehinderde rijtijd prioriteit fase 68                                                                                  */
+    #define prmrtg68risov               1538 /* Gehinderde rijtijd prioriteit fase 68                                                                                          */
+    #define prmomx68risov               1539 /* Ondermaximum OV fase 68                                                                                                        */
+    #define prmprio68risov              1540 /* Prioriteitsinstelling OV fase 68                                                                                               */
+    #define prmrisstart68risov          1541
+    #define prmrisend68risov            1542
+    #define prmriseta68risov            1543
+    #define prmrisrole68risov           1544
+    #define prmrissubrole68risov        1545
+    #define prmrisstationtype68risov    1546
+    #define prmrisapproachid68risov     1547
+    #define prmrislaneid68risov_1       1548
+    #define prmrislaneid68risov_2       1549
+    #define prmrto68risvrw              1550 /* Ongehinderde rijtijd prioriteit fase 68                                                                                        */
+    #define prmrtbg68risvrw             1551 /* Beperkt gehinderde rijtijd prioriteit fase 68                                                                                  */
+    #define prmrtg68risvrw              1552 /* Gehinderde rijtijd prioriteit fase 68                                                                                          */
+    #define prmomx68risvrw              1553 /* Ondermaximum OV fase 68                                                                                                        */
+    #define prmprio68risvrw             1554 /* Prioriteitsinstelling OV fase 68                                                                                               */
+    #define prmrisstart68risvrw         1555
+    #define prmrisend68risvrw           1556
+    #define prmriseta68risvrw           1557
+    #define prmrisrole68risvrw          1558
+    #define prmrissubrole68risvrw       1559
+    #define prmrisstationtype68risvrw   1560
+    #define prmrisapproachid68risvrw    1561
+    #define prmrislaneid68risvrw_1      1562
+    #define prmrislaneid68risvrw_2      1563
+    #define prmpriohd02                 1564 /* Prioriteitsinstelling HD fase 02                                                                                               */
+    #define prmrtohd02                  1565 /* Ongehinderde rijtijd HD fase 02                                                                                                */
+    #define prmrtbghd02                 1566 /* Beperkt gehinderde rijtijd HD fase 02                                                                                          */
+    #define prmrtghd02                  1567 /* Gehinderde rijtijd HD fase 02                                                                                                  */
+    #define prmrisstart02hd             1568
+    #define prmrisend02hd               1569
+    #define prmriseta02hd               1570
+    #define prmrisrole02hd              1571
+    #define prmrissubrole02hd           1572
+    #define prmrisstationtype02hd       1573
+    #define prmrisapproachid02hd        1574
+    #define prmrislaneid02hd_1          1575
+    #define prmrislaneid02hd_2          1576
+    #define prmpriohd03                 1577 /* Prioriteitsinstelling HD fase 03                                                                                               */
+    #define prmrtohd03                  1578 /* Ongehinderde rijtijd HD fase 03                                                                                                */
+    #define prmrtbghd03                 1579 /* Beperkt gehinderde rijtijd HD fase 03                                                                                          */
+    #define prmrtghd03                  1580 /* Gehinderde rijtijd HD fase 03                                                                                                  */
+    #define prmrisstart03hd             1581
+    #define prmrisend03hd               1582
+    #define prmriseta03hd               1583
+    #define prmrisrole03hd              1584
+    #define prmrissubrole03hd           1585
+    #define prmrisstationtype03hd       1586
+    #define prmrisapproachid03hd        1587
+    #define prmrislaneid03hd_1          1588
+    #define prmpriohd05                 1589 /* Prioriteitsinstelling HD fase 05                                                                                               */
+    #define prmrtohd05                  1590 /* Ongehinderde rijtijd HD fase 05                                                                                                */
+    #define prmrtbghd05                 1591 /* Beperkt gehinderde rijtijd HD fase 05                                                                                          */
+    #define prmrtghd05                  1592 /* Gehinderde rijtijd HD fase 05                                                                                                  */
+    #define prmrisstart05hd             1593
+    #define prmrisend05hd               1594
+    #define prmriseta05hd               1595
+    #define prmrisrole05hd              1596
+    #define prmrissubrole05hd           1597
+    #define prmrisstationtype05hd       1598
+    #define prmrisapproachid05hd        1599
+    #define prmrislaneid05hd_1          1600
+    #define prmpriohd08                 1601 /* Prioriteitsinstelling HD fase 08                                                                                               */
+    #define prmrtohd08                  1602 /* Ongehinderde rijtijd HD fase 08                                                                                                */
+    #define prmrtbghd08                 1603 /* Beperkt gehinderde rijtijd HD fase 08                                                                                          */
+    #define prmrtghd08                  1604 /* Gehinderde rijtijd HD fase 08                                                                                                  */
+    #define prmrisstart08hd             1605
+    #define prmrisend08hd               1606
+    #define prmriseta08hd               1607
+    #define prmrisrole08hd              1608
+    #define prmrissubrole08hd           1609
+    #define prmrisstationtype08hd       1610
+    #define prmrisapproachid08hd        1611
+    #define prmrislaneid08hd_1          1612
+    #define prmrislaneid08hd_2          1613
+    #define prmpriohd09                 1614 /* Prioriteitsinstelling HD fase 09                                                                                               */
+    #define prmrtohd09                  1615 /* Ongehinderde rijtijd HD fase 09                                                                                                */
+    #define prmrtbghd09                 1616 /* Beperkt gehinderde rijtijd HD fase 09                                                                                          */
+    #define prmrtghd09                  1617 /* Gehinderde rijtijd HD fase 09                                                                                                  */
+    #define prmrisstart09hd             1618
+    #define prmrisend09hd               1619
+    #define prmriseta09hd               1620
+    #define prmrisrole09hd              1621
+    #define prmrissubrole09hd           1622
+    #define prmrisstationtype09hd       1623
+    #define prmrisapproachid09hd        1624
+    #define prmrislaneid09hd_1          1625
+    #define prmpriohd11                 1626 /* Prioriteitsinstelling HD fase 11                                                                                               */
+    #define prmrtohd11                  1627 /* Ongehinderde rijtijd HD fase 11                                                                                                */
+    #define prmrtbghd11                 1628 /* Beperkt gehinderde rijtijd HD fase 11                                                                                          */
+    #define prmrtghd11                  1629 /* Gehinderde rijtijd HD fase 11                                                                                                  */
+    #define prmrisstart11hd             1630
+    #define prmrisend11hd               1631
+    #define prmriseta11hd               1632
+    #define prmrisrole11hd              1633
+    #define prmrissubrole11hd           1634
+    #define prmrisstationtype11hd       1635
+    #define prmrisapproachid11hd        1636
+    #define prmrislaneid11hd_1          1637
+    #define prmpriohd61                 1638 /* Prioriteitsinstelling HD fase 61                                                                                               */
+    #define prmrtohd61                  1639 /* Ongehinderde rijtijd HD fase 61                                                                                                */
+    #define prmrtbghd61                 1640 /* Beperkt gehinderde rijtijd HD fase 61                                                                                          */
+    #define prmrtghd61                  1641 /* Gehinderde rijtijd HD fase 61                                                                                                  */
+    #define prmrisstart61hd             1642
+    #define prmrisend61hd               1643
+    #define prmriseta61hd               1644
+    #define prmrisrole61hd              1645
+    #define prmrissubrole61hd           1646
+    #define prmrisstationtype61hd       1647
+    #define prmrisapproachid61hd        1648
+    #define prmrislaneid61hd_1          1649
+    #define prmpriohd62                 1650 /* Prioriteitsinstelling HD fase 62                                                                                               */
+    #define prmrtohd62                  1651 /* Ongehinderde rijtijd HD fase 62                                                                                                */
+    #define prmrtbghd62                 1652 /* Beperkt gehinderde rijtijd HD fase 62                                                                                          */
+    #define prmrtghd62                  1653 /* Gehinderde rijtijd HD fase 62                                                                                                  */
+    #define prmrisstart62hd             1654
+    #define prmrisend62hd               1655
+    #define prmriseta62hd               1656
+    #define prmrisrole62hd              1657
+    #define prmrissubrole62hd           1658
+    #define prmrisstationtype62hd       1659
+    #define prmrisapproachid62hd        1660
+    #define prmrislaneid62hd_1          1661
+    #define prmrislaneid62hd_2          1662
+    #define prmpriohd67                 1663 /* Prioriteitsinstelling HD fase 67                                                                                               */
+    #define prmrtohd67                  1664 /* Ongehinderde rijtijd HD fase 67                                                                                                */
+    #define prmrtbghd67                 1665 /* Beperkt gehinderde rijtijd HD fase 67                                                                                          */
+    #define prmrtghd67                  1666 /* Gehinderde rijtijd HD fase 67                                                                                                  */
+    #define prmrisstart67hd             1667
+    #define prmrisend67hd               1668
+    #define prmriseta67hd               1669
+    #define prmrisrole67hd              1670
+    #define prmrissubrole67hd           1671
+    #define prmrisstationtype67hd       1672
+    #define prmrisapproachid67hd        1673
+    #define prmrislaneid67hd_1          1674
+    #define prmpriohd68                 1675 /* Prioriteitsinstelling HD fase 68                                                                                               */
+    #define prmrtohd68                  1676 /* Ongehinderde rijtijd HD fase 68                                                                                                */
+    #define prmrtbghd68                 1677 /* Beperkt gehinderde rijtijd HD fase 68                                                                                          */
+    #define prmrtghd68                  1678 /* Gehinderde rijtijd HD fase 68                                                                                                  */
+    #define prmrisstart68hd             1679
+    #define prmrisend68hd               1680
+    #define prmriseta68hd               1681
+    #define prmrisrole68hd              1682
+    #define prmrissubrole68hd           1683
+    #define prmrisstationtype68hd       1684
+    #define prmrisapproachid68hd        1685
+    #define prmrislaneid68hd_1          1686
+    #define prmrislaneid68hd_2          1687
+    #define prmkarsg02                  1688 /* Signaalgroep nummer voor fase 02 bij inmelding via DSI                                                                         */
+    #define prmkarsg03                  1689 /* Signaalgroep nummer voor fase 03 bij inmelding via DSI                                                                         */
+    #define prmkarsg05                  1690 /* Signaalgroep nummer voor fase 05 bij inmelding via DSI                                                                         */
+    #define prmkarsg08                  1691 /* Signaalgroep nummer voor fase 08 bij inmelding via DSI                                                                         */
+    #define prmkarsg09                  1692 /* Signaalgroep nummer voor fase 09 bij inmelding via DSI                                                                         */
+    #define prmkarsg11                  1693 /* Signaalgroep nummer voor fase 11 bij inmelding via DSI                                                                         */
+    #define prmkarsg61                  1694 /* Signaalgroep nummer voor fase 61 bij inmelding via DSI                                                                         */
+    #define prmkarsg62                  1695 /* Signaalgroep nummer voor fase 62 bij inmelding via DSI                                                                         */
+    #define prmkarsg67                  1696 /* Signaalgroep nummer voor fase 67 bij inmelding via DSI                                                                         */
+    #define prmkarsg68                  1697 /* Signaalgroep nummer voor fase 68 bij inmelding via DSI                                                                         */
+    #define prmkarsghd02                1698 /* Signaalgroep nummer voor fase 02 bij inmelding HD via DSI                                                                      */
+    #define prmkarsghd03                1699 /* Signaalgroep nummer voor fase 03 bij inmelding HD via DSI                                                                      */
+    #define prmkarsghd05                1700 /* Signaalgroep nummer voor fase 05 bij inmelding HD via DSI                                                                      */
+    #define prmkarsghd08                1701 /* Signaalgroep nummer voor fase 08 bij inmelding HD via DSI                                                                      */
+    #define prmkarsghd09                1702 /* Signaalgroep nummer voor fase 09 bij inmelding HD via DSI                                                                      */
+    #define prmkarsghd11                1703 /* Signaalgroep nummer voor fase 11 bij inmelding HD via DSI                                                                      */
+    #define prmkarsghd61                1704 /* Signaalgroep nummer voor fase 61 bij inmelding HD via DSI                                                                      */
+    #define prmkarsghd62                1705 /* Signaalgroep nummer voor fase 62 bij inmelding HD via DSI                                                                      */
+    #define prmkarsghd67                1706 /* Signaalgroep nummer voor fase 67 bij inmelding HD via DSI                                                                      */
+    #define prmkarsghd68                1707 /* Signaalgroep nummer voor fase 68 bij inmelding HD via DSI                                                                      */
+    #define prmstkp1                    1708 /* Start klokperiode dag                                                                                                          */
+    #define prmetkp1                    1709 /* Einde klokperiode dag                                                                                                          */
+    #define prmdckp1                    1710 /* Dagsoort klokperiode dag                                                                                                       */
+    #define prmstkp2                    1711 /* Start klokperiode ochtend                                                                                                      */
+    #define prmetkp2                    1712 /* Einde klokperiode ochtend                                                                                                      */
+    #define prmdckp2                    1713 /* Dagsoort klokperiode ochtend                                                                                                   */
+    #define prmstkp3                    1714 /* Start klokperiode avond                                                                                                        */
+    #define prmetkp3                    1715 /* Einde klokperiode avond                                                                                                        */
+    #define prmdckp3                    1716 /* Dagsoort klokperiode avond                                                                                                     */
+    #define prmstkp4                    1717 /* Start klokperiode koopavond                                                                                                    */
+    #define prmetkp4                    1718 /* Einde klokperiode koopavond                                                                                                    */
+    #define prmdckp4                    1719 /* Dagsoort klokperiode koopavond                                                                                                 */
+    #define prmstkp5                    1720 /* Start klokperiode weekend                                                                                                      */
+    #define prmetkp5                    1721 /* Einde klokperiode weekend                                                                                                      */
+    #define prmdckp5                    1722 /* Dagsoort klokperiode weekend                                                                                                   */
+    #define prmstkp6                    1723 /* Start klokperiode reserve                                                                                                      */
+    #define prmetkp6                    1724 /* Einde klokperiode reserve                                                                                                      */
+    #define prmdckp6                    1725 /* Dagsoort klokperiode reserve                                                                                                   */
+    #define prmmg2_02                   1726 /* Maximale groentijd MG2 02                                                                                                      */
+    #define prmmg2_03                   1727 /* Maximale groentijd MG2 03                                                                                                      */
+    #define prmmg2_05                   1728 /* Maximale groentijd MG2 05                                                                                                      */
+    #define prmmg2_08                   1729 /* Maximale groentijd MG2 08                                                                                                      */
+    #define prmmg2_09                   1730 /* Maximale groentijd MG2 09                                                                                                      */
+    #define prmmg2_11                   1731 /* Maximale groentijd MG2 11                                                                                                      */
+    #define prmmg2_21                   1732 /* Maximale groentijd MG2 21                                                                                                      */
+    #define prmmg2_22                   1733 /* Maximale groentijd MG2 22                                                                                                      */
+    #define prmmg2_24                   1734 /* Maximale groentijd MG2 24                                                                                                      */
+    #define prmmg2_26                   1735 /* Maximale groentijd MG2 26                                                                                                      */
+    #define prmmg2_28                   1736 /* Maximale groentijd MG2 28                                                                                                      */
+    #define prmmg2_61                   1737 /* Maximale groentijd MG2 61                                                                                                      */
+    #define prmmg2_62                   1738 /* Maximale groentijd MG2 62                                                                                                      */
+    #define prmmg2_67                   1739 /* Maximale groentijd MG2 67                                                                                                      */
+    #define prmmg2_68                   1740 /* Maximale groentijd MG2 68                                                                                                      */
+    #define prmmg2_81                   1741 /* Maximale groentijd MG2 81                                                                                                      */
+    #define prmmg2_82                   1742 /* Maximale groentijd MG2 82                                                                                                      */
+    #define prmmg2_84                   1743 /* Maximale groentijd MG2 84                                                                                                      */
+    #define prmmg3_02                   1744 /* Maximale groentijd MG3 02                                                                                                      */
+    #define prmmg3_03                   1745 /* Maximale groentijd MG3 03                                                                                                      */
+    #define prmmg3_05                   1746 /* Maximale groentijd MG3 05                                                                                                      */
+    #define prmmg3_08                   1747 /* Maximale groentijd MG3 08                                                                                                      */
+    #define prmmg3_09                   1748 /* Maximale groentijd MG3 09                                                                                                      */
+    #define prmmg3_11                   1749 /* Maximale groentijd MG3 11                                                                                                      */
+    #define prmmg3_21                   1750 /* Maximale groentijd MG3 21                                                                                                      */
+    #define prmmg3_22                   1751 /* Maximale groentijd MG3 22                                                                                                      */
+    #define prmmg3_24                   1752 /* Maximale groentijd MG3 24                                                                                                      */
+    #define prmmg3_26                   1753 /* Maximale groentijd MG3 26                                                                                                      */
+    #define prmmg3_28                   1754 /* Maximale groentijd MG3 28                                                                                                      */
+    #define prmmg3_61                   1755 /* Maximale groentijd MG3 61                                                                                                      */
+    #define prmmg3_62                   1756 /* Maximale groentijd MG3 62                                                                                                      */
+    #define prmmg3_67                   1757 /* Maximale groentijd MG3 67                                                                                                      */
+    #define prmmg3_68                   1758 /* Maximale groentijd MG3 68                                                                                                      */
+    #define prmmg3_81                   1759 /* Maximale groentijd MG3 81                                                                                                      */
+    #define prmmg3_82                   1760 /* Maximale groentijd MG3 82                                                                                                      */
+    #define prmmg3_84                   1761 /* Maximale groentijd MG3 84                                                                                                      */
+    #define prmmg4_02                   1762 /* Maximale groentijd MG4 02                                                                                                      */
+    #define prmmg4_03                   1763 /* Maximale groentijd MG4 03                                                                                                      */
+    #define prmmg4_05                   1764 /* Maximale groentijd MG4 05                                                                                                      */
+    #define prmmg4_08                   1765 /* Maximale groentijd MG4 08                                                                                                      */
+    #define prmmg4_09                   1766 /* Maximale groentijd MG4 09                                                                                                      */
+    #define prmmg4_11                   1767 /* Maximale groentijd MG4 11                                                                                                      */
+    #define prmmg4_21                   1768 /* Maximale groentijd MG4 21                                                                                                      */
+    #define prmmg4_22                   1769 /* Maximale groentijd MG4 22                                                                                                      */
+    #define prmmg4_24                   1770 /* Maximale groentijd MG4 24                                                                                                      */
+    #define prmmg4_26                   1771 /* Maximale groentijd MG4 26                                                                                                      */
+    #define prmmg4_28                   1772 /* Maximale groentijd MG4 28                                                                                                      */
+    #define prmmg4_61                   1773 /* Maximale groentijd MG4 61                                                                                                      */
+    #define prmmg4_62                   1774 /* Maximale groentijd MG4 62                                                                                                      */
+    #define prmmg4_67                   1775 /* Maximale groentijd MG4 67                                                                                                      */
+    #define prmmg4_68                   1776 /* Maximale groentijd MG4 68                                                                                                      */
+    #define prmmg4_81                   1777 /* Maximale groentijd MG4 81                                                                                                      */
+    #define prmmg4_82                   1778 /* Maximale groentijd MG4 82                                                                                                      */
+    #define prmmg4_84                   1779 /* Maximale groentijd MG4 84                                                                                                      */
+    #define prmmg5_02                   1780 /* Maximale groentijd MG5 02                                                                                                      */
+    #define prmmg5_03                   1781 /* Maximale groentijd MG5 03                                                                                                      */
+    #define prmmg5_05                   1782 /* Maximale groentijd MG5 05                                                                                                      */
+    #define prmmg5_08                   1783 /* Maximale groentijd MG5 08                                                                                                      */
+    #define prmmg5_09                   1784 /* Maximale groentijd MG5 09                                                                                                      */
+    #define prmmg5_11                   1785 /* Maximale groentijd MG5 11                                                                                                      */
+    #define prmmg5_21                   1786 /* Maximale groentijd MG5 21                                                                                                      */
+    #define prmmg5_22                   1787 /* Maximale groentijd MG5 22                                                                                                      */
+    #define prmmg5_24                   1788 /* Maximale groentijd MG5 24                                                                                                      */
+    #define prmmg5_26                   1789 /* Maximale groentijd MG5 26                                                                                                      */
+    #define prmmg5_28                   1790 /* Maximale groentijd MG5 28                                                                                                      */
+    #define prmmg5_61                   1791 /* Maximale groentijd MG5 61                                                                                                      */
+    #define prmmg5_62                   1792 /* Maximale groentijd MG5 62                                                                                                      */
+    #define prmmg5_67                   1793 /* Maximale groentijd MG5 67                                                                                                      */
+    #define prmmg5_68                   1794 /* Maximale groentijd MG5 68                                                                                                      */
+    #define prmmg5_81                   1795 /* Maximale groentijd MG5 81                                                                                                      */
+    #define prmmg5_82                   1796 /* Maximale groentijd MG5 82                                                                                                      */
+    #define prmmg5_84                   1797 /* Maximale groentijd MG5 84                                                                                                      */
+    #define prmmg6_02                   1798 /* Maximale groentijd MG6 02                                                                                                      */
+    #define prmmg6_03                   1799 /* Maximale groentijd MG6 03                                                                                                      */
+    #define prmmg6_05                   1800 /* Maximale groentijd MG6 05                                                                                                      */
+    #define prmmg6_08                   1801 /* Maximale groentijd MG6 08                                                                                                      */
+    #define prmmg6_09                   1802 /* Maximale groentijd MG6 09                                                                                                      */
+    #define prmmg6_11                   1803 /* Maximale groentijd MG6 11                                                                                                      */
+    #define prmmg6_21                   1804 /* Maximale groentijd MG6 21                                                                                                      */
+    #define prmmg6_22                   1805 /* Maximale groentijd MG6 22                                                                                                      */
+    #define prmmg6_24                   1806 /* Maximale groentijd MG6 24                                                                                                      */
+    #define prmmg6_26                   1807 /* Maximale groentijd MG6 26                                                                                                      */
+    #define prmmg6_28                   1808 /* Maximale groentijd MG6 28                                                                                                      */
+    #define prmmg6_61                   1809 /* Maximale groentijd MG6 61                                                                                                      */
+    #define prmmg6_62                   1810 /* Maximale groentijd MG6 62                                                                                                      */
+    #define prmmg6_67                   1811 /* Maximale groentijd MG6 67                                                                                                      */
+    #define prmmg6_68                   1812 /* Maximale groentijd MG6 68                                                                                                      */
+    #define prmmg6_81                   1813 /* Maximale groentijd MG6 81                                                                                                      */
+    #define prmmg6_82                   1814 /* Maximale groentijd MG6 82                                                                                                      */
+    #define prmmg6_84                   1815 /* Maximale groentijd MG6 84                                                                                                      */
+    #define prmmg7_02                   1816 /* Maximale groentijd MG7 02                                                                                                      */
+    #define prmmg7_03                   1817 /* Maximale groentijd MG7 03                                                                                                      */
+    #define prmmg7_05                   1818 /* Maximale groentijd MG7 05                                                                                                      */
+    #define prmmg7_08                   1819 /* Maximale groentijd MG7 08                                                                                                      */
+    #define prmmg7_09                   1820 /* Maximale groentijd MG7 09                                                                                                      */
+    #define prmmg7_11                   1821 /* Maximale groentijd MG7 11                                                                                                      */
+    #define prmmg7_21                   1822 /* Maximale groentijd MG7 21                                                                                                      */
+    #define prmmg7_22                   1823 /* Maximale groentijd MG7 22                                                                                                      */
+    #define prmmg7_24                   1824 /* Maximale groentijd MG7 24                                                                                                      */
+    #define prmmg7_26                   1825 /* Maximale groentijd MG7 26                                                                                                      */
+    #define prmmg7_28                   1826 /* Maximale groentijd MG7 28                                                                                                      */
+    #define prmmg7_61                   1827 /* Maximale groentijd MG7 61                                                                                                      */
+    #define prmmg7_62                   1828 /* Maximale groentijd MG7 62                                                                                                      */
+    #define prmmg7_67                   1829 /* Maximale groentijd MG7 67                                                                                                      */
+    #define prmmg7_68                   1830 /* Maximale groentijd MG7 68                                                                                                      */
+    #define prmmg7_81                   1831 /* Maximale groentijd MG7 81                                                                                                      */
+    #define prmmg7_82                   1832 /* Maximale groentijd MG7 82                                                                                                      */
+    #define prmmg7_84                   1833 /* Maximale groentijd MG7 84                                                                                                      */
+    #define prmrisapproachid02          1834 /* Approach id voor fase 02                                                                                                       */
+    #define prmrisapproachid03          1835 /* Approach id voor fase 03                                                                                                       */
+    #define prmrisapproachid05          1836 /* Approach id voor fase 05                                                                                                       */
+    #define prmrisapproachid08          1837 /* Approach id voor fase 08                                                                                                       */
+    #define prmrisapproachid09          1838 /* Approach id voor fase 09                                                                                                       */
+    #define prmrisapproachid11          1839 /* Approach id voor fase 11                                                                                                       */
+    #define prmrisapproachid21          1840 /* Approach id voor fase 21                                                                                                       */
+    #define prmrisapproachid22          1841 /* Approach id voor fase 22                                                                                                       */
+    #define prmrisapproachid24          1842 /* Approach id voor fase 24                                                                                                       */
+    #define prmrisapproachid26          1843 /* Approach id voor fase 26                                                                                                       */
+    #define prmrisapproachid28          1844 /* Approach id voor fase 28                                                                                                       */
+    #define prmrisapproachid31          1845 /* Approach id voor fase 31                                                                                                       */
+    #define prmrisapproachid32          1846 /* Approach id voor fase 32                                                                                                       */
+    #define prmrisapproachid33          1847 /* Approach id voor fase 33                                                                                                       */
+    #define prmrisapproachid34          1848 /* Approach id voor fase 34                                                                                                       */
+    #define prmrisapproachid38          1849 /* Approach id voor fase 38                                                                                                       */
+    #define prmrisapproachid61          1850 /* Approach id voor fase 61                                                                                                       */
+    #define prmrisapproachid62          1851 /* Approach id voor fase 62                                                                                                       */
+    #define prmrisapproachid67          1852 /* Approach id voor fase 67                                                                                                       */
+    #define prmrisapproachid68          1853 /* Approach id voor fase 68                                                                                                       */
+    #define prmrisapproachid81          1854 /* Approach id voor fase 81                                                                                                       */
+    #define prmrisapproachid82          1855 /* Approach id voor fase 82                                                                                                       */
+    #define prmrisapproachid84          1856 /* Approach id voor fase 84                                                                                                       */
+    #define prmrislaneid02_1            1857 /* Lane id voor lane met index 1 bij fase 02                                                                                      */
+    #define prmrislaneid02_2            1858 /* Lane id voor lane met index 2 bij fase 02                                                                                      */
+    #define prmrislaneid03_1            1859 /* Lane id voor lane met index 1 bij fase 03                                                                                      */
+    #define prmrislaneid05_1            1860 /* Lane id voor lane met index 1 bij fase 05                                                                                      */
+    #define prmrislaneid08_1            1861 /* Lane id voor lane met index 1 bij fase 08                                                                                      */
+    #define prmrislaneid08_2            1862 /* Lane id voor lane met index 2 bij fase 08                                                                                      */
+    #define prmrislaneid09_1            1863 /* Lane id voor lane met index 1 bij fase 09                                                                                      */
+    #define prmrislaneid11_1            1864 /* Lane id voor lane met index 1 bij fase 11                                                                                      */
+    #define prmrislaneid21_1            1865 /* Lane id voor lane met index 1 bij fase 21                                                                                      */
+    #define prmrislaneid22_1            1866 /* Lane id voor lane met index 1 bij fase 22                                                                                      */
+    #define prmrislaneid24_1            1867 /* Lane id voor lane met index 1 bij fase 24                                                                                      */
+    #define prmrislaneid26_1            1868 /* Lane id voor lane met index 1 bij fase 26                                                                                      */
+    #define prmrislaneid28_1            1869 /* Lane id voor lane met index 1 bij fase 28                                                                                      */
+    #define prmrislaneid31_1            1870 /* Lane id voor lane met index 1 bij fase 31                                                                                      */
+    #define prmrislaneid31_2            1871 /* Lane id voor lane met index 2 bij fase 31                                                                                      */
+    #define prmrislaneid32_1            1872 /* Lane id voor lane met index 1 bij fase 32                                                                                      */
+    #define prmrislaneid32_2            1873 /* Lane id voor lane met index 2 bij fase 32                                                                                      */
+    #define prmrislaneid33_1            1874 /* Lane id voor lane met index 1 bij fase 33                                                                                      */
+    #define prmrislaneid33_2            1875 /* Lane id voor lane met index 2 bij fase 33                                                                                      */
+    #define prmrislaneid34_1            1876 /* Lane id voor lane met index 1 bij fase 34                                                                                      */
+    #define prmrislaneid34_2            1877 /* Lane id voor lane met index 2 bij fase 34                                                                                      */
+    #define prmrislaneid38_1            1878 /* Lane id voor lane met index 1 bij fase 38                                                                                      */
+    #define prmrislaneid38_2            1879 /* Lane id voor lane met index 2 bij fase 38                                                                                      */
+    #define prmrislaneid61_1            1880 /* Lane id voor lane met index 1 bij fase 61                                                                                      */
+    #define prmrislaneid62_1            1881 /* Lane id voor lane met index 1 bij fase 62                                                                                      */
+    #define prmrislaneid62_2            1882 /* Lane id voor lane met index 2 bij fase 62                                                                                      */
+    #define prmrislaneid67_1            1883 /* Lane id voor lane met index 1 bij fase 67                                                                                      */
+    #define prmrislaneid68_1            1884 /* Lane id voor lane met index 1 bij fase 68                                                                                      */
+    #define prmrislaneid68_2            1885 /* Lane id voor lane met index 2 bij fase 68                                                                                      */
+    #define prmrislaneid81_1            1886 /* Lane id voor lane met index 1 bij fase 81                                                                                      */
+    #define prmrislaneid82_1            1887 /* Lane id voor lane met index 1 bij fase 82                                                                                      */
+    #define prmrislaneid84_1            1888 /* Lane id voor lane met index 1 bij fase 84                                                                                      */
+    #define prmrisastart02mveh1         1889 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 02                                                                   */
+    #define prmrisastart02mveh2         1890 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 02                                                                   */
+    #define prmrisastart03mveh1         1891 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 03                                                                   */
+    #define prmrisastart05mveh1         1892 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 05                                                                   */
+    #define prmrisastart08mveh1         1893 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 08                                                                   */
+    #define prmrisastart08mveh2         1894 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 08                                                                   */
+    #define prmrisastart09mveh1         1895 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 09                                                                   */
+    #define prmrisastart11mveh1         1896 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 11                                                                   */
+    #define prmrisastart21fts1          1897 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 21                                                                   */
+    #define prmrisastart22fts1          1898 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 22                                                                   */
+    #define prmrisastart24fts1          1899 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 24                                                                   */
+    #define prmrisastart26fts1          1900 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 26                                                                   */
+    #define prmrisastart28fts1          1901 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 28                                                                   */
+    #define prmrisastart31vtg1          1902 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisastart31vtg2          1903 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisastart32vtg1          1904 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisastart32vtg2          1905 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisastart33vtg1          1906 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisastart33vtg2          1907 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisastart34vtg1          1908 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisastart34vtg2          1909 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisastart38vtg1          1910 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisastart38vtg2          1911 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisastart61mveh1         1912 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 61                                                                   */
+    #define prmrisastart62mveh1         1913 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisastart62mveh2         1914 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisastart67mveh1         1915 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 67                                                                   */
+    #define prmrisastart68mveh1         1916 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisastart68mveh2         1917 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisastart81fts1          1918 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 81                                                                   */
+    #define prmrisastart82fts1          1919 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 82                                                                   */
+    #define prmrisastart84fts1          1920 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 84                                                                   */
+    #define prmrisaend02mveh1           1921 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
+    #define prmrisaend02mveh2           1922 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 02                                                                   */
+    #define prmrisaend03mveh1           1923 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 03                                                                   */
+    #define prmrisaend05mveh1           1924 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 05                                                                   */
+    #define prmrisaend08mveh1           1925 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 08                                                                   */
+    #define prmrisaend08mveh2           1926 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 08                                                                   */
+    #define prmrisaend09mveh1           1927 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 09                                                                   */
+    #define prmrisaend11mveh1           1928 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 11                                                                   */
+    #define prmrisaend21fts1            1929 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 21                                                                   */
+    #define prmrisaend22fts1            1930 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 22                                                                   */
+    #define prmrisaend24fts1            1931 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 24                                                                   */
+    #define prmrisaend26fts1            1932 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 26                                                                   */
+    #define prmrisaend28fts1            1933 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 28                                                                   */
+    #define prmrisaend31vtg1            1934 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisaend31vtg2            1935 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisaend32vtg1            1936 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisaend32vtg2            1937 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisaend33vtg1            1938 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisaend33vtg2            1939 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisaend34vtg1            1940 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisaend34vtg2            1941 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisaend38vtg1            1942 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisaend38vtg2            1943 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisaend61mveh1           1944 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 61                                                                   */
+    #define prmrisaend62mveh1           1945 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisaend62mveh2           1946 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisaend67mveh1           1947 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 67                                                                   */
+    #define prmrisaend68mveh1           1948 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisaend68mveh2           1949 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisaend81fts1            1950 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 81                                                                   */
+    #define prmrisaend82fts1            1951 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 82                                                                   */
+    #define prmrisaend84fts1            1952 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 84                                                                   */
+    #define prmrisvstart02mveh1         1953 /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
+    #define prmrisvstart02mveh2         1954 /* Afstand van stopstreep tot start verleng gebied RIS fase 02                                                                    */
+    #define prmrisvstart03mveh1         1955 /* Afstand van stopstreep tot start verleng gebied RIS fase 03                                                                    */
+    #define prmrisvstart05mveh1         1956 /* Afstand van stopstreep tot start verleng gebied RIS fase 05                                                                    */
+    #define prmrisvstart08mveh1         1957 /* Afstand van stopstreep tot start verleng gebied RIS fase 08                                                                    */
+    #define prmrisvstart08mveh2         1958 /* Afstand van stopstreep tot start verleng gebied RIS fase 08                                                                    */
+    #define prmrisvstart09mveh1         1959 /* Afstand van stopstreep tot start verleng gebied RIS fase 09                                                                    */
+    #define prmrisvstart11mveh1         1960 /* Afstand van stopstreep tot start verleng gebied RIS fase 11                                                                    */
+    #define prmrisvstart21fts1          1961 /* Afstand van stopstreep tot start verleng gebied RIS fase 21                                                                    */
+    #define prmrisvstart22fts1          1962 /* Afstand van stopstreep tot start verleng gebied RIS fase 22                                                                    */
+    #define prmrisvstart24fts1          1963 /* Afstand van stopstreep tot start verleng gebied RIS fase 24                                                                    */
+    #define prmrisvstart26fts1          1964 /* Afstand van stopstreep tot start verleng gebied RIS fase 26                                                                    */
+    #define prmrisvstart28fts1          1965 /* Afstand van stopstreep tot start verleng gebied RIS fase 28                                                                    */
+    #define prmrisvstart31vtg1          1966 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
+    #define prmrisvstart31vtg2          1967 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
+    #define prmrisvstart32vtg1          1968 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
+    #define prmrisvstart32vtg2          1969 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
+    #define prmrisvstart33vtg1          1970 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
+    #define prmrisvstart33vtg2          1971 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
+    #define prmrisvstart34vtg1          1972 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
+    #define prmrisvstart34vtg2          1973 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
+    #define prmrisvstart38vtg1          1974 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
+    #define prmrisvstart38vtg2          1975 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
+    #define prmrisvstart61mveh1         1976 /* Afstand van stopstreep tot start verleng gebied RIS fase 61                                                                    */
+    #define prmrisvstart62mveh1         1977 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
+    #define prmrisvstart62mveh2         1978 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
+    #define prmrisvstart67mveh1         1979 /* Afstand van stopstreep tot start verleng gebied RIS fase 67                                                                    */
+    #define prmrisvstart68mveh1         1980 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
+    #define prmrisvstart68mveh2         1981 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
+    #define prmrisvstart81fts1          1982 /* Afstand van stopstreep tot start verleng gebied RIS fase 81                                                                    */
+    #define prmrisvstart82fts1          1983 /* Afstand van stopstreep tot start verleng gebied RIS fase 82                                                                    */
+    #define prmrisvstart84fts1          1984 /* Afstand van stopstreep tot start verleng gebied RIS fase 84                                                                    */
+    #define prmrisvend02mveh1           1985 /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
+    #define prmrisvend02mveh2           1986 /* Afstand van stopstreep tot einde verleng gebied RIS fase 02                                                                    */
+    #define prmrisvend03mveh1           1987 /* Afstand van stopstreep tot einde verleng gebied RIS fase 03                                                                    */
+    #define prmrisvend05mveh1           1988 /* Afstand van stopstreep tot einde verleng gebied RIS fase 05                                                                    */
+    #define prmrisvend08mveh1           1989 /* Afstand van stopstreep tot einde verleng gebied RIS fase 08                                                                    */
+    #define prmrisvend08mveh2           1990 /* Afstand van stopstreep tot einde verleng gebied RIS fase 08                                                                    */
+    #define prmrisvend09mveh1           1991 /* Afstand van stopstreep tot einde verleng gebied RIS fase 09                                                                    */
+    #define prmrisvend11mveh1           1992 /* Afstand van stopstreep tot einde verleng gebied RIS fase 11                                                                    */
+    #define prmrisvend21fts1            1993 /* Afstand van stopstreep tot einde verleng gebied RIS fase 21                                                                    */
+    #define prmrisvend22fts1            1994 /* Afstand van stopstreep tot einde verleng gebied RIS fase 22                                                                    */
+    #define prmrisvend24fts1            1995 /* Afstand van stopstreep tot einde verleng gebied RIS fase 24                                                                    */
+    #define prmrisvend26fts1            1996 /* Afstand van stopstreep tot einde verleng gebied RIS fase 26                                                                    */
+    #define prmrisvend28fts1            1997 /* Afstand van stopstreep tot einde verleng gebied RIS fase 28                                                                    */
+    #define prmrisvend31vtg1            1998 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
+    #define prmrisvend31vtg2            1999 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
+    #define prmrisvend32vtg1            2000 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
+    #define prmrisvend32vtg2            2001 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
+    #define prmrisvend33vtg1            2002 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
+    #define prmrisvend33vtg2            2003 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
+    #define prmrisvend34vtg1            2004 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
+    #define prmrisvend34vtg2            2005 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
+    #define prmrisvend38vtg1            2006 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
+    #define prmrisvend38vtg2            2007 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
+    #define prmrisvend61mveh1           2008 /* Afstand van stopstreep tot einde verleng gebied RIS fase 61                                                                    */
+    #define prmrisvend62mveh1           2009 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
+    #define prmrisvend62mveh2           2010 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
+    #define prmrisvend67mveh1           2011 /* Afstand van stopstreep tot einde verleng gebied RIS fase 67                                                                    */
+    #define prmrisvend68mveh1           2012 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
+    #define prmrisvend68mveh2           2013 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
+    #define prmrisvend81fts1            2014 /* Afstand van stopstreep tot einde verleng gebied RIS fase 81                                                                    */
+    #define prmrisvend82fts1            2015 /* Afstand van stopstreep tot einde verleng gebied RIS fase 82                                                                    */
+    #define prmrisvend84fts1            2016 /* Afstand van stopstreep tot einde verleng gebied RIS fase 84                                                                    */
+    #define prmmkrgd24_3                2017 /* Type verlengen tbv richtinggevoelig verlengen fase 24                                                                          */
+    #define prmrgv                      2018 /* Type RoBuGrover                                                                                                                */
+    #define prmmin_tcyclus              2019 /* Minimale cyclustijd                                                                                                            */
+    #define prmmax_tcyclus              2020 /* Maximale cyclustijd                                                                                                            */
+    #define prmtvg_omhoog               2021 /* Hoeveelheid ophogen TVG                                                                                                        */
+    #define prmtvg_omlaag               2022 /* Hoeveelheid verlagen TVG                                                                                                       */
+    #define prmtvg_verschil             2023 /* Parameter verschil                                                                                                             */
+    #define prmtvg_npr_omlaag           2024 /* Hoeveelheid verlagen TVG bij niet primair                                                                                      */
+    #define prmmintvg_02                2025 /* Minimale verlenggroentijd fase 02                                                                                              */
+    #define prmmaxtvg_02                2026 /* Maximale verlenggroentijd fase 02                                                                                              */
+    #define prmmintvg_03                2027 /* Minimale verlenggroentijd fase 03                                                                                              */
+    #define prmmaxtvg_03                2028 /* Maximale verlenggroentijd fase 03                                                                                              */
+    #define prmmintvg_05                2029 /* Minimale verlenggroentijd fase 05                                                                                              */
+    #define prmmaxtvg_05                2030 /* Maximale verlenggroentijd fase 05                                                                                              */
+    #define prmmintvg_08                2031 /* Minimale verlenggroentijd fase 08                                                                                              */
+    #define prmmaxtvg_08                2032 /* Maximale verlenggroentijd fase 08                                                                                              */
+    #define prmmintvg_09                2033 /* Minimale verlenggroentijd fase 09                                                                                              */
+    #define prmmaxtvg_09                2034 /* Maximale verlenggroentijd fase 09                                                                                              */
+    #define prmmintvg_11                2035 /* Minimale verlenggroentijd fase 11                                                                                              */
+    #define prmmaxtvg_11                2036 /* Maximale verlenggroentijd fase 11                                                                                              */
+    #define prmmintvg_22                2037 /* Minimale verlenggroentijd fase 22                                                                                              */
+    #define prmmaxtvg_22                2038 /* Maximale verlenggroentijd fase 22                                                                                              */
+    #define prmmintvg_28                2039 /* Minimale verlenggroentijd fase 28                                                                                              */
+    #define prmmaxtvg_28                2040 /* Maximale verlenggroentijd fase 28                                                                                              */
+    #define prmmintvg_68                2041 /* Minimale verlenggroentijd fase 68                                                                                              */
+    #define prmmaxtvg_68                2042 /* Maximale verlenggroentijd fase 68                                                                                              */
+    #define prmmaxtvgvlog               2043 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
+    #define prmmaxtfbvlog               2044 /* Parameter VLOG max. wachttijd na aanvraag                                                                                      */
+    #define prmmlfpr02                  2045 /* Maximaal aantal modules vooruit fase 02                                                                                        */
+    #define prmmlfpr03                  2046 /* Maximaal aantal modules vooruit fase 03                                                                                        */
+    #define prmmlfpr05                  2047 /* Maximaal aantal modules vooruit fase 05                                                                                        */
+    #define prmmlfpr08                  2048 /* Maximaal aantal modules vooruit fase 08                                                                                        */
+    #define prmmlfpr09                  2049 /* Maximaal aantal modules vooruit fase 09                                                                                        */
+    #define prmmlfpr11                  2050 /* Maximaal aantal modules vooruit fase 11                                                                                        */
+    #define prmmlfpr21                  2051 /* Maximaal aantal modules vooruit fase 21                                                                                        */
+    #define prmmlfpr22                  2052 /* Maximaal aantal modules vooruit fase 22                                                                                        */
+    #define prmmlfpr24                  2053 /* Maximaal aantal modules vooruit fase 24                                                                                        */
+    #define prmmlfpr26                  2054 /* Maximaal aantal modules vooruit fase 26                                                                                        */
+    #define prmmlfpr28                  2055 /* Maximaal aantal modules vooruit fase 28                                                                                        */
+    #define prmmlfpr31                  2056 /* Maximaal aantal modules vooruit fase 31                                                                                        */
+    #define prmmlfpr32                  2057 /* Maximaal aantal modules vooruit fase 32                                                                                        */
+    #define prmmlfpr33                  2058 /* Maximaal aantal modules vooruit fase 33                                                                                        */
+    #define prmmlfpr34                  2059 /* Maximaal aantal modules vooruit fase 34                                                                                        */
+    #define prmmlfpr38                  2060 /* Maximaal aantal modules vooruit fase 38                                                                                        */
+    #define prmmlfpr61                  2061 /* Maximaal aantal modules vooruit fase 61                                                                                        */
+    #define prmmlfpr62                  2062 /* Maximaal aantal modules vooruit fase 62                                                                                        */
+    #define prmmlfpr67                  2063 /* Maximaal aantal modules vooruit fase 67                                                                                        */
+    #define prmmlfpr68                  2064 /* Maximaal aantal modules vooruit fase 68                                                                                        */
+    #define prmmlfpr81                  2065 /* Maximaal aantal modules vooruit fase 81                                                                                        */
+    #define prmmlfpr82                  2066 /* Maximaal aantal modules vooruit fase 82                                                                                        */
+    #define prmmlfpr84                  2067 /* Maximaal aantal modules vooruit fase 84                                                                                        */
+    #define prmaltg02                   2068 /* Minimale groentijd bij alternatieve realisatie fase 02                                                                         */
+    #define prmaltp02                   2069 /* Minimale ruimte tbv alternatieve realisatie fase 02                                                                            */
+    #define prmaltg03                   2070 /* Minimale groentijd bij alternatieve realisatie fase 03                                                                         */
+    #define prmaltp03                   2071 /* Minimale ruimte tbv alternatieve realisatie fase 03                                                                            */
+    #define prmaltg05                   2072 /* Minimale groentijd bij alternatieve realisatie fase 05                                                                         */
+    #define prmaltp05                   2073 /* Minimale ruimte tbv alternatieve realisatie fase 05                                                                            */
+    #define prmaltg08                   2074 /* Minimale groentijd bij alternatieve realisatie fase 08                                                                         */
+    #define prmaltp08                   2075 /* Minimale ruimte tbv alternatieve realisatie fase 08                                                                            */
+    #define prmaltg09                   2076 /* Minimale groentijd bij alternatieve realisatie fase 09                                                                         */
+    #define prmaltp09                   2077 /* Minimale ruimte tbv alternatieve realisatie fase 09                                                                            */
+    #define prmaltg11                   2078 /* Minimale groentijd bij alternatieve realisatie fase 11                                                                         */
+    #define prmaltp11                   2079 /* Minimale ruimte tbv alternatieve realisatie fase 11                                                                            */
+    #define prmaltg21                   2080 /* Minimale groentijd bij alternatieve realisatie fase 21                                                                         */
+    #define prmaltp21                   2081 /* Minimale ruimte tbv alternatieve realisatie fase 21                                                                            */
+    #define prmaltg22                   2082 /* Minimale groentijd bij alternatieve realisatie fase 22                                                                         */
+    #define prmaltp2232                 2083 /* Minimale ruimte tbv alternatieve realisatie fasen 22, 32                                                                       */
+    #define prmaltg24                   2084 /* Minimale groentijd bij alternatieve realisatie fase 24                                                                         */
+    #define prmaltp2434                 2085 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
+    #define prmaltg26                   2086 /* Minimale groentijd bij alternatieve realisatie fase 26                                                                         */
+    #define prmaltp26                   2087 /* Minimale ruimte tbv alternatieve realisatie fase 26                                                                            */
+    #define prmaltg28                   2088 /* Minimale groentijd bij alternatieve realisatie fase 28                                                                         */
+    #define prmaltp28                   2089 /* Minimale ruimte tbv alternatieve realisatie fase 28                                                                            */
+    #define prmaltg31                   2090 /* Minimale groentijd bij alternatieve realisatie fase 31                                                                         */
+    #define prmaltp31                   2091 /* Minimale ruimte tbv alternatieve realisatie fase 31                                                                            */
+    #define prmaltg32                   2092 /* Minimale groentijd bij alternatieve realisatie fase 32                                                                         */
+    #define prmaltg33                   2093 /* Minimale groentijd bij alternatieve realisatie fase 33                                                                         */
+    #define prmaltp3384                 2094 /* Minimale ruimte tbv alternatieve realisatie fasen 33, 84                                                                       */
+    #define prmaltg34                   2095 /* Minimale groentijd bij alternatieve realisatie fase 34                                                                         */
+    #define prmaltg38                   2096 /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
+    #define prmaltp38                   2097 /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
+    #define prmaltg61                   2098 /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
+    #define prmaltp61                   2099 /* Minimale ruimte tbv alternatieve realisatie fase 61                                                                            */
+    #define prmaltg62                   2100 /* Minimale groentijd bij alternatieve realisatie fase 62                                                                         */
+    #define prmaltp62                   2101 /* Minimale ruimte tbv alternatieve realisatie fase 62                                                                            */
+    #define prmaltg67                   2102 /* Minimale groentijd bij alternatieve realisatie fase 67                                                                         */
+    #define prmaltp67                   2103 /* Minimale ruimte tbv alternatieve realisatie fase 67                                                                            */
+    #define prmaltg68                   2104 /* Minimale groentijd bij alternatieve realisatie fase 68                                                                         */
+    #define prmaltp68                   2105 /* Minimale ruimte tbv alternatieve realisatie fase 68                                                                            */
+    #define prmaltg81                   2106 /* Minimale groentijd bij alternatieve realisatie fase 81                                                                         */
+    #define prmaltp81                   2107 /* Minimale ruimte tbv alternatieve realisatie fase 81                                                                            */
+    #define prmaltg82                   2108 /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
+    #define prmaltp82                   2109 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
+    #define prmaltg84                   2110 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
+    #define prmstarprogdef              2111 /* Default star programma                                                                                                         */
+    #define prmttxconfidence15          2112
+    #define prmlatencyminendsg          2113
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
     #define prmtestdsivert              2114 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
     #define prmtestdsilyn               2115 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */

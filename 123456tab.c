@@ -18,7 +18,7 @@ void signaalplan_instellingen(void);
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0)
+ * 1.0.0    13-12-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0) beta 13122021
  *
  ************************************************************************************/
 
@@ -1947,37 +1947,6 @@ void control_parameters(void)
     SCH_code[schdynhiaat11]            = "dynhiaat11";            SCH[schdynhiaat11]            = 1;                                        /* Toepassen dynamsich hiaat bij fase 11                                 */
     SCH_code[schopdrempelen11]         = "opdrempelen11";         SCH[schopdrempelen11]         = 0;                                        /* Opdrempelen toepassen voor fase 11                                    */
     SCH_code[schedkop_11]              = "edkop_11";              SCH[schedkop_11]              = 1;                                        /* Start timers dynamische hiaat fase 11 op einde detectie koplus        */
-    SCH_code[schconfidence15fix]       = "confidence15fix";       SCH[schconfidence15fix]       = 0;                                       
-    SCH_code[schtxconfidence15ar]      = "txconfidence15ar";      SCH[schtxconfidence15ar]      = 1;                                       
-    SCH_code[schspatconfidence1]       = "spatconfidence1";       SCH[schspatconfidence1]       = 0;                                       
-    SCH_code[schspatconfidence3]       = "spatconfidence3";       SCH[schspatconfidence3]       = 0;                                       
-    SCH_code[schspatconfidence6]       = "spatconfidence6";       SCH[schspatconfidence6]       = 0;                                       
-    SCH_code[schspatconfidence9]       = "spatconfidence9";       SCH[schspatconfidence9]       = 0;                                       
-    SCH_code[schspatconfidence12]      = "spatconfidence12";      SCH[schspatconfidence12]      = 0;                                       
-    SCH_code[schspatconfidence15]      = "spatconfidence15";      SCH[schspatconfidence15]      = 1;                                       
-    SCH_code[schtimings02]             = "timings02";             SCH[schtimings02]             = 0;                                       
-    SCH_code[schtimings03]             = "timings03";             SCH[schtimings03]             = 0;                                       
-    SCH_code[schtimings05]             = "timings05";             SCH[schtimings05]             = 0;                                       
-    SCH_code[schtimings08]             = "timings08";             SCH[schtimings08]             = 0;                                       
-    SCH_code[schtimings09]             = "timings09";             SCH[schtimings09]             = 0;                                       
-    SCH_code[schtimings11]             = "timings11";             SCH[schtimings11]             = 0;                                       
-    SCH_code[schtimings21]             = "timings21";             SCH[schtimings21]             = 0;                                       
-    SCH_code[schtimings22]             = "timings22";             SCH[schtimings22]             = 0;                                       
-    SCH_code[schtimings24]             = "timings24";             SCH[schtimings24]             = 0;                                       
-    SCH_code[schtimings26]             = "timings26";             SCH[schtimings26]             = 0;                                       
-    SCH_code[schtimings28]             = "timings28";             SCH[schtimings28]             = 0;                                       
-    SCH_code[schtimings31]             = "timings31";             SCH[schtimings31]             = 0;                                       
-    SCH_code[schtimings32]             = "timings32";             SCH[schtimings32]             = 0;                                       
-    SCH_code[schtimings33]             = "timings33";             SCH[schtimings33]             = 0;                                       
-    SCH_code[schtimings34]             = "timings34";             SCH[schtimings34]             = 0;                                       
-    SCH_code[schtimings38]             = "timings38";             SCH[schtimings38]             = 0;                                       
-    SCH_code[schtimings61]             = "timings61";             SCH[schtimings61]             = 0;                                       
-    SCH_code[schtimings62]             = "timings62";             SCH[schtimings62]             = 0;                                       
-    SCH_code[schtimings67]             = "timings67";             SCH[schtimings67]             = 0;                                       
-    SCH_code[schtimings68]             = "timings68";             SCH[schtimings68]             = 0;                                       
-    SCH_code[schtimings81]             = "timings81";             SCH[schtimings81]             = 0;                                       
-    SCH_code[schtimings82]             = "timings82";             SCH[schtimings82]             = 0;                                       
-    SCH_code[schtimings84]             = "timings84";             SCH[schtimings84]             = 0;                                       
     SCH_code[schfileFile68af]          = "fileFile68af";          SCH[schfileFile68af]          = 1;                                        /* File ingreep File68af toepassen                                       */
     SCH_code[schfiledoserenFile68af]   = "filedoserenFile68af";   SCH[schfiledoserenFile68af]   = 1;                                        /* Toepassen doseerpercentages voor fileingreep File68af                 */
     SCH_code[schfileFile68afparstrook] = "fileFile68afparstrook"; SCH[schfileFile68afparstrook] = 0;                                        /* Parallele file meldingen per strook file ingreep File68af             */
@@ -2324,6 +2293,37 @@ void control_parameters(void)
     SCH_code[schlos34_2]               = "los34_2";               SCH[schlos34_2]               = 0;                                        /* Toestaan los realiseren fase 34                                       */
     SCH_code[schlos33_1]               = "los33_1";               SCH[schlos33_1]               = 0;                                        /* Toestaan los realiseren fase 33                                       */
     SCH_code[schlos33_2]               = "los33_2";               SCH[schlos33_2]               = 0;                                        /* Toestaan los realiseren fase 33                                       */
+    SCH_code[schconfidence15fix]       = "confidence15fix";       SCH[schconfidence15fix]       = 0;                                       
+    SCH_code[schtxconfidence15ar]      = "txconfidence15ar";      SCH[schtxconfidence15ar]      = 1;                                       
+    SCH_code[schspatconfidence1]       = "spatconfidence1";       SCH[schspatconfidence1]       = 0;                                       
+    SCH_code[schspatconfidence3]       = "spatconfidence3";       SCH[schspatconfidence3]       = 0;                                       
+    SCH_code[schspatconfidence6]       = "spatconfidence6";       SCH[schspatconfidence6]       = 0;                                       
+    SCH_code[schspatconfidence9]       = "spatconfidence9";       SCH[schspatconfidence9]       = 0;                                       
+    SCH_code[schspatconfidence12]      = "spatconfidence12";      SCH[schspatconfidence12]      = 0;                                       
+    SCH_code[schspatconfidence15]      = "spatconfidence15";      SCH[schspatconfidence15]      = 1;                                       
+    SCH_code[schtimings02]             = "timings02";             SCH[schtimings02]             = 0;                                       
+    SCH_code[schtimings03]             = "timings03";             SCH[schtimings03]             = 0;                                       
+    SCH_code[schtimings05]             = "timings05";             SCH[schtimings05]             = 0;                                       
+    SCH_code[schtimings08]             = "timings08";             SCH[schtimings08]             = 0;                                       
+    SCH_code[schtimings09]             = "timings09";             SCH[schtimings09]             = 0;                                       
+    SCH_code[schtimings11]             = "timings11";             SCH[schtimings11]             = 0;                                       
+    SCH_code[schtimings21]             = "timings21";             SCH[schtimings21]             = 0;                                       
+    SCH_code[schtimings22]             = "timings22";             SCH[schtimings22]             = 0;                                       
+    SCH_code[schtimings24]             = "timings24";             SCH[schtimings24]             = 0;                                       
+    SCH_code[schtimings26]             = "timings26";             SCH[schtimings26]             = 0;                                       
+    SCH_code[schtimings28]             = "timings28";             SCH[schtimings28]             = 0;                                       
+    SCH_code[schtimings31]             = "timings31";             SCH[schtimings31]             = 0;                                       
+    SCH_code[schtimings32]             = "timings32";             SCH[schtimings32]             = 0;                                       
+    SCH_code[schtimings33]             = "timings33";             SCH[schtimings33]             = 0;                                       
+    SCH_code[schtimings34]             = "timings34";             SCH[schtimings34]             = 0;                                       
+    SCH_code[schtimings38]             = "timings38";             SCH[schtimings38]             = 0;                                       
+    SCH_code[schtimings61]             = "timings61";             SCH[schtimings61]             = 0;                                       
+    SCH_code[schtimings62]             = "timings62";             SCH[schtimings62]             = 0;                                       
+    SCH_code[schtimings67]             = "timings67";             SCH[schtimings67]             = 0;                                       
+    SCH_code[schtimings68]             = "timings68";             SCH[schtimings68]             = 0;                                       
+    SCH_code[schtimings81]             = "timings81";             SCH[schtimings81]             = 0;                                       
+    SCH_code[schtimings82]             = "timings82";             SCH[schtimings82]             = 0;                                       
+    SCH_code[schtimings84]             = "timings84";             SCH[schtimings84]             = 0;                                       
     SCH_code[schgsbeidedkb]            = "gsbeidedkb";            SCH[schgsbeidedkb]            = 0;                                       
 
 /* parameters */
@@ -2351,8 +2351,6 @@ void control_parameters(void)
     PRM_code[prmspringverleng_11_2]       = "springverleng_11_2";       PRM[prmspringverleng_11_2]       = 24;                                                     /* Dyn. hiaattij instelling voor det. 11_2 (via bitsturing)                                                                       */
     PRM_code[prmspringverleng_11_3]       = "springverleng_11_3";       PRM[prmspringverleng_11_3]       = 9;                                                      /* Dyn. hiaattij instelling voor det. 11_3 (via bitsturing)                                                                       */
     PRM_code[prmspringverleng_11_4]       = "springverleng_11_4";       PRM[prmspringverleng_11_4]       = 0;                                                      /* Dyn. hiaattij instelling voor det. 11_4 (via bitsturing)                                                                       */
-    PRM_code[prmttxconfidence15]          = "ttxconfidence15";          PRM[prmttxconfidence15]          = 30;                                                    
-    PRM_code[prmlatencyminendsg]          = "latencyminendsg";          PRM[prmlatencyminendsg]          = 3;    PRM_type[prmlatencyminendsg]          = TE_type;
     PRM_code[prmfb]                       = "fb";                       PRM[prmfb]                       = 240;  PRM_type[prmfb]                       = TS_type; /* Instelling fasebewaking                                                                                                        */
     PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 1;                                                      /* Versiebeheer xx                                                                                                                */
     PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 0;                                                      /* Versiebeheer yy                                                                                                                */
@@ -4442,6 +4440,8 @@ void control_parameters(void)
     PRM_code[prmaltp82]                   = "altp82";                   PRM[prmaltp82]                   = 60;   PRM_type[prmaltp82]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
     PRM_code[prmaltg84]                   = "altg84";                   PRM[prmaltg84]                   = 60;   PRM_type[prmaltg84]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
     PRM_code[prmstarprogdef]              = "starprogdef";              PRM[prmstarprogdef]              = 1;    PRM_type[prmstarprogdef]              = SCH_type; /* Default star programma                                                                                                         */
+    PRM_code[prmttxconfidence15]          = "ttxconfidence15";          PRM[prmttxconfidence15]          = 30;                                                    
+    PRM_code[prmlatencyminendsg]          = "latencyminendsg";          PRM[prmlatencyminendsg]          = 3;    PRM_type[prmlatencyminendsg]          = TE_type;
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
     PRM_code[prmtestdsivert]              = "testdsivert";              PRM[prmtestdsivert]              = 120;  PRM_type[prmtestdsivert]              = TS_type; /* Testen vertraging in DSI bericht in testomgeving                                                                               */
     PRM_code[prmtestdsilyn]               = "testdsilyn";               PRM[prmtestdsilyn]               = 0;                                          /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */

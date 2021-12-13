@@ -16,7 +16,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0)
+ * 1.0.0    13-12-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0) beta 13122021
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
@@ -132,18 +132,18 @@ void PostApplication_Add(void)
    /* TESTOMGEVING */
    /* ============ */
 
-
    if (TS &&
       (CIF_KLOK[CIF_JAAR] == 2099) && 
       (CIF_KLOK[CIF_MAAND] == 1) &&
       (CIF_KLOK[CIF_DAG] == 1) &&
       (CIF_KLOK[CIF_UUR] == 1) &&
       (CIF_KLOK[CIF_MINUUT] == 1) &&
-      (CIF_KLOK[CIF_SECONDE] == 1))
+      (CIF_KLOK[CIF_SECONDE] == 1)) 
    {
       stuffkey(F3KEY);
       stuffkey(F5KEY);
       stuffkey(F4KEY);
+      stuffkey(F7KEY);
       //stuffkey(F10KEY); 
    }
 #endif
@@ -191,146 +191,14 @@ void post_system_application(void)
 {
 
 }
+void pre_msg_fctiming(void)
+{
+
+}
 
 void post_system_application2(void)
 {
 
-   int i;
-
-   /* P fc21 eerder zetten  */
-   i = fc21;
-   if (/* 12 is actief */
-      ((CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE]) == 12) &&
-      /* geen conflicterende (of FK) richtingen met privilege (P) */
-      !kp(i) &&
-      /* geen conflicterende groenfase (G) */
-      !kg(i) &&
-      /* voorwaarde 12 --> 15 */
-      (((NaarConfidence9_15prio(i) || RA[i]) && ((MM[mrealtijd21] <= (PRM[prmttxconfidence15] + T_max[tlr2122])) && (MM[mrealtijdmin21] <= (PRM[prmttxconfidence15] + T_max[tlr2122])) && (MM[mrealtijdmax22] <= (PRM[prmttxconfidence15] + T_max[tlr2122]))))) || P[i] & BIT11)
-   {
-      if (P[i] & BIT11) CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE] = TIMING_CONFIDENCE_RD_GROEN_DEFINITIEF; /* 15 */ /* 1 machineslag vertragen ivm acties door P bij gelijk- en voorstart */
-      P[i] |= BIT11;
-   }
-   if ((CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE]) == 12)
-   {
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME] = MM[mrealtijdmin21];
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] = MM[mrealtijdmax21];
-      CCOL_FC_TIMING[i][0][CIF_TIMING_LIKELYTIME] = (((CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME]) + (CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME]))) / 2;
-   }
-   /* override */
-   if (!SCH[schspatconfidence12] && (CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE] == 12) || !SCH[schtimings21])
-   {
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME] = NG;
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] = NG;
-      CCOL_FC_TIMING[i][0][CIF_TIMING_LIKELYTIME] = NG;
-   }
-
-   /* Interne koppeling fc22 alleen P als fc21 een P heeft */
-   if (!(P[fc21] & BIT11) && !(P[fc22] & BIT11)) P[fc22] &= ~BIT11;
-   /* P doorzetten */
-   if (P[fc22] & BIT11) P[fc21] |= BIT11;
-
-   /* P fc81 eerder zetten  */
-   i = fc81;
-   if (/* 12 is actief */
-      ((CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE]) == 12) &&
-      /* geen conflicterende (of FK) richtingen met privilege (P) */
-      !kp(i) &&
-      /* geen conflicterende groenfase (G) */
-      !kg(i) &&
-      /* voorwaarde 12 --> 15 */
-      (((NaarConfidence9_15prio(i) || RA[i]) && ((MM[mrealtijd81] <= (PRM[prmttxconfidence15] + T_max[tlr8182])) && (MM[mrealtijdmin81] <= (PRM[prmttxconfidence15] + T_max[tlr8182])) && (MM[mrealtijdmax82] <= (PRM[prmttxconfidence15] + T_max[tlr8182]))))) || P[i] & BIT11)
-   {
-      if (P[i] & BIT11) CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE] = TIMING_CONFIDENCE_RD_GROEN_DEFINITIEF; /* 15 */ /* 1 machineslag vertragen ivm acties door P bij gelijk- en voorstart */
-      P[i] |= BIT11;
-   }
-   if ((CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE]) == 12)
-   {
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME] = MM[mrealtijdmin81];
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] = MM[mrealtijdmax81];
-      CCOL_FC_TIMING[i][0][CIF_TIMING_LIKELYTIME] = (((CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME]) + (CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME]))) / 2;
-   }
-   /* override */
-   if (!SCH[schspatconfidence12] && (CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE] == 12) || !SCH[schtimings81])
-   {
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME] = NG;
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] = NG;
-      CCOL_FC_TIMING[i][0][CIF_TIMING_LIKELYTIME] = NG;
-   }
-
-   /* Interne koppeling fc82 alleen P als fc81 een P heeft */
-   if (!(P[fc81] & BIT11) && !(P[fc82] & BIT11)) P[fc82] &= ~BIT11;
-   /* P doorzetten */
-   if (P[fc82] & BIT11) P[fc81] |= BIT11;
-
-
-   /* P fc62 eerder zetten  */
-   i = fc62;
-   if (/* 12 is actief */
-      ((CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE]) == 12) &&
-      /* geen conflicterende (of FK) richtingen met privilege (P) */
-      !kp(i) &&
-      /* geen conflicterende groenfase (G) */
-      !kg(i) &&
-      /* voorwaarde 12 --> 15 */
-      (((NaarConfidence9_15prio(i) || RA[i]) && ((MM[mrealtijd62] <= (PRM[prmttxconfidence15] + T_max[tlr6202])) && (MM[mrealtijdmin62] <= (PRM[prmttxconfidence15] + T_max[tlr6202])) && (MM[mrealtijdmax02] <= (PRM[prmttxconfidence15] + T_max[tlr6202]))))) || P[i] & BIT11)
-   {
-      if (P[i] & BIT11) CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE] = TIMING_CONFIDENCE_RD_GROEN_DEFINITIEF; /* 15 */ /* 1 machineslag vertragen ivm acties door P bij gelijk- en voorstart */
-      P[i] |= BIT11;
-   }
-   if ((CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE]) == 12)
-   {
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME] = MM[mrealtijdmin62];
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] = MM[mrealtijdmax62];
-      CCOL_FC_TIMING[i][0][CIF_TIMING_LIKELYTIME] = (((CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME]) + (CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME]))) / 2;
-   }
-   /* override */
-   if (!SCH[schspatconfidence12] && (CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE] == 12) || !SCH[schtimings62])
-   {
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME] = NG;
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] = NG;
-      CCOL_FC_TIMING[i][0][CIF_TIMING_LIKELYTIME] = NG;
-   }
-
-   /* Interne koppeling fc02 alleen P als fc62 een P heeft */
-   if (!(P[fc62] & BIT11) && !(P[fc02] & BIT11)) P[fc02] &= ~BIT11;
-   /* P doorzetten */
-   if (P[fc02] & BIT11) P[fc62] |= BIT11;
-
-   /* P fc68 eerder zetten  */
-   i = fc68;
-   if (/* 12 is actief */
-      ((CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE]) == 12) &&
-      /* geen conflicterende (of FK) richtingen met privilege (P) */
-      !kp(i) &&
-      /* geen conflicterende groenfase (G) */
-      !kg(i) &&
-      /* voorwaarde 12 --> 15 */
-      (((NaarConfidence9_15prio(i) || RA[i]) && (((MM[mrealtijd68] <= (PRM[prmttxconfidence15] + T_max[tlr6808])) && (MM[mrealtijdmin68] <= (PRM[prmttxconfidence15] + T_max[tlr6808])) && (MM[mrealtijdmax08] <= (PRM[prmttxconfidence15] + T_max[tlr6808]))) ||
-                                                 ((MM[mrealtijd68] <= (PRM[prmttxconfidence15] + T_max[tlr6811])) && (MM[mrealtijdmin68] <= (PRM[prmttxconfidence15] + T_max[tlr6811])) && (MM[mrealtijdmax08] <= (PRM[prmttxconfidence15] + T_max[tlr6811])))))) || P[i] & BIT11)
-   {
-      if (P[i] & BIT11) CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE] = TIMING_CONFIDENCE_RD_GROEN_DEFINITIEF; /* 15 */ /* 1 machineslag vertragen ivm acties door P bij gelijk- en voorstart */
-      P[i] |= BIT11;
-   }
-   if ((CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE]) == 12)
-   {
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME] = MM[mrealtijdmin68];
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] = MM[mrealtijdmax68];
-      CCOL_FC_TIMING[i][0][CIF_TIMING_LIKELYTIME] = (((CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME]) + (CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME]))) / 2;
-   }
-   /* override */
-   if (!SCH[schspatconfidence12] && (CCOL_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE] == 12) || !SCH[schtimings68])
-   {
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MINENDTIME] = NG;
-      CCOL_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] = NG;
-      CCOL_FC_TIMING[i][0][CIF_TIMING_LIKELYTIME] = NG;
-   }
-
-   /* Interne koppeling fc08 alleen P als fc68 een P heeft */
-   if (!(P[fc68] & BIT11) && !((P[fc08] & BIT11) || (P[fc11] & BIT11))) P[fc08] &= ~BIT11;
-   /* P doorzetten */
-   if (P[fc08] & BIT11) P[fc68] |= BIT11;
-   if (P[fc11] & BIT11) P[fc68] |= BIT11;
 }
 
 void post_dump_application(void)

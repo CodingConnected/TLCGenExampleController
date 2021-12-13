@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0)
+ * 1.0.0    13-12-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0) beta 13122021
  *
  ************************************************************************************/
 
@@ -2646,9 +2646,7 @@ void system_application(void)
 
 void system_application2(void)
 {
-#if (!defined NO_TIMETOX)
     int i;
-#endif
 
 #ifndef NO_VLOG
     mon3_mon4_buffers(SAPPLPROG, PRM[prmmaxtvgvlog], PRM[prmmaxtfbvlog]);
@@ -2678,6 +2676,8 @@ void system_application2(void)
         if (RT[tfo0522] || T[tfo0522]) P[fc22] &= ~BIT11;
         if (RT[tfo0532] || T[tfo0532]) P[fc32] &= ~BIT11;
         if (RT[tfo1126] || T[tfo1126]) P[fc26] &= ~BIT11;
+
+        pre_msg_fctiming();
 
         msg_fctiming(PRM[prmlatencyminendsg]);
     #endif
