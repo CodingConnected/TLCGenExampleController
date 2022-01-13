@@ -1,5 +1,7 @@
 /* extra_func.c - gegenereerd met TLCGen 0.10.4.0 */
 
+/* extra_func.c - gegenereerd met TLCGen 0.10.4.0 */
+
 #include "extra_func.h"
 
 int Knipper_1Hz = 0;
@@ -463,7 +465,7 @@ boolv Rateltikkers(   count fc,        /* fase                                  
     return (IH[has]); /* positieve uitsturing bij niet-bewaakte tikkers */
   }
   else {
-    return (!IH[has]); /* ge?nverteerde uitsturing bij bewaakte tikkers */
+    return (!IH[has]); /* geinverteerde uitsturing bij bewaakte tikkers */
   }
 }
 
@@ -1539,7 +1541,7 @@ boolv ControleerVS(count fc1, count fc2, boolv cond, boolv halt)
 
       if (cond)
       {
-         if ((EVS[fc1] && !(G[fc2]||GL[fc2]) && !RR[fc2]&BIT6))
+         if ((EVS[fc1] && !(G[fc2]||GL[fc2]) && !(RR[fc2]&BIT6)))
          {
             /* Schrijf naar de CCOL-terminal */
             code helpstr[30];  /* help string */

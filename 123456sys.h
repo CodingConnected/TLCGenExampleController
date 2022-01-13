@@ -1863,8 +1863,26 @@
     #define schtimings81             386
     #define schtimings82             387
     #define schtimings84             388
-    #define schgsbeidedkb            389
-    #define SCHMAX1                  390
+    #define schsneld02_1a            389 /* Aanvraag snel voor detector 02_1a aan of uit                          */
+    #define schsneld03_1             390 /* Aanvraag snel voor detector 03_1 aan of uit                           */
+    #define schsneld05_1             391 /* Aanvraag snel voor detector 05_1 aan of uit                           */
+    #define schsneld08_1a            392 /* Aanvraag snel voor detector 08_1a aan of uit                          */
+    #define schsneld09_1             393 /* Aanvraag snel voor detector 09_1 aan of uit                           */
+    #define schsneld11_1             394 /* Aanvraag snel voor detector 11_1 aan of uit                           */
+    #define schsneld211              395 /* Aanvraag snel voor detector 211 aan of uit                            */
+    #define schsneld22_1             396 /* Aanvraag snel voor detector 22_1 aan of uit                           */
+    #define schsneld24_1             397 /* Aanvraag snel voor detector 24_1 aan of uit                           */
+    #define schsneld261              398 /* Aanvraag snel voor detector 261 aan of uit                            */
+    #define schsneld28_1             399 /* Aanvraag snel voor detector 28_1 aan of uit                           */
+    #define schsneld61_1             400 /* Aanvraag snel voor detector 61_1 aan of uit                           */
+    #define schsneld62_1a            401 /* Aanvraag snel voor detector 62_1a aan of uit                          */
+    #define schsneld67_1             402 /* Aanvraag snel voor detector 67_1 aan of uit                           */
+    #define schsneld68_1a            403 /* Aanvraag snel voor detector 68_1a aan of uit                          */
+    #define schsneld81_1             404 /* Aanvraag snel voor detector 81_1 aan of uit                           */
+    #define schsneld82_1             405 /* Aanvraag snel voor detector 82_1 aan of uit                           */
+    #define schsneld84_1             406 /* Aanvraag snel voor detector 84_1 aan of uit                           */
+    #define schgsbeidedkb            407
+    #define SCHMAX1                  408
 
 /* parameters */
 /* ---------- */

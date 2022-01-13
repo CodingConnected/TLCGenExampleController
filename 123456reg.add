@@ -136,9 +136,9 @@ void PostApplication_Add(void)
       (CIF_KLOK[CIF_JAAR] == 2099) && 
       (CIF_KLOK[CIF_MAAND] == 1) &&
       (CIF_KLOK[CIF_DAG] == 1) &&
-      (CIF_KLOK[CIF_UUR] == 1) &&
-      (CIF_KLOK[CIF_MINUUT] == 1) &&
-      (CIF_KLOK[CIF_SECONDE] == 1)) 
+      (CIF_KLOK[CIF_UUR] == 13) &&
+      (CIF_KLOK[CIF_MINUUT] == 48) &&
+      (CIF_KLOK[CIF_SECONDE] == 34)) //fc05
    {
       stuffkey(F3KEY);
       stuffkey(F5KEY);
@@ -195,9 +195,55 @@ void pre_msg_fctiming(void)
 {
 
 }
+mulv MAXEND_set[FCMAX] = { 0 }; /* uitgestuurde MaxEnd tijd */
+mulv ESTATE_cur[FCMAX] = { -1 }; /* huidige EventState       */
+mulv MAXEND_tim[FCMAX] = { 0 }; /* lopende timer            */
 
 void post_system_application2(void)
 {
+
+#if !defined AUTOMAAT && !defined AUTOMAAT_TEST
+//   if (display) {
+      int i;
+
+      //xyprintf(115, 6, "MES   MET   ESH");
+
+      for (i = 0; i < FC_MAX; ++i) {
+         if (CIF_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] != -1) { // maxend tijdanders dan -1
+
+            if (MAXEND_tim[i] == 0) {
+               ESTATE_cur[i] = CIF_FC_TIMING[i][0][CIF_TIMING_EVENTSTATE]; /* status signaalgroep (bv rood / geel / groen) */
+               MAXEND_set[i] = CIF_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME]; /* hier wordt opgeslagen wat de uitgestuurde waarde is om later mee te vergelijken */
+            }
+            MAXEND_tim[i] += TE; // iedere machineslag ophogen tot de waarde maxend weer -1 is
+         }
+
+         if (CIF_FC_TIMING[i][0][CIF_TIMING_EVENTSTATE] != ESTATE_cur[i]) {
+
+            if (MAXEND_tim[i] > MAXEND_set[i]) { // check of gemeten maxend tijd hoger is dan de gemeten tijd, als waar dan stuffkey
+               /* Schrijf naar de CCOL-terminal */
+               code helpstr[30]; /* help string */
+               uber_puts(PROMPT_code);
+               uber_puts("Ongewenste situatie: TIMINGS fc");
+               uber_puts(FC_code[i]);
+               uber_puts(" / ");
+               datetostr(helpstr);
+               uber_puts(helpstr);
+               uber_puts(" / ");
+               timetostr(helpstr);
+               uber_puts(helpstr);
+               uber_puts("\n");
+               //stuffkey(F5KEY);
+            }
+            MAXEND_tim[i] = 0;
+            MAXEND_set[i] = 0;
+            ESTATE_cur[i] = -1;
+
+         }
+         //xyprintf(115, 7 + i, "%3d   %3d   %3d", MAXEND_set[i], MAXEND_tim[i], ESTATE_cur[i]);
+      //}
+   }
+#endif   
 
 }
 

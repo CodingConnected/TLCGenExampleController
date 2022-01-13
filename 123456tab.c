@@ -2324,6 +2324,24 @@ void control_parameters(void)
     SCH_code[schtimings81]             = "timings81";             SCH[schtimings81]             = 0;                                       
     SCH_code[schtimings82]             = "timings82";             SCH[schtimings82]             = 0;                                       
     SCH_code[schtimings84]             = "timings84";             SCH[schtimings84]             = 0;                                       
+    SCH_code[schsneld02_1a]            = "sneld02_1a";            SCH[schsneld02_1a]            = 1;                                        /* Aanvraag snel voor detector 02_1a aan of uit                          */
+    SCH_code[schsneld03_1]             = "sneld03_1";             SCH[schsneld03_1]             = 1;                                        /* Aanvraag snel voor detector 03_1 aan of uit                           */
+    SCH_code[schsneld05_1]             = "sneld05_1";             SCH[schsneld05_1]             = 1;                                        /* Aanvraag snel voor detector 05_1 aan of uit                           */
+    SCH_code[schsneld08_1a]            = "sneld08_1a";            SCH[schsneld08_1a]            = 1;                                        /* Aanvraag snel voor detector 08_1a aan of uit                          */
+    SCH_code[schsneld09_1]             = "sneld09_1";             SCH[schsneld09_1]             = 1;                                        /* Aanvraag snel voor detector 09_1 aan of uit                           */
+    SCH_code[schsneld11_1]             = "sneld11_1";             SCH[schsneld11_1]             = 1;                                        /* Aanvraag snel voor detector 11_1 aan of uit                           */
+    SCH_code[schsneld211]              = "sneld211";              SCH[schsneld211]              = 1;                                        /* Aanvraag snel voor detector 211 aan of uit                            */
+    SCH_code[schsneld22_1]             = "sneld22_1";             SCH[schsneld22_1]             = 1;                                        /* Aanvraag snel voor detector 22_1 aan of uit                           */
+    SCH_code[schsneld24_1]             = "sneld24_1";             SCH[schsneld24_1]             = 1;                                        /* Aanvraag snel voor detector 24_1 aan of uit                           */
+    SCH_code[schsneld261]              = "sneld261";              SCH[schsneld261]              = 1;                                        /* Aanvraag snel voor detector 261 aan of uit                            */
+    SCH_code[schsneld28_1]             = "sneld28_1";             SCH[schsneld28_1]             = 1;                                        /* Aanvraag snel voor detector 28_1 aan of uit                           */
+    SCH_code[schsneld61_1]             = "sneld61_1";             SCH[schsneld61_1]             = 1;                                        /* Aanvraag snel voor detector 61_1 aan of uit                           */
+    SCH_code[schsneld62_1a]            = "sneld62_1a";            SCH[schsneld62_1a]            = 1;                                        /* Aanvraag snel voor detector 62_1a aan of uit                          */
+    SCH_code[schsneld67_1]             = "sneld67_1";             SCH[schsneld67_1]             = 1;                                        /* Aanvraag snel voor detector 67_1 aan of uit                           */
+    SCH_code[schsneld68_1a]            = "sneld68_1a";            SCH[schsneld68_1a]            = 1;                                        /* Aanvraag snel voor detector 68_1a aan of uit                          */
+    SCH_code[schsneld81_1]             = "sneld81_1";             SCH[schsneld81_1]             = 1;                                        /* Aanvraag snel voor detector 81_1 aan of uit                           */
+    SCH_code[schsneld82_1]             = "sneld82_1";             SCH[schsneld82_1]             = 1;                                        /* Aanvraag snel voor detector 82_1 aan of uit                           */
+    SCH_code[schsneld84_1]             = "sneld84_1";             SCH[schsneld84_1]             = 1;                                        /* Aanvraag snel voor detector 84_1 aan of uit                           */
     SCH_code[schgsbeidedkb]            = "gsbeidedkb";            SCH[schgsbeidedkb]            = 0;                                       
 
 /* parameters */

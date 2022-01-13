@@ -87,6 +87,7 @@
           <Naam>segm1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>406</X>
@@ -101,6 +102,7 @@
           <Naam>segm2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>395</X>
@@ -115,6 +117,7 @@
           <Naam>segm3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>413</X>
@@ -129,6 +132,7 @@
           <Naam>segm4</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>404</X>
@@ -143,6 +147,7 @@
           <Naam>segm5</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>393</X>
@@ -157,6 +162,7 @@
           <Naam>segm6</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>413</X>
@@ -171,6 +177,7 @@
           <Naam>segm7</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>403</X>
@@ -187,6 +194,7 @@
           <Naam>ML1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>574</X>
@@ -201,6 +209,7 @@
           <Naam>ML2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>574</X>
@@ -215,6 +224,7 @@
           <Naam>ML3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>572</X>
@@ -229,6 +239,7 @@
           <Naam>ML4</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>572</X>
@@ -243,6 +254,7 @@
           <Naam>ML5</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>573</X>
@@ -267,6 +279,7 @@
         <Naam>fix</Naam>
         <Dummy>false</Dummy>
         <ElementType>Input</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten>
           <Coordinaat>
             <X>625</X>
@@ -277,9 +290,9 @@
     </FixatieData>
     <Versie>
       <Versie>1.0.0</Versie>
-      <Datum>2021-11-14T00:00:00</Datum>
+      <Datum>2021-12-13T00:00:00</Datum>
       <Ontwerper>Cyril</Ontwerper>
-      <Commentaar>Nieuwe versie TLCGen (0.10.4.0)</Commentaar>
+      <Commentaar>Nieuwe versie TLCGen (0.10.4.0) beta 13122021</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -299,6 +312,7 @@
       <Naam>02</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>336</X>
@@ -351,6 +365,7 @@
           <Naam>02_1a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>319</X>
@@ -392,6 +407,7 @@
           <Naam>02_1b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>338</X>
@@ -433,6 +449,7 @@
           <Naam>02_2a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>316</X>
@@ -474,6 +491,7 @@
           <Naam>02_2b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>335</X>
@@ -515,6 +533,7 @@
           <Naam>02_3a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>315</X>
@@ -556,6 +575,7 @@
           <Naam>02_3b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>335</X>
@@ -597,6 +617,7 @@
           <Naam>02_4a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>318</X>
@@ -638,6 +659,7 @@
           <Naam>02_4b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>335</X>
@@ -680,59 +702,70 @@
         <Naam>ovinm02</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg02</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd02</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat02</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -741,6 +774,7 @@
       <Naam>03</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>357</X>
@@ -793,6 +827,7 @@
           <Naam>03_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>361</X>
@@ -834,6 +869,7 @@
           <Naam>03_2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>362</X>
@@ -876,59 +912,70 @@
         <Naam>ovinm03</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg03</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd03</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat03</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -937,6 +984,7 @@
       <Naam>05</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>606</X>
@@ -989,6 +1037,7 @@
           <Naam>05_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>532</X>
@@ -1030,6 +1079,7 @@
           <Naam>05_2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>568</X>
@@ -1072,59 +1122,70 @@
         <Naam>ovinm05</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg05</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd05</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat05</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -1133,6 +1194,7 @@
       <Naam>08</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>421</X>
@@ -1185,6 +1247,7 @@
           <Naam>08_1a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>411</X>
@@ -1226,6 +1289,7 @@
           <Naam>08_1b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>395</X>
@@ -1267,6 +1331,7 @@
           <Naam>08_2a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>419</X>
@@ -1308,6 +1373,7 @@
           <Naam>08_2b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>393</X>
@@ -1349,6 +1415,7 @@
           <Naam>08_3a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>418</X>
@@ -1390,6 +1457,7 @@
           <Naam>08_3b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>394</X>
@@ -1431,6 +1499,7 @@
           <Naam>08_4a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>417</X>
@@ -1472,6 +1541,7 @@
           <Naam>08_4b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>397</X>
@@ -1514,59 +1584,70 @@
         <Naam>ovinm08</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg08</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd08</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat08</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -1575,6 +1656,7 @@
       <Naam>09</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>373</X>
@@ -1627,6 +1709,7 @@
           <Naam>09_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>370</X>
@@ -1668,6 +1751,7 @@
           <Naam>09_2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>376</X>
@@ -1709,6 +1793,7 @@
           <Naam>09_3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>374</X>
@@ -1751,59 +1836,70 @@
         <Naam>ovinm09</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg09</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd09</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat09</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -1812,6 +1908,7 @@
       <Naam>11</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>156</X>
@@ -1864,6 +1961,7 @@
           <Naam>11_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>225</X>
@@ -1905,6 +2003,7 @@
           <Naam>11_2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>185</X>
@@ -1946,6 +2045,7 @@
           <Naam>11_3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>139</X>
@@ -1987,6 +2087,7 @@
           <Naam>11_4</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>96</X>
@@ -2029,59 +2130,70 @@
         <Naam>ovinm11</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg11</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd11</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat11</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -2090,6 +2202,7 @@
       <Naam>21</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>323</X>
@@ -2142,6 +2255,7 @@
           <Naam>211</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>377</X>
@@ -2182,6 +2296,7 @@
           <Naam>k21</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>372</X>
@@ -2204,6 +2319,7 @@
             <Naam>wtk21</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>376</X>
@@ -2233,56 +2349,67 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -2291,6 +2418,7 @@
       <Naam>22</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>420</X>
@@ -2343,6 +2471,7 @@
           <Naam>22_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>434</X>
@@ -2384,6 +2513,7 @@
           <Naam>k22</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>433</X>
@@ -2407,6 +2537,7 @@
             <Naam>wtk22</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>434</X>
@@ -2437,6 +2568,7 @@
         <Naam>ovinm22</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten>
           <Coordinaat>
             <X>247</X>
@@ -2447,51 +2579,61 @@
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -2500,6 +2642,7 @@
       <Naam>24</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>486</X>
@@ -2552,6 +2695,7 @@
           <Naam>24_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>487</X>
@@ -2593,6 +2737,7 @@
           <Naam>24_2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>488</X>
@@ -2634,6 +2779,7 @@
           <Naam>24_3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>488</X>
@@ -2675,6 +2821,7 @@
           <Naam>k24</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>504</X>
@@ -2698,6 +2845,7 @@
             <Naam>wtk24</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>504</X>
@@ -2727,6 +2875,7 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten>
           <Coordinaat>
             <X>499</X>
@@ -2737,51 +2886,61 @@
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -2790,6 +2949,7 @@
       <Naam>26</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>372</X>
@@ -2842,6 +3002,7 @@
           <Naam>261</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>301</X>
@@ -2882,6 +3043,7 @@
           <Naam>k26</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>301</X>
@@ -2904,6 +3066,7 @@
             <Naam>wtk26</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>301</X>
@@ -2933,56 +3096,67 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -2991,6 +3165,7 @@
       <Naam>28</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>274</X>
@@ -3043,6 +3218,7 @@
           <Naam>28_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>274</X>
@@ -3084,6 +3260,7 @@
           <Naam>28_2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>276</X>
@@ -3125,6 +3302,7 @@
           <Naam>k28</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>261</X>
@@ -3148,6 +3326,7 @@
             <Naam>wtk28</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>261</X>
@@ -3177,6 +3356,7 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten>
           <Coordinaat>
             <X>498</X>
@@ -3187,51 +3367,61 @@
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -3240,6 +3430,7 @@
       <Naam>31</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>356</X>
@@ -3292,6 +3483,7 @@
           <Naam>k31a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>306</X>
@@ -3315,6 +3507,7 @@
             <Naam>wtk31a</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>306</X>
@@ -3344,6 +3537,7 @@
           <Naam>k31b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>373</X>
@@ -3367,6 +3561,7 @@
             <Naam>wtk31b</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>372</X>
@@ -3396,56 +3591,67 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -3454,6 +3660,7 @@
       <Naam>32</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>387</X>
@@ -3506,6 +3713,7 @@
           <Naam>k32a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>429</X>
@@ -3529,6 +3737,7 @@
             <Naam>wtk32a</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>428</X>
@@ -3558,6 +3767,7 @@
           <Naam>k32b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>383</X>
@@ -3581,6 +3791,7 @@
             <Naam>wtk32b</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>383</X>
@@ -3610,56 +3821,67 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -3668,6 +3890,7 @@
       <Naam>33</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>508</X>
@@ -3720,6 +3943,7 @@
           <Naam>k33a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>521</X>
@@ -3743,6 +3967,7 @@
             <Naam>wtk33a</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>521</X>
@@ -3772,6 +3997,7 @@
           <Naam>k33b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>521</X>
@@ -3795,6 +4021,7 @@
             <Naam>wtk33b</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>522</X>
@@ -3824,56 +4051,67 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -3882,6 +4120,7 @@
       <Naam>34</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>510</X>
@@ -3934,6 +4173,7 @@
           <Naam>k34a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>521</X>
@@ -3957,6 +4197,7 @@
             <Naam>wtk34a</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>521</X>
@@ -3986,6 +4227,7 @@
           <Naam>k34b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>521</X>
@@ -4009,6 +4251,7 @@
             <Naam>wtk34b</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>521</X>
@@ -4038,56 +4281,67 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -4096,6 +4350,7 @@
       <Naam>38</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>251</X>
@@ -4148,6 +4403,7 @@
           <Naam>k38a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>249</X>
@@ -4171,6 +4427,7 @@
             <Naam>wtk38a</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>249</X>
@@ -4200,6 +4457,7 @@
           <Naam>k38b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>249</X>
@@ -4223,6 +4481,7 @@
             <Naam>wtk38b</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>246</X>
@@ -4252,56 +4511,67 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -4310,6 +4580,7 @@
       <Naam>61</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>299</X>
@@ -4362,6 +4633,7 @@
           <Naam>61_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>294</X>
@@ -4403,6 +4675,7 @@
           <Naam>61_2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>295</X>
@@ -4445,59 +4718,70 @@
         <Naam>ovinm61</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg61</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd61</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat61</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -4506,6 +4790,7 @@
       <Naam>62</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>335</X>
@@ -4558,6 +4843,7 @@
           <Naam>62_1a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>316</X>
@@ -4599,6 +4885,7 @@
           <Naam>62_1b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>336</X>
@@ -4640,6 +4927,7 @@
           <Naam>62_2a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>319</X>
@@ -4681,6 +4969,7 @@
           <Naam>62_2b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>336</X>
@@ -4723,59 +5012,70 @@
         <Naam>ovinm62</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg62</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd62</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat62</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -4784,6 +5084,7 @@
       <Naam>67</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>431</X>
@@ -4836,6 +5137,7 @@
           <Naam>67_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>435</X>
@@ -4877,6 +5179,7 @@
           <Naam>67_2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>437</X>
@@ -4919,59 +5222,70 @@
         <Naam>ovinm67</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg67</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd67</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat67</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -4980,6 +5294,7 @@
       <Naam>68</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>396</X>
@@ -5032,6 +5347,7 @@
           <Naam>68_1a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>417</X>
@@ -5073,6 +5389,7 @@
           <Naam>68_1b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>394</X>
@@ -5114,6 +5431,7 @@
           <Naam>68_2a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>417</X>
@@ -5155,6 +5473,7 @@
           <Naam>68_2b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>391</X>
@@ -5196,6 +5515,7 @@
           <Naam>68_9a</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>417</X>
@@ -5236,6 +5556,7 @@
           <Naam>68_9b</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>397</X>
@@ -5277,59 +5598,70 @@
         <Naam>ovinm68</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Naam>ovtevroeg68</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Naam>ovoptijd68</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Naam>ovtelaat68</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -5338,6 +5670,7 @@
       <Naam>81</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>439</X>
@@ -5390,6 +5723,7 @@
           <Naam>81_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>378</X>
@@ -5430,6 +5764,7 @@
           <Naam>k81</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>382</X>
@@ -5452,6 +5787,7 @@
             <Naam>wtk81</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>381</X>
@@ -5481,56 +5817,67 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -5539,6 +5886,7 @@
       <Naam>82</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>342</X>
@@ -5591,6 +5939,7 @@
           <Naam>82_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>290</X>
@@ -5631,6 +5980,7 @@
           <Naam>k82</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>291</X>
@@ -5653,6 +6003,7 @@
             <Naam>wtk82</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>287</X>
@@ -5682,56 +6033,67 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </PrioIngreepBitmapData>
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -5740,6 +6102,7 @@
       <Naam>84</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>469</X>
@@ -5792,6 +6155,7 @@
           <Naam>84_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>468</X>
@@ -5833,6 +6197,7 @@
           <Naam>k84</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>453</X>
@@ -5856,6 +6221,7 @@
             <Naam>wtk84</Naam>
             <Dummy>false</Dummy>
             <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
             <BitmapCoordinaten>
               <Coordinaat>
                 <X>454</X>
@@ -5885,6 +6251,7 @@
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten>
           <Coordinaat>
             <X>499</X>
@@ -5895,51 +6262,61 @@
       <GeconditioneerdePrioTeVroegBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeVroegBitmapData>
       <GeconditioneerdePrioOpTijdBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioOpTijdBitmapData>
       <GeconditioneerdePrioTeLaatBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
       <WachttijdVoorspellerBusBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBusBitmapData>
       <WachttijdVoorspellerBitmapData0>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData0>
       <WachttijdVoorspellerBitmapData1>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData1>
       <WachttijdVoorspellerBitmapData2>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData2>
       <WachttijdVoorspellerBitmapData3>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData3>
       <WachttijdVoorspellerBitmapData4>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData4>
       <HardMeeverlengenFaseCycli />
@@ -7681,6 +8058,7 @@
         <Naam>fileFile68af</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten>
           <Coordinaat>
             <X>524</X>
@@ -7835,6 +8213,7 @@
       <Naam>perdef</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>625</X>
@@ -7853,6 +8232,7 @@
           <Naam>per1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>625</X>
@@ -7873,6 +8253,7 @@
           <Naam>per2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>625</X>
@@ -7893,6 +8274,7 @@
           <Naam>per3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>625</X>
@@ -7913,6 +8295,7 @@
           <Naam>per4</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>624</X>
@@ -7933,6 +8316,7 @@
           <Naam>per5</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>624</X>
@@ -7953,6 +8337,7 @@
           <Naam>per6</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>625</X>
@@ -7988,6 +8373,7 @@
       <Naam>karmelding</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>276</X>
@@ -7999,6 +8385,7 @@
       <Naam>karog</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>277</X>
@@ -8010,6 +8397,7 @@
       <Naam>maxwt</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>275</X>
@@ -8057,6 +8445,7 @@
           <Naam>ovinm02bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>151</X>
@@ -8068,18 +8457,21 @@
           <Naam>ovtevroeg02bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd02bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat02bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -8116,6 +8508,7 @@
                 <Naam>dummykarin02bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>781</X>
@@ -8185,6 +8578,7 @@
                 <Naam>dummykaruit02bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>796</X>
@@ -8274,6 +8668,7 @@
           <Naam>ovinm02risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>50</X>
@@ -8284,16 +8679,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -8346,8 +8744,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -8408,6 +8806,7 @@
           <Naam>ovinm02risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>84</X>
@@ -8418,16 +8817,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -8480,8 +8882,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -8542,6 +8944,7 @@
           <Naam>ovinm03bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>149</X>
@@ -8553,18 +8956,21 @@
           <Naam>ovtevroeg03bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd03bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat03bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -8601,6 +9007,7 @@
                 <Naam>dummykarin03bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>781</X>
@@ -8670,6 +9077,7 @@
                 <Naam>dummykaruit03bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>796</X>
@@ -8759,6 +9167,7 @@
           <Naam>ovinm03risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>52</X>
@@ -8769,16 +9178,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -8831,8 +9243,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -8893,6 +9305,7 @@
           <Naam>ovinm03risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>83</X>
@@ -8903,16 +9316,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -8965,8 +9381,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -9027,6 +9443,7 @@
           <Naam>ovinm05bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>152</X>
@@ -9038,18 +9455,21 @@
           <Naam>ovtevroeg05bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd05bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat05bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -9086,6 +9506,7 @@
                 <Naam>dummykarin05bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>784</X>
@@ -9155,6 +9576,7 @@
                 <Naam>dummykaruit05bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>793</X>
@@ -9244,6 +9666,7 @@
           <Naam>ovinm05risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>52</X>
@@ -9254,16 +9677,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -9316,8 +9742,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -9378,6 +9804,7 @@
           <Naam>ovinm05risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>82</X>
@@ -9388,16 +9815,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -9450,8 +9880,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -9512,6 +9942,7 @@
           <Naam>ovinm08bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>152</X>
@@ -9523,18 +9954,21 @@
           <Naam>ovtevroeg08bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd08bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat08bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -9571,6 +10005,7 @@
                 <Naam>dummykarin08bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>779</X>
@@ -9640,6 +10075,7 @@
                 <Naam>dummykaruit08bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>799</X>
@@ -9729,6 +10165,7 @@
           <Naam>ovinm08risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>54</X>
@@ -9739,16 +10176,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -9801,8 +10241,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -9863,6 +10303,7 @@
           <Naam>ovinm08risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>83</X>
@@ -9873,16 +10314,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -9935,8 +10379,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -9997,6 +10441,7 @@
           <Naam>ovinm09bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>149</X>
@@ -10008,18 +10453,21 @@
           <Naam>ovtevroeg09bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd09bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat09bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -10056,6 +10504,7 @@
                 <Naam>dummykarin09bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>782</X>
@@ -10125,6 +10574,7 @@
                 <Naam>dummykaruit09bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>794</X>
@@ -10214,6 +10664,7 @@
           <Naam>ovinm09risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>53</X>
@@ -10224,16 +10675,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -10286,8 +10740,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -10348,6 +10802,7 @@
           <Naam>ovinm09risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>85</X>
@@ -10358,16 +10813,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -10420,8 +10878,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -10482,6 +10940,7 @@
           <Naam>ovinm11bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>151</X>
@@ -10493,18 +10952,21 @@
           <Naam>ovtevroeg11bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd11bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat11bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -10541,6 +11003,7 @@
                 <Naam>dummykarin11bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>782</X>
@@ -10610,6 +11073,7 @@
                 <Naam>dummykaruit11bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>799</X>
@@ -10699,6 +11163,7 @@
           <Naam>ovinm11risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>52</X>
@@ -10709,16 +11174,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -10771,8 +11239,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -10833,6 +11301,7 @@
           <Naam>ovinm11risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>86</X>
@@ -10843,16 +11312,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -10905,8 +11377,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -10967,6 +11439,7 @@
           <Naam>ovinm22fiets</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>277</X>
@@ -10977,16 +11450,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -11101,21 +11577,25 @@
           <Naam>ovinm31fietsprio</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </PrioInmeldingBitmapData>
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -11174,21 +11654,25 @@
           <Naam>ovinm32fietsprio</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </PrioInmeldingBitmapData>
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -11247,6 +11731,7 @@
           <Naam>ovinm61bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>153</X>
@@ -11258,18 +11743,21 @@
           <Naam>ovtevroeg61bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd61bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat61bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -11306,6 +11794,7 @@
                 <Naam>dummykarin61bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>782</X>
@@ -11375,6 +11864,7 @@
                 <Naam>dummykaruit61bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>801</X>
@@ -11464,6 +11954,7 @@
           <Naam>ovinm61risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>50</X>
@@ -11474,16 +11965,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -11536,8 +12030,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11598,6 +12092,7 @@
           <Naam>ovinm61risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>85</X>
@@ -11608,16 +12103,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -11670,8 +12168,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11732,6 +12230,7 @@
           <Naam>ovinm62bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>153</X>
@@ -11743,18 +12242,21 @@
           <Naam>ovtevroeg62bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd62bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat62bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -11791,6 +12293,7 @@
                 <Naam>dummykarin62bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>778</X>
@@ -11860,6 +12363,7 @@
                 <Naam>dummykaruit62bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>798</X>
@@ -11949,6 +12453,7 @@
           <Naam>ovinm62risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>49</X>
@@ -11959,16 +12464,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -12021,8 +12529,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12083,6 +12591,7 @@
           <Naam>ovinm62risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>85</X>
@@ -12093,16 +12602,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -12155,8 +12667,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12217,6 +12729,7 @@
           <Naam>ovinm67bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>152</X>
@@ -12228,18 +12741,21 @@
           <Naam>ovtevroeg67bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd67bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat67bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -12276,6 +12792,7 @@
                 <Naam>dummykarin67bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>779</X>
@@ -12345,6 +12862,7 @@
                 <Naam>dummykaruit67bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>796</X>
@@ -12434,6 +12952,7 @@
           <Naam>ovinm67risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>51</X>
@@ -12444,16 +12963,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -12506,8 +13028,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12568,6 +13090,7 @@
           <Naam>ovinm67risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>84</X>
@@ -12578,16 +13101,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -12640,8 +13166,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12702,6 +13228,7 @@
           <Naam>ovinm68bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>154</X>
@@ -12713,18 +13240,21 @@
           <Naam>ovtevroeg68bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Naam>ovoptijd68bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Naam>ovtelaat68bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -12761,6 +13291,7 @@
                 <Naam>dummykarin68bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>784</X>
@@ -12830,6 +13361,7 @@
                 <Naam>dummykaruit68bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>FaseCyclus</ElementType>
+                <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
                     <X>796</X>
@@ -12919,6 +13451,7 @@
           <Naam>ovinm68risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>52</X>
@@ -12929,16 +13462,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -12991,8 +13527,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13053,6 +13589,7 @@
           <Naam>ovinm68risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>85</X>
@@ -13063,16 +13600,19 @@
         <GeconditioneerdePrioTeVroegBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
           <Dummy>false</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
@@ -13125,8 +13665,8 @@
               <RisStart>0</RisStart>
               <RisEnd>0</RisEnd>
               <RisEta>60</RisEta>
-              <RisRole />
-              <RisSubrole />
+              <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
+              <RisSubrole>UNKNOWN</RisSubrole>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13172,6 +13712,7 @@
           <Naam>hdinm02</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>66</X>
@@ -13187,6 +13728,7 @@
           <Naam>dummyhdkarin02</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>815</X>
@@ -13227,6 +13769,7 @@
           <Naam>dummyhdkaruit02</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>826</X>
@@ -13291,6 +13834,7 @@
           <Naam>hdinm03</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>70</X>
@@ -13306,6 +13850,7 @@
           <Naam>dummyhdkarin03</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>816</X>
@@ -13346,6 +13891,7 @@
           <Naam>dummyhdkaruit03</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>827</X>
@@ -13410,6 +13956,7 @@
           <Naam>hdinm05</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>67</X>
@@ -13425,6 +13972,7 @@
           <Naam>dummyhdkarin05</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>809</X>
@@ -13465,6 +14013,7 @@
           <Naam>dummyhdkaruit05</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>830</X>
@@ -13528,6 +14077,7 @@
           <Naam>hdinm08</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>68</X>
@@ -13543,6 +14093,7 @@
           <Naam>dummyhdkarin08</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>815</X>
@@ -13583,6 +14134,7 @@
           <Naam>dummyhdkaruit08</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>829</X>
@@ -13647,6 +14199,7 @@
           <Naam>hdinm09</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>66</X>
@@ -13662,6 +14215,7 @@
           <Naam>dummyhdkarin09</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>815</X>
@@ -13702,6 +14256,7 @@
           <Naam>dummyhdkaruit09</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>834</X>
@@ -13766,6 +14321,7 @@
           <Naam>hdinm11</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>71</X>
@@ -13781,6 +14337,7 @@
           <Naam>dummyhdkarin11</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>815</X>
@@ -13821,6 +14378,7 @@
           <Naam>dummyhdkaruit11</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>827</X>
@@ -13884,6 +14442,7 @@
           <Naam>hdinm61</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>66</X>
@@ -13899,6 +14458,7 @@
           <Naam>dummyhdkarin61</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>814</X>
@@ -13939,6 +14499,7 @@
           <Naam>dummyhdkaruit61</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>827</X>
@@ -14001,6 +14562,7 @@
           <Naam>hdinm62</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>65</X>
@@ -14016,6 +14578,7 @@
           <Naam>dummyhdkarin62</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>817</X>
@@ -14056,6 +14619,7 @@
           <Naam>dummyhdkaruit62</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>831</X>
@@ -14118,6 +14682,7 @@
           <Naam>hdinm67</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>68</X>
@@ -14133,6 +14698,7 @@
           <Naam>dummyhdkarin67</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>816</X>
@@ -14173,6 +14739,7 @@
           <Naam>dummyhdkaruit67</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>830</X>
@@ -14235,6 +14802,7 @@
           <Naam>hdinm68</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>66</X>
@@ -14250,6 +14818,7 @@
           <Naam>dummyhdkarin68</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>814</X>
@@ -14290,6 +14859,7 @@
           <Naam>dummyhdkaruit68</Naam>
           <Dummy>true</Dummy>
           <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
               <X>830</X>
@@ -14590,6 +15160,7 @@
                   <Naam>ris021car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>680</X>
@@ -14626,6 +15197,7 @@
                   <Naam>ris021bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>698</X>
@@ -14662,6 +15234,7 @@
                   <Naam>ris021special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>711</X>
@@ -14698,6 +15271,7 @@
                   <Naam>ris021heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>729</X>
@@ -14742,6 +15316,7 @@
                   <Naam>ris022car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>677</X>
@@ -14778,6 +15353,7 @@
                   <Naam>ris022bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>698</X>
@@ -14814,6 +15390,7 @@
                   <Naam>ris022special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>710</X>
@@ -14850,6 +15427,7 @@
                   <Naam>ris022heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>728</X>
@@ -14900,6 +15478,7 @@
                   <Naam>ris031car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>680</X>
@@ -14936,6 +15515,7 @@
                   <Naam>ris031bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>696</X>
@@ -14972,6 +15552,7 @@
                   <Naam>ris031special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>708</X>
@@ -15008,6 +15589,7 @@
                   <Naam>ris031heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>727</X>
@@ -15058,6 +15640,7 @@
                   <Naam>ris051car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -15094,6 +15677,7 @@
                   <Naam>ris051bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>695</X>
@@ -15130,6 +15714,7 @@
                   <Naam>ris051special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>712</X>
@@ -15166,6 +15751,7 @@
                   <Naam>ris051heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>727</X>
@@ -15216,6 +15802,7 @@
                   <Naam>ris081car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -15252,6 +15839,7 @@
                   <Naam>ris081bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>695</X>
@@ -15288,6 +15876,7 @@
                   <Naam>ris081special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>714</X>
@@ -15324,6 +15913,7 @@
                   <Naam>ris081heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>730</X>
@@ -15368,6 +15958,7 @@
                   <Naam>ris082car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -15404,6 +15995,7 @@
                   <Naam>ris082bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>698</X>
@@ -15440,6 +16032,7 @@
                   <Naam>ris082special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>711</X>
@@ -15476,6 +16069,7 @@
                   <Naam>ris082heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>732</X>
@@ -15526,6 +16120,7 @@
                   <Naam>ris091car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -15562,6 +16157,7 @@
                   <Naam>ris091bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>691</X>
@@ -15598,6 +16194,7 @@
                   <Naam>ris091special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>711</X>
@@ -15634,6 +16231,7 @@
                   <Naam>ris091heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>727</X>
@@ -15684,6 +16282,7 @@
                   <Naam>ris111car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -15720,6 +16319,7 @@
                   <Naam>ris111bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>693</X>
@@ -15756,6 +16356,7 @@
                   <Naam>ris111special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>707</X>
@@ -15792,6 +16393,7 @@
                   <Naam>ris111heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>726</X>
@@ -15842,6 +16444,7 @@
                   <Naam>ris211cyclist</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>678</X>
@@ -15892,6 +16495,7 @@
                   <Naam>ris221cyclist</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>681</X>
@@ -15942,6 +16546,7 @@
                   <Naam>ris241cyclist</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -15992,6 +16597,7 @@
                   <Naam>ris261cyclist</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -16042,6 +16648,7 @@
                   <Naam>ris281cyclist</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>682</X>
@@ -16092,6 +16699,7 @@
                   <Naam>ris311pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -16136,6 +16744,7 @@
                   <Naam>ris312pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>680</X>
@@ -16186,6 +16795,7 @@
                   <Naam>ris321pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>678</X>
@@ -16230,6 +16840,7 @@
                   <Naam>ris322pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>678</X>
@@ -16280,6 +16891,7 @@
                   <Naam>ris331pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -16324,6 +16936,7 @@
                   <Naam>ris332pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -16374,6 +16987,7 @@
                   <Naam>ris341pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>678</X>
@@ -16418,6 +17032,7 @@
                   <Naam>ris342pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>681</X>
@@ -16468,6 +17083,7 @@
                   <Naam>ris381pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -16512,6 +17128,7 @@
                   <Naam>ris382pedestrian</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -16562,6 +17179,7 @@
                   <Naam>ris611car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -16598,6 +17216,7 @@
                   <Naam>ris611bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>694</X>
@@ -16634,6 +17253,7 @@
                   <Naam>ris611special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>708</X>
@@ -16670,6 +17290,7 @@
                   <Naam>ris611heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>728</X>
@@ -16720,6 +17341,7 @@
                   <Naam>ris621car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>681</X>
@@ -16756,6 +17378,7 @@
                   <Naam>ris621bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>697</X>
@@ -16792,6 +17415,7 @@
                   <Naam>ris621special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>710</X>
@@ -16828,6 +17452,7 @@
                   <Naam>ris621heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>732</X>
@@ -16872,6 +17497,7 @@
                   <Naam>ris622car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>680</X>
@@ -16908,6 +17534,7 @@
                   <Naam>ris622bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>694</X>
@@ -16944,6 +17571,7 @@
                   <Naam>ris622special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>711</X>
@@ -16980,6 +17608,7 @@
                   <Naam>ris622heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>728</X>
@@ -17030,6 +17659,7 @@
                   <Naam>ris671car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>677</X>
@@ -17066,6 +17696,7 @@
                   <Naam>ris671bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>696</X>
@@ -17102,6 +17733,7 @@
                   <Naam>ris671special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>711</X>
@@ -17138,6 +17770,7 @@
                   <Naam>ris671heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>728</X>
@@ -17188,6 +17821,7 @@
                   <Naam>ris681car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>675</X>
@@ -17224,6 +17858,7 @@
                   <Naam>ris681bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>697</X>
@@ -17260,6 +17895,7 @@
                   <Naam>ris681special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>714</X>
@@ -17296,6 +17932,7 @@
                   <Naam>ris681heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>726</X>
@@ -17340,6 +17977,7 @@
                   <Naam>ris682car</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>681</X>
@@ -17376,6 +18014,7 @@
                   <Naam>ris682bus</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>697</X>
@@ -17412,6 +18051,7 @@
                   <Naam>ris682special</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>711</X>
@@ -17448,6 +18088,7 @@
                   <Naam>ris682heavytruck</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>732</X>
@@ -17498,6 +18139,7 @@
                   <Naam>ris811cyclist</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>676</X>
@@ -17548,6 +18190,7 @@
                   <Naam>ris821cyclist</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>680</X>
@@ -17598,6 +18241,7 @@
                   <Naam>ris841cyclist</Naam>
                   <Dummy>false</Dummy>
                   <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
                   <BitmapCoordinaten>
                     <Coordinaat>
                       <X>679</X>
@@ -18432,6 +19076,7 @@
       <Naam>rgv</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>275</X>
@@ -18704,6 +19349,7 @@
       <Naam>perrta</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>282</X>
@@ -18715,6 +19361,7 @@
       <Naam>perrt</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>280</X>
@@ -18726,6 +19373,7 @@
       <Naam>perrtdim</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>282</X>
@@ -18736,16 +19384,19 @@
     <BellenActiefBitmapData>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </BellenActiefBitmapData>
     <BellenDimmenBitmapData>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </BellenDimmenBitmapData>
     <PeriodeBellenDimmenBitmapData>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </PeriodeBellenDimmenBitmapData>
   </Signalen>
@@ -18796,6 +19447,7 @@
         <Naam>PL1</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten>
           <Coordinaat>
             <X>166</X>
@@ -19112,6 +19764,7 @@
         <Naam>PL2</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten>
           <Coordinaat>
             <X>171</X>
@@ -19428,6 +20081,7 @@
         <Naam>PL3</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
         <BitmapCoordinaten>
           <Coordinaat>
             <X>167</X>
@@ -19917,6 +20571,7 @@
       <Naam>mlact</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>167</X>
@@ -19928,6 +20583,7 @@
       <Naam>plact</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>167</X>
@@ -19939,40 +20595,47 @@
       <Naam>kpact</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </KpActUitgang>
     <MlPlUitgang>
       <Naam>mlpl</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </MlPlUitgang>
     <TxTimerUitgang>
       <Naam>txtimer</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </TxTimerUitgang>
     <KlokUitgang>
       <Naam>klok</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </KlokUitgang>
     <HandUitgang>
       <Naam>hand</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </HandUitgang>
     <MasterUitgang>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </MasterUitgang>
     <SlaveUitgang>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </SlaveUitgang>
   </HalfstarData>
@@ -19986,6 +20649,7 @@
       <Naam>star</Naam>
       <Dummy>false</Dummy>
       <ElementType>Input</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>154</X>
@@ -19997,12 +20661,14 @@
       <Naam>starprogwissel</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </ProgrammaWisselBitmapInfo>
     <Programma>
       <Naam>star01</Naam>
       <Dummy>false</Dummy>
       <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten>
         <Coordinaat>
           <X>168</X>
@@ -20175,6 +20841,104 @@
     <DefaultProgramma>star01</DefaultProgramma>
     <PeriodenData />
   </StarData>
+  <TimingsData>
+    <TimingsToepassen>true</TimingsToepassen>
+    <TimingsUsePredictions>true</TimingsUsePredictions>
+    <TimingsFaseCyclusData>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>02</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>03</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>05</FaseCyclus>
+        <ConflictType>Deelconflict</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>08</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>09</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>11</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>21</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>22</FaseCyclus>
+        <ConflictType>Deelconflict</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>24</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>26</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>28</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>31</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>32</FaseCyclus>
+        <ConflictType>Deelconflict</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>33</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>34</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>38</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>61</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>62</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>67</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>68</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>81</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>82</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
+        <FaseCyclus>84</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+    </TimingsFaseCyclusData>
+  </TimingsData>
   <CustomData>
     <AddinSettings />
   </CustomData>
@@ -20200,6 +20964,7 @@
     <AFMLevenBitmapCoordinaten>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
+      <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </AFMLevenBitmapCoordinaten>
     <AFMFaseCyclusData />
@@ -20615,6 +21380,9 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
+  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <SimulationEntries />
+  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>false</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -21236,6 +22004,27 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykarin08bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin08bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin09bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin09bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin11bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin11bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k84</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
@@ -21449,127 +22238,8 @@
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
-      <Detector>
-        <Naam>dummykarin11bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin11bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin09bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin09bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin08bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin08bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
     </Detectoren>
   </SumoKoppeling>
-  <TimingsData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <TimingsToepassen>true</TimingsToepassen>
-    <TimingsUsePredictions>true</TimingsUsePredictions>
-    <TimingsFaseCyclusData>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>02</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>03</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>05</FaseCyclus>
-        <ConflictType>Deelconflict</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>08</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>09</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>11</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>21</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>22</FaseCyclus>
-        <ConflictType>Deelconflict</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>24</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>26</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>28</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>31</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>32</FaseCyclus>
-        <ConflictType>Deelconflict</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>33</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>34</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>38</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>61</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>62</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>67</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>68</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>81</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>82</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>84</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
-    </TimingsFaseCyclusData>
-  </TimingsData>
   <Specificator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <SpecialsParagrafen />
   </Specificator>

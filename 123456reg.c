@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    14-11-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0)
+ * 1.0.0    13-12-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0) beta 13122021
  *
  ************************************************************************************/
 
@@ -365,24 +365,24 @@ void Aanvragen(void)
 
 
     /* Direct groen in geval van !K voor een richting */
-    if (PRM[prmda02_1a] != 0) AanvraagSnelV2(fc02, d02_1a);
-    if (PRM[prmda03_1] != 0) AanvraagSnelV2(fc03, d03_1);
-    if (PRM[prmda05_1] != 0) AanvraagSnelV2(fc05, d05_1);
-    if (PRM[prmda08_1a] != 0) AanvraagSnelV2(fc08, d08_1a);
-    if (PRM[prmda09_1] != 0) AanvraagSnelV2(fc09, d09_1);
-    if (PRM[prmda11_1] != 0) AanvraagSnelV2(fc11, d11_1);
-    if (PRM[prmda211] != 0) AanvraagSnelV2(fc21, d211);
-    if (PRM[prmda22_1] != 0) AanvraagSnelV2(fc22, d22_1);
-    if (PRM[prmda24_1] != 0) AanvraagSnelV2(fc24, d24_1);
-    if (PRM[prmda261] != 0) AanvraagSnelV2(fc26, d261);
-    if (PRM[prmda28_1] != 0) AanvraagSnelV2(fc28, d28_1);
-    if (PRM[prmda61_1] != 0) AanvraagSnelV2(fc61, d61_1);
-    if (PRM[prmda62_1a] != 0) AanvraagSnelV2(fc62, d62_1a);
-    if (PRM[prmda67_1] != 0) AanvraagSnelV2(fc67, d67_1);
-    if (PRM[prmda68_1a] != 0) AanvraagSnelV2(fc68, d68_1a);
-    if (PRM[prmda81_1] != 0) AanvraagSnelV2(fc81, d81_1);
-    if (PRM[prmda82_1] != 0) AanvraagSnelV2(fc82, d82_1);
-    if (PRM[prmda84_1] != 0) AanvraagSnelV2(fc84, d84_1);
+    if (PRM[prmda02_1a] != 0 && SCH[schsneld02_1a]) AanvraagSnelV2(fc02, d02_1a);
+    if (PRM[prmda03_1] != 0 && SCH[schsneld03_1]) AanvraagSnelV2(fc03, d03_1);
+    if (PRM[prmda05_1] != 0 && SCH[schsneld05_1]) AanvraagSnelV2(fc05, d05_1);
+    if (PRM[prmda08_1a] != 0 && SCH[schsneld08_1a]) AanvraagSnelV2(fc08, d08_1a);
+    if (PRM[prmda09_1] != 0 && SCH[schsneld09_1]) AanvraagSnelV2(fc09, d09_1);
+    if (PRM[prmda11_1] != 0 && SCH[schsneld11_1]) AanvraagSnelV2(fc11, d11_1);
+    if (PRM[prmda211] != 0 && SCH[schsneld211]) AanvraagSnelV2(fc21, d211);
+    if (PRM[prmda22_1] != 0 && SCH[schsneld22_1]) AanvraagSnelV2(fc22, d22_1);
+    if (PRM[prmda24_1] != 0 && SCH[schsneld24_1]) AanvraagSnelV2(fc24, d24_1);
+    if (PRM[prmda261] != 0 && SCH[schsneld261]) AanvraagSnelV2(fc26, d261);
+    if (PRM[prmda28_1] != 0 && SCH[schsneld28_1]) AanvraagSnelV2(fc28, d28_1);
+    if (PRM[prmda61_1] != 0 && SCH[schsneld61_1]) AanvraagSnelV2(fc61, d61_1);
+    if (PRM[prmda62_1a] != 0 && SCH[schsneld62_1a]) AanvraagSnelV2(fc62, d62_1a);
+    if (PRM[prmda67_1] != 0 && SCH[schsneld67_1]) AanvraagSnelV2(fc67, d67_1);
+    if (PRM[prmda68_1a] != 0 && SCH[schsneld68_1a]) AanvraagSnelV2(fc68, d68_1a);
+    if (PRM[prmda81_1] != 0 && SCH[schsneld81_1]) AanvraagSnelV2(fc81, d81_1);
+    if (PRM[prmda82_1] != 0 && SCH[schsneld82_1]) AanvraagSnelV2(fc82, d82_1);
+    if (PRM[prmda84_1] != 0 && SCH[schsneld84_1]) AanvraagSnelV2(fc84, d84_1);
 
     /* Meeaanvragen */
     /* ------------ */
@@ -790,26 +790,6 @@ void BepaalRealisatieTijden(void)
         wijziging |= Corr_FOT(fc05, fc22, tfo0522, 0, TRUE);
         wijziging |= Corr_FOT(fc05, fc32, tfo0532, 0, TRUE);
         wijziging |= Corr_FOT(fc11, fc26, tfo1126, T_max[tlr2611], TRUE);
-
-#ifndef NO_TIMETOX
-        /* Hoogste realtijd_max voor alle richtingen uit een synchronisatiegroep */
-        REALTIJD_max[fc05] = max(REALTIJD_max[fc05], REALTIJD_max[fc21]);
-        REALTIJD_max[fc05] = max(REALTIJD_max[fc05], REALTIJD_max[fc22]);
-        REALTIJD_max[fc05] = max(REALTIJD_max[fc05], REALTIJD_max[fc31]);
-        REALTIJD_max[fc05] = max(REALTIJD_max[fc05], REALTIJD_max[fc32]);
-        REALTIJD_max[fc21] = REALTIJD_max[fc22] = REALTIJD_max[fc31] = REALTIJD_max[fc32] = REALTIJD_max[fc05];
-
-        REALTIJD_max[fc24] = max(REALTIJD_max[fc24], REALTIJD_max[fc33]);
-        REALTIJD_max[fc24] = max(REALTIJD_max[fc24], REALTIJD_max[fc34]);
-        REALTIJD_max[fc24] = max(REALTIJD_max[fc24], REALTIJD_max[fc84]);
-        REALTIJD_max[fc33] = REALTIJD_max[fc34] = REALTIJD_max[fc84] = REALTIJD_max[fc24];
-
-        REALTIJD_max[fc28] = max(REALTIJD_max[fc28], REALTIJD_max[fc38]);
-        REALTIJD_max[fc38] = REALTIJD_max[fc28];
-
-        REALTIJD_max[fc11] = max(REALTIJD_max[fc11], REALTIJD_max[fc26]);
-        REALTIJD_max[fc26] = REALTIJD_max[fc11];
-#endif
 
         wijziging |= CorrectieRealisatieTijd_Add();
 
@@ -1549,7 +1529,6 @@ void RealisatieAfhandeling(void)
     {
         RR[fc81] &= ~BIT5;
     }
-
 #ifndef NO_TIMETOX
     if (P[fc02]) { RR[fc02] &= ~BIT5; }
     if (P[fc03]) { RR[fc03] &= ~BIT5; }
@@ -1574,7 +1553,7 @@ void RealisatieAfhandeling(void)
     if (P[fc81]) { RR[fc81] &= ~BIT5; }
     if (P[fc82]) { RR[fc82] &= ~BIT5; }
     if (P[fc84]) { RR[fc84] &= ~BIT5; }
-#endif
+#endif // NO_TIMETOX
 
     FM[fc02] |= (fm_ar_kpr(fc02, PRM[prmaltg02])) ? BIT5 : 0;
     FM[fc03] |= (fm_ar_kpr(fc03, PRM[prmaltg03])) ? BIT5 : 0;
@@ -1889,57 +1868,56 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2232] && RA[fc32] && (P[fc32] & BIT11) && !kaa(fc22) && A[fc22] && !RR[fc22]) AA[fc22] |= BIT11;
         if (SCH[schgs2232] && R[fc22] && !PG[fc22] && R[fc32] && PG[fc32]) PG[fc22] = 0;
         if (SCH[schgs2232] && R[fc32] && !PG[fc32] && R[fc22] && PG[fc22]) PG[fc32] = 0;
-        if (SCH[schgs2232] && R[fc32] && (P[fc32] & BIT11)) YM[fc22] |= BIT11;
-        if (SCH[schgs2232] && R[fc22] && (P[fc22] & BIT11)) YM[fc32] |= BIT11;
+        if (SCH[schgs2232] && G[fc22] && R[fc32] && (P[fc32] & BIT11)) YM[fc22] |= BIT11;
+        if (SCH[schgs2232] && G[fc32] && R[fc22] && (P[fc22] & BIT11)) YM[fc32] |= BIT11;
         if (SCH[schgs2434] && RA[fc24] && (P[fc24] & BIT11) && !kaa(fc34) && A[fc34] && !RR[fc34]) AA[fc34] |= BIT11;
         if (SCH[schgs2434] && RA[fc34] && (P[fc34] & BIT11) && !kaa(fc24) && A[fc24] && !RR[fc24]) AA[fc24] |= BIT11;
         if (SCH[schgs2434] && R[fc24] && !PG[fc24] && R[fc34] && PG[fc34]) PG[fc24] = 0;
         if (SCH[schgs2434] && R[fc34] && !PG[fc34] && R[fc24] && PG[fc24]) PG[fc34] = 0;
-        if (SCH[schgs2434] && R[fc34] && (P[fc34] & BIT11)) YM[fc24] |= BIT11;
-        if (SCH[schgs2434] && R[fc24] && (P[fc24] & BIT11)) YM[fc34] |= BIT11;
-        if (R[fc32] && (P[fc32] & BIT11)) YM[fc31] |= BIT11;
-        if (R[fc31] && (P[fc31] & BIT11)) YM[fc32] |= BIT11;
-        if (R[fc34] && (P[fc34] & BIT11)) YM[fc33] |= BIT11;
-        if (R[fc33] && (P[fc33] & BIT11)) YM[fc34] |= BIT11;
+        if (SCH[schgs2434] && G[fc24] && R[fc34] && (P[fc34] & BIT11)) YM[fc24] |= BIT11;
+        if (SCH[schgs2434] && G[fc34] && R[fc24] && (P[fc24] & BIT11)) YM[fc34] |= BIT11;
         if (SCH[schgs3384] && RA[fc33] && (P[fc33] & BIT11) && !kaa(fc84) && A[fc84] && !RR[fc84]) AA[fc84] |= BIT11;
         if (SCH[schgs3384] && RA[fc84] && (P[fc84] & BIT11) && !kaa(fc33) && A[fc33] && !RR[fc33]) AA[fc33] |= BIT11;
         if (SCH[schgs3384] && R[fc33] && !PG[fc33] && R[fc84] && PG[fc84]) PG[fc33] = 0;
         if (SCH[schgs3384] && R[fc84] && !PG[fc84] && R[fc33] && PG[fc33]) PG[fc84] = 0;
-        if (SCH[schgs3384] && R[fc84] && (P[fc84] & BIT11)) YM[fc33] |= BIT11;
-        if (SCH[schgs3384] && R[fc33] && (P[fc33] & BIT11)) YM[fc84] |= BIT11;
-        if (R[fc05] && (P[fc05] & BIT11)) YM[fc22] |= BIT11;
+        if (SCH[schgs3384] && G[fc33] && R[fc84] && (P[fc84] & BIT11)) YM[fc33] |= BIT11;
+        if (SCH[schgs3384] && G[fc84] && R[fc33] && (P[fc33] & BIT11)) YM[fc84] |= BIT11;
         if (R[fc05] && !PG[fc05] && R[fc22] && PG[fc22]) PG[fc22] = 0;
-        if (R[fc05] && (P[fc05] & BIT11)) YM[fc21] |= BIT11; /* onderdeel synchronisatiegroep */
-        if (R[fc05] && (P[fc05] & BIT11)) YM[fc22] |= BIT11;  
-        if (R[fc05] && (P[fc05] & BIT11)) YM[fc31] |= BIT11; /* onderdeel synchronisatiegroep */
-        if (R[fc05] && (P[fc05] & BIT11)) YM[fc32] |= BIT11;  
+        if (G[fc22] && R[fc05] && (P[fc05] & BIT11)) YM[fc22] |= BIT11;
         if (R[fc05] && !PG[fc05] && R[fc32] && PG[fc32]) PG[fc32] = 0;
-        if (R[fc11] && (P[fc11] & BIT11)) YM[fc26] |= BIT11;
-
-        /* interne koppelingen */
-        if (R[fc02] && (P[fc02] & BIT11)) YM[fc62] |= BIT11;  
-        if (R[fc08] && (P[fc08] & BIT11)) YM[fc68] |= BIT11;  
-        if (R[fc11] && (P[fc11] & BIT11)) YM[fc68] |= BIT11;  
-        if (R[fc22] && (P[fc22] & BIT11)) YM[fc21] |= BIT11;  
-        if (R[fc82] && (P[fc82] & BIT11)) YM[fc81] |= BIT11;  
-
-        /* Correctie gelijkstart <> gelijkstart
-     * Bij een gelijkstart die een fase deelt met een andere gelijsktart
-     * kan de max-end tijd worden verhoogd op start-geel, daarom wordt
-     * start geel uitgesteld.
-     */
+        if (G[fc32] && R[fc05] && (P[fc05] & BIT11)) YM[fc32] |= BIT11;
+        if (G[fc26] && R[fc11] && (P[fc11] & BIT11)) YM[fc26] |= BIT11;
+        /* Correctie gelijkstart <> gelijkstart of naloop
+         * Bij een gelijkstart die een fase deelt met een andere gelijsktart of naloop
+         * kan de max-end tijd worden verhoogd op start-geel, daarom wordt
+         * start geel uitgesteld.
+         */
+        if (SCH[schgs2232] && G[fc32] && R[fc21] && (P[fc21] & BIT11)) YM[fc32] |= BIT11;
+        if (SCH[schgs2232] && G[fc21] && R[fc32] && (P[fc32] & BIT11)) YM[fc21] |= BIT11;
+        if (SCH[schgs2232] && G[fc22] && R[fc31] && (P[fc31] & BIT11)) YM[fc22] |= BIT11;
+        if (SCH[schgs2232] && G[fc31] && R[fc22] && (P[fc22] & BIT11)) YM[fc31] |= BIT11;
         if (SCH[schgs2232] && G[fc22] && R[fc31] && (P[fc31] & BIT11)) YM[fc22] |= BIT11;
         if (SCH[schgs2232] && G[fc31] && R[fc22] && (P[fc22] & BIT11)) YM[fc31] |= BIT11;
         if (SCH[schgs2434] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
         if (SCH[schgs2434] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
-        if (SCH[schgs2232] && G[fc31] && R[fc22] && (P[fc22] & BIT11)) YM[fc31] |= BIT11;
-        if (SCH[schgs2232] && G[fc22] && R[fc31] && (P[fc31] & BIT11)) YM[fc22] |= BIT11;
-        if (SCH[schgs2434] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
         if (SCH[schgs2434] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
-        if (SCH[schgs3384] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) YM[fc34] |= BIT11;
+        if (SCH[schgs2434] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
         if (SCH[schgs3384] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) YM[fc84] |= BIT11;
-        if (SCH[schgs3384] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) YM[fc84] |= BIT11;
         if (SCH[schgs3384] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) YM[fc34] |= BIT11;
+         /* YM nalopen P */
+        if (G[fc62] && R[fc02] && (P[fc02] & BIT11)) YM[fc62] |= BIT11;
+        if (G[fc68] && R[fc08] && (P[fc08] & BIT11)) YM[fc68] |= BIT11;
+        if (G[fc68] && R[fc11] && (P[fc11] & BIT11)) YM[fc68] |= BIT11;
+        if (G[fc21] && R[fc22] && (P[fc22] & BIT11)) YM[fc21] |= BIT11;
+        if (G[fc31] && R[fc32] && (P[fc32] & BIT11)) YM[fc31] |= BIT11;
+        if (G[fc32] && R[fc31] && (P[fc31] & BIT11)) YM[fc32] |= BIT11;
+        if (G[fc32] && R[fc31] && (P[fc31] & BIT11)) YM[fc32] |= BIT11;
+        if (G[fc31] && R[fc32] && (P[fc32] & BIT11)) YM[fc31] |= BIT11;
+        if (G[fc33] && R[fc34] && (P[fc34] & BIT11)) YM[fc33] |= BIT11;
+        if (G[fc34] && R[fc33] && (P[fc33] & BIT11)) YM[fc34] |= BIT11;
+        if (G[fc34] && R[fc33] && (P[fc33] & BIT11)) YM[fc34] |= BIT11;
+        if (G[fc33] && R[fc34] && (P[fc34] & BIT11)) YM[fc33] |= BIT11;
+        if (G[fc81] && R[fc82] && (P[fc82] & BIT11)) YM[fc81] |= BIT11;
     }
     #endif
 
@@ -2754,54 +2732,39 @@ void system_application2(void)
             }
         }
 
-        if (RT[tfo0522] || T[tfo0522]) { P[fc05] &= ~BIT11; P[fc22] &= ~BIT11; } 
-        if (RT[tfo0532] || T[tfo0532]) { P[fc05] &= ~BIT11; P[fc32] &= ~BIT11; } 
-        if (RT[tfo1126] || T[tfo1126]) { P[fc11] &= ~BIT11; P[fc26] &= ~BIT11; }
-
+        if (RT[tfo0522] || T[tfo0522]) { P[fc22] &= ~BIT11; P[fc05] &= ~BIT11; }
+        if (RT[tfo0532] || T[tfo0532]) { P[fc32] &= ~BIT11; P[fc05] &= ~BIT11; }
+        if (RT[tfo1126] || T[tfo1126]) { P[fc26] &= ~BIT11; P[fc11] &= ~BIT11; }
 
         pre_msg_fctiming();
 
         msg_fctiming(PRM[prmlatencyminendsg]);
 
-        /* Alleen een P als iedereen een P (of G) heeft */
-        if(!((P[fc05] || G[fc05]) && 
-             (P[fc21] || G[fc21]) && 
-             (P[fc22] || G[fc22]) && 
-             (P[fc31] || G[fc31]) && 
-             (P[fc32] || G[fc32])))    { P[fc05] &= ~BIT11; P[fc21] &= ~BIT11; P[fc22] &= ~BIT11; P[fc31] &= ~BIT11; P[fc32] &= ~BIT11; }
-        if(!((P[fc24] || G[fc24]) &&
-             (P[fc33] || G[fc33]) &&
-             (P[fc34] || G[fc34]) &&
-             (P[fc84] || G[fc84])))    { P[fc24] &= ~BIT11; P[fc33] &= ~BIT11; P[fc34] &= ~BIT11; P[fc84] &= ~BIT11; }
-        if(!((P[fc28] || G[fc28]) && 
-             (P[fc38] || G[fc38])))    { P[fc28] &= ~BIT11; P[fc38] &= ~BIT11; }
-        if(!((P[fc11] || G[fc11]) && 
-             (P[fc26] || G[fc26])))    { P[fc11] &= ~BIT11; P[fc26] &= ~BIT11; }
-
-        /* Interne koppeling fc22 alleen P als fc21 een P heeft */
-        if (!(P[fc21] & BIT11) && !(P[fc22] & BIT11)) P[fc22] &= ~BIT11;
-        /* P doorzetten */
-        if (P[fc22] & BIT11) P[fc21] |= BIT11;
-
-        /* Interne koppeling fc82 alleen P als fc81 een P heeft */
-        if (!(P[fc81] & BIT11) && !(P[fc82] & BIT11)) P[fc82] &= ~BIT11;
-        /* P doorzetten */
-        if (P[fc82] & BIT11) P[fc81] |= BIT11;
-
-        /* Interne koppeling fc02 alleen P als fc62 een P heeft */
+        /* Interne koppeling fc02 alleen P als fc02 een P heeft */
         if (!(P[fc62] & BIT11) && !(P[fc02] & BIT11)) P[fc02] &= ~BIT11;
         /* P doorzetten */
         if (P[fc02] & BIT11) P[fc62] |= BIT11;
 
-        /* Interne koppeling fc08 alleen P als fc68 een P heeft */
+        /* Interne koppeling fc08 alleen P als fc08 een P heeft */
         if (!(P[fc68] & BIT11) && !(P[fc08] & BIT11)) P[fc08] &= ~BIT11;
         /* P doorzetten */
         if (P[fc08] & BIT11) P[fc68] |= BIT11;
 
-        /* Interne koppeling fc11 alleen P als fc68 een P heeft */
+        /* Interne koppeling fc11 alleen P als fc11 een P heeft */
         if (!(P[fc68] & BIT11) && !(P[fc11] & BIT11)) P[fc11] &= ~BIT11;
         /* P doorzetten */
         if (P[fc11] & BIT11) P[fc68] |= BIT11;
+
+        /* Interne koppeling fc22 alleen P als fc22 een P heeft */
+        if (!(P[fc21] & BIT11) && !(P[fc22] & BIT11)) P[fc22] &= ~BIT11;
+        /* P doorzetten */
+        if (P[fc22] & BIT11) P[fc21] |= BIT11;
+
+        /* Interne koppeling fc82 alleen P als fc82 een P heeft */
+        if (!(P[fc81] & BIT11) && !(P[fc82] & BIT11)) P[fc82] &= ~BIT11;
+        /* P doorzetten */
+        if (P[fc82] & BIT11) P[fc81] |= BIT11;
+
     #endif
 
 #if !(defined NO_TIMETOX) && !defined NO_TIMINGS_PRINT && (!defined (AUTOMAAT) || defined (VISSIM)) && !defined AUTOMAAT_TEST
