@@ -8,14 +8,14 @@
 
    BESTAND:   123456prio.c
       CCOL:   11.0
-    TLCGEN:   0.10.4.0
-   CCOLGEN:   0.10.4.0
+    TLCGEN:   0.10.5.0
+   CCOLGEN:   0.10.5.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    13-12-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0) beta 13122021
+ * 1.0.0    22-01-2022   Cyril       Nieuwe versie TLCGen (0.10.5.0)
  *
  ************************************************************************************/
 
@@ -2517,49 +2517,49 @@ void PostAfhandelingPrio(void)
 
 
     /* Niet afkappen naloop richtingen wanneer een naloop tijd nog loopt */
-    if (RA[fc22] || RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
+    if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
     {
         Z[fc21] &= ~BIT6;
         RR[fc21] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc21] &= ~PRIO_FM_BIT;
     }
-    if (RA[fc32] || RT[tnlsgd3231] || T[tnlsgd3231])
+    if (RT[tnlsgd3231] || T[tnlsgd3231])
     {
         Z[fc31] &= ~BIT6;
         RR[fc31] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc31] &= ~PRIO_FM_BIT;
     }
-    if (RA[fc31] || RT[tnlsgd3132] || T[tnlsgd3132])
+    if (RT[tnlsgd3132] || T[tnlsgd3132])
     {
         Z[fc32] &= ~BIT6;
         RR[fc32] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc32] &= ~PRIO_FM_BIT;
     }
-    if (RA[fc34] || RT[tnlsgd3433] || T[tnlsgd3433])
+    if (RT[tnlsgd3433] || T[tnlsgd3433])
     {
         Z[fc33] &= ~BIT6;
         RR[fc33] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc33] &= ~PRIO_FM_BIT;
     }
-    if (RA[fc33] || RT[tnlsgd3334] || T[tnlsgd3334])
+    if (RT[tnlsgd3334] || T[tnlsgd3334])
     {
         Z[fc34] &= ~BIT6;
         RR[fc34] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc34] &= ~PRIO_FM_BIT;
     }
-    if (RA[fc02] || RT[tnlfg0262] || T[tnlfg0262] || RT[tnleg0262] || T[tnleg0262])
+    if (RT[tnlfg0262] || T[tnlfg0262] || RT[tnleg0262] || T[tnleg0262])
     {
         Z[fc62] &= ~BIT6;
         RR[fc62] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc62] &= ~PRIO_FM_BIT;
     }
-    if (RA[fc08] || RT[tnlfg0868] || T[tnlfg0868] || RT[tnleg0868] || T[tnleg0868] || RT[tnlfg1168] || T[tnlfg1168] || RT[tnlfgd1168] || T[tnlfgd1168] || RT[tnleg1168] || T[tnleg1168] || RT[tnlegd1168] || T[tnlegd1168])
+    if (RT[tnlfg0868] || T[tnlfg0868] || RT[tnleg0868] || T[tnleg0868] || RT[tnlfg1168] || T[tnlfg1168] || RT[tnlfgd1168] || T[tnlfgd1168] || RT[tnleg1168] || T[tnleg1168] || RT[tnlegd1168] || T[tnlegd1168])
     {
         Z[fc68] &= ~BIT6;
         RR[fc68] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
         FM[fc68] &= ~PRIO_FM_BIT;
     }
-    if (RA[fc82] || RT[tnlfg8281] || T[tnlfg8281] || RT[tnlfgd8281] || T[tnlfgd8281] || RT[tnleg8281] || T[tnleg8281] || RT[tnlegd8281] || T[tnlegd8281])
+    if (RT[tnlfg8281] || T[tnlfg8281] || RT[tnlfgd8281] || T[tnlfgd8281] || RT[tnleg8281] || T[tnleg8281] || RT[tnlegd8281] || T[tnlegd8281])
     {
         Z[fc81] &= ~BIT6;
         RR[fc81] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);

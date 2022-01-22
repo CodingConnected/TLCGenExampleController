@@ -1,4 +1,4 @@
-/* nalopen.c - gegenereerd met TLCGen 0.10.4.0 */
+/* nalopen.c - gegenereerd met TLCGen 0.10.5.0 */
 
 #include "nalopen.h"
 #include "gkvar.h"

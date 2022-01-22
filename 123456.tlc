@@ -80,7 +80,7 @@
     <GenererenCyclustijdMeting>false</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
     <TDHAMaxToepassen>true</TDHAMaxToepassen>
-    <TLCGenVersie>0.10.4.0</TLCGenVersie>
+    <TLCGenVersie>0.10.5.0</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -290,9 +290,9 @@
     </FixatieData>
     <Versie>
       <Versie>1.0.0</Versie>
-      <Datum>2021-12-13T00:00:00</Datum>
+      <Datum>2022-01-22T00:00:00</Datum>
       <Ontwerper>Cyril</Ontwerper>
-      <Commentaar>Nieuwe versie TLCGen (0.10.4.0) beta 13122021</Commentaar>
+      <Commentaar>Nieuwe versie TLCGen (0.10.5.0)</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -21380,9 +21380,6 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
-  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <SimulationEntries />
-  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>false</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -22025,6 +22022,20 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykarin61bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin61bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin62bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin62bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k84</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
@@ -22221,20 +22232,6 @@
         <Naam>dummykarin67bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin67bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin62bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin62bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin61bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin61bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

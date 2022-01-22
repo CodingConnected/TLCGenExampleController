@@ -8,14 +8,14 @@
 
    BESTAND:   123456reg.c
       CCOL:   11.0
-    TLCGEN:   0.10.4.0
-   CCOLGEN:   0.10.4.0
+    TLCGEN:   0.10.5.0
+   CCOLGEN:   0.10.5.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    13-12-2021   Cyril       Nieuwe versie TLCGen (0.10.4.0) beta 13122021
+ * 1.0.0    22-01-2022   Cyril       Nieuwe versie TLCGen (0.10.5.0)
  *
  ************************************************************************************/
 
@@ -2228,65 +2228,65 @@ void DetectieStoring(void)
             (CIF_IS[d02_2b] >= CIF_DET_STORING) && (CIF_IS[d02_3b] >= CIF_DET_STORING))
         {
             MK[fc02] |= BIT5;
-            PercentageMaxGroenTijden(fc02, mperiod, prmperc02, 
-                                     7, TVGA_max[fc02], prmmg2_02, prmmg3_02, prmmg4_02, prmmg5_02, prmmg6_02, prmmg7_02);
+            PercentageMaxGroenTijden(fc02, mperiod, PRM[prmperc02], 
+                                     7, TVGA_max[fc02], PRM[prmmg2_02], PRM[prmmg3_02], PRM[prmmg4_02], PRM[prmmg5_02], PRM[prmmg6_02], PRM[prmmg7_02]);
         }
         if ((CIF_IS[d03_1] >= CIF_DET_STORING) && (CIF_IS[d03_2] >= CIF_DET_STORING))
         {
             MK[fc03] |= BIT5;
-            PercentageMaxGroenTijden(fc03, mperiod, prmperc03, 
-                                     7, TVGA_max[fc03], prmmg2_03, prmmg3_03, prmmg4_03, prmmg5_03, prmmg6_03, prmmg7_03);
+            PercentageMaxGroenTijden(fc03, mperiod, PRM[prmperc03], 
+                                     7, TVGA_max[fc03], PRM[prmmg2_03], PRM[prmmg3_03], PRM[prmmg4_03], PRM[prmmg5_03], PRM[prmmg6_03], PRM[prmmg7_03]);
         }
         if ((CIF_IS[d05_1] >= CIF_DET_STORING) && (CIF_IS[d05_2] >= CIF_DET_STORING))
         {
             MK[fc05] |= BIT5;
-            PercentageMaxGroenTijden(fc05, mperiod, prmperc05, 
-                                     7, TVGA_max[fc05], prmmg2_05, prmmg3_05, prmmg4_05, prmmg5_05, prmmg6_05, prmmg7_05);
+            PercentageMaxGroenTijden(fc05, mperiod, PRM[prmperc05], 
+                                     7, TVGA_max[fc05], PRM[prmmg2_05], PRM[prmmg3_05], PRM[prmmg4_05], PRM[prmmg5_05], PRM[prmmg6_05], PRM[prmmg7_05]);
         }
         if ((CIF_IS[d08_1a] >= CIF_DET_STORING) && (CIF_IS[d08_1b] >= CIF_DET_STORING) && (CIF_IS[d08_2a] >= CIF_DET_STORING) && (CIF_IS[d08_3a] >= CIF_DET_STORING) ||
             (CIF_IS[d08_2b] >= CIF_DET_STORING) && (CIF_IS[d08_3b] >= CIF_DET_STORING))
         {
             MK[fc08] |= BIT5;
-            PercentageMaxGroenTijden(fc08, mperiod, prmperc08, 
-                                     7, TVGA_max[fc08], prmmg2_08, prmmg3_08, prmmg4_08, prmmg5_08, prmmg6_08, prmmg7_08);
+            PercentageMaxGroenTijden(fc08, mperiod, PRM[prmperc08], 
+                                     7, TVGA_max[fc08], PRM[prmmg2_08], PRM[prmmg3_08], PRM[prmmg4_08], PRM[prmmg5_08], PRM[prmmg6_08], PRM[prmmg7_08]);
         }
         if ((CIF_IS[d09_1] >= CIF_DET_STORING) && (CIF_IS[d09_2] >= CIF_DET_STORING) && (CIF_IS[d09_3] >= CIF_DET_STORING))
         {
             MK[fc09] |= BIT5;
-            PercentageMaxGroenTijden(fc09, mperiod, prmperc09, 
-                                     7, TVGA_max[fc09], prmmg2_09, prmmg3_09, prmmg4_09, prmmg5_09, prmmg6_09, prmmg7_09);
+            PercentageMaxGroenTijden(fc09, mperiod, PRM[prmperc09], 
+                                     7, TVGA_max[fc09], PRM[prmmg2_09], PRM[prmmg3_09], PRM[prmmg4_09], PRM[prmmg5_09], PRM[prmmg6_09], PRM[prmmg7_09]);
         }
         if ((CIF_IS[d11_1] >= CIF_DET_STORING) && (CIF_IS[d11_2] >= CIF_DET_STORING) && (CIF_IS[d11_3] >= CIF_DET_STORING))
         {
             MK[fc11] |= BIT5;
-            PercentageMaxGroenTijden(fc11, mperiod, prmperc11, 
-                                     7, TVGA_max[fc11], prmmg2_11, prmmg3_11, prmmg4_11, prmmg5_11, prmmg6_11, prmmg7_11);
+            PercentageMaxGroenTijden(fc11, mperiod, PRM[prmperc11], 
+                                     7, TVGA_max[fc11], PRM[prmmg2_11], PRM[prmmg3_11], PRM[prmmg4_11], PRM[prmmg5_11], PRM[prmmg6_11], PRM[prmmg7_11]);
         }
         if ((CIF_IS[d61_1] >= CIF_DET_STORING) && (CIF_IS[d61_2] >= CIF_DET_STORING))
         {
             MK[fc61] |= BIT5;
-            PercentageMaxGroenTijden(fc61, mperiod, prmperc61, 
-                                     7, TVGA_max[fc61], prmmg2_61, prmmg3_61, prmmg4_61, prmmg5_61, prmmg6_61, prmmg7_61);
+            PercentageMaxGroenTijden(fc61, mperiod, PRM[prmperc61], 
+                                     7, TVGA_max[fc61], PRM[prmmg2_61], PRM[prmmg3_61], PRM[prmmg4_61], PRM[prmmg5_61], PRM[prmmg6_61], PRM[prmmg7_61]);
         }
         if ((CIF_IS[d62_1a] >= CIF_DET_STORING) && (CIF_IS[d62_1b] >= CIF_DET_STORING) && (CIF_IS[d62_2a] >= CIF_DET_STORING) ||
             (CIF_IS[d62_2b] >= CIF_DET_STORING))
         {
             MK[fc62] |= BIT5;
-            PercentageMaxGroenTijden(fc62, mperiod, prmperc62, 
-                                     7, TVGA_max[fc62], prmmg2_62, prmmg3_62, prmmg4_62, prmmg5_62, prmmg6_62, prmmg7_62);
+            PercentageMaxGroenTijden(fc62, mperiod, PRM[prmperc62], 
+                                     7, TVGA_max[fc62], PRM[prmmg2_62], PRM[prmmg3_62], PRM[prmmg4_62], PRM[prmmg5_62], PRM[prmmg6_62], PRM[prmmg7_62]);
         }
         if ((CIF_IS[d67_1] >= CIF_DET_STORING) && (CIF_IS[d67_2] >= CIF_DET_STORING))
         {
             MK[fc67] |= BIT5;
-            PercentageMaxGroenTijden(fc67, mperiod, prmperc67, 
-                                     7, TVGA_max[fc67], prmmg2_67, prmmg3_67, prmmg4_67, prmmg5_67, prmmg6_67, prmmg7_67);
+            PercentageMaxGroenTijden(fc67, mperiod, PRM[prmperc67], 
+                                     7, TVGA_max[fc67], PRM[prmmg2_67], PRM[prmmg3_67], PRM[prmmg4_67], PRM[prmmg5_67], PRM[prmmg6_67], PRM[prmmg7_67]);
         }
         if ((CIF_IS[d68_1a] >= CIF_DET_STORING) && (CIF_IS[d68_1b] >= CIF_DET_STORING) && (CIF_IS[d68_2a] >= CIF_DET_STORING) ||
             (CIF_IS[d68_2b] >= CIF_DET_STORING))
         {
             MK[fc68] |= BIT5;
-            PercentageMaxGroenTijden(fc68, mperiod, prmperc68, 
-                                     7, TVGA_max[fc68], prmmg2_68, prmmg3_68, prmmg4_68, prmmg5_68, prmmg6_68, prmmg7_68);
+            PercentageMaxGroenTijden(fc68, mperiod, PRM[prmperc68], 
+                                     7, TVGA_max[fc68], PRM[prmmg2_68], PRM[prmmg3_68], PRM[prmmg4_68], PRM[prmmg5_68], PRM[prmmg6_68], PRM[prmmg7_68]);
         }
 
     }
