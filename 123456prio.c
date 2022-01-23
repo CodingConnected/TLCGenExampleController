@@ -190,6 +190,13 @@ void PrioInitExtra(void)
         granted_verstrekt[i] = 0;
     }
 
+    /* initialisatie variabelen granted_verstrekt */
+    /* ------------------------------------------ */
+    for (i = 0; i < prioFCMAX; ++i)
+    {
+       vertraag_kar_uitm[i] = 0;
+    }
+
 }
 
 void PrioInstellingen(void) 
@@ -1364,7 +1371,7 @@ void InUitMelden(void)
     IH[hpriouit02bus] = IH[hpriouit02buskar] = FALSE;
     if (SCH[schpriouit02buskar])
     {
-        IH[hpriouit02buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat02bus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSUIT, WDNST_check_uit(fc02));
+        IH[hpriouit02buskar] = DSIMeldingPRIO_V2(fc02, prioFC02bus, 0, PRM[prmvtgcat02bus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSUIT, WDNST_check_uit(fc02));
     }
     IH[hpriouit02bus] = IH[hpriouit02buskar];
 
@@ -1428,7 +1435,7 @@ void InUitMelden(void)
     IH[hpriouit03bus] = IH[hpriouit03buskar] = FALSE;
     if (SCH[schpriouit03buskar])
     {
-        IH[hpriouit03buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat03bus], TRUE, PRM[prmkarsg03],TRUE, CIF_DSUIT, WDNST_check_uit(fc03));
+        IH[hpriouit03buskar] = DSIMeldingPRIO_V2(fc03, prioFC03bus, 0, PRM[prmvtgcat03bus], TRUE, PRM[prmkarsg03],TRUE, CIF_DSUIT, WDNST_check_uit(fc03));
     }
     IH[hpriouit03bus] = IH[hpriouit03buskar];
 
@@ -1490,7 +1497,7 @@ void InUitMelden(void)
     IH[hpriouit05bus] = IH[hpriouit05buskar] = FALSE;
     if (SCH[schpriouit05buskar])
     {
-        IH[hpriouit05buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat05bus], TRUE, PRM[prmkarsg05],TRUE, CIF_DSUIT, WDNST_check_uit(fc05));
+        IH[hpriouit05buskar] = DSIMeldingPRIO_V2(fc05, prioFC05bus, 0, PRM[prmvtgcat05bus], TRUE, PRM[prmkarsg05],TRUE, CIF_DSUIT, WDNST_check_uit(fc05));
     }
     IH[hpriouit05bus] = IH[hpriouit05buskar];
 
@@ -1552,7 +1559,7 @@ void InUitMelden(void)
     IH[hpriouit08bus] = IH[hpriouit08buskar] = FALSE;
     if (SCH[schpriouit08buskar])
     {
-        IH[hpriouit08buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat08bus], TRUE, PRM[prmkarsg08],TRUE, CIF_DSUIT, WDNST_check_uit(fc08));
+        IH[hpriouit08buskar] = DSIMeldingPRIO_V2(fc08, prioFC08bus, 0, PRM[prmvtgcat08bus], TRUE, PRM[prmkarsg08],TRUE, CIF_DSUIT, WDNST_check_uit(fc08));
     }
     IH[hpriouit08bus] = IH[hpriouit08buskar];
 
@@ -1616,7 +1623,7 @@ void InUitMelden(void)
     IH[hpriouit09bus] = IH[hpriouit09buskar] = FALSE;
     if (SCH[schpriouit09buskar])
     {
-        IH[hpriouit09buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat09bus], TRUE, PRM[prmkarsg09],TRUE, CIF_DSUIT, WDNST_check_uit(fc09));
+        IH[hpriouit09buskar] = DSIMeldingPRIO_V2(fc09, prioFC09bus, 0, PRM[prmvtgcat09bus], TRUE, PRM[prmkarsg09],TRUE, CIF_DSUIT, WDNST_check_uit(fc09));
     }
     IH[hpriouit09bus] = IH[hpriouit09buskar];
 
@@ -1678,7 +1685,7 @@ void InUitMelden(void)
     IH[hpriouit11bus] = IH[hpriouit11buskar] = FALSE;
     if (SCH[schpriouit11buskar])
     {
-        IH[hpriouit11buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat11bus], TRUE, PRM[prmkarsg11],TRUE, CIF_DSUIT, WDNST_check_uit(fc11));
+        IH[hpriouit11buskar] = DSIMeldingPRIO_V2(fc11, prioFC11bus, 0, PRM[prmvtgcat11bus], TRUE, PRM[prmkarsg11],TRUE, CIF_DSUIT, WDNST_check_uit(fc11));
     }
     IH[hpriouit11bus] = IH[hpriouit11buskar];
 
@@ -1757,7 +1764,7 @@ void InUitMelden(void)
     IH[hpriouit61bus] = IH[hpriouit61buskar] = FALSE;
     if (SCH[schpriouit61buskar])
     {
-        IH[hpriouit61buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat61bus], TRUE, PRM[prmkarsg61],TRUE, CIF_DSUIT, WDNST_check_uit(fc61));
+        IH[hpriouit61buskar] = DSIMeldingPRIO_V2(fc61, prioFC61bus, 0, PRM[prmvtgcat61bus], TRUE, PRM[prmkarsg61],TRUE, CIF_DSUIT, WDNST_check_uit(fc61));
     }
     IH[hpriouit61bus] = IH[hpriouit61buskar];
 
@@ -1819,7 +1826,7 @@ void InUitMelden(void)
     IH[hpriouit62bus] = IH[hpriouit62buskar] = FALSE;
     if (SCH[schpriouit62buskar])
     {
-        IH[hpriouit62buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat62bus], TRUE, PRM[prmkarsg62],TRUE, CIF_DSUIT, WDNST_check_uit(fc62));
+        IH[hpriouit62buskar] = DSIMeldingPRIO_V2(fc62, prioFC62bus, 0, PRM[prmvtgcat62bus], TRUE, PRM[prmkarsg62],TRUE, CIF_DSUIT, WDNST_check_uit(fc62));
     }
     IH[hpriouit62bus] = IH[hpriouit62buskar];
 
@@ -1883,7 +1890,7 @@ void InUitMelden(void)
     IH[hpriouit67bus] = IH[hpriouit67buskar] = FALSE;
     if (SCH[schpriouit67buskar])
     {
-        IH[hpriouit67buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat67bus], TRUE, PRM[prmkarsg67],TRUE, CIF_DSUIT, WDNST_check_uit(fc67));
+        IH[hpriouit67buskar] = DSIMeldingPRIO_V2(fc67, prioFC67bus, 0, PRM[prmvtgcat67bus], TRUE, PRM[prmkarsg67],TRUE, CIF_DSUIT, WDNST_check_uit(fc67));
     }
     IH[hpriouit67bus] = IH[hpriouit67buskar];
 
@@ -1945,7 +1952,7 @@ void InUitMelden(void)
     IH[hpriouit68bus] = IH[hpriouit68buskar] = FALSE;
     if (SCH[schpriouit68buskar])
     {
-        IH[hpriouit68buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat68bus], TRUE, PRM[prmkarsg68],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit68buskar] = DSIMeldingPRIO_V2(fc68, prioFC68bus, 0, PRM[prmvtgcat68bus], TRUE, PRM[prmkarsg68],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit68bus] = IH[hpriouit68buskar];
 

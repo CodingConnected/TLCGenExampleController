@@ -7,7 +7,10 @@
 
 extern mulv C_counter_old[CTMAX];
 
+boolv vertraag_kar_uitm[prioFCMAX];
+
 boolv DSIMeldingPRIO_V1(count dslus, count vtgtype, boolv checkfcnmr, count fcnmr, boolv checktype, count meldingtype, boolv extra);
+boolv DSIMeldingPRIO_V2(count fc, count prio_fc, count dslus, count vtgtype, boolv checkfcnmr, count fcnmr, boolv checktype, count meldingtype, boolv extra);
 boolv DSIMeldingPRIO_LijnNummer_V1(count lijnparm, count lijnmax);
 boolv DSIMeldingPRIO_LijnNummerEnRitCategorie_V1(count lijnparm, count lijnmax);
 boolv DSIMelding_HD_V1(count dir, count meldingtype, boolv check_sirene);
