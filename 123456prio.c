@@ -190,7 +190,7 @@ void PrioInitExtra(void)
         granted_verstrekt[i] = 0;
     }
 
-    /* initialisatie variabelen granted_verstrekt */
+    /* initialisatie variabelen vertraag_kar_uitm */
     /* ------------------------------------------ */
     for (i = 0; i < prioFCMAX; ++i)
     {
