@@ -55,17 +55,16 @@ boolv DSIMeldingPRIO_V2(           /* Fik220201 */
    {
       if (iAantalInmeldingen[prio_fc] > 0 && dslus == 0 && CIF_DSI[CIF_DSI_TYPE] == CIF_DSUIT)
       {
-	 if (melding)
-	 {
-	    vertraag_kar_uitm[prio_fc] = TRUE;    /* correctie, uitmelding vertragen tot start groen */
-	    melding = FALSE;   /* intrekken eerste uitmelding tijdens rood */
-	 }
+        if (melding)
+        {
+          vertraag_kar_uitm[prio_fc] = TRUE;    /* correctie, uitmelding vertragen tot start groen */
+          melding = FALSE;   /* intrekken eerste uitmelding tijdens rood */
+        }
       }
    }
 
    return melding;
 }
-
 
 boolv DSIMeldingPRIO_LijnNummer_V1(count lijnparm, count lijnmax)
 {

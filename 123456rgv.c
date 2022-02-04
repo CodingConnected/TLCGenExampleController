@@ -233,12 +233,7 @@ void rgv_add(void)
 
     /* Meetkriterium MK */
     /* ---------------- */
-    RT[thd02_2a] = D[d02_2a];
-    RT[thd02_2b] = D[d02_2b];
-    RT[thd02_3a] = D[d02_3a];
-    RT[thd02_3b] = D[d02_3b];
-    MK1[fc02] = SVG[fc02] || G[fc02] && MK1[fc02] && (RT[thd02_2a] || T[thd02_2a] || RT[thd02_3a] || T[thd02_3a]);
-    MK2[fc02] = SVG[fc02] || G[fc02] && MK2[fc02] && (RT[thd02_2b] || T[thd02_2b] || RT[thd02_3b] || T[thd02_3b]);
+    MK1[fc02] = SVG[fc02] || G[fc02] && MK1[fc02] && MK[fc02];
     MK1[fc03] = SVG[fc03] || G[fc03] && MK1[fc03] && MK[fc03];
     MK1[fc05] = SVG[fc05] || G[fc05] && MK1[fc05] && MK[fc05];
     RT[thd08_2a] = D[d08_2a];
@@ -262,7 +257,7 @@ void rgv_add(void)
 
     /* Aanpassen verlenggroentijden op einde verlenggroen */
     /* -------------------------------------------------- */
-    rgv_verlenggroentijd2(fc02, PRM[prmmintvg_02], PRM[prmmaxtvg_02], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc02], (boolv)!SCH[schrgv_snel], (boolv)DD[fc02], (boolv)(MK1[fc02] && MK2[fc02]));
+    rgv_verlenggroentijd1(fc02, PRM[prmmintvg_02], PRM[prmmaxtvg_02], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc02], (boolv)!SCH[schrgv_snel], (boolv)DD[fc02], (boolv)(MK1[fc02]));
     rgv_verlenggroentijd1(fc03, PRM[prmmintvg_03], PRM[prmmaxtvg_03], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc03], (boolv)!SCH[schrgv_snel], (boolv)DD[fc03], (boolv)(MK1[fc03]));
     rgv_verlenggroentijd1(fc05, PRM[prmmintvg_05], PRM[prmmaxtvg_05], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc05], (boolv)!SCH[schrgv_snel], (boolv)DD[fc05], (boolv)(MK1[fc05]));
     rgv_verlenggroentijd2(fc08, PRM[prmmintvg_08], PRM[prmmaxtvg_08], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc08], (boolv)!SCH[schrgv_snel], (boolv)DD[fc08], (boolv)(MK1[fc08] && MK2[fc08]));

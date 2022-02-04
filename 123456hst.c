@@ -299,6 +299,7 @@ void Meetkriterium_halfstar(void)
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risov]);
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risvrw]);
         yv_PRIO_pl_halfstar(fc22, BIT7, C[cvc22fiets]);
+        yv_PRIO_pl_halfstar(fc28, BIT7, C[cvc28fiets]);
         yv_PRIO_pl_halfstar(fc31, BIT7, C[cvc31fietsprio]);
         yv_PRIO_pl_halfstar(fc32, BIT7, C[cvc32fietsprio]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61bus]);
@@ -470,9 +471,9 @@ void RealisatieAfhandeling_halfstar(void)
     /* PL2 */
 
     /* PL3 */
-    set_2real(fc28, prmtxA1PL3_28, prmtxA2PL3_28, PL3, (boolv)(IH[hplact]));
-    set_2real(fc38, prmtxA1PL3_38, prmtxA2PL3_38, PL3, (boolv)(IH[hplact]));
     set_2real(fc61, prmtxA1PL3_61, prmtxA2PL3_61, PL3, (boolv)(IH[hplact]));
+    set_2real(fc38, prmtxA1PL3_38, prmtxA2PL3_38, PL3, (boolv)(IH[hplact]));
+    set_2real(fc28, prmtxA1PL3_28, prmtxA2PL3_28, PL3, (boolv)(IH[hplact]));
 
     /* PP opzetten */
     set_pp_halfstar(fc02, IH[hkpact], BIT4);
@@ -691,6 +692,7 @@ void PrioHalfstarSettings(void)
     iExtraGroenNaTXD[prioFC11risov] = PRM[prmnatxdhst11risov];
     iExtraGroenNaTXD[prioFC11risvrw] = PRM[prmnatxdhst11risvrw];
     iExtraGroenNaTXD[prioFC22fiets] = PRM[prmnatxdhst22fiets];
+    iExtraGroenNaTXD[prioFC28fiets] = PRM[prmnatxdhst28fiets];
     iExtraGroenNaTXD[prioFC31fietsprio] = PRM[prmnatxdhst31fietsprio];
     iExtraGroenNaTXD[prioFC32fietsprio] = PRM[prmnatxdhst32fietsprio];
     iExtraGroenNaTXD[prioFC61bus] = PRM[prmnatxdhst61bus];

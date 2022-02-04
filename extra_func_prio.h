@@ -6,8 +6,7 @@
 #define MAX_AANTAL_INMELDINGEN 10
 
 extern mulv C_counter_old[CTMAX];
-
-boolv vertraag_kar_uitm[prioFCMAX];
+extern boolv vertraag_kar_uitm[prioFCMAX];
 
 boolv DSIMeldingPRIO_V1(count dslus, count vtgtype, boolv checkfcnmr, count fcnmr, boolv checktype, count meldingtype, boolv extra);
 boolv DSIMeldingPRIO_V2(count fc, count prio_fc, count dslus, count vtgtype, boolv checkfcnmr, count fcnmr, boolv checktype, count meldingtype, boolv extra);

@@ -25,7 +25,6 @@
 /* dit is een placeholder */
 /* ---------------------- */
 #ifndef AUTOMAAT
-/*
    SCH[schconfidence15fix] = 1;
    SCH[schtxconfidence15ar] = 1;
    SCH[schspatconfidence1] = 0;
@@ -57,5 +56,4 @@
    SCH[schtimings81] = 1;
    SCH[schtimings82] = 1;
    SCH[schtimings84] = 1;
-*/
 #endif
