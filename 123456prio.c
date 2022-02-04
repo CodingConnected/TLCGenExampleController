@@ -1770,7 +1770,7 @@ void InUitMelden(void)
     IH[hpriouit22fiets] = RT[tpriouit22fiets] = IH[hpriouit22fietsfiets];
 
     /* Inmelding fc28 type Fiets */
-    fietsprio_update(fc28, d28_2, cftsvtg28fietsfiets, cftscyc28fietsfiets,SH[hprioin28fietsfiets], ML);
+    fietsprio_update(fc28, d28_2, cftsvtg28fietsfiets, cftscyc28fietsfiets,SH[hprioin28fietsfiets28_2], ML);
     IH[hprioin28fiets] = IH[hprioin28fietsfiets28_2] = FALSE;
     if (SCH[schprioin28fietsfiets28_2])
     {
@@ -2247,6 +2247,7 @@ void InUitMelden(void)
     MM[mstp67bus] = iAantInm67bus > 0 ? iKARInSTP67bus[0] : 0;
     MM[mstp68bus] = iAantInm68bus > 0 ? iKARInSTP68bus[0] : 0;
 
+#ifndef NO_RIS
     /* Bijhouden granted verstrekt */
     Bepaal_Granted_Verstrekt();
 
@@ -2270,7 +2271,7 @@ void InUitMelden(void)
     if (granted_verstrekt[fc61] == 2) granted_verstrekt[fc62] = 2;
     if (granted_verstrekt[fc68] == 2) granted_verstrekt[fc67] = 2;
     if (granted_verstrekt[fc67] == 2) granted_verstrekt[fc68] = 2;
-
+#endif
 
     /* Bijhouden melding en ondergedrag KAR */
     RT[tkarmelding] = CIF_DSIWIJZ != 0;
