@@ -698,28 +698,34 @@
     #define hprreal22               309 /* Bijhouden primaire realisatie fase 22                              */
     #define hprreal28               310 /* Bijhouden primaire realisatie fase 28                              */
     #define hprreal68               311 /* Bijhouden primaire realisatie fase 68                              */
-    #define hnleg0262               312
-    #define hnleg0868               313
-    #define hnleg1168               314
-    #define hnleg2221               315
-    #define hnlsg3132               316
-    #define hnlsg3231               317
-    #define hnlsg3334               318
-    #define hnlsg3433               319
-    #define hnleg8281               320
-    #define hinl32                  321 /* Onthouden inlopen toestaan fase 32                                 */
-    #define hlos32                  322 /* Onthouden toestaan los realiseren fase 32                          */
-    #define hinl31                  323 /* Onthouden inlopen toestaan fase 31                                 */
-    #define hlos31                  324 /* Onthouden toestaan los realiseren fase 31                          */
-    #define hinl34                  325 /* Onthouden inlopen toestaan fase 34                                 */
-    #define hlos34                  326 /* Onthouden toestaan los realiseren fase 34                          */
-    #define hinl33                  327 /* Onthouden inlopen toestaan fase 33                                 */
-    #define hlos33                  328 /* Onthouden toestaan los realiseren fase 33                          */
-    #define hlos62                  329 /* Onthouden toestaan los realiseren fase 62                          */
-    #define hlos68                  330 /* Onthouden toestaan los realiseren fase 68                          */
-    #define hlos21                  331 /* Onthouden toestaan los realiseren fase 21                          */
-    #define hlos81                  332 /* Onthouden toestaan los realiseren fase 81                          */
-    #define HEMAX1                  333
+    #define hschoolingreepdk33a     312 /* Onthouden actief zijn schoolingreep voor fase 33 via detector k33a */
+    #define hschoolingreepdk33b     313 /* Onthouden actief zijn schoolingreep voor fase 33 via detector k33b */
+    #define hschoolingreepdk34a     314 /* Onthouden actief zijn schoolingreep voor fase 34 via detector k34a */
+    #define hschoolingreepdk34b     315 /* Onthouden actief zijn schoolingreep voor fase 34 via detector k34b */
+    #define hsiexgr33               316 /* Onthouden actief zijn senioreningreep bij fase 33                  */
+    #define hsiexgr34               317 /* Onthouden actief zijn senioreningreep bij fase 34                  */
+    #define hnleg0262               318
+    #define hnleg0868               319
+    #define hnleg1168               320
+    #define hnleg2221               321
+    #define hnlsg3132               322
+    #define hnlsg3231               323
+    #define hnlsg3334               324
+    #define hnlsg3433               325
+    #define hnleg8281               326
+    #define hinl32                  327 /* Onthouden inlopen toestaan fase 32                                 */
+    #define hlos32                  328 /* Onthouden toestaan los realiseren fase 32                          */
+    #define hinl31                  329 /* Onthouden inlopen toestaan fase 31                                 */
+    #define hlos31                  330 /* Onthouden toestaan los realiseren fase 31                          */
+    #define hinl34                  331 /* Onthouden inlopen toestaan fase 34                                 */
+    #define hlos34                  332 /* Onthouden toestaan los realiseren fase 34                          */
+    #define hinl33                  333 /* Onthouden inlopen toestaan fase 33                                 */
+    #define hlos33                  334 /* Onthouden toestaan los realiseren fase 33                          */
+    #define hlos62                  335 /* Onthouden toestaan los realiseren fase 62                          */
+    #define hlos68                  336 /* Onthouden toestaan los realiseren fase 68                          */
+    #define hlos21                  337 /* Onthouden toestaan los realiseren fase 21                          */
+    #define hlos81                  338 /* Onthouden toestaan los realiseren fase 81                          */
+    #define HEMAX1                  339
 
 /* geheugen elementen */
 /* ------------------ */
@@ -1296,57 +1302,69 @@
     #define tfd68_1b                   448 /* File meting RoBuGrover fase 68 detector 68_1b                                            */
     #define thd68_2a                   449 /* RoBuGrover hiaat meting fase 68 detector 68_2a                                           */
     #define thd68_2b                   450 /* RoBuGrover hiaat meting fase 68 detector 68_2b                                           */
-    #define tuitgestca03               451 /* Uitgestelde cyclische aanvraag fase 03                                                   */
-    #define tuitgestca05               452 /* Uitgestelde cyclische aanvraag fase 05                                                   */
-    #define tuitgestca08               453 /* Uitgestelde cyclische aanvraag fase 08                                                   */
-    #define tuitgestca09               454 /* Uitgestelde cyclische aanvraag fase 09                                                   */
-    #define tuitgestca11               455 /* Uitgestelde cyclische aanvraag fase 11                                                   */
-    #define tuitgestca21               456 /* Uitgestelde cyclische aanvraag fase 21                                                   */
-    #define tuitgestca22               457 /* Uitgestelde cyclische aanvraag fase 22                                                   */
-    #define tuitgestca24               458 /* Uitgestelde cyclische aanvraag fase 24                                                   */
-    #define tuitgestca26               459 /* Uitgestelde cyclische aanvraag fase 26                                                   */
-    #define tuitgestca28               460 /* Uitgestelde cyclische aanvraag fase 28                                                   */
-    #define tuitgestca31               461 /* Uitgestelde cyclische aanvraag fase 31                                                   */
-    #define tuitgestca32               462 /* Uitgestelde cyclische aanvraag fase 32                                                   */
-    #define tuitgestca33               463 /* Uitgestelde cyclische aanvraag fase 33                                                   */
-    #define tuitgestca34               464 /* Uitgestelde cyclische aanvraag fase 34                                                   */
-    #define tuitgestca38               465 /* Uitgestelde cyclische aanvraag fase 38                                                   */
-    #define tuitgestca61               466 /* Uitgestelde cyclische aanvraag fase 61                                                   */
-    #define tuitgestca62               467 /* Uitgestelde cyclische aanvraag fase 62                                                   */
-    #define tuitgestca67               468 /* Uitgestelde cyclische aanvraag fase 67                                                   */
-    #define tuitgestca68               469 /* Uitgestelde cyclische aanvraag fase 68                                                   */
-    #define tuitgestca81               470 /* Uitgestelde cyclische aanvraag fase 81                                                   */
-    #define tuitgestca82               471 /* Uitgestelde cyclische aanvraag fase 82                                                   */
-    #define tuitgestca84               472 /* Uitgestelde cyclische aanvraag fase 84                                                   */
-    #define tvgmax02                   473 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
-    #define tvgvolg02_4a               474 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4a van fase 02 */
-    #define tvghiaat02_4a              475 /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4a van fase 02                    */
-    #define tvgvolg02_4b               476 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4b van fase 02 */
-    #define tvghiaat02_4b              477 /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4b van fase 02                    */
-    #define tvgmax08                   478 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
-    #define tvgvolg08_4a               479 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4a van fase 08 */
-    #define tvghiaat08_4a              480 /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4a van fase 08                    */
-    #define tvgvolg08_4b               481 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4b van fase 08 */
-    #define tvghiaat08_4b              482 /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4b van fase 08                    */
-    #define tvgmax11                   483 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
-    #define tvgvolg11_4                484 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 11_4 van fase 11  */
-    #define tvghiaat11_4               485 /* Hiaattijd bij actief zijn veiligheidsgroen detector 11_4 van fase 11                     */
-    #define tvs2205                    486 /* Voorstarttijd fase 22 op fase 05                                                         */
-    #define tvs3205                    487 /* Voorstarttijd fase 32 op fase 05                                                         */
-    #define tlr2611                    488 /* Late release tijd fase 26 naar fase 11                                                   */
-    #define tlr6202                    489 /* Late release tijd fase 62 naar fase 02                                                   */
-    #define tlr6808                    490 /* Late release tijd fase 68 naar fase 08                                                   */
-    #define tlr6811                    491 /* Late release tijd fase 68 naar fase 11                                                   */
-    #define tlr2122                    492 /* Late release tijd fase 21 naar fase 22                                                   */
-    #define tlr8182                    493 /* Late release tijd fase 81 naar fase 82                                                   */
-    #define tinl3231                   494 /* Inloop tijd fase 32                                                                      */
-    #define tinl3132                   495 /* Inloop tijd fase 31                                                                      */
-    #define tinl3433                   496 /* Inloop tijd fase 34                                                                      */
-    #define tinl3334                   497 /* Inloop tijd fase 33                                                                      */
-    #define tfo0522                    498 /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
-    #define tfo0532                    499 /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
-    #define tfo1126                    500 /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
-    #define TMMAX1                     501
+    #define tschoolingreepmaxg33       451 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 33                        */
+    #define tdbsidk33a                 452 /* Bezettijd detector k33a t.b.v. schoolingreep                                             */
+    #define tdbsidk33b                 453 /* Bezettijd detector k33b t.b.v. schoolingreep                                             */
+    #define tschoolingreepmaxg34       454 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 34                        */
+    #define tdbsidk34a                 455 /* Bezettijd detector k34a t.b.v. schoolingreep                                             */
+    #define tdbsidk34b                 456 /* Bezettijd detector k34b t.b.v. schoolingreep                                             */
+    #define tsiexgr33                  457 /* Meten duur extra groen bij senioreningreep op fase 33                                    */
+    #define tdbsiexgrdk33a             458 /* Bezettijd detector k33a t.b.v. Senioreningreep                                           */
+    #define tdbsiexgrdk33b             459 /* Bezettijd detector k33b t.b.v. Senioreningreep                                           */
+    #define tsiexgr34                  460 /* Meten duur extra groen bij senioreningreep op fase 34                                    */
+    #define tdbsiexgrdk34a             461 /* Bezettijd detector k34a t.b.v. Senioreningreep                                           */
+    #define tdbsiexgrdk34b             462 /* Bezettijd detector k34b t.b.v. Senioreningreep                                           */
+    #define tuitgestca03               463 /* Uitgestelde cyclische aanvraag fase 03                                                   */
+    #define tuitgestca05               464 /* Uitgestelde cyclische aanvraag fase 05                                                   */
+    #define tuitgestca08               465 /* Uitgestelde cyclische aanvraag fase 08                                                   */
+    #define tuitgestca09               466 /* Uitgestelde cyclische aanvraag fase 09                                                   */
+    #define tuitgestca11               467 /* Uitgestelde cyclische aanvraag fase 11                                                   */
+    #define tuitgestca21               468 /* Uitgestelde cyclische aanvraag fase 21                                                   */
+    #define tuitgestca22               469 /* Uitgestelde cyclische aanvraag fase 22                                                   */
+    #define tuitgestca24               470 /* Uitgestelde cyclische aanvraag fase 24                                                   */
+    #define tuitgestca26               471 /* Uitgestelde cyclische aanvraag fase 26                                                   */
+    #define tuitgestca28               472 /* Uitgestelde cyclische aanvraag fase 28                                                   */
+    #define tuitgestca31               473 /* Uitgestelde cyclische aanvraag fase 31                                                   */
+    #define tuitgestca32               474 /* Uitgestelde cyclische aanvraag fase 32                                                   */
+    #define tuitgestca33               475 /* Uitgestelde cyclische aanvraag fase 33                                                   */
+    #define tuitgestca34               476 /* Uitgestelde cyclische aanvraag fase 34                                                   */
+    #define tuitgestca38               477 /* Uitgestelde cyclische aanvraag fase 38                                                   */
+    #define tuitgestca61               478 /* Uitgestelde cyclische aanvraag fase 61                                                   */
+    #define tuitgestca62               479 /* Uitgestelde cyclische aanvraag fase 62                                                   */
+    #define tuitgestca67               480 /* Uitgestelde cyclische aanvraag fase 67                                                   */
+    #define tuitgestca68               481 /* Uitgestelde cyclische aanvraag fase 68                                                   */
+    #define tuitgestca81               482 /* Uitgestelde cyclische aanvraag fase 81                                                   */
+    #define tuitgestca82               483 /* Uitgestelde cyclische aanvraag fase 82                                                   */
+    #define tuitgestca84               484 /* Uitgestelde cyclische aanvraag fase 84                                                   */
+    #define tvgmax02                   485 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
+    #define tvgvolg02_4a               486 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4a van fase 02 */
+    #define tvghiaat02_4a              487 /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4a van fase 02                    */
+    #define tvgvolg02_4b               488 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4b van fase 02 */
+    #define tvghiaat02_4b              489 /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4b van fase 02                    */
+    #define tvgmax08                   490 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
+    #define tvgvolg08_4a               491 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4a van fase 08 */
+    #define tvghiaat08_4a              492 /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4a van fase 08                    */
+    #define tvgvolg08_4b               493 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4b van fase 08 */
+    #define tvghiaat08_4b              494 /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4b van fase 08                    */
+    #define tvgmax11                   495 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
+    #define tvgvolg11_4                496 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 11_4 van fase 11  */
+    #define tvghiaat11_4               497 /* Hiaattijd bij actief zijn veiligheidsgroen detector 11_4 van fase 11                     */
+    #define tvs2205                    498 /* Voorstarttijd fase 22 op fase 05                                                         */
+    #define tvs3205                    499 /* Voorstarttijd fase 32 op fase 05                                                         */
+    #define tlr2611                    500 /* Late release tijd fase 26 naar fase 11                                                   */
+    #define tlr6202                    501 /* Late release tijd fase 62 naar fase 02                                                   */
+    #define tlr6808                    502 /* Late release tijd fase 68 naar fase 08                                                   */
+    #define tlr6811                    503 /* Late release tijd fase 68 naar fase 11                                                   */
+    #define tlr2122                    504 /* Late release tijd fase 21 naar fase 22                                                   */
+    #define tlr8182                    505 /* Late release tijd fase 81 naar fase 82                                                   */
+    #define tinl3231                   506 /* Inloop tijd fase 32                                                                      */
+    #define tinl3132                   507 /* Inloop tijd fase 31                                                                      */
+    #define tinl3433                   508 /* Inloop tijd fase 34                                                                      */
+    #define tinl3334                   509 /* Inloop tijd fase 33                                                                      */
+    #define tfo0522                    510 /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
+    #define tfo0532                    511 /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
+    #define tfo1126                    512 /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
+    #define TMMAX1                     513
 
 /* teller elementen */
 /* ---------------- */
@@ -1710,140 +1728,144 @@
     #define schrgadd24_3              272 /* Type richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2            */
     #define schrgv                    273 /* RoBuGrover aan of uit                                                 */
     #define schrgv_snel               274 /* RoBuGrover versneld ophogen of verlagen                               */
-    #define schca02                   275 /* Cyclische aanvraag fase 02                                            */
-    #define schca03                   276 /* Cyclische aanvraag fase 03                                            */
-    #define schca05                   277 /* Cyclische aanvraag fase 05                                            */
-    #define schca08                   278 /* Cyclische aanvraag fase 08                                            */
-    #define schca09                   279 /* Cyclische aanvraag fase 09                                            */
-    #define schca11                   280 /* Cyclische aanvraag fase 11                                            */
-    #define schca21                   281 /* Cyclische aanvraag fase 21                                            */
-    #define schca22                   282 /* Cyclische aanvraag fase 22                                            */
-    #define schca24                   283 /* Cyclische aanvraag fase 24                                            */
-    #define schca26                   284 /* Cyclische aanvraag fase 26                                            */
-    #define schca28                   285 /* Cyclische aanvraag fase 28                                            */
-    #define schca31                   286 /* Cyclische aanvraag fase 31                                            */
-    #define schca32                   287 /* Cyclische aanvraag fase 32                                            */
-    #define schca33                   288 /* Cyclische aanvraag fase 33                                            */
-    #define schca34                   289 /* Cyclische aanvraag fase 34                                            */
-    #define schca38                   290 /* Cyclische aanvraag fase 38                                            */
-    #define schca61                   291 /* Cyclische aanvraag fase 61                                            */
-    #define schca62                   292 /* Cyclische aanvraag fase 62                                            */
-    #define schca67                   293 /* Cyclische aanvraag fase 67                                            */
-    #define schca68                   294 /* Cyclische aanvraag fase 68                                            */
-    #define schca81                   295 /* Cyclische aanvraag fase 81                                            */
-    #define schca82                   296 /* Cyclische aanvraag fase 82                                            */
-    #define schca84                   297 /* Cyclische aanvraag fase 84                                            */
-    #define schvg02_4a                298 /* Veiligheidsgroen detector 02_4a fase 02                               */
-    #define schvg02_4b                299 /* Veiligheidsgroen detector 02_4b fase 02                               */
-    #define schvg08_4a                300 /* Veiligheidsgroen detector 08_4a fase 08                               */
-    #define schvg08_4b                301 /* Veiligheidsgroen detector 08_4b fase 08                               */
-    #define schvg11_4                 302 /* Veiligheidsgroen detector 11_4 fase 11                                */
-    #define schaltg02                 303 /* Alternatieve realisatie toestaan fase 02                              */
-    #define schaltg03                 304 /* Alternatieve realisatie toestaan fase 03                              */
-    #define schaltg05                 305 /* Alternatieve realisatie toestaan fase 05                              */
-    #define schaltg08                 306 /* Alternatieve realisatie toestaan fase 08                              */
-    #define schaltg09                 307 /* Alternatieve realisatie toestaan fase 09                              */
-    #define schaltg11                 308 /* Alternatieve realisatie toestaan fase 11                              */
-    #define schaltg21                 309 /* Alternatieve realisatie toestaan fase 21                              */
-    #define schaltg2232               310 /* Alternatieve realisatie toestaan fasen 22, 32                         */
-    #define schaltg2434               311 /* Alternatieve realisatie toestaan fasen 24, 34                         */
-    #define schaltg26                 312 /* Alternatieve realisatie toestaan fase 26                              */
-    #define schaltg28                 313 /* Alternatieve realisatie toestaan fase 28                              */
-    #define schaltg31                 314 /* Alternatieve realisatie toestaan fase 31                              */
-    #define schaltg3384               315 /* Alternatieve realisatie toestaan fasen 33, 84                         */
-    #define schaltg38                 316 /* Alternatieve realisatie toestaan fase 38                              */
-    #define schaltg61                 317 /* Alternatieve realisatie toestaan fase 61                              */
-    #define schaltg62                 318 /* Alternatieve realisatie toestaan fase 62                              */
-    #define schaltg67                 319 /* Alternatieve realisatie toestaan fase 67                              */
-    #define schaltg68                 320 /* Alternatieve realisatie toestaan fase 68                              */
-    #define schaltg81                 321 /* Alternatieve realisatie toestaan fase 81                              */
-    #define schaltg82                 322 /* Alternatieve realisatie toestaan fase 82                              */
-    #define schwg02                   323 /* Wachtstand groen fase 02                                              */
-    #define schwg03                   324 /* Wachtstand groen fase 03                                              */
-    #define schwg05                   325 /* Wachtstand groen fase 05                                              */
-    #define schwg08                   326 /* Wachtstand groen fase 08                                              */
-    #define schwg09                   327 /* Wachtstand groen fase 09                                              */
-    #define schwg11                   328 /* Wachtstand groen fase 11                                              */
-    #define schwg21                   329 /* Wachtstand groen fase 21                                              */
-    #define schwg22                   330 /* Wachtstand groen fase 22                                              */
-    #define schwg24                   331 /* Wachtstand groen fase 24                                              */
-    #define schwg26                   332 /* Wachtstand groen fase 26                                              */
-    #define schwg28                   333 /* Wachtstand groen fase 28                                              */
-    #define schwg31                   334 /* Wachtstand groen fase 31                                              */
-    #define schwg32                   335 /* Wachtstand groen fase 32                                              */
-    #define schwg33                   336 /* Wachtstand groen fase 33                                              */
-    #define schwg34                   337 /* Wachtstand groen fase 34                                              */
-    #define schwg38                   338 /* Wachtstand groen fase 38                                              */
-    #define schwg61                   339 /* Wachtstand groen fase 61                                              */
-    #define schwg62                   340 /* Wachtstand groen fase 62                                              */
-    #define schwg67                   341 /* Wachtstand groen fase 67                                              */
-    #define schwg68                   342 /* Wachtstand groen fase 68                                              */
-    #define schwg81                   343 /* Wachtstand groen fase 81                                              */
-    #define schwg82                   344 /* Wachtstand groen fase 82                                              */
-    #define schwg84                   345 /* Wachtstand groen fase 84                                              */
-    #define schstar                   346 /* Inschakelen star programma                                            */
-    #define schgs2232                 347 /* Schakelbare gelijkstart tussen fase 32 en 22                          */
-    #define schgs2434                 348 /* Schakelbare gelijkstart tussen fase 34 en 24                          */
-    #define schgs3384                 349 /* Schakelbare gelijkstart tussen fase 84 en 33                          */
-    #define schlos32_1                350 /* Toestaan los realiseren fase 32                                       */
-    #define schlos32_2                351 /* Toestaan los realiseren fase 32                                       */
-    #define schlos31_1                352 /* Toestaan los realiseren fase 31                                       */
-    #define schlos31_2                353 /* Toestaan los realiseren fase 31                                       */
-    #define schlos34_1                354 /* Toestaan los realiseren fase 34                                       */
-    #define schlos34_2                355 /* Toestaan los realiseren fase 34                                       */
-    #define schlos33_1                356 /* Toestaan los realiseren fase 33                                       */
-    #define schlos33_2                357 /* Toestaan los realiseren fase 33                                       */
-    #define schconfidence15fix        358
-    #define schtxconfidence15ar       359
-    #define schspatconfidence1        360
-    #define schspatconfidence3        361
-    #define schspatconfidence6        362
-    #define schspatconfidence9        363
-    #define schspatconfidence12       364
-    #define schspatconfidence15       365
-    #define schtimings02              366
-    #define schtimings03              367
-    #define schtimings05              368
-    #define schtimings08              369
-    #define schtimings09              370
-    #define schtimings11              371
-    #define schtimings21              372
-    #define schtimings22              373
-    #define schtimings24              374
-    #define schtimings26              375
-    #define schtimings28              376
-    #define schtimings31              377
-    #define schtimings32              378
-    #define schtimings33              379
-    #define schtimings34              380
-    #define schtimings38              381
-    #define schtimings61              382
-    #define schtimings62              383
-    #define schtimings67              384
-    #define schtimings68              385
-    #define schtimings81              386
-    #define schtimings82              387
-    #define schtimings84              388
-    #define schsneld02_1a             389 /* Aanvraag snel voor detector 02_1a aan of uit                          */
-    #define schsneld03_1              390 /* Aanvraag snel voor detector 03_1 aan of uit                           */
-    #define schsneld05_1              391 /* Aanvraag snel voor detector 05_1 aan of uit                           */
-    #define schsneld08_1a             392 /* Aanvraag snel voor detector 08_1a aan of uit                          */
-    #define schsneld09_1              393 /* Aanvraag snel voor detector 09_1 aan of uit                           */
-    #define schsneld11_1              394 /* Aanvraag snel voor detector 11_1 aan of uit                           */
-    #define schsneld211               395 /* Aanvraag snel voor detector 211 aan of uit                            */
-    #define schsneld22_1              396 /* Aanvraag snel voor detector 22_1 aan of uit                           */
-    #define schsneld24_1              397 /* Aanvraag snel voor detector 24_1 aan of uit                           */
-    #define schsneld261               398 /* Aanvraag snel voor detector 261 aan of uit                            */
-    #define schsneld28_1              399 /* Aanvraag snel voor detector 28_1 aan of uit                           */
-    #define schsneld61_1              400 /* Aanvraag snel voor detector 61_1 aan of uit                           */
-    #define schsneld62_1a             401 /* Aanvraag snel voor detector 62_1a aan of uit                          */
-    #define schsneld67_1              402 /* Aanvraag snel voor detector 67_1 aan of uit                           */
-    #define schsneld68_1a             403 /* Aanvraag snel voor detector 68_1a aan of uit                          */
-    #define schsneld81_1              404 /* Aanvraag snel voor detector 81_1 aan of uit                           */
-    #define schsneld82_1              405 /* Aanvraag snel voor detector 82_1 aan of uit                           */
-    #define schsneld84_1              406 /* Aanvraag snel voor detector 84_1 aan of uit                           */
-    #define schgsbeidedkb             407
-    #define SCHMAX1                   408
+    #define schschoolingreep33        275 /* Schoolingreep aan of uit voor fase 33                                 */
+    #define schschoolingreep34        276 /* Schoolingreep aan of uit voor fase 34                                 */
+    #define schsi33                   277 /* Senioreningreep aan of uit voor fase 33                               */
+    #define schsi34                   278 /* Senioreningreep aan of uit voor fase 34                               */
+    #define schca02                   279 /* Cyclische aanvraag fase 02                                            */
+    #define schca03                   280 /* Cyclische aanvraag fase 03                                            */
+    #define schca05                   281 /* Cyclische aanvraag fase 05                                            */
+    #define schca08                   282 /* Cyclische aanvraag fase 08                                            */
+    #define schca09                   283 /* Cyclische aanvraag fase 09                                            */
+    #define schca11                   284 /* Cyclische aanvraag fase 11                                            */
+    #define schca21                   285 /* Cyclische aanvraag fase 21                                            */
+    #define schca22                   286 /* Cyclische aanvraag fase 22                                            */
+    #define schca24                   287 /* Cyclische aanvraag fase 24                                            */
+    #define schca26                   288 /* Cyclische aanvraag fase 26                                            */
+    #define schca28                   289 /* Cyclische aanvraag fase 28                                            */
+    #define schca31                   290 /* Cyclische aanvraag fase 31                                            */
+    #define schca32                   291 /* Cyclische aanvraag fase 32                                            */
+    #define schca33                   292 /* Cyclische aanvraag fase 33                                            */
+    #define schca34                   293 /* Cyclische aanvraag fase 34                                            */
+    #define schca38                   294 /* Cyclische aanvraag fase 38                                            */
+    #define schca61                   295 /* Cyclische aanvraag fase 61                                            */
+    #define schca62                   296 /* Cyclische aanvraag fase 62                                            */
+    #define schca67                   297 /* Cyclische aanvraag fase 67                                            */
+    #define schca68                   298 /* Cyclische aanvraag fase 68                                            */
+    #define schca81                   299 /* Cyclische aanvraag fase 81                                            */
+    #define schca82                   300 /* Cyclische aanvraag fase 82                                            */
+    #define schca84                   301 /* Cyclische aanvraag fase 84                                            */
+    #define schvg02_4a                302 /* Veiligheidsgroen detector 02_4a fase 02                               */
+    #define schvg02_4b                303 /* Veiligheidsgroen detector 02_4b fase 02                               */
+    #define schvg08_4a                304 /* Veiligheidsgroen detector 08_4a fase 08                               */
+    #define schvg08_4b                305 /* Veiligheidsgroen detector 08_4b fase 08                               */
+    #define schvg11_4                 306 /* Veiligheidsgroen detector 11_4 fase 11                                */
+    #define schaltg02                 307 /* Alternatieve realisatie toestaan fase 02                              */
+    #define schaltg03                 308 /* Alternatieve realisatie toestaan fase 03                              */
+    #define schaltg05                 309 /* Alternatieve realisatie toestaan fase 05                              */
+    #define schaltg08                 310 /* Alternatieve realisatie toestaan fase 08                              */
+    #define schaltg09                 311 /* Alternatieve realisatie toestaan fase 09                              */
+    #define schaltg11                 312 /* Alternatieve realisatie toestaan fase 11                              */
+    #define schaltg21                 313 /* Alternatieve realisatie toestaan fase 21                              */
+    #define schaltg2232               314 /* Alternatieve realisatie toestaan fasen 22, 32                         */
+    #define schaltg2434               315 /* Alternatieve realisatie toestaan fasen 24, 34                         */
+    #define schaltg26                 316 /* Alternatieve realisatie toestaan fase 26                              */
+    #define schaltg28                 317 /* Alternatieve realisatie toestaan fase 28                              */
+    #define schaltg31                 318 /* Alternatieve realisatie toestaan fase 31                              */
+    #define schaltg3384               319 /* Alternatieve realisatie toestaan fasen 33, 84                         */
+    #define schaltg38                 320 /* Alternatieve realisatie toestaan fase 38                              */
+    #define schaltg61                 321 /* Alternatieve realisatie toestaan fase 61                              */
+    #define schaltg62                 322 /* Alternatieve realisatie toestaan fase 62                              */
+    #define schaltg67                 323 /* Alternatieve realisatie toestaan fase 67                              */
+    #define schaltg68                 324 /* Alternatieve realisatie toestaan fase 68                              */
+    #define schaltg81                 325 /* Alternatieve realisatie toestaan fase 81                              */
+    #define schaltg82                 326 /* Alternatieve realisatie toestaan fase 82                              */
+    #define schwg02                   327 /* Wachtstand groen fase 02                                              */
+    #define schwg03                   328 /* Wachtstand groen fase 03                                              */
+    #define schwg05                   329 /* Wachtstand groen fase 05                                              */
+    #define schwg08                   330 /* Wachtstand groen fase 08                                              */
+    #define schwg09                   331 /* Wachtstand groen fase 09                                              */
+    #define schwg11                   332 /* Wachtstand groen fase 11                                              */
+    #define schwg21                   333 /* Wachtstand groen fase 21                                              */
+    #define schwg22                   334 /* Wachtstand groen fase 22                                              */
+    #define schwg24                   335 /* Wachtstand groen fase 24                                              */
+    #define schwg26                   336 /* Wachtstand groen fase 26                                              */
+    #define schwg28                   337 /* Wachtstand groen fase 28                                              */
+    #define schwg31                   338 /* Wachtstand groen fase 31                                              */
+    #define schwg32                   339 /* Wachtstand groen fase 32                                              */
+    #define schwg33                   340 /* Wachtstand groen fase 33                                              */
+    #define schwg34                   341 /* Wachtstand groen fase 34                                              */
+    #define schwg38                   342 /* Wachtstand groen fase 38                                              */
+    #define schwg61                   343 /* Wachtstand groen fase 61                                              */
+    #define schwg62                   344 /* Wachtstand groen fase 62                                              */
+    #define schwg67                   345 /* Wachtstand groen fase 67                                              */
+    #define schwg68                   346 /* Wachtstand groen fase 68                                              */
+    #define schwg81                   347 /* Wachtstand groen fase 81                                              */
+    #define schwg82                   348 /* Wachtstand groen fase 82                                              */
+    #define schwg84                   349 /* Wachtstand groen fase 84                                              */
+    #define schstar                   350 /* Inschakelen star programma                                            */
+    #define schgs2232                 351 /* Schakelbare gelijkstart tussen fase 32 en 22                          */
+    #define schgs2434                 352 /* Schakelbare gelijkstart tussen fase 34 en 24                          */
+    #define schgs3384                 353 /* Schakelbare gelijkstart tussen fase 84 en 33                          */
+    #define schlos32_1                354 /* Toestaan los realiseren fase 32                                       */
+    #define schlos32_2                355 /* Toestaan los realiseren fase 32                                       */
+    #define schlos31_1                356 /* Toestaan los realiseren fase 31                                       */
+    #define schlos31_2                357 /* Toestaan los realiseren fase 31                                       */
+    #define schlos34_1                358 /* Toestaan los realiseren fase 34                                       */
+    #define schlos34_2                359 /* Toestaan los realiseren fase 34                                       */
+    #define schlos33_1                360 /* Toestaan los realiseren fase 33                                       */
+    #define schlos33_2                361 /* Toestaan los realiseren fase 33                                       */
+    #define schconfidence15fix        362
+    #define schtxconfidence15ar       363
+    #define schspatconfidence1        364
+    #define schspatconfidence3        365
+    #define schspatconfidence6        366
+    #define schspatconfidence9        367
+    #define schspatconfidence12       368
+    #define schspatconfidence15       369
+    #define schtimings02              370
+    #define schtimings03              371
+    #define schtimings05              372
+    #define schtimings08              373
+    #define schtimings09              374
+    #define schtimings11              375
+    #define schtimings21              376
+    #define schtimings22              377
+    #define schtimings24              378
+    #define schtimings26              379
+    #define schtimings28              380
+    #define schtimings31              381
+    #define schtimings32              382
+    #define schtimings33              383
+    #define schtimings34              384
+    #define schtimings38              385
+    #define schtimings61              386
+    #define schtimings62              387
+    #define schtimings67              388
+    #define schtimings68              389
+    #define schtimings81              390
+    #define schtimings82              391
+    #define schtimings84              392
+    #define schsneld02_1a             393 /* Aanvraag snel voor detector 02_1a aan of uit                          */
+    #define schsneld03_1              394 /* Aanvraag snel voor detector 03_1 aan of uit                           */
+    #define schsneld05_1              395 /* Aanvraag snel voor detector 05_1 aan of uit                           */
+    #define schsneld08_1a             396 /* Aanvraag snel voor detector 08_1a aan of uit                          */
+    #define schsneld09_1              397 /* Aanvraag snel voor detector 09_1 aan of uit                           */
+    #define schsneld11_1              398 /* Aanvraag snel voor detector 11_1 aan of uit                           */
+    #define schsneld211               399 /* Aanvraag snel voor detector 211 aan of uit                            */
+    #define schsneld22_1              400 /* Aanvraag snel voor detector 22_1 aan of uit                           */
+    #define schsneld24_1              401 /* Aanvraag snel voor detector 24_1 aan of uit                           */
+    #define schsneld261               402 /* Aanvraag snel voor detector 261 aan of uit                            */
+    #define schsneld28_1              403 /* Aanvraag snel voor detector 28_1 aan of uit                           */
+    #define schsneld61_1              404 /* Aanvraag snel voor detector 61_1 aan of uit                           */
+    #define schsneld62_1a             405 /* Aanvraag snel voor detector 62_1a aan of uit                          */
+    #define schsneld67_1              406 /* Aanvraag snel voor detector 67_1 aan of uit                           */
+    #define schsneld68_1a             407 /* Aanvraag snel voor detector 68_1a aan of uit                          */
+    #define schsneld81_1              408 /* Aanvraag snel voor detector 81_1 aan of uit                           */
+    #define schsneld82_1              409 /* Aanvraag snel voor detector 82_1 aan of uit                           */
+    #define schsneld84_1              410 /* Aanvraag snel voor detector 84_1 aan of uit                           */
+    #define schgsbeidedkb             411
+    #define SCHMAX1                   412
 
 /* parameters */
 /* ---------- */
@@ -3888,84 +3910,86 @@
     #define prmmaxtvg_28                2038 /* Maximale verlenggroentijd fase 28                                                                                              */
     #define prmmintvg_68                2039 /* Minimale verlenggroentijd fase 68                                                                                              */
     #define prmmaxtvg_68                2040 /* Maximale verlenggroentijd fase 68                                                                                              */
-    #define prmmaxtvgvlog               2041 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
-    #define prmmaxtfbvlog               2042 /* Parameter VLOG max. wachttijd na aanvraag                                                                                      */
-    #define prmmlfpr02                  2043 /* Maximaal aantal modules vooruit fase 02                                                                                        */
-    #define prmmlfpr03                  2044 /* Maximaal aantal modules vooruit fase 03                                                                                        */
-    #define prmmlfpr05                  2045 /* Maximaal aantal modules vooruit fase 05                                                                                        */
-    #define prmmlfpr08                  2046 /* Maximaal aantal modules vooruit fase 08                                                                                        */
-    #define prmmlfpr09                  2047 /* Maximaal aantal modules vooruit fase 09                                                                                        */
-    #define prmmlfpr11                  2048 /* Maximaal aantal modules vooruit fase 11                                                                                        */
-    #define prmmlfpr21                  2049 /* Maximaal aantal modules vooruit fase 21                                                                                        */
-    #define prmmlfpr22                  2050 /* Maximaal aantal modules vooruit fase 22                                                                                        */
-    #define prmmlfpr24                  2051 /* Maximaal aantal modules vooruit fase 24                                                                                        */
-    #define prmmlfpr26                  2052 /* Maximaal aantal modules vooruit fase 26                                                                                        */
-    #define prmmlfpr28                  2053 /* Maximaal aantal modules vooruit fase 28                                                                                        */
-    #define prmmlfpr31                  2054 /* Maximaal aantal modules vooruit fase 31                                                                                        */
-    #define prmmlfpr32                  2055 /* Maximaal aantal modules vooruit fase 32                                                                                        */
-    #define prmmlfpr33                  2056 /* Maximaal aantal modules vooruit fase 33                                                                                        */
-    #define prmmlfpr34                  2057 /* Maximaal aantal modules vooruit fase 34                                                                                        */
-    #define prmmlfpr38                  2058 /* Maximaal aantal modules vooruit fase 38                                                                                        */
-    #define prmmlfpr61                  2059 /* Maximaal aantal modules vooruit fase 61                                                                                        */
-    #define prmmlfpr62                  2060 /* Maximaal aantal modules vooruit fase 62                                                                                        */
-    #define prmmlfpr67                  2061 /* Maximaal aantal modules vooruit fase 67                                                                                        */
-    #define prmmlfpr68                  2062 /* Maximaal aantal modules vooruit fase 68                                                                                        */
-    #define prmmlfpr81                  2063 /* Maximaal aantal modules vooruit fase 81                                                                                        */
-    #define prmmlfpr82                  2064 /* Maximaal aantal modules vooruit fase 82                                                                                        */
-    #define prmmlfpr84                  2065 /* Maximaal aantal modules vooruit fase 84                                                                                        */
-    #define prmaltg02                   2066 /* Minimale groentijd bij alternatieve realisatie fase 02                                                                         */
-    #define prmaltp02                   2067 /* Minimale ruimte tbv alternatieve realisatie fase 02                                                                            */
-    #define prmaltg03                   2068 /* Minimale groentijd bij alternatieve realisatie fase 03                                                                         */
-    #define prmaltp03                   2069 /* Minimale ruimte tbv alternatieve realisatie fase 03                                                                            */
-    #define prmaltg05                   2070 /* Minimale groentijd bij alternatieve realisatie fase 05                                                                         */
-    #define prmaltp05                   2071 /* Minimale ruimte tbv alternatieve realisatie fase 05                                                                            */
-    #define prmaltg08                   2072 /* Minimale groentijd bij alternatieve realisatie fase 08                                                                         */
-    #define prmaltp08                   2073 /* Minimale ruimte tbv alternatieve realisatie fase 08                                                                            */
-    #define prmaltg09                   2074 /* Minimale groentijd bij alternatieve realisatie fase 09                                                                         */
-    #define prmaltp09                   2075 /* Minimale ruimte tbv alternatieve realisatie fase 09                                                                            */
-    #define prmaltg11                   2076 /* Minimale groentijd bij alternatieve realisatie fase 11                                                                         */
-    #define prmaltp11                   2077 /* Minimale ruimte tbv alternatieve realisatie fase 11                                                                            */
-    #define prmaltg21                   2078 /* Minimale groentijd bij alternatieve realisatie fase 21                                                                         */
-    #define prmaltp21                   2079 /* Minimale ruimte tbv alternatieve realisatie fase 21                                                                            */
-    #define prmaltg22                   2080 /* Minimale groentijd bij alternatieve realisatie fase 22                                                                         */
-    #define prmaltp2232                 2081 /* Minimale ruimte tbv alternatieve realisatie fasen 22, 32                                                                       */
-    #define prmaltg24                   2082 /* Minimale groentijd bij alternatieve realisatie fase 24                                                                         */
-    #define prmaltp2434                 2083 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
-    #define prmaltg26                   2084 /* Minimale groentijd bij alternatieve realisatie fase 26                                                                         */
-    #define prmaltp26                   2085 /* Minimale ruimte tbv alternatieve realisatie fase 26                                                                            */
-    #define prmaltg28                   2086 /* Minimale groentijd bij alternatieve realisatie fase 28                                                                         */
-    #define prmaltp28                   2087 /* Minimale ruimte tbv alternatieve realisatie fase 28                                                                            */
-    #define prmaltg31                   2088 /* Minimale groentijd bij alternatieve realisatie fase 31                                                                         */
-    #define prmaltp31                   2089 /* Minimale ruimte tbv alternatieve realisatie fase 31                                                                            */
-    #define prmaltg32                   2090 /* Minimale groentijd bij alternatieve realisatie fase 32                                                                         */
-    #define prmaltg33                   2091 /* Minimale groentijd bij alternatieve realisatie fase 33                                                                         */
-    #define prmaltp3384                 2092 /* Minimale ruimte tbv alternatieve realisatie fasen 33, 84                                                                       */
-    #define prmaltg34                   2093 /* Minimale groentijd bij alternatieve realisatie fase 34                                                                         */
-    #define prmaltg38                   2094 /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
-    #define prmaltp38                   2095 /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
-    #define prmaltg61                   2096 /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
-    #define prmaltp61                   2097 /* Minimale ruimte tbv alternatieve realisatie fase 61                                                                            */
-    #define prmaltg62                   2098 /* Minimale groentijd bij alternatieve realisatie fase 62                                                                         */
-    #define prmaltp62                   2099 /* Minimale ruimte tbv alternatieve realisatie fase 62                                                                            */
-    #define prmaltg67                   2100 /* Minimale groentijd bij alternatieve realisatie fase 67                                                                         */
-    #define prmaltp67                   2101 /* Minimale ruimte tbv alternatieve realisatie fase 67                                                                            */
-    #define prmaltg68                   2102 /* Minimale groentijd bij alternatieve realisatie fase 68                                                                         */
-    #define prmaltp68                   2103 /* Minimale ruimte tbv alternatieve realisatie fase 68                                                                            */
-    #define prmaltg81                   2104 /* Minimale groentijd bij alternatieve realisatie fase 81                                                                         */
-    #define prmaltp81                   2105 /* Minimale ruimte tbv alternatieve realisatie fase 81                                                                            */
-    #define prmaltg82                   2106 /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
-    #define prmaltp82                   2107 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
-    #define prmaltg84                   2108 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
-    #define prmstarprogdef              2109 /* Default star programma                                                                                                         */
-    #define prmttxconfidence15          2110
-    #define prmlatencyminendsg          2111
+    #define prmsiexgrperc33             2041 /* Extra groen percentage tov. TFG voor senioreningreep op fase 33                                                                */
+    #define prmsiexgrperc34             2042 /* Extra groen percentage tov. TFG voor senioreningreep op fase 34                                                                */
+    #define prmmaxtvgvlog               2043 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
+    #define prmmaxtfbvlog               2044 /* Parameter VLOG max. wachttijd na aanvraag                                                                                      */
+    #define prmmlfpr02                  2045 /* Maximaal aantal modules vooruit fase 02                                                                                        */
+    #define prmmlfpr03                  2046 /* Maximaal aantal modules vooruit fase 03                                                                                        */
+    #define prmmlfpr05                  2047 /* Maximaal aantal modules vooruit fase 05                                                                                        */
+    #define prmmlfpr08                  2048 /* Maximaal aantal modules vooruit fase 08                                                                                        */
+    #define prmmlfpr09                  2049 /* Maximaal aantal modules vooruit fase 09                                                                                        */
+    #define prmmlfpr11                  2050 /* Maximaal aantal modules vooruit fase 11                                                                                        */
+    #define prmmlfpr21                  2051 /* Maximaal aantal modules vooruit fase 21                                                                                        */
+    #define prmmlfpr22                  2052 /* Maximaal aantal modules vooruit fase 22                                                                                        */
+    #define prmmlfpr24                  2053 /* Maximaal aantal modules vooruit fase 24                                                                                        */
+    #define prmmlfpr26                  2054 /* Maximaal aantal modules vooruit fase 26                                                                                        */
+    #define prmmlfpr28                  2055 /* Maximaal aantal modules vooruit fase 28                                                                                        */
+    #define prmmlfpr31                  2056 /* Maximaal aantal modules vooruit fase 31                                                                                        */
+    #define prmmlfpr32                  2057 /* Maximaal aantal modules vooruit fase 32                                                                                        */
+    #define prmmlfpr33                  2058 /* Maximaal aantal modules vooruit fase 33                                                                                        */
+    #define prmmlfpr34                  2059 /* Maximaal aantal modules vooruit fase 34                                                                                        */
+    #define prmmlfpr38                  2060 /* Maximaal aantal modules vooruit fase 38                                                                                        */
+    #define prmmlfpr61                  2061 /* Maximaal aantal modules vooruit fase 61                                                                                        */
+    #define prmmlfpr62                  2062 /* Maximaal aantal modules vooruit fase 62                                                                                        */
+    #define prmmlfpr67                  2063 /* Maximaal aantal modules vooruit fase 67                                                                                        */
+    #define prmmlfpr68                  2064 /* Maximaal aantal modules vooruit fase 68                                                                                        */
+    #define prmmlfpr81                  2065 /* Maximaal aantal modules vooruit fase 81                                                                                        */
+    #define prmmlfpr82                  2066 /* Maximaal aantal modules vooruit fase 82                                                                                        */
+    #define prmmlfpr84                  2067 /* Maximaal aantal modules vooruit fase 84                                                                                        */
+    #define prmaltg02                   2068 /* Minimale groentijd bij alternatieve realisatie fase 02                                                                         */
+    #define prmaltp02                   2069 /* Minimale ruimte tbv alternatieve realisatie fase 02                                                                            */
+    #define prmaltg03                   2070 /* Minimale groentijd bij alternatieve realisatie fase 03                                                                         */
+    #define prmaltp03                   2071 /* Minimale ruimte tbv alternatieve realisatie fase 03                                                                            */
+    #define prmaltg05                   2072 /* Minimale groentijd bij alternatieve realisatie fase 05                                                                         */
+    #define prmaltp05                   2073 /* Minimale ruimte tbv alternatieve realisatie fase 05                                                                            */
+    #define prmaltg08                   2074 /* Minimale groentijd bij alternatieve realisatie fase 08                                                                         */
+    #define prmaltp08                   2075 /* Minimale ruimte tbv alternatieve realisatie fase 08                                                                            */
+    #define prmaltg09                   2076 /* Minimale groentijd bij alternatieve realisatie fase 09                                                                         */
+    #define prmaltp09                   2077 /* Minimale ruimte tbv alternatieve realisatie fase 09                                                                            */
+    #define prmaltg11                   2078 /* Minimale groentijd bij alternatieve realisatie fase 11                                                                         */
+    #define prmaltp11                   2079 /* Minimale ruimte tbv alternatieve realisatie fase 11                                                                            */
+    #define prmaltg21                   2080 /* Minimale groentijd bij alternatieve realisatie fase 21                                                                         */
+    #define prmaltp21                   2081 /* Minimale ruimte tbv alternatieve realisatie fase 21                                                                            */
+    #define prmaltg22                   2082 /* Minimale groentijd bij alternatieve realisatie fase 22                                                                         */
+    #define prmaltp2232                 2083 /* Minimale ruimte tbv alternatieve realisatie fasen 22, 32                                                                       */
+    #define prmaltg24                   2084 /* Minimale groentijd bij alternatieve realisatie fase 24                                                                         */
+    #define prmaltp2434                 2085 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
+    #define prmaltg26                   2086 /* Minimale groentijd bij alternatieve realisatie fase 26                                                                         */
+    #define prmaltp26                   2087 /* Minimale ruimte tbv alternatieve realisatie fase 26                                                                            */
+    #define prmaltg28                   2088 /* Minimale groentijd bij alternatieve realisatie fase 28                                                                         */
+    #define prmaltp28                   2089 /* Minimale ruimte tbv alternatieve realisatie fase 28                                                                            */
+    #define prmaltg31                   2090 /* Minimale groentijd bij alternatieve realisatie fase 31                                                                         */
+    #define prmaltp31                   2091 /* Minimale ruimte tbv alternatieve realisatie fase 31                                                                            */
+    #define prmaltg32                   2092 /* Minimale groentijd bij alternatieve realisatie fase 32                                                                         */
+    #define prmaltg33                   2093 /* Minimale groentijd bij alternatieve realisatie fase 33                                                                         */
+    #define prmaltp3384                 2094 /* Minimale ruimte tbv alternatieve realisatie fasen 33, 84                                                                       */
+    #define prmaltg34                   2095 /* Minimale groentijd bij alternatieve realisatie fase 34                                                                         */
+    #define prmaltg38                   2096 /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
+    #define prmaltp38                   2097 /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
+    #define prmaltg61                   2098 /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
+    #define prmaltp61                   2099 /* Minimale ruimte tbv alternatieve realisatie fase 61                                                                            */
+    #define prmaltg62                   2100 /* Minimale groentijd bij alternatieve realisatie fase 62                                                                         */
+    #define prmaltp62                   2101 /* Minimale ruimte tbv alternatieve realisatie fase 62                                                                            */
+    #define prmaltg67                   2102 /* Minimale groentijd bij alternatieve realisatie fase 67                                                                         */
+    #define prmaltp67                   2103 /* Minimale ruimte tbv alternatieve realisatie fase 67                                                                            */
+    #define prmaltg68                   2104 /* Minimale groentijd bij alternatieve realisatie fase 68                                                                         */
+    #define prmaltp68                   2105 /* Minimale ruimte tbv alternatieve realisatie fase 68                                                                            */
+    #define prmaltg81                   2106 /* Minimale groentijd bij alternatieve realisatie fase 81                                                                         */
+    #define prmaltp81                   2107 /* Minimale ruimte tbv alternatieve realisatie fase 81                                                                            */
+    #define prmaltg82                   2108 /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
+    #define prmaltp82                   2109 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
+    #define prmaltg84                   2110 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
+    #define prmstarprogdef              2111 /* Default star programma                                                                                                         */
+    #define prmttxconfidence15          2112
+    #define prmlatencyminendsg          2113
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
-    #define prmtestdsivert              2112 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
-    #define prmtestdsilyn               2113 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
-    #define prmtestdsicat               2114 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
-    #define PRMMAX1                     2115
+    #define prmtestdsivert              2114 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
+    #define prmtestdsilyn               2115 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
+    #define prmtestdsicat               2116 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
+    #define PRMMAX1                     2117
 #else
-    #define PRMMAX1                     2112
+    #define PRMMAX1                     2114
 #endif
 
 /* Selectieve detectie */

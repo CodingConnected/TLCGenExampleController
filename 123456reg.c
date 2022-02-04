@@ -119,6 +119,8 @@ mulv C_counter_old[CTMAX];
 
 void PreApplication(void)
 {
+    int fc;
+
     /* bepalen of regeling mag omschakelen */
     IH[homschtegenh] = FALSE;
 
@@ -154,6 +156,22 @@ void PreApplication(void)
 
     /* Robuuste Groenverdeler */
     IH[hrgvact] = SCH[schrgv];
+
+    /* School ingreep */
+    RT[tdbsidk33a] = !D[dk33a];
+    RT[tdbsidk33b] = !D[dk33b];
+    RT[tdbsidk34a] = !D[dk34a];
+    RT[tdbsidk34b] = !D[dk34b];
+    IH[hschoolingreepdk33a] = D[dk33a] && !(RT[tdbsidk33a] || T[tdbsidk33a]) && !(CIF_IS[dk33a] >= CIF_DET_STORING) && (R[fc33] || FG[fc33] || H[hschoolingreepdk33a]) || TDH[dk33a] && !(CIF_IS[dk33a] >= CIF_DET_STORING) && H[hschoolingreepdk33a];
+    IH[hschoolingreepdk33b] = D[dk33b] && !(RT[tdbsidk33b] || T[tdbsidk33b]) && !(CIF_IS[dk33b] >= CIF_DET_STORING) && (R[fc33] || FG[fc33] || H[hschoolingreepdk33b]) || TDH[dk33b] && !(CIF_IS[dk33b] >= CIF_DET_STORING) && H[hschoolingreepdk33b];
+    IH[hschoolingreepdk34a] = D[dk34a] && !(RT[tdbsidk34a] || T[tdbsidk34a]) && !(CIF_IS[dk34a] >= CIF_DET_STORING) && (R[fc34] || FG[fc34] || H[hschoolingreepdk34a]) || TDH[dk34a] && !(CIF_IS[dk34a] >= CIF_DET_STORING) && H[hschoolingreepdk34a];
+    IH[hschoolingreepdk34b] = D[dk34b] && !(RT[tdbsidk34b] || T[tdbsidk34b]) && !(CIF_IS[dk34b] >= CIF_DET_STORING) && (R[fc34] || FG[fc34] || H[hschoolingreepdk34b]) || TDH[dk34b] && !(CIF_IS[dk34b] >= CIF_DET_STORING) && H[hschoolingreepdk34b];
+
+    /* Reset BITs senioren ingreep */
+    for (fc = 0; fc < FCMAX; ++fc)
+    {
+        if (US_type[fc] & VTG_type) RW[fc] &= ~BIT7;
+    }
 
     if (SML && ML == ML1 && (MM[mstarprog] == 0))
     {
@@ -1059,6 +1077,10 @@ void Maxgroen(void)
         CIF_GUS[usrgv] = FALSE;
     }
 
+    /* Seniorengroen (percentage van TFG extra als WG) */
+    if (SCH[schsi33]) SeniorenGroen(fc33, dk33a, tdbsiexgrdk33a, dk33b, tdbsiexgrdk33b, prmsiexgrperc33, hsiexgr33, tsiexgr33, tnlsgd3334, END);
+    if (SCH[schsi34]) SeniorenGroen(fc34, dk34a, tdbsiexgrdk34a, dk34b, tdbsiexgrdk34b, prmsiexgrperc34, hsiexgr34, tsiexgr34, tnlsgd3433, END);
+
     /* Bij inlopen, inlopende richting in WG houden t.b.v. eventuele aanvraag naloop in tegenrichting */
     RW[fc32] |= T[tinl3231] ? BIT2 : 0;
     RW[fc31] |= T[tinl3132] ? BIT2 : 0;
@@ -1263,6 +1285,16 @@ void Meetkriterium(void)
                                  trgrd24_3_d24_2, trgvd24_3_d24_2,
                                  hrgvd24_3_d24_2), (mulv)PRM[prmmkrgd24_3],
                                  (count)END);
+
+    /* School ingreep: reset BITs */
+    RW[fc33] &= ~BIT8;
+    RW[fc34] &= ~BIT8;
+
+    /* School ingreep: set RW BIT8 */
+    if (SCH[schschoolingreep33] && H[hschoolingreepdk33a] && T[tschoolingreepmaxg33]) RW[fc33] |= BIT8;
+    if (SCH[schschoolingreep33] && H[hschoolingreepdk33b] && T[tschoolingreepmaxg33]) RW[fc33] |= BIT8;
+    if (SCH[schschoolingreep34] && H[hschoolingreepdk34a] && T[tschoolingreepmaxg34]) RW[fc34] |= BIT8;
+    if (SCH[schschoolingreep34] && H[hschoolingreepdk34b] && T[tschoolingreepmaxg34]) RW[fc34] |= BIT8;
 
     #ifndef NO_RIS
     for (fc = 0; fc < FCMAX; ++fc)
@@ -1779,6 +1811,12 @@ void RealisatieAfhandeling(void)
         YM[fc] &= ~BIT5;
         YM[fc] |= SML && PG[fc] ? BIT5 : FALSE;
     }
+
+    /* School ingreep: bijhouden max groen & vasthouden naloop tijd */
+    RT[tschoolingreepmaxg33] = SG[fc33];
+    RT[tschoolingreepmaxg34] = SG[fc34];
+    HT[tnlsgd3334] = T[tschoolingreepmaxg33] && CV[fc33] && G[fc33] && IH[hschoolingreepdk33a];
+    HT[tnlsgd3433] = T[tschoolingreepmaxg34] && CV[fc34] && G[fc34] && IH[hschoolingreepdk34a];
 
     #ifndef NO_TIMETOX
     if (SCH[schconfidence15fix])
@@ -2667,6 +2705,12 @@ void system_application(void)
     PRIO_teller(cvchd62, schcovuber);
     PRIO_teller(cvchd67, schcovuber);
     PRIO_teller(cvchd68, schcovuber);
+
+    /* School ingreep: knipperen wachtlicht */
+    if (SCH[schschoolingreep33]) CIF_GUS[uswtk33a] = CIF_GUS[uswtk33a] && !(IH[hschoolingreepdk33a] && Knipper_1Hz) || G[fc33] && D[dk33a] && IH[hschoolingreepdk33a] && Knipper_1Hz;
+    if (SCH[schschoolingreep33]) CIF_GUS[uswtk33b] = CIF_GUS[uswtk33b] && !(IH[hschoolingreepdk33b] && Knipper_1Hz) || G[fc33] && D[dk33b] && IH[hschoolingreepdk33b] && Knipper_1Hz;
+    if (SCH[schschoolingreep34]) CIF_GUS[uswtk34a] = CIF_GUS[uswtk34a] && !(IH[hschoolingreepdk34a] && Knipper_1Hz) || G[fc34] && D[dk34a] && IH[hschoolingreepdk34a] && Knipper_1Hz;
+    if (SCH[schschoolingreep34]) CIF_GUS[uswtk34b] = CIF_GUS[uswtk34b] && !(IH[hschoolingreepdk34b] && Knipper_1Hz) || G[fc34] && D[dk34b] && IH[hschoolingreepdk34b] && Knipper_1Hz;
 
     #ifndef NO_RIS
         #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST)
