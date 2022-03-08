@@ -57,7 +57,7 @@
     <SynchronisatiesType>RealFunc</SynchronisatiesType>
     <RealFuncBepaalRealisatieTijdenAltijd>true</RealFuncBepaalRealisatieTijdenAltijd>
     <ExtraMeeverlengenInWG>false</ExtraMeeverlengenInWG>
-    <TypeGroentijden>MaxGroentijden</TypeGroentijden>
+    <TypeGroentijden>VerlengGroentijden</TypeGroentijden>
     <AansturingWaitsignalen>DrukknopGebruik</AansturingWaitsignalen>
     <WachttijdvoorspellerNietHalterenMax>21</WachttijdvoorspellerNietHalterenMax>
     <WachttijdvoorspellerNietHalterenMin>5</WachttijdvoorspellerNietHalterenMin>
@@ -78,13 +78,13 @@
     <ToevoegenOVM>true</ToevoegenOVM>
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>false</GenererenCyclustijdMeting>
-    <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
+    <TVGAMaxAlsDefaultGroentijdSet>false</TVGAMaxAlsDefaultGroentijdSet>
     <TDHAMaxToepassen>true</TDHAMaxToepassen>
-    <TLCGenVersie>0.10.5.0</TLCGenVersie>
+    <TLCGenVersie>0.10.6.0</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm1</Naam>
+          <Naam>1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -99,7 +99,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm2</Naam>
+          <Naam>2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -114,7 +114,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm3</Naam>
+          <Naam>3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -129,7 +129,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm4</Naam>
+          <Naam>4</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -144,7 +144,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm5</Naam>
+          <Naam>5</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -159,7 +159,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm6</Naam>
+          <Naam>6</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -174,7 +174,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>segm7</Naam>
+          <Naam>7</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -290,9 +290,9 @@
     </FixatieData>
     <Versie>
       <Versie>1.0.0</Versie>
-      <Datum>2022-01-22T00:00:00</Datum>
+      <Datum>2022-03-08T00:00:00</Datum>
       <Ontwerper>Cyril</Ontwerper>
-      <Commentaar>Nieuwe versie TLCGen (0.10.5.0)</Commentaar>
+      <Commentaar>Nieuwe versie TLCGen (0.10.6.0)</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -3932,10 +3932,10 @@
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
       <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
-      <SchoolIngreep>Nooit</SchoolIngreep>
+      <SchoolIngreep>SchUit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>500</SchoolIngreepMaximumGroen>
       <SchoolIngreepBezetTijd>60</SchoolIngreepBezetTijd>
-      <SeniorenIngreep>Nooit</SeniorenIngreep>
+      <SeniorenIngreep>SchUit</SeniorenIngreep>
       <SeniorenIngreepBezetTijd>30</SeniorenIngreepBezetTijd>
       <SeniorenIngreepExtraGroenPercentage>50</SeniorenIngreepExtraGroenPercentage>
       <Detectoren>
@@ -4162,10 +4162,10 @@
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
       <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
-      <SchoolIngreep>Nooit</SchoolIngreep>
+      <SchoolIngreep>SchUit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>500</SchoolIngreepMaximumGroen>
       <SchoolIngreepBezetTijd>60</SchoolIngreepBezetTijd>
-      <SeniorenIngreep>Nooit</SeniorenIngreep>
+      <SeniorenIngreep>SchUit</SeniorenIngreep>
       <SeniorenIngreepBezetTijd>30</SeniorenIngreepBezetTijd>
       <SeniorenIngreepExtraGroenPercentage>50</SeniorenIngreepExtraGroenPercentage>
       <Detectoren>
@@ -7371,8 +7371,8 @@
   </InterSignaalGroep>
   <GroentijdenSets>
     <GroentijdenSet>
-      <Naam>MG1</Naam>
-      <Type>MaxGroentijden</Type>
+      <Naam>VG1</Naam>
+      <Type>VerlengGroentijden</Type>
       <Groentijd>
         <FaseCyclus>02</FaseCyclus>
         <Waarde>200</Waarde>
@@ -7467,8 +7467,8 @@
       </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
-      <Naam>MG2</Naam>
-      <Type>MaxGroentijden</Type>
+      <Naam>VG2</Naam>
+      <Type>VerlengGroentijden</Type>
       <Groentijd>
         <FaseCyclus>02</FaseCyclus>
         <Waarde>200</Waarde>
@@ -7563,8 +7563,8 @@
       </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
-      <Naam>MG3</Naam>
-      <Type>MaxGroentijden</Type>
+      <Naam>VG3</Naam>
+      <Type>VerlengGroentijden</Type>
       <Groentijd>
         <FaseCyclus>02</FaseCyclus>
         <Waarde>200</Waarde>
@@ -7659,8 +7659,8 @@
       </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
-      <Naam>MG4</Naam>
-      <Type>MaxGroentijden</Type>
+      <Naam>VG4</Naam>
+      <Type>VerlengGroentijden</Type>
       <Groentijd>
         <FaseCyclus>02</FaseCyclus>
         <Waarde>300</Waarde>
@@ -7755,8 +7755,8 @@
       </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
-      <Naam>MG5</Naam>
-      <Type>MaxGroentijden</Type>
+      <Naam>VG5</Naam>
+      <Type>VerlengGroentijden</Type>
       <Groentijd>
         <FaseCyclus>02</FaseCyclus>
         <Waarde>300</Waarde>
@@ -7851,8 +7851,8 @@
       </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
-      <Naam>MG6</Naam>
-      <Type>MaxGroentijden</Type>
+      <Naam>VG6</Naam>
+      <Type>VerlengGroentijden</Type>
       <Groentijd>
         <FaseCyclus>02</FaseCyclus>
         <Waarde>300</Waarde>
@@ -7947,8 +7947,8 @@
       </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
-      <Naam>MG7</Naam>
-      <Type>MaxGroentijden</Type>
+      <Naam>VG7</Naam>
+      <Type>VerlengGroentijden</Type>
       <Groentijd>
         <FaseCyclus>02</FaseCyclus>
         <Waarde>300</Waarde>
@@ -8120,6 +8120,22 @@
         <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
+        <FaseCyclus>05</FaseCyclus>
+        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+      </FaseCyclusAlternatiefPerBlok>
+      <FaseCyclusAlternatiefPerBlok>
+        <FaseCyclus>08</FaseCyclus>
+        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+      </FaseCyclusAlternatiefPerBlok>
+      <FaseCyclusAlternatiefPerBlok>
+        <FaseCyclus>09</FaseCyclus>
+        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+      </FaseCyclusAlternatiefPerBlok>
+      <FaseCyclusAlternatiefPerBlok>
+        <FaseCyclus>11</FaseCyclus>
+        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+      </FaseCyclusAlternatiefPerBlok>
+      <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>84</FaseCyclus>
         <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
@@ -8187,27 +8203,11 @@
         <FaseCyclus>21</FaseCyclus>
         <BitWiseBlokAlternatief>1023</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
-      <FaseCyclusAlternatiefPerBlok>
-        <FaseCyclus>11</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
-      </FaseCyclusAlternatiefPerBlok>
-      <FaseCyclusAlternatiefPerBlok>
-        <FaseCyclus>09</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
-      </FaseCyclusAlternatiefPerBlok>
-      <FaseCyclusAlternatiefPerBlok>
-        <FaseCyclus>08</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
-      </FaseCyclusAlternatiefPerBlok>
-      <FaseCyclusAlternatiefPerBlok>
-        <FaseCyclus>05</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
-      </FaseCyclusAlternatiefPerBlok>
     </AlternatievenPerBlok>
   </AlternatievenPerBlokData>
   <PeriodenData>
     <GebruikPeriodenNamen>false</GebruikPeriodenNamen>
-    <DefaultPeriodeGroentijdenSet>MG1</DefaultPeriodeGroentijdenSet>
+    <DefaultPeriodeGroentijdenSet>VG1</DefaultPeriodeGroentijdenSet>
     <DefaultPeriodeNaam>Nacht periode</DefaultPeriodeNaam>
     <DefaultPeriodeBitmapData>
       <Naam>perdef</Naam>
@@ -8247,7 +8247,7 @@
         <Naam>dag</Naam>
         <Type>Groentijden</Type>
         <DagCode>8</DagCode>
-        <GroentijdenSet>MG2</GroentijdenSet>
+        <GroentijdenSet>VG2</GroentijdenSet>
         <Commentaar>Dag periode</Commentaar>
         <BitmapData>
           <Naam>per1</Naam>
@@ -8268,7 +8268,7 @@
         <Naam>ochtend</Naam>
         <Type>Groentijden</Type>
         <DagCode>8</DagCode>
-        <GroentijdenSet>MG3</GroentijdenSet>
+        <GroentijdenSet>VG3</GroentijdenSet>
         <Commentaar>Ochtendspits</Commentaar>
         <BitmapData>
           <Naam>per2</Naam>
@@ -8289,7 +8289,7 @@
         <Naam>avond</Naam>
         <Type>Groentijden</Type>
         <DagCode>8</DagCode>
-        <GroentijdenSet>MG4</GroentijdenSet>
+        <GroentijdenSet>VG4</GroentijdenSet>
         <Commentaar>Avondspits</Commentaar>
         <BitmapData>
           <Naam>per3</Naam>
@@ -8310,7 +8310,7 @@
         <Naam>koopavond</Naam>
         <Type>Groentijden</Type>
         <DagCode>4</DagCode>
-        <GroentijdenSet>MG5</GroentijdenSet>
+        <GroentijdenSet>VG5</GroentijdenSet>
         <Commentaar>Koopavond</Commentaar>
         <BitmapData>
           <Naam>per4</Naam>
@@ -8331,7 +8331,7 @@
         <Naam>weekend</Naam>
         <Type>Groentijden</Type>
         <DagCode>9</DagCode>
-        <GroentijdenSet>MG6</GroentijdenSet>
+        <GroentijdenSet>VG6</GroentijdenSet>
         <Commentaar>Weekend</Commentaar>
         <BitmapData>
           <Naam>per5</Naam>
@@ -8352,7 +8352,7 @@
         <Naam>reserve</Naam>
         <Type>Groentijden</Type>
         <DagCode>10</DagCode>
-        <GroentijdenSet>MG7</GroentijdenSet>
+        <GroentijdenSet>VG7</GroentijdenSet>
         <Commentaar>Reserve</Commentaar>
         <BitmapData>
           <Naam>per6</Naam>
@@ -15614,6 +15614,810 @@
         </LaneData>
       </RISFaseCyclusDataModel>
       <RISFaseCyclusDataModel>
+        <FaseCyclus>05</FaseCyclus>
+        <ApproachID>0</ApproachID>
+        <LaneData>
+          <RISFaseCyclusLaneDataModel>
+            <RijstrookIndex>1</RijstrookIndex>
+            <LaneID>4</LaneID>
+            <SystemITF>123456</SystemITF>
+            <SignalGroupName>05</SignalGroupName>
+            <SimulatedStations>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>PASSENGERCAR</Type>
+                <VehicleRole>DEFAULT</VehicleRole>
+                <VehicleSubrole>UNKNOWN</VehicleSubrole>
+                <Prioriteit>false</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>0</Importance>
+                <SimulationData>
+                  <RelatedName>ris051car</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>05</FCNr>
+                </SimulationData>
+                <SignalGroupName>05</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>4</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris051car</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>679</X>
+                      <Y>72</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris051car</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>BUS</Type>
+                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
+                <VehicleSubrole>BUS</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris051bus</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>05</FCNr>
+                </SimulationData>
+                <SignalGroupName>05</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>4</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris051bus</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>695</X>
+                      <Y>72</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris051bus</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>SPECIALVEHICLES</Type>
+                <VehicleRole>EMERGENCY</VehicleRole>
+                <VehicleSubrole>EMERGENCY</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>15</Importance>
+                <SimulationData>
+                  <RelatedName>ris051special</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>NG</FCNr>
+                </SimulationData>
+                <SignalGroupName>05</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>4</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris051special</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>712</X>
+                      <Y>73</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris051special</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>HEAVYTRUCK</Type>
+                <VehicleRole>COMMERCIAL</VehicleRole>
+                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris051heavytruck</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>05</FCNr>
+                </SimulationData>
+                <SignalGroupName>05</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>4</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris051heavytruck</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>727</X>
+                      <Y>73</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris051heavytruck</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+            </SimulatedStations>
+          </RISFaseCyclusLaneDataModel>
+        </LaneData>
+      </RISFaseCyclusDataModel>
+      <RISFaseCyclusDataModel>
+        <FaseCyclus>08</FaseCyclus>
+        <ApproachID>0</ApproachID>
+        <LaneData>
+          <RISFaseCyclusLaneDataModel>
+            <RijstrookIndex>1</RijstrookIndex>
+            <LaneID>5</LaneID>
+            <SystemITF>123456</SystemITF>
+            <SignalGroupName>08</SignalGroupName>
+            <SimulatedStations>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>PASSENGERCAR</Type>
+                <VehicleRole>DEFAULT</VehicleRole>
+                <VehicleSubrole>UNKNOWN</VehicleSubrole>
+                <Prioriteit>false</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>0</Importance>
+                <SimulationData>
+                  <RelatedName>ris081car</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>08</FCNr>
+                </SimulationData>
+                <SignalGroupName>08</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>5</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris081car</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>679</X>
+                      <Y>87</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris081car</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>BUS</Type>
+                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
+                <VehicleSubrole>BUS</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris081bus</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>08</FCNr>
+                </SimulationData>
+                <SignalGroupName>08</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>5</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris081bus</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>695</X>
+                      <Y>86</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris081bus</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>SPECIALVEHICLES</Type>
+                <VehicleRole>EMERGENCY</VehicleRole>
+                <VehicleSubrole>EMERGENCY</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>15</Importance>
+                <SimulationData>
+                  <RelatedName>ris081special</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>NG</FCNr>
+                </SimulationData>
+                <SignalGroupName>08</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>5</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris081special</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>714</X>
+                      <Y>86</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris081special</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>HEAVYTRUCK</Type>
+                <VehicleRole>COMMERCIAL</VehicleRole>
+                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris081heavytruck</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>08</FCNr>
+                </SimulationData>
+                <SignalGroupName>08</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>5</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris081heavytruck</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>730</X>
+                      <Y>85</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris081heavytruck</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+            </SimulatedStations>
+          </RISFaseCyclusLaneDataModel>
+          <RISFaseCyclusLaneDataModel>
+            <RijstrookIndex>2</RijstrookIndex>
+            <LaneID>6</LaneID>
+            <SystemITF>123456</SystemITF>
+            <SignalGroupName>08</SignalGroupName>
+            <SimulatedStations>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>PASSENGERCAR</Type>
+                <VehicleRole>DEFAULT</VehicleRole>
+                <VehicleSubrole>UNKNOWN</VehicleSubrole>
+                <Prioriteit>false</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>0</Importance>
+                <SimulationData>
+                  <RelatedName>ris082car</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>08</FCNr>
+                </SimulationData>
+                <SignalGroupName>08</SignalGroupName>
+                <RijstrookIndex>2</RijstrookIndex>
+                <LaneID>6</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris082car</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>679</X>
+                      <Y>99</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris082car</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>BUS</Type>
+                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
+                <VehicleSubrole>BUS</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris082bus</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>08</FCNr>
+                </SimulationData>
+                <SignalGroupName>08</SignalGroupName>
+                <RijstrookIndex>2</RijstrookIndex>
+                <LaneID>6</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris082bus</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>698</X>
+                      <Y>99</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris082bus</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>SPECIALVEHICLES</Type>
+                <VehicleRole>EMERGENCY</VehicleRole>
+                <VehicleSubrole>EMERGENCY</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>15</Importance>
+                <SimulationData>
+                  <RelatedName>ris082special</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>NG</FCNr>
+                </SimulationData>
+                <SignalGroupName>08</SignalGroupName>
+                <RijstrookIndex>2</RijstrookIndex>
+                <LaneID>6</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris082special</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>711</X>
+                      <Y>99</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris082special</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>HEAVYTRUCK</Type>
+                <VehicleRole>COMMERCIAL</VehicleRole>
+                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris082heavytruck</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>08</FCNr>
+                </SimulationData>
+                <SignalGroupName>08</SignalGroupName>
+                <RijstrookIndex>2</RijstrookIndex>
+                <LaneID>6</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris082heavytruck</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>732</X>
+                      <Y>99</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris082heavytruck</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+            </SimulatedStations>
+          </RISFaseCyclusLaneDataModel>
+        </LaneData>
+      </RISFaseCyclusDataModel>
+      <RISFaseCyclusDataModel>
+        <FaseCyclus>09</FaseCyclus>
+        <ApproachID>0</ApproachID>
+        <LaneData>
+          <RISFaseCyclusLaneDataModel>
+            <RijstrookIndex>1</RijstrookIndex>
+            <LaneID>7</LaneID>
+            <SystemITF>123456</SystemITF>
+            <SignalGroupName>09</SignalGroupName>
+            <SimulatedStations>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>PASSENGERCAR</Type>
+                <VehicleRole>DEFAULT</VehicleRole>
+                <VehicleSubrole>UNKNOWN</VehicleSubrole>
+                <Prioriteit>false</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>0</Importance>
+                <SimulationData>
+                  <RelatedName>ris091car</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>09</FCNr>
+                </SimulationData>
+                <SignalGroupName>09</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>7</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris091car</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>679</X>
+                      <Y>111</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris091car</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>BUS</Type>
+                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
+                <VehicleSubrole>BUS</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris091bus</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>09</FCNr>
+                </SimulationData>
+                <SignalGroupName>09</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>7</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris091bus</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>691</X>
+                      <Y>109</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris091bus</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>SPECIALVEHICLES</Type>
+                <VehicleRole>EMERGENCY</VehicleRole>
+                <VehicleSubrole>EMERGENCY</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>15</Importance>
+                <SimulationData>
+                  <RelatedName>ris091special</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>NG</FCNr>
+                </SimulationData>
+                <SignalGroupName>09</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>7</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris091special</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>711</X>
+                      <Y>111</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris091special</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>HEAVYTRUCK</Type>
+                <VehicleRole>COMMERCIAL</VehicleRole>
+                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris091heavytruck</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>09</FCNr>
+                </SimulationData>
+                <SignalGroupName>09</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>7</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris091heavytruck</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>727</X>
+                      <Y>112</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris091heavytruck</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+            </SimulatedStations>
+          </RISFaseCyclusLaneDataModel>
+        </LaneData>
+      </RISFaseCyclusDataModel>
+      <RISFaseCyclusDataModel>
+        <FaseCyclus>11</FaseCyclus>
+        <ApproachID>0</ApproachID>
+        <LaneData>
+          <RISFaseCyclusLaneDataModel>
+            <RijstrookIndex>1</RijstrookIndex>
+            <LaneID>8</LaneID>
+            <SystemITF>123456</SystemITF>
+            <SignalGroupName>11</SignalGroupName>
+            <SimulatedStations>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>PASSENGERCAR</Type>
+                <VehicleRole>DEFAULT</VehicleRole>
+                <VehicleSubrole>UNKNOWN</VehicleSubrole>
+                <Prioriteit>false</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>0</Importance>
+                <SimulationData>
+                  <RelatedName>ris111car</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>11</FCNr>
+                </SimulationData>
+                <SignalGroupName>11</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>8</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris111car</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>679</X>
+                      <Y>124</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris111car</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>BUS</Type>
+                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
+                <VehicleSubrole>BUS</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris111bus</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>11</FCNr>
+                </SimulationData>
+                <SignalGroupName>11</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>8</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris111bus</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>693</X>
+                      <Y>124</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris111bus</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>SPECIALVEHICLES</Type>
+                <VehicleRole>EMERGENCY</VehicleRole>
+                <VehicleSubrole>EMERGENCY</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>15</Importance>
+                <SimulationData>
+                  <RelatedName>ris111special</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>NG</FCNr>
+                </SimulationData>
+                <SignalGroupName>11</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>8</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris111special</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>707</X>
+                      <Y>124</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris111special</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>HEAVYTRUCK</Type>
+                <VehicleRole>COMMERCIAL</VehicleRole>
+                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris111heavytruck</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>11</FCNr>
+                </SimulationData>
+                <SignalGroupName>11</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>8</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris111heavytruck</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>726</X>
+                      <Y>124</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris111heavytruck</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+            </SimulatedStations>
+          </RISFaseCyclusLaneDataModel>
+        </LaneData>
+      </RISFaseCyclusDataModel>
+      <RISFaseCyclusDataModel>
         <FaseCyclus>84</FaseCyclus>
         <ApproachID>0</ApproachID>
         <LaneData>
@@ -17461,810 +18265,6 @@
           </RISFaseCyclusLaneDataModel>
         </LaneData>
       </RISFaseCyclusDataModel>
-      <RISFaseCyclusDataModel>
-        <FaseCyclus>11</FaseCyclus>
-        <ApproachID>0</ApproachID>
-        <LaneData>
-          <RISFaseCyclusLaneDataModel>
-            <RijstrookIndex>1</RijstrookIndex>
-            <LaneID>8</LaneID>
-            <SystemITF>123456</SystemITF>
-            <SignalGroupName>11</SignalGroupName>
-            <SimulatedStations>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>PASSENGERCAR</Type>
-                <VehicleRole>DEFAULT</VehicleRole>
-                <VehicleSubrole>UNKNOWN</VehicleSubrole>
-                <Prioriteit>false</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>0</Importance>
-                <SimulationData>
-                  <RelatedName>ris111car</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>11</FCNr>
-                </SimulationData>
-                <SignalGroupName>11</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>8</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris111car</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>679</X>
-                      <Y>124</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris111car</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>BUS</Type>
-                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
-                <VehicleSubrole>BUS</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris111bus</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>11</FCNr>
-                </SimulationData>
-                <SignalGroupName>11</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>8</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris111bus</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>693</X>
-                      <Y>124</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris111bus</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>SPECIALVEHICLES</Type>
-                <VehicleRole>EMERGENCY</VehicleRole>
-                <VehicleSubrole>EMERGENCY</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>15</Importance>
-                <SimulationData>
-                  <RelatedName>ris111special</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>NG</FCNr>
-                </SimulationData>
-                <SignalGroupName>11</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>8</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris111special</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>707</X>
-                      <Y>124</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris111special</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>HEAVYTRUCK</Type>
-                <VehicleRole>COMMERCIAL</VehicleRole>
-                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris111heavytruck</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>11</FCNr>
-                </SimulationData>
-                <SignalGroupName>11</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>8</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris111heavytruck</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>726</X>
-                      <Y>124</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris111heavytruck</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-            </SimulatedStations>
-          </RISFaseCyclusLaneDataModel>
-        </LaneData>
-      </RISFaseCyclusDataModel>
-      <RISFaseCyclusDataModel>
-        <FaseCyclus>09</FaseCyclus>
-        <ApproachID>0</ApproachID>
-        <LaneData>
-          <RISFaseCyclusLaneDataModel>
-            <RijstrookIndex>1</RijstrookIndex>
-            <LaneID>7</LaneID>
-            <SystemITF>123456</SystemITF>
-            <SignalGroupName>09</SignalGroupName>
-            <SimulatedStations>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>PASSENGERCAR</Type>
-                <VehicleRole>DEFAULT</VehicleRole>
-                <VehicleSubrole>UNKNOWN</VehicleSubrole>
-                <Prioriteit>false</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>0</Importance>
-                <SimulationData>
-                  <RelatedName>ris091car</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>09</FCNr>
-                </SimulationData>
-                <SignalGroupName>09</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>7</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris091car</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>679</X>
-                      <Y>111</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris091car</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>BUS</Type>
-                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
-                <VehicleSubrole>BUS</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris091bus</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>09</FCNr>
-                </SimulationData>
-                <SignalGroupName>09</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>7</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris091bus</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>691</X>
-                      <Y>109</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris091bus</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>SPECIALVEHICLES</Type>
-                <VehicleRole>EMERGENCY</VehicleRole>
-                <VehicleSubrole>EMERGENCY</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>15</Importance>
-                <SimulationData>
-                  <RelatedName>ris091special</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>NG</FCNr>
-                </SimulationData>
-                <SignalGroupName>09</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>7</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris091special</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>711</X>
-                      <Y>111</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris091special</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>HEAVYTRUCK</Type>
-                <VehicleRole>COMMERCIAL</VehicleRole>
-                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris091heavytruck</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>09</FCNr>
-                </SimulationData>
-                <SignalGroupName>09</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>7</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris091heavytruck</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>727</X>
-                      <Y>112</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris091heavytruck</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-            </SimulatedStations>
-          </RISFaseCyclusLaneDataModel>
-        </LaneData>
-      </RISFaseCyclusDataModel>
-      <RISFaseCyclusDataModel>
-        <FaseCyclus>08</FaseCyclus>
-        <ApproachID>0</ApproachID>
-        <LaneData>
-          <RISFaseCyclusLaneDataModel>
-            <RijstrookIndex>1</RijstrookIndex>
-            <LaneID>5</LaneID>
-            <SystemITF>123456</SystemITF>
-            <SignalGroupName>08</SignalGroupName>
-            <SimulatedStations>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>PASSENGERCAR</Type>
-                <VehicleRole>DEFAULT</VehicleRole>
-                <VehicleSubrole>UNKNOWN</VehicleSubrole>
-                <Prioriteit>false</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>0</Importance>
-                <SimulationData>
-                  <RelatedName>ris081car</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>08</FCNr>
-                </SimulationData>
-                <SignalGroupName>08</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>5</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris081car</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>679</X>
-                      <Y>87</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris081car</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>BUS</Type>
-                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
-                <VehicleSubrole>BUS</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris081bus</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>08</FCNr>
-                </SimulationData>
-                <SignalGroupName>08</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>5</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris081bus</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>695</X>
-                      <Y>86</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris081bus</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>SPECIALVEHICLES</Type>
-                <VehicleRole>EMERGENCY</VehicleRole>
-                <VehicleSubrole>EMERGENCY</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>15</Importance>
-                <SimulationData>
-                  <RelatedName>ris081special</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>NG</FCNr>
-                </SimulationData>
-                <SignalGroupName>08</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>5</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris081special</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>714</X>
-                      <Y>86</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris081special</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>HEAVYTRUCK</Type>
-                <VehicleRole>COMMERCIAL</VehicleRole>
-                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris081heavytruck</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>08</FCNr>
-                </SimulationData>
-                <SignalGroupName>08</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>5</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris081heavytruck</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>730</X>
-                      <Y>85</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris081heavytruck</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-            </SimulatedStations>
-          </RISFaseCyclusLaneDataModel>
-          <RISFaseCyclusLaneDataModel>
-            <RijstrookIndex>2</RijstrookIndex>
-            <LaneID>6</LaneID>
-            <SystemITF>123456</SystemITF>
-            <SignalGroupName>08</SignalGroupName>
-            <SimulatedStations>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>PASSENGERCAR</Type>
-                <VehicleRole>DEFAULT</VehicleRole>
-                <VehicleSubrole>UNKNOWN</VehicleSubrole>
-                <Prioriteit>false</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>0</Importance>
-                <SimulationData>
-                  <RelatedName>ris082car</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>08</FCNr>
-                </SimulationData>
-                <SignalGroupName>08</SignalGroupName>
-                <RijstrookIndex>2</RijstrookIndex>
-                <LaneID>6</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris082car</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>679</X>
-                      <Y>99</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris082car</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>BUS</Type>
-                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
-                <VehicleSubrole>BUS</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris082bus</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>08</FCNr>
-                </SimulationData>
-                <SignalGroupName>08</SignalGroupName>
-                <RijstrookIndex>2</RijstrookIndex>
-                <LaneID>6</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris082bus</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>698</X>
-                      <Y>99</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris082bus</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>SPECIALVEHICLES</Type>
-                <VehicleRole>EMERGENCY</VehicleRole>
-                <VehicleSubrole>EMERGENCY</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>15</Importance>
-                <SimulationData>
-                  <RelatedName>ris082special</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>NG</FCNr>
-                </SimulationData>
-                <SignalGroupName>08</SignalGroupName>
-                <RijstrookIndex>2</RijstrookIndex>
-                <LaneID>6</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris082special</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>711</X>
-                      <Y>99</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris082special</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>HEAVYTRUCK</Type>
-                <VehicleRole>COMMERCIAL</VehicleRole>
-                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris082heavytruck</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>08</FCNr>
-                </SimulationData>
-                <SignalGroupName>08</SignalGroupName>
-                <RijstrookIndex>2</RijstrookIndex>
-                <LaneID>6</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris082heavytruck</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>732</X>
-                      <Y>99</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris082heavytruck</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-            </SimulatedStations>
-          </RISFaseCyclusLaneDataModel>
-        </LaneData>
-      </RISFaseCyclusDataModel>
-      <RISFaseCyclusDataModel>
-        <FaseCyclus>05</FaseCyclus>
-        <ApproachID>0</ApproachID>
-        <LaneData>
-          <RISFaseCyclusLaneDataModel>
-            <RijstrookIndex>1</RijstrookIndex>
-            <LaneID>4</LaneID>
-            <SystemITF>123456</SystemITF>
-            <SignalGroupName>05</SignalGroupName>
-            <SimulatedStations>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>PASSENGERCAR</Type>
-                <VehicleRole>DEFAULT</VehicleRole>
-                <VehicleSubrole>UNKNOWN</VehicleSubrole>
-                <Prioriteit>false</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>0</Importance>
-                <SimulationData>
-                  <RelatedName>ris051car</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>05</FCNr>
-                </SimulationData>
-                <SignalGroupName>05</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>4</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris051car</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>679</X>
-                      <Y>72</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris051car</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>BUS</Type>
-                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
-                <VehicleSubrole>BUS</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris051bus</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>05</FCNr>
-                </SimulationData>
-                <SignalGroupName>05</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>4</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris051bus</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>695</X>
-                      <Y>72</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris051bus</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>SPECIALVEHICLES</Type>
-                <VehicleRole>EMERGENCY</VehicleRole>
-                <VehicleSubrole>EMERGENCY</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>15</Importance>
-                <SimulationData>
-                  <RelatedName>ris051special</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>NG</FCNr>
-                </SimulationData>
-                <SignalGroupName>05</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>4</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris051special</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>712</X>
-                      <Y>73</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris051special</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>HEAVYTRUCK</Type>
-                <VehicleRole>COMMERCIAL</VehicleRole>
-                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris051heavytruck</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>05</FCNr>
-                </SimulationData>
-                <SignalGroupName>05</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>4</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris051heavytruck</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>727</X>
-                      <Y>73</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris051heavytruck</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-            </SimulatedStations>
-          </RISFaseCyclusLaneDataModel>
-        </LaneData>
-      </RISFaseCyclusDataModel>
     </RISFaseCyclusData>
     <RISLaneRequestData>
       <RISLaneRequestDataModel>
@@ -19464,6 +19464,19 @@
             <E2 xsi:nil="true" />
           </SignaalPlanFaseModel>
           <SignaalPlanFaseModel>
+            <FaseCyclus>05</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>47</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
             <FaseCyclus>84</FaseCyclus>
             <A1 xsi:nil="true" />
             <B1>56</B1>
@@ -19723,19 +19736,6 @@
             <D2 xsi:nil="true" />
             <E2 xsi:nil="true" />
           </SignaalPlanFaseModel>
-          <SignaalPlanFaseModel>
-            <FaseCyclus>05</FaseCyclus>
-            <A1 xsi:nil="true" />
-            <B1>41</B1>
-            <C1 xsi:nil="true" />
-            <D1>47</D1>
-            <E1 xsi:nil="true" />
-            <A2 xsi:nil="true" />
-            <B2 xsi:nil="true" />
-            <C2 xsi:nil="true" />
-            <D2 xsi:nil="true" />
-            <E2 xsi:nil="true" />
-          </SignaalPlanFaseModel>
         </Fasen>
       </SignaalPlanModel>
       <SignaalPlanModel>
@@ -19773,6 +19773,19 @@
             <B1>34</B1>
             <C1 xsi:nil="true" />
             <D1>48</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>05</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>56</B1>
+            <C1 xsi:nil="true" />
+            <D1>71</D1>
             <E1 xsi:nil="true" />
             <A2 xsi:nil="true" />
             <B2 xsi:nil="true" />
@@ -20040,19 +20053,6 @@
             <D2 xsi:nil="true" />
             <E2 xsi:nil="true" />
           </SignaalPlanFaseModel>
-          <SignaalPlanFaseModel>
-            <FaseCyclus>05</FaseCyclus>
-            <A1 xsi:nil="true" />
-            <B1>56</B1>
-            <C1 xsi:nil="true" />
-            <D1>71</D1>
-            <E1 xsi:nil="true" />
-            <A2 xsi:nil="true" />
-            <B2 xsi:nil="true" />
-            <C2 xsi:nil="true" />
-            <D2 xsi:nil="true" />
-            <E2 xsi:nil="true" />
-          </SignaalPlanFaseModel>
         </Fasen>
       </SignaalPlanModel>
       <SignaalPlanModel>
@@ -20090,6 +20090,19 @@
             <B1>40</B1>
             <C1 xsi:nil="true" />
             <D1>55</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>05</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>63</B1>
+            <C1 xsi:nil="true" />
+            <D1>78</D1>
             <E1 xsi:nil="true" />
             <A2 xsi:nil="true" />
             <B2 xsi:nil="true" />
@@ -20351,19 +20364,6 @@
             <C1>15</C1>
             <D1>25</D1>
             <E1>25</E1>
-            <A2 xsi:nil="true" />
-            <B2 xsi:nil="true" />
-            <C2 xsi:nil="true" />
-            <D2 xsi:nil="true" />
-            <E2 xsi:nil="true" />
-          </SignaalPlanFaseModel>
-          <SignaalPlanFaseModel>
-            <FaseCyclus>05</FaseCyclus>
-            <A1 xsi:nil="true" />
-            <B1>63</B1>
-            <C1 xsi:nil="true" />
-            <D1>78</D1>
-            <E1 xsi:nil="true" />
             <A2 xsi:nil="true" />
             <B2 xsi:nil="true" />
             <C2 xsi:nil="true" />
@@ -20959,7 +20959,7 @@
         <DynamischHiaatDetector />
       </DynamischHiaatSignalGroupModel>
       <DynamischHiaatSignalGroupModel>
-        <SignalGroupName>68</SignalGroupName>
+        <SignalGroupName>03</SignalGroupName>
         <HasDynamischHiaat>false</HasDynamischHiaat>
         <Opdrempelen>false</Opdrempelen>
         <Snelheid>50 km/u</Snelheid>
@@ -20967,144 +20967,12 @@
         <DynamischHiaatDetector />
       </DynamischHiaatSignalGroupModel>
       <DynamischHiaatSignalGroupModel>
-        <SignalGroupName>67</SignalGroupName>
+        <SignalGroupName>05</SignalGroupName>
         <HasDynamischHiaat>false</HasDynamischHiaat>
         <Opdrempelen>false</Opdrempelen>
         <Snelheid>50 km/u</Snelheid>
         <KijkenNaarKoplus>false</KijkenNaarKoplus>
         <DynamischHiaatDetector />
-      </DynamischHiaatSignalGroupModel>
-      <DynamischHiaatSignalGroupModel>
-        <SignalGroupName>62</SignalGroupName>
-        <HasDynamischHiaat>false</HasDynamischHiaat>
-        <Opdrempelen>false</Opdrempelen>
-        <Snelheid>50 km/u</Snelheid>
-        <KijkenNaarKoplus>false</KijkenNaarKoplus>
-        <DynamischHiaatDetector />
-      </DynamischHiaatSignalGroupModel>
-      <DynamischHiaatSignalGroupModel>
-        <SignalGroupName>61</SignalGroupName>
-        <HasDynamischHiaat>false</HasDynamischHiaat>
-        <Opdrempelen>false</Opdrempelen>
-        <Snelheid>50 km/u</Snelheid>
-        <KijkenNaarKoplus>false</KijkenNaarKoplus>
-        <DynamischHiaatDetector />
-      </DynamischHiaatSignalGroupModel>
-      <DynamischHiaatSignalGroupModel>
-        <SignalGroupName>11</SignalGroupName>
-        <HasDynamischHiaat>true</HasDynamischHiaat>
-        <Opdrempelen>false</Opdrempelen>
-        <Snelheid>50 km/u</Snelheid>
-        <KijkenNaarKoplus>true</KijkenNaarKoplus>
-        <DynamischHiaatDetector>
-          <DynamischHiaatDetectorModel>
-            <SignalGroupName>11</SignalGroupName>
-            <DetectorName>11_1</DetectorName>
-            <Moment1>0</Moment1>
-            <Moment2>0</Moment2>
-            <TDH1>0</TDH1>
-            <TDH2>0</TDH2>
-            <Maxtijd>80</Maxtijd>
-            <SpringStart>false</SpringStart>
-            <VerlengNiet>true</VerlengNiet>
-            <VerlengExtra>false</VerlengExtra>
-            <DirectAftellen>false</DirectAftellen>
-            <SpringGroen>false</SpringGroen>
-          </DynamischHiaatDetectorModel>
-          <DynamischHiaatDetectorModel>
-            <SignalGroupName>11</SignalGroupName>
-            <DetectorName>11_2</DetectorName>
-            <Moment1>0</Moment1>
-            <Moment2>0</Moment2>
-            <TDH1>1</TDH1>
-            <TDH2>1</TDH2>
-            <Maxtijd>100</Maxtijd>
-            <SpringStart>false</SpringStart>
-            <VerlengNiet>false</VerlengNiet>
-            <VerlengExtra>false</VerlengExtra>
-            <DirectAftellen>true</DirectAftellen>
-            <SpringGroen>true</SpringGroen>
-          </DynamischHiaatDetectorModel>
-          <DynamischHiaatDetectorModel>
-            <SignalGroupName>11</SignalGroupName>
-            <DetectorName>11_3</DetectorName>
-            <Moment1>100</Moment1>
-            <Moment2>220</Moment2>
-            <TDH1>20</TDH1>
-            <TDH2>8</TDH2>
-            <Maxtijd>0</Maxtijd>
-            <SpringStart>true</SpringStart>
-            <VerlengNiet>false</VerlengNiet>
-            <VerlengExtra>false</VerlengExtra>
-            <DirectAftellen>true</DirectAftellen>
-            <SpringGroen>false</SpringGroen>
-          </DynamischHiaatDetectorModel>
-          <DynamischHiaatDetectorModel>
-            <SignalGroupName>11</SignalGroupName>
-            <DetectorName>11_4</DetectorName>
-            <Moment1>0</Moment1>
-            <Moment2>0</Moment2>
-            <TDH1>25</TDH1>
-            <TDH2>25</TDH2>
-            <Maxtijd>0</Maxtijd>
-            <SpringStart>false</SpringStart>
-            <VerlengNiet>false</VerlengNiet>
-            <VerlengExtra>false</VerlengExtra>
-            <DirectAftellen>false</DirectAftellen>
-            <SpringGroen>false</SpringGroen>
-          </DynamischHiaatDetectorModel>
-        </DynamischHiaatDetector>
-      </DynamischHiaatSignalGroupModel>
-      <DynamischHiaatSignalGroupModel>
-        <SignalGroupName>09</SignalGroupName>
-        <HasDynamischHiaat>true</HasDynamischHiaat>
-        <Opdrempelen>false</Opdrempelen>
-        <Snelheid>50 km/u</Snelheid>
-        <KijkenNaarKoplus>true</KijkenNaarKoplus>
-        <DynamischHiaatDetector>
-          <DynamischHiaatDetectorModel>
-            <SignalGroupName>09</SignalGroupName>
-            <DetectorName>09_1</DetectorName>
-            <Moment1>0</Moment1>
-            <Moment2>0</Moment2>
-            <TDH1>0</TDH1>
-            <TDH2>0</TDH2>
-            <Maxtijd>80</Maxtijd>
-            <SpringStart>false</SpringStart>
-            <VerlengNiet>true</VerlengNiet>
-            <VerlengExtra>false</VerlengExtra>
-            <DirectAftellen>false</DirectAftellen>
-            <SpringGroen>false</SpringGroen>
-          </DynamischHiaatDetectorModel>
-          <DynamischHiaatDetectorModel>
-            <SignalGroupName>09</SignalGroupName>
-            <DetectorName>09_2</DetectorName>
-            <Moment1>0</Moment1>
-            <Moment2>0</Moment2>
-            <TDH1>1</TDH1>
-            <TDH2>1</TDH2>
-            <Maxtijd>100</Maxtijd>
-            <SpringStart>false</SpringStart>
-            <VerlengNiet>false</VerlengNiet>
-            <VerlengExtra>false</VerlengExtra>
-            <DirectAftellen>true</DirectAftellen>
-            <SpringGroen>true</SpringGroen>
-          </DynamischHiaatDetectorModel>
-          <DynamischHiaatDetectorModel>
-            <SignalGroupName>09</SignalGroupName>
-            <DetectorName>09_3</DetectorName>
-            <Moment1>100</Moment1>
-            <Moment2>220</Moment2>
-            <TDH1>20</TDH1>
-            <TDH2>8</TDH2>
-            <Maxtijd>0</Maxtijd>
-            <SpringStart>true</SpringStart>
-            <VerlengNiet>false</VerlengNiet>
-            <VerlengExtra>false</VerlengExtra>
-            <DirectAftellen>true</DirectAftellen>
-            <SpringGroen>false</SpringGroen>
-          </DynamischHiaatDetectorModel>
-        </DynamischHiaatDetector>
       </DynamischHiaatSignalGroupModel>
       <DynamischHiaatSignalGroupModel>
         <SignalGroupName>08</SignalGroupName>
@@ -21228,7 +21096,58 @@
         </DynamischHiaatDetector>
       </DynamischHiaatSignalGroupModel>
       <DynamischHiaatSignalGroupModel>
-        <SignalGroupName>05</SignalGroupName>
+        <SignalGroupName>09</SignalGroupName>
+        <HasDynamischHiaat>true</HasDynamischHiaat>
+        <Opdrempelen>false</Opdrempelen>
+        <Snelheid>50 km/u</Snelheid>
+        <KijkenNaarKoplus>true</KijkenNaarKoplus>
+        <DynamischHiaatDetector>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>09</SignalGroupName>
+            <DetectorName>09_1</DetectorName>
+            <Moment1>0</Moment1>
+            <Moment2>0</Moment2>
+            <TDH1>0</TDH1>
+            <TDH2>0</TDH2>
+            <Maxtijd>80</Maxtijd>
+            <SpringStart>false</SpringStart>
+            <VerlengNiet>true</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>false</DirectAftellen>
+            <SpringGroen>false</SpringGroen>
+          </DynamischHiaatDetectorModel>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>09</SignalGroupName>
+            <DetectorName>09_2</DetectorName>
+            <Moment1>0</Moment1>
+            <Moment2>0</Moment2>
+            <TDH1>1</TDH1>
+            <TDH2>1</TDH2>
+            <Maxtijd>100</Maxtijd>
+            <SpringStart>false</SpringStart>
+            <VerlengNiet>false</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>true</DirectAftellen>
+            <SpringGroen>true</SpringGroen>
+          </DynamischHiaatDetectorModel>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>09</SignalGroupName>
+            <DetectorName>09_3</DetectorName>
+            <Moment1>100</Moment1>
+            <Moment2>220</Moment2>
+            <TDH1>20</TDH1>
+            <TDH2>8</TDH2>
+            <Maxtijd>0</Maxtijd>
+            <SpringStart>true</SpringStart>
+            <VerlengNiet>false</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>true</DirectAftellen>
+            <SpringGroen>false</SpringGroen>
+          </DynamischHiaatDetectorModel>
+        </DynamischHiaatDetector>
+      </DynamischHiaatSignalGroupModel>
+      <DynamischHiaatSignalGroupModel>
+        <SignalGroupName>68</SignalGroupName>
         <HasDynamischHiaat>false</HasDynamischHiaat>
         <Opdrempelen>false</Opdrempelen>
         <Snelheid>50 km/u</Snelheid>
@@ -21236,12 +21155,93 @@
         <DynamischHiaatDetector />
       </DynamischHiaatSignalGroupModel>
       <DynamischHiaatSignalGroupModel>
-        <SignalGroupName>03</SignalGroupName>
+        <SignalGroupName>67</SignalGroupName>
         <HasDynamischHiaat>false</HasDynamischHiaat>
         <Opdrempelen>false</Opdrempelen>
         <Snelheid>50 km/u</Snelheid>
         <KijkenNaarKoplus>false</KijkenNaarKoplus>
         <DynamischHiaatDetector />
+      </DynamischHiaatSignalGroupModel>
+      <DynamischHiaatSignalGroupModel>
+        <SignalGroupName>62</SignalGroupName>
+        <HasDynamischHiaat>false</HasDynamischHiaat>
+        <Opdrempelen>false</Opdrempelen>
+        <Snelheid>50 km/u</Snelheid>
+        <KijkenNaarKoplus>false</KijkenNaarKoplus>
+        <DynamischHiaatDetector />
+      </DynamischHiaatSignalGroupModel>
+      <DynamischHiaatSignalGroupModel>
+        <SignalGroupName>61</SignalGroupName>
+        <HasDynamischHiaat>false</HasDynamischHiaat>
+        <Opdrempelen>false</Opdrempelen>
+        <Snelheid>50 km/u</Snelheid>
+        <KijkenNaarKoplus>false</KijkenNaarKoplus>
+        <DynamischHiaatDetector />
+      </DynamischHiaatSignalGroupModel>
+      <DynamischHiaatSignalGroupModel>
+        <SignalGroupName>11</SignalGroupName>
+        <HasDynamischHiaat>true</HasDynamischHiaat>
+        <Opdrempelen>false</Opdrempelen>
+        <Snelheid>50 km/u</Snelheid>
+        <KijkenNaarKoplus>true</KijkenNaarKoplus>
+        <DynamischHiaatDetector>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>11</SignalGroupName>
+            <DetectorName>11_1</DetectorName>
+            <Moment1>0</Moment1>
+            <Moment2>0</Moment2>
+            <TDH1>0</TDH1>
+            <TDH2>0</TDH2>
+            <Maxtijd>80</Maxtijd>
+            <SpringStart>false</SpringStart>
+            <VerlengNiet>true</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>false</DirectAftellen>
+            <SpringGroen>false</SpringGroen>
+          </DynamischHiaatDetectorModel>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>11</SignalGroupName>
+            <DetectorName>11_2</DetectorName>
+            <Moment1>0</Moment1>
+            <Moment2>0</Moment2>
+            <TDH1>1</TDH1>
+            <TDH2>1</TDH2>
+            <Maxtijd>100</Maxtijd>
+            <SpringStart>false</SpringStart>
+            <VerlengNiet>false</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>true</DirectAftellen>
+            <SpringGroen>true</SpringGroen>
+          </DynamischHiaatDetectorModel>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>11</SignalGroupName>
+            <DetectorName>11_3</DetectorName>
+            <Moment1>100</Moment1>
+            <Moment2>220</Moment2>
+            <TDH1>20</TDH1>
+            <TDH2>8</TDH2>
+            <Maxtijd>0</Maxtijd>
+            <SpringStart>true</SpringStart>
+            <VerlengNiet>false</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>true</DirectAftellen>
+            <SpringGroen>false</SpringGroen>
+          </DynamischHiaatDetectorModel>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>11</SignalGroupName>
+            <DetectorName>11_4</DetectorName>
+            <Moment1>0</Moment1>
+            <Moment2>0</Moment2>
+            <TDH1>25</TDH1>
+            <TDH2>25</TDH2>
+            <Maxtijd>0</Maxtijd>
+            <SpringStart>false</SpringStart>
+            <VerlengNiet>false</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>false</DirectAftellen>
+            <SpringGroen>false</SpringGroen>
+          </DynamischHiaatDetectorModel>
+        </DynamischHiaatDetector>
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
@@ -21775,9 +21775,30 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruitA</Naam>
+        <Naam>dummyhdkaruit03</Naam>
         <Selectief>false</Selectief>
-        <SumoNaam1>dummyhdkaruitA</SumoNaam1>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit05</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit08</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit09</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -22038,6 +22059,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruitA</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummyhdkaruitA</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummyhdkaruit68</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
@@ -22067,34 +22095,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkaruit11</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit09</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit08</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit05</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit03</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

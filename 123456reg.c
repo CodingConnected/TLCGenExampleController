@@ -8,14 +8,14 @@
 
    BESTAND:   123456reg.c
       CCOL:   11.0
-    TLCGEN:   0.10.5.0
-   CCOLGEN:   0.10.5.0
+    TLCGEN:   0.10.6.0
+   CCOLGEN:   0.10.6.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    22-01-2022   Cyril       Nieuwe versie TLCGen (0.10.5.0)
+ * 1.0.0    08-03-2022   Cyril       Nieuwe versie TLCGen (0.10.6.0)
  *
  ************************************************************************************/
 
@@ -180,15 +180,15 @@ void PreApplication(void)
 
     /* Instellen basis waarde hulpelementen 'geen dynamisch hiaat gebruiken'.
        Dit hulpelement kan in gebruikers code worden gebruikt voor eigen aansturing. */
-    IH[hgeendynhiaat11] = !SCH[schdynhiaat11];
-    IH[hgeendynhiaat09] = !SCH[schdynhiaat09];
     IH[hgeendynhiaat08] = !SCH[schdynhiaat08];
+    IH[hgeendynhiaat09] = !SCH[schdynhiaat09];
+    IH[hgeendynhiaat11] = !SCH[schdynhiaat11];
 
     /* Instellen basis waarde hulpelementen opdrempelen t.b.v. dynamische hiaattijden.
        Dit hulpelement kan in gebruikers code worden gebruikt voor eigen aansturing. */
-    IH[hopdrempelen11] = SCH[schopdrempelen11];
-    IH[hopdrempelen09] = SCH[schopdrempelen09];
     IH[hopdrempelen08] = SCH[schopdrempelen08];
+    IH[hopdrempelen09] = SCH[schopdrempelen09];
+    IH[hopdrempelen11] = SCH[schopdrempelen11];
 
     PreApplication_Add();
     pre_application_halfstar();
@@ -840,159 +840,9 @@ void BepaalRealisatieTijden(void)
     BepaalRealisatieTijden_Add();
 }
 
-void Maxgroen(void)
+void Verlenggroen(void)
 {
     int fc;
-
-    maximumgroentijden_va_arg((count) fc02,
-                              (va_mulv) PRM[prmmg2_02], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_02], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_02], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_02], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_02], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_02], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc02], (va_count) END);
-    maximumgroentijden_va_arg((count) fc03,
-                              (va_mulv) PRM[prmmg2_03], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_03], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_03], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_03], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_03], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_03], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc03], (va_count) END);
-    maximumgroentijden_va_arg((count) fc05,
-                              (va_mulv) PRM[prmmg2_05], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_05], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_05], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_05], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_05], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_05], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc05], (va_count) END);
-    maximumgroentijden_va_arg((count) fc08,
-                              (va_mulv) PRM[prmmg2_08], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_08], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_08], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_08], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_08], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_08], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc08], (va_count) END);
-    maximumgroentijden_va_arg((count) fc09,
-                              (va_mulv) PRM[prmmg2_09], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_09], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_09], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_09], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_09], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_09], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc09], (va_count) END);
-    maximumgroentijden_va_arg((count) fc11,
-                              (va_mulv) PRM[prmmg2_11], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_11], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_11], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_11], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_11], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_11], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc11], (va_count) END);
-    maximumgroentijden_va_arg((count) fc21,
-                              (va_mulv) PRM[prmmg2_21], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_21], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_21], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_21], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_21], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_21], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc21], (va_count) END);
-    maximumgroentijden_va_arg((count) fc22,
-                              (va_mulv) PRM[prmmg2_22], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_22], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_22], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_22], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_22], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_22], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc22], (va_count) END);
-    maximumgroentijden_va_arg((count) fc24,
-                              (va_mulv) PRM[prmmg2_24], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_24], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_24], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_24], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_24], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_24], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc24], (va_count) END);
-    maximumgroentijden_va_arg((count) fc26,
-                              (va_mulv) PRM[prmmg2_26], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_26], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_26], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_26], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_26], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_26], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc26], (va_count) END);
-    maximumgroentijden_va_arg((count) fc28,
-                              (va_mulv) PRM[prmmg2_28], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_28], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_28], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_28], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_28], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_28], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc28], (va_count) END);
-    TVG_max[fc31] = 0;
-    TVG_max[fc32] = 0;
-    TVG_max[fc33] = 0;
-    TVG_max[fc34] = 0;
-    TVG_max[fc38] = 0;
-    maximumgroentijden_va_arg((count) fc61,
-                              (va_mulv) PRM[prmmg2_61], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_61], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_61], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_61], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_61], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_61], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc61], (va_count) END);
-    maximumgroentijden_va_arg((count) fc62,
-                              (va_mulv) PRM[prmmg2_62], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_62], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_62], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_62], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_62], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_62], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc62], (va_count) END);
-    maximumgroentijden_va_arg((count) fc67,
-                              (va_mulv) PRM[prmmg2_67], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_67], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_67], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_67], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_67], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_67], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc67], (va_count) END);
-    maximumgroentijden_va_arg((count) fc68,
-                              (va_mulv) PRM[prmmg2_68], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_68], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_68], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_68], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_68], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_68], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc68], (va_count) END);
-    maximumgroentijden_va_arg((count) fc81,
-                              (va_mulv) PRM[prmmg2_81], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_81], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_81], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_81], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_81], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_81], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc81], (va_count) END);
-    maximumgroentijden_va_arg((count) fc82,
-                              (va_mulv) PRM[prmmg2_82], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_82], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_82], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_82], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_82], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_82], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc82], (va_count) END);
-    maximumgroentijden_va_arg((count) fc84,
-                              (va_mulv) PRM[prmmg2_84], (va_mulv) (MM[mperiod] == 1),
-                              (va_mulv) PRM[prmmg3_84], (va_mulv) (MM[mperiod] == 2),
-                              (va_mulv) PRM[prmmg4_84], (va_mulv) (MM[mperiod] == 3),
-                              (va_mulv) PRM[prmmg5_84], (va_mulv) (MM[mperiod] == 4),
-                              (va_mulv) PRM[prmmg6_84], (va_mulv) (MM[mperiod] == 5),
-                              (va_mulv) PRM[prmmg7_84], (va_mulv) (MM[mperiod] == 6),
-                              (va_mulv) TVGA_max[fc84], (va_count) END);
 
     /* Nalopen */
     /* ------- */
@@ -1025,6 +875,156 @@ void Maxgroen(void)
     NaloopFGDet(fc82, fc81, tnlfgd8281, d82_1, END);
     NaloopEGDet(fc82, fc81, tnlegd8281, d82_1, END);
 
+
+    verlenggroentijden_va_arg((count) fc02,
+                              (va_mulv) PRM[prmvg2_02], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_02], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_02], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_02], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_02], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_02], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_02], (va_count) END);
+    verlenggroentijden_va_arg((count) fc03,
+                              (va_mulv) PRM[prmvg2_03], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_03], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_03], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_03], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_03], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_03], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_03], (va_count) END);
+    verlenggroentijden_va_arg((count) fc05,
+                              (va_mulv) PRM[prmvg2_05], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_05], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_05], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_05], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_05], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_05], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_05], (va_count) END);
+    verlenggroentijden_va_arg((count) fc08,
+                              (va_mulv) PRM[prmvg2_08], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_08], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_08], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_08], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_08], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_08], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_08], (va_count) END);
+    verlenggroentijden_va_arg((count) fc09,
+                              (va_mulv) PRM[prmvg2_09], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_09], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_09], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_09], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_09], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_09], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_09], (va_count) END);
+    verlenggroentijden_va_arg((count) fc11,
+                              (va_mulv) PRM[prmvg2_11], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_11], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_11], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_11], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_11], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_11], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_11], (va_count) END);
+    verlenggroentijden_va_arg((count) fc21,
+                              (va_mulv) PRM[prmvg2_21], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_21], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_21], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_21], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_21], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_21], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_21], (va_count) END);
+    verlenggroentijden_va_arg((count) fc22,
+                              (va_mulv) PRM[prmvg2_22], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_22], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_22], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_22], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_22], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_22], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_22], (va_count) END);
+    verlenggroentijden_va_arg((count) fc24,
+                              (va_mulv) PRM[prmvg2_24], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_24], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_24], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_24], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_24], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_24], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_24], (va_count) END);
+    verlenggroentijden_va_arg((count) fc26,
+                              (va_mulv) PRM[prmvg2_26], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_26], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_26], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_26], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_26], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_26], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_26], (va_count) END);
+    verlenggroentijden_va_arg((count) fc28,
+                              (va_mulv) PRM[prmvg2_28], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_28], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_28], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_28], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_28], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_28], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_28], (va_count) END);
+    TVG_max[fc31] = 0;
+    TVG_max[fc32] = 0;
+    TVG_max[fc33] = 0;
+    TVG_max[fc34] = 0;
+    TVG_max[fc38] = 0;
+    verlenggroentijden_va_arg((count) fc61,
+                              (va_mulv) PRM[prmvg2_61], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_61], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_61], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_61], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_61], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_61], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_61], (va_count) END);
+    verlenggroentijden_va_arg((count) fc62,
+                              (va_mulv) PRM[prmvg2_62], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_62], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_62], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_62], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_62], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_62], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_62], (va_count) END);
+    verlenggroentijden_va_arg((count) fc67,
+                              (va_mulv) PRM[prmvg2_67], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_67], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_67], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_67], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_67], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_67], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_67], (va_count) END);
+    verlenggroentijden_va_arg((count) fc68,
+                              (va_mulv) PRM[prmvg2_68], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_68], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_68], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_68], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_68], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_68], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_68], (va_count) END);
+    verlenggroentijden_va_arg((count) fc81,
+                              (va_mulv) PRM[prmvg2_81], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_81], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_81], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_81], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_81], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_81], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_81], (va_count) END);
+    verlenggroentijden_va_arg((count) fc82,
+                              (va_mulv) PRM[prmvg2_82], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_82], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_82], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_82], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_82], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_82], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_82], (va_count) END);
+    verlenggroentijden_va_arg((count) fc84,
+                              (va_mulv) PRM[prmvg2_84], (va_mulv) (MM[mperiod] == 1),
+                              (va_mulv) PRM[prmvg3_84], (va_mulv) (MM[mperiod] == 2),
+                              (va_mulv) PRM[prmvg4_84], (va_mulv) (MM[mperiod] == 3),
+                              (va_mulv) PRM[prmvg5_84], (va_mulv) (MM[mperiod] == 4),
+                              (va_mulv) PRM[prmvg6_84], (va_mulv) (MM[mperiod] == 5),
+                              (va_mulv) PRM[prmvg7_84], (va_mulv) (MM[mperiod] == 6),
+                              (va_mulv) PRM[prmvg1_84], (va_count) END);
 
     /* AANROEP EN RAPPOTEREN ROBUGROVER */
     if (IH[hrgvact] != 0)
@@ -1090,6 +1090,7 @@ void Maxgroen(void)
     Maxgroen_Add();
     gk_ControlGK();
 }
+
 
 void Wachtgroen(void)
 {
@@ -1346,17 +1347,6 @@ void Meetkriterium(void)
     
     
 
-    hiaattijden_verlenging(IH[hgeendynhiaat11], SCH[schedkop_11], FALSE, mmk11, IH[hopdrempelen11], fc11, 
-        1, d11_1, t11_1_1, t11_1_2, ttdh_11_1_1, ttdh_11_1_2, tmax_11_1, prmspringverleng_11_1, hverleng_11_1, 
-        1, d11_2, t11_2_1, t11_2_2, ttdh_11_2_1, ttdh_11_2_2, tmax_11_2, prmspringverleng_11_2, hverleng_11_2, 
-        1, d11_3, t11_3_1, t11_3_2, ttdh_11_3_1, ttdh_11_3_2, tmax_11_3, prmspringverleng_11_3, hverleng_11_3, 
-        1, d11_4, t11_4_1, t11_4_2, ttdh_11_4_1, ttdh_11_4_2, tmax_11_4, prmspringverleng_11_4, hverleng_11_4, 
-        END);
-    hiaattijden_verlenging(IH[hgeendynhiaat09], SCH[schedkop_09], FALSE, mmk09, IH[hopdrempelen09], fc09, 
-        1, d09_1, t09_1_1, t09_1_2, ttdh_09_1_1, ttdh_09_1_2, tmax_09_1, prmspringverleng_09_1, hverleng_09_1, 
-        1, d09_2, t09_2_1, t09_2_2, ttdh_09_2_1, ttdh_09_2_2, tmax_09_2, prmspringverleng_09_2, hverleng_09_2, 
-        1, d09_3, t09_3_1, t09_3_2, ttdh_09_3_1, ttdh_09_3_2, tmax_09_3, prmspringverleng_09_3, hverleng_09_3, 
-        END);
     hiaattijden_verlenging(IH[hgeendynhiaat08], SCH[schedkop_08], FALSE, mmk08, IH[hopdrempelen08], fc08, 
         1, d08_1a, t08_1a_1, t08_1a_2, ttdh_08_1a_1, ttdh_08_1a_2, tmax_08_1a, prmspringverleng_08_1a, hverleng_08_1a, 
         1, d08_1b, t08_1b_1, t08_1b_2, ttdh_08_1b_1, ttdh_08_1b_2, tmax_08_1b, prmspringverleng_08_1b, hverleng_08_1b, 
@@ -1366,6 +1356,17 @@ void Meetkriterium(void)
         2, d08_2b, t08_2b_1, t08_2b_2, ttdh_08_2b_1, ttdh_08_2b_2, tmax_08_2b, prmspringverleng_08_2b, hverleng_08_2b, 
         2, d08_3b, t08_3b_1, t08_3b_2, ttdh_08_3b_1, ttdh_08_3b_2, tmax_08_3b, prmspringverleng_08_3b, hverleng_08_3b, 
         2, d08_4b, t08_4b_1, t08_4b_2, ttdh_08_4b_1, ttdh_08_4b_2, tmax_08_4b, prmspringverleng_08_4b, hverleng_08_4b, 
+        END);
+    hiaattijden_verlenging(IH[hgeendynhiaat09], SCH[schedkop_09], FALSE, mmk09, IH[hopdrempelen09], fc09, 
+        1, d09_1, t09_1_1, t09_1_2, ttdh_09_1_1, ttdh_09_1_2, tmax_09_1, prmspringverleng_09_1, hverleng_09_1, 
+        1, d09_2, t09_2_1, t09_2_2, ttdh_09_2_1, ttdh_09_2_2, tmax_09_2, prmspringverleng_09_2, hverleng_09_2, 
+        1, d09_3, t09_3_1, t09_3_2, ttdh_09_3_1, ttdh_09_3_2, tmax_09_3, prmspringverleng_09_3, hverleng_09_3, 
+        END);
+    hiaattijden_verlenging(IH[hgeendynhiaat11], SCH[schedkop_11], FALSE, mmk11, IH[hopdrempelen11], fc11, 
+        1, d11_1, t11_1_1, t11_1_2, ttdh_11_1_1, ttdh_11_1_2, tmax_11_1, prmspringverleng_11_1, hverleng_11_1, 
+        1, d11_2, t11_2_1, t11_2_2, ttdh_11_2_1, ttdh_11_2_2, tmax_11_2, prmspringverleng_11_2, hverleng_11_2, 
+        1, d11_3, t11_3_1, t11_3_2, ttdh_11_3_1, ttdh_11_3_2, tmax_11_3, prmspringverleng_11_3, hverleng_11_3, 
+        1, d11_4, t11_4_1, t11_4_2, ttdh_11_4_1, ttdh_11_4_2, tmax_11_4, prmspringverleng_11_4, hverleng_11_4, 
         END);
 
     Meetkriterium_Add();
@@ -2003,10 +2004,10 @@ void FileVerwerking(void)
         /* percentage MG bij filemelding */
         if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
         {
-            PercentageMaxGroenTijden(fc08, mperiod, PRM[prmfpercFile68af08],
-                                     7, TVGA_max[fc08], PRM[prmmg2_08], PRM[prmmg3_08], PRM[prmmg4_08], PRM[prmmg5_08], PRM[prmmg6_08], PRM[prmmg7_08]);
-            PercentageMaxGroenTijden(fc11, mperiod, PRM[prmfpercFile68af11],
-                                     7, TVGA_max[fc11], PRM[prmmg2_11], PRM[prmmg3_11], PRM[prmmg4_11], PRM[prmmg5_11], PRM[prmmg6_11], PRM[prmmg7_11]);
+            PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmfpercFile68af08],
+                                         7, PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
+            PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmfpercFile68af11],
+                                         7, PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
         }
     }
     else
@@ -2014,8 +2015,8 @@ void FileVerwerking(void)
         /* percentage MG bij filemelding tijdens halfstar */
         if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
         {
-            PercentageMaxGroenTijden_halfstar(fc08, prmfpercFile68af08, BIT3);
-            PercentageMaxGroenTijden_halfstar(fc11, prmfpercFile68af11, BIT3);
+            PercentageVerlengGroenTijden_halfstar(fc08, prmfpercFile68af08, BIT3);
+            PercentageVerlengGroenTijden_halfstar(fc11, prmfpercFile68af11, BIT3);
         }
     }
 
@@ -2190,118 +2191,118 @@ void DetectieStoring(void)
 
     if (IH[hplact])
     {
-        /* percentage MG bij defect alle kop/lange lussen */
+        /* percentage VG bij defect alle kop/lange lussen */
         /* ---------------------------------------------- */
         if ((CIF_IS[d03_1] >= CIF_DET_STORING) && (CIF_IS[d03_2] >= CIF_DET_STORING))
         {
             MK[fc03] |= BIT5;
-            PercentageMaxGroenTijden_halfstar(fc03, prmperc03, BIT5);
+            PercentageVerlengGroenTijden_halfstar(fc03, prmperc03, BIT5);
         }
         if ((CIF_IS[d05_1] >= CIF_DET_STORING) && (CIF_IS[d05_2] >= CIF_DET_STORING))
         {
             MK[fc05] |= BIT5;
-            PercentageMaxGroenTijden_halfstar(fc05, prmperc05, BIT5);
+            PercentageVerlengGroenTijden_halfstar(fc05, prmperc05, BIT5);
         }
         if ((CIF_IS[d08_1a] >= CIF_DET_STORING) && (CIF_IS[d08_1b] >= CIF_DET_STORING) && (CIF_IS[d08_2a] >= CIF_DET_STORING) && (CIF_IS[d08_3a] >= CIF_DET_STORING) ||
             (CIF_IS[d08_2b] >= CIF_DET_STORING) && (CIF_IS[d08_3b] >= CIF_DET_STORING))
         {
             MK[fc08] |= BIT5;
-            PercentageMaxGroenTijden_halfstar(fc08, prmperc08, BIT5);
+            PercentageVerlengGroenTijden_halfstar(fc08, prmperc08, BIT5);
         }
         if ((CIF_IS[d09_1] >= CIF_DET_STORING) && (CIF_IS[d09_2] >= CIF_DET_STORING) && (CIF_IS[d09_3] >= CIF_DET_STORING))
         {
             MK[fc09] |= BIT5;
-            PercentageMaxGroenTijden_halfstar(fc09, prmperc09, BIT5);
+            PercentageVerlengGroenTijden_halfstar(fc09, prmperc09, BIT5);
         }
         if ((CIF_IS[d11_1] >= CIF_DET_STORING) && (CIF_IS[d11_2] >= CIF_DET_STORING) && (CIF_IS[d11_3] >= CIF_DET_STORING))
         {
             MK[fc11] |= BIT5;
-            PercentageMaxGroenTijden_halfstar(fc11, prmperc11, BIT5);
+            PercentageVerlengGroenTijden_halfstar(fc11, prmperc11, BIT5);
         }
         if ((CIF_IS[d61_1] >= CIF_DET_STORING) && (CIF_IS[d61_2] >= CIF_DET_STORING))
         {
             MK[fc61] |= BIT5;
-            PercentageMaxGroenTijden_halfstar(fc61, prmperc61, BIT5);
+            PercentageVerlengGroenTijden_halfstar(fc61, prmperc61, BIT5);
         }
         if ((CIF_IS[d62_1a] >= CIF_DET_STORING) && (CIF_IS[d62_1b] >= CIF_DET_STORING) && (CIF_IS[d62_2a] >= CIF_DET_STORING) ||
             (CIF_IS[d62_2b] >= CIF_DET_STORING))
         {
             MK[fc62] |= BIT5;
-            PercentageMaxGroenTijden_halfstar(fc62, prmperc62, BIT5);
+            PercentageVerlengGroenTijden_halfstar(fc62, prmperc62, BIT5);
         }
         if ((CIF_IS[d67_1] >= CIF_DET_STORING) && (CIF_IS[d67_2] >= CIF_DET_STORING))
         {
             MK[fc67] |= BIT5;
-            PercentageMaxGroenTijden_halfstar(fc67, prmperc67, BIT5);
+            PercentageVerlengGroenTijden_halfstar(fc67, prmperc67, BIT5);
         }
         if ((CIF_IS[d68_1a] >= CIF_DET_STORING) && (CIF_IS[d68_1b] >= CIF_DET_STORING) && (CIF_IS[d68_2a] >= CIF_DET_STORING) ||
             (CIF_IS[d68_2b] >= CIF_DET_STORING))
         {
             MK[fc68] |= BIT5;
-            PercentageMaxGroenTijden_halfstar(fc68, prmperc68, BIT5);
+            PercentageVerlengGroenTijden_halfstar(fc68, prmperc68, BIT5);
         }
 
     }
     else
     {
-        /* percentage MG bij defect alle kop/lange lussen */
+        /* percentage VG bij defect alle kop/lange lussen */
         /* ---------------------------------------------- */
         if ((CIF_IS[d03_1] >= CIF_DET_STORING) && (CIF_IS[d03_2] >= CIF_DET_STORING))
         {
             MK[fc03] |= BIT5;
-            PercentageMaxGroenTijden(fc03, mperiod, PRM[prmperc03], 
-                                     7, TVGA_max[fc03], PRM[prmmg2_03], PRM[prmmg3_03], PRM[prmmg4_03], PRM[prmmg5_03], PRM[prmmg6_03], PRM[prmmg7_03]);
+            PercentageVerlengGroenTijden(fc03, mperiod, PRM[prmperc03], 
+                                         7, PRM[prmvg1_03], PRM[prmvg2_03], PRM[prmvg3_03], PRM[prmvg4_03], PRM[prmvg5_03], PRM[prmvg6_03], PRM[prmvg7_03]);
         }
         if ((CIF_IS[d05_1] >= CIF_DET_STORING) && (CIF_IS[d05_2] >= CIF_DET_STORING))
         {
             MK[fc05] |= BIT5;
-            PercentageMaxGroenTijden(fc05, mperiod, PRM[prmperc05], 
-                                     7, TVGA_max[fc05], PRM[prmmg2_05], PRM[prmmg3_05], PRM[prmmg4_05], PRM[prmmg5_05], PRM[prmmg6_05], PRM[prmmg7_05]);
+            PercentageVerlengGroenTijden(fc05, mperiod, PRM[prmperc05], 
+                                         7, PRM[prmvg1_05], PRM[prmvg2_05], PRM[prmvg3_05], PRM[prmvg4_05], PRM[prmvg5_05], PRM[prmvg6_05], PRM[prmvg7_05]);
         }
         if ((CIF_IS[d08_1a] >= CIF_DET_STORING) && (CIF_IS[d08_1b] >= CIF_DET_STORING) && (CIF_IS[d08_2a] >= CIF_DET_STORING) && (CIF_IS[d08_3a] >= CIF_DET_STORING) ||
             (CIF_IS[d08_2b] >= CIF_DET_STORING) && (CIF_IS[d08_3b] >= CIF_DET_STORING))
         {
             MK[fc08] |= BIT5;
-            PercentageMaxGroenTijden(fc08, mperiod, PRM[prmperc08], 
-                                     7, TVGA_max[fc08], PRM[prmmg2_08], PRM[prmmg3_08], PRM[prmmg4_08], PRM[prmmg5_08], PRM[prmmg6_08], PRM[prmmg7_08]);
+            PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmperc08], 
+                                         7, PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
         }
         if ((CIF_IS[d09_1] >= CIF_DET_STORING) && (CIF_IS[d09_2] >= CIF_DET_STORING) && (CIF_IS[d09_3] >= CIF_DET_STORING))
         {
             MK[fc09] |= BIT5;
-            PercentageMaxGroenTijden(fc09, mperiod, PRM[prmperc09], 
-                                     7, TVGA_max[fc09], PRM[prmmg2_09], PRM[prmmg3_09], PRM[prmmg4_09], PRM[prmmg5_09], PRM[prmmg6_09], PRM[prmmg7_09]);
+            PercentageVerlengGroenTijden(fc09, mperiod, PRM[prmperc09], 
+                                         7, PRM[prmvg1_09], PRM[prmvg2_09], PRM[prmvg3_09], PRM[prmvg4_09], PRM[prmvg5_09], PRM[prmvg6_09], PRM[prmvg7_09]);
         }
         if ((CIF_IS[d11_1] >= CIF_DET_STORING) && (CIF_IS[d11_2] >= CIF_DET_STORING) && (CIF_IS[d11_3] >= CIF_DET_STORING))
         {
             MK[fc11] |= BIT5;
-            PercentageMaxGroenTijden(fc11, mperiod, PRM[prmperc11], 
-                                     7, TVGA_max[fc11], PRM[prmmg2_11], PRM[prmmg3_11], PRM[prmmg4_11], PRM[prmmg5_11], PRM[prmmg6_11], PRM[prmmg7_11]);
+            PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmperc11], 
+                                         7, PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
         }
         if ((CIF_IS[d61_1] >= CIF_DET_STORING) && (CIF_IS[d61_2] >= CIF_DET_STORING))
         {
             MK[fc61] |= BIT5;
-            PercentageMaxGroenTijden(fc61, mperiod, PRM[prmperc61], 
-                                     7, TVGA_max[fc61], PRM[prmmg2_61], PRM[prmmg3_61], PRM[prmmg4_61], PRM[prmmg5_61], PRM[prmmg6_61], PRM[prmmg7_61]);
+            PercentageVerlengGroenTijden(fc61, mperiod, PRM[prmperc61], 
+                                         7, PRM[prmvg1_61], PRM[prmvg2_61], PRM[prmvg3_61], PRM[prmvg4_61], PRM[prmvg5_61], PRM[prmvg6_61], PRM[prmvg7_61]);
         }
         if ((CIF_IS[d62_1a] >= CIF_DET_STORING) && (CIF_IS[d62_1b] >= CIF_DET_STORING) && (CIF_IS[d62_2a] >= CIF_DET_STORING) ||
             (CIF_IS[d62_2b] >= CIF_DET_STORING))
         {
             MK[fc62] |= BIT5;
-            PercentageMaxGroenTijden(fc62, mperiod, PRM[prmperc62], 
-                                     7, TVGA_max[fc62], PRM[prmmg2_62], PRM[prmmg3_62], PRM[prmmg4_62], PRM[prmmg5_62], PRM[prmmg6_62], PRM[prmmg7_62]);
+            PercentageVerlengGroenTijden(fc62, mperiod, PRM[prmperc62], 
+                                         7, PRM[prmvg1_62], PRM[prmvg2_62], PRM[prmvg3_62], PRM[prmvg4_62], PRM[prmvg5_62], PRM[prmvg6_62], PRM[prmvg7_62]);
         }
         if ((CIF_IS[d67_1] >= CIF_DET_STORING) && (CIF_IS[d67_2] >= CIF_DET_STORING))
         {
             MK[fc67] |= BIT5;
-            PercentageMaxGroenTijden(fc67, mperiod, PRM[prmperc67], 
-                                     7, TVGA_max[fc67], PRM[prmmg2_67], PRM[prmmg3_67], PRM[prmmg4_67], PRM[prmmg5_67], PRM[prmmg6_67], PRM[prmmg7_67]);
+            PercentageVerlengGroenTijden(fc67, mperiod, PRM[prmperc67], 
+                                         7, PRM[prmvg1_67], PRM[prmvg2_67], PRM[prmvg3_67], PRM[prmvg4_67], PRM[prmvg5_67], PRM[prmvg6_67], PRM[prmvg7_67]);
         }
         if ((CIF_IS[d68_1a] >= CIF_DET_STORING) && (CIF_IS[d68_1b] >= CIF_DET_STORING) && (CIF_IS[d68_2a] >= CIF_DET_STORING) ||
             (CIF_IS[d68_2b] >= CIF_DET_STORING))
         {
             MK[fc68] |= BIT5;
-            PercentageMaxGroenTijden(fc68, mperiod, PRM[prmperc68], 
-                                     7, TVGA_max[fc68], PRM[prmmg2_68], PRM[prmmg3_68], PRM[prmmg4_68], PRM[prmmg5_68], PRM[prmmg6_68], PRM[prmmg7_68]);
+            PercentageVerlengGroenTijden(fc68, mperiod, PRM[prmperc68], 
+                                         7, PRM[prmvg1_68], PRM[prmvg2_68], PRM[prmvg3_68], PRM[prmvg4_68], PRM[prmvg5_68], PRM[prmvg6_68], PRM[prmvg7_68]);
         }
 
     }
@@ -2314,6 +2315,7 @@ void init_application(void)
 #if (defined AUTOMAAT || defined AUTOMAAT_TEST)
     int i;
 #endif
+    int fc;
 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) && !defined VISSIM
     if (!SAPPLPROG)
@@ -2359,6 +2361,11 @@ void init_application(void)
        - alleen indien de actuele instellingen door een check heen komen
          waarbij middels een functie de blokkenstructuur wordt gecheckt
          (op toedeling en conflicten) */
+    /* Reset blokkering voor niet-toegedeelde fasen */
+    for (fc = 0; fc < FCMAX; ++fc)
+    {
+        BL[fc] &= ~BIT10;
+    }
     if (SCH[schmlprm])
     {
         ModuleStructuurPRM(prmprml02, 0, FCMAX, ML_MAX, PRML, YML, &ML, &SML);
@@ -2497,7 +2504,7 @@ void application(void)
     }
     else if (IH[hplact])
     {
-        Maxgroen_halfstar();
+        Verlenggroen_halfstar();
         Wachtgroen_halfstar();
         Meetkriterium();
         Meetkriterium_halfstar();
@@ -2513,7 +2520,7 @@ void application(void)
     }
     else
     {
-        Maxgroen();
+        Verlenggroen();
         Wachtgroen();
         Meetkriterium();
         Meeverlengen();

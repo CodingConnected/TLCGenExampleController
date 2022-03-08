@@ -8,14 +8,14 @@
 
    BESTAND:   123456dpl.c
       CCOL:   11.0
-    TLCGEN:   0.10.5.0
-   CCOLGEN:   0.10.5.0
+    TLCGEN:   0.10.6.0
+   CCOLGEN:   0.10.6.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    22-01-2022   Cyril       Nieuwe versie TLCGen (0.10.5.0)
+ * 1.0.0    08-03-2022   Cyril       Nieuwe versie TLCGen (0.10.6.0)
  *
  ************************************************************************************/
 
@@ -350,6 +350,22 @@ void display_parameters(void)
     X_is[isris051bus] = 695; Y_is[isris051bus] = 72;
     X_is[isris051special] = 712; Y_is[isris051special] = 73;
     X_is[isris051heavytruck] = 727; Y_is[isris051heavytruck] = 73;
+    X_is[isris081car] = 679; Y_is[isris081car] = 87;
+    X_is[isris081bus] = 695; Y_is[isris081bus] = 86;
+    X_is[isris081special] = 714; Y_is[isris081special] = 86;
+    X_is[isris081heavytruck] = 730; Y_is[isris081heavytruck] = 85;
+    X_is[isris082car] = 679; Y_is[isris082car] = 99;
+    X_is[isris082bus] = 698; Y_is[isris082bus] = 99;
+    X_is[isris082special] = 711; Y_is[isris082special] = 99;
+    X_is[isris082heavytruck] = 732; Y_is[isris082heavytruck] = 99;
+    X_is[isris091car] = 679; Y_is[isris091car] = 111;
+    X_is[isris091bus] = 691; Y_is[isris091bus] = 109;
+    X_is[isris091special] = 711; Y_is[isris091special] = 111;
+    X_is[isris091heavytruck] = 727; Y_is[isris091heavytruck] = 112;
+    X_is[isris111car] = 679; Y_is[isris111car] = 124;
+    X_is[isris111bus] = 693; Y_is[isris111bus] = 124;
+    X_is[isris111special] = 707; Y_is[isris111special] = 124;
+    X_is[isris111heavytruck] = 726; Y_is[isris111heavytruck] = 124;
     X_is[isris841cyclist] = 679; Y_is[isris841cyclist] = 435;
     X_is[isris821cyclist] = 680; Y_is[isris821cyclist] = 423;
     X_is[isris811cyclist] = 676; Y_is[isris811cyclist] = 411;
@@ -392,22 +408,6 @@ void display_parameters(void)
     X_is[isris241cyclist] = 679; Y_is[isris241cyclist] = 163;
     X_is[isris221cyclist] = 681; Y_is[isris221cyclist] = 150;
     X_is[isris211cyclist] = 678; Y_is[isris211cyclist] = 137;
-    X_is[isris111car] = 679; Y_is[isris111car] = 124;
-    X_is[isris111bus] = 693; Y_is[isris111bus] = 124;
-    X_is[isris111special] = 707; Y_is[isris111special] = 124;
-    X_is[isris111heavytruck] = 726; Y_is[isris111heavytruck] = 124;
-    X_is[isris091car] = 679; Y_is[isris091car] = 111;
-    X_is[isris091bus] = 691; Y_is[isris091bus] = 109;
-    X_is[isris091special] = 711; Y_is[isris091special] = 111;
-    X_is[isris091heavytruck] = 727; Y_is[isris091heavytruck] = 112;
-    X_is[isris081car] = 679; Y_is[isris081car] = 87;
-    X_is[isris081bus] = 695; Y_is[isris081bus] = 86;
-    X_is[isris081special] = 714; Y_is[isris081special] = 86;
-    X_is[isris081heavytruck] = 730; Y_is[isris081heavytruck] = 85;
-    X_is[isris082car] = 679; Y_is[isris082car] = 99;
-    X_is[isris082bus] = 698; Y_is[isris082bus] = 99;
-    X_is[isris082special] = 711; Y_is[isris082special] = 99;
-    X_is[isris082heavytruck] = 732; Y_is[isris082heavytruck] = 99;
 #endif
 
     /* Gebruikers toevoegingen file includen */

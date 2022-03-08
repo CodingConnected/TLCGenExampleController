@@ -8,14 +8,14 @@
 
    BESTAND:   123456hst.c
       CCOL:   11.0
-    TLCGEN:   0.10.5.0
-   CCOLGEN:   0.10.5.0
+    TLCGEN:   0.10.6.0
+   CCOLGEN:   0.10.6.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    22-01-2022   Cyril       Nieuwe versie TLCGen (0.10.5.0)
+ * 1.0.0    08-03-2022   Cyril       Nieuwe versie TLCGen (0.10.6.0)
  *
  ************************************************************************************/
 
@@ -213,7 +213,7 @@ void Aanvragen_halfstar(void)
     Aanvragen_halfstar_Add();
 }
 
-void Maxgroen_halfstar(void)
+void Verlenggroen_halfstar(void)
 {
     int fc;
 

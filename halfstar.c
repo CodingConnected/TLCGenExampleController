@@ -1,4 +1,4 @@
-/* halfstar.c - gegenereerd met TLCGen 0.10.5.0 */
+/* halfstar.c - gegenereerd met TLCGen 0.10.6.0 */
 
 #include "halfstar.h"
 #include "halfstar_prio.h"     /* declaratie functies                                      */
