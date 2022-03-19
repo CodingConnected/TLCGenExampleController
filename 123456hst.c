@@ -8,14 +8,14 @@
 
    BESTAND:   123456hst.c
       CCOL:   11.0
-    TLCGEN:   0.10.6.0
-   CCOLGEN:   0.10.6.0
+    TLCGEN:   0.10.7.0
+   CCOLGEN:   0.10.7.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    08-03-2022   Cyril       Nieuwe versie TLCGen (0.10.6.0)
+ * 10.7.0   18-03-2022   Cyril       Nieuwe versie TLCGen (0.10.7.0)
  *
  ************************************************************************************/
 
@@ -99,6 +99,11 @@ void KlokPerioden_halfstar(void)
             APL = PRM[prmplxper6] - 1;
             break;
         }
+        case 7: /* default */
+        {
+            APL = PRM[prmplxper7] - 1;
+            break;
+        }
         default:
         {
             APL = PRM[prmplxperdef] - 1;
@@ -114,7 +119,8 @@ void KlokPerioden_halfstar(void)
             (SCH[schpervar3] && (MM[mperiod] == 3)) ||
             (SCH[schpervar4] && (MM[mperiod] == 4)) ||
             (SCH[schpervar5] && (MM[mperiod] == 5)) ||
-            (SCH[schpervar6] && (MM[mperiod] == 6)))
+            (SCH[schpervar6] && (MM[mperiod] == 6)) ||
+            (SCH[schpervar7] && (MM[mperiod] == 7)))
         {
             IH[hpervar] = TRUE;
         }
@@ -131,7 +137,8 @@ void KlokPerioden_halfstar(void)
         (SCH[schperarh3] && (MM[mperiod] == 3)) ||
         (SCH[schperarh4] && (MM[mperiod] == 4)) ||
         (SCH[schperarh5] && (MM[mperiod] == 5)) ||
-        (SCH[schperarh6] && (MM[mperiod] == 6)))
+        (SCH[schperarh6] && (MM[mperiod] == 6)) ||
+        (SCH[schperarh7] && (MM[mperiod] == 7)))
     {
         IH[hperarh] = TRUE;
     }

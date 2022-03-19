@@ -1,4 +1,4 @@
-/* prio.c - gegenereerd met TLCGen 0.10.6.0 */
+/* prio.c - gegenereerd met TLCGen 0.10.7.0 */
 
 /* OVPROGRAMMA */
 /* ----------- */
@@ -1353,11 +1353,11 @@ void RealisatieTijden(int fc, int iPrioriteitsOptiesFC)
             }
             else
             {
-                iRealisatieTijd[fc][k] = iKonfliktTijd[k] + iGroenTijd + (TGL_max[k] > 0 ? TGL_max[k] : 1) +
+                iRealisatieTijd[fc][k] = iKonfliktTijd[k] + iGroenTijd +
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
                 TIG_max[k][fc];
 #else
-                TO_max[k][fc];
+                (TGL_max[k] > 0 ? TGL_max[k] : 1) + TO_max[k][fc];
 #endif
             }
         }

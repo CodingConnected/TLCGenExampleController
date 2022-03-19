@@ -9,14 +9,14 @@
 
    BESTAND:   123456reg.add
       CCOL:   11.0
-    TLCGEN:   0.10.6.0
-   CCOLGEN:   0.10.6.0
+    TLCGEN:   0.10.7.0
+   CCOLGEN:   0.10.7.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    08-03-2022   Cyril       Nieuwe versie TLCGen (0.10.6.0)
+ * 10.7.0   18-03-2022   Cyril       Nieuwe versie TLCGen (0.10.7.0)
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
@@ -136,9 +136,9 @@ void PostApplication_Add(void)
       (CIF_KLOK[CIF_JAAR] == 2099) && 
       (CIF_KLOK[CIF_MAAND] == 1) &&
       (CIF_KLOK[CIF_DAG] == 1) &&
-      (CIF_KLOK[CIF_UUR] == 13) &&
-      (CIF_KLOK[CIF_MINUUT] == 48) &&
-      (CIF_KLOK[CIF_SECONDE] == 34)) //fc05
+      (CIF_KLOK[CIF_UUR] == 1) &&
+      (CIF_KLOK[CIF_MINUUT] == 1) &&
+      (CIF_KLOK[CIF_SECONDE] == 1))
    {
       stuffkey(F3KEY);
       stuffkey(F5KEY);

@@ -1,4 +1,4 @@
-/* extra_func_prio.c - gegenereerd met TLCGen 0.10.6.0 */
+/* extra_func_prio.c - gegenereerd met TLCGen 0.10.7.0 */
 
 #include "extra_func_prio.h"
 #include "prio.h"
@@ -51,7 +51,11 @@ boolv DSIMeldingPRIO_V2(           /* Fik220201 */
    if (checktype && meldingtype != NG && meldingtype != CIF_DSI[CIF_DSI_TYPE]) melding = FALSE;
 
    /* uitmelding eerste bus tijdens rood, tijdens 1e seconde rood gaan we ervan uit dat de bus toch doorgereden is */
+#if (CCOL_V >= 95)
    if (R[fc] && TR_timer[fc] > 10 && (!vertraag_kar_uitm[prio_fc] || iAantalInmeldingen[prio_fc] == 1))
+#else
+   if (R[fc] && TFB_timer[fc] > 10 && (!vertraag_kar_uitm[prio_fc] || iAantalInmeldingen[prio_fc] == 1))
+#endif
    {
       if (iAantalInmeldingen[prio_fc] > 0 && dslus == 0 && CIF_DSI[CIF_DSI_TYPE] == CIF_DSUIT)
       {

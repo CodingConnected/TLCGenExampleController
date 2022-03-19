@@ -8,14 +8,14 @@
 
    BESTAND:   123456dpl.c
       CCOL:   11.0
-    TLCGEN:   0.10.6.0
-   CCOLGEN:   0.10.6.0
+    TLCGEN:   0.10.7.0
+   CCOLGEN:   0.10.7.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    08-03-2022   Cyril       Nieuwe versie TLCGen (0.10.6.0)
+ * 10.7.0   18-03-2022   Cyril       Nieuwe versie TLCGen (0.10.7.0)
  *
  ************************************************************************************/
 
@@ -167,8 +167,8 @@ void display_parameters(void)
     X_is[ddummykaruit62bus] = 798; Y_is[ddummykaruit62bus] = 125;
     X_is[ddummykaruit67bus] = 796; Y_is[ddummykaruit67bus] = 137;
     X_is[ddummykaruit68bus] = 796; Y_is[ddummykaruit68bus] = 149;
-    X_is[ddummyhdkarinA] = NG; Y_is[ddummyhdkarinA] = NG;
-    X_is[ddummyhdkaruitA] = NG; Y_is[ddummyhdkaruitA] = NG;
+    X_is[ddummyhdkarin02] = 815; Y_is[ddummyhdkarin02] = 37;
+    X_is[ddummyhdkaruit02] = 831; Y_is[ddummyhdkaruit02] = 36;
     X_is[ddummyhdkarin03] = 816; Y_is[ddummyhdkarin03] = 44;
     X_is[ddummyhdkaruit03] = 827; Y_is[ddummyhdkaruit03] = 45;
     X_is[ddummyhdkarin05] = 809; Y_is[ddummyhdkarin05] = 61;
@@ -301,16 +301,17 @@ void display_parameters(void)
     X_us[ushdinm67_1] = 167; Y_us[ushdinm67_1] = 136; NR_us[ushdinm67_1] = ushdinm67;
     X_us[ushdinm68] = 66; Y_us[ushdinm68] = 148;
     X_us[ushdinm68_1] = 168; Y_us[ushdinm68_1] = 147; NR_us[ushdinm68_1] = ushdinm68;
-    X_us[usperdef] = 625; Y_us[usperdef] = 13;
+    X_us[usperdef] = NG; Y_us[usperdef] = NG;
+    X_us[usper1] = 625; Y_us[usper1] = 14;
     X_us[usperoFietsprio1] = NG; Y_us[usperoFietsprio1] = NG;
     X_us[usperoFietsprio2] = NG; Y_us[usperoFietsprio2] = NG;
     X_us[usperoFietsprio3] = NG; Y_us[usperoFietsprio3] = NG;
-    X_us[usper1] = 625; Y_us[usper1] = 28;
-    X_us[usper2] = 625; Y_us[usper2] = 42;
-    X_us[usper3] = 625; Y_us[usper3] = 55;
-    X_us[usper4] = 624; Y_us[usper4] = 69;
-    X_us[usper5] = 624; Y_us[usper5] = 84;
-    X_us[usper6] = 625; Y_us[usper6] = 97;
+    X_us[usper2] = 625; Y_us[usper2] = 28;
+    X_us[usper3] = 625; Y_us[usper3] = 42;
+    X_us[usper4] = 625; Y_us[usper4] = 55;
+    X_us[usper5] = 624; Y_us[usper5] = 69;
+    X_us[usper6] = 624; Y_us[usper6] = 84;
+    X_us[usper7] = 625; Y_us[usper7] = 98;
     X_us[usrgv] = 275; Y_us[usrgv] = 107;
     X_us[uswtk21] = 376; Y_us[uswtk21] = 219;
     X_us[uswtk22] = 434; Y_us[uswtk22] = 214;
@@ -342,6 +343,10 @@ void display_parameters(void)
     X_is[isris021bus] = 698; Y_is[isris021bus] = 34;
     X_is[isris021special] = 711; Y_is[isris021special] = 34;
     X_is[isris021heavytruck] = 729; Y_is[isris021heavytruck] = 31;
+    X_is[isris022car] = 677; Y_is[isris022car] = 45;
+    X_is[isris022bus] = 697; Y_is[isris022bus] = 46;
+    X_is[isris022special] = 714; Y_is[isris022special] = 47;
+    X_is[isris022heavytruck] = 728; Y_is[isris022heavytruck] = 47;
     X_is[isris031car] = 680; Y_is[isris031car] = 59;
     X_is[isris031bus] = 696; Y_is[isris031bus] = 59;
     X_is[isris031special] = 708; Y_is[isris031special] = 59;
@@ -366,6 +371,21 @@ void display_parameters(void)
     X_is[isris111bus] = 693; Y_is[isris111bus] = 124;
     X_is[isris111special] = 707; Y_is[isris111special] = 124;
     X_is[isris111heavytruck] = 726; Y_is[isris111heavytruck] = 124;
+    X_is[isris211cyclist] = 678; Y_is[isris211cyclist] = 137;
+    X_is[isris221cyclist] = 681; Y_is[isris221cyclist] = 150;
+    X_is[isris241cyclist] = 679; Y_is[isris241cyclist] = 163;
+    X_is[isris261cyclist] = 679; Y_is[isris261cyclist] = 178;
+    X_is[isris281cyclist] = 682; Y_is[isris281cyclist] = 191;
+    X_is[isris311pedestrian] = 679; Y_is[isris311pedestrian] = 200;
+    X_is[isris312pedestrian] = 680; Y_is[isris312pedestrian] = 216;
+    X_is[isris321pedestrian] = 678; Y_is[isris321pedestrian] = 229;
+    X_is[isris322pedestrian] = 678; Y_is[isris322pedestrian] = 243;
+    X_is[isris331pedestrian] = 679; Y_is[isris331pedestrian] = 254;
+    X_is[isris332pedestrian] = 679; Y_is[isris332pedestrian] = 268;
+    X_is[isris341pedestrian] = 678; Y_is[isris341pedestrian] = 282;
+    X_is[isris342pedestrian] = 681; Y_is[isris342pedestrian] = 293;
+    X_is[isris381pedestrian] = 679; Y_is[isris381pedestrian] = 305;
+    X_is[isris382pedestrian] = 679; Y_is[isris382pedestrian] = 319;
     X_is[isris841cyclist] = 679; Y_is[isris841cyclist] = 435;
     X_is[isris821cyclist] = 680; Y_is[isris821cyclist] = 423;
     X_is[isris811cyclist] = 676; Y_is[isris811cyclist] = 411;
@@ -393,21 +413,6 @@ void display_parameters(void)
     X_is[isris611bus] = 694; Y_is[isris611bus] = 332;
     X_is[isris611special] = 708; Y_is[isris611special] = 331;
     X_is[isris611heavytruck] = 728; Y_is[isris611heavytruck] = 333;
-    X_is[isris381pedestrian] = 679; Y_is[isris381pedestrian] = 305;
-    X_is[isris382pedestrian] = 679; Y_is[isris382pedestrian] = 319;
-    X_is[isris341pedestrian] = 678; Y_is[isris341pedestrian] = 282;
-    X_is[isris342pedestrian] = 681; Y_is[isris342pedestrian] = 293;
-    X_is[isris331pedestrian] = 679; Y_is[isris331pedestrian] = 254;
-    X_is[isris332pedestrian] = 679; Y_is[isris332pedestrian] = 268;
-    X_is[isris321pedestrian] = 678; Y_is[isris321pedestrian] = 229;
-    X_is[isris322pedestrian] = 678; Y_is[isris322pedestrian] = 243;
-    X_is[isris311pedestrian] = 679; Y_is[isris311pedestrian] = 200;
-    X_is[isris312pedestrian] = 680; Y_is[isris312pedestrian] = 216;
-    X_is[isris281cyclist] = 682; Y_is[isris281cyclist] = 191;
-    X_is[isris261cyclist] = 679; Y_is[isris261cyclist] = 178;
-    X_is[isris241cyclist] = 679; Y_is[isris241cyclist] = 163;
-    X_is[isris221cyclist] = 681; Y_is[isris221cyclist] = 150;
-    X_is[isris211cyclist] = 678; Y_is[isris211cyclist] = 137;
 #endif
 
     /* Gebruikers toevoegingen file includen */

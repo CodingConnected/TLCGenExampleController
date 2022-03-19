@@ -8,14 +8,14 @@
 
    BESTAND:   123456prio.c
       CCOL:   11.0
-    TLCGEN:   0.10.6.0
-   CCOLGEN:   0.10.6.0
+    TLCGEN:   0.10.7.0
+   CCOLGEN:   0.10.7.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 1.0.0    08-03-2022   Cyril       Nieuwe versie TLCGen (0.10.6.0)
+ * 10.7.0   18-03-2022   Cyril       Nieuwe versie TLCGen (0.10.7.0)
  *
  ************************************************************************************/
 
@@ -58,8 +58,6 @@
     #include "extra_func.h"
     #define PRIO_CHECK_WAGENNMR /* check op wagendienstnummer          */
     #include "extra_func_prio.h"
-
-    #include "extra_func_ris.h"
 
 #define MAX_AANTAL_INMELDINGEN           10
 #define DEFAULT_MAX_WACHTTIJD           120
@@ -192,12 +190,14 @@ void PrioInitExtra(void)
         vertraag_kar_uitm[i] = 0;
     }
 
+    #ifndef NO_TIMETOX
     /* initialisatie variabelen granted_verstrekt */
     /* ------------------------------------------ */
     for (i = 0; i < FCMAX; ++i)
     {
         granted_verstrekt[i] = 0;
     }
+    #endif /* NO_TIMETOX */
 
 }
 
@@ -1400,7 +1400,8 @@ void InUitMelden(void)
     if (SCH[schprioin02risovris])
     {
         IH[hprioin02risovris] = RT[tprioin02risovris] = 
-            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risov], SYSTEM_ITF, PRM[prmrislaneid02risov_1], PRM[prmrisstationtype02risov], PRM[prmrisstart02risov], PRM[prmrisend02risov], PRM[prmrisrole02risov], PRM[prmrissubrole02risov], PRM[prmriseta02risov], prioFC02risov);
+            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risov], SYSTEM_ITF1, PRM[prmrislaneid02risov_1], PRM[prmrisstationtype02risov], PRM[prmrisstart02risov], PRM[prmrisend02risov], PRM[prmrisrole02risov], PRM[prmrissubrole02risov], PRM[prmriseta02risov], prioFC02risov) ||
+            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risov], SYSTEM_ITF1, PRM[prmrislaneid02risov_2], PRM[prmrisstationtype02risov], PRM[prmrisstart02risov], PRM[prmrisend02risov], PRM[prmrisrole02risov], PRM[prmrissubrole02risov], PRM[prmriseta02risov], prioFC02risov);
         if (IH[hprioin02risovris]) iPrioriteitNooitAfkappen[prioFC02risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1423,7 +1424,8 @@ void InUitMelden(void)
     if (SCH[schprioin02risvrwris])
     {
         IH[hprioin02risvrwris] = RT[tprioin02risvrwris] = 
-            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risvrw], SYSTEM_ITF, PRM[prmrislaneid02risvrw_1], PRM[prmrisstationtype02risvrw], PRM[prmrisstart02risvrw], PRM[prmrisend02risvrw], PRM[prmrisrole02risvrw], PRM[prmrissubrole02risvrw], PRM[prmriseta02risvrw], prioFC02risvrw);
+            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risvrw], SYSTEM_ITF1, PRM[prmrislaneid02risvrw_1], PRM[prmrisstationtype02risvrw], PRM[prmrisstart02risvrw], PRM[prmrisend02risvrw], PRM[prmrisrole02risvrw], PRM[prmrissubrole02risvrw], PRM[prmriseta02risvrw], prioFC02risvrw) ||
+            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risvrw], SYSTEM_ITF1, PRM[prmrislaneid02risvrw_2], PRM[prmrisstationtype02risvrw], PRM[prmrisstart02risvrw], PRM[prmrisend02risvrw], PRM[prmrisrole02risvrw], PRM[prmrissubrole02risvrw], PRM[prmriseta02risvrw], prioFC02risvrw);
         if (IH[hprioin02risvrwris]) iPrioriteitNooitAfkappen[prioFC02risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1462,7 +1464,7 @@ void InUitMelden(void)
     if (SCH[schprioin03risovris])
     {
         IH[hprioin03risovris] = RT[tprioin03risovris] = 
-            ris_inmelding_selectief(fc03, PRM[prmrisapproachid03risov], SYSTEM_ITF, PRM[prmrislaneid03risov_1], PRM[prmrisstationtype03risov], PRM[prmrisstart03risov], PRM[prmrisend03risov], PRM[prmrisrole03risov], PRM[prmrissubrole03risov], PRM[prmriseta03risov], prioFC03risov);
+            ris_inmelding_selectief(fc03, PRM[prmrisapproachid03risov], SYSTEM_ITF1, PRM[prmrislaneid03risov_1], PRM[prmrisstationtype03risov], PRM[prmrisstart03risov], PRM[prmrisend03risov], PRM[prmrisrole03risov], PRM[prmrissubrole03risov], PRM[prmriseta03risov], prioFC03risov);
         if (IH[hprioin03risovris]) iPrioriteitNooitAfkappen[prioFC03risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1485,7 +1487,7 @@ void InUitMelden(void)
     if (SCH[schprioin03risvrwris])
     {
         IH[hprioin03risvrwris] = RT[tprioin03risvrwris] = 
-            ris_inmelding_selectief(fc03, PRM[prmrisapproachid03risvrw], SYSTEM_ITF, PRM[prmrislaneid03risvrw_1], PRM[prmrisstationtype03risvrw], PRM[prmrisstart03risvrw], PRM[prmrisend03risvrw], PRM[prmrisrole03risvrw], PRM[prmrissubrole03risvrw], PRM[prmriseta03risvrw], prioFC03risvrw);
+            ris_inmelding_selectief(fc03, PRM[prmrisapproachid03risvrw], SYSTEM_ITF1, PRM[prmrislaneid03risvrw_1], PRM[prmrisstationtype03risvrw], PRM[prmrisstart03risvrw], PRM[prmrisend03risvrw], PRM[prmrisrole03risvrw], PRM[prmrissubrole03risvrw], PRM[prmriseta03risvrw], prioFC03risvrw);
         if (IH[hprioin03risvrwris]) iPrioriteitNooitAfkappen[prioFC03risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1524,7 +1526,7 @@ void InUitMelden(void)
     if (SCH[schprioin05risovris])
     {
         IH[hprioin05risovris] = RT[tprioin05risovris] = 
-            ris_inmelding_selectief(fc05, PRM[prmrisapproachid05risov], SYSTEM_ITF, PRM[prmrislaneid05risov_1], PRM[prmrisstationtype05risov], PRM[prmrisstart05risov], PRM[prmrisend05risov], PRM[prmrisrole05risov], PRM[prmrissubrole05risov], PRM[prmriseta05risov], prioFC05risov);
+            ris_inmelding_selectief(fc05, PRM[prmrisapproachid05risov], SYSTEM_ITF1, PRM[prmrislaneid05risov_1], PRM[prmrisstationtype05risov], PRM[prmrisstart05risov], PRM[prmrisend05risov], PRM[prmrisrole05risov], PRM[prmrissubrole05risov], PRM[prmriseta05risov], prioFC05risov);
         if (IH[hprioin05risovris]) iPrioriteitNooitAfkappen[prioFC05risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1547,7 +1549,7 @@ void InUitMelden(void)
     if (SCH[schprioin05risvrwris])
     {
         IH[hprioin05risvrwris] = RT[tprioin05risvrwris] = 
-            ris_inmelding_selectief(fc05, PRM[prmrisapproachid05risvrw], SYSTEM_ITF, PRM[prmrislaneid05risvrw_1], PRM[prmrisstationtype05risvrw], PRM[prmrisstart05risvrw], PRM[prmrisend05risvrw], PRM[prmrisrole05risvrw], PRM[prmrissubrole05risvrw], PRM[prmriseta05risvrw], prioFC05risvrw);
+            ris_inmelding_selectief(fc05, PRM[prmrisapproachid05risvrw], SYSTEM_ITF1, PRM[prmrislaneid05risvrw_1], PRM[prmrisstationtype05risvrw], PRM[prmrisstart05risvrw], PRM[prmrisend05risvrw], PRM[prmrisrole05risvrw], PRM[prmrissubrole05risvrw], PRM[prmriseta05risvrw], prioFC05risvrw);
         if (IH[hprioin05risvrwris]) iPrioriteitNooitAfkappen[prioFC05risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1586,8 +1588,8 @@ void InUitMelden(void)
     if (SCH[schprioin08risovris])
     {
         IH[hprioin08risovris] = RT[tprioin08risovris] = 
-            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08risov], SYSTEM_ITF, PRM[prmrislaneid08risov_1], PRM[prmrisstationtype08risov], PRM[prmrisstart08risov], PRM[prmrisend08risov], PRM[prmrisrole08risov], PRM[prmrissubrole08risov], PRM[prmriseta08risov], prioFC08risov) ||
-            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08risov], SYSTEM_ITF, PRM[prmrislaneid08risov_2], PRM[prmrisstationtype08risov], PRM[prmrisstart08risov], PRM[prmrisend08risov], PRM[prmrisrole08risov], PRM[prmrissubrole08risov], PRM[prmriseta08risov], prioFC08risov);
+            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08risov], SYSTEM_ITF1, PRM[prmrislaneid08risov_1], PRM[prmrisstationtype08risov], PRM[prmrisstart08risov], PRM[prmrisend08risov], PRM[prmrisrole08risov], PRM[prmrissubrole08risov], PRM[prmriseta08risov], prioFC08risov) ||
+            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08risov], SYSTEM_ITF1, PRM[prmrislaneid08risov_2], PRM[prmrisstationtype08risov], PRM[prmrisstart08risov], PRM[prmrisend08risov], PRM[prmrisrole08risov], PRM[prmrissubrole08risov], PRM[prmriseta08risov], prioFC08risov);
         if (IH[hprioin08risovris]) iPrioriteitNooitAfkappen[prioFC08risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1610,8 +1612,8 @@ void InUitMelden(void)
     if (SCH[schprioin08risvrwris])
     {
         IH[hprioin08risvrwris] = RT[tprioin08risvrwris] = 
-            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08risvrw], SYSTEM_ITF, PRM[prmrislaneid08risvrw_1], PRM[prmrisstationtype08risvrw], PRM[prmrisstart08risvrw], PRM[prmrisend08risvrw], PRM[prmrisrole08risvrw], PRM[prmrissubrole08risvrw], PRM[prmriseta08risvrw], prioFC08risvrw) ||
-            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08risvrw], SYSTEM_ITF, PRM[prmrislaneid08risvrw_2], PRM[prmrisstationtype08risvrw], PRM[prmrisstart08risvrw], PRM[prmrisend08risvrw], PRM[prmrisrole08risvrw], PRM[prmrissubrole08risvrw], PRM[prmriseta08risvrw], prioFC08risvrw);
+            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08risvrw], SYSTEM_ITF1, PRM[prmrislaneid08risvrw_1], PRM[prmrisstationtype08risvrw], PRM[prmrisstart08risvrw], PRM[prmrisend08risvrw], PRM[prmrisrole08risvrw], PRM[prmrissubrole08risvrw], PRM[prmriseta08risvrw], prioFC08risvrw) ||
+            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08risvrw], SYSTEM_ITF1, PRM[prmrislaneid08risvrw_2], PRM[prmrisstationtype08risvrw], PRM[prmrisstart08risvrw], PRM[prmrisend08risvrw], PRM[prmrisrole08risvrw], PRM[prmrissubrole08risvrw], PRM[prmriseta08risvrw], prioFC08risvrw);
         if (IH[hprioin08risvrwris]) iPrioriteitNooitAfkappen[prioFC08risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1650,7 +1652,7 @@ void InUitMelden(void)
     if (SCH[schprioin09risovris])
     {
         IH[hprioin09risovris] = RT[tprioin09risovris] = 
-            ris_inmelding_selectief(fc09, PRM[prmrisapproachid09risov], SYSTEM_ITF, PRM[prmrislaneid09risov_1], PRM[prmrisstationtype09risov], PRM[prmrisstart09risov], PRM[prmrisend09risov], PRM[prmrisrole09risov], PRM[prmrissubrole09risov], PRM[prmriseta09risov], prioFC09risov);
+            ris_inmelding_selectief(fc09, PRM[prmrisapproachid09risov], SYSTEM_ITF1, PRM[prmrislaneid09risov_1], PRM[prmrisstationtype09risov], PRM[prmrisstart09risov], PRM[prmrisend09risov], PRM[prmrisrole09risov], PRM[prmrissubrole09risov], PRM[prmriseta09risov], prioFC09risov);
         if (IH[hprioin09risovris]) iPrioriteitNooitAfkappen[prioFC09risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1673,7 +1675,7 @@ void InUitMelden(void)
     if (SCH[schprioin09risvrwris])
     {
         IH[hprioin09risvrwris] = RT[tprioin09risvrwris] = 
-            ris_inmelding_selectief(fc09, PRM[prmrisapproachid09risvrw], SYSTEM_ITF, PRM[prmrislaneid09risvrw_1], PRM[prmrisstationtype09risvrw], PRM[prmrisstart09risvrw], PRM[prmrisend09risvrw], PRM[prmrisrole09risvrw], PRM[prmrissubrole09risvrw], PRM[prmriseta09risvrw], prioFC09risvrw);
+            ris_inmelding_selectief(fc09, PRM[prmrisapproachid09risvrw], SYSTEM_ITF1, PRM[prmrislaneid09risvrw_1], PRM[prmrisstationtype09risvrw], PRM[prmrisstart09risvrw], PRM[prmrisend09risvrw], PRM[prmrisrole09risvrw], PRM[prmrissubrole09risvrw], PRM[prmriseta09risvrw], prioFC09risvrw);
         if (IH[hprioin09risvrwris]) iPrioriteitNooitAfkappen[prioFC09risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1712,7 +1714,7 @@ void InUitMelden(void)
     if (SCH[schprioin11risovris])
     {
         IH[hprioin11risovris] = RT[tprioin11risovris] = 
-            ris_inmelding_selectief(fc11, PRM[prmrisapproachid11risov], SYSTEM_ITF, PRM[prmrislaneid11risov_1], PRM[prmrisstationtype11risov], PRM[prmrisstart11risov], PRM[prmrisend11risov], PRM[prmrisrole11risov], PRM[prmrissubrole11risov], PRM[prmriseta11risov], prioFC11risov);
+            ris_inmelding_selectief(fc11, PRM[prmrisapproachid11risov], SYSTEM_ITF1, PRM[prmrislaneid11risov_1], PRM[prmrisstationtype11risov], PRM[prmrisstart11risov], PRM[prmrisend11risov], PRM[prmrisrole11risov], PRM[prmrissubrole11risov], PRM[prmriseta11risov], prioFC11risov);
         if (IH[hprioin11risovris]) iPrioriteitNooitAfkappen[prioFC11risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1735,7 +1737,7 @@ void InUitMelden(void)
     if (SCH[schprioin11risvrwris])
     {
         IH[hprioin11risvrwris] = RT[tprioin11risvrwris] = 
-            ris_inmelding_selectief(fc11, PRM[prmrisapproachid11risvrw], SYSTEM_ITF, PRM[prmrislaneid11risvrw_1], PRM[prmrisstationtype11risvrw], PRM[prmrisstart11risvrw], PRM[prmrisend11risvrw], PRM[prmrisrole11risvrw], PRM[prmrissubrole11risvrw], PRM[prmriseta11risvrw], prioFC11risvrw);
+            ris_inmelding_selectief(fc11, PRM[prmrisapproachid11risvrw], SYSTEM_ITF1, PRM[prmrislaneid11risvrw_1], PRM[prmrisstationtype11risvrw], PRM[prmrisstart11risvrw], PRM[prmrisend11risvrw], PRM[prmrisrole11risvrw], PRM[prmrissubrole11risvrw], PRM[prmriseta11risvrw], prioFC11risvrw);
         if (IH[hprioin11risvrwris]) iPrioriteitNooitAfkappen[prioFC11risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1808,7 +1810,7 @@ void InUitMelden(void)
     if (SCH[schprioin61risovris])
     {
         IH[hprioin61risovris] = RT[tprioin61risovris] = 
-            ris_inmelding_selectief(fc61, PRM[prmrisapproachid61risov], SYSTEM_ITF, PRM[prmrislaneid61risov_1], PRM[prmrisstationtype61risov], PRM[prmrisstart61risov], PRM[prmrisend61risov], PRM[prmrisrole61risov], PRM[prmrissubrole61risov], PRM[prmriseta61risov], prioFC61risov);
+            ris_inmelding_selectief(fc61, PRM[prmrisapproachid61risov], SYSTEM_ITF1, PRM[prmrislaneid61risov_1], PRM[prmrisstationtype61risov], PRM[prmrisstart61risov], PRM[prmrisend61risov], PRM[prmrisrole61risov], PRM[prmrissubrole61risov], PRM[prmriseta61risov], prioFC61risov);
         if (IH[hprioin61risovris]) iPrioriteitNooitAfkappen[prioFC61risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1831,7 +1833,7 @@ void InUitMelden(void)
     if (SCH[schprioin61risvrwris])
     {
         IH[hprioin61risvrwris] = RT[tprioin61risvrwris] = 
-            ris_inmelding_selectief(fc61, PRM[prmrisapproachid61risvrw], SYSTEM_ITF, PRM[prmrislaneid61risvrw_1], PRM[prmrisstationtype61risvrw], PRM[prmrisstart61risvrw], PRM[prmrisend61risvrw], PRM[prmrisrole61risvrw], PRM[prmrissubrole61risvrw], PRM[prmriseta61risvrw], prioFC61risvrw);
+            ris_inmelding_selectief(fc61, PRM[prmrisapproachid61risvrw], SYSTEM_ITF1, PRM[prmrislaneid61risvrw_1], PRM[prmrisstationtype61risvrw], PRM[prmrisstart61risvrw], PRM[prmrisend61risvrw], PRM[prmrisrole61risvrw], PRM[prmrissubrole61risvrw], PRM[prmriseta61risvrw], prioFC61risvrw);
         if (IH[hprioin61risvrwris]) iPrioriteitNooitAfkappen[prioFC61risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1870,8 +1872,8 @@ void InUitMelden(void)
     if (SCH[schprioin62risovris])
     {
         IH[hprioin62risovris] = RT[tprioin62risovris] = 
-            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62risov], SYSTEM_ITF, PRM[prmrislaneid62risov_1], PRM[prmrisstationtype62risov], PRM[prmrisstart62risov], PRM[prmrisend62risov], PRM[prmrisrole62risov], PRM[prmrissubrole62risov], PRM[prmriseta62risov], prioFC62risov) ||
-            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62risov], SYSTEM_ITF, PRM[prmrislaneid62risov_2], PRM[prmrisstationtype62risov], PRM[prmrisstart62risov], PRM[prmrisend62risov], PRM[prmrisrole62risov], PRM[prmrissubrole62risov], PRM[prmriseta62risov], prioFC62risov);
+            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62risov], SYSTEM_ITF1, PRM[prmrislaneid62risov_1], PRM[prmrisstationtype62risov], PRM[prmrisstart62risov], PRM[prmrisend62risov], PRM[prmrisrole62risov], PRM[prmrissubrole62risov], PRM[prmriseta62risov], prioFC62risov) ||
+            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62risov], SYSTEM_ITF1, PRM[prmrislaneid62risov_2], PRM[prmrisstationtype62risov], PRM[prmrisstart62risov], PRM[prmrisend62risov], PRM[prmrisrole62risov], PRM[prmrissubrole62risov], PRM[prmriseta62risov], prioFC62risov);
         if (IH[hprioin62risovris]) iPrioriteitNooitAfkappen[prioFC62risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1894,8 +1896,8 @@ void InUitMelden(void)
     if (SCH[schprioin62risvrwris])
     {
         IH[hprioin62risvrwris] = RT[tprioin62risvrwris] = 
-            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62risvrw], SYSTEM_ITF, PRM[prmrislaneid62risvrw_1], PRM[prmrisstationtype62risvrw], PRM[prmrisstart62risvrw], PRM[prmrisend62risvrw], PRM[prmrisrole62risvrw], PRM[prmrissubrole62risvrw], PRM[prmriseta62risvrw], prioFC62risvrw) ||
-            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62risvrw], SYSTEM_ITF, PRM[prmrislaneid62risvrw_2], PRM[prmrisstationtype62risvrw], PRM[prmrisstart62risvrw], PRM[prmrisend62risvrw], PRM[prmrisrole62risvrw], PRM[prmrissubrole62risvrw], PRM[prmriseta62risvrw], prioFC62risvrw);
+            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62risvrw], SYSTEM_ITF1, PRM[prmrislaneid62risvrw_1], PRM[prmrisstationtype62risvrw], PRM[prmrisstart62risvrw], PRM[prmrisend62risvrw], PRM[prmrisrole62risvrw], PRM[prmrissubrole62risvrw], PRM[prmriseta62risvrw], prioFC62risvrw) ||
+            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62risvrw], SYSTEM_ITF1, PRM[prmrislaneid62risvrw_2], PRM[prmrisstationtype62risvrw], PRM[prmrisstart62risvrw], PRM[prmrisend62risvrw], PRM[prmrisrole62risvrw], PRM[prmrissubrole62risvrw], PRM[prmriseta62risvrw], prioFC62risvrw);
         if (IH[hprioin62risvrwris]) iPrioriteitNooitAfkappen[prioFC62risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1934,7 +1936,7 @@ void InUitMelden(void)
     if (SCH[schprioin67risovris])
     {
         IH[hprioin67risovris] = RT[tprioin67risovris] = 
-            ris_inmelding_selectief(fc67, PRM[prmrisapproachid67risov], SYSTEM_ITF, PRM[prmrislaneid67risov_1], PRM[prmrisstationtype67risov], PRM[prmrisstart67risov], PRM[prmrisend67risov], PRM[prmrisrole67risov], PRM[prmrissubrole67risov], PRM[prmriseta67risov], prioFC67risov);
+            ris_inmelding_selectief(fc67, PRM[prmrisapproachid67risov], SYSTEM_ITF1, PRM[prmrislaneid67risov_1], PRM[prmrisstationtype67risov], PRM[prmrisstart67risov], PRM[prmrisend67risov], PRM[prmrisrole67risov], PRM[prmrissubrole67risov], PRM[prmriseta67risov], prioFC67risov);
         if (IH[hprioin67risovris]) iPrioriteitNooitAfkappen[prioFC67risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1957,7 +1959,7 @@ void InUitMelden(void)
     if (SCH[schprioin67risvrwris])
     {
         IH[hprioin67risvrwris] = RT[tprioin67risvrwris] = 
-            ris_inmelding_selectief(fc67, PRM[prmrisapproachid67risvrw], SYSTEM_ITF, PRM[prmrislaneid67risvrw_1], PRM[prmrisstationtype67risvrw], PRM[prmrisstart67risvrw], PRM[prmrisend67risvrw], PRM[prmrisrole67risvrw], PRM[prmrissubrole67risvrw], PRM[prmriseta67risvrw], prioFC67risvrw);
+            ris_inmelding_selectief(fc67, PRM[prmrisapproachid67risvrw], SYSTEM_ITF1, PRM[prmrislaneid67risvrw_1], PRM[prmrisstationtype67risvrw], PRM[prmrisstart67risvrw], PRM[prmrisend67risvrw], PRM[prmrisrole67risvrw], PRM[prmrissubrole67risvrw], PRM[prmriseta67risvrw], prioFC67risvrw);
         if (IH[hprioin67risvrwris]) iPrioriteitNooitAfkappen[prioFC67risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -1996,8 +1998,8 @@ void InUitMelden(void)
     if (SCH[schprioin68risovris])
     {
         IH[hprioin68risovris] = RT[tprioin68risovris] = 
-            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68risov], SYSTEM_ITF, PRM[prmrislaneid68risov_1], PRM[prmrisstationtype68risov], PRM[prmrisstart68risov], PRM[prmrisend68risov], PRM[prmrisrole68risov], PRM[prmrissubrole68risov], PRM[prmriseta68risov], prioFC68risov) ||
-            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68risov], SYSTEM_ITF, PRM[prmrislaneid68risov_2], PRM[prmrisstationtype68risov], PRM[prmrisstart68risov], PRM[prmrisend68risov], PRM[prmrisrole68risov], PRM[prmrissubrole68risov], PRM[prmriseta68risov], prioFC68risov);
+            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68risov], SYSTEM_ITF1, PRM[prmrislaneid68risov_1], PRM[prmrisstationtype68risov], PRM[prmrisstart68risov], PRM[prmrisend68risov], PRM[prmrisrole68risov], PRM[prmrissubrole68risov], PRM[prmriseta68risov], prioFC68risov) ||
+            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68risov], SYSTEM_ITF1, PRM[prmrislaneid68risov_2], PRM[prmrisstationtype68risov], PRM[prmrisstart68risov], PRM[prmrisend68risov], PRM[prmrisrole68risov], PRM[prmrissubrole68risov], PRM[prmriseta68risov], prioFC68risov);
         if (IH[hprioin68risovris]) iPrioriteitNooitAfkappen[prioFC68risov] = TRUE;
     }
 #endif /* NO_RIS */
@@ -2020,8 +2022,8 @@ void InUitMelden(void)
     if (SCH[schprioin68risvrwris])
     {
         IH[hprioin68risvrwris] = RT[tprioin68risvrwris] = 
-            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68risvrw], SYSTEM_ITF, PRM[prmrislaneid68risvrw_1], PRM[prmrisstationtype68risvrw], PRM[prmrisstart68risvrw], PRM[prmrisend68risvrw], PRM[prmrisrole68risvrw], PRM[prmrissubrole68risvrw], PRM[prmriseta68risvrw], prioFC68risvrw) ||
-            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68risvrw], SYSTEM_ITF, PRM[prmrislaneid68risvrw_2], PRM[prmrisstationtype68risvrw], PRM[prmrisstart68risvrw], PRM[prmrisend68risvrw], PRM[prmrisrole68risvrw], PRM[prmrissubrole68risvrw], PRM[prmriseta68risvrw], prioFC68risvrw);
+            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68risvrw], SYSTEM_ITF1, PRM[prmrislaneid68risvrw_1], PRM[prmrisstationtype68risvrw], PRM[prmrisstart68risvrw], PRM[prmrisend68risvrw], PRM[prmrisrole68risvrw], PRM[prmrissubrole68risvrw], PRM[prmriseta68risvrw], prioFC68risvrw) ||
+            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68risvrw], SYSTEM_ITF1, PRM[prmrislaneid68risvrw_2], PRM[prmrisstationtype68risvrw], PRM[prmrisstart68risvrw], PRM[prmrisend68risvrw], PRM[prmrisrole68risvrw], PRM[prmrissubrole68risvrw], PRM[prmriseta68risvrw], prioFC68risvrw);
         if (IH[hprioin68risvrwris]) iPrioriteitNooitAfkappen[prioFC68risvrw] = TRUE;
     }
 #endif /* NO_RIS */
@@ -2075,7 +2077,8 @@ void InUitMelden(void)
     IH[hhdin02kar] = RT[thdin02kar] = !T[thdin02kar] && SCH[schhdin02kar] && (DSIMelding_HD_V1(PRM[prmkarsghd02], CIF_DSIN, SCH[schchecksirene02]));
 #ifndef NO_RIS
     IH[hhdin02ris] = SCH[schhdin02ris] && (
-            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02hd], SYSTEM_ITF, PRM[prmrislaneid02hd_1], PRM[prmrisstationtype02hd], PRM[prmrisstart02hd], PRM[prmrisend02hd], PRM[prmrisrole02hd], PRM[prmrissubrole02hd], PRM[prmriseta02hd], hdFC02));
+            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02hd], SYSTEM_ITF1, PRM[prmrislaneid02hd_1], PRM[prmrisstationtype02hd], PRM[prmrisstart02hd], PRM[prmrisend02hd], PRM[prmrisrole02hd], PRM[prmrissubrole02hd], PRM[prmriseta02hd], hdFC02) ||
+            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02hd], SYSTEM_ITF1, PRM[prmrislaneid02hd_2], PRM[prmrisstationtype02hd], PRM[prmrisstart02hd], PRM[prmrisend02hd], PRM[prmrisrole02hd], PRM[prmrissubrole02hd], PRM[prmriseta02hd], hdFC02));
 #endif /* NO_RIS */
     IH[hhdin02] = IH[hhdin02kar] || IH[hhdin02ris];
 
@@ -2083,7 +2086,7 @@ void InUitMelden(void)
     IH[hhdin03kar] = RT[thdin03kar] = !T[thdin03kar] && SCH[schhdin03kar] && (DSIMelding_HD_V1(PRM[prmkarsghd03], CIF_DSIN, SCH[schchecksirene03]));
 #ifndef NO_RIS
     IH[hhdin03ris] = SCH[schhdin03ris] && (
-            ris_inmelding_selectief(fc03, PRM[prmrisapproachid03hd], SYSTEM_ITF, PRM[prmrislaneid03hd_1], PRM[prmrisstationtype03hd], PRM[prmrisstart03hd], PRM[prmrisend03hd], PRM[prmrisrole03hd], PRM[prmrissubrole03hd], PRM[prmriseta03hd], hdFC03));
+            ris_inmelding_selectief(fc03, PRM[prmrisapproachid03hd], SYSTEM_ITF1, PRM[prmrislaneid03hd_1], PRM[prmrisstationtype03hd], PRM[prmrisstart03hd], PRM[prmrisend03hd], PRM[prmrisrole03hd], PRM[prmrissubrole03hd], PRM[prmriseta03hd], hdFC03));
 #endif /* NO_RIS */
     IH[hhdin03] = IH[hhdin03kar] || IH[hhdin03ris];
 
@@ -2091,7 +2094,7 @@ void InUitMelden(void)
     IH[hhdin05kar] = RT[thdin05kar] = !T[thdin05kar] && SCH[schhdin05kar] && (DSIMelding_HD_V1(PRM[prmkarsghd05], CIF_DSIN, SCH[schchecksirene05]));
 #ifndef NO_RIS
     IH[hhdin05ris] = SCH[schhdin05ris] && (
-            ris_inmelding_selectief(fc05, PRM[prmrisapproachid05hd], SYSTEM_ITF, PRM[prmrislaneid05hd_1], PRM[prmrisstationtype05hd], PRM[prmrisstart05hd], PRM[prmrisend05hd], PRM[prmrisrole05hd], PRM[prmrissubrole05hd], PRM[prmriseta05hd], hdFC05));
+            ris_inmelding_selectief(fc05, PRM[prmrisapproachid05hd], SYSTEM_ITF1, PRM[prmrislaneid05hd_1], PRM[prmrisstationtype05hd], PRM[prmrisstart05hd], PRM[prmrisend05hd], PRM[prmrisrole05hd], PRM[prmrissubrole05hd], PRM[prmriseta05hd], hdFC05));
 #endif /* NO_RIS */
     IH[hhdin05] = IH[hhdin05kar] || IH[hhdin05ris];
 
@@ -2099,8 +2102,8 @@ void InUitMelden(void)
     IH[hhdin08kar] = RT[thdin08kar] = !T[thdin08kar] && SCH[schhdin08kar] && (DSIMelding_HD_V1(PRM[prmkarsghd08], CIF_DSIN, SCH[schchecksirene08]));
 #ifndef NO_RIS
     IH[hhdin08ris] = SCH[schhdin08ris] && (
-            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08hd], SYSTEM_ITF, PRM[prmrislaneid08hd_1], PRM[prmrisstationtype08hd], PRM[prmrisstart08hd], PRM[prmrisend08hd], PRM[prmrisrole08hd], PRM[prmrissubrole08hd], PRM[prmriseta08hd], hdFC08) ||
-            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08hd], SYSTEM_ITF, PRM[prmrislaneid08hd_2], PRM[prmrisstationtype08hd], PRM[prmrisstart08hd], PRM[prmrisend08hd], PRM[prmrisrole08hd], PRM[prmrissubrole08hd], PRM[prmriseta08hd], hdFC08));
+            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08hd], SYSTEM_ITF1, PRM[prmrislaneid08hd_1], PRM[prmrisstationtype08hd], PRM[prmrisstart08hd], PRM[prmrisend08hd], PRM[prmrisrole08hd], PRM[prmrissubrole08hd], PRM[prmriseta08hd], hdFC08) ||
+            ris_inmelding_selectief(fc08, PRM[prmrisapproachid08hd], SYSTEM_ITF1, PRM[prmrislaneid08hd_2], PRM[prmrisstationtype08hd], PRM[prmrisstart08hd], PRM[prmrisend08hd], PRM[prmrisrole08hd], PRM[prmrissubrole08hd], PRM[prmriseta08hd], hdFC08));
 #endif /* NO_RIS */
     IH[hhdin08] = IH[hhdin08kar] || IH[hhdin08ris];
 
@@ -2108,7 +2111,7 @@ void InUitMelden(void)
     IH[hhdin09kar] = RT[thdin09kar] = !T[thdin09kar] && SCH[schhdin09kar] && (DSIMelding_HD_V1(PRM[prmkarsghd09], CIF_DSIN, SCH[schchecksirene09]));
 #ifndef NO_RIS
     IH[hhdin09ris] = SCH[schhdin09ris] && (
-            ris_inmelding_selectief(fc09, PRM[prmrisapproachid09hd], SYSTEM_ITF, PRM[prmrislaneid09hd_1], PRM[prmrisstationtype09hd], PRM[prmrisstart09hd], PRM[prmrisend09hd], PRM[prmrisrole09hd], PRM[prmrissubrole09hd], PRM[prmriseta09hd], hdFC09));
+            ris_inmelding_selectief(fc09, PRM[prmrisapproachid09hd], SYSTEM_ITF1, PRM[prmrislaneid09hd_1], PRM[prmrisstationtype09hd], PRM[prmrisstart09hd], PRM[prmrisend09hd], PRM[prmrisrole09hd], PRM[prmrissubrole09hd], PRM[prmriseta09hd], hdFC09));
 #endif /* NO_RIS */
     IH[hhdin09] = IH[hhdin09kar] || IH[hhdin09ris];
 
@@ -2116,7 +2119,7 @@ void InUitMelden(void)
     IH[hhdin11kar] = RT[thdin11kar] = !T[thdin11kar] && SCH[schhdin11kar] && (DSIMelding_HD_V1(PRM[prmkarsghd11], CIF_DSIN, SCH[schchecksirene11]));
 #ifndef NO_RIS
     IH[hhdin11ris] = SCH[schhdin11ris] && (
-            ris_inmelding_selectief(fc11, PRM[prmrisapproachid11hd], SYSTEM_ITF, PRM[prmrislaneid11hd_1], PRM[prmrisstationtype11hd], PRM[prmrisstart11hd], PRM[prmrisend11hd], PRM[prmrisrole11hd], PRM[prmrissubrole11hd], PRM[prmriseta11hd], hdFC11));
+            ris_inmelding_selectief(fc11, PRM[prmrisapproachid11hd], SYSTEM_ITF1, PRM[prmrislaneid11hd_1], PRM[prmrisstationtype11hd], PRM[prmrisstart11hd], PRM[prmrisend11hd], PRM[prmrisrole11hd], PRM[prmrissubrole11hd], PRM[prmriseta11hd], hdFC11));
 #endif /* NO_RIS */
     IH[hhdin11] = IH[hhdin11kar] || IH[hhdin11ris];
 
@@ -2124,7 +2127,7 @@ void InUitMelden(void)
     IH[hhdin61kar] = RT[thdin61kar] = !T[thdin61kar] && SCH[schhdin61kar] && (DSIMelding_HD_V1(PRM[prmkarsghd61], CIF_DSIN, SCH[schchecksirene61]));
 #ifndef NO_RIS
     IH[hhdin61ris] = SCH[schhdin61ris] && (
-            ris_inmelding_selectief(fc61, PRM[prmrisapproachid61hd], SYSTEM_ITF, PRM[prmrislaneid61hd_1], PRM[prmrisstationtype61hd], PRM[prmrisstart61hd], PRM[prmrisend61hd], PRM[prmrisrole61hd], PRM[prmrissubrole61hd], PRM[prmriseta61hd], hdFC61));
+            ris_inmelding_selectief(fc61, PRM[prmrisapproachid61hd], SYSTEM_ITF1, PRM[prmrislaneid61hd_1], PRM[prmrisstationtype61hd], PRM[prmrisstart61hd], PRM[prmrisend61hd], PRM[prmrisrole61hd], PRM[prmrissubrole61hd], PRM[prmriseta61hd], hdFC61));
 #endif /* NO_RIS */
     IH[hhdin61] = IH[hhdin61kar] || IH[hhdin61ris];
 
@@ -2132,8 +2135,8 @@ void InUitMelden(void)
     IH[hhdin62kar] = RT[thdin62kar] = !T[thdin62kar] && SCH[schhdin62kar] && (DSIMelding_HD_V1(PRM[prmkarsghd62], CIF_DSIN, SCH[schchecksirene62]));
 #ifndef NO_RIS
     IH[hhdin62ris] = SCH[schhdin62ris] && (
-            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62hd], SYSTEM_ITF, PRM[prmrislaneid62hd_1], PRM[prmrisstationtype62hd], PRM[prmrisstart62hd], PRM[prmrisend62hd], PRM[prmrisrole62hd], PRM[prmrissubrole62hd], PRM[prmriseta62hd], hdFC62) ||
-            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62hd], SYSTEM_ITF, PRM[prmrislaneid62hd_2], PRM[prmrisstationtype62hd], PRM[prmrisstart62hd], PRM[prmrisend62hd], PRM[prmrisrole62hd], PRM[prmrissubrole62hd], PRM[prmriseta62hd], hdFC62));
+            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62hd], SYSTEM_ITF1, PRM[prmrislaneid62hd_1], PRM[prmrisstationtype62hd], PRM[prmrisstart62hd], PRM[prmrisend62hd], PRM[prmrisrole62hd], PRM[prmrissubrole62hd], PRM[prmriseta62hd], hdFC62) ||
+            ris_inmelding_selectief(fc62, PRM[prmrisapproachid62hd], SYSTEM_ITF1, PRM[prmrislaneid62hd_2], PRM[prmrisstationtype62hd], PRM[prmrisstart62hd], PRM[prmrisend62hd], PRM[prmrisrole62hd], PRM[prmrissubrole62hd], PRM[prmriseta62hd], hdFC62));
 #endif /* NO_RIS */
     IH[hhdin62] = IH[hhdin62kar] || IH[hhdin62ris];
 
@@ -2141,7 +2144,7 @@ void InUitMelden(void)
     IH[hhdin67kar] = RT[thdin67kar] = !T[thdin67kar] && SCH[schhdin67kar] && (DSIMelding_HD_V1(PRM[prmkarsghd67], CIF_DSIN, SCH[schchecksirene67]));
 #ifndef NO_RIS
     IH[hhdin67ris] = SCH[schhdin67ris] && (
-            ris_inmelding_selectief(fc67, PRM[prmrisapproachid67hd], SYSTEM_ITF, PRM[prmrislaneid67hd_1], PRM[prmrisstationtype67hd], PRM[prmrisstart67hd], PRM[prmrisend67hd], PRM[prmrisrole67hd], PRM[prmrissubrole67hd], PRM[prmriseta67hd], hdFC67));
+            ris_inmelding_selectief(fc67, PRM[prmrisapproachid67hd], SYSTEM_ITF1, PRM[prmrislaneid67hd_1], PRM[prmrisstationtype67hd], PRM[prmrisstart67hd], PRM[prmrisend67hd], PRM[prmrisrole67hd], PRM[prmrissubrole67hd], PRM[prmriseta67hd], hdFC67));
 #endif /* NO_RIS */
     IH[hhdin67] = IH[hhdin67kar] || IH[hhdin67ris];
 
@@ -2149,8 +2152,8 @@ void InUitMelden(void)
     IH[hhdin68kar] = RT[thdin68kar] = !T[thdin68kar] && SCH[schhdin68kar] && (DSIMelding_HD_V1(PRM[prmkarsghd68], CIF_DSIN, SCH[schchecksirene68]));
 #ifndef NO_RIS
     IH[hhdin68ris] = SCH[schhdin68ris] && (
-            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68hd], SYSTEM_ITF, PRM[prmrislaneid68hd_1], PRM[prmrisstationtype68hd], PRM[prmrisstart68hd], PRM[prmrisend68hd], PRM[prmrisrole68hd], PRM[prmrissubrole68hd], PRM[prmriseta68hd], hdFC68) ||
-            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68hd], SYSTEM_ITF, PRM[prmrislaneid68hd_2], PRM[prmrisstationtype68hd], PRM[prmrisstart68hd], PRM[prmrisend68hd], PRM[prmrisrole68hd], PRM[prmrissubrole68hd], PRM[prmriseta68hd], hdFC68));
+            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68hd], SYSTEM_ITF1, PRM[prmrislaneid68hd_1], PRM[prmrisstationtype68hd], PRM[prmrisstart68hd], PRM[prmrisend68hd], PRM[prmrisrole68hd], PRM[prmrissubrole68hd], PRM[prmriseta68hd], hdFC68) ||
+            ris_inmelding_selectief(fc68, PRM[prmrisapproachid68hd], SYSTEM_ITF1, PRM[prmrislaneid68hd_2], PRM[prmrisstationtype68hd], PRM[prmrisstart68hd], PRM[prmrisend68hd], PRM[prmrisrole68hd], PRM[prmrissubrole68hd], PRM[prmriseta68hd], hdFC68));
 #endif /* NO_RIS */
     IH[hhdin68] = IH[hhdin68kar] || IH[hhdin68ris];
 
@@ -2299,6 +2302,9 @@ void InUitMelden(void)
     IH[hhdin61] |= IH[hhdin62]; IH[hhduit61] |= IH[hhduit62];
     IH[hhdin68] |= IH[hhdin67]; IH[hhduit68] |= IH[hhduit67];
     IH[hhdin67] |= IH[hhdin68]; IH[hhduit67] |= IH[hhduit68];
+#if defined CCOL_IS_SPECIAL && defined PRACTICE_TEST
+    is_special_signals();
+#endif
 }
 
 void OnderMaximumExtra(void)
@@ -2619,6 +2625,7 @@ void PostAfhandelingPrio(void)
     }
 
 
+    #ifndef NO_TIMETOX
     /* nooit einde groen als granted verstrekt */
     /* --------------------------------------- */
     for (i = 0; i < FCMAX; ++i)
@@ -2630,6 +2637,7 @@ void PostAfhandelingPrio(void)
             Z[i] = FALSE;
         }
     }
+    #endif /* NO_TIMETOX */
 
     #ifndef NO_TIMETOX
     /* Niet afkappen naloop richtingen wanneer voedende een P[]&BIT11 heeft */
@@ -2891,8 +2899,8 @@ void PrioSpecialSignals(void)
     if (SD[ddummykaruit68bus]) set_DSI_message(NG, CIF_BUS, 68, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
 
     /* HD ingrepen */
-    if (SD[ddummyhdkarinA]) set_DSI_message(0, CIF_POL, 2, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruitA]) set_DSI_message(0, CIF_POL, 2, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin02]) set_DSI_message(0, CIF_POL, 2, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit02]) set_DSI_message(0, CIF_POL, 2, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin03]) set_DSI_message(0, CIF_POL, 3, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkaruit03]) set_DSI_message(0, CIF_POL, 3, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin05]) set_DSI_message(0, CIF_POL, 5, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
