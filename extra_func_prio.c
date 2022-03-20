@@ -51,7 +51,7 @@ boolv DSIMeldingPRIO_V2(           /* Fik220201 */
    if (checktype && meldingtype != NG && meldingtype != CIF_DSI[CIF_DSI_TYPE]) melding = FALSE;
 
    /* uitmelding eerste bus tijdens rood, tijdens 1e seconde rood gaan we ervan uit dat de bus toch doorgereden is */
-#if (CCOL_V >= 95)
+#if (CCOL_V >= 110)
    if (R[fc] && TR_timer[fc] > 10 && (!vertraag_kar_uitm[prio_fc] || iAantalInmeldingen[prio_fc] == 1))
 #else
    if (R[fc] && TFB_timer[fc] > 10 && (!vertraag_kar_uitm[prio_fc] || iAantalInmeldingen[prio_fc] == 1))
@@ -537,4 +537,36 @@ boolv fietsprio_inmelding(
          R[fc] && !TRG[fc] &&
 		 (dvw != NG && C_counter[c_priocount] >= PRM[prm_priocount] ||
           A[fc] && TFB_timer[fc] >= PRM[prm_priowt]);
+}
+
+boolv fietsprio_inmelding2(
+   count fc,               /* Fasecyclus */
+   count dvw,              /* Verweg detector */
+   count c_priocount,      /* Counter tellen voertuigen */
+   count c_priocyc,        /* Counter aantal keer prio per cyclus */
+   count prm_prioblok,     /* Bitwise bepalen toegestane blokken */
+   count prm_priocyc,      /* Maximum aantal keer prio per cyclus */
+   count prm_priocount,    /* Minimum aantal voertuigen voor prio */
+   count prm_priowt,       /* Minimum wachttijd voor prio */
+   boolv prioin,           /* Hulpelement inmelding prio */
+   count ml,               /* Actieve module */
+   count me_priocount,     /* Memory-element tellen voertuigen RIS */
+   count prm_priocountris) /* Minimum aantal voertuigen voor prio RIS */
+   {
+   /* Check juiste blok */
+   if (!(PRM[prm_prioblok] & (1 << ml))) return FALSE;
+
+   /* Check aantal keer prio per cyclus niet overschreden */
+   if (C[c_priocyc] && (C_counter[c_priocyc] >= PRM[prm_priocyc]))
+      return FALSE;
+
+   /* prio actief indien: voldoende voertuigen OF voldoende wachttijd */
+   return
+      R[fc] && !TRG[fc] &&
+      /* voldoende voertuigen massadetectie */
+      (dvw != NG && C_counter[c_priocount] >= PRM[prm_priocount] ||
+      /* voldoende voertuigen massadetectie */
+      A[fc] && TFB_timer[fc] >= PRM[prm_priowt] ||
+     /* voldoende voertuigen RIS */
+      (dvw != NG && MM[me_priocount] >= PRM[prm_priocountris]));
 }

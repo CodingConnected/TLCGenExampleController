@@ -60,7 +60,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>%(AdditionalDependencies);ccolmain.lib;ccolreg.lib;ccolsim.lib;ccolvlog.lib;comctl32.lib;dsifunc.lib;htmlhelp.lib;legacy_stdio_definitions.lib;lwmlfunc.lib;plefunc.lib;plfunc.lib;risfunc.lib;rissimfunc.lib;stdfunc.lib;trigfunc.lib;tx_synch.lib;</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies);ccolmain.lib;ccolreg.lib;ccolsim.lib;ccolvlog.lib;comctl32.lib;dsifunc.lib;htmlhelp.lib;legacy_stdio_definitions.lib;lwmlfunc.lib;plefunc.lib;plfunc.lib;risfunc.lib;rissimfunc4.lib;stdfunc.lib;trigfunc.lib;tx_synch.lib;</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD</IgnoreSpecificDefaultLibraries>
       <AdditionalLibraryDirectories>$(CcolDir)\WIN32\LIB\</AdditionalLibraryDirectories>
     </Link>

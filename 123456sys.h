@@ -185,7 +185,9 @@
     #define uswtk84            (FCMAX + 129) /* Aansturing waitsignaal detector k84                 */
     #define usstarprogwissel   (FCMAX + 130) /* Verklikken actief zijn wisselen naar star programma */
     #define usstarstar01       (FCMAX + 131) /* Star programma star01 actief                        */
-    #define USMAX1             (FCMAX + 132)
+    #define usincontrol        (FCMAX + 132) /* Applicatie is in control                            */
+    #define usnocontrol        (FCMAX + 133) /* Applicatie is niet in staat te regelen              */
+    #define USMAX1             (FCMAX + 134)
 
 /* detectie */
 /* -------- */
@@ -852,7 +854,8 @@
     #define mar81           115 /* Alternatieve ruimte fase 81                                  */
     #define mar82           116 /* Alternatieve ruimte fase 82                                  */
     #define mar84           117 /* Alternatieve ruimte fase 84                                  */
-    #define MEMAX1          118
+    #define mftsvtg28fietsfietsrislaneid28_1  118 /* aantal RIS voertuigen */
+    #define MEMAX1                            119
 
 /* tijd elementen */
 /* -------------- */
@@ -3778,251 +3781,266 @@
     #define prmrislaneid09_1            1895 /* Lane id voor lane met index 1 bij fase 09                                                                                      */
     #define prmrislaneid11_1            1896 /* Lane id voor lane met index 1 bij fase 11                                                                                      */
     #define prmrislaneid21_1            1897 /* Lane id voor lane met index 1 bij fase 21                                                                                      */
-    #define prmrislaneid22_1            1898 /* Lane id voor lane met index 1 bij fase 22                                                                                      */
-    #define prmrislaneid24_1            1899 /* Lane id voor lane met index 1 bij fase 24                                                                                      */
-    #define prmrislaneid26_1            1900 /* Lane id voor lane met index 1 bij fase 26                                                                                      */
-    #define prmrislaneid28_1            1901 /* Lane id voor lane met index 1 bij fase 28                                                                                      */
-    #define prmrislaneid31_1            1902 /* Lane id voor lane met index 1 bij fase 31                                                                                      */
-    #define prmrislaneid31_2            1903 /* Lane id voor lane met index 2 bij fase 31                                                                                      */
-    #define prmrislaneid32_1            1904 /* Lane id voor lane met index 1 bij fase 32                                                                                      */
-    #define prmrislaneid32_2            1905 /* Lane id voor lane met index 2 bij fase 32                                                                                      */
-    #define prmrislaneid33_1            1906 /* Lane id voor lane met index 1 bij fase 33                                                                                      */
-    #define prmrislaneid33_2            1907 /* Lane id voor lane met index 2 bij fase 33                                                                                      */
-    #define prmrislaneid34_1            1908 /* Lane id voor lane met index 1 bij fase 34                                                                                      */
-    #define prmrislaneid34_2            1909 /* Lane id voor lane met index 2 bij fase 34                                                                                      */
-    #define prmrislaneid38_1            1910 /* Lane id voor lane met index 1 bij fase 38                                                                                      */
-    #define prmrislaneid38_2            1911 /* Lane id voor lane met index 2 bij fase 38                                                                                      */
-    #define prmrislaneid84_1            1912 /* Lane id voor lane met index 1 bij fase 84                                                                                      */
-    #define prmrislaneid82_1            1913 /* Lane id voor lane met index 1 bij fase 82                                                                                      */
-    #define prmrislaneid81_1            1914 /* Lane id voor lane met index 1 bij fase 81                                                                                      */
-    #define prmrislaneid68_1            1915 /* Lane id voor lane met index 1 bij fase 68                                                                                      */
-    #define prmrislaneid68_2            1916 /* Lane id voor lane met index 2 bij fase 68                                                                                      */
-    #define prmrislaneid67_1            1917 /* Lane id voor lane met index 1 bij fase 67                                                                                      */
-    #define prmrislaneid62_1            1918 /* Lane id voor lane met index 1 bij fase 62                                                                                      */
-    #define prmrislaneid62_2            1919 /* Lane id voor lane met index 2 bij fase 62                                                                                      */
-    #define prmrislaneid61_1            1920 /* Lane id voor lane met index 1 bij fase 61                                                                                      */
-    #define prmrisastart03mveh1         1921 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 03                                                                   */
-    #define prmrisastart05mveh1         1922 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 05                                                                   */
-    #define prmrisastart08mveh1         1923 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 08                                                                   */
-    #define prmrisastart08mveh2         1924 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 08                                                                   */
-    #define prmrisastart09mveh1         1925 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 09                                                                   */
-    #define prmrisastart11mveh1         1926 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 11                                                                   */
-    #define prmrisastart21fts1          1927 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 21                                                                   */
-    #define prmrisastart24fts1          1928 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 24                                                                   */
-    #define prmrisastart26fts1          1929 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 26                                                                   */
-    #define prmrisastart28fts1          1930 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 28                                                                   */
-    #define prmrisastart31vtg1          1931 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisastart31vtg2          1932 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisastart32vtg1          1933 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisastart32vtg2          1934 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisastart33vtg1          1935 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisastart33vtg2          1936 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisastart34vtg1          1937 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisastart34vtg2          1938 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisastart38vtg1          1939 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisastart38vtg2          1940 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisastart61mveh1         1941 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 61                                                                   */
-    #define prmrisastart62mveh1         1942 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisastart62mveh2         1943 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisastart67mveh1         1944 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 67                                                                   */
-    #define prmrisastart68mveh1         1945 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisastart68mveh2         1946 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisastart81fts1          1947 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 81                                                                   */
-    #define prmrisastart82fts1          1948 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 82                                                                   */
-    #define prmrisastart84fts1          1949 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 84                                                                   */
-    #define prmrisaend03mveh1           1950 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 03                                                                   */
-    #define prmrisaend05mveh1           1951 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 05                                                                   */
-    #define prmrisaend08mveh1           1952 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 08                                                                   */
-    #define prmrisaend08mveh2           1953 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 08                                                                   */
-    #define prmrisaend09mveh1           1954 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 09                                                                   */
-    #define prmrisaend11mveh1           1955 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 11                                                                   */
-    #define prmrisaend21fts1            1956 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 21                                                                   */
-    #define prmrisaend24fts1            1957 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 24                                                                   */
-    #define prmrisaend26fts1            1958 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 26                                                                   */
-    #define prmrisaend28fts1            1959 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 28                                                                   */
-    #define prmrisaend31vtg1            1960 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisaend31vtg2            1961 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
-    #define prmrisaend32vtg1            1962 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisaend32vtg2            1963 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
-    #define prmrisaend33vtg1            1964 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisaend33vtg2            1965 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
-    #define prmrisaend34vtg1            1966 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisaend34vtg2            1967 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
-    #define prmrisaend38vtg1            1968 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisaend38vtg2            1969 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
-    #define prmrisaend61mveh1           1970 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 61                                                                   */
-    #define prmrisaend62mveh1           1971 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisaend62mveh2           1972 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
-    #define prmrisaend67mveh1           1973 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 67                                                                   */
-    #define prmrisaend68mveh1           1974 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisaend68mveh2           1975 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
-    #define prmrisaend81fts1            1976 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 81                                                                   */
-    #define prmrisaend82fts1            1977 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 82                                                                   */
-    #define prmrisaend84fts1            1978 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 84                                                                   */
-    #define prmrisvstart03mveh1         1979 /* Afstand van stopstreep tot start verleng gebied RIS fase 03                                                                    */
-    #define prmrisvstart05mveh1         1980 /* Afstand van stopstreep tot start verleng gebied RIS fase 05                                                                    */
-    #define prmrisvstart08mveh1         1981 /* Afstand van stopstreep tot start verleng gebied RIS fase 08                                                                    */
-    #define prmrisvstart08mveh2         1982 /* Afstand van stopstreep tot start verleng gebied RIS fase 08                                                                    */
-    #define prmrisvstart09mveh1         1983 /* Afstand van stopstreep tot start verleng gebied RIS fase 09                                                                    */
-    #define prmrisvstart11mveh1         1984 /* Afstand van stopstreep tot start verleng gebied RIS fase 11                                                                    */
-    #define prmrisvstart21fts1          1985 /* Afstand van stopstreep tot start verleng gebied RIS fase 21                                                                    */
-    #define prmrisvstart24fts1          1986 /* Afstand van stopstreep tot start verleng gebied RIS fase 24                                                                    */
-    #define prmrisvstart26fts1          1987 /* Afstand van stopstreep tot start verleng gebied RIS fase 26                                                                    */
-    #define prmrisvstart28fts1          1988 /* Afstand van stopstreep tot start verleng gebied RIS fase 28                                                                    */
-    #define prmrisvstart31vtg1          1989 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
-    #define prmrisvstart31vtg2          1990 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
-    #define prmrisvstart32vtg1          1991 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
-    #define prmrisvstart32vtg2          1992 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
-    #define prmrisvstart33vtg1          1993 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
-    #define prmrisvstart33vtg2          1994 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
-    #define prmrisvstart34vtg1          1995 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
-    #define prmrisvstart34vtg2          1996 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
-    #define prmrisvstart38vtg1          1997 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
-    #define prmrisvstart38vtg2          1998 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
-    #define prmrisvstart61mveh1         1999 /* Afstand van stopstreep tot start verleng gebied RIS fase 61                                                                    */
-    #define prmrisvstart62mveh1         2000 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
-    #define prmrisvstart62mveh2         2001 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
-    #define prmrisvstart67mveh1         2002 /* Afstand van stopstreep tot start verleng gebied RIS fase 67                                                                    */
-    #define prmrisvstart68mveh1         2003 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
-    #define prmrisvstart68mveh2         2004 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
-    #define prmrisvstart81fts1          2005 /* Afstand van stopstreep tot start verleng gebied RIS fase 81                                                                    */
-    #define prmrisvstart82fts1          2006 /* Afstand van stopstreep tot start verleng gebied RIS fase 82                                                                    */
-    #define prmrisvstart84fts1          2007 /* Afstand van stopstreep tot start verleng gebied RIS fase 84                                                                    */
-    #define prmrisvend03mveh1           2008 /* Afstand van stopstreep tot einde verleng gebied RIS fase 03                                                                    */
-    #define prmrisvend05mveh1           2009 /* Afstand van stopstreep tot einde verleng gebied RIS fase 05                                                                    */
-    #define prmrisvend08mveh1           2010 /* Afstand van stopstreep tot einde verleng gebied RIS fase 08                                                                    */
-    #define prmrisvend08mveh2           2011 /* Afstand van stopstreep tot einde verleng gebied RIS fase 08                                                                    */
-    #define prmrisvend09mveh1           2012 /* Afstand van stopstreep tot einde verleng gebied RIS fase 09                                                                    */
-    #define prmrisvend11mveh1           2013 /* Afstand van stopstreep tot einde verleng gebied RIS fase 11                                                                    */
-    #define prmrisvend21fts1            2014 /* Afstand van stopstreep tot einde verleng gebied RIS fase 21                                                                    */
-    #define prmrisvend24fts1            2015 /* Afstand van stopstreep tot einde verleng gebied RIS fase 24                                                                    */
-    #define prmrisvend26fts1            2016 /* Afstand van stopstreep tot einde verleng gebied RIS fase 26                                                                    */
-    #define prmrisvend28fts1            2017 /* Afstand van stopstreep tot einde verleng gebied RIS fase 28                                                                    */
-    #define prmrisvend31vtg1            2018 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
-    #define prmrisvend31vtg2            2019 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
-    #define prmrisvend32vtg1            2020 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
-    #define prmrisvend32vtg2            2021 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
-    #define prmrisvend33vtg1            2022 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
-    #define prmrisvend33vtg2            2023 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
-    #define prmrisvend34vtg1            2024 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
-    #define prmrisvend34vtg2            2025 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
-    #define prmrisvend38vtg1            2026 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
-    #define prmrisvend38vtg2            2027 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
-    #define prmrisvend61mveh1           2028 /* Afstand van stopstreep tot einde verleng gebied RIS fase 61                                                                    */
-    #define prmrisvend62mveh1           2029 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
-    #define prmrisvend62mveh2           2030 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
-    #define prmrisvend67mveh1           2031 /* Afstand van stopstreep tot einde verleng gebied RIS fase 67                                                                    */
-    #define prmrisvend68mveh1           2032 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
-    #define prmrisvend68mveh2           2033 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
-    #define prmrisvend81fts1            2034 /* Afstand van stopstreep tot einde verleng gebied RIS fase 81                                                                    */
-    #define prmrisvend82fts1            2035 /* Afstand van stopstreep tot einde verleng gebied RIS fase 82                                                                    */
-    #define prmrisvend84fts1            2036 /* Afstand van stopstreep tot einde verleng gebied RIS fase 84                                                                    */
-    #define prmmkrgd24_3                2037 /* Type verlengen tbv richtinggevoelig verlengen fase 24                                                                          */
-    #define prmrgv                      2038 /* Type RoBuGrover                                                                                                                */
-    #define prmmin_tcyclus              2039 /* Minimale cyclustijd                                                                                                            */
-    #define prmmax_tcyclus              2040 /* Maximale cyclustijd                                                                                                            */
-    #define prmtvg_omhoog               2041 /* Hoeveelheid ophogen TVG                                                                                                        */
-    #define prmtvg_omlaag               2042 /* Hoeveelheid verlagen TVG                                                                                                       */
-    #define prmtvg_verschil             2043 /* Parameter verschil                                                                                                             */
-    #define prmtvg_npr_omlaag           2044 /* Hoeveelheid verlagen TVG bij niet primair                                                                                      */
-    #define prmmintvg_02                2045 /* Minimale verlenggroentijd fase 02                                                                                              */
-    #define prmmaxtvg_02                2046 /* Maximale verlenggroentijd fase 02                                                                                              */
-    #define prmmintvg_03                2047 /* Minimale verlenggroentijd fase 03                                                                                              */
-    #define prmmaxtvg_03                2048 /* Maximale verlenggroentijd fase 03                                                                                              */
-    #define prmmintvg_05                2049 /* Minimale verlenggroentijd fase 05                                                                                              */
-    #define prmmaxtvg_05                2050 /* Maximale verlenggroentijd fase 05                                                                                              */
-    #define prmmintvg_08                2051 /* Minimale verlenggroentijd fase 08                                                                                              */
-    #define prmmaxtvg_08                2052 /* Maximale verlenggroentijd fase 08                                                                                              */
-    #define prmmintvg_09                2053 /* Minimale verlenggroentijd fase 09                                                                                              */
-    #define prmmaxtvg_09                2054 /* Maximale verlenggroentijd fase 09                                                                                              */
-    #define prmmintvg_11                2055 /* Minimale verlenggroentijd fase 11                                                                                              */
-    #define prmmaxtvg_11                2056 /* Maximale verlenggroentijd fase 11                                                                                              */
-    #define prmmintvg_22                2057 /* Minimale verlenggroentijd fase 22                                                                                              */
-    #define prmmaxtvg_22                2058 /* Maximale verlenggroentijd fase 22                                                                                              */
-    #define prmmintvg_28                2059 /* Minimale verlenggroentijd fase 28                                                                                              */
-    #define prmmaxtvg_28                2060 /* Maximale verlenggroentijd fase 28                                                                                              */
-    #define prmmintvg_68                2061 /* Minimale verlenggroentijd fase 68                                                                                              */
-    #define prmmaxtvg_68                2062 /* Maximale verlenggroentijd fase 68                                                                                              */
-    #define prmsiexgrperc33             2063 /* Extra groen percentage tov. TFG voor senioreningreep op fase 33                                                                */
-    #define prmsiexgrperc34             2064 /* Extra groen percentage tov. TFG voor senioreningreep op fase 34                                                                */
-    #define prmmaxtvgvlog               2065 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
-    #define prmmaxtfbvlog               2066 /* Parameter VLOG max. wachttijd na aanvraag                                                                                      */
-    #define prmmlfpr02                  2067 /* Maximaal aantal modules vooruit fase 02                                                                                        */
-    #define prmmlfpr03                  2068 /* Maximaal aantal modules vooruit fase 03                                                                                        */
-    #define prmmlfpr05                  2069 /* Maximaal aantal modules vooruit fase 05                                                                                        */
-    #define prmmlfpr08                  2070 /* Maximaal aantal modules vooruit fase 08                                                                                        */
-    #define prmmlfpr09                  2071 /* Maximaal aantal modules vooruit fase 09                                                                                        */
-    #define prmmlfpr11                  2072 /* Maximaal aantal modules vooruit fase 11                                                                                        */
-    #define prmmlfpr21                  2073 /* Maximaal aantal modules vooruit fase 21                                                                                        */
-    #define prmmlfpr22                  2074 /* Maximaal aantal modules vooruit fase 22                                                                                        */
-    #define prmmlfpr24                  2075 /* Maximaal aantal modules vooruit fase 24                                                                                        */
-    #define prmmlfpr26                  2076 /* Maximaal aantal modules vooruit fase 26                                                                                        */
-    #define prmmlfpr28                  2077 /* Maximaal aantal modules vooruit fase 28                                                                                        */
-    #define prmmlfpr31                  2078 /* Maximaal aantal modules vooruit fase 31                                                                                        */
-    #define prmmlfpr32                  2079 /* Maximaal aantal modules vooruit fase 32                                                                                        */
-    #define prmmlfpr33                  2080 /* Maximaal aantal modules vooruit fase 33                                                                                        */
-    #define prmmlfpr34                  2081 /* Maximaal aantal modules vooruit fase 34                                                                                        */
-    #define prmmlfpr38                  2082 /* Maximaal aantal modules vooruit fase 38                                                                                        */
-    #define prmmlfpr61                  2083 /* Maximaal aantal modules vooruit fase 61                                                                                        */
-    #define prmmlfpr62                  2084 /* Maximaal aantal modules vooruit fase 62                                                                                        */
-    #define prmmlfpr67                  2085 /* Maximaal aantal modules vooruit fase 67                                                                                        */
-    #define prmmlfpr68                  2086 /* Maximaal aantal modules vooruit fase 68                                                                                        */
-    #define prmmlfpr81                  2087 /* Maximaal aantal modules vooruit fase 81                                                                                        */
-    #define prmmlfpr82                  2088 /* Maximaal aantal modules vooruit fase 82                                                                                        */
-    #define prmmlfpr84                  2089 /* Maximaal aantal modules vooruit fase 84                                                                                        */
-    #define prmaltg02                   2090 /* Minimale groentijd bij alternatieve realisatie fase 02                                                                         */
-    #define prmaltp02                   2091 /* Minimale ruimte tbv alternatieve realisatie fase 02                                                                            */
-    #define prmaltg03                   2092 /* Minimale groentijd bij alternatieve realisatie fase 03                                                                         */
-    #define prmaltp03                   2093 /* Minimale ruimte tbv alternatieve realisatie fase 03                                                                            */
-    #define prmaltg05                   2094 /* Minimale groentijd bij alternatieve realisatie fase 05                                                                         */
-    #define prmaltp05                   2095 /* Minimale ruimte tbv alternatieve realisatie fase 05                                                                            */
-    #define prmaltg08                   2096 /* Minimale groentijd bij alternatieve realisatie fase 08                                                                         */
-    #define prmaltp08                   2097 /* Minimale ruimte tbv alternatieve realisatie fase 08                                                                            */
-    #define prmaltg09                   2098 /* Minimale groentijd bij alternatieve realisatie fase 09                                                                         */
-    #define prmaltp09                   2099 /* Minimale ruimte tbv alternatieve realisatie fase 09                                                                            */
-    #define prmaltg11                   2100 /* Minimale groentijd bij alternatieve realisatie fase 11                                                                         */
-    #define prmaltp11                   2101 /* Minimale ruimte tbv alternatieve realisatie fase 11                                                                            */
-    #define prmaltg21                   2102 /* Minimale groentijd bij alternatieve realisatie fase 21                                                                         */
-    #define prmaltp21                   2103 /* Minimale ruimte tbv alternatieve realisatie fase 21                                                                            */
-    #define prmaltg22                   2104 /* Minimale groentijd bij alternatieve realisatie fase 22                                                                         */
-    #define prmaltp2232                 2105 /* Minimale ruimte tbv alternatieve realisatie fasen 22, 32                                                                       */
-    #define prmaltg24                   2106 /* Minimale groentijd bij alternatieve realisatie fase 24                                                                         */
-    #define prmaltp2434                 2107 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
-    #define prmaltg26                   2108 /* Minimale groentijd bij alternatieve realisatie fase 26                                                                         */
-    #define prmaltp26                   2109 /* Minimale ruimte tbv alternatieve realisatie fase 26                                                                            */
-    #define prmaltg28                   2110 /* Minimale groentijd bij alternatieve realisatie fase 28                                                                         */
-    #define prmaltp28                   2111 /* Minimale ruimte tbv alternatieve realisatie fase 28                                                                            */
-    #define prmaltg31                   2112 /* Minimale groentijd bij alternatieve realisatie fase 31                                                                         */
-    #define prmaltp31                   2113 /* Minimale ruimte tbv alternatieve realisatie fase 31                                                                            */
-    #define prmaltg32                   2114 /* Minimale groentijd bij alternatieve realisatie fase 32                                                                         */
-    #define prmaltg33                   2115 /* Minimale groentijd bij alternatieve realisatie fase 33                                                                         */
-    #define prmaltp3384                 2116 /* Minimale ruimte tbv alternatieve realisatie fasen 33, 84                                                                       */
-    #define prmaltg34                   2117 /* Minimale groentijd bij alternatieve realisatie fase 34                                                                         */
-    #define prmaltg38                   2118 /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
-    #define prmaltp38                   2119 /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
-    #define prmaltg61                   2120 /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
-    #define prmaltp61                   2121 /* Minimale ruimte tbv alternatieve realisatie fase 61                                                                            */
-    #define prmaltg62                   2122 /* Minimale groentijd bij alternatieve realisatie fase 62                                                                         */
-    #define prmaltp62                   2123 /* Minimale ruimte tbv alternatieve realisatie fase 62                                                                            */
-    #define prmaltg67                   2124 /* Minimale groentijd bij alternatieve realisatie fase 67                                                                         */
-    #define prmaltp67                   2125 /* Minimale ruimte tbv alternatieve realisatie fase 67                                                                            */
-    #define prmaltg68                   2126 /* Minimale groentijd bij alternatieve realisatie fase 68                                                                         */
-    #define prmaltp68                   2127 /* Minimale ruimte tbv alternatieve realisatie fase 68                                                                            */
-    #define prmaltg81                   2128 /* Minimale groentijd bij alternatieve realisatie fase 81                                                                         */
-    #define prmaltp81                   2129 /* Minimale ruimte tbv alternatieve realisatie fase 81                                                                            */
-    #define prmaltg82                   2130 /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
-    #define prmaltp82                   2131 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
-    #define prmaltg84                   2132 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
-    #define prmstarprogdef              2133 /* Default star programma                                                                                                         */
-    #define prmttxconfidence15          2134
-    #define prmlatencyminendsg          2135
+    #define prmrislaneheading21_1       1898 /* Lane heading voor lane met index 1 bij fase 21                                                                                 */
+    #define prmrislaneheadingmarge21_1  1899 /* Lane heading marge voor lane met index 1 bij fase 21                                                                           */
+    #define prmrislaneid22_1            1900 /* Lane id voor lane met index 1 bij fase 22                                                                                      */
+    #define prmrislaneheading22_1       1901 /* Lane heading voor lane met index 1 bij fase 22                                                                                 */
+    #define prmrislaneheadingmarge22_1  1902 /* Lane heading marge voor lane met index 1 bij fase 22                                                                           */
+    #define prmrislaneid24_1            1903 /* Lane id voor lane met index 1 bij fase 24                                                                                      */
+    #define prmrislaneheading24_1       1904 /* Lane heading voor lane met index 1 bij fase 24                                                                                 */
+    #define prmrislaneheadingmarge24_1  1905 /* Lane heading marge voor lane met index 1 bij fase 24                                                                           */
+    #define prmrislaneid26_1            1906 /* Lane id voor lane met index 1 bij fase 26                                                                                      */
+    #define prmrislaneheading26_1       1907 /* Lane heading voor lane met index 1 bij fase 26                                                                                 */
+    #define prmrislaneheadingmarge26_1  1908 /* Lane heading marge voor lane met index 1 bij fase 26                                                                           */
+    #define prmrislaneid28_1            1909 /* Lane id voor lane met index 1 bij fase 28                                                                                      */
+    #define prmrislaneheading28_1       1910 /* Lane heading voor lane met index 1 bij fase 28                                                                                 */
+    #define prmrislaneheadingmarge28_1  1911 /* Lane heading marge voor lane met index 1 bij fase 28                                                                           */
+    #define prmrislaneid31_1            1912 /* Lane id voor lane met index 1 bij fase 31                                                                                      */
+    #define prmrislaneid31_2            1913 /* Lane id voor lane met index 2 bij fase 31                                                                                      */
+    #define prmrislaneid32_1            1914 /* Lane id voor lane met index 1 bij fase 32                                                                                      */
+    #define prmrislaneid32_2            1915 /* Lane id voor lane met index 2 bij fase 32                                                                                      */
+    #define prmrislaneid33_1            1916 /* Lane id voor lane met index 1 bij fase 33                                                                                      */
+    #define prmrislaneid33_2            1917 /* Lane id voor lane met index 2 bij fase 33                                                                                      */
+    #define prmrislaneid34_1            1918 /* Lane id voor lane met index 1 bij fase 34                                                                                      */
+    #define prmrislaneid34_2            1919 /* Lane id voor lane met index 2 bij fase 34                                                                                      */
+    #define prmrislaneid38_1            1920 /* Lane id voor lane met index 1 bij fase 38                                                                                      */
+    #define prmrislaneid38_2            1921 /* Lane id voor lane met index 2 bij fase 38                                                                                      */
+    #define prmrislaneid84_1            1922 /* Lane id voor lane met index 1 bij fase 84                                                                                      */
+    #define prmrislaneid82_1            1923 /* Lane id voor lane met index 1 bij fase 82                                                                                      */
+    #define prmrislaneid81_1            1924 /* Lane id voor lane met index 1 bij fase 81                                                                                      */
+    #define prmrislaneid68_1            1925 /* Lane id voor lane met index 1 bij fase 68                                                                                      */
+    #define prmrislaneid68_2            1926 /* Lane id voor lane met index 2 bij fase 68                                                                                      */
+    #define prmrislaneid67_1            1927 /* Lane id voor lane met index 1 bij fase 67                                                                                      */
+    #define prmrislaneid62_1            1928 /* Lane id voor lane met index 1 bij fase 62                                                                                      */
+    #define prmrislaneid62_2            1929 /* Lane id voor lane met index 2 bij fase 62                                                                                      */
+    #define prmrislaneid61_1            1930 /* Lane id voor lane met index 1 bij fase 61                                                                                      */
+    #define prmrisastart03mveh1         1931 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 03                                                                   */
+    #define prmrisastart05mveh1         1932 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 05                                                                   */
+    #define prmrisastart08mveh1         1933 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 08                                                                   */
+    #define prmrisastart08mveh2         1934 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 08                                                                   */
+    #define prmrisastart09mveh1         1935 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 09                                                                   */
+    #define prmrisastart11mveh1         1936 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 11                                                                   */
+    #define prmrisastart21fts1          1937 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 21                                                                   */
+    #define prmrisastart24fts1          1938 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 24                                                                   */
+    #define prmrisastart26fts1          1939 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 26                                                                   */
+    #define prmrisastart28fts1          1940 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 28                                                                   */
+    #define prmrisastart31vtg1          1941 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisastart31vtg2          1942 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisastart32vtg1          1943 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisastart32vtg2          1944 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisastart33vtg1          1945 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisastart33vtg2          1946 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisastart34vtg1          1947 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisastart34vtg2          1948 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisastart38vtg1          1949 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisastart38vtg2          1950 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisastart61mveh1         1951 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 61                                                                   */
+    #define prmrisastart62mveh1         1952 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisastart62mveh2         1953 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisastart67mveh1         1954 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 67                                                                   */
+    #define prmrisastart68mveh1         1955 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisastart68mveh2         1956 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisastart81fts1          1957 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 81                                                                   */
+    #define prmrisastart82fts1          1958 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 82                                                                   */
+    #define prmrisastart84fts1          1959 /* Afstand van stopstreep tot start aanvraag gebied RIS fase 84                                                                   */
+    #define prmrisaend03mveh1           1960 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 03                                                                   */
+    #define prmrisaend05mveh1           1961 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 05                                                                   */
+    #define prmrisaend08mveh1           1962 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 08                                                                   */
+    #define prmrisaend08mveh2           1963 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 08                                                                   */
+    #define prmrisaend09mveh1           1964 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 09                                                                   */
+    #define prmrisaend11mveh1           1965 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 11                                                                   */
+    #define prmrisaend21fts1            1966 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 21                                                                   */
+    #define prmrisaend24fts1            1967 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 24                                                                   */
+    #define prmrisaend26fts1            1968 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 26                                                                   */
+    #define prmrisaend28fts1            1969 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 28                                                                   */
+    #define prmrisaend31vtg1            1970 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisaend31vtg2            1971 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 31                                                                   */
+    #define prmrisaend32vtg1            1972 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisaend32vtg2            1973 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 32                                                                   */
+    #define prmrisaend33vtg1            1974 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisaend33vtg2            1975 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 33                                                                   */
+    #define prmrisaend34vtg1            1976 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisaend34vtg2            1977 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 34                                                                   */
+    #define prmrisaend38vtg1            1978 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisaend38vtg2            1979 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 38                                                                   */
+    #define prmrisaend61mveh1           1980 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 61                                                                   */
+    #define prmrisaend62mveh1           1981 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisaend62mveh2           1982 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 62                                                                   */
+    #define prmrisaend67mveh1           1983 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 67                                                                   */
+    #define prmrisaend68mveh1           1984 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisaend68mveh2           1985 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 68                                                                   */
+    #define prmrisaend81fts1            1986 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 81                                                                   */
+    #define prmrisaend82fts1            1987 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 82                                                                   */
+    #define prmrisaend84fts1            1988 /* Afstand van stopstreep tot einde aanvraag gebied RIS fase 84                                                                   */
+    #define prmrisvstart03mveh1         1989 /* Afstand van stopstreep tot start verleng gebied RIS fase 03                                                                    */
+    #define prmrisvstart05mveh1         1990 /* Afstand van stopstreep tot start verleng gebied RIS fase 05                                                                    */
+    #define prmrisvstart08mveh1         1991 /* Afstand van stopstreep tot start verleng gebied RIS fase 08                                                                    */
+    #define prmrisvstart08mveh2         1992 /* Afstand van stopstreep tot start verleng gebied RIS fase 08                                                                    */
+    #define prmrisvstart09mveh1         1993 /* Afstand van stopstreep tot start verleng gebied RIS fase 09                                                                    */
+    #define prmrisvstart11mveh1         1994 /* Afstand van stopstreep tot start verleng gebied RIS fase 11                                                                    */
+    #define prmrisvstart21fts1          1995 /* Afstand van stopstreep tot start verleng gebied RIS fase 21                                                                    */
+    #define prmrisvstart24fts1          1996 /* Afstand van stopstreep tot start verleng gebied RIS fase 24                                                                    */
+    #define prmrisvstart26fts1          1997 /* Afstand van stopstreep tot start verleng gebied RIS fase 26                                                                    */
+    #define prmrisvstart28fts1          1998 /* Afstand van stopstreep tot start verleng gebied RIS fase 28                                                                    */
+    #define prmrisvstart31vtg1          1999 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
+    #define prmrisvstart31vtg2          2000 /* Afstand van stopstreep tot start verleng gebied RIS fase 31                                                                    */
+    #define prmrisvstart32vtg1          2001 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
+    #define prmrisvstart32vtg2          2002 /* Afstand van stopstreep tot start verleng gebied RIS fase 32                                                                    */
+    #define prmrisvstart33vtg1          2003 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
+    #define prmrisvstart33vtg2          2004 /* Afstand van stopstreep tot start verleng gebied RIS fase 33                                                                    */
+    #define prmrisvstart34vtg1          2005 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
+    #define prmrisvstart34vtg2          2006 /* Afstand van stopstreep tot start verleng gebied RIS fase 34                                                                    */
+    #define prmrisvstart38vtg1          2007 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
+    #define prmrisvstart38vtg2          2008 /* Afstand van stopstreep tot start verleng gebied RIS fase 38                                                                    */
+    #define prmrisvstart61mveh1         2009 /* Afstand van stopstreep tot start verleng gebied RIS fase 61                                                                    */
+    #define prmrisvstart62mveh1         2010 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
+    #define prmrisvstart62mveh2         2011 /* Afstand van stopstreep tot start verleng gebied RIS fase 62                                                                    */
+    #define prmrisvstart67mveh1         2012 /* Afstand van stopstreep tot start verleng gebied RIS fase 67                                                                    */
+    #define prmrisvstart68mveh1         2013 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
+    #define prmrisvstart68mveh2         2014 /* Afstand van stopstreep tot start verleng gebied RIS fase 68                                                                    */
+    #define prmrisvstart81fts1          2015 /* Afstand van stopstreep tot start verleng gebied RIS fase 81                                                                    */
+    #define prmrisvstart82fts1          2016 /* Afstand van stopstreep tot start verleng gebied RIS fase 82                                                                    */
+    #define prmrisvstart84fts1          2017 /* Afstand van stopstreep tot start verleng gebied RIS fase 84                                                                    */
+    #define prmrisvend03mveh1           2018 /* Afstand van stopstreep tot einde verleng gebied RIS fase 03                                                                    */
+    #define prmrisvend05mveh1           2019 /* Afstand van stopstreep tot einde verleng gebied RIS fase 05                                                                    */
+    #define prmrisvend08mveh1           2020 /* Afstand van stopstreep tot einde verleng gebied RIS fase 08                                                                    */
+    #define prmrisvend08mveh2           2021 /* Afstand van stopstreep tot einde verleng gebied RIS fase 08                                                                    */
+    #define prmrisvend09mveh1           2022 /* Afstand van stopstreep tot einde verleng gebied RIS fase 09                                                                    */
+    #define prmrisvend11mveh1           2023 /* Afstand van stopstreep tot einde verleng gebied RIS fase 11                                                                    */
+    #define prmrisvend21fts1            2024 /* Afstand van stopstreep tot einde verleng gebied RIS fase 21                                                                    */
+    #define prmrisvend24fts1            2025 /* Afstand van stopstreep tot einde verleng gebied RIS fase 24                                                                    */
+    #define prmrisvend26fts1            2026 /* Afstand van stopstreep tot einde verleng gebied RIS fase 26                                                                    */
+    #define prmrisvend28fts1            2027 /* Afstand van stopstreep tot einde verleng gebied RIS fase 28                                                                    */
+    #define prmrisvend31vtg1            2028 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
+    #define prmrisvend31vtg2            2029 /* Afstand van stopstreep tot einde verleng gebied RIS fase 31                                                                    */
+    #define prmrisvend32vtg1            2030 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
+    #define prmrisvend32vtg2            2031 /* Afstand van stopstreep tot einde verleng gebied RIS fase 32                                                                    */
+    #define prmrisvend33vtg1            2032 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
+    #define prmrisvend33vtg2            2033 /* Afstand van stopstreep tot einde verleng gebied RIS fase 33                                                                    */
+    #define prmrisvend34vtg1            2034 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
+    #define prmrisvend34vtg2            2035 /* Afstand van stopstreep tot einde verleng gebied RIS fase 34                                                                    */
+    #define prmrisvend38vtg1            2036 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
+    #define prmrisvend38vtg2            2037 /* Afstand van stopstreep tot einde verleng gebied RIS fase 38                                                                    */
+    #define prmrisvend61mveh1           2038 /* Afstand van stopstreep tot einde verleng gebied RIS fase 61                                                                    */
+    #define prmrisvend62mveh1           2039 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
+    #define prmrisvend62mveh2           2040 /* Afstand van stopstreep tot einde verleng gebied RIS fase 62                                                                    */
+    #define prmrisvend67mveh1           2041 /* Afstand van stopstreep tot einde verleng gebied RIS fase 67                                                                    */
+    #define prmrisvend68mveh1           2042 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
+    #define prmrisvend68mveh2           2043 /* Afstand van stopstreep tot einde verleng gebied RIS fase 68                                                                    */
+    #define prmrisvend81fts1            2044 /* Afstand van stopstreep tot einde verleng gebied RIS fase 81                                                                    */
+    #define prmrisvend82fts1            2045 /* Afstand van stopstreep tot einde verleng gebied RIS fase 82                                                                    */
+    #define prmrisvend84fts1            2046 /* Afstand van stopstreep tot einde verleng gebied RIS fase 84                                                                    */
+    #define prmmkrgd24_3                2047 /* Type verlengen tbv richtinggevoelig verlengen fase 24                                                                          */
+    #define prmrgv                      2048 /* Type RoBuGrover                                                                                                                */
+    #define prmmin_tcyclus              2049 /* Minimale cyclustijd                                                                                                            */
+    #define prmmax_tcyclus              2050 /* Maximale cyclustijd                                                                                                            */
+    #define prmtvg_omhoog               2051 /* Hoeveelheid ophogen TVG                                                                                                        */
+    #define prmtvg_omlaag               2052 /* Hoeveelheid verlagen TVG                                                                                                       */
+    #define prmtvg_verschil             2053 /* Parameter verschil                                                                                                             */
+    #define prmtvg_npr_omlaag           2054 /* Hoeveelheid verlagen TVG bij niet primair                                                                                      */
+    #define prmmintvg_02                2055 /* Minimale verlenggroentijd fase 02                                                                                              */
+    #define prmmaxtvg_02                2056 /* Maximale verlenggroentijd fase 02                                                                                              */
+    #define prmmintvg_03                2057 /* Minimale verlenggroentijd fase 03                                                                                              */
+    #define prmmaxtvg_03                2058 /* Maximale verlenggroentijd fase 03                                                                                              */
+    #define prmmintvg_05                2059 /* Minimale verlenggroentijd fase 05                                                                                              */
+    #define prmmaxtvg_05                2060 /* Maximale verlenggroentijd fase 05                                                                                              */
+    #define prmmintvg_08                2061 /* Minimale verlenggroentijd fase 08                                                                                              */
+    #define prmmaxtvg_08                2062 /* Maximale verlenggroentijd fase 08                                                                                              */
+    #define prmmintvg_09                2063 /* Minimale verlenggroentijd fase 09                                                                                              */
+    #define prmmaxtvg_09                2064 /* Maximale verlenggroentijd fase 09                                                                                              */
+    #define prmmintvg_11                2065 /* Minimale verlenggroentijd fase 11                                                                                              */
+    #define prmmaxtvg_11                2066 /* Maximale verlenggroentijd fase 11                                                                                              */
+    #define prmmintvg_22                2067 /* Minimale verlenggroentijd fase 22                                                                                              */
+    #define prmmaxtvg_22                2068 /* Maximale verlenggroentijd fase 22                                                                                              */
+    #define prmmintvg_28                2069 /* Minimale verlenggroentijd fase 28                                                                                              */
+    #define prmmaxtvg_28                2070 /* Maximale verlenggroentijd fase 28                                                                                              */
+    #define prmmintvg_68                2071 /* Minimale verlenggroentijd fase 68                                                                                              */
+    #define prmmaxtvg_68                2072 /* Maximale verlenggroentijd fase 68                                                                                              */
+    #define prmsiexgrperc33             2073 /* Extra groen percentage tov. TFG voor senioreningreep op fase 33                                                                */
+    #define prmsiexgrperc34             2074 /* Extra groen percentage tov. TFG voor senioreningreep op fase 34                                                                */
+    #define prmmaxtvgvlog               2075 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
+    #define prmmaxtfbvlog               2076 /* Parameter VLOG max. wachttijd na aanvraag                                                                                      */
+    #define prmmlfpr02                  2077 /* Maximaal aantal modules vooruit fase 02                                                                                        */
+    #define prmmlfpr03                  2078 /* Maximaal aantal modules vooruit fase 03                                                                                        */
+    #define prmmlfpr05                  2079 /* Maximaal aantal modules vooruit fase 05                                                                                        */
+    #define prmmlfpr08                  2080 /* Maximaal aantal modules vooruit fase 08                                                                                        */
+    #define prmmlfpr09                  2081 /* Maximaal aantal modules vooruit fase 09                                                                                        */
+    #define prmmlfpr11                  2082 /* Maximaal aantal modules vooruit fase 11                                                                                        */
+    #define prmmlfpr21                  2083 /* Maximaal aantal modules vooruit fase 21                                                                                        */
+    #define prmmlfpr22                  2084 /* Maximaal aantal modules vooruit fase 22                                                                                        */
+    #define prmmlfpr24                  2085 /* Maximaal aantal modules vooruit fase 24                                                                                        */
+    #define prmmlfpr26                  2086 /* Maximaal aantal modules vooruit fase 26                                                                                        */
+    #define prmmlfpr28                  2087 /* Maximaal aantal modules vooruit fase 28                                                                                        */
+    #define prmmlfpr31                  2088 /* Maximaal aantal modules vooruit fase 31                                                                                        */
+    #define prmmlfpr32                  2089 /* Maximaal aantal modules vooruit fase 32                                                                                        */
+    #define prmmlfpr33                  2090 /* Maximaal aantal modules vooruit fase 33                                                                                        */
+    #define prmmlfpr34                  2091 /* Maximaal aantal modules vooruit fase 34                                                                                        */
+    #define prmmlfpr38                  2092 /* Maximaal aantal modules vooruit fase 38                                                                                        */
+    #define prmmlfpr61                  2093 /* Maximaal aantal modules vooruit fase 61                                                                                        */
+    #define prmmlfpr62                  2094 /* Maximaal aantal modules vooruit fase 62                                                                                        */
+    #define prmmlfpr67                  2095 /* Maximaal aantal modules vooruit fase 67                                                                                        */
+    #define prmmlfpr68                  2096 /* Maximaal aantal modules vooruit fase 68                                                                                        */
+    #define prmmlfpr81                  2097 /* Maximaal aantal modules vooruit fase 81                                                                                        */
+    #define prmmlfpr82                  2098 /* Maximaal aantal modules vooruit fase 82                                                                                        */
+    #define prmmlfpr84                  2099 /* Maximaal aantal modules vooruit fase 84                                                                                        */
+    #define prmaltg02                   2100 /* Minimale groentijd bij alternatieve realisatie fase 02                                                                         */
+    #define prmaltp02                   2101 /* Minimale ruimte tbv alternatieve realisatie fase 02                                                                            */
+    #define prmaltg03                   2102 /* Minimale groentijd bij alternatieve realisatie fase 03                                                                         */
+    #define prmaltp03                   2103 /* Minimale ruimte tbv alternatieve realisatie fase 03                                                                            */
+    #define prmaltg05                   2104 /* Minimale groentijd bij alternatieve realisatie fase 05                                                                         */
+    #define prmaltp05                   2105 /* Minimale ruimte tbv alternatieve realisatie fase 05                                                                            */
+    #define prmaltg08                   2106 /* Minimale groentijd bij alternatieve realisatie fase 08                                                                         */
+    #define prmaltp08                   2107 /* Minimale ruimte tbv alternatieve realisatie fase 08                                                                            */
+    #define prmaltg09                   2108 /* Minimale groentijd bij alternatieve realisatie fase 09                                                                         */
+    #define prmaltp09                   2109 /* Minimale ruimte tbv alternatieve realisatie fase 09                                                                            */
+    #define prmaltg11                   2110 /* Minimale groentijd bij alternatieve realisatie fase 11                                                                         */
+    #define prmaltp11                   2111 /* Minimale ruimte tbv alternatieve realisatie fase 11                                                                            */
+    #define prmaltg21                   2112 /* Minimale groentijd bij alternatieve realisatie fase 21                                                                         */
+    #define prmaltp21                   2113 /* Minimale ruimte tbv alternatieve realisatie fase 21                                                                            */
+    #define prmaltg22                   2114 /* Minimale groentijd bij alternatieve realisatie fase 22                                                                         */
+    #define prmaltp2232                 2115 /* Minimale ruimte tbv alternatieve realisatie fasen 22, 32                                                                       */
+    #define prmaltg24                   2116 /* Minimale groentijd bij alternatieve realisatie fase 24                                                                         */
+    #define prmaltp2434                 2117 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
+    #define prmaltg26                   2118 /* Minimale groentijd bij alternatieve realisatie fase 26                                                                         */
+    #define prmaltp26                   2119 /* Minimale ruimte tbv alternatieve realisatie fase 26                                                                            */
+    #define prmaltg28                   2120 /* Minimale groentijd bij alternatieve realisatie fase 28                                                                         */
+    #define prmaltp28                   2121 /* Minimale ruimte tbv alternatieve realisatie fase 28                                                                            */
+    #define prmaltg31                   2122 /* Minimale groentijd bij alternatieve realisatie fase 31                                                                         */
+    #define prmaltp31                   2123 /* Minimale ruimte tbv alternatieve realisatie fase 31                                                                            */
+    #define prmaltg32                   2124 /* Minimale groentijd bij alternatieve realisatie fase 32                                                                         */
+    #define prmaltg33                   2125 /* Minimale groentijd bij alternatieve realisatie fase 33                                                                         */
+    #define prmaltp3384                 2126 /* Minimale ruimte tbv alternatieve realisatie fasen 33, 84                                                                       */
+    #define prmaltg34                   2127 /* Minimale groentijd bij alternatieve realisatie fase 34                                                                         */
+    #define prmaltg38                   2128 /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
+    #define prmaltp38                   2129 /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
+    #define prmaltg61                   2130 /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
+    #define prmaltp61                   2131 /* Minimale ruimte tbv alternatieve realisatie fase 61                                                                            */
+    #define prmaltg62                   2132 /* Minimale groentijd bij alternatieve realisatie fase 62                                                                         */
+    #define prmaltp62                   2133 /* Minimale ruimte tbv alternatieve realisatie fase 62                                                                            */
+    #define prmaltg67                   2134 /* Minimale groentijd bij alternatieve realisatie fase 67                                                                         */
+    #define prmaltp67                   2135 /* Minimale ruimte tbv alternatieve realisatie fase 67                                                                            */
+    #define prmaltg68                   2136 /* Minimale groentijd bij alternatieve realisatie fase 68                                                                         */
+    #define prmaltp68                   2137 /* Minimale ruimte tbv alternatieve realisatie fase 68                                                                            */
+    #define prmaltg81                   2138 /* Minimale groentijd bij alternatieve realisatie fase 81                                                                         */
+    #define prmaltp81                   2139 /* Minimale ruimte tbv alternatieve realisatie fase 81                                                                            */
+    #define prmaltg82                   2140 /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
+    #define prmaltp82                   2141 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
+    #define prmaltg84                   2142 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
+    #define prmstarprogdef              2143 /* Default star programma                                                                                                         */
+    #define prmttxconfidence15          2144
+    #define prmlatencyminendsg          2145
+    #define prmftsminvtg28fietsfietsrislaneid28_1 2146
+    #define prmrispelstart28fts1        2147 /* Afstand van stopstreep tot start pel gebied RIS fase 28                                                                   */
+    #define prmrispelend28fts1          2148 /* Afstand van stopstreep tot start pel gebied RIS fase 28                                                                   */
+
+
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
-    #define prmtestdsivert              2136 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
-    #define prmtestdsilyn               2137 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
-    #define prmtestdsicat               2138 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
-    #define PRMMAX1                     2139
+    #define prmtestdsivert              2149 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
+    #define prmtestdsilyn               2150 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
+    #define prmtestdsicat               2151 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
+    #define PRMMAX1                     2152
 #else
-    #define PRMMAX1                     2136
+    #define PRMMAX1                     2149
 #endif
 
 /* Selectieve detectie */

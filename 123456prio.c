@@ -1775,8 +1775,10 @@ void InUitMelden(void)
     fietsprio_update(fc28, d28_2, cftsvtg28fietsfiets, cftscyc28fietsfiets,SH[hprioin28fietsfiets28_2], ML);
     IH[hprioin28fiets] = IH[hprioin28fietsfiets28_2] = FALSE;
     if (SCH[schprioin28fietsfiets28_2])
-    {
-        IH[hprioin28fietsfiets28_2] = !C[cvc28fiets] && fietsprio_inmelding(fc28, d28_2, cftsvtg28fietsfiets, cftscyc28fietsfiets, prmftsblok28fietsfiets, prmftsmaxpercyc28fietsfiets, prmftsminvtg28fietsfiets, prmftsminwt28fietsfiets, SH[hprioin28fietsfiets28_2], ML);
+    {   
+       
+        MM[mftsvtg28fietsfietsrislaneid28_1] = ris_itsstations_heading(fc28, SYSTEM_ITF1, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrispelstart28fts1], PRM[prmrispelend28fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading28_1], PRM[prmrislaneheadingmarge28_1]);
+        IH[hprioin28fietsfiets28_2] = !C[cvc28fiets] && fietsprio_inmelding2(fc28, d28_2, cftsvtg28fietsfiets, cftscyc28fietsfiets, prmftsblok28fietsfiets, prmftsmaxpercyc28fietsfiets, prmftsminvtg28fietsfiets, prmftsminwt28fietsfiets, SH[hprioin28fietsfiets28_2], ML, mftsvtg28fietsfietsrislaneid28_1, prmftsminvtg28fietsfietsrislaneid28_1);
     }
     IH[hprioin28fiets] = (IH[hperiodFietsprio1] || IH[hperiodFietsprio2] || IH[hperiodFietsprio3]) && (IH[hprioin28fietsfiets28_2]);
 

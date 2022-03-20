@@ -84,7 +84,7 @@
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>1</Naam>
+          <Naam>segm1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -99,7 +99,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>2</Naam>
+          <Naam>segm2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -114,7 +114,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>3</Naam>
+          <Naam>segm3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -129,7 +129,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>4</Naam>
+          <Naam>segm4</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -144,7 +144,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>5</Naam>
+          <Naam>segm5</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -159,7 +159,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>6</Naam>
+          <Naam>segm6</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -174,7 +174,7 @@
       </SegmentDisplayElementModel>
       <SegmentDisplayElementModel>
         <BitmapData>
-          <Naam>7</Naam>
+          <Naam>segm7</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -18261,9 +18261,9 @@
             <RijstrookIndex>1</RijstrookIndex>
             <LaneID>9</LaneID>
             <SystemITF>123456</SystemITF>
-            <UseHeading>false</UseHeading>
-            <Heading>0</Heading>
-            <HeadingMarge>0</HeadingMarge>
+            <UseHeading>true</UseHeading>
+            <Heading>270</Heading>
+            <HeadingMarge>45</HeadingMarge>
             <SignalGroupName>21</SignalGroupName>
             <SimulatedStations>
               <RISFaseCyclusLaneSimulatedStationModel>
@@ -18315,9 +18315,9 @@
             <RijstrookIndex>1</RijstrookIndex>
             <LaneID>10</LaneID>
             <SystemITF>123456</SystemITF>
-            <UseHeading>false</UseHeading>
-            <Heading>0</Heading>
-            <HeadingMarge>0</HeadingMarge>
+            <UseHeading>true</UseHeading>
+            <Heading>270</Heading>
+            <HeadingMarge>45</HeadingMarge>
             <SignalGroupName>22</SignalGroupName>
             <SimulatedStations>
               <RISFaseCyclusLaneSimulatedStationModel>
@@ -18369,9 +18369,9 @@
             <RijstrookIndex>1</RijstrookIndex>
             <LaneID>11</LaneID>
             <SystemITF>123456</SystemITF>
-            <UseHeading>false</UseHeading>
-            <Heading>0</Heading>
-            <HeadingMarge>0</HeadingMarge>
+            <UseHeading>true</UseHeading>
+            <Heading>270</Heading>
+            <HeadingMarge>45</HeadingMarge>
             <SignalGroupName>24</SignalGroupName>
             <SimulatedStations>
               <RISFaseCyclusLaneSimulatedStationModel>
@@ -18423,9 +18423,9 @@
             <RijstrookIndex>1</RijstrookIndex>
             <LaneID>12</LaneID>
             <SystemITF>123456</SystemITF>
-            <UseHeading>false</UseHeading>
-            <Heading>0</Heading>
-            <HeadingMarge>0</HeadingMarge>
+            <UseHeading>true</UseHeading>
+            <Heading>270</Heading>
+            <HeadingMarge>45</HeadingMarge>
             <SignalGroupName>26</SignalGroupName>
             <SimulatedStations>
               <RISFaseCyclusLaneSimulatedStationModel>
@@ -18477,7 +18477,7 @@
             <RijstrookIndex>1</RijstrookIndex>
             <LaneID>13</LaneID>
             <SystemITF>123456</SystemITF>
-            <UseHeading>false</UseHeading>
+            <UseHeading>true</UseHeading>
             <Heading>270</Heading>
             <HeadingMarge>45</HeadingMarge>
             <SignalGroupName>28</SignalGroupName>
@@ -20227,32 +20227,32 @@
         <SignalGroupName>21</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
         <SignalGroupName>24</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
         <SignalGroupName>26</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
         <SignalGroupName>28</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
@@ -20387,24 +20387,24 @@
         <SignalGroupName>81</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
         <SignalGroupName>82</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
     </RISLaneRequestData>
@@ -20461,32 +20461,32 @@
         <SignalGroupName>21</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
         <SignalGroupName>24</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
         <SignalGroupName>26</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
         <SignalGroupName>28</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
@@ -20621,24 +20621,24 @@
         <SignalGroupName>81</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
         <SignalGroupName>82</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>404</VerlengenEnd>
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
     </RISLaneExtendData>
