@@ -2777,6 +2777,7 @@ void system_application(void)
     if (SCH[schschoolingreep34]) CIF_GUS[uswtk34a] = CIF_GUS[uswtk34a] && !(IH[hschoolingreepdk34a] && Knipper_1Hz) || G[fc34] && D[dk34a] && IH[hschoolingreepdk34a] && Knipper_1Hz;
     if (SCH[schschoolingreep34]) CIF_GUS[uswtk34b] = CIF_GUS[uswtk34b] && !(IH[hschoolingreepdk34b] && Knipper_1Hz) || G[fc34] && D[dk34b] && IH[hschoolingreepdk34b] && Knipper_1Hz;
 
+#ifdef AUTOMAAT
     /* @Menno: alleen >=CCOL110 */
     /* verklikken of applicatie daadwerkelijk de TLC aanstuurt */
     CIF_GUS[usincontrol] = (CIF_WPS[3] == 5) ? TRUE : FALSE;
@@ -2787,6 +2788,7 @@ void system_application(void)
     /* uitschakelen vlog indien applicatie niet in control is */
     LOGPRM[LOGPRM_VLOGMODE] &= ~(BIT5);
     LOGPRM[LOGPRM_VLOGMODE] |= CIF_GUS[usincontrol] ? 0 : BIT5;
+#endif
 
     #ifndef NO_RIS
         #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST)
