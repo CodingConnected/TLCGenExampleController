@@ -568,5 +568,5 @@ boolv fietsprio_inmelding2(
       /* voldoende voertuigen massadetectie */
       A[fc] && TFB_timer[fc] >= PRM[prm_priowt] ||
      /* voldoende voertuigen RIS */
-      (dvw != NG && MM[me_priocount] >= PRM[prm_priocountris]));
+      (MM[me_priocount] >= PRM[prm_priocountris]));
 }
