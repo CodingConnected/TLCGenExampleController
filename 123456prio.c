@@ -1786,7 +1786,7 @@ void InUitMelden(void)
     IH[hpriouit28fiets] = IH[hpriouit28fietsfiets] = FALSE;
     if (SCH[schpriouit28fietsfiets])
     {
-        IH[hpriouit28fietsfiets] = !T[tpriouit28fiets] && C[cvc28fiets] && G[fc28];
+       IH[hpriouit28fietsfiets] = !T[tpriouit28fiets] && C[cvc28fiets] && G[fc28] && (T_timer[tgb28fiets]>1);
     }
     IH[hpriouit28fiets] = RT[tpriouit28fiets] = IH[hpriouit28fietsfiets];
 
