@@ -1,4 +1,4 @@
-/* extra_func.h - gegenereerd met TLCGen 0.10.7.0 */
+/* extra_func.h - gegenereerd met TLCGen 0.12.1.0 */
 
 #ifndef EXTRA_FUNC
 #define EXTRA_FUNC
@@ -103,5 +103,9 @@ extern int Knipper_2Hz;
 #endif 
 
 boolv set_MRLW_nl(count i, count j, boolv period);
+
+#if !defined (CCOLFUNC)
+boolv kg(count i);
+#endif
 
 #endif // #define EXTRA_FUNC

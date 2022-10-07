@@ -1,4 +1,4 @@
-/* extra_func.c - gegenereerd met TLCGen 0.10.7.0 */
+/* extra_func.c - gegenereerd met TLCGen 0.12.1.0 */
 
 /* extra_func.c - gegenereerd met TLCGen 0.10.4.0 */
 
@@ -211,7 +211,7 @@ boolv ym_max_toV1(count i, mulv to_verschil)
 							TVG_max[m] - TVG_timer[m] +
 							TIG_max[m][k] - TIG_timer[m]))
 						|| (to_verschil < 0))
-						|| TIG[m][k]
+						|| TIG[m][k] && !(RW[m] & BIT2)
 						&& ((TIG_max[i][k]) < (TIG_max[m][k] - TIG_timer[m])))
 #else
 					if (CV[m] && !(RW[m] & BIT2) && (((TGL_max[i] + TO_max[i][k] - to_verschil) <=
@@ -220,7 +220,7 @@ boolv ym_max_toV1(count i, mulv to_verschil)
 							TVG_max[m] - TVG_timer[m] + TGL_max[m] - TGL_timer[m] +
 							TO_max[m][k] - TO_timer[m]))
 						|| (to_verschil < 0))
-						|| TO[m][k]
+						|| TO[m][k] && !(RW[m] & BIT2)
 						&& ((TGL_max[i] + TO_max[i][k]) < (TGL_max[m] + TO_max[m][k] -
 							TGL_timer[m] - TO_timer[m])))
 #endif
@@ -1650,3 +1650,30 @@ boolv set_parm1wijzpb_tvgmax (mulv periode, count startprm, mulv ifc_prm[], coun
     return (tvgmaxwijzpb);
 }
 
+/* KG */
+/* kg() tests G for the conflicting phasecycles.
+ * kg() returns TRUE if an "G[]" is detected, otherwise FALSE.
+ * kg() can be used in the function application().
+ */
+#if !defined (CCOLFUNC)
+
+boolv kg(count i)
+{
+   register count n, j;
+
+#ifndef NO_GGCONFLICT
+   for (n = 0; n < GKFC_MAX[i]; ++n) {
+#else
+   for (n = 0; n < KFC_MAX[i]; ++n) {
+#endif
+#if (CCOL_V >= 95)
+      j = KF_pointer[i][n];
+#else
+      j = TO_pointer[i][n];
+#endif
+      if (G[j]) return TRUE;
+   }
+   return FALSE;
+}
+
+#endif

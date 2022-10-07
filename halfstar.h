@@ -1,4 +1,4 @@
-/* halfstar.h - gegenereerd met TLCGen 0.10.7.0 */
+/* halfstar.h - gegenereerd met TLCGen 0.12.1.0 */
 
 #ifndef __HALFSTARH__
 #define __HALFSTARH__
@@ -43,7 +43,7 @@ void gelijkstart_va_arg_halfstar(count h_x, count h_rr, boolv  overslag, ...);
 void getrapte_fietser_halfstar(count fc1, count fc2, boolv  a_bui_fc1, boolv  a_bui_fc2, count tkopfc1fc2, count tkopfc2fc1, count voorstartfc1fc2,	count voorstartfc2fc1);
 void mgcor_halfstar(count fcaan, count fcnal, count t_nal);
 void mgcor_halfstar_deelc(count fc1, count fc2);
-void naloopEG_CV_halfstar(boolv period, count fc1, count fc2, count tvs, count tnldet, count tnl);
+void naloopEG_CV_halfstar(boolv period, count fc1, count fc2, mulv tvs, count tnldet, count tnl);
 void naloopSG_halfstar(count fc1, count fc2, count dk_bui_fc1, count hd_bui_fc1, count tkopfc1fc2);
 void PercentageMaxGroenTijden_halfstar(count fc, count percentage, mulv bit);
 void PercentageVerlengGroenTijden_halfstar(count fc, count percentage, mulv bit);

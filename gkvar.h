@@ -1,4 +1,4 @@
-/* gkvar.h - gegenereerd met TLCGen 0.10.7.0 */
+/* gkvar.h - gegenereerd met TLCGen 0.12.1.0 */
 
 #ifndef TGKVAR_H
 #define TGKVAR_H

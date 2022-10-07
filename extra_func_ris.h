@@ -1,4 +1,4 @@
-/* extra_func_ris.h - gegenereerd met TLCGen 0.10.7.0 */
+/* extra_func_ris.h - gegenereerd met TLCGen 0.12.1.0 */
 
 /* EXTRA_FUNC_RIS.H */
 /* ================ */
@@ -6,8 +6,6 @@
 /* CCOL :  versie 11.0        */
 /* FILE :  extra_func_ris.h   */
 /* DATUM:  24-11-2020         */
-
-
 
 #ifndef __EXTRA_FUNC_RIS_H
 #define __EXTRA_FUNC_RIS_H
@@ -29,9 +27,10 @@
 
    rif_int ris_srm_put_signalgroup(count fc, rif_int approach_id, rif_int role_bits, rif_int subrole_bits, count prm_line_first, count prm_line_max);
 
+#if defined prioFCMAX && (prioFCMAX > 0) /* alleen indien PRIO */
    rif_int ris_verstuur_ssm(rif_int priotypefc_id);
-
    void Bepaal_Granted_Verstrekt(void);
+#endif
     
    rif_bool ris_check_heading(rif_float itsstation_heading, mulv heading, mulv heading_marge);
 

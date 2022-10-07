@@ -1,4 +1,4 @@
-/* dynamischhiaat.c - gegenereerd met TLCGen 0.10.7.0 */
+/* dynamischhiaat.c - gegenereerd met TLCGen 0.12.1.0 */
 
 /* 
    BESTAND:   dynamischhiaat.c
@@ -17,9 +17,12 @@
    * 2.6.0    21-10-2021   ddo         Fix voor 'nietToepassen' (else toegevoegd)
    * 3.0.0    23-10-2021   ddo         Toevoegen en gebruiken TDHA / TDHDYN ter voorkoming van stortvloed aan wijzigingen op
    *                                      de CVN-C interface, alsmede verwijderen van de wijzigingen onder 2.3.0 en 2.6.0
-   * 3.0.1    27-10-2021   ddo         Fix bij niettoepassen waar een accolade verkeerd stond
-   * 3.1.0    08-11-2021   ddo         TDHA_max wijzigingen verwijderd zodat het functioneel goed werkt en er niet onterecht 
-   *                                      op de CVN-C interface wordt geschreven bij wijzigingen van de dynamische hiaattijd.  
+   * 3.0.1    27-10-2021   ddo         Fix bij niettoepassen (accolade verkeerd)
+   * 3.1.0    08-11-2021   ddo         TDHA_max wijzigingen verwijderd; TDH_max berekenen via eigen timers (TDHDYN) zodat niet
+   *                                      continue  op de CVN-C interface wordt geschreven maar maar toch de oorspronkelijke 
+   *                                      (statische) TDH_max behouden blijft (deze wordt gebruikt in geval van detectiestoring).  
+   * 3.2.0    05-02-2022   ddo         Bijwerken tdhdyn ook tijdens RV[fc] (resetten timers en TDHDYN[dp]); toevoegen 
+   *                                      #define DYN_HIAAT ivm toepassing van custom VLOG berichten. 
    *
    ***********************************************************************************************************
 
@@ -155,6 +158,7 @@
 		
    ======================================================================================================== */
 
+#define DYN_HIAAT
 
 #if (CCOL_V >= 110 /* && !defined TDHAMAX */) || (CCOL_V < 110)
 
@@ -178,8 +182,14 @@ void init_tdhdyn(void) /* aanroepen onder init_application() of post_init_applic
   }
 }
 
-void tdhdyn(count dp) /* verwerk TDHDYN per detector */
+void tdhdyn(count dp, count fc) /* verwerk TDHDYN per detector */
 {
+  if (RV[fc]) {
+    TDHDYN_timer[dp]  = 0;
+    TDHDYN_timer0[dp] = 0;
+    TDHDYN[dp]        = FALSE;
+  }
+  
   if (CIF_IS[dp] & CIF_DET_BEZET) {
     if (D[dp]) {
       TDHDYN_timer [dp] = 0;
@@ -252,6 +262,11 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
         prmdetvw   = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
         hevlvw     = va_arg(argpt, va_count);     /* ongebruikt tijdens R[]                                    */
   
+#if (CCOL_V >= 110 /*&& !defined TDHAMAX*/) || (CCOL_V < 110)
+        /* bijwerken TDHDYN[dpnr] en TDHDYN_timer[dpnr] */
+        tdhdyn(dpnr, fc);
+#endif
+  
         if (!TRG[fc] && !ERV[fc]) {
   #if defined (DL_type) && !defined (NO_DDFLUTTER) /* CCOL7 of hoger */  
           if (CIF_IS[dpnr] >= CIF_DET_STORING /*|| OG[dpnr]*/ || BG[dpnr] || FL[dpnr])   detstor[fc] |= TRUE;
@@ -290,7 +305,7 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
         
 #if (CCOL_V >= 110 && !defined TDHAMAX) || (CCOL_V < 110)
         /* bijwerken TDHDYN[dpnr] en TDHDYN_timer[dpnr] */  /*--*/
-        tdhdyn(dpnr);
+        tdhdyn(dpnr, fc);
 #endif
 
         max_rijstrook = rijstrook;                    /* onthoud hoogste rijstrooknummer                                  */

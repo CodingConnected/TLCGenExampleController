@@ -7,15 +7,15 @@
               123456
 
    BESTAND:   123456fctimings.c
-      CCOL:   11.0
-    TLCGEN:   0.10.7.0
-   CCOLGEN:   0.10.7.0
+      CCOL:   12.0
+    TLCGEN:   0.12.1.0
+   CCOLGEN:   0.12.1.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 10.7.0   18-03-2022   Cyril       Nieuwe versie TLCGen (0.10.7.0)
+ * 12.1.0   07-10-2022   TLCGen      Nieuwe versie TLCGen (release)
  *
  ************************************************************************************/
 

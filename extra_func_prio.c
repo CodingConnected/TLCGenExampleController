@@ -1,4 +1,4 @@
-/* extra_func_prio.c - gegenereerd met TLCGen 0.10.7.0 */
+/* extra_func_prio.c - gegenereerd met TLCGen 0.12.1.0 */
 
 #include "extra_func_prio.h"
 #include "prio.h"
@@ -401,34 +401,6 @@ boolv WDNST_check_uit(count fc)
 
 #endif // PRIO_CHECK_WAGENNMR
 
-/* KG */
-/* kg() tests G for the conflicting phasecycles.
- * kg() returns TRUE if an "G[]" is detected, otherwise FALSE.
- * kg() can be used in the function application().
- */
-#if !defined (CCOLFUNC)
-
-boolv kg(count i)
-{
-   register count n, j;
-
-#ifndef NO_GGCONFLICT
-   for (n = 0; n < GKFC_MAX[i]; ++n) {
-#else
-   for (n = 0; n < KFC_MAX[i]; ++n) {
-#endif
-#if (CCOL_V >= 95)
-      j = KF_pointer[i][n];
-#else
-      j = TO_pointer[i][n];
-#endif
-      if (G[j]) return TRUE;
-   }
-   return FALSE;
-}
-
-#endif
-
 void NevenMelding(count ov1,      /* OV fasecyclus 1                */
                   count ov2,      /* OV fasecyclus 2                */
                   count ov3,      /* OV fasecyclus 3                */
@@ -514,16 +486,18 @@ void fietsprio_update(
 }
 
 boolv fietsprio_inmelding(
-     count fc,            /* Fasecyclus */
-     count dvw,           /* Verweg detector */
-     count c_priocount,   /* Counter tellen voertuigen */
-     count c_priocyc,     /* Counter aantal keer prio per cyclus */
-     count prm_prioblok,  /* Bitwise bepalen toegestane blokken */
-     count prm_priocyc,   /* Maximum aantal keer prio per cyclus */
-     count prm_priocount, /* Minimum aantal voertuigen voor prio */
-     count prm_priowt,    /* Minimum wachttijd voor prio */
-     boolv prioin,        /* Hulpelement inmelding prio */
-	 count ml)            /* Actieve module */
+     count fc,               /* Fasecyclus */
+     count dvw,              /* Verweg detector */
+     count c_priocount,      /* Counter tellen voertuigen */
+     count c_priocyc,        /* Counter aantal keer prio per cyclus */
+     count prm_prioblok,     /* Bitwise bepalen toegestane blokken */
+     count prm_priocyc,      /* Maximum aantal keer prio per cyclus */
+     count prm_priocount,    /* Minimum aantal voertuigen voor prio */
+     count prm_priowt,       /* Minimum wachttijd voor prio */
+     boolv prioin,            /* Hulpelement inmelding prio */
+     count ml,               /* Actieve module */
+     count me_priocount,     /* Memory-element tellen voertuigen RIS */
+     count prm_priocountris) /* Minimum aantal voertuigen voor prio RIS */
 {
      /* Check juiste blok */
      if (!(PRM[prm_prioblok] & (1 << ml))) return FALSE;
@@ -534,39 +508,10 @@ boolv fietsprio_inmelding(
 
      /* prio actief indien: voldoende voertuigen OF voldoende wachttijd */
      return
-         R[fc] && !TRG[fc] &&
-		 (dvw != NG && C_counter[c_priocount] >= PRM[prm_priocount] ||
-          A[fc] && TFB_timer[fc] >= PRM[prm_priowt]);
-}
-
-boolv fietsprio_inmelding2(
-   count fc,               /* Fasecyclus */
-   count dvw,              /* Verweg detector */
-   count c_priocount,      /* Counter tellen voertuigen */
-   count c_priocyc,        /* Counter aantal keer prio per cyclus */
-   count prm_prioblok,     /* Bitwise bepalen toegestane blokken */
-   count prm_priocyc,      /* Maximum aantal keer prio per cyclus */
-   count prm_priocount,    /* Minimum aantal voertuigen voor prio */
-   count prm_priowt,       /* Minimum wachttijd voor prio */
-   boolv prioin,           /* Hulpelement inmelding prio */
-   count ml,               /* Actieve module */
-   count me_priocount,     /* Memory-element tellen voertuigen RIS */
-   count prm_priocountris) /* Minimum aantal voertuigen voor prio RIS */
-   {
-   /* Check juiste blok */
-   if (!(PRM[prm_prioblok] & (1 << ml))) return FALSE;
-
-   /* Check aantal keer prio per cyclus niet overschreden */
-   if (C[c_priocyc] && (C_counter[c_priocyc] >= PRM[prm_priocyc]))
-      return FALSE;
-
-   /* prio actief indien: voldoende voertuigen OF voldoende wachttijd */
-   return
-      R[fc] && !TRG[fc] &&
-      /* voldoende voertuigen massadetectie */
-      (dvw != NG && C_counter[c_priocount] >= PRM[prm_priocount] ||
-      /* voldoende voertuigen massadetectie */
-      A[fc] && TFB_timer[fc] >= PRM[prm_priowt] ||
-     /* voldoende voertuigen RIS */
-      (MM[me_priocount] >= PRM[prm_priocountris]));
+           /* voldoende voertuigen massadetectie */
+           (dvw != NG && C_counter[c_priocount] >= PRM[prm_priocount] ||
+           /* voldoende voertuigen massadetectie */
+           A[fc] && TFB_timer[fc] >= PRM[prm_priowt] ||
+          /* voldoende voertuigen RIS */
+          me_priocount > NG && prm_priocountris > NG && (MM[me_priocount] >= PRM[prm_priocountris]));
 }

@@ -1,4 +1,4 @@
-/* detectie.c - gegenereerd met TLCGen 0.10.7.0 */
+/* detectie.c - gegenereerd met TLCGen 0.12.1.0 */
 
 /* DETECTIE OPTIES VOOR REGELPROGRAMMA */
 /* ----------------------------------- */

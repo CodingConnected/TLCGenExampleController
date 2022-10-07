@@ -1,4 +1,4 @@
-/* timings_uc4.c - gegenereerd met TLCGen 0.10.7.0 */
+/* timings_uc4.c - gegenereerd met TLCGen 0.12.1.0 */
 
 /* signaalgroep stadium : */
 /* 'Confidence' = Signaalgroep Stadium */

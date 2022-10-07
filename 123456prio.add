@@ -8,18 +8,20 @@
               123456
 
    BESTAND:   123456prio.add
-      CCOL:   11.0
-    TLCGEN:   0.10.7.0
-   CCOLGEN:   0.10.7.0
+      CCOL:   12.0
+    TLCGEN:   0.12.1.0
+   CCOLGEN:   0.12.1.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 10.7.0   18-03-2022   Cyril       Nieuwe versie TLCGen (0.10.7.0)
+ * 12.1.0   07-10-2022   TLCGen      Nieuwe versie TLCGen (release)
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
+
+#include "traffick2tlcgen.h"
 
 void RijTijdScenario_Add(void) {
   /* -----------------------------------------------
@@ -33,6 +35,8 @@ void InUitMelden_Add(void) {
      Pas hier zo nodig de instructie voor de hulpelementen
      aan t.b.v. de in- en uitmeldingen.
      ----------------------------------------------------- */
+
+   fiets_voorrang_module();
 }
 
 void PrioInstellingen_Add(void) {
@@ -73,6 +77,8 @@ void BlokkeringsTijd_Add(void) {
      Pas hier zonodig de BlokkeringsTimer aan, bijv:
      iBlokkeringsTimer[prioFC02] = MAX_INT;
      ----------------------------------------------- */
+   corrigeer_blokkeringstijd_OV();
+
 }
 
 void PrioriteitsOpties_Add(void) {
@@ -80,6 +86,15 @@ void PrioriteitsOpties_Add(void) {
      Pas hier zonodig de PrioriteitsOpties aan, bijv:
      iPrioriteitsOpties[prioFC02] = poGeenPrioriteit;
      ------------------------------------------------ */
+   Traffick2TLCgen_HLPD();
+
+   Traffick2TLCgen_HLPD_nal(fc02, fc62, 100);
+   Traffick2TLCgen_HLPD_nal(fc05, fc62, 100);
+   Traffick2TLCgen_HLPD_nal(fc08, fc68, 100);
+   Traffick2TLCgen_HLPD_nal(fc11, fc68, 100);
+
+   Traffick2TLCgen_PELOTON();
+   Traffick2TLCgen_FIETS();
 }
 
 void PrioriteitsNiveau_Add(void) {
@@ -99,6 +114,7 @@ void PrioriteitsToekenning_Add(void) {
      Pas hier zonodig de Prioriteit aan, bijv:
      iPrioriteit[prioFC02] = FALSE;
      ----------------------------------------- */
+   Traffick2TLCgen_PRIO_TOE();
 }
 
 void AfkapGroen_Add(void) {
@@ -142,6 +158,7 @@ void PrioTegenhouden_Add(void) {
        RR[fc24]|= PRIO_RR_BIT;
      }
      ----------------------------------------------------- */
+   Traffick2TLCgen_PRIO_RR();
 }
 
 void PrioAfkappen_Add(void) {
@@ -167,6 +184,7 @@ void PrioAlternatieven_Add(void) {
     deelconflict, voorstarten...), bijv:
     PAR[fc31] = PAR[fc31] && PAR[fc32];
     ----------------------------------------------------- */
+   Traffick2TLCgen_PRIO_PAR();
 
 }
 
@@ -174,6 +192,7 @@ void PrioAlternatieven_Add(void) {
 
 void PostAfhandelingPrio_Add(void) {
 
+   Traffick2TLCgen_PRIO();
 }
 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM

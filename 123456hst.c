@@ -7,15 +7,15 @@
               123456
 
    BESTAND:   123456hst.c
-      CCOL:   11.0
-    TLCGEN:   0.10.7.0
-   CCOLGEN:   0.10.7.0
+      CCOL:   12.0
+    TLCGEN:   0.12.1.0
+   CCOLGEN:   0.12.1.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 10.7.0   18-03-2022   Cyril       Nieuwe versie TLCGen (0.10.7.0)
+ * 12.1.0   07-10-2022   TLCGen      Nieuwe versie TLCGen (release)
  *
  ************************************************************************************/
 
@@ -307,8 +307,6 @@ void Meetkriterium_halfstar(void)
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risvrw]);
         yv_PRIO_pl_halfstar(fc22, BIT7, C[cvc22fiets]);
         yv_PRIO_pl_halfstar(fc28, BIT7, C[cvc28fiets]);
-        yv_PRIO_pl_halfstar(fc31, BIT7, C[cvc31fietsprio]);
-        yv_PRIO_pl_halfstar(fc32, BIT7, C[cvc32fietsprio]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61bus]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61risov]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61risvrw]);
@@ -377,15 +375,15 @@ void Synchronisaties_halfstar(void)
          X[fc]&= ~(BIT1 | BIT2 |BIT3 | X_GELIJK_HALFSTAR | X_VOOR_HALFSTAR | X_DEELC_HALFSTAR);
     }
 
-    naloopEG_CV_halfstar(TRUE, fc02, fc62, prmxnl0262, NG, tnleg0262);
-    naloopEG_CV_halfstar(TRUE, fc08, fc68, prmxnl0868, NG, tnleg0868);
-    naloopEG_CV_halfstar(TRUE, fc11, fc68, prmxnl1168, tnlegd1168, tnleg1168);
-    naloopEG_CV_halfstar(TRUE, fc22, fc21, prmxnl2221, tnlegd2221, tnleg2221);
+    naloopEG_CV_halfstar(TRUE, fc02, fc62, T_max[tlr6202], tnlegd0262, tnleg0262);
+    naloopEG_CV_halfstar(TRUE, fc08, fc68, T_max[tlr6808], tnlegd0868, tnleg0868);
+    naloopEG_CV_halfstar(TRUE, fc11, fc68, T_max[tlr6811], tnlegd1168, tnleg1168);
+    naloopEG_CV_halfstar(TRUE, fc22, fc21, T_max[tlr2122], tnlegd2221, tnleg2221);
     naloopSG_halfstar(fc31, fc32, dk31a, hnlak31a, tnlsgd3132);
     naloopSG_halfstar(fc32, fc31, dk32a, hnlak32a, tnlsgd3231);
     naloopSG_halfstar(fc33, fc34, dk33a, hnlak33a, tnlsgd3334);
     naloopSG_halfstar(fc34, fc33, dk34a, hnlak34a, tnlsgd3433);
-    naloopEG_CV_halfstar(TRUE, fc82, fc81, prmxnl8281, tnlegd8281, tnleg8281);
+    naloopEG_CV_halfstar(TRUE, fc82, fc81, T_max[tlr8182], tnlegd8281, tnleg8281);
 
 
     Synchronisaties_halfstar_Add();
@@ -393,26 +391,10 @@ void Synchronisaties_halfstar(void)
 
 void Alternatief_halfstar(void)
 {
-    int ov;
     int fc;
 
-    /* PAR correctie: PRIO alternatieven enkel voor richtingen met actieve PRIO ingreep */
-    for (fc = 0; fc < FCMAX; ++fc)
-    {
-        char hasOV = FALSE;
-        for (ov = 0; ov < prioFCMAX; ++ov)
-        {
-            if (iAantalInmeldingen[ov] > 0 && iFC_PRIOix[ov] == fc)
-            {
-                hasOV = TRUE;
-                break;
-            }
-        }
-        if (!hasOV)
-        {
-            PAR[fc] &= ~PRIO_PAR_BIT;
-        }
-    }
+    PrioHalfstarPARCorrectieAlternatievenZonderPrio();
+
     alternatief_halfstar(fc02, PRM[prmaltphst02], SCH[schaltghst02]);
     alternatief_halfstar(fc03, PRM[prmaltphst03], SCH[schaltghst03]);
     alternatief_halfstar(fc05, PRM[prmaltphst05], SCH[schaltghst05]);
@@ -436,8 +418,8 @@ void Alternatief_halfstar(void)
     alternatief_halfstar(fc81, PRM[prmaltphst81], SCH[schaltghst81]);
     alternatief_halfstar(fc82, PRM[prmaltphst82], SCH[schaltghst82]);
     alternatief_halfstar(fc84, PRM[prmaltphst3384], SCH[schaltghst3384]);
-    altcor_kop_halfstar(fc02, fc62, tnleg0262);
-    altcor_kop_halfstar(fc08, fc68, tnleg0868);
+    altcor_kop_halfstar(fc02, fc62, tnlegd0262);
+    altcor_kop_halfstar(fc08, fc68, tnlegd0868);
     altcor_kop_halfstar(fc11, fc68, tnlegd1168);
     altcor_kop_halfstar(fc22, fc21, tnlegd2221);
     altcor_naloopSG_halfstar(fc31, fc32, IH[hnlak31a], tnlsgd3132, TRUE);
@@ -645,9 +627,9 @@ void pre_system_application_halfstar(void)
     GUS[usmlact] = IH[hmlact];
     GUS[uskpact] = IH[hkpact];
     GUS[usmlpl] = IH[hplact] ? (s_int16)(PL+1): (s_int16)(ML+1);
-    GUS[usplPL1] = PL == PL1;
-    GUS[usplPL2] = PL == PL2;
-    GUS[usplPL3] = PL == PL3;
+    GUS[usPL1] = PL == PL1;
+    GUS[usPL2] = PL == PL2;
+    GUS[usPL3] = PL == PL3;
     GUS[ustxtimer] = IH[hplact] ? (s_int16)(TX_timer): 0;
     GUS[usklok] = MM[mklok];
     GUS[ushand] = MM[mhand];
@@ -700,8 +682,6 @@ void PrioHalfstarSettings(void)
     iExtraGroenNaTXD[prioFC11risvrw] = PRM[prmnatxdhst11risvrw];
     iExtraGroenNaTXD[prioFC22fiets] = PRM[prmnatxdhst22fiets];
     iExtraGroenNaTXD[prioFC28fiets] = PRM[prmnatxdhst28fiets];
-    iExtraGroenNaTXD[prioFC31fietsprio] = PRM[prmnatxdhst31fietsprio];
-    iExtraGroenNaTXD[prioFC32fietsprio] = PRM[prmnatxdhst32fietsprio];
     iExtraGroenNaTXD[prioFC61bus] = PRM[prmnatxdhst61bus];
     iExtraGroenNaTXD[prioFC61risov] = PRM[prmnatxdhst61risov];
     iExtraGroenNaTXD[prioFC61risvrw] = PRM[prmnatxdhst61risvrw];

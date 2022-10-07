@@ -1,4 +1,4 @@
-/* halfstar_prio.h - gegenereerd met TLCGen 0.10.7.0 */
+/* halfstar_prio.h - gegenereerd met TLCGen 0.12.1.0 */
 
 /* -------------------------------------------------------------------------------------- */
 /*                                                                                        */
@@ -53,5 +53,6 @@ void PrioHalfstarAfkappen(void);
 void PrioHalfstarTerugkomGroen(void);
 void PrioHalfstarGroenVasthouden(void);
 void PrioHalfstarMeetKriterium(void);
+void PrioHalfstarPARCorrectieAlternatievenZonderPrio(void);
 
 #endif

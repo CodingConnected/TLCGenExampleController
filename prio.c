@@ -1,4 +1,4 @@
-/* prio.c - gegenereerd met TLCGen 0.10.7.0 */
+/* prio.c - gegenereerd met TLCGen 0.12.1.0 */
 
 /* OVPROGRAMMA */
 /* ----------- */
@@ -936,8 +936,7 @@ void PrioriteitsToekenning(void)
         iGroenBewakingsTimer[prio] = iGroenBewakingsTijd[prio];
         for (inm = 0; inm < iAantalInmeldingen[prio]; ++inm)
         {
-           /* wijz. Cyril Ondermaximum resetten niet op !G maar SG omdat anders als de richting bij prio= direct weer terug komt   */
-           if (SG[fc] || kg(fc))
+           if (!G[fc] || kg(fc))
             {
               iInOnderMaximumVerstreken[prio][inm] = 0;
               iInMaxWachtTijdOverschreden[prio][inm] = 0;
