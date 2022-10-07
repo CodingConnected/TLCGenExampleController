@@ -105,6 +105,7 @@ struct prioriteit_id {
   count OV_kar;                       /* count OV ingreep - KAR                                             */
   count OV_srm;                       /* count OV ingreep - SRM                                             */
   count OV_verlos;                    /* count OV ingreep - verlos                                          */
+  count VRW;                          /* count VRW ingreep                                                  */
   count FTS;                          /* count fiets voorrang module                                        */
 };
 
@@ -114,8 +115,11 @@ extern mulv  aantal_vtg_tgo;          /* aantal voetgangerskoppelingen - type ge
 extern mulv  aantal_lvk_gst;          /* aantal gelijk starten langzaam verkeer                             */
 extern mulv  aantal_dcf_vst;          /* aantal deelconflicten voorstart                                    */
 extern mulv  aantal_pel_kop;          /* aantal peloton koppelingen                                         */
+extern mulv  aantal_aft_123;          /* aantal definities aftellers                                        */
 
 extern mulv  REALtraffick[FCMAX];     /* REALTIJD voor richtingen die als eerstvolgende aan de beurt zijn   */
+extern mulv  PARtraffick[FCMAX];      /* buffer PAR[] zoals bepaald door Traffick                           */
+extern boolv AAPRprio[FCMAX];         /* AAPR[] voor prioriteitsrealisaties                                 */
 extern mulv  AltRuimte[FCMAX];        /* realisatie ruimte voor alternatieve realisatie                     */
 extern boolv ART[FCMAX];              /* alternatieve realisatie toegestaan algemene schakelaar             */
 extern mulv  ARB[FCMAX];              /* alternatieve realisatie toegestaan verfijning per blok             */
@@ -136,9 +140,13 @@ extern boolv DOSEER[FCMAX];           /* doseren aktief               (zelf te b
 extern mulv  MINTSG[FCMAX];           /* minimale tijd tot startgroen (zelf te besturen in REG[]ADD)        */
 extern mulv  PELTEG[FCMAX];           /* tijd tot einde groen als peloton ingreep maximaal duurt            */
 
+extern mulv  TVG_instelling[FCMAX];   /* buffer ingestelde waarde TVG_max[]                                 */
+extern mulv  TGL_instelling[FCMAX];   /* buffer ingestelde waarde TGL_max[]                                 */
+
+extern mulv  Waft[FCMAX];             /* aftellerwaarde ( > 0 betekent dat 1-2-3 afteller loopt)            */
 extern mulv  Aled[FCMAX];             /* aantal resterende leds bij wachttijd voorspeller                   */
 extern mulv  AanDuurLed[FCMAX];       /* tijd dat huidige aantal leds wordt uitgestuurd                     */
-extern mulv  TijdPerLed[FCMAX];       /* tijdsduur per led voor gelijkmatige afloop wachttijd voorspeller   */ 
+extern mulv  TijdPerLed[FCMAX];       /* tijdsduur per led voor gelijkmatige afloop wachttijd voorspeller   */
 extern mulv  wacht_ML[FCMAX];         /* maximale wachttijd volgens de module molen                         */
 
 extern mulv  ARM[FCMAX];              /* kruispunt arm tbv HLPD prioriteit                                  */
@@ -147,9 +155,10 @@ extern boolv HD_aanwezig[FCMAX];      /* HLPD aanwezig op richting              
 extern boolv HLPD[FCMAX];             /* HLPD prioriteit toegekend aan richting (en volgrichtingen)         */
 extern mulv  NAL_HLPD[FCMAX];         /* nalooptijd hulpdienst ingreep op richting(en) in volgarm           */
 extern mulv  verlos_busbaan[FCMAX];   /* buffer voor verlosmelding met prioriteit                           */
+extern boolv iPRIO[FCMAX];            /* prioriteit toegekend aan richting                                  */
 
-extern mulv  PEL_UIT_VTG[FCMAX];      /* buffer aantal voertuig voor uitgaande peloton koppeling obv pulsen */
-extern mulv  PEL_UIT_PLS[FCMAX];      /* restant duur uitsturing koppelsignaal peloton koppeling obv pulsen */
+extern mulv  PEL_UIT_VTG[FCMAX];      /* buffer aantal voertuig voor uitgaande peloton koppeling            */
+extern mulv  PEL_UIT_RES[FCMAX];      /* restant minimale duur uitsturing koppelsignaal peloton koppeling   */
 
 extern boolv RAT[FCMAX];              /* aansturing rateltikker                                             */
 extern boolv KNIP;                    /* hulpwaarde voor knipper signaal                                    */
@@ -327,6 +336,31 @@ void traffick2tlcgen_detectie(void);  /* Fik230101                              
 
 
 /* -------------------------------------------------------------------------------------------------------- */
+/* Functie bepaal start puls snelheidsheidsdetectie                                                         */
+/* -------------------------------------------------------------------------------------------------------- */
+/* Deze functie bepaalt de snelheid die aan de applicatie is doorgegeven op basis van snelheidsdetectie.    */
+/* De snelheid wordt precies 1 applicatie ronde aangeboden voor gebruik in andere functies.                 */
+/*                                                                                                          */
+/* Functie wordt aangeroepen vanuit PreApplication_Add().                                                   */
+/*                                                                                                          */
+/* Voor snelheid en classificatie geldt de volgende codering:                                               */
+/* xxxx xxxx 1111 1111                voertuigsnelheid (0-255 km/h)                                         */
+/* 1xxx xxxx xxxx xxxx                rijrichting: 0 = normaal;     1 = tegenrichting                       */
+/* xxx1 xxxx xxxx xxxx                status     : 0 = betrouwbaar; 1 = onbetrouwbaar                       */
+/* xxxx x111 xxxx xxxx   000          voertuig   : geen voertuigpassage info                                */
+/* xxxx x111 xxxx xxxx   001          voertuig   : personenauto                                             */
+/* xxxx x111 xxxx xxxx   010          voertuig   : vrachtwagen                                              */
+/* xxxx x111 xxxx xxxx   011          voertuig   : bus                                                      */
+/* xxxx x111 xxxx xxxx   100          voertuig   : personenauto + aanhanger                                 */
+/* xxxx x111 xxxx xxxx   101          voertuig   : vrachtwagen  + aanhanger                                 */
+/* xxxx x111 xxxx xxxx   110          voertuig   : niet gebruikt                                            */
+/* xxxx x111 xxxx xxxx   111          voertuig   : ongeldig voertuig                                        */
+/*                                                                                                          */
+mulv bepaal_start_puls_snelheid(      /* Fik230101                                                          */
+count is);                            /* IS ingang signaal waarop snelheid wordt afgebeeld                  */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
 /* Functie fasecyclus instellingen Traffick2TLCGen                                                          */
 /* -------------------------------------------------------------------------------------------------------- */
 /* In deze functie worden fasecyclus instellingen naar arrays gekopieerd, zodat deze instellingen eenvoudig */
@@ -348,6 +382,7 @@ mulv  prioOV_index_srm,               /* mulv  OVFCfc - prioriteitsindex OV ingr
 mulv  prioOV_index_verlos,            /* mulv  OVFCfc - prioriteitsindex OV ingreep - verlos                */
 mulv  prioHD_index,                   /* mulv  hdFCfc - prioriteitsindex hulpdienst ingreep                 */
 boolv HD_counter,                     /* boolv HD_counter (TRUE = hulpdienst aanwezig)                      */
+mulv  prioVRW_index,                  /* mulv  VRWFCfc - prioriteitsindex fiets vrachtwagen ingreep         */
 mulv  prioFTS_index);                 /* mulv  ftsFCfc - prioriteitsindex fiets voorrang module             */
 
 
@@ -735,22 +770,26 @@ count uswacht);                       /* US wachtlicht uitsturing               
 
 
 /* -------------------------------------------------------------------------------------------------------- */
-/* Functie uitgaande pelotonkoppeling obv puls sturing                                                      */
+/* Functie uitgaande pelotonkoppeling obv getelde voertuigen ter hoogte van de stopstreep                   */
 /* -------------------------------------------------------------------------------------------------------- */
-/* Deze functie verzorgt de uitsturing van een uitgaand peloton signaal obv pulsen. Indien een peloton is   */
-/* gemeten wordt het bijbehorende koppelsignaal gedurende 2,0 sec. uitgestuurd.                             */
+/* Deze functie verzorgt de uitsturing van een uitgaand peloton signaal obv getelde voertuigen nabij de     */
+/* stopstreep. Indien het koppelsignaal als puls is gedefinieerd wordt het bijbehorende koppelsignaal       */
+/* gedurende 2,0 sec. uitgestuurd waarna de meting herstart. Bij een duursignaal wordt het koppelsignaal    */
+/* uitgestuurd zolang het meetkriterium MK[] waar is tijdens de groenfase, na het afvallen van MK[] wordt   */
+/* de meting herstart.                                                                                      */
 /*                                                                                                          */
 /* Functie wordt aangeroepen vanuit post_application().                                                     */
 /*                                                                                                          */
-void peloton_meting_uit_puls(         /* Fik230101                                                          */
-count fc,                             /* FC  fasecyclus                                                     */
-count de1,                            /* DE  koplus 1                                                       */
-count de2,                            /* DE  koplus 2                                                       */
-count de3,                            /* DE  koplus 3                                                       */
-count tpelmeet,                       /* TM  meetperiode peloton koppeling                                  */
-count tpeltdh,                        /* TM  grenshiaat  peloton meting                                     */
-count pgrenswaarde,                   /* PRM grenswaarde aantal voertuigen                                  */
-count us_ks);                         /* US  uitgaand koppelsignaal                                         */
+void peloton_meting_uit_stopstreep(   /* Fik230101                                                          */
+count fc,                             /* FC    fasecyclus                                                   */
+count de1,                            /* DE    koplus 1                                                     */
+count de2,                            /* DE    koplus 2                                                     */
+count de3,                            /* DE    koplus 3                                                     */
+count tpelmeet,                       /* TM    meetperiode peloton koppeling                                */
+count tpeltdh,                        /* TM    grenshiaat  peloton meting                                   */
+count pgrenswaarde,                   /* PRM   grenswaarde aantal voertuigen                                */
+boolv duur_signaal,                   /* boolv FALSE = puls                                                 */
+count us_ks);                         /* US    uitgaand koppelsignaal                                       */
 
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -804,7 +843,7 @@ void corrigeer_blokkeringstijd_OV(void); /* Fik230101                           
 /* Deze functie verzorgt de hulpdienst ingreep op alle richtingen van de gedefinieerde kruispuntarm en      */
 /* eventuele gedefinieerde volgarmen.                                                                       */
 /*                                                                                                          */
-/* Functie wordt aangeroepen vanuit PrioriteitsOpties_Add().                                                */
+/* Functie wordt aangeroepen vanuit Traffick2TLCgen_PRIO_OPTIES().                                          */
 /*                                                                                                          */
 void Traffick2TLCgen_HLPD(void);      /* Fik230101                                                          */
 
@@ -816,7 +855,7 @@ void Traffick2TLCgen_HLPD(void);      /* Fik230101                              
 /* volgarm. De functie controleert of de volgrichting ook gedefinieerd is als volg_ARM[]. Als dit het geval */
 /* is wordt de nalooptijd doorgezet op alle richtingen van de volg_ARM.                                     */
 /*                                                                                                          */
-/* Functie wordt aangeroepen vanuit PrioriteitsOpties_Add().                                                */
+/* Functie wordt aangeroepen vanuit PrioriteitsOpties_Add() na aanroep Traffick2TLCgen_PRIO_OPTIES().       */
 /*                                                                                                          */
 void Traffick2TLCgen_HLPD_nal(        /* Fik230101                                                          */
 count fc1,                            /* FC   fasecyclus voedende richting                                  */
@@ -829,7 +868,7 @@ mulv  naloop);                        /* mulv nalooptijd                        
 /* -------------------------------------------------------------------------------------------------------- */
 /* Deze functie blokkeert conflicterende prioriteitsingrepen bij een aktieve peloton ingreep.               */
 /*                                                                                                          */
-/* Functie wordt aangeroepen vanuit PrioriteitsOpties_Add().                                                */
+/* Functie wordt aangeroepen vanuit Traffick2TLCgen_PRIO_OPTIES().                                          */
 /*                                                                                                          */
 void Traffick2TLCgen_PELOTON(void);   /* Fik230101                                                          */
 
@@ -841,9 +880,20 @@ void Traffick2TLCgen_PELOTON(void);   /* Fik230101                              
 /* van de status van de regensensor. De functie corrigeert de opties zodra een conflicterende prioriteit    */
 /* is aangevraagd met als optie bijzondere realisatie. De fietsprioriteit is hieraan altijd ondergeschikt.  */
 /*                                                                                                          */
-/* Functie wordt aangeroepen vanuit PrioriteitsOpties_Add().                                                */
+/* Functie wordt aangeroepen vanuit Traffick2TLCgen_PRIO_OPTIES().                                          */
 /*                                                                                                          */
 void Traffick2TLCgen_FIETS(void);     /* Fik230101                                                          */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* Functie corrigeer prioriteitsopties                                                                      */
+/* -------------------------------------------------------------------------------------------------------- */
+/* Deze functie corrigeert prioriteitsopties als gevolg van verschillende (en onderling conflicterende)     */
+/* prioriteitsingrepen en voor wachttijdvoorspellers waarvan minder dan een instelbaar aantal leds branden. */
+/*                                                                                                          */
+/* Functie wordt aangeroepen vanuit PrioriteitsOpties_Add().                                                */
+/*                                                                                                          */
+void Traffick2TLCgen_PRIO_OPTIES(void); /* Fik230101                                                        */
 
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -858,6 +908,36 @@ void Traffick2TLCgen_PRIO_TOE(void);  /* Fik230101                              
 
 
 /* -------------------------------------------------------------------------------------------------------- */
+/* Functie manipuleer TVG_max[] naloop harde koppelingen                                                    */
+/* -------------------------------------------------------------------------------------------------------- */
+/* TLCgen gaat bij de berekening van de maximale duur van de naloop uit van de koppeltijden + de ingestelde */
+/* TVG_max[] van de naloop richting. Deze tijd kan te hoog zijn omdat de maximale duur van het verlenggroen */
+/* na afloop van de koppeltijden lager kan zijn ingesteld dan TVG_max[]. Deze functie manipuleert de        */
+/* instelling van TVG_max[] juist voor de startgroen berekening van prioriteitsrealisaties, zodat die wel   */
+/* met de juiste waarde rekent. In StartGroenMomenten_Add() worden de oorspronkelijke waarden terug gezet.  */
+/*                                                                                                          */
+/* Functie wordt aangeroepen vanuit AfkapGroen_Add().                                                       */
+/*                                                                                                          */
+void Traffick2TLCpas_TVG_aan(void);   /* Fik230101                                                          */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* Functie manipuleer TVG_max[] naloop harde koppelingen                                                    */
+/* -------------------------------------------------------------------------------------------------------- */
+/* TLCgen gaat bij de berekening van de maximale duur van de naloop uit van de koppeltijden + de ingestelde */
+/* TVG_max[] van de naloop richting. Deze tijd kan te hoog zijn omdat de maximale duur van het verlenggroen */
+/* na afloop van de koppeltijden lager kan zijn ingesteld dan TVG_max[].                                    */
+/*                                                                                                          */
+/* De functie Traffick2TLCpas_TVG_aan() manipuleert de instelling van TVG_max[] juist voor de startgroen    */
+/* berekening van prioriteitsrealisaties, zodat die wel met de juiste waarde rekent. Deze functie zet       */
+/* juist na de startgroen berekening de oorspronkelijke waarden weer terug.                                 */
+/*                                                                                                          */
+/* Functie wordt aangeroepen vanuit StartGroenMomenten_Add().                                               */
+/*                                                                                                          */
+void Traffick2TLCzet_TVG_terug(void); /* Fik230101                                                          */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
 /* Functie corrigeer PRIO_RR_BIT[]                                                                          */
 /* -------------------------------------------------------------------------------------------------------- */
 /* TLCgen stuurt een volgrichting niet RR[] indien de voedende richting wordt tegengehouden door een        */
@@ -865,7 +945,8 @@ void Traffick2TLCgen_PRIO_TOE(void);  /* Fik230101                              
 /* is het wel nodig om ook het PRIO_RR_BIT[] door te zetten naar de volgrichting. Deze functie verzorgt     */
 /* het doorschrijven van het PRIO_RR_BIT[].                                                                 */
 /*                                                                                                          */
-/* De functie zet verder bij een prioriteitsrealisatie ook het PRIO_RR_BIT[] bij de tijdelijke conflicten.  */
+/* De functie schrijft daarnaast ook het PRIO_RR_BIT[] door aan richtingen die onderling een gelijkstart    */
+/* hebben.                                                                                                  */
 /*                                                                                                          */
 /* Functie wordt aangeroepen vanuit PrioTegenhouden_Add() en Traffick2TLCgen_PRIO().                        */
 /*                                                                                                          */
@@ -877,7 +958,7 @@ void Traffick2TLCgen_PRIO_RR(void);   /* Fik230101                              
 /* -------------------------------------------------------------------------------------------------------- */
 /* TLCgen staat een alternatieve realisaties toe indien er voldoende ruimte is als gevolg van een           */
 /* prioriteitsrealisatie van een niet conflicterende richting. Dit mag echter niet gebeuren voor richtingen */
-/* die gedoseerd worden. Deze functie corrigeert dit door in dat geval PAR[] te resetten.                   */
+/* die gedoseerd worden of indien Traffick heeft uitgerekend dat een alternatieve realisatie niet past.     */
 /*                                                                                                          */
 /* Functie wordt aangeroepen vanuit PrioAlternatieven_Add().                                                */
 /*                                                                                                          */
@@ -1006,6 +1087,16 @@ count fc);                            /* FC fasecyclus                          
 
 
 /* -------------------------------------------------------------------------------------------------------- */
+/* Hulpfunctie bepaal aanwezigheid conflicterende prioriteitsingreep welke nog niet is gerealiseerd         */
+/* -------------------------------------------------------------------------------------------------------- */
+/* Hulpfunctie met als return waarde de aanwezigheid van een conflicterende prioriteitsingreep welke nog    */
+/* niet is gerealiseerd. (nog niet groen is)                                                                */
+/*                                                                                                          */
+boolv conflict_prio_real(             /* Fik230101                                                          */
+count fc);                            /* FC fasecyclus                                                      */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
 /* Hulpfunctie bepaal aanwezigheid conflicterende hulpdienst ingreep                                        */
 /* -------------------------------------------------------------------------------------------------------- */
 /* Hulpfunctie met als return waarde de aanwezigheid van een conflicterende hulpdienst ingreep.             */
@@ -1020,6 +1111,15 @@ count fc);                            /* FC fasecyclus                          
 /* Hulpfunctie met als RETURN of een richting een volgrichting is binnen een gedefinieerde harde koppeling. */
 /*                                                                                                          */
 boolv volgrichting_hki(               /* Fik230101                                                          */
+count fc);                            /* FC fasecyclus                                                      */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* Hulpfunctie bepaal of een richting een voorstart moet geven binnen een gedefinieerd deelconflict         */
+/* -------------------------------------------------------------------------------------------------------- */
+/* Hulpfunctie met als RETURN of een richting een voorstart moet geven aan een andere richting.             */
+/*                                                                                                          */
+boolv voorstart_gever(                /* Fik230101                                                          */
 count fc);                            /* FC fasecyclus                                                      */
 
 
@@ -1059,4 +1159,18 @@ void DumpTraffick(void);              /* Fik230101                              
 void FlightTraffick(void);            /* Fik230101                                                          */
 
 #endif
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* Functie toggle FK conflicten                                                                             */
+/* -------------------------------------------------------------------------------------------------------- */
+/* Deze functie schakelt FK conflicten, bijvoorbeeld voor het schakelbaar maken van voetgangerskoppelingen. */
+/*                                                                                                          */
+/* Functie wordt aangeroepen vanuit PostApplication_Add().                                                  */
+/* (na het schakelen van FK conflicten geen andere programma code opnemen)                                  */
+/*                                                                                                          */
+void Toggle_FK_Conflict(              /* Fik230101                                                          */
+count fc1,                            /* FC    fasecyclus 1                                                 */
+count fc2,                            /* FC    fasecyclus 2                                                 */
+boolv period);                        /* boolv FK conflict gewenst                                          */
 #endif

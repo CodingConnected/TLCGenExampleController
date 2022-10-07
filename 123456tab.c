@@ -886,8 +886,8 @@ void control_parameters(void)
     H_code[hopdrempelen09]          = "opdrempelen09";                                            /* Opdrempelen toepassen voor fase 09                                 */
     H_code[hgeendynhiaat09]         = "geendynhiaat09";                                           /* Tegenhouden toepassen dynamische hiaattijden voor fase 09          */
     H_code[hverleng_09_1]           = "verleng_09_1";                                             /* Instructie verlengen op detector 09_1 ongeacht dynamische hiaat    */
-    H_code[hverleng_09_3]           = "verleng_09_3";                                             /* Instructie verlengen op detector 09_3 ongeacht dynamische hiaat    */
     H_code[hverleng_09_2]           = "verleng_09_2";                                             /* Instructie verlengen op detector 09_2 ongeacht dynamische hiaat    */
+    H_code[hverleng_09_3]           = "verleng_09_3";                                             /* Instructie verlengen op detector 09_3 ongeacht dynamische hiaat    */
     H_code[hopdrempelen11]          = "opdrempelen11";                                            /* Opdrempelen toepassen voor fase 11                                 */
     H_code[hgeendynhiaat11]         = "geendynhiaat11";                                           /* Tegenhouden toepassen dynamische hiaattijden voor fase 11          */
     H_code[hverleng_11_1]           = "verleng_11_1";                                             /* Instructie verlengen op detector 11_1 ongeacht dynamische hiaat    */
@@ -1381,16 +1381,16 @@ void control_parameters(void)
     T_code[ttdh_09_1_1]                = "tdh_09_1_1";                T_max[ttdh_09_1_1]                = 0;    T_type[ttdh_09_1_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_1                                          */
     T_code[ttdh_09_1_2]                = "tdh_09_1_2";                T_max[ttdh_09_1_2]                = 0;    T_type[ttdh_09_1_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_1                                          */
     T_code[tmax_09_1]                  = "max_09_1";                  T_max[tmax_09_1]                  = 0;    T_type[tmax_09_1]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_1                                */
-    T_code[t09_3_1]                    = "09_3_1";                    T_max[t09_3_1]                    = 0;    T_type[t09_3_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 09_3                                       */
-    T_code[t09_3_2]                    = "09_3_2";                    T_max[t09_3_2]                    = 0;    T_type[t09_3_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 09_3                                       */
-    T_code[ttdh_09_3_1]                = "tdh_09_3_1";                T_max[ttdh_09_3_1]                = 0;    T_type[ttdh_09_3_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_3                                          */
-    T_code[ttdh_09_3_2]                = "tdh_09_3_2";                T_max[ttdh_09_3_2]                = 0;    T_type[ttdh_09_3_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_3                                          */
-    T_code[tmax_09_3]                  = "max_09_3";                  T_max[tmax_09_3]                  = 0;    T_type[tmax_09_3]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_3                                */
     T_code[t09_2_1]                    = "09_2_1";                    T_max[t09_2_1]                    = 0;    T_type[t09_2_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 09_2                                       */
     T_code[t09_2_2]                    = "09_2_2";                    T_max[t09_2_2]                    = 0;    T_type[t09_2_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 09_2                                       */
     T_code[ttdh_09_2_1]                = "tdh_09_2_1";                T_max[ttdh_09_2_1]                = 0;    T_type[ttdh_09_2_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_2                                          */
     T_code[ttdh_09_2_2]                = "tdh_09_2_2";                T_max[ttdh_09_2_2]                = 0;    T_type[ttdh_09_2_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_2                                          */
     T_code[tmax_09_2]                  = "max_09_2";                  T_max[tmax_09_2]                  = 0;    T_type[tmax_09_2]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_2                                */
+    T_code[t09_3_1]                    = "09_3_1";                    T_max[t09_3_1]                    = 0;    T_type[t09_3_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 09_3                                       */
+    T_code[t09_3_2]                    = "09_3_2";                    T_max[t09_3_2]                    = 0;    T_type[t09_3_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 09_3                                       */
+    T_code[ttdh_09_3_1]                = "tdh_09_3_1";                T_max[ttdh_09_3_1]                = 0;    T_type[ttdh_09_3_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 09_3                                          */
+    T_code[ttdh_09_3_2]                = "tdh_09_3_2";                T_max[ttdh_09_3_2]                = 0;    T_type[ttdh_09_3_2]                = TE_type; /* Dynamische hiaattijden TDH 2 voor detector 09_3                                          */
+    T_code[tmax_09_3]                  = "max_09_3";                  T_max[tmax_09_3]                  = 0;    T_type[tmax_09_3]                  = TE_type; /* Dynamische hiaattijden maximale tijd 2 voor detector 09_3                                */
     T_code[t11_1_1]                    = "11_1_1";                    T_max[t11_1_1]                    = 0;    T_type[t11_1_1]                    = TE_type; /* Dynamische hiaattijden moment 1 voor detector 11_1                                       */
     T_code[t11_1_2]                    = "11_1_2";                    T_max[t11_1_2]                    = 0;    T_type[t11_1_2]                    = TE_type; /* Dynamische hiaattijden moment 2 voor detector 11_1                                       */
     T_code[ttdh_11_1_1]                = "tdh_11_1_1";                T_max[ttdh_11_1_1]                = 0;    T_type[ttdh_11_1_1]                = TE_type; /* Dynamische hiaattijden TDH 1 voor detector 11_1                                          */
@@ -2359,7 +2359,7 @@ void control_parameters(void)
     SCH_code[schsneld81_1]              = "sneld81_1";              SCH[schsneld81_1]              = 1;                                         /* Aanvraag snel voor detector 81_1 aan of uit                           */
     SCH_code[schsneld82_1]              = "sneld82_1";              SCH[schsneld82_1]              = 1;                                         /* Aanvraag snel voor detector 82_1 aan of uit                           */
     SCH_code[schsneld84_1]              = "sneld84_1";              SCH[schsneld84_1]              = 1;                                         /* Aanvraag snel voor detector 84_1 aan of uit                           */
-    SCH_code[schgsbeidedkb]             = "gsbeidedkb";             SCH[schgsbeidedkb]             = 0;                                        
+    SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 1;                                         /* 1 = traffick2tlcgen                                                   */
 
 /* parameters */
 /* ---------- */
@@ -2372,8 +2372,8 @@ void control_parameters(void)
     PRM_code[prmspringverleng_08_4a]      = "springverleng_08_4a";      PRM[prmspringverleng_08_4a]      = 0;                                                      /* Dyn. hiaattij instelling voor det. 08_4a (via bitsturing)                                                                      */
     PRM_code[prmspringverleng_08_4b]      = "springverleng_08_4b";      PRM[prmspringverleng_08_4b]      = 0;                                                      /* Dyn. hiaattij instelling voor det. 08_4b (via bitsturing)                                                                      */
     PRM_code[prmspringverleng_09_1]       = "springverleng_09_1";       PRM[prmspringverleng_09_1]       = 0;                                                      /* Dyn. hiaattij instelling voor det. 09_1 (via bitsturing)                                                                       */
-    PRM_code[prmspringverleng_09_3]       = "springverleng_09_3";       PRM[prmspringverleng_09_3]       = 0;                                                      /* Dyn. hiaattij instelling voor det. 09_3 (via bitsturing)                                                                       */
     PRM_code[prmspringverleng_09_2]       = "springverleng_09_2";       PRM[prmspringverleng_09_2]       = 0;                                                      /* Dyn. hiaattij instelling voor det. 09_2 (via bitsturing)                                                                       */
+    PRM_code[prmspringverleng_09_3]       = "springverleng_09_3";       PRM[prmspringverleng_09_3]       = 0;                                                      /* Dyn. hiaattij instelling voor det. 09_3 (via bitsturing)                                                                       */
     PRM_code[prmspringverleng_11_1]       = "springverleng_11_1";       PRM[prmspringverleng_11_1]       = 2;                                                      /* Dyn. hiaattij instelling voor det. 11_1 (via bitsturing)                                                                       */
     PRM_code[prmspringverleng_11_2]       = "springverleng_11_2";       PRM[prmspringverleng_11_2]       = 24;                                                     /* Dyn. hiaattij instelling voor det. 11_2 (via bitsturing)                                                                       */
     PRM_code[prmspringverleng_11_3]       = "springverleng_11_3";       PRM[prmspringverleng_11_3]       = 9;                                                      /* Dyn. hiaattij instelling voor det. 11_3 (via bitsturing)                                                                       */
@@ -2723,6 +2723,16 @@ void control_parameters(void)
     PRM_code[prmtxC2PL1_22]               = "txC2PL1_22";               PRM[prmtxC2PL1_22]               = 0;                                                      /* Tweede realisatie PL1 fc22 C-moment                                                                                            */
     PRM_code[prmtxD2PL1_22]               = "txD2PL1_22";               PRM[prmtxD2PL1_22]               = 0;                                                      /* Tweede realisatie PL1 fc22 D-moment                                                                                            */
     PRM_code[prmtxE2PL1_22]               = "txE2PL1_22";               PRM[prmtxE2PL1_22]               = 0;                                                      /* Tweede realisatie PL1 fc22 E-moment                                                                                            */
+    PRM_code[prmtxA1PL1_24]               = "txA1PL1_24";               PRM[prmtxA1PL1_24]               = 0;                                                      /* Eerste realisatie PL1 fc24 A-moment                                                                                            */
+    PRM_code[prmtxB1PL1_24]               = "txB1PL1_24";               PRM[prmtxB1PL1_24]               = 60;                                                     /* Eerste realisatie PL1 fc24 B-moment                                                                                            */
+    PRM_code[prmtxC1PL1_24]               = "txC1PL1_24";               PRM[prmtxC1PL1_24]               = 0;                                                      /* Eerste realisatie PL1 fc24 C-moment                                                                                            */
+    PRM_code[prmtxD1PL1_24]               = "txD1PL1_24";               PRM[prmtxD1PL1_24]               = 3;                                                      /* Eerste realisatie PL1 fc24 D-moment                                                                                            */
+    PRM_code[prmtxE1PL1_24]               = "txE1PL1_24";               PRM[prmtxE1PL1_24]               = 0;                                                      /* Eerste realisatie PL1 fc24 E-moment                                                                                            */
+    PRM_code[prmtxA2PL1_24]               = "txA2PL1_24";               PRM[prmtxA2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 A-moment                                                                                            */
+    PRM_code[prmtxB2PL1_24]               = "txB2PL1_24";               PRM[prmtxB2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 B-moment                                                                                            */
+    PRM_code[prmtxC2PL1_24]               = "txC2PL1_24";               PRM[prmtxC2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 C-moment                                                                                            */
+    PRM_code[prmtxD2PL1_24]               = "txD2PL1_24";               PRM[prmtxD2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 D-moment                                                                                            */
+    PRM_code[prmtxE2PL1_24]               = "txE2PL1_24";               PRM[prmtxE2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 E-moment                                                                                            */
     PRM_code[prmtxA1PL1_84]               = "txA1PL1_84";               PRM[prmtxA1PL1_84]               = 0;                                                      /* Eerste realisatie PL1 fc84 A-moment                                                                                            */
     PRM_code[prmtxB1PL1_84]               = "txB1PL1_84";               PRM[prmtxB1PL1_84]               = 56;                                                     /* Eerste realisatie PL1 fc84 B-moment                                                                                            */
     PRM_code[prmtxC1PL1_84]               = "txC1PL1_84";               PRM[prmtxC1PL1_84]               = 0;                                                      /* Eerste realisatie PL1 fc84 C-moment                                                                                            */
@@ -2863,16 +2873,6 @@ void control_parameters(void)
     PRM_code[prmtxC2PL1_26]               = "txC2PL1_26";               PRM[prmtxC2PL1_26]               = 0;                                                      /* Tweede realisatie PL1 fc26 C-moment                                                                                            */
     PRM_code[prmtxD2PL1_26]               = "txD2PL1_26";               PRM[prmtxD2PL1_26]               = 0;                                                      /* Tweede realisatie PL1 fc26 D-moment                                                                                            */
     PRM_code[prmtxE2PL1_26]               = "txE2PL1_26";               PRM[prmtxE2PL1_26]               = 0;                                                      /* Tweede realisatie PL1 fc26 E-moment                                                                                            */
-    PRM_code[prmtxA1PL1_24]               = "txA1PL1_24";               PRM[prmtxA1PL1_24]               = 0;                                                      /* Eerste realisatie PL1 fc24 A-moment                                                                                            */
-    PRM_code[prmtxB1PL1_24]               = "txB1PL1_24";               PRM[prmtxB1PL1_24]               = 60;                                                     /* Eerste realisatie PL1 fc24 B-moment                                                                                            */
-    PRM_code[prmtxC1PL1_24]               = "txC1PL1_24";               PRM[prmtxC1PL1_24]               = 0;                                                      /* Eerste realisatie PL1 fc24 C-moment                                                                                            */
-    PRM_code[prmtxD1PL1_24]               = "txD1PL1_24";               PRM[prmtxD1PL1_24]               = 3;                                                      /* Eerste realisatie PL1 fc24 D-moment                                                                                            */
-    PRM_code[prmtxE1PL1_24]               = "txE1PL1_24";               PRM[prmtxE1PL1_24]               = 0;                                                      /* Eerste realisatie PL1 fc24 E-moment                                                                                            */
-    PRM_code[prmtxA2PL1_24]               = "txA2PL1_24";               PRM[prmtxA2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 A-moment                                                                                            */
-    PRM_code[prmtxB2PL1_24]               = "txB2PL1_24";               PRM[prmtxB2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 B-moment                                                                                            */
-    PRM_code[prmtxC2PL1_24]               = "txC2PL1_24";               PRM[prmtxC2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 C-moment                                                                                            */
-    PRM_code[prmtxD2PL1_24]               = "txD2PL1_24";               PRM[prmtxD2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 D-moment                                                                                            */
-    PRM_code[prmtxE2PL1_24]               = "txE2PL1_24";               PRM[prmtxE2PL1_24]               = 0;                                                      /* Tweede realisatie PL1 fc24 E-moment                                                                                            */
     PRM_code[prmtxA1PL2_02]               = "txA1PL2_02";               PRM[prmtxA1PL2_02]               = 95;                                                     /* Eerste realisatie PL2 fc02 A-moment                                                                                            */
     PRM_code[prmtxB1PL2_02]               = "txB1PL2_02";               PRM[prmtxB1PL2_02]               = 97;                                                     /* Eerste realisatie PL2 fc02 B-moment                                                                                            */
     PRM_code[prmtxC1PL2_02]               = "txC1PL2_02";               PRM[prmtxC1PL2_02]               = 19;                                                     /* Eerste realisatie PL2 fc02 C-moment                                                                                            */
@@ -2953,6 +2953,16 @@ void control_parameters(void)
     PRM_code[prmtxC2PL2_22]               = "txC2PL2_22";               PRM[prmtxC2PL2_22]               = 0;                                                      /* Tweede realisatie PL2 fc22 C-moment                                                                                            */
     PRM_code[prmtxD2PL2_22]               = "txD2PL2_22";               PRM[prmtxD2PL2_22]               = 0;                                                      /* Tweede realisatie PL2 fc22 D-moment                                                                                            */
     PRM_code[prmtxE2PL2_22]               = "txE2PL2_22";               PRM[prmtxE2PL2_22]               = 0;                                                      /* Tweede realisatie PL2 fc22 E-moment                                                                                            */
+    PRM_code[prmtxA1PL2_24]               = "txA1PL2_24";               PRM[prmtxA1PL2_24]               = 0;                                                      /* Eerste realisatie PL2 fc24 A-moment                                                                                            */
+    PRM_code[prmtxB1PL2_24]               = "txB1PL2_24";               PRM[prmtxB1PL2_24]               = 77;                                                     /* Eerste realisatie PL2 fc24 B-moment                                                                                            */
+    PRM_code[prmtxC1PL2_24]               = "txC1PL2_24";               PRM[prmtxC1PL2_24]               = 0;                                                      /* Eerste realisatie PL2 fc24 C-moment                                                                                            */
+    PRM_code[prmtxD1PL2_24]               = "txD1PL2_24";               PRM[prmtxD1PL2_24]               = 3;                                                      /* Eerste realisatie PL2 fc24 D-moment                                                                                            */
+    PRM_code[prmtxE1PL2_24]               = "txE1PL2_24";               PRM[prmtxE1PL2_24]               = 0;                                                      /* Eerste realisatie PL2 fc24 E-moment                                                                                            */
+    PRM_code[prmtxA2PL2_24]               = "txA2PL2_24";               PRM[prmtxA2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 A-moment                                                                                            */
+    PRM_code[prmtxB2PL2_24]               = "txB2PL2_24";               PRM[prmtxB2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 B-moment                                                                                            */
+    PRM_code[prmtxC2PL2_24]               = "txC2PL2_24";               PRM[prmtxC2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 C-moment                                                                                            */
+    PRM_code[prmtxD2PL2_24]               = "txD2PL2_24";               PRM[prmtxD2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 D-moment                                                                                            */
+    PRM_code[prmtxE2PL2_24]               = "txE2PL2_24";               PRM[prmtxE2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 E-moment                                                                                            */
     PRM_code[prmtxA1PL2_84]               = "txA1PL2_84";               PRM[prmtxA1PL2_84]               = 0;                                                      /* Eerste realisatie PL2 fc84 A-moment                                                                                            */
     PRM_code[prmtxB1PL2_84]               = "txB1PL2_84";               PRM[prmtxB1PL2_84]               = 80;                                                     /* Eerste realisatie PL2 fc84 B-moment                                                                                            */
     PRM_code[prmtxC1PL2_84]               = "txC1PL2_84";               PRM[prmtxC1PL2_84]               = 0;                                                      /* Eerste realisatie PL2 fc84 C-moment                                                                                            */
@@ -3093,16 +3103,6 @@ void control_parameters(void)
     PRM_code[prmtxC2PL2_26]               = "txC2PL2_26";               PRM[prmtxC2PL2_26]               = 0;                                                      /* Tweede realisatie PL2 fc26 C-moment                                                                                            */
     PRM_code[prmtxD2PL2_26]               = "txD2PL2_26";               PRM[prmtxD2PL2_26]               = 0;                                                      /* Tweede realisatie PL2 fc26 D-moment                                                                                            */
     PRM_code[prmtxE2PL2_26]               = "txE2PL2_26";               PRM[prmtxE2PL2_26]               = 0;                                                      /* Tweede realisatie PL2 fc26 E-moment                                                                                            */
-    PRM_code[prmtxA1PL2_24]               = "txA1PL2_24";               PRM[prmtxA1PL2_24]               = 0;                                                      /* Eerste realisatie PL2 fc24 A-moment                                                                                            */
-    PRM_code[prmtxB1PL2_24]               = "txB1PL2_24";               PRM[prmtxB1PL2_24]               = 77;                                                     /* Eerste realisatie PL2 fc24 B-moment                                                                                            */
-    PRM_code[prmtxC1PL2_24]               = "txC1PL2_24";               PRM[prmtxC1PL2_24]               = 0;                                                      /* Eerste realisatie PL2 fc24 C-moment                                                                                            */
-    PRM_code[prmtxD1PL2_24]               = "txD1PL2_24";               PRM[prmtxD1PL2_24]               = 3;                                                      /* Eerste realisatie PL2 fc24 D-moment                                                                                            */
-    PRM_code[prmtxE1PL2_24]               = "txE1PL2_24";               PRM[prmtxE1PL2_24]               = 0;                                                      /* Eerste realisatie PL2 fc24 E-moment                                                                                            */
-    PRM_code[prmtxA2PL2_24]               = "txA2PL2_24";               PRM[prmtxA2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 A-moment                                                                                            */
-    PRM_code[prmtxB2PL2_24]               = "txB2PL2_24";               PRM[prmtxB2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 B-moment                                                                                            */
-    PRM_code[prmtxC2PL2_24]               = "txC2PL2_24";               PRM[prmtxC2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 C-moment                                                                                            */
-    PRM_code[prmtxD2PL2_24]               = "txD2PL2_24";               PRM[prmtxD2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 D-moment                                                                                            */
-    PRM_code[prmtxE2PL2_24]               = "txE2PL2_24";               PRM[prmtxE2PL2_24]               = 0;                                                      /* Tweede realisatie PL2 fc24 E-moment                                                                                            */
     PRM_code[prmtxA1PL3_02]               = "txA1PL3_02";               PRM[prmtxA1PL3_02]               = 103;                                                    /* Eerste realisatie PL3 fc02 A-moment                                                                                            */
     PRM_code[prmtxB1PL3_02]               = "txB1PL3_02";               PRM[prmtxB1PL3_02]               = 103;                                                    /* Eerste realisatie PL3 fc02 B-moment                                                                                            */
     PRM_code[prmtxC1PL3_02]               = "txC1PL3_02";               PRM[prmtxC1PL3_02]               = 25;                                                     /* Eerste realisatie PL3 fc02 C-moment                                                                                            */
@@ -3183,6 +3183,16 @@ void control_parameters(void)
     PRM_code[prmtxC2PL3_22]               = "txC2PL3_22";               PRM[prmtxC2PL3_22]               = 0;                                                      /* Tweede realisatie PL3 fc22 C-moment                                                                                            */
     PRM_code[prmtxD2PL3_22]               = "txD2PL3_22";               PRM[prmtxD2PL3_22]               = 0;                                                      /* Tweede realisatie PL3 fc22 D-moment                                                                                            */
     PRM_code[prmtxE2PL3_22]               = "txE2PL3_22";               PRM[prmtxE2PL3_22]               = 0;                                                      /* Tweede realisatie PL3 fc22 E-moment                                                                                            */
+    PRM_code[prmtxA1PL3_24]               = "txA1PL3_24";               PRM[prmtxA1PL3_24]               = 0;                                                      /* Eerste realisatie PL3 fc24 A-moment                                                                                            */
+    PRM_code[prmtxB1PL3_24]               = "txB1PL3_24";               PRM[prmtxB1PL3_24]               = 86;                                                     /* Eerste realisatie PL3 fc24 B-moment                                                                                            */
+    PRM_code[prmtxC1PL3_24]               = "txC1PL3_24";               PRM[prmtxC1PL3_24]               = 0;                                                      /* Eerste realisatie PL3 fc24 C-moment                                                                                            */
+    PRM_code[prmtxD1PL3_24]               = "txD1PL3_24";               PRM[prmtxD1PL3_24]               = 3;                                                      /* Eerste realisatie PL3 fc24 D-moment                                                                                            */
+    PRM_code[prmtxE1PL3_24]               = "txE1PL3_24";               PRM[prmtxE1PL3_24]               = 0;                                                      /* Eerste realisatie PL3 fc24 E-moment                                                                                            */
+    PRM_code[prmtxA2PL3_24]               = "txA2PL3_24";               PRM[prmtxA2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 A-moment                                                                                            */
+    PRM_code[prmtxB2PL3_24]               = "txB2PL3_24";               PRM[prmtxB2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 B-moment                                                                                            */
+    PRM_code[prmtxC2PL3_24]               = "txC2PL3_24";               PRM[prmtxC2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 C-moment                                                                                            */
+    PRM_code[prmtxD2PL3_24]               = "txD2PL3_24";               PRM[prmtxD2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 D-moment                                                                                            */
+    PRM_code[prmtxE2PL3_24]               = "txE2PL3_24";               PRM[prmtxE2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 E-moment                                                                                            */
     PRM_code[prmtxA1PL3_84]               = "txA1PL3_84";               PRM[prmtxA1PL3_84]               = 0;                                                      /* Eerste realisatie PL3 fc84 A-moment                                                                                            */
     PRM_code[prmtxB1PL3_84]               = "txB1PL3_84";               PRM[prmtxB1PL3_84]               = 87;                                                     /* Eerste realisatie PL3 fc84 B-moment                                                                                            */
     PRM_code[prmtxC1PL3_84]               = "txC1PL3_84";               PRM[prmtxC1PL3_84]               = 0;                                                      /* Eerste realisatie PL3 fc84 C-moment                                                                                            */
@@ -3323,16 +3333,6 @@ void control_parameters(void)
     PRM_code[prmtxC2PL3_26]               = "txC2PL3_26";               PRM[prmtxC2PL3_26]               = 0;                                                      /* Tweede realisatie PL3 fc26 C-moment                                                                                            */
     PRM_code[prmtxD2PL3_26]               = "txD2PL3_26";               PRM[prmtxD2PL3_26]               = 0;                                                      /* Tweede realisatie PL3 fc26 D-moment                                                                                            */
     PRM_code[prmtxE2PL3_26]               = "txE2PL3_26";               PRM[prmtxE2PL3_26]               = 0;                                                      /* Tweede realisatie PL3 fc26 E-moment                                                                                            */
-    PRM_code[prmtxA1PL3_24]               = "txA1PL3_24";               PRM[prmtxA1PL3_24]               = 0;                                                      /* Eerste realisatie PL3 fc24 A-moment                                                                                            */
-    PRM_code[prmtxB1PL3_24]               = "txB1PL3_24";               PRM[prmtxB1PL3_24]               = 86;                                                     /* Eerste realisatie PL3 fc24 B-moment                                                                                            */
-    PRM_code[prmtxC1PL3_24]               = "txC1PL3_24";               PRM[prmtxC1PL3_24]               = 0;                                                      /* Eerste realisatie PL3 fc24 C-moment                                                                                            */
-    PRM_code[prmtxD1PL3_24]               = "txD1PL3_24";               PRM[prmtxD1PL3_24]               = 3;                                                      /* Eerste realisatie PL3 fc24 D-moment                                                                                            */
-    PRM_code[prmtxE1PL3_24]               = "txE1PL3_24";               PRM[prmtxE1PL3_24]               = 0;                                                      /* Eerste realisatie PL3 fc24 E-moment                                                                                            */
-    PRM_code[prmtxA2PL3_24]               = "txA2PL3_24";               PRM[prmtxA2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 A-moment                                                                                            */
-    PRM_code[prmtxB2PL3_24]               = "txB2PL3_24";               PRM[prmtxB2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 B-moment                                                                                            */
-    PRM_code[prmtxC2PL3_24]               = "txC2PL3_24";               PRM[prmtxC2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 C-moment                                                                                            */
-    PRM_code[prmtxD2PL3_24]               = "txD2PL3_24";               PRM[prmtxD2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 D-moment                                                                                            */
-    PRM_code[prmtxE2PL3_24]               = "txE2PL3_24";               PRM[prmtxE2PL3_24]               = 0;                                                      /* Tweede realisatie PL3 fc24 E-moment                                                                                            */
     PRM_code[prmrstotxa]                  = "rstotxa";                  PRM[prmrstotxa]                  = 50;   PRM_type[prmrstotxa]                  = TE_type; /* Tijd tot xa dat RS opgezet wordt (anti-flitsgroen)                                                                             */
     PRM_code[prmplxperdef]                = "plxperdef";                PRM[prmplxperdef]                = 0;                                                      /* Plan voor periode default                                                                                                      */
     PRM_code[prmplxper1]                  = "plxper1";                  PRM[prmplxper1]                  = 0;                                                      /* Plan voor periode dag                                                                                                          */
@@ -5276,16 +5276,16 @@ void control_parameters(void)
     T_cat[ttdh_09_1_1]             = CAT_Basisfuncties;    T_subcat[ttdh_09_1_1]                = SUBCAT_Verlengen;
     T_cat[ttdh_09_1_2]             = CAT_Basisfuncties;    T_subcat[ttdh_09_1_2]                = SUBCAT_Verlengen;
     T_cat[tmax_09_1]               = CAT_Basisfuncties;    T_subcat[tmax_09_1]                  = SUBCAT_Verlengen;
-    T_cat[t09_3_1]                 = CAT_Basisfuncties;    T_subcat[t09_3_1]                    = SUBCAT_Verlengen;
-    T_cat[t09_3_2]                 = CAT_Basisfuncties;    T_subcat[t09_3_2]                    = SUBCAT_Verlengen;
-    T_cat[ttdh_09_3_1]             = CAT_Basisfuncties;    T_subcat[ttdh_09_3_1]                = SUBCAT_Verlengen;
-    T_cat[ttdh_09_3_2]             = CAT_Basisfuncties;    T_subcat[ttdh_09_3_2]                = SUBCAT_Verlengen;
-    T_cat[tmax_09_3]               = CAT_Basisfuncties;    T_subcat[tmax_09_3]                  = SUBCAT_Verlengen;
     T_cat[t09_2_1]                 = CAT_Basisfuncties;    T_subcat[t09_2_1]                    = SUBCAT_Verlengen;
     T_cat[t09_2_2]                 = CAT_Basisfuncties;    T_subcat[t09_2_2]                    = SUBCAT_Verlengen;
     T_cat[ttdh_09_2_1]             = CAT_Basisfuncties;    T_subcat[ttdh_09_2_1]                = SUBCAT_Verlengen;
     T_cat[ttdh_09_2_2]             = CAT_Basisfuncties;    T_subcat[ttdh_09_2_2]                = SUBCAT_Verlengen;
     T_cat[tmax_09_2]               = CAT_Basisfuncties;    T_subcat[tmax_09_2]                  = SUBCAT_Verlengen;
+    T_cat[t09_3_1]                 = CAT_Basisfuncties;    T_subcat[t09_3_1]                    = SUBCAT_Verlengen;
+    T_cat[t09_3_2]                 = CAT_Basisfuncties;    T_subcat[t09_3_2]                    = SUBCAT_Verlengen;
+    T_cat[ttdh_09_3_1]             = CAT_Basisfuncties;    T_subcat[ttdh_09_3_1]                = SUBCAT_Verlengen;
+    T_cat[ttdh_09_3_2]             = CAT_Basisfuncties;    T_subcat[ttdh_09_3_2]                = SUBCAT_Verlengen;
+    T_cat[tmax_09_3]               = CAT_Basisfuncties;    T_subcat[tmax_09_3]                  = SUBCAT_Verlengen;
     T_cat[t11_1_1]                 = CAT_Basisfuncties;    T_subcat[t11_1_1]                    = SUBCAT_Verlengen;
     T_cat[t11_1_2]                 = CAT_Basisfuncties;    T_subcat[t11_1_2]                    = SUBCAT_Verlengen;
     T_cat[ttdh_11_1_1]             = CAT_Basisfuncties;    T_subcat[ttdh_11_1_1]                = SUBCAT_Verlengen;
@@ -5722,8 +5722,8 @@ void control_parameters(void)
     PRM_cat[prmspringverleng_08_4a]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_4a]      = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_08_4b]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_4b]      = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_09_1]    = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_09_1]       = SUBCAT_Verlengen;
-    PRM_cat[prmspringverleng_09_3]    = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_09_3]       = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_09_2]    = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_09_2]       = SUBCAT_Verlengen;
+    PRM_cat[prmspringverleng_09_3]    = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_09_3]       = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_11_1]    = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_11_1]       = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_11_2]    = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_11_2]       = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_11_3]    = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_11_3]       = SUBCAT_Verlengen;
@@ -6073,6 +6073,16 @@ void control_parameters(void)
     PRM_cat[prmtxC2PL1_22]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL1_22]               = SUBCAT_Plantijden;
     PRM_cat[prmtxD2PL1_22]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL1_22]               = SUBCAT_Plantijden;
     PRM_cat[prmtxE2PL1_22]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL1_22]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxA1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL1_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxB1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL1_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxC1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL1_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxD1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD1PL1_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxE1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE1PL1_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxA2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA2PL1_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxB2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB2PL1_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxC2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL1_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxD2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL1_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxE2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL1_24]               = SUBCAT_Plantijden;
     PRM_cat[prmtxA1PL1_84]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL1_84]               = SUBCAT_Plantijden;
     PRM_cat[prmtxB1PL1_84]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL1_84]               = SUBCAT_Plantijden;
     PRM_cat[prmtxC1PL1_84]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL1_84]               = SUBCAT_Plantijden;
@@ -6213,16 +6223,6 @@ void control_parameters(void)
     PRM_cat[prmtxC2PL1_26]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL1_26]               = SUBCAT_Plantijden;
     PRM_cat[prmtxD2PL1_26]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL1_26]               = SUBCAT_Plantijden;
     PRM_cat[prmtxE2PL1_26]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL1_26]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxA1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL1_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxB1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL1_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxC1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL1_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxD1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD1PL1_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxE1PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE1PL1_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxA2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA2PL1_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxB2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB2PL1_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxC2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL1_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxD2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL1_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxE2PL1_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL1_24]               = SUBCAT_Plantijden;
     PRM_cat[prmtxA1PL2_02]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL2_02]               = SUBCAT_Plantijden;
     PRM_cat[prmtxB1PL2_02]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL2_02]               = SUBCAT_Plantijden;
     PRM_cat[prmtxC1PL2_02]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL2_02]               = SUBCAT_Plantijden;
@@ -6303,6 +6303,16 @@ void control_parameters(void)
     PRM_cat[prmtxC2PL2_22]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL2_22]               = SUBCAT_Plantijden;
     PRM_cat[prmtxD2PL2_22]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL2_22]               = SUBCAT_Plantijden;
     PRM_cat[prmtxE2PL2_22]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL2_22]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxA1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL2_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxB1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL2_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxC1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL2_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxD1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD1PL2_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxE1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE1PL2_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxA2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA2PL2_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxB2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB2PL2_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxC2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL2_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxD2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL2_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxE2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL2_24]               = SUBCAT_Plantijden;
     PRM_cat[prmtxA1PL2_84]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL2_84]               = SUBCAT_Plantijden;
     PRM_cat[prmtxB1PL2_84]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL2_84]               = SUBCAT_Plantijden;
     PRM_cat[prmtxC1PL2_84]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL2_84]               = SUBCAT_Plantijden;
@@ -6443,16 +6453,6 @@ void control_parameters(void)
     PRM_cat[prmtxC2PL2_26]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL2_26]               = SUBCAT_Plantijden;
     PRM_cat[prmtxD2PL2_26]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL2_26]               = SUBCAT_Plantijden;
     PRM_cat[prmtxE2PL2_26]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL2_26]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxA1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL2_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxB1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL2_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxC1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL2_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxD1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD1PL2_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxE1PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE1PL2_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxA2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA2PL2_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxB2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB2PL2_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxC2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL2_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxD2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL2_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxE2PL2_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL2_24]               = SUBCAT_Plantijden;
     PRM_cat[prmtxA1PL3_02]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL3_02]               = SUBCAT_Plantijden;
     PRM_cat[prmtxB1PL3_02]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL3_02]               = SUBCAT_Plantijden;
     PRM_cat[prmtxC1PL3_02]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL3_02]               = SUBCAT_Plantijden;
@@ -6533,6 +6533,16 @@ void control_parameters(void)
     PRM_cat[prmtxC2PL3_22]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL3_22]               = SUBCAT_Plantijden;
     PRM_cat[prmtxD2PL3_22]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL3_22]               = SUBCAT_Plantijden;
     PRM_cat[prmtxE2PL3_22]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL3_22]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxA1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL3_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxB1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL3_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxC1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL3_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxD1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD1PL3_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxE1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE1PL3_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxA2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA2PL3_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxB2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB2PL3_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxC2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL3_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxD2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL3_24]               = SUBCAT_Plantijden;
+    PRM_cat[prmtxE2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL3_24]               = SUBCAT_Plantijden;
     PRM_cat[prmtxA1PL3_84]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL3_84]               = SUBCAT_Plantijden;
     PRM_cat[prmtxB1PL3_84]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL3_84]               = SUBCAT_Plantijden;
     PRM_cat[prmtxC1PL3_84]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL3_84]               = SUBCAT_Plantijden;
@@ -6673,16 +6683,6 @@ void control_parameters(void)
     PRM_cat[prmtxC2PL3_26]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL3_26]               = SUBCAT_Plantijden;
     PRM_cat[prmtxD2PL3_26]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL3_26]               = SUBCAT_Plantijden;
     PRM_cat[prmtxE2PL3_26]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL3_26]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxA1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA1PL3_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxB1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB1PL3_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxC1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC1PL3_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxD1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD1PL3_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxE1PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE1PL3_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxA2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxA2PL3_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxB2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxB2PL3_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxC2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxC2PL3_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxD2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxD2PL3_24]               = SUBCAT_Plantijden;
-    PRM_cat[prmtxE2PL3_24]            = CAT_Signaalplan;      PRM_subcat[prmtxE2PL3_24]               = SUBCAT_Plantijden;
     PRM_cat[prmrstotxa]               = CAT_Module;           PRM_subcat[prmrstotxa]                  = SUBCAT_Plantijden;
     PRM_cat[prmplxperdef]             = CAT_Module;           PRM_subcat[prmplxperdef]                = SUBCAT_Plantijden;
     PRM_cat[prmplxper1]               = CAT_Module;           PRM_subcat[prmplxper1]                  = SUBCAT_Plantijden;
@@ -8280,6 +8280,7 @@ void signaalplan_instellingen(void)
     SetPlanTijden(fc11, PL1,   0,  59,   0,  65,   0);
     SetPlanTijden(fc21, PL1,   0,  44,   0,  56,   0);
     SetPlanTijden(fc22, PL1,   0,  41,   0,  51,   0);
+    SetPlanTijden(fc24, PL1,   0,  60,   0,   3,   0);
     SetPlanTijden(fc84, PL1,   0,  56,   0,   2,   0);
     SetPlanTijden(fc82, PL1,   0,  22,   0,  31,   0);
     SetPlanTijden(fc81, PL1,   0,  22,   0,  38,   0);
@@ -8294,7 +8295,6 @@ void signaalplan_instellingen(void)
     SetPlanTijden(fc31, PL1,   0,  39,   0,  52,   0);
     SetPlanTijden(fc28, PL1,   0,  19,   0,  25,   0);
     SetPlanTijden(fc26, PL1,   0,  53,   0,  65,   0);
-    SetPlanTijden(fc24, PL1,   0,  60,   0,   3,   0);
 
     /* ochtend */
     SetPlanTijden(fc02, PL2,  95,  97,  19,  24,  24);
@@ -8305,6 +8305,7 @@ void signaalplan_instellingen(void)
     SetPlanTijden(fc11, PL2,   0,  75,   0,  92,   0);
     SetPlanTijden(fc21, PL2,   0,  52,   0,  80,   0);
     SetPlanTijden(fc22, PL2,   0,  52,   0,  75,   0);
+    SetPlanTijden(fc24, PL2,   0,  77,   0,   3,   0);
     SetPlanTijden(fc84, PL2,   0,  80,   0,   3,   0);
     SetPlanTijden(fc82, PL2,   0,  31,   0,  46,   0);
     SetPlanTijden(fc81, PL2,   0,  31,   0,  53,   0);
@@ -8319,7 +8320,6 @@ void signaalplan_instellingen(void)
     SetPlanTijden(fc31, PL2,   0,  56,   0,  69,   0);
     SetPlanTijden(fc28, PL2,   0,  23,   0,  36,   0);
     SetPlanTijden(fc26, PL2,   0,  73,   0,  93,   0);
-    SetPlanTijden(fc24, PL2,   0,  77,   0,   3,   0);
 
     /* avond 2x groen 38 */
     SetPlanTijden(fc02, PL3, 103, 103,  25,  30,  30);
@@ -8330,6 +8330,7 @@ void signaalplan_instellingen(void)
     SetPlanTijden(fc11, PL3,   0,  86,   0,  96,   0);
     SetPlanTijden(fc21, PL3,   0,  59,   0,  87,   0);
     SetPlanTijden(fc22, PL3,   0,  59,   0,  82,   0);
+    SetPlanTijden(fc24, PL3,   0,  86,   0,   3,   0);
     SetPlanTijden(fc84, PL3,   0,  87,   0,   3,   0);
     SetPlanTijden(fc82, PL3,   0,  37,   0,  54,   0);
     SetPlanTijden(fc81, PL3,   0,  37,   0,  60,   0);
@@ -8344,7 +8345,6 @@ void signaalplan_instellingen(void)
     SetPlanTijden(fc31, PL3,   0,  63,   0,  76,   0);
     SetPlanTijden(fc28, PL3,   0,  29,   0,  42,   0);
     SetPlanTijden(fc26, PL3,   0,  74,   0,  99,   0);
-    SetPlanTijden(fc24, PL3,   0,  86,   0,   3,   0);
 
 }
 

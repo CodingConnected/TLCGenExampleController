@@ -22273,6 +22273,19 @@
             <E2 xsi:nil="true" />
           </SignaalPlanFaseModel>
           <SignaalPlanFaseModel>
+            <FaseCyclus>24</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>60</B1>
+            <C1 xsi:nil="true" />
+            <D1>3</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
             <FaseCyclus>84</FaseCyclus>
             <A1 xsi:nil="true" />
             <B1>56</B1>
@@ -22454,19 +22467,6 @@
             <D2 xsi:nil="true" />
             <E2 xsi:nil="true" />
           </SignaalPlanFaseModel>
-          <SignaalPlanFaseModel>
-            <FaseCyclus>24</FaseCyclus>
-            <A1 xsi:nil="true" />
-            <B1>60</B1>
-            <C1 xsi:nil="true" />
-            <D1>3</D1>
-            <E1 xsi:nil="true" />
-            <A2 xsi:nil="true" />
-            <B2 xsi:nil="true" />
-            <C2 xsi:nil="true" />
-            <D2 xsi:nil="true" />
-            <E2 xsi:nil="true" />
-          </SignaalPlanFaseModel>
         </Fasen>
       </SignaalPlanModel>
       <SignaalPlanModel>
@@ -22582,6 +22582,19 @@
             <B1>52</B1>
             <C1 xsi:nil="true" />
             <D1>75</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>24</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>77</B1>
+            <C1 xsi:nil="true" />
+            <D1>3</D1>
             <E1 xsi:nil="true" />
             <A2 xsi:nil="true" />
             <B2 xsi:nil="true" />
@@ -22771,19 +22784,6 @@
             <D2 xsi:nil="true" />
             <E2 xsi:nil="true" />
           </SignaalPlanFaseModel>
-          <SignaalPlanFaseModel>
-            <FaseCyclus>24</FaseCyclus>
-            <A1 xsi:nil="true" />
-            <B1>77</B1>
-            <C1 xsi:nil="true" />
-            <D1>3</D1>
-            <E1 xsi:nil="true" />
-            <A2 xsi:nil="true" />
-            <B2 xsi:nil="true" />
-            <C2 xsi:nil="true" />
-            <D2 xsi:nil="true" />
-            <E2 xsi:nil="true" />
-          </SignaalPlanFaseModel>
         </Fasen>
       </SignaalPlanModel>
       <SignaalPlanModel>
@@ -22899,6 +22899,19 @@
             <B1>59</B1>
             <C1 xsi:nil="true" />
             <D1>82</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>24</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>86</B1>
+            <C1 xsi:nil="true" />
+            <D1>3</D1>
             <E1 xsi:nil="true" />
             <A2 xsi:nil="true" />
             <B2 xsi:nil="true" />
@@ -23081,19 +23094,6 @@
             <B1>74</B1>
             <C1 xsi:nil="true" />
             <D1>99</D1>
-            <E1 xsi:nil="true" />
-            <A2 xsi:nil="true" />
-            <B2 xsi:nil="true" />
-            <C2 xsi:nil="true" />
-            <D2 xsi:nil="true" />
-            <E2 xsi:nil="true" />
-          </SignaalPlanFaseModel>
-          <SignaalPlanFaseModel>
-            <FaseCyclus>24</FaseCyclus>
-            <A1 xsi:nil="true" />
-            <B1>86</B1>
-            <C1 xsi:nil="true" />
-            <D1>3</D1>
             <E1 xsi:nil="true" />
             <A2 xsi:nil="true" />
             <B2 xsi:nil="true" />
@@ -23837,10 +23837,11 @@
     <Counters />
     <Schakelaars>
       <Schakelaar>
-        <Naam>gsbeidedkb</Naam>
+        <Naam>traffick2tlcgen</Naam>
         <Type>TE_type</Type>
-        <Instelling>0</Instelling>
+        <Instelling>1</Instelling>
         <Dummy>false</Dummy>
+        <Commentaar>1 = traffick2tlcgen</Commentaar>
       </Schakelaar>
     </Schakelaars>
     <GeheugenElementen />
@@ -24027,7 +24028,7 @@
           </DynamischHiaatDetectorModel>
           <DynamischHiaatDetectorModel>
             <SignalGroupName>09</SignalGroupName>
-            <DetectorName>09_3</DetectorName>
+            <DetectorName>09_2</DetectorName>
             <Moment1>0</Moment1>
             <Moment2>0</Moment2>
             <TDH1>0</TDH1>
@@ -24041,7 +24042,7 @@
           </DynamischHiaatDetectorModel>
           <DynamischHiaatDetectorModel>
             <SignalGroupName>09</SignalGroupName>
-            <DetectorName>09_2</DetectorName>
+            <DetectorName>09_3</DetectorName>
             <Moment1>0</Moment1>
             <Moment2>0</Moment2>
             <TDH1>0</TDH1>
@@ -24481,6 +24482,13 @@
         <Naam>261</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>261</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>28_1</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>28_1</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
       </Detector>
       <Detector>
         <Naam>opt11</Naam>
@@ -25013,13 +25021,6 @@
         <Naam>28_2</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>28_2</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>28_1</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>28_1</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
