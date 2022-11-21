@@ -15,12 +15,13 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   04-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.1.0   07-10-2022   TLCGen      Nieuwe versie TLCGen (release)
  *
  ************************************************************************************/
 
 #define NALOPEN
 #define PRIO_ADDFILE
+#define TRAFFICK
 
 /*include files */
 /*------------- */
@@ -2194,18 +2195,9 @@ void OnderMaximumExtra(void)
 }
 void AfkapGroenExtra(void)
 {
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO_TOE();
-
 }
 void StartGroenMomentenExtra(void)
 {
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) Traffick2TLCpas_TVG_aan();
-
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) Traffick2TLCzet_TVG_terug();
-
 }
 void PrioAfkappenExtra(void)
 {
@@ -2347,15 +2339,7 @@ void PrioriteitsOpties(void)
     /* Traffick2TLCGen */
     if (SCH[schtraffick2tlcgen])
     {
-        Traffick2TLCgen_HLPD();
-
-        Traffick2TLCgen_HLPD_nal(fc02, fc62, 100);
-        Traffick2TLCgen_HLPD_nal(fc08, fc68, 100);
-        Traffick2TLCgen_HLPD_nal(fc11, fc68, 100);
-        Traffick2TLCgen_HLPD_nal(fc22, fc21, 100);
-        Traffick2TLCgen_HLPD_nal(fc82, fc81, 100);
-
-        Traffick2TLCgen_HLPD();
+        Traffick2TLCgen_PRIO_OPTIES();
     }
 
     #ifdef PRIO_ADDFILE
@@ -2371,8 +2355,6 @@ void PrioriteitsOpties(void)
    ------------------------------------ */
 void PrioriteitsToekenningExtra(void)
 {
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) corrigeer_blokkeringstijd_OV();
     /* Geen prioriteit bij file stroom afwaarts */
     if (IH[hfileFile68af])
     {
@@ -2389,8 +2371,6 @@ void PrioriteitsToekenningExtra(void)
    ------------------------------------ */
 void TegenhoudenConflictenExtra(void)
 {
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO_RR();
 #ifndef NO_TIMETOX
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc22] & BIT11)) { RR[fc32] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc32] & BIT11)) { RR[fc22] &= ~PRIO_RR_BIT; }
@@ -2555,10 +2535,6 @@ void PostAfhandelingPrio(void)
     }
 
     #endif // NO_TIMETOX
-
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO();
-
 }
 /* ---------------------------------------
    PrioPARCorrecties corrigeert de PAR van
@@ -2655,8 +2631,6 @@ void PrioPARCorrecties(void)
     if ((P[fc11] & BIT11) && R[fc26] && !kp(fc26) && A[fc26]) { PAR[fc26] |= BIT11; P[fc26] |= BIT11; }
     if ((P[fc05] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
     #endif
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO_PAR();
 }
 
 /* -------------------------------------------------------
