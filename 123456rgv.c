@@ -7,7 +7,7 @@
               123456
 
    BESTAND:   123456rgv.c
-      CCOL:   12.0
+      CCOL:   11.0
     TLCGEN:   0.12.1.0
    CCOLGEN:   0.12.1.0
 */

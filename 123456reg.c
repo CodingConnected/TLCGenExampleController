@@ -7,7 +7,7 @@
               123456
 
    BESTAND:   123456reg.c
-      CCOL:   12.0
+      CCOL:   11.0
     TLCGEN:   0.12.1.0
    CCOLGEN:   0.12.1.0
 */
@@ -42,8 +42,6 @@
     #include "tmvar.c"    /* tijd elementen                    */
     #include "ctvar.c"    /* teller elementen                  */
     #include "schvar.c"   /* software schakelaars              */
-    #include "trigvar.c"   /* uitgebreide signaalplan structuur */
-    #include "plevar.c"   /* uitgebreide signaalplan structuur */
     #include "prmvar.c"   /* parameters                        */
     #include "lwmlvar.c"  /* langstwachtende modulen structuur */
     #ifndef NO_VLOG
@@ -85,7 +83,6 @@
     #include "ccolfunc.c"
     #include "realfunc.c"
     #include "fixatie.c"
-    #include "123456hst.c"
 #ifdef MIRMON
     #include "MirakelMonitor.h"
 #endif /* MIRMON */
@@ -101,6 +98,7 @@
 /* Traffick2TLCGen */
 #include "traffick2tlcgen.c"
 
+mulv TDH_old[DPMAX];
 mulv DB_old[DPMAX];
 mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
 
@@ -114,17 +112,6 @@ mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
 mulv C_counter_old[CTMAX];
     extern mulv star_cyclustimer;
 
-#ifndef NO_RIS
-    /* Definitie ProductInformatie ITSinfo */
-    /* ----------------------------------- */
-    const struct Rif_ProductInformation RIF_ITSINFO_AP = {
-      "Gemeente Rotterdam",    /* manufacturerName   */
-      "TLCGen",                /* certifiedName      */
-      "12.0.0",                /* certifiedVersion   */
-      "12.0.0"                 /* version            */
-    };
-#endif /* NO_RIS */
-
     #if !defined AUTOMAAT && !defined AUTOMAAT_TEST
         extern boolv display;
     #endif
@@ -135,41 +122,10 @@ void PreApplication(void)
 {
     int fc;
 
-    /* bepalen of regeling mag omschakelen */
-    IH[homschtegenh] = FALSE;
-
     /* Nalopen */
     /* ------- */
     gk_ResetGK();
     gk_ResetNL();
-
-    IH[homschtegenh] |=
-        T[tnlfg0262] ||
-        T[tnlfgd0262] ||
-        T[tnleg0262] ||
-        T[tnlegd0262] ||
-        T[tnlfg0868] ||
-        T[tnlfgd0868] ||
-        T[tnleg0868] ||
-        T[tnlegd0868] ||
-        T[tnlfg1168] ||
-        T[tnlfgd1168] ||
-        T[tnleg1168] ||
-        T[tnlegd1168] ||
-        T[tnlfg2221] ||
-        T[tnlfgd2221] ||
-        T[tnleg2221] ||
-        T[tnlegd2221] ||
-        T[tnlsg3132] ||
-        T[tnlsgd3132] ||
-        T[tnlsg3231] ||
-        T[tnlsgd3231] ||
-        T[tnlsgd3334] ||
-        T[tnlsgd3433] ||
-        T[tnlfg8281] ||
-        T[tnlfgd8281] ||
-        T[tnleg8281] ||
-        T[tnlegd8281];
 
     /* Opschonen wagennummer buffers */
     WDNST_cleanup();
@@ -245,7 +201,6 @@ void PreApplication(void)
     }
 
     PreApplication_Add();
-    pre_application_halfstar();
 
     /* Genereren knippersignalen */
     UpdateKnipperSignalen();
@@ -345,7 +300,6 @@ void KlokPerioden(void)
     }
 
     KlokPerioden_Add();
-    KlokPerioden_halfstar();
 }
 
 void Aanvragen(void)
@@ -883,7 +837,6 @@ void Aanvragen(void)
     #endif
 
     Aanvragen_Add();
-    Aanvragen_halfstar();
 }
 
 void BepaalRealisatieTijden(void)
@@ -1335,18 +1288,12 @@ void Wachtgroen(void)
     WS[fc84] |= (WG[fc84] && SCH[schwg84] && yws_groen(fc84)) ? BIT1 : 0;
 
     /* Niet in wachtgroen vasthouden tijdens file */
-    if (!IH[hplact])
-    {
-        if (IH[hfileFile68af]) RW[fc08] &= ~BIT4;
-        if (IH[hfileFile68af]) RW[fc11] &= ~BIT4;
-    }
+    if (IH[hfileFile68af]) RW[fc08] &= ~BIT4;
+    if (IH[hfileFile68af]) RW[fc11] &= ~BIT4;
 
     /* Geen wachtstand bij file stroomafwaarts */
-    if (!IH[hplact])
-    {
-        if (IH[hfileFile68af]) WS[fc08] &= ~BIT4;
-        if (IH[hfileFile68af]) WS[fc11] &= ~BIT4;
-    }
+    if (IH[hfileFile68af]) WS[fc08] &= ~BIT4;
+    if (IH[hfileFile68af]) WS[fc11] &= ~BIT4;
 
     /* Traffick2TLCGen */
     if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_WGR();
@@ -1619,11 +1566,8 @@ void Meeverlengen(void)
     YM[fc84] |= SCH[schmv84] && ym_max_prmV1(fc84, prmmv84, NG) && hf_wsg() ? BIT4 : 0;
 
     /* Niet meeverlengen tijdens file (meting na ss) */
-    if (!IH[hplact])
-    {
-        if (IH[hfileFile68af]) YM[fc08] &= ~BIT4;
-        if (IH[hfileFile68af]) YM[fc11] &= ~BIT4;
-    }
+    if (IH[hfileFile68af]) YM[fc08] &= ~BIT4;
+    if (IH[hfileFile68af]) YM[fc11] &= ~BIT4;
 
     /* Hard meeverlengen */
     if (SCH[schhardmv2205] && G[fc05] && !kcv(fc22)) YM[fc22] |= BIT1;
@@ -1657,7 +1601,6 @@ void Synchronisaties(void)
     }
 
     /* Uitvoeren synchronisaties */
-    Synchroniseer_SP(IH[hplact]); /* synchronisatie intrekken tbv SP */
     Synchroniseer_SG(); /* synchronisatie obv realtijd (startgroenmomenten) */
     Synchroniseer_FO(); /* synchronisatie obv fictieve ontruiming */
 
@@ -2000,14 +1943,7 @@ void RealisatieAfhandeling(void)
     #endif
 
     /* Alternatieve ruimte in memory element schrijven */
-    if (IH[hplact])
-    {
-        for (fc = 0; fc < FCMAX; ++fc) MM[mar02 + fc] = tar_max_ple(fc);
-    }
-    else
-    {
     MM[mar02] = max_tar_tig(fc02);
-    }
 
 
     Alternatief_Add();
@@ -2306,25 +2242,13 @@ void FileVerwerking(void)
         IH[hfileFile68af] = IH[hfile68_9a] && IH[hfile68_9b];
     }
 
-    if (!IH[hplact])
+    /* percentage MG bij filemelding */
+    if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
     {
-        /* percentage MG bij filemelding */
-        if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
-        {
-            PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmfpercFile68af08],
-                                         8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
-            PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmfpercFile68af11],
-                                         8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
-        }
-    }
-    else
-    {
-        /* percentage MG bij filemelding tijdens halfstar */
-        if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
-        {
-            PercentageVerlengGroenTijden_halfstar(fc08, prmfpercFile68af08, BIT3);
-            PercentageVerlengGroenTijden_halfstar(fc11, prmfpercFile68af11, BIT3);
-        }
+        PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmfpercFile68af08],
+                                     8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
+        PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmfpercFile68af11],
+                                     8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
     }
 
     /* Afkappen tijdens file ingreep File68af */
@@ -2551,123 +2475,66 @@ void DetectieStoring(void)
     VervangendHiaatKoplus(fc67, d67_1, d67_2, thdvd67_1);
     VervangendHiaatKoplus(fc68, d68_1a, d68_2a, thdvd68_1a);
 
-    if (IH[hplact])
+    /* percentage VG bij defect alle kop/lange lussen */
+    /* ---------------------------------------------- */
+    if ((CIF_IS[d03_1] >= CIF_DET_STORING) && (CIF_IS[d03_2] >= CIF_DET_STORING))
     {
-        /* percentage VG bij defect alle kop/lange lussen */
-        /* ---------------------------------------------- */
-        if ((CIF_IS[d03_1] >= CIF_DET_STORING) && (CIF_IS[d03_2] >= CIF_DET_STORING))
-        {
-            MK[fc03] |= BIT5;
-            PercentageVerlengGroenTijden_halfstar(fc03, prmperc03, BIT5);
-        }
-        if ((CIF_IS[d05_1] >= CIF_DET_STORING) && (CIF_IS[d05_2] >= CIF_DET_STORING))
-        {
-            MK[fc05] |= BIT5;
-            PercentageVerlengGroenTijden_halfstar(fc05, prmperc05, BIT5);
-        }
-        if ((CIF_IS[d08_1a] >= CIF_DET_STORING) && (CIF_IS[d08_1b] >= CIF_DET_STORING) && (CIF_IS[d08_2a] >= CIF_DET_STORING) && (CIF_IS[d08_3a] >= CIF_DET_STORING) ||
-            (CIF_IS[d08_2b] >= CIF_DET_STORING) && (CIF_IS[d08_3b] >= CIF_DET_STORING))
-        {
-            MK[fc08] |= BIT5;
-            PercentageVerlengGroenTijden_halfstar(fc08, prmperc08, BIT5);
-        }
-        if ((CIF_IS[d09_1] >= CIF_DET_STORING) && (CIF_IS[d09_2] >= CIF_DET_STORING))
-        {
-            MK[fc09] |= BIT5;
-            PercentageVerlengGroenTijden_halfstar(fc09, prmperc09, BIT5);
-        }
-        if ((CIF_IS[d11_1] >= CIF_DET_STORING) && (CIF_IS[d11_2] >= CIF_DET_STORING) && (CIF_IS[d11_3] >= CIF_DET_STORING))
-        {
-            MK[fc11] |= BIT5;
-            PercentageVerlengGroenTijden_halfstar(fc11, prmperc11, BIT5);
-        }
-        if ((CIF_IS[d61_1] >= CIF_DET_STORING) && (CIF_IS[d61_2] >= CIF_DET_STORING))
-        {
-            MK[fc61] |= BIT5;
-            PercentageVerlengGroenTijden_halfstar(fc61, prmperc61, BIT5);
-        }
-        if ((CIF_IS[d62_1a] >= CIF_DET_STORING) && (CIF_IS[d62_1b] >= CIF_DET_STORING) && (CIF_IS[d62_2a] >= CIF_DET_STORING) ||
-            (CIF_IS[d62_2b] >= CIF_DET_STORING))
-        {
-            MK[fc62] |= BIT5;
-            PercentageVerlengGroenTijden_halfstar(fc62, prmperc62, BIT5);
-        }
-        if ((CIF_IS[d67_1] >= CIF_DET_STORING) && (CIF_IS[d67_2] >= CIF_DET_STORING))
-        {
-            MK[fc67] |= BIT5;
-            PercentageVerlengGroenTijden_halfstar(fc67, prmperc67, BIT5);
-        }
-        if ((CIF_IS[d68_1a] >= CIF_DET_STORING) && (CIF_IS[d68_1b] >= CIF_DET_STORING) && (CIF_IS[d68_2a] >= CIF_DET_STORING) ||
-            (CIF_IS[d68_2b] >= CIF_DET_STORING))
-        {
-            MK[fc68] |= BIT5;
-            PercentageVerlengGroenTijden_halfstar(fc68, prmperc68, BIT5);
-        }
-
+        MK[fc03] |= BIT5;
+        PercentageVerlengGroenTijden(fc03, mperiod, PRM[prmperc03], 
+                                     8, TVGA_max[fc03], PRM[prmvg1_03], PRM[prmvg2_03], PRM[prmvg3_03], PRM[prmvg4_03], PRM[prmvg5_03], PRM[prmvg6_03], PRM[prmvg7_03]);
     }
-    else
+    if ((CIF_IS[d05_1] >= CIF_DET_STORING) && (CIF_IS[d05_2] >= CIF_DET_STORING))
     {
-        /* percentage VG bij defect alle kop/lange lussen */
-        /* ---------------------------------------------- */
-        if ((CIF_IS[d03_1] >= CIF_DET_STORING) && (CIF_IS[d03_2] >= CIF_DET_STORING))
-        {
-            MK[fc03] |= BIT5;
-            PercentageVerlengGroenTijden(fc03, mperiod, PRM[prmperc03], 
-                                         8, TVGA_max[fc03], PRM[prmvg1_03], PRM[prmvg2_03], PRM[prmvg3_03], PRM[prmvg4_03], PRM[prmvg5_03], PRM[prmvg6_03], PRM[prmvg7_03]);
-        }
-        if ((CIF_IS[d05_1] >= CIF_DET_STORING) && (CIF_IS[d05_2] >= CIF_DET_STORING))
-        {
-            MK[fc05] |= BIT5;
-            PercentageVerlengGroenTijden(fc05, mperiod, PRM[prmperc05], 
-                                         8, TVGA_max[fc05], PRM[prmvg1_05], PRM[prmvg2_05], PRM[prmvg3_05], PRM[prmvg4_05], PRM[prmvg5_05], PRM[prmvg6_05], PRM[prmvg7_05]);
-        }
-        if ((CIF_IS[d08_1a] >= CIF_DET_STORING) && (CIF_IS[d08_1b] >= CIF_DET_STORING) && (CIF_IS[d08_2a] >= CIF_DET_STORING) && (CIF_IS[d08_3a] >= CIF_DET_STORING) ||
-            (CIF_IS[d08_2b] >= CIF_DET_STORING) && (CIF_IS[d08_3b] >= CIF_DET_STORING))
-        {
-            MK[fc08] |= BIT5;
-            PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmperc08], 
-                                         8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
-        }
-        if ((CIF_IS[d09_1] >= CIF_DET_STORING) && (CIF_IS[d09_2] >= CIF_DET_STORING))
-        {
-            MK[fc09] |= BIT5;
-            PercentageVerlengGroenTijden(fc09, mperiod, PRM[prmperc09], 
-                                         8, TVGA_max[fc09], PRM[prmvg1_09], PRM[prmvg2_09], PRM[prmvg3_09], PRM[prmvg4_09], PRM[prmvg5_09], PRM[prmvg6_09], PRM[prmvg7_09]);
-        }
-        if ((CIF_IS[d11_1] >= CIF_DET_STORING) && (CIF_IS[d11_2] >= CIF_DET_STORING) && (CIF_IS[d11_3] >= CIF_DET_STORING))
-        {
-            MK[fc11] |= BIT5;
-            PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmperc11], 
-                                         8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
-        }
-        if ((CIF_IS[d61_1] >= CIF_DET_STORING) && (CIF_IS[d61_2] >= CIF_DET_STORING))
-        {
-            MK[fc61] |= BIT5;
-            PercentageVerlengGroenTijden(fc61, mperiod, PRM[prmperc61], 
-                                         8, TVGA_max[fc61], PRM[prmvg1_61], PRM[prmvg2_61], PRM[prmvg3_61], PRM[prmvg4_61], PRM[prmvg5_61], PRM[prmvg6_61], PRM[prmvg7_61]);
-        }
-        if ((CIF_IS[d62_1a] >= CIF_DET_STORING) && (CIF_IS[d62_1b] >= CIF_DET_STORING) && (CIF_IS[d62_2a] >= CIF_DET_STORING) ||
-            (CIF_IS[d62_2b] >= CIF_DET_STORING))
-        {
-            MK[fc62] |= BIT5;
-            PercentageVerlengGroenTijden(fc62, mperiod, PRM[prmperc62], 
-                                         8, TVGA_max[fc62], PRM[prmvg1_62], PRM[prmvg2_62], PRM[prmvg3_62], PRM[prmvg4_62], PRM[prmvg5_62], PRM[prmvg6_62], PRM[prmvg7_62]);
-        }
-        if ((CIF_IS[d67_1] >= CIF_DET_STORING) && (CIF_IS[d67_2] >= CIF_DET_STORING))
-        {
-            MK[fc67] |= BIT5;
-            PercentageVerlengGroenTijden(fc67, mperiod, PRM[prmperc67], 
-                                         8, TVGA_max[fc67], PRM[prmvg1_67], PRM[prmvg2_67], PRM[prmvg3_67], PRM[prmvg4_67], PRM[prmvg5_67], PRM[prmvg6_67], PRM[prmvg7_67]);
-        }
-        if ((CIF_IS[d68_1a] >= CIF_DET_STORING) && (CIF_IS[d68_1b] >= CIF_DET_STORING) && (CIF_IS[d68_2a] >= CIF_DET_STORING) ||
-            (CIF_IS[d68_2b] >= CIF_DET_STORING))
-        {
-            MK[fc68] |= BIT5;
-            PercentageVerlengGroenTijden(fc68, mperiod, PRM[prmperc68], 
-                                         8, TVGA_max[fc68], PRM[prmvg1_68], PRM[prmvg2_68], PRM[prmvg3_68], PRM[prmvg4_68], PRM[prmvg5_68], PRM[prmvg6_68], PRM[prmvg7_68]);
-        }
-
+        MK[fc05] |= BIT5;
+        PercentageVerlengGroenTijden(fc05, mperiod, PRM[prmperc05], 
+                                     8, TVGA_max[fc05], PRM[prmvg1_05], PRM[prmvg2_05], PRM[prmvg3_05], PRM[prmvg4_05], PRM[prmvg5_05], PRM[prmvg6_05], PRM[prmvg7_05]);
     }
+    if ((CIF_IS[d08_1a] >= CIF_DET_STORING) && (CIF_IS[d08_1b] >= CIF_DET_STORING) && (CIF_IS[d08_2a] >= CIF_DET_STORING) && (CIF_IS[d08_3a] >= CIF_DET_STORING) ||
+        (CIF_IS[d08_2b] >= CIF_DET_STORING) && (CIF_IS[d08_3b] >= CIF_DET_STORING))
+    {
+        MK[fc08] |= BIT5;
+        PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmperc08], 
+                                     8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
+    }
+    if ((CIF_IS[d09_1] >= CIF_DET_STORING) && (CIF_IS[d09_2] >= CIF_DET_STORING))
+    {
+        MK[fc09] |= BIT5;
+        PercentageVerlengGroenTijden(fc09, mperiod, PRM[prmperc09], 
+                                     8, TVGA_max[fc09], PRM[prmvg1_09], PRM[prmvg2_09], PRM[prmvg3_09], PRM[prmvg4_09], PRM[prmvg5_09], PRM[prmvg6_09], PRM[prmvg7_09]);
+    }
+    if ((CIF_IS[d11_1] >= CIF_DET_STORING) && (CIF_IS[d11_2] >= CIF_DET_STORING) && (CIF_IS[d11_3] >= CIF_DET_STORING))
+    {
+        MK[fc11] |= BIT5;
+        PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmperc11], 
+                                     8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
+    }
+    if ((CIF_IS[d61_1] >= CIF_DET_STORING) && (CIF_IS[d61_2] >= CIF_DET_STORING))
+    {
+        MK[fc61] |= BIT5;
+        PercentageVerlengGroenTijden(fc61, mperiod, PRM[prmperc61], 
+                                     8, TVGA_max[fc61], PRM[prmvg1_61], PRM[prmvg2_61], PRM[prmvg3_61], PRM[prmvg4_61], PRM[prmvg5_61], PRM[prmvg6_61], PRM[prmvg7_61]);
+    }
+    if ((CIF_IS[d62_1a] >= CIF_DET_STORING) && (CIF_IS[d62_1b] >= CIF_DET_STORING) && (CIF_IS[d62_2a] >= CIF_DET_STORING) ||
+        (CIF_IS[d62_2b] >= CIF_DET_STORING))
+    {
+        MK[fc62] |= BIT5;
+        PercentageVerlengGroenTijden(fc62, mperiod, PRM[prmperc62], 
+                                     8, TVGA_max[fc62], PRM[prmvg1_62], PRM[prmvg2_62], PRM[prmvg3_62], PRM[prmvg4_62], PRM[prmvg5_62], PRM[prmvg6_62], PRM[prmvg7_62]);
+    }
+    if ((CIF_IS[d67_1] >= CIF_DET_STORING) && (CIF_IS[d67_2] >= CIF_DET_STORING))
+    {
+        MK[fc67] |= BIT5;
+        PercentageVerlengGroenTijden(fc67, mperiod, PRM[prmperc67], 
+                                     8, TVGA_max[fc67], PRM[prmvg1_67], PRM[prmvg2_67], PRM[prmvg3_67], PRM[prmvg4_67], PRM[prmvg5_67], PRM[prmvg6_67], PRM[prmvg7_67]);
+    }
+    if ((CIF_IS[d68_1a] >= CIF_DET_STORING) && (CIF_IS[d68_1b] >= CIF_DET_STORING) && (CIF_IS[d68_2a] >= CIF_DET_STORING) ||
+        (CIF_IS[d68_2b] >= CIF_DET_STORING))
+    {
+        MK[fc68] |= BIT5;
+        PercentageVerlengGroenTijden(fc68, mperiod, PRM[prmperc68], 
+                                     8, TVGA_max[fc68], PRM[prmvg1_68], PRM[prmvg2_68], PRM[prmvg3_68], PRM[prmvg4_68], PRM[prmvg5_68], PRM[prmvg6_68], PRM[prmvg7_68]);
+    }
+
 
     DetectieStoring_Add();
 }
@@ -2779,7 +2646,6 @@ void init_application(void)
     volg_ARM[fc11] = ARM6;
 
     post_init_application();
-    post_init_application_halfstar();
 }
 
 void PostApplication(void)
@@ -2789,6 +2655,7 @@ void PostApplication(void)
     int i = 0;
     for (i = 0; i < DPMAX; ++i)
     {
+        TDH_old[i] = TDH[i];
         DB_old[i] = DB[i];
     }
 
@@ -2881,7 +2748,6 @@ void PostApplication(void)
     }
 
     PostApplication_Add();
-    PostApplication_halfstar();
 }
 void application(void)
 {
@@ -2897,22 +2763,6 @@ void application(void)
         star_instellingen();
         star_regelen();
     }
-    else if (IH[hplact])
-    {
-        Verlenggroen_halfstar();
-        Wachtgroen_halfstar();
-        Meetkriterium();
-        Meetkriterium_halfstar();
-        Meeverlengen_halfstar();
-        Synchronisaties();
-        Synchronisaties_halfstar();
-        RealisatieAfhandeling_halfstar();
-        Alternatief_halfstar();
-        FileVerwerking();
-        FileVerwerking_halfstar();
-        DetectieStoring();
-        DetectieStoring_halfstar();
-    }
     else
     {
         Verlenggroen();
@@ -2924,23 +2774,7 @@ void application(void)
         FileVerwerking();
         DetectieStoring();
     }
-    if (MM[mstarprog] == 0 && (IH[hmlact] || SCH[schovpriople])) AfhandelingPrio();
-    else
-    {
-        int fc;
-        RTFB &= ~PRIO_RTFB_BIT;
-        for (fc = 0; fc < FCMAX; ++fc)
-        {
-            Z[fc] &= ~PRIO_Z_BIT;
-            FM[fc] &= ~PRIO_FM_BIT;
-            RW[fc] &= ~PRIO_RW_BIT;
-            RR[fc] &= ~PRIO_RR_BIT;
-            YV[fc] &= ~PRIO_YV_BIT;
-            YM[fc] &= ~PRIO_YM_BIT;
-            MK[fc] &= ~PRIO_MK_BIT;
-            PP[fc] &= ~PRIO_PP_BIT;
-        }
-    }
+    if (MM[mstarprog] == 0) AfhandelingPrio();
 
     PostApplication();
 }
@@ -2950,7 +2784,6 @@ void system_application(void)
     int ov = 0;
 
     pre_system_application();
-    pre_system_application_halfstar();
 
     /* file verklikking */
     /* ---------------- */
@@ -3133,7 +2966,6 @@ void system_application(void)
     #endif
 
     post_system_application();
-    post_system_application_halfstar();
 }
 
 void system_application2(void)
@@ -3300,7 +3132,6 @@ void dump_application(void)
 {
 
     post_dump_application();
-    post_dump_application_halfstar();
 }
 
 #ifdef CCOL_IS_SPECIAL

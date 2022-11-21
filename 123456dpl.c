@@ -7,7 +7,7 @@
               123456
 
    BESTAND:   123456dpl.c
-      CCOL:   12.0
+      CCOL:   11.0
     TLCGEN:   0.12.1.0
    CCOLGEN:   0.12.1.0
 */
@@ -210,16 +210,6 @@ void display_parameters(void)
     X_us[usincontrol] = NG; Y_us[usincontrol] = NG;
     X_us[usnocontrol] = NG; Y_us[usnocontrol] = NG;
     X_us[usFile68af] = 524; Y_us[usFile68af] = 101;
-    X_us[usplact] = 167; Y_us[usplact] = 205;
-    X_us[uskpact] = NG; Y_us[uskpact] = NG;
-    X_us[usmlact] = 167; Y_us[usmlact] = 191;
-    X_us[usmlpl] = NG; Y_us[usmlpl] = NG;
-    X_us[ustxtimer] = NG; Y_us[ustxtimer] = NG;
-    X_us[usklok] = NG; Y_us[usklok] = NG;
-    X_us[ushand] = NG; Y_us[ushand] = NG;
-    X_us[usPL1] = 166; Y_us[usPL1] = 221;
-    X_us[usPL2] = 171; Y_us[usPL2] = 232;
-    X_us[usPL3] = 167; Y_us[usPL3] = 245;
     X_us[usovtevroeg02bus] = NG; Y_us[usovtevroeg02bus] = NG;
     X_us[usovoptijd02bus] = NG; Y_us[usovoptijd02bus] = NG;
     X_us[usovtelaat02bus] = NG; Y_us[usovtelaat02bus] = NG;
