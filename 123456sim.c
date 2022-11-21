@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   07-10-2022   TLCGen      Nieuwe versie TLCGen (release)
+ * 12.1.0   04-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 

@@ -524,7 +524,6 @@ void BlokkeringsTijd(void)
     }
 }
 
-
 /* --------------------------------------------------------------
    OnderMaximum bepaalt van alle PRIO-richtingen of het
    ondermaximum is overschreden.
@@ -2248,7 +2247,6 @@ void AfhandelingPrio(void)
        In - en uitmeldingen
        -------------------- */
     InUitMelden();
-
 #ifdef PRIO_ADDFILE
     InUitMelden_Add();
 #endif
@@ -2279,7 +2277,6 @@ void AfhandelingPrio(void)
 #endif
 
     BlokkeringsTijd();
-
 #ifdef PRIO_ADDFILE
     BlokkeringsTijd_Add();
 #endif

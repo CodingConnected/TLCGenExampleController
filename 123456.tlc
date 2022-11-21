@@ -289,9 +289,9 @@
     </FixatieData>
     <Versie>
       <Versie>12.1.0</Versie>
-      <Datum>2022-10-07T00:00:00</Datum>
+      <Datum>2022-11-04T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Nieuwe versie TLCGen (release)</Commentaar>
+      <Commentaar>Ontwikkel versie TLCGen (portable)</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -2178,6 +2178,7 @@
       <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </NoControlBitmapData>
+    <TraffickCompatible>true</TraffickCompatible>
   </Data>
   <Fasen>
     <FaseCyclus>
@@ -23829,6 +23830,151 @@
   <CustomData>
     <AddinSettings />
   </CustomData>
+  <Kruispunt>
+    <KruispuntArmen>
+      <KruispuntArmen>
+        <Naam>ARM1</Naam>
+        <Omschrijving />
+      </KruispuntArmen>
+      <KruispuntArmen>
+        <Naam>ARM2</Naam>
+        <Omschrijving />
+      </KruispuntArmen>
+      <KruispuntArmen>
+        <Naam>ARM3</Naam>
+        <Omschrijving />
+      </KruispuntArmen>
+      <KruispuntArmen>
+        <Naam>ARM4</Naam>
+        <Omschrijving />
+      </KruispuntArmen>
+      <KruispuntArmen>
+        <Naam>ARM5</Naam>
+        <Omschrijving />
+      </KruispuntArmen>
+      <KruispuntArmen>
+        <Naam>ARM6</Naam>
+        <Omschrijving />
+      </KruispuntArmen>
+    </KruispuntArmen>
+    <FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>02</FaseCyclus>
+        <KruispuntArm>ARM1</KruispuntArm>
+        <KruispuntArmVolg>ARM5</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>03</FaseCyclus>
+        <KruispuntArm>ARM1</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>05</FaseCyclus>
+        <KruispuntArm>ARM2</KruispuntArm>
+        <KruispuntArmVolg>ARM5</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>08</FaseCyclus>
+        <KruispuntArm>ARM3</KruispuntArm>
+        <KruispuntArmVolg>ARM6</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>09</FaseCyclus>
+        <KruispuntArm>ARM3</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>11</FaseCyclus>
+        <KruispuntArm>ARM4</KruispuntArm>
+        <KruispuntArmVolg>ARM6</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>21</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>22</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>24</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>26</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>28</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>31</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>32</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>33</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>34</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>38</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>61</FaseCyclus>
+        <KruispuntArm>ARM5</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>62</FaseCyclus>
+        <KruispuntArm>ARM5</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>67</FaseCyclus>
+        <KruispuntArm>ARM6</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>68</FaseCyclus>
+        <KruispuntArm>ARM6</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>81</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>82</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+      <FasenMetKruispuntArmen>
+        <FaseCyclus>84</FaseCyclus>
+        <KruispuntArm>NG</KruispuntArm>
+        <KruispuntArmVolg>NG</KruispuntArmVolg>
+      </FasenMetKruispuntArmen>
+    </FasenMetKruispuntArmen>
+  </Kruispunt>
   <GebruikersOpties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Uitgangen />
     <Ingangen />
@@ -24155,6 +24301,9 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
+  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <SimulationEntries />
+  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>false</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -24487,6 +24636,41 @@
         <Naam>28_1</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>28_1</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>28_2</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>28_2</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>61_1</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>61_1</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>61_2</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>61_2</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>62_1a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>62_1a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>62_1b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>62_1b</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24986,41 +25170,6 @@
         <Naam>62_2a</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>62_2a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>62_1b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>62_1b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>62_1a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>62_1a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>61_2</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>61_2</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>61_1</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>61_1</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>28_2</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>28_2</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

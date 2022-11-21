@@ -1,4 +1,4 @@
-/* starvar.h - gegenereerd met TLCGen 0.12.0.0 */
+/* starvar.h - gegenereerd met TLCGen 0.12.1.0 */
 
 extern mulv star_programma; 
 extern mulv STAR_ctijd[STARMAX];

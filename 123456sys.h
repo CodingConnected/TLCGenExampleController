@@ -15,14 +15,22 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   07-10-2022   TLCGen      Nieuwe versie TLCGen (release)
+ * 12.1.0   04-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.1.0 20221007"
+#define VERSION "12.1.0 20221104"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
+/* Kruispunt armen definities */
+#define ARM1 0
+#define ARM2 1
+#define ARM3 2
+#define ARM4 3
+#define ARM5 4
+#define ARM6 5
+
 
 /* fasecycli */
 /* --------- */
@@ -1889,8 +1897,9 @@
     #define schsneld81_1              419 /* Aanvraag snel voor detector 81_1 aan of uit                           */
     #define schsneld82_1              420 /* Aanvraag snel voor detector 82_1 aan of uit                           */
     #define schsneld84_1              421 /* Aanvraag snel voor detector 84_1 aan of uit                           */
-    #define schtraffick2tlcgen        422 /* 1 = traffick2tlcgen                                                   */
-    #define SCHMAX1                   423
+    #define schtraffick2tlcgen        422 /* Activeren Traffick functies                                           */
+    #define schtraffick2tlcgen        423 /* 1 = traffick2tlcgen                                                   */
+    #define SCHMAX1                   424
 
 /* parameters */
 /* ---------- */

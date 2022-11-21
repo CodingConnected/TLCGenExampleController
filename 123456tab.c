@@ -18,7 +18,7 @@ void signaalplan_instellingen(void);
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   07-10-2022   TLCGen      Nieuwe versie TLCGen (release)
+ * 12.1.0   04-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -2359,6 +2359,7 @@ void control_parameters(void)
     SCH_code[schsneld81_1]              = "sneld81_1";              SCH[schsneld81_1]              = 1;                                         /* Aanvraag snel voor detector 81_1 aan of uit                           */
     SCH_code[schsneld82_1]              = "sneld82_1";              SCH[schsneld82_1]              = 1;                                         /* Aanvraag snel voor detector 82_1 aan of uit                           */
     SCH_code[schsneld84_1]              = "sneld84_1";              SCH[schsneld84_1]              = 1;                                         /* Aanvraag snel voor detector 84_1 aan of uit                           */
+    SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 1;                                         /* Activeren Traffick functies                                           */
     SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 1;                                         /* 1 = traffick2tlcgen                                                   */
 
 /* parameters */
@@ -5170,6 +5171,9 @@ void control_parameters(void)
     SCH_cat[schwg82]                = CAT_Basisfuncties;    SCH_subcat[schwg82]                   = SUBCAT_Wachtgroen;
     SCH_cat[schwg84]                = CAT_Basisfuncties;    SCH_subcat[schwg84]                   = SUBCAT_Wachtgroen;
     SCH_cat[schstar]                = CAT_SpecialeIngrepen; SCH_subcat[schstar]                   = SUBCAT_Plantijden;
+    SCH_cat[schgs2232]              = CAT_Basisfuncties;    SCH_subcat[schgs2232]                 = SUBCAT_Deelconflicten;
+    SCH_cat[schgs2434]              = CAT_Basisfuncties;    SCH_subcat[schgs2434]                 = SUBCAT_Deelconflicten;
+    SCH_cat[schgs3384]              = CAT_Basisfuncties;    SCH_subcat[schgs3384]                 = SUBCAT_Deelconflicten;
     SCH_cat[schlos32_1]             = CAT_Basisfuncties;    SCH_subcat[schlos32_1]                = SUBCAT_Deelconflicten;
     SCH_cat[schlos32_2]             = CAT_Basisfuncties;    SCH_subcat[schlos32_2]                = SUBCAT_Deelconflicten;
     SCH_cat[schlos31_1]             = CAT_Basisfuncties;    SCH_subcat[schlos31_1]                = SUBCAT_Deelconflicten;
@@ -5231,6 +5235,7 @@ void control_parameters(void)
     SCH_cat[schsneld81_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld81_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld82_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld82_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld84_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld84_1]              = SUBCAT_MaximumGroentijden;
+    SCH_cat[schtraffick2tlcgen]     = CAT_Basisfuncties;    SCH_subcat[schtraffick2tlcgen]        = SUBCAT_Testen;
     T_cat[t08_1a_1]                = CAT_Basisfuncties;    T_subcat[t08_1a_1]                   = SUBCAT_Verlengen;
     T_cat[t08_1a_2]                = CAT_Basisfuncties;    T_subcat[t08_1a_2]                   = SUBCAT_Verlengen;
     T_cat[ttdh_08_1a_1]            = CAT_Basisfuncties;    T_subcat[ttdh_08_1a_1]               = SUBCAT_Verlengen;
@@ -5706,6 +5711,14 @@ void control_parameters(void)
     T_cat[tvgmax11]                = CAT_Basisfuncties;    T_subcat[tvgmax11]                   = SUBCAT_Verlengen;
     T_cat[tvgvolg11_4]             = CAT_Basisfuncties;    T_subcat[tvgvolg11_4]                = SUBCAT_Verlengen;
     T_cat[tvghiaat11_4]            = CAT_Basisfuncties;    T_subcat[tvghiaat11_4]               = SUBCAT_Verlengen;
+    T_cat[tvs2205]                 = CAT_Basisfuncties;    T_subcat[tvs2205]                    = SUBCAT_Deelconflicten;
+    T_cat[tvs2611]                 = CAT_Basisfuncties;    T_subcat[tvs2611]                    = SUBCAT_Deelconflicten;
+    T_cat[tvs3205]                 = CAT_Basisfuncties;    T_subcat[tvs3205]                    = SUBCAT_Deelconflicten;
+    T_cat[tlr6202]                 = CAT_Basisfuncties;    T_subcat[tlr6202]                    = SUBCAT_Deelconflicten;
+    T_cat[tlr6808]                 = CAT_Basisfuncties;    T_subcat[tlr6808]                    = SUBCAT_Deelconflicten;
+    T_cat[tlr6811]                 = CAT_Basisfuncties;    T_subcat[tlr6811]                    = SUBCAT_Deelconflicten;
+    T_cat[tlr2122]                 = CAT_Basisfuncties;    T_subcat[tlr2122]                    = SUBCAT_Deelconflicten;
+    T_cat[tlr8182]                 = CAT_Basisfuncties;    T_subcat[tlr8182]                    = SUBCAT_Deelconflicten;
     T_cat[tinl3231]                = CAT_Basisfuncties;    T_subcat[tinl3231]                   = SUBCAT_Deelconflicten;
     T_cat[tinl3132]                = CAT_Basisfuncties;    T_subcat[tinl3132]                   = SUBCAT_Deelconflicten;
     T_cat[tinl3433]                = CAT_Basisfuncties;    T_subcat[tinl3433]                   = SUBCAT_Deelconflicten;
@@ -7946,6 +7959,100 @@ void control_parameters(void)
     PRM_cat[prmaltp82]                = CAT_Module;           PRM_subcat[prmaltp82]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltg84]                = CAT_Module;           PRM_subcat[prmaltg84]                   = SUBCAT_Plantijden;
     PRM_cat[prmstarprogdef]           = CAT_SpecialeIngrepen; PRM_subcat[prmstarprogdef]              = SUBCAT_Plantijden;
+    PRM_cat[prmctijdstar01]           = CAT_SpecialeIngrepen; PRM_subcat[prmctijdstar01]              = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0102]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0102]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0102]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0102]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0103]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0103]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0103]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0103]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0105]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0105]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0105]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0105]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0108]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0108]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0108]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0108]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0109]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0109]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0109]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0109]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0111]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0111]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0111]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0111]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0121]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0121]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0121]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0121]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0122]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0122]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0122]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0122]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0124]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0124]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0124]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0124]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0126]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0126]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0126]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0126]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0128]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0128]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0128]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0128]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0131]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0131]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0131]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0131]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0132]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0132]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0132]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0132]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0133]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0133]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0133]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0133]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0134]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0134]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0134]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0134]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0138]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0138]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0138]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0138]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0161]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0161]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0161]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0161]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0162]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0162]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0162]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0162]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0167]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0167]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0167]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0167]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0168]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0168]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0168]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0168]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0181]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0181]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0181]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0181]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0182]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0182]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0182]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0182]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0184]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0184]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0184]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0184]            = SUBCAT_Plantijden;
+    PRM_cat[prmctijdstar02]           = CAT_SpecialeIngrepen; PRM_subcat[prmctijdstar02]              = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0202]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0202]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0202]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0202]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0203]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0203]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0203]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0203]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0205]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0205]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0205]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0205]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0208]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0208]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0208]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0208]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0209]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0209]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0209]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0209]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0211]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0211]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0211]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0211]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0221]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0221]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0221]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0221]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0222]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0222]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0222]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0222]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0224]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0224]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0224]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0224]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0226]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0226]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0226]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0226]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0228]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0228]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0228]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0228]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0231]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0231]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0231]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0231]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0232]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0232]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0232]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0232]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0233]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0233]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0233]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0233]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0234]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0234]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0234]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0234]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0238]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0238]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0238]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0238]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0261]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0261]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0261]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0261]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0262]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0262]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0262]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0262]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0267]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0267]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0267]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0267]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0268]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0268]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0268]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0268]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0281]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0281]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0281]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0281]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0282]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0282]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0282]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0282]            = SUBCAT_Plantijden;
+    PRM_cat[prmstart1star0284]        = CAT_SpecialeIngrepen; PRM_subcat[prmstart1star0284]           = SUBCAT_Plantijden;
+    PRM_cat[prmeind1star0284]         = CAT_SpecialeIngrepen; PRM_subcat[prmeind1star0284]            = SUBCAT_Plantijden;
     PRM_cat[prmstarprogStar01]        = CAT_SpecialeIngrepen; PRM_subcat[prmstarprogStar01]           = SUBCAT_Plantijden;
     PRM_cat[prmstarprogStar02]        = CAT_SpecialeIngrepen; PRM_subcat[prmstarprogStar02]           = SUBCAT_Plantijden;
     PRM_cat[prmttxconfidence15]       = CAT_Informeren;       PRM_subcat[prmttxconfidence15]          = SUBCAT_Afteller;
