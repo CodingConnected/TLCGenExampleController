@@ -1921,10 +1921,11 @@ void PrioAlternatieven(void)
     }
 	PrioPARCorrecties();
 #ifdef PRIO_ADDFILE
+        /* Traffick2TLCGen */
 #ifdef TRAFFICK
-    if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO_PAR();
+        if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO_PAR();
 #endif
-    PrioAlternatieven_Add();
+	PrioAlternatieven_Add();
 #endif
 
     for (fc = 0; fc < FCMAX; ++fc)
@@ -2270,6 +2271,7 @@ void AfhandelingPrio(void)
 
     WachtTijdBewaking();
 #ifdef PRIO_ADDFILE
+    /* Traffick2TLCGen */
 #ifdef TRAFFICK
     if (SCH[schtraffick2tlcgen]) corrigeer_maximum_wachttijd_OV();
 #endif
@@ -2284,6 +2286,7 @@ void AfhandelingPrio(void)
 
     BlokkeringsTijd();
 #ifdef PRIO_ADDFILE
+    /* Traffick2TLCGen */
 #ifdef TRAFFICK
     if (SCH[schtraffick2tlcgen]) corrigeer_blokkeringstijd_OV();
 #endif
@@ -2292,6 +2295,7 @@ void AfhandelingPrio(void)
 
     PrioriteitsToekenning();
 #ifdef PRIO_ADDFILE
+    /* Traffick2TLCGen */
 #ifdef TRAFFICK
     if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO_TOE();
 #endif
@@ -2301,6 +2305,7 @@ void AfhandelingPrio(void)
 	AfkapGroen();
 	AfkapGroenExtra();
 #ifdef PRIO_ADDFILE
+    /* Traffick2TLCGen */
 #if (defined (TRAFFICK) && defined (NALOPEN))
     if (SCH[schtraffick2tlcgen]) Traffick2TLCpas_TVG_aan();
 #endif
@@ -2310,6 +2315,7 @@ void AfhandelingPrio(void)
 	StartGroenMomenten();
 	StartGroenMomentenExtra();
 #ifdef PRIO_ADDFILE
+    /* Traffick2TLCGen */
 #if (defined (TRAFFICK) && defined (NALOPEN))
     if (SCH[schtraffick2tlcgen]) Traffick2TLCzet_TVG_terug();
 #endif
@@ -2330,10 +2336,11 @@ void AfhandelingPrio(void)
        ------------------------------------------------ */
 	PrioTegenhouden();
 #ifdef PRIO_ADDFILE
+        /* Traffick2TLCGen */
 #ifdef TRAFFICK
-    if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO_RR();
+        if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO_RR();
 #endif
-    PrioTegenhouden_Add();
+	PrioTegenhouden_Add();
 #endif
 
     /* -------------------------------------------
@@ -2384,10 +2391,11 @@ void AfhandelingPrio(void)
 
     PostAfhandelingPrio();
 #ifdef PRIO_ADDFILE
+        /* Traffick2TLCGen */
 #ifdef TRAFFICK
-    if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO();
+        if (SCH[schtraffick2tlcgen]) Traffick2TLCgen_PRIO();
 #endif
-    PostAfhandelingPrio_Add();
+	PostAfhandelingPrio_Add();
 #endif
 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined(VISSIM)

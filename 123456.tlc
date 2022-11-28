@@ -289,7 +289,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.1.0</Versie>
-      <Datum>2022-11-04T00:00:00</Datum>
+      <Datum>2022-11-28T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (portable)</Commentaar>
     </Versie>
@@ -1420,66 +1420,6 @@
           <Naam>ML5</Naam>
           <HasManualNaam>false</HasManualNaam>
           <RangeerIndex>15</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>plact</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>16</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>kpact</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>17</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>mlact</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>18</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>mlpl</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>19</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>txtimer</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>20</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>klok</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>21</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>hand</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>22</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>PL1</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>23</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>PL2</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>24</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>PL3</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>25</RangeerIndex>
           <RangeerIndex2>-1</RangeerIndex2>
         </IOElementRangeerDataModel>
         <IOElementRangeerDataModel>
@@ -22910,116 +22850,162 @@
         <FaseCyclus>02</FaseCyclus>
         <KruispuntArm>ARM1</KruispuntArm>
         <KruispuntArmVolg>ARM5</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>03</FaseCyclus>
         <KruispuntArm>ARM1</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>05</FaseCyclus>
         <KruispuntArm>ARM2</KruispuntArm>
         <KruispuntArmVolg>ARM5</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>08</FaseCyclus>
         <KruispuntArm>ARM3</KruispuntArm>
         <KruispuntArmVolg>ARM6</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>09</FaseCyclus>
         <KruispuntArm>ARM3</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>11</FaseCyclus>
         <KruispuntArm>ARM4</KruispuntArm>
         <KruispuntArmVolg>ARM6</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>21</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>22</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>24</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>26</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>28</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>31</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>32</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>33</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>34</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>38</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>61</FaseCyclus>
         <KruispuntArm>ARM5</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>62</FaseCyclus>
         <KruispuntArm>ARM5</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>67</FaseCyclus>
         <KruispuntArm>ARM6</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>68</FaseCyclus>
         <KruispuntArm>ARM6</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>81</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>82</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>84</FaseCyclus>
         <KruispuntArm>NG</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
     </FasenMetKruispuntArmen>
   </Kruispunt>
@@ -23730,6 +23716,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>62_2b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>62_2b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -24211,13 +24204,6 @@
         <Naam>67_1</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>67_1</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>62_2b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>62_2b</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

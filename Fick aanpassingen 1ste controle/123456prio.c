@@ -15,12 +15,13 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   28-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.1.0   07-10-2022   TLCGen      Nieuwe versie TLCGen (release)
  *
  ************************************************************************************/
 
 #define NALOPEN
 #define PRIO_ADDFILE
+#define TRAFFICK
 
 /*include files */
 /*------------- */
@@ -75,8 +76,6 @@ extern mulv TDH_old[];
 
 /* Variabele tbv start KAR ondergedrag timer bij starten regeling */
 static char startkarog = FALSE;
-
-#define TRAFFICK
 
 /* Variabelen tbv registreren stiptheid bij inmelding via KAR: tbv bepalen prioriteit in OV.ADD */
 int iKARInSTP02bus[MAX_AANTAL_INMELDINGEN] = { 0 }; int iAantInm02bus = 0;
@@ -2341,14 +2340,6 @@ void PrioriteitsOpties(void)
     if (SCH[schtraffick2tlcgen])
     {
         Traffick2TLCgen_PRIO_OPTIES();
-
-        Traffick2TLCgen_HLPD_nal(fc02, fc62, NG);
-        Traffick2TLCgen_HLPD_nal(fc08, fc68, NG);
-        Traffick2TLCgen_HLPD_nal(fc11, fc68, NG);
-        Traffick2TLCgen_HLPD_nal(fc22, fc21, NG);
-        Traffick2TLCgen_HLPD_nal(fc82, fc81, NG);
-
-        Traffick2TLCgen_HLPD();
     }
 
     #ifdef PRIO_ADDFILE
@@ -2544,7 +2535,6 @@ void PostAfhandelingPrio(void)
     }
 
     #endif // NO_TIMETOX
-
 }
 /* ---------------------------------------
    PrioPARCorrecties corrigeert de PAR van
