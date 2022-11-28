@@ -22850,8 +22850,8 @@
         <FaseCyclus>02</FaseCyclus>
         <KruispuntArm>ARM1</KruispuntArm>
         <KruispuntArmVolg>ARM5</KruispuntArmVolg>
-        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
-        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
+        <HasKruispuntArmVolgTijd>true</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>100</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>03</FaseCyclus>
@@ -22864,29 +22864,29 @@
         <FaseCyclus>05</FaseCyclus>
         <KruispuntArm>ARM2</KruispuntArm>
         <KruispuntArmVolg>ARM5</KruispuntArmVolg>
-        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
-        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
+        <HasKruispuntArmVolgTijd>true</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>100</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>08</FaseCyclus>
         <KruispuntArm>ARM3</KruispuntArm>
         <KruispuntArmVolg>ARM6</KruispuntArmVolg>
-        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
-        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
+        <HasKruispuntArmVolgTijd>true</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>100</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>09</FaseCyclus>
         <KruispuntArm>ARM3</KruispuntArm>
         <KruispuntArmVolg>NG</KruispuntArmVolg>
         <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
-        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>1</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>11</FaseCyclus>
         <KruispuntArm>ARM4</KruispuntArm>
         <KruispuntArmVolg>ARM6</KruispuntArmVolg>
-        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
-        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
+        <HasKruispuntArmVolgTijd>true</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>100</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>21</FaseCyclus>

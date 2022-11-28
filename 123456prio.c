@@ -2342,9 +2342,9 @@ void PrioriteitsOpties(void)
     {
         Traffick2TLCgen_PRIO_OPTIES();
 
-        Traffick2TLCgen_HLPD_nal(fc02, fc62, NG);
-        Traffick2TLCgen_HLPD_nal(fc08, fc68, NG);
-        Traffick2TLCgen_HLPD_nal(fc11, fc68, NG);
+        Traffick2TLCgen_HLPD_nal(fc02, fc62, 100);
+        Traffick2TLCgen_HLPD_nal(fc08, fc68, 100);
+        Traffick2TLCgen_HLPD_nal(fc11, fc68, 100);
         Traffick2TLCgen_HLPD_nal(fc22, fc21, NG);
         Traffick2TLCgen_HLPD_nal(fc82, fc81, NG);
 
