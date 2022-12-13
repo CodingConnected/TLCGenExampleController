@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   28-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.1.0   13-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -188,7 +188,7 @@ void PreApplication(void)
         traffick2tlcgen_instel(fc11, SCH[schwg11], TRUE, SCH[schmv11], FALSE, SCH[schaltg11], PRM[prmaltb11], PRM[prmaltp11], PRM[prmaltg11], prioFC11bus, prioFC11risov, NG, hdFC11, C[cvchd11], prioFC11risvrw, NG);
         traffick2tlcgen_instel(fc21, SCH[schwg21], TRUE, SCH[schmv21], FALSE, SCH[schaltg21], PRM[prmaltb21], PRM[prmaltp21], PRM[prmaltg21], NG, NG, NG, NG, FALSE, NG, NG);
         traffick2tlcgen_instel(fc22, SCH[schwg22], TRUE, SCH[schmv22], FALSE, SCH[schaltg2232], PRM[prmaltb22], PRM[prmaltp2232], PRM[prmaltg22], NG, NG, NG, NG, FALSE, NG, prioFC22fiets);
-        traffick2tlcgen_instel(fc24, SCH[schwg24], TRUE, SCH[schmv24], FALSE, SCH[schaltg2434], PRM[prmaltb24], PRM[prmaltp2434], PRM[prmaltg24], NG, NG, NG, NG, FALSE, NG, NG);
+        traffick2tlcgen_instel(fc24, SCH[schwg24], TRUE, SCH[schmv24], FALSE, SCH[schaltg243484], PRM[prmaltb24], PRM[prmaltp243484], PRM[prmaltg24], NG, NG, NG, NG, FALSE, NG, NG);
         traffick2tlcgen_instel(fc26, SCH[schwg26], TRUE, SCH[schmv26], FALSE, SCH[schaltg26], PRM[prmaltb26], PRM[prmaltp26], PRM[prmaltg26], NG, NG, NG, NG, FALSE, NG, NG);
         traffick2tlcgen_instel(fc28, SCH[schwg28], TRUE, SCH[schmv28], FALSE, SCH[schaltg28], PRM[prmaltb28], PRM[prmaltp28], PRM[prmaltg28], NG, NG, NG, NG, FALSE, NG, prioFC28fiets);
         traffick2tlcgen_instel(fc31, SCH[schwg31], TRUE, SCH[schmv31], FALSE, SCH[schaltg31], PRM[prmaltb31], PRM[prmaltp31], PRM[prmaltg31], NG, NG, NG, NG, FALSE, NG, NG);
@@ -202,7 +202,7 @@ void PreApplication(void)
         traffick2tlcgen_instel(fc68, SCH[schwg68], TRUE, SCH[schmv68], FALSE, SCH[schaltg68], PRM[prmaltb68], PRM[prmaltp68], PRM[prmaltg68], prioFC68bus, prioFC68risov, NG, hdFC68, C[cvchd68], prioFC68risvrw, NG);
         traffick2tlcgen_instel(fc81, SCH[schwg81], TRUE, SCH[schmv81], FALSE, SCH[schaltg81], PRM[prmaltb81], PRM[prmaltp81], PRM[prmaltg81], NG, NG, NG, NG, FALSE, NG, NG);
         traffick2tlcgen_instel(fc82, SCH[schwg82], TRUE, SCH[schmv82], FALSE, SCH[schaltg82], PRM[prmaltb82], PRM[prmaltp82], PRM[prmaltg82], NG, NG, NG, NG, FALSE, NG, NG);
-        traffick2tlcgen_instel(fc84, SCH[schwg84], TRUE, SCH[schmv84], FALSE, SCH[schaltg3384], PRM[prmaltb84], PRM[prmaltp3384], PRM[prmaltg84], NG, NG, NG, NG, FALSE, NG, NG);
+        traffick2tlcgen_instel(fc84, SCH[schwg84], TRUE, SCH[schmv84], FALSE, SCH[schaltg243384], PRM[prmaltb84], PRM[prmaltp243384], PRM[prmaltg84], NG, NG, NG, NG, FALSE, NG, NG);
     }
 
     PreApplication_Add();
@@ -893,6 +893,7 @@ void BepaalRealisatieTijden(void)
         wijziging |= Corr_Min_nl(fc81, fc82, T_max[tlr8182], TRUE);
         if (SCH[schgs2232]) wijziging |= Corr_Gel(fc22, fc32, TRUE);
         if (SCH[schgs2434]) wijziging |= Corr_Gel(fc24, fc34, TRUE);
+        if (SCH[schgs2484]) wijziging |= Corr_Gel(fc24, fc84, TRUE);
         if (SCH[schgs3384]) wijziging |= Corr_Gel(fc33, fc84, TRUE);
 
         /* Inlopen */
@@ -1795,7 +1796,7 @@ void RealisatieAfhandeling(void)
     PAR[fc11] = (Real_Ruimte(fc11, mar11) >= PRM[prmaltp11]) && SCH[schaltg11];
     PAR[fc21] = (Real_Ruimte(fc21, mar21) >= PRM[prmaltp21]) && SCH[schaltg21];
     PAR[fc22] = (Real_Ruimte(fc22, mar22) >= PRM[prmaltp2232]) && SCH[schaltg2232];
-    PAR[fc24] = (Real_Ruimte(fc24, mar24) >= PRM[prmaltp2434]) && SCH[schaltg2434];
+    PAR[fc24] = (Real_Ruimte(fc24, mar24) >= PRM[prmaltp243484]) && SCH[schaltg243484];
     PAR[fc26] = (Real_Ruimte(fc26, mar26) >= PRM[prmaltp26]) && SCH[schaltg26];
     PAR[fc28] = (Real_Ruimte(fc28, mar28) >= PRM[prmaltp28]) && SCH[schaltg28];
     PAR[fc31] = (Real_Ruimte(fc31, mar31) >= PRM[prmaltp31]) && SCH[schaltg31];
@@ -1809,7 +1810,7 @@ void RealisatieAfhandeling(void)
     PAR[fc68] = (Real_Ruimte(fc68, mar68) >= PRM[prmaltp68]) && SCH[schaltg68];
     PAR[fc81] = (Real_Ruimte(fc81, mar81) >= PRM[prmaltp81]) && SCH[schaltg81];
     PAR[fc82] = (Real_Ruimte(fc82, mar82) >= PRM[prmaltp82]) && SCH[schaltg82];
-    PAR[fc84] = (Real_Ruimte(fc84, mar84) >= PRM[prmaltp3384]) && SCH[schaltg3384];
+    PAR[fc84] = (Real_Ruimte(fc84, mar84) >= PRM[prmaltp243384]) && SCH[schaltg243384];
 
      /* Bepaal naloop voetgangers wel/niet toegestaan */
     IH[hnlsg3132] = Naloop_OK(fc31, mar32, tnlsgd3132);
@@ -1856,6 +1857,8 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && (PAR[fc22] || !A[fc22]);
         if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && (PAR[fc34] || !A[fc34]);
         if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
+        if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
+        if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
         if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
     }
@@ -1885,6 +1888,8 @@ void RealisatieAfhandeling(void)
     if (SCH[schgs2232]) set_MRLW(fc32, fc22, (boolv) ((RA[fc22] || SG[fc22]) && (PR[fc22] || AR[fc22] || (AA[fc32] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
     if (SCH[schgs2434]) set_MRLW(fc24, fc34, (boolv) ((RA[fc34] || SG[fc34]) && (PR[fc34] || AR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
     if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
+    if (SCH[schgs2484]) set_MRLW(fc24, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
+    if (SCH[schgs2484]) set_MRLW(fc84, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
     if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
     if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv) ((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
@@ -1925,6 +1930,8 @@ void RealisatieAfhandeling(void)
     if (SCH[schgs2232] && (P[fc32] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
     if (SCH[schgs2434] && (P[fc24] & BIT11) && R[fc34] && !kp(fc34) && A[fc34]) { PAR[fc34] |= BIT11; P[fc34] |= BIT11; }
     if (SCH[schgs2434] && (P[fc34] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
+    if (SCH[schgs2484] && (P[fc24] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
+    if (SCH[schgs2484] && (P[fc84] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
     if (SCH[schgs3384] && (P[fc33] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs3384] && (P[fc84] & BIT11) && R[fc33] && !kp(fc33) && A[fc33]) { PAR[fc33] |= BIT11; P[fc33] |= BIT11; }
     if ((P[fc05] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
@@ -2087,6 +2094,8 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2232] && R[fc32] && (P[fc32] & BIT11)) set_rr_gk(fc22, BIT11);
         if (SCH[schgs2434] && R[fc24] && (P[fc24] & BIT11)) set_rr_gk(fc34, BIT11);
         if (SCH[schgs2434] && R[fc34] && (P[fc34] & BIT11)) set_rr_gk(fc24, BIT11);
+        if (SCH[schgs2484] && R[fc24] && (P[fc24] & BIT11)) set_rr_gk(fc84, BIT11);
+        if (SCH[schgs2484] && R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc24, BIT11);
         if (SCH[schgs3384] && R[fc33] && (P[fc33] & BIT11)) set_rr_gk(fc84, BIT11);
         if (SCH[schgs3384] && R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc33, BIT11);
         if (R[fc05] && (P[fc05] & BIT11)) set_rr_gk(fc22, BIT11);
@@ -2153,6 +2162,12 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2434] && R[fc34] && !PG[fc34] && R[fc24] && PG[fc24]) PG[fc34] = 0;
         if (SCH[schgs2434] && G[fc24] && R[fc34] && (P[fc34] & BIT11)) YM[fc24] |= BIT11;
         if (SCH[schgs2434] && G[fc34] && R[fc24] && (P[fc24] & BIT11)) YM[fc34] |= BIT11;
+        if (SCH[schgs2484] && RA[fc24] && (P[fc24] & BIT11) && !kaa(fc84) && A[fc84] && !RR[fc84]) AA[fc84] |= BIT11;
+        if (SCH[schgs2484] && RA[fc84] && (P[fc84] & BIT11) && !kaa(fc24) && A[fc24] && !RR[fc24]) AA[fc24] |= BIT11;
+        if (SCH[schgs2484] && R[fc24] && !PG[fc24] && R[fc84] && PG[fc84]) PG[fc24] = 0;
+        if (SCH[schgs2484] && R[fc84] && !PG[fc84] && R[fc24] && PG[fc24]) PG[fc84] = 0;
+        if (SCH[schgs2484] && G[fc24] && R[fc84] && (P[fc84] & BIT11)) YM[fc24] |= BIT11;
+        if (SCH[schgs2484] && G[fc84] && R[fc24] && (P[fc24] & BIT11)) YM[fc84] |= BIT11;
         if (SCH[schgs3384] && RA[fc33] && (P[fc33] & BIT11) && !kaa(fc84) && A[fc84] && !RR[fc84]) AA[fc84] |= BIT11;
         if (SCH[schgs3384] && RA[fc84] && (P[fc84] & BIT11) && !kaa(fc33) && A[fc33] && !RR[fc33]) AA[fc33] |= BIT11;
         if (SCH[schgs3384] && R[fc33] && !PG[fc33] && R[fc84] && PG[fc84]) PG[fc33] = 0;
@@ -2175,10 +2190,18 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2232] && G[fc31] && R[fc22] && (P[fc22] & BIT11)) YM[fc31] |= BIT11;
         if (SCH[schgs2232] && G[fc22] && R[fc31] && (P[fc31] & BIT11)) YM[fc22] |= BIT11;
         if (SCH[schgs2232] && G[fc31] && R[fc22] && (P[fc22] & BIT11)) YM[fc31] |= BIT11;
+        if (SCH[schgs2434] && SCH[schgs2484] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) YM[fc34] |= BIT11;
+        if (SCH[schgs2434] && SCH[schgs2484] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) YM[fc84] |= BIT11;
         if (SCH[schgs2434] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
         if (SCH[schgs2434] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
         if (SCH[schgs2434] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
         if (SCH[schgs2434] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
+        if (SCH[schgs2484] && SCH[schgs2434] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) YM[fc84] |= BIT11;
+        if (SCH[schgs2484] && SCH[schgs2434] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) YM[fc34] |= BIT11;
+        if (SCH[schgs2484] && SCH[schgs3384] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
+        if (SCH[schgs2484] && SCH[schgs3384] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
+        if (SCH[schgs3384] && SCH[schgs2484] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
+        if (SCH[schgs3384] && SCH[schgs2484] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
         if (SCH[schgs3384] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) YM[fc84] |= BIT11;
         if (SCH[schgs3384] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) YM[fc34] |= BIT11;
          /* YM nalopen P */
@@ -2619,8 +2642,7 @@ void init_application(void)
     definitie_vtg_gescheiden(fc31, fc32, tinl3132, tinl3231, tnlsgd3132, tnlsgd3231, hnlak31a, hnlak32a, hlos31, hlos32);
     definitie_vtg_gescheiden(fc33, fc34, tinl3334, tinl3433, tnlsgd3334, tnlsgd3433, hnlak33a, hnlak34a, hlos33, hlos34);
     definitie_gelijkstart_lvk(fc22, fc32, NG, NG);
-    definitie_gelijkstart_lvk(fc24, fc34, NG, NG);
-    definitie_gelijkstart_lvk(fc33, fc84, NG, NG);
+    definitie_gelijkstart_lvk(fc24, fc34, fc84, fc33);
     definitie_voorstart_dcf(fc05, fc22, tvs2205, tfo0522, schma0522, schhardmv2205);
     definitie_voorstart_dcf(fc11, fc26, tvs2611, tfo1126, schma1126, schhardmv2611);
     definitie_voorstart_dcf(fc05, fc32, tvs3205, tfo0532, schma0532, schhardmv3205);
@@ -2636,8 +2658,10 @@ void init_application(void)
     ARM[fc67] = ARM6;
     ARM[fc68] = ARM6;
     volg_ARM[fc02] = ARM5;
+    volg_ARM[fc03] = ARM5;
     volg_ARM[fc05] = ARM5;
     volg_ARM[fc08] = ARM6;
+    volg_ARM[fc09] = ARM6;
     volg_ARM[fc11] = ARM6;
 
     post_init_application();

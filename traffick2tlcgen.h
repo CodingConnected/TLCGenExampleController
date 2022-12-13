@@ -95,6 +95,7 @@ struct fietsvoorrang {
   count prio_fts;                     /* PRM   prioriteitscode                                              */
   count ogwt_reg;                     /* TM    ondergrens wachttijd voor prioriteit (indien REGEN == TRUE)  */
   count prio_reg;                     /* PRM   prioriteitscode                      (indien REGEN == TRUE)  */
+  count verklik;                      /* US    verklik fiets prioriteit                                     */
   boolv aanvraag;                     /* boolv fietser is op juiste wijze aangevraagd                       */
   boolv prio_vw;                      /* boolv fietser voldoet aan prioriteitsvoorwaarden                   */
   boolv prio_av;                      /* boolv fietser is met prioriteit aangevraagd                        */
@@ -107,6 +108,21 @@ struct prioriteit_id {
   count OV_verlos;                    /* count OV ingreep - verlos                                          */
   count VRW;                          /* count VRW ingreep                                                  */
   count FTS;                          /* count fiets voorrang module                                        */
+};
+
+struct afteller {
+  count fc;                           /* FC    richting met afteller                                        */
+  count de1;                          /* DE    koplus 1                                                     */
+  count de2;                          /* DE    koplus 2                                                     */
+  count de3;                          /* DE    koplus 3                                                     */
+  count toest;                        /* SCH   toestemming aansturing afteller                              */
+  count min_duur;                     /* PRM   minimale duur tot start groen waarbij afteller mag starten   */
+  count tel_duur;                     /* PRM   duur van een tel in tienden van seconden                     */
+  count us_getal;                     /* US    tbv verklikking op bedienpaneel                              */
+  count us_bit0;                      /* US    aansturing afteller BIT0                                     */
+  count us_bit1;                      /* US    aansturing afteller BIT1                                     */
+  boolv aftel_ok;                     /* boolv alle aftellers van een rijrichting zijn OK                   */
+  mulv  act_duur;                     /* mulv  tijd in tienden van seconden dat TEL wordt aangestuurd       */
 };
 
 #ifndef __TRAFFICK2TLCGEN_VAR
@@ -124,9 +140,10 @@ extern mulv  AltRuimte[FCMAX];        /* realisatie ruimte voor alternatieve rea
 extern boolv ART[FCMAX];              /* alternatieve realisatie toegestaan algemene schakelaar             */
 extern mulv  ARB[FCMAX];              /* alternatieve realisatie toegestaan verfijning per blok             */
 extern boolv MGR[FCMAX];              /* meeverleng groen                                                   */
-extern boolv BMC[FCMAX];              /* beeindig meeverleng groen conflicten                               */
 extern boolv MMK[FCMAX];              /* meeverleng groen alleen als MK[] waar is                           */
+extern boolv BMC[FCMAX];              /* beeindig meeverleng groen conflicten                               */
 extern boolv WGR[FCMAX];              /* wachtstand groen                                                   */
+extern boolv FC_DVM[FCMAX];           /* richting krijgt hogere hiaattijden toebedeeld                      */
 extern mulv  AR_max[FCMAX];           /* alternatief maximum                                                */
 extern mulv  GWT[FCMAX];              /* gewogen wachttijd tbv toekennen alternatieve realisatie            */
 extern mulv  TEG[FCMAX];              /* tijd tot einde groen                                               */
@@ -164,10 +181,12 @@ extern boolv RAT[FCMAX];              /* aansturing rateltikker                 
 extern boolv KNIP;                    /* hulpwaarde voor knipper signaal                                    */
 extern boolv REGEN;                   /* regensensor aktief (zelf te besturen in REG[]ADD)                  */
 extern boolv WT_TE_HOOG;              /* wachttijd te hoog voor toekennen prioriteit                        */
+extern boolv GEEN_FIETS_PRIO;         /* geen fietsprioriteit (zelf te besturen in REG[]ADD)                */
 
 extern boolv DF[DPMAX];               /* detectie fout aanwezig                                             */
 extern mulv  D_bez[DPMAX];            /* tijdsduur detector bezet                                           */
 extern mulv  D_onb[DPMAX];            /* tijdsduur detector onbezet                                         */
+extern boolv TDH_DVM[DPMAX];          /* status TDH tijdens DVM                                             */
 
 extern struct hki_koppeling hki_kop[MAX_HKI_KOP];
 extern struct vtg_koppeling vtg_tgo[MAX_VTG_KOP];
@@ -176,6 +195,7 @@ extern struct dcf_voorstart dcf_vst[MAX_DCF_VST];
 extern struct pel_koppeling pel_kop[MAX_PEL_KOP];
 extern struct fietsvoorrang fts_pri[MAX_FTS_PRI];
 extern struct prioriteit_id prio_index[FCMAX];
+extern struct afteller      aft_123[FCMAX];
 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
 extern char  _UUR[MAXDUMPSTAP];        /* bijhouden UUR tbv flight buffer                                    */
@@ -307,7 +327,8 @@ count uitmeld,                        /* HE    hulp element voor prioriteitsmodu
 count ogwt,                           /* TM    ondergrens wachttijd voor prioriteit                         */
 count prio,                           /* PRM   prioriteitscode                                              */
 count ogwt_reg,                       /* TM    ondergrens wachttijd voor prioriteit (indien REGEN == TRUE)  */
-count prio_reg);                      /* PRM   prioriteitscode                      (indien REGEN == TRUE)  */
+count prio_reg,                       /* PRM   prioriteitscode                      (indien REGEN == TRUE)  */
+count verklik);                       /* US                                        */
 
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -326,9 +347,10 @@ void traffick2tlcgen_kruispunt(void); /* Fik230101                              
 /* Functie bijwerken detectie variabelen Traffick2TLCGen                                                    */
 /* -------------------------------------------------------------------------------------------------------- */
 /* In deze functie worden de detectie variabelen bijgewerkt, te weten:                                      */
-/* DF[]  : detectie fout geconstateerd                                                                      */
-/* Dbez[]: tijdsduur detector bezet                                                                         */
-/* Donb[]: tijdsduur detector onbezet                                                                       */
+/* DF[]     : detectie fout geconstateerd                                                                   */
+/* Dbez[]   : tijdsduur detector bezet                                                                      */
+/* Donb[]   : tijdsduur detector onbezet                                                                    */
+/* TDH_DVM[]: logische waarde TDH[] bij actief DVM programma                                                */
 /*                                                                                                          */
 /* Functie wordt aangeroepen vanuit PreApplication_Add().                                                   */
 /*                                                                                                          */
@@ -376,6 +398,7 @@ mulv  mg,                             /* mulv  meeverleng groen                 
 mulv  mgmk,                           /* mulv  meeverleng groen alleen als MK[] waar is                     */
 mulv  ar,                             /* mulv  alternatieve realisatie toegestaan - algemene schakelaar     */
 mulv  arb,                            /* mulv  alternatieve realisatie toegestaan - verfijning per blok     */
+mulv  alt_ruimte,                     /* mulv  alternatieve ruimte voor toestemming alternatieve realisatie */
 mulv  alt_max,                        /* mulv  alternatief maximum                                          */
 mulv  prioOV_index_kar,               /* mulv  OVFCfc - prioriteitsindex OV ingreep - KAR                   */
 mulv  prioOV_index_srm,               /* mulv  OVFCfc - prioriteitsindex OV ingreep - SRM                   */
@@ -731,6 +754,16 @@ count usbus);                         /* US aansturing bus sjabloon             
 
 
 /* -------------------------------------------------------------------------------------------------------- */
+/* Functie aansturing afteller                                                                              */
+/* -------------------------------------------------------------------------------------------------------- */
+/* Deze functie verzorgt de aansturing van de aftellers.                                                    */
+/*                                                                                                          */
+/* Functie wordt aangeroepen vanuit post_system_application().                                              */
+/*                                                                                                          */
+void aansturing_aftellers(void);      /* Fik230101                                                          */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
 /* Functie aansturing rateltikkers vanuit applicatie                                                        */
 /* -------------------------------------------------------------------------------------------------------- */
 /* Deze functie verzorgt de aansturing van rateltikkers waarbij de uitgang van de rateltikker HOOG is       */
@@ -804,6 +837,17 @@ void fiets_voorrang_module(void);     /* Fik230101                              
 
 
 /* -------------------------------------------------------------------------------------------------------- */
+/* Functie verklik fiets voorrang module                                                                    */
+/* -------------------------------------------------------------------------------------------------------- */
+/* Deze functie verzorgt de verklikking van de fiets voorrang module. Het led knippert tijdens rood indien  */
+/* een prioriteitsaavraag aanwezig is en brandt vervolgens vast tot einde vastgroen van de fietsrichting.   */
+/*                                                                                                          */
+/* Functie wordt aangeroepen vanuit post_system_application().                                              */
+/*                                                                                                          */
+void verklik_fiets_voorrang(void);    /* Fik230101                                                          */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
 /* Functie verlosmelding busbaan met prioriteit                                                             */
 /* -------------------------------------------------------------------------------------------------------- */
 /* Door in TLCgen een BUS prioriteit te definieren zonder in- en uitmelding kan met behulp van de detectie  */
@@ -835,6 +879,19 @@ mulv  min_rood);                      /* mulv minimale roodtijd (TE) voor priori
 /* Functie wordt aangeroepen vanuit BlokkeringsTijd_Add().                                                  */
 /*                                                                                                          */
 void corrigeer_blokkeringstijd_OV(void); /* Fik230101                                                       */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* Functie corrigeer maximum wachttijd voor BUS prioriteit                                                  */
+/* -------------------------------------------------------------------------------------------------------- */
+/* In TLCgen wordt prioriteit geblokkeerd als een conflictrichting een te hoge wachttijd heeft. In Traffick */
+/* is dit ook het geval indien een niet conflicterende richting een te hoge wachttijd heeft.                */
+/*                                                                                                          */
+/* Deze functie zorgt voor toepassing van de Traffick methodiek in plaats van de TLCgen methodiek.          */
+/*                                                                                                          */
+/* Functie wordt aangeroepen vanuit WachtTijdBewaking_Add().                                                */
+/*                                                                                                          */
+void corrigeer_maximum_wachttijd_OV(void); /* Fik230101                                                     */
 
 
 /* -------------------------------------------------------------------------------------------------------- */

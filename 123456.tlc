@@ -289,7 +289,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.1.0</Versie>
-      <Datum>2022-11-28T00:00:00</Datum>
+      <Datum>2022-12-13T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (portable)</Commentaar>
     </Versie>
@@ -8895,6 +8895,14 @@
       <Gelijkstart>
         <FaseVan>24</FaseVan>
         <FaseNaar>34</FaseNaar>
+        <GelijkstartOntruimingstijdFaseVan>0</GelijkstartOntruimingstijdFaseVan>
+        <GelijkstartOntruimingstijdFaseNaar>0</GelijkstartOntruimingstijdFaseNaar>
+        <DeelConflict>false</DeelConflict>
+        <Schakelbaar>SchAan</Schakelbaar>
+      </Gelijkstart>
+      <Gelijkstart>
+        <FaseVan>24</FaseVan>
+        <FaseNaar>84</FaseNaar>
         <GelijkstartOntruimingstijdFaseVan>0</GelijkstartOntruimingstijdFaseVan>
         <GelijkstartOntruimingstijdFaseNaar>0</GelijkstartOntruimingstijdFaseNaar>
         <DeelConflict>false</DeelConflict>
@@ -22856,9 +22864,9 @@
       <FasenMetKruispuntArmen>
         <FaseCyclus>03</FaseCyclus>
         <KruispuntArm>ARM1</KruispuntArm>
-        <KruispuntArmVolg>NG</KruispuntArmVolg>
-        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
-        <KruispuntArmVolgTijd>0</KruispuntArmVolgTijd>
+        <KruispuntArmVolg>ARM5</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>true</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>100</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>05</FaseCyclus>
@@ -22877,9 +22885,9 @@
       <FasenMetKruispuntArmen>
         <FaseCyclus>09</FaseCyclus>
         <KruispuntArm>ARM3</KruispuntArm>
-        <KruispuntArmVolg>NG</KruispuntArmVolg>
-        <HasKruispuntArmVolgTijd>false</HasKruispuntArmVolgTijd>
-        <KruispuntArmVolgTijd>1</KruispuntArmVolgTijd>
+        <KruispuntArmVolg>ARM6</KruispuntArmVolg>
+        <HasKruispuntArmVolgTijd>true</HasKruispuntArmVolgTijd>
+        <KruispuntArmVolgTijd>100</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
         <FaseCyclus>11</FaseCyclus>
@@ -23015,15 +23023,7 @@
     <HulpElementen />
     <Timers />
     <Counters />
-    <Schakelaars>
-      <Schakelaar>
-        <Naam>traffick2tlcgen</Naam>
-        <Type>TE_type</Type>
-        <Instelling>1</Instelling>
-        <Dummy>false</Dummy>
-        <Commentaar>1 = traffick2tlcgen</Commentaar>
-      </Schakelaar>
-    </Schakelaars>
+    <Schakelaars />
     <GeheugenElementen />
     <Parameters />
   </GebruikersOpties>
@@ -23723,6 +23723,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>67_1</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>67_1</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -24197,13 +24204,6 @@
         <Naam>67_2</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>67_2</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>67_1</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>67_1</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

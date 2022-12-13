@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   28-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.1.0   13-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.1.0 20221128"
+#define VERSION "12.1.0 20221213"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
 /* Kruispunt armen definities */
@@ -1696,109 +1696,111 @@
     #define schaltg11                 275 /* Alternatieve realisatie toestaan fase 11                       */
     #define schaltg21                 276 /* Alternatieve realisatie toestaan fase 21                       */
     #define schaltg2232               277 /* Alternatieve realisatie toestaan fasen 22, 32                  */
-    #define schaltg2434               278 /* Alternatieve realisatie toestaan fasen 24, 34                  */
+    #define schaltg243484             278 /* Alternatieve realisatie toestaan fasen 24, 34, 84              */
     #define schaltg26                 279 /* Alternatieve realisatie toestaan fase 26                       */
     #define schaltg28                 280 /* Alternatieve realisatie toestaan fase 28                       */
     #define schaltg31                 281 /* Alternatieve realisatie toestaan fase 31                       */
     #define schaltg3384               282 /* Alternatieve realisatie toestaan fasen 33, 84                  */
-    #define schaltg38                 283 /* Alternatieve realisatie toestaan fase 38                       */
-    #define schaltg61                 284 /* Alternatieve realisatie toestaan fase 61                       */
-    #define schaltg62                 285 /* Alternatieve realisatie toestaan fase 62                       */
-    #define schaltg67                 286 /* Alternatieve realisatie toestaan fase 67                       */
-    #define schaltg68                 287 /* Alternatieve realisatie toestaan fase 68                       */
-    #define schaltg81                 288 /* Alternatieve realisatie toestaan fase 81                       */
-    #define schaltg82                 289 /* Alternatieve realisatie toestaan fase 82                       */
-    #define schwg02                   290 /* Wachtstand groen fase 02                                       */
-    #define schwg03                   291 /* Wachtstand groen fase 03                                       */
-    #define schwg05                   292 /* Wachtstand groen fase 05                                       */
-    #define schwg08                   293 /* Wachtstand groen fase 08                                       */
-    #define schwg09                   294 /* Wachtstand groen fase 09                                       */
-    #define schwg11                   295 /* Wachtstand groen fase 11                                       */
-    #define schwg21                   296 /* Wachtstand groen fase 21                                       */
-    #define schwg22                   297 /* Wachtstand groen fase 22                                       */
-    #define schwg24                   298 /* Wachtstand groen fase 24                                       */
-    #define schwg26                   299 /* Wachtstand groen fase 26                                       */
-    #define schwg28                   300 /* Wachtstand groen fase 28                                       */
-    #define schwg31                   301 /* Wachtstand groen fase 31                                       */
-    #define schwg32                   302 /* Wachtstand groen fase 32                                       */
-    #define schwg33                   303 /* Wachtstand groen fase 33                                       */
-    #define schwg34                   304 /* Wachtstand groen fase 34                                       */
-    #define schwg38                   305 /* Wachtstand groen fase 38                                       */
-    #define schwg61                   306 /* Wachtstand groen fase 61                                       */
-    #define schwg62                   307 /* Wachtstand groen fase 62                                       */
-    #define schwg67                   308 /* Wachtstand groen fase 67                                       */
-    #define schwg68                   309 /* Wachtstand groen fase 68                                       */
-    #define schwg81                   310 /* Wachtstand groen fase 81                                       */
-    #define schwg82                   311 /* Wachtstand groen fase 82                                       */
-    #define schwg84                   312 /* Wachtstand groen fase 84                                       */
-    #define schstar                   313 /* Inschakelen star programma                                     */
-    #define schgs2232                 314 /* Schakelbare gelijkstart tussen fase 32 en 22                   */
-    #define schgs2434                 315 /* Schakelbare gelijkstart tussen fase 34 en 24                   */
-    #define schgs3384                 316 /* Schakelbare gelijkstart tussen fase 84 en 33                   */
-    #define schlos32_1                317 /* Toestaan los realiseren fase 32                                */
-    #define schlos32_2                318 /* Toestaan los realiseren fase 32                                */
-    #define schlos31_1                319 /* Toestaan los realiseren fase 31                                */
-    #define schlos31_2                320 /* Toestaan los realiseren fase 31                                */
-    #define schlos34_1                321 /* Toestaan los realiseren fase 34                                */
-    #define schlos34_2                322 /* Toestaan los realiseren fase 34                                */
-    #define schlos33_1                323 /* Toestaan los realiseren fase 33                                */
-    #define schlos33_2                324 /* Toestaan los realiseren fase 33                                */
-    #define schconfidence15fix        325
-    #define schtxconfidence15ar       326
-    #define schspatconfidence1        327
-    #define schspatconfidence3        328
-    #define schspatconfidence6        329
-    #define schspatconfidence9        330
-    #define schspatconfidence12       331
-    #define schspatconfidence15       332
-    #define schtimings02              333
-    #define schtimings03              334
-    #define schtimings05              335
-    #define schtimings08              336
-    #define schtimings09              337
-    #define schtimings11              338
-    #define schtimings21              339
-    #define schtimings22              340
-    #define schtimings24              341
-    #define schtimings26              342
-    #define schtimings28              343
-    #define schtimings31              344
-    #define schtimings32              345
-    #define schtimings33              346
-    #define schtimings34              347
-    #define schtimings38              348
-    #define schtimings61              349
-    #define schtimings62              350
-    #define schtimings67              351
-    #define schtimings68              352
-    #define schtimings81              353
-    #define schtimings82              354
-    #define schtimings84              355
-    #define schsneld02_1a             356 /* Aanvraag snel voor detector 02_1a aan of uit                   */
-    #define schsneld02_1b             357 /* Aanvraag snel voor detector 02_1b aan of uit                   */
-    #define schsneld03_1              358 /* Aanvraag snel voor detector 03_1 aan of uit                    */
-    #define schsneld05_1              359 /* Aanvraag snel voor detector 05_1 aan of uit                    */
-    #define schsneld08_1a             360 /* Aanvraag snel voor detector 08_1a aan of uit                   */
-    #define schsneld08_1b             361 /* Aanvraag snel voor detector 08_1b aan of uit                   */
-    #define schsneld09_1              362 /* Aanvraag snel voor detector 09_1 aan of uit                    */
-    #define schsneld11_1              363 /* Aanvraag snel voor detector 11_1 aan of uit                    */
-    #define schsneld211               364 /* Aanvraag snel voor detector 211 aan of uit                     */
-    #define schsneld22_1              365 /* Aanvraag snel voor detector 22_1 aan of uit                    */
-    #define schsneld24_1              366 /* Aanvraag snel voor detector 24_1 aan of uit                    */
-    #define schsneld261               367 /* Aanvraag snel voor detector 261 aan of uit                     */
-    #define schsneld28_1              368 /* Aanvraag snel voor detector 28_1 aan of uit                    */
-    #define schsneld61_1              369 /* Aanvraag snel voor detector 61_1 aan of uit                    */
-    #define schsneld62_1a             370 /* Aanvraag snel voor detector 62_1a aan of uit                   */
-    #define schsneld62_1b             371 /* Aanvraag snel voor detector 62_1b aan of uit                   */
-    #define schsneld67_1              372 /* Aanvraag snel voor detector 67_1 aan of uit                    */
-    #define schsneld68_1a             373 /* Aanvraag snel voor detector 68_1a aan of uit                   */
-    #define schsneld68_1b             374 /* Aanvraag snel voor detector 68_1b aan of uit                   */
-    #define schsneld81_1              375 /* Aanvraag snel voor detector 81_1 aan of uit                    */
-    #define schsneld82_1              376 /* Aanvraag snel voor detector 82_1 aan of uit                    */
-    #define schsneld84_1              377 /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    #define schtraffick2tlcgen        378 /* Activeren Traffick functies                                    */
-    #define schtraffick2tlcgen        379 /* 1 = traffick2tlcgen                                            */
-    #define SCHMAX1                   380
+    #define schaltg2434               283 /* Alternatieve realisatie toestaan fasen 24, 34                  */
+    #define schaltg38                 284 /* Alternatieve realisatie toestaan fase 38                       */
+    #define schaltg61                 285 /* Alternatieve realisatie toestaan fase 61                       */
+    #define schaltg62                 286 /* Alternatieve realisatie toestaan fase 62                       */
+    #define schaltg67                 287 /* Alternatieve realisatie toestaan fase 67                       */
+    #define schaltg68                 288 /* Alternatieve realisatie toestaan fase 68                       */
+    #define schaltg81                 289 /* Alternatieve realisatie toestaan fase 81                       */
+    #define schaltg82                 290 /* Alternatieve realisatie toestaan fase 82                       */
+    #define schaltg243384             291 /* Alternatieve realisatie toestaan fasen 24, 33, 84              */
+    #define schwg02                   292 /* Wachtstand groen fase 02                                       */
+    #define schwg03                   293 /* Wachtstand groen fase 03                                       */
+    #define schwg05                   294 /* Wachtstand groen fase 05                                       */
+    #define schwg08                   295 /* Wachtstand groen fase 08                                       */
+    #define schwg09                   296 /* Wachtstand groen fase 09                                       */
+    #define schwg11                   297 /* Wachtstand groen fase 11                                       */
+    #define schwg21                   298 /* Wachtstand groen fase 21                                       */
+    #define schwg22                   299 /* Wachtstand groen fase 22                                       */
+    #define schwg24                   300 /* Wachtstand groen fase 24                                       */
+    #define schwg26                   301 /* Wachtstand groen fase 26                                       */
+    #define schwg28                   302 /* Wachtstand groen fase 28                                       */
+    #define schwg31                   303 /* Wachtstand groen fase 31                                       */
+    #define schwg32                   304 /* Wachtstand groen fase 32                                       */
+    #define schwg33                   305 /* Wachtstand groen fase 33                                       */
+    #define schwg34                   306 /* Wachtstand groen fase 34                                       */
+    #define schwg38                   307 /* Wachtstand groen fase 38                                       */
+    #define schwg61                   308 /* Wachtstand groen fase 61                                       */
+    #define schwg62                   309 /* Wachtstand groen fase 62                                       */
+    #define schwg67                   310 /* Wachtstand groen fase 67                                       */
+    #define schwg68                   311 /* Wachtstand groen fase 68                                       */
+    #define schwg81                   312 /* Wachtstand groen fase 81                                       */
+    #define schwg82                   313 /* Wachtstand groen fase 82                                       */
+    #define schwg84                   314 /* Wachtstand groen fase 84                                       */
+    #define schstar                   315 /* Inschakelen star programma                                     */
+    #define schgs2232                 316 /* Schakelbare gelijkstart tussen fase 32 en 22                   */
+    #define schgs2434                 317 /* Schakelbare gelijkstart tussen fase 34 en 24                   */
+    #define schgs2484                 318 /* Schakelbare gelijkstart tussen fase 84 en 24                   */
+    #define schgs3384                 319 /* Schakelbare gelijkstart tussen fase 84 en 33                   */
+    #define schlos32_1                320 /* Toestaan los realiseren fase 32                                */
+    #define schlos32_2                321 /* Toestaan los realiseren fase 32                                */
+    #define schlos31_1                322 /* Toestaan los realiseren fase 31                                */
+    #define schlos31_2                323 /* Toestaan los realiseren fase 31                                */
+    #define schlos34_1                324 /* Toestaan los realiseren fase 34                                */
+    #define schlos34_2                325 /* Toestaan los realiseren fase 34                                */
+    #define schlos33_1                326 /* Toestaan los realiseren fase 33                                */
+    #define schlos33_2                327 /* Toestaan los realiseren fase 33                                */
+    #define schconfidence15fix        328
+    #define schtxconfidence15ar       329
+    #define schspatconfidence1        330
+    #define schspatconfidence3        331
+    #define schspatconfidence6        332
+    #define schspatconfidence9        333
+    #define schspatconfidence12       334
+    #define schspatconfidence15       335
+    #define schtimings02              336
+    #define schtimings03              337
+    #define schtimings05              338
+    #define schtimings08              339
+    #define schtimings09              340
+    #define schtimings11              341
+    #define schtimings21              342
+    #define schtimings22              343
+    #define schtimings24              344
+    #define schtimings26              345
+    #define schtimings28              346
+    #define schtimings31              347
+    #define schtimings32              348
+    #define schtimings33              349
+    #define schtimings34              350
+    #define schtimings38              351
+    #define schtimings61              352
+    #define schtimings62              353
+    #define schtimings67              354
+    #define schtimings68              355
+    #define schtimings81              356
+    #define schtimings82              357
+    #define schtimings84              358
+    #define schsneld02_1a             359 /* Aanvraag snel voor detector 02_1a aan of uit                   */
+    #define schsneld02_1b             360 /* Aanvraag snel voor detector 02_1b aan of uit                   */
+    #define schsneld03_1              361 /* Aanvraag snel voor detector 03_1 aan of uit                    */
+    #define schsneld05_1              362 /* Aanvraag snel voor detector 05_1 aan of uit                    */
+    #define schsneld08_1a             363 /* Aanvraag snel voor detector 08_1a aan of uit                   */
+    #define schsneld08_1b             364 /* Aanvraag snel voor detector 08_1b aan of uit                   */
+    #define schsneld09_1              365 /* Aanvraag snel voor detector 09_1 aan of uit                    */
+    #define schsneld11_1              366 /* Aanvraag snel voor detector 11_1 aan of uit                    */
+    #define schsneld211               367 /* Aanvraag snel voor detector 211 aan of uit                     */
+    #define schsneld22_1              368 /* Aanvraag snel voor detector 22_1 aan of uit                    */
+    #define schsneld24_1              369 /* Aanvraag snel voor detector 24_1 aan of uit                    */
+    #define schsneld261               370 /* Aanvraag snel voor detector 261 aan of uit                     */
+    #define schsneld28_1              371 /* Aanvraag snel voor detector 28_1 aan of uit                    */
+    #define schsneld61_1              372 /* Aanvraag snel voor detector 61_1 aan of uit                    */
+    #define schsneld62_1a             373 /* Aanvraag snel voor detector 62_1a aan of uit                   */
+    #define schsneld62_1b             374 /* Aanvraag snel voor detector 62_1b aan of uit                   */
+    #define schsneld67_1              375 /* Aanvraag snel voor detector 67_1 aan of uit                    */
+    #define schsneld68_1a             376 /* Aanvraag snel voor detector 68_1a aan of uit                   */
+    #define schsneld68_1b             377 /* Aanvraag snel voor detector 68_1b aan of uit                   */
+    #define schsneld81_1              378 /* Aanvraag snel voor detector 81_1 aan of uit                    */
+    #define schsneld82_1              379 /* Aanvraag snel voor detector 82_1 aan of uit                    */
+    #define schsneld84_1              380 /* Aanvraag snel voor detector 84_1 aan of uit                    */
+    #define schtraffick2tlcgen        381 /* Activeren Traffick functies                                    */
+    #define SCHMAX1                   382
 
 /* parameters */
 /* ---------- */
@@ -3260,7 +3262,7 @@
     #define prmaltg22                   1455 /* Minimale groentijd bij alternatieve realisatie fase 22                                                                         */
     #define prmaltp2232                 1456 /* Minimale ruimte tbv alternatieve realisatie fasen 22, 32                                                                       */
     #define prmaltg24                   1457 /* Minimale groentijd bij alternatieve realisatie fase 24                                                                         */
-    #define prmaltp2434                 1458 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
+    #define prmaltp243484               1458 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34, 84                                                                   */
     #define prmaltg26                   1459 /* Minimale groentijd bij alternatieve realisatie fase 26                                                                         */
     #define prmaltp26                   1460 /* Minimale ruimte tbv alternatieve realisatie fase 26                                                                            */
     #define prmaltg28                   1461 /* Minimale groentijd bij alternatieve realisatie fase 28                                                                         */
@@ -3271,127 +3273,129 @@
     #define prmaltg33                   1466 /* Minimale groentijd bij alternatieve realisatie fase 33                                                                         */
     #define prmaltp3384                 1467 /* Minimale ruimte tbv alternatieve realisatie fasen 33, 84                                                                       */
     #define prmaltg34                   1468 /* Minimale groentijd bij alternatieve realisatie fase 34                                                                         */
-    #define prmaltg38                   1469 /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
-    #define prmaltp38                   1470 /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
-    #define prmaltg61                   1471 /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
-    #define prmaltp61                   1472 /* Minimale ruimte tbv alternatieve realisatie fase 61                                                                            */
-    #define prmaltg62                   1473 /* Minimale groentijd bij alternatieve realisatie fase 62                                                                         */
-    #define prmaltp62                   1474 /* Minimale ruimte tbv alternatieve realisatie fase 62                                                                            */
-    #define prmaltg67                   1475 /* Minimale groentijd bij alternatieve realisatie fase 67                                                                         */
-    #define prmaltp67                   1476 /* Minimale ruimte tbv alternatieve realisatie fase 67                                                                            */
-    #define prmaltg68                   1477 /* Minimale groentijd bij alternatieve realisatie fase 68                                                                         */
-    #define prmaltp68                   1478 /* Minimale ruimte tbv alternatieve realisatie fase 68                                                                            */
-    #define prmaltg81                   1479 /* Minimale groentijd bij alternatieve realisatie fase 81                                                                         */
-    #define prmaltp81                   1480 /* Minimale ruimte tbv alternatieve realisatie fase 81                                                                            */
-    #define prmaltg82                   1481 /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
-    #define prmaltp82                   1482 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
-    #define prmaltg84                   1483 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
-    #define prmstarprogdef              1484 /* Default star programma                                                                                                         */
-    #define prmctijdstar01              1485 /* Cyclustijd star programma star01                                                                                               */
-    #define prmstart1star0102           1486 /* Start realisatie 1 fase 02 star programma star01                                                                               */
-    #define prmeind1star0102            1487 /* Einde realisatie 1 fase 02 star programma star01                                                                               */
-    #define prmstart1star0103           1488 /* Start realisatie 1 fase 03 star programma star01                                                                               */
-    #define prmeind1star0103            1489 /* Einde realisatie 1 fase 03 star programma star01                                                                               */
-    #define prmstart1star0105           1490 /* Start realisatie 1 fase 05 star programma star01                                                                               */
-    #define prmeind1star0105            1491 /* Einde realisatie 1 fase 05 star programma star01                                                                               */
-    #define prmstart1star0108           1492 /* Start realisatie 1 fase 08 star programma star01                                                                               */
-    #define prmeind1star0108            1493 /* Einde realisatie 1 fase 08 star programma star01                                                                               */
-    #define prmstart1star0109           1494 /* Start realisatie 1 fase 09 star programma star01                                                                               */
-    #define prmeind1star0109            1495 /* Einde realisatie 1 fase 09 star programma star01                                                                               */
-    #define prmstart1star0111           1496 /* Start realisatie 1 fase 11 star programma star01                                                                               */
-    #define prmeind1star0111            1497 /* Einde realisatie 1 fase 11 star programma star01                                                                               */
-    #define prmstart1star0121           1498 /* Start realisatie 1 fase 21 star programma star01                                                                               */
-    #define prmeind1star0121            1499 /* Einde realisatie 1 fase 21 star programma star01                                                                               */
-    #define prmstart1star0122           1500 /* Start realisatie 1 fase 22 star programma star01                                                                               */
-    #define prmeind1star0122            1501 /* Einde realisatie 1 fase 22 star programma star01                                                                               */
-    #define prmstart1star0124           1502 /* Start realisatie 1 fase 24 star programma star01                                                                               */
-    #define prmeind1star0124            1503 /* Einde realisatie 1 fase 24 star programma star01                                                                               */
-    #define prmstart1star0126           1504 /* Start realisatie 1 fase 26 star programma star01                                                                               */
-    #define prmeind1star0126            1505 /* Einde realisatie 1 fase 26 star programma star01                                                                               */
-    #define prmstart1star0128           1506 /* Start realisatie 1 fase 28 star programma star01                                                                               */
-    #define prmeind1star0128            1507 /* Einde realisatie 1 fase 28 star programma star01                                                                               */
-    #define prmstart1star0131           1508 /* Start realisatie 1 fase 31 star programma star01                                                                               */
-    #define prmeind1star0131            1509 /* Einde realisatie 1 fase 31 star programma star01                                                                               */
-    #define prmstart1star0132           1510 /* Start realisatie 1 fase 32 star programma star01                                                                               */
-    #define prmeind1star0132            1511 /* Einde realisatie 1 fase 32 star programma star01                                                                               */
-    #define prmstart1star0133           1512 /* Start realisatie 1 fase 33 star programma star01                                                                               */
-    #define prmeind1star0133            1513 /* Einde realisatie 1 fase 33 star programma star01                                                                               */
-    #define prmstart1star0134           1514 /* Start realisatie 1 fase 34 star programma star01                                                                               */
-    #define prmeind1star0134            1515 /* Einde realisatie 1 fase 34 star programma star01                                                                               */
-    #define prmstart1star0138           1516 /* Start realisatie 1 fase 38 star programma star01                                                                               */
-    #define prmeind1star0138            1517 /* Einde realisatie 1 fase 38 star programma star01                                                                               */
-    #define prmstart1star0161           1518 /* Start realisatie 1 fase 61 star programma star01                                                                               */
-    #define prmeind1star0161            1519 /* Einde realisatie 1 fase 61 star programma star01                                                                               */
-    #define prmstart1star0162           1520 /* Start realisatie 1 fase 62 star programma star01                                                                               */
-    #define prmeind1star0162            1521 /* Einde realisatie 1 fase 62 star programma star01                                                                               */
-    #define prmstart1star0167           1522 /* Start realisatie 1 fase 67 star programma star01                                                                               */
-    #define prmeind1star0167            1523 /* Einde realisatie 1 fase 67 star programma star01                                                                               */
-    #define prmstart1star0168           1524 /* Start realisatie 1 fase 68 star programma star01                                                                               */
-    #define prmeind1star0168            1525 /* Einde realisatie 1 fase 68 star programma star01                                                                               */
-    #define prmstart1star0181           1526 /* Start realisatie 1 fase 81 star programma star01                                                                               */
-    #define prmeind1star0181            1527 /* Einde realisatie 1 fase 81 star programma star01                                                                               */
-    #define prmstart1star0182           1528 /* Start realisatie 1 fase 82 star programma star01                                                                               */
-    #define prmeind1star0182            1529 /* Einde realisatie 1 fase 82 star programma star01                                                                               */
-    #define prmstart1star0184           1530 /* Start realisatie 1 fase 84 star programma star01                                                                               */
-    #define prmeind1star0184            1531 /* Einde realisatie 1 fase 84 star programma star01                                                                               */
-    #define prmctijdstar02              1532 /* Cyclustijd star programma star02                                                                                               */
-    #define prmstart1star0202           1533 /* Start realisatie 1 fase 02 star programma star02                                                                               */
-    #define prmeind1star0202            1534 /* Einde realisatie 1 fase 02 star programma star02                                                                               */
-    #define prmstart1star0203           1535 /* Start realisatie 1 fase 03 star programma star02                                                                               */
-    #define prmeind1star0203            1536 /* Einde realisatie 1 fase 03 star programma star02                                                                               */
-    #define prmstart1star0205           1537 /* Start realisatie 1 fase 05 star programma star02                                                                               */
-    #define prmeind1star0205            1538 /* Einde realisatie 1 fase 05 star programma star02                                                                               */
-    #define prmstart1star0208           1539 /* Start realisatie 1 fase 08 star programma star02                                                                               */
-    #define prmeind1star0208            1540 /* Einde realisatie 1 fase 08 star programma star02                                                                               */
-    #define prmstart1star0209           1541 /* Start realisatie 1 fase 09 star programma star02                                                                               */
-    #define prmeind1star0209            1542 /* Einde realisatie 1 fase 09 star programma star02                                                                               */
-    #define prmstart1star0211           1543 /* Start realisatie 1 fase 11 star programma star02                                                                               */
-    #define prmeind1star0211            1544 /* Einde realisatie 1 fase 11 star programma star02                                                                               */
-    #define prmstart1star0221           1545 /* Start realisatie 1 fase 21 star programma star02                                                                               */
-    #define prmeind1star0221            1546 /* Einde realisatie 1 fase 21 star programma star02                                                                               */
-    #define prmstart1star0222           1547 /* Start realisatie 1 fase 22 star programma star02                                                                               */
-    #define prmeind1star0222            1548 /* Einde realisatie 1 fase 22 star programma star02                                                                               */
-    #define prmstart1star0224           1549 /* Start realisatie 1 fase 24 star programma star02                                                                               */
-    #define prmeind1star0224            1550 /* Einde realisatie 1 fase 24 star programma star02                                                                               */
-    #define prmstart1star0226           1551 /* Start realisatie 1 fase 26 star programma star02                                                                               */
-    #define prmeind1star0226            1552 /* Einde realisatie 1 fase 26 star programma star02                                                                               */
-    #define prmstart1star0228           1553 /* Start realisatie 1 fase 28 star programma star02                                                                               */
-    #define prmeind1star0228            1554 /* Einde realisatie 1 fase 28 star programma star02                                                                               */
-    #define prmstart1star0231           1555 /* Start realisatie 1 fase 31 star programma star02                                                                               */
-    #define prmeind1star0231            1556 /* Einde realisatie 1 fase 31 star programma star02                                                                               */
-    #define prmstart1star0232           1557 /* Start realisatie 1 fase 32 star programma star02                                                                               */
-    #define prmeind1star0232            1558 /* Einde realisatie 1 fase 32 star programma star02                                                                               */
-    #define prmstart1star0233           1559 /* Start realisatie 1 fase 33 star programma star02                                                                               */
-    #define prmeind1star0233            1560 /* Einde realisatie 1 fase 33 star programma star02                                                                               */
-    #define prmstart1star0234           1561 /* Start realisatie 1 fase 34 star programma star02                                                                               */
-    #define prmeind1star0234            1562 /* Einde realisatie 1 fase 34 star programma star02                                                                               */
-    #define prmstart1star0238           1563 /* Start realisatie 1 fase 38 star programma star02                                                                               */
-    #define prmeind1star0238            1564 /* Einde realisatie 1 fase 38 star programma star02                                                                               */
-    #define prmstart1star0261           1565 /* Start realisatie 1 fase 61 star programma star02                                                                               */
-    #define prmeind1star0261            1566 /* Einde realisatie 1 fase 61 star programma star02                                                                               */
-    #define prmstart1star0262           1567 /* Start realisatie 1 fase 62 star programma star02                                                                               */
-    #define prmeind1star0262            1568 /* Einde realisatie 1 fase 62 star programma star02                                                                               */
-    #define prmstart1star0267           1569 /* Start realisatie 1 fase 67 star programma star02                                                                               */
-    #define prmeind1star0267            1570 /* Einde realisatie 1 fase 67 star programma star02                                                                               */
-    #define prmstart1star0268           1571 /* Start realisatie 1 fase 68 star programma star02                                                                               */
-    #define prmeind1star0268            1572 /* Einde realisatie 1 fase 68 star programma star02                                                                               */
-    #define prmstart1star0281           1573 /* Start realisatie 1 fase 81 star programma star02                                                                               */
-    #define prmeind1star0281            1574 /* Einde realisatie 1 fase 81 star programma star02                                                                               */
-    #define prmstart1star0282           1575 /* Start realisatie 1 fase 82 star programma star02                                                                               */
-    #define prmeind1star0282            1576 /* Einde realisatie 1 fase 82 star programma star02                                                                               */
-    #define prmstart1star0284           1577 /* Start realisatie 1 fase 84 star programma star02                                                                               */
-    #define prmeind1star0284            1578 /* Einde realisatie 1 fase 84 star programma star02                                                                               */
-    #define prmstarprogStar01           1579 /* Noodprogramma bij periode Star01                                                                                               */
-    #define prmstarprogStar02           1580 /* Noodprogramma bij periode Star02                                                                                               */
-    #define prmttxconfidence15          1581
-    #define prmlatencyminendsg          1582
+    #define prmaltp2434                 1469 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
+    #define prmaltg38                   1470 /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
+    #define prmaltp38                   1471 /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
+    #define prmaltg61                   1472 /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
+    #define prmaltp61                   1473 /* Minimale ruimte tbv alternatieve realisatie fase 61                                                                            */
+    #define prmaltg62                   1474 /* Minimale groentijd bij alternatieve realisatie fase 62                                                                         */
+    #define prmaltp62                   1475 /* Minimale ruimte tbv alternatieve realisatie fase 62                                                                            */
+    #define prmaltg67                   1476 /* Minimale groentijd bij alternatieve realisatie fase 67                                                                         */
+    #define prmaltp67                   1477 /* Minimale ruimte tbv alternatieve realisatie fase 67                                                                            */
+    #define prmaltg68                   1478 /* Minimale groentijd bij alternatieve realisatie fase 68                                                                         */
+    #define prmaltp68                   1479 /* Minimale ruimte tbv alternatieve realisatie fase 68                                                                            */
+    #define prmaltg81                   1480 /* Minimale groentijd bij alternatieve realisatie fase 81                                                                         */
+    #define prmaltp81                   1481 /* Minimale ruimte tbv alternatieve realisatie fase 81                                                                            */
+    #define prmaltg82                   1482 /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
+    #define prmaltp82                   1483 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
+    #define prmaltg84                   1484 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
+    #define prmaltp243384               1485 /* Minimale ruimte tbv alternatieve realisatie fasen 24, 33, 84                                                                   */
+    #define prmstarprogdef              1486 /* Default star programma                                                                                                         */
+    #define prmctijdstar01              1487 /* Cyclustijd star programma star01                                                                                               */
+    #define prmstart1star0102           1488 /* Start realisatie 1 fase 02 star programma star01                                                                               */
+    #define prmeind1star0102            1489 /* Einde realisatie 1 fase 02 star programma star01                                                                               */
+    #define prmstart1star0103           1490 /* Start realisatie 1 fase 03 star programma star01                                                                               */
+    #define prmeind1star0103            1491 /* Einde realisatie 1 fase 03 star programma star01                                                                               */
+    #define prmstart1star0105           1492 /* Start realisatie 1 fase 05 star programma star01                                                                               */
+    #define prmeind1star0105            1493 /* Einde realisatie 1 fase 05 star programma star01                                                                               */
+    #define prmstart1star0108           1494 /* Start realisatie 1 fase 08 star programma star01                                                                               */
+    #define prmeind1star0108            1495 /* Einde realisatie 1 fase 08 star programma star01                                                                               */
+    #define prmstart1star0109           1496 /* Start realisatie 1 fase 09 star programma star01                                                                               */
+    #define prmeind1star0109            1497 /* Einde realisatie 1 fase 09 star programma star01                                                                               */
+    #define prmstart1star0111           1498 /* Start realisatie 1 fase 11 star programma star01                                                                               */
+    #define prmeind1star0111            1499 /* Einde realisatie 1 fase 11 star programma star01                                                                               */
+    #define prmstart1star0121           1500 /* Start realisatie 1 fase 21 star programma star01                                                                               */
+    #define prmeind1star0121            1501 /* Einde realisatie 1 fase 21 star programma star01                                                                               */
+    #define prmstart1star0122           1502 /* Start realisatie 1 fase 22 star programma star01                                                                               */
+    #define prmeind1star0122            1503 /* Einde realisatie 1 fase 22 star programma star01                                                                               */
+    #define prmstart1star0124           1504 /* Start realisatie 1 fase 24 star programma star01                                                                               */
+    #define prmeind1star0124            1505 /* Einde realisatie 1 fase 24 star programma star01                                                                               */
+    #define prmstart1star0126           1506 /* Start realisatie 1 fase 26 star programma star01                                                                               */
+    #define prmeind1star0126            1507 /* Einde realisatie 1 fase 26 star programma star01                                                                               */
+    #define prmstart1star0128           1508 /* Start realisatie 1 fase 28 star programma star01                                                                               */
+    #define prmeind1star0128            1509 /* Einde realisatie 1 fase 28 star programma star01                                                                               */
+    #define prmstart1star0131           1510 /* Start realisatie 1 fase 31 star programma star01                                                                               */
+    #define prmeind1star0131            1511 /* Einde realisatie 1 fase 31 star programma star01                                                                               */
+    #define prmstart1star0132           1512 /* Start realisatie 1 fase 32 star programma star01                                                                               */
+    #define prmeind1star0132            1513 /* Einde realisatie 1 fase 32 star programma star01                                                                               */
+    #define prmstart1star0133           1514 /* Start realisatie 1 fase 33 star programma star01                                                                               */
+    #define prmeind1star0133            1515 /* Einde realisatie 1 fase 33 star programma star01                                                                               */
+    #define prmstart1star0134           1516 /* Start realisatie 1 fase 34 star programma star01                                                                               */
+    #define prmeind1star0134            1517 /* Einde realisatie 1 fase 34 star programma star01                                                                               */
+    #define prmstart1star0138           1518 /* Start realisatie 1 fase 38 star programma star01                                                                               */
+    #define prmeind1star0138            1519 /* Einde realisatie 1 fase 38 star programma star01                                                                               */
+    #define prmstart1star0161           1520 /* Start realisatie 1 fase 61 star programma star01                                                                               */
+    #define prmeind1star0161            1521 /* Einde realisatie 1 fase 61 star programma star01                                                                               */
+    #define prmstart1star0162           1522 /* Start realisatie 1 fase 62 star programma star01                                                                               */
+    #define prmeind1star0162            1523 /* Einde realisatie 1 fase 62 star programma star01                                                                               */
+    #define prmstart1star0167           1524 /* Start realisatie 1 fase 67 star programma star01                                                                               */
+    #define prmeind1star0167            1525 /* Einde realisatie 1 fase 67 star programma star01                                                                               */
+    #define prmstart1star0168           1526 /* Start realisatie 1 fase 68 star programma star01                                                                               */
+    #define prmeind1star0168            1527 /* Einde realisatie 1 fase 68 star programma star01                                                                               */
+    #define prmstart1star0181           1528 /* Start realisatie 1 fase 81 star programma star01                                                                               */
+    #define prmeind1star0181            1529 /* Einde realisatie 1 fase 81 star programma star01                                                                               */
+    #define prmstart1star0182           1530 /* Start realisatie 1 fase 82 star programma star01                                                                               */
+    #define prmeind1star0182            1531 /* Einde realisatie 1 fase 82 star programma star01                                                                               */
+    #define prmstart1star0184           1532 /* Start realisatie 1 fase 84 star programma star01                                                                               */
+    #define prmeind1star0184            1533 /* Einde realisatie 1 fase 84 star programma star01                                                                               */
+    #define prmctijdstar02              1534 /* Cyclustijd star programma star02                                                                                               */
+    #define prmstart1star0202           1535 /* Start realisatie 1 fase 02 star programma star02                                                                               */
+    #define prmeind1star0202            1536 /* Einde realisatie 1 fase 02 star programma star02                                                                               */
+    #define prmstart1star0203           1537 /* Start realisatie 1 fase 03 star programma star02                                                                               */
+    #define prmeind1star0203            1538 /* Einde realisatie 1 fase 03 star programma star02                                                                               */
+    #define prmstart1star0205           1539 /* Start realisatie 1 fase 05 star programma star02                                                                               */
+    #define prmeind1star0205            1540 /* Einde realisatie 1 fase 05 star programma star02                                                                               */
+    #define prmstart1star0208           1541 /* Start realisatie 1 fase 08 star programma star02                                                                               */
+    #define prmeind1star0208            1542 /* Einde realisatie 1 fase 08 star programma star02                                                                               */
+    #define prmstart1star0209           1543 /* Start realisatie 1 fase 09 star programma star02                                                                               */
+    #define prmeind1star0209            1544 /* Einde realisatie 1 fase 09 star programma star02                                                                               */
+    #define prmstart1star0211           1545 /* Start realisatie 1 fase 11 star programma star02                                                                               */
+    #define prmeind1star0211            1546 /* Einde realisatie 1 fase 11 star programma star02                                                                               */
+    #define prmstart1star0221           1547 /* Start realisatie 1 fase 21 star programma star02                                                                               */
+    #define prmeind1star0221            1548 /* Einde realisatie 1 fase 21 star programma star02                                                                               */
+    #define prmstart1star0222           1549 /* Start realisatie 1 fase 22 star programma star02                                                                               */
+    #define prmeind1star0222            1550 /* Einde realisatie 1 fase 22 star programma star02                                                                               */
+    #define prmstart1star0224           1551 /* Start realisatie 1 fase 24 star programma star02                                                                               */
+    #define prmeind1star0224            1552 /* Einde realisatie 1 fase 24 star programma star02                                                                               */
+    #define prmstart1star0226           1553 /* Start realisatie 1 fase 26 star programma star02                                                                               */
+    #define prmeind1star0226            1554 /* Einde realisatie 1 fase 26 star programma star02                                                                               */
+    #define prmstart1star0228           1555 /* Start realisatie 1 fase 28 star programma star02                                                                               */
+    #define prmeind1star0228            1556 /* Einde realisatie 1 fase 28 star programma star02                                                                               */
+    #define prmstart1star0231           1557 /* Start realisatie 1 fase 31 star programma star02                                                                               */
+    #define prmeind1star0231            1558 /* Einde realisatie 1 fase 31 star programma star02                                                                               */
+    #define prmstart1star0232           1559 /* Start realisatie 1 fase 32 star programma star02                                                                               */
+    #define prmeind1star0232            1560 /* Einde realisatie 1 fase 32 star programma star02                                                                               */
+    #define prmstart1star0233           1561 /* Start realisatie 1 fase 33 star programma star02                                                                               */
+    #define prmeind1star0233            1562 /* Einde realisatie 1 fase 33 star programma star02                                                                               */
+    #define prmstart1star0234           1563 /* Start realisatie 1 fase 34 star programma star02                                                                               */
+    #define prmeind1star0234            1564 /* Einde realisatie 1 fase 34 star programma star02                                                                               */
+    #define prmstart1star0238           1565 /* Start realisatie 1 fase 38 star programma star02                                                                               */
+    #define prmeind1star0238            1566 /* Einde realisatie 1 fase 38 star programma star02                                                                               */
+    #define prmstart1star0261           1567 /* Start realisatie 1 fase 61 star programma star02                                                                               */
+    #define prmeind1star0261            1568 /* Einde realisatie 1 fase 61 star programma star02                                                                               */
+    #define prmstart1star0262           1569 /* Start realisatie 1 fase 62 star programma star02                                                                               */
+    #define prmeind1star0262            1570 /* Einde realisatie 1 fase 62 star programma star02                                                                               */
+    #define prmstart1star0267           1571 /* Start realisatie 1 fase 67 star programma star02                                                                               */
+    #define prmeind1star0267            1572 /* Einde realisatie 1 fase 67 star programma star02                                                                               */
+    #define prmstart1star0268           1573 /* Start realisatie 1 fase 68 star programma star02                                                                               */
+    #define prmeind1star0268            1574 /* Einde realisatie 1 fase 68 star programma star02                                                                               */
+    #define prmstart1star0281           1575 /* Start realisatie 1 fase 81 star programma star02                                                                               */
+    #define prmeind1star0281            1576 /* Einde realisatie 1 fase 81 star programma star02                                                                               */
+    #define prmstart1star0282           1577 /* Start realisatie 1 fase 82 star programma star02                                                                               */
+    #define prmeind1star0282            1578 /* Einde realisatie 1 fase 82 star programma star02                                                                               */
+    #define prmstart1star0284           1579 /* Start realisatie 1 fase 84 star programma star02                                                                               */
+    #define prmeind1star0284            1580 /* Einde realisatie 1 fase 84 star programma star02                                                                               */
+    #define prmstarprogStar01           1581 /* Noodprogramma bij periode Star01                                                                                               */
+    #define prmstarprogStar02           1582 /* Noodprogramma bij periode Star02                                                                                               */
+    #define prmttxconfidence15          1583
+    #define prmlatencyminendsg          1584
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
-    #define prmtestdsivert              1583 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
-    #define prmtestdsilyn               1584 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
-    #define prmtestdsicat               1585 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
-    #define PRMMAX1                     1586
+    #define prmtestdsivert              1585 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
+    #define prmtestdsilyn               1586 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
+    #define prmtestdsicat               1587 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
+    #define PRMMAX1                     1588
 #else
-    #define PRMMAX1                     1583
+    #define PRMMAX1                     1585
 #endif
 
 /* Selectieve detectie */

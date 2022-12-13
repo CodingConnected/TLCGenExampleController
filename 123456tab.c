@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   28-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.1.0   13-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -2151,11 +2151,12 @@ void control_parameters(void)
     SCH_code[schaltg11]                 = "altg11";                 SCH[schaltg11]                 = 1;                                         /* Alternatieve realisatie toestaan fase 11                       */
     SCH_code[schaltg21]                 = "altg21";                 SCH[schaltg21]                 = 1;                                         /* Alternatieve realisatie toestaan fase 21                       */
     SCH_code[schaltg2232]               = "altg2232";               SCH[schaltg2232]               = 1;                                         /* Alternatieve realisatie toestaan fasen 22, 32                  */
-    SCH_code[schaltg2434]               = "altg2434";               SCH[schaltg2434]               = 1;                                         /* Alternatieve realisatie toestaan fasen 24, 34                  */
+    SCH_code[schaltg243484]             = "altg243484";             SCH[schaltg243484]             = 1;                                         /* Alternatieve realisatie toestaan fasen 24, 34, 84              */
     SCH_code[schaltg26]                 = "altg26";                 SCH[schaltg26]                 = 1;                                         /* Alternatieve realisatie toestaan fase 26                       */
     SCH_code[schaltg28]                 = "altg28";                 SCH[schaltg28]                 = 1;                                         /* Alternatieve realisatie toestaan fase 28                       */
     SCH_code[schaltg31]                 = "altg31";                 SCH[schaltg31]                 = 1;                                         /* Alternatieve realisatie toestaan fase 31                       */
     SCH_code[schaltg3384]               = "altg3384";               SCH[schaltg3384]               = 1;                                         /* Alternatieve realisatie toestaan fasen 33, 84                  */
+    SCH_code[schaltg2434]               = "altg2434";               SCH[schaltg2434]               = 1;                                         /* Alternatieve realisatie toestaan fasen 24, 34                  */
     SCH_code[schaltg38]                 = "altg38";                 SCH[schaltg38]                 = 1;                                         /* Alternatieve realisatie toestaan fase 38                       */
     SCH_code[schaltg61]                 = "altg61";                 SCH[schaltg61]                 = 1;                                         /* Alternatieve realisatie toestaan fase 61                       */
     SCH_code[schaltg62]                 = "altg62";                 SCH[schaltg62]                 = 1;                                         /* Alternatieve realisatie toestaan fase 62                       */
@@ -2163,6 +2164,7 @@ void control_parameters(void)
     SCH_code[schaltg68]                 = "altg68";                 SCH[schaltg68]                 = 1;                                         /* Alternatieve realisatie toestaan fase 68                       */
     SCH_code[schaltg81]                 = "altg81";                 SCH[schaltg81]                 = 1;                                         /* Alternatieve realisatie toestaan fase 81                       */
     SCH_code[schaltg82]                 = "altg82";                 SCH[schaltg82]                 = 1;                                         /* Alternatieve realisatie toestaan fase 82                       */
+    SCH_code[schaltg243384]             = "altg243384";             SCH[schaltg243384]             = 1;                                         /* Alternatieve realisatie toestaan fasen 24, 33, 84              */
     SCH_code[schwg02]                   = "wg02";                   SCH[schwg02]                   = 0;                                         /* Wachtstand groen fase 02                                       */
     SCH_code[schwg03]                   = "wg03";                   SCH[schwg03]                   = 0;                                         /* Wachtstand groen fase 03                                       */
     SCH_code[schwg05]                   = "wg05";                   SCH[schwg05]                   = 0;                                         /* Wachtstand groen fase 05                                       */
@@ -2189,6 +2191,7 @@ void control_parameters(void)
     SCH_code[schstar]                   = "star";                   SCH[schstar]                   = 0;                                         /* Inschakelen star programma                                     */
     SCH_code[schgs2232]                 = "gs2232";                 SCH[schgs2232]                 = 1;                                         /* Schakelbare gelijkstart tussen fase 32 en 22                   */
     SCH_code[schgs2434]                 = "gs2434";                 SCH[schgs2434]                 = 1;                                         /* Schakelbare gelijkstart tussen fase 34 en 24                   */
+    SCH_code[schgs2484]                 = "gs2484";                 SCH[schgs2484]                 = 1;                                         /* Schakelbare gelijkstart tussen fase 84 en 24                   */
     SCH_code[schgs3384]                 = "gs3384";                 SCH[schgs3384]                 = 1;                                         /* Schakelbare gelijkstart tussen fase 84 en 33                   */
     SCH_code[schlos32_1]                = "los32_1";                SCH[schlos32_1]                = 0;                                         /* Toestaan los realiseren fase 32                                */
     SCH_code[schlos32_2]                = "los32_2";                SCH[schlos32_2]                = 0;                                         /* Toestaan los realiseren fase 32                                */
@@ -2252,7 +2255,6 @@ void control_parameters(void)
     SCH_code[schsneld82_1]              = "sneld82_1";              SCH[schsneld82_1]              = 1;                                         /* Aanvraag snel voor detector 82_1 aan of uit                    */
     SCH_code[schsneld84_1]              = "sneld84_1";              SCH[schsneld84_1]              = 1;                                         /* Aanvraag snel voor detector 84_1 aan of uit                    */
     SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 1;                                         /* Activeren Traffick functies                                    */
-    SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 1;                                         /* 1 = traffick2tlcgen                                            */
 
 /* parameters */
 /* ---------- */
@@ -3714,7 +3716,7 @@ void control_parameters(void)
     PRM_code[prmaltg22]                   = "altg22";                   PRM[prmaltg22]                   = 60;   PRM_type[prmaltg22]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 22                                                                         */
     PRM_code[prmaltp2232]                 = "altp2232";                 PRM[prmaltp2232]                 = 60;   PRM_type[prmaltp2232]                 = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 22, 32                                                                       */
     PRM_code[prmaltg24]                   = "altg24";                   PRM[prmaltg24]                   = 60;   PRM_type[prmaltg24]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 24                                                                         */
-    PRM_code[prmaltp2434]                 = "altp2434";                 PRM[prmaltp2434]                 = 60;   PRM_type[prmaltp2434]                 = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
+    PRM_code[prmaltp243484]               = "altp243484";               PRM[prmaltp243484]               = 60;   PRM_type[prmaltp243484]               = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34, 84                                                                   */
     PRM_code[prmaltg26]                   = "altg26";                   PRM[prmaltg26]                   = 60;   PRM_type[prmaltg26]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 26                                                                         */
     PRM_code[prmaltp26]                   = "altp26";                   PRM[prmaltp26]                   = 60;   PRM_type[prmaltp26]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 26                                                                            */
     PRM_code[prmaltg28]                   = "altg28";                   PRM[prmaltg28]                   = 60;   PRM_type[prmaltg28]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 28                                                                         */
@@ -3725,6 +3727,7 @@ void control_parameters(void)
     PRM_code[prmaltg33]                   = "altg33";                   PRM[prmaltg33]                   = 60;   PRM_type[prmaltg33]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 33                                                                         */
     PRM_code[prmaltp3384]                 = "altp3384";                 PRM[prmaltp3384]                 = 60;   PRM_type[prmaltp3384]                 = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 33, 84                                                                       */
     PRM_code[prmaltg34]                   = "altg34";                   PRM[prmaltg34]                   = 60;   PRM_type[prmaltg34]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 34                                                                         */
+    PRM_code[prmaltp2434]                 = "altp2434";                 PRM[prmaltp2434]                 = 60;   PRM_type[prmaltp2434]                 = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
     PRM_code[prmaltg38]                   = "altg38";                   PRM[prmaltg38]                   = 60;   PRM_type[prmaltg38]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
     PRM_code[prmaltp38]                   = "altp38";                   PRM[prmaltp38]                   = 60;   PRM_type[prmaltp38]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
     PRM_code[prmaltg61]                   = "altg61";                   PRM[prmaltg61]                   = 60;   PRM_type[prmaltg61]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
@@ -3740,6 +3743,7 @@ void control_parameters(void)
     PRM_code[prmaltg82]                   = "altg82";                   PRM[prmaltg82]                   = 60;   PRM_type[prmaltg82]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
     PRM_code[prmaltp82]                   = "altp82";                   PRM[prmaltp82]                   = 60;   PRM_type[prmaltp82]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
     PRM_code[prmaltg84]                   = "altg84";                   PRM[prmaltg84]                   = 60;   PRM_type[prmaltg84]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
+    PRM_code[prmaltp243384]               = "altp243384";               PRM[prmaltp243384]               = 60;   PRM_type[prmaltp243384]               = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 24, 33, 84                                                                   */
     PRM_code[prmstarprogdef]              = "starprogdef";              PRM[prmstarprogdef]              = 1;    PRM_type[prmstarprogdef]              = SCH_type; /* Default star programma                                                                                                         */
     PRM_code[prmctijdstar01]              = "ctijdstar01";              PRM[prmctijdstar01]              = 97;   PRM_type[prmctijdstar01]              = TS_type; /* Cyclustijd star programma star01                                                                                               */
     PRM_code[prmstart1star0102]           = "start1star0102";           PRM[prmstart1star0102]           = 97;                                                     /* Start realisatie 1 fase 02 star programma star01                                                                               */
