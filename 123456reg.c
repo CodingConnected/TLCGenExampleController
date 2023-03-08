@@ -7,15 +7,15 @@
               123456
 
    BESTAND:   123456reg.c
-      CCOL:   11.0
-    TLCGEN:   0.12.1.0
-   CCOLGEN:   0.12.1.0
+      CCOL:   12.0
+    TLCGEN:   0.12.2.0
+   CCOLGEN:   0.12.2.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   13-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.2.1   22-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -86,8 +86,6 @@
 #ifdef MIRMON
     #include "MirakelMonitor.h"
 #endif /* MIRMON */
-    #include "starfunc.c" /* Functies t.b.v. star regelen */
-    #include "starvar.c" /* Variabelen t.b.v. star regelen */
     #include "dynamischhiaat.c"
     #ifndef NO_TIMETOX
     #include "timingsvar.c" /* FCTiming functies */
@@ -98,7 +96,6 @@
 /* Traffick2TLCGen */
 #include "traffick2tlcgen.c"
 
-mulv TDH_old[DPMAX];
 mulv DB_old[DPMAX];
 mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
 
@@ -110,7 +107,17 @@ mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
     code SCJ_code[] = "123456";
 #endif
 mulv C_counter_old[CTMAX];
-    extern mulv star_cyclustimer;
+
+#ifndef NO_RIS
+    /* Definitie ProductInformatie ITSinfo */
+    /* ----------------------------------- */
+    const struct Rif_ProductInformation RIF_ITSINFO_AP = {
+      "Gemeente Rotterdam",    /* manufacturerName   */
+      "TLCGen",                /* certifiedName      */
+      "12.0.0",                /* certifiedVersion   */
+      "12.0.0"                 /* version            */
+    };
+#endif /* NO_RIS */
 #define TRAFFICK
 
     #if !defined AUTOMAAT && !defined AUTOMAAT_TEST
@@ -148,11 +155,6 @@ void PreApplication(void)
     for (fc = 0; fc < FCMAX; ++fc)
     {
         if (US_type[fc] & VTG_type) RW[fc] &= ~BIT7;
-    }
-
-    if (SML && ML == ML1 && (MM[mstarprog] == 0))
-    {
-        star_cyclustimer = 0;
     }
 
     /* Instellen basis waarde hulpelementen 'geen dynamisch hiaat gebruiken'.
@@ -259,18 +261,6 @@ void KlokPerioden(void)
         dagsoort(PRM[prmdckp7]))
         MM[mperiod] = 7;
 
-    /* klokperiode star regelen:  */
-    /* -------------------------- */
-    if (klokperiode(PRM[prmstkpStar02], PRM[prmetkpStar02]) &&
-        dagsoort(PRM[prmdckpStar02]))
-        MM[mperiodstar] = 1;
-
-    /* klokperiode star regelen:  */
-    /* -------------------------- */
-    if (klokperiode(PRM[prmstkpStar01], PRM[prmetkpStar01]) &&
-        dagsoort(PRM[prmdckpStar01]))
-        MM[mperiodstar] = 2;
-
     /* vrije klokperiode:  */
     /* ------------------- */
     IH[hperiodFietsprio1] = (klokperiode(PRM[prmstkpoFietsprio1], PRM[prmetkpoFietsprio1]) && dagsoort(PRM[prmdckpoFietsprio1]));
@@ -282,27 +272,6 @@ void KlokPerioden(void)
     /* vrije klokperiode:  */
     /* ------------------- */
     IH[hperiodFietsprio3] = (klokperiode(PRM[prmstkpoFietsprio3], PRM[prmetkpoFietsprio3]) && dagsoort(PRM[prmdckpoFietsprio3]));
-
-    /* Bepalen actief star programma wens */
-    MM[mstarprogwens] = 0;
-    if (SCH[schstar] || IS[isstar])
-    {
-        /* Actief star programma o.b.v. kloksturing */
-        switch (MM[mperiodstar])
-        {
-            case 1:
-                MM[mstarprogwens] = PRM[prmstarprogStar01];
-                break;
-            case 2:
-                MM[mstarprogwens] = PRM[prmstarprogStar02];
-                break;
-            default:
-                break;
-        }
-
-        /* Actief star programma o.b.v. parameter */
-        if (PRM[prmstarprogdef] != 0) MM[mstarprogwens] = PRM[prmstarprogdef];
-    }
 
     KlokPerioden_Add();
 }
@@ -2403,6 +2372,8 @@ void DetectieStoring(void)
                      (CIF_IS[dk28] >= CIF_DET_STORING || PRM[prmdak28] == 0) &&
                      !(PRM[prmda28_1] == 0 && PRM[prmdak28] == 0));
     RT[tdstvert31] = !T[tdstvert31] && R[fc31] && !A[fc31] && (
+                     SCH[schdvakdk31a] && (CIF_IS[dk31a] >= CIF_DET_STORING) ||
+                     SCH[schdvakdk31b] && (CIF_IS[dk31b] >= CIF_DET_STORING) ||
                      (CIF_IS[dk31a] >= CIF_DET_STORING || PRM[prmdak31a] == 0) &&
                      (CIF_IS[dk31b] >= CIF_DET_STORING || PRM[prmdak31b] == 0) &&
                      !(PRM[prmdak31a] == 0 && PRM[prmdak31b] == 0));
@@ -2674,7 +2645,6 @@ void PostApplication(void)
     int i = 0;
     for (i = 0; i < DPMAX; ++i)
     {
-        TDH_old[i] = TDH[i];
         DB_old[i] = DB[i];
     }
 
@@ -2751,15 +2721,6 @@ void PostApplication(void)
     if (TVG_max[fc68] > -1) TVG_max[fc68] -= PRM[prmovmmindergroen_68];
 
 
-    /* star programmawisseling */
-    star_bepaal_omschakelen(mstarprogwens, mstarprog, mstarprogwissel);
-    star_programma = MM[mstarprog];
-
-    /* verklikken actief star programma en wisseling*/
-    CIF_GUS[usstar01] = MM[mstarprog] == 1;
-    CIF_GUS[usstar02] = MM[mstarprog] == 2;
-    CIF_GUS[usstarprogwissel] = MM[mstarprogwissel] != 0 || MM[mstarprog] != 0 && MM[mstarprogwens] != MM[mstarprog];
-
     /* Tbv parametreerbare blokindeling: reset A voor niet toegedeeld fasen */
     for (fc = 0; fc < FCMAX; ++fc)
     {
@@ -2784,24 +2745,16 @@ void application(void)
     KlokPerioden();
     Aanvragen();
     BepaalRealisatieTijden();
-    star_reset_bits(MM[mstarprog] != 0);
-    if (MM[mstarprog] != 0)
-    {
-        star_instellingen();
-        star_regelen();
-    }
-    else
-    {
-        Verlenggroen();
-        Wachtgroen();
-        Meetkriterium();
-        Meeverlengen();
-        Synchronisaties();
-        RealisatieAfhandeling();
-        FileVerwerking();
-        DetectieStoring();
-    }
-    if (MM[mstarprog] == 0) AfhandelingPrio();
+    Verlenggroen();
+    Wachtgroen();
+    Meetkriterium();
+    Meeverlengen();
+    Synchronisaties();
+    RealisatieAfhandeling();
+    FileVerwerking();
+    DetectieStoring();
+    AfhandelingPrio();
+    Fixatie(isfix, 0, FCMAX-1, SCH[schbmfix], PRML, ML);
 
     PostApplication();
 }
@@ -2880,8 +2833,6 @@ void system_application(void)
     CIF_GUS[usper5] = (MM[mperiod] == 5);
     CIF_GUS[usper6] = (MM[mperiod] == 6);
     CIF_GUS[usper7] = (MM[mperiod] == 7);
-    CIF_GUS[usperStar02] = (MM[mperiodstar] == 1);
-    CIF_GUS[usperStar01] = (MM[mperiodstar] == 2);
     CIF_GUS[usperoFietsprio1] = (IH[hperiodFietsprio1] == TRUE);
     CIF_GUS[usperoFietsprio2] = (IH[hperiodFietsprio2] == TRUE);
     CIF_GUS[usperoFietsprio3] = (IH[hperiodFietsprio3] == TRUE);

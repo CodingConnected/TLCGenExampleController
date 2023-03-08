@@ -7,15 +7,15 @@
               123456
 
    BESTAND:   123456prio.c
-      CCOL:   11.0
-    TLCGEN:   0.12.1.0
-   CCOLGEN:   0.12.1.0
+      CCOL:   12.0
+    TLCGEN:   0.12.2.0
+   CCOLGEN:   0.12.2.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   13-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.2.1   22-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -62,6 +62,7 @@
 boolv vertraag_kar_uitm[prioFCMAX];
 
 /* Traffick2TLCGen */
+#define TRAFFICK
 #include "traffick2tlcgen.h"
 
 #define MAX_AANTAL_INMELDINGEN           10
@@ -69,14 +70,11 @@ boolv vertraag_kar_uitm[prioFCMAX];
 #define NO_REALISEREN_TOEGESTAAN
 
 extern mulv DB_old[];
-extern mulv TDH_old[];
 
 #include "prio.c"
 
 /* Variabele tbv start KAR ondergedrag timer bij starten regeling */
 static char startkarog = FALSE;
-
-#define TRAFFICK
 
 /* Variabelen tbv registreren stiptheid bij inmelding via KAR: tbv bepalen prioriteit in OV.ADD */
 int iKARInSTP02bus[MAX_AANTAL_INMELDINGEN] = { 0 }; int iAantInm02bus = 0;
@@ -2352,9 +2350,9 @@ void PrioriteitsOpties(void)
     {
         Traffick2TLCgen_PRIO_OPTIES();
 
-        Traffick2TLCgen_HLPD_nal(fc02, fc62, 100);
-        Traffick2TLCgen_HLPD_nal(fc08, fc68, 100);
-        Traffick2TLCgen_HLPD_nal(fc11, fc68, 100);
+        Traffick2TLCgen_HLPD_nal(fc02, fc62, T_max[tarmvt02]);
+        Traffick2TLCgen_HLPD_nal(fc08, fc68, T_max[tarmvt08]);
+        Traffick2TLCgen_HLPD_nal(fc11, fc68, T_max[tarmvt11]);
         Traffick2TLCgen_HLPD_nal(fc22, fc21, NG);
         Traffick2TLCgen_HLPD_nal(fc82, fc81, NG);
 

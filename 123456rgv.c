@@ -7,15 +7,15 @@
               123456
 
    BESTAND:   123456rgv.c
-      CCOL:   11.0
-    TLCGEN:   0.12.1.0
-   CCOLGEN:   0.12.1.0
+      CCOL:   12.0
+    TLCGEN:   0.12.2.0
+   CCOLGEN:   0.12.2.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   13-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.2.1   22-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -69,9 +69,9 @@ void rgv_add(void)
        - voor nalopen op CV of EG wordt TO_ontwerp gecorrigeerd */
     /* Fase 02 en conflicten van naloop 62 */
     #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc02][fc09] = TIG[fc62][fc09] + T_max[tnlegd0262];
-        TIG_ontwerp[fc02][fc11] = TIG[fc62][fc11] + T_max[tnlegd0262];
-        TIG_ontwerp[fc02][fc26] = TIG[fc62][fc26] + T_max[tnlegd0262];
+        TIG_ontwerp[fc02][fc09] = TIG_max[fc62][fc09] + T_max[tnlegd0262];
+        TIG_ontwerp[fc02][fc11] = TIG_max[fc62][fc11] + T_max[tnlegd0262];
+        TIG_ontwerp[fc02][fc26] = TIG_max[fc62][fc26] + T_max[tnlegd0262];
     #else
         TO_ontwerp[fc02][fc09] = TO_max[fc62][fc09] + T_max[tnlegd0262];
         TO_ontwerp[fc02][fc11] = TO_max[fc62][fc11] + T_max[tnlegd0262];
@@ -80,11 +80,11 @@ void rgv_add(void)
 
     /* Fase 08 en conflicten van naloop 68 */
     #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc08][fc03] = TIG[fc68][fc03] + T_max[tnlegd0868];
-        TIG_ontwerp[fc08][fc05] = TIG[fc68][fc05] + T_max[tnlegd0868];
-        TIG_ontwerp[fc08][fc22] = TIG[fc68][fc22] + T_max[tnlegd0868];
-        TIG_ontwerp[fc08][fc32] = TIG[fc68][fc32] + T_max[tnlegd0868];
-        TIG_ontwerp[fc08][fc81] = TIG[fc68][fc81] + T_max[tnlegd0868];
+        TIG_ontwerp[fc08][fc03] = TIG_max[fc68][fc03] + T_max[tnlegd0868];
+        TIG_ontwerp[fc08][fc05] = TIG_max[fc68][fc05] + T_max[tnlegd0868];
+        TIG_ontwerp[fc08][fc22] = TIG_max[fc68][fc22] + T_max[tnlegd0868];
+        TIG_ontwerp[fc08][fc32] = TIG_max[fc68][fc32] + T_max[tnlegd0868];
+        TIG_ontwerp[fc08][fc81] = TIG_max[fc68][fc81] + T_max[tnlegd0868];
     #else
         TO_ontwerp[fc08][fc03] = TO_max[fc68][fc03] + T_max[tnlegd0868];
         TO_ontwerp[fc08][fc05] = TO_max[fc68][fc05] + T_max[tnlegd0868];
@@ -95,11 +95,11 @@ void rgv_add(void)
 
     /* Fase 11 en conflicten van naloop 68 */
     #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc11][fc03] = TIG[fc68][fc03] + T_max[tnlegd1168];
-        TIG_ontwerp[fc11][fc05] = TIG[fc68][fc05] + T_max[tnlegd1168];
-        TIG_ontwerp[fc11][fc22] = TIG[fc68][fc22] + T_max[tnlegd1168];
-        TIG_ontwerp[fc11][fc32] = TIG[fc68][fc32] + T_max[tnlegd1168];
-        TIG_ontwerp[fc11][fc81] = TIG[fc68][fc81] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc03] = TIG_max[fc68][fc03] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc05] = TIG_max[fc68][fc05] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc22] = TIG_max[fc68][fc22] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc32] = TIG_max[fc68][fc32] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc81] = TIG_max[fc68][fc81] + T_max[tnlegd1168];
     #else
         TO_ontwerp[fc11][fc03] = TO_max[fc68][fc03] + T_max[tnlegd1168];
         TO_ontwerp[fc11][fc05] = TO_max[fc68][fc05] + T_max[tnlegd1168];
@@ -110,8 +110,8 @@ void rgv_add(void)
 
     /* Fase 22 en conflicten van naloop 21 */
     #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc22][fc02] = TIG[fc21][fc02] + T_max[tnlegd2221];
-        TIG_ontwerp[fc22][fc03] = TIG[fc21][fc03] + T_max[tnlegd2221];
+        TIG_ontwerp[fc22][fc02] = TIG_max[fc21][fc02] + T_max[tnlegd2221];
+        TIG_ontwerp[fc22][fc03] = TIG_max[fc21][fc03] + T_max[tnlegd2221];
     #else
         TO_ontwerp[fc22][fc02] = TO_max[fc21][fc02] + T_max[tnlegd2221];
         TO_ontwerp[fc22][fc03] = TO_max[fc21][fc03] + T_max[tnlegd2221];
@@ -119,8 +119,8 @@ void rgv_add(void)
 
     /* Fase 82 en conflicten van naloop 81 */
     #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc82][fc67] = TIG[fc81][fc67] + T_max[tnlegd8281];
-        TIG_ontwerp[fc82][fc68] = TIG[fc81][fc68] + T_max[tnlegd8281];
+        TIG_ontwerp[fc82][fc67] = TIG_max[fc81][fc67] + T_max[tnlegd8281];
+        TIG_ontwerp[fc82][fc68] = TIG_max[fc81][fc68] + T_max[tnlegd8281];
     #else
         TO_ontwerp[fc82][fc67] = TO_max[fc81][fc67] + T_max[tnlegd8281];
         TO_ontwerp[fc82][fc68] = TO_max[fc81][fc68] + T_max[tnlegd8281];

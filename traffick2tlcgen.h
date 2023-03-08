@@ -1,3 +1,5 @@
+/* traffick2tlcgen.h - gegenereerd met TLCGen 0.12.2.0 */
+
 /* -------------------------------------------------------------------------------------------------------- */
 /* Traffick2TLCGen                                                               Versie 1.0.0 / 01 jan 2023 */
 /* -------------------------------------------------------------------------------------------------------- */
@@ -177,10 +179,15 @@ extern boolv iPRIO[FCMAX];            /* prioriteit toegekend aan richting      
 extern mulv  PEL_UIT_VTG[FCMAX];      /* buffer aantal voertuig voor uitgaande peloton koppeling            */
 extern mulv  PEL_UIT_RES[FCMAX];      /* restant minimale duur uitsturing koppelsignaal peloton koppeling   */
 
+extern mulv  verklik_srm;             /* restant duur verklikking SRM bericht                               */
+extern mulv  duur_geen_srm;           /* aantal minuten dat geen SRM bericht is ontvangen (maximum = 32000) */
+
 extern boolv RAT[FCMAX];              /* aansturing rateltikker                                             */
 extern boolv KNIP;                    /* hulpwaarde voor knipper signaal                                    */
 extern boolv REGEN;                   /* regensensor aktief (zelf te besturen in REG[]ADD)                  */
 extern boolv WT_TE_HOOG;              /* wachttijd te hoog voor toekennen prioriteit                        */
+extern boolv GEEN_OV_PRIO;            /* geen prioriteit OV   (zelf te besturen in REG[]ADD)                */
+extern boolv GEEN_VW_PRIO;            /* geen prioriteit VW   (zelf te besturen in REG[]ADD)                */
 extern boolv GEEN_FIETS_PRIO;         /* geen fietsprioriteit (zelf te besturen in REG[]ADD)                */
 
 extern boolv DF[DPMAX];               /* detectie fout aanwezig                                             */
@@ -329,6 +336,26 @@ count prio,                           /* PRM   prioriteitscode                  
 count ogwt_reg,                       /* TM    ondergrens wachttijd voor prioriteit (indien REGEN == TRUE)  */
 count prio_reg,                       /* PRM   prioriteitscode                      (indien REGEN == TRUE)  */
 count verklik);                       /* US                                        */
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* Functie definieer afteller                                                                               */
+/* -------------------------------------------------------------------------------------------------------- */
+/* Met behulp van deze functie worden de gegevens van aftellers in een struct geplaatst                     */
+/*                                                                                                          */
+/* Functie wordt aangeroepen vanuit post_init_application().                                                */
+/*                                                                                                          */
+void definitie_afteller(              /* Fik230101                                                          */
+count fc,                             /* FC    richting met afteller                                        */
+count de1,                            /* DE    koplus 1                                                     */
+count de2,                            /* DE    koplus 2                                                     */
+count de3,                            /* DE    koplus 3                                                     */
+count toest,                          /* SCH   toestemming aansturing afteller                              */
+count min_duur,                       /* PRM   minimale duur tot start groen waarbij afteller mag starten   */
+count tel_duur,                       /* PRM   duur van een tel in tienden van seconden                     */
+count us_getal,                       /* US    tbv verklikking op bedienpaneel                              */
+count us_bit0,                        /* US    aansturing afteller BIT0                                     */
+count us_bit1);                       /* US    aansturing afteller BIT1                                     */
 
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -1230,4 +1257,5 @@ void Toggle_FK_Conflict(              /* Fik230101                              
 count fc1,                            /* FC    fasecyclus 1                                                 */
 count fc2,                            /* FC    fasecyclus 2                                                 */
 boolv period);                        /* boolv FK conflict gewenst                                          */
+
 #endif

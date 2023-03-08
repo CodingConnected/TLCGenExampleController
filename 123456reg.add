@@ -8,15 +8,15 @@
               123456
 
    BESTAND:   123456reg.add
-      CCOL:   11.0
-    TLCGEN:   0.12.1.0
-   CCOLGEN:   0.12.1.0
+      CCOL:   12.0
+    TLCGEN:   0.12.2.0
+   CCOLGEN:   0.12.2.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   13-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.2.1   22-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
@@ -143,7 +143,7 @@ void PostApplication_Add(void)
     /* TESTOMGEVING */
     /* ============ */
 
-  if (!CIF_GUS[usstar01]) { 
+//  if (!CIF_GUS[usstar01]) { 
 
 //     if (ET[tlr2611] && G[fc11] && A[fc26] && R[fc26] && !C[cvchd11]) {
 //      /* Schrijf naar de CCOL-terminal */
@@ -185,7 +185,7 @@ void PostApplication_Add(void)
   if (!ControleerInrijden(fc11, fc68, tlr6811, FALSE) && G[fc11] && R[fc68] && (TG_timer[fc11] > T_max[tlr6811] + 3)) stuffkey(F5KEY);
 
   ControleerVS(fc05, fc32, TRUE, TRUE);
- }
+// }
 #endif
 
 

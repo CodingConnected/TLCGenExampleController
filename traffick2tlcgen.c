@@ -1,3 +1,5 @@
+/* traffick2tlcgen.c - gegenereerd met TLCGen 0.12.2.0 */
+
 /* -------------------------------------------------------------------------------------------------------- */
 /* Traffick2TLCGen                                                               Versie 1.0.0 / 01 jan 2023 */
 /* -------------------------------------------------------------------------------------------------------- */
@@ -62,10 +64,15 @@ boolv iPRIO[FCMAX];                   /* prioriteit toegekend aan richting      
 mulv  PEL_UIT_VTG[FCMAX];             /* buffer aantal voertuig voor uitgaande peloton koppeling            */
 mulv  PEL_UIT_RES[FCMAX];             /* restant minimale duur uitsturing koppelsignaal peloton koppeling   */
 
+mulv  verklik_srm;                    /* restant duur verklikking SRM bericht                               */
+mulv  duur_geen_srm = 0;              /* aantal minuten dat geen SRM bericht is ontvangen (maximum = 32000) */
+
 boolv RAT[FCMAX];                     /* aansturing rateltikker                                             */
 boolv KNIP;                           /* hulpwaarde voor knipper signaal                                    */
 boolv REGEN;                          /* regensensor aktief (zelf te besturen in REG[]ADD)                  */
 boolv WT_TE_HOOG;                     /* wachttijd te hoog voor toekennen prioriteit                        */
+boolv GEEN_OV_PRIO;                   /* geen prioriteit OV   (zelf te besturen in REG[]ADD)                */
+boolv GEEN_VW_PRIO;                   /* geen prioriteit VW   (zelf te besturen in REG[]ADD)                */
 boolv GEEN_FIETS_PRIO;                /* geen fietsprioriteit (zelf te besturen in REG[]ADD)                */
 
 boolv DF[DPMAX];                      /* detectie fout aanwezig                                             */
@@ -116,7 +123,10 @@ void init_traffick2tlcgen(void)       /* Fik230101                              
   KNIP            = FALSE;            /* hulpwaarde voor knipper signaal                                    */
   REGEN           = FALSE;            /* regensensor aktief (zelf te besturen in REG[]ADD)                  */
   WT_TE_HOOG      = FALSE;            /* wachttijd te hoog voor toekennen prioriteit                        */
+  GEEN_OV_PRIO;                       /* geen prioriteit OV   (zelf te besturen in REG[]ADD)                */
+  GEEN_VW_PRIO;                       /* geen prioriteit VW   (zelf te besturen in REG[]ADD)                */
   GEEN_FIETS_PRIO = FALSE;            /* geen fietsprioriteit (zelf te besturen in REG[]ADD)                */
+  verklik_srm     = 0;                /* restant duur verklikking SRM bericht                               */
 
   for (i = 0; i < FCMAX; ++i)
   {
@@ -630,6 +640,12 @@ void traffick2tlcgen_detectie(void)   /* Fik230101                              
 
   for (i = 0; i < DPMAX; ++i)
   {
+
+#ifndef AUTOMAAT
+    if (!D[i]) BG[i] = TBG_timer[i] = FALSE;
+    else       OG[i] = TOG_timer[i] = FALSE;
+#endif
+
     DF[i] = (CIF_IS[i] >= CIF_DET_STORING) || OG[i] || BG[i] || FL[i];
 
     if (!D[i]) D_bez[i]  = 0;
@@ -661,6 +677,22 @@ void traffick2tlcgen_detectie(void)   /* Fik230101                              
     if ((IS_type[i] == DVER_type) && (TDH_max[i] >= 0))
     {
       if (D_onb[i] < PRM[prmtdhdvmver]) TDH_DVM[i] = TRUE;
+    }
+#endif
+
+#ifndef AUTOMAAT
+    if (DF[i])
+    {
+      if (CIF_IS[i] < CIF_DET_STORING)
+      {
+        if (BG[i]) CIF_IS[i] |= BIT2;
+        if (OG[i]) CIF_IS[i] |= BIT3;
+        if (FL[i]) CIF_IS[i] |= BIT4;
+      }
+      if (!FL[i]) CFL_counter[i] = 0;
+
+      D_bez[i] = D_onb[i] = 0;
+      D[i] = SD[i] = ED[i] = DB[i] = TDH[i] = TDH_DVM[i] = FALSE;
     }
 #endif
 
@@ -1169,7 +1201,7 @@ count volgnr)                         /* index prioriteit                       
     {
       if (volgnr != NG) prio = volgnr;
 
-      if ((iStartGroen[prio] > NG) && (iPrioriteit[prio] > 0))
+      if ((iStartGroen[prio] > NG) && (iStartGroen[prio] < 9999) && (iPrioriteit[prio] > 0))
       {
         count fc = (count)iFC_PRIOix[prio];
         if (volgnr == NG) iPRIO[fc] = TRUE;       /* aan richting FC is een prioriteitsrealisatie toegekend */
@@ -1868,8 +1900,8 @@ void RealTraffickPrioriteit(void)     /* Fik230101                              
   }
 
   for (prio = 0; prio < prioFCMAX; ++prio)
-  {
-    if ((iStartGroen[prio] > NG) && (iPrioriteit[prio] > 0))         /* richting heeft of krijgt prioriteit */
+  {                                             /* richting heeft of krijgt prioriteit */
+    if ((iStartGroen[prio] > NG) && (iStartGroen[prio] < 9999) && (iPrioriteit[prio] > 0))
     {
       count fc = (count)iFC_PRIOix[prio];
       if (!G[fc])
@@ -4113,7 +4145,7 @@ void Traffick2TLCgen_PELOTON(void)    /* Fik230101                              
 #ifdef PRIO_ADDFILE
 void Traffick2TLCgen_FIETS(void)      /* Fik230101                                                          */
 {
-  count i,k;
+  count i;
 
   for (i = 0; i < aantal_fts_pri; ++i)
   {
@@ -4138,68 +4170,6 @@ void Traffick2TLCgen_FIETS(void)      /* Fik230101                              
       /* prioriteitsaanvraag nooit intrekken tijdens RA[] (bijvoorbeeld als REGEN afvalt tijdens RA) */
       if (RA[fc]) iPrioriteitsOpties[prio_fts_index] |= poBijzonderRealiseren;
       iPrioriteitsOpties[prio_fts_index] &= ~poGroenVastHouden;
-    }
-
-    /* controleer of er een conflicterende prioriteitsaanvraag is */
-    if (RV[fc] && prio_av && prio_fts_index != NG)
-    {
-      for (k = 0; k < FCMAX; ++k)
-      {
-        if (FK_conflict(fc,k))
-        {
-          count prio_hd_index        = prio_index[k].HD;
-          count prio_OV_kar_index    = prio_index[k].OV_kar;
-          count prio_OV_SRM_index    = prio_index[k].OV_srm;
-          count prio_OV_verlos_index = prio_index[k].OV_verlos;
-          count prio_vrw_index       = prio_index[k].VRW;
-
-          if (R[k] && (prio_hd_index != NG) && (iAantalInmeldingen[prio_hd_index] > 0))
-          {
-             if ((iPrioriteitsOpties[prio_hd_index]&poNoodDienst) || (iPrioriteitsOpties[prio_hd_index]&poBijzonderRealiseren))
-             {
-               iPrioriteitsOpties[prio_fts_index] = poGeenPrioriteit;
-             }
-          }
-
-          if (R[k] && (prio_OV_kar_index != NG) && (iAantalInmeldingen[prio_OV_kar_index] > 0))
-          {
-             if ((iPrioriteitsOpties[prio_OV_kar_index]&poNoodDienst) || (iPrioriteitsOpties[prio_OV_kar_index]&poBijzonderRealiseren))
-             {
-               iPrioriteitsOpties[prio_fts_index] = poGeenPrioriteit;
-             }
-          }
-
-          if (R[k] && (prio_OV_SRM_index != NG) && (iAantalInmeldingen[prio_OV_SRM_index] > 0))
-          {
-             if ((iPrioriteitsOpties[prio_OV_SRM_index]&poNoodDienst) || (iPrioriteitsOpties[prio_OV_SRM_index]&poBijzonderRealiseren))
-             {
-               iPrioriteitsOpties[prio_fts_index] = poGeenPrioriteit;
-             }
-          }
-
-          if (R[k] && (prio_OV_verlos_index != NG) && (iAantalInmeldingen[prio_OV_verlos_index] > 0))
-          {
-             if ((iPrioriteitsOpties[prio_OV_verlos_index]&poNoodDienst) || (iPrioriteitsOpties[prio_OV_verlos_index]&poBijzonderRealiseren))
-             {
-               iPrioriteitsOpties[prio_fts_index] = poGeenPrioriteit;
-             }
-          }
-
-          if (R[k] && (prio_vrw_index != NG) && (iAantalInmeldingen[prio_vrw_index] > 0))
-          {
-             if ((iPrioriteitsOpties[prio_vrw_index]&poNoodDienst) || (iPrioriteitsOpties[prio_vrw_index]&poBijzonderRealiseren))
-             {
-               iPrioriteitsOpties[prio_fts_index] = poGeenPrioriteit;
-             }
-          }
-
-          if (G[k] && (RW[k]&BIT12) || (YV[k]&BIT12) || (YM[k]&BIT12)) /* conflicterende peloton ingreep */
-          {
-            iPrioriteitsOpties[prio_fts_index] = poGeenPrioriteit;
-          }
-        }
-        if (iPrioriteitsOpties[prio_fts_index] == poGeenPrioriteit) break;
-      }
     }
   }
 }
@@ -4252,53 +4222,68 @@ void Traffick2TLCgen_PRIO_OPTIES(void) /* Fik230101                             
       if (prio_fts_index       > NG) iPrioriteitsOpties[prio_fts_index]       = poGeenPrioriteit;
     }
 
+    if (GEEN_OV_PRIO)
+    {
+      if ((prio_OV_kar_index    > NG) && !iPrioriteit[prio_OV_kar_index]   ) iPrioriteitsOpties[prio_OV_kar_index]    &= ~poBijzonderRealiseren;
+      if ((prio_OV_srm_index    > NG) && !iPrioriteit[prio_OV_srm_index]   ) iPrioriteitsOpties[prio_OV_srm_index]    &= ~poBijzonderRealiseren;
+      if ((prio_OV_verlos_index > NG) && !iPrioriteit[prio_OV_verlos_index]) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poBijzonderRealiseren;
+    }
+
+    if (GEEN_VW_PRIO)
+    {
+      if ((prio_vrw_index       > NG) && !iPrioriteit[prio_vrw_index]      ) iPrioriteitsOpties[prio_vrw_index]       &= ~poBijzonderRealiseren;
+    }
+
 #ifdef TRAFFICK_DVM
     if (dvm_actief)                    /* schakel fiets- en vrachtwagen prioriteit uit */
     {
-      if (prio_vrw_index > NG) iPrioriteitsOpties[prio_vrw_index] = poGeenPrioriteit;
-      if (prio_fts_index > NG) iPrioriteitsOpties[prio_fts_index] = poGeenPrioriteit;
+      if ((prio_vrw_index > NG) && !iPrioriteit[prio_vrw_index]) iPrioriteitsOpties[prio_vrw_index] = poGeenPrioriteit;
+      if ((prio_fts_index > NG) && !iPrioriteit[prio_fts_index]) iPrioriteitsOpties[prio_fts_index] = poGeenPrioriteit;
 
       if (prmovdm[fc] > NG) 
       {
         OV_DVM_opties = BepaalPrioriteitsOpties(prmovdvm[fc]);
         OV_DVM_niveau = PRM[prmovdvm[fc]]/1000L;
 
-        if (prio_OV_kar_index > NG)    /* pas OV prioriteit KAR aan obv de ingestelde OV_DVM_opties */
+                                       /* pas OV prioriteit KAR aan obv de ingestelde OV_DVM_opties */
+        if ((prio_OV_kar_index > NG) && !iPrioriteit[prio_OV_kar_index])
         {
-          if (OV_DVM_opties&poAanvraag                  ) iPrioriteitsOpties[prio_OV_kar_index] &= ~poAanvraag;
-          if (OV_DVM_opties&poAfkappenKonfliktRichtingen) iPrioriteitsOpties[prio_OV_kar_index] &= ~poAfkappenKonfliktRichtingen;
-          if (OV_DVM_opties&poGroenVastHouden           ) iPrioriteitsOpties[prio_OV_kar_index] &= ~poGroenVastHouden;
-          if (OV_DVM_opties&poBijzonderRealiseren       ) iPrioriteitsOpties[prio_OV_kar_index] &= ~poBijzonderRealiseren;
-          if (OV_DVM_opties&poAfkappenKonflikterendOV   ) iPrioriteitsOpties[prio_OV_kar_index] &= ~poAfkappenKonflikterendOV;
-          if (OV_DVM_opties&poNoodDienst                ) iPrioriteitsOpties[prio_OV_kar_index] &= ~poNoodDienst;
+          if (!(OV_DVM_opties&poAanvraag                  )) iPrioriteitsOpties[prio_OV_kar_index] &= ~poAanvraag;
+          if (!(OV_DVM_opties&poAfkappenKonfliktRichtingen)) iPrioriteitsOpties[prio_OV_kar_index] &= ~poAfkappenKonfliktRichtingen;
+          if (!(OV_DVM_opties&poGroenVastHouden           )) iPrioriteitsOpties[prio_OV_kar_index] &= ~poGroenVastHouden;
+          if (!(OV_DVM_opties&poBijzonderRealiseren       )) iPrioriteitsOpties[prio_OV_kar_index] &= ~poBijzonderRealiseren;
+          if (!(OV_DVM_opties&poAfkappenKonflikterendOV   )) iPrioriteitsOpties[prio_OV_kar_index] &= ~poAfkappenKonflikterendOV;
+          if (!(OV_DVM_opties&poNoodDienst                )) iPrioriteitsOpties[prio_OV_kar_index] &= ~poNoodDienst;
           if (iInstPrioriteitsNiveau[prio_OV_kar_index] > OV_DVM_niveau)
           {
             iInstPrioriteitsNiveau[prio_OV_kar_index] = OV_DVM_niveau)
           }
         }
 
-        if (prio_OV_srm_index > NG)    /* pas OV prioriteit SRM aan obv de ingestelde OV_DVM_opties */
+                                       /* pas OV prioriteit SRM aan obv de ingestelde OV_DVM_opties */
+        if ((prio_OV_srm_index > NG) && !iPrioriteit[prio_OV_srm_index])
         {
-          if (OV_DVM_opties&poAanvraag                  ) iPrioriteitsOpties[prio_OV_srm_index] &= ~poAanvraag;
-          if (OV_DVM_opties&poAfkappenKonfliktRichtingen) iPrioriteitsOpties[prio_OV_srm_index] &= ~poAfkappenKonfliktRichtingen;
-          if (OV_DVM_opties&poGroenVastHouden           ) iPrioriteitsOpties[prio_OV_srm_index] &= ~poGroenVastHouden;
-          if (OV_DVM_opties&poBijzonderRealiseren       ) iPrioriteitsOpties[prio_OV_srm_index] &= ~poBijzonderRealiseren;
-          if (OV_DVM_opties&poAfkappenKonflikterendOV   ) iPrioriteitsOpties[prio_OV_srm_index] &= ~poAfkappenKonflikterendOV;
-          if (OV_DVM_opties&poNoodDienst                ) iPrioriteitsOpties[prio_OV_srm_index] &= ~poNoodDienst;
+          if (!(OV_DVM_opties&poAanvraag                  )) iPrioriteitsOpties[prio_OV_srm_index] &= ~poAanvraag;
+          if (!(OV_DVM_opties&poAfkappenKonfliktRichtingen)) iPrioriteitsOpties[prio_OV_srm_index] &= ~poAfkappenKonfliktRichtingen;
+          if (!(OV_DVM_opties&poGroenVastHouden           )) iPrioriteitsOpties[prio_OV_srm_index] &= ~poGroenVastHouden;
+          if (!(OV_DVM_opties&poBijzonderRealiseren       )) iPrioriteitsOpties[prio_OV_srm_index] &= ~poBijzonderRealiseren;
+          if (!(OV_DVM_opties&poAfkappenKonflikterendOV   )) iPrioriteitsOpties[prio_OV_srm_index] &= ~poAfkappenKonflikterendOV;
+          if (!(OV_DVM_opties&poNoodDienst                )) iPrioriteitsOpties[prio_OV_srm_index] &= ~poNoodDienst;
           if (iInstPrioriteitsNiveau[prio_OV_srm_index] > OV_DVM_niveau)
           {
             iInstPrioriteitsNiveau[prio_OV_srm_index] = OV_DVM_niveau)
           }
         }
 
-        if (prio_OV_verlos_index > NG) /* pas OV prioriteit verlosmelding aan obv de ingestelde OV_DVM_opties */
+                                       /* pas OV prioriteit verlosmelding aan obv de ingestelde OV_DVM_opties */
+        if ((prio_OV_verlos_index > NG) && !iPrioriteit[prio_OV_verlos_index])
         {
-          if (OV_DVM_opties&poAanvraag                  ) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poAanvraag;
-          if (OV_DVM_opties&poAfkappenKonfliktRichtingen) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poAfkappenKonfliktRichtingen;
-          if (OV_DVM_opties&poGroenVastHouden           ) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poGroenVastHouden;
-          if (OV_DVM_opties&poBijzonderRealiseren       ) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poBijzonderRealiseren;
-          if (OV_DVM_opties&poAfkappenKonflikterendOV   ) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poAfkappenKonflikterendOV;
-          if (OV_DVM_opties&poNoodDienst                ) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poNoodDienst;
+          if (!(OV_DVM_opties&poAanvraag                  )) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poAanvraag;
+          if (!(OV_DVM_opties&poAfkappenKonfliktRichtingen)) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poAfkappenKonfliktRichtingen;
+          if (!(OV_DVM_opties&poGroenVastHouden           )) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poGroenVastHouden;
+          if (!(OV_DVM_opties&poBijzonderRealiseren       )) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poBijzonderRealiseren;
+          if (!(OV_DVM_opties&poAfkappenKonflikterendOV   )) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poAfkappenKonflikterendOV;
+          if (!(OV_DVM_opties&poNoodDienst                )) iPrioriteitsOpties[prio_OV_verlos_index] &= ~poNoodDienst;
           if (iInstPrioriteitsNiveau[prio_OV_verlos_index] > OV_DVM_niveau)
           {
             iInstPrioriteitsNiveau[prio_OV_verlos_index] = OV_DVM_niveau)
@@ -5271,57 +5256,3 @@ void FlightTraffick(void)             /* Fik230101                              
   }
 }
 #endif
-
-
-/* -------------------------------------------------------------------------------------------------------- */
-/* Functie toggle FK conflicten                                                                             */
-/* -------------------------------------------------------------------------------------------------------- */
-/* Deze functie schakelt FK conflicten, bijvoorbeeld voor het schakelbaar maken van voetgangerskoppelingen. */
-/*                                                                                                          */
-/* Functie wordt aangeroepen vanuit PostApplication_Add().                                                  */
-/* (na het schakelen van FK conflicten geen andere programma code opnemen)                                  */
-/*                                                                                                          */
-void Toggle_FK_Conflict(              /* Fik230101                                                          */
-count fc1,                            /* FC    fasecyclus 1                                                 */
-count fc2,                            /* FC    fasecyclus 2                                                 */
-boolv period)                         /* boolv FK conflict gewenst                                          */
-{
-  if (period)                         /* FK conflict is gewenst */
-  {
-    if ((TI_max(fc1,fc2) == NK) && (TI_max(fc2,fc1) == NK))
-    {
-      if (!AA[fc1] && !RA[fc1] && !SG[fc1] || !AA[fc1] && !RA[fc2] && !SG[fc2])
-      {
-#ifndef NO_TIGMAX                     /* intergroentijden                                                   */
-        TIG_max[fc1][fc2] = FK;
-        TIG_max[fc2][fc1] = FK;
-#else                                 /* ontruimingstijden                                                  */
-        TO_max[fc1][fc2]  = FK;
-        TO_max[fc2][fc1]  = FK;
-#endif
-        pointer_conflicts();          /* verander pointertabel conflicten */
-                                      /* registreer dat de applicatie het PARM1[] buffer heeft aangepast */
-        CIF_PARM1WIJZAP = (s_int16)(CIF_MEER_PARMWIJZ);
-      }
-    }
-  }
-  else                                /* FK conflict is niet gewenst */
-  {
-    if ((TI_max(fc1,fc2) == FK) && (TI_max(fc2,fc1) == FK))
-    {
-      if (!AA[fc1] && !RA[fc1] && !SG[fc1] || !AA[fc1] && !RA[fc2] && !SG[fc2])
-      {
-#ifndef NO_TIGMAX                     /* intergroentijden                                                   */
-        TIG_max[fc1][fc2] = NK;
-        TIG_max[fc2][fc1] = NK;
-#else                                 /* ontruimingstijden                                                  */
-        TO_max[fc1][fc2]  = NK;
-        TO_max[fc2][fc1]  = NK;
-#endif
-        pointer_conflicts();          /* verander pointertabel conflicten */
-                                      /* registreer dat de applicatie het PARM1[] buffer heeft aangepast */
-        CIF_PARM1WIJZAP = (s_int16)(CIF_MEER_PARMWIJZ);
-      }
-    }
-  }
-}
