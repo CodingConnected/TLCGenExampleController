@@ -1,7 +1,5 @@
 /* realfunc.c - gegenereerd met TLCGen 0.12.2.0 */
 
-/* realfunc.c - gegenereerd met TLCGen 0.10.4.0 */
-
 /*
 BESTAND:   realfunc.c
 */
@@ -25,8 +23,9 @@ BESTAND:   realfunc.c
 *                                                         Minder argumenten voetgangersfuncties + detailwijzigingen (10032021) 
 * 3.1     16-10-2021                - CCA       Corr_Min_nl gemaakt waarniet naar de aanwezigheid voor A voor de naloop wordt gekeken
 *                                               _temp interne variabelen verwijderd (CCA/Ddo 07032021)
-* 3.2      9-11-2021                - CCA       MG && TGG toegevoegd in berekeningen
-* 3.3      6-12-2021                - CCA       _temp interne variabelen wederom toegevoegd
+* 3.2     09-11-2021                - CCA       MG && TGG toegevoegd in berekeningen
+* 3.3     06-12-2021                - CCA       _temp interne variabelen wederom toegevoegd
+* 3.4     09-03-2023                - CCA       MLNLTEST toegevoegd ivm onterechte PG (optioneel zelf te activeren)
 ************************************************************************************/
 
 mulv REALTIJD[FCMAX];
@@ -910,31 +909,55 @@ void Synchroniseer_FO1_2(count fc1, count fc2)   /* Gelijk aan bovenstaande alle
 /* - beide moeten PFPR hebben                                                                                                                                                                                 */
 /* - beide moeten A    hebben                                                                                                                                                                                 */
 /* zo niet, dan gaat versneld primair niet door                                                                                                                                                               */
+/*                                                                                                                                                                                                            */
+/* Als de #define MLNLTEST opstaat (bv opgezet in de sys.add) dan wordt alleen de PG gezet als de fc1 niet in meerdere blokken staat.                                                                         */
+/* Dit voorkomt het onterecht PG zetten bijvoorbeeld bij interne koppleingen van twee voedende richtingen met een naloop of synchronisaties als de richtingen niet in hetzelfde blok staat.                   */
 /* ========================================================================================================================================================================================================== */
+
 void Synchroniseer_PG(void)
 {
   register count fc1, fc2;
 
   for (fc1=0; fc1<FC_MAX; fc1++)
   {
-    for (fc2=0; fc2<FC_MAX; fc2++)
-    {
-      if(!A[fc2] && R[fc2] && !PG[fc2] && PG[fc1])
+#ifdef MLNLTEST
+      for (mlfc1 = 0; mlfc1 < ML_MAX; ++mlfc1) {
+         if (PRML[mlfc1][fc1] & PRIMAIR) {  /* zoek de eerste plek in de MLmolen waar fc1 primair komt */
+            ml_1 = mlfc1;
+            break;
+         }
+      }
+#endif
+      for (fc2 = 0; fc2 < FC_MAX; fc2++)
       {
+#ifdef MLNLTEST
+         for (mlfc2 = 0; mlfc2 < ML_MAX; ++mlfc2) {
+            if (PRML[mlfc2][fc2] & PRIMAIR) {  /* zoek de laatste plek in de MLmolen waar fc2 primair komt */
+               ml_2 = mlfc2;
+            }
+         }
+#endif
+         if (!A[fc2] && R[fc2] && !PG[fc2] && PG[fc1]
+#ifdef MLNLTEST
+            && (ml_1 > 0) && (ml_2 > 0) && !(ml_1 < ml_2) /* alleen wanneer fc2 niet ook nog in een later blok zit (dan fc1) */
+#endif  
+            )
+         {
           PG[fc2] |= REAL_SYN[fc1][fc2] && R[fc1] ? PG[fc1]          : 0;
 
           PG[fc2] |= TIME_FOT[fc1][fc2] && G[fc1] ? PRIMAIR_OVERSLAG : 0;
-      }
+         }
 
       /* voorkomen dat slechts één van beide verscneld primair komt, terwijl synchronsatie gewenst */
       if(REAL_SYN[fc1][fc2] && A[fc1] && A[fc2] && (!PFPR[fc1] || !PFPR[fc2]))
-      {
-        PFPR[fc1] = FALSE;
-        PFPR[fc2] = FALSE;
+         {
+            PFPR[fc1] = FALSE;
+            PFPR[fc2] = FALSE;
+         }
       }
-    }
-  }
+   }
 }
+
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 void Synchroniseer_PG1_2(count fc1, count fc2)  /* Gelijk aan bovenstaande alleen niet algemeen, maar specifiek per synchronisatie                                                                            */
 {

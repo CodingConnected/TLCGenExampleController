@@ -112,8 +112,8 @@ mulv C_counter_old[CTMAX];
     const struct Rif_ProductInformation RIF_ITSINFO_AP = {
       "Gemeente Rotterdam",    /* manufacturerName   */
       "TLCGen",                /* certifiedName      */
-      "12.0.0",                /* certifiedVersion   */
-      "12.0.0"                 /* version            */
+      "12.4.0",                /* certifiedVersion   */
+      "12.4.0"                 /* version            */
     };
 #endif /* NO_RIS */
 
@@ -1722,16 +1722,6 @@ void RealisatieAfhandeling(void)
         PAR[fc33] = PAR[fc33] && (PAR[fc34] || IH[hlos33]);
         PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
 
-        /* PAR correcties eenzijdige synchronisaties */
-        PAR[fc22] = PAR[fc22] || G[fc05];
-        PAR[fc26] = PAR[fc26] || G[fc11];
-        PAR[fc32] = PAR[fc32] || G[fc05];
-        PAR[fc62] = PAR[fc62] || G[fc02];
-        PAR[fc68] = PAR[fc68] || G[fc08];
-        PAR[fc68] = PAR[fc68] || G[fc11];
-        PAR[fc21] = PAR[fc21] || G[fc22];
-        PAR[fc81] = PAR[fc81] || G[fc82];
-
         PAR[fc05] = PAR[fc05] && PAR[fc22];
         PAR[fc11] = PAR[fc11] && PAR[fc26];
         PAR[fc05] = PAR[fc05] && PAR[fc32];
@@ -1751,6 +1741,17 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
     }
+
+
+    /* PAR correcties eenzijdige synchronisaties */
+    PAR[fc22] = PAR[fc22] || G[fc05];
+    PAR[fc26] = PAR[fc26] || G[fc11];
+    PAR[fc32] = PAR[fc32] || G[fc05];
+    PAR[fc62] = PAR[fc62] || G[fc02];
+    PAR[fc68] = PAR[fc68] || G[fc08];
+    PAR[fc68] = PAR[fc68] || G[fc11];
+    PAR[fc21] = PAR[fc21] || G[fc22];
+    PAR[fc81] = PAR[fc81] || G[fc82];
 
     /* Niet alternatief komen tijdens file */
     if (IH[hfileFile68af]) PAR[fc08] = FALSE;
