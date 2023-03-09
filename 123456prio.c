@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.2.1   22-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.2.0   09-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -2408,8 +2408,29 @@ void TegenhoudenConflictenExtra(void)
    --------------------------- */
 void PostAfhandelingPrio(void)
 {
+    boolv isHD = FALSE;
     int i;
 
+    /* Bepalen of een HD ingreep actief is */
+    isHD = C[cvchd02] || C[cvchd03] || C[cvchd05] || C[cvchd08] || C[cvchd09] || C[cvchd11] || C[cvchd61] || C[cvchd62] || C[cvchd67] || C[cvchd68];
+
+    /* Blokkeren alle langzaam verkeer (tevens niet-conflicten) */
+    if (isHD)
+    {
+        RR[fc21] |= BIT6; Z[fc21] |= BIT6;
+        RR[fc22] |= BIT6; Z[fc22] |= BIT6;
+        RR[fc24] |= BIT6; Z[fc24] |= BIT6;
+        RR[fc26] |= BIT6; Z[fc26] |= BIT6;
+        RR[fc28] |= BIT6; Z[fc28] |= BIT6;
+        RR[fc31] |= BIT6; Z[fc31] |= BIT6;
+        RR[fc32] |= BIT6; Z[fc32] |= BIT6;
+        RR[fc33] |= BIT6; Z[fc33] |= BIT6;
+        RR[fc34] |= BIT6; Z[fc34] |= BIT6;
+        RR[fc38] |= BIT6; Z[fc38] |= BIT6;
+        RR[fc81] |= BIT6; Z[fc81] |= BIT6;
+        RR[fc82] |= BIT6; Z[fc82] |= BIT6;
+        RR[fc84] |= BIT6; Z[fc84] |= BIT6;
+    }
 
     /* Niet afkappen naloop richtingen wanneer een naloop tijd nog loopt */
     if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])

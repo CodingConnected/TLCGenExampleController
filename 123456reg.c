@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.2.1   22-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.2.0   09-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -446,11 +446,11 @@ void Aanvragen(void)
     }
     if (SCH[schma0522])
     {
-        mee_aanvraag_prm(fc22, fc05, prmtypema0522, (boolv)(TRUE));
+        mee_aanvraag_prm(fc22, fc05, prmtypema0522, (boolv)(!C[cvchd05]));
     }
     if (SCH[schma0532])
     {
-        mee_aanvraag_prm(fc32, fc05, prmtypema0532, (boolv)(TRUE));
+        mee_aanvraag_prm(fc32, fc05, prmtypema0532, (boolv)(!C[cvchd05]));
     }
     if (SCH[schma0868])
     {
@@ -458,7 +458,7 @@ void Aanvragen(void)
     }
     if (SCH[schma1126])
     {
-        mee_aanvraag_prm(fc26, fc11, prmtypema1126, (boolv)(TRUE));
+        mee_aanvraag_prm(fc26, fc11, prmtypema1126, (boolv)(!C[cvchd11]));
     }
     if (SCH[schma1168])
     {
@@ -852,9 +852,9 @@ void BepaalRealisatieTijden(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-        wijziging |= Corr_Pls(fc22, fc05, T_max[tvs2205], TRUE);
-        wijziging |= Corr_Pls(fc26, fc11, T_max[tvs2611], TRUE);
-        wijziging |= Corr_Pls(fc32, fc05, T_max[tvs3205], TRUE);
+        wijziging |= Corr_Pls(fc22, fc05, T_max[tvs2205], !C[cvchd05]);
+        wijziging |= Corr_Pls(fc26, fc11, T_max[tvs2611], !C[cvchd11]);
+        wijziging |= Corr_Pls(fc32, fc05, T_max[tvs3205], !C[cvchd05]);
         wijziging |= Corr_Min_nl(fc62, fc02, T_max[tlr6202], TRUE);
         wijziging |= Corr_Min_nl(fc68, fc08, T_max[tlr6808], TRUE);
         wijziging |= Corr_Min_nl(fc68, fc11, T_max[tlr6811], TRUE);
@@ -2721,6 +2721,8 @@ void PostApplication(void)
     if (TVG_max[fc68] > -1) TVG_max[fc68] -= PRM[prmovmmindergroen_68];
 
 
+    CyclustijdMeting(tcycl, schcycl, SML && (ML == ML1), schcycl_reset, mlcycl);
+
     /* Tbv parametreerbare blokindeling: reset A voor niet toegedeeld fasen */
     for (fc = 0; fc < FCMAX; ++fc)
     {
@@ -2864,6 +2866,10 @@ void system_application(void)
 
         /* verklikken of applicatie niet in staat is te regelen */
         CIF_GUS[usnocontrol] = (CIF_GPS[CIF_PROG_CONTROL] != CIF_CONTROL_ONGEDEF) ? TRUE : FALSE;
+
+        /* uitschakelen vlog indien applicatie niet in control is */
+        LOGPRM[LOGPRM_VLOGMODE] &= ~(BIT5);
+        LOGPRM[LOGPRM_VLOGMODE] |= CIF_GUS[usincontrol] ? 0 : BIT5;
     #endif
 
     /* minimumtijden */

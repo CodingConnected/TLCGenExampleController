@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.2.1   22-12-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.2.0   09-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -170,40 +170,32 @@ void rgv_add(void)
 
     DD_anyfase = 0;
     #if (defined AUTOMAAT || defined AUTOMAAT_TEST)
-        DD[fc02] = 
-                   (CIF_IS[d02_1a] >= CIF_DET_STORING) || (CIF_IS[d02_1b] >= CIF_DET_STORING) || 
-                   (CIF_IS[d02_2a] >= CIF_DET_STORING) || (CIF_IS[d02_2b] >= CIF_DET_STORING) || (CIF_IS[d02_3a] >= CIF_DET_STORING) || (CIF_IS[d02_3b] >= CIF_DET_STORING) || 
-                   (!T[tfd02_1a] && !T[tfd02_1b]);
-        DD[fc03] = 
-                   (CIF_IS[d03_1] >= CIF_DET_STORING) || 
-                   (CIF_IS[d03_2] >= CIF_DET_STORING) || 
-                   (!T[tfd03_1]);
-        DD[fc05] = 
-                   (CIF_IS[d05_1] >= CIF_DET_STORING) || 
-                   (CIF_IS[d05_2] >= CIF_DET_STORING) || 
-                   (!T[tfd05_1]);
-        DD[fc08] = 
-                   (CIF_IS[d08_1a] >= CIF_DET_STORING) || (CIF_IS[d08_1b] >= CIF_DET_STORING) || 
-                   (CIF_IS[d08_2a] >= CIF_DET_STORING) || (CIF_IS[d08_2b] >= CIF_DET_STORING) || (CIF_IS[d08_3a] >= CIF_DET_STORING) || (CIF_IS[d08_3b] >= CIF_DET_STORING) || 
-                   (IH[hfileFile68af]) ||
-                   (!T[tfd08_1a] && !T[tfd08_1b]);
-        DD[fc11] = 
-                   (CIF_IS[d11_1] >= CIF_DET_STORING) || 
-                   (CIF_IS[d11_2] >= CIF_DET_STORING) || (CIF_IS[d11_3] >= CIF_DET_STORING) || 
-                   (IH[hfileFile68af]) ||
-                   (!T[tfd11_1]);
-        DD[fc22] = 
-                   (CIF_IS[d22_1] >= CIF_DET_STORING) || 
-                   (CIF_IS[d22_1] >= CIF_DET_STORING) || 
-                   (!T[tfd22_1]);
-        DD[fc28] = 
-                   (CIF_IS[d28_1] >= CIF_DET_STORING) || 
-                   (CIF_IS[d28_1] >= CIF_DET_STORING) || 
-                   (!T[tfd28_1]);
-        DD[fc68] = 
-                   (CIF_IS[d68_1a] >= CIF_DET_STORING) || (CIF_IS[d68_1b] >= CIF_DET_STORING) || 
-                   (CIF_IS[d68_2a] >= CIF_DET_STORING) || (CIF_IS[d68_2b] >= CIF_DET_STORING) || 
-                   (!T[tfd68_1a] && !T[tfd68_1b]);
+        DD[fc02] = (CIF_IS[d02_1a] >= CIF_DET_STORING) || (CIF_IS[d02_1b] >= CIF_DET_STORING)
+                    || (CIF_IS[d02_2a] >= CIF_DET_STORING) || (CIF_IS[d02_2b] >= CIF_DET_STORING) || (CIF_IS[d02_3a] >= CIF_DET_STORING) || (CIF_IS[d02_3b] >= CIF_DET_STORING)
+                    || (!T[tfd02_1a] && !T[tfd02_1b]);
+        DD[fc03] = (CIF_IS[d03_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d03_2] >= CIF_DET_STORING)
+                    || (!T[tfd03_1]);
+        DD[fc05] = (CIF_IS[d05_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d05_2] >= CIF_DET_STORING)
+                    || (!T[tfd05_1]);
+        DD[fc08] = (CIF_IS[d08_1a] >= CIF_DET_STORING) || (CIF_IS[d08_1b] >= CIF_DET_STORING)
+                    || (CIF_IS[d08_2a] >= CIF_DET_STORING) || (CIF_IS[d08_2b] >= CIF_DET_STORING) || (CIF_IS[d08_3a] >= CIF_DET_STORING) || (CIF_IS[d08_3b] >= CIF_DET_STORING)
+                    || (IH[hfileFile68af])
+                    || (!T[tfd08_1a] && !T[tfd08_1b]);
+        DD[fc11] = (CIF_IS[d11_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d11_2] >= CIF_DET_STORING) || (CIF_IS[d11_3] >= CIF_DET_STORING)
+                    || (IH[hfileFile68af])
+                    || (!T[tfd11_1]);
+        DD[fc22] = (CIF_IS[d22_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d22_1] >= CIF_DET_STORING)
+                    || (!T[tfd22_1]);
+        DD[fc28] = (CIF_IS[d28_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d28_1] >= CIF_DET_STORING)
+                    || (!T[tfd28_1]);
+        DD[fc68] = (CIF_IS[d68_1a] >= CIF_DET_STORING) || (CIF_IS[d68_1b] >= CIF_DET_STORING)
+                    || (CIF_IS[d68_2a] >= CIF_DET_STORING) || (CIF_IS[d68_2b] >= CIF_DET_STORING)
+                    || (!T[tfd68_1a] && !T[tfd68_1b]);
     #else
         DD[fc02] = FALSE;
         DD[fc03] = FALSE;

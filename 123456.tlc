@@ -72,12 +72,12 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>12</HuidigeVersieMajor>
     <HuidigeVersieMinor>2</HuidigeVersieMinor>
-    <HuidigeVersieRevision>1</HuidigeVersieRevision>
+    <HuidigeVersieRevision>0</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <StoreCurrentController>false</StoreCurrentController>
     <ToevoegenOVM>true</ToevoegenOVM>
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
-    <GenererenCyclustijdMeting>false</GenererenCyclustijdMeting>
+    <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
     <TLCGenVersie>0.12.2.0</TLCGenVersie>
     <SegmentenDisplayBitmapData>
@@ -267,7 +267,7 @@
     <SegmentDisplayType>EnkelDisplay</SegmentDisplayType>
     <UitgangPerModule>true</UitgangPerModule>
     <GenererenIncludesLijst>false</GenererenIncludesLijst>
-    <GenererenEnkelCompilatieBestand>false</GenererenEnkelCompilatieBestand>
+    <GenererenEnkelCompilatieBestand>true</GenererenEnkelCompilatieBestand>
     <GeenDetectorGedragInAutomaatOmgeving>true</GeenDetectorGedragInAutomaatOmgeving>
     <MultiModuleReeksen>false</MultiModuleReeksen>
     <ModulenInParameters>true</ModulenInParameters>
@@ -288,8 +288,8 @@
       </FixatieBitmapData>
     </FixatieData>
     <Versie>
-      <Versie>12.2.1</Versie>
-      <Datum>2022-12-22T00:00:00</Datum>
+      <Versie>12.2.0</Versie>
+      <Datum>2023-03-09T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (portable)</Commentaar>
     </Versie>
@@ -2103,7 +2103,7 @@
       </RangeerUitgangen>
       <RangeerSelectieveDetectoren />
     </RangeerData>
-    <GeenControlGeenFileBasedVLOG>false</GeenControlGeenFileBasedVLOG>
+    <GeenControlGeenFileBasedVLOG>true</GeenControlGeenFileBasedVLOG>
     <InControlBitmapData>
       <Naam>incontrol</Naam>
       <Dummy>false</Dummy>
@@ -10621,14 +10621,14 @@
   <PrioData>
     <PrioIngreepType>GeneriekePrioriteit</PrioIngreepType>
     <PrioUitgangPerFase>false</PrioUitgangPerFase>
-    <CheckOpDSIN>false</CheckOpDSIN>
+    <CheckOpDSIN>true</CheckOpDSIN>
     <MaxWachttijdAuto>120</MaxWachttijdAuto>
     <MaxWachttijdFiets>90</MaxWachttijdFiets>
     <MaxWachttijdVoetganger>90</MaxWachttijdVoetganger>
     <GeconditioneerdePrioGrensTeVroeg>60</GeconditioneerdePrioGrensTeVroeg>
     <GeconditioneerdePrioGrensTeLaat>120</GeconditioneerdePrioGrensTeLaat>
-    <BlokkeerNietConflictenBijHDIngreep>false</BlokkeerNietConflictenBijHDIngreep>
-    <BlokkeerNietConflictenAlleenLangzaamVerkeer>false</BlokkeerNietConflictenAlleenLangzaamVerkeer>
+    <BlokkeerNietConflictenBijHDIngreep>true</BlokkeerNietConflictenBijHDIngreep>
+    <BlokkeerNietConflictenAlleenLangzaamVerkeer>true</BlokkeerNietConflictenAlleenLangzaamVerkeer>
     <VerklikkenPrioTellerUber>SchAan</VerklikkenPrioTellerUber>
     <VerlaagHogeSignaalGroepNummers>false</VerlaagHogeSignaalGroepNummers>
     <KARSignaalGroepNummersInParameters>true</KARSignaalGroepNummersInParameters>
@@ -22356,6 +22356,349 @@
       <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </ProgrammaWisselBitmapInfo>
+    <Programma>
+      <Naam>star01</Naam>
+      <Dummy>false</Dummy>
+      <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
+      <BitmapCoordinaten>
+        <Coordinaat>
+          <X>168</X>
+          <Y>255</Y>
+        </Coordinaat>
+      </BitmapCoordinaten>
+      <Cyclustijd>97</Cyclustijd>
+      <Fase>
+        <FaseCyclus>02</FaseCyclus>
+        <Start1>97</Start1>
+        <Eind1>24</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>03</FaseCyclus>
+        <Start1>34</Start1>
+        <Eind1>48</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>05</FaseCyclus>
+        <Start1>56</Start1>
+        <Eind1>71</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>08</FaseCyclus>
+        <Start1>4</Start1>
+        <Eind1>19</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>09</FaseCyclus>
+        <Start1>43</Start1>
+        <Eind1>65</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>11</FaseCyclus>
+        <Start1>75</Start1>
+        <Eind1>92</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>21</FaseCyclus>
+        <Start1>52</Start1>
+        <Eind1>79</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>22</FaseCyclus>
+        <Start1>52</Start1>
+        <Eind1>75</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>24</FaseCyclus>
+        <Start1>95</Start1>
+        <Eind1>3</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>26</FaseCyclus>
+        <Start1>73</Start1>
+        <Eind1>93</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>28</FaseCyclus>
+        <Start1>23</Start1>
+        <Eind1>36</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>31</FaseCyclus>
+        <Start1>56</Start1>
+        <Eind1>70</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>32</FaseCyclus>
+        <Start1>56</Start1>
+        <Eind1>70</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>33</FaseCyclus>
+        <Start1>79</Start1>
+        <Eind1>3</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>34</FaseCyclus>
+        <Start1>79</Start1>
+        <Eind1>3</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>38</FaseCyclus>
+        <Start1>25</Start1>
+        <Eind1>31</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>61</FaseCyclus>
+        <Start1>74</Start1>
+        <Eind1>16</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>62</FaseCyclus>
+        <Start1>3</Start1>
+        <Eind1>30</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>67</FaseCyclus>
+        <Start1>12</Start1>
+        <Eind1>28</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>68</FaseCyclus>
+        <Start1>79</Start1>
+        <Eind1>26</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>81</FaseCyclus>
+        <Start1>31</Start1>
+        <Eind1>53</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>82</FaseCyclus>
+        <Start1>31</Start1>
+        <Eind1>53</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>84</FaseCyclus>
+        <Start1>80</Start1>
+        <Eind1>3</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+    </Programma>
+    <Programma>
+      <Naam>star02</Naam>
+      <Dummy>false</Dummy>
+      <ElementType>Output</ElementType>
+      <Multivalent>false</Multivalent>
+      <BitmapCoordinaten />
+      <Cyclustijd>0</Cyclustijd>
+      <Fase>
+        <FaseCyclus>02</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>03</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>05</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>08</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>09</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>11</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>21</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>22</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>24</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>26</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>28</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>31</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>32</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>33</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>34</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>38</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>61</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>62</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>67</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>68</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>81</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>82</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+      <Fase>
+        <FaseCyclus>84</FaseCyclus>
+        <Start1>0</Start1>
+        <Eind1>0</Eind1>
+        <Start2 xsi:nil="true" />
+        <Eind2 xsi:nil="true" />
+      </Fase>
+    </Programma>
     <DefaultProgramma>star01</DefaultProgramma>
     <PeriodenData />
   </StarData>
