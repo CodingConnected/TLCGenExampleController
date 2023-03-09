@@ -23,14 +23,6 @@
 #define VERSION "12.2.0 20230309"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
-/* Kruispunt armen definities */
-#define ARM1 0
-#define ARM2 1
-#define ARM3 2
-#define ARM4 3
-#define ARM5 4
-#define ARM6 5
-
 
 /* fasecycli */
 /* --------- */
@@ -1356,10 +1348,7 @@
     #define tfo0522                    514 /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
     #define tfo1126                    515 /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
     #define tfo0532                    516 /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
-    #define tarmvt02                   517 /* Volgtijd van arm naar volgarm voor fase 02                                               */
-    #define tarmvt08                   518 /* Volgtijd van arm naar volgarm voor fase 08                                               */
-    #define tarmvt11                   519 /* Volgtijd van arm naar volgarm voor fase 11                                               */
-    #define TMMAX1                     520
+    #define TMMAX1                     517
 
 /* teller elementen */
 /* ---------------- */
@@ -1797,8 +1786,7 @@
     #define schsneld81_1              381 /* Aanvraag snel voor detector 81_1 aan of uit                    */
     #define schsneld82_1              382 /* Aanvraag snel voor detector 82_1 aan of uit                    */
     #define schsneld84_1              383 /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    #define schtraffick2tlcgen        384 /* Activeren Traffick functies                                    */
-    #define SCHMAX1                   385
+    #define SCHMAX1                   384
 
 /* parameters */
 /* ---------- */

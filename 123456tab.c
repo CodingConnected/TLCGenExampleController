@@ -1812,9 +1812,6 @@ void control_parameters(void)
     T_code[tfo0522]                    = "fo0522";                    T_max[tfo0522]                    = 40;   T_type[tfo0522]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
     T_code[tfo1126]                    = "fo1126";                    T_max[tfo1126]                    = 0;    T_type[tfo1126]                    = TE_type; /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
     T_code[tfo0532]                    = "fo0532";                    T_max[tfo0532]                    = 50;   T_type[tfo0532]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
-    T_code[tarmvt02]                   = "armvt02";                   T_max[tarmvt02]                   = 101;  T_type[tarmvt02]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 02                                               */
-    T_code[tarmvt08]                   = "armvt08";                   T_max[tarmvt08]                   = 100;  T_type[tarmvt08]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 08                                               */
-    T_code[tarmvt11]                   = "armvt11";                   T_max[tarmvt11]                   = 100;  T_type[tarmvt11]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 11                                               */
 
 /* teller elementen */
 /* ---------------- */
@@ -2251,7 +2248,6 @@ void control_parameters(void)
     SCH_code[schsneld81_1]              = "sneld81_1";              SCH[schsneld81_1]              = 0;                                         /* Aanvraag snel voor detector 81_1 aan of uit                    */
     SCH_code[schsneld82_1]              = "sneld82_1";              SCH[schsneld82_1]              = 0;                                         /* Aanvraag snel voor detector 82_1 aan of uit                    */
     SCH_code[schsneld84_1]              = "sneld84_1";              SCH[schsneld84_1]              = 0;                                         /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 1;                                         /* Activeren Traffick functies                                    */
 
 /* parameters */
 /* ---------- */
@@ -4205,7 +4201,6 @@ void control_parameters(void)
     SCH_cat[schsneld81_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld81_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld82_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld82_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld84_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld84_1]              = SUBCAT_MaximumGroentijden;
-    SCH_cat[schtraffick2tlcgen]     = CAT_Basisfuncties;    SCH_subcat[schtraffick2tlcgen]        = SUBCAT_Testen;
     T_cat[t08_1a_1]                = CAT_Basisfuncties;    T_subcat[t08_1a_1]                   = SUBCAT_Verlengen;
     T_cat[t08_1a_2]                = CAT_Basisfuncties;    T_subcat[t08_1a_2]                   = SUBCAT_Verlengen;
     T_cat[ttdh_08_1a_1]            = CAT_Basisfuncties;    T_subcat[ttdh_08_1a_1]               = SUBCAT_Verlengen;
@@ -4696,9 +4691,6 @@ void control_parameters(void)
     T_cat[tfo0522]                 = CAT_Basisfuncties;    T_subcat[tfo0522]                    = SUBCAT_Deelconflicten;
     T_cat[tfo1126]                 = CAT_Basisfuncties;    T_subcat[tfo1126]                    = SUBCAT_Deelconflicten;
     T_cat[tfo0532]                 = CAT_Basisfuncties;    T_subcat[tfo0532]                    = SUBCAT_Deelconflicten;
-    T_cat[tarmvt02]                = CAT_Basisfuncties;    T_subcat[tarmvt02]                   = SUBCAT_Testen;
-    T_cat[tarmvt08]                = CAT_Basisfuncties;    T_subcat[tarmvt08]                   = SUBCAT_Testen;
-    T_cat[tarmvt11]                = CAT_Basisfuncties;    T_subcat[tarmvt11]                   = SUBCAT_Testen;
     PRM_cat[prmspringverleng_08_1a]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_1a]      = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_08_1b]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_1b]      = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_08_2a]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_2a]      = SUBCAT_Verlengen;

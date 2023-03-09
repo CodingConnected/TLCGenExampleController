@@ -61,10 +61,6 @@
 
 boolv vertraag_kar_uitm[prioFCMAX];
 
-/* Traffick2TLCGen */
-#define TRAFFICK
-#include "traffick2tlcgen.h"
-
 #define MAX_AANTAL_INMELDINGEN           10
 #define DEFAULT_MAX_WACHTTIJD           120
 #define NO_REALISEREN_TOEGESTAAN
@@ -2176,9 +2172,6 @@ void InUitMelden(void)
     Bepaal_Granted_Verstrekt();
 #endif /* NO_RIS */
 
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) fiets_voorrang_module();
-
 
     /* Bijhouden melding en ondergedrag KAR */
     RT[tkarmelding] = CIF_DSIWIJZ != 0 && CIF_DSI[CIF_DSI_LUS] == 0;
@@ -2343,20 +2336,6 @@ void PrioriteitsOpties(void)
         iInstPrioriteitsOpties[prioFC11bus] = poGeenPrioriteit;
         iInstPrioriteitsOpties[prioFC11risov] = poGeenPrioriteit;
         iInstPrioriteitsOpties[prioFC11risvrw] = poGeenPrioriteit;
-    }
-
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen])
-    {
-        Traffick2TLCgen_PRIO_OPTIES();
-
-        Traffick2TLCgen_HLPD_nal(fc02, fc62, T_max[tarmvt02]);
-        Traffick2TLCgen_HLPD_nal(fc08, fc68, T_max[tarmvt08]);
-        Traffick2TLCgen_HLPD_nal(fc11, fc68, T_max[tarmvt11]);
-        Traffick2TLCgen_HLPD_nal(fc22, fc21, NG);
-        Traffick2TLCgen_HLPD_nal(fc82, fc81, NG);
-
-        Traffick2TLCgen_HLPD();
     }
 
     #ifdef PRIO_ADDFILE

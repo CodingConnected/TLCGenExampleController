@@ -1337,12 +1337,6 @@
           <RangeerIndex2>-1</RangeerIndex2>
         </IOElementRangeerDataModel>
         <IOElementRangeerDataModel>
-          <Naam>star</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>75</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
           <Naam>ris222cyclist</Naam>
           <HasManualNaam>false</HasManualNaam>
           <RangeerIndex>76</RangeerIndex>
@@ -2047,18 +2041,6 @@
           <RangeerIndex2>-1</RangeerIndex2>
         </IOElementRangeerDataModel>
         <IOElementRangeerDataModel>
-          <Naam>starprogwissel</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>133</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>star01</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>1</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
           <Naam>incontrol</Naam>
           <HasManualNaam>false</HasManualNaam>
           <RangeerIndex>0</RangeerIndex>
@@ -2082,24 +2064,6 @@
           <RangeerIndex>4</RangeerIndex>
           <RangeerIndex2>-1</RangeerIndex2>
         </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>perStar02</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>132</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>perStar01</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>133</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>star02</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>134</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
       </RangeerUitgangen>
       <RangeerSelectieveDetectoren />
     </RangeerData>
@@ -2118,7 +2082,7 @@
       <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </NoControlBitmapData>
-    <TraffickCompatible>true</TraffickCompatible>
+    <TraffickCompatible>false</TraffickCompatible>
   </Data>
   <Fasen>
     <FaseCyclus>
@@ -23517,6 +23481,9 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
+  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <SimulationEntries />
+  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>false</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -23933,6 +23900,13 @@
         <Naam>68_2a</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>68_2a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>68_2b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>68_2b</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24378,13 +24352,6 @@
         <Naam>68_9a</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>681</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>68_2b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>68_2b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
       </Detector>
     </Detectoren>
   </SumoKoppeling>
