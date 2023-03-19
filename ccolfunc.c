@@ -1,4 +1,4 @@
-/* ccolfunc.c - gegenereerd met TLCGen 0.12.2.0 */
+/* ccolfunc.c - gegenereerd met TLCGen 12.4.0.0 */
 
 /* ccolfunc.c - gegenereerd met TLCGen 0.8.2.0 */
 

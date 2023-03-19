@@ -8,14 +8,14 @@
 
    BESTAND:   123456reg.c
       CCOL:   12.0
-    TLCGEN:   0.12.2.0
-   CCOLGEN:   0.12.2.0
+    TLCGEN:   12.4.0.0
+   CCOLGEN:   12.4.0.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.2.0   09-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.2.1   14-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -718,6 +718,7 @@ void Aanvragen(void)
             /* Ris PRIO: verstuur SSM */
             ris_srm_put_signalgroup(fc02, PRM[prmrisapproachid02], PRM[prmrisrole02risov], PRM[prmrissubrole02risov], NG, NG);
             ris_srm_put_signalgroup(fc02, PRM[prmrisapproachid02], PRM[prmrisrole02risvrw], PRM[prmrissubrole02risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc02, PRM[prmrisapproachid02], PRM[prmrisrole02ristest], PRM[prmrissubrole02ristest], NG, NG);
             ris_srm_put_signalgroup(fc03, PRM[prmrisapproachid03], PRM[prmrisrole03risov], PRM[prmrissubrole03risov], NG, NG);
             ris_srm_put_signalgroup(fc03, PRM[prmrisapproachid03], PRM[prmrisrole03risvrw], PRM[prmrissubrole03risvrw], NG, NG);
             ris_srm_put_signalgroup(fc05, PRM[prmrisapproachid05], PRM[prmrisrole05risov], PRM[prmrissubrole05risov], NG, NG);
@@ -738,6 +739,7 @@ void Aanvragen(void)
             ris_srm_put_signalgroup(fc68, PRM[prmrisapproachid68], PRM[prmrisrole68risvrw], PRM[prmrissubrole68risvrw], NG, NG);
             ris_verstuur_ssm(prioFC02risov);
             ris_verstuur_ssm(prioFC02risvrw);
+            ris_verstuur_ssm(prioFC02ristest);
             ris_verstuur_ssm(prioFC03risov);
             ris_verstuur_ssm(prioFC03risvrw);
             ris_verstuur_ssm(prioFC05risov);
@@ -1742,7 +1744,6 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
     }
 
-
     /* PAR correcties eenzijdige synchronisaties */
     PAR[fc22] = PAR[fc22] || G[fc05];
     PAR[fc26] = PAR[fc26] || G[fc11];
@@ -1862,7 +1863,8 @@ void RealisatieAfhandeling(void)
         (G[fc22] || !(YV[fc22] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC22fiets] & poBijzonderRealiseren))) RR[fc11] &= ~BIT10;
     if ((G[fc02] || !(YV[fc02] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC02bus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC02risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC02risvrw] & poBijzonderRealiseren)) &&
+                                                 !(iPrioriteitsOpties[prioFC02risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC02ristest] & poBijzonderRealiseren)) &&
         (G[fc03] || !(YV[fc03] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC03bus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC03risov] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC03risvrw] & poBijzonderRealiseren))) RR[fc22] &= ~BIT10;
@@ -2645,6 +2647,7 @@ void system_application(void)
     CIF_GUS[usovinm02bus] = C[cvc02bus];
     CIF_GUS[usovinm02risov] = C[cvc02risov];
     CIF_GUS[usovinm02risvrw] = C[cvc02risvrw];
+    CIF_GUS[usovinm02ristest] = C[cvc02ristest];
     CIF_GUS[usovinm03bus] = C[cvc03bus];
     CIF_GUS[usovinm03risov] = C[cvc03risov];
     CIF_GUS[usovinm03risvrw] = C[cvc03risvrw];
@@ -2761,6 +2764,7 @@ void system_application(void)
     PRIO_teller(cvc02bus, schcovuber);
     PRIO_teller(cvc02risov, schcovuber);
     PRIO_teller(cvc02risvrw, schcovuber);
+    PRIO_teller(cvc02ristest, schcovuber);
     PRIO_teller(cvc03bus, schcovuber);
     PRIO_teller(cvc03risov, schcovuber);
     PRIO_teller(cvc03risvrw, schcovuber);
@@ -2931,8 +2935,9 @@ void system_application2(void)
     for (fc = 0; fc < FCMAX; ++fc)
     {
         if (C[cvc02bus] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc02risov] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc02risov] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_ONBEKEND;
         if (C[cvc02risvrw] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
+        if (C[cvc02ristest] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc03bus] && R[fc] && TIG[fc03][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc03risov] && R[fc] && TIG[fc03][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc03risvrw] && R[fc] && TIG[fc03][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;

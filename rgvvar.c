@@ -1,4 +1,4 @@
-/* rgvvar.c - gegenereerd met TLCGen 0.12.2.0 */
+/* rgvvar.c - gegenereerd met TLCGen 12.4.0.0 */
 
 /* DEFINITIE FUNCTIES - ROBUUSTE GROENTIJD VERDELER */
 /* ================================================ */

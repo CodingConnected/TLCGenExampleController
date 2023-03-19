@@ -8,14 +8,14 @@
 
    BESTAND:   123456fctimings.c
       CCOL:   12.0
-    TLCGEN:   0.12.2.0
-   CCOLGEN:   0.12.2.0
+    TLCGEN:   12.4.0.0
+   CCOLGEN:   12.4.0.0
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.2.0   09-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.2.1   14-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 

@@ -79,7 +79,7 @@
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>0.12.2.0</TLCGenVersie>
+    <TLCGenVersie>12.4.0.0</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -288,8 +288,8 @@
       </FixatieBitmapData>
     </FixatieData>
     <Versie>
-      <Versie>12.2.0</Versie>
-      <Datum>2023-03-09T00:00:00</Datum>
+      <Versie>12.2.1</Versie>
+      <Datum>2023-03-14T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (portable)</Commentaar>
     </Versie>
@@ -10726,6 +10726,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -10799,6 +10800,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -10867,7 +10869,7 @@
       <PrioIngreep>
         <Naam>risov</Naam>
         <FaseCyclus>02</FaseCyclus>
-        <Type>Bus</Type>
+        <Type>NG</Type>
         <VersneldeInmeldingKoplus>SchUit</VersneldeInmeldingKoplus>
         <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
         <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
@@ -10953,6 +10955,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -10984,6 +10987,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11096,6 +11100,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11127,6 +11132,147 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>15</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>true</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>15</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>ristest</Naam>
+        <FaseCyclus>02</FaseCyclus>
+        <Type>Bus</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>140</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>100</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>60</RijTijdGehinderd>
+        <OnderMaximum>150</OnderMaximum>
+        <GroenBewaking>300</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm02ristest</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>02ristestrisin</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>RISVoorwaarde</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>true</AntiJutterTijdToepassen>
+              <AntiJutterTijd>15</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>02ristestrisuit</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>RISVoorwaarde</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole>PUBLICTRANSPORT</RisRole>
+              <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11242,6 +11388,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11315,6 +11462,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11469,6 +11617,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11500,6 +11649,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11612,6 +11762,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11643,6 +11794,7 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11758,6 +11910,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11831,6 +11984,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -11985,6 +12139,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12016,6 +12171,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12128,6 +12284,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12159,6 +12316,7 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12274,6 +12432,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12347,6 +12506,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12501,6 +12661,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12532,6 +12693,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12644,6 +12806,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12675,6 +12838,7 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12790,6 +12954,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -12863,6 +13028,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13017,6 +13183,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13048,6 +13215,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13160,6 +13328,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13191,6 +13360,7 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13306,6 +13476,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13379,6 +13550,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13533,6 +13705,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13564,6 +13737,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13676,6 +13850,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13707,6 +13882,7 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13820,6 +13996,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>true</FietsPrioriteitGebruikLus>
@@ -13851,6 +14028,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -13964,6 +14142,7 @@
               <RisEta xsi:nil="true" />
               <RisRole>DEFAULT</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>true</FietsPrioriteitGebruikLus>
@@ -13995,6 +14174,7 @@
               <RisEta xsi:nil="true" />
               <RisRole>DEFAULT</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14110,6 +14290,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14183,6 +14364,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14337,6 +14519,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14368,6 +14551,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14480,6 +14664,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14511,6 +14696,7 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14626,6 +14812,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14699,6 +14886,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14853,6 +15041,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14884,6 +15073,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -14996,6 +15186,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15027,6 +15218,7 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15142,6 +15334,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15215,6 +15408,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15369,6 +15563,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15400,6 +15595,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15512,6 +15708,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15543,6 +15740,7 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15658,6 +15856,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15731,6 +15930,7 @@
               <RisEta xsi:nil="true" />
               <RisRole />
               <RisSubrole />
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15885,6 +16085,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -15916,6 +16117,7 @@
               <RisEta>60</RisEta>
               <RisRole>PUBLICTRANSPORT</RisRole>
               <RisSubrole>BUS</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -16028,6 +16230,7 @@
               <RisEta>60</RisEta>
               <RisRole>DEFAULT PUBLICTRANSPORT SPECIALTRANSPORT DANGEROUSGOODS ROADWORK RESCUE EMERGENCY SAFETYCAR AGRICULTURE COMMERCIAL MILITARY ROADOPERATOR TAXI</RisRole>
               <RisSubrole>UNKNOWN BUS TRAM METRO TRAIN EMERGENCY SMOOTH TIMETABLE INTERVAL EXPRESSTRANSIT NOSERVICE PLATOON ECODRIVING</RisSubrole>
+              <RisImportance>I11</RisImportance>
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -16059,6 +16262,7 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
+              <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
               <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
@@ -16091,6 +16295,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -16199,7 +16404,9 @@
           <VeiligheidsGroenHiaat>0</VeiligheidsGroenHiaat>
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </DummyKARUitmelding>
-        <MeerealiserendeFaseCycli />
+        <MeerealiserendeFaseCycli>
+          <MeerealiserendeFaseCyclus>03</MeerealiserendeFaseCyclus>
+        </MeerealiserendeFaseCycli>
       </HDIngreep>
       <HDIngreep>
         <FaseCyclus>03</FaseCyclus>
@@ -16208,6 +16415,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -16328,6 +16536,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -16449,6 +16658,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -16570,6 +16780,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -16690,6 +16901,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -16811,6 +17023,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -16931,6 +17144,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -17051,6 +17265,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -17171,6 +17386,7 @@
         <RisStart>0</RisStart>
         <RisEnd>0</RisEnd>
         <RisEta>900</RisEta>
+        <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -22966,212 +23182,7 @@
     <Counters />
     <Schakelaars />
     <GeheugenElementen />
-    <Parameters>
-      <Parameter>
-        <Naam>risimportance02risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance03risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance05risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance08risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance09risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance11risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance61risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance62risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance67risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance68risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance69risov</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance02risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance03risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance05risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance08risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance09risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance11risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance12risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance61risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance62risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance67risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance68risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance69risvrw</Naam>
-        <Type>Geen</Type>
-        <Instelling>2048</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance02hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance03hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance05hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance08hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance09hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance11hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance61hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance62hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance67hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance68hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-      <Parameter>
-        <Naam>risimportance69hd</Naam>
-        <Type>Geen</Type>
-        <Instelling>16384</Instelling>
-        <Dummy>false</Dummy>
-      </Parameter>
-    </Parameters>
+    <Parameters />
   </GebruikersOpties>
   <AFMData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <AFMToepassen>false</AFMToepassen>
@@ -23481,9 +23492,6 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
-  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <SimulationEntries />
-  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>false</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -23911,9 +23919,57 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>68_9a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>681</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>68_9b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>682</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>81_1</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>811</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>82_1</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>821</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>84_1</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>84_1</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit02</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummyhdkaruit02</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin68</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin67</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
       </Detector>
       <Detector>
         <Naam>opt08</Naam>
@@ -23921,9 +23977,23 @@
         <SumoNaam1>003</SumoNaam1>
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin62</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt05</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>001</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin61</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
       </Detector>
       <Detector>
         <Naam>opt02</Naam>
@@ -23931,7 +24001,21 @@
         <SumoNaam1>002</SumoNaam1>
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin11</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k84</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin09</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
@@ -23943,9 +24027,23 @@
         <SumoNaam1>822</SumoNaam1>
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin08</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k81</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>812</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin05</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
       </Detector>
       <Detector>
         <Naam>k38b</Naam>
@@ -23955,9 +24053,23 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin03</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k38a</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>38a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin02</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummyhdkarin02</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24248,110 +24360,6 @@
         <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit02</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummyhdkaruit02</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin68</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin67</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin62</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin61</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin11</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin09</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin08</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin05</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin03</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin02</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummyhdkarin02</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>84_1</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>84_1</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>82_1</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>821</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>81_1</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>811</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>68_9b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>682</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>68_9a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>681</SumoNaam1>
       </Detector>
     </Detectoren>
   </SumoKoppeling>

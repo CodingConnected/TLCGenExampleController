@@ -1,4 +1,4 @@
-/* prio.c - gegenereerd met TLCGen 0.12.2.0 */
+/* prio.c - gegenereerd met TLCGen 12.4.0.0 */
 
 /* OVPROGRAMMA */
 /* ----------- */
