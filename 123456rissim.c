@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.2.1   14-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 

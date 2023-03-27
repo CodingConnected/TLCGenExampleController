@@ -71,7 +71,7 @@
     <CCOLMulti>false</CCOLMulti>
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>12</HuidigeVersieMajor>
-    <HuidigeVersieMinor>2</HuidigeVersieMinor>
+    <HuidigeVersieMinor>4</HuidigeVersieMinor>
     <HuidigeVersieRevision>0</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -288,8 +288,8 @@
       </FixatieBitmapData>
     </FixatieData>
     <Versie>
-      <Versie>12.2.1</Versie>
-      <Datum>2023-03-14T00:00:00</Datum>
+      <Versie>12.4.0</Versie>
+      <Datum>2023-03-27T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (portable)</Commentaar>
     </Versie>
@@ -2113,17 +2113,17 @@
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>To</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
-      <MeeverlengenTypeInstelbaarOpStraat>false</MeeverlengenTypeInstelbaarOpStraat>
+      <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>300</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
       <AantalRijstroken>2</AantalRijstroken>
       <HiaatKoplusBijDetectieStoring>true</HiaatKoplusBijDetectieStoring>
       <VervangendHiaatKoplus>25</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>300</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>false</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
@@ -4030,14 +4030,14 @@
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>200</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
       <AantalRijstroken>1</AantalRijstroken>
       <HiaatKoplusBijDetectieStoring>false</HiaatKoplusBijDetectieStoring>
       <VervangendHiaatKoplus xsi:nil="true" />
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>true</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
@@ -4248,14 +4248,14 @@
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>200</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
       <AantalRijstroken>2</AantalRijstroken>
       <HiaatKoplusBijDetectieStoring>true</HiaatKoplusBijDetectieStoring>
       <VervangendHiaatKoplus>35</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>true</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
@@ -4445,7 +4445,7 @@
         <HardMeeverlengFaseCyclus>
           <FaseCyclus>05</FaseCyclus>
           <Type>Groen</Type>
-          <AanUit>true</AanUit>
+          <AanUit>false</AanUit>
         </HardMeeverlengFaseCyclus>
       </HardMeeverlengenFaseCycli>
     </FaseCyclus>
@@ -4480,14 +4480,14 @@
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>200</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
       <AantalRijstroken>1</AantalRijstroken>
       <HiaatKoplusBijDetectieStoring>true</HiaatKoplusBijDetectieStoring>
       <VervangendHiaatKoplus>35</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>true</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
@@ -4791,14 +4791,14 @@
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>200</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
       <AantalRijstroken>1</AantalRijstroken>
       <HiaatKoplusBijDetectieStoring>false</HiaatKoplusBijDetectieStoring>
       <VervangendHiaatKoplus xsi:nil="true" />
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>true</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
@@ -4980,7 +4980,7 @@
         <HardMeeverlengFaseCyclus>
           <FaseCyclus>11</FaseCyclus>
           <Type>Groen</Type>
-          <AanUit>true</AanUit>
+          <AanUit>false</AanUit>
         </HardMeeverlengFaseCyclus>
       </HardMeeverlengenFaseCycli>
     </FaseCyclus>
@@ -5015,14 +5015,14 @@
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>200</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
       <AantalRijstroken>1</AantalRijstroken>
       <HiaatKoplusBijDetectieStoring>true</HiaatKoplusBijDetectieStoring>
       <VervangendHiaatKoplus>35</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>true</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
@@ -5718,7 +5718,7 @@
         <HardMeeverlengFaseCyclus>
           <FaseCyclus>05</FaseCyclus>
           <Type>Groen</Type>
-          <AanUit>true</AanUit>
+          <AanUit>false</AanUit>
         </HardMeeverlengFaseCyclus>
       </HardMeeverlengenFaseCycli>
     </FaseCyclus>
@@ -6456,7 +6456,7 @@
       <VervangendHiaatKoplus>25</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>false</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>true</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>true</PercentageGroenBijDetectieStoring>
@@ -6668,7 +6668,7 @@
       <VervangendHiaatKoplus>25</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>false</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>true</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>true</PercentageGroenBijDetectieStoring>
@@ -6966,7 +6966,7 @@
       <VervangendHiaatKoplus>25</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>false</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>true</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>true</PercentageGroenBijDetectieStoring>
@@ -7178,7 +7178,7 @@
       <VervangendHiaatKoplus>25</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>false</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>true</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>true</PercentageGroenBijDetectieStoring>
@@ -7553,14 +7553,14 @@
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>200</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
       <AantalRijstroken>1</AantalRijstroken>
       <HiaatKoplusBijDetectieStoring>false</HiaatKoplusBijDetectieStoring>
       <VervangendHiaatKoplus xsi:nil="true" />
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>true</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
@@ -7771,14 +7771,14 @@
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>200</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
       <AantalRijstroken>1</AantalRijstroken>
       <HiaatKoplusBijDetectieStoring>false</HiaatKoplusBijDetectieStoring>
       <VervangendHiaatKoplus xsi:nil="true" />
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>true</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
@@ -7989,14 +7989,14 @@
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>200</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
       <AantalRijstroken>1</AantalRijstroken>
       <HiaatKoplusBijDetectieStoring>true</HiaatKoplusBijDetectieStoring>
       <VervangendHiaatKoplus>35</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>200</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>true</AanvraagBijDetectieStoringKoplusKnop>
       <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
@@ -10208,7 +10208,7 @@
     <FileIngreep>
       <Naam>File68af</Naam>
       <MetingPerLus>true</MetingPerLus>
-      <MetingPerStrook>false</MetingPerStrook>
+      <MetingPerStrook>true</MetingPerStrook>
       <AfvalVertraging>600</AfvalVertraging>
       <EerlijkDoseren>false</EerlijkDoseren>
       <ToepassenDoseren>SchAan</ToepassenDoseren>
@@ -11132,146 +11132,6 @@
               <RisEta>60</RisEta>
               <RisRole>SPECIALTRANSPORT COMMERCIAL</RisRole>
               <RisSubrole>UNKNOWN</RisSubrole>
-              <RisImportance />
-              <RisPeloton>false</RisPeloton>
-              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
-              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
-              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
-              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
-              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
-              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
-              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
-              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
-            </Uitmelding>
-          </Uitmeldingen>
-          <Wissel1>false</Wissel1>
-          <Wissel1Type>Ingang</Wissel1Type>
-          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
-          <Wissel2>false</Wissel2>
-          <Wissel2Type>Ingang</Wissel2Type>
-          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
-          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
-          <AntiJutterTijdVoorAlleInmeldingen>15</AntiJutterTijdVoorAlleInmeldingen>
-          <AntiJutterVoorAlleUitmeldingen>true</AntiJutterVoorAlleUitmeldingen>
-          <AntiJutterTijdVoorAlleUitmeldingen>15</AntiJutterTijdVoorAlleUitmeldingen>
-        </MeldingenData>
-      </PrioIngreep>
-      <PrioIngreep>
-        <Naam>ristest</Naam>
-        <FaseCyclus>02</FaseCyclus>
-        <Type>Bus</Type>
-        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
-        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
-        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
-        <Koplus>NG</Koplus>
-        <RijTijdOngehinderd>140</RijTijdOngehinderd>
-        <RijTijdBeperktgehinderd>100</RijTijdBeperktgehinderd>
-        <RijTijdGehinderd>60</RijTijdGehinderd>
-        <OnderMaximum>150</OnderMaximum>
-        <GroenBewaking>300</GroenBewaking>
-        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
-        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
-        <MinimaleRoodtijd>70</MinimaleRoodtijd>
-        <AfkappenConflicten>true</AfkappenConflicten>
-        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
-        <VasthoudenGroen>true</VasthoudenGroen>
-        <TussendoorRealiseren>true</TussendoorRealiseren>
-        <PrioriteitsNiveau>0</PrioriteitsNiveau>
-        <CheckLijnNummer>false</CheckLijnNummer>
-        <CheckWagenNummer>false</CheckWagenNummer>
-        <CheckRitCategorie>false</CheckRitCategorie>
-        <AlleLijnen>false</AlleLijnen>
-        <AlleRitCategorien>false</AlleRitCategorien>
-        <CheckPeriode>false</CheckPeriode>
-        <GeenEigenVerklikking>false</GeenEigenVerklikking>
-        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
-        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
-        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
-        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
-        <HalfstarIngreepData>
-          <Prioriteit>0</Prioriteit>
-          <GroenNaTXDTijd>0</GroenNaTXDTijd>
-        </HalfstarIngreepData>
-        <PrioInmeldingBitmapData>
-          <Naam>ovinm02ristest</Naam>
-          <Dummy>false</Dummy>
-          <ElementType>Output</ElementType>
-          <Multivalent>false</Multivalent>
-          <BitmapCoordinaten />
-        </PrioInmeldingBitmapData>
-        <GeconditioneerdePrioTeVroegBitmapData>
-          <Dummy>false</Dummy>
-          <ElementType>FaseCyclus</ElementType>
-          <Multivalent>false</Multivalent>
-          <BitmapCoordinaten />
-        </GeconditioneerdePrioTeVroegBitmapData>
-        <GeconditioneerdePrioOpTijdBitmapData>
-          <Dummy>false</Dummy>
-          <ElementType>FaseCyclus</ElementType>
-          <Multivalent>false</Multivalent>
-          <BitmapCoordinaten />
-        </GeconditioneerdePrioOpTijdBitmapData>
-        <GeconditioneerdePrioTeLaatBitmapData>
-          <Dummy>false</Dummy>
-          <ElementType>FaseCyclus</ElementType>
-          <Multivalent>false</Multivalent>
-          <BitmapCoordinaten />
-        </GeconditioneerdePrioTeLaatBitmapData>
-        <LijnNummers />
-        <GerelateerdePerioden />
-        <MeldingenData>
-          <Inmeldingen>
-            <Inmelding>
-              <Naam>02ristestrisin</Naam>
-              <InUit>Inmelding</InUit>
-              <Type>RISVoorwaarde</Type>
-              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
-              <TweedeInput>false</TweedeInput>
-              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
-              <KijkNaarWisselStand>false</KijkNaarWisselStand>
-              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
-              <AlleenIndienRood>false</AlleenIndienRood>
-              <AntiJutterTijdToepassen>true</AntiJutterTijdToepassen>
-              <AntiJutterTijd>15</AntiJutterTijd>
-              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
-              <OpvangStoring>false</OpvangStoring>
-              <RisStart>0</RisStart>
-              <RisEnd>0</RisEnd>
-              <RisEta>0</RisEta>
-              <RisRole>PUBLICTRANSPORT</RisRole>
-              <RisSubrole>BUS</RisSubrole>
-              <RisImportance />
-              <RisPeloton>false</RisPeloton>
-              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
-              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
-              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
-              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
-              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
-              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
-              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
-              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
-            </Inmelding>
-          </Inmeldingen>
-          <Uitmeldingen>
-            <Uitmelding>
-              <Naam>02ristestrisuit</Naam>
-              <InUit>Uitmelding</InUit>
-              <Type>RISVoorwaarde</Type>
-              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
-              <TweedeInput>false</TweedeInput>
-              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
-              <KijkNaarWisselStand>false</KijkNaarWisselStand>
-              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
-              <AlleenIndienRood>false</AlleenIndienRood>
-              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
-              <AntiJutterTijd>0</AntiJutterTijd>
-              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
-              <OpvangStoring>false</OpvangStoring>
-              <RisStart>0</RisStart>
-              <RisEnd>0</RisEnd>
-              <RisEta>0</RisEta>
-              <RisRole>PUBLICTRANSPORT</RisRole>
-              <RisSubrole>BUS</RisSubrole>
               <RisImportance />
               <RisPeloton>false</RisPeloton>
               <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
@@ -23946,109 +23806,9 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit02</Naam>
+        <Naam>dummyhdkarin02</Naam>
         <Selectief>false</Selectief>
-        <SumoNaam1>dummyhdkaruit02</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin68</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>opt11</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>004</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin67</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>opt08</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>003</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin62</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>opt05</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>001</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin61</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>opt02</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>002</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin11</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k84</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin09</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k82</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>822</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin08</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k81</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>812</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin05</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k38b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>38b</SumoNaam1>
+        <SumoNaam1>dummyhdkarin02</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24060,16 +23820,60 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>k38a</Naam>
+        <Naam>dummyhdkaruit05</Naam>
         <Selectief>false</Selectief>
-        <SumoNaam1>38a</SumoNaam1>
+        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkarin02</Naam>
+        <Naam>opt11</Naam>
         <Selectief>false</Selectief>
-        <SumoNaam1>dummyhdkarin02</SumoNaam1>
+        <SumoNaam1>004</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>opt08</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>003</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>opt05</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>001</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>opt02</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>002</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>k84</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k82</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>822</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>k81</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>812</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>k38b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>38b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k38a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>38a</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24137,9 +23941,23 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit03</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k26</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>262</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit02</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummyhdkaruit02</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
       </Detector>
       <Detector>
         <Naam>k24</Naam>
@@ -24147,7 +23965,21 @@
         <SumoNaam1 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin68</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>k22</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin67</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
@@ -24159,9 +23991,23 @@
         <SumoNaam1>212</SumoNaam1>
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin62</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummykaruit68bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit68bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin61</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24173,9 +24019,23 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin11</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummykaruit62bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit62bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin09</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24187,9 +24047,23 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin08</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummykaruit11bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit11bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin05</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24342,20 +24216,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkaruit08</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit05</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit03</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

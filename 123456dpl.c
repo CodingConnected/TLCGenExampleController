@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.2.1   14-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -246,7 +246,6 @@ void display_parameters(void)
     X_us[usovinm02bus] = 151; Y_us[usovinm02bus] = 30;
     X_us[usovinm02risov] = 50; Y_us[usovinm02risov] = 33;
     X_us[usovinm02risvrw] = 84; Y_us[usovinm02risvrw] = 34;
-    X_us[usovinm02ristest] = NG; Y_us[usovinm02ristest] = NG;
     X_us[usovinm03bus] = 149; Y_us[usovinm03bus] = 44;
     X_us[usovinm03risov] = 52; Y_us[usovinm03risov] = 45;
     X_us[usovinm03risvrw] = 83; Y_us[usovinm03risvrw] = 45;
