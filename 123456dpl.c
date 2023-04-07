@@ -307,6 +307,7 @@ void display_parameters(void)
     X_us[usper6] = 624; Y_us[usper6] = 84;
     X_us[usper7] = 625; Y_us[usper7] = 98;
     X_us[usrgv] = 275; Y_us[usrgv] = 107;
+    X_us[uswtv22] = NG; Y_us[uswtv22] = NG;
     X_us[uswtk21] = 376; Y_us[uswtk21] = 219;
     X_us[uswtk22] = 434; Y_us[uswtk22] = 214;
     X_us[uswtk24] = 504; Y_us[uswtk24] = 301;

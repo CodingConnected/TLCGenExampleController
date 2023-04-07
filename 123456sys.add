@@ -21,6 +21,7 @@
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
 
+#define MLNLTEST
 
 #define FCMAX  (FCMAX1+0)  /* Totaal aantal gebruikte fasecycli      */
 #define USMAX  (USMAX1+0)  /* Totaal aantal gebruikte uitgangen      */

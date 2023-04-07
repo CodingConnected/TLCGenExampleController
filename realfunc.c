@@ -26,6 +26,7 @@ BESTAND:   realfunc.c
 * 3.2     09-11-2021                - CCA       MG && TGG toegevoegd in berekeningen
 * 3.3     06-12-2021                - CCA       _temp interne variabelen wederom toegevoegd
 * 3.4     09-03-2023                - CCA       MLNLTEST toegevoegd ivm onterechte PG (optioneel zelf te activeren)
+* 3.5     07-04-2023                - CCA       MLNLTEST register count toegevoegd
 ************************************************************************************/
 
 mulv REALTIJD[FCMAX];
@@ -916,7 +917,10 @@ void Synchroniseer_FO1_2(count fc1, count fc2)   /* Gelijk aan bovenstaande alle
 
 void Synchroniseer_PG(void)
 {
-  register count fc1, fc2;
+#ifdef MLNLTEST
+   register count  mlfc1, mlfc2, ml_1, ml_2;
+#endif
+   register count fc1, fc2;
 
   for (fc1=0; fc1<FC_MAX; fc1++)
   {

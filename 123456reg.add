@@ -199,6 +199,11 @@ void PostApplication_Add(void)
 
 }
 
+void WachttijdvoorspellersWachttijd_Add()
+{
+    
+}
+
 void pre_system_application(void)
 {
 

@@ -1,7 +1,5 @@
 /* extra_func.c - gegenereerd met TLCGen 12.4.0.0 */
 
-/* extra_func.c - gegenereerd met TLCGen 0.10.4.0 */
-
 #include "extra_func.h"
 
 int Knipper_1Hz = 0;
@@ -61,9 +59,9 @@ boolv ym_maxV1(count i, mulv to_verschil)
 					m = TO_pointer[k][j];
 #endif
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
-				    if (CV[m] && !(RW[m] & BIT2) && (((TIG_max[i][k] - to_verschil) <= TIG_max[m][k])
+				    if (CV[m] && (((TIG_max[i][k] - to_verschil) <= TIG_max[m][k])
 #else
-					if (CV[m] && !(RW[m] & BIT2) && (((TO_max[i][k] - to_verschil) <= TO_max[m][k])
+					if (CV[m] && (((TO_max[i][k] - to_verschil) <= TO_max[m][k])
 #endif
 						|| (to_verschil<0)))
 					{
@@ -80,9 +78,9 @@ boolv ym_maxV1(count i, mulv to_verschil)
 					m = TO_pointer[k][j];
 #endif
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
-					if (CV[m] && !(RW[m] & BIT2) && (TIG_max[m][k] == GKL || TIG_max[i][k] <= GK))
+					if (CV[m] && (TIG_max[m][k] == GKL || TIG_max[i][k] <= GK))
 #else
-			        if (CV[m] && !(RW[m] & BIT2) && (TO_max[m][k] == GKL || TO_max[i][k] <= GK))
+			        if (CV[m] && (TO_max[m][k] == GKL || TO_max[i][k] <= GK))
 #endif
 					{
 						ym = TRUE;
@@ -187,7 +185,7 @@ boolv ym_max_toV1(count i, mulv to_verschil)
 #else
 						m = TO_pointer[k][j];
 #endif
-					    if (CV[m] && !(RW[m] & BIT2) && (TO_max[m][k] <= GK || TO_max[i][k] <= GK))
+					    if (CV[m] && (TO_max[m][k] <= GK || TO_max[i][k] <= GK))
 						{
     						ym = TRUE;
                         }
@@ -205,22 +203,22 @@ boolv ym_max_toV1(count i, mulv to_verschil)
 #endif
 
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
-					if (CV[m] && !(RW[m] & BIT2) && (((TIG_max[i][k] - to_verschil) <=
+					if (CV[m] && (((TIG_max[i][k] - to_verschil) <=
 						(TIG_max[m][k])) &&
 						((TIG_max[i][k]) < (TFG_max[m] - TFG_timer[m] +
 							TVG_max[m] - TVG_timer[m] +
 							TIG_max[m][k] - TIG_timer[m]))
 						|| (to_verschil < 0))
-						|| TIG[m][k] && !(RW[m] & BIT2)
+						|| TIG[m][k]
 						&& ((TIG_max[i][k]) < (TIG_max[m][k] - TIG_timer[m])))
 #else
-					if (CV[m] && !(RW[m] & BIT2) && (((TGL_max[i] + TO_max[i][k] - to_verschil) <=
+					if (CV[m] && (((TGL_max[i] + TO_max[i][k] - to_verschil) <=
 						(TGL_max[m] + TO_max[m][k])) &&
 						((TGL_max[i] + TO_max[i][k]) < (TFG_max[m] - TFG_timer[m] +
 							TVG_max[m] - TVG_timer[m] + TGL_max[m] - TGL_timer[m] +
 							TO_max[m][k] - TO_timer[m]))
 						|| (to_verschil < 0))
-						|| TO[m][k] && !(RW[m] & BIT2)
+						|| TO[m][k]
 						&& ((TGL_max[i] + TO_max[i][k]) < (TGL_max[m] + TO_max[m][k] -
 							TGL_timer[m] - TO_timer[m])))
 #endif
@@ -238,9 +236,9 @@ boolv ym_max_toV1(count i, mulv to_verschil)
 					m = TO_pointer[k][j];
 #endif
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
-					if (CV[m] && !(RW[m] & BIT2) && (TIG_max[m][k] == GKL || TIG_max[i][k] <= GK))
+					if (CV[m] && (TIG_max[m][k] == GKL || TIG_max[i][k] <= GK))
 #else
-					if (CV[m] && !(RW[m] & BIT2) && (TO_max[m][k] == GKL || TO_max[i][k] <= GK))
+					if (CV[m] && (TO_max[m][k] == GKL || TO_max[i][k] <= GK))
 #endif
 					{
 						ym = TRUE;
