@@ -31,7 +31,7 @@ boolv ym_maxV1(count i, mulv to_verschil)
 	{   /* let op! i.v.m. snelheid alleen in MG[] behandeld */
 		ym = TRUE;
 #ifndef NO_GGCONFLICT
-		for (n = 0; n<FKFC_MAX[i]; ++n)
+		for (n = 0; n<GKFC_MAX[i]; ++n)
 #else
 		for (n = 0; n<KFC_MAX[i]; ++n)
 #endif
@@ -162,7 +162,7 @@ boolv ym_max_toV1(count i, mulv to_verschil)
 	if (MG[i]) /* let op! i.v.m. snelheid alleen in MG[] behandeld	*/
 	{
 		ym = TRUE;
-		for (n = 0; n < FKFC_MAX[i]; ++n)
+		for (n = 0; n < GKFC_MAX[i]; ++n)
 		{
 #if (CCOL_V >= 95)
 			k = KF_pointer[i][n];
@@ -175,24 +175,7 @@ boolv ym_max_toV1(count i, mulv to_verschil)
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
 				if (TIG_max[i][k] < GK)  break;
 #else
-				if (TO_max[i][k] <= GK)
-                {
-#ifndef NO_GGCONFLICT 
-                	for (j = 0; j < FKFC_MAX[k]; ++j)
-                	{
-#if (CCOL_V >= 95)
-                		m = KF_pointer[k][j];
-#else
-						m = TO_pointer[k][j];
-#endif
-					    if (CV[m] && (TO_max[m][k] <= GK || TO_max[i][k] <= GK))
-						{
-    						ym = TRUE;
-                        }
-                    }
-#endif
-                    break;
-                }
+				if (TO_max[i][k] < GK)  break;
 #endif
 				for (j = 0; j < KFC_MAX[k]; ++j)
 				{
