@@ -16,9 +16,11 @@
  *
  * Versie   Datum        Ontwerper   Commentaar
  * 12.4.0   11-04-2023   TLCGen      Funties detectiestoring uit elkaar halen
+ * 12.4.0   11-04-2023   TLCGen      Funties fileingreep toegevoegd + #define NO_ISG
  *
  ************************************************************************************/
 
+#define NO_ISG
 #define REG (CIF_WPS[CIF_PROG_STATUS] == CIF_STAT_REG)
 #define NALOPEN
 #define PRIO_ADDFILE
@@ -70,6 +72,9 @@
     #define PRIO_CHECK_WAGENNMR /* check op wagendienstnummer          */
     #include "extra_func_prio.c" /* extra standaard functies OV     */
     #include "extra_func.c" /* extra standaard functies        */
+#ifndef NO_ISG
+    #include "isgfunc.c" /* Interstartgroenfuncties */
+#endif
 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST)
 /*    #include "ccdump.inc" */
@@ -129,6 +134,9 @@ mulv C_counter_old[CTMAX];
     #endif
 
     #include "123456reg.add"
+#ifndef NO_ISG
+    boolv init_tvg;
+#endif 
 
 void PreApplication(void)
 {
@@ -1118,6 +1126,9 @@ void BepaalRealisatieTijden(void)
 void Verlenggroen(void)
 {
     int fc;
+#ifndef NO_ISG
+    boolv filemem[FCMAX] = { 0 };
+#endif
 
     /* Nalopen */
     /* ------- */
@@ -1325,6 +1336,21 @@ void Verlenggroen(void)
                               (va_mulv) PRM[prmvg7_84], (va_mulv) (MM[mperiod] == 7),
                               (va_mulv) TVGA_max[fc84], (va_count) END);
 
+#ifndef NO_ISG
+    /* */@Menno: ik vraag nog aan Peter na of deze nodig is ? Lijkt mij van niet namelijk. */
+    /* percentage MG bij filemelding > 100% */
+    if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
+    {
+       if (PRM[prmfpercFile68af08] > 100)
+       {
+          PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmfpercFile68af08],
+             8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
+          PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmfpercFile68af11],
+             8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
+       }
+    }
+#endif
+
     /* AANROEP EN RAPPOTEREN ROBUGROVER */
     if (IH[hrgvact] != 0)
     {
@@ -1375,6 +1401,100 @@ void Verlenggroen(void)
 
         CIF_GUS[usrgv] = FALSE;
     }
+#ifndef NO_ISG
+    if (EVG[fc] && PR[fc] || init_tvg)
+    {
+       TVG_PR[fc] = TVG_max[fc];
+    }
+    else
+    {
+       TVG_max[fc] = TVG_PR[fc];
+    }
+    init_tvg = TRUE;
+    /* Bepaal de minimale maximale verlengroentijd bij alternatieve realisaties */
+    TVG_AR[fc02] = ((PRM[prmaltg02] - TFG_max[fc02]) >= 0) ? PRM[prmaltg02] - TFG_max[fc02] : NG;
+    TVG_AR[fc03] = ((PRM[prmaltg03] - TFG_max[fc03]) >= 0) ? PRM[prmaltg03] - TFG_max[fc03] : NG;
+    TVG_AR[fc05] = ((PRM[prmaltg05] - TFG_max[fc05]) >= 0) ? PRM[prmaltg05] - TFG_max[fc05] : NG;
+    TVG_AR[fc08] = ((PRM[prmaltg08] - TFG_max[fc08]) >= 0) ? PRM[prmaltg08] - TFG_max[fc08] : NG;
+    TVG_AR[fc09] = ((PRM[prmaltg09] - TFG_max[fc09]) >= 0) ? PRM[prmaltg09] - TFG_max[fc09] : NG;
+    TVG_AR[fc11] = ((PRM[prmaltg11] - TFG_max[fc11]) >= 0) ? PRM[prmaltg11] - TFG_max[fc11] : NG;
+    TVG_AR[fc21] = ((PRM[prmaltg21] - TFG_max[fc21]) >= 0) ? PRM[prmaltg21] - TFG_max[fc21] : NG;
+    TVG_AR[fc22] = ((PRM[prmaltg22] - TFG_max[fc22]) >= 0) ? PRM[prmaltg22] - TFG_max[fc22] : NG;
+    TVG_AR[fc24] = ((PRM[prmaltg24] - TFG_max[fc24]) >= 0) ? PRM[prmaltg24] - TFG_max[fc24] : NG;
+    TVG_AR[fc26] = ((PRM[prmaltg26] - TFG_max[fc26]) >= 0) ? PRM[prmaltg26] - TFG_max[fc26] : NG;
+    TVG_AR[fc28] = ((PRM[prmaltg28] - TFG_max[fc28]) >= 0) ? PRM[prmaltg28] - TFG_max[fc28] : NG;
+    TVG_AR[fc31] = ((PRM[prmaltg31] - TFG_max[fc31]) >= 0) ? PRM[prmaltg31] - TFG_max[fc31] : NG;
+    TVG_AR[fc32] = ((PRM[prmaltg32] - TFG_max[fc32]) >= 0) ? PRM[prmaltg32] - TFG_max[fc32] : NG;
+    TVG_AR[fc33] = ((PRM[prmaltg33] - TFG_max[fc33]) >= 0) ? PRM[prmaltg33] - TFG_max[fc33] : NG;
+    TVG_AR[fc34] = ((PRM[prmaltg34] - TFG_max[fc34]) >= 0) ? PRM[prmaltg34] - TFG_max[fc34] : NG;
+    TVG_AR[fc38] = ((PRM[prmaltg38] - TFG_max[fc38]) >= 0) ? PRM[prmaltg38] - TFG_max[fc38] : NG;
+    TVG_AR[fc61] = ((PRM[prmaltg61] - TFG_max[fc61]) >= 0) ? PRM[prmaltg61] - TFG_max[fc61] : NG;
+    TVG_AR[fc62] = ((PRM[prmaltg62] - TFG_max[fc62]) >= 0) ? PRM[prmaltg62] - TFG_max[fc62] : NG;
+    TVG_AR[fc67] = ((PRM[prmaltg67] - TFG_max[fc67]) >= 0) ? PRM[prmaltg67] - TFG_max[fc67] : NG;
+    TVG_AR[fc68] = ((PRM[prmaltg68] - TFG_max[fc68]) >= 0) ? PRM[prmaltg68] - TFG_max[fc68] : NG;
+    TVG_AR[fc81] = ((PRM[prmaltg81] - TFG_max[fc81]) >= 0) ? PRM[prmaltg81] - TFG_max[fc81] : NG;
+    TVG_AR[fc82] = ((PRM[prmaltg82] - TFG_max[fc82]) >= 0) ? PRM[prmaltg82] - TFG_max[fc82] : NG;
+    TVG_AR[fc84] = ((PRM[prmaltg84] - TFG_max[fc84]) >= 0) ? PRM[prmaltg84] - TFG_max[fc84] : NG;
+
+    /* percentage MG bij filemelding < 100% */
+    if (G[fc08] && !MG[fc08] && IH[hfileFile68af] && (PRM[prmfpercFile68af08] < 100)) filemem[fc08] = TRUE;
+    if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)) filemem[fc11] = TRUE;
+
+    /* percentage MG bij filemelding < 100% */
+
+    if (G[fc08] && !MG[fc08] && IH[hfileFile68af] && (PRM[prmfpercFile68af08] < 100)) filemem[fc08] = TRUE;
+    if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)) filemem[fc11] = TRUE;
+
+    /* @Menno: onderstaande code is de code uit FileVerwerking() met een kleine aanpassing (filemem)  */
+    if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
+    {
+        if (filemem[fc08] && G[fc08] && !MG[fc08])
+        {
+            PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmfpercFile68af08],
+                8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
+        }
+        if (filemem[fc11] && G[fc08] && !MG[fc08])
+        {
+            PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmfpercFile68af11],
+                8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
+        }
+    }
+    /* Afkappen tijdens file ingreep File68af */
+/* Eenmalig afkappen fase 08 op start file ingreep */
+    RT[tafkmingroen08fileFile68af] = ER[fc08] && T_max[tafkmingroen08fileFile68af];
+    if (SH[hfileFile68af] && G[fc08]) IH[hafk08fileFile68af] = TRUE;
+    if (EG[fc08]) IH[hafk08fileFile68af] = FALSE;
+    /* Afkappen fase 08 op max. groentijd tijdens file ingreep */
+    RT[tmaxgroen08fileFile68af] = SG[fc08] && T_max[tmaxgroen08fileFile68af];
+    if (filemem[fc08])
+    {
+        if (IH[hafk08fileFile68af] && T_max[tafkmingroen08fileFile68af] &&
+            !RT[tafkmingroen08fileFile68af] && !T[tafkmingroen08fileFile68af] && !(MK[fc08] & PRIO_MK_BIT) ||
+            !RT[tmaxgroen08fileFile68af] && !T[tmaxgroen08fileFile68af])
+        {
+            TVG_max[fc08] = 0;
+        }
+    }
+    /* Eenmalig afkappen fase 11 op start file ingreep */
+    RT[tafkmingroen11fileFile68af] = ER[fc11] && T_max[tafkmingroen11fileFile68af];
+    if (SH[hfileFile68af] && G[fc11]) IH[hafk11fileFile68af] = TRUE;
+    if (EG[fc11]) IH[hafk11fileFile68af] = FALSE;
+    /* Afkappen fase 11 op max. groentijd tijdens file ingreep */
+    RT[tmaxgroen11fileFile68af] = SG[fc11] && T_max[tmaxgroen11fileFile68af];
+    if (filemem[fc11])
+    {
+        if (IH[hafk11fileFile68af] && T_max[tafkmingroen11fileFile68af] &&
+            !RT[tafkmingroen11fileFile68af] && !T[tafkmingroen11fileFile68af] && !(MK[fc11] & PRIO_MK_BIT) ||
+            !RT[tmaxgroen11fileFile68af] && !T[tmaxgroen11fileFile68af])
+        {
+            TVG_max[fc11] = 0;
+        }
+    }
+        
+    if (EVG[fc08]) filemem[fc08] = FALSE;
+    if (EVG[fc11]) filemem[fc11] = FALSE;
+
+#endif
 
     /* Seniorengroen (percentage van TFG extra als WG) */
     if (SCH[schsi33]) SeniorenGroen(fc33, dk33a, tdbsiexgrdk33a, dk33b, tdbsiexgrdk33b, prmsiexgrperc33, hsiexgr33, tsiexgr33, tnlsgd3334, END);
@@ -2400,6 +2520,7 @@ void FileVerwerking(void)
         IH[hfileFile68af] = IH[hfile68_9a] && IH[hfile68_9b];
     }
 
+#ifdef NO_ISG
     /* percentage MG bij filemelding */
     if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
     {
@@ -2440,6 +2561,7 @@ void FileVerwerking(void)
             Z[fc11] |= BIT5;
         }
     }
+#endif
 
     /* Minimale roodtijden tijdens file ingreep File68af */
     /* Minimale roodtijd fase 08 */
@@ -2482,6 +2604,9 @@ void init_application(void)
         stuffkey(CTRLF4KEY);
 #endif
 
+#ifndef NO_ISG
+    init_tvg = FALSE;
+#endif
     /* Aansturing hulpelement aansturing wachttijdvoorspellers */
     IH[hwtv22] = SCH[schwtv22];
 
