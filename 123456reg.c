@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   11-04-2023   TLCGen      Funties detectiestoring uit elkaar halen
+ * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -177,256 +177,6 @@ void PreApplication(void)
 
     /* Genereren knippersignalen */
     UpdateKnipperSignalen();
-}
-
-void DetectieStoring_Aanvraag(void)
-{
-   /* @MENNO: verplaatste code uit detectiestoring*/
-    /* vaste/vertraagde aanvraag bij DetectieStoring_Meetkriterium */
-   RT[tdstvert02] = !T[tdstvert02] && R[fc02] && !A[fc02] && (
-      SCH[schdvakd02_1a] && (CIF_IS[d02_1a] >= CIF_DET_STORING) ||
-      SCH[schdvakd02_1b] && (CIF_IS[d02_1b] >= CIF_DET_STORING) ||
-      (CIF_IS[d02_1a] >= CIF_DET_STORING || PRM[prmda02_1a] == 0) &&
-      (CIF_IS[d02_2a] >= CIF_DET_STORING || PRM[prmda02_2a] == 0) &&
-      (CIF_IS[d02_3a] >= CIF_DET_STORING || PRM[prmda02_3a] == 0) &&
-      (CIF_IS[d02_4a] >= CIF_DET_STORING || PRM[prmda02_4a] == 0) &&
-      !(PRM[prmda02_1a] == 0 && PRM[prmda02_2a] == 0 && PRM[prmda02_3a] == 0 && PRM[prmda02_4a] == 0) ||
-      (CIF_IS[d02_1b] >= CIF_DET_STORING || PRM[prmda02_1b] == 0) &&
-      (CIF_IS[d02_2b] >= CIF_DET_STORING || PRM[prmda02_2b] == 0) &&
-      (CIF_IS[d02_3b] >= CIF_DET_STORING || PRM[prmda02_3b] == 0) &&
-      (CIF_IS[d02_4b] >= CIF_DET_STORING || PRM[prmda02_4b] == 0) &&
-      !(PRM[prmda02_1b] == 0 && PRM[prmda02_2b] == 0 && PRM[prmda02_3b] == 0 && PRM[prmda02_4b] == 0));
-   RT[tdstvert03] = !T[tdstvert03] && R[fc03] && !A[fc03] && (
-      SCH[schdvakd03_1] && (CIF_IS[d03_1] >= CIF_DET_STORING) ||
-      (CIF_IS[d03_1] >= CIF_DET_STORING || PRM[prmda03_1] == 0) &&
-      (CIF_IS[d03_2] >= CIF_DET_STORING || PRM[prmda03_2] == 0) &&
-      !(PRM[prmda03_1] == 0 && PRM[prmda03_2] == 0));
-   RT[tdstvert05] = !T[tdstvert05] && R[fc05] && !A[fc05] && (
-      (CIF_IS[d05_1] >= CIF_DET_STORING || PRM[prmda05_1] == 0) &&
-      (CIF_IS[d05_2] >= CIF_DET_STORING || PRM[prmda05_2] == 0) &&
-      !(PRM[prmda05_1] == 0 && PRM[prmda05_2] == 0));
-   RT[tdstvert08] = !T[tdstvert08] && R[fc08] && !A[fc08] && (
-      (CIF_IS[d08_1a] >= CIF_DET_STORING || PRM[prmda08_1a] == 0) &&
-      (CIF_IS[d08_1b] >= CIF_DET_STORING || PRM[prmda08_1b] == 0) &&
-      (CIF_IS[d08_2a] >= CIF_DET_STORING || PRM[prmda08_2a] == 0) &&
-      (CIF_IS[d08_3a] >= CIF_DET_STORING || PRM[prmda08_3a] == 0) &&
-      !(PRM[prmda08_1a] == 0 && PRM[prmda08_1b] == 0 && PRM[prmda08_2a] == 0 && PRM[prmda08_3a] == 0) ||
-      (CIF_IS[d08_2b] >= CIF_DET_STORING || PRM[prmda08_2b] == 0) &&
-      (CIF_IS[d08_3b] >= CIF_DET_STORING || PRM[prmda08_3b] == 0) &&
-      (CIF_IS[d08_4b] >= CIF_DET_STORING || PRM[prmda08_4b] == 0) &&
-      !(PRM[prmda08_2b] == 0 && PRM[prmda08_3b] == 0 && PRM[prmda08_4b] == 0));
-   RT[tdstvert09] = !T[tdstvert09] && R[fc09] && !A[fc09] && (
-      (CIF_IS[d09_1] >= CIF_DET_STORING || PRM[prmda09_1] == 0) &&
-      (CIF_IS[d09_2] >= CIF_DET_STORING || PRM[prmda09_2] == 0) &&
-      !(PRM[prmda09_1] == 0 && PRM[prmda09_2] == 0));
-   RT[tdstvert11] = !T[tdstvert11] && R[fc11] && !A[fc11] && (
-      (CIF_IS[d11_1] >= CIF_DET_STORING || PRM[prmda11_1] == 0) &&
-      (CIF_IS[d11_2] >= CIF_DET_STORING || PRM[prmda11_2] == 0) &&
-      (CIF_IS[d11_3] >= CIF_DET_STORING || PRM[prmda11_3] == 0) &&
-      !(PRM[prmda11_1] == 0 && PRM[prmda11_2] == 0 && PRM[prmda11_3] == 0));
-   RT[tdstvert21] = !T[tdstvert21] && R[fc21] && !A[fc21] && (
-      (CIF_IS[d211] >= CIF_DET_STORING || PRM[prmda211] == 0) &&
-      (CIF_IS[dk21] >= CIF_DET_STORING || PRM[prmdak21] == 0) &&
-      !(PRM[prmda211] == 0 && PRM[prmdak21] == 0));
-   RT[tdstvert22] = !T[tdstvert22] && R[fc22] && !A[fc22] && (
-      (CIF_IS[d22_1] >= CIF_DET_STORING || PRM[prmda22_1] == 0) &&
-      (CIF_IS[dk22] >= CIF_DET_STORING || PRM[prmdak22] == 0) &&
-      !(PRM[prmda22_1] == 0 && PRM[prmdak22] == 0));
-   RT[tdstvert24] = !T[tdstvert24] && R[fc24] && !A[fc24] && (
-      (CIF_IS[d24_1] >= CIF_DET_STORING || PRM[prmda24_1] == 0) &&
-      (CIF_IS[dk24] >= CIF_DET_STORING || PRM[prmdak24] == 0) &&
-      !(PRM[prmda24_1] == 0 && PRM[prmdak24] == 0));
-   RT[tdstvert26] = !T[tdstvert26] && R[fc26] && !A[fc26] && (
-      (CIF_IS[d261] >= CIF_DET_STORING || PRM[prmda261] == 0) &&
-      (CIF_IS[dk26] >= CIF_DET_STORING || PRM[prmdak26] == 0) &&
-      !(PRM[prmda261] == 0 && PRM[prmdak26] == 0));
-   RT[tdstvert28] = !T[tdstvert28] && R[fc28] && !A[fc28] && (
-      (CIF_IS[d28_1] >= CIF_DET_STORING || PRM[prmda28_1] == 0) &&
-      (CIF_IS[dk28] >= CIF_DET_STORING || PRM[prmdak28] == 0) &&
-      !(PRM[prmda28_1] == 0 && PRM[prmdak28] == 0));
-   RT[tdstvert31] = !T[tdstvert31] && R[fc31] && !A[fc31] && (
-      SCH[schdvakdk31a] && (CIF_IS[dk31a] >= CIF_DET_STORING) ||
-      SCH[schdvakdk31b] && (CIF_IS[dk31b] >= CIF_DET_STORING) ||
-      (CIF_IS[dk31a] >= CIF_DET_STORING || PRM[prmdak31a] == 0) &&
-      (CIF_IS[dk31b] >= CIF_DET_STORING || PRM[prmdak31b] == 0) &&
-      !(PRM[prmdak31a] == 0 && PRM[prmdak31b] == 0));
-   RT[tdstvert32] = !T[tdstvert32] && R[fc32] && !A[fc32] && (
-      (CIF_IS[dk32a] >= CIF_DET_STORING || PRM[prmdak32a] == 0) &&
-      (CIF_IS[dk32b] >= CIF_DET_STORING || PRM[prmdak32b] == 0) &&
-      !(PRM[prmdak32a] == 0 && PRM[prmdak32b] == 0));
-   RT[tdstvert33] = !T[tdstvert33] && R[fc33] && !A[fc33] && (
-      (CIF_IS[dk33a] >= CIF_DET_STORING || PRM[prmdak33a] == 0) &&
-      (CIF_IS[dk33b] >= CIF_DET_STORING || PRM[prmdak33b] == 0) &&
-      !(PRM[prmdak33a] == 0 && PRM[prmdak33b] == 0));
-   RT[tdstvert34] = !T[tdstvert34] && R[fc34] && !A[fc34] && (
-      (CIF_IS[dk34a] >= CIF_DET_STORING || PRM[prmdak34a] == 0) &&
-      (CIF_IS[dk34b] >= CIF_DET_STORING || PRM[prmdak34b] == 0) &&
-      !(PRM[prmdak34a] == 0 && PRM[prmdak34b] == 0));
-   RT[tdstvert38] = !T[tdstvert38] && R[fc38] && !A[fc38] && (
-      (CIF_IS[dk38a] >= CIF_DET_STORING || PRM[prmdak38a] == 0) &&
-      (CIF_IS[dk38b] >= CIF_DET_STORING || PRM[prmdak38b] == 0) &&
-      !(PRM[prmdak38a] == 0 && PRM[prmdak38b] == 0));
-   RT[tdstvert61] = !T[tdstvert61] && R[fc61] && !A[fc61] && (
-      (CIF_IS[d61_1] >= CIF_DET_STORING || PRM[prmda61_1] == 0) &&
-      (CIF_IS[d61_2] >= CIF_DET_STORING || PRM[prmda61_2] == 0) &&
-      !(PRM[prmda61_1] == 0 && PRM[prmda61_2] == 0));
-   RT[tdstvert62] = !T[tdstvert62] && R[fc62] && !A[fc62] && (
-      (CIF_IS[d62_1a] >= CIF_DET_STORING || PRM[prmda62_1a] == 0) &&
-      (CIF_IS[d62_1b] >= CIF_DET_STORING || PRM[prmda62_1b] == 0) &&
-      (CIF_IS[d62_2a] >= CIF_DET_STORING || PRM[prmda62_2a] == 0) &&
-      !(PRM[prmda62_1a] == 0 && PRM[prmda62_1b] == 0 && PRM[prmda62_2a] == 0) ||
-      (CIF_IS[d62_2b] >= CIF_DET_STORING || PRM[prmda62_2b] == 0) &&
-      !(PRM[prmda62_2b] == 0));
-   RT[tdstvert67] = !T[tdstvert67] && R[fc67] && !A[fc67] && (
-      (CIF_IS[d67_1] >= CIF_DET_STORING || PRM[prmda67_1] == 0) &&
-      (CIF_IS[d67_2] >= CIF_DET_STORING || PRM[prmda67_2] == 0) &&
-      !(PRM[prmda67_1] == 0 && PRM[prmda67_2] == 0));
-   RT[tdstvert68] = !T[tdstvert68] && R[fc68] && !A[fc68] && (
-      (CIF_IS[d68_1a] >= CIF_DET_STORING || PRM[prmda68_1a] == 0) &&
-      (CIF_IS[d68_1b] >= CIF_DET_STORING || PRM[prmda68_1b] == 0) &&
-      (CIF_IS[d68_2a] >= CIF_DET_STORING || PRM[prmda68_2a] == 0) &&
-      !(PRM[prmda68_1a] == 0 && PRM[prmda68_1b] == 0 && PRM[prmda68_2a] == 0) ||
-      (CIF_IS[d68_2b] >= CIF_DET_STORING || PRM[prmda68_2b] == 0) &&
-      (CIF_IS[d68_9b] >= CIF_DET_STORING || PRM[prmda68_9b] == 0) &&
-      !(PRM[prmda68_2b] == 0 && PRM[prmda68_9b] == 0));
-   RT[tdstvert81] = !T[tdstvert81] && R[fc81] && !A[fc81] && (
-      (CIF_IS[d81_1] >= CIF_DET_STORING || PRM[prmda81_1] == 0) &&
-      (CIF_IS[dk81] >= CIF_DET_STORING || PRM[prmdak81] == 0) &&
-      !(PRM[prmda81_1] == 0 && PRM[prmdak81] == 0));
-   RT[tdstvert82] = !T[tdstvert82] && R[fc82] && !A[fc82] && (
-      (CIF_IS[d82_1] >= CIF_DET_STORING || PRM[prmda82_1] == 0) &&
-      (CIF_IS[dk82] >= CIF_DET_STORING || PRM[prmdak82] == 0) &&
-      !(PRM[prmda82_1] == 0 && PRM[prmdak82] == 0));
-   RT[tdstvert84] = !T[tdstvert84] && R[fc84] && !A[fc84] && (
-      (CIF_IS[d84_1] >= CIF_DET_STORING || PRM[prmda84_1] == 0) &&
-      (CIF_IS[dk84] >= CIF_DET_STORING || PRM[prmdak84] == 0) &&
-      !(PRM[prmda84_1] == 0 && PRM[prmdak84] == 0));
-   A[fc02] |= (ET[tdstvert02] ? BIT11 : 0);
-   A[fc03] |= (ET[tdstvert03] ? BIT11 : 0);
-   A[fc05] |= (ET[tdstvert05] ? BIT11 : 0);
-   A[fc08] |= (ET[tdstvert08] ? BIT11 : 0);
-   A[fc09] |= (ET[tdstvert09] ? BIT11 : 0);
-   A[fc11] |= (ET[tdstvert11] ? BIT11 : 0);
-   A[fc21] |= (ET[tdstvert21] ? BIT11 : 0);
-   A[fc22] |= (ET[tdstvert22] ? BIT11 : 0);
-   A[fc24] |= (ET[tdstvert24] ? BIT11 : 0);
-   A[fc26] |= (ET[tdstvert26] ? BIT11 : 0);
-   A[fc28] |= (ET[tdstvert28] ? BIT11 : 0);
-   A[fc31] |= (ET[tdstvert31] ? BIT11 : 0);
-   A[fc32] |= (ET[tdstvert32] ? BIT11 : 0);
-   A[fc33] |= (ET[tdstvert33] ? BIT11 : 0);
-   A[fc34] |= (ET[tdstvert34] ? BIT11 : 0);
-   A[fc38] |= (ET[tdstvert38] ? BIT11 : 0);
-   A[fc61] |= (ET[tdstvert61] ? BIT11 : 0);
-   A[fc62] |= (ET[tdstvert62] ? BIT11 : 0);
-   A[fc67] |= (ET[tdstvert67] ? BIT11 : 0);
-   A[fc68] |= (ET[tdstvert68] ? BIT11 : 0);
-   A[fc81] |= (ET[tdstvert81] ? BIT11 : 0);
-   A[fc82] |= (ET[tdstvert82] ? BIT11 : 0);
-   A[fc84] |= (ET[tdstvert84] ? BIT11 : 0);
-   /* @MENNO: einde verplaatste code */
-
-   /* @MENNO: ook toevoegen in reg_add */
-   DetectieStoring_Aanvraag_Add();
-
-}
-
-void DetectieStoring_Meetkriterium(void)
-{
-   /* @MENNO: verplaatste code uit detectiestoring*/
-   int fc;
-
-   /* reset MK-bits vooraf, ivm onderlinge verwijzing. */
-   for (fc = 0; fc < FCMAX; ++fc)
-      MK[fc] &= ~BIT5;
-
-
-   /* hiaattijd op koplus bij defect lange lus */
-   /* ---------------------------------------- */
-   VervangendHiaatKoplus(fc02, d02_1a, d02_2a, thdvd02_1a);
-   VervangendHiaatKoplus(fc02, d02_1b, d02_2b, thdvd02_1b);
-   VervangendHiaatKoplus(fc03, d03_1, d03_2, thdvd03_1);
-   VervangendHiaatKoplus(fc05, d05_1, d05_2, thdvd05_1);
-   VervangendHiaatKoplus(fc08, d08_1a, d08_2a, thdvd08_1a);
-   VervangendHiaatKoplus(fc09, d09_1, d09_2, thdvd09_1);
-   VervangendHiaatKoplus(fc11, d11_1, d11_2, thdvd11_1);
-   VervangendHiaatKoplus(fc61, d61_1, d61_2, thdvd61_1);
-   VervangendHiaatKoplus(fc62, d62_1a, d62_2a, thdvd62_1a);
-   VervangendHiaatKoplus(fc67, d67_1, d67_2, thdvd67_1);
-   VervangendHiaatKoplus(fc68, d68_1a, d68_2a, thdvd68_1a);
-
-  /* @MENNO: einde verplaatste code */
-
-   /* @MENNO: ook toevoegen in reg_add */
-   DetectieStoring_Meetkriterium_Add();
-}
-
-void DetectieStoring_Verlenggroen(void)
-{
-   /* @MENNO: verplaatste code uit detectiestoring*/
-   /* percentage VG bij defect alle kop/lange lussen */
-   /* ---------------------------------------------- */
-   if ((CIF_IS[d03_1] >= CIF_DET_STORING) && (CIF_IS[d03_2] >= CIF_DET_STORING))
-   {
-      MK[fc03] |= BIT5;
-      PercentageVerlengGroenTijden(fc03, mperiod, PRM[prmperc03],
-         8, TVGA_max[fc03], PRM[prmvg1_03], PRM[prmvg2_03], PRM[prmvg3_03], PRM[prmvg4_03], PRM[prmvg5_03], PRM[prmvg6_03], PRM[prmvg7_03]);
-   }
-   if ((CIF_IS[d05_1] >= CIF_DET_STORING) && (CIF_IS[d05_2] >= CIF_DET_STORING))
-   {
-      MK[fc05] |= BIT5;
-      PercentageVerlengGroenTijden(fc05, mperiod, PRM[prmperc05],
-         8, TVGA_max[fc05], PRM[prmvg1_05], PRM[prmvg2_05], PRM[prmvg3_05], PRM[prmvg4_05], PRM[prmvg5_05], PRM[prmvg6_05], PRM[prmvg7_05]);
-   }
-   if ((CIF_IS[d08_1a] >= CIF_DET_STORING) && (CIF_IS[d08_1b] >= CIF_DET_STORING) && (CIF_IS[d08_2a] >= CIF_DET_STORING) && (CIF_IS[d08_3a] >= CIF_DET_STORING) ||
-      (CIF_IS[d08_2b] >= CIF_DET_STORING) && (CIF_IS[d08_3b] >= CIF_DET_STORING))
-   {
-      MK[fc08] |= BIT5;
-      PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmperc08],
-         8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
-   }
-   if ((CIF_IS[d09_1] >= CIF_DET_STORING) && (CIF_IS[d09_2] >= CIF_DET_STORING))
-   {
-      MK[fc09] |= BIT5;
-      PercentageVerlengGroenTijden(fc09, mperiod, PRM[prmperc09],
-         8, TVGA_max[fc09], PRM[prmvg1_09], PRM[prmvg2_09], PRM[prmvg3_09], PRM[prmvg4_09], PRM[prmvg5_09], PRM[prmvg6_09], PRM[prmvg7_09]);
-   }
-   if ((CIF_IS[d11_1] >= CIF_DET_STORING) && (CIF_IS[d11_2] >= CIF_DET_STORING) && (CIF_IS[d11_3] >= CIF_DET_STORING))
-   {
-      MK[fc11] |= BIT5;
-      PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmperc11],
-         8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
-   }
-   if ((CIF_IS[d61_1] >= CIF_DET_STORING) && (CIF_IS[d61_2] >= CIF_DET_STORING))
-   {
-      MK[fc61] |= BIT5;
-      PercentageVerlengGroenTijden(fc61, mperiod, PRM[prmperc61],
-         8, TVGA_max[fc61], PRM[prmvg1_61], PRM[prmvg2_61], PRM[prmvg3_61], PRM[prmvg4_61], PRM[prmvg5_61], PRM[prmvg6_61], PRM[prmvg7_61]);
-   }
-   if ((CIF_IS[d62_1a] >= CIF_DET_STORING) && (CIF_IS[d62_1b] >= CIF_DET_STORING) && (CIF_IS[d62_2a] >= CIF_DET_STORING) ||
-      (CIF_IS[d62_2b] >= CIF_DET_STORING))
-   {
-      MK[fc62] |= BIT5;
-      PercentageVerlengGroenTijden(fc62, mperiod, PRM[prmperc62],
-         8, TVGA_max[fc62], PRM[prmvg1_62], PRM[prmvg2_62], PRM[prmvg3_62], PRM[prmvg4_62], PRM[prmvg5_62], PRM[prmvg6_62], PRM[prmvg7_62]);
-   }
-   if ((CIF_IS[d67_1] >= CIF_DET_STORING) && (CIF_IS[d67_2] >= CIF_DET_STORING))
-   {
-      MK[fc67] |= BIT5;
-      PercentageVerlengGroenTijden(fc67, mperiod, PRM[prmperc67],
-         8, TVGA_max[fc67], PRM[prmvg1_67], PRM[prmvg2_67], PRM[prmvg3_67], PRM[prmvg4_67], PRM[prmvg5_67], PRM[prmvg6_67], PRM[prmvg7_67]);
-   }
-   if ((CIF_IS[d68_1a] >= CIF_DET_STORING) && (CIF_IS[d68_1b] >= CIF_DET_STORING) && (CIF_IS[d68_2a] >= CIF_DET_STORING) ||
-      (CIF_IS[d68_2b] >= CIF_DET_STORING))
-   {
-      MK[fc68] |= BIT5;
-      PercentageVerlengGroenTijden(fc68, mperiod, PRM[prmperc68],
-         8, TVGA_max[fc68], PRM[prmvg1_68], PRM[prmvg2_68], PRM[prmvg3_68], PRM[prmvg4_68], PRM[prmvg5_68], PRM[prmvg6_68], PRM[prmvg7_68]);
-   }
-   /* @MMenno: einde verplaatste code uit meetkriterium*/
-
-   /* @MENNO: ook toevoegen in reg_add */
-   DetectieStoring_Verlenggroen_Add();
 }
 
 void KlokPerioden(void)
@@ -1026,7 +776,6 @@ void Aanvragen(void)
         #endif
     #endif
 
-    DetectieStoring_Aanvraag();
     Aanvragen_Add();
 }
 
@@ -1386,8 +1135,6 @@ void Verlenggroen(void)
     RW[fc34] |= T[tinl3433] ? BIT2 : 0;
     RW[fc33] |= T[tinl3334] ? BIT2 : 0;
 
-    DetectieStoring_Verlenggroen();
-
     Maxgroen_Add();
     gk_ControlGK();
 }
@@ -1692,7 +1439,6 @@ void Meetkriterium(void)
         1, d11_4, t11_4_1, t11_4_2, ttdh_11_4_1, ttdh_11_4_2, tmax_11_4, prmspringverleng_11_4, hverleng_11_4, 
         END);
 
-    DetectieStoring_Meetkriterium();
     Meetkriterium_Add();
 }
 
@@ -2470,6 +2216,235 @@ void FileVerwerking(void)
     FileVerwerking_Add();
 }
 
+void DetectieStoring(void)
+{
+    int fc;
+
+    /* reset MK-bits vooraf, ivm onderlinge verwijzing. */
+    for (fc = 0; fc < FCMAX; ++fc)
+        MK[fc] &= ~BIT5;
+
+    /* vaste/vertraagde aanvraag bij detectiestoring */
+    RT[tdstvert02] = !T[tdstvert02] && R[fc02] && !A[fc02] && (
+                     SCH[schdvakd02_1a] && (CIF_IS[d02_1a] >= CIF_DET_STORING) ||
+                     SCH[schdvakd02_1b] && (CIF_IS[d02_1b] >= CIF_DET_STORING) ||
+                     (CIF_IS[d02_1a] >= CIF_DET_STORING || PRM[prmda02_1a] == 0) &&
+                     (CIF_IS[d02_2a] >= CIF_DET_STORING || PRM[prmda02_2a] == 0) &&
+                     (CIF_IS[d02_3a] >= CIF_DET_STORING || PRM[prmda02_3a] == 0) &&
+                     (CIF_IS[d02_4a] >= CIF_DET_STORING || PRM[prmda02_4a] == 0) &&
+                     !(PRM[prmda02_1a] == 0 && PRM[prmda02_2a] == 0 && PRM[prmda02_3a] == 0 && PRM[prmda02_4a] == 0) ||
+                     (CIF_IS[d02_1b] >= CIF_DET_STORING || PRM[prmda02_1b] == 0) &&
+                     (CIF_IS[d02_2b] >= CIF_DET_STORING || PRM[prmda02_2b] == 0) &&
+                     (CIF_IS[d02_3b] >= CIF_DET_STORING || PRM[prmda02_3b] == 0) &&
+                     (CIF_IS[d02_4b] >= CIF_DET_STORING || PRM[prmda02_4b] == 0) &&
+                     !(PRM[prmda02_1b] == 0 && PRM[prmda02_2b] == 0 && PRM[prmda02_3b] == 0 && PRM[prmda02_4b] == 0));
+    RT[tdstvert03] = !T[tdstvert03] && R[fc03] && !A[fc03] && (
+                     SCH[schdvakd03_1] && (CIF_IS[d03_1] >= CIF_DET_STORING) ||
+                     (CIF_IS[d03_1] >= CIF_DET_STORING || PRM[prmda03_1] == 0) &&
+                     (CIF_IS[d03_2] >= CIF_DET_STORING || PRM[prmda03_2] == 0) &&
+                     !(PRM[prmda03_1] == 0 && PRM[prmda03_2] == 0));
+    RT[tdstvert05] = !T[tdstvert05] && R[fc05] && !A[fc05] && (
+                     (CIF_IS[d05_1] >= CIF_DET_STORING || PRM[prmda05_1] == 0) &&
+                     (CIF_IS[d05_2] >= CIF_DET_STORING || PRM[prmda05_2] == 0) &&
+                     !(PRM[prmda05_1] == 0 && PRM[prmda05_2] == 0));
+    RT[tdstvert08] = !T[tdstvert08] && R[fc08] && !A[fc08] && (
+                     (CIF_IS[d08_1a] >= CIF_DET_STORING || PRM[prmda08_1a] == 0) &&
+                     (CIF_IS[d08_1b] >= CIF_DET_STORING || PRM[prmda08_1b] == 0) &&
+                     (CIF_IS[d08_2a] >= CIF_DET_STORING || PRM[prmda08_2a] == 0) &&
+                     (CIF_IS[d08_3a] >= CIF_DET_STORING || PRM[prmda08_3a] == 0) &&
+                     !(PRM[prmda08_1a] == 0 && PRM[prmda08_1b] == 0 && PRM[prmda08_2a] == 0 && PRM[prmda08_3a] == 0) ||
+                     (CIF_IS[d08_2b] >= CIF_DET_STORING || PRM[prmda08_2b] == 0) &&
+                     (CIF_IS[d08_3b] >= CIF_DET_STORING || PRM[prmda08_3b] == 0) &&
+                     (CIF_IS[d08_4b] >= CIF_DET_STORING || PRM[prmda08_4b] == 0) &&
+                     !(PRM[prmda08_2b] == 0 && PRM[prmda08_3b] == 0 && PRM[prmda08_4b] == 0));
+    RT[tdstvert09] = !T[tdstvert09] && R[fc09] && !A[fc09] && (
+                     (CIF_IS[d09_1] >= CIF_DET_STORING || PRM[prmda09_1] == 0) &&
+                     (CIF_IS[d09_2] >= CIF_DET_STORING || PRM[prmda09_2] == 0) &&
+                     !(PRM[prmda09_1] == 0 && PRM[prmda09_2] == 0));
+    RT[tdstvert11] = !T[tdstvert11] && R[fc11] && !A[fc11] && (
+                     (CIF_IS[d11_1] >= CIF_DET_STORING || PRM[prmda11_1] == 0) &&
+                     (CIF_IS[d11_2] >= CIF_DET_STORING || PRM[prmda11_2] == 0) &&
+                     (CIF_IS[d11_3] >= CIF_DET_STORING || PRM[prmda11_3] == 0) &&
+                     !(PRM[prmda11_1] == 0 && PRM[prmda11_2] == 0 && PRM[prmda11_3] == 0));
+    RT[tdstvert21] = !T[tdstvert21] && R[fc21] && !A[fc21] && (
+                     (CIF_IS[d211] >= CIF_DET_STORING || PRM[prmda211] == 0) &&
+                     (CIF_IS[dk21] >= CIF_DET_STORING || PRM[prmdak21] == 0) &&
+                     !(PRM[prmda211] == 0 && PRM[prmdak21] == 0));
+    RT[tdstvert22] = !T[tdstvert22] && R[fc22] && !A[fc22] && (
+                     (CIF_IS[d22_1] >= CIF_DET_STORING || PRM[prmda22_1] == 0) &&
+                     (CIF_IS[dk22] >= CIF_DET_STORING || PRM[prmdak22] == 0) &&
+                     !(PRM[prmda22_1] == 0 && PRM[prmdak22] == 0));
+    RT[tdstvert24] = !T[tdstvert24] && R[fc24] && !A[fc24] && (
+                     (CIF_IS[d24_1] >= CIF_DET_STORING || PRM[prmda24_1] == 0) &&
+                     (CIF_IS[dk24] >= CIF_DET_STORING || PRM[prmdak24] == 0) &&
+                     !(PRM[prmda24_1] == 0 && PRM[prmdak24] == 0));
+    RT[tdstvert26] = !T[tdstvert26] && R[fc26] && !A[fc26] && (
+                     (CIF_IS[d261] >= CIF_DET_STORING || PRM[prmda261] == 0) &&
+                     (CIF_IS[dk26] >= CIF_DET_STORING || PRM[prmdak26] == 0) &&
+                     !(PRM[prmda261] == 0 && PRM[prmdak26] == 0));
+    RT[tdstvert28] = !T[tdstvert28] && R[fc28] && !A[fc28] && (
+                     (CIF_IS[d28_1] >= CIF_DET_STORING || PRM[prmda28_1] == 0) &&
+                     (CIF_IS[dk28] >= CIF_DET_STORING || PRM[prmdak28] == 0) &&
+                     !(PRM[prmda28_1] == 0 && PRM[prmdak28] == 0));
+    RT[tdstvert31] = !T[tdstvert31] && R[fc31] && !A[fc31] && (
+                     SCH[schdvakdk31a] && (CIF_IS[dk31a] >= CIF_DET_STORING) ||
+                     SCH[schdvakdk31b] && (CIF_IS[dk31b] >= CIF_DET_STORING) ||
+                     (CIF_IS[dk31a] >= CIF_DET_STORING || PRM[prmdak31a] == 0) &&
+                     (CIF_IS[dk31b] >= CIF_DET_STORING || PRM[prmdak31b] == 0) &&
+                     !(PRM[prmdak31a] == 0 && PRM[prmdak31b] == 0));
+    RT[tdstvert32] = !T[tdstvert32] && R[fc32] && !A[fc32] && (
+                     (CIF_IS[dk32a] >= CIF_DET_STORING || PRM[prmdak32a] == 0) &&
+                     (CIF_IS[dk32b] >= CIF_DET_STORING || PRM[prmdak32b] == 0) &&
+                     !(PRM[prmdak32a] == 0 && PRM[prmdak32b] == 0));
+    RT[tdstvert33] = !T[tdstvert33] && R[fc33] && !A[fc33] && (
+                     (CIF_IS[dk33a] >= CIF_DET_STORING || PRM[prmdak33a] == 0) &&
+                     (CIF_IS[dk33b] >= CIF_DET_STORING || PRM[prmdak33b] == 0) &&
+                     !(PRM[prmdak33a] == 0 && PRM[prmdak33b] == 0));
+    RT[tdstvert34] = !T[tdstvert34] && R[fc34] && !A[fc34] && (
+                     (CIF_IS[dk34a] >= CIF_DET_STORING || PRM[prmdak34a] == 0) &&
+                     (CIF_IS[dk34b] >= CIF_DET_STORING || PRM[prmdak34b] == 0) &&
+                     !(PRM[prmdak34a] == 0 && PRM[prmdak34b] == 0));
+    RT[tdstvert38] = !T[tdstvert38] && R[fc38] && !A[fc38] && (
+                     (CIF_IS[dk38a] >= CIF_DET_STORING || PRM[prmdak38a] == 0) &&
+                     (CIF_IS[dk38b] >= CIF_DET_STORING || PRM[prmdak38b] == 0) &&
+                     !(PRM[prmdak38a] == 0 && PRM[prmdak38b] == 0));
+    RT[tdstvert61] = !T[tdstvert61] && R[fc61] && !A[fc61] && (
+                     (CIF_IS[d61_1] >= CIF_DET_STORING || PRM[prmda61_1] == 0) &&
+                     (CIF_IS[d61_2] >= CIF_DET_STORING || PRM[prmda61_2] == 0) &&
+                     !(PRM[prmda61_1] == 0 && PRM[prmda61_2] == 0));
+    RT[tdstvert62] = !T[tdstvert62] && R[fc62] && !A[fc62] && (
+                     (CIF_IS[d62_1a] >= CIF_DET_STORING || PRM[prmda62_1a] == 0) &&
+                     (CIF_IS[d62_1b] >= CIF_DET_STORING || PRM[prmda62_1b] == 0) &&
+                     (CIF_IS[d62_2a] >= CIF_DET_STORING || PRM[prmda62_2a] == 0) &&
+                     !(PRM[prmda62_1a] == 0 && PRM[prmda62_1b] == 0 && PRM[prmda62_2a] == 0) ||
+                     (CIF_IS[d62_2b] >= CIF_DET_STORING || PRM[prmda62_2b] == 0) &&
+                     !(PRM[prmda62_2b] == 0));
+    RT[tdstvert67] = !T[tdstvert67] && R[fc67] && !A[fc67] && (
+                     (CIF_IS[d67_1] >= CIF_DET_STORING || PRM[prmda67_1] == 0) &&
+                     (CIF_IS[d67_2] >= CIF_DET_STORING || PRM[prmda67_2] == 0) &&
+                     !(PRM[prmda67_1] == 0 && PRM[prmda67_2] == 0));
+    RT[tdstvert68] = !T[tdstvert68] && R[fc68] && !A[fc68] && (
+                     (CIF_IS[d68_1a] >= CIF_DET_STORING || PRM[prmda68_1a] == 0) &&
+                     (CIF_IS[d68_1b] >= CIF_DET_STORING || PRM[prmda68_1b] == 0) &&
+                     (CIF_IS[d68_2a] >= CIF_DET_STORING || PRM[prmda68_2a] == 0) &&
+                     !(PRM[prmda68_1a] == 0 && PRM[prmda68_1b] == 0 && PRM[prmda68_2a] == 0) ||
+                     (CIF_IS[d68_2b] >= CIF_DET_STORING || PRM[prmda68_2b] == 0) &&
+                     (CIF_IS[d68_9b] >= CIF_DET_STORING || PRM[prmda68_9b] == 0) &&
+                     !(PRM[prmda68_2b] == 0 && PRM[prmda68_9b] == 0));
+    RT[tdstvert81] = !T[tdstvert81] && R[fc81] && !A[fc81] && (
+                     (CIF_IS[d81_1] >= CIF_DET_STORING || PRM[prmda81_1] == 0) &&
+                     (CIF_IS[dk81] >= CIF_DET_STORING || PRM[prmdak81] == 0) &&
+                     !(PRM[prmda81_1] == 0 && PRM[prmdak81] == 0));
+    RT[tdstvert82] = !T[tdstvert82] && R[fc82] && !A[fc82] && (
+                     (CIF_IS[d82_1] >= CIF_DET_STORING || PRM[prmda82_1] == 0) &&
+                     (CIF_IS[dk82] >= CIF_DET_STORING || PRM[prmdak82] == 0) &&
+                     !(PRM[prmda82_1] == 0 && PRM[prmdak82] == 0));
+    RT[tdstvert84] = !T[tdstvert84] && R[fc84] && !A[fc84] && (
+                     (CIF_IS[d84_1] >= CIF_DET_STORING || PRM[prmda84_1] == 0) &&
+                     (CIF_IS[dk84] >= CIF_DET_STORING || PRM[prmdak84] == 0) &&
+                     !(PRM[prmda84_1] == 0 && PRM[prmdak84] == 0));
+    A[fc02] |= (ET[tdstvert02] ? BIT11 : 0);
+    A[fc03] |= (ET[tdstvert03] ? BIT11 : 0);
+    A[fc05] |= (ET[tdstvert05] ? BIT11 : 0);
+    A[fc08] |= (ET[tdstvert08] ? BIT11 : 0);
+    A[fc09] |= (ET[tdstvert09] ? BIT11 : 0);
+    A[fc11] |= (ET[tdstvert11] ? BIT11 : 0);
+    A[fc21] |= (ET[tdstvert21] ? BIT11 : 0);
+    A[fc22] |= (ET[tdstvert22] ? BIT11 : 0);
+    A[fc24] |= (ET[tdstvert24] ? BIT11 : 0);
+    A[fc26] |= (ET[tdstvert26] ? BIT11 : 0);
+    A[fc28] |= (ET[tdstvert28] ? BIT11 : 0);
+    A[fc31] |= (ET[tdstvert31] ? BIT11 : 0);
+    A[fc32] |= (ET[tdstvert32] ? BIT11 : 0);
+    A[fc33] |= (ET[tdstvert33] ? BIT11 : 0);
+    A[fc34] |= (ET[tdstvert34] ? BIT11 : 0);
+    A[fc38] |= (ET[tdstvert38] ? BIT11 : 0);
+    A[fc61] |= (ET[tdstvert61] ? BIT11 : 0);
+    A[fc62] |= (ET[tdstvert62] ? BIT11 : 0);
+    A[fc67] |= (ET[tdstvert67] ? BIT11 : 0);
+    A[fc68] |= (ET[tdstvert68] ? BIT11 : 0);
+    A[fc81] |= (ET[tdstvert81] ? BIT11 : 0);
+    A[fc82] |= (ET[tdstvert82] ? BIT11 : 0);
+    A[fc84] |= (ET[tdstvert84] ? BIT11 : 0);
+
+    /* hiaattijd op koplus bij defect lange lus */
+    /* ---------------------------------------- */
+    VervangendHiaatKoplus(fc02, d02_1a, d02_2a, thdvd02_1a);
+    VervangendHiaatKoplus(fc02, d02_1b, d02_2b, thdvd02_1b);
+    VervangendHiaatKoplus(fc03, d03_1, d03_2, thdvd03_1);
+    VervangendHiaatKoplus(fc05, d05_1, d05_2, thdvd05_1);
+    VervangendHiaatKoplus(fc08, d08_1a, d08_2a, thdvd08_1a);
+    VervangendHiaatKoplus(fc09, d09_1, d09_2, thdvd09_1);
+    VervangendHiaatKoplus(fc11, d11_1, d11_2, thdvd11_1);
+    VervangendHiaatKoplus(fc61, d61_1, d61_2, thdvd61_1);
+    VervangendHiaatKoplus(fc62, d62_1a, d62_2a, thdvd62_1a);
+    VervangendHiaatKoplus(fc67, d67_1, d67_2, thdvd67_1);
+    VervangendHiaatKoplus(fc68, d68_1a, d68_2a, thdvd68_1a);
+
+    /* percentage VG bij defect alle kop/lange lussen */
+    /* ---------------------------------------------- */
+    if ((CIF_IS[d03_1] >= CIF_DET_STORING) && (CIF_IS[d03_2] >= CIF_DET_STORING))
+    {
+        MK[fc03] |= BIT5;
+        PercentageVerlengGroenTijden(fc03, mperiod, PRM[prmperc03], 
+                                     8, TVGA_max[fc03], PRM[prmvg1_03], PRM[prmvg2_03], PRM[prmvg3_03], PRM[prmvg4_03], PRM[prmvg5_03], PRM[prmvg6_03], PRM[prmvg7_03]);
+    }
+    if ((CIF_IS[d05_1] >= CIF_DET_STORING) && (CIF_IS[d05_2] >= CIF_DET_STORING))
+    {
+        MK[fc05] |= BIT5;
+        PercentageVerlengGroenTijden(fc05, mperiod, PRM[prmperc05], 
+                                     8, TVGA_max[fc05], PRM[prmvg1_05], PRM[prmvg2_05], PRM[prmvg3_05], PRM[prmvg4_05], PRM[prmvg5_05], PRM[prmvg6_05], PRM[prmvg7_05]);
+    }
+    if ((CIF_IS[d08_1a] >= CIF_DET_STORING) && (CIF_IS[d08_1b] >= CIF_DET_STORING) && (CIF_IS[d08_2a] >= CIF_DET_STORING) && (CIF_IS[d08_3a] >= CIF_DET_STORING) ||
+        (CIF_IS[d08_2b] >= CIF_DET_STORING) && (CIF_IS[d08_3b] >= CIF_DET_STORING))
+    {
+        MK[fc08] |= BIT5;
+        PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmperc08], 
+                                     8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
+    }
+    if ((CIF_IS[d09_1] >= CIF_DET_STORING) && (CIF_IS[d09_2] >= CIF_DET_STORING))
+    {
+        MK[fc09] |= BIT5;
+        PercentageVerlengGroenTijden(fc09, mperiod, PRM[prmperc09], 
+                                     8, TVGA_max[fc09], PRM[prmvg1_09], PRM[prmvg2_09], PRM[prmvg3_09], PRM[prmvg4_09], PRM[prmvg5_09], PRM[prmvg6_09], PRM[prmvg7_09]);
+    }
+    if ((CIF_IS[d11_1] >= CIF_DET_STORING) && (CIF_IS[d11_2] >= CIF_DET_STORING) && (CIF_IS[d11_3] >= CIF_DET_STORING))
+    {
+        MK[fc11] |= BIT5;
+        PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmperc11], 
+                                     8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
+    }
+    if ((CIF_IS[d61_1] >= CIF_DET_STORING) && (CIF_IS[d61_2] >= CIF_DET_STORING))
+    {
+        MK[fc61] |= BIT5;
+        PercentageVerlengGroenTijden(fc61, mperiod, PRM[prmperc61], 
+                                     8, TVGA_max[fc61], PRM[prmvg1_61], PRM[prmvg2_61], PRM[prmvg3_61], PRM[prmvg4_61], PRM[prmvg5_61], PRM[prmvg6_61], PRM[prmvg7_61]);
+    }
+    if ((CIF_IS[d62_1a] >= CIF_DET_STORING) && (CIF_IS[d62_1b] >= CIF_DET_STORING) && (CIF_IS[d62_2a] >= CIF_DET_STORING) ||
+        (CIF_IS[d62_2b] >= CIF_DET_STORING))
+    {
+        MK[fc62] |= BIT5;
+        PercentageVerlengGroenTijden(fc62, mperiod, PRM[prmperc62], 
+                                     8, TVGA_max[fc62], PRM[prmvg1_62], PRM[prmvg2_62], PRM[prmvg3_62], PRM[prmvg4_62], PRM[prmvg5_62], PRM[prmvg6_62], PRM[prmvg7_62]);
+    }
+    if ((CIF_IS[d67_1] >= CIF_DET_STORING) && (CIF_IS[d67_2] >= CIF_DET_STORING))
+    {
+        MK[fc67] |= BIT5;
+        PercentageVerlengGroenTijden(fc67, mperiod, PRM[prmperc67], 
+                                     8, TVGA_max[fc67], PRM[prmvg1_67], PRM[prmvg2_67], PRM[prmvg3_67], PRM[prmvg4_67], PRM[prmvg5_67], PRM[prmvg6_67], PRM[prmvg7_67]);
+    }
+    if ((CIF_IS[d68_1a] >= CIF_DET_STORING) && (CIF_IS[d68_1b] >= CIF_DET_STORING) && (CIF_IS[d68_2a] >= CIF_DET_STORING) ||
+        (CIF_IS[d68_2b] >= CIF_DET_STORING))
+    {
+        MK[fc68] |= BIT5;
+        PercentageVerlengGroenTijden(fc68, mperiod, PRM[prmperc68], 
+                                     8, TVGA_max[fc68], PRM[prmvg1_68], PRM[prmvg2_68], PRM[prmvg3_68], PRM[prmvg4_68], PRM[prmvg5_68], PRM[prmvg6_68], PRM[prmvg7_68]);
+    }
+
+
+    DetectieStoring_Add();
+}
+
 void init_application(void)
 {
 #if (defined AUTOMAAT || defined AUTOMAAT_TEST)
@@ -2657,6 +2632,7 @@ void application(void)
     Synchronisaties();
     RealisatieAfhandeling();
     FileVerwerking();
+    DetectieStoring();
     AfhandelingPrio();
     Fixatie(isfix, 0, FCMAX-1, SCH[schbmfix], PRML, ML);
 

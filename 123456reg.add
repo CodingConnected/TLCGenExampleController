@@ -110,17 +110,7 @@ void FileVerwerking_Add(void)
 
 }
 
-void DetectieStoring_Aanvraag_Add(void)
-{
-
-}
-
-void DetectieStoring_Verlenggroen_Add(void)
-{
-
-}
-
-void DetectieStoring_Meetkriterium_Add(void)
+void DetectieStoring_Add(void)
 {
 
 }
