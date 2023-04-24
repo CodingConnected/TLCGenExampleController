@@ -8,14 +8,14 @@
 
    BESTAND:   123456prio.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.0
-   CCOLGEN:   12.4.0.0
+    TLCGEN:   12.4.0.1
+   CCOLGEN:   12.4.0.1
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.1   24-04-2023   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -924,12 +924,12 @@ void PrioInstellingen(void)
     iPRM_ALTP[fc22] = PRM[prmaltp2232];
     iPRM_ALTP[fc24] = PRM[prmaltp243484];
     iPRM_ALTP[fc26] = PRM[prmaltp26];
-    iPRM_ALTP[fc28] = PRM[prmaltp28];
+    iPRM_ALTP[fc28] = PRM[prmaltp2838];
     iPRM_ALTP[fc31] = PRM[prmaltp31];
     iPRM_ALTP[fc32] = PRM[prmaltp2232];
     iPRM_ALTP[fc33] = PRM[prmaltp3384];
     iPRM_ALTP[fc34] = PRM[prmaltp2434];
-    iPRM_ALTP[fc38] = PRM[prmaltp38];
+    iPRM_ALTP[fc38] = PRM[prmaltp2838];
     iPRM_ALTP[fc61] = PRM[prmaltp61];
     iPRM_ALTP[fc62] = PRM[prmaltp62];
     iPRM_ALTP[fc67] = PRM[prmaltp67];
@@ -949,12 +949,12 @@ void PrioInstellingen(void)
     iSCH_ALTG[fc22] = SCH[schaltg2232];
     iSCH_ALTG[fc24] = SCH[schaltg243484];
     iSCH_ALTG[fc26] = SCH[schaltg26];
-    iSCH_ALTG[fc28] = SCH[schaltg28];
+    iSCH_ALTG[fc28] = SCH[schaltg2838];
     iSCH_ALTG[fc31] = SCH[schaltg31];
     iSCH_ALTG[fc32] = SCH[schaltg2232];
     iSCH_ALTG[fc33] = SCH[schaltg3384];
     iSCH_ALTG[fc34] = SCH[schaltg2434];
-    iSCH_ALTG[fc38] = SCH[schaltg38];
+    iSCH_ALTG[fc38] = SCH[schaltg2838];
     iSCH_ALTG[fc61] = SCH[schaltg61];
     iSCH_ALTG[fc62] = SCH[schaltg62];
     iSCH_ALTG[fc67] = SCH[schaltg67];
@@ -2209,6 +2209,8 @@ if (SCH[schconfidence15fix])
         if (SCH[schgs2434] && (P[fc34] & BIT11)) { Z[fc24] &= ~PRIO_Z_BIT; }
         if (SCH[schgs2484] && (P[fc24] & BIT11)) { Z[fc84] &= ~PRIO_Z_BIT; }
         if (SCH[schgs2484] && (P[fc84] & BIT11)) { Z[fc24] &= ~PRIO_Z_BIT; }
+        if (SCH[schgs2838] && (P[fc28] & BIT11)) { Z[fc38] &= ~PRIO_Z_BIT; }
+        if (SCH[schgs2838] && (P[fc38] & BIT11)) { Z[fc28] &= ~PRIO_Z_BIT; }
         if (SCH[schgs3384] && (P[fc33] & BIT11)) { Z[fc84] &= ~PRIO_Z_BIT; }
         if (SCH[schgs3384] && (P[fc84] & BIT11)) { Z[fc33] &= ~PRIO_Z_BIT; }
         if ((P[fc05] & BIT11)) { Z[fc22] &= ~PRIO_Z_BIT; }
@@ -2385,6 +2387,8 @@ void TegenhoudenConflictenExtra(void)
     if (SCH[schconfidence15fix] && SCH[schgs2434] && (P[fc34] & BIT11)) { RR[fc24] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2484] && (P[fc24] & BIT11)) { RR[fc84] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2484] && (P[fc84] & BIT11)) { RR[fc24] &= ~PRIO_RR_BIT; }
+    if (SCH[schconfidence15fix] && SCH[schgs2838] && (P[fc28] & BIT11)) { RR[fc38] &= ~PRIO_RR_BIT; }
+    if (SCH[schconfidence15fix] && SCH[schgs2838] && (P[fc38] & BIT11)) { RR[fc28] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs3384] && (P[fc33] & BIT11)) { RR[fc84] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs3384] && (P[fc84] & BIT11)) { RR[fc33] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && (P[fc05] & BIT11)) { RR[fc22] &= ~PRIO_RR_BIT; }
@@ -2608,6 +2612,8 @@ void PrioPARCorrecties(void)
         if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
         if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
+        if (SCH[schgs2838]) PAR[fc28] = PAR[fc28] && (PAR[fc38] || !A[fc38]);
+        if (SCH[schgs2838]) PAR[fc38] = PAR[fc38] && (PAR[fc28] || !A[fc28]);
         if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
     }
@@ -2663,6 +2669,8 @@ void PrioPARCorrecties(void)
     if (SCH[schgs2434] && (P[fc34] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
     if (SCH[schgs2484] && (P[fc24] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs2484] && (P[fc84] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
+    if (SCH[schgs2838] && (P[fc28] & BIT11) && R[fc38] && !kp(fc38) && A[fc38]) { PAR[fc38] |= BIT11; P[fc38] |= BIT11; }
+    if (SCH[schgs2838] && (P[fc38] & BIT11) && R[fc28] && !kp(fc28) && A[fc28]) { PAR[fc28] |= BIT11; P[fc28] |= BIT11; }
     if (SCH[schgs3384] && (P[fc33] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs3384] && (P[fc84] & BIT11) && R[fc33] && !kp(fc33) && A[fc33]) { PAR[fc33] |= BIT11; P[fc33] |= BIT11; }
     if ((P[fc05] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }

@@ -1,4 +1,4 @@
-/* extra_func_ris.c - gegenereerd met TLCGen 12.4.0.0 */
+/* extra_func_ris.c - gegenereerd met TLCGen 12.4.0.1 */
 
 /* EXTRA_FUNC_RIS.C */
 /* ================ */
@@ -14,7 +14,9 @@
 
 /* Deze ris prioriteit applicatiefuncties worden gebruikt in de programmagenerator TLCGEN in combinatie met de PrioModule van TLCGen */
 
-
+#if (CCOL_V <= 110)
+  #define GEEN_CONSOLIDATIE
+#endif
 
 /* include files */
 /* ============= */
@@ -580,7 +582,7 @@ void Bepaal_Granted_Verstrekt(void)
 
 #endif /* prioFCMAX - alleen indien PRIO */
 
-/* iVRI – ISSUE TWEERICHTINGEN FIETSPADEN */
+/* iVRI ? ISSUE TWEERICHTINGEN FIETSPADEN */
 /* ===================================== */ 
 
 /* Probleemstelling
@@ -588,7 +590,7 @@ void Bepaal_Granted_Verstrekt(void)
  * Op tweerichtingen fietspaden worden CAM berichten verstuurd van fietsers die naar de stopstreep rijden en van fietsers die van de stopstreep af rijden.
  * De fietsers die van de stopstreep af rijden veroorzaken nu foutieve informatie bij aanvragen en verlengen op basis van CAM-berichten van fietsers. 
  * Het splitsen van de lanes van deze fietspaden in rijrichting zou een mogelijke oplossing zijn. In het ITF-bestand is het echter verplicht om deze
- * tweerichtingen fietspaden op te geven als ‘bidirectionele lanes’. Dit probleem kan worden opgelost door ook naar de heading (rijrichting) van de
+ * tweerichtingen fietspaden op te geven als ?bidirectionele lanes?. Dit probleem kan worden opgelost door ook naar de heading (rijrichting) van de
  * fietsers in de CAM-berichten te kijken.
  *
  * Heading

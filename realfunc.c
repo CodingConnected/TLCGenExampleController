@@ -1,4 +1,4 @@
-/* realfunc.c - gegenereerd met TLCGen 12.4.0.0 */
+/* realfunc.c - gegenereerd met TLCGen 12.4.0.1 */
 
 /*
 BESTAND:   realfunc.c
@@ -918,9 +918,9 @@ void Synchroniseer_FO1_2(count fc1, count fc2)   /* Gelijk aan bovenstaande alle
 void Synchroniseer_PG(void)
 {
 #ifdef MLNLTEST
-   register count  mlfc1, mlfc2, ml_1, ml_2;
+  register count  mlfc1, mlfc2, ml_1, ml_2;
 #endif
-   register count fc1, fc2;
+  register count fc1, fc2;
 
   for (fc1=0; fc1<FC_MAX; fc1++)
   {

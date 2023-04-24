@@ -1,4 +1,4 @@
-/* timingsvar.c - gegenereerd met TLCGen 12.4.0.0 */
+/* timingsvar.c - gegenereerd met TLCGen 12.4.0.1 */
 
 /* Definitie EventState */
 /* ==================== */

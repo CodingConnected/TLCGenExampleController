@@ -8,14 +8,14 @@
 
    BESTAND:   123456reg.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.0
-   CCOLGEN:   12.4.0.0
+    TLCGEN:   12.4.0.1
+   CCOLGEN:   12.4.0.1
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.1   24-04-2023   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -826,6 +826,7 @@ void BepaalRealisatieTijden(void)
         if (SCH[schgs2232]) wijziging |= Corr_Gel(fc22, fc32, TRUE);
         if (SCH[schgs2434]) wijziging |= Corr_Gel(fc24, fc34, TRUE);
         if (SCH[schgs2484]) wijziging |= Corr_Gel(fc24, fc84, TRUE);
+        if (SCH[schgs2838]) wijziging |= Corr_Gel(fc28, fc38, TRUE);
         if (SCH[schgs3384]) wijziging |= Corr_Gel(fc33, fc84, TRUE);
 
         /* Inlopen */
@@ -1694,12 +1695,12 @@ void RealisatieAfhandeling(void)
     PAR[fc22] = (Real_Ruimte(fc22, mar22) >= PRM[prmaltp2232]) && SCH[schaltg2232];
     PAR[fc24] = (Real_Ruimte(fc24, mar24) >= PRM[prmaltp243484]) && SCH[schaltg243484];
     PAR[fc26] = (Real_Ruimte(fc26, mar26) >= PRM[prmaltp26]) && SCH[schaltg26];
-    PAR[fc28] = (Real_Ruimte(fc28, mar28) >= PRM[prmaltp28]) && SCH[schaltg28];
+    PAR[fc28] = (Real_Ruimte(fc28, mar28) >= PRM[prmaltp2838]) && SCH[schaltg2838];
     PAR[fc31] = (Real_Ruimte(fc31, mar31) >= PRM[prmaltp31]) && SCH[schaltg31];
     PAR[fc32] = (Real_Ruimte(fc32, mar32) >= PRM[prmaltp2232]) && SCH[schaltg2232];
     PAR[fc33] = (Real_Ruimte(fc33, mar33) >= PRM[prmaltp3384]) && SCH[schaltg3384];
     PAR[fc34] = (Real_Ruimte(fc34, mar34) >= PRM[prmaltp2434]) && SCH[schaltg2434];
-    PAR[fc38] = (Real_Ruimte(fc38, mar38) >= PRM[prmaltp38]) && SCH[schaltg38];
+    PAR[fc38] = (Real_Ruimte(fc38, mar38) >= PRM[prmaltp2838]) && SCH[schaltg2838];
     PAR[fc61] = (Real_Ruimte(fc61, mar61) >= PRM[prmaltp61]) && SCH[schaltg61];
     PAR[fc62] = (Real_Ruimte(fc62, mar62) >= PRM[prmaltp62]) && SCH[schaltg62];
     PAR[fc67] = (Real_Ruimte(fc67, mar67) >= PRM[prmaltp67]) && SCH[schaltg67];
@@ -1745,6 +1746,8 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
         if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
+        if (SCH[schgs2838]) PAR[fc28] = PAR[fc28] && (PAR[fc38] || !A[fc38]);
+        if (SCH[schgs2838]) PAR[fc38] = PAR[fc38] && (PAR[fc28] || !A[fc28]);
         if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
     }
@@ -1786,6 +1789,8 @@ void RealisatieAfhandeling(void)
     if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
     if (SCH[schgs2484]) set_MRLW(fc24, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
     if (SCH[schgs2484]) set_MRLW(fc84, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
+    if (SCH[schgs2838]) set_MRLW(fc28, fc38, (boolv) ((RA[fc38] || SG[fc38]) && (PR[fc38] || AR[fc38] || (AA[fc38] & BIT11)) && A[fc28] && R[fc28] && !TRG[fc28] && !kcv(fc28)));
+    if (SCH[schgs2838]) set_MRLW(fc38, fc28, (boolv) ((RA[fc28] || SG[fc28]) && (PR[fc28] || AR[fc28] || (AA[fc38] & BIT11)) && A[fc38] && R[fc38] && !TRG[fc38] && !kcv(fc38)));
     if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
     if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv) ((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
@@ -1828,6 +1833,8 @@ void RealisatieAfhandeling(void)
     if (SCH[schgs2434] && (P[fc34] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
     if (SCH[schgs2484] && (P[fc24] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs2484] && (P[fc84] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
+    if (SCH[schgs2838] && (P[fc28] & BIT11) && R[fc38] && !kp(fc38) && A[fc38]) { PAR[fc38] |= BIT11; P[fc38] |= BIT11; }
+    if (SCH[schgs2838] && (P[fc38] & BIT11) && R[fc28] && !kp(fc28) && A[fc28]) { PAR[fc28] |= BIT11; P[fc28] |= BIT11; }
     if (SCH[schgs3384] && (P[fc33] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs3384] && (P[fc84] & BIT11) && R[fc33] && !kp(fc33) && A[fc33]) { PAR[fc33] |= BIT11; P[fc33] |= BIT11; }
     if ((P[fc05] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
@@ -1983,6 +1990,8 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2434] && R[fc34] && (P[fc34] & BIT11)) set_rr_gk(fc24, BIT11);
         if (SCH[schgs2484] && R[fc24] && (P[fc24] & BIT11)) set_rr_gk(fc84, BIT11);
         if (SCH[schgs2484] && R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc24, BIT11);
+        if (SCH[schgs2838] && R[fc28] && (P[fc28] & BIT11)) set_rr_gk(fc38, BIT11);
+        if (SCH[schgs2838] && R[fc38] && (P[fc38] & BIT11)) set_rr_gk(fc28, BIT11);
         if (SCH[schgs3384] && R[fc33] && (P[fc33] & BIT11)) set_rr_gk(fc84, BIT11);
         if (SCH[schgs3384] && R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc33, BIT11);
         if (R[fc05] && (P[fc05] & BIT11)) set_rr_gk(fc22, BIT11);
@@ -2055,6 +2064,12 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2484] && R[fc84] && !PG[fc84] && R[fc24] && PG[fc24]) PG[fc84] = 0;
         if (SCH[schgs2484] && G[fc24] && R[fc84] && (P[fc84] & BIT11)) YM[fc24] |= BIT11;
         if (SCH[schgs2484] && G[fc84] && R[fc24] && (P[fc24] & BIT11)) YM[fc84] |= BIT11;
+        if (SCH[schgs2838] && RA[fc28] && (P[fc28] & BIT11) && !kaa(fc38) && A[fc38] && !RR[fc38]) AA[fc38] |= BIT11;
+        if (SCH[schgs2838] && RA[fc38] && (P[fc38] & BIT11) && !kaa(fc28) && A[fc28] && !RR[fc28]) AA[fc28] |= BIT11;
+        if (SCH[schgs2838] && R[fc28] && !PG[fc28] && R[fc38] && PG[fc38]) PG[fc28] = 0;
+        if (SCH[schgs2838] && R[fc38] && !PG[fc38] && R[fc28] && PG[fc28]) PG[fc38] = 0;
+        if (SCH[schgs2838] && G[fc28] && R[fc38] && (P[fc38] & BIT11)) YM[fc28] |= BIT11;
+        if (SCH[schgs2838] && G[fc38] && R[fc28] && (P[fc28] & BIT11)) YM[fc38] |= BIT11;
         if (SCH[schgs3384] && RA[fc33] && (P[fc33] & BIT11) && !kaa(fc84) && A[fc84] && !RR[fc84]) AA[fc84] |= BIT11;
         if (SCH[schgs3384] && RA[fc84] && (P[fc84] & BIT11) && !kaa(fc33) && A[fc33] && !RR[fc33]) AA[fc33] |= BIT11;
         if (SCH[schgs3384] && R[fc33] && !PG[fc33] && R[fc84] && PG[fc84]) PG[fc33] = 0;
@@ -2761,6 +2776,7 @@ void system_application(void)
     wachttijd_correctie_gelijkstart(fc22, fc32, t_wacht);
     wachttijd_correctie_gelijkstart(fc24, fc34, t_wacht);
     wachttijd_correctie_gelijkstart(fc24, fc84, t_wacht);
+    wachttijd_correctie_gelijkstart(fc28, fc38, t_wacht);
     wachttijd_correctie_gelijkstart(fc33, fc84, t_wacht);
 
     /* check of richting wordt tegengehouden door OV/HD */
@@ -2785,13 +2801,12 @@ void system_application(void)
     /* Aansturen wachttijdlantaarn fase 22 */
     if (IH[hwtv22] && R[fc22])
     {
-       CIF_GUS[uswtv22] = MM[mwtvm22];
+        CIF_GUS[uswtv22] = MM[mwtvm22];
     }
     else
-    {       
-       CIF_GUS[uswtv22] = 0;
+    {
+        CIF_GUS[uswtv22] = 0;
     }
-
     CIF_GUS[uswtv22] &= ~BIT8;
     if (CIF_GUS[uswtv22] && (RR[fc22] & BIT6) && rr_twacht[fc22] && IH[hwtv22] && (SCH[schwtvbusbijhd] || !(RTFB & PRIO_RTFB_BIT)))
     {
@@ -2998,6 +3013,8 @@ void system_application2(void)
     }
 #endif
 
+#if !(defined NO_TIMETOX)
+#if !(defined NO_RIS)
     for (fc = 0; fc < FCMAX; ++fc)
     {
         if (C[cvc02bus] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
@@ -3044,6 +3061,8 @@ void system_application2(void)
         if (C[cvchd68] && R[fc] && TIG[fc68][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
         if (SG[fc]) CIF_FC_RWT[fc] = 0;
     }
+#endif /* NO_TIMETOX */
+#endif /* NO_RIS */
 
 
     post_system_application2();
