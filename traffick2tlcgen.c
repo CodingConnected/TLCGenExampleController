@@ -7302,10 +7302,6 @@ void FlightTraffick(void)             /* Fik230101                              
 }
 #endif
 
-void pre_msg_fctiming(void)
-{
-}
-
 #ifndef TRAFFICK_ADD
 void definitie_groentijden_traffick(void)
 {
