@@ -2209,8 +2209,8 @@ if (SCH[schconfidence15fix])
         if (SCH[schgs2434] && (P[fc34] & BIT11)) { Z[fc24] &= ~PRIO_Z_BIT; }
         if (SCH[schgs2484] && (P[fc24] & BIT11)) { Z[fc84] &= ~PRIO_Z_BIT; }
         if (SCH[schgs2484] && (P[fc84] & BIT11)) { Z[fc24] &= ~PRIO_Z_BIT; }
-        if (SCH[schgs2838] && (P[fc28] & BIT11)) { Z[fc38] &= ~PRIO_Z_BIT; }
-        if (SCH[schgs2838] && (P[fc38] & BIT11)) { Z[fc28] &= ~PRIO_Z_BIT; }
+        if ((P[fc28] & BIT11)) { Z[fc38] &= ~PRIO_Z_BIT; }
+        if ((P[fc38] & BIT11)) { Z[fc28] &= ~PRIO_Z_BIT; }
         if (SCH[schgs3384] && (P[fc33] & BIT11)) { Z[fc84] &= ~PRIO_Z_BIT; }
         if (SCH[schgs3384] && (P[fc84] & BIT11)) { Z[fc33] &= ~PRIO_Z_BIT; }
         if ((P[fc05] & BIT11)) { Z[fc22] &= ~PRIO_Z_BIT; }
@@ -2387,8 +2387,8 @@ void TegenhoudenConflictenExtra(void)
     if (SCH[schconfidence15fix] && SCH[schgs2434] && (P[fc34] & BIT11)) { RR[fc24] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2484] && (P[fc24] & BIT11)) { RR[fc84] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2484] && (P[fc84] & BIT11)) { RR[fc24] &= ~PRIO_RR_BIT; }
-    if (SCH[schconfidence15fix] && SCH[schgs2838] && (P[fc28] & BIT11)) { RR[fc38] &= ~PRIO_RR_BIT; }
-    if (SCH[schconfidence15fix] && SCH[schgs2838] && (P[fc38] & BIT11)) { RR[fc28] &= ~PRIO_RR_BIT; }
+    if (SCH[schconfidence15fix] && (P[fc28] & BIT11)) { RR[fc38] &= ~PRIO_RR_BIT; }
+    if (SCH[schconfidence15fix] && (P[fc38] & BIT11)) { RR[fc28] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs3384] && (P[fc33] & BIT11)) { RR[fc84] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs3384] && (P[fc84] & BIT11)) { RR[fc33] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && (P[fc05] & BIT11)) { RR[fc22] &= ~PRIO_RR_BIT; }
@@ -2612,8 +2612,8 @@ void PrioPARCorrecties(void)
         if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
         if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
-        if (SCH[schgs2838]) PAR[fc28] = PAR[fc28] && (PAR[fc38] || !A[fc38]);
-        if (SCH[schgs2838]) PAR[fc38] = PAR[fc38] && (PAR[fc28] || !A[fc28]);
+        PAR[fc28] = PAR[fc28] && (PAR[fc38] || !A[fc38]);
+        PAR[fc38] = PAR[fc38] && (PAR[fc28] || !A[fc28]);
         if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
     }
@@ -2669,8 +2669,8 @@ void PrioPARCorrecties(void)
     if (SCH[schgs2434] && (P[fc34] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
     if (SCH[schgs2484] && (P[fc24] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs2484] && (P[fc84] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
-    if (SCH[schgs2838] && (P[fc28] & BIT11) && R[fc38] && !kp(fc38) && A[fc38]) { PAR[fc38] |= BIT11; P[fc38] |= BIT11; }
-    if (SCH[schgs2838] && (P[fc38] & BIT11) && R[fc28] && !kp(fc28) && A[fc28]) { PAR[fc28] |= BIT11; P[fc28] |= BIT11; }
+    if ((P[fc28] & BIT11) && R[fc38] && !kp(fc38) && A[fc38]) { PAR[fc38] |= BIT11; P[fc38] |= BIT11; }
+    if ((P[fc38] & BIT11) && R[fc28] && !kp(fc28) && A[fc28]) { PAR[fc28] |= BIT11; P[fc28] |= BIT11; }
     if (SCH[schgs3384] && (P[fc33] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs3384] && (P[fc84] & BIT11) && R[fc33] && !kp(fc33) && A[fc33]) { PAR[fc33] |= BIT11; P[fc33] |= BIT11; }
     if ((P[fc05] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }

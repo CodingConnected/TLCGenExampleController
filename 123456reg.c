@@ -826,7 +826,7 @@ void BepaalRealisatieTijden(void)
         if (SCH[schgs2232]) wijziging |= Corr_Gel(fc22, fc32, TRUE);
         if (SCH[schgs2434]) wijziging |= Corr_Gel(fc24, fc34, TRUE);
         if (SCH[schgs2484]) wijziging |= Corr_Gel(fc24, fc84, TRUE);
-        if (SCH[schgs2838]) wijziging |= Corr_Gel(fc28, fc38, TRUE);
+        wijziging |= Corr_Gel(fc28, fc38, TRUE);
         if (SCH[schgs3384]) wijziging |= Corr_Gel(fc33, fc84, TRUE);
 
         /* Inlopen */
@@ -1746,8 +1746,8 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
         if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
-        if (SCH[schgs2838]) PAR[fc28] = PAR[fc28] && (PAR[fc38] || !A[fc38]);
-        if (SCH[schgs2838]) PAR[fc38] = PAR[fc38] && (PAR[fc28] || !A[fc28]);
+        PAR[fc28] = PAR[fc28] && (PAR[fc38] || !A[fc38]);
+        PAR[fc38] = PAR[fc38] && (PAR[fc28] || !A[fc28]);
         if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
         if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
     }
@@ -1789,8 +1789,8 @@ void RealisatieAfhandeling(void)
     if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
     if (SCH[schgs2484]) set_MRLW(fc24, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
     if (SCH[schgs2484]) set_MRLW(fc84, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
-    if (SCH[schgs2838]) set_MRLW(fc28, fc38, (boolv) ((RA[fc38] || SG[fc38]) && (PR[fc38] || AR[fc38] || (AA[fc38] & BIT11)) && A[fc28] && R[fc28] && !TRG[fc28] && !kcv(fc28)));
-    if (SCH[schgs2838]) set_MRLW(fc38, fc28, (boolv) ((RA[fc28] || SG[fc28]) && (PR[fc28] || AR[fc28] || (AA[fc38] & BIT11)) && A[fc38] && R[fc38] && !TRG[fc38] && !kcv(fc38)));
+    set_MRLW(fc28, fc38, (boolv) ((RA[fc38] || SG[fc38]) && (PR[fc38] || AR[fc38] || (AA[fc38] & BIT11)) && A[fc28] && R[fc28] && !TRG[fc28] && !kcv(fc28)));
+    set_MRLW(fc38, fc28, (boolv) ((RA[fc28] || SG[fc28]) && (PR[fc28] || AR[fc28] || (AA[fc38] & BIT11)) && A[fc38] && R[fc38] && !TRG[fc38] && !kcv(fc38)));
     if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
     if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv) ((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
@@ -1833,8 +1833,8 @@ void RealisatieAfhandeling(void)
     if (SCH[schgs2434] && (P[fc34] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
     if (SCH[schgs2484] && (P[fc24] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs2484] && (P[fc84] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
-    if (SCH[schgs2838] && (P[fc28] & BIT11) && R[fc38] && !kp(fc38) && A[fc38]) { PAR[fc38] |= BIT11; P[fc38] |= BIT11; }
-    if (SCH[schgs2838] && (P[fc38] & BIT11) && R[fc28] && !kp(fc28) && A[fc28]) { PAR[fc28] |= BIT11; P[fc28] |= BIT11; }
+    if ((P[fc28] & BIT11) && R[fc38] && !kp(fc38) && A[fc38]) { PAR[fc38] |= BIT11; P[fc38] |= BIT11; }
+    if ((P[fc38] & BIT11) && R[fc28] && !kp(fc28) && A[fc28]) { PAR[fc28] |= BIT11; P[fc28] |= BIT11; }
     if (SCH[schgs3384] && (P[fc33] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs3384] && (P[fc84] & BIT11) && R[fc33] && !kp(fc33) && A[fc33]) { PAR[fc33] |= BIT11; P[fc33] |= BIT11; }
     if ((P[fc05] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
@@ -1990,8 +1990,8 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2434] && R[fc34] && (P[fc34] & BIT11)) set_rr_gk(fc24, BIT11);
         if (SCH[schgs2484] && R[fc24] && (P[fc24] & BIT11)) set_rr_gk(fc84, BIT11);
         if (SCH[schgs2484] && R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc24, BIT11);
-        if (SCH[schgs2838] && R[fc28] && (P[fc28] & BIT11)) set_rr_gk(fc38, BIT11);
-        if (SCH[schgs2838] && R[fc38] && (P[fc38] & BIT11)) set_rr_gk(fc28, BIT11);
+        if (R[fc28] && (P[fc28] & BIT11)) set_rr_gk(fc38, BIT11);
+        if (R[fc38] && (P[fc38] & BIT11)) set_rr_gk(fc28, BIT11);
         if (SCH[schgs3384] && R[fc33] && (P[fc33] & BIT11)) set_rr_gk(fc84, BIT11);
         if (SCH[schgs3384] && R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc33, BIT11);
         if (R[fc05] && (P[fc05] & BIT11)) set_rr_gk(fc22, BIT11);
@@ -2064,12 +2064,12 @@ void RealisatieAfhandeling(void)
         if (SCH[schgs2484] && R[fc84] && !PG[fc84] && R[fc24] && PG[fc24]) PG[fc84] = 0;
         if (SCH[schgs2484] && G[fc24] && R[fc84] && (P[fc84] & BIT11)) YM[fc24] |= BIT11;
         if (SCH[schgs2484] && G[fc84] && R[fc24] && (P[fc24] & BIT11)) YM[fc84] |= BIT11;
-        if (SCH[schgs2838] && RA[fc28] && (P[fc28] & BIT11) && !kaa(fc38) && A[fc38] && !RR[fc38]) AA[fc38] |= BIT11;
-        if (SCH[schgs2838] && RA[fc38] && (P[fc38] & BIT11) && !kaa(fc28) && A[fc28] && !RR[fc28]) AA[fc28] |= BIT11;
-        if (SCH[schgs2838] && R[fc28] && !PG[fc28] && R[fc38] && PG[fc38]) PG[fc28] = 0;
-        if (SCH[schgs2838] && R[fc38] && !PG[fc38] && R[fc28] && PG[fc28]) PG[fc38] = 0;
-        if (SCH[schgs2838] && G[fc28] && R[fc38] && (P[fc38] & BIT11)) YM[fc28] |= BIT11;
-        if (SCH[schgs2838] && G[fc38] && R[fc28] && (P[fc28] & BIT11)) YM[fc38] |= BIT11;
+        if (RA[fc28] && (P[fc28] & BIT11) && !kaa(fc38) && A[fc38] && !RR[fc38]) AA[fc38] |= BIT11;
+        if (RA[fc38] && (P[fc38] & BIT11) && !kaa(fc28) && A[fc28] && !RR[fc28]) AA[fc28] |= BIT11;
+        if (R[fc28] && !PG[fc28] && R[fc38] && PG[fc38]) PG[fc28] = 0;
+        if (R[fc38] && !PG[fc38] && R[fc28] && PG[fc28]) PG[fc38] = 0;
+        if (G[fc28] && R[fc38] && (P[fc38] & BIT11)) YM[fc28] |= BIT11;
+        if (G[fc38] && R[fc28] && (P[fc28] & BIT11)) YM[fc38] |= BIT11;
         if (SCH[schgs3384] && RA[fc33] && (P[fc33] & BIT11) && !kaa(fc84) && A[fc84] && !RR[fc84]) AA[fc84] |= BIT11;
         if (SCH[schgs3384] && RA[fc84] && (P[fc84] & BIT11) && !kaa(fc33) && A[fc33] && !RR[fc33]) AA[fc33] |= BIT11;
         if (SCH[schgs3384] && R[fc33] && !PG[fc33] && R[fc84] && PG[fc84]) PG[fc33] = 0;

@@ -1,4 +1,4 @@
-/* traffick2tlcgen.c - gegenereerd met TLCGen 0.12.4.0 */
+/* traffick2tlcgen.c - gegenereerd met TLCGen 0.12.4.1 */
 
 /* -------------------------------------------------------------------------------------------------------- */
 /* Traffick2TLCGen                                                               Versie 1.0.0 / 01 jan 2023 */
@@ -7301,6 +7301,10 @@ void FlightTraffick(void)             /* Fik230101                              
   }
 }
 #endif
+
+void pre_msg_fctiming(void)
+{
+}
 
 #ifndef TRAFFICK_ADD
 void definitie_groentijden_traffick(void)

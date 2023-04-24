@@ -2192,7 +2192,6 @@ void control_parameters(void)
     SCH_code[schgs2232]                 = "gs2232";                 SCH[schgs2232]                 = 1;                                         /* Schakelbare gelijkstart tussen fase 32 en 22                   */
     SCH_code[schgs2434]                 = "gs2434";                 SCH[schgs2434]                 = 1;                                         /* Schakelbare gelijkstart tussen fase 34 en 24                   */
     SCH_code[schgs2484]                 = "gs2484";                 SCH[schgs2484]                 = 1;                                         /* Schakelbare gelijkstart tussen fase 84 en 24                   */
-    SCH_code[schgs2838]                 = "gs2838";                 SCH[schgs2838]                 = 1;                                         /* Schakelbare gelijkstart tussen fase 38 en 28                   */
     SCH_code[schgs3384]                 = "gs3384";                 SCH[schgs3384]                 = 1;                                         /* Schakelbare gelijkstart tussen fase 84 en 33                   */
     SCH_code[schlos32_1]                = "los32_1";                SCH[schlos32_1]                = 0;                                         /* Toestaan los realiseren fase 32                                */
     SCH_code[schlos32_2]                = "los32_2";                SCH[schlos32_2]                = 0;                                         /* Toestaan los realiseren fase 32                                */

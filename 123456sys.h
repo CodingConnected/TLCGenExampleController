@@ -1730,70 +1730,69 @@
     #define schgs2232                 320 /* Schakelbare gelijkstart tussen fase 32 en 22                   */
     #define schgs2434                 321 /* Schakelbare gelijkstart tussen fase 34 en 24                   */
     #define schgs2484                 322 /* Schakelbare gelijkstart tussen fase 84 en 24                   */
-    #define schgs2838                 323 /* Schakelbare gelijkstart tussen fase 38 en 28                   */
-    #define schgs3384                 324 /* Schakelbare gelijkstart tussen fase 84 en 33                   */
-    #define schlos32_1                325 /* Toestaan los realiseren fase 32                                */
-    #define schlos32_2                326 /* Toestaan los realiseren fase 32                                */
-    #define schlos31_1                327 /* Toestaan los realiseren fase 31                                */
-    #define schlos31_2                328 /* Toestaan los realiseren fase 31                                */
-    #define schlos34_1                329 /* Toestaan los realiseren fase 34                                */
-    #define schlos34_2                330 /* Toestaan los realiseren fase 34                                */
-    #define schlos33_1                331 /* Toestaan los realiseren fase 33                                */
-    #define schlos33_2                332 /* Toestaan los realiseren fase 33                                */
-    #define schconfidence15fix        333
-    #define schtxconfidence15ar       334
-    #define schspatconfidence1        335
-    #define schspatconfidence3        336
-    #define schspatconfidence6        337
-    #define schspatconfidence9        338
-    #define schspatconfidence12       339
-    #define schspatconfidence15       340
-    #define schtimings02              341
-    #define schtimings03              342
-    #define schtimings05              343
-    #define schtimings08              344
-    #define schtimings09              345
-    #define schtimings11              346
-    #define schtimings21              347
-    #define schtimings22              348
-    #define schtimings24              349
-    #define schtimings26              350
-    #define schtimings28              351
-    #define schtimings31              352
-    #define schtimings32              353
-    #define schtimings33              354
-    #define schtimings34              355
-    #define schtimings38              356
-    #define schtimings61              357
-    #define schtimings62              358
-    #define schtimings67              359
-    #define schtimings68              360
-    #define schtimings81              361
-    #define schtimings82              362
-    #define schtimings84              363
-    #define schsneld02_1a             364 /* Aanvraag snel voor detector 02_1a aan of uit                   */
-    #define schsneld02_1b             365 /* Aanvraag snel voor detector 02_1b aan of uit                   */
-    #define schsneld03_1              366 /* Aanvraag snel voor detector 03_1 aan of uit                    */
-    #define schsneld05_1              367 /* Aanvraag snel voor detector 05_1 aan of uit                    */
-    #define schsneld08_1a             368 /* Aanvraag snel voor detector 08_1a aan of uit                   */
-    #define schsneld08_1b             369 /* Aanvraag snel voor detector 08_1b aan of uit                   */
-    #define schsneld09_1              370 /* Aanvraag snel voor detector 09_1 aan of uit                    */
-    #define schsneld11_1              371 /* Aanvraag snel voor detector 11_1 aan of uit                    */
-    #define schsneld211               372 /* Aanvraag snel voor detector 211 aan of uit                     */
-    #define schsneld22_1              373 /* Aanvraag snel voor detector 22_1 aan of uit                    */
-    #define schsneld24_1              374 /* Aanvraag snel voor detector 24_1 aan of uit                    */
-    #define schsneld261               375 /* Aanvraag snel voor detector 261 aan of uit                     */
-    #define schsneld28_1              376 /* Aanvraag snel voor detector 28_1 aan of uit                    */
-    #define schsneld61_1              377 /* Aanvraag snel voor detector 61_1 aan of uit                    */
-    #define schsneld62_1a             378 /* Aanvraag snel voor detector 62_1a aan of uit                   */
-    #define schsneld62_1b             379 /* Aanvraag snel voor detector 62_1b aan of uit                   */
-    #define schsneld67_1              380 /* Aanvraag snel voor detector 67_1 aan of uit                    */
-    #define schsneld68_1a             381 /* Aanvraag snel voor detector 68_1a aan of uit                   */
-    #define schsneld68_1b             382 /* Aanvraag snel voor detector 68_1b aan of uit                   */
-    #define schsneld81_1              383 /* Aanvraag snel voor detector 81_1 aan of uit                    */
-    #define schsneld82_1              384 /* Aanvraag snel voor detector 82_1 aan of uit                    */
-    #define schsneld84_1              385 /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    #define SCHMAX1                   386
+    #define schgs3384                 323 /* Schakelbare gelijkstart tussen fase 84 en 33                   */
+    #define schlos32_1                324 /* Toestaan los realiseren fase 32                                */
+    #define schlos32_2                325 /* Toestaan los realiseren fase 32                                */
+    #define schlos31_1                326 /* Toestaan los realiseren fase 31                                */
+    #define schlos31_2                327 /* Toestaan los realiseren fase 31                                */
+    #define schlos34_1                328 /* Toestaan los realiseren fase 34                                */
+    #define schlos34_2                329 /* Toestaan los realiseren fase 34                                */
+    #define schlos33_1                330 /* Toestaan los realiseren fase 33                                */
+    #define schlos33_2                331 /* Toestaan los realiseren fase 33                                */
+    #define schconfidence15fix        332
+    #define schtxconfidence15ar       333
+    #define schspatconfidence1        334
+    #define schspatconfidence3        335
+    #define schspatconfidence6        336
+    #define schspatconfidence9        337
+    #define schspatconfidence12       338
+    #define schspatconfidence15       339
+    #define schtimings02              340
+    #define schtimings03              341
+    #define schtimings05              342
+    #define schtimings08              343
+    #define schtimings09              344
+    #define schtimings11              345
+    #define schtimings21              346
+    #define schtimings22              347
+    #define schtimings24              348
+    #define schtimings26              349
+    #define schtimings28              350
+    #define schtimings31              351
+    #define schtimings32              352
+    #define schtimings33              353
+    #define schtimings34              354
+    #define schtimings38              355
+    #define schtimings61              356
+    #define schtimings62              357
+    #define schtimings67              358
+    #define schtimings68              359
+    #define schtimings81              360
+    #define schtimings82              361
+    #define schtimings84              362
+    #define schsneld02_1a             363 /* Aanvraag snel voor detector 02_1a aan of uit                   */
+    #define schsneld02_1b             364 /* Aanvraag snel voor detector 02_1b aan of uit                   */
+    #define schsneld03_1              365 /* Aanvraag snel voor detector 03_1 aan of uit                    */
+    #define schsneld05_1              366 /* Aanvraag snel voor detector 05_1 aan of uit                    */
+    #define schsneld08_1a             367 /* Aanvraag snel voor detector 08_1a aan of uit                   */
+    #define schsneld08_1b             368 /* Aanvraag snel voor detector 08_1b aan of uit                   */
+    #define schsneld09_1              369 /* Aanvraag snel voor detector 09_1 aan of uit                    */
+    #define schsneld11_1              370 /* Aanvraag snel voor detector 11_1 aan of uit                    */
+    #define schsneld211               371 /* Aanvraag snel voor detector 211 aan of uit                     */
+    #define schsneld22_1              372 /* Aanvraag snel voor detector 22_1 aan of uit                    */
+    #define schsneld24_1              373 /* Aanvraag snel voor detector 24_1 aan of uit                    */
+    #define schsneld261               374 /* Aanvraag snel voor detector 261 aan of uit                     */
+    #define schsneld28_1              375 /* Aanvraag snel voor detector 28_1 aan of uit                    */
+    #define schsneld61_1              376 /* Aanvraag snel voor detector 61_1 aan of uit                    */
+    #define schsneld62_1a             377 /* Aanvraag snel voor detector 62_1a aan of uit                   */
+    #define schsneld62_1b             378 /* Aanvraag snel voor detector 62_1b aan of uit                   */
+    #define schsneld67_1              379 /* Aanvraag snel voor detector 67_1 aan of uit                    */
+    #define schsneld68_1a             380 /* Aanvraag snel voor detector 68_1a aan of uit                   */
+    #define schsneld68_1b             381 /* Aanvraag snel voor detector 68_1b aan of uit                   */
+    #define schsneld81_1              382 /* Aanvraag snel voor detector 81_1 aan of uit                    */
+    #define schsneld82_1              383 /* Aanvraag snel voor detector 82_1 aan of uit                    */
+    #define schsneld84_1              384 /* Aanvraag snel voor detector 84_1 aan of uit                    */
+    #define SCHMAX1                   385
 
 /* parameters */
 /* ---------- */
