@@ -14,8 +14,8 @@
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.1   24-04-2023   TLCGen      Release versie TLCGen
+ * Versie   Datum        Ontwerper   Commentaar
+ * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -60,6 +60,10 @@
     #include "extra_func_prio.h"
 
 boolv vertraag_kar_uitm[prioFCMAX];
+
+/* Traffick2TLCGen */
+#define TRAFFICK
+#include "traffick2tlcgen.h"
 
 #define MAX_AANTAL_INMELDINGEN           10
 #define DEFAULT_MAX_WACHTTIJD           120
@@ -2175,6 +2179,14 @@ void InUitMelden(void)
     if (granted_verstrekt[fc03] == 2) granted_verstrekt[fc02] = 2;
 #endif /* NO_RIS */
 
+    /* Traffick2TLCGen */
+    if (SCH[schtraffick2tlcgen]) 
+    {
+      fiets_voorrang_module();
+      buffer_stiptheid_info();
+      busbaan_verlos_prioriteit();
+    }
+
 
     /* Bijhouden melding en ondergedrag KAR */
     RT[tkarmelding] = CIF_DSIWIJZ != 0 && CIF_DSI[CIF_DSI_LUS] == 0;
@@ -2343,6 +2355,25 @@ void PrioriteitsOpties(void)
         iInstPrioriteitsOpties[prioFC11bus] = poGeenPrioriteit;
         iInstPrioriteitsOpties[prioFC11risov] = poGeenPrioriteit;
         iInstPrioriteitsOpties[prioFC11risvrw] = poGeenPrioriteit;
+    }
+
+    /* Traffick2TLCGen */
+    if (SCH[schtraffick2tlcgen])
+    {
+        Traffick2TLCgen_PRIO_OPTIES();
+
+        // Aanroep is gewijzigd. 2e argument is vervallen. Genereren eenvoudiger gemaakt.
+        // Voor iedere fasecyclus waar een volgtijd voor gedefinieerd is dient de functie te worden aangeroepen.
+
+        Traffick2TLCgen_HLPD_nal(fc02, T_max[tarmvt02]);
+        Traffick2TLCgen_HLPD_nal(fc03, T_max[tarmvt03]);
+        Traffick2TLCgen_HLPD_nal(fc05, T_max[tarmvt05]);
+        Traffick2TLCgen_HLPD_nal(fc08, T_max[tarmvt08]);
+        Traffick2TLCgen_HLPD_nal(fc09, T_max[tarmvt09]);
+        Traffick2TLCgen_HLPD_nal(fc11, T_max[tarmvt11]);
+
+        // onderstaande functie aanroep komt te vervallen !!!
+        // Traffick2TLCgen_HLPD();
     }
 
     #ifdef PRIO_ADDFILE

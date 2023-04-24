@@ -14,13 +14,13 @@
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.1   24-04-2023   TLCGen      Release versie TLCGen
+ * Versie   Datum        Ontwerper   Commentaar
+ * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0.1 20230424"
+#define VERSION "12.4.0 20230327"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
 
@@ -1353,7 +1353,13 @@
     #define tfo0522                    515 /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
     #define tfo1126                    516 /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
     #define tfo0532                    517 /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
-    #define TMMAX1                     518
+    #define tarmvt02                   518 /* Volgtijd van arm naar volgarm voor fase 02                                               */
+    #define tarmvt03                   519 /* Volgtijd van arm naar volgarm voor fase 03                                               */
+    #define tarmvt05                   520 /* Volgtijd van arm naar volgarm voor fase 05                                               */
+    #define tarmvt08                   521 /* Volgtijd van arm naar volgarm voor fase 08                                               */
+    #define tarmvt09                   522 /* Volgtijd van arm naar volgarm voor fase 09                                               */
+    #define tarmvt11                   523 /* Volgtijd van arm naar volgarm voor fase 11                                               */
+    #define TMMAX1                     524
 
 /* teller elementen */
 /* ---------------- */
@@ -1792,7 +1798,8 @@
     #define schsneld81_1              382 /* Aanvraag snel voor detector 81_1 aan of uit                    */
     #define schsneld82_1              383 /* Aanvraag snel voor detector 82_1 aan of uit                    */
     #define schsneld84_1              384 /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    #define SCHMAX1                   385
+    #define schtraffick2tlcgen        385 /* Activeren Traffick functies                                    */
+    #define SCHMAX1                   386
 
 /* parameters */
 /* ---------- */
@@ -3390,6 +3397,16 @@
 /* Definitie lane id in het topologiebestand */
 /* ----------------------------------------- */
 #define ris_conflict_gebied    0 /* connection tussen alle ingress lanes en egress lanes */
+
+/* Kruispunt armen definities */
+/* ------------------------- */
+#define ARM1 0
+#define ARM2 1
+#define ARM3 2
+#define ARM4 3
+#define ARM5 4
+#define ARM6 5
+
 
 /* Gebruikers toevoegingen file includen */
 /* ------------------------------------- */

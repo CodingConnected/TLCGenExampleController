@@ -2259,6 +2259,9 @@ void AfhandelingPrio(void)
        --------------- */
 	PrioInstellingen();
 #ifdef PRIO_ADDFILE
+#ifdef TRAFFICK
+        if (SCH[schtraffick2tlcgen]) corrigeer_terugkomen_traffick();
+#endif
 	PrioInstellingen_Add();
 #endif
 
