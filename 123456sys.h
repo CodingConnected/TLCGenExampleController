@@ -14,15 +14,23 @@
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.1   24-04-2023   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20230327"
+#define VERSION "12.4.0.1 20230424"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
+
+/* Kruispunt armen definities */
+    #define ARM1 0
+    #define ARM2 1
+    #define ARM3 2
+    #define ARM4 3
+    #define ARM5 4
+    #define ARM6 5
 
 /* fasecycli */
 /* --------- */
@@ -3397,16 +3405,6 @@
 /* Definitie lane id in het topologiebestand */
 /* ----------------------------------------- */
 #define ris_conflict_gebied    0 /* connection tussen alle ingress lanes en egress lanes */
-
-/* Kruispunt armen definities */
-/* ------------------------- */
-#define ARM1 0
-#define ARM2 1
-#define ARM3 2
-#define ARM4 3
-#define ARM5 4
-#define ARM6 5
-
 
 /* Gebruikers toevoegingen file includen */
 /* ------------------------------------- */

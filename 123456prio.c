@@ -14,8 +14,8 @@
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.1   24-04-2023   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -2180,11 +2180,11 @@ void InUitMelden(void)
 #endif /* NO_RIS */
 
     /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) 
+    if (SCH[schtraffick2tlcgen])
     {
-      fiets_voorrang_module();
-      buffer_stiptheid_info();
-      busbaan_verlos_prioriteit();
+        fiets_voorrang_module();
+        buffer_stiptheid_info();
+        busbaan_verlos_prioriteit();
     }
 
 
@@ -2361,19 +2361,12 @@ void PrioriteitsOpties(void)
     if (SCH[schtraffick2tlcgen])
     {
         Traffick2TLCgen_PRIO_OPTIES();
-
-        // Aanroep is gewijzigd. 2e argument is vervallen. Genereren eenvoudiger gemaakt.
-        // Voor iedere fasecyclus waar een volgtijd voor gedefinieerd is dient de functie te worden aangeroepen.
-
         Traffick2TLCgen_HLPD_nal(fc02, T_max[tarmvt02]);
         Traffick2TLCgen_HLPD_nal(fc03, T_max[tarmvt03]);
         Traffick2TLCgen_HLPD_nal(fc05, T_max[tarmvt05]);
         Traffick2TLCgen_HLPD_nal(fc08, T_max[tarmvt08]);
         Traffick2TLCgen_HLPD_nal(fc09, T_max[tarmvt09]);
         Traffick2TLCgen_HLPD_nal(fc11, T_max[tarmvt11]);
-
-        // onderstaande functie aanroep komt te vervallen !!!
-        // Traffick2TLCgen_HLPD();
     }
 
     #ifdef PRIO_ADDFILE
