@@ -1,4 +1,4 @@
-/* traffick2tlcgen.c - gegenereerd met TLCGen 12.4.0.1 */
+/* traffick2tlcgen.c - gegenereerd met TLCGen 0.12.4.0 */
 
 /* -------------------------------------------------------------------------------------------------------- */
 /* Traffick2TLCGen                                                               Versie 1.0.0 / 01 jan 2023 */
@@ -905,6 +905,8 @@ void traffick2tlcgen_kruispunt(void)  /* Fik230101                              
   test_stiptheid(prmovtstpgrensvroeg, prmovtstpgrenslaat, prmtestdsivert);
 #endif
 #endif
+
+  extra_instellingen_traffick();
 }
 
 
@@ -1353,7 +1355,7 @@ count usHD,                           /* US   verklik HD ingreep                
 count usOV_kar,                       /* US   verklik OV ingreep - KAR                                      */
 count usOV_srm,                       /* US   verklik OV ingreep - SRM                                      */
 count usVRW,                          /* US   verklik VRW ingreep                                           */
-count vooruit)                        /* mulv aantal modulen dat vooruit gerealiseerd mag worden            */
+mulv  vooruit)                        /* mulv aantal modulen dat vooruit gerealiseerd mag worden            */
 {
    if (KAR_id_OV > NG) prio_index[fc].KAR_id_OV = KAR_id_OV;
    if (KAR_id_HD > NG) prio_index[fc].KAR_id_HD = KAR_id_HD;
@@ -5777,6 +5779,7 @@ void fiets_voorrang_module(void)      /* Fik230101                              
 /*                                                                                                          */
 void verlos_melding_busbaan(          /* Fik230101                                                          */
 count fc,                             /* FC   fasecyclus                                                    */
+count prioOV_index_verlos,            /* count OVFCfc - prioriteitsindex OV ingreep - verlos                */
 count de1,                            /* DE   koplus nabij de stopstreep                                    */
 count de2,                            /* DE   koplus tbv lengte gevoeligheid (optioneel)                    */
 count hinm,                           /* HE   puls tbv in.melding (wordt door TLCgen gegenereerd)           */
@@ -5784,6 +5787,9 @@ count huitm,                          /* HE   puls tbv uitmelding (wordt door TL
 mulv  min_rood)                       /* mulv minimale roodtijd (TE) voor prioriteit aanvraag               */
 {
   IH[hinm] = IH[huitm] = FALSE;       /* reset hulp elementen */
+
+  prio_index[fc].OV_verlos = prioOV_index_verlos;
+  if (TRG_max[fc] > min_rood) min_rood = TRG_max[fc];
 
   if (de1 != NG)                      /* als de1 niet is gedefinieerd dan is de definitie ongeldig */
   {
@@ -7303,7 +7309,11 @@ void FlightTraffick(void)             /* Fik230101                              
 #endif
 
 #ifndef TRAFFICK_ADD
-void definitie_groentijden_traffick(void)
+void extra_definities_traffick(void)
+{
+}
+
+void extra_instellingen_traffick(void)
 {
 }
 

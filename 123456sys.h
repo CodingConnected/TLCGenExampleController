@@ -14,23 +14,23 @@
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.1   24-04-2023   TLCGen      Release versie TLCGen
+ * Versie   Datum        Ontwerper   Commentaar
+ * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0.1 20230424"
+#define VERSION "12.4.0 20230327"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
-
 /* Kruispunt armen definities */
-    #define ARM1 0
-    #define ARM2 1
-    #define ARM3 2
-    #define ARM4 3
-    #define ARM5 4
-    #define ARM6 5
+#define ARM1 0
+#define ARM2 1
+#define ARM3 2
+#define ARM4 3
+#define ARM5 4
+#define ARM6 5
+
 
 /* fasecycli */
 /* --------- */
