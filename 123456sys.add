@@ -26,13 +26,74 @@
 #define FCMAX  (FCMAX1+0)  /* Totaal aantal gebruikte fasecycli      */
 #define USMAX  (USMAX1+0)  /* Totaal aantal gebruikte uitgangen      */
 #define DPMAX  (DPMAX1+0)  /* Totaal aantal gebruikte detectoren     */
+
 #define ISMAX  (ISMAX1+0)  /* Totaal aantal gebruikte ingangen       */
-#define HEMAX  (HEMAX1+0)  /* Totaal aantal gebruikte hulpelementen  */
+#define hmadk31b    (HEMAX1+0) 
+#define hmadk32b    (HEMAX1+1) 
+#define hmadk33b    (HEMAX1+2) 
+#define hmadk34b    (HEMAX1+3)
+#define hnlsg3132   (HEMAX1+4)
+#define hnlsg3231   (HEMAX1+5)
+#define hnlsg3334   (HEMAX1+6)
+#define hnlsg3433   (HEMAX1+7)
+#define HEMAX  (HEMAX1+8)  /* Totaal aantal gebruikte hulpelementen  */
 #define MEMAX  (MEMAX1+0)  /* Totaal aantal gebruikte mem.elementen  */
-#define TMMAX  (TMMAX1+0)  /* Totaal aantal gebruikte timers         */
+#define tvs2205                     (TMMAX1+0)
+#define tvs3205                     (TMMAX1+1)
+#define tlr2611                     (TMMAX1+2)
+#define tlr6202                     (TMMAX1+3)
+#define tlr6808                     (TMMAX1+4)
+#define tlr6811                     (TMMAX1+5)
+#define tlr2122                     (TMMAX1+6)
+#define tlr8182                     (TMMAX1+7)
+#define tinl3231                    (TMMAX1+8)
+#define tinl3132                    (TMMAX1+9)
+#define tinl3433                    (TMMAX1+10)
+#define tinl3334                    (TMMAX1+11)
+#define tfo0522                     (TMMAX1+12)
+#define tfo0532                     (TMMAX1+13)
+#define tfo1126                     (TMMAX1+14)
+#define tvgnaloop2221               (TMMAX1+15)
+#define tvgnaloop0262               (TMMAX1+16)
+#define tvgnaloop0868               (TMMAX1+17)
+#define tvgnaloop1168               (TMMAX1+18)
+#define tvgnaloop8281               (TMMAX1+19)
+
+#define TMMAX  (TMMAX1+20)  /* Totaal aantal gebruikte timers         */
 #define CTMAX  (CTMAX1+0)  /* Totaal aantal gebruikte tellers        */
-#define SCHMAX (SCHMAX1+0) /* Totaal aantal gebruikte schakelaars    */
-#define PRMMAX (PRMMAX1+0) /* Totaal aantal gebruikte parameters     */
+#define schlos32_1               (SCHMAX1+0) /* ...............................                               */
+#define schlos32_2               (SCHMAX1+1) /* ...............................                               */
+#define schlos31_1               (SCHMAX1+2) /* .............................31                               */
+#define schlos31_2               (SCHMAX1+3) /* ...............................                               */
+#define schlos34_1               (SCHMAX1+4) /* .............................34                               */
+#define schlos34_2               (SCHMAX1+5) /* ...............................                               */
+#define schlos33_1               (SCHMAX1+6) /* .............................33                               */
+#define schlos33_2               (SCHMAX1+7) /* ...............................                               */
+#define SCHMAX (SCHMAX1+8) /* Totaal aantal gebruikte schakelaars    */
+#define prmomx02    (PRMMAX1+0)
+#define prmomx03    (PRMMAX1+1)
+#define prmomx05    (PRMMAX1+2)
+#define prmomx08    (PRMMAX1+3)
+#define prmomx09    (PRMMAX1+4)
+#define prmomx11    (PRMMAX1+5)
+#define prmomx21    (PRMMAX1+6)
+#define prmomx22    (PRMMAX1+7)
+#define prmomx24    (PRMMAX1+8)
+#define prmomx26    (PRMMAX1+9)
+#define prmomx28    (PRMMAX1+10)
+#define prmomx31    (PRMMAX1+11)
+#define prmomx32    (PRMMAX1+12)
+#define prmomx33    (PRMMAX1+13)
+#define prmomx34    (PRMMAX1+14)
+#define prmomx38    (PRMMAX1+15)
+#define prmomx61    (PRMMAX1+16)
+#define prmomx62    (PRMMAX1+17)
+#define prmomx67    (PRMMAX1+18)
+#define prmomx68    (PRMMAX1+19)
+#define prmomx81    (PRMMAX1+20)
+#define prmomx82    (PRMMAX1+21)
+#define prmomx84    (PRMMAX1+22)
+#define PRMMAX (PRMMAX1+23) /* Totaal aantal gebruikte parameters     */
 #define MLMAX  (MLMAX1+0)  /* Totaal aantal gebruikte modulen        */
 #if !defined AUTOMAAT
 #define LNKMAX (LNKMAX1+0) /* Totaal aantal gebruikte simulatie elementen */
