@@ -623,11 +623,11 @@ void Aanvragen(void)
     }
     if (SCH[schma0522])
     {
-        mee_aanvraag_prm(fc22, fc05, prmtypema0522, (boolv)(!C[cvchd05]));
+        mee_aanvraag_prm(fc22, fc05, prmtypema0522, (boolv)(TRUE));
     }
     if (SCH[schma0532])
     {
-        mee_aanvraag_prm(fc32, fc05, prmtypema0532, (boolv)(!C[cvchd05]));
+        mee_aanvraag_prm(fc32, fc05, prmtypema0532, (boolv)(TRUE));
     }
     if (SCH[schma0868])
     {
@@ -635,7 +635,7 @@ void Aanvragen(void)
     }
     if (SCH[schma1126])
     {
-        mee_aanvraag_prm(fc26, fc11, prmtypema1126, (boolv)(!C[cvchd11]));
+        mee_aanvraag_prm(fc26, fc11, prmtypema1126, (boolv)(TRUE));
     }
     if (SCH[schma1168])
     {

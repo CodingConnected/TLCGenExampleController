@@ -10586,17 +10586,17 @@
   <PrioData>
     <PrioIngreepType>Geen</PrioIngreepType>
     <PrioUitgangPerFase>false</PrioUitgangPerFase>
-    <CheckOpDSIN>true</CheckOpDSIN>
+    <CheckOpDSIN>false</CheckOpDSIN>
     <MaxWachttijdAuto>120</MaxWachttijdAuto>
     <MaxWachttijdFiets>90</MaxWachttijdFiets>
     <MaxWachttijdVoetganger>90</MaxWachttijdVoetganger>
     <GeconditioneerdePrioGrensTeVroeg>60</GeconditioneerdePrioGrensTeVroeg>
     <GeconditioneerdePrioGrensTeLaat>120</GeconditioneerdePrioGrensTeLaat>
-    <BlokkeerNietConflictenBijHDIngreep>true</BlokkeerNietConflictenBijHDIngreep>
-    <BlokkeerNietConflictenAlleenLangzaamVerkeer>true</BlokkeerNietConflictenAlleenLangzaamVerkeer>
-    <VerklikkenPrioTellerUber>SchAan</VerklikkenPrioTellerUber>
+    <BlokkeerNietConflictenBijHDIngreep>false</BlokkeerNietConflictenBijHDIngreep>
+    <BlokkeerNietConflictenAlleenLangzaamVerkeer>false</BlokkeerNietConflictenAlleenLangzaamVerkeer>
+    <VerklikkenPrioTellerUber>SchUit</VerklikkenPrioTellerUber>
     <VerlaagHogeSignaalGroepNummers>false</VerlaagHogeSignaalGroepNummers>
-    <KARSignaalGroepNummersInParameters>true</KARSignaalGroepNummersInParameters>
+    <KARSignaalGroepNummersInParameters>false</KARSignaalGroepNummersInParameters>
     <WeglatenIngreepNaamBijEnkeleIngreepPerFase>false</WeglatenIngreepNaamBijEnkeleIngreepPerFase>
     <KARMeldingBitmapData>
       <Naam>karmelding</Naam>
