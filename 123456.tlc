@@ -289,9 +289,9 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2023-03-27T00:00:00</Datum>
+      <Datum>2023-06-23T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Ontwikkel versie TLCGen (portable)</Commentaar>
+      <Commentaar>Ontwikkel versie TLCGen (portable) voor Interfunc</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -2435,7 +2435,7 @@
           <Verlengen>MK2</Verlengen>
           <VerlengenHardOpStraat>false</VerlengenHardOpStraat>
           <AanvraagBijStoring>Nooit</AanvraagBijStoring>
-          <VeiligheidsGroen>SchUit</VeiligheidsGroen>
+          <VeiligheidsGroen>Nooit</VeiligheidsGroen>
           <VeiligheidsGroenHiaat>20</VeiligheidsGroenHiaat>
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
@@ -2478,7 +2478,7 @@
           <Verlengen>MK2</Verlengen>
           <VerlengenHardOpStraat>false</VerlengenHardOpStraat>
           <AanvraagBijStoring>Nooit</AanvraagBijStoring>
-          <VeiligheidsGroen>SchUit</VeiligheidsGroen>
+          <VeiligheidsGroen>Altijd</VeiligheidsGroen>
           <VeiligheidsGroenHiaat>20</VeiligheidsGroenHiaat>
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
@@ -3329,7 +3329,7 @@
           <Verlengen>MK2</Verlengen>
           <VerlengenHardOpStraat>false</VerlengenHardOpStraat>
           <AanvraagBijStoring>Nooit</AanvraagBijStoring>
-          <VeiligheidsGroen>SchUit</VeiligheidsGroen>
+          <VeiligheidsGroen>Nooit</VeiligheidsGroen>
           <VeiligheidsGroenHiaat>20</VeiligheidsGroenHiaat>
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
@@ -3372,7 +3372,7 @@
           <Verlengen>MK2</Verlengen>
           <VerlengenHardOpStraat>false</VerlengenHardOpStraat>
           <AanvraagBijStoring>Nooit</AanvraagBijStoring>
-          <VeiligheidsGroen>SchUit</VeiligheidsGroen>
+          <VeiligheidsGroen>Nooit</VeiligheidsGroen>
           <VeiligheidsGroenHiaat>20</VeiligheidsGroenHiaat>
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
@@ -3922,7 +3922,7 @@
           <Verlengen>MK2</Verlengen>
           <VerlengenHardOpStraat>false</VerlengenHardOpStraat>
           <AanvraagBijStoring>Nooit</AanvraagBijStoring>
-          <VeiligheidsGroen>SchUit</VeiligheidsGroen>
+          <VeiligheidsGroen>Nooit</VeiligheidsGroen>
           <VeiligheidsGroenHiaat>20</VeiligheidsGroenHiaat>
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
@@ -4446,7 +4446,7 @@
         <HardMeeverlengFaseCyclus>
           <FaseCyclus>05</FaseCyclus>
           <Type>Groen</Type>
-          <AanUit>false</AanUit>
+          <AanUit>true</AanUit>
         </HardMeeverlengFaseCyclus>
       </HardMeeverlengenFaseCycli>
     </FaseCyclus>
@@ -4981,7 +4981,7 @@
         <HardMeeverlengFaseCyclus>
           <FaseCyclus>11</FaseCyclus>
           <Type>Groen</Type>
-          <AanUit>false</AanUit>
+          <AanUit>true</AanUit>
         </HardMeeverlengFaseCyclus>
       </HardMeeverlengenFaseCycli>
     </FaseCyclus>
@@ -5719,7 +5719,7 @@
         <HardMeeverlengFaseCyclus>
           <FaseCyclus>05</FaseCyclus>
           <Type>Groen</Type>
-          <AanUit>false</AanUit>
+          <AanUit>true</AanUit>
         </HardMeeverlengFaseCyclus>
       </HardMeeverlengenFaseCycli>
     </FaseCyclus>
@@ -5769,10 +5769,10 @@
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
       <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
-      <SchoolIngreep>SchUit</SchoolIngreep>
+      <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>500</SchoolIngreepMaximumGroen>
       <SchoolIngreepBezetTijd>60</SchoolIngreepBezetTijd>
-      <SeniorenIngreep>SchUit</SeniorenIngreep>
+      <SeniorenIngreep>Nooit</SeniorenIngreep>
       <SeniorenIngreepBezetTijd>30</SeniorenIngreepBezetTijd>
       <SeniorenIngreepExtraGroenPercentage>50</SeniorenIngreepExtraGroenPercentage>
       <Detectoren>
@@ -6001,10 +6001,10 @@
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
       <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
-      <SchoolIngreep>SchUit</SchoolIngreep>
+      <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>500</SchoolIngreepMaximumGroen>
       <SchoolIngreepBezetTijd>60</SchoolIngreepBezetTijd>
-      <SeniorenIngreep>SchUit</SeniorenIngreep>
+      <SeniorenIngreep>Nooit</SeniorenIngreep>
       <SeniorenIngreepBezetTijd>30</SeniorenIngreepBezetTijd>
       <SeniorenIngreepExtraGroenPercentage>50</SeniorenIngreepExtraGroenPercentage>
       <Detectoren>
@@ -21755,12 +21755,12 @@
   </ModuleMolen>
   <MultiModuleMolens />
   <RoBuGrover>
-    <RoBuGrover>false</RoBuGrover>
+    <RoBuGrover>true</RoBuGrover>
     <RoBuGroverVenster>false</RoBuGroverVenster>
     <MinimaleCyclustijd>900</MinimaleCyclustijd>
     <MaximaleCyclustijd>1500</MaximaleCyclustijd>
     <GroentijdVerschil>50</GroentijdVerschil>
-    <MethodeRoBuGrover>EigenConflictGroep</MethodeRoBuGrover>
+    <MethodeRoBuGrover>AlleConflictGroepen</MethodeRoBuGrover>
     <GroenOphoogFactor>50</GroenOphoogFactor>
     <GroenVerlaagFactor>20</GroenVerlaagFactor>
     <GroenVerlaagFactorNietPrimair>50</GroenVerlaagFactorNietPrimair>
