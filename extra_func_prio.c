@@ -37,6 +37,8 @@ boolv DSIMeldingPRIO_V2(           /* Fik220201 */
 {
    boolv melding = TRUE;
 
+#ifndef NO_PRIO
+
    /* Correctie uitmelding van eerste bus fc tijdens rood */
    if (vertraag_kar_uitm[prio_fc]) PrioUitmelden(prio_fc, SG[fc]); /* vertraagde uitmelding op start groen */
    if (SG[fc]) vertraag_kar_uitm[prio_fc] = FALSE;
@@ -67,6 +69,7 @@ boolv DSIMeldingPRIO_V2(           /* Fik220201 */
       }
    }
 
+#endif 
    return melding;
 }
 

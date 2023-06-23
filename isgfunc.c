@@ -1,19 +1,19 @@
 /* isgfunc.c - gegenereerd met TLCGen 12.4.0.0 */
 
-count INTERSGTIJD[FCMAX][FCMAX];
+count REALISATIETIJD[FCMAX][FCMAX];
 void Realisatietijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);
 void Realisatietijd_NLSG(count i, count j, count tnlsg, count tnlsgd);
 void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);
 void NaloopVtg_TVG_Correctie(count fc1, count fc2, count tnlsg, count tnlsgd);
-boolv Correctie_INTERSGTIJD_Voorstart(count fcvs, count fcns, count tvs);
-boolv Correctie_INTERSGTIJD_Gelijkstart(count fc1, count fc2);
-boolv Correctie_INTERSGTIJD_LateRelease(count fclr, count fcvs, count tlr);
+boolv Correctie_REALISATIETIJD_Voorstart(count fcvs, count fcns, count tvs);
+boolv Correctie_REALISATIETIJD_Gelijkstart(count fc1, count fc2);
+boolv Correctie_REALISATIETIJD_LateRelease(count fclr, count fcvs, count tlr);
 void Ontruiming_Deelconflict_Voorstart(count fcns, count fcvs, count tfo);
 void Ontruiming_Deelconflict_Gelijkstart(count fc1, count fc2, count tfo12, count tfo21);
 void Ontruiming_Deelconflict_LateRelease(count fcvs, count fclr, count tlr, count tfo);
 void NaloopEG(count fc1, count fc2, count tnl, count tnld, count tvgnaloop, ...);
 void NaloopVtg(count fc1, count fc2, count dk, count hdk, boolv naloop_ok, count tnlsg, count tnlsgd);
-boolv ym_max_tig_INTERSGTIJD(count i, count prmomx);
+boolv ym_max_tig_REALISATIETIJD(count i, count prmomx);
 mulv TNL_type[FCMAX][FCMAX]; /* type naloop */
 
 #define offsetAR    5
@@ -37,7 +37,7 @@ mulv TISG_AR[FCMAX][FCMAX];
 mulv TVG_PR[FCMAX];
 mulv TVG_old[FCMAX];
 mulv TVG_AR_old[FCMAX];
-mulv INTERSGTIJD_max[FCMAX];
+mulv REALISATIETIJD_max[FCMAX];
 void BepaalInterStartGroenTijden(void);
 void InterStartGroenTijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);
 void InterStartGroenTijd_NLSG(count i, count j, count tnlsg, count tnlsgd);
@@ -68,135 +68,135 @@ void Realisatietijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnle
         {
             if (VS[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (FG[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (WG[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (VG[i] && (TVG_max[i] > TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (MG[i] || VG[i] && (TVG_max[i] <= TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (GL[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (TIG[j][k])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
             }
         }
@@ -204,135 +204,135 @@ void Realisatietijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnle
         {
             if (VS[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (FG[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (WG[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (VG[i] && (TVG_AR[i] > TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (MG[i] || VG[i] && (TVG_AR[i] <= TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (GL[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (TIG[j][k])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
             }
         }
@@ -344,136 +344,136 @@ void Realisatietijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnle
         {
             if (VS[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (FG[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (WG[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (VG[i] && (TVG_max[i] > TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
 
             }
             else if (MG[i] || VG[i] && (TVG_max[i] < TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k];
+                    REALISATIETIJD[i][k] = T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k];
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k];
+                    REALISATIETIJD[i][k] = T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k];
                 }
-                if ((INTERSGTIJD[i][k] < (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k];
+                    REALISATIETIJD[i][k] = TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k];
                 }
             }
             else if (GL[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (TIG[j][k])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
             }
         }
@@ -481,136 +481,136 @@ void Realisatietijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnle
         {
             if (VS[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (FG[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (WG[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (VG[i] && (TVG_AR[i] > TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] - TVG_timer[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
 
             }
             else if (MG[i] || VG[i] && (TVG_AR[i] <= TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k];
+                    REALISATIETIJD[i][k] = T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k];
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k];
+                    REALISATIETIJD[i][k] = T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k];
                 }
-                if ((INTERSGTIJD[i][k] < (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k];
+                    REALISATIETIJD[i][k] = TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k];
                 }
             }
             else if (GL[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TGL_max[i] - TGL_timer[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             else if (TIG[j][k])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnleg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlegd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlegd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlegd] - T_timer[tnlegd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
             }
         }
@@ -626,97 +626,97 @@ void Realisatietijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, count tnl
         {
             if (VS[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             if (FG[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             if (WG[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             if (VG[i] && (TVG_max[i] > TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             if ((VG[i] && (TVG_max[i] >= TVG_timer[i]) || MG[i] || !G[i]) && TIG[j][k])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
             }
 
@@ -725,97 +725,97 @@ void Realisatietijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, count tnl
         {
             if (VS[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             if (FG[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             if (WG[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             if (VG[i] && (TVG_AR[i] > TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
                 }
             }
             if ((VG[i] && (TVG_AR[i] <= TVG_timer[i]) || MG[i] || !G[i]) && TIG[j][k])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
             }
 
@@ -828,98 +828,98 @@ void Realisatietijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, count tnl
         {
             if (VS[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
                 }
             }
             if (FG[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop]);
+                   REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
                 }
             }
             if (WG[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
                 }
             }
             if (VG[i] && (TVG_max[i] > TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_max[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TVG_max[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
                 }
 
             }
             if ((VG[i] && (TVG_max[i] <= TVG_timer[i]) || MG[i] || !G[i]) && TIG[j][k])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
             }
         }
@@ -927,98 +927,98 @@ void Realisatietijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, count tnl
         {
             if (VS[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
                 }
             }
             if (FG[i])
             {
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + T_max[tnlfgd] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
                 }
             }
             if (WG[i])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
                 }
             }
             if (VG[i] && (TVG_max[i] > TVG_timer[i]))
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnlevg] + T_max[tvgnaloop]);
                 }
-                if ((INTERSGTIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (TVG_AR[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TVG_AR[i] - TVG_timer[i] + T_max[tnlevgd] + T_max[tvgnaloop]);
                 }
 
             }
             if ((VG[i] && (TVG_AR[i] <= TVG_timer[i]) || MG[i] || !G[i]) && TIG[j][k])
             {
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfg] - T_timer[tnlfg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlfgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlfgd] - T_timer[tnlfgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevg == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevg == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlevg] - T_timer[tnlevg] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
-                if ((INTERSGTIJD[i][k] < (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevgd == NG))
+                if ((REALISATIETIJD[i][k] < (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j])) && !(tnlevgd == NG))
                 {
-                    INTERSGTIJD[i][k] = (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
+                    REALISATIETIJD[i][k] = (T_max[tnlevgd] - T_timer[tnlevgd] + T_max[tvgnaloop] - T_timer[tvgnaloop] + TIG_max[j][k] - TIG_timer[j]);
                 }
             }
         }
@@ -1184,24 +1184,24 @@ void Realisatietijd_NLSG(count i, count j, count tnlsg, count tnlsgd)
         k = KF_pointer[j][n];
         if (VS[i] && (RT[tnlsg] || T[tnlsg] || RT[tnlsgd] || RT[tnlsgd]))
         {
-            if ((INTERSGTIJD[i][k] < (T_max[tnlsg] + TIG_max[j][k])) && !(tnlsg == NG))
+            if ((REALISATIETIJD[i][k] < (T_max[tnlsg] + TIG_max[j][k])) && !(tnlsg == NG))
             {
-                INTERSGTIJD[i][k] = T_max[tnlsg] + TIG_max[j][k];
+                REALISATIETIJD[i][k] = T_max[tnlsg] + TIG_max[j][k];
             }
-            if ((INTERSGTIJD[i][k] < (T_max[tnlsgd] + TIG_max[j][k])) && !(tnlsgd == NG))
+            if ((REALISATIETIJD[i][k] < (T_max[tnlsgd] + TIG_max[j][k])) && !(tnlsgd == NG))
             {
-                INTERSGTIJD[i][k] = T_max[tnlsgd] + TIG_max[j][k];
+                REALISATIETIJD[i][k] = T_max[tnlsgd] + TIG_max[j][k];
             }
         }
         else if (T[tnlsg] || T[tnlsgd])
         {
-            if ((INTERSGTIJD[i][k] < (T_max[tnlsg] - T_timer[tnlsg] + TIG_max[j][k])) && !(tnlsg == NG))
+            if ((REALISATIETIJD[i][k] < (T_max[tnlsg] - T_timer[tnlsg] + TIG_max[j][k])) && !(tnlsg == NG))
             {
-                INTERSGTIJD[i][k] = T_max[tnlsg] - T_timer[tnlsg] + TIG_max[j][k];
+                REALISATIETIJD[i][k] = T_max[tnlsg] - T_timer[tnlsg] + TIG_max[j][k];
             }
-            if ((INTERSGTIJD[i][k] < (T_max[tnlsgd] - T_timer[tnlsgd] + TIG_max[j][k])) && !(tnlsgd == NG))
+            if ((REALISATIETIJD[i][k] < (T_max[tnlsgd] - T_timer[tnlsgd] + TIG_max[j][k])) && !(tnlsgd == NG))
             {
-                INTERSGTIJD[i][k] = T_max[tnlsgd] - T_timer[tnlsgd] + TIG_max[j][k];
+                REALISATIETIJD[i][k] = T_max[tnlsgd] - T_timer[tnlsgd] + TIG_max[j][k];
             }
         }
     }
@@ -7957,7 +7957,7 @@ void NaloopEVG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, co
 
 
 
-boolv Correctie_INTERSGTIJD_Voorstart(count fcvs, count fcns, count tvs)
+boolv Correctie_REALISATIETIJD_Voorstart(count fcvs, count fcns, count tvs)
 {
     count n;
     boolv result;
@@ -7966,28 +7966,28 @@ boolv Correctie_INTERSGTIJD_Voorstart(count fcvs, count fcns, count tvs)
     {
         for (n = 0; n < FCMAX; ++n)
         {
-            if ((INTERSGTIJD[n][fcns] < INTERSGTIJD[n][fcvs] + T_max[tvs]) && INTERSGTIJD[n][fcvs] > 0)
+            if ((REALISATIETIJD[n][fcns] < REALISATIETIJD[n][fcvs] + T_max[tvs]) && REALISATIETIJD[n][fcvs] > 0)
             {
-                INTERSGTIJD[n][fcns] = INTERSGTIJD[n][fcvs] + T_max[tvs];
+                REALISATIETIJD[n][fcns] = REALISATIETIJD[n][fcvs] + T_max[tvs];
                 result = TRUE;
             }
         }
     }
-    if (G[fcvs] || RA[fcvs] && (INTERSGTIJD_max[fcvs] <= 1))
+    if (G[fcvs] || RA[fcvs] && (REALISATIETIJD_max[fcvs] <= 1))
     {
         if (TG[fcvs])
         {
-            if (INTERSGTIJD[fcvs][fcns] < (T_max[tvs] - TG_timer[fcvs]))
+            if (REALISATIETIJD[fcvs][fcns] < (T_max[tvs] - TG_timer[fcvs]))
             {
-                INTERSGTIJD[fcvs][fcns] = T_max[tvs] - TG_timer[fcvs];
+                REALISATIETIJD[fcvs][fcns] = T_max[tvs] - TG_timer[fcvs];
                 result = TRUE;
             }
         }
         else
         {
-            if (INTERSGTIJD[fcvs][fcns] < T_max[tvs])
+            if (REALISATIETIJD[fcvs][fcns] < T_max[tvs])
             {
-                INTERSGTIJD[fcvs][fcns] = T_max[tvs];
+                REALISATIETIJD[fcvs][fcns] = T_max[tvs];
                 result = TRUE;
             }
         }
@@ -7996,7 +7996,7 @@ boolv Correctie_INTERSGTIJD_Voorstart(count fcvs, count fcns, count tvs)
 }
 
 /* deelconflicten moeten nu nog tegelijk realiseren */
-boolv Correctie_INTERSGTIJD_Gelijkstart(count fc1, count fc2)
+boolv Correctie_REALISATIETIJD_Gelijkstart(count fc1, count fc2)
 {
     count n;
     boolv result;
@@ -8006,16 +8006,16 @@ boolv Correctie_INTERSGTIJD_Gelijkstart(count fc1, count fc2)
         if ((A[fc1] || !(PG[fc1] & PRIMAIR_OVERSLAG)) && (A[fc2] || !(PG[fc2] & PRIMAIR_OVERSLAG)) && !G[fc1] && !G[fc2])
         {
             {
-                if (INTERSGTIJD[n][fc1] < INTERSGTIJD[n][fc2])
+                if (REALISATIETIJD[n][fc1] < REALISATIETIJD[n][fc2])
                 {
-                    INTERSGTIJD[n][fc1] = INTERSGTIJD[n][fc2];
+                    REALISATIETIJD[n][fc1] = REALISATIETIJD[n][fc2];
                     result = TRUE;
                 }
                 else
                 {
-                    if (INTERSGTIJD[n][fc1] != INTERSGTIJD[n][fc2])
+                    if (REALISATIETIJD[n][fc1] != REALISATIETIJD[n][fc2])
                     {
-                        INTERSGTIJD[n][fc2] = INTERSGTIJD[n][fc1];
+                        REALISATIETIJD[n][fc2] = REALISATIETIJD[n][fc1];
                         result = TRUE;
                     }
                 }
@@ -8024,7 +8024,7 @@ boolv Correctie_INTERSGTIJD_Gelijkstart(count fc1, count fc2)
     }
     return result;
 }
-boolv Correctie_INTERSGTIJD_LateRelease(count fclr, count fcvs, count tlr)
+boolv Correctie_REALISATIETIJD_LateRelease(count fclr, count fcvs, count tlr)
 {
     count n;
     boolv result;
@@ -8035,10 +8035,10 @@ boolv Correctie_INTERSGTIJD_LateRelease(count fclr, count fcvs, count tlr)
         {
             if (!G[fcvs])
             {
-                if (INTERSGTIJD[n][fcvs] < INTERSGTIJD[n][fclr] - T_max[tlr])
+                if (REALISATIETIJD[n][fcvs] < REALISATIETIJD[n][fclr] - T_max[tlr])
                 {
-                    INTERSGTIJD[n][fcvs] = INTERSGTIJD[n][fclr] - T_max[tlr];
-                    if (INTERSGTIJD[n][fcvs] < 0) INTERSGTIJD[n][fcvs] = 0;
+                    REALISATIETIJD[n][fcvs] = REALISATIETIJD[n][fclr] - T_max[tlr];
+                    if (REALISATIETIJD[n][fcvs] < 0) REALISATIETIJD[n][fcvs] = 0;
                     result = TRUE;
                 }
             }
@@ -8285,27 +8285,27 @@ void Ontruiming_Deelconflict_Voorstart(count fcns, count fcvs, count tfo)
     {
         if (VS[fcns])
         {
-            INTERSGTIJD[fcns][fcvs] = TFG_max[fcns] + TVG_max[fcns] + T_max[tfo];
+            REALISATIETIJD[fcns][fcvs] = TFG_max[fcns] + TVG_max[fcns] + T_max[tfo];
         }
         if (FG[fcns])
         {
-            INTERSGTIJD[fcns][fcvs] = TFG_max[fcns] - TFG_timer[fcns] + TVG_max[fcns] + T_max[tfo];
+            REALISATIETIJD[fcns][fcvs] = TFG_max[fcns] - TFG_timer[fcns] + TVG_max[fcns] + T_max[tfo];
         }
         if (WG[fcns])
         {
-            INTERSGTIJD[fcns][fcvs] = TVG_max[fcns] + T_max[tfo];
+            REALISATIETIJD[fcns][fcvs] = TVG_max[fcns] + T_max[tfo];
         }
         if (VG[fcns] && (TVG_max[fcns] > TVG_timer[fcns]))
         {
-            INTERSGTIJD[fcns][fcvs] = TVG_max[fcns] - TVG_timer[fcns] + T_max[tfo];
+            REALISATIETIJD[fcns][fcvs] = TVG_max[fcns] - TVG_timer[fcns] + T_max[tfo];
         }
         if (MG[fcns] || VG[fcns] && (TVG_max[fcns] <= TVG_timer[fcns]))
         {
-            INTERSGTIJD[fcns][fcvs] = T_max[tfo];
+            REALISATIETIJD[fcns][fcvs] = T_max[tfo];
         }
         if (T[tfo] && !G[fcns])
         {
-            INTERSGTIJD[fcns][fcvs] = T_max[tfo] - T_timer[tfo];
+            REALISATIETIJD[fcns][fcvs] = T_max[tfo] - T_timer[tfo];
         }
     }
 }
@@ -8316,56 +8316,56 @@ void Ontruiming_Deelconflict_Gelijkstart(count fc1, count fc2, count tfo12, coun
     {
         if (VS[fc1])
         {
-            INTERSGTIJD[fc1][fc2] = TFG_max[fc1] + TVG_max[fc1] + T_max[tfo12];
+            REALISATIETIJD[fc1][fc2] = TFG_max[fc1] + TVG_max[fc1] + T_max[tfo12];
         }
         if (FG[fc1])
         {
-            INTERSGTIJD[fc1][fc2] = TFG_max[fc1] - TFG_timer[fc1] + TVG_max[fc1] + T_max[tfo12];
+            REALISATIETIJD[fc1][fc2] = TFG_max[fc1] - TFG_timer[fc1] + TVG_max[fc1] + T_max[tfo12];
         }
         if (WG[fc1])
         {
-            INTERSGTIJD[fc1][fc2] = TVG_max[fc1] + T_max[tfo12];
+            REALISATIETIJD[fc1][fc2] = TVG_max[fc1] + T_max[tfo12];
         }
         if (VG[fc1])
         {
-            INTERSGTIJD[fc1][fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tfo12];
+            REALISATIETIJD[fc1][fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tfo12];
 
         }
         if (MG[fc1])
         {
-            INTERSGTIJD[fc1][fc2] = T_max[tfo12];
+            REALISATIETIJD[fc1][fc2] = T_max[tfo12];
         }
         if (T[tfo12] && !G[fc1])
         {
-            INTERSGTIJD[fc1][fc2] = T_max[tfo12] - T_timer[tfo12];
+            REALISATIETIJD[fc1][fc2] = T_max[tfo12] - T_timer[tfo12];
         }
     }
     RT[tfo21] = G[fc2];
     {
         if (VS[fc2])
         {
-            INTERSGTIJD[fc2][fc1] = TFG_max[fc2] + TVG_max[fc2] + T_max[tfo21];
+            REALISATIETIJD[fc2][fc1] = TFG_max[fc2] + TVG_max[fc2] + T_max[tfo21];
         }
         if (FG[fc2])
         {
-            INTERSGTIJD[fc2][fc1] = TFG_max[fc2] - TFG_timer[fc2] + TVG_max[fc2] + T_max[tfo21];
+            REALISATIETIJD[fc2][fc1] = TFG_max[fc2] - TFG_timer[fc2] + TVG_max[fc2] + T_max[tfo21];
         }
         if (WG[fc2])
         {
-            INTERSGTIJD[fc2][fc1] = TVG_max[fc2] + T_max[tfo21];
+            REALISATIETIJD[fc2][fc1] = TVG_max[fc2] + T_max[tfo21];
         }
         if (VG[fc2])
         {
-            INTERSGTIJD[fc2][fc1] = TVG_max[fc2] - TVG_timer[fc2] + T_max[tfo21];
+            REALISATIETIJD[fc2][fc1] = TVG_max[fc2] - TVG_timer[fc2] + T_max[tfo21];
 
         }
         if (MG[fc2])
         {
-            INTERSGTIJD[fc2][fc1] = T_max[tfo21];
+            REALISATIETIJD[fc2][fc1] = T_max[tfo21];
         }
         if (T[tfo21] && !G[fc2])
         {
-            INTERSGTIJD[fc2][fc1] = T_max[tfo21] - T_timer[tfo21];
+            REALISATIETIJD[fc2][fc1] = T_max[tfo21] - T_timer[tfo21];
         }
     }
 }
@@ -8376,27 +8376,27 @@ void Ontruiming_Deelconflict_LateRelease(count fcvs, count fclr, count tlr, coun
     {
         if (VS[fcvs])
         {
-            INTERSGTIJD[fcvs][fclr] = TFG_max[fcvs] + TVG_max[fcvs] + T_max[tfo];
+            REALISATIETIJD[fcvs][fclr] = TFG_max[fcvs] + TVG_max[fcvs] + T_max[tfo];
         }
         if (FG[fcvs])
         {
-            INTERSGTIJD[fcvs][fclr] = TFG_max[fcvs] - TFG_timer[fcvs] + TVG_max[fcvs] + T_max[tfo];
+            REALISATIETIJD[fcvs][fclr] = TFG_max[fcvs] - TFG_timer[fcvs] + TVG_max[fcvs] + T_max[tfo];
         }
         if (WG[fcvs])
         {
-            INTERSGTIJD[fcvs][fclr] = TVG_max[fcvs] + T_max[tfo];
+            REALISATIETIJD[fcvs][fclr] = TVG_max[fcvs] + T_max[tfo];
         }
         if (VG[fcvs])
         {
-            INTERSGTIJD[fcvs][fclr] = TVG_max[fcvs] - TVG_timer[fcvs] + T_max[tfo];
+            REALISATIETIJD[fcvs][fclr] = TVG_max[fcvs] - TVG_timer[fcvs] + T_max[tfo];
         }
         if (MG[fcvs])
         {
-            INTERSGTIJD[fcvs][fclr] = T_max[tfo];
+            REALISATIETIJD[fcvs][fclr] = T_max[tfo];
         }
         if (T[tfo] && !G[fcvs])
         {
-            INTERSGTIJD[fcvs][fclr] = T_max[tfo] - T_timer[tfo];
+            REALISATIETIJD[fcvs][fclr] = T_max[tfo] - T_timer[tfo];
         }
 
     }
@@ -8510,7 +8510,7 @@ void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, co
     }
     if (EVG[fc2]) AT[tvgnaloop] = TRUE;
 }
-boolv ym_max_tig_INTERSGTIJD(count i,count prmomx) /* todo fc22 moet met 5 meeverlengen als 11 groen is. */
+boolv ym_max_tig_REALISATIETIJD(count i,count prmomx) /* todo fc22 moet met 5 meeverlengen als 11 groen is. */
 {
     register count n, j, k, m;
     boolv ym;
@@ -8521,13 +8521,13 @@ boolv ym_max_tig_INTERSGTIJD(count i,count prmomx) /* todo fc22 moet met 5 meeve
         for (n = 0; n < FKFC_MAX[i]; ++n)
         {
             k = KF_pointer[i][n];
-            if ((RA[k] || AAPR[k]) && !(FK_type[i][k] == FK_SG) && !(FK_type[i][k] == FK_EVG) && (INTERSGTIJD_max[k] > 0))
+            if ((RA[k] || AAPR[k]) && !(FK_type[i][k] == FK_SG) && !(FK_type[i][k] == FK_EVG) && (REALISATIETIJD_max[k] > 0))
             {
                 ym = FALSE;
                 for (j = 0; j < FKFC_MAX[k]; j++)
                 {
                     m = KF_pointer[k][j];
-                    if ((INTERSGTIJD[m][k] > INTERSGTIJD[i][k] + PRM[prmomx]) && !(TNL_type[m][i] == TNL_EG))
+                    if ((REALISATIETIJD[m][k] > REALISATIETIJD[i][k] + PRM[prmomx]) && !(TNL_type[m][i] == TNL_EG))
                     {
                         ym = TRUE;
                         break;
@@ -8550,8 +8550,8 @@ boolv max_par(count fc)
     for (n = 0; n < FKFC_MAX[fc]; ++n)
     {
         k = KF_pointer[fc][n];
-        if (AAPR[k] && ((INTERSGTIJD_max[k] - INTERSGTIJD_max[fc] + offsetAR) < TISG_AR[fc][k]) || CV[k] ||
-            (A[k]||PRIOFC[k]) && ((twacht[k] - INTERSGTIJD_max[fc] + offsetAR) < TISG_AR[fc][k]))
+        if (AAPR[k] && ((REALISATIETIJD_max[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR[fc][k]) || CV[k] ||
+            (A[k]||PRIOFC[k]) && ((twacht[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR[fc][k]))
         {
             return FALSE;
         }
@@ -8566,7 +8566,7 @@ boolv max_par_los(fc)
     for (n = 0; n < FKFC_MAX[fc]; ++n)
     {
         k = KF_pointer[fc][n];
-        if (AAPR[k] && !((TIG_max[fc][k] == FK) && (FK_type[fc][k] == FK_SG)) && ((INTERSGTIJD_max[k] - INTERSGTIJD_max[fc] + offsetAR) < TISG_AR[fc][k])) return FALSE;
+        if (AAPR[k] && !((TIG_max[fc][k] == FK) && (FK_type[fc][k] == FK_SG)) && ((REALISATIETIJD_max[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR[fc][k])) return FALSE;
     }
     return TRUE;
 }
@@ -8584,7 +8584,7 @@ void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mu
     /* ------------------------------------------------------------------- */
     for (i = 0; i < FC_MAX; i++) {
         if ((prml[ml][i] & PRIMAIR_VERSNELD) && !PG[i] && R[i])
-            twacht[i] = INTERSGTIJD_max[i];
+            twacht[i] = REALISATIETIJD_max[i];
     }
 
 
@@ -8596,7 +8596,7 @@ void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mu
         for (i = 0; i < FC_MAX; i++) {
 
             if ((prml[hml][i] & PRIMAIR_VERSNELD) && !PG[i] && (twacht[i] < 0)) {
-                twacht[i] = INTERSGTIJD_max[i];
+                twacht[i] = REALISATIETIJD_max[i];
                 for (n = 0; n < FC_MAX; n++)
                 {
                     if (TISG_PR[i][n] >= 0 && i != n)
@@ -8645,10 +8645,10 @@ void Bepaal_Realisatietijd_per_richting(void)
 
     for (i = 0; i < FCMAX; ++i)
     {
-        INTERSGTIJD_max[i] = 0;
+        REALISATIETIJD_max[i] = 0;
         for (j = 0; j < FCMAX; ++j)
         {
-            if (INTERSGTIJD_max[i] < INTERSGTIJD[j][i]) INTERSGTIJD_max[i] = INTERSGTIJD[j][i];
+            if (REALISATIETIJD_max[i] < REALISATIETIJD[j][i]) REALISATIETIJD_max[i] = REALISATIETIJD[j][i];
         }
     }
 }
@@ -8737,56 +8737,56 @@ void Realisatietijd_MeeverlengenDeelconflict(mulv fc1, mulv fc2)
             {
                 if (VS[fc1])
                 {
-                    if (INTERSGTIJD[fc1][fc] < TFG_max[fc1] + TVG_max[fc1] + TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TFG_max[fc1] + TVG_max[fc1] + TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TFG_max[fc1] + TVG_max[fc1] + TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TFG_max[fc1] + TVG_max[fc1] + TIGR[fc2][fc];
                 }
                 if (FG[fc1])
                 {
-                    if (INTERSGTIJD[fc1][fc] < TFG_max[fc1] - TFG_timer[fc1] + TVG_max[fc1] + TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TFG_max[fc1] - TFG_timer[fc1] + TVG_max[fc1] + TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TFG_max[fc1] - TFG_timer[fc1] + TVG_max[fc1] + TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TFG_max[fc1] - TFG_timer[fc1] + TVG_max[fc1] + TIGR[fc2][fc];
                 }
                 if (WG[fc1])
                 {
-                    if (INTERSGTIJD[fc1][fc] < TVG_max[fc1] + TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TVG_max[fc1] + TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TVG_max[fc1] + TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TVG_max[fc1] + TIGR[fc2][fc];
                 }
                 if (VG[fc1] && (TVG_timer[fc1] <= TVG_max[fc1]))
                 {
-                    if (INTERSGTIJD[fc1][fc] < TVG_max[fc1] - TVG_timer[fc1] + TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TVG_max[fc1] - TVG_timer[fc1] + TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TVG_max[fc1] - TVG_timer[fc1] + TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TVG_max[fc1] - TVG_timer[fc1] + TIGR[fc2][fc];
                 }
                 if (MG[fc1] || VG[fc1] && (TVG_timer[fc1] > TVG_max[fc1]))
                 {
-                    if (INTERSGTIJD[fc1][fc] < TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TIGR[fc2][fc];
                 }
             }
             else
             {
                 if (VS[fc1])
                 {
-                    if (INTERSGTIJD[fc1][fc] < TFG_max[fc1] + TVG_AR[fc1] + TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TFG_max[fc1] + TVG_AR[fc1] + TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TFG_max[fc1] + TVG_AR[fc1] + TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TFG_max[fc1] + TVG_AR[fc1] + TIGR[fc2][fc];
                 }
                 if (FG[fc1])
                 {
-                    if (INTERSGTIJD[fc1][fc] < TFG_max[fc1] - TFG_timer[fc1] + TVG_AR[fc1] + TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TFG_max[fc1] - TFG_timer[fc1] + TVG_AR[fc1] + TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TFG_max[fc1] - TFG_timer[fc1] + TVG_AR[fc1] + TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TFG_max[fc1] - TFG_timer[fc1] + TVG_AR[fc1] + TIGR[fc2][fc];
                 }
                 if (WG[fc1])
                 {
-                    if (INTERSGTIJD[fc1][fc] < TVG_AR[fc1] + TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TVG_AR[fc1] + TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TVG_AR[fc1] + TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TVG_AR[fc1] + TIGR[fc2][fc];
                 }
                 if (VG[fc1] && (TVG_timer[fc1] <= TVG_AR[fc1]))
                 {
-                    if (INTERSGTIJD[fc1][fc] < TVG_AR[fc1] - TVG_timer[fc1] + TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TVG_AR[fc1] - TVG_timer[fc1] + TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TVG_AR[fc1] - TVG_timer[fc1] + TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TVG_AR[fc1] - TVG_timer[fc1] + TIGR[fc2][fc];
                 }
                 if (MG[fc1] || VG[fc1] && (TVG_timer[fc1] > TVG_AR[fc1]))
                 {
-                    if (INTERSGTIJD[fc1][fc] < TIGR[fc2][fc])
-                        INTERSGTIJD[fc1][fc] = TIGR[fc2][fc];
+                    if (REALISATIETIJD[fc1][fc] < TIGR[fc2][fc])
+                        REALISATIETIJD[fc1][fc] = TIGR[fc2][fc];
                 }
             }
 
@@ -8829,13 +8829,16 @@ void MeeverlengenUitDoorVoetgangerLos(count fcvtg, count hmadk)
     for (n = 0; n < FKFC_MAX[fcvtg]; ++n)
     {
         fc = KF_pointer[fcvtg][n];
-        if ((INTERSGTIJD[fc][fcvtg] > 0) && MG[fc]) YM[fc] = FALSE;
+        if ((REALISATIETIJD[fc][fcvtg] > 0) && MG[fc]) YM[fc] = FALSE;
     }
 }
 
 void PrioAanwezig(void)
 {
-    count prio, fc;
+    count fc;
+#ifndef NO_PRIO
+    count prio;
+#endif
     for (fc = 0; fc < FCMAX; ++fc) PRIOFC[fc] = FALSE;
 #ifndef NO_PRIO
     for (prio = 0; prio < prioFCMAX; ++prio)
@@ -8865,7 +8868,7 @@ void BepaalIntersignaalgroepTijden(void)
     {
         for (fc2 = 0; fc2 < FC_MAX; fc2++)
         {
-            INTERSGTIJD[fc1][fc2] = NG;
+            REALISATIETIJD[fc1][fc2] = NG;
         }
     }
 }
@@ -8883,7 +8886,7 @@ void RealisatieTijden_VulHaldeConflictenIn(void)
             {
                 if (PR[fc1] || BR[fc1] && !AR[fc1])
                 {
-                    INTERSGTIJD[fc1][fc2] = (VS[fc1]) ? TFG_max[fc1] + TVG_max[fc1] + TIG_max[fc1][fc2] :
+                    REALISATIETIJD[fc1][fc2] = (VS[fc1]) ? TFG_max[fc1] + TVG_max[fc1] + TIG_max[fc1][fc2] :
                         (FG[fc1]) ? TFG_max[fc1] - TFG_timer[fc1] + TVG_max[fc1] + TIG_max[fc1][fc2] :
                         (WG[fc1]) ? TVG_max[fc1] + TIG_max[fc1][fc2] :
                         (VG[fc1] && (TVG_max[fc1] > TVG_timer[fc1])) ? TVG_max[fc1] - TVG_timer[fc1] + TIG_max[fc1][fc2] :
@@ -8892,7 +8895,7 @@ void RealisatieTijden_VulHaldeConflictenIn(void)
                 }
                 else
                 {
-                    INTERSGTIJD[fc1][fc2] = (VS[fc1]) ? TFG_max[fc1] + TVG_AR[fc1] + TIG_max[fc1][fc2] :
+                    REALISATIETIJD[fc1][fc2] = (VS[fc1]) ? TFG_max[fc1] + TVG_AR[fc1] + TIG_max[fc1][fc2] :
                         (FG[fc1]) ? TFG_max[fc1] - TFG_timer[fc1] + TVG_AR[fc1] + TIG_max[fc1][fc2] :
                         (WG[fc1]) ? TVG_AR[fc1] + TIG_max[fc1][fc2] :
                         (VG[fc1] && (TVG_AR[fc1] > TVG_timer[fc1])) ? TVG_AR[fc1] - TVG_timer[fc1] + TIG_max[fc1][fc2] :
@@ -8902,7 +8905,7 @@ void RealisatieTijden_VulHaldeConflictenIn(void)
             }
             else
             {
-                INTERSGTIJD[fc1][fc2] = 0;
+                REALISATIETIJD[fc1][fc2] = 0;
             }
         }
     }
@@ -8919,7 +8922,7 @@ void RealisatieTijden_VulGroenGroenConflictenIn(void)
             fc2 = KF_pointer[fc1][n];
             if (TIG[fc1][fc2])
             {
-                INTERSGTIJD[fc1][fc2] = (VS[fc1]) ? TFG_max[fc1] + TVG_max[fc1] :
+                REALISATIETIJD[fc1][fc2] = (VS[fc1]) ? TFG_max[fc1] + TVG_max[fc1] :
                     (FG[fc1]) ? TFG_max[fc1] - TFG_timer[fc1] + TVG_max[fc1] :
                     (WG[fc1]) ? TVG_max[fc1] :
                     (VG[fc1] && (TVG_max[fc1] > TVG_timer[fc1])) ? TVG_max[fc1] - TVG_timer[fc1] :
@@ -8927,7 +8930,7 @@ void RealisatieTijden_VulGroenGroenConflictenIn(void)
             }
             else
             {
-                INTERSGTIJD[fc1][fc2] = 0;
+                REALISATIETIJD[fc1][fc2] = 0;
             }
 
         }
@@ -8936,7 +8939,8 @@ void RealisatieTijden_VulGroenGroenConflictenIn(void)
 
 void InterStartGroenTijden_VulHaldeConflictenIn(void)
 {
-    for (fc1 = 0; fc1 < FCMAX; ++fc1)
+   count fc1, fc2, n;
+   for (fc1 = 0; fc1 < FCMAX; ++fc1)
     {
         for (n = 0; n < KFC_MAX[fc1]; ++n)
         {
@@ -8949,7 +8953,8 @@ void InterStartGroenTijden_VulHaldeConflictenIn(void)
 
 void InterStartGroenTijden_VulGroenGroenConflictenIn(void)
 {
-    for (fc1 = 0; fc1 < FCMAX; ++fc1)
+   count fc1, fc2, n;
+   for (fc1 = 0; fc1 < FCMAX; ++fc1)
     {
         for (n = KFC_MAX[fc1]; n < GKFC_MAX[fc1]; ++n)
         {
@@ -8962,16 +8967,16 @@ void InterStartGroenTijden_VulGroenGroenConflictenIn(void)
 
 void CorrigeerIntersignaalgroepTijdObvGarantieTijden(void)
 {
-    count fc1, fc2;
+    count fc1;
 
     for (fc1 = 0; fc1 < FCMAX; ++fc1)
     {
-        REALTIJD[fc1][fc1] = GL[fc1] ? (TGL_max[fc1] - TGL_timer[fc1] + TRG_max[fc1]) : TRG[fc1] ? TRG_max[fc1] - TRG_timer[fc1] : 0;
-        if ((REALTIJD[fc1][fc1] <= 0) && RV[fc1]) REALTIJD[fc1][fc1] = 1;
+        REALISATIETIJD[fc1][fc1] = GL[fc1] ? (TGL_max[fc1] - TGL_timer[fc1] + TRG_max[fc1]) : TRG[fc1] ? TRG_max[fc1] - TRG_timer[fc1] : 0;
+        if ((REALISATIETIJD[fc1][fc1] <= 0) && RV[fc1]) REALISATIETIJD[fc1][fc1] = 1;
     }
 }
 
-void InitInterStartGroenTijden() {
+void InitInterStartGroenTijden() 
 {
     count i, j;
     for (i = 0; i < FC_MAX; i++)  /* zet alle GK en GKL conflicten om in FK */
@@ -8981,7 +8986,7 @@ void InitInterStartGroenTijden() {
             if (TIG_max[i][j] < FK) TIG_max[i][j] = FK;
             TISG_PR[i][j] = NG;
             TISG_AR[i][j] = NG;
-            REALTIJD[i][j] = NG;
+            REALISATIETIJD[i][j] = NG;
 
         }
     }
