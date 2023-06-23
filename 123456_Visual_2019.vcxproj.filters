@@ -29,15 +29,9 @@
     <ClCompile Include="123456sim.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="123456tab.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="123456prio.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="C:\CCOL120\WIN32\RES\ccolvissim_e.res">
+    <Resource Include="C:\CCOL120\WIN32\RES\Ccolmenu.res">
       <Filter>Resource Files</Filter>
     </Resource>
   </ItemGroup>

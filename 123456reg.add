@@ -115,7 +115,7 @@ void DetectieStoring_Aanvraag_Add(void)
 
 }
 
-void DetectieStoring_Verlenggroen_Add(void)
+void DetectieStoring_VerlengGroen_Add(void)
 {
 
 }

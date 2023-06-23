@@ -21,18 +21,8 @@
 
 /* aantal ingangs-/uitgangs signalen */
 /* --------------------------------- */
-    #define ushdinm02_1 (USMAX + 0)
-    #define ushdinm03_1 (USMAX + 1)
-    #define ushdinm05_1 (USMAX + 2)
-    #define ushdinm08_1 (USMAX + 3)
-    #define ushdinm09_1 (USMAX + 4)
-    #define ushdinm11_1 (USMAX + 5)
-    #define ushdinm61_1 (USMAX + 6)
-    #define ushdinm62_1 (USMAX + 7)
-    #define ushdinm67_1 (USMAX + 8)
-    #define ushdinm68_1 (USMAX + 9)
 
-    #define USDPLMAX (USMAX + 10)
+    #define USDPLMAX (USMAX + 0)
     #define ISDPLMAX (ISMAX + 0)
 
 /* include files */
@@ -240,61 +230,6 @@ void display_parameters(void)
     X_us[usovtevroeg68bus] = NG; Y_us[usovtevroeg68bus] = NG;
     X_us[usovoptijd68bus] = NG; Y_us[usovoptijd68bus] = NG;
     X_us[usovtelaat68bus] = NG; Y_us[usovtelaat68bus] = NG;
-    X_us[usmaxwt] = 275; Y_us[usmaxwt] = 36;
-    X_us[uskarmelding] = 276; Y_us[uskarmelding] = 11;
-    X_us[uskarog] = 277; Y_us[uskarog] = 24;
-    X_us[usovinm02bus] = 151; Y_us[usovinm02bus] = 30;
-    X_us[usovinm02risov] = 50; Y_us[usovinm02risov] = 33;
-    X_us[usovinm02risvrw] = 84; Y_us[usovinm02risvrw] = 34;
-    X_us[usovinm03bus] = 149; Y_us[usovinm03bus] = 44;
-    X_us[usovinm03risov] = 52; Y_us[usovinm03risov] = 45;
-    X_us[usovinm03risvrw] = 83; Y_us[usovinm03risvrw] = 45;
-    X_us[usovinm05bus] = 152; Y_us[usovinm05bus] = 59;
-    X_us[usovinm05risov] = 52; Y_us[usovinm05risov] = 59;
-    X_us[usovinm05risvrw] = 82; Y_us[usovinm05risvrw] = 60;
-    X_us[usovinm08bus] = 152; Y_us[usovinm08bus] = 72;
-    X_us[usovinm08risov] = 54; Y_us[usovinm08risov] = 72;
-    X_us[usovinm08risvrw] = 83; Y_us[usovinm08risvrw] = 72;
-    X_us[usovinm09bus] = 149; Y_us[usovinm09bus] = 84;
-    X_us[usovinm09risov] = 53; Y_us[usovinm09risov] = 87;
-    X_us[usovinm09risvrw] = 85; Y_us[usovinm09risvrw] = 84;
-    X_us[usovinm11bus] = 151; Y_us[usovinm11bus] = 98;
-    X_us[usovinm11risov] = 52; Y_us[usovinm11risov] = 98;
-    X_us[usovinm11risvrw] = 86; Y_us[usovinm11risvrw] = 96;
-    X_us[usovinm22fiets] = 277; Y_us[usovinm22fiets] = 144;
-    X_us[usovinm28fiets] = 277; Y_us[usovinm28fiets] = 157;
-    X_us[usovinm61bus] = 153; Y_us[usovinm61bus] = 108;
-    X_us[usovinm61risov] = 50; Y_us[usovinm61risov] = 110;
-    X_us[usovinm61risvrw] = 85; Y_us[usovinm61risvrw] = 108;
-    X_us[usovinm62bus] = 153; Y_us[usovinm62bus] = 122;
-    X_us[usovinm62risov] = 49; Y_us[usovinm62risov] = 123;
-    X_us[usovinm62risvrw] = 85; Y_us[usovinm62risvrw] = 123;
-    X_us[usovinm67bus] = 152; Y_us[usovinm67bus] = 137;
-    X_us[usovinm67risov] = 51; Y_us[usovinm67risov] = 137;
-    X_us[usovinm67risvrw] = 84; Y_us[usovinm67risvrw] = 136;
-    X_us[usovinm68bus] = 154; Y_us[usovinm68bus] = 152;
-    X_us[usovinm68risov] = 52; Y_us[usovinm68risov] = 149;
-    X_us[usovinm68risvrw] = 85; Y_us[usovinm68risvrw] = 150;
-    X_us[ushdinm02] = 66; Y_us[ushdinm02] = 31;
-    X_us[ushdinm02_1] = 167; Y_us[ushdinm02_1] = 29; NR_us[ushdinm02_1] = ushdinm02;
-    X_us[ushdinm03] = 70; Y_us[ushdinm03] = 44;
-    X_us[ushdinm03_1] = 167; Y_us[ushdinm03_1] = 45; NR_us[ushdinm03_1] = ushdinm03;
-    X_us[ushdinm05] = 67; Y_us[ushdinm05] = 58;
-    X_us[ushdinm05_1] = 169; Y_us[ushdinm05_1] = 59; NR_us[ushdinm05_1] = ushdinm05;
-    X_us[ushdinm08] = 68; Y_us[ushdinm08] = 70;
-    X_us[ushdinm08_1] = 169; Y_us[ushdinm08_1] = 71; NR_us[ushdinm08_1] = ushdinm08;
-    X_us[ushdinm09] = 66; Y_us[ushdinm09] = 85;
-    X_us[ushdinm09_1] = 166; Y_us[ushdinm09_1] = 85; NR_us[ushdinm09_1] = ushdinm09;
-    X_us[ushdinm11] = 71; Y_us[ushdinm11] = 99;
-    X_us[ushdinm11_1] = 168; Y_us[ushdinm11_1] = 98; NR_us[ushdinm11_1] = ushdinm11;
-    X_us[ushdinm61] = 66; Y_us[ushdinm61] = 112;
-    X_us[ushdinm61_1] = 172; Y_us[ushdinm61_1] = 110; NR_us[ushdinm61_1] = ushdinm61;
-    X_us[ushdinm62] = 65; Y_us[ushdinm62] = 124;
-    X_us[ushdinm62_1] = 166; Y_us[ushdinm62_1] = 122; NR_us[ushdinm62_1] = ushdinm62;
-    X_us[ushdinm67] = 68; Y_us[ushdinm67] = 134;
-    X_us[ushdinm67_1] = 167; Y_us[ushdinm67_1] = 136; NR_us[ushdinm67_1] = ushdinm67;
-    X_us[ushdinm68] = 66; Y_us[ushdinm68] = 148;
-    X_us[ushdinm68_1] = 168; Y_us[ushdinm68_1] = 147; NR_us[ushdinm68_1] = ushdinm68;
     X_us[usperdef] = NG; Y_us[usperdef] = NG;
     X_us[usper1] = 625; Y_us[usper1] = 14;
     X_us[usperoFietsprio1] = NG; Y_us[usperoFietsprio1] = NG;
