@@ -54,7 +54,7 @@
     <MirakelMonitor>false</MirakelMonitor>
     <GenererenDuurtestCode>true</GenererenDuurtestCode>
     <GarantieOntruimingsTijden>true</GarantieOntruimingsTijden>
-    <SynchronisatiesType>RealFunc</SynchronisatiesType>
+    <SynchronisatiesType>InterFunc</SynchronisatiesType>
     <RealFuncBepaalRealisatieTijdenAltijd>true</RealFuncBepaalRealisatieTijdenAltijd>
     <ExtraMeeverlengenInWG>false</ExtraMeeverlengenInWG>
     <TypeGroentijden>VerlengGroentijden</TypeGroentijden>
@@ -4400,8 +4400,9 @@
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
+        <Naam>wtv22</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
+        <ElementType>Output</ElementType>
         <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
@@ -23352,6 +23353,9 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
+  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <SimulationEntries />
+  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>false</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -23827,7 +23831,14 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit08</Naam>
+        <Naam>dummyhdkarin08</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit09</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
@@ -24005,23 +24016,9 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit05</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
         <Naam>dummykaruit09bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit09bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit03</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24033,23 +24030,9 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit02</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummyhdkaruit02</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
         <Naam>dummykaruit05bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit05bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin68</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24061,23 +24044,9 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkarin67</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
         <Naam>dummykaruit02bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit02bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin62</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24089,23 +24058,9 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkarin61</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
         <Naam>dummykarin67bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin67bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin11</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24117,13 +24072,6 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkarin09</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
         <Naam>dummykarin61bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin61bus</SumoNaam1>
@@ -24131,7 +24079,7 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkarin08</Naam>
+        <Naam>dummyhdkaruit08</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
@@ -24145,9 +24093,23 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit05</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummykarin09bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin09bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit03</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24159,9 +24121,23 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit02</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummyhdkaruit02</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummykarin05bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin05bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin68</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -24173,6 +24149,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin67</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummykarin02bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin02bus</SumoNaam1>
@@ -24180,7 +24163,21 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin62</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummyhdkaruit68</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin61</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
@@ -24194,7 +24191,21 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin11</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummyhdkaruit62</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin09</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
@@ -24209,13 +24220,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkaruit11</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit09</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

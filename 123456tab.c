@@ -14,8 +14,8 @@
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.1   24-04-2023   TLCGen      Release versie TLCGen
+ * Versie   Datum        Ontwerper   Commentaar
+ * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
  *
  ************************************************************************************/
 
@@ -2016,10 +2016,11 @@ void control_parameters(void)
     SCH_code[schaltg2232]               = "altg2232";               SCH[schaltg2232]               = 1;                                         /* Alternatieve realisatie toestaan fasen 22, 32                  */
     SCH_code[schaltg243484]             = "altg243484";             SCH[schaltg243484]             = 1;                                         /* Alternatieve realisatie toestaan fasen 24, 34, 84              */
     SCH_code[schaltg26]                 = "altg26";                 SCH[schaltg26]                 = 1;                                         /* Alternatieve realisatie toestaan fase 26                       */
-    SCH_code[schaltg2838]               = "altg2838";               SCH[schaltg2838]               = 1;                                         /* Alternatieve realisatie toestaan fasen 28, 38                  */
+    SCH_code[schaltg28]                 = "altg28";                 SCH[schaltg28]                 = 1;                                         /* Alternatieve realisatie toestaan fase 28                       */
     SCH_code[schaltg31]                 = "altg31";                 SCH[schaltg31]                 = 1;                                         /* Alternatieve realisatie toestaan fase 31                       */
     SCH_code[schaltg3384]               = "altg3384";               SCH[schaltg3384]               = 1;                                         /* Alternatieve realisatie toestaan fasen 33, 84                  */
     SCH_code[schaltg2434]               = "altg2434";               SCH[schaltg2434]               = 1;                                         /* Alternatieve realisatie toestaan fasen 24, 34                  */
+    SCH_code[schaltg38]                 = "altg38";                 SCH[schaltg38]                 = 1;                                         /* Alternatieve realisatie toestaan fase 38                       */
     SCH_code[schaltg61]                 = "altg61";                 SCH[schaltg61]                 = 1;                                         /* Alternatieve realisatie toestaan fase 61                       */
     SCH_code[schaltg62]                 = "altg62";                 SCH[schaltg62]                 = 1;                                         /* Alternatieve realisatie toestaan fase 62                       */
     SCH_code[schaltg67]                 = "altg67";                 SCH[schaltg67]                 = 1;                                         /* Alternatieve realisatie toestaan fase 67                       */
@@ -3606,7 +3607,7 @@ void control_parameters(void)
     PRM_code[prmaltg26]                   = "altg26";                   PRM[prmaltg26]                   = 60;    PRM_type[prmaltg26]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 26                                                                         */
     PRM_code[prmaltp26]                   = "altp26";                   PRM[prmaltp26]                   = 60;    PRM_type[prmaltp26]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 26                                                                            */
     PRM_code[prmaltg28]                   = "altg28";                   PRM[prmaltg28]                   = 60;    PRM_type[prmaltg28]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 28                                                                         */
-    PRM_code[prmaltp2838]                 = "altp2838";                 PRM[prmaltp2838]                 = 60;    PRM_type[prmaltp2838]                 = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 28, 38                                                                       */
+    PRM_code[prmaltp28]                   = "altp28";                   PRM[prmaltp28]                   = 60;    PRM_type[prmaltp28]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 28                                                                            */
     PRM_code[prmaltg31]                   = "altg31";                   PRM[prmaltg31]                   = 60;    PRM_type[prmaltg31]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 31                                                                         */
     PRM_code[prmaltp31]                   = "altp31";                   PRM[prmaltp31]                   = 60;    PRM_type[prmaltp31]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 31                                                                            */
     PRM_code[prmaltg32]                   = "altg32";                   PRM[prmaltg32]                   = 60;    PRM_type[prmaltg32]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 32                                                                         */
@@ -3615,6 +3616,7 @@ void control_parameters(void)
     PRM_code[prmaltg34]                   = "altg34";                   PRM[prmaltg34]                   = 60;    PRM_type[prmaltg34]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 34                                                                         */
     PRM_code[prmaltp2434]                 = "altp2434";                 PRM[prmaltp2434]                 = 60;    PRM_type[prmaltp2434]                 = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 24, 34                                                                       */
     PRM_code[prmaltg38]                   = "altg38";                   PRM[prmaltg38]                   = 60;    PRM_type[prmaltg38]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 38                                                                         */
+    PRM_code[prmaltp38]                   = "altp38";                   PRM[prmaltp38]                   = 60;    PRM_type[prmaltp38]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 38                                                                            */
     PRM_code[prmaltg61]                   = "altg61";                   PRM[prmaltg61]                   = 60;    PRM_type[prmaltg61]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 61                                                                         */
     PRM_code[prmaltp61]                   = "altp61";                   PRM[prmaltp61]                   = 60;    PRM_type[prmaltp61]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 61                                                                            */
     PRM_code[prmaltg62]                   = "altg62";                   PRM[prmaltg62]                   = 60;    PRM_type[prmaltg62]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 62                                                                         */
@@ -3972,10 +3974,11 @@ void control_parameters(void)
     SCH_cat[schaltg2232]            = CAT_Module;           SCH_subcat[schaltg2232]               = SUBCAT_Plantijden;
     SCH_cat[schaltg243484]          = CAT_Module;           SCH_subcat[schaltg243484]             = SUBCAT_Plantijden;
     SCH_cat[schaltg26]              = CAT_Module;           SCH_subcat[schaltg26]                 = SUBCAT_Plantijden;
-    SCH_cat[schaltg2838]            = CAT_Module;           SCH_subcat[schaltg2838]               = SUBCAT_Plantijden;
+    SCH_cat[schaltg28]              = CAT_Module;           SCH_subcat[schaltg28]                 = SUBCAT_Plantijden;
     SCH_cat[schaltg31]              = CAT_Module;           SCH_subcat[schaltg31]                 = SUBCAT_Plantijden;
     SCH_cat[schaltg3384]            = CAT_Module;           SCH_subcat[schaltg3384]               = SUBCAT_Plantijden;
     SCH_cat[schaltg2434]            = CAT_Module;           SCH_subcat[schaltg2434]               = SUBCAT_Plantijden;
+    SCH_cat[schaltg38]              = CAT_Module;           SCH_subcat[schaltg38]                 = SUBCAT_Plantijden;
     SCH_cat[schaltg61]              = CAT_Module;           SCH_subcat[schaltg61]                 = SUBCAT_Plantijden;
     SCH_cat[schaltg62]              = CAT_Module;           SCH_subcat[schaltg62]                 = SUBCAT_Plantijden;
     SCH_cat[schaltg67]              = CAT_Module;           SCH_subcat[schaltg67]                 = SUBCAT_Plantijden;
@@ -6005,7 +6008,7 @@ void control_parameters(void)
     PRM_cat[prmaltg26]                = CAT_Module;           PRM_subcat[prmaltg26]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltp26]                = CAT_Module;           PRM_subcat[prmaltp26]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltg28]                = CAT_Module;           PRM_subcat[prmaltg28]                   = SUBCAT_Plantijden;
-    PRM_cat[prmaltp2838]              = CAT_Module;           PRM_subcat[prmaltp2838]                 = SUBCAT_Plantijden;
+    PRM_cat[prmaltp28]                = CAT_Module;           PRM_subcat[prmaltp28]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltg31]                = CAT_Module;           PRM_subcat[prmaltg31]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltp31]                = CAT_Module;           PRM_subcat[prmaltp31]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltg32]                = CAT_Module;           PRM_subcat[prmaltg32]                   = SUBCAT_Plantijden;
@@ -6014,6 +6017,7 @@ void control_parameters(void)
     PRM_cat[prmaltg34]                = CAT_Module;           PRM_subcat[prmaltg34]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltp2434]              = CAT_Module;           PRM_subcat[prmaltp2434]                 = SUBCAT_Plantijden;
     PRM_cat[prmaltg38]                = CAT_Module;           PRM_subcat[prmaltg38]                   = SUBCAT_Plantijden;
+    PRM_cat[prmaltp38]                = CAT_Module;           PRM_subcat[prmaltp38]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltg61]                = CAT_Module;           PRM_subcat[prmaltg61]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltp61]                = CAT_Module;           PRM_subcat[prmaltp61]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltg62]                = CAT_Module;           PRM_subcat[prmaltg62]                   = SUBCAT_Plantijden;
