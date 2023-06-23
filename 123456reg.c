@@ -100,9 +100,6 @@
 mulv DB_old[DPMAX];
 mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
 
-    /* Robuuste Groenverdeler */
-    #include "123456rgv.c"
-
 /* kruispuntnaam in VISSIM */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     code SCJ_code[] = "123456";
@@ -135,9 +132,6 @@ void PreApplication(void)
 {
     /* Opschonen wagennummer buffers */
     WDNST_cleanup();
-
-    /* Robuuste Groenverdeler */
-    IH[hrgvact] = SCH[schrgv];
 
     /* Instellen basis waarde hulpelementen 'geen dynamisch hiaat gebruiken'.
        Dit hulpelement kan in gebruikers code worden gebruikt voor eigen aansturing. */
@@ -1271,57 +1265,6 @@ TLCGen.Models.ControllerModelvoid Verlenggroen(void)
                               (va_mulv) PRM[prmvg6_84], (va_mulv) (MM[mperiod] == 6),
                               (va_mulv) PRM[prmvg7_84], (va_mulv) (MM[mperiod] == 7),
                               (va_mulv) TVGA_max[fc84], (va_count) END);
-
-    /* AANROEP EN RAPPOTEREN ROBUGROVER */
-    if (IH[hrgvact] != 0)
-    {
-        int teller = 0;
-
-        TC[teller++] = berekencyclustijd_va_arg(fc03, fc68, fc05, END);
-        TC[teller++] = berekencyclustijd_va_arg(fc05, END);
-        TC[teller++] = berekencyclustijd_va_arg(fc02, fc05, END);
-        TC[teller++] = berekencyclustijd_va_arg(fc08, fc11, END);
-        TC[teller++] = berekencyclustijd_va_arg(fc08, fc11, END);
-
-        TC_max = TC[0];
-
-        for (teller = 1; teller < MAX_AANTAL_CONFLICTGROEPEN; ++teller)
-        {
-            if (TC_max < TC[teller])
-            {
-                TC_max = TC[teller];
-            }
-        }
-    /* RoBuGrover verklikking in F11 scherm
-    #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST)
-        for (teller = 0; teller < MAX_AANTAL_CONFLICTGROEPEN; ++teller)
-        {
-            xyprintf(52, teller + 6, "%4d", TC[teller]);
-        }
-    #endif
-    */
-
-        /* AANROEP ROBUUSTE GROENTIJD VERDELER */
-        /* ================================== */
-        rgv_add();
-
-        CIF_GUS[usrgv] = TRUE;
-    }
-    else
-    {
-        TVG_rgv[fc02] = TVG_basis[fc02];
-        TVG_rgv[fc03] = TVG_basis[fc03];
-        TVG_rgv[fc05] = TVG_basis[fc05];
-        TVG_rgv[fc08] = TVG_basis[fc08];
-        TVG_rgv[fc09] = TVG_basis[fc09];
-        TVG_rgv[fc11] = TVG_basis[fc11];
-        TVG_rgv[fc61] = TVG_basis[fc61];
-        TVG_rgv[fc62] = TVG_basis[fc62];
-        TVG_rgv[fc67] = TVG_basis[fc67];
-        TVG_rgv[fc68] = TVG_basis[fc68];
-
-        CIF_GUS[usrgv] = FALSE;
-    }
 
     /* percentage MG bij filemelding < 100% */
 if (G[fc08] && !MG[fc08] && IH[hfileFile68af] && (PRM[prmfpercFile68af08] < 100)) MM[mfilemem08] = TRUE;
