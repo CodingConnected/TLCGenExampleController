@@ -70,6 +70,7 @@ boolv DSIMeldingPRIO_V2(           /* Fik220201 */
    }
 
 #endif 
+
    return melding;
 }
 

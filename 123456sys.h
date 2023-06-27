@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   23-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+ * 12.4.0   27-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20230623"
+#define VERSION "12.4.0 20230627"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 
 /* fasecycli */
@@ -393,7 +393,11 @@
     #define hperiodFietsprio3  53 /* Periode Fietsprio3 actief                                          */
     #define hrgvd24_3_d24_2    54 /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
     #define hwtv22             55 /* Onthouden aansturing wachttijdvoorspeller fase 22                  */
-    #define HEMAX1             56
+    #define hlos31             56 /* Toestaan los realiseren fase 31                                    */
+    #define hlos32             57 /* Toestaan los realiseren fase 32                                    */
+    #define hlos33             58 /* Toestaan los realiseren fase 33                                    */
+    #define hlos34             59 /* Toestaan los realiseren fase 34                                    */
+    #define HEMAX1             60
 
 /* geheugen elementen */
 /* ------------------ */
@@ -422,7 +426,30 @@
     #define mstp68bus  22 /* Stiptheid voorste OV voertuig bij 68 Bus                                    */
     #define mwtv22     23 /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 22                  */
     #define mwtvm22    24 /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 22                 */
-    #define MEMAX1     25
+    #define mar02      25 /* Alternatieve ruimte fase 02                                                 */
+    #define mar03      26 /* Alternatieve ruimte fase 03                                                 */
+    #define mar05      27 /* Alternatieve ruimte fase 05                                                 */
+    #define mar08      28 /* Alternatieve ruimte fase 08                                                 */
+    #define mar09      29 /* Alternatieve ruimte fase 09                                                 */
+    #define mar11      30 /* Alternatieve ruimte fase 11                                                 */
+    #define mar21      31 /* Alternatieve ruimte fase 21                                                 */
+    #define mar22      32 /* Alternatieve ruimte fase 22                                                 */
+    #define mar24      33 /* Alternatieve ruimte fase 24                                                 */
+    #define mar26      34 /* Alternatieve ruimte fase 26                                                 */
+    #define mar28      35 /* Alternatieve ruimte fase 28                                                 */
+    #define mar31      36 /* Alternatieve ruimte fase 31                                                 */
+    #define mar32      37 /* Alternatieve ruimte fase 32                                                 */
+    #define mar33      38 /* Alternatieve ruimte fase 33                                                 */
+    #define mar34      39 /* Alternatieve ruimte fase 34                                                 */
+    #define mar38      40 /* Alternatieve ruimte fase 38                                                 */
+    #define mar61      41 /* Alternatieve ruimte fase 61                                                 */
+    #define mar62      42 /* Alternatieve ruimte fase 62                                                 */
+    #define mar67      43 /* Alternatieve ruimte fase 67                                                 */
+    #define mar68      44 /* Alternatieve ruimte fase 68                                                 */
+    #define mar81      45 /* Alternatieve ruimte fase 81                                                 */
+    #define mar82      46 /* Alternatieve ruimte fase 82                                                 */
+    #define mar84      47 /* Alternatieve ruimte fase 84                                                 */
+    #define MEMAX1     48
 
 /* tijd elementen */
 /* -------------- */
@@ -636,7 +663,13 @@
     #define tvgvolg02_4b               207 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4b van fase 02 */
     #define tvghiaat02_4b              208 /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4b van fase 02                    */
     #define twtv22                     209 /* T.b.v. aansturing wachttijdvoorspeller fase 22                                           */
-    #define TMMAX1                     210
+    #define tvs2205                    210 /* Voorstarttijd fase 22 op fase 05                                                         */
+    #define tfo2205                    211 /* Fictieve ontruimingstijd van 22 naar fase 05                                             */
+    #define tvs2611                    212 /* Voorstarttijd fase 26 op fase 11                                                         */
+    #define tfo2611                    213 /* Fictieve ontruimingstijd van 26 naar fase 11                                             */
+    #define tvs3205                    214 /* Voorstarttijd fase 32 op fase 05                                                         */
+    #define tfo3205                    215 /* Fictieve ontruimingstijd van 32 naar fase 05                                             */
+    #define TMMAX1                     216
 
 /* teller elementen */
 /* ---------------- */

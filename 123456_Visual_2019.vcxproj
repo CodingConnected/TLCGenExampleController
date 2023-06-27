@@ -72,7 +72,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>CCOL_IS_SPECIAL;WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CCOL_IS_SPECIAL;CCOLTIG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CCOL_IS_SPECIAL;CCOLTIG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -90,6 +90,7 @@
   <ItemGroup>
     <ClCompile Include="123456dpl.c" />
     <ClCompile Include="123456reg.c" />
+    <ClCompile Include="123456tab.c" />
     <ClCompile Include="123456sim.c" />
   </ItemGroup>
   <ItemGroup>

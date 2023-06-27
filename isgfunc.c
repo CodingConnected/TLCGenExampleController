@@ -1,34 +1,9 @@
 /* isgfunc.c - gegenereerd met TLCGen 12.4.0.0 */
 
-count REALISATIETIJD[FCMAX][FCMAX];
-void Realisatietijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);
-void Realisatietijd_NLSG(count i, count j, count tnlsg, count tnlsgd);
-void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);
-void NaloopVtg_TVG_Correctie(count fc1, count fc2, count tnlsg, count tnlsgd);
-boolv Correctie_REALISATIETIJD_Voorstart(count fcvs, count fcns, count tvs);
-boolv Correctie_REALISATIETIJD_Gelijkstart(count fc1, count fc2);
-boolv Correctie_REALISATIETIJD_LateRelease(count fclr, count fcvs, count tlr);
-void Ontruiming_Deelconflict_Voorstart(count fcns, count fcvs, count tfo);
-void Ontruiming_Deelconflict_Gelijkstart(count fc1, count fc2, count tfo12, count tfo21);
-void Ontruiming_Deelconflict_LateRelease(count fcvs, count fclr, count tlr, count tfo);
-void NaloopEG(count fc1, count fc2, count tnl, count tnld, count tvgnaloop, ...);
-void NaloopVtg(count fc1, count fc2, count dk, count hdk, boolv naloop_ok, count tnlsg, count tnlsgd);
-boolv ym_max_tig_REALISATIETIJD(count i, count prmomx);
+#include "isgfunc.h"
+
 mulv TNL_type[FCMAX][FCMAX]; /* type naloop */
-
-#define offsetAR    5
-/* Type naloop */
-#define TNL_NG	-1 /* Geen */
-#define TNL_SG	 0 /* Naloop van StartGroen bv TNL_type[fc31][fc32] = TNL_SG*/
-#define TNL_ECV	 1 /* Naloop vanaf Einde verlenggroen bv TNL_type[fc22][fc21] = TNL_ECV */
-#define TNL_EG	 2 /* Naloop vanaf EindeGroen nv TNL_type[fc02][fc62] = TNL_EG*/ 
-
 mulv FK_type[FCMAX][FCMAX]; /* type fictief conflict */
-/* Type fictief conflict*/
-#define FK_NG		-1 /* Geen */
-#define FK_SG		0  /* bijv FK_type[fc32][fc02] = FK_SG  Starttijd 02 kan worden bepaald op basis  StartGroen van fc32  */
-#define FK_EVG  	1  /* bv FK_type[fc22][fc02] = FK_EV  Starttijd 02 kan worden bepaald op basis van EindeVerlengGroen van fc22 */  
-#define FK_EG		2  /* bv FK_type[fc02][fc05] = FK_EG Starttijd 05 kan worden bepaald op bais van Einde Groen fc02 */
 
 mulv TISG_PR[FCMAX][FCMAX];
 mulv TVG_basis[FCMAX];
@@ -38,26 +13,19 @@ mulv TVG_PR[FCMAX];
 mulv TVG_old[FCMAX];
 mulv TVG_AR_old[FCMAX];
 mulv REALISATIETIJD_max[FCMAX];
-void BepaalInterStartGroenTijden(void);
-void InterStartGroenTijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);
-void InterStartGroenTijd_NLSG(count i, count j, count tnlsg, count tnlsgd);
-boolv Correctie_TISG_Voorstart(count fcvs, count fcns, count tvs);
-boolv Correctie_TISG_Gelijkstart(count fc1, count fc2);
-boolv Correctie_TISG_LateRelease(count fclr, count fcvs, count tlr);
-boolv max_par(count fc);
-boolv max_par_los(fc);
-mulv twacht[FCMAX];
-mulv twacht_afkap[FCMAX];
-void BepaalRealisatieTijden(void);
-boolv Volgrichting[FCMAX];
-void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mulv twacht[]);
-boolv yml_cv_pr_nl(boolv* prml[], count ml, count ml_max);
-boolv AfslaandDeelconflict[FCMAX] = { 0 };
-void Bepaal_Realisatietijd_per_richting(void);
 mulv TIGR[FCMAX][FCMAX];
 mulv PRIOFC[FCMAX];
 
 boolv NietGroentijdOphogen[FCMAX];
+mulv twacht[FCMAX];
+mulv twacht_afkap[FCMAX];
+count REALISATIETIJD[FCMAX][FCMAX];
+
+boolv Volgrichting[FCMAX];
+boolv AfslaandDeelconflict[FCMAX] = { 0 };
+
+boolv TNL[FCMAX];
+
 void Realisatietijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop)
 {
     int k, n;
@@ -616,6 +584,7 @@ void Realisatietijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnle
         }
     }
 }
+
 void Realisatietijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop)
 {
     int k, n;
@@ -857,7 +826,7 @@ void Realisatietijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, count tnl
                 }
                 if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop])) && !(tnlevg == NG))
                 {
-                   REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop]);
+                    REALISATIETIJD[i][k] = (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevg] + T_max[tvgnaloop]);
                 }
                 if ((REALISATIETIJD[i][k] < (TFG_max[i] - TFG_timer[i] + TVG_max[i] + T_max[tnlevgd] + T_max[tvgnaloop])) && !(tnlevgd == NG))
                 {
@@ -1024,6 +993,7 @@ void Realisatietijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, count tnl
         }
     }
 }
+
 void InterStartGroenTijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop)
 {
     int k, n;
@@ -1100,6 +1070,7 @@ void InterStartGroenTijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count
         }
     }
 }
+
 void InterStartGroenTijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop)
 {
     int k, n;
@@ -1176,6 +1147,7 @@ void InterStartGroenTijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, coun
         }
     }
 }
+
 void Realisatietijd_NLSG(count i, count j, count tnlsg, count tnlsgd)
 {
     int k, n;
@@ -1206,6 +1178,7 @@ void Realisatietijd_NLSG(count i, count j, count tnlsg, count tnlsgd)
         }
     }
 }
+
 void InterStartGroenTijd_NLSG(count i, count j, count tnlsg, count tnlsgd)
 {
     int k, n;
@@ -1227,9 +1200,10 @@ void InterStartGroenTijd_NLSG(count i, count j, count tnlsg, count tnlsgd)
         if ((TISG_AR[i][k] < (T_max[tnlsgd] + TIG_max[j][k])) && !(tnlsgd == NG))
         {
             TISG_AR[i][k] = T_max[tnlsgd] + TIG_max[j][k];
-          }
+        }
     }
 }
+
 void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop)
 {
     if (!AR[fc1])
@@ -5070,6 +5044,7 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
     }
     if ((TVG_max[fc2] < TVG_AR[fc2]) && AR[fc2]) TVG_max[fc2] = TVG_AR[fc2];
 }
+
 void NaloopEVG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop)
 {
     if (!AR[fc1])
@@ -5261,9 +5236,9 @@ void NaloopEVG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, co
                     }
                     if (!(tnlevgd == NG))
                     {
-                        if (TVG_AR[fc2] < -TFG_max[fc2] + TFG_max[fc1] + TVG_max[fc1]  + T_max[tnlevgd] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < -TFG_max[fc2] + TFG_max[fc1] + TVG_max[fc1] + T_max[tnlevgd] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = -TFG_max[fc2] + TFG_max[fc1] + TVG_max[fc1]  + T_max[tnlevgd] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = -TFG_max[fc2] + TFG_max[fc1] + TVG_max[fc1] + T_max[tnlevgd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -7954,9 +7929,6 @@ void NaloopEVG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, co
     if ((TVG_max[fc2] < TVG_AR[fc2]) && AR[fc2]) TVG_max[fc2] = TVG_AR[fc2];
 }
 
-
-
-
 boolv Correctie_REALISATIETIJD_Voorstart(count fcvs, count fcns, count tvs)
 {
     count n;
@@ -8024,6 +7996,7 @@ boolv Correctie_REALISATIETIJD_Gelijkstart(count fc1, count fc2)
     }
     return result;
 }
+
 boolv Correctie_REALISATIETIJD_LateRelease(count fclr, count fcvs, count tlr)
 {
     count n;
@@ -8067,6 +8040,7 @@ boolv Correctie_TISG_Voorstart(count fcvs, count fcns, count tvs)
     }
     return result;
 }
+
 boolv Correctie_TISG_Gelijkstart(count fc1, count fc2)
 {
     count n;
@@ -8103,6 +8077,7 @@ boolv Correctie_TISG_Gelijkstart(count fc1, count fc2)
     }
     return result;
 }
+
 boolv Correctie_TISG_LateRelease(count fclr, count fcvs, count tlr)
 {
     count n;
@@ -8123,6 +8098,7 @@ boolv Correctie_TISG_LateRelease(count fclr, count fcvs, count tlr)
     }
     return result;
 }
+
 void NaloopVtg_TVG_Correctie(count fc1, count fc2, count tnlsg, count tnlsgd)
 {
     if (RT[tnlsg] && !(tnlsg == NG))
@@ -8278,6 +8254,7 @@ void NaloopVtg_TVG_Correctie(count fc1, count fc2, count tnlsg, count tnlsgd)
         }
     }
 }
+
 void Ontruiming_Deelconflict_Voorstart(count fcns, count fcvs, count tfo)
 {
     RT[tfo] = G[fcns];
@@ -8309,6 +8286,7 @@ void Ontruiming_Deelconflict_Voorstart(count fcns, count fcvs, count tfo)
         }
     }
 }
+
 void Ontruiming_Deelconflict_Gelijkstart(count fc1, count fc2, count tfo12, count tfo21)
 {
     RT[tfo12] = G[fc1];
@@ -8369,6 +8347,7 @@ void Ontruiming_Deelconflict_Gelijkstart(count fc1, count fc2, count tfo12, coun
         }
     }
 }
+
 void Ontruiming_Deelconflict_LateRelease(count fcvs, count fclr, count tlr, count tfo)
 {
     RT[tfo] = G[fcvs] && (TG_timer[fcvs] > T_max[tlr]);
@@ -8465,6 +8444,7 @@ void NaloopEG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnleg, coun
     }
     if (EVG[fc2]) AT[tvgnaloop] = TRUE; else AT[tvgnaloop] = FALSE;
 }
+
 void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop, ...)
 {
     va_list argpt;
@@ -8510,7 +8490,8 @@ void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, co
     }
     if (EVG[fc2]) AT[tvgnaloop] = TRUE;
 }
-boolv ym_max_tig_REALISATIETIJD(count i,count prmomx) /* todo fc22 moet met 5 meeverlengen als 11 groen is. */
+
+boolv ym_max_tig_REALISATIETIJD(count i, count prmomx) /* todo fc22 moet met 5 meeverlengen als 11 groen is. */
 {
     register count n, j, k, m;
     boolv ym;
@@ -8551,7 +8532,7 @@ boolv max_par(count fc)
     {
         k = KF_pointer[fc][n];
         if (AAPR[k] && ((REALISATIETIJD_max[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR[fc][k]) || CV[k] ||
-            (A[k]||PRIOFC[k]) && ((twacht[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR[fc][k]))
+            (A[k] || PRIOFC[k]) && ((twacht[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR[fc][k]))
         {
             return FALSE;
         }
@@ -8559,6 +8540,7 @@ boolv max_par(count fc)
     }
     return TRUE;
 }
+
 boolv max_par_los(fc)
 {
     int k, n;
@@ -8570,6 +8552,7 @@ boolv max_par_los(fc)
     }
     return TRUE;
 }
+
 void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mulv twacht[])
 {
     register count i, m, n, hml;
@@ -8623,8 +8606,8 @@ void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mu
         if (hml >= ml_max)  hml = ML1;
 
     }
-
 }
+
 boolv yml_cv_pr_nl_ISG(boolv* prml[], count ml, count ml_max)
 {
     register count i;
@@ -8639,6 +8622,7 @@ boolv yml_cv_pr_nl_ISG(boolv* prml[], count ml, count ml_max)
     }
     return (FALSE);
 }
+
 void Bepaal_Realisatietijd_per_richting(void)
 {
     int i, j;
@@ -8652,6 +8636,7 @@ void Bepaal_Realisatietijd_per_richting(void)
         }
     }
 }
+
 void set_PG_Deelconflict_Voorstart(mulv fc1, mulv fc2)
 {
     if (G[fc2] && !G[fc1] && !PG[fc1])
@@ -8664,6 +8649,7 @@ void set_PG_Deelconflict_Voorstart(mulv fc1, mulv fc2)
         RR[fc1] &= ~BIT2;
     }
 }
+
 set_PG_Deelconflict_LateRelease(mulv fc1, mulv fc2, mulv tlr)
 {
     if (G[fc2] && !G[fc1] && (TG_timer[fc2] > T_max[tlr]) && !PG[fc1])
@@ -8676,10 +8662,12 @@ set_PG_Deelconflict_LateRelease(mulv fc1, mulv fc2, mulv tlr)
         RR[fc1] &= ~BIT2;
     }
 }
+
 void MeeverlengenUitDoorDeelconflictVoorstart(mulv fc1, mulv fc2)
 {
     if (RA[fc1] || AAPR[fc1]) YM[fc2] &= ~BIT4;
 }
+
 void MeeverlengenUitDoorDeelconflictLateRelease(mulv fc1, mulv fc2, mulv tlr)
 {
     if ((RA[fc1] || AAPR[fc1]) && (TG_timer[fc1] >= T_max[tlr])) YM[fc2] &= ~BIT4;
@@ -8687,8 +8675,9 @@ void MeeverlengenUitDoorDeelconflictLateRelease(mulv fc1, mulv fc2, mulv tlr)
 
 void PercentageVerlengGroenTijdenISG(count fc, mulv percentage)
 {
-    TVG_max[fc] = (mulv)(((long) PRM[percentage] * (long)TVG_max[fc]) / 100);
+    TVG_max[fc] = (mulv)(((long)PRM[percentage] * (long)TVG_max[fc]) / 100);
 }
+
 boolv hf_wsg_nlISG(void)
 {
     register count i;
@@ -8700,6 +8689,7 @@ boolv hf_wsg_nlISG(void)
     }
     return (FALSE);
 }
+
 boolv afsluiten_aanvraaggebied_prISG(boolv* prml[], count ml)
 {
     register count i;
@@ -8709,15 +8699,16 @@ boolv afsluiten_aanvraaggebied_prISG(boolv* prml[], count ml)
     }
     return (TRUE);
 }
+
 void BepaalVolgrichtingen(void)
 {
-    count fc1,fc2;
+    count fc1, fc2;
     for (fc1 = 0; fc1 < FCMAX; ++fc1)
     {
         Volgrichting[fc1] = FALSE;
         for (fc2 = 0; fc2 < FCMAX; ++fc2)
         {
-            if (TNL_type[fc2][fc1] == TNL_EG) 
+            if (TNL_type[fc2][fc1] == TNL_EG)
             {
                 Volgrichting[fc1] = TRUE;
                 break;
@@ -8726,6 +8717,7 @@ void BepaalVolgrichtingen(void)
 
     }
 }
+
 void Realisatietijd_MeeverlengenDeelconflict(mulv fc1, mulv fc2)
 {
     count fc;
@@ -8793,6 +8785,7 @@ void Realisatietijd_MeeverlengenDeelconflict(mulv fc1, mulv fc2)
         }
     }
 }
+
 void InterStartGroentijd_MeeverlengenDeelconflict(mulv fc1, mulv fc2)
 {
     count fc;
@@ -8807,6 +8800,7 @@ void InterStartGroentijd_MeeverlengenDeelconflict(mulv fc1, mulv fc2)
         }
     }
 }
+
 void corrigeerTIGRvoorNalopen(count fc1, count fc2, mulv tnleg, mulv tnlegd, mulv tvgnaloop)
 {
     int fc3, n;
@@ -8823,6 +8817,7 @@ void corrigeerTIGRvoorNalopen(count fc1, count fc2, mulv tnleg, mulv tnlegd, mul
         }
     }
 }
+
 void MeeverlengenUitDoorVoetgangerLos(count fcvtg, count hmadk)
 {
     count n, fc;
@@ -8876,7 +8871,7 @@ void BepaalIntersignaalgroepTijden(void)
 void RealisatieTijden_VulHaldeConflictenIn(void)
 {
     count fc1, fc2, n;
-    
+
     for (fc1 = 0; fc1 < FCMAX; ++fc1)
     {
         for (n = 0; n < KFC_MAX[fc1]; ++n)
@@ -8939,8 +8934,8 @@ void RealisatieTijden_VulGroenGroenConflictenIn(void)
 
 void InterStartGroenTijden_VulHaldeConflictenIn(void)
 {
-   count fc1, fc2, n;
-   for (fc1 = 0; fc1 < FCMAX; ++fc1)
+    count fc1, fc2, n;
+    for (fc1 = 0; fc1 < FCMAX; ++fc1)
     {
         for (n = 0; n < KFC_MAX[fc1]; ++n)
         {
@@ -8953,8 +8948,8 @@ void InterStartGroenTijden_VulHaldeConflictenIn(void)
 
 void InterStartGroenTijden_VulGroenGroenConflictenIn(void)
 {
-   count fc1, fc2, n;
-   for (fc1 = 0; fc1 < FCMAX; ++fc1)
+    count fc1, fc2, n;
+    for (fc1 = 0; fc1 < FCMAX; ++fc1)
     {
         for (n = KFC_MAX[fc1]; n < GKFC_MAX[fc1]; ++n)
         {
@@ -8976,7 +8971,7 @@ void CorrigeerIntersignaalgroepTijdObvGarantieTijden(void)
     }
 }
 
-void InitInterStartGroenTijden() 
+void InitInterStartGroenTijden()
 {
     count i, j;
     for (i = 0; i < FC_MAX; i++)  /* zet alle GK en GKL conflicten om in FK */
@@ -8991,4 +8986,89 @@ void InitInterStartGroenTijden()
         }
     }
     pointer_conflicts();
+}
+
+mulv Real_Ruimte(count fc,    /* fasecyclus                                                   */
+    count mar)   /* memory element t.b.v. inzichtelijk maken alternatieve ruimte */
+{
+    register count n, k;
+
+    mulv ruimte = 3000;  /* initieel veel ruimte voor groen */
+    mulv hulpruimte = 3000;  /* hulpwaarde    ruimte voor groen */
+
+
+    /* ------------------------------------------ */
+    /* Als conflicterend CV dan is er geen ruimte */
+    /* ------------------------------------------ */
+    if (kcv(fc))
+    {
+        ruimte = 0;
+    }
+    else
+    {
+        /* --------------------------------------------------------------------------- */
+        /* Anders bepaal (hulp)ruimte t.o.v. conflicten die primair aan de beurt zijn: */
+        /* --------------------------------------------------------------------------- */
+        /* - REALISATIETIJD[k] : Wanneer kan conflict realiseren ?                     */
+        /*                                                                             */
+        /* - REALISATIETIJD[fc]: Wanneer kan fc       realiseren ?                     */
+        /* - Intergroen  : Wat is intergroen van fc naar k (of geel/ontruimen)         */
+        /*                                                                             */
+        /* Een positief verschil geeft ruimte aan voor fc.                             */
+        /* --------------------------------------------------------------------------- */
+        for (n = 0; n < GKFC_MAX[fc]; n++)
+        {
+#if (CCOL_V >= 95)
+            k = KF_pointer[fc][n];
+#else
+            k = TO_pointer[fc][n];
+#endif
+
+            if (AAPR[k])
+            {
+#if (CCOL_V >= 95) && !defined NO_TIGMAX
+                hulpruimte = (REALISATIETIJD[k] - REALISATIETIJD[fc] - TIG_max[fc][k]) > 0 ?
+                    (REALISATIETIJD[k] - REALISATIETIJD[fc] - TIG_max[fc][k]) : 0;
+#else
+                hulpruimte = (REALISATIETIJD[k] - REALISATIETIJD[fc] - TGL_max[fc] - TO_max[fc][k]) > 0 ?
+                    (REALISATIETIJD[k] - REALISATIETIJD[fc] - TGL_max[fc] - TO_max[fc][k]) : 0;
+#endif
+            }
+
+            /* -------------------------------------------------------------------------- */
+            /* Kleinste ruimte is maatgevend                                              */
+            /* -------------------------------------------------------------------------- */
+            ruimte = (hulpruimte < ruimte) ? hulpruimte : ruimte;
+        }
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* Inzichtelijk maken ruimte + returnwaarde gevven                            */
+    /* -------------------------------------------------------------------------- */
+    MM[mar] = ruimte;
+
+    return ruimte;
+
+}
+
+boolv Naloop_OK(count fc1,     /* fc1  voedende                                                      */
+    count marfc2,  /* memory element fc2, alternatieve ruimte (max_tar_to / tar_max_ple) */
+    count tnlsg)   /* nalooptijd                                                         */
+{
+    boolv result = 0;
+
+    /* ---------------------------------------------------------------- */
+    /* primair, dus nalooptijd toegestaan                               */
+    /* ---------------------------------------------------------------- */
+  /*if(AAPR[fc1] &&   !RR[fc1]       || PR[fc1])           result=TRUE;*/
+    if ((AAPR[fc1] && (AAPR[fc1] < BIT4)) || PR[fc1])           result = TRUE;    /* AAPR & BIT4 betekent RR, AAPR & BIT5 betekent PFPR nog niet waar */
+    /* ---------------------------------------------------------------- */
+    /* niet primair, bepaal of nalooptijd past bij naloop:              */
+    /* - eerst moet fc1 op groen komen, dus check REALISATIETIJD[fc1]         */
+    /* - plus de nalooptijd moet passen bij fc2                         */
+    /* ---------------------------------------------------------------- */
+    else if (MM[marfc2] >= (REALISATIETIJD[fc1] + T_max[tnlsg]))  result = TRUE;
+    /* ---------------------------------------------------------------- */
+
+    return result;
 }
