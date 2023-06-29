@@ -289,3 +289,7 @@ void post_dump_application(void)
 {
 }
 
+boolv Correctie_TISG_add()
+{
+    return FALSE;
+}

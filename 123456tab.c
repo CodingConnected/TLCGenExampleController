@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+ * 12.4.0   29-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
  *
  ************************************************************************************/
 
@@ -221,44 +221,44 @@ void control_parameters(void)
     TIG_max[fc84][fc05] = 23;
     TIG_max[fc84][fc67] = 67;
 
-    TIG_max[fc02][fc09] = GKL;
-    TIG_max[fc02][fc11] = GKL;
-    TIG_max[fc02][fc22] = GK;
-    TIG_max[fc02][fc26] = GKL;
+    TIG_max[fc02][fc09] = FK;
+    TIG_max[fc02][fc11] = FK;
+    TIG_max[fc02][fc22] = FK;
+    TIG_max[fc02][fc26] = FK;
 
-    TIG_max[fc03][fc08] = GK;
-    TIG_max[fc03][fc11] = GK;
-    TIG_max[fc03][fc22] = GK;
+    TIG_max[fc03][fc08] = FK;
+    TIG_max[fc03][fc11] = FK;
+    TIG_max[fc03][fc22] = FK;
 
-    TIG_max[fc05][fc08] = GK;
-    TIG_max[fc05][fc11] = GK;
+    TIG_max[fc05][fc08] = FK;
+    TIG_max[fc05][fc11] = FK;
     TIG_max[fc05][fc34] = FK;
 
-    TIG_max[fc08][fc03] = GKL;
-    TIG_max[fc08][fc05] = GKL;
-    TIG_max[fc08][fc22] = GKL;
+    TIG_max[fc08][fc03] = FK;
+    TIG_max[fc08][fc05] = FK;
+    TIG_max[fc08][fc22] = FK;
     TIG_max[fc08][fc31] = FK;
     TIG_max[fc08][fc32] = FK;
-    TIG_max[fc08][fc81] = GKL;
-    TIG_max[fc08][fc82] = GKL;
+    TIG_max[fc08][fc81] = FK;
+    TIG_max[fc08][fc82] = FK;
 
-    TIG_max[fc09][fc02] = GK;
+    TIG_max[fc09][fc02] = FK;
 
-    TIG_max[fc11][fc02] = GK;
-    TIG_max[fc11][fc03] = GKL;
-    TIG_max[fc11][fc05] = GKL;
-    TIG_max[fc11][fc22] = GKL;
+    TIG_max[fc11][fc02] = FK;
+    TIG_max[fc11][fc03] = FK;
+    TIG_max[fc11][fc05] = FK;
+    TIG_max[fc11][fc22] = FK;
     TIG_max[fc11][fc31] = FK;
     TIG_max[fc11][fc32] = FK;
-    TIG_max[fc11][fc81] = GKL;
-    TIG_max[fc11][fc82] = GKL;
+    TIG_max[fc11][fc81] = FK;
+    TIG_max[fc11][fc82] = FK;
 
-    TIG_max[fc22][fc02] = GKL;
-    TIG_max[fc22][fc03] = GKL;
-    TIG_max[fc22][fc08] = GK;
-    TIG_max[fc22][fc11] = GK;
+    TIG_max[fc22][fc02] = FK;
+    TIG_max[fc22][fc03] = FK;
+    TIG_max[fc22][fc08] = FK;
+    TIG_max[fc22][fc11] = FK;
 
-    TIG_max[fc26][fc02] = GK;
+    TIG_max[fc26][fc02] = FK;
 
     TIG_max[fc31][fc08] = FK;
     TIG_max[fc31][fc11] = FK;
@@ -268,17 +268,17 @@ void control_parameters(void)
 
     TIG_max[fc34][fc05] = FK;
 
-    TIG_max[fc67][fc82] = GK;
+    TIG_max[fc67][fc82] = FK;
 
-    TIG_max[fc68][fc82] = GK;
+    TIG_max[fc68][fc82] = FK;
 
-    TIG_max[fc81][fc08] = GK;
-    TIG_max[fc81][fc11] = GK;
+    TIG_max[fc81][fc08] = FK;
+    TIG_max[fc81][fc11] = FK;
 
-    TIG_max[fc82][fc08] = GKL;
-    TIG_max[fc82][fc11] = GKL;
-    TIG_max[fc82][fc67] = GKL;
-    TIG_max[fc82][fc68] = GKL;
+    TIG_max[fc82][fc08] = FK;
+    TIG_max[fc82][fc11] = FK;
+    TIG_max[fc82][fc67] = FK;
+    TIG_max[fc82][fc68] = FK;
 
     default_tig_min(0);
 

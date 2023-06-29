@@ -44,15 +44,13 @@ void corrigeerTIGRvoorNalopen(count fc1, count fc2, mulv tnleg, mulv tnlegd, mul
 void MeeverlengenUitDoorVoetgangerLos(count fcvtg, count hmadk);
 void PrioAanwezig(void);
 void BepaalIntergroenTijden(void);
-void BepaalIntersignaalgroepTijden(void);
+void InitRealisatieTijden(void);
 void RealisatieTijden_VulHaldeConflictenIn(void);
 void RealisatieTijden_VulGroenGroenConflictenIn(void);
 void InterStartGroenTijden_VulHaldeConflictenIn(void);
 void InterStartGroenTijden_VulGroenGroenConflictenIn(void);
-void CorrigeerIntersignaalgroepTijdObvGarantieTijden(void);
+void CorrigeerRealisatieTijdenObvGarantieTijden(void);
 void InitInterStartGroenTijden();
-mulv Real_Ruimte(count fc, count mar);
-boolv Naloop_OK(count fc1, count marfc2, count tnlsg);
 
 extern mulv TNL_type[][FCMAX]; /* type naloop */
 extern mulv FK_type[][FCMAX]; /* type fictief conflict */
