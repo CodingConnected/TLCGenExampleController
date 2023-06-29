@@ -1546,10 +1546,6 @@ void Meeverlengen(void)
     if (SCH[schhardmv2611] && G[fc11] && !kcv(fc26)) YM[fc26] |= BIT1;
     if (SCH[schhardmv3205] && G[fc05] && !kcv(fc32)) YM[fc32] |= BIT1;
 
-    /* Veiligheidsgroen */
-    /* ---------------- */
-    veiligheidsgroen_V1(fc02, tvgmax02, d02_4b, tvgvolg02_4b, NG, tvghiaat02_4b, END);
-
     Meeverlengen_Add();
 }
 void Synchronisaties(void)

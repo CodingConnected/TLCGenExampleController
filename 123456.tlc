@@ -2202,7 +2202,7 @@
           <Verlengen>MK2</Verlengen>
           <VerlengenHardOpStraat>false</VerlengenHardOpStraat>
           <AanvraagBijStoring>Nooit</AanvraagBijStoring>
-          <VeiligheidsGroen>Altijd</VeiligheidsGroen>
+          <VeiligheidsGroen>Nooit</VeiligheidsGroen>
           <VeiligheidsGroenHiaat>20</VeiligheidsGroenHiaat>
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
@@ -23122,7 +23122,7 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit11</Naam>
+        <Naam>dummyhdkarin11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
@@ -23426,14 +23426,21 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit09</Naam>
+        <Naam>dummyhdkaruit61</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit61</Naam>
+        <Naam>dummyhdkaruit11</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit09</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
@@ -23490,13 +23497,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkarin61</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
