@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+ * 12.4.0   10-07-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20230627"
+#define VERSION "12.4.0 20230710"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 
 /* fasecycli */
@@ -373,31 +373,35 @@
     #define hnla08_1b          33 /* Onthouden detectiemelding detector 08_1b tbv naloop van 08 naar 68 */
     #define hnla11_1           34 /* Onthouden detectiemelding detector 11_1 tbv naloop van 11 naar 68  */
     #define hnla22_1           35 /* Onthouden detectiemelding detector 22_1 tbv naloop van 22 naar 21  */
-    #define hnlak31a           36 /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
-    #define hnlak32a           37 /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
-    #define hnlak33a           38 /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
-    #define hnlak34a           39 /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
-    #define hnla82_1           40 /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
-    #define hstp02bus          41 /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
-    #define hstp03bus          42 /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
-    #define hstp05bus          43 /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
-    #define hstp08bus          44 /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
-    #define hstp09bus          45 /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
-    #define hstp11bus          46 /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
-    #define hstp61bus          47 /* Geconditioneerde prio OV mogelijk bij 61 Bus                       */
-    #define hstp62bus          48 /* Geconditioneerde prio OV mogelijk bij 62 Bus                       */
-    #define hstp67bus          49 /* Geconditioneerde prio OV mogelijk bij 67 Bus                       */
-    #define hstp68bus          50 /* Geconditioneerde prio OV mogelijk bij 68 Bus                       */
-    #define hperiodFietsprio1  51 /* Periode Fietsprio1 actief                                          */
-    #define hperiodFietsprio2  52 /* Periode Fietsprio2 actief                                          */
-    #define hperiodFietsprio3  53 /* Periode Fietsprio3 actief                                          */
-    #define hrgvd24_3_d24_2    54 /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
-    #define hwtv22             55 /* Onthouden aansturing wachttijdvoorspeller fase 22                  */
-    #define hlos31             56 /* Toestaan los realiseren fase 31                                    */
-    #define hlos32             57 /* Toestaan los realiseren fase 32                                    */
-    #define hlos33             58 /* Toestaan los realiseren fase 33                                    */
-    #define hlos34             59 /* Toestaan los realiseren fase 34                                    */
-    #define HEMAX1             60
+    #define hnlsg3132          36 /* Hulpelement naloop SG van 31 naar 32                               */
+    #define hnlak31a           37 /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
+    #define hnlsg3231          38 /* Hulpelement naloop SG van 32 naar 31                               */
+    #define hnlak32a           39 /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
+    #define hnlsg3334          40 /* Hulpelement naloop SG van 33 naar 34                               */
+    #define hnlak33a           41 /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
+    #define hnlsg3433          42 /* Hulpelement naloop SG van 34 naar 33                               */
+    #define hnlak34a           43 /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
+    #define hnla82_1           44 /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
+    #define hstp02bus          45 /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
+    #define hstp03bus          46 /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
+    #define hstp05bus          47 /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
+    #define hstp08bus          48 /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
+    #define hstp09bus          49 /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
+    #define hstp11bus          50 /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
+    #define hstp61bus          51 /* Geconditioneerde prio OV mogelijk bij 61 Bus                       */
+    #define hstp62bus          52 /* Geconditioneerde prio OV mogelijk bij 62 Bus                       */
+    #define hstp67bus          53 /* Geconditioneerde prio OV mogelijk bij 67 Bus                       */
+    #define hstp68bus          54 /* Geconditioneerde prio OV mogelijk bij 68 Bus                       */
+    #define hperiodFietsprio1  55 /* Periode Fietsprio1 actief                                          */
+    #define hperiodFietsprio2  56 /* Periode Fietsprio2 actief                                          */
+    #define hperiodFietsprio3  57 /* Periode Fietsprio3 actief                                          */
+    #define hrgvd24_3_d24_2    58 /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
+    #define hwtv22             59 /* Onthouden aansturing wachttijdvoorspeller fase 22                  */
+    #define hlos31             60 /* Toestaan los realiseren fase 31                                    */
+    #define hlos32             61 /* Toestaan los realiseren fase 32                                    */
+    #define hlos33             62 /* Toestaan los realiseren fase 33                                    */
+    #define hlos34             63 /* Toestaan los realiseren fase 34                                    */
+    #define HEMAX1             64
 
 /* geheugen elementen */
 /* ------------------ */
@@ -606,67 +610,76 @@
     #define tnlfgd0262                 150 /* Detectieafhankelijke naloop tijdens vastgroen van 02 naar 62          */
     #define tnleg0262                  151 /* Naloop op einde groen van 02 naar 62                                  */
     #define tnlegd0262                 152 /* Detectieafhankelijke naloop op einde groen van 02 naar 62             */
-    #define tnlfg0868                  153 /* Naloop tijdens vastgroen van 08 naar 68                               */
-    #define tnlfgd0868                 154 /* Detectieafhankelijke naloop tijdens vastgroen van 08 naar 68          */
-    #define tnleg0868                  155 /* Naloop op einde groen van 08 naar 68                                  */
-    #define tnlegd0868                 156 /* Detectieafhankelijke naloop op einde groen van 08 naar 68             */
-    #define tnlfg1168                  157 /* Naloop tijdens vastgroen van 11 naar 68                               */
-    #define tnlfgd1168                 158 /* Detectieafhankelijke naloop tijdens vastgroen van 11 naar 68          */
-    #define tnleg1168                  159 /* Naloop op einde groen van 11 naar 68                                  */
-    #define tnlegd1168                 160 /* Detectieafhankelijke naloop op einde groen van 11 naar 68             */
-    #define tnlfg2221                  161 /* Naloop tijdens vastgroen van 22 naar 21                               */
-    #define tnlfgd2221                 162 /* Detectieafhankelijke naloop tijdens vastgroen van 22 naar 21          */
-    #define tnleg2221                  163 /* Naloop op einde groen van 22 naar 21                                  */
-    #define tnlegd2221                 164 /* Detectieafhankelijke naloop op einde groen van 22 naar 21             */
-    #define tnlsg3132                  165 /* Naloop op start groen van 31 naar 32                                  */
-    #define tnlsgd3132                 166 /* Detectieafhankelijke naloop op start groen van 31 naar 32             */
-    #define tnlsg3231                  167 /* Naloop op start groen van 32 naar 31                                  */
-    #define tnlsgd3231                 168 /* Detectieafhankelijke naloop op start groen van 32 naar 31             */
-    #define tnlsgd3334                 169 /* Detectieafhankelijke naloop op start groen van 33 naar 34             */
-    #define tnlsgd3433                 170 /* Detectieafhankelijke naloop op start groen van 34 naar 33             */
-    #define tnlfg8281                  171 /* Naloop tijdens vastgroen van 82 naar 81                               */
-    #define tnlfgd8281                 172 /* Detectieafhankelijke naloop tijdens vastgroen van 82 naar 81          */
-    #define tnleg8281                  173 /* Naloop op einde groen van 82 naar 81                                  */
-    #define tnlegd8281                 174 /* Detectieafhankelijke naloop op einde groen van 82 naar 81             */
-    #define trgad24_3                  175 /* Richtinggevoelige aanvraag rijtijd fase 24 van 24_3 naar 24_2         */
-    #define trgavd24_3                 176 /* Timer reset richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2     */
-    #define trgrd24_3_d24_2            177 /* Richtinggevoelig verlengen rijtijd fase 24 van 24_3 naar 24_2         */
-    #define trgvd24_3_d24_2            178 /* Richtinggevoelig verlengen hiaattijd fase 24 van 24_3 naar 24_2       */
-    #define tvamax62                   179 /* Maximale tijd VA ontruimen na einde geel fase 62                      */
-    #define tva6209_d62_1a             180 /* Tijdsduur VA ontruimen van 62 naar                                    */
-    #define tva6211_d62_1a             181 /* Tijdsduur VA ontruimen van 62 naar                                    */
-    #define tva6226_d62_1a             182 /* Tijdsduur VA ontruimen van 62 naar                                    */
-    #define tuitgestca02               183 /* Uitgestelde cyclische aanvraag fase 02                                */
-    #define tuitgestca03               184 /* Uitgestelde cyclische aanvraag fase 03                                */
-    #define tuitgestca05               185 /* Uitgestelde cyclische aanvraag fase 05                                */
-    #define tuitgestca08               186 /* Uitgestelde cyclische aanvraag fase 08                                */
-    #define tuitgestca09               187 /* Uitgestelde cyclische aanvraag fase 09                                */
-    #define tuitgestca11               188 /* Uitgestelde cyclische aanvraag fase 11                                */
-    #define tuitgestca21               189 /* Uitgestelde cyclische aanvraag fase 21                                */
-    #define tuitgestca22               190 /* Uitgestelde cyclische aanvraag fase 22                                */
-    #define tuitgestca24               191 /* Uitgestelde cyclische aanvraag fase 24                                */
-    #define tuitgestca26               192 /* Uitgestelde cyclische aanvraag fase 26                                */
-    #define tuitgestca28               193 /* Uitgestelde cyclische aanvraag fase 28                                */
-    #define tuitgestca31               194 /* Uitgestelde cyclische aanvraag fase 31                                */
-    #define tuitgestca32               195 /* Uitgestelde cyclische aanvraag fase 32                                */
-    #define tuitgestca33               196 /* Uitgestelde cyclische aanvraag fase 33                                */
-    #define tuitgestca34               197 /* Uitgestelde cyclische aanvraag fase 34                                */
-    #define tuitgestca38               198 /* Uitgestelde cyclische aanvraag fase 38                                */
-    #define tuitgestca61               199 /* Uitgestelde cyclische aanvraag fase 61                                */
-    #define tuitgestca62               200 /* Uitgestelde cyclische aanvraag fase 62                                */
-    #define tuitgestca67               201 /* Uitgestelde cyclische aanvraag fase 67                                */
-    #define tuitgestca68               202 /* Uitgestelde cyclische aanvraag fase 68                                */
-    #define tuitgestca81               203 /* Uitgestelde cyclische aanvraag fase 81                                */
-    #define tuitgestca82               204 /* Uitgestelde cyclische aanvraag fase 82                                */
-    #define tuitgestca84               205 /* Uitgestelde cyclische aanvraag fase 84                                */
-    #define twtv22                     206 /* T.b.v. aansturing wachttijdvoorspeller fase 22                        */
-    #define tvs2205                    207 /* Voorstarttijd fase 22 op fase 05                                      */
-    #define tfo2205                    208 /* Fictieve ontruimingstijd van 22 naar fase 05                          */
-    #define tvs2611                    209 /* Voorstarttijd fase 26 op fase 11                                      */
-    #define tfo2611                    210 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
-    #define tvs3205                    211 /* Voorstarttijd fase 32 op fase 05                                      */
-    #define tfo3205                    212 /* Fictieve ontruimingstijd van 32 naar fase 05                          */
-    #define TMMAX1                     213
+    #define tvgnaloop0262              153 /* Timer naloop EG van 02 naar 62                                        */
+    #define tnlfg0868                  154 /* Naloop tijdens vastgroen van 08 naar 68                               */
+    #define tnlfgd0868                 155 /* Detectieafhankelijke naloop tijdens vastgroen van 08 naar 68          */
+    #define tnleg0868                  156 /* Naloop op einde groen van 08 naar 68                                  */
+    #define tnlegd0868                 157 /* Detectieafhankelijke naloop op einde groen van 08 naar 68             */
+    #define tvgnaloop0868              158 /* Timer naloop EG van 08 naar 68                                        */
+    #define tnlfg1168                  159 /* Naloop tijdens vastgroen van 11 naar 68                               */
+    #define tnlfgd1168                 160 /* Detectieafhankelijke naloop tijdens vastgroen van 11 naar 68          */
+    #define tnleg1168                  161 /* Naloop op einde groen van 11 naar 68                                  */
+    #define tnlegd1168                 162 /* Detectieafhankelijke naloop op einde groen van 11 naar 68             */
+    #define tvgnaloop1168              163 /* Timer naloop EG van 11 naar 68                                        */
+    #define tnlfg2221                  164 /* Naloop tijdens vastgroen van 22 naar 21                               */
+    #define tnlfgd2221                 165 /* Detectieafhankelijke naloop tijdens vastgroen van 22 naar 21          */
+    #define tnleg2221                  166 /* Naloop op einde groen van 22 naar 21                                  */
+    #define tnlegd2221                 167 /* Detectieafhankelijke naloop op einde groen van 22 naar 21             */
+    #define tvgnaloop2221              168 /* Timer naloop EG van 22 naar 21                                        */
+    #define tnlsg3132                  169 /* Naloop op start groen van 31 naar 32                                  */
+    #define tnlsgd3132                 170 /* Detectieafhankelijke naloop op start groen van 31 naar 32             */
+    #define tnlsg3231                  171 /* Naloop op start groen van 32 naar 31                                  */
+    #define tnlsgd3231                 172 /* Detectieafhankelijke naloop op start groen van 32 naar 31             */
+    #define tnlsgd3334                 173 /* Detectieafhankelijke naloop op start groen van 33 naar 34             */
+    #define tnlsgd3433                 174 /* Detectieafhankelijke naloop op start groen van 34 naar 33             */
+    #define tnlfg8281                  175 /* Naloop tijdens vastgroen van 82 naar 81                               */
+    #define tnlfgd8281                 176 /* Detectieafhankelijke naloop tijdens vastgroen van 82 naar 81          */
+    #define tnleg8281                  177 /* Naloop op einde groen van 82 naar 81                                  */
+    #define tnlegd8281                 178 /* Detectieafhankelijke naloop op einde groen van 82 naar 81             */
+    #define tvgnaloop8281              179 /* Timer naloop EG van 82 naar 81                                        */
+    #define trgad24_3                  180 /* Richtinggevoelige aanvraag rijtijd fase 24 van 24_3 naar 24_2         */
+    #define trgavd24_3                 181 /* Timer reset richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2     */
+    #define trgrd24_3_d24_2            182 /* Richtinggevoelig verlengen rijtijd fase 24 van 24_3 naar 24_2         */
+    #define trgvd24_3_d24_2            183 /* Richtinggevoelig verlengen hiaattijd fase 24 van 24_3 naar 24_2       */
+    #define tvamax62                   184 /* Maximale tijd VA ontruimen na einde geel fase 62                      */
+    #define tva6209_d62_1a             185 /* Tijdsduur VA ontruimen van 62 naar                                    */
+    #define tva6211_d62_1a             186 /* Tijdsduur VA ontruimen van 62 naar                                    */
+    #define tva6226_d62_1a             187 /* Tijdsduur VA ontruimen van 62 naar                                    */
+    #define tuitgestca02               188 /* Uitgestelde cyclische aanvraag fase 02                                */
+    #define tuitgestca03               189 /* Uitgestelde cyclische aanvraag fase 03                                */
+    #define tuitgestca05               190 /* Uitgestelde cyclische aanvraag fase 05                                */
+    #define tuitgestca08               191 /* Uitgestelde cyclische aanvraag fase 08                                */
+    #define tuitgestca09               192 /* Uitgestelde cyclische aanvraag fase 09                                */
+    #define tuitgestca11               193 /* Uitgestelde cyclische aanvraag fase 11                                */
+    #define tuitgestca21               194 /* Uitgestelde cyclische aanvraag fase 21                                */
+    #define tuitgestca22               195 /* Uitgestelde cyclische aanvraag fase 22                                */
+    #define tuitgestca24               196 /* Uitgestelde cyclische aanvraag fase 24                                */
+    #define tuitgestca26               197 /* Uitgestelde cyclische aanvraag fase 26                                */
+    #define tuitgestca28               198 /* Uitgestelde cyclische aanvraag fase 28                                */
+    #define tuitgestca31               199 /* Uitgestelde cyclische aanvraag fase 31                                */
+    #define tuitgestca32               200 /* Uitgestelde cyclische aanvraag fase 32                                */
+    #define tuitgestca33               201 /* Uitgestelde cyclische aanvraag fase 33                                */
+    #define tuitgestca34               202 /* Uitgestelde cyclische aanvraag fase 34                                */
+    #define tuitgestca38               203 /* Uitgestelde cyclische aanvraag fase 38                                */
+    #define tuitgestca61               204 /* Uitgestelde cyclische aanvraag fase 61                                */
+    #define tuitgestca62               205 /* Uitgestelde cyclische aanvraag fase 62                                */
+    #define tuitgestca67               206 /* Uitgestelde cyclische aanvraag fase 67                                */
+    #define tuitgestca68               207 /* Uitgestelde cyclische aanvraag fase 68                                */
+    #define tuitgestca81               208 /* Uitgestelde cyclische aanvraag fase 81                                */
+    #define tuitgestca82               209 /* Uitgestelde cyclische aanvraag fase 82                                */
+    #define tuitgestca84               210 /* Uitgestelde cyclische aanvraag fase 84                                */
+    #define twtv22                     211 /* T.b.v. aansturing wachttijdvoorspeller fase 22                        */
+    #define tvs2205                    212 /* Voorstarttijd fase 22 op fase 05                                      */
+    #define tfo2205                    213 /* Fictieve ontruimingstijd van 22 naar fase 05                          */
+    #define tvs2611                    214 /* Voorstarttijd fase 26 op fase 11                                      */
+    #define tfo2611                    215 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
+    #define tvs3205                    216 /* Voorstarttijd fase 32 op fase 05                                      */
+    #define tfo3205                    217 /* Fictieve ontruimingstijd van 32 naar fase 05                          */
+    #define tinl3132                   218 /* Inlooptijd fase 31                                                    */
+    #define tinl3231                   219 /* Inlooptijd fase 32                                                    */
+    #define tinl3334                   220 /* Inlooptijd fase 33                                                    */
+    #define tinl3433                   221 /* Inlooptijd fase 34                                                    */
+    #define TMMAX1                     222
 
 /* teller elementen */
 /* ---------------- */

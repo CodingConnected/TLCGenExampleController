@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   29-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+ * 12.4.0   10-07-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
  *
  ************************************************************************************/
 
@@ -221,44 +221,44 @@ void control_parameters(void)
     TIG_max[fc84][fc05] = 23;
     TIG_max[fc84][fc67] = 67;
 
-    TIG_max[fc02][fc09] = FK;
-    TIG_max[fc02][fc11] = FK;
-    TIG_max[fc02][fc22] = FK;
-    TIG_max[fc02][fc26] = FK;
+    TIG_max[fc02][fc09] = GKL;
+    TIG_max[fc02][fc11] = GKL;
+    TIG_max[fc02][fc22] = GK;
+    TIG_max[fc02][fc26] = GKL;
 
-    TIG_max[fc03][fc08] = FK;
-    TIG_max[fc03][fc11] = FK;
-    TIG_max[fc03][fc22] = FK;
+    TIG_max[fc03][fc08] = GK;
+    TIG_max[fc03][fc11] = GK;
+    TIG_max[fc03][fc22] = GK;
 
-    TIG_max[fc05][fc08] = FK;
-    TIG_max[fc05][fc11] = FK;
+    TIG_max[fc05][fc08] = GK;
+    TIG_max[fc05][fc11] = GK;
     TIG_max[fc05][fc34] = FK;
 
-    TIG_max[fc08][fc03] = FK;
-    TIG_max[fc08][fc05] = FK;
-    TIG_max[fc08][fc22] = FK;
+    TIG_max[fc08][fc03] = GKL;
+    TIG_max[fc08][fc05] = GKL;
+    TIG_max[fc08][fc22] = GKL;
     TIG_max[fc08][fc31] = FK;
     TIG_max[fc08][fc32] = FK;
-    TIG_max[fc08][fc81] = FK;
-    TIG_max[fc08][fc82] = FK;
+    TIG_max[fc08][fc81] = GKL;
+    TIG_max[fc08][fc82] = GKL;
 
-    TIG_max[fc09][fc02] = FK;
+    TIG_max[fc09][fc02] = GK;
 
-    TIG_max[fc11][fc02] = FK;
-    TIG_max[fc11][fc03] = FK;
-    TIG_max[fc11][fc05] = FK;
-    TIG_max[fc11][fc22] = FK;
+    TIG_max[fc11][fc02] = GK;
+    TIG_max[fc11][fc03] = GKL;
+    TIG_max[fc11][fc05] = GKL;
+    TIG_max[fc11][fc22] = GKL;
     TIG_max[fc11][fc31] = FK;
     TIG_max[fc11][fc32] = FK;
-    TIG_max[fc11][fc81] = FK;
-    TIG_max[fc11][fc82] = FK;
+    TIG_max[fc11][fc81] = GKL;
+    TIG_max[fc11][fc82] = GKL;
 
-    TIG_max[fc22][fc02] = FK;
-    TIG_max[fc22][fc03] = FK;
-    TIG_max[fc22][fc08] = FK;
-    TIG_max[fc22][fc11] = FK;
+    TIG_max[fc22][fc02] = GKL;
+    TIG_max[fc22][fc03] = GKL;
+    TIG_max[fc22][fc08] = GK;
+    TIG_max[fc22][fc11] = GK;
 
-    TIG_max[fc26][fc02] = FK;
+    TIG_max[fc26][fc02] = GK;
 
     TIG_max[fc31][fc08] = FK;
     TIG_max[fc31][fc11] = FK;
@@ -268,17 +268,17 @@ void control_parameters(void)
 
     TIG_max[fc34][fc05] = FK;
 
-    TIG_max[fc67][fc82] = FK;
+    TIG_max[fc67][fc82] = GK;
 
-    TIG_max[fc68][fc82] = FK;
+    TIG_max[fc68][fc82] = GK;
 
-    TIG_max[fc81][fc08] = FK;
-    TIG_max[fc81][fc11] = FK;
+    TIG_max[fc81][fc08] = GK;
+    TIG_max[fc81][fc11] = GK;
 
-    TIG_max[fc82][fc08] = FK;
-    TIG_max[fc82][fc11] = FK;
-    TIG_max[fc82][fc67] = FK;
-    TIG_max[fc82][fc68] = FK;
+    TIG_max[fc82][fc08] = GKL;
+    TIG_max[fc82][fc11] = GKL;
+    TIG_max[fc82][fc67] = GKL;
+    TIG_max[fc82][fc68] = GKL;
 
     default_tig_min(0);
 
@@ -829,9 +829,13 @@ void control_parameters(void)
     H_code[hnla08_1b]          = "nla08_1b";                                       /* Onthouden detectiemelding detector 08_1b tbv naloop van 08 naar 68 */
     H_code[hnla11_1]           = "nla11_1";                                        /* Onthouden detectiemelding detector 11_1 tbv naloop van 11 naar 68  */
     H_code[hnla22_1]           = "nla22_1";                                        /* Onthouden detectiemelding detector 22_1 tbv naloop van 22 naar 21  */
+    H_code[hnlsg3132]          = "nlsg3132";                                       /* Hulpelement naloop SG van 31 naar 32                               */
     H_code[hnlak31a]           = "nlak31a";                                        /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
+    H_code[hnlsg3231]          = "nlsg3231";                                       /* Hulpelement naloop SG van 32 naar 31                               */
     H_code[hnlak32a]           = "nlak32a";                                        /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
+    H_code[hnlsg3334]          = "nlsg3334";                                       /* Hulpelement naloop SG van 33 naar 34                               */
     H_code[hnlak33a]           = "nlak33a";                                        /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
+    H_code[hnlsg3433]          = "nlsg3433";                                       /* Hulpelement naloop SG van 34 naar 33                               */
     H_code[hnlak34a]           = "nlak34a";                                        /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
     H_code[hnla82_1]           = "nla82_1";                                        /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
     H_code[hstp02bus]          = "stp02bus";                                       /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
@@ -1060,18 +1064,22 @@ void control_parameters(void)
     T_code[tnlfgd0262]                 = "nlfgd0262";                 T_max[tnlfgd0262]                 = 60;   T_type[tnlfgd0262]                 = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 02 naar 62          */
     T_code[tnleg0262]                  = "nleg0262";                  T_max[tnleg0262]                  = 50;   T_type[tnleg0262]                  = TE_type; /* Naloop op einde groen van 02 naar 62                                  */
     T_code[tnlegd0262]                 = "nlegd0262";                 T_max[tnlegd0262]                 = 60;   T_type[tnlegd0262]                 = TE_type; /* Detectieafhankelijke naloop op einde groen van 02 naar 62             */
+    T_code[tvgnaloop0262]              = "vgnaloop0262";              T_max[tvgnaloop0262]              = 50;   T_type[tvgnaloop0262]              = TE_type; /* Timer naloop EG van 02 naar 62                                        */
     T_code[tnlfg0868]                  = "nlfg0868";                  T_max[tnlfg0868]                  = 60;   T_type[tnlfg0868]                  = TE_type; /* Naloop tijdens vastgroen van 08 naar 68                               */
     T_code[tnlfgd0868]                 = "nlfgd0868";                 T_max[tnlfgd0868]                 = 60;   T_type[tnlfgd0868]                 = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 08 naar 68          */
     T_code[tnleg0868]                  = "nleg0868";                  T_max[tnleg0868]                  = 60;   T_type[tnleg0868]                  = TE_type; /* Naloop op einde groen van 08 naar 68                                  */
     T_code[tnlegd0868]                 = "nlegd0868";                 T_max[tnlegd0868]                 = 70;   T_type[tnlegd0868]                 = TE_type; /* Detectieafhankelijke naloop op einde groen van 08 naar 68             */
+    T_code[tvgnaloop0868]              = "vgnaloop0868";              T_max[tvgnaloop0868]              = 50;   T_type[tvgnaloop0868]              = TE_type; /* Timer naloop EG van 08 naar 68                                        */
     T_code[tnlfg1168]                  = "nlfg1168";                  T_max[tnlfg1168]                  = 40;   T_type[tnlfg1168]                  = TE_type; /* Naloop tijdens vastgroen van 11 naar 68                               */
     T_code[tnlfgd1168]                 = "nlfgd1168";                 T_max[tnlfgd1168]                 = 50;   T_type[tnlfgd1168]                 = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 11 naar 68          */
     T_code[tnleg1168]                  = "nleg1168";                  T_max[tnleg1168]                  = 50;   T_type[tnleg1168]                  = TE_type; /* Naloop op einde groen van 11 naar 68                                  */
     T_code[tnlegd1168]                 = "nlegd1168";                 T_max[tnlegd1168]                 = 60;   T_type[tnlegd1168]                 = TE_type; /* Detectieafhankelijke naloop op einde groen van 11 naar 68             */
+    T_code[tvgnaloop1168]              = "vgnaloop1168";              T_max[tvgnaloop1168]              = 50;   T_type[tvgnaloop1168]              = TE_type; /* Timer naloop EG van 11 naar 68                                        */
     T_code[tnlfg2221]                  = "nlfg2221";                  T_max[tnlfg2221]                  = 30;   T_type[tnlfg2221]                  = TE_type; /* Naloop tijdens vastgroen van 22 naar 21                               */
     T_code[tnlfgd2221]                 = "nlfgd2221";                 T_max[tnlfgd2221]                 = 40;   T_type[tnlfgd2221]                 = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 22 naar 21          */
     T_code[tnleg2221]                  = "nleg2221";                  T_max[tnleg2221]                  = 40;   T_type[tnleg2221]                  = TE_type; /* Naloop op einde groen van 22 naar 21                                  */
     T_code[tnlegd2221]                 = "nlegd2221";                 T_max[tnlegd2221]                 = 50;   T_type[tnlegd2221]                 = TE_type; /* Detectieafhankelijke naloop op einde groen van 22 naar 21             */
+    T_code[tvgnaloop2221]              = "vgnaloop2221";              T_max[tvgnaloop2221]              = 50;   T_type[tvgnaloop2221]              = TE_type; /* Timer naloop EG van 22 naar 21                                        */
     T_code[tnlsg3132]                  = "nlsg3132";                  T_max[tnlsg3132]                  = 125;  T_type[tnlsg3132]                  = TE_type; /* Naloop op start groen van 31 naar 32                                  */
     T_code[tnlsgd3132]                 = "nlsgd3132";                 T_max[tnlsgd3132]                 = 125;  T_type[tnlsgd3132]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 31 naar 32             */
     T_code[tnlsg3231]                  = "nlsg3231";                  T_max[tnlsg3231]                  = 115;  T_type[tnlsg3231]                  = TE_type; /* Naloop op start groen van 32 naar 31                                  */
@@ -1082,6 +1090,7 @@ void control_parameters(void)
     T_code[tnlfgd8281]                 = "nlfgd8281";                 T_max[tnlfgd8281]                 = 50;   T_type[tnlfgd8281]                 = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 82 naar 81          */
     T_code[tnleg8281]                  = "nleg8281";                  T_max[tnleg8281]                  = 60;   T_type[tnleg8281]                  = TE_type; /* Naloop op einde groen van 82 naar 81                                  */
     T_code[tnlegd8281]                 = "nlegd8281";                 T_max[tnlegd8281]                 = 70;   T_type[tnlegd8281]                 = TE_type; /* Detectieafhankelijke naloop op einde groen van 82 naar 81             */
+    T_code[tvgnaloop8281]              = "vgnaloop8281";              T_max[tvgnaloop8281]              = 0;    T_type[tvgnaloop8281]              = TE_type; /* Timer naloop EG van 82 naar 81                                        */
     T_code[trgad24_3]                  = "rgad24_3";                  T_max[trgad24_3]                  = 10;   T_type[trgad24_3]                  = TE_type; /* Richtinggevoelige aanvraag rijtijd fase 24 van 24_3 naar 24_2         */
     T_code[trgavd24_3]                 = "rgavd24_3";                 T_max[trgavd24_3]                 = 60;   T_type[trgavd24_3]                 = TE_type; /* Timer reset richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2     */
     T_code[trgrd24_3_d24_2]            = "rgrd24_3_d24_2";            T_max[trgrd24_3_d24_2]            = 10;   T_type[trgrd24_3_d24_2]            = TE_type; /* Richtinggevoelig verlengen rijtijd fase 24 van 24_3 naar 24_2         */
@@ -1120,6 +1129,10 @@ void control_parameters(void)
     T_code[tfo2611]                    = "fo2611";                    T_max[tfo2611]                    = 0;    T_type[tfo2611]                    = TE_type; /* Fictieve ontruimingstijd van 26 naar fase 11                          */
     T_code[tvs3205]                    = "vs3205";                    T_max[tvs3205]                    = 20;   T_type[tvs3205]                    = TE_type; /* Voorstarttijd fase 32 op fase 05                                      */
     T_code[tfo3205]                    = "fo3205";                    T_max[tfo3205]                    = 50;   T_type[tfo3205]                    = TE_type; /* Fictieve ontruimingstijd van 32 naar fase 05                          */
+    T_code[tinl3132]                   = "inl3132";                   T_max[tinl3132]                   = 30;   T_type[tinl3132]                   = TE_type; /* Inlooptijd fase 31                                                    */
+    T_code[tinl3231]                   = "inl3231";                   T_max[tinl3231]                   = 30;   T_type[tinl3231]                   = TE_type; /* Inlooptijd fase 32                                                    */
+    T_code[tinl3334]                   = "inl3334";                   T_max[tinl3334]                   = 30;   T_type[tinl3334]                   = TE_type; /* Inlooptijd fase 33                                                    */
+    T_code[tinl3433]                   = "inl3433";                   T_max[tinl3433]                   = 30;   T_type[tinl3433]                   = TE_type; /* Inlooptijd fase 34                                                    */
 
 /* teller elementen */
 /* ---------------- */
@@ -2170,18 +2183,22 @@ void control_parameters(void)
     T_cat[tnlfgd0262]              = CAT_Basisfuncties;    T_subcat[tnlfgd0262]                 = SUBCAT_HardeKoppeling;
     T_cat[tnleg0262]               = CAT_Basisfuncties;    T_subcat[tnleg0262]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlegd0262]              = CAT_Basisfuncties;    T_subcat[tnlegd0262]                 = SUBCAT_HardeKoppeling;
+    T_cat[tvgnaloop0262]           = CAT_Basisfuncties;    T_subcat[tvgnaloop0262]              = SUBCAT_HardeKoppeling;
     T_cat[tnlfg0868]               = CAT_Basisfuncties;    T_subcat[tnlfg0868]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlfgd0868]              = CAT_Basisfuncties;    T_subcat[tnlfgd0868]                 = SUBCAT_HardeKoppeling;
     T_cat[tnleg0868]               = CAT_Basisfuncties;    T_subcat[tnleg0868]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlegd0868]              = CAT_Basisfuncties;    T_subcat[tnlegd0868]                 = SUBCAT_HardeKoppeling;
+    T_cat[tvgnaloop0868]           = CAT_Basisfuncties;    T_subcat[tvgnaloop0868]              = SUBCAT_HardeKoppeling;
     T_cat[tnlfg1168]               = CAT_Basisfuncties;    T_subcat[tnlfg1168]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlfgd1168]              = CAT_Basisfuncties;    T_subcat[tnlfgd1168]                 = SUBCAT_HardeKoppeling;
     T_cat[tnleg1168]               = CAT_Basisfuncties;    T_subcat[tnleg1168]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlegd1168]              = CAT_Basisfuncties;    T_subcat[tnlegd1168]                 = SUBCAT_HardeKoppeling;
+    T_cat[tvgnaloop1168]           = CAT_Basisfuncties;    T_subcat[tvgnaloop1168]              = SUBCAT_HardeKoppeling;
     T_cat[tnlfg2221]               = CAT_Basisfuncties;    T_subcat[tnlfg2221]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlfgd2221]              = CAT_Basisfuncties;    T_subcat[tnlfgd2221]                 = SUBCAT_HardeKoppeling;
     T_cat[tnleg2221]               = CAT_Basisfuncties;    T_subcat[tnleg2221]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlegd2221]              = CAT_Basisfuncties;    T_subcat[tnlegd2221]                 = SUBCAT_HardeKoppeling;
+    T_cat[tvgnaloop2221]           = CAT_Basisfuncties;    T_subcat[tvgnaloop2221]              = SUBCAT_HardeKoppeling;
     T_cat[tnlsg3132]               = CAT_Basisfuncties;    T_subcat[tnlsg3132]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlsgd3132]              = CAT_Basisfuncties;    T_subcat[tnlsgd3132]                 = SUBCAT_HardeKoppeling;
     T_cat[tnlsg3231]               = CAT_Basisfuncties;    T_subcat[tnlsg3231]                  = SUBCAT_HardeKoppeling;
@@ -2192,6 +2209,7 @@ void control_parameters(void)
     T_cat[tnlfgd8281]              = CAT_Basisfuncties;    T_subcat[tnlfgd8281]                 = SUBCAT_HardeKoppeling;
     T_cat[tnleg8281]               = CAT_Basisfuncties;    T_subcat[tnleg8281]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlegd8281]              = CAT_Basisfuncties;    T_subcat[tnlegd8281]                 = SUBCAT_HardeKoppeling;
+    T_cat[tvgnaloop8281]           = CAT_Basisfuncties;    T_subcat[tvgnaloop8281]              = SUBCAT_HardeKoppeling;
     T_cat[trgad24_3]               = CAT_Basisfuncties;    T_subcat[trgad24_3]                  = SUBCAT_Aanvraag;
     T_cat[trgavd24_3]              = CAT_Basisfuncties;    T_subcat[trgavd24_3]                 = SUBCAT_Aanvraag;
     T_cat[trgrd24_3_d24_2]         = CAT_Basisfuncties;    T_subcat[trgrd24_3_d24_2]            = SUBCAT_Verlengen;

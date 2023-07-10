@@ -8615,6 +8615,7 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>50</MaxUitverlengenVolgrichting>
         <Detectoren>
           <NaloopDetector>
             <Detector>02_1a</Detector>
@@ -8652,6 +8653,7 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>50</MaxUitverlengenVolgrichting>
         <Detectoren>
           <NaloopDetector>
             <Detector>08_1a</Detector>
@@ -8689,6 +8691,7 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>50</MaxUitverlengenVolgrichting>
         <Detectoren>
           <NaloopDetector>
             <Detector>11_1</Detector>
@@ -8722,6 +8725,7 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>20</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>50</MaxUitverlengenVolgrichting>
         <Detectoren>
           <NaloopDetector>
             <Detector>22_1</Detector>
@@ -8755,6 +8759,7 @@
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <Detectoren>
           <NaloopDetector>
             <Detector>k31a</Detector>
@@ -8780,6 +8785,7 @@
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <Detectoren>
           <NaloopDetector>
             <Detector>k32a</Detector>
@@ -8805,6 +8811,7 @@
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <Detectoren>
           <NaloopDetector>
             <Detector>k33a</Detector>
@@ -8826,6 +8833,7 @@
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <Detectoren>
           <NaloopDetector>
             <Detector>k34a</Detector>
@@ -8847,6 +8855,7 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <Detectoren>
           <NaloopDetector>
             <Detector>82_1</Detector>
@@ -23129,6 +23138,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin61</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -23490,13 +23506,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkarin62</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin61</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

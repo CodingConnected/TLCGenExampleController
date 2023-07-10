@@ -16,7 +16,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+ * 12.4.0   10-07-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
@@ -32,10 +32,10 @@
 #define hmadk32b    (HEMAX1+1) 
 #define hmadk33b    (HEMAX1+2) 
 #define hmadk34b    (HEMAX1+3)
-#define hnlsg3132   (HEMAX1+4)
-#define hnlsg3231   (HEMAX1+5)
-#define hnlsg3334   (HEMAX1+6)
-#define hnlsg3433   (HEMAX1+7)
+//#define hnlsg3132   (HEMAX1+4)
+//#define hnlsg3231   (HEMAX1+5)
+//#define hnlsg3334   (HEMAX1+6)
+//#define hnlsg3433   (HEMAX1+7)
 #define HEMAX  (HEMAX1+8)  /* Totaal aantal gebruikte hulpelementen  */
 #define MEMAX  (MEMAX1+0)  /* Totaal aantal gebruikte mem.elementen  */
 
@@ -47,18 +47,18 @@
 #define tlr6811                     (TMMAX1+5)
 #define tlr2122                     (TMMAX1+6)
 #define tlr8182                     (TMMAX1+7)
-#define tinl3231                    (TMMAX1+8)
-#define tinl3132                    (TMMAX1+9)
-#define tinl3433                    (TMMAX1+10)
-#define tinl3334                    (TMMAX1+11)
+//#define tinl3231                    (TMMAX1+8)
+//#define tinl3132                    (TMMAX1+9)
+//#define tinl3433                    (TMMAX1+10)
+//#define tinl3334                    (TMMAX1+11)
 #define tfo0522                     (TMMAX1+12)
 #define tfo0532                     (TMMAX1+13)
 #define tfo1126                     (TMMAX1+14)
-#define tvgnaloop2221               (TMMAX1+15)
-#define tvgnaloop0262               (TMMAX1+16)
-#define tvgnaloop0868               (TMMAX1+17)
-#define tvgnaloop1168               (TMMAX1+18)
-#define tvgnaloop8281               (TMMAX1+19)
+//#define tvgnaloop2221               (TMMAX1+15)
+//#define tvgnaloop0262               (TMMAX1+16)
+//#define tvgnaloop0868               (TMMAX1+17)
+//#define tvgnaloop1168               (TMMAX1+18)
+//#define tvgnaloop8281               (TMMAX1+19)
 
 #define TMMAX  (TMMAX1+20)  /* Totaal aantal gebruikte timers         */
 #define CTMAX  (CTMAX1+0)  /* Totaal aantal gebruikte tellers        */

@@ -16,7 +16,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+ * 12.4.0   10-07-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
@@ -59,11 +59,11 @@ count i, j;
    SCH[schtimings84] = 1;
 */ 
 #endif
-T_code[tvgnaloop2221] = "vgnaloop2221";              T_max[tvgnaloop2221] = 40;   T_type[tvgnaloop2221] = TE_type;
-T_code[tvgnaloop0262] = "vgnaloop0262";              T_max[tvgnaloop0262] = 40;   T_type[tvgnaloop0262] = TE_type;
-T_code[tvgnaloop0868] = "vgnaloop0868";              T_max[tvgnaloop0868] = 40;   T_type[tvgnaloop0868] = TE_type;
-T_code[tvgnaloop1168] = "vgnaloop1168";              T_max[tvgnaloop1168] = 40;   T_type[tvgnaloop1168] = TE_type;
-T_code[tvgnaloop8281] = "vgnaloop8281";              T_max[tvgnaloop8281] = 40;   T_type[tvgnaloop8281] = TE_type;
+//T_code[tvgnaloop2221] = "vgnaloop2221";              T_max[tvgnaloop2221] = 40;   T_type[tvgnaloop2221] = TE_type;
+//T_code[tvgnaloop0262] = "vgnaloop0262";              T_max[tvgnaloop0262] = 40;   T_type[tvgnaloop0262] = TE_type;
+//T_code[tvgnaloop0868] = "vgnaloop0868";              T_max[tvgnaloop0868] = 40;   T_type[tvgnaloop0868] = TE_type;
+//T_code[tvgnaloop1168] = "vgnaloop1168";              T_max[tvgnaloop1168] = 40;   T_type[tvgnaloop1168] = TE_type;
+//T_code[tvgnaloop8281] = "vgnaloop8281";              T_max[tvgnaloop8281] = 40;   T_type[tvgnaloop8281] = TE_type;
 T_code[tvs2205] = "vs2205";                    T_max[tvs2205] = 20;   T_type[tvs2205] = TE_type; /* Voorstarttijd fase 22 op fase 05                                      */
 T_code[tvs3205] = "vs3205";                    T_max[tvs3205] = 20;   T_type[tvs3205] = TE_type; /* ...................32...........                                      */
 T_code[tlr2611] = "lr2611";                    T_max[tlr2611] = 5;   T_type[tlr2611] = TE_type; /* Late release tijd fase 26 naar fase 11                                */
@@ -72,10 +72,10 @@ T_code[tlr6808] = "lr6808";                    T_max[tlr6808] = 30;   T_type[tlr
 T_code[tlr6811] = "lr6811";                    T_max[tlr6811] = 55;   T_type[tlr6811] = TE_type; /* ....................................11                                */
 T_code[tlr2122] = "lr2122";                    T_max[tlr2122] = 20;   T_type[tlr2122] = TE_type; /* .......................21...........22                                */
 T_code[tlr8182] = "lr8182";                    T_max[tlr8182] = 30;   T_type[tlr8182] = TE_type; /* .......................81...........82                                */
-T_code[tinl3231] = "inl3231";                   T_max[tinl3231] = 30;   T_type[tinl3231] = TE_type; /* Inloop tijd fase 32                                                   */
-T_code[tinl3132] = "inl3132";                   T_max[tinl3132] = 30;   T_type[tinl3132] = TE_type; /* .................31                                                   */
-T_code[tinl3433] = "inl3433";                   T_max[tinl3433] = 30;   T_type[tinl3433] = TE_type; /* .................34                                                   */
-T_code[tinl3334] = "inl3334";                   T_max[tinl3334] = 30;   T_type[tinl3334] = TE_type; /* .................33                                                   */
+//T_code[tinl3231] = "inl3231";                   T_max[tinl3231] = 30;   T_type[tinl3231] = TE_type; /* Inloop tijd fase 32                                                   */
+//T_code[tinl3132] = "inl3132";                   T_max[tinl3132] = 30;   T_type[tinl3132] = TE_type; /* .................31                                                   */
+//T_code[tinl3433] = "inl3433";                   T_max[tinl3433] = 30;   T_type[tinl3433] = TE_type; /* .................34                                                   */
+//T_code[tinl3334] = "inl3334";                   T_max[tinl3334] = 30;   T_type[tinl3334] = TE_type; /* .................33                                                   */
 T_code[tfo0522] = "fo0522";                    T_max[tfo0522] = 40;   T_type[tfo0522] = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 22                          */
 T_code[tfo0532] = "fo0532";                    T_max[tfo0532] = 50;   T_type[tfo0532] = TE_type; /* ..........................................32                          */
 T_code[tfo1126] = "fo1126";                    T_max[tfo1126] = 20;   T_type[tfo1126] = TE_type; /* .............................11...........26                          */

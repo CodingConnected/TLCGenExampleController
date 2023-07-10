@@ -8988,3 +8988,16 @@ void InitInterStartGroenTijden()
     pointer_conflicts();
 }
 
+void TegenhoudenInrijdenInlopen()
+{
+    count fc, i, j;
+
+    for (i = 0; i < FCMAX; ++i)
+    {
+        for (j = 0; j < FCMAX; ++j)
+        {
+            if (REALISATIETIJD[i][j] > 0) X[j] |= BIT1; else X[j] &= ~BIT1; /* Als er een realisatietijd loopt van (fictief) conflict i, wordt richting j nog tegengehouden */
+            if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1;  RR[j] &= ~BIT1; /*  150 tijdelijk moet afhankleijk gemaakt wordt van de tijd de een richting eerder mag starten dan de volgrichting */
+        }
+    }
+}

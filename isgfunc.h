@@ -1,5 +1,7 @@
 /* isgfunc.h - gegenereerd met TLCGen 12.4.0.0 */
 
+/* isgfunc.h - gegenereerd met TLCGen 12.4.0.0 */
+
 #ifndef __ISGFUNC
 #define __ISGFUNC
 
@@ -51,6 +53,7 @@ void InterStartGroenTijden_VulHaldeConflictenIn(void);
 void InterStartGroenTijden_VulGroenGroenConflictenIn(void);
 void CorrigeerRealisatieTijdenObvGarantieTijden(void);
 void InitInterStartGroenTijden();
+void TegenhoudenInrijdenInlopen();
 
 extern mulv TNL_type[][FCMAX]; /* type naloop */
 extern mulv FK_type[][FCMAX]; /* type fictief conflict */
