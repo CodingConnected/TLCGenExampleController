@@ -1632,7 +1632,7 @@ void RealisatieAfhandeling(void)
 
 
     /* Niet intrekken alternatief nalooprichting tijdens inlopen voedende richting */
-    if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
+    if (RT[tvgnaloop2221] || T[tvgnaloop2221])
     {
         RR[fc21] &= ~BIT5;
     }
@@ -1652,15 +1652,15 @@ void RealisatieAfhandeling(void)
     {
         RR[fc34] &= ~BIT5;
     }
-    if (RT[tnlfg0262] || T[tnlfg0262] || RT[tnlfgd0262] || T[tnlfgd0262] || RT[tnleg0262] || T[tnleg0262] || RT[tnlegd0262] || T[tnlegd0262])
+    if (RT[tvgnaloop0262] || T[tvgnaloop0262])
     {
         RR[fc62] &= ~BIT5;
     }
-    if (RT[tnlfg0868] || T[tnlfg0868] || RT[tnlfgd0868] || T[tnlfgd0868] || RT[tnleg0868] || T[tnleg0868] || RT[tnlegd0868] || T[tnlegd0868])
+    if (RT[tvgnaloop0868] || T[tvgnaloop0868])
     {
         RR[fc68] &= ~BIT5;
     }
-    if (RT[tnlfg8281] || T[tnlfg8281] || RT[tnlfgd8281] || T[tnlfgd8281] || RT[tnleg8281] || T[tnleg8281] || RT[tnlegd8281] || T[tnlegd8281])
+    if (RT[tvgnaloop8281] || T[tvgnaloop8281])
     {
         RR[fc81] &= ~BIT5;
     }
@@ -1688,117 +1688,86 @@ void RealisatieAfhandeling(void)
     FM[fc82] |= (fm_ar_kpr(fc82, PRM[prmaltg82])) ? BIT5 : 0;
     FM[fc84] |= (fm_ar_kpr(fc84, PRM[prmaltg84])) ? BIT5 : 0;
 
-    /* Bij nalopen op EG mag de volgrichting niet RR en FM
-       gestuurd worden indien de voedende richting groen is */
-    if (!R[fc02] || TNL[fc62]) { RR[fc62] &= ~BIT5; FM[fc62] &= ~BIT5; }
-    if (!R[fc08] || TNL[fc68]) { RR[fc68] &= ~BIT5; FM[fc68] &= ~BIT5; }
-    if (!R[fc11] || TNL[fc68]) { RR[fc68] &= ~BIT5; FM[fc68] &= ~BIT5; }
-    if (!R[fc22] || TNL[fc21]) { RR[fc21] &= ~BIT5; FM[fc21] &= ~BIT5; }
-    if (!R[fc82] || TNL[fc81]) { RR[fc81] &= ~BIT5; FM[fc81] &= ~BIT5; }
+    /* Bepaal of er genoeg ruimte is voor alternatieve realsaties */
 
-    //PAR[fc02] = (max_tar_tig(fc02) >= PRM[prmaltp02]) && SCH[schaltg02];
-    //PAR[fc03] = (Real_Ruimte(fc03, mar03) >= PRM[prmaltp03]) && SCH[schaltg03];
-    //PAR[fc05] = (Real_Ruimte(fc05, mar05) >= PRM[prmaltp05]) && SCH[schaltg05];
-    //PAR[fc08] = (Real_Ruimte(fc08, mar08) >= PRM[prmaltp08]) && SCH[schaltg08];
-    //PAR[fc09] = (Real_Ruimte(fc09, mar09) >= PRM[prmaltp09]) && SCH[schaltg09];
-    //PAR[fc11] = (Real_Ruimte(fc11, mar11) >= PRM[prmaltp11]) && SCH[schaltg11];
-    //PAR[fc21] = (Real_Ruimte(fc21, mar21) >= PRM[prmaltp21]) && SCH[schaltg21];
-    //PAR[fc22] = (Real_Ruimte(fc22, mar22) >= PRM[prmaltp2232]) && SCH[schaltg2232];
-    //PAR[fc24] = (Real_Ruimte(fc24, mar24) >= PRM[prmaltp243484]) && SCH[schaltg243484];
-    //PAR[fc26] = (Real_Ruimte(fc26, mar26) >= PRM[prmaltp26]) && SCH[schaltg26];
-    //PAR[fc28] = (Real_Ruimte(fc28, mar28) >= PRM[prmaltp28]) && SCH[schaltg28];
-    //PAR[fc31] = (Real_Ruimte(fc31, mar31) >= PRM[prmaltp31]) && SCH[schaltg31];
-    //PAR[fc32] = (Real_Ruimte(fc32, mar32) >= PRM[prmaltp2232]) && SCH[schaltg2232];
-    //PAR[fc33] = (Real_Ruimte(fc33, mar33) >= PRM[prmaltp3384]) && SCH[schaltg3384];
-    //PAR[fc34] = (Real_Ruimte(fc34, mar34) >= PRM[prmaltp2434]) && SCH[schaltg2434];
-    //PAR[fc38] = (Real_Ruimte(fc38, mar38) >= PRM[prmaltp38]) && SCH[schaltg38];
-    //PAR[fc61] = (Real_Ruimte(fc61, mar61) >= PRM[prmaltp61]) && SCH[schaltg61];
-    //PAR[fc62] = (Real_Ruimte(fc62, mar62) >= PRM[prmaltp62]) && SCH[schaltg62];
-    //PAR[fc67] = (Real_Ruimte(fc67, mar67) >= PRM[prmaltp67]) && SCH[schaltg67];
-    //PAR[fc68] = (Real_Ruimte(fc68, mar68) >= PRM[prmaltp68]) && SCH[schaltg68];
-    //PAR[fc81] = (Real_Ruimte(fc81, mar81) >= PRM[prmaltp81]) && SCH[schaltg81];
-    //PAR[fc82] = (Real_Ruimte(fc82, mar82) >= PRM[prmaltp82]) && SCH[schaltg82];
-    //PAR[fc84] = (Real_Ruimte(fc84, mar84) >= PRM[prmaltp243384]) && SCH[schaltg243384];
+    PAR[fc02] = max_par(fc02) && SCH[schaltg02];
+    PAR[fc03] = max_par(fc03) && SCH[schaltg03];
+    PAR[fc05] = max_par(fc05) && SCH[schaltg05];
+    PAR[fc08] = max_par(fc08) && SCH[schaltg08];
+    PAR[fc09] = max_par(fc09) && SCH[schaltg09];
+    PAR[fc11] = max_par(fc11) && SCH[schaltg11];
+    PAR[fc21] = max_par(fc21) && SCH[schaltg21];
+    PAR[fc22] = max_par(fc22) && SCH[schaltg2232];
+    PAR[fc24] = max_par(fc24) && SCH[schaltg2434];
+    PAR[fc26] = max_par(fc26) && SCH[schaltg26];
+    PAR[fc28] = max_par(fc28) && SCH[schaltg28];
+    PAR[fc31] = max_par(fc31) && SCH[schaltg31];
+    PAR[fc32] = max_par(fc32) && SCH[schaltg2232];
+    PAR[fc33] = max_par(fc33) && SCH[schaltg3384];
+    PAR[fc34] = max_par(fc34) && SCH[schaltg2434];
+    PAR[fc38] = max_par(fc38) && SCH[schaltg38];
+    PAR[fc61] = max_par(fc61) && SCH[schaltg61];
+    PAR[fc62] = max_par(fc62) && SCH[schaltg62];
+    PAR[fc67] = max_par(fc67) && SCH[schaltg67];
+    PAR[fc68] = max_par(fc68) && SCH[schaltg68];
+    PAR[fc81] = max_par(fc81) && SCH[schaltg81];
+    PAR[fc82] = max_par(fc82) && SCH[schaltg82];
+    PAR[fc84] = max_par(fc84) && SCH[schaltg3384];
 
-     /* Bepaal naloop voetgangers wel/niet toegestaan */
-    //IH[hnlsg3132] = Naloop_OK(fc31, mar32, tnlsgd3132);
-    //IH[hnlsg3231] = Naloop_OK(fc32, mar31, tnlsgd3231);
-    //IH[hnlsg3334] = Naloop_OK(fc33, mar34, tnlsgd3334);
-    //IH[hnlsg3433] = Naloop_OK(fc34, mar33, tnlsgd3433);
+    /* Tegenrichting moet ook kunnen koppelen bij koppelaanvraag */
+    PAR[fc31] = PAR[fc32] && (!IH[hnlak32a] || PAR[fc31]);
+    PAR[fc32] = PAR[fc31] && (!IH[hnlak31a] || PAR[fc31]);
+    PAR[fc33] = PAR[fc33] && (!IH[hnlak34a] || PAR[fc34]);
+    PAR[fc34] = PAR[fc34] && (!IH[hnlak33a] || PAR[fc33]);
 
-     /* PAR-correcties nalopen voetgagners stap 1: naloop past of los OK */
-    PAR[fc31] = PAR[fc31] && (IH[hnlsg3132] || IH[hlos31]);
-    PAR[fc32] = PAR[fc32] && (IH[hnlsg3231] || IH[hlos32]);
-    PAR[fc33] = PAR[fc33] && (IH[hnlsg3334] || IH[hlos33]);
-    PAR[fc34] = PAR[fc34] && (IH[hnlsg3433] || IH[hlos34]);
+    /* Bepaal naloop voetgangers wel/niet toegestaan */
+    IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc32]) && IH[hnlak31a];
+    IH[hnlsg3231] = (PR[fc32] || AR[fc32] && PAR[fc31]) && IH[hnlak32a];
+    IH[hnlsg3334] = (PR[fc33] || AR[fc33] && PAR[fc34]) && IH[hnlak33a];
+    IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc33]) && IH[hnlak34a];
+    /* PAR-ongecoordineerd */
 
-    /* PAR-correcties 10 keer checken ivm onderlinge afhankelijkheden */
-    for (fc = 0; fc < 10; ++fc)
-    {
-        /* PAR-correcties nalopen voetgagners stap 2: beide PAR of los OK */
-        PAR[fc31] = PAR[fc31] && (PAR[fc32] || IH[hlos31]);
-        PAR[fc32] = PAR[fc32] && (PAR[fc31] || IH[hlos32]);
-        PAR[fc33] = PAR[fc33] && (PAR[fc34] || IH[hlos33]);
-        PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
+    PAR[fc31] = PAR[fc31] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
+    PAR[fc32] = PAR[fc32] || IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]);
+    PAR[fc33] = PAR[fc33] || IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]);
+    PAR[fc34] = PAR[fc34] || IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]);
 
-        PAR[fc05] = PAR[fc05] && PAR[fc22];
-        PAR[fc05] = PAR[fc05] && PAR[fc32];
-        PAR[fc11] = PAR[fc11] && PAR[fc26];
-        PAR[fc02] = PAR[fc02] && PAR[fc62];
-        PAR[fc08] = PAR[fc08] && PAR[fc68];
-        PAR[fc11] = PAR[fc11] && PAR[fc68];
-        PAR[fc22] = PAR[fc22] && PAR[fc21];
-        PAR[fc82] = PAR[fc82] && PAR[fc81];
 
-        /* PAR correcties gelijkstart synchronisaties */
-        if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && (PAR[fc32] || !A[fc32]);
-        if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && (PAR[fc22] || !A[fc22]);
-        if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && (PAR[fc34] || !A[fc34]);
-        if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
-        if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
-        if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
-        if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
-        if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
-    }
+    /* PAR correcties gelijkstart synchronisaties */
+    if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && (PAR[fc32] || !A[fc32]);
+    if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && (PAR[fc22] || !A[fc22]);
+    if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && (PAR[fc34] || !A[fc34]);
+    if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
+    if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
+    if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
 
-    /* PAR correcties eenzijdige synchronisaties */
-    PAR[fc22] = PAR[fc22] || G[fc05];
-    PAR[fc32] = PAR[fc32] || G[fc05];
-    PAR[fc26] = PAR[fc26] || G[fc11];
-    PAR[fc62] = PAR[fc62] || G[fc02];
-    PAR[fc68] = PAR[fc68] || G[fc08];
-    PAR[fc68] = PAR[fc68] || G[fc11];
-    PAR[fc21] = PAR[fc21] || G[fc22];
-    PAR[fc81] = PAR[fc81] || G[fc82];
+    /* set meerealisatie voor richtingen met nalopen */
+    /* --------------------------------------------- */
+    set_MRLW_nl(fc62, fc02, (boolv)(G[fc02] && !G[fc62] && A[fc62]));
+    set_MRLW_nl(fc68, fc08, (boolv)(G[fc08] && !G[fc68] && A[fc68]));
+    set_MRLW_nl(fc68, fc11, (boolv)(G[fc11] && !G[fc68] && A[fc68]));
+    set_MRLW_nl(fc21, fc22, (boolv)(G[fc22] && !G[fc21] && A[fc21]));
+    set_MRLW(fc32, fc31, (boolv)(SG[fc31] && A[fc32] && IH[hnlak31a] && IH[hnlsg3132]));
+    set_MRLW(fc31, fc32, (boolv)(SG[fc32] && A[fc31] && IH[hnlak32a] && IH[hnlsg3231]));
+    set_MRLW(fc34, fc33, (boolv)(SG[fc33] && A[fc34] && IH[hnlak33a] && IH[hnlsg3334]));
+    set_MRLW(fc33, fc34, (boolv)(SG[fc34] && A[fc33] && IH[hnlak34a] && IH[hnlsg3433]));
+    set_MRLW_nl(fc81, fc82, (boolv)(G[fc82] && !G[fc81] && A[fc81]));
+
+    /* set meerealisatie voor gelijk- of voorstartende richtingen */
+    /* ---------------------------------------------------------- */
+    set_MRLW(fc22, fc05, (boolv)(RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    set_MRLW(fc32, fc05, (boolv)(RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
+    if (SCH[schgs2232]) set_MRLW(fc22, fc32, (boolv)((RA[fc32] || SG[fc32]) && (PR[fc32] || AR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    if (SCH[schgs2232]) set_MRLW(fc32, fc22, (boolv)((RA[fc22] || SG[fc22]) && (PR[fc22] || AR[fc22] || (AA[fc32] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
+    if (SCH[schgs2434]) set_MRLW(fc24, fc34, (boolv)((RA[fc34] || SG[fc34]) && (PR[fc34] || AR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
+    if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv)((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
+    if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv)((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
+    if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv)((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
     /* Niet alternatief komen tijdens file */
     if (IH[hfileFile68af]) PAR[fc08] = FALSE;
     if (IH[hfileFile68af]) PAR[fc11] = FALSE;
 
-    /* set meerealisatie voor richtingen met nalopen */
-    /* --------------------------------------------- */
-    set_MRLW_nl(fc62, fc02, (boolv) ((T[tlr6202] || RT[tlr6202]) && A[fc62] && !G[fc62]));
-    set_MRLW_nl(fc68, fc08, (boolv) ((T[tlr6808] || RT[tlr6808]) && A[fc68] && !G[fc68]));
-    set_MRLW_nl(fc68, fc11, (boolv) ((T[tlr6811] || RT[tlr6811]) && A[fc68] && !G[fc68]));
-    set_MRLW_nl(fc21, fc22, (boolv) ((T[tlr2122] || RT[tlr2122]) && A[fc21] && !G[fc21]));
-    set_MRLW(fc32, fc31, (boolv) ((T[tinl3132] || RT[tinl3132]) && A[fc32] && !G[fc32] && !kcv(fc32)));
-    set_MRLW(fc31, fc32, (boolv) ((T[tinl3231] || RT[tinl3231]) && A[fc31] && !G[fc31] && !kcv(fc31)));
-    set_MRLW(fc34, fc33, (boolv) ((T[tinl3334] || RT[tinl3334]) && A[fc34] && !G[fc34] && !kcv(fc34)));
-    set_MRLW(fc33, fc34, (boolv) ((T[tinl3433] || RT[tinl3433]) && A[fc33] && !G[fc33] && !kcv(fc33)));
-    set_MRLW_nl(fc81, fc82, (boolv) ((T[tlr8182] || RT[tlr8182]) && A[fc81] && !G[fc81]));
-
-    /* set meerealisatie voor gelijk- of voorstartende richtingen */
-    /* ---------------------------------------------------------- */
-    set_MRLW(fc22, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
-    if (SCH[schgs2232]) set_MRLW(fc22, fc32, (boolv) ((RA[fc32] || SG[fc32]) && (PR[fc32] || AR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    if (SCH[schgs2232]) set_MRLW(fc32, fc22, (boolv) ((RA[fc22] || SG[fc22]) && (PR[fc22] || AR[fc22] || (AA[fc32] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
-    if (SCH[schgs2434]) set_MRLW(fc24, fc34, (boolv) ((RA[fc34] || SG[fc34]) && (PR[fc34] || AR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
-    if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
-    if (SCH[schgs2484]) set_MRLW(fc24, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
-    if (SCH[schgs2484]) set_MRLW(fc84, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
-    if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
-    if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv) ((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
     /* BLOKGEBONDEN ALTERNATIEF */
     /* ======================== */
@@ -1831,10 +1800,6 @@ void RealisatieAfhandeling(void)
     if (!(PRM[prmaltb81] & (1 << ML))) PAR[fc81] = FALSE;
     if (!(PRM[prmaltb82] & (1 << ML))) PAR[fc82] = FALSE;
     if (!(PRM[prmaltb84] & (1 << ML))) PAR[fc84] = FALSE;
-
-
-
-
 
     Alternatief_Add();
 
