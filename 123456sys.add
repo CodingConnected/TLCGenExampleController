@@ -16,7 +16,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   10-07-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+ * 12.4.0   01-09-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
@@ -41,7 +41,7 @@
 
 //#define tvs2205                     (TMMAX1+0)
 //#define tvs3205                     (TMMAX1+1)
-#define tlr2611                     (TMMAX1+2)
+//#define tlr2611                     (TMMAX1+2)
 #define tlr6202                     (TMMAX1+3)
 #define tlr6808                     (TMMAX1+4)
 #define tlr6811                     (TMMAX1+5)

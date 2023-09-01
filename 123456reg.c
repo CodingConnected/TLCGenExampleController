@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   10-07-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+ * 12.4.0   01-09-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
  *
  ************************************************************************************/
 
@@ -73,9 +73,6 @@
     #include "detectie.c"
     #include "ccolfunc.c"
     #include "fixatie.c"
-/* Include files wachttijdvoorspeller*/
-#include "wtvfunc.c" /* berekening van de wachttijden voorspelling */
-#include "wtlleds.c" /* aansturing van de wachttijdlantaarn met leds */
 #ifdef MIRMON
     #include "MirakelMonitor.h"
 #endif /* MIRMON */
@@ -89,10 +86,6 @@ mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     code SCJ_code[] = "123456";
 #endif
-/* tijden t.b.v. wachttijdvoorspellers */
-/* ----------------------------------- */
-mulv t_wacht[FCMAX]; /* berekende wachttijd */
-mulv rr_twacht[FCMAX]; /* halteren wachttijd */
 boolv init_tvg;
 
     #if !defined AUTOMAAT && !defined AUTOMAAT_TEST
@@ -117,8 +110,6 @@ void PreApplication(void)
 
     PreApplication_Add();
 
-    /* Genereren knippersignalen */
-    UpdateKnipperSignalen();
 }
 
 void DetectieStoring_Aanvraag(void)
@@ -902,8 +893,8 @@ void BepaalRealisatieTijden(void)
 
     /* Pas realisatietijden aan a.g.v ontruimende deelconflicten */
     Ontruiming_Deelconflict_Voorstart(fc05, fc22, tfo0522);
-    Ontruiming_Deelconflict_Voorstart(fc11, fc26, tfo1126);
     Ontruiming_Deelconflict_Voorstart(fc05, fc32, tfo0532);
+    Ontruiming_Deelconflict_LateRelease(fc26, fc11, tlr2611, tfo2611);
 
     /* Pas realisatietijden aan a.g.v. deelconflicten/voorstarts die nog groen moeten worden */
     do
@@ -916,8 +907,8 @@ void BepaalRealisatieTijden(void)
     wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc24);
     wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc33);
     wijziging |= Correctie_REALISATIETIJD_Voorstart(fc05, fc22, tvs2205);
-    wijziging |= Correctie_REALISATIETIJD_Voorstart(fc11, fc26, tvs2611);
     wijziging |= Correctie_REALISATIETIJD_Voorstart(fc05, fc32, tvs3205);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc26, fc11, tlr2611);
 
         /* Inlopen voetgangers */
         wijziging |= Correctie_REALISATIETIJD_LateRelease(fc31, fc32, tinl3132);
@@ -965,8 +956,8 @@ void BepaalInterStartGroenTijden(void)
         wijziging |= Correctie_TISG_Gelijkstart(fc84, fc24);
         wijziging |= Correctie_TISG_Gelijkstart(fc84, fc33);
         wijziging |= Correctie_TISG_Voorstart(fc05, fc22, tvs2205);
-        wijziging |= Correctie_TISG_Voorstart(fc11, fc26, tvs2611);
         wijziging |= Correctie_TISG_Voorstart(fc05, fc32, tvs3205);
+        wijziging |= Correctie_TISG_LateRelease(fc26, fc11, tlr2611);
 
         /* Inlopen voetgangers */
         wijziging |= Correctie_TISG_LateRelease(fc31, fc32, tinl3132);
@@ -1615,14 +1606,14 @@ void RealisatieAfhandeling(void)
 
     /* zet richtingen die alternatief gaan realiseren         */
     /* terug naar RV als er geen alternatieve ruimte meer is. */
-    /* Dit gebeurt niet voor fasen met een wachttijd voorspeller, */
-    /* of fasen waarvan de voedende richting die heeft. */
     RR[fc02] |= R[fc02] && AR[fc02] && (!PAR[fc02] || ERA[fc02]) ? BIT5 : 0;
     RR[fc03] |= R[fc03] && AR[fc03] && (!PAR[fc03] || ERA[fc03]) ? BIT5 : 0;
     RR[fc05] |= R[fc05] && AR[fc05] && (!PAR[fc05] || ERA[fc05]) ? BIT5 : 0;
     RR[fc08] |= R[fc08] && AR[fc08] && (!PAR[fc08] || ERA[fc08]) ? BIT5 : 0;
     RR[fc09] |= R[fc09] && AR[fc09] && (!PAR[fc09] || ERA[fc09]) ? BIT5 : 0;
     RR[fc11] |= R[fc11] && AR[fc11] && (!PAR[fc11] || ERA[fc11]) ? BIT5 : 0;
+    RR[fc21] |= R[fc21] && AR[fc21] && (!PAR[fc21] || ERA[fc21]) ? BIT5 : 0;
+    RR[fc22] |= R[fc22] && AR[fc22] && (!PAR[fc22] || ERA[fc22]) ? BIT5 : 0;
     RR[fc24] |= R[fc24] && AR[fc24] && (!PAR[fc24] || ERA[fc24]) ? BIT5 : 0;
     RR[fc26] |= R[fc26] && AR[fc26] && (!PAR[fc26] || ERA[fc26]) ? BIT5 : 0;
     RR[fc28] |= R[fc28] && AR[fc28] && (!PAR[fc28] || ERA[fc28]) ? BIT5 : 0;
@@ -1705,36 +1696,35 @@ void RealisatieAfhandeling(void)
     if (!R[fc22] || TNL[fc21]) { RR[fc21] &= ~BIT5; FM[fc21] &= ~BIT5; }
     if (!R[fc82] || TNL[fc81]) { RR[fc81] &= ~BIT5; FM[fc81] &= ~BIT5; }
 
-    //   Onderstaande code uitgecomentarieerd
-    //   PAR[fc02] = (max_tar_tig(fc02) >= PRM[prmaltp02]) && SCH[schaltg02];
-    //   PAR[fc03] = (Real_Ruimte(fc03, mar03) >= PRM[prmaltp03]) && SCH[schaltg03];
-    //   PAR[fc05] = (Real_Ruimte(fc05, mar05) >= PRM[prmaltp05]) && SCH[schaltg05];
-    //   PAR[fc08] = (Real_Ruimte(fc08, mar08) >= PRM[prmaltp08]) && SCH[schaltg08];
-    //   PAR[fc09] = (Real_Ruimte(fc09, mar09) >= PRM[prmaltp09]) && SCH[schaltg09];
-    //   PAR[fc11] = (Real_Ruimte(fc11, mar11) >= PRM[prmaltp11]) && SCH[schaltg11];
-    //   PAR[fc21] = (Real_Ruimte(fc21, mar21) >= PRM[prmaltp21]) && SCH[schaltg21];
-    //   PAR[fc22] = (Real_Ruimte(fc22, mar22) >= PRM[prmaltp2232]) && SCH[schaltg2232];
-    //   PAR[fc24] = (Real_Ruimte(fc24, mar24) >= PRM[prmaltp243484]) && SCH[schaltg243484];
-    //   PAR[fc26] = (Real_Ruimte(fc26, mar26) >= PRM[prmaltp26]) && SCH[schaltg26];
-    //   PAR[fc28] = (Real_Ruimte(fc28, mar28) >= PRM[prmaltp28]) && SCH[schaltg28];
-    //   PAR[fc31] = (Real_Ruimte(fc31, mar31) >= PRM[prmaltp31]) && SCH[schaltg31];
-    //   PAR[fc32] = (Real_Ruimte(fc32, mar32) >= PRM[prmaltp2232]) && SCH[schaltg2232];
-    //   PAR[fc33] = (Real_Ruimte(fc33, mar33) >= PRM[prmaltp3384]) && SCH[schaltg3384];
-    //   PAR[fc34] = (Real_Ruimte(fc34, mar34) >= PRM[prmaltp2434]) && SCH[schaltg2434];
-    //   PAR[fc38] = (Real_Ruimte(fc38, mar38) >= PRM[prmaltp38]) && SCH[schaltg38];
-    //   PAR[fc61] = (Real_Ruimte(fc61, mar61) >= PRM[prmaltp61]) && SCH[schaltg61];
-    //   PAR[fc62] = (Real_Ruimte(fc62, mar62) >= PRM[prmaltp62]) && SCH[schaltg62];
-    //   PAR[fc67] = (Real_Ruimte(fc67, mar67) >= PRM[prmaltp67]) && SCH[schaltg67];
-    //   PAR[fc68] = (Real_Ruimte(fc68, mar68) >= PRM[prmaltp68]) && SCH[schaltg68];
-    //   PAR[fc81] = (Real_Ruimte(fc81, mar81) >= PRM[prmaltp81]) && SCH[schaltg81];
-    //   PAR[fc82] = (Real_Ruimte(fc82, mar82) >= PRM[prmaltp82]) && SCH[schaltg82];
-    //   PAR[fc84] = (Real_Ruimte(fc84, mar84) >= PRM[prmaltp243384]) && SCH[schaltg243384];
-    //
-    //    /* Bepaal naloop voetgangers wel/niet toegestaan */
-    //   IH[hnlsg3132] = Naloop_OK(fc31, mar32, tnlsgd3132);
-    //   IH[hnlsg3231] = Naloop_OK(fc32, mar31, tnlsgd3231);
-    //   IH[hnlsg3334] = Naloop_OK(fc33, mar34, tnlsgd3334);
-    //   IH[hnlsg3433] = Naloop_OK(fc34, mar33, tnlsgd3433);
+    //PAR[fc02] = (max_tar_tig(fc02) >= PRM[prmaltp02]) && SCH[schaltg02];
+    //PAR[fc03] = (Real_Ruimte(fc03, mar03) >= PRM[prmaltp03]) && SCH[schaltg03];
+    //PAR[fc05] = (Real_Ruimte(fc05, mar05) >= PRM[prmaltp05]) && SCH[schaltg05];
+    //PAR[fc08] = (Real_Ruimte(fc08, mar08) >= PRM[prmaltp08]) && SCH[schaltg08];
+    //PAR[fc09] = (Real_Ruimte(fc09, mar09) >= PRM[prmaltp09]) && SCH[schaltg09];
+    //PAR[fc11] = (Real_Ruimte(fc11, mar11) >= PRM[prmaltp11]) && SCH[schaltg11];
+    //PAR[fc21] = (Real_Ruimte(fc21, mar21) >= PRM[prmaltp21]) && SCH[schaltg21];
+    //PAR[fc22] = (Real_Ruimte(fc22, mar22) >= PRM[prmaltp2232]) && SCH[schaltg2232];
+    //PAR[fc24] = (Real_Ruimte(fc24, mar24) >= PRM[prmaltp243484]) && SCH[schaltg243484];
+    //PAR[fc26] = (Real_Ruimte(fc26, mar26) >= PRM[prmaltp26]) && SCH[schaltg26];
+    //PAR[fc28] = (Real_Ruimte(fc28, mar28) >= PRM[prmaltp28]) && SCH[schaltg28];
+    //PAR[fc31] = (Real_Ruimte(fc31, mar31) >= PRM[prmaltp31]) && SCH[schaltg31];
+    //PAR[fc32] = (Real_Ruimte(fc32, mar32) >= PRM[prmaltp2232]) && SCH[schaltg2232];
+    //PAR[fc33] = (Real_Ruimte(fc33, mar33) >= PRM[prmaltp3384]) && SCH[schaltg3384];
+    //PAR[fc34] = (Real_Ruimte(fc34, mar34) >= PRM[prmaltp2434]) && SCH[schaltg2434];
+    //PAR[fc38] = (Real_Ruimte(fc38, mar38) >= PRM[prmaltp38]) && SCH[schaltg38];
+    //PAR[fc61] = (Real_Ruimte(fc61, mar61) >= PRM[prmaltp61]) && SCH[schaltg61];
+    //PAR[fc62] = (Real_Ruimte(fc62, mar62) >= PRM[prmaltp62]) && SCH[schaltg62];
+    //PAR[fc67] = (Real_Ruimte(fc67, mar67) >= PRM[prmaltp67]) && SCH[schaltg67];
+    //PAR[fc68] = (Real_Ruimte(fc68, mar68) >= PRM[prmaltp68]) && SCH[schaltg68];
+    //PAR[fc81] = (Real_Ruimte(fc81, mar81) >= PRM[prmaltp81]) && SCH[schaltg81];
+    //PAR[fc82] = (Real_Ruimte(fc82, mar82) >= PRM[prmaltp82]) && SCH[schaltg82];
+    //PAR[fc84] = (Real_Ruimte(fc84, mar84) >= PRM[prmaltp243384]) && SCH[schaltg243384];
+
+     /* Bepaal naloop voetgangers wel/niet toegestaan */
+    //IH[hnlsg3132] = Naloop_OK(fc31, mar32, tnlsgd3132);
+    //IH[hnlsg3231] = Naloop_OK(fc32, mar31, tnlsgd3231);
+    //IH[hnlsg3334] = Naloop_OK(fc33, mar34, tnlsgd3334);
+    //IH[hnlsg3433] = Naloop_OK(fc34, mar33, tnlsgd3433);
 
      /* PAR-correcties nalopen voetgagners stap 1: naloop past of los OK */
     PAR[fc31] = PAR[fc31] && (IH[hnlsg3132] || IH[hlos31]);
@@ -1752,8 +1742,8 @@ void RealisatieAfhandeling(void)
         PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
 
         PAR[fc05] = PAR[fc05] && PAR[fc22];
-        PAR[fc11] = PAR[fc11] && PAR[fc26];
         PAR[fc05] = PAR[fc05] && PAR[fc32];
+        PAR[fc11] = PAR[fc11] && PAR[fc26];
         PAR[fc02] = PAR[fc02] && PAR[fc62];
         PAR[fc08] = PAR[fc08] && PAR[fc68];
         PAR[fc11] = PAR[fc11] && PAR[fc68];
@@ -1773,8 +1763,8 @@ void RealisatieAfhandeling(void)
 
     /* PAR correcties eenzijdige synchronisaties */
     PAR[fc22] = PAR[fc22] || G[fc05];
-    PAR[fc26] = PAR[fc26] || G[fc11];
     PAR[fc32] = PAR[fc32] || G[fc05];
+    PAR[fc26] = PAR[fc26] || G[fc11];
     PAR[fc62] = PAR[fc62] || G[fc02];
     PAR[fc68] = PAR[fc68] || G[fc08];
     PAR[fc68] = PAR[fc68] || G[fc11];
@@ -1800,7 +1790,6 @@ void RealisatieAfhandeling(void)
     /* set meerealisatie voor gelijk- of voorstartende richtingen */
     /* ---------------------------------------------------------- */
     set_MRLW(fc22, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    set_MRLW(fc26, fc11, (boolv) (RA[fc11] && (PR[fc11] || AR[fc11] || (AA[fc11] & BIT11)) && A[fc26] && R[fc26] && !TRG[fc26] && !kcv(fc26)));
     set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
     if (SCH[schgs2232]) set_MRLW(fc22, fc32, (boolv) ((RA[fc32] || SG[fc32]) && (PR[fc32] || AR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
     if (SCH[schgs2232]) set_MRLW(fc32, fc22, (boolv) ((RA[fc22] || SG[fc22]) && (PR[fc22] || AR[fc22] || (AA[fc32] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
@@ -1982,9 +1971,6 @@ void init_application(void)
         stuffkey(CTRLF4KEY);
 #endif
 
-    /* Aansturing hulpelement aansturing wachttijdvoorspellers */
-    IH[hwtv22] = SCH[schwtv22];
-
     /* TESTOMGEVING */
     /* ============ */
     #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
@@ -2098,29 +2084,6 @@ void PostApplication(void)
         }
     #endif
 
-    /* OVM Rotterdam: extra/minder groen */
-    if (TVG_max[fc02] > -1) TVG_max[fc02] += PRM[prmovmextragroen_02];
-    if (TVG_max[fc02] > -1) TVG_max[fc02] -= PRM[prmovmmindergroen_02];
-    if (TVG_max[fc03] > -1) TVG_max[fc03] += PRM[prmovmextragroen_03];
-    if (TVG_max[fc03] > -1) TVG_max[fc03] -= PRM[prmovmmindergroen_03];
-    if (TVG_max[fc05] > -1) TVG_max[fc05] += PRM[prmovmextragroen_05];
-    if (TVG_max[fc05] > -1) TVG_max[fc05] -= PRM[prmovmmindergroen_05];
-    if (TVG_max[fc08] > -1) TVG_max[fc08] += PRM[prmovmextragroen_08];
-    if (TVG_max[fc08] > -1) TVG_max[fc08] -= PRM[prmovmmindergroen_08];
-    if (TVG_max[fc09] > -1) TVG_max[fc09] += PRM[prmovmextragroen_09];
-    if (TVG_max[fc09] > -1) TVG_max[fc09] -= PRM[prmovmmindergroen_09];
-    if (TVG_max[fc11] > -1) TVG_max[fc11] += PRM[prmovmextragroen_11];
-    if (TVG_max[fc11] > -1) TVG_max[fc11] -= PRM[prmovmmindergroen_11];
-    if (TVG_max[fc61] > -1) TVG_max[fc61] += PRM[prmovmextragroen_61];
-    if (TVG_max[fc61] > -1) TVG_max[fc61] -= PRM[prmovmmindergroen_61];
-    if (TVG_max[fc62] > -1) TVG_max[fc62] += PRM[prmovmextragroen_62];
-    if (TVG_max[fc62] > -1) TVG_max[fc62] -= PRM[prmovmmindergroen_62];
-    if (TVG_max[fc67] > -1) TVG_max[fc67] += PRM[prmovmextragroen_67];
-    if (TVG_max[fc67] > -1) TVG_max[fc67] -= PRM[prmovmmindergroen_67];
-    if (TVG_max[fc68] > -1) TVG_max[fc68] += PRM[prmovmextragroen_68];
-    if (TVG_max[fc68] > -1) TVG_max[fc68] -= PRM[prmovmmindergroen_68];
-
-
     CyclustijdMeting(tcycl, schcycl, SML && (ML == ML1), schcycl_reset, mlcycl);
 
     /* Tbv parametreerbare blokindeling: reset A voor niet toegedeeld fasen */
@@ -2195,61 +2158,6 @@ void system_application(void)
     CIF_GUS[uswtk81] = (D[dk81] && !SD[dk81] || ED[dk81]) && A[fc81] && !G[fc81] && REG ? TRUE : CIF_GUS[uswtk81] && !G[fc81] && REG;
     CIF_GUS[uswtk82] = (D[dk82] && !SD[dk82] || ED[dk82]) && A[fc82] && !G[fc82] && REG ? TRUE : CIF_GUS[uswtk82] && !G[fc82] && REG;
     CIF_GUS[uswtk84] = (D[dk84] && !SD[dk84] || ED[dk84]) && A[fc84] && !G[fc84] && REG ? TRUE : CIF_GUS[uswtk84] && !G[fc84] && REG;
-
-    /* Wachttijdvoorspellers */
-
-    /* verlenggroentijd gekoppelde richtingen */
-    TVG_max[fc62] = T_max[tnlfgd0262] > TVG_max[fc62] ? T_max[tnlfgd0262] : TVG_max[fc62];
-    TVG_max[fc68] = T_max[tnlfgd0868] > TVG_max[fc68] ? T_max[tnlfgd0868] : TVG_max[fc68];
-    TVG_max[fc68] = T_max[tnlfgd1168] > TVG_max[fc68] ? T_max[tnlfgd1168] : TVG_max[fc68];
-    TVG_max[fc21] = T_max[tnlfgd2221] > TVG_max[fc21] ? T_max[tnlfgd2221] : TVG_max[fc21];
-    TVG_max[fc32] = T_max[tnlsgd3132] > TVG_max[fc32] ? T_max[tnlsgd3132] : TVG_max[fc32];
-    TVG_max[fc31] = T_max[tnlsgd3231] > TVG_max[fc31] ? T_max[tnlsgd3231] : TVG_max[fc31];
-    TVG_max[fc34] = T_max[tnlsgd3334] > TVG_max[fc34] ? T_max[tnlsgd3334] : TVG_max[fc34];
-    TVG_max[fc33] = T_max[tnlsgd3433] > TVG_max[fc33] ? T_max[tnlsgd3433] : TVG_max[fc33];
-    TVG_max[fc81] = T_max[tnlfgd8281] > TVG_max[fc81] ? T_max[tnlfgd8281] : TVG_max[fc81];
-
-    /* bereken de primaire wachttijd van alle richtingen */
-    max_wachttijd_modulen_primair(PRML, ML, ML_MAX, t_wacht);
-
-    /* bereken de alternatieve wachttijd van de richtingen met wachttijdvoorspeller */
-    max_wachttijd_alternatief(fc22, t_wacht);
-
-    /* corrigeer waarde i.v.m. gelijkstart fietsers */
-    wachttijd_correctie_gelijkstart(fc22, fc32, t_wacht);
-    wachttijd_correctie_gelijkstart(fc24, fc34, t_wacht);
-    wachttijd_correctie_gelijkstart(fc24, fc84, t_wacht);
-    wachttijd_correctie_gelijkstart(fc33, fc84, t_wacht);
-
-    /* check of richting wordt tegengehouden door OV/HD */
-    rr_modulen_primair(PRML, ML, ML_MAX, rr_twacht);
-
-    /* Eventuele correctie op berekende wachttijd door gebruiker */
-    WachttijdvoorspellersWachttijd_Add();
-
-    /* aansturing wachttijd lantaarns (niet tijdens fixatie of prio ingreep) */
-    if (!CIF_IS[isfix])
-    {
-        if (!MM[mwtv22] || MM[mwtv22] >= PRM[prmwtvnhaltmax] || MM[mwtv22] <= PRM[prmwtvnhaltmin]) rr_twacht[fc22] = 0;
-        if (rr_twacht[fc22] < 1 || G[fc22]) wachttijd_leds_mm(fc22, mwtv22, twtv22, t_wacht[fc22], PRM[prmminwtv]);
-    }
-
-    /* laatste ledje laten knipperen bij ov/hd-ingreep of fixatie */
-    wachttijd_leds_knip(fc22, mwtv22, mwtvm22, rr_twacht[fc22], isfix);
-
-    /* beveiliging op afzetten tijdens bedrijf */
-    if (G[fc22])  IH[hwtv22] = SCH[schwtv22];
-
-    /* Aansturen wachttijdlantaarn fase 22 */
-    if (IH[hwtv22] && R[fc22])
-    {
-        CIF_GUS[uswtv22] = MM[mwtvm22];
-    }
-    else
-    {
-        CIF_GUS[uswtv22] = 0;
-    }
-
 
     #ifdef AUTOMAAT
         /* verklikken of applicatie daadwerkelijk de TLC aanstuurt */

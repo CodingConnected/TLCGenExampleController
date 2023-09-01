@@ -75,7 +75,7 @@
     <HuidigeVersieRevision>0</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <StoreCurrentController>false</StoreCurrentController>
-    <ToevoegenOVM>true</ToevoegenOVM>
+    <ToevoegenOVM>false</ToevoegenOVM>
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
@@ -289,7 +289,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2023-06-27T00:00:00</Datum>
+      <Datum>2023-09-01T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (portable) voor Interfunc</Commentaar>
     </Versie>
@@ -3985,7 +3985,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>true</WachttijdVoorspeller>
+      <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -8560,12 +8560,6 @@
         <VoorstartOntruimingstijd>40</VoorstartOntruimingstijd>
       </Voorstart>
       <Voorstart>
-        <FaseVan>26</FaseVan>
-        <FaseNaar>11</FaseNaar>
-        <VoorstartTijd>0</VoorstartTijd>
-        <VoorstartOntruimingstijd>0</VoorstartOntruimingstijd>
-      </Voorstart>
-      <Voorstart>
         <FaseVan>32</FaseVan>
         <FaseNaar>05</FaseNaar>
         <VoorstartTijd>20</VoorstartTijd>
@@ -9166,7 +9160,14 @@
         <Detectoren />
       </Meeaanvraag>
     </Meeaanvragen>
-    <LateReleases />
+    <LateReleases>
+      <LateRelease>
+        <FaseVan>26</FaseVan>
+        <FaseNaar>11</FaseNaar>
+        <LateReleaseTijd>20</LateReleaseTijd>
+        <LateReleaseOntruimingstijd>20</LateReleaseOntruimingstijd>
+      </LateRelease>
+    </LateReleases>
   </InterSignaalGroep>
   <GroentijdenSets>
     <GroentijdenSet>
@@ -23145,6 +23146,20 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin62</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin67</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -23492,20 +23507,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkarin68</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin67</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin62</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
