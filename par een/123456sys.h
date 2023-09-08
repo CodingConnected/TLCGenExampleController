@@ -8,29 +8,29 @@
 
    BESTAND:   123456sys.h
       CCOL:   12.0
-    TLCGEN:   12.4.0.1
-   CCOLGEN:   12.4.0.1
+    TLCGEN:   12.4.0.2
+   CCOLGEN:   12.4.0.2
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.1   24-04-2023   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20230327"
+#define VERSION "12.4.0.1 20230424"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
-/* Kruispunt armen definities */
-#define ARM1 0
-#define ARM2 1
-#define ARM3 2
-#define ARM4 3
-#define ARM5 4
-#define ARM6 5
 
+/* Kruispunt armen definities */
+    #define ARM1 0
+    #define ARM2 1
+    #define ARM3 2
+    #define ARM4 3
+    #define ARM5 4
+    #define ARM6 5
 
 /* fasecycli */
 /* --------- */
@@ -3328,14 +3328,13 @@
     #define prmwtvnhaltmin              1514 /* Niet halteren wachttijdvoorspellers indien minder dan of zoveel leds branden                                                   */
     #define prmttxconfidence15          1515
     #define prmlatencyminendsg          1516
-    #define prmrisgrenspriotype         1517
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
-    #define prmtestdsivert              1518 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
-    #define prmtestdsilyn               1519 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
-    #define prmtestdsicat               1520 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
-    #define PRMMAX1                     1521
+    #define prmtestdsivert              1517 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
+    #define prmtestdsilyn               1518 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
+    #define prmtestdsicat               1519 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
+    #define PRMMAX1                     1520
 #else
-    #define PRMMAX1                     1518
+    #define PRMMAX1                     1517
 #endif
 
 /* Selectieve detectie */

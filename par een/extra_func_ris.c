@@ -1,4 +1,4 @@
-/* extra_func_ris.c - gegenereerd met TLCGen 12.4.0.1 */
+/* extra_func_ris.c - gegenereerd met TLCGen 12.4.0.2 */
 
 /* EXTRA_FUNC_RIS.C */
 /* ================ */
@@ -14,7 +14,7 @@
 
 /* Deze ris prioriteit applicatiefuncties worden gebruikt in de programmagenerator TLCGEN in combinatie met de PrioModule van TLCGen */
 
-#if (CCOL_V < 120000)
+#if (CCOL_V <= 110)
   #define GEEN_CONSOLIDATIE
 #endif
 
@@ -377,7 +377,7 @@ static rif_bool test_conflicten_fasecyclus_hulpdienst(count fc)
 
 #if defined prioFCMAX && (prioFCMAX > 0) /* alleen indien PRIO */
 
-rif_int ris_verstuur_ssm(rif_int priotypefc_id, rif_int risgrenspriotype) {
+rif_int ris_verstuur_ssm(rif_int priotypefc_id) {
 
    register rif_int r = 0;
    rif_int number = 0, j;
@@ -399,13 +399,13 @@ rif_int ris_verstuur_ssm(rif_int priotypefc_id, rif_int risgrenspriotype) {
 
                /* Correctie Prioriteitsniveau */
                /* --------------------------- */
-               if ((RIS_PRIOREQUEST_AP[r].importance > 0) && (RIS_PRIOREQUEST_AP[r].importance <= risgrenspriotype)) {       /* geconditoneerde prioriteit */
+               if ( (RIS_PRIOREQUEST_AP[r].importance >  0) && (RIS_PRIOREQUEST_AP[r].importance <= 10) ) {       /* geconditoneerde prioriteit */
                   if (iInstPrioriteitsOpties[priotypefc_id] >= 13) {
 /*                   iInstPrioriteitsOpties[priotypefc_id] = 13; */   /* 13 = poAanvraag(1)+                                poGroenVastHouden(4)+poBijzonderRealiseren(8) */
                      iInstPrioriteitsOpties[priotypefc_id] &= ~(poAfkappenKonfliktRichtingen | poAfkappenKonflikterendOV); /* afkappen verwijderen */
                   }
                } 
-               else if ((RIS_PRIOREQUEST_AP[r].importance > risgrenspriotype) && (RIS_PRIOREQUEST_AP[r].importance <= 14)) {   /* absolute prioriteit */
+               else if ((RIS_PRIOREQUEST_AP[r].importance > 10) && (RIS_PRIOREQUEST_AP[r].importance <= 14) ) {   /* absolute prioriteit */
                   if (iInstPrioriteitsOpties[priotypefc_id] >= 15) {
                      /* prioriteitsniveau niet aanpassen */
                   }
