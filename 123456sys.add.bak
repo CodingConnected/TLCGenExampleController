@@ -97,6 +97,7 @@
 #define prmlr2611   (PRMMAX1+23)
 #define PRMMAX (PRMMAX1+24) /* Totaal aantal gebruikte parameters     */
 #define MLMAX  (MLMAX1+0)  /* Totaal aantal gebruikte modulen        */
+
 #if !defined AUTOMAAT
 #define LNKMAX (LNKMAX1+0) /* Totaal aantal gebruikte simulatie elementen */
 #endif

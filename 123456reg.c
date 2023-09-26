@@ -894,7 +894,7 @@ void BepaalRealisatieTijden(void)
     /* Pas realisatietijden aan a.g.v ontruimende deelconflicten */
     Ontruiming_Deelconflict_Voorstart(fc05, fc22, tfo0522);
     Ontruiming_Deelconflict_Voorstart(fc05, fc32, tfo0532);
-    Ontruiming_Deelconflict_LateRelease(fc26, fc11, tlr2611, tfo2611);
+    Ontruiming_Deelconflict_LateRelease(fc11, fc26, prmlr2611, tfo2611);
 
     /* Pas realisatietijden aan a.g.v. deelconflicten/voorstarts die nog groen moeten worden */
     do
@@ -902,19 +902,25 @@ void BepaalRealisatieTijden(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-    wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc32, fc22);
-    wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc34, fc24);
-    wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc24);
-    wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc33);
-    wijziging |= Correctie_REALISATIETIJD_Voorstart(fc05, fc22, tvs2205);
-    wijziging |= Correctie_REALISATIETIJD_Voorstart(fc05, fc32, tvs3205);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc26, fc11, tlr2611);
+//    wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc32, fc22);
+//    wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc34, fc24);
+//    wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc24);
+//    wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc33);
+    wijziging |= Correctie_REALISATIETIJD_Voorstart(fc22, fc05, tvs2205);
+    wijziging |= Correctie_REALISATIETIJD_Voorstart(fc32, fc05, tvs3205);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc26, fc11, prmlr2611);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc62, fc02, prmxnl0262);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc68, fc08, prmxnl0868);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc68, fc11, prmxnl1168);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc21, fc22, prmxnl2221);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc81, fc82, prmxnl8281);
+
 
         /* Inlopen voetgangers */
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc31, fc32, tinl3132);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc32, fc31, tinl3231);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc33, fc34, tinl3334);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc34, fc33, tinl3433);
+        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc32, fc31, prmxnl3132);
+        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc31, fc32, prmxnl3231);
+        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc34, fc33, prmxnl3334);
+        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc33, fc34, prmxnl3433);
 
         wijziging |= CorrectieRealisatieTijd_Add();
     } while (wijziging);
@@ -945,26 +951,30 @@ void BepaalInterStartGroenTijden(void)
     InterStartGroentijd_MeeverlengenDeelconflict(fc05, fc22);
     InterStartGroentijd_MeeverlengenDeelconflict(fc11, fc26);
     InterStartGroentijd_MeeverlengenDeelconflict(fc05, fc32);
-
     do
     {
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-        wijziging |= Correctie_TISG_Gelijkstart(fc32, fc22);
-        wijziging |= Correctie_TISG_Gelijkstart(fc34, fc24);
-        wijziging |= Correctie_TISG_Gelijkstart(fc84, fc24);
-        wijziging |= Correctie_TISG_Gelijkstart(fc84, fc33);
-        wijziging |= Correctie_TISG_Voorstart(fc05, fc22, tvs2205);
-        wijziging |= Correctie_TISG_Voorstart(fc05, fc32, tvs3205);
-        wijziging |= Correctie_TISG_LateRelease(fc26, fc11, tlr2611);
+//        wijziging |= Correctie_TISG_Gelijkstart(fc32, fc22);
+//        wijziging |= Correctie_TISG_Gelijkstart(fc34, fc24);
+//        wijziging |= Correctie_TISG_Gelijkstart(fc84, fc24);
+//        wijziging |= Correctie_TISG_Gelijkstart(fc84, fc33);
+        wijziging |= Correctie_TISG_Voorstart(fc22, fc05, tvs2205);
+        wijziging |= Correctie_TISG_Voorstart(fc32, fc05, tvs3205);
+        wijziging |= Correctie_TISG_LateRelease(fc26, fc11, prmlr2611);
 
-        /* Inlopen voetgangers */
-        wijziging |= Correctie_TISG_LateRelease(fc31, fc32, tinl3132);
-        wijziging |= Correctie_TISG_LateRelease(fc32, fc31, tinl3231);
-        wijziging |= Correctie_TISG_LateRelease(fc33, fc34, tinl3334);
-        wijziging |= Correctie_TISG_LateRelease(fc34, fc33, tinl3433);
-
+//        /* Inlopen/rijden */
+        wijziging |= Correctie_TISG_LateRelease(fc62, fc02, prmxnl0262);
+        wijziging |= Correctie_TISG_LateRelease(fc68, fc08, prmxnl0868);
+        wijziging |= Correctie_TISG_LateRelease(fc68, fc11, prmxnl1168);
+        wijziging |= Correctie_TISG_LateRelease(fc21, fc22, prmxnl2221);
+        wijziging |= Correctie_TISG_LateRelease(fc81, fc82, prmxnl8281);
+        wijziging |= Correctie_TISG_LateRelease(fc32, fc31, prmxnl3132);
+        wijziging |= Correctie_TISG_LateRelease(fc31, fc32, prmxnl3231);
+        wijziging |= Correctie_TISG_LateRelease(fc34, fc33, prmxnl3334);
+        wijziging |= Correctie_TISG_LateRelease(fc33, fc34, prmxnl3433);
+//
         wijziging |= Correctie_TISG_add();
     } while (wijziging);
 
@@ -1216,16 +1226,18 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
 
     if (EVG[fc08]) MM[mfilemem08] = FALSE;
     if (EVG[fc11]) MM[mfilemem11] = FALSE;
-
-    if (EVG[fc] && PR[fc] || init_tvg)
+    for (fc = 0; fc < FCMAX; ++fc)
     {
-        TVG_PR[fc] = TVG_max[fc];
+        if (EVG[fc] && PR[fc] || init_tvg)
+        {
+            TVG_PR[fc] = TVG_max[fc];
+        }
+        else
+        {
+            TVG_max[fc] = TVG_PR[fc];
+        }
     }
-    else
-    {
-        TVG_max[fc] = TVG_PR[fc];
-    }
-    init_tvg = TRUE;
+    init_tvg = FALSE;
     /* Bepaal de minimale maximale verlengroentijd bij alternatieve realisaties */
     TVG_AR[fc02] = ((PRM[prmaltg02] - TFG_max[fc02]) >= 0) ? PRM[prmaltg02] - TFG_max[fc02] : NG;
     TVG_AR[fc03] = ((PRM[prmaltg03] - TFG_max[fc03]) >= 0) ? PRM[prmaltg03] - TFG_max[fc03] : NG;
@@ -1264,7 +1276,7 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
     NaloopVtg_TVG_Correctie(fc34, fc33, NG, tnlsgd3433);
     NaloopEG_TVG_Correctie(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281);
     BepaalRealisatieTijden();
-    Bepaal_Realisatietijd_per_richting();
+//    Bepaal_Realisatietijd_per_richting();
     BepaalInterStartGroenTijden();
 
 
@@ -1536,9 +1548,9 @@ void Meeverlengen(void)
     if (IH[hfileFile68af]) YM[fc11] &= ~BIT4;
 
     /* Hard meeverlengen */
-    if (SCH[schhardmv2205] && G[fc05] && !kcv(fc22)) YM[fc22] |= BIT1;
-    if (SCH[schhardmv2611] && G[fc11] && !kcv(fc26)) YM[fc26] |= BIT1;
-    if (SCH[schhardmv3205] && G[fc05] && !kcv(fc32)) YM[fc32] |= BIT1;
+    if (SCH[schhardmv2205] && (RA[fc05]||G[fc05]) && !kcv(fc22)) YM[fc22] |= BIT1;
+    if (SCH[schhardmv2611] && (RA[fc11]||G[fc11]) && !kcv(fc26)) YM[fc26] |= BIT1;
+    if (SCH[schhardmv3205] && (RA[fc05]||G[fc05]) && !kcv(fc32)) YM[fc32] |= BIT1;
 
         MeeverlengenUitDoorVoetgangerLos(fc31, hmadk31b);
         MeeverlengenUitDoorVoetgangerLos(fc32, hmadk32b);
@@ -1549,7 +1561,7 @@ void Meeverlengen(void)
 }
 void Synchronisaties(void)
 {
-    TegenhoudenInrijdenInlopen();
+    TegenhoudenDoorRealisatietijden();
 
     Synchronisaties_Add();
 }
@@ -1688,6 +1700,55 @@ void RealisatieAfhandeling(void)
     FM[fc82] |= (fm_ar_kpr(fc82, PRM[prmaltg82])) ? BIT5 : 0;
     FM[fc84] |= (fm_ar_kpr(fc84, PRM[prmaltg84])) ? BIT5 : 0;
 
+    /* Niet intrekken alternatief nalooprichting tijdens inlopen voedende richting */
+    if (RT[tvgnaloop2221] || T[tvgnaloop2221])
+    {
+        RR[fc21] &= ~BIT5;
+        FM[fc21] &= ~BIT5;
+    }
+    if (RT[tnlsgd3231] || T[tnlsgd3231])
+    {
+        RR[fc31] &= ~BIT5;
+        FM[fc31] &= ~BIT5;
+    }
+    if (RT[tnlsgd3132] || T[tnlsgd3132])
+    {
+        RR[fc32] &= ~BIT5;
+        FM[fc32] &= ~BIT5;
+    }
+    if (RT[tnlsgd3433] || T[tnlsgd3433])
+    {
+        RR[fc33] &= ~BIT5;
+        FM[fc33] &= ~BIT5;
+    }
+    if (RT[tnlsgd3334] || T[tnlsgd3334])
+    {
+        RR[fc34] &= ~BIT5;
+        FM[fc34] &= ~BIT5;
+    }
+    if (RT[tvgnaloop0262] || T[tvgnaloop0262])
+    {
+        RR[fc62] &= ~BIT5;
+        FM[fc62] &= ~BIT5;
+    }
+    if (RT[tvgnaloop0868] || T[tvgnaloop0868])
+    {
+        RR[fc68] &= ~BIT5;
+        FM[fc68] &= ~BIT5;
+    }
+    if (RT[tvgnaloop1168] || T[tvgnaloop1168])
+    {
+        RR[fc68] &= ~BIT5;
+        FM[fc68] &= ~BIT5;
+    }
+    if (RT[tvgnaloop8281] || T[tvgnaloop8281])
+    {
+        RR[fc81] &= ~BIT5;
+        FM[fc81] &= ~BIT5;
+    }
+
+
+    /* Bepaal of er genoeg ruimte is voor alternatieve realsaties */
     PAR[fc02] = max_par(fc02) && SCH[schaltg02];
     PAR[fc03] = max_par(fc03) && SCH[schaltg03];
     PAR[fc05] = max_par(fc05) && SCH[schaltg05];
@@ -1696,7 +1757,7 @@ void RealisatieAfhandeling(void)
     PAR[fc11] = max_par(fc11) && SCH[schaltg11];
     PAR[fc21] = max_par(fc21) && SCH[schaltg21];
     PAR[fc22] = max_par(fc22) && SCH[schaltg2232];
-    PAR[fc24] = max_par(fc24) && SCH[schaltg243484];
+    PAR[fc24] = max_par(fc24) && SCH[schaltg2434];
     PAR[fc26] = max_par(fc26) && SCH[schaltg26];
     PAR[fc28] = max_par(fc28) && SCH[schaltg28];
     PAR[fc31] = max_par(fc31) && SCH[schaltg31];
@@ -1710,13 +1771,13 @@ void RealisatieAfhandeling(void)
     PAR[fc68] = max_par(fc68) && SCH[schaltg68];
     PAR[fc81] = max_par(fc81) && SCH[schaltg81];
     PAR[fc82] = max_par(fc82) && SCH[schaltg82];
-    PAR[fc84] = max_par(fc84) && SCH[schaltg243384];
+    PAR[fc84] = max_par(fc84) && SCH[schaltg3384];
 
     /* Tegenrichting moet ook kunnen koppelen bij koppelaanvraag */
-    PAR[fc32] = PAR[fc31] && (!IH[hnlak31a] || PAR[fc32]);
     PAR[fc31] = PAR[fc32] && (!IH[hnlak32a] || PAR[fc31]);
-    PAR[fc34] = PAR[fc33] && (!IH[hnlak33a] || PAR[fc34]);
-    PAR[fc33] = PAR[fc34] && (!IH[hnlak34a] || PAR[fc33]);
+    PAR[fc32] = PAR[fc31] && (!IH[hnlak31a] || PAR[fc31]);
+    PAR[fc33] = PAR[fc33] && (!IH[hnlak34a] || PAR[fc34]);
+    PAR[fc34] = PAR[fc34] && (!IH[hnlak33a] || PAR[fc33]);
 
     /* Bepaal naloop voetgangers wel/niet toegestaan */
     IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc32]) && IH[hnlak31a];
@@ -1726,19 +1787,18 @@ void RealisatieAfhandeling(void)
 
     /* PAR-ongecoordineerd */
     PAR[fc31] = PAR[fc31] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
-    PAR[fc32] = PAR[fc31] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
-    PAR[fc33] = PAR[fc33] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
-    PAR[fc34] = PAR[fc31] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
+    PAR[fc32] = PAR[fc32] || IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]);
+    PAR[fc33] = PAR[fc33] || IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]);
+    PAR[fc34] = PAR[fc34] || IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]);
 
     /* PAR correcties gelijkstart synchronisaties */
-    if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && (PAR[fc22] || !A[fc22]);
     if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && (PAR[fc32] || !A[fc32]);
-    if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
+    if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && (PAR[fc22] || !A[fc22]);
     if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && (PAR[fc34] || !A[fc34]);
-    if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
-    if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
-    if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
+    if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
     if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
+    if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
+
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
     set_MRLW_nl(fc62, fc02, (boolv)(G[fc02] && !G[fc62] && A[fc62]));
@@ -1753,18 +1813,14 @@ void RealisatieAfhandeling(void)
 
     /* set meerealisatie voor gelijk- of voorstartende richtingen */
     /* ---------------------------------------------------------- */
-    set_MRLW(fc22, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
-    if (SCH[schgs2232]) set_MRLW(fc22, fc32, (boolv) ((RA[fc32] || SG[fc32]) && (PR[fc32] || AR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    if (SCH[schgs2232]) set_MRLW(fc32, fc22, (boolv) ((RA[fc22] || SG[fc22]) && (PR[fc22] || AR[fc22] || (AA[fc32] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
-    if (SCH[schgs2434]) set_MRLW(fc24, fc34, (boolv) ((RA[fc34] || SG[fc34]) && (PR[fc34] || AR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
-    if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
-    if (SCH[schgs2484]) set_MRLW(fc24, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
-    if (SCH[schgs2484]) set_MRLW(fc84, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
-    if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
-    if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv) ((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
-
-
+    set_MRLW(fc22, fc05, (boolv)(RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    set_MRLW(fc32, fc05, (boolv)(RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
+    if (SCH[schgs2232]) set_MRLW(fc22, fc32, (boolv)((RA[fc32] || SG[fc32]) && (PR[fc32] || AR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    if (SCH[schgs2232]) set_MRLW(fc32, fc22, (boolv)((RA[fc22] || SG[fc22]) && (PR[fc22] || AR[fc22] || (AA[fc32] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
+    if (SCH[schgs2434]) set_MRLW(fc24, fc34, (boolv)((RA[fc34] || SG[fc34]) && (PR[fc34] || AR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
+    if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv)((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
+    if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv)((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
+    if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv)((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
     /* Niet alternatief komen tijdens file */
     if (IH[hfileFile68af]) PAR[fc08] = FALSE;
@@ -1802,9 +1858,6 @@ void RealisatieAfhandeling(void)
     if (!(PRM[prmaltb82] & (1 << ML))) PAR[fc82] = FALSE;
     if (!(PRM[prmaltb84] & (1 << ML))) PAR[fc84] = FALSE;
 
-
-
-
     Alternatief_Add();
 
     langstwachtende_alternatief_modulen(PRML, ML, ML_MAX);
@@ -1815,8 +1868,7 @@ void RealisatieAfhandeling(void)
     YML[ML2] |= FALSE;
     YML[ML3] |= FALSE;
     YML[ML4] |= FALSE;
-    YML[ML5] |= FALSE;
-
+ 
     Modules_Add();
 
     SML = modules(ML_MAX, PRML, YML, &ML);
@@ -1827,39 +1879,7 @@ void RealisatieAfhandeling(void)
         YM[fc] |= SML && PG[fc] ? BIT5 : FALSE;
     }
 
-    /* VA ontruimen */
-    /* ============ */
-
-    /* herstarten maxima */
-    RT[tvamax62] = !R[fc62];
-
-    /* Fase 62 */
-    if (!(CIF_IS[d62_1a] >= CIF_DET_STORING))
-    {
-        RT[tva6209_d62_1a] = D[d62_1a] && T[tvamax62] && T_max[tva6209_d62_1a];
-        RT[tva6211_d62_1a] = D[d62_1a] && T[tvamax62] && T_max[tva6211_d62_1a];
-        RT[tva6226_d62_1a] = D[d62_1a] && T[tvamax62] && T_max[tva6226_d62_1a];
-    }
-    else
-    {
-        RT[tva6209_d62_1a] = FALSE;
-        RT[tva6211_d62_1a] = FALSE;
-        RT[tva6226_d62_1a] = FALSE;
-    }
-
-    /* afzetten X voor alle relevante fasen */
-    X[fc09] &= ~BIT9;
-    X[fc11] &= ~BIT9;
-    X[fc26] &= ~BIT9;
-    X[fc11] &= ~BIT9;
-
-    /* opzetten X voor conflicten van fase 62 */
-    if(T[tva6209_d62_1a]) X[fc09] |= BIT9;
-    if(T[tva6211_d62_1a]) X[fc11] |= BIT9;
-    if(T[tva6226_d62_1a]) X[fc26] |= BIT9;
-    /* opzetten X voor synchronisaties */
-    if (X[fc26] & BIT9) X[fc11] |= BIT9;
-
+ 
     RealisatieAfhandeling_Add();
 }
 
@@ -1988,7 +2008,7 @@ void init_application(void)
         init_tdhdyn();
     #endif
 
-    init_tvg = FALSE;
+    init_tvg = TRUE;
 
     post_init_application();
 }
@@ -2075,6 +2095,7 @@ void application(void)
     Meetkriterium();
     Meeverlengen();
     Synchronisaties();
+    max_wachttijd_modulen_primair_ISG(PRML, ML, MLMAX, twacht);
     RealisatieAfhandeling();
     FileVerwerking();
 #ifndef NO_PRIO

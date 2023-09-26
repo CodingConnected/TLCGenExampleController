@@ -19,6 +19,7 @@
  * 12.4.0   26-09-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
  *
  ************************************************************************************/
+
 /* EINDE GEGENEREERDE HEADER */
 count i, j;
 
@@ -67,11 +68,6 @@ count i, j;
 T_code[tvs2205] = "vs2205";                    T_max[tvs2205] = 20;   T_type[tvs2205] = TE_type; /* Voorstarttijd fase 22 op fase 05                                      */
 T_code[tvs3205] = "vs3205";                    T_max[tvs3205] = 20;   T_type[tvs3205] = TE_type; /* ...................32...........                                      */
 T_code[tlr2611] = "lr2611";                    T_max[tlr2611] = 5;   T_type[tlr2611] = TE_type; /* Late release tijd fase 26 naar fase 11                                */
-T_code[tlr6202] = "lr6202";                    T_max[tlr6202] = 30;   T_type[tlr6202] = TE_type; /* .......................62...........02                                */
-T_code[tlr6808] = "lr6808";                    T_max[tlr6808] = 30;   T_type[tlr6808] = TE_type; /* .......................68...........08                                */
-T_code[tlr6811] = "lr6811";                    T_max[tlr6811] = 55;   T_type[tlr6811] = TE_type; /* ....................................11                                */
-T_code[tlr2122] = "lr2122";                    T_max[tlr2122] = 20;   T_type[tlr2122] = TE_type; /* .......................21...........22                                */
-T_code[tlr8182] = "lr8182";                    T_max[tlr8182] = 30;   T_type[tlr8182] = TE_type; /* .......................81...........82                                */
 //T_code[tinl3231] = "inl3231";                   T_max[tinl3231] = 30;   T_type[tinl3231] = TE_type; /* Inloop tijd fase 32                                                   */
 //T_code[tinl3132] = "inl3132";                   T_max[tinl3132] = 30;   T_type[tinl3132] = TE_type; /* .................31                                                   */
 //T_code[tinl3433] = "inl3433";                   T_max[tinl3433] = 30;   T_type[tinl3433] = TE_type; /* .................34                                                   */

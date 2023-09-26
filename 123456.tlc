@@ -289,9 +289,9 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2023-09-01T00:00:00</Datum>
+      <Datum>2023-09-26T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Ontwikkel versie TLCGen (portable) voor Interfunc</Commentaar>
+      <Commentaar>Ontwikkel versie TLCGen (laastste portable) voor Interfunc</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -23160,6 +23160,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin68</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -23502,13 +23509,6 @@
         <Naam>dummyhdkaruit02</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummyhdkaruit02</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin68</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

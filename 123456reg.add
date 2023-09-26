@@ -21,6 +21,11 @@
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
 
+#ifndef AUTOMAAT
+	FILE* fpt;
+#endif
+
+
 #ifdef CCOL_IS_SPECIAL
 void SpecialSignals_Add(void)
 {
@@ -30,6 +35,14 @@ void SpecialSignals_Add(void)
 
 void post_init_application()
 {
+#ifndef AUTOMAAT
+	int i;
+    fpt = fopen("MyFile.csv", "w");
+    for (i = 0; i < FCMAX; ++i)
+    {
+        fprintf(fpt, "%4s,", FC_code[i]);
+    }
+#endif
 }
 
 void PreApplication_Add(void)
@@ -131,7 +144,7 @@ void DetectieStoring_Meetkriterium_Add(void)
 
 void PostApplication_Add(void)
 {
-
+   int x, y; 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
 
    /* TESTOMGEVING */
@@ -192,15 +205,58 @@ void PostApplication_Add(void)
   ControleerNaloopEG(fc08, fc68, tnlfg0868, tnleg0868, NG, TRUE);
 
   /* @#@ Fick, aantal machine slagen marge genomen */
-  if (!ControleerInrijden(fc22, fc21, tlr2122, FALSE) && G[fc22] && R[fc21] && (TG_timer[fc22] > T_max[tlr2122] + 3)) stuffkey(F5KEY);
-  if (!ControleerInrijden(fc82, fc81, tlr8182, FALSE) && G[fc82] && R[fc81] && (TG_timer[fc82] > T_max[tlr8182] + 3)) stuffkey(F5KEY);
-  if (!ControleerInrijden(fc02, fc62, tlr6202, FALSE) && G[fc02] && R[fc62] && (TG_timer[fc02] > T_max[tlr6202] + 3)) stuffkey(F5KEY);
-  if (!ControleerInrijden(fc08, fc68, tlr6808, FALSE) && G[fc08] && R[fc68] && (TG_timer[fc08] > T_max[tlr6808] + 3)) stuffkey(F5KEY);
-  if (!ControleerInrijden(fc11, fc68, tlr6811, FALSE) && G[fc11] && R[fc68] && (TG_timer[fc11] > T_max[tlr6811] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc22, fc21, prmxnl2221, FALSE) && G[fc22] && R[fc21] && (TG_timer[fc22] > PRM[prmxnl2221] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc82, fc81, prmxnl8281, FALSE) && G[fc82] && R[fc81] && (TG_timer[fc82] > PRM[prmxnl8281] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc02, fc62, prmxnl0262, FALSE) && G[fc02] && R[fc62] && (TG_timer[fc02] > PRM[prmxnl0262] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc08, fc68, prmxnl0868, FALSE) && G[fc08] && R[fc68] && (TG_timer[fc08] > PRM[prmxnl0868] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc11, fc68, prmxnl1168, FALSE) && G[fc11] && R[fc68] && (TG_timer[fc11] > PRM[prmxnl1168] + 3)) stuffkey(F5KEY);
 
   ControleerVS(fc05, fc32, TRUE, TRUE);
 // }
 #endif
+#ifndef AUTOMAAT								   
+  //    xyprintf(30, 0, "REALTIJD");
+  xyprintf(38 + 4 * FCMAX, 0, "InterStartGroentijd");
+  xyprintf(46 + 8 * FCMAX, 0, "PAR");
+  for (y = 0; y < FCMAX; ++y)
+  {
+      xyprintf(30, y + 4, "%2s", FC_code[y]);
+      for (x = 0; x < FCMAX; ++x)
+      {
+          xyprintf(34 + 4 * x, y + 4, "%4d", REALISATIETIJD[y][x]);
+      }
+  }
+  for (x = 0; x < FCMAX; ++x)
+  {
+      xyprintf(34 + 4 * x, 3, "%4s", FC_code[x]);
+  }
+  for (x = 0; x < FCMAX; ++x)
+  {
+      xyprintf(34 + 4 * x, 4 + FCMAX, "%4d", REALISATIETIJD_max[x]);
+  }
+  for (x = 0; x < FCMAX; ++x)
+  {
+      xyprintf(42 + 4 * (x + FCMAX), 3, "%4s", FC_code[x]);
+  }
+  for (y = 0; y < FCMAX; ++y)
+  {
+      xyprintf(38 + 4 * FCMAX, y + 4, "%2s", FC_code[y]);
+      for (x = 0; x < FCMAX; ++x)
+      {
+          xyprintf(42 + 4 * (x + FCMAX), y + 4, "%4d", TISG_PR[y][x]);
+      }
+  }
+  for (x = 0; x < FCMAX; ++x)
+  {
+      xyprintf(42 + 4 * (x + FCMAX), 4 + FCMAX, "%4d", twacht[x]);
+  }
+  xyprintf(36 + 4 * FCMAX, 4 + FCMAX, "twacht");
+  for (y = 0; y < FCMAX; ++y)
+  {
+      xyprintf(46 + 8 * FCMAX, y + 4, "%2s", FC_code[y]);
+      xyprintf(50 + 8 * FCMAX, y + 4, "%4d", max_par(y));
+  }
+#endif								 
 
 
 #ifndef AUTOMAAT
@@ -211,7 +267,19 @@ void PostApplication_Add(void)
 //    xyprintf(92, 4, "%s:  %3d  %3d  %3d  %3d", D_code[d11_4], TDH_max[d11_4], TDH_timer[d11_4], TDHA_max[d11_4], TDHDYN_max[d11_4]);
 #endif	
 
-}
+#ifndef AUTOMAAT
+	if (TS)
+		{
+		fpt = fopen("MyFile.csv", "a");    
+		for (x = 0; x < FCMAX; ++x)
+			{
+				fprintf(fpt, "%4d,", twacht[x] * (A[x] != 0 || PRIOFC[x]));
+			}
+				fprintf(fpt, "\n");
+				fclose(fpt);
+		}
+	}
+#endif	
 
 void WachttijdvoorspellersWachttijd_Add()
 {

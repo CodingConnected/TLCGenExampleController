@@ -322,67 +322,9 @@ void control_parameters(void)
     TIG_min[fc84][fc05] = 23;
     TIG_min[fc84][fc67] = 67;
 
+
     /* Interstartgroen relaties */
     /* ------------------------ */
-    TIG_max[fc02][fc09] = FK;
-    TIG_max[fc02][fc11] = FK;
-    TIG_max[fc02][fc22] = FK;
-    TIG_max[fc02][fc26] = FK;
-
-    TIG_max[fc03][fc08] = FK;
-    TIG_max[fc03][fc11] = FK;
-    TIG_max[fc03][fc22] = FK;
-
-    TIG_max[fc05][fc08] = FK;
-    TIG_max[fc05][fc11] = FK;
-    TIG_max[fc05][fc34] = FK;
-
-    TIG_max[fc08][fc03] = FK;
-    TIG_max[fc08][fc05] = FK;
-    TIG_max[fc08][fc22] = FK;
-    TIG_max[fc08][fc31] = FK;
-    TIG_max[fc08][fc32] = FK;
-    TIG_max[fc08][fc81] = FK;
-    TIG_max[fc08][fc82] = FK;
-
-    TIG_max[fc09][fc02] = FK;
-
-    TIG_max[fc11][fc02] = FK;
-    TIG_max[fc11][fc03] = FK;
-    TIG_max[fc11][fc05] = FK;
-    TIG_max[fc11][fc22] = FK;
-    TIG_max[fc11][fc31] = FK;
-    TIG_max[fc11][fc32] = FK;
-    TIG_max[fc11][fc81] = FK;
-    TIG_max[fc11][fc82] = FK;
-
-    TIG_max[fc22][fc02] = FK;
-    TIG_max[fc22][fc03] = FK;
-    TIG_max[fc22][fc08] = FK;
-    TIG_max[fc22][fc11] = FK;
-
-    TIG_max[fc26][fc02] = FK;
-
-    TIG_max[fc31][fc08] = FK;
-    TIG_max[fc31][fc11] = FK;
-
-    TIG_max[fc32][fc08] = FK;
-    TIG_max[fc32][fc11] = FK;
-
-    TIG_max[fc34][fc05] = FK;
-
-    TIG_max[fc67][fc82] = FK;
-
-    TIG_max[fc68][fc82] = FK;
-
-    TIG_max[fc81][fc08] = FK;
-    TIG_max[fc81][fc11] = FK;
-
-    TIG_max[fc82][fc08] = FK;
-    TIG_max[fc82][fc11] = FK;
-    TIG_max[fc82][fc67] = FK;
-    TIG_max[fc82][fc68] = FK;
-
     TNL_type[fc02][fc62] = TNL_EG;
     TNL_type[fc08][fc68] = TNL_EG;
     TNL_type[fc11][fc68] = TNL_EG;
@@ -1209,6 +1151,7 @@ void control_parameters(void)
     T_code[tfo2205]                    = "fo2205";                    T_max[tfo2205]                    = 40;   T_type[tfo2205]                    = TE_type; /* Fictieve ontruimingstijd van 22 naar fase 05                          */
     T_code[tvs3205]                    = "vs3205";                    T_max[tvs3205]                    = 20;   T_type[tvs3205]                    = TE_type; /* Voorstarttijd fase 32 op fase 05                                      */
     T_code[tfo3205]                    = "fo3205";                    T_max[tfo3205]                    = 50;   T_type[tfo3205]                    = TE_type; /* Fictieve ontruimingstijd van 32 naar fase 05                          */
+    T_code[tlr2611]                    = "lr2611";                    T_max[tlr2611]                    = 20;   T_type[tlr2611]                    = TE_type; /* Late release tijd fase 26 naar fase 11                                */
     T_code[tfo2611]                    = "fo2611";                    T_max[tfo2611]                    = 20;   T_type[tfo2611]                    = TE_type; /* Fictieve ontruimingstijd van 26 naar fase 11                          */
     T_code[tinl3132]                   = "inl3132";                   T_max[tinl3132]                   = 30;   T_type[tinl3132]                   = TE_type; /* Inlooptijd fase 31                                                    */
     T_code[tinl3231]                   = "inl3231";                   T_max[tinl3231]                   = 30;   T_type[tinl3231]                   = TE_type; /* Inlooptijd fase 32                                                    */
