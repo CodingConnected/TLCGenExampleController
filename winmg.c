@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 /* winmg.c - gegenereerd met TLCGen 12.4.0.0 */
+=======
+/* winmg.c - gegenereerd met TLCGen 12.4.0.2 */
+>>>>>>> Stashed changes
 
 #ifndef ___MGBARSRGV
 #define ___MGBARSRGV

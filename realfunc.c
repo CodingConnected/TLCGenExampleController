@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 /* realfunc.c - gegenereerd met TLCGen 12.4.0.0 */
+=======
+/* realfunc.c - gegenereerd met TLCGen 12.4.0.2 */
+>>>>>>> Stashed changes
 
 /*
 BESTAND:   realfunc.c

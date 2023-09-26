@@ -1,12 +1,15 @@
+<<<<<<< Updated upstream
 /* timingsfunc.c - gegenereerd met TLCGen 12.4.0.0 */
 
 /* timingsfunc.c - gegenereerd met TLCGen 0.9.1.0 */
+=======
+/* timingsfunc.c - gegenereerd met TLCGen 12.4.0.2 */
+>>>>>>> Stashed changes
 
 /* DEFINITIE FUNCTIE DEMO_MSG_FCTIMING */
 /* =================================== */
 
 
-/* CCOL:  version 11.0	      */
 /* FILE:  demo_msg_fctiming.c */
 
 /* DATUM: 11-10-2020 - start regelen, inschakelen, uitschakelen en fatale fout zijn toegevoegd */

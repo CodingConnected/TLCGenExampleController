@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 /* extra_func_ris.c - gegenereerd met TLCGen 12.4.0.0 */
+=======
+/* extra_func_ris.c - gegenereerd met TLCGen 12.4.0.2 */
+>>>>>>> Stashed changes
 
 /* EXTRA_FUNC_RIS.C */
 /* ================ */
@@ -843,4 +847,3 @@ mulv ris_itsstations_heading(count fc, rif_string intersection, rif_int lane_id,
    }
    return (number);
 }
-

@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   01-09-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+ * 12.4.0   26-09-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
  *
  ************************************************************************************/
 
@@ -1688,8 +1688,6 @@ void RealisatieAfhandeling(void)
     FM[fc82] |= (fm_ar_kpr(fc82, PRM[prmaltg82])) ? BIT5 : 0;
     FM[fc84] |= (fm_ar_kpr(fc84, PRM[prmaltg84])) ? BIT5 : 0;
 
-    /* Bepaal of er genoeg ruimte is voor alternatieve realsaties */
-
     PAR[fc02] = max_par(fc02) && SCH[schaltg02];
     PAR[fc03] = max_par(fc03) && SCH[schaltg03];
     PAR[fc05] = max_par(fc05) && SCH[schaltg05];
@@ -1698,7 +1696,7 @@ void RealisatieAfhandeling(void)
     PAR[fc11] = max_par(fc11) && SCH[schaltg11];
     PAR[fc21] = max_par(fc21) && SCH[schaltg21];
     PAR[fc22] = max_par(fc22) && SCH[schaltg2232];
-    PAR[fc24] = max_par(fc24) && SCH[schaltg2434];
+    PAR[fc24] = max_par(fc24) && SCH[schaltg243484];
     PAR[fc26] = max_par(fc26) && SCH[schaltg26];
     PAR[fc28] = max_par(fc28) && SCH[schaltg28];
     PAR[fc31] = max_par(fc31) && SCH[schaltg31];
@@ -1712,35 +1710,35 @@ void RealisatieAfhandeling(void)
     PAR[fc68] = max_par(fc68) && SCH[schaltg68];
     PAR[fc81] = max_par(fc81) && SCH[schaltg81];
     PAR[fc82] = max_par(fc82) && SCH[schaltg82];
-    PAR[fc84] = max_par(fc84) && SCH[schaltg3384];
+    PAR[fc84] = max_par(fc84) && SCH[schaltg243384];
 
     /* Tegenrichting moet ook kunnen koppelen bij koppelaanvraag */
+    PAR[fc32] = PAR[fc31] && (!IH[hnlak31a] || PAR[fc32]);
     PAR[fc31] = PAR[fc32] && (!IH[hnlak32a] || PAR[fc31]);
-    PAR[fc32] = PAR[fc31] && (!IH[hnlak31a] || PAR[fc31]);
-    PAR[fc33] = PAR[fc33] && (!IH[hnlak34a] || PAR[fc34]);
-    PAR[fc34] = PAR[fc34] && (!IH[hnlak33a] || PAR[fc33]);
+    PAR[fc34] = PAR[fc33] && (!IH[hnlak33a] || PAR[fc34]);
+    PAR[fc33] = PAR[fc34] && (!IH[hnlak34a] || PAR[fc33]);
 
     /* Bepaal naloop voetgangers wel/niet toegestaan */
     IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc32]) && IH[hnlak31a];
     IH[hnlsg3231] = (PR[fc32] || AR[fc32] && PAR[fc31]) && IH[hnlak32a];
     IH[hnlsg3334] = (PR[fc33] || AR[fc33] && PAR[fc34]) && IH[hnlak33a];
     IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc33]) && IH[hnlak34a];
+
     /* PAR-ongecoordineerd */
-
     PAR[fc31] = PAR[fc31] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
-    PAR[fc32] = PAR[fc32] || IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]);
-    PAR[fc33] = PAR[fc33] || IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]);
-    PAR[fc34] = PAR[fc34] || IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]);
-
+    PAR[fc32] = PAR[fc31] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
+    PAR[fc33] = PAR[fc33] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
+    PAR[fc34] = PAR[fc31] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
 
     /* PAR correcties gelijkstart synchronisaties */
-    if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && (PAR[fc32] || !A[fc32]);
     if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && (PAR[fc22] || !A[fc22]);
-    if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && (PAR[fc34] || !A[fc34]);
+    if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && (PAR[fc32] || !A[fc32]);
     if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
-    if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
+    if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && (PAR[fc34] || !A[fc34]);
+    if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
+    if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
     if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
-
+    if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
     set_MRLW_nl(fc62, fc02, (boolv)(G[fc02] && !G[fc62] && A[fc62]));
@@ -1755,19 +1753,22 @@ void RealisatieAfhandeling(void)
 
     /* set meerealisatie voor gelijk- of voorstartende richtingen */
     /* ---------------------------------------------------------- */
-    set_MRLW(fc22, fc05, (boolv)(RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    set_MRLW(fc32, fc05, (boolv)(RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
-    if (SCH[schgs2232]) set_MRLW(fc22, fc32, (boolv)((RA[fc32] || SG[fc32]) && (PR[fc32] || AR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    if (SCH[schgs2232]) set_MRLW(fc32, fc22, (boolv)((RA[fc22] || SG[fc22]) && (PR[fc22] || AR[fc22] || (AA[fc32] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
-    if (SCH[schgs2434]) set_MRLW(fc24, fc34, (boolv)((RA[fc34] || SG[fc34]) && (PR[fc34] || AR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
-    if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv)((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
-    if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv)((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
-    if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv)((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
+    set_MRLW(fc22, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
+    if (SCH[schgs2232]) set_MRLW(fc22, fc32, (boolv) ((RA[fc32] || SG[fc32]) && (PR[fc32] || AR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    if (SCH[schgs2232]) set_MRLW(fc32, fc22, (boolv) ((RA[fc22] || SG[fc22]) && (PR[fc22] || AR[fc22] || (AA[fc32] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
+    if (SCH[schgs2434]) set_MRLW(fc24, fc34, (boolv) ((RA[fc34] || SG[fc34]) && (PR[fc34] || AR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
+    if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
+    if (SCH[schgs2484]) set_MRLW(fc24, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
+    if (SCH[schgs2484]) set_MRLW(fc84, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
+    if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
+    if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv) ((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
+
+
 
     /* Niet alternatief komen tijdens file */
     if (IH[hfileFile68af]) PAR[fc08] = FALSE;
     if (IH[hfileFile68af]) PAR[fc11] = FALSE;
-
 
     /* BLOKGEBONDEN ALTERNATIEF */
     /* ======================== */
@@ -1800,6 +1801,9 @@ void RealisatieAfhandeling(void)
     if (!(PRM[prmaltb81] & (1 << ML))) PAR[fc81] = FALSE;
     if (!(PRM[prmaltb82] & (1 << ML))) PAR[fc82] = FALSE;
     if (!(PRM[prmaltb84] & (1 << ML))) PAR[fc84] = FALSE;
+
+
+
 
     Alternatief_Add();
 

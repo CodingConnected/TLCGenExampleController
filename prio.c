@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 /* prio.c - gegenereerd met TLCGen 12.4.0.0 */
+=======
+/* prio.c - gegenereerd met TLCGen 12.4.0.2 */
+>>>>>>> Stashed changes
 
 /* OVPROGRAMMA */
 /* ----------- */
@@ -2259,6 +2263,12 @@ void AfhandelingPrio(void)
        --------------- */
 	PrioInstellingen();
 #ifdef PRIO_ADDFILE
+<<<<<<< Updated upstream
+=======
+#ifdef TRAFFICK
+    if (SCH[schtraffick2tlcgen]) corrigeer_terugkomen_traffick();
+#endif
+>>>>>>> Stashed changes
 	PrioInstellingen_Add();
 #endif
 

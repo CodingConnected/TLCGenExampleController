@@ -8,14 +8,14 @@
 
    BESTAND:   123456hst.c
       CCOL:   12.0
-    TLCGEN:   0.12.1.0
-   CCOLGEN:   0.12.1.0
+    TLCGEN:   12.4.0.2
+   CCOLGEN:   12.4.0.2
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   04-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -403,21 +403,21 @@ void Alternatief_halfstar(void)
     alternatief_halfstar(fc11, PRM[prmaltphst11], SCH[schaltghst11]);
     alternatief_halfstar(fc21, PRM[prmaltphst21], SCH[schaltghst21]);
     alternatief_halfstar(fc22, PRM[prmaltphst2232], SCH[schaltghst2232]);
-    alternatief_halfstar(fc24, PRM[prmaltphst2434], SCH[schaltghst2434]);
+    alternatief_halfstar(fc24, PRM[prmaltphst243484], SCH[schaltghst243484]);
     alternatief_halfstar(fc26, PRM[prmaltphst26], SCH[schaltghst26]);
-    alternatief_halfstar(fc28, PRM[prmaltphst28], SCH[schaltghst28]);
+    alternatief_halfstar(fc28, PRM[prmaltphst2838], SCH[schaltghst2838]);
     alternatief_halfstar(fc31, PRM[prmaltphst31], SCH[schaltghst31]);
     alternatief_halfstar(fc32, PRM[prmaltphst2232], SCH[schaltghst2232]);
     alternatief_halfstar(fc33, PRM[prmaltphst3384], SCH[schaltghst3384]);
     alternatief_halfstar(fc34, PRM[prmaltphst2434], SCH[schaltghst2434]);
-    alternatief_halfstar(fc38, PRM[prmaltphst38], SCH[schaltghst38]);
+    alternatief_halfstar(fc38, PRM[prmaltphst2838], SCH[schaltghst2838]);
     alternatief_halfstar(fc61, PRM[prmaltphst61], SCH[schaltghst61]);
     alternatief_halfstar(fc62, PRM[prmaltphst62], SCH[schaltghst62]);
     alternatief_halfstar(fc67, PRM[prmaltphst67], SCH[schaltghst67]);
     alternatief_halfstar(fc68, PRM[prmaltphst68], SCH[schaltghst68]);
     alternatief_halfstar(fc81, PRM[prmaltphst81], SCH[schaltghst81]);
     alternatief_halfstar(fc82, PRM[prmaltphst82], SCH[schaltghst82]);
-    alternatief_halfstar(fc84, PRM[prmaltphst3384], SCH[schaltghst3384]);
+    alternatief_halfstar(fc84, PRM[prmaltphst243384], SCH[schaltghst243384]);
     altcor_kop_halfstar(fc02, fc62, tnlegd0262);
     altcor_kop_halfstar(fc08, fc68, tnlegd0868);
     altcor_kop_halfstar(fc11, fc68, tnlegd1168);
@@ -460,9 +460,9 @@ void RealisatieAfhandeling_halfstar(void)
     /* PL2 */
 
     /* PL3 */
-    set_2real(fc61, prmtxA1PL3_61, prmtxA2PL3_61, PL3, (boolv)(IH[hplact]));
-    set_2real(fc38, prmtxA1PL3_38, prmtxA2PL3_38, PL3, (boolv)(IH[hplact]));
     set_2real(fc28, prmtxA1PL3_28, prmtxA2PL3_28, PL3, (boolv)(IH[hplact]));
+    set_2real(fc38, prmtxA1PL3_38, prmtxA2PL3_38, PL3, (boolv)(IH[hplact]));
+    set_2real(fc61, prmtxA1PL3_61, prmtxA2PL3_61, PL3, (boolv)(IH[hplact]));
 
     /* PP opzetten */
     set_pp_halfstar(fc02, IH[hkpact], BIT4);

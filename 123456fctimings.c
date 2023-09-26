@@ -8,14 +8,24 @@
 
    BESTAND:   123456fctimings.c
       CCOL:   12.0
+<<<<<<< Updated upstream
     TLCGEN:   12.4.0.0
    CCOLGEN:   12.4.0.0
+=======
+    TLCGEN:   12.4.0.2
+   CCOLGEN:   12.4.0.2
+>>>>>>> Stashed changes
 */
 
 /****************************** Versie commentaar ***********************************
  *
+<<<<<<< Updated upstream
  * Versie   Datum        Ontwerper   Commentaar
  * 12.4.0   23-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
+=======
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
+>>>>>>> Stashed changes
  *
  ************************************************************************************/
 

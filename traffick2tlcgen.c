@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 /* traffick2tlcgen.c - gegenereerd met TLCGen 0.12.2.0 */
+=======
+/* traffick2tlcgen.c - gegenereerd met TLCGen 12.4.0.2 */
+>>>>>>> Stashed changes
 
 /* -------------------------------------------------------------------------------------------------------- */
 /* Traffick2TLCGen                                                               Versie 1.0.0 / 01 jan 2023 */
