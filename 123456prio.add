@@ -25,7 +25,11 @@
  * 12.4.0   23-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
 =======
  * Versie     Datum        Ontwerper   Commentaar
+<<<<<<< Updated upstream
  * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
+>>>>>>> Stashed changes
+=======
+ * 12.4.0.2   27-09-2023   TLCGen      Release versie TLCGen
 >>>>>>> Stashed changes
  *
  ************************************************************************************/
