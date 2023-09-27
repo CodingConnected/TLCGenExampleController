@@ -288,13 +288,8 @@
       </FixatieBitmapData>
     </FixatieData>
     <Versie>
-<<<<<<< Updated upstream
       <Versie>12.4.0</Versie>
       <Datum>2023-09-26T00:00:00</Datum>
-=======
-      <Versie>12.4.0.3</Versie>
-      <Datum>2023-09-27T00:00:00</Datum>
->>>>>>> Stashed changes
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (laastste portable) voor Interfunc</Commentaar>
     </Versie>
@@ -8985,7 +8980,7 @@
         <FaseVan>26</FaseVan>
         <FaseNaar>11</FaseNaar>
         <Type>RoodVoorAanvraag</Type>
-        <AanUit>SchAan</AanUit>
+        <AanUit>SchUit</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
         <DetectieAfhankelijk>false</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
@@ -15897,7 +15892,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd>10</OpticomInmeldingFilterTijd>
@@ -16018,7 +16012,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -16140,7 +16133,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd>10</OpticomInmeldingFilterTijd>
@@ -16263,7 +16255,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd>10</OpticomInmeldingFilterTijd>
@@ -16386,7 +16377,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -16508,7 +16498,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd>10</OpticomInmeldingFilterTijd>
@@ -16631,7 +16620,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -16753,7 +16741,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -16875,7 +16862,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -16997,7 +16983,6 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
-        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -23189,6 +23174,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit03</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -23515,13 +23507,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkaruit05</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit03</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

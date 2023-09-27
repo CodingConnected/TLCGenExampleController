@@ -15,16 +15,10 @@
 
 /****************************** Versie commentaar ***********************************
  *
-<<<<<<< Updated upstream
  * Versie   Datum        Ontwerper   Commentaar
  * 12.4.0   26-09-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
-=======
- * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.2   27-09-2023   TLCGen      Release versie TLCGen
->>>>>>> Stashed changes
  *
  ************************************************************************************/
-
 /* EINDE GEGENEREERDE HEADER */
 count i, j;
 
