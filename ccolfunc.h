@@ -1,4 +1,4 @@
-/* ccolfunc.h - gegenereerd met TLCGen 12.4.0.1 */
+/* ccolfunc.h - gegenereerd met TLCGen 12.4.0.2 */
 
 #ifndef __CCOLFUNC_H__
 #define __CCOLFUNC_H__

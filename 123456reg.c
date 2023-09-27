@@ -8,14 +8,14 @@
 
    BESTAND:   123456reg.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.1
-   CCOLGEN:   12.4.0.1
+    TLCGEN:   12.4.0.2
+   CCOLGEN:   12.4.0.2
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -83,9 +83,6 @@
     #include "ccolfunc.c"
     #include "realfunc.c"
     #include "fixatie.c"
-/* Include files wachttijdvoorspeller*/
-#include "wtvfunc.c" /* berekening van de wachttijden voorspelling */
-#include "wtlleds.c" /* aansturing van de wachttijdlantaarn met leds */
 #ifdef MIRMON
     #include "MirakelMonitor.h"
 #endif /* MIRMON */
@@ -109,10 +106,6 @@ mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     code SCJ_code[] = "123456";
 #endif
-/* tijden t.b.v. wachttijdvoorspellers */
-/* ----------------------------------- */
-mulv t_wacht[FCMAX]; /* berekende wachttijd */
-mulv rr_twacht[FCMAX]; /* halteren wachttijd */
 mulv C_counter_old[CTMAX];
 
 #ifndef NO_RIS
@@ -189,19 +182,6 @@ void PreApplication(void)
 
         /* faseyclus instellingen */
         /* ---------------------- */
-
-        // Bugs in aanroepen traffick2tlcgen_instel:
-        // In de aanroep is altijd SCH WG opgenomen, dit is niet juist.
-        // Indien in TLCGen “altijd” is aangevinkt dan in aanroep TRUE meegeven.
-        // Indien in TLCGen “nooit” is aangevinkt dan in aanroep FALSE meegeven.
-
-        // In de aanroep is altijd SCH MV opgenomen, dit is niet juist.
-        // Indien in TLCGen “altijd” is aangevinkt dan in aanroep TRUE meegeven.
-        // Indien in TLCGen “nooit” is aangevinkt dan in aanroep FALSE meegeven.
-
-        // In de aanroep is altijd PRM ALTB opgenomen, dit is niet juist.
-        // Indien in TLCGen "toepassen alternatieven per blok" niet is aangevinkt dan in aanroep NG meegeven.
-
         traffick2tlcgen_instel(fc02, SCH[schwg02], TRUE, SCH[schmv02], FALSE, SCH[schaltg02], PRM[prmaltb02], PRM[prmaltp02], PRM[prmaltg02], prioFC02bus, prioFC02risov, NG, hdFC02, C[cvchd02], prioFC02risvrw, NG);
         traffick2tlcgen_instel(fc03, SCH[schwg03], TRUE, SCH[schmv03], FALSE, SCH[schaltg03], PRM[prmaltb03], PRM[prmaltp03], PRM[prmaltg03], prioFC03bus, prioFC03risov, NG, hdFC03, C[cvchd03], prioFC03risvrw, NG);
         traffick2tlcgen_instel(fc05, SCH[schwg05], TRUE, SCH[schmv05], FALSE, SCH[schaltg05], PRM[prmaltb05], PRM[prmaltp05], PRM[prmaltg05], prioFC05bus, prioFC05risov, NG, hdFC05, C[cvchd05], prioFC05risvrw, NG);
@@ -293,8 +273,9 @@ void KlokPerioden(void)
     /* ------------------- */
     IH[hperiodFietsprio3] = (klokperiode(PRM[prmstkpoFietsprio3], PRM[prmetkpoFietsprio3]) && dagsoort(PRM[prmdckpoFietsprio3]));
 
+    /* Traffick2TLCGen: DVM */
     if (SCH[schtraffick2tlcgen]) bepaal_DVM_programma();
-    
+
     KlokPerioden_Add();
 }
 
@@ -799,46 +780,46 @@ void Aanvragen(void)
             ris_srm_put_signalgroup(fc67, PRM[prmrisapproachid67], PRM[prmrisrole67risvrw], PRM[prmrissubrole67risvrw], NG, NG);
             ris_srm_put_signalgroup(fc68, PRM[prmrisapproachid68], PRM[prmrisrole68risov], PRM[prmrissubrole68risov], NG, NG);
             ris_srm_put_signalgroup(fc68, PRM[prmrisapproachid68], PRM[prmrisrole68risvrw], PRM[prmrissubrole68risvrw], NG, NG);
-            ris_verstuur_ssm(prioFC02risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC02risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC03risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC03risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC05risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC05risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC08risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC08risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC09risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC09risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC11risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC11risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC61risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC61risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC62risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC62risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC67risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC67risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC68risov, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(prioFC68risvrw, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC02, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC03, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC05, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC08, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC09, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC11, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC61, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC62, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC67, PRM[prmrisgrenspriotype]);
-            ris_verstuur_ssm(hdFC68, PRM[prmrisgrenspriotype]);
+            ris_verstuur_ssm(prioFC02risov);
+            ris_verstuur_ssm(prioFC02risvrw);
+            ris_verstuur_ssm(prioFC03risov);
+            ris_verstuur_ssm(prioFC03risvrw);
+            ris_verstuur_ssm(prioFC05risov);
+            ris_verstuur_ssm(prioFC05risvrw);
+            ris_verstuur_ssm(prioFC08risov);
+            ris_verstuur_ssm(prioFC08risvrw);
+            ris_verstuur_ssm(prioFC09risov);
+            ris_verstuur_ssm(prioFC09risvrw);
+            ris_verstuur_ssm(prioFC11risov);
+            ris_verstuur_ssm(prioFC11risvrw);
+            ris_verstuur_ssm(prioFC61risov);
+            ris_verstuur_ssm(prioFC61risvrw);
+            ris_verstuur_ssm(prioFC62risov);
+            ris_verstuur_ssm(prioFC62risvrw);
+            ris_verstuur_ssm(prioFC67risov);
+            ris_verstuur_ssm(prioFC67risvrw);
+            ris_verstuur_ssm(prioFC68risov);
+            ris_verstuur_ssm(prioFC68risvrw);
+            ris_verstuur_ssm(hdFC02);
+            ris_verstuur_ssm(hdFC03);
+            ris_verstuur_ssm(hdFC05);
+            ris_verstuur_ssm(hdFC08);
+            ris_verstuur_ssm(hdFC09);
+            ris_verstuur_ssm(hdFC11);
+            ris_verstuur_ssm(hdFC61);
+            ris_verstuur_ssm(hdFC62);
+            ris_verstuur_ssm(hdFC67);
+            ris_verstuur_ssm(hdFC68);
         #endif
     #endif
 
     /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) 
+    if (SCH[schtraffick2tlcgen])
     {
-      fiets_voorrang_aanvraag();
-      hki_wachtstand_aanvraag();
-      koppel_aanvragen();
-      peloton_ingreep_aanvraag();
+        fiets_voorrang_aanvraag();
+        hki_wachtstand_aanvraag();
+        koppel_aanvragen();
+        peloton_ingreep_aanvraag();
     }
 
     Aanvragen_Add();
@@ -1205,10 +1186,10 @@ void Verlenggroen(void)
     RW[fc33] |= T[tinl3334] ? BIT2 : 0;
 
     /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) 
+    if (SCH[schtraffick2tlcgen])
     {
-      BepaalAltRuimte();
-      bepaal_maximum_groen_traffick();
+        BepaalAltRuimte();
+        bepaal_maximum_groen_traffick();
     }
 #if (!defined (AUTOMAAT) && !defined AUTOMAAT_TEST || defined (VISSIM)) && !defined NO_PRINT_REALTIJD
     if (SCH[schtraffick2tlcgen])
@@ -1308,10 +1289,10 @@ void Wachtgroen(void)
     if (IH[hfileFile68af]) WS[fc11] &= ~BIT4;
 
     /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) 
+    if (SCH[schtraffick2tlcgen])
     {
-      Traffick2TLCgen_WGR();
-      peloton_ingreep_wachtgroen();
+        Traffick2TLCgen_WGR();
+        peloton_ingreep_wachtgroen();
     }
 
     Wachtgroen_Add();
@@ -1688,14 +1669,14 @@ void RealisatieAfhandeling(void)
 
     /* zet richtingen die alternatief gaan realiseren         */
     /* terug naar RV als er geen alternatieve ruimte meer is. */
-    /* Dit gebeurt niet voor fasen met een wachttijd voorspeller, */
-    /* of fasen waarvan de voedende richting die heeft. */
     RR[fc02] |= R[fc02] && AR[fc02] && (!PAR[fc02] || ERA[fc02]) ? BIT5 : 0;
     RR[fc03] |= R[fc03] && AR[fc03] && (!PAR[fc03] || ERA[fc03]) ? BIT5 : 0;
     RR[fc05] |= R[fc05] && AR[fc05] && (!PAR[fc05] || ERA[fc05]) ? BIT5 : 0;
     RR[fc08] |= R[fc08] && AR[fc08] && (!PAR[fc08] || ERA[fc08]) ? BIT5 : 0;
     RR[fc09] |= R[fc09] && AR[fc09] && (!PAR[fc09] || ERA[fc09]) ? BIT5 : 0;
     RR[fc11] |= R[fc11] && AR[fc11] && (!PAR[fc11] || ERA[fc11]) ? BIT5 : 0;
+    RR[fc21] |= R[fc21] && AR[fc21] && (!PAR[fc21] || ERA[fc21]) ? BIT5 : 0;
+    RR[fc22] |= R[fc22] && AR[fc22] && (!PAR[fc22] || ERA[fc22]) ? BIT5 : 0;
     RR[fc24] |= R[fc24] && AR[fc24] && (!PAR[fc24] || ERA[fc24]) ? BIT5 : 0;
     RR[fc26] |= R[fc26] && AR[fc26] && (!PAR[fc26] || ERA[fc26]) ? BIT5 : 0;
     RR[fc28] |= R[fc28] && AR[fc28] && (!PAR[fc28] || ERA[fc28]) ? BIT5 : 0;
@@ -2590,6 +2571,7 @@ void DetectieStoring(void)
                                      8, TVGA_max[fc68], PRM[prmvg1_68], PRM[prmvg2_68], PRM[prmvg3_68], PRM[prmvg4_68], PRM[prmvg5_68], PRM[prmvg6_68], PRM[prmvg7_68]);
     }
 
+
     /* Traffick2TLCGen */
     if (SCH[schtraffick2tlcgen]) maatregelen_bij_detectie_storing();
 
@@ -2607,9 +2589,6 @@ void init_application(void)
     if (!SAPPLPROG)
         stuffkey(CTRLF4KEY);
 #endif
-
-    /* Aansturing hulpelement aansturing wachttijdvoorspellers */
-    IH[hwtv22] = SCH[schwtv22];
 
     /* Nalopen */
     /* ------- */
@@ -2630,10 +2609,8 @@ void init_application(void)
             //stuffkey(F10KEY);
             //stuffkey(F11KEY);
             CFB_max = 0; /* maximum aantal herstarts na fasebewaking */
-            #ifndef NO_VLOG
-               MONTYPE[MONTYPE_DATI] = 0;
-               LOGTYPE[LOGTYPE_DATI] = 0;
-            #endif
+            MONTYPE[MONTYPE_DATI] = 0;
+            LOGTYPE[LOGTYPE_DATI] = 0;
         #endif
         }
     #endif
@@ -2676,17 +2653,6 @@ void init_application(void)
 
     /* Traffick2TLCGen */
     init_traffick2tlcgen();
-
-    // Bugs in aanroepen definitie_harde_koppeling:
-    // Als enkel vaste naloop is gedefinieerd wordt tnlegxxyy en tnlegdxxyy op NG gezet.
-    // Dat is niet juist, in dat geval dient tnlfgdxxyy en tnlegdxxyy op NG te worden gezet.
-
-    // Als enkel detectie afhankelijke naloop is gedefinieerd wordt tnlfgxxyy en tnlfgdxxyy op NG gezet.
-    // Dat is niet juist, in dat geval dient tnlfgxxyy en tnlegxxyy op NG te worden gezet.
-
-    // Wijziging in aanroepen definitie_harde_koppeling:
-    // In de aanroepen het laatste argument TVG_max[] wijzigen in NG.
-
     definitie_harde_koppeling(fc02, fc62, tlr6202, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, TRUE, TRUE, NG);
     definitie_harde_koppeling(fc08, fc68, tlr6808, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, TRUE, TRUE, NG);
     definitie_harde_koppeling(fc11, fc68, tlr6811, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, TRUE, TRUE, NG);
@@ -2694,19 +2660,9 @@ void init_application(void)
     definitie_harde_koppeling(fc82, fc81, tlr8182, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, TRUE, FALSE, NG);
     definitie_vtg_gescheiden(fc31, fc32, tinl3132, tinl3231, tnlsgd3132, tnlsgd3231, hnlak31a, hnlak32a, hlos31, hlos32);
     definitie_vtg_gescheiden(fc33, fc34, tinl3334, tinl3433, tnlsgd3334, tnlsgd3433, hnlak33a, hnlak34a, hlos33, hlos34);
-
-    // Bugs in aanroepen definitie_gelijkstart_lvk:
-    // De aanroep mag alleen worden gedaan als de richtingen NIET in deelconflict met elkaar zijn.
-    // Nu gebeurd dat altijd en dat is niet juist.
-
-    // Als een definitie vier fasecycli kent gaat de definitie van de eerstvolgende gelijkstart fout indien die
-    // slechts twee fasecycli kent. De twee laatste fasecycli van de definitie met vier fasecycli worden dan
-    // ten onrechte toegevoegd aan de gelijkstart met twee fasecyli. In de voorbeeld regeling 123456 is dit
-    // eenvoudig op te roepen door een gelijkstart toe te voegen voor fasecyclus 28 en 38. (zie hieronder)
-
     definitie_gelijkstart_lvk(fc22, fc32, NG, NG);
     definitie_gelijkstart_lvk(fc24, fc34, fc84, fc33);
-    definitie_gelijkstart_lvk(fc28, fc38, fc33, fc84);
+    definitie_gelijkstart_lvk(fc28, fc38, NG, NG);
     definitie_voorstart_dcf(fc05, fc22, tvs2205, tfo0522, schma0522, schhardmv2205);
     definitie_voorstart_dcf(fc11, fc26, tvs2611, tfo1126, schma1126, schhardmv2611);
     definitie_voorstart_dcf(fc05, fc32, tvs3205, tfo0532, schma0532, schhardmv3205);
@@ -2728,6 +2684,7 @@ void init_application(void)
     volg_ARM[fc09] = ARM6;
     volg_ARM[fc11] = ARM6;
 
+    /* Traffick2TLCGen */
     if (SCH[schtraffick2tlcgen]) extra_definities_traffick();
 
     post_init_application();
@@ -2824,6 +2781,7 @@ void PostApplication(void)
         if (BL[fc] & BIT10) A[fc] = FALSE;
     }
 
+    /* Traffick2TLCGen */
     if (SCH[schtraffick2tlcgen]) corrigeer_verklikking_stiptheid();
 
     #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
@@ -2957,67 +2915,6 @@ void system_application(void)
     CIF_GUS[uswtk82] = (D[dk82] && !SD[dk82] || ED[dk82]) && A[fc82] && !G[fc82] && REG ? TRUE : CIF_GUS[uswtk82] && !G[fc82] && REG;
     CIF_GUS[uswtk84] = (D[dk84] && !SD[dk84] || ED[dk84]) && A[fc84] && !G[fc84] && REG ? TRUE : CIF_GUS[uswtk84] && !G[fc84] && REG;
 
-    /* Wachttijdvoorspellers */
-
-    /* verlenggroentijd gekoppelde richtingen */
-    TVG_max[fc62] = T_max[tnlfgd0262] > TVG_max[fc62] ? T_max[tnlfgd0262] : TVG_max[fc62];
-    TVG_max[fc68] = T_max[tnlfgd0868] > TVG_max[fc68] ? T_max[tnlfgd0868] : TVG_max[fc68];
-    TVG_max[fc68] = T_max[tnlfgd1168] > TVG_max[fc68] ? T_max[tnlfgd1168] : TVG_max[fc68];
-    TVG_max[fc21] = T_max[tnlfgd2221] > TVG_max[fc21] ? T_max[tnlfgd2221] : TVG_max[fc21];
-    TVG_max[fc32] = T_max[tnlsgd3132] > TVG_max[fc32] ? T_max[tnlsgd3132] : TVG_max[fc32];
-    TVG_max[fc31] = T_max[tnlsgd3231] > TVG_max[fc31] ? T_max[tnlsgd3231] : TVG_max[fc31];
-    TVG_max[fc34] = T_max[tnlsgd3334] > TVG_max[fc34] ? T_max[tnlsgd3334] : TVG_max[fc34];
-    TVG_max[fc33] = T_max[tnlsgd3433] > TVG_max[fc33] ? T_max[tnlsgd3433] : TVG_max[fc33];
-    TVG_max[fc81] = T_max[tnlfgd8281] > TVG_max[fc81] ? T_max[tnlfgd8281] : TVG_max[fc81];
-
-    /* bereken de primaire wachttijd van alle richtingen */
-    max_wachttijd_modulen_primair(PRML, ML, ML_MAX, t_wacht);
-
-    /* bereken de alternatieve wachttijd van de richtingen met wachttijdvoorspeller */
-    max_wachttijd_alternatief(fc22, t_wacht);
-
-    /* corrigeer waarde i.v.m. gelijkstart fietsers */
-    wachttijd_correctie_gelijkstart(fc22, fc32, t_wacht);
-    wachttijd_correctie_gelijkstart(fc24, fc34, t_wacht);
-    wachttijd_correctie_gelijkstart(fc24, fc84, t_wacht);
-    wachttijd_correctie_gelijkstart(fc28, fc38, t_wacht);
-    wachttijd_correctie_gelijkstart(fc33, fc84, t_wacht);
-
-    /* check of richting wordt tegengehouden door OV/HD */
-    rr_modulen_primair(PRML, ML, ML_MAX, rr_twacht);
-
-    /* Eventuele correctie op berekende wachttijd door gebruiker */
-    WachttijdvoorspellersWachttijd_Add();
-
-    /* aansturing wachttijd lantaarns (niet tijdens fixatie of prio ingreep) */
-    if (!CIF_IS[isfix])
-    {
-        if (!MM[mwtv22] || MM[mwtv22] >= PRM[prmwtvnhaltmax] || MM[mwtv22] <= PRM[prmwtvnhaltmin]) rr_twacht[fc22] = 0;
-        if (rr_twacht[fc22] < 1 || G[fc22]) wachttijd_leds_mm(fc22, mwtv22, twtv22, t_wacht[fc22], PRM[prmminwtv]);
-    }
-
-    /* laatste ledje laten knipperen bij ov/hd-ingreep of fixatie */
-    wachttijd_leds_knip(fc22, mwtv22, mwtvm22, rr_twacht[fc22], isfix);
-
-    /* beveiliging op afzetten tijdens bedrijf */
-    if (G[fc22])  IH[hwtv22] = SCH[schwtv22];
-
-    /* Aansturen wachttijdlantaarn fase 22 */
-    if (IH[hwtv22] && R[fc22])
-    {
-        CIF_GUS[uswtv22] = MM[mwtvm22];
-    }
-    else
-    {
-        CIF_GUS[uswtv22] = 0;
-    }
-    CIF_GUS[uswtv22] &= ~BIT8;
-    if (CIF_GUS[uswtv22] && (RR[fc22] & BIT6) && rr_twacht[fc22] && IH[hwtv22] && (SCH[schwtvbusbijhd] || !(RTFB & PRIO_RTFB_BIT)))
-    {
-        CIF_GUS[uswtv22] |= BIT8;
-    }
-
-
     #ifdef AUTOMAAT
         /* verklikken of applicatie daadwerkelijk de TLC aanstuurt */
         CIF_GUS[usincontrol] = (CIF_WPS[CIF_PROG_CONTROL] == CIF_CONTROL_INCONTROL) ? TRUE : FALSE;
@@ -3108,13 +3005,14 @@ void system_application(void)
     #endif
 
     /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) 
+    if (SCH[schtraffick2tlcgen])
     {
-      traffick_corrigeer_wtv();
-      verklik_fiets_voorrang();
-      verklik_peloton_ingreep();
-      verklik_prio_KAR_SRM();
+    traffick_corrigeer_wtv();
+    verklik_fiets_voorrang();
+    verklik_peloton_ingreep();
+    verklik_prio_KAR_SRM();
     }
+
     post_system_application();
 }
 

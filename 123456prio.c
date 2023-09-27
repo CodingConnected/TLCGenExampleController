@@ -8,14 +8,14 @@
 
    BESTAND:   123456prio.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.1
-   CCOLGEN:   12.4.0.1
+    TLCGEN:   12.4.0.2
+   CCOLGEN:   12.4.0.2
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   27-03-2023   TLCGen      Ontwikkel versie TLCGen (portable)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -2180,11 +2180,11 @@ void InUitMelden(void)
 #endif /* NO_RIS */
 
     /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen]) 
+    if (SCH[schtraffick2tlcgen])
     {
-      fiets_voorrang_module();
-      buffer_stiptheid_info();
-      busbaan_verlos_prioriteit();
+        fiets_voorrang_module();
+        buffer_stiptheid_info();
+        busbaan_verlos_prioriteit();
     }
 
 
@@ -2349,31 +2349,24 @@ void PrioriteitsOpties(void)
     /* Geen prioriteit bij file stroom afwaarts */
     if (IH[hfileFile68af])
     {
-        iPrioriteitsOpties[prioFC08bus] = poAanvraag;
-        iPrioriteitsOpties[prioFC08risov] = poAanvraag;
-        iPrioriteitsOpties[prioFC08risvrw] = poAanvraag;
-        iPrioriteitsOpties[prioFC11bus] = poAanvraag;
-        iPrioriteitsOpties[prioFC11risov] = poAanvraag;
-        iPrioriteitsOpties[prioFC11risvrw] = poAanvraag;
+        iInstPrioriteitsOpties[prioFC08bus] = poGeenPrioriteit;
+        iInstPrioriteitsOpties[prioFC08risov] = poGeenPrioriteit;
+        iInstPrioriteitsOpties[prioFC08risvrw] = poGeenPrioriteit;
+        iInstPrioriteitsOpties[prioFC11bus] = poGeenPrioriteit;
+        iInstPrioriteitsOpties[prioFC11risov] = poGeenPrioriteit;
+        iInstPrioriteitsOpties[prioFC11risvrw] = poGeenPrioriteit;
     }
 
     /* Traffick2TLCGen */
     if (SCH[schtraffick2tlcgen])
     {
         Traffick2TLCgen_PRIO_OPTIES();
-
-        // Aanroep is gewijzigd. 2e argument is vervallen. Genereren eenvoudiger gemaakt.
-        // Voor iedere fasecyclus waar een volgtijd voor gedefinieerd is dient de functie te worden aangeroepen.
-
         Traffick2TLCgen_HLPD_nal(fc02, T_max[tarmvt02]);
         Traffick2TLCgen_HLPD_nal(fc03, T_max[tarmvt03]);
         Traffick2TLCgen_HLPD_nal(fc05, T_max[tarmvt05]);
         Traffick2TLCgen_HLPD_nal(fc08, T_max[tarmvt08]);
         Traffick2TLCgen_HLPD_nal(fc09, T_max[tarmvt09]);
         Traffick2TLCgen_HLPD_nal(fc11, T_max[tarmvt11]);
-
-        // onderstaande functie aanroep komt te vervallen !!!
-        // Traffick2TLCgen_HLPD();
     }
 
     #ifdef PRIO_ADDFILE
@@ -2405,12 +2398,6 @@ void PrioriteitsToekenningExtra(void)
    ------------------------------------ */
 void TegenhoudenConflictenExtra(void)
 {
-    if (MM[mwtvm22] && MM[mwtvm22] <= PRM[prmwtvnhaltmin])
-    {
-        RR[fc22] &= ~BIT6;
-        RR[fc21] &= ~BIT6;
-        RR[fc32] &= ~BIT6;
-    }
 #ifndef NO_TIMETOX
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc22] & BIT11)) { RR[fc32] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc32] & BIT11)) { RR[fc22] &= ~PRIO_RR_BIT; }
@@ -2434,16 +2421,13 @@ void TegenhoudenConflictenExtra(void)
 void PostAfhandelingPrio(void)
 {
     boolv isHD = FALSE;
-    boolv isWTV = FALSE;
     int i;
 
     /* Bepalen of een HD ingreep actief is */
     isHD = C[cvchd02] || C[cvchd03] || C[cvchd05] || C[cvchd08] || C[cvchd09] || C[cvchd11] || C[cvchd61] || C[cvchd62] || C[cvchd67] || C[cvchd68];
 
     /* Blokkeren alle langzaam verkeer (tevens niet-conflicten) */
-    /* Blokkeren uitstellen indien een wachttijdvoorspeller onder het minimum is */
-    isWTV |= (MM[mwtvm22] && MM[mwtvm22] <= PRM[prmwtvnhaltmin]);
-    if (isHD && !isWTV)
+    if (isHD)
     {
         RR[fc21] |= BIT6; Z[fc21] |= BIT6;
         RR[fc22] |= BIT6; Z[fc22] |= BIT6;

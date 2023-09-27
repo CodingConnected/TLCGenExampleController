@@ -9,14 +9,14 @@
 
    BESTAND:   123456hst.add
       CCOL:   12.0
-    TLCGEN:   0.12.1.0
-   CCOLGEN:   0.12.1.0
+    TLCGEN:   12.4.0.2
+   CCOLGEN:   12.4.0.2
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 12.1.0   04-11-2022   TLCGen      Ontwikkel versie TLCGen (portable)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */

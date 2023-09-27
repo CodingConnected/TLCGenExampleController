@@ -1,4 +1,4 @@
-/* prio.c - gegenereerd met TLCGen 12.4.0.1 */
+/* prio.c - gegenereerd met TLCGen 12.4.0.2 */
 
 /* OVPROGRAMMA */
 /* ----------- */
@@ -2260,7 +2260,7 @@ void AfhandelingPrio(void)
 	PrioInstellingen();
 #ifdef PRIO_ADDFILE
 #ifdef TRAFFICK
-        if (SCH[schtraffick2tlcgen]) corrigeer_terugkomen_traffick();
+    if (SCH[schtraffick2tlcgen]) corrigeer_terugkomen_traffick();
 #endif
 	PrioInstellingen_Add();
 #endif
