@@ -2625,7 +2625,7 @@ void init_application(void)
             //stuffkey(F5KEY);
             stuffkey(ALTF9KEY);
             stuffkey(F2KEY);
-            stuffkey(ALTCTRLF3KEY);
+            stuffkey(CTRLALTF3KEY);
             stuffkey(F4KEY);
             //stuffkey(F10KEY);
             //stuffkey(F11KEY);

@@ -25,7 +25,7 @@
    *                                      Het tweede voertuig staat dan nog voor de 1e verlenglus waardoor groen soms te snel beeindigd 
    *                                      wordt; in dat geval wordt de SG nu enige tijd vastgehouden in VOORSTART groen.
    * 4.1.0    03-04-2023   ddo         Aflopen detectoren die tot maxgroen moeten verlengen halteren tijdens wachtgroen (Rotterdam / Peter Snijders)
-   * 4.2.0    11-08-2023   ddo         Fix voor aanpassing zoals aangegeven bij versie 4.0.0.
+   * 4.2.0    11-08-2023   ddo         Fix voor aanpassing zoals aangegeven bij versie 4.0.0. 
    *
    ***********************************************************************************************************
 
