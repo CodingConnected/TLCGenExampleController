@@ -289,7 +289,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2023-09-26T00:00:00</Datum>
+      <Datum>2023-10-05T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (laastste portable) voor Interfunc</Commentaar>
     </Versie>
@@ -8568,31 +8568,7 @@
     </Voorstarten>
     <Gelijkstarten>
       <Gelijkstart>
-        <FaseVan>22</FaseVan>
-        <FaseNaar>32</FaseNaar>
-        <GelijkstartOntruimingstijdFaseVan>0</GelijkstartOntruimingstijdFaseVan>
-        <GelijkstartOntruimingstijdFaseNaar>0</GelijkstartOntruimingstijdFaseNaar>
-        <DeelConflict>false</DeelConflict>
-        <Schakelbaar>SchAan</Schakelbaar>
-      </Gelijkstart>
-      <Gelijkstart>
         <FaseVan>24</FaseVan>
-        <FaseNaar>34</FaseNaar>
-        <GelijkstartOntruimingstijdFaseVan>0</GelijkstartOntruimingstijdFaseVan>
-        <GelijkstartOntruimingstijdFaseNaar>0</GelijkstartOntruimingstijdFaseNaar>
-        <DeelConflict>false</DeelConflict>
-        <Schakelbaar>SchAan</Schakelbaar>
-      </Gelijkstart>
-      <Gelijkstart>
-        <FaseVan>24</FaseVan>
-        <FaseNaar>84</FaseNaar>
-        <GelijkstartOntruimingstijdFaseVan>0</GelijkstartOntruimingstijdFaseVan>
-        <GelijkstartOntruimingstijdFaseNaar>0</GelijkstartOntruimingstijdFaseNaar>
-        <DeelConflict>false</DeelConflict>
-        <Schakelbaar>SchAan</Schakelbaar>
-      </Gelijkstart>
-      <Gelijkstart>
-        <FaseVan>33</FaseVan>
         <FaseNaar>84</FaseNaar>
         <GelijkstartOntruimingstijdFaseVan>0</GelijkstartOntruimingstijdFaseVan>
         <GelijkstartOntruimingstijdFaseNaar>0</GelijkstartOntruimingstijdFaseNaar>
@@ -10000,37 +9976,7 @@
       </TeDoserenSignaalGroepen>
     </FileIngreep>
   </FileIngrepen>
-  <VAOntruimenFasen>
-    <VAOntruimenFase>
-      <FaseCyclus>62</FaseCyclus>
-      <VAOntrMax>100</VAOntrMax>
-      <KijkNaarWisselstand>false</KijkNaarWisselstand>
-      <Wissel1Type>Ingang</Wissel1Type>
-      <Wissel2>false</Wissel2>
-      <Wissel2Type>Ingang</Wissel2Type>
-      <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
-      <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
-      <VADetectoren>
-        <VADetector>
-          <ConflicterendeFasen>
-            <ConflictendeFase>
-              <FaseCyclus>09</FaseCyclus>
-              <VAOntruimingsTijd>0</VAOntruimingsTijd>
-            </ConflictendeFase>
-            <ConflictendeFase>
-              <FaseCyclus>11</FaseCyclus>
-              <VAOntruimingsTijd>10</VAOntruimingsTijd>
-            </ConflictendeFase>
-            <ConflictendeFase>
-              <FaseCyclus>26</FaseCyclus>
-              <VAOntruimingsTijd>20</VAOntruimingsTijd>
-            </ConflictendeFase>
-          </ConflicterendeFasen>
-          <Detector>62_1a</Detector>
-        </VADetector>
-      </VADetectoren>
-    </VAOntruimenFase>
-  </VAOntruimenFasen>
+  <VAOntruimenFasen />
   <PelotonKoppelingenData>
     <PelotonKoppelingen />
   </PelotonKoppelingenData>
@@ -23181,6 +23127,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit05</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -23500,13 +23453,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkaruit08</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit05</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

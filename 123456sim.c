@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   26-09-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
+ * 12.4.0   05-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
  *
  ************************************************************************************/
 
