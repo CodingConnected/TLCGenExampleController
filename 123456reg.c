@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   05-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
+ * 12.4.0   27-09-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
  *
  ************************************************************************************/
 
@@ -894,7 +894,7 @@ void BepaalRealisatieTijden(void)
     /* Pas realisatietijden aan a.g.v ontruimende deelconflicten */
     Ontruiming_Deelconflict_Voorstart(fc05, fc22, tfo0522);
     Ontruiming_Deelconflict_Voorstart(fc05, fc32, tfo0532);
-    Ontruiming_Deelconflict_LateRelease(fc26, fc11, tlr2611, tfo2611);
+    Ontruiming_Deelconflict_LateRelease(fc11, fc26, prmlr2611, tfo2611);
 
     /* Pas realisatietijden aan a.g.v. deelconflicten/voorstarts die nog groen moeten worden */
     do
@@ -905,18 +905,18 @@ void BepaalRealisatieTijden(void)
     wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc24);
     wijziging |= Correctie_REALISATIETIJD_Voorstart(fc22, fc05, tvs2205);
     wijziging |= Correctie_REALISATIETIJD_Voorstart(fc32, fc05, tvs3205);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc26, fc11, tlr2611);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc26, fc11, prmlr2611);
 
-        /* Inlopen / inrijden nalopen */
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc02, fc62, prmxnl0262);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc08, fc68, prmxnl0868);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc11, fc68, prmxnl1168);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc22, fc21, prmxnl2221);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc31, fc32, prmxnl3132);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc32, fc31, prmxnl3231);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc33, fc34, prmxnl3334);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc34, fc33, prmxnl3433);
-        wijziging |= Correctie_REALISATIETIJD_LateRelease(fc82, fc81, prmxnl8281);
+    /* Inlopen / inrijden nalopen */
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc62, fc02, prmxnl0262);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc68, fc08, prmxnl0868);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc68, fc11, prmxnl1168);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc21, fc22, prmxnl2221);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc31, fc32, prmxnl3231);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc32, fc31, prmxnl3132);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc33, fc34, prmxnl3433);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc34, fc33, prmxnl3334);
+    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc81, fc82, prmxnl8281);
 
         wijziging |= CorrectieRealisatieTijd_Add();
     } while (wijziging);
@@ -956,7 +956,7 @@ void BepaalInterStartGroenTijden(void)
         wijziging |= Correctie_TISG_Gelijkstart(fc84, fc24);
         wijziging |= Correctie_TISG_Voorstart(fc22, fc05, tvs2205);
         wijziging |= Correctie_TISG_Voorstart(fc32, fc05, tvs3205);
-        wijziging |= Correctie_TISG_LateRelease(fc26, fc11, tlr2611);
+        wijziging |= Correctie_TISG_LateRelease(fc26, fc11, prmlr2611);
 
         /* Inlopen / inrijden */
         wijziging |= Correctie_TISG_LateRelease(fc62, fc02, prmxnl0262);
@@ -1220,7 +1220,6 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
 
     if (EVG[fc08]) MM[mfilemem08] = FALSE;
     if (EVG[fc11]) MM[mfilemem11] = FALSE;
-
     for (fc = 0; fc < FCMAX; ++fc)
     {
         if (EVG[fc] && PR[fc] || init_tvg)
@@ -1233,7 +1232,6 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
         }
     }
     init_tvg = FALSE;
-
     /* Bepaal de minimale maximale verlengroentijd bij alternatieve realisaties */
     TVG_AR[fc02] = ((PRM[prmaltg02] - TFG_max[fc02]) >= 0) ? PRM[prmaltg02] - TFG_max[fc02] : NG;
     TVG_AR[fc03] = ((PRM[prmaltg03] - TFG_max[fc03]) >= 0) ? PRM[prmaltg03] - TFG_max[fc03] : NG;
@@ -1272,7 +1270,6 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
     NaloopVtg_TVG_Correctie(fc34, fc33, NG, tnlsgd3433);
     NaloopEG_TVG_Correctie(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281);
     BepaalRealisatieTijden();
-    Bepaal_Realisatietijd_per_richting();
     BepaalInterStartGroenTijden();
 
 
@@ -1707,14 +1704,8 @@ void RealisatieAfhandeling(void)
     if (RT[tnlsgd3433] || T[tnlsgd3433]) { RR[fc33] &= ~BIT5; FM[fc33] &= ~BIT5; }
     if (RT[tvgnaloop8281] || T[tvgnaloop8281]) { RR[fc81] &= ~BIT5; FM[fc81] &= ~BIT5; }
 
-    /* Bij nalopen op EG mag de volgrichting niet RR en FM
-       gestuurd worden indien de voedende richting groen is */
-    if (!R[fc02] || TNL[fc62]) { RR[fc62] &= ~BIT5; FM[fc62] &= ~BIT5; }
-    if (!R[fc08] || TNL[fc68]) { RR[fc68] &= ~BIT5; FM[fc68] &= ~BIT5; }
-    if (!R[fc11] || TNL[fc68]) { RR[fc68] &= ~BIT5; FM[fc68] &= ~BIT5; }
-    if (!R[fc22] || TNL[fc21]) { RR[fc21] &= ~BIT5; FM[fc21] &= ~BIT5; }
-    if (!R[fc82] || TNL[fc81]) { RR[fc81] &= ~BIT5; FM[fc81] &= ~BIT5; }
 
+    /* Bepaal of er genoeg ruimte is voor alternatieve realsaties */
     PAR[fc02] = max_par(fc02) && SCH[schaltg02];
     PAR[fc03] = max_par(fc03) && SCH[schaltg03];
     PAR[fc05] = max_par(fc05) && SCH[schaltg05];
@@ -1760,6 +1751,7 @@ void RealisatieAfhandeling(void)
     /* PAR correcties gelijkstart synchronisaties */
     if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
     if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
+
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
     set_MRLW_nl(fc62, fc02, (boolv)(G[fc02] && !G[fc62] && A[fc62]));
@@ -1778,8 +1770,6 @@ void RealisatieAfhandeling(void)
     set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
     if (SCH[schgs2484]) set_MRLW(fc24, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
     if (SCH[schgs2484]) set_MRLW(fc84, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
-
-
 
     /* Niet alternatief komen tijdens file */
     if (IH[hfileFile68af]) PAR[fc08] = FALSE;
@@ -1816,9 +1806,6 @@ void RealisatieAfhandeling(void)
     if (!(PRM[prmaltb81] & (1 << ML))) PAR[fc81] = FALSE;
     if (!(PRM[prmaltb82] & (1 << ML))) PAR[fc82] = FALSE;
     if (!(PRM[prmaltb84] & (1 << ML))) PAR[fc84] = FALSE;
-
-
-
 
     Alternatief_Add();
 

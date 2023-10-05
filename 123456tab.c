@@ -95,6 +95,9 @@ void control_defaults(void)
 
 void control_parameters(void)
 {
+
+   count i, j;
+
 /* fasecycli */
 /* --------- */
    FC_code[fc02] = "02"; TRG_max[fc02] = 20; TRG_min[fc02] = 20; TGG_max[fc02] = 40; TGG_min[fc02] = 40; TFG_max[fc02] = 50; TGL_max[fc02] = 30; TGL_min[fc02] = 30; TMGL_max[fc02] = 30; TVGA_max[fc02] = 200;
@@ -393,6 +396,24 @@ void control_parameters(void)
     TIG_min[fc84][fc05] = 23;
     TIG_min[fc84][fc67] = 67;
 
+    for (i = 0; i < FCMAX; i++)  /* initialisatie TNL-type en FK_type */
+    {
+       for (j = 0; j < FCMAX; j++)
+       {
+          TNL_type[i][j] = TNL_NG;  /* defaults nalooptypen */
+          FK_type[i][j] = FK_NG; /* defaultls FK_type */
+       }
+    }
+
+    TNL_type[fc02][fc62] = TNL_EG;
+    TNL_type[fc08][fc68] = TNL_EG;
+    TNL_type[fc11][fc68] = TNL_EG;
+    TNL_type[fc22][fc21] = TNL_EG;
+    TNL_type[fc31][fc32] = TNL_SG;
+    TNL_type[fc32][fc31] = TNL_SG;
+    TNL_type[fc33][fc34] = TNL_SG;
+    TNL_type[fc34][fc33] = TNL_SG;
+    TNL_type[fc82][fc81] = TNL_EG;
 
     FK_type[fc02][fc09] = FK_EG;
     FK_type[fc02][fc11] = FK_EG;
@@ -434,6 +455,8 @@ void control_parameters(void)
     FK_type[fc82][fc67] = FK_EG;
     FK_type[fc82][fc68] = FK_EG;
 
+    AfslaandDeelconflict[fc05] = TRUE;
+    AfslaandDeelconflict[fc11] = TRUE;
 
 /* overige uitgangen */
 /* ----------------- */
