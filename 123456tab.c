@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   05-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
+ * 12.4.0   09-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
  *
  ************************************************************************************/
 
@@ -95,9 +95,6 @@ void control_defaults(void)
 
 void control_parameters(void)
 {
-
-   count i, j;
-
 /* fasecycli */
 /* --------- */
    FC_code[fc02] = "02"; TRG_max[fc02] = 20; TRG_min[fc02] = 20; TGG_max[fc02] = 40; TGG_min[fc02] = 40; TFG_max[fc02] = 50; TGL_max[fc02] = 30; TGL_min[fc02] = 30; TMGL_max[fc02] = 30; TVGA_max[fc02] = 200;
@@ -396,14 +393,7 @@ void control_parameters(void)
     TIG_min[fc84][fc05] = 23;
     TIG_min[fc84][fc67] = 67;
 
-    for (i = 0; i < FCMAX; i++)  /* initialisatie TNL-type en FK_type */
-    {
-       for (j = 0; j < FCMAX; j++)
-       {
-          TNL_type[i][j] = TNL_NG;  /* defaults nalooptypen */
-          FK_type[i][j] = FK_NG; /* defaultls FK_type */
-       }
-    }
+    InitInterfunc();
 
     TNL_type[fc02][fc62] = TNL_EG;
     TNL_type[fc08][fc68] = TNL_EG;
@@ -455,8 +445,6 @@ void control_parameters(void)
     FK_type[fc82][fc67] = FK_EG;
     FK_type[fc82][fc68] = FK_EG;
 
-    AfslaandDeelconflict[fc05] = TRUE;
-    AfslaandDeelconflict[fc11] = TRUE;
 
 /* overige uitgangen */
 /* ----------------- */
@@ -869,69 +857,73 @@ void control_parameters(void)
 
 /* hulp elementen */
 /* -------------- */
-    H_code[hopdrempelen08]     = "opdrempelen08";                                  /* Opdrempelen toepassen voor fase 08                                 */
-    H_code[hgeendynhiaat08]    = "geendynhiaat08";                                 /* Tegenhouden toepassen dynamische hiaattijden voor fase 08          */
-    H_code[hverleng_08_1a]     = "verleng_08_1a";                                  /* Instructie verlengen op detector 08_1a ongeacht dynamische hiaat   */
-    H_code[hverleng_08_1b]     = "verleng_08_1b";                                  /* Instructie verlengen op detector 08_1b ongeacht dynamische hiaat   */
-    H_code[hverleng_08_2a]     = "verleng_08_2a";                                  /* Instructie verlengen op detector 08_2a ongeacht dynamische hiaat   */
-    H_code[hverleng_08_2b]     = "verleng_08_2b";                                  /* Instructie verlengen op detector 08_2b ongeacht dynamische hiaat   */
-    H_code[hverleng_08_3a]     = "verleng_08_3a";                                  /* Instructie verlengen op detector 08_3a ongeacht dynamische hiaat   */
-    H_code[hverleng_08_3b]     = "verleng_08_3b";                                  /* Instructie verlengen op detector 08_3b ongeacht dynamische hiaat   */
-    H_code[hverleng_08_4a]     = "verleng_08_4a";                                  /* Instructie verlengen op detector 08_4a ongeacht dynamische hiaat   */
-    H_code[hverleng_08_4b]     = "verleng_08_4b";                                  /* Instructie verlengen op detector 08_4b ongeacht dynamische hiaat   */
-    H_code[hopdrempelen09]     = "opdrempelen09";                                  /* Opdrempelen toepassen voor fase 09                                 */
-    H_code[hgeendynhiaat09]    = "geendynhiaat09";                                 /* Tegenhouden toepassen dynamische hiaattijden voor fase 09          */
-    H_code[hverleng_09_1]      = "verleng_09_1";                                   /* Instructie verlengen op detector 09_1 ongeacht dynamische hiaat    */
-    H_code[hverleng_09_2]      = "verleng_09_2";                                   /* Instructie verlengen op detector 09_2 ongeacht dynamische hiaat    */
-    H_code[hverleng_09_3]      = "verleng_09_3";                                   /* Instructie verlengen op detector 09_3 ongeacht dynamische hiaat    */
-    H_code[hopdrempelen11]     = "opdrempelen11";                                  /* Opdrempelen toepassen voor fase 11                                 */
-    H_code[hgeendynhiaat11]    = "geendynhiaat11";                                 /* Tegenhouden toepassen dynamische hiaattijden voor fase 11          */
-    H_code[hverleng_11_1]      = "verleng_11_1";                                   /* Instructie verlengen op detector 11_1 ongeacht dynamische hiaat    */
-    H_code[hverleng_11_2]      = "verleng_11_2";                                   /* Instructie verlengen op detector 11_2 ongeacht dynamische hiaat    */
-    H_code[hverleng_11_3]      = "verleng_11_3";                                   /* Instructie verlengen op detector 11_3 ongeacht dynamische hiaat    */
-    H_code[hverleng_11_4]      = "verleng_11_4";                                   /* Instructie verlengen op detector 11_4 ongeacht dynamische hiaat    */
-    H_code[hmadk31a]           = "madk31a";                                        /* Hulpelement onthouden melding meeaanvraag detector k31a            */
-    H_code[hmadk32a]           = "madk32a";                                        /* Hulpelement onthouden melding meeaanvraag detector k32a            */
-    H_code[hmadk33a]           = "madk33a";                                        /* Hulpelement onthouden melding meeaanvraag detector k33a            */
-    H_code[hmadk34a]           = "madk34a";                                        /* Hulpelement onthouden melding meeaanvraag detector k34a            */
-    H_code[hfileFile68af]      = "fileFile68af";                                   /* File File68af actief                                               */
-    H_code[hfile68_9a]         = "file68_9a";                                      /* File 68_9a actief                                                  */
-    H_code[hfile68_9b]         = "file68_9b";                                      /* File 68_9b actief                                                  */
-    H_code[hafk08fileFile68af] = "afk08fileFile68af";                              /* Onthouden afkappen fase 08 bij start file ingreep                  */
-    H_code[hafk11fileFile68af] = "afk11fileFile68af";                              /* Onthouden afkappen fase 11 bij start file ingreep                  */
-    H_code[hnla02_1a]          = "nla02_1a";                                       /* Onthouden detectiemelding detector 02_1a tbv naloop van 02 naar 62 */
-    H_code[hnla02_1b]          = "nla02_1b";                                       /* Onthouden detectiemelding detector 02_1b tbv naloop van 02 naar 62 */
-    H_code[hnla08_1a]          = "nla08_1a";                                       /* Onthouden detectiemelding detector 08_1a tbv naloop van 08 naar 68 */
-    H_code[hnla08_1b]          = "nla08_1b";                                       /* Onthouden detectiemelding detector 08_1b tbv naloop van 08 naar 68 */
-    H_code[hnla11_1]           = "nla11_1";                                        /* Onthouden detectiemelding detector 11_1 tbv naloop van 11 naar 68  */
-    H_code[hnla22_1]           = "nla22_1";                                        /* Onthouden detectiemelding detector 22_1 tbv naloop van 22 naar 21  */
-    H_code[hnlsg3132]          = "nlsg3132";                                       /* Hulpelement naloop SG van 31 naar 32                               */
-    H_code[hnlak31a]           = "nlak31a";                                        /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
-    H_code[hnlsg3231]          = "nlsg3231";                                       /* Hulpelement naloop SG van 32 naar 31                               */
-    H_code[hnlak32a]           = "nlak32a";                                        /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
-    H_code[hnlsg3334]          = "nlsg3334";                                       /* Hulpelement naloop SG van 33 naar 34                               */
-    H_code[hnlak33a]           = "nlak33a";                                        /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
-    H_code[hnlsg3433]          = "nlsg3433";                                       /* Hulpelement naloop SG van 34 naar 33                               */
-    H_code[hnlak34a]           = "nlak34a";                                        /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
-    H_code[hnla82_1]           = "nla82_1";                                        /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
-    H_code[hstp02bus]          = "stp02bus";                                       /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
-    H_code[hstp03bus]          = "stp03bus";                                       /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
-    H_code[hstp05bus]          = "stp05bus";                                       /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
-    H_code[hstp08bus]          = "stp08bus";                                       /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
-    H_code[hstp09bus]          = "stp09bus";                                       /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
-    H_code[hstp11bus]          = "stp11bus";                                       /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
-    H_code[hstp61bus]          = "stp61bus";                                       /* Geconditioneerde prio OV mogelijk bij 61 Bus                       */
-    H_code[hstp62bus]          = "stp62bus";                                       /* Geconditioneerde prio OV mogelijk bij 62 Bus                       */
-    H_code[hstp67bus]          = "stp67bus";                                       /* Geconditioneerde prio OV mogelijk bij 67 Bus                       */
-    H_code[hstp68bus]          = "stp68bus";                                       /* Geconditioneerde prio OV mogelijk bij 68 Bus                       */
-    H_code[hperiodFietsprio1]  = "periodFietsprio1";                               /* Periode Fietsprio1 actief                                          */
-    H_code[hperiodFietsprio2]  = "periodFietsprio2";                               /* Periode Fietsprio2 actief                                          */
-    H_code[hperiodFietsprio3]  = "periodFietsprio3";                               /* Periode Fietsprio3 actief                                          */
-    H_code[hrgvd24_3_d24_2]    = "rgvd24_3_d24_2";                                 /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
-    H_code[hlos31]             = "los31";                                          /* Toestaan los realiseren fase 31                                    */
-    H_code[hlos32]             = "los32";                                          /* Toestaan los realiseren fase 32                                    */
-    H_code[hlos33]             = "los33";                                          /* Toestaan los realiseren fase 33                                    */
-    H_code[hlos34]             = "los34";                                          /* Toestaan los realiseren fase 34                                    */
+    H_code[hopdrempelen08]     = "opdrempelen08";                                     /* Opdrempelen toepassen voor fase 08                                 */
+    H_code[hgeendynhiaat08]    = "geendynhiaat08";                                    /* Tegenhouden toepassen dynamische hiaattijden voor fase 08          */
+    H_code[hverleng_08_1a]     = "verleng_08_1a";                                     /* Instructie verlengen op detector 08_1a ongeacht dynamische hiaat   */
+    H_code[hverleng_08_1b]     = "verleng_08_1b";                                     /* Instructie verlengen op detector 08_1b ongeacht dynamische hiaat   */
+    H_code[hverleng_08_2a]     = "verleng_08_2a";                                     /* Instructie verlengen op detector 08_2a ongeacht dynamische hiaat   */
+    H_code[hverleng_08_2b]     = "verleng_08_2b";                                     /* Instructie verlengen op detector 08_2b ongeacht dynamische hiaat   */
+    H_code[hverleng_08_3a]     = "verleng_08_3a";                                     /* Instructie verlengen op detector 08_3a ongeacht dynamische hiaat   */
+    H_code[hverleng_08_3b]     = "verleng_08_3b";                                     /* Instructie verlengen op detector 08_3b ongeacht dynamische hiaat   */
+    H_code[hverleng_08_4a]     = "verleng_08_4a";                                     /* Instructie verlengen op detector 08_4a ongeacht dynamische hiaat   */
+    H_code[hverleng_08_4b]     = "verleng_08_4b";                                     /* Instructie verlengen op detector 08_4b ongeacht dynamische hiaat   */
+    H_code[hopdrempelen09]     = "opdrempelen09";                                     /* Opdrempelen toepassen voor fase 09                                 */
+    H_code[hgeendynhiaat09]    = "geendynhiaat09";                                    /* Tegenhouden toepassen dynamische hiaattijden voor fase 09          */
+    H_code[hverleng_09_1]      = "verleng_09_1";                                      /* Instructie verlengen op detector 09_1 ongeacht dynamische hiaat    */
+    H_code[hverleng_09_2]      = "verleng_09_2";                                      /* Instructie verlengen op detector 09_2 ongeacht dynamische hiaat    */
+    H_code[hverleng_09_3]      = "verleng_09_3";                                      /* Instructie verlengen op detector 09_3 ongeacht dynamische hiaat    */
+    H_code[hopdrempelen11]     = "opdrempelen11";                                     /* Opdrempelen toepassen voor fase 11                                 */
+    H_code[hgeendynhiaat11]    = "geendynhiaat11";                                    /* Tegenhouden toepassen dynamische hiaattijden voor fase 11          */
+    H_code[hverleng_11_1]      = "verleng_11_1";                                      /* Instructie verlengen op detector 11_1 ongeacht dynamische hiaat    */
+    H_code[hverleng_11_2]      = "verleng_11_2";                                      /* Instructie verlengen op detector 11_2 ongeacht dynamische hiaat    */
+    H_code[hverleng_11_3]      = "verleng_11_3";                                      /* Instructie verlengen op detector 11_3 ongeacht dynamische hiaat    */
+    H_code[hverleng_11_4]      = "verleng_11_4";                                      /* Instructie verlengen op detector 11_4 ongeacht dynamische hiaat    */
+    H_code[hmadk31a]           = "madk31a";                                           /* Hulpelement onthouden melding meeaanvraag detector k31a            */
+    H_code[hmadk32a]           = "madk32a";                                           /* Hulpelement onthouden melding meeaanvraag detector k32a            */
+    H_code[hmadk33a]           = "madk33a";                                           /* Hulpelement onthouden melding meeaanvraag detector k33a            */
+    H_code[hmadk34a]           = "madk34a";                                           /* Hulpelement onthouden melding meeaanvraag detector k34a            */
+    H_code[hfileFile68af]      = "fileFile68af";                                      /* File File68af actief                                               */
+    H_code[hfile68_9a]         = "file68_9a";                                         /* File 68_9a actief                                                  */
+    H_code[hfile68_9b]         = "file68_9b";                                         /* File 68_9b actief                                                  */
+    H_code[hafk08fileFile68af] = "afk08fileFile68af";                                 /* Onthouden afkappen fase 08 bij start file ingreep                  */
+    H_code[hafk11fileFile68af] = "afk11fileFile68af";                                 /* Onthouden afkappen fase 11 bij start file ingreep                  */
+    H_code[hnla02_1a]          = "nla02_1a";                                          /* Onthouden detectiemelding detector 02_1a tbv naloop van 02 naar 62 */
+    H_code[hnla02_1b]          = "nla02_1b";                                          /* Onthouden detectiemelding detector 02_1b tbv naloop van 02 naar 62 */
+    H_code[hnla08_1a]          = "nla08_1a";                                          /* Onthouden detectiemelding detector 08_1a tbv naloop van 08 naar 68 */
+    H_code[hnla08_1b]          = "nla08_1b";                                          /* Onthouden detectiemelding detector 08_1b tbv naloop van 08 naar 68 */
+    H_code[hnla11_1]           = "nla11_1";                                           /* Onthouden detectiemelding detector 11_1 tbv naloop van 11 naar 68  */
+    H_code[hnla22_1]           = "nla22_1";                                           /* Onthouden detectiemelding detector 22_1 tbv naloop van 22 naar 21  */
+    H_code[hnlsg3132]          = "nlsg3132";                                          /* Hulpelement naloop SG van 31 naar 32                               */
+    H_code[hnlak31a]           = "nlak31a";                                           /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
+    H_code[hnlsg3231]          = "nlsg3231";                                          /* Hulpelement naloop SG van 32 naar 31                               */
+    H_code[hnlak32a]           = "nlak32a";                                           /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
+    H_code[hnlsg3334]          = "nlsg3334";                                          /* Hulpelement naloop SG van 33 naar 34                               */
+    H_code[hnlak33a]           = "nlak33a";                                           /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
+    H_code[hnlsg3433]          = "nlsg3433";                                          /* Hulpelement naloop SG van 34 naar 33                               */
+    H_code[hnlak34a]           = "nlak34a";                                           /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
+    H_code[hnla82_1]           = "nla82_1";                                           /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
+    H_code[hstp02bus]          = "stp02bus";                                          /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
+    H_code[hstp03bus]          = "stp03bus";                                          /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
+    H_code[hstp05bus]          = "stp05bus";                                          /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
+    H_code[hstp08bus]          = "stp08bus";                                          /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
+    H_code[hstp09bus]          = "stp09bus";                                          /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
+    H_code[hstp11bus]          = "stp11bus";                                          /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
+    H_code[hstp61bus]          = "stp61bus";                                          /* Geconditioneerde prio OV mogelijk bij 61 Bus                       */
+    H_code[hstp62bus]          = "stp62bus";                                          /* Geconditioneerde prio OV mogelijk bij 62 Bus                       */
+    H_code[hstp67bus]          = "stp67bus";                                          /* Geconditioneerde prio OV mogelijk bij 67 Bus                       */
+    H_code[hstp68bus]          = "stp68bus";                                          /* Geconditioneerde prio OV mogelijk bij 68 Bus                       */
+    H_code[hperiodFietsprio1]  = "periodFietsprio1";                                  /* Periode Fietsprio1 actief                                          */
+    H_code[hperiodFietsprio2]  = "periodFietsprio2";                                  /* Periode Fietsprio2 actief                                          */
+    H_code[hperiodFietsprio3]  = "periodFietsprio3";                                  /* Periode Fietsprio3 actief                                          */
+    H_code[hrgvd24_3_d24_2]    = "rgvd24_3_d24_2";                                    /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
+    H_code[hlos31]             = "los31";                                             /* Toestaan los realiseren fase 31                                    */
+    H_code[hlos32]             = "los32";                                             /* Toestaan los realiseren fase 32                                    */
+    H_code[hlos33]             = "los33";                                             /* Toestaan los realiseren fase 33                                    */
+    H_code[hlos34]             = "los34";                                             /* Toestaan los realiseren fase 34                                    */
+    H_code[hmadk31b]           = "madk31b";                                           /* Onthouden melding binnen drukknop k31b                             */
+    H_code[hmadk32b]           = "madk32b";                                           /* Onthouden melding binnen drukknop k32b                             */
+    H_code[hmadk33b]           = "madk33b";                                           /* Onthouden melding binnen drukknop k33b                             */
+    H_code[hmadk34b]           = "madk34b";                                           /* Onthouden melding binnen drukknop k34b                             */
 
 /* geheugen elementen */
 /* ------------------ */
@@ -1192,9 +1184,9 @@ void control_parameters(void)
     T_code[tuitgestca82]               = "uitgestca82";               T_max[tuitgestca82]               = 100;  T_type[tuitgestca82]               = TE_type; /* Uitgestelde cyclische aanvraag fase 82                                */
     T_code[tuitgestca84]               = "uitgestca84";               T_max[tuitgestca84]               = 100;  T_type[tuitgestca84]               = TE_type; /* Uitgestelde cyclische aanvraag fase 84                                */
     T_code[tvs2205]                    = "vs2205";                    T_max[tvs2205]                    = 20;   T_type[tvs2205]                    = TE_type; /* Voorstarttijd fase 22 op fase 05                                      */
-    T_code[tfo2205]                    = "fo2205";                    T_max[tfo2205]                    = 40;   T_type[tfo2205]                    = TE_type; /* Fictieve ontruimingstijd van 22 naar fase 05                          */
+    T_code[tfo0522]                    = "fo0522";                    T_max[tfo0522]                    = 40;   T_type[tfo0522]                    = TE_type; /* Fictieve ontruimingstijd van 22 naar fase 05                          */
     T_code[tvs3205]                    = "vs3205";                    T_max[tvs3205]                    = 20;   T_type[tvs3205]                    = TE_type; /* Voorstarttijd fase 32 op fase 05                                      */
-    T_code[tfo3205]                    = "fo3205";                    T_max[tfo3205]                    = 50;   T_type[tfo3205]                    = TE_type; /* Fictieve ontruimingstijd van 32 naar fase 05                          */
+    T_code[tfo0532]                    = "fo0532";                    T_max[tfo0532]                    = 50;   T_type[tfo0532]                    = TE_type; /* Fictieve ontruimingstijd van 32 naar fase 05                          */
     T_code[tlr2611]                    = "lr2611";                    T_max[tlr2611]                    = 20;   T_type[tlr2611]                    = TE_type; /* Late release tijd fase 26 naar fase 11                                */
     T_code[tfo2611]                    = "fo2611";                    T_max[tfo2611]                    = 20;   T_type[tfo2611]                    = TE_type; /* Fictieve ontruimingstijd van 26 naar fase 11                          */
     T_code[tinl3132]                   = "inl3132";                   T_max[tinl3132]                   = 30;   T_type[tinl3132]                   = TE_type; /* Inlooptijd fase 31                                                    */
@@ -1356,6 +1348,14 @@ void control_parameters(void)
     SCH_code[schwg81]                  = "wg81";                  SCH[schwg81]                  = 0;                                        /* Wachtstand groen fase 81                                       */
     SCH_code[schwg82]                  = "wg82";                  SCH[schwg82]                  = 0;                                        /* Wachtstand groen fase 82                                       */
     SCH_code[schwg84]                  = "wg84";                  SCH[schwg84]                  = 0;                                        /* Wachtstand groen fase 84                                       */
+    SCH_code[schlos31_1]               = "los31_1";               SCH[schlos31_1]               = 0;                                        /* Wel/niet toestaan losse realisatie 31                          */
+    SCH_code[schlos31_2]               = "los31_2";               SCH[schlos31_2]               = 0;                                        /* Wel/niet toestaan losse realisatie 31                          */
+    SCH_code[schlos32_1]               = "los32_1";               SCH[schlos32_1]               = 0;                                        /* Wel/niet toestaan losse realisatie 32                          */
+    SCH_code[schlos32_2]               = "los32_2";               SCH[schlos32_2]               = 0;                                        /* Wel/niet toestaan losse realisatie 32                          */
+    SCH_code[schlos33_1]               = "los33_1";               SCH[schlos33_1]               = 0;                                        /* Wel/niet toestaan losse realisatie 33                          */
+    SCH_code[schlos33_2]               = "los33_2";               SCH[schlos33_2]               = 0;                                        /* Wel/niet toestaan losse realisatie 33                          */
+    SCH_code[schlos34_1]               = "los34_1";               SCH[schlos34_1]               = 0;                                        /* Wel/niet toestaan losse realisatie 34                          */
+    SCH_code[schlos34_2]               = "los34_2";               SCH[schlos34_2]               = 0;                                        /* Wel/niet toestaan losse realisatie 34                          */
     SCH_code[schsneld02_1a]            = "sneld02_1a";            SCH[schsneld02_1a]            = 1;                                        /* Aanvraag snel voor detector 02_1a aan of uit                   */
     SCH_code[schsneld02_1b]            = "sneld02_1b";            SCH[schsneld02_1b]            = 1;                                        /* Aanvraag snel voor detector 02_1b aan of uit                   */
     SCH_code[schsneld03_1]             = "sneld03_1";             SCH[schsneld03_1]             = 1;                                        /* Aanvraag snel voor detector 03_1 aan of uit                    */
@@ -2273,9 +2273,9 @@ void control_parameters(void)
     T_cat[tuitgestca82]            = CAT_Basisfuncties;    T_subcat[tuitgestca82]               = SUBCAT_Aanvraag;
     T_cat[tuitgestca84]            = CAT_Basisfuncties;    T_subcat[tuitgestca84]               = SUBCAT_Aanvraag;
     T_cat[tvs2205]                 = CAT_Basisfuncties;    T_subcat[tvs2205]                    = SUBCAT_Deelconflicten;
-    T_cat[tfo2205]                 = CAT_Basisfuncties;    T_subcat[tfo2205]                    = SUBCAT_Deelconflicten;
+    T_cat[tfo0522]                 = CAT_Basisfuncties;    T_subcat[tfo0522]                    = SUBCAT_Deelconflicten;
     T_cat[tvs3205]                 = CAT_Basisfuncties;    T_subcat[tvs3205]                    = SUBCAT_Deelconflicten;
-    T_cat[tfo3205]                 = CAT_Basisfuncties;    T_subcat[tfo3205]                    = SUBCAT_Deelconflicten;
+    T_cat[tfo0532]                 = CAT_Basisfuncties;    T_subcat[tfo0532]                    = SUBCAT_Deelconflicten;
     T_cat[tlr2611]                 = CAT_Basisfuncties;    T_subcat[tlr2611]                    = SUBCAT_Deelconflicten;
     T_cat[tfo2611]                 = CAT_Basisfuncties;    T_subcat[tfo2611]                    = SUBCAT_Deelconflicten;
     PRM_cat[prmspringverleng_08_1a] = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_1a] = SUBCAT_Verlengen;

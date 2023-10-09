@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   05-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
+ * 12.4.0   09-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20231005"
+#define VERSION "12.4.0 20231009"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 
 /* fasecycli */
@@ -399,7 +399,11 @@
     #define hlos32             60 /* Toestaan los realiseren fase 32                                    */
     #define hlos33             61 /* Toestaan los realiseren fase 33                                    */
     #define hlos34             62 /* Toestaan los realiseren fase 34                                    */
-    #define HEMAX1             63
+    #define hmadk31b           63 /* Onthouden melding binnen drukknop k31b                             */
+    #define hmadk32b           64 /* Onthouden melding binnen drukknop k32b                             */
+    #define hmadk33b           65 /* Onthouden melding binnen drukknop k33b                             */
+    #define hmadk34b           66 /* Onthouden melding binnen drukknop k34b                             */
+    #define HEMAX1             67
 
 /* geheugen elementen */
 /* ------------------ */
@@ -661,9 +665,9 @@
     #define tuitgestca82               205 /* Uitgestelde cyclische aanvraag fase 82                                */
     #define tuitgestca84               206 /* Uitgestelde cyclische aanvraag fase 84                                */
     #define tvs2205                    207 /* Voorstarttijd fase 22 op fase 05                                      */
-    #define tfo2205                    208 /* Fictieve ontruimingstijd van 22 naar fase 05                          */
+    #define tfo0522                    208 /* Fictieve ontruimingstijd van 22 naar fase 05                          */
     #define tvs3205                    209 /* Voorstarttijd fase 32 op fase 05                                      */
-    #define tfo3205                    210 /* Fictieve ontruimingstijd van 32 naar fase 05                          */
+    #define tfo0532                    210 /* Fictieve ontruimingstijd van 32 naar fase 05                          */
     #define tlr2611                    211 /* Late release tijd fase 26 naar fase 11                                */
     #define tfo2611                    212 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
     #define tinl3132                   213 /* Inlooptijd fase 31                                                    */
@@ -827,29 +831,37 @@
     #define schwg81                  145 /* Wachtstand groen fase 81                                       */
     #define schwg82                  146 /* Wachtstand groen fase 82                                       */
     #define schwg84                  147 /* Wachtstand groen fase 84                                       */
-    #define schsneld02_1a            148 /* Aanvraag snel voor detector 02_1a aan of uit                   */
-    #define schsneld02_1b            149 /* Aanvraag snel voor detector 02_1b aan of uit                   */
-    #define schsneld03_1             150 /* Aanvraag snel voor detector 03_1 aan of uit                    */
-    #define schsneld05_1             151 /* Aanvraag snel voor detector 05_1 aan of uit                    */
-    #define schsneld08_1a            152 /* Aanvraag snel voor detector 08_1a aan of uit                   */
-    #define schsneld08_1b            153 /* Aanvraag snel voor detector 08_1b aan of uit                   */
-    #define schsneld09_1             154 /* Aanvraag snel voor detector 09_1 aan of uit                    */
-    #define schsneld11_1             155 /* Aanvraag snel voor detector 11_1 aan of uit                    */
-    #define schsneld211              156 /* Aanvraag snel voor detector 211 aan of uit                     */
-    #define schsneld22_1             157 /* Aanvraag snel voor detector 22_1 aan of uit                    */
-    #define schsneld24_1             158 /* Aanvraag snel voor detector 24_1 aan of uit                    */
-    #define schsneld261              159 /* Aanvraag snel voor detector 261 aan of uit                     */
-    #define schsneld28_1             160 /* Aanvraag snel voor detector 28_1 aan of uit                    */
-    #define schsneld61_1             161 /* Aanvraag snel voor detector 61_1 aan of uit                    */
-    #define schsneld62_1a            162 /* Aanvraag snel voor detector 62_1a aan of uit                   */
-    #define schsneld62_1b            163 /* Aanvraag snel voor detector 62_1b aan of uit                   */
-    #define schsneld67_1             164 /* Aanvraag snel voor detector 67_1 aan of uit                    */
-    #define schsneld68_1a            165 /* Aanvraag snel voor detector 68_1a aan of uit                   */
-    #define schsneld68_1b            166 /* Aanvraag snel voor detector 68_1b aan of uit                   */
-    #define schsneld81_1             167 /* Aanvraag snel voor detector 81_1 aan of uit                    */
-    #define schsneld82_1             168 /* Aanvraag snel voor detector 82_1 aan of uit                    */
-    #define schsneld84_1             169 /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    #define SCHMAX1                  170
+    #define schlos31_1               148 /* Wel/niet toestaan losse realisatie 31                          */
+    #define schlos31_2               149 /* Wel/niet toestaan losse realisatie 31                          */
+    #define schlos32_1               150 /* Wel/niet toestaan losse realisatie 32                          */
+    #define schlos32_2               151 /* Wel/niet toestaan losse realisatie 32                          */
+    #define schlos33_1               152 /* Wel/niet toestaan losse realisatie 33                          */
+    #define schlos33_2               153 /* Wel/niet toestaan losse realisatie 33                          */
+    #define schlos34_1               154 /* Wel/niet toestaan losse realisatie 34                          */
+    #define schlos34_2               155 /* Wel/niet toestaan losse realisatie 34                          */
+    #define schsneld02_1a            156 /* Aanvraag snel voor detector 02_1a aan of uit                   */
+    #define schsneld02_1b            157 /* Aanvraag snel voor detector 02_1b aan of uit                   */
+    #define schsneld03_1             158 /* Aanvraag snel voor detector 03_1 aan of uit                    */
+    #define schsneld05_1             159 /* Aanvraag snel voor detector 05_1 aan of uit                    */
+    #define schsneld08_1a            160 /* Aanvraag snel voor detector 08_1a aan of uit                   */
+    #define schsneld08_1b            161 /* Aanvraag snel voor detector 08_1b aan of uit                   */
+    #define schsneld09_1             162 /* Aanvraag snel voor detector 09_1 aan of uit                    */
+    #define schsneld11_1             163 /* Aanvraag snel voor detector 11_1 aan of uit                    */
+    #define schsneld211              164 /* Aanvraag snel voor detector 211 aan of uit                     */
+    #define schsneld22_1             165 /* Aanvraag snel voor detector 22_1 aan of uit                    */
+    #define schsneld24_1             166 /* Aanvraag snel voor detector 24_1 aan of uit                    */
+    #define schsneld261              167 /* Aanvraag snel voor detector 261 aan of uit                     */
+    #define schsneld28_1             168 /* Aanvraag snel voor detector 28_1 aan of uit                    */
+    #define schsneld61_1             169 /* Aanvraag snel voor detector 61_1 aan of uit                    */
+    #define schsneld62_1a            170 /* Aanvraag snel voor detector 62_1a aan of uit                   */
+    #define schsneld62_1b            171 /* Aanvraag snel voor detector 62_1b aan of uit                   */
+    #define schsneld67_1             172 /* Aanvraag snel voor detector 67_1 aan of uit                    */
+    #define schsneld68_1a            173 /* Aanvraag snel voor detector 68_1a aan of uit                   */
+    #define schsneld68_1b            174 /* Aanvraag snel voor detector 68_1b aan of uit                   */
+    #define schsneld81_1             175 /* Aanvraag snel voor detector 81_1 aan of uit                    */
+    #define schsneld82_1             176 /* Aanvraag snel voor detector 82_1 aan of uit                    */
+    #define schsneld84_1             177 /* Aanvraag snel voor detector 84_1 aan of uit                    */
+    #define SCHMAX1                  178
 
 /* parameters */
 /* ---------- */

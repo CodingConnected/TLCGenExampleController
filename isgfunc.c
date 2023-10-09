@@ -7997,7 +7997,7 @@ boolv Correctie_REALISATIETIJD_Gelijkstart(count fc1, count fc2)
     return result;
 }
 
-boolv Correctie_REALISATIETIJD_LateRelease(count fclr, count fcvs, count prmlr)
+boolv Correctie_REALISATIETIJD_LateRelease(count fclr, count fcvs, count tlr)
 {
     count n;
     boolv result;
@@ -8008,9 +8008,9 @@ boolv Correctie_REALISATIETIJD_LateRelease(count fclr, count fcvs, count prmlr)
         {
             if (!G[fcvs])
             {
-                if (REALISATIETIJD[n][fcvs] < REALISATIETIJD[n][fclr] - PRM[prmlr])
+                if (REALISATIETIJD[n][fcvs] < REALISATIETIJD[n][fclr] - T_max[tlr])
                 {
-                    REALISATIETIJD[n][fcvs] = REALISATIETIJD[n][fclr] - PRM[prmlr];
+                    REALISATIETIJD[n][fcvs] = REALISATIETIJD[n][fclr] - T_max[tlr];
                     if (REALISATIETIJD[n][fcvs] < 0) REALISATIETIJD[n][fcvs] = 0;
                     result = TRUE;
                 }
@@ -8078,21 +8078,21 @@ boolv Correctie_TISG_Gelijkstart(count fc1, count fc2)
     return result;
 }
 
-boolv Correctie_TISG_LateRelease(count fclr, count fcvs, count prmlr)
+boolv Correctie_TISG_LateRelease(count fclr, count fcvs, count tlr)
 {
     count n;
     boolv result;
     result = FALSE;
     for (n = 0; n < FCMAX; ++n)
     {
-        if (TISG_PR[n][fcvs] < TISG_PR[n][fclr] - PRM[prmlr])
+        if (TISG_PR[n][fcvs] < TISG_PR[n][fclr] - T_max[tlr])
         {
-            TISG_PR[n][fcvs] = TISG_PR[n][fclr] - PRM[prmlr];
+            TISG_PR[n][fcvs] = TISG_PR[n][fclr] - T_max[tlr];
             result = TRUE;
         }
-        if (TISG_AR[n][fcvs] < TISG_AR[n][fclr] - PRM[prmlr])
+        if (TISG_AR[n][fcvs] < TISG_AR[n][fclr] - T_max[tlr])
         {
-            TISG_AR[n][fcvs] = TISG_AR[n][fclr] - PRM[prmlr];
+            TISG_AR[n][fcvs] = TISG_AR[n][fclr] - T_max[tlr];
             result = TRUE;
         }
     }
@@ -8348,9 +8348,9 @@ void Ontruiming_Deelconflict_Gelijkstart(count fc1, count fc2, count tfo12, coun
     }
 }
 
-void Ontruiming_Deelconflict_LateRelease(count fcvs, count fclr, count prmlr, count tfo)
+void Ontruiming_Deelconflict_LateRelease(count fcvs, count fclr, count tlr, count tfo)
 {
-    RT[tfo] = G[fcvs] && (TG_timer[fcvs] > PRM[prmlr]);
+    RT[tfo] = G[fcvs] && (TG_timer[fcvs] > T_max[tlr]);
     if ((RT[tfo] || T[tfo]) && !G[fclr])
     {
         if (VS[fcvs])
@@ -8981,27 +8981,36 @@ void InitInterStartGroenTijden()
             if (TIG_max[i][j] < FK) TIG_max[i][j] = FK;
             TISG_PR[i][j] = NG;
             TISG_AR[i][j] = NG;
+            REALISATIETIJD[i][j] = NG;
 
         }
     }
     pointer_conflicts();
 }
 
-void TegenhoudenDoorRealisatietijden()
+void TegenhoudenInrijdenInlopen()
 {
-    count i, j;
+    count fc, i, j;
 
-    for (i = 0; i < FCMAX; ++i)
-    {
-        X[i] &= ~BIT1;
-        RR[i] &= ~BIT1;
-    }
     for (i = 0; i < FCMAX; ++i)
     {
         for (j = 0; j < FCMAX; ++j)
         {
-            if (REALISATIETIJD[i][j] > 0) X[j] |= BIT1; /* Als er een realisatietijd loopt van (fictief) conflict i, wordt richting j nog tegengehouden */
-            if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1; /*  150 tijdelijk moet afhankleijk gemaakt wordt van de tijd de een richting eerder mag starten dan de volgrichting */
+            if (REALISATIETIJD[i][j] > 0) X[j] |= BIT1; else X[j] &= ~BIT1; /* Als er een realisatietijd loopt van (fictief) conflict i, wordt richting j nog tegengehouden */
+            if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1;  RR[j] &= ~BIT1; /*  150 tijdelijk moet afhankleijk gemaakt wordt van de tijd de een richting eerder mag starten dan de volgrichting */
+        }
+    }
+}
+
+void InitInterfunc()
+{
+    count i, j;
+    for (i = 0; i < FCMAX; i++)  /* initialisatie TNL-type en FK_type */
+    {
+        for (j = 0; j < FCMAX; j++)
+        {
+            TNL_type[i][j] = TNL_NG;  /* defaults nalooptypen */
+            FK_type[i][j] = FK_NG; /* defaultls FK_type */
         }
     }
 }
