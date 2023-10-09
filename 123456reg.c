@@ -1272,7 +1272,6 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
     NaloopVtg_TVG_Correctie(fc34, fc33, NG, tnlsgd3433);
     NaloopEG_TVG_Correctie(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281);
     BepaalRealisatieTijden();
-    Bepaal_Realisatietijd_per_richting();
     BepaalInterStartGroenTijden();
 
 
