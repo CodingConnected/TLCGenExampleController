@@ -8981,7 +8981,6 @@ void InitInterStartGroenTijden()
             if (TIG_max[i][j] < FK) TIG_max[i][j] = FK;
             TISG_PR[i][j] = NG;
             TISG_AR[i][j] = NG;
-
         }
     }
     pointer_conflicts();
@@ -8989,22 +8988,23 @@ void InitInterStartGroenTijden()
 
 void TegenhoudenDoorRealisatietijden()
 {
-   count i, j;
+    count i, j;
 
-   for (i = 0; i < FCMAX; ++i)
-   {
-      X[i] &= ~BIT1;
-      RR[i] &= ~BIT1;
-   }
-   for (i = 0; i < FCMAX; ++i)
-   {
-      for (j = 0; j < FCMAX; ++j)
-      {
-         if (REALISATIETIJD[i][j] > 0) X[j] |= BIT1; /* Als er een realisatietijd loopt van (fictief) conflict i, wordt richting j nog tegengehouden */
-         if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1; /*  150 tijdelijk moet afhankleijk gemaakt wordt van de tijd de een richting eerder mag starten dan de volgrichting */
-      }
-   }
+    for (i = 0; i < FCMAX; ++i)
+    {
+        X[i] &= ~BIT1;
+        RR[i] &= ~BIT1;
+    }
+    for (i = 0; i < FCMAX; ++i)
+    {
+        for (j = 0; j < FCMAX; ++j)
+        {
+            if (REALISATIETIJD[i][j] > 0) X[j] |= BIT1; /* Als er een realisatietijd loopt van (fictief) conflict i, wordt richting j nog tegengehouden */
+            if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1; /*  150 tijdelijk moet afhankleijk gemaakt wordt van de tijd de een richting eerder mag starten dan de volgrichting */
+        }
+    }
 }
+
 void InitInterfunc()
 {
     count i, j;
