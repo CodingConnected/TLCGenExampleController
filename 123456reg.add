@@ -16,17 +16,13 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   09-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc 2
+ * 12.4.0   17-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc - aanpassing PRIO
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
+FILE* fpt;
 
-#ifndef AUTOMAAT
-	FILE* fpt;
-#endif
-
-
-#ifdef CCOL_IS_SPECIAL
+#if defined CCOL_IS_SPECIAL && !defined NO_PRIO
 void SpecialSignals_Add(void)
 {
 
@@ -35,23 +31,46 @@ void SpecialSignals_Add(void)
 
 void post_init_application()
 {
-#ifndef AUTOMAAT
-	int i;
+    int i;
     fpt = fopen("MyFile.csv", "w");
     for (i = 0; i < FCMAX; ++i)
     {
         fprintf(fpt, "%4s,", FC_code[i]);
     }
-#endif
+    fprintf(fpt, " prio02,");
+    fprintf(fpt, " prio03,");
+    fprintf(fpt, " prio05,");
+    fprintf(fpt, " prio08,");
+    fprintf(fpt, " prio09,");
+    fprintf(fpt, " prio11,");
+    fprintf(fpt, "\n");
+    fclose(fpt);
+
+
+    stuffkey(F2KEY);
+    stuffkey(CTRLALTF3KEY);
+    stuffkey(F4KEY);
+
 }
 
 void PreApplication_Add(void)
 {
-#ifndef AUTOMAAT
-   #ifdef DUURTEST
-      SCH[schcovuber] = 0;
-   #endif
-#endif
+
+}
+
+void DetectieStoring_Aanvraag_Add(void)
+{
+
+}
+
+void DetectieStoring_Meetkriterium_Add(void)
+{
+
+}
+
+void DetectieStoring_VerlengGroen_Add(void)
+{
+
 }
 
 void KlokPerioden_Add(void)
@@ -64,45 +83,29 @@ void Aanvragen_Add(void)
 
 }
 
-boolv CorrectieRealisatieTijd_Add(void)
-{
-    /* let op! deze functie wordt in een loop aangeroepen (max. 100 iteraties). */
-    boolv aanpassing = FALSE;
-    
-    /* Voeg hier zonodig eigen code toe, bijv:
-     * aanpassing |= VTG2_Real_Los(fc32, fc31, T_max[tinl3231], T_max[tinl3132], hinl32, hinl31, hlos32, hlos31, (IH[hdrtk311] && IH[hdrtk321]));
-     * aanpassing |= VTG2_Real_Los(fc31, fc32, T_max[tinl3132], T_max[tinl3231], hinl31, hinl32, hlos31, hlos32, (IH[hdrtk311] && IH[hdrtk321]));
-     */
-    
-    return aanpassing;
-}
-
-void BepaalRealisatieTijden_Add(void)
-{
-}
-
-void BepaalInterStartGroenTijden_Add(void)
-{
-}
-
 void Maxgroen_Add(void)
 {
+
 }
 
 void Wachtgroen_Add(void)
 {
+
 }
 
 void Meetkriterium_Add(void)
 {
+
 }
 
 void Meeverlengen_Add(void)
 {
+
 }
 
 void Synchronisaties_Add(void)
 {
+
 }
 
 void VersneldPrimair_Add(void)
@@ -112,14 +115,20 @@ void VersneldPrimair_Add(void)
 
 void Alternatief_Add(void)
 {
+    if (EG[fc22] && PR[fc22]) PG[fc05] |= PRIMAIR_OVERSLAG;
+    if (EG[fc32] && PR[fc32]) PG[fc05] |= PRIMAIR_OVERSLAG;
+    if (EG[fc26] && PR[fc26]) PG[fc11] |= PRIMAIR_OVERSLAG;
+
 }
 
 void Modules_Add(void)
 {
+
 }
 
 void RealisatieAfhandeling_Add(void)
 {
+
 }
 
 void FileVerwerking_Add(void)
@@ -127,41 +136,26 @@ void FileVerwerking_Add(void)
 
 }
 
-void DetectieStoring_Aanvraag_Add(void)
-{
-
-}
-
-void DetectieStoring_VerlengGroen_Add(void)
-{
-
-}
-
-void DetectieStoring_Meetkriterium_Add(void)
-{
-
-}
-
 void PostApplication_Add(void)
 {
-   int x, y; 
+//count prio;
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
 
    /* TESTOMGEVING */
    /* ============ */
 
    if (TS &&
-      (CIF_KLOK[CIF_JAAR] == 2099) && 
+      (CIF_KLOK[CIF_JAAR] == 2001) && 
       (CIF_KLOK[CIF_MAAND] == 1) &&
       (CIF_KLOK[CIF_DAG] == 1) &&
-      (CIF_KLOK[CIF_UUR] == 1) &&
-      (CIF_KLOK[CIF_MINUUT] == 1) && 
-      (CIF_KLOK[CIF_SECONDE] == 1))
+      (CIF_KLOK[CIF_UUR] == 12) &&
+      (CIF_KLOK[CIF_MINUUT] == 4) && 
+      (CIF_KLOK[CIF_SECONDE] == 0))
    {
-      stuffkey(F3KEY);
       stuffkey(F5KEY);
-      stuffkey(F4KEY);
-      stuffkey(F7KEY);
+      //stuffkey(F5KEY);
+      //stuffkey(F4KEY);
+      //stuffkey(F7KEY);
       //stuffkey(F10KEY); 
    }
 #endif
@@ -214,7 +208,24 @@ void PostApplication_Add(void)
   ControleerVS(fc05, fc32, TRUE, TRUE);
 // }
 #endif
-#ifndef AUTOMAAT								   
+  count x, y;
+  /* TESTOMGEVING */
+  /* ============ */
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
+  if (TS &&
+      (CIF_KLOK[CIF_JAAR] == 2001) &&
+      (CIF_KLOK[CIF_MAAND] == 1) &&
+      (CIF_KLOK[CIF_DAG] == 1) &&
+      (CIF_KLOK[CIF_UUR] == 17) &&
+      (CIF_KLOK[CIF_MINUUT] == 44) &&
+      (CIF_KLOK[CIF_SECONDE] == 16))
+  {
+      //stuffkey(F2KEY);
+      //stuffkey(F5KEY);
+      //stuffkey(F4KEY);
+      //stuffkey(F10KEY); 
+  }
+#endif
   //    xyprintf(30, 0, "REALTIJD");
   xyprintf(38 + 4 * FCMAX, 0, "InterStartGroentijd");
   xyprintf(46 + 8 * FCMAX, 0, "PAR");
@@ -256,7 +267,6 @@ void PostApplication_Add(void)
       xyprintf(46 + 8 * FCMAX, y + 4, "%2s", FC_code[y]);
       xyprintf(50 + 8 * FCMAX, y + 4, "%4d", max_par(y));
   }
-#endif								 
 
 
 #ifndef AUTOMAAT
@@ -266,29 +276,36 @@ void PostApplication_Add(void)
 //    xyprintf(92, 3, "%s:  %3d  %3d  %3d  %3d", D_code[d11_3], TDH_max[d11_3], TDH_timer[d11_3], TDHA_max[d11_3], TDHDYN_max[d11_3]);
 //    xyprintf(92, 4, "%s:  %3d  %3d  %3d  %3d", D_code[d11_4], TDH_max[d11_4], TDH_timer[d11_4], TDHA_max[d11_4], TDHDYN_max[d11_4]);
 #endif	
-
-#ifndef AUTOMAAT
-	if (TS)
-		{
-		fpt = fopen("MyFile.csv", "a");    
-		for (x = 0; x < FCMAX; ++x)
-			{
-				fprintf(fpt, "%4d,", twacht[x] * (A[x] != 0 || PRIOFC[x]));
-			}
-				fprintf(fpt, "\n");
-				fclose(fpt);
-		}
-	}
-#endif	
-
-void WachttijdvoorspellersWachttijd_Add()
+//PrioAanwezig();
+  /*
+  if (TS)
 {
-    
+    fpt = fopen("MyFile.csv", "a");    
+    for (prio=0;prio<prioFCMAX;++prio)
+    {
+        x = iFC_PRIOix[prio];
+        if (iPrioriteit[prio] && (iStartGroen[prio] < twacht[x])) twacht[x] = iStartGroen[prio]; 
+    }
+
+    for (x = 0; x < FCMAX; ++x)
+    {
+        fprintf(fpt, "%4d,", twacht[x] * (A[x] != 0 || PRIOFC[x]) * R[x]);
+    }
+    fprintf(fpt, "%7d,", (H[hprio02bus]) * 50);
+    fprintf(fpt, "%7d,", (H[hprio03bus]) * 50);
+    fprintf(fpt, "%7d,", (H[hprio05bus]) * 50);
+    fprintf(fpt, "%7d,", (H[hprio08bus]) * 50);
+    fprintf(fpt, "%7d,", (H[hprio09bus]) * 50);
+    fprintf(fpt, "%7d,", (H[hprio11bus]) * 50);
+    fprintf(fpt, "\n");
+    fclose(fpt);
+    }
+    */
 }
 
 void pre_system_application(void)
 {
-
+//    xyprintf(0,0,"twacht[fc02] = %3d A[fc02] = %3d, PRIOFC[fc02] = %3d",twacht[fc02],A[fc02], PRIOFC[fc02]);
 }
 
 void post_system_application(void)
@@ -296,68 +313,36 @@ void post_system_application(void)
 
 }
 
-void pre_msg_fctiming(void)
-{
-
-}
-
-mulv MAXEND_set[FCMAX] = { 0 }; /* uitgestuurde MaxEnd tijd */
-mulv ESTATE_cur[FCMAX] = { -1 }; /* huidige EventState       */
-mulv MAXEND_tim[FCMAX] = { 0 }; /* lopende timer            */
-
 void post_system_application2(void)
 {
-
-#if !defined AUTOMAAT && !defined AUTOMAAT_TEST
-//   if (display) {
-      int i;
-
-      //xyprintf(115, 6, "MES   MET   ESH");
-
-      for (i = 0; i < FC_MAX; ++i) {
-         if (CIF_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] != -1) { // maxend tijdanders dan -1
-
-            if (MAXEND_tim[i] == 0) {
-               ESTATE_cur[i] = CIF_FC_TIMING[i][0][CIF_TIMING_EVENTSTATE]; /* status signaalgroep (bv rood / geel / groen) */
-               MAXEND_set[i] = CIF_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME]; /* hier wordt opgeslagen wat de uitgestuurde waarde is om later mee te vergelijken */
-            }
-            MAXEND_tim[i] += TE; // iedere machineslag ophogen tot de waarde maxend weer -1 is
-         }
-
-         if (CIF_FC_TIMING[i][0][CIF_TIMING_EVENTSTATE] != ESTATE_cur[i]) {
-
-            if (MAXEND_tim[i] > MAXEND_set[i]) { // check of gemeten maxend tijd hoger is dan de gemeten tijd, als waar dan stuffkey
-               /* Schrijf naar de CCOL-terminal */
-               code helpstr[30]; /* help string */
-               uber_puts(PROMPT_code);
-               uber_puts("Ongewenste situatie: TIMINGS fc");
-               uber_puts(FC_code[i]);
-               uber_puts(" / ");
-               datetostr(helpstr);
-               uber_puts(helpstr);
-               uber_puts(" / ");
-               timetostr(helpstr);
-               uber_puts(helpstr);
-               uber_puts("\n");
-               //stuffkey(F5KEY);
-            }
-            MAXEND_tim[i] = 0;
-            MAXEND_set[i] = 0;
-            ESTATE_cur[i] = -1;
-
-         }
-         //xyprintf(115, 7 + i, "%3d   %3d   %3d", MAXEND_set[i], MAXEND_tim[i], ESTATE_cur[i]);
-      //}
-   }
-#endif   
 
 }
 
 void post_dump_application(void)
 {
+
+}
+void BepaalRealisatieTijden_Add(void)
+{
+
 }
 
-boolv Correctie_TISG_add()
+void BepaalInterStartGroenTijden_Add(void)
+{
+
+}
+
+boolv Correctie_TISG_add(void)
 {
     return FALSE;
 }
+boolv CorrectieRealisatieTijd_Add(void)
+{
+    return FALSE;
+}
+
+boolv Correctie_InterStartGroentijdTijd_PRIO_Add(void)
+{
+    return FALSE;
+}
+

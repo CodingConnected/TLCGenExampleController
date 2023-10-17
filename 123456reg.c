@@ -15,12 +15,11 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   09-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc 2
+ * 12.4.0   17-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc - aanpassing PRIO
  *
  ************************************************************************************/
 
 #define REG (CIF_WPS[CIF_PROG_STATUS] == CIF_STAT_REG)
-#define NO_PRIO /* geen prioriteit ingesteld in de TLCGen in tabblad Algemeen - Prioriteitopties */
 #define PRIO_ADDFILE
 
 /* include files */
@@ -86,6 +85,7 @@ mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     code SCJ_code[] = "123456";
 #endif
+mulv C_counter_old[CTMAX];
 boolv init_tvg;
 
     #if !defined AUTOMAAT && !defined AUTOMAAT_TEST
@@ -96,6 +96,9 @@ boolv init_tvg;
 
 void PreApplication(void)
 {
+    /* Opschonen wagennummer buffers */
+    WDNST_cleanup();
+
     /* Instellen basis waarde hulpelementen 'geen dynamisch hiaat gebruiken'.
        Dit hulpelement kan in gebruikers code worden gebruikt voor eigen aansturing. */
     IH[hgeendynhiaat08] = !SCH[schdynhiaat08];
@@ -1821,7 +1824,6 @@ void RealisatieAfhandeling(void)
     YML[ML2] |= FALSE;
     YML[ML3] |= FALSE;
     YML[ML4] |= FALSE;
-    YML[ML5] |= FALSE;
 
     Modules_Add();
 
@@ -1995,18 +1997,6 @@ void PostApplication(void)
     CIF_GUS[usovtevroeg11bus] = MM[mstp11bus] == CIF_TE_VROEG;
     CIF_GUS[usovoptijd11bus] = MM[mstp11bus] == CIF_OP_TIJD;
     CIF_GUS[usovtelaat11bus] = MM[mstp11bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg61bus] = MM[mstp61bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd61bus] = MM[mstp61bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat61bus] = MM[mstp61bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg62bus] = MM[mstp62bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd62bus] = MM[mstp62bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat62bus] = MM[mstp62bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg67bus] = MM[mstp67bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd67bus] = MM[mstp67bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat67bus] = MM[mstp67bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg68bus] = MM[mstp68bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd68bus] = MM[mstp68bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat68bus] = MM[mstp68bus] == CIF_TE_LAAT;
 
     /* TESTOMGEVING */
     /* ============ */
@@ -2061,11 +2051,41 @@ void application(void)
 
 void system_application(void)
 {
+    int ov = 0;
+
     pre_system_application();
 
     /* file verklikking */
     /* ---------------- */
     CIF_GUS[usFile68af] = IH[hfileFile68af];
+
+    /* PRIO verklikking */
+    /* ---------------- */
+    CIF_GUS[usprioinm02bus] = C[cvc02bus];
+    CIF_GUS[usprioinm03bus] = C[cvc03bus];
+    CIF_GUS[usprioinm05bus] = C[cvc05bus];
+    CIF_GUS[usprioinm08bus] = C[cvc08bus];
+    CIF_GUS[usprioinm09bus] = C[cvc09bus];
+    CIF_GUS[usprioinm11bus] = C[cvc11bus];
+    CIF_GUS[ushdinm02] = C[cvchd02];
+    CIF_GUS[ushdinm03] = C[cvchd03];
+    CIF_GUS[ushdinm05] = C[cvchd05];
+    CIF_GUS[ushdinm08] = C[cvchd08];
+    CIF_GUS[ushdinm09] = C[cvchd09];
+    CIF_GUS[ushdinm11] = C[cvchd11];
+    CIF_GUS[ushdinm61] = C[cvchd61];
+    CIF_GUS[ushdinm62] = C[cvchd62];
+    CIF_GUS[ushdinm67] = C[cvchd67];
+    CIF_GUS[ushdinm68] = C[cvchd68];
+
+    /* Verklikken melding en ondergedrag KAR */
+    CIF_GUS[uskarmelding] = T[tkarmelding];
+    CIF_GUS[uskarog] = !T[tkarog];
+
+    /* Verklikken overschreiding maximale wachttijd */
+    CIF_GUS[usmaxwt] = FALSE;
+    for (ov = 0; ov < prioFCMAX; ++ov)
+        CIF_GUS[usmaxwt] |= iMaximumWachtTijdOverschreden[ov];
 
     /* periode verklikking */
     /* ------------------- */
@@ -2128,7 +2148,6 @@ void system_application(void)
     CIF_GUS[usML2] = ML == ML2;
     CIF_GUS[usML3] = ML == ML3;
     CIF_GUS[usML4] = ML == ML4;
-    CIF_GUS[usML5] = ML == ML5;
 
     post_system_application();
 }

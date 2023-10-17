@@ -15,14 +15,24 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   09-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc 2
+ * 12.4.0   17-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc - aanpassing PRIO
  *
  ************************************************************************************/
 
 /* aantal ingangs-/uitgangs signalen */
 /* --------------------------------- */
+    #define ushdinm02_1 (USMAX + 0)
+    #define ushdinm03_1 (USMAX + 1)
+    #define ushdinm05_1 (USMAX + 2)
+    #define ushdinm08_1 (USMAX + 3)
+    #define ushdinm09_1 (USMAX + 4)
+    #define ushdinm11_1 (USMAX + 5)
+    #define ushdinm61_1 (USMAX + 6)
+    #define ushdinm62_1 (USMAX + 7)
+    #define ushdinm67_1 (USMAX + 8)
+    #define ushdinm68_1 (USMAX + 9)
 
-    #define USDPLMAX (USMAX + 0)
+    #define USDPLMAX (USMAX + 10)
     #define ISDPLMAX (ISMAX + 0)
 
 /* include files */
@@ -147,20 +157,12 @@ void display_parameters(void)
     X_is[ddummykarin08bus] = 779; Y_is[ddummykarin08bus] = 72;
     X_is[ddummykarin09bus] = 782; Y_is[ddummykarin09bus] = 84;
     X_is[ddummykarin11bus] = 782; Y_is[ddummykarin11bus] = 99;
-    X_is[ddummykarin61bus] = 782; Y_is[ddummykarin61bus] = 112;
-    X_is[ddummykarin62bus] = 778; Y_is[ddummykarin62bus] = 123;
-    X_is[ddummykarin67bus] = 779; Y_is[ddummykarin67bus] = 136;
-    X_is[ddummykarin68bus] = 784; Y_is[ddummykarin68bus] = 152;
     X_is[ddummykaruit02bus] = 796; Y_is[ddummykaruit02bus] = 33;
     X_is[ddummykaruit03bus] = 796; Y_is[ddummykaruit03bus] = 45;
     X_is[ddummykaruit05bus] = 793; Y_is[ddummykaruit05bus] = 60;
     X_is[ddummykaruit08bus] = 799; Y_is[ddummykaruit08bus] = 72;
     X_is[ddummykaruit09bus] = 794; Y_is[ddummykaruit09bus] = 85;
     X_is[ddummykaruit11bus] = 799; Y_is[ddummykaruit11bus] = 100;
-    X_is[ddummykaruit61bus] = 801; Y_is[ddummykaruit61bus] = 114;
-    X_is[ddummykaruit62bus] = 798; Y_is[ddummykaruit62bus] = 125;
-    X_is[ddummykaruit67bus] = 796; Y_is[ddummykaruit67bus] = 137;
-    X_is[ddummykaruit68bus] = 796; Y_is[ddummykaruit68bus] = 149;
     X_is[ddummyhdkarin02] = 815; Y_is[ddummyhdkarin02] = 37;
     X_is[ddummyhdkaruit02] = 831; Y_is[ddummyhdkaruit02] = 36;
     X_is[ddummyhdkarin03] = 816; Y_is[ddummyhdkarin03] = 44;
@@ -196,7 +198,6 @@ void display_parameters(void)
     X_us[usML2] = 574; Y_us[usML2] = 156;
     X_us[usML3] = 572; Y_us[usML3] = 170;
     X_us[usML4] = 572; Y_us[usML4] = 185;
-    X_us[usML5] = 573; Y_us[usML5] = 197;
     X_us[usincontrol] = NG; Y_us[usincontrol] = NG;
     X_us[usnocontrol] = NG; Y_us[usnocontrol] = NG;
     X_us[usFile68af] = 524; Y_us[usFile68af] = 101;
@@ -218,18 +219,35 @@ void display_parameters(void)
     X_us[usovtevroeg11bus] = NG; Y_us[usovtevroeg11bus] = NG;
     X_us[usovoptijd11bus] = NG; Y_us[usovoptijd11bus] = NG;
     X_us[usovtelaat11bus] = NG; Y_us[usovtelaat11bus] = NG;
-    X_us[usovtevroeg61bus] = NG; Y_us[usovtevroeg61bus] = NG;
-    X_us[usovoptijd61bus] = NG; Y_us[usovoptijd61bus] = NG;
-    X_us[usovtelaat61bus] = NG; Y_us[usovtelaat61bus] = NG;
-    X_us[usovtevroeg62bus] = NG; Y_us[usovtevroeg62bus] = NG;
-    X_us[usovoptijd62bus] = NG; Y_us[usovoptijd62bus] = NG;
-    X_us[usovtelaat62bus] = NG; Y_us[usovtelaat62bus] = NG;
-    X_us[usovtevroeg67bus] = NG; Y_us[usovtevroeg67bus] = NG;
-    X_us[usovoptijd67bus] = NG; Y_us[usovoptijd67bus] = NG;
-    X_us[usovtelaat67bus] = NG; Y_us[usovtelaat67bus] = NG;
-    X_us[usovtevroeg68bus] = NG; Y_us[usovtevroeg68bus] = NG;
-    X_us[usovoptijd68bus] = NG; Y_us[usovoptijd68bus] = NG;
-    X_us[usovtelaat68bus] = NG; Y_us[usovtelaat68bus] = NG;
+    X_us[usmaxwt] = 275; Y_us[usmaxwt] = 36;
+    X_us[uskarmelding] = 276; Y_us[uskarmelding] = 11;
+    X_us[uskarog] = 277; Y_us[uskarog] = 24;
+    X_us[usprioinm02bus] = 151; Y_us[usprioinm02bus] = 30;
+    X_us[usprioinm03bus] = 149; Y_us[usprioinm03bus] = 44;
+    X_us[usprioinm05bus] = 152; Y_us[usprioinm05bus] = 59;
+    X_us[usprioinm08bus] = 152; Y_us[usprioinm08bus] = 72;
+    X_us[usprioinm09bus] = 149; Y_us[usprioinm09bus] = 84;
+    X_us[usprioinm11bus] = 151; Y_us[usprioinm11bus] = 98;
+    X_us[ushdinm02] = 66; Y_us[ushdinm02] = 31;
+    X_us[ushdinm02_1] = 167; Y_us[ushdinm02_1] = 29; NR_us[ushdinm02_1] = ushdinm02;
+    X_us[ushdinm03] = 70; Y_us[ushdinm03] = 44;
+    X_us[ushdinm03_1] = 167; Y_us[ushdinm03_1] = 45; NR_us[ushdinm03_1] = ushdinm03;
+    X_us[ushdinm05] = 67; Y_us[ushdinm05] = 58;
+    X_us[ushdinm05_1] = 169; Y_us[ushdinm05_1] = 59; NR_us[ushdinm05_1] = ushdinm05;
+    X_us[ushdinm08] = 68; Y_us[ushdinm08] = 70;
+    X_us[ushdinm08_1] = 169; Y_us[ushdinm08_1] = 71; NR_us[ushdinm08_1] = ushdinm08;
+    X_us[ushdinm09] = 66; Y_us[ushdinm09] = 85;
+    X_us[ushdinm09_1] = 166; Y_us[ushdinm09_1] = 85; NR_us[ushdinm09_1] = ushdinm09;
+    X_us[ushdinm11] = 71; Y_us[ushdinm11] = 99;
+    X_us[ushdinm11_1] = 168; Y_us[ushdinm11_1] = 98; NR_us[ushdinm11_1] = ushdinm11;
+    X_us[ushdinm61] = 66; Y_us[ushdinm61] = 112;
+    X_us[ushdinm61_1] = 172; Y_us[ushdinm61_1] = 110; NR_us[ushdinm61_1] = ushdinm61;
+    X_us[ushdinm62] = 65; Y_us[ushdinm62] = 124;
+    X_us[ushdinm62_1] = 166; Y_us[ushdinm62_1] = 122; NR_us[ushdinm62_1] = ushdinm62;
+    X_us[ushdinm67] = 68; Y_us[ushdinm67] = 134;
+    X_us[ushdinm67_1] = 167; Y_us[ushdinm67_1] = 136; NR_us[ushdinm67_1] = ushdinm67;
+    X_us[ushdinm68] = 66; Y_us[ushdinm68] = 148;
+    X_us[ushdinm68_1] = 168; Y_us[ushdinm68_1] = 147; NR_us[ushdinm68_1] = ushdinm68;
     X_us[usperdef] = NG; Y_us[usperdef] = NG;
     X_us[usper1] = 625; Y_us[usper1] = 14;
     X_us[usperoFietsprio1] = NG; Y_us[usperoFietsprio1] = NG;

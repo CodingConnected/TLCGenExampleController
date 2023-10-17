@@ -9,32 +9,17 @@
 
    BESTAND:   123456prio.add
       CCOL:   12.0
-<<<<<<< Updated upstream
     TLCGEN:   12.4.0.0
    CCOLGEN:   12.4.0.0
-=======
-    TLCGEN:   12.4.0.2
-   CCOLGEN:   12.4.0.2
->>>>>>> Stashed changes
 */
 
 /****************************** Versie commentaar ***********************************
  *
-<<<<<<< Updated upstream
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   23-06-2023   TLCGen      Ontwikkel versie TLCGen (portable) voor Interfunc
-=======
- * Versie     Datum        Ontwerper   Commentaar
-<<<<<<< Updated upstream
- * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
->>>>>>> Stashed changes
-=======
- * 12.4.0.2   27-09-2023   TLCGen      Release versie TLCGen
->>>>>>> Stashed changes
+ * 12.4.0   17-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc - aanpassing PRIO
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
-
 
 void RijTijdScenario_Add(void) {
   /* -----------------------------------------------
@@ -106,6 +91,7 @@ void PrioriteitsNiveau_Add(void) {
      tegen, door gebruik te maken van iXPrio[fc], bijv:
      iXPrio[prioFC02] = TRUE;
      --------------------------------------------------- */
+
 }
 
 void PrioriteitsToekenning_Add(void) {
@@ -127,6 +113,7 @@ void StartGroenMomenten_Add(void) {
      Pas hier zonodig het StartGroenMoment aan, bijv:
      iStartGroen[prioFC02] = 0;
      ------------------------------------------------ */
+
 }
 
 void PrioAanvragen_Add(void) {
@@ -158,19 +145,20 @@ void PrioTegenhouden_Add(void) {
 }
 
 void PrioAfkappen_Add(void) {
-   /* --------------------------------------------------------
-      Pas hier zonodig het TerugKomen aan, bijv:
-      iTerugKomen[fc02] = FALSE;
-      --------------------------------------------------------
-      Pas hier zonodig de TerugKomGroenTijd aan, bijv:
-      iTerugKomGroenTijd[[fc02] = 0;
-      --------------------------------------------------------
-      Pas hier zonodig het NietAfkappen aan, bijv:
-      iNietAfkappen[fc02]=FALSE;
-      -------------------------------------------------------
-      Pas hier zonodig het AantalMalenNietAfkappen aan, bijv:
-      iAantalMalenNietAfkappen[fc02] = 3;
-      ------------------------------------------------------- */
+  /* --------------------------------------------------------
+     Pas hier zonodig het TerugKomen aan, bijv:
+     iTerugKomen[fc02] = FALSE;
+     --------------------------------------------------------
+     Pas hier zonodig de TerugKomGroenTijd aan, bijv:
+     iTerugKomGroenTijd[[fc02] = 0;
+     --------------------------------------------------------
+     Pas hier zonodig het NietAfkappen aan, bijv:
+     iNietAfkappen[fc02]=FALSE;
+     -------------------------------------------------------
+     Pas hier zonodig het AantalMalenNietAfkappen aan, bijv:
+     iAantalMalenNietAfkappen[fc02] = 3;
+     ------------------------------------------------------- */
+
 }
 
 void PrioAlternatieven_Add(void) {
@@ -181,10 +169,7 @@ void PrioAlternatieven_Add(void) {
     ----------------------------------------------------- */
 }
 
-
-
 void PostAfhandelingPrio_Add(void) {
-
 
 }
 
