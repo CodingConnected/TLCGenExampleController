@@ -115,9 +115,6 @@ void VersneldPrimair_Add(void)
 
 void Alternatief_Add(void)
 {
-    if (EG[fc22] && PR[fc22]) PG[fc05] |= PRIMAIR_OVERSLAG;
-    if (EG[fc32] && PR[fc32]) PG[fc05] |= PRIMAIR_OVERSLAG;
-    if (EG[fc26] && PR[fc26]) PG[fc11] |= PRIMAIR_OVERSLAG;
 
 }
 
@@ -138,7 +135,7 @@ void FileVerwerking_Add(void)
 
 void PostApplication_Add(void)
 {
-//count prio;
+count prio;
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
 
    /* TESTOMGEVING */
@@ -199,11 +196,11 @@ void PostApplication_Add(void)
   ControleerNaloopEG(fc08, fc68, tnlfg0868, tnleg0868, NG, TRUE);
 
   /* @#@ Fick, aantal machine slagen marge genomen */
- if (!ControleerInrijden(fc22, fc21, prmxnl2221, FALSE) && G[fc22] && R[fc21] && (TG_timer[fc22] > PRM[prmxnl2221] + 3)) stuffkey(F5KEY);
- if (!ControleerInrijden(fc82, fc81, prmxnl8281, FALSE) && G[fc82] && R[fc81] && (TG_timer[fc82] > PRM[prmxnl8281] + 3)) stuffkey(F5KEY);
- if (!ControleerInrijden(fc02, fc62, prmxnl0262, FALSE) && G[fc02] && R[fc62] && (TG_timer[fc02] > PRM[prmxnl0262] + 3)) stuffkey(F5KEY);
- if (!ControleerInrijden(fc08, fc68, prmxnl0868, FALSE) && G[fc08] && R[fc68] && (TG_timer[fc08] > PRM[prmxnl0868] + 3)) stuffkey(F5KEY);
- if (!ControleerInrijden(fc11, fc68, prmxnl1168, FALSE) && G[fc11] && R[fc68] && (TG_timer[fc11] > PRM[prmxnl1168] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc22, fc21, txnl2221, FALSE) && G[fc22] && R[fc21] && (TG_timer[fc22] > PRM[txnl2221] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc82, fc81, txnl8281, FALSE) && G[fc82] && R[fc81] && (TG_timer[fc82] > PRM[txnl8281] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc02, fc62, txnl0262, FALSE) && G[fc02] && R[fc62] && (TG_timer[fc02] > PRM[txnl0262] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc08, fc68, txnl0868, FALSE) && G[fc08] && R[fc68] && (TG_timer[fc08] > PRM[txnl0868] + 3)) stuffkey(F5KEY);
+ if (!ControleerInrijden(fc11, fc68, txnl1168, FALSE) && G[fc11] && R[fc68] && (TG_timer[fc11] > PRM[txnl1168] + 3)) stuffkey(F5KEY);
 
   ControleerVS(fc05, fc32, TRUE, TRUE);
 // }
@@ -213,12 +210,12 @@ void PostApplication_Add(void)
   /* ============ */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
   if (TS &&
-      (CIF_KLOK[CIF_JAAR] == 2001) &&
+      (CIF_KLOK[CIF_JAAR] == 2099) &&
       (CIF_KLOK[CIF_MAAND] == 1) &&
       (CIF_KLOK[CIF_DAG] == 1) &&
-      (CIF_KLOK[CIF_UUR] == 17) &&
-      (CIF_KLOK[CIF_MINUUT] == 44) &&
-      (CIF_KLOK[CIF_SECONDE] == 16))
+      (CIF_KLOK[CIF_UUR] == 1) &&
+      (CIF_KLOK[CIF_MINUUT] == 1) &&
+      (CIF_KLOK[CIF_SECONDE] == 1))
   {
       //stuffkey(F2KEY);
       //stuffkey(F5KEY);
@@ -276,8 +273,7 @@ void PostApplication_Add(void)
 //    xyprintf(92, 3, "%s:  %3d  %3d  %3d  %3d", D_code[d11_3], TDH_max[d11_3], TDH_timer[d11_3], TDHA_max[d11_3], TDHDYN_max[d11_3]);
 //    xyprintf(92, 4, "%s:  %3d  %3d  %3d  %3d", D_code[d11_4], TDH_max[d11_4], TDH_timer[d11_4], TDHA_max[d11_4], TDHDYN_max[d11_4]);
 #endif	
-//PrioAanwezig();
-  /*
+PrioAanwezig();
   if (TS)
 {
     fpt = fopen("MyFile.csv", "a");    
@@ -300,7 +296,6 @@ void PostApplication_Add(void)
     fprintf(fpt, "\n");
     fclose(fpt);
     }
-    */
 }
 
 void pre_system_application(void)

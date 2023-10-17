@@ -2545,9 +2545,9 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_max[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_max[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -2569,16 +2569,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_max[fc2] < TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_max[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_max[fc2] < TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_max[fc2] = TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -2600,16 +2600,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_max[fc2] < TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < TVG_timer[fc2] + T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_max[fc2] = TVG_timer[fc2] + T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_max[fc2] < TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < TVG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_max[fc2] = TVG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -2631,16 +2631,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_max[fc2] < TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_max[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_max[fc2] < TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_max[fc2] = TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -2703,9 +2703,9 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_AR[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -2727,16 +2727,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -2758,16 +2758,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < TVG_timer[fc2] + T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = TVG_timer[fc2] + T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < TVG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = TVG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -2789,16 +2789,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -4144,9 +4144,9 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_max[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_max[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -4168,16 +4168,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_max[fc2] < TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_max[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_max[fc2] < TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_max[fc2] = TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -4199,16 +4199,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_max[fc2] < TVG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < TVG_timer[fc2] + T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_max[fc2] = TVG_timer[fc2] + T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_max[fc2] < TVG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < TVG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_max[fc2] = TVG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -4230,16 +4230,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_max[fc2] < TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_max[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_max[fc2] < TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_max[fc2] < TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_max[fc2] = TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_max[fc2] = TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -4302,9 +4302,9 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_AR[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -4326,16 +4326,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -4357,16 +4357,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < TVG_timer[fc2] + T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = TVG_timer[fc2] + T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < TVG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_timer[fc2] + TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = TVG_timer[fc2] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -4388,16 +4388,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                     }
                     if (!(tnleg == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_AR[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                         }
                     }
                     if (!(tnlegd == NG))
                     {
-                        if (TVG_AR[fc2] < TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                        if (TVG_AR[fc2] < TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                         {
-                            TVG_AR[fc2] = TVG_AR[fc1] - TVG_timer[fc1] + TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                            TVG_AR[fc2] = TGL_max[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                         }
                     }
                 }
@@ -4464,9 +4464,9 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                 }
                 if (!(tnlegd == NG))
                 {
-                    if (TVG_max[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                    if (TVG_max[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                     {
-                        TVG_max[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                        TVG_max[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                     }
                 }
             }
@@ -4490,14 +4490,14 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                 {
                     if (TVG_max[fc2] < TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop])
                     {
-                        TVG_max[fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop];
+                        TVG_max[fc2] = T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop];
                     }
                 }
                 if (!(tnlegd == NG))
                 {
-                    if (TVG_max[fc2] < TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                    if (TVG_max[fc2] < TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                     {
-                        TVG_max[fc2] = TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                        TVG_max[fc2] = TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                     }
                 }
             }
@@ -4519,16 +4519,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                 }
                 if (!(tnleg == NG))
                 {
-                    if (TVG_max[fc2] < TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop])
+                    if (TVG_max[fc2] < TVG_timer[fc2] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop])
                     {
-                        TVG_max[fc2] = TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop];
+                        TVG_max[fc2] = TVG_timer[fc2] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop];
                     }
                 }
                 if (!(tnlegd == NG))
                 {
-                    if (TVG_max[fc2] < TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                    if (TVG_max[fc2] < TVG_timer[fc2] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                     {
-                        TVG_max[fc2] = TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                        TVG_max[fc2] = TVG_timer[fc2] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                     }
                 }
             }
@@ -4550,16 +4550,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                 }
                 if (!(tnleg == NG))
                 {
-                    if (TVG_max[fc2] < TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                    if (TVG_max[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                     {
-                        TVG_max[fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                        TVG_max[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                     }
                 }
                 if (!(tnlegd == NG))
                 {
-                    if (TVG_max[fc2] < TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                    if (TVG_max[fc2] < TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                     {
-                        TVG_max[fc2] = TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                        TVG_max[fc2] = TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                     }
                 }
             }
@@ -4622,9 +4622,9 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                 }
                 if (!(tnlegd == NG))
                 {
-                    if (TVG_AR[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                    if (TVG_AR[fc2] < -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                     {
-                        TVG_AR[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                        TVG_AR[fc2] = -TFG_max[fc2] + TFG_timer[fc2] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                     }
                 }
             }
@@ -4646,16 +4646,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                 }
                 if (!(tnleg == NG))
                 {
-                    if (TVG_AR[fc2] < TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop])
+                    if (TVG_AR[fc2] < T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop])
                     {
-                        TVG_AR[fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop];
+                        TVG_AR[fc2] = T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop];
                     }
                 }
                 if (!(tnlegd == NG))
                 {
-                    if (TVG_AR[fc2] < TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                    if (TVG_AR[fc2] < TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                     {
-                        TVG_AR[fc2] = TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                        TVG_AR[fc2] = TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                     }
                 }
             }
@@ -4677,16 +4677,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                 }
                 if (!(tnleg == NG))
                 {
-                    if (TVG_AR[fc2] < TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop])
+                    if (TVG_AR[fc2] < TVG_timer[fc2] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop])
                     {
-                        TVG_AR[fc2] = TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop];
+                        TVG_AR[fc2] = TVG_timer[fc2] + T_max[tnleg] - T_timer[tnleg] + T_max[tvgnaloop];
                     }
                 }
                 if (!(tnlegd == NG))
                 {
-                    if (TVG_AR[fc2] < TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                    if (TVG_AR[fc2] < TVG_timer[fc2] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                     {
-                        TVG_AR[fc2] = TVG_timer[fc2] + TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                        TVG_AR[fc2] = TVG_timer[fc2] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                     }
                 }
             }
@@ -4708,16 +4708,16 @@ void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, cou
                 }
                 if (!(tnleg == NG))
                 {
-                    if (TVG_AR[fc2] < TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop])
+                    if (TVG_AR[fc2] < T_max[tnleg] + T_max[tvgnaloop])
                     {
-                        TVG_AR[fc2] = TVG_max[fc1] - TVG_timer[fc1] + T_max[tnleg] + T_max[tvgnaloop];
+                        TVG_AR[fc2] = T_max[tnleg] + T_max[tvgnaloop];
                     }
                 }
                 if (!(tnlegd == NG))
                 {
-                    if (TVG_AR[fc2] < TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
+                    if (TVG_AR[fc2] < TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop])
                     {
-                        TVG_AR[fc2] = TVG_max[fc1] - TVG_timer[fc1] + TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
+                        TVG_AR[fc2] = TGL_max[fc1] - TGL_timer[fc1] + T_max[tnlegd] + T_max[tvgnaloop];
                     }
                 }
             }
@@ -8576,18 +8576,21 @@ void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mu
     hml = ml + 1;
     if (hml >= ml_max)  hml = ML1;
     for (m = 1; m < ml_max; m++) {
-        for (i = 0; i < FC_MAX; i++) {
-
-            if ((prml[hml][i] & PRIMAIR_VERSNELD) && !PG[i] && (twacht[i] < 0)) {
+        for (i = 0; i < FC_MAX; i++) 
+        {
+            if ((prml[hml][i] & PRIMAIR_VERSNELD) && !PG[i] && (twacht[i] < 0)) 
+            {
                 twacht[i] = REALISATIETIJD_max[i];
                 for (n = 0; n < FC_MAX; n++)
                 {
-                    if (TISG_PR[i][n] >= 0 && i != n)
+                    if (TISG_PR[n][i] >= 0 && i != n)
+                    {
                         if (twacht[n] >= 0)
                         {
                             twacht_tmp = twacht[n] + TISG_PR[n][i];
                             if (twacht_tmp > twacht[i])  twacht[i] = twacht_tmp;
                         }
+                    }
                 }
             }
         }
@@ -8824,7 +8827,7 @@ void MeeverlengenUitDoorVoetgangerLos(count fcvtg, count hmadk)
     for (n = 0; n < FKFC_MAX[fcvtg]; ++n)
     {
         fc = KF_pointer[fcvtg][n];
-        if ((REALISATIETIJD[fc][fcvtg] > 0) && MG[fc]) YM[fc] = FALSE;
+        if ((REALISATIETIJD[fc][fcvtg] > 0) && PAR[fcvtg] && MG[fc]) YM[fc] = FALSE;
     }
 }
 
@@ -9016,4 +9019,26 @@ void InitInterfunc()
             FK_type[i][j] = FK_NG; /* defaultls FK_type */
         }
     }
+}
+
+void VerhoogGroentijdNietTijdensInrijden(count fc1, count fc2, count txnlfc1fc2)
+{
+   count n, fc;
+   if (T_max[txnlfc1fc2] > -1)
+   {
+      RT[txnlfc1fc2] = SG[fc1];
+      if ((RT[txnlfc1fc2] || T[txnlfc1fc2]))
+      {
+         for (n = 0; n < KFC_MAX[fc2]; ++n)
+         {
+            fc = KF_pointer[fc2][n];
+            NietGroentijdOphogen[fc] = TRUE;
+         }
+         for (KFC_MAX[fc2] = 0; n < FKFC_MAX[fc2]; ++n)
+         {
+            fc = KF_pointer[fc2][n];
+            if (FK_type[fc][fc2] != FK_SG) NietGroentijdOphogen[fc] = TRUE;
+         }
+      }
+   }
 }

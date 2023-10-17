@@ -1449,17 +1449,17 @@ boolv ControleerNaloopEG(count voedend, count volg, count tnlfg, count tnleg, co
 * is dan startgroen van de naloop.
 */
 
-boolv ControleerInrijden(count voedend, count volg, boolv tinr, boolv halt)
+boolv ControleerInrijden(count voedend, count volg, count txnl, boolv halt)
 {
-   if (!G[volg] && G[voedend]  && (TG_timer[voedend] > (tinr == NG ? TRUE : T_max[tinr])))
+   if (!G[volg] && G[voedend]  && ((txnl == NG) ? TRUE : TG_timer[voedend] > T_max[txnl]))
    {
       /* Schrijf naar de CCOL-terminal */
       code helpstr[30]; /* help string */
       uber_puts(PROMPT_code);
-      uber_puts("Ongewenste situatie: R[");
-      uber_puts(FC_code[volg]);
-      uber_puts("] en niet tijdig groen ");
+      uber_puts("Ongewenste situatie: G[");
       uber_puts(FC_code[voedend]);
+      uber_puts("] en niet tijdig G[ ");
+      uber_puts(FC_code[volg]);
       uber_puts("]");
       uber_puts(" / ");
       datetostr(helpstr);

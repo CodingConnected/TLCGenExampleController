@@ -132,7 +132,75 @@
     #define uswtk81          (FCMAX + 77) /* Aansturing waitsignaal detector k81                     */
     #define uswtk82          (FCMAX + 78) /* Aansturing waitsignaal detector k82                     */
     #define uswtk84          (FCMAX + 79) /* Aansturing waitsignaal detector k84                     */
-    #define USMAX1           (FCMAX + 80)
+    #define usisgtijd02      (FCMAX + 80) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd03      (FCMAX + 81) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd05      (FCMAX + 82) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd08      (FCMAX + 83) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd09      (FCMAX + 84) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd11      (FCMAX + 85) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd21      (FCMAX + 86) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd22      (FCMAX + 87) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd24      (FCMAX + 88) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd26      (FCMAX + 89) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd28      (FCMAX + 90) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd31      (FCMAX + 91) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd32      (FCMAX + 92) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd33      (FCMAX + 93) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd34      (FCMAX + 94) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd38      (FCMAX + 95) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd61      (FCMAX + 96) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd62      (FCMAX + 97) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd67      (FCMAX + 98) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd68      (FCMAX + 99) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd81      (FCMAX + 100) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd82      (FCMAX + 101) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define usisgtijd84      (FCMAX + 102) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define USMAX1           (FCMAX + 103)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* detectie */
 /* -------- */
@@ -834,13 +902,22 @@
     #define tfo0522                    284 /* Fictieve ontruimingstijd van 22 naar fase 05                          */
     #define tvs3205                    285 /* Voorstarttijd fase 32 op fase 05                                      */
     #define tfo0532                    286 /* Fictieve ontruimingstijd van 32 naar fase 05                          */
-    #define tlr2611                    287 /* Late release tijd fase 26 naar fase 11                                */
-    #define tfo2611                    288 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
-    #define tinl3132                   289 /* Inlooptijd fase 31                                                    */
-    #define tinl3231                   290 /* Inlooptijd fase 32                                                    */
-    #define tinl3334                   291 /* Inlooptijd fase 33                                                    */
-    #define tinl3433                   292 /* Inlooptijd fase 34                                                    */
-    #define TMMAX1                     293
+    #define tfo2611                    287 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
+    #define tinl3132                   288 /* Inlooptijd fase 31                                                    */
+    #define tinl3231                   289 /* Inlooptijd fase 32                                                    */
+    #define tinl3334                   290 /* Inlooptijd fase 33                                                    */
+    #define tinl3433                   291 /* Inlooptijd fase 34                                                    */
+    #define txnl0262                   292 /* Tijd tegenhouden voedende richting naloop van 02 naar 62              */
+    #define txnl0868                   293 /* Tijd tegenhouden voedende richting naloop van 08 naar 68              */
+    #define txnl1168                   294 /* Tijd tegenhouden voedende richting naloop van 11 naar 68              */
+    #define txnl2221                   295 /* Tijd tegenhouden voedende richting naloop van 22 naar 21              */
+    #define txnl3132                   296 /* Tijd tegenhouden voedende richting naloop van 31 naar 32              */
+    #define txnl3231                   297 /* Tijd tegenhouden voedende richting naloop van 32 naar 31              */
+    #define txnl3334                   298 /* Tijd tegenhouden voedende richting naloop van 33 naar 34              */
+    #define txnl3433                   299 /* Tijd tegenhouden voedende richting naloop van 34 naar 33              */
+    #define txnl8281                   300 /* Tijd tegenhouden voedende richting naloop van 82 naar 81              */
+    #define tlr2611                    301 /* Late release tijd fase 26 naar fase 11                                */
+    #define TMMAX1                     302
 
 /* teller elementen */
 /* ---------------- */
@@ -1364,15 +1441,6 @@
     #define prmprml81              240 /* Toewijzen PRML voor fase 81 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     #define prmprml82              241 /* Toewijzen PRML voor fase 82 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     #define prmprml84              242 /* Toewijzen PRML voor fase 84 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
-    #define prmxnl0262             243 /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
-    #define prmxnl0868             244 /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
-    #define prmxnl1168             245 /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
-    #define prmxnl2221             246 /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
-    #define prmxnl3132             247 /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
-    #define prmxnl3231             248 /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
-    #define prmxnl3334             249 /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
-    #define prmxnl3433             250 /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
-    #define prmxnl8281             251 /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
     #define prmOVtstpgrensvroeg    252 /* Grens waarboven een OV voertuig als te vroeg wordt aangemerkt                                                                  */
     #define prmOVtstpgrenslaat     253 /* Grens waarboven een OV voertuig als te laat wordt aangemerkt                                                                   */
     #define prmovstipttevroeg02bus 254 /* Prioriteitsnveau OV te vroeg bij 02 Bus                                                                                        */
