@@ -93,7 +93,10 @@ boolv init_tvg;
 #endif
 
 #include "123456reg.add"
+
+/* prioriteitsingrepen */
 #include "123456prio.c"
+#include "prioisg.c"
 #include "123456tab.c"
 
 void PreApplication(void)

@@ -53,8 +53,6 @@
 
 boolv vertraag_kar_uitm[prioFCMAX];
 
-#include "prioisg.c" /* Interstartgroen prio functies */
-
 #define MAX_AANTAL_INMELDINGEN           10
 #define DEFAULT_MAX_WACHTTIJD           120
 #define NO_REALISEREN_TOEGESTAAN

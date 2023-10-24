@@ -863,7 +863,16 @@
     #define tinl3231                   290 /* Inlooptijd fase 32                                                    */
     #define tinl3334                   291 /* Inlooptijd fase 33                                                    */
     #define tinl3433                   292 /* Inlooptijd fase 34                                                    */
-    #define TMMAX1                     293
+    #define txnl0262                   293 /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
+    #define txnl0868                   294 /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
+    #define txnl1168                   295 /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
+    #define txnl2221                   296 /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
+    #define txnl3132                   297 /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
+    #define txnl3231                   298 /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
+    #define txnl3334                   299 /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
+    #define txnl3433                   300 /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
+    #define txnl8281                   301 /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
+    #define TMMAX1                     303
 
 /* teller elementen */
 /* ---------------- */
@@ -1387,15 +1396,6 @@
     #define prmprml81              240 /* Toewijzen PRML voor fase 81 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     #define prmprml82              241 /* Toewijzen PRML voor fase 82 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     #define prmprml84              242 /* Toewijzen PRML voor fase 84 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
-    #define prmxnl0262             243 /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
-    #define prmxnl0868             244 /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
-    #define prmxnl1168             245 /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
-    #define prmxnl2221             246 /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
-    #define prmxnl3132             247 /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
-    #define prmxnl3231             248 /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
-    #define prmxnl3334             249 /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
-    #define prmxnl3433             250 /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
-    #define prmxnl8281             251 /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
     #define prmOVtstpgrensvroeg    252 /* Grens waarboven een OV voertuig als te vroeg wordt aangemerkt                                                                  */
     #define prmOVtstpgrenslaat     253 /* Grens waarboven een OV voertuig als te laat wordt aangemerkt                                                                   */
     #define prmovstipttevroeg02bus 254 /* Prioriteitsnveau OV te vroeg bij 02 Bus                                                                                        */
