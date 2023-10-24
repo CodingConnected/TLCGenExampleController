@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>12</HuidigeVersieMajor>
     <HuidigeVersieMinor>4</HuidigeVersieMinor>
-    <HuidigeVersieRevision>3</HuidigeVersieRevision>
+    <HuidigeVersieRevision>0</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <StoreCurrentController>false</StoreCurrentController>
     <ToevoegenOVM>false</ToevoegenOVM>
@@ -253,6 +253,7 @@
     <UitgangPerModule>true</UitgangPerModule>
     <GenererenIncludesLijst>false</GenererenIncludesLijst>
     <GenererenEnkelCompilatieBestand>true</GenererenEnkelCompilatieBestand>
+    <LosseBrondbestanden>false</LosseBrondbestanden>
     <GeenDetectorGedragInAutomaatOmgeving>true</GeenDetectorGedragInAutomaatOmgeving>
     <MultiModuleReeksen>false</MultiModuleReeksen>
     <ModulenInParameters>true</ModulenInParameters>
@@ -274,9 +275,9 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2023-10-17T00:00:00</Datum>
+      <Datum>2023-10-24T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Ontwikkel versie TLCGen (laastste portable) voor Interfunc - aanpassing PRIO</Commentaar>
+      <Commentaar>Ontwikkel versie TLCGen (laastste portable)</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -1736,6 +1737,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -2114,6 +2116,13 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd02</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm02</Naam>
         <Dummy>false</Dummy>
@@ -2206,6 +2215,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -2326,6 +2336,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd03</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm03</Naam>
         <Dummy>false</Dummy>
@@ -2418,6 +2435,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -2538,6 +2556,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd05</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm05</Naam>
         <Dummy>false</Dummy>
@@ -2630,6 +2655,7 @@
       <TGL>35</TGL>
       <TGL_min>35</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -3008,6 +3034,13 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd08</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm08</Naam>
         <Dummy>false</Dummy>
@@ -3100,6 +3133,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -3260,6 +3294,13 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd09</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm09</Naam>
         <Dummy>false</Dummy>
@@ -3352,6 +3393,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -3558,6 +3600,13 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd11</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm11</Naam>
         <Dummy>false</Dummy>
@@ -3650,6 +3699,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -3780,6 +3830,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd21</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -3868,6 +3925,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4000,6 +4058,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd22</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm22</Naam>
         <Dummy>false</Dummy>
@@ -4101,6 +4166,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4319,6 +4385,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd24</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -4412,6 +4485,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4542,6 +4616,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd26</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -4636,6 +4717,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4811,6 +4893,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd28</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -4904,6 +4993,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5048,6 +5138,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd31</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -5136,6 +5233,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5280,6 +5378,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd32</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -5374,6 +5479,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5518,6 +5624,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd33</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -5606,6 +5719,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5750,6 +5864,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd34</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -5838,6 +5959,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5982,6 +6104,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd38</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -6070,6 +6199,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -6190,6 +6320,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd61</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm61</Naam>
         <Dummy>false</Dummy>
@@ -6282,6 +6419,7 @@
       <TGL>35</TGL>
       <TGL_min>35</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -6488,6 +6626,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd62</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm62</Naam>
         <Dummy>false</Dummy>
@@ -6580,6 +6725,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -6700,6 +6846,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd67</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm67</Naam>
         <Dummy>false</Dummy>
@@ -6792,6 +6945,7 @@
       <TGL>35</TGL>
       <TGL_min>35</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -7082,6 +7236,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd68</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm68</Naam>
         <Dummy>false</Dummy>
@@ -7174,6 +7335,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -7304,6 +7466,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd81</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -7392,6 +7561,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -7522,6 +7692,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd82</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -7610,6 +7787,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -7742,6 +7920,13 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Naam>isgtijd84</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -19160,6 +19345,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit67</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -19381,13 +19573,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkaruit68</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit67</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

@@ -89,7 +89,6 @@ int iM_PrioMeeRealisatie[FCMAX*FCMAX];
 
 int prioKFC_MAX[prioFCMAX];
 int prioGKFC_MAX[prioFCMAX];
-int prioFKFC_MAX[prioFCMAX];
 int *prioTO_pointer[prioFCMAX];
 int prioM_TO_pointer[prioFCMAX*prioFCMAX];
 int iLangstWachtendeAlternatief;

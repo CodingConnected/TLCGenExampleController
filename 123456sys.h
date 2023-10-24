@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   17-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc - aanpassing PRIO
+ * 12.4.0   24-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20231017"
+#define VERSION "12.4.0 20231024"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 
 /* fasecycli */
@@ -52,155 +52,110 @@
 
 /* overige uitgangen */
 /* ----------------- */
-    #define ussegm1          (FCMAX +  0) /* Aansturing segmenten display                            */
-    #define ussegm2          (FCMAX +  1) /* Aansturing segmenten display                            */
-    #define ussegm3          (FCMAX +  2) /* Aansturing segmenten display                            */
-    #define ussegm4          (FCMAX +  3) /* Aansturing segmenten display                            */
-    #define ussegm5          (FCMAX +  4) /* Aansturing segmenten display                            */
-    #define ussegm6          (FCMAX +  5) /* Aansturing segmenten display                            */
-    #define ussegm7          (FCMAX +  6) /* Aansturing segmenten display                            */
-    #define usML1            (FCMAX +  7) /* Verklikken actief zijn ML1                              */
-    #define usML2            (FCMAX +  8) /* Verklikken actief zijn ML2                              */
-    #define usML3            (FCMAX +  9) /* Verklikken actief zijn ML3                              */
-    #define usML4            (FCMAX + 10) /* Verklikken actief zijn ML4                              */
-    #define usincontrol      (FCMAX + 11) /* Verklikken of applicatie daadwerkelijk de TLC aanstuurt */
-    #define usnocontrol      (FCMAX + 12) /* Verklikken of applicatie niet in staat is te regelen    */
-    #define usFile68af       (FCMAX + 13) /* File ingreep File68af actief                            */
-    #define usovtevroeg02bus (FCMAX + 14) /* Voorste OV voertuig bij 02 te vroeg Bus                 */
-    #define usovoptijd02bus  (FCMAX + 15) /* Voorste OV voertuig bij 02 op tijd Bus                  */
-    #define usovtelaat02bus  (FCMAX + 16) /* Voorste OV voertuig bij 02 te laat Bus                  */
-    #define usovtevroeg03bus (FCMAX + 17) /* Voorste OV voertuig bij 03 te vroeg Bus                 */
-    #define usovoptijd03bus  (FCMAX + 18) /* Voorste OV voertuig bij 03 op tijd Bus                  */
-    #define usovtelaat03bus  (FCMAX + 19) /* Voorste OV voertuig bij 03 te laat Bus                  */
-    #define usovtevroeg05bus (FCMAX + 20) /* Voorste OV voertuig bij 05 te vroeg Bus                 */
-    #define usovoptijd05bus  (FCMAX + 21) /* Voorste OV voertuig bij 05 op tijd Bus                  */
-    #define usovtelaat05bus  (FCMAX + 22) /* Voorste OV voertuig bij 05 te laat Bus                  */
-    #define usovtevroeg08bus (FCMAX + 23) /* Voorste OV voertuig bij 08 te vroeg Bus                 */
-    #define usovoptijd08bus  (FCMAX + 24) /* Voorste OV voertuig bij 08 op tijd Bus                  */
-    #define usovtelaat08bus  (FCMAX + 25) /* Voorste OV voertuig bij 08 te laat Bus                  */
-    #define usovtevroeg09bus (FCMAX + 26) /* Voorste OV voertuig bij 09 te vroeg Bus                 */
-    #define usovoptijd09bus  (FCMAX + 27) /* Voorste OV voertuig bij 09 op tijd Bus                  */
-    #define usovtelaat09bus  (FCMAX + 28) /* Voorste OV voertuig bij 09 te laat Bus                  */
-    #define usovtevroeg11bus (FCMAX + 29) /* Voorste OV voertuig bij 11 te vroeg Bus                 */
-    #define usovoptijd11bus  (FCMAX + 30) /* Voorste OV voertuig bij 11 op tijd Bus                  */
-    #define usovtelaat11bus  (FCMAX + 31) /* Voorste OV voertuig bij 11 te laat Bus                  */
-    #define usmaxwt          (FCMAX + 32) /* Verklikken maximale wachttijd overschreden              */
-    #define uskarmelding     (FCMAX + 33) /* Verklikken ontvangst melding KAR                        */
-    #define uskarog          (FCMAX + 34) /* Verklikken ondergedrag KAR                              */
-    #define usprioinm02bus   (FCMAX + 35) /* Verklikken inmelding OV fase 02                         */
-    #define usprioinm03bus   (FCMAX + 36) /* Verklikken inmelding OV fase 03                         */
-    #define usprioinm05bus   (FCMAX + 37) /* Verklikken inmelding OV fase 05                         */
-    #define usprioinm08bus   (FCMAX + 38) /* Verklikken inmelding OV fase 08                         */
-    #define usprioinm09bus   (FCMAX + 39) /* Verklikken inmelding OV fase 09                         */
-    #define usprioinm11bus   (FCMAX + 40) /* Verklikken inmelding OV fase 11                         */
-    #define ushdinm02        (FCMAX + 41) /* Verklikken inmelding HD fase 02                         */
-    #define ushdinm03        (FCMAX + 42) /* Verklikken inmelding HD fase 03                         */
-    #define ushdinm05        (FCMAX + 43) /* Verklikken inmelding HD fase 05                         */
-    #define ushdinm08        (FCMAX + 44) /* Verklikken inmelding HD fase 08                         */
-    #define ushdinm09        (FCMAX + 45) /* Verklikken inmelding HD fase 09                         */
-    #define ushdinm11        (FCMAX + 46) /* Verklikken inmelding HD fase 11                         */
-    #define ushdinm61        (FCMAX + 47) /* Verklikken inmelding HD fase 61                         */
-    #define ushdinm62        (FCMAX + 48) /* Verklikken inmelding HD fase 62                         */
-    #define ushdinm67        (FCMAX + 49) /* Verklikken inmelding HD fase 67                         */
-    #define ushdinm68        (FCMAX + 50) /* Verklikken inmelding HD fase 68                         */
-    #define usperdef         (FCMAX + 51) /* Default periode actief                                  */
-    #define usper1           (FCMAX + 52) /* Periode Reserve actief                                  */
-    #define usperoFietsprio1 (FCMAX + 53) /* Periode actief                                          */
-    #define usperoFietsprio2 (FCMAX + 54) /* Periode actief                                          */
-    #define usperoFietsprio3 (FCMAX + 55) /* Periode actief                                          */
-    #define usper2           (FCMAX + 56) /* Periode Dag periode actief                              */
-    #define usper3           (FCMAX + 57) /* Periode Ochtendspits actief                             */
-    #define usper4           (FCMAX + 58) /* Periode Avondspits actief                               */
-    #define usper5           (FCMAX + 59) /* Periode Koopavond actief                                */
-    #define usper6           (FCMAX + 60) /* Periode Weekend actief                                  */
-    #define usper7           (FCMAX + 61) /* Periode Reserve actief                                  */
-    #define uswtk21          (FCMAX + 62) /* Aansturing waitsignaal detector k21                     */
-    #define uswtk22          (FCMAX + 63) /* Aansturing waitsignaal detector k22                     */
-    #define uswtk24          (FCMAX + 64) /* Aansturing waitsignaal detector k24                     */
-    #define uswtk26          (FCMAX + 65) /* Aansturing waitsignaal detector k26                     */
-    #define uswtk28          (FCMAX + 66) /* Aansturing waitsignaal detector k28                     */
-    #define uswtk31a         (FCMAX + 67) /* Aansturing waitsignaal detector k31a                    */
-    #define uswtk31b         (FCMAX + 68) /* Aansturing waitsignaal detector k31b                    */
-    #define uswtk32a         (FCMAX + 69) /* Aansturing waitsignaal detector k32a                    */
-    #define uswtk32b         (FCMAX + 70) /* Aansturing waitsignaal detector k32b                    */
-    #define uswtk33a         (FCMAX + 71) /* Aansturing waitsignaal detector k33a                    */
-    #define uswtk33b         (FCMAX + 72) /* Aansturing waitsignaal detector k33b                    */
-    #define uswtk34a         (FCMAX + 73) /* Aansturing waitsignaal detector k34a                    */
-    #define uswtk34b         (FCMAX + 74) /* Aansturing waitsignaal detector k34b                    */
-    #define uswtk38a         (FCMAX + 75) /* Aansturing waitsignaal detector k38a                    */
-    #define uswtk38b         (FCMAX + 76) /* Aansturing waitsignaal detector k38b                    */
-    #define uswtk81          (FCMAX + 77) /* Aansturing waitsignaal detector k81                     */
-    #define uswtk82          (FCMAX + 78) /* Aansturing waitsignaal detector k82                     */
-    #define uswtk84          (FCMAX + 79) /* Aansturing waitsignaal detector k84                     */
-    #define usisgtijd02      (FCMAX + 80) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd03      (FCMAX + 81) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd05      (FCMAX + 82) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd08      (FCMAX + 83) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd09      (FCMAX + 84) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd11      (FCMAX + 85) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd21      (FCMAX + 86) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd22      (FCMAX + 87) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd24      (FCMAX + 88) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd26      (FCMAX + 89) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd28      (FCMAX + 90) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd31      (FCMAX + 91) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd32      (FCMAX + 92) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd33      (FCMAX + 93) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd34      (FCMAX + 94) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd38      (FCMAX + 95) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd61      (FCMAX + 96) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd62      (FCMAX + 97) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd67      (FCMAX + 98) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd68      (FCMAX + 99) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd81      (FCMAX + 100) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd82      (FCMAX + 101) /* Logging isgtijd in multivalent uitgangssignaal          */
-    #define usisgtijd84      (FCMAX + 102) /* Logging isgtijd in multivalent uitgangssignaal          */
+    #define ussegm1          (FCMAX +   0) /* Aansturing segmenten display                            */
+    #define ussegm2          (FCMAX +   1) /* Aansturing segmenten display                            */
+    #define ussegm3          (FCMAX +   2) /* Aansturing segmenten display                            */
+    #define ussegm4          (FCMAX +   3) /* Aansturing segmenten display                            */
+    #define ussegm5          (FCMAX +   4) /* Aansturing segmenten display                            */
+    #define ussegm6          (FCMAX +   5) /* Aansturing segmenten display                            */
+    #define ussegm7          (FCMAX +   6) /* Aansturing segmenten display                            */
+    #define usML1            (FCMAX +   7) /* Verklikken actief zijn ML1                              */
+    #define usML2            (FCMAX +   8) /* Verklikken actief zijn ML2                              */
+    #define usML3            (FCMAX +   9) /* Verklikken actief zijn ML3                              */
+    #define usML4            (FCMAX +  10) /* Verklikken actief zijn ML4                              */
+    #define usincontrol      (FCMAX +  11) /* Verklikken of applicatie daadwerkelijk de TLC aanstuurt */
+    #define usnocontrol      (FCMAX +  12) /* Verklikken of applicatie niet in staat is te regelen    */
+    #define usFile68af       (FCMAX +  13) /* File ingreep File68af actief                            */
+    #define usovtevroeg02bus (FCMAX +  14) /* Voorste OV voertuig bij 02 te vroeg Bus                 */
+    #define usovoptijd02bus  (FCMAX +  15) /* Voorste OV voertuig bij 02 op tijd Bus                  */
+    #define usovtelaat02bus  (FCMAX +  16) /* Voorste OV voertuig bij 02 te laat Bus                  */
+    #define usovtevroeg03bus (FCMAX +  17) /* Voorste OV voertuig bij 03 te vroeg Bus                 */
+    #define usovoptijd03bus  (FCMAX +  18) /* Voorste OV voertuig bij 03 op tijd Bus                  */
+    #define usovtelaat03bus  (FCMAX +  19) /* Voorste OV voertuig bij 03 te laat Bus                  */
+    #define usovtevroeg05bus (FCMAX +  20) /* Voorste OV voertuig bij 05 te vroeg Bus                 */
+    #define usovoptijd05bus  (FCMAX +  21) /* Voorste OV voertuig bij 05 op tijd Bus                  */
+    #define usovtelaat05bus  (FCMAX +  22) /* Voorste OV voertuig bij 05 te laat Bus                  */
+    #define usovtevroeg08bus (FCMAX +  23) /* Voorste OV voertuig bij 08 te vroeg Bus                 */
+    #define usovoptijd08bus  (FCMAX +  24) /* Voorste OV voertuig bij 08 op tijd Bus                  */
+    #define usovtelaat08bus  (FCMAX +  25) /* Voorste OV voertuig bij 08 te laat Bus                  */
+    #define usovtevroeg09bus (FCMAX +  26) /* Voorste OV voertuig bij 09 te vroeg Bus                 */
+    #define usovoptijd09bus  (FCMAX +  27) /* Voorste OV voertuig bij 09 op tijd Bus                  */
+    #define usovtelaat09bus  (FCMAX +  28) /* Voorste OV voertuig bij 09 te laat Bus                  */
+    #define usovtevroeg11bus (FCMAX +  29) /* Voorste OV voertuig bij 11 te vroeg Bus                 */
+    #define usovoptijd11bus  (FCMAX +  30) /* Voorste OV voertuig bij 11 op tijd Bus                  */
+    #define usovtelaat11bus  (FCMAX +  31) /* Voorste OV voertuig bij 11 te laat Bus                  */
+    #define usmaxwt          (FCMAX +  32) /* Verklikken maximale wachttijd overschreden              */
+    #define uskarmelding     (FCMAX +  33) /* Verklikken ontvangst melding KAR                        */
+    #define uskarog          (FCMAX +  34) /* Verklikken ondergedrag KAR                              */
+    #define usprioinm02bus   (FCMAX +  35) /* Verklikken inmelding OV fase 02                         */
+    #define usprioinm03bus   (FCMAX +  36) /* Verklikken inmelding OV fase 03                         */
+    #define usprioinm05bus   (FCMAX +  37) /* Verklikken inmelding OV fase 05                         */
+    #define usprioinm08bus   (FCMAX +  38) /* Verklikken inmelding OV fase 08                         */
+    #define usprioinm09bus   (FCMAX +  39) /* Verklikken inmelding OV fase 09                         */
+    #define usprioinm11bus   (FCMAX +  40) /* Verklikken inmelding OV fase 11                         */
+    #define ushdinm02        (FCMAX +  41) /* Verklikken inmelding HD fase 02                         */
+    #define ushdinm03        (FCMAX +  42) /* Verklikken inmelding HD fase 03                         */
+    #define ushdinm05        (FCMAX +  43) /* Verklikken inmelding HD fase 05                         */
+    #define ushdinm08        (FCMAX +  44) /* Verklikken inmelding HD fase 08                         */
+    #define ushdinm09        (FCMAX +  45) /* Verklikken inmelding HD fase 09                         */
+    #define ushdinm11        (FCMAX +  46) /* Verklikken inmelding HD fase 11                         */
+    #define ushdinm61        (FCMAX +  47) /* Verklikken inmelding HD fase 61                         */
+    #define ushdinm62        (FCMAX +  48) /* Verklikken inmelding HD fase 62                         */
+    #define ushdinm67        (FCMAX +  49) /* Verklikken inmelding HD fase 67                         */
+    #define ushdinm68        (FCMAX +  50) /* Verklikken inmelding HD fase 68                         */
+    #define usperdef         (FCMAX +  51) /* Default periode actief                                  */
+    #define usper1           (FCMAX +  52) /* Periode Reserve actief                                  */
+    #define usperoFietsprio1 (FCMAX +  53) /* Periode actief                                          */
+    #define usperoFietsprio2 (FCMAX +  54) /* Periode actief                                          */
+    #define usperoFietsprio3 (FCMAX +  55) /* Periode actief                                          */
+    #define usper2           (FCMAX +  56) /* Periode Dag periode actief                              */
+    #define usper3           (FCMAX +  57) /* Periode Ochtendspits actief                             */
+    #define usper4           (FCMAX +  58) /* Periode Avondspits actief                               */
+    #define usper5           (FCMAX +  59) /* Periode Koopavond actief                                */
+    #define usper6           (FCMAX +  60) /* Periode Weekend actief                                  */
+    #define usper7           (FCMAX +  61) /* Periode Reserve actief                                  */
+    #define uswtk21          (FCMAX +  62) /* Aansturing waitsignaal detector k21                     */
+    #define uswtk22          (FCMAX +  63) /* Aansturing waitsignaal detector k22                     */
+    #define uswtk24          (FCMAX +  64) /* Aansturing waitsignaal detector k24                     */
+    #define uswtk26          (FCMAX +  65) /* Aansturing waitsignaal detector k26                     */
+    #define uswtk28          (FCMAX +  66) /* Aansturing waitsignaal detector k28                     */
+    #define uswtk31a         (FCMAX +  67) /* Aansturing waitsignaal detector k31a                    */
+    #define uswtk31b         (FCMAX +  68) /* Aansturing waitsignaal detector k31b                    */
+    #define uswtk32a         (FCMAX +  69) /* Aansturing waitsignaal detector k32a                    */
+    #define uswtk32b         (FCMAX +  70) /* Aansturing waitsignaal detector k32b                    */
+    #define uswtk33a         (FCMAX +  71) /* Aansturing waitsignaal detector k33a                    */
+    #define uswtk33b         (FCMAX +  72) /* Aansturing waitsignaal detector k33b                    */
+    #define uswtk34a         (FCMAX +  73) /* Aansturing waitsignaal detector k34a                    */
+    #define uswtk34b         (FCMAX +  74) /* Aansturing waitsignaal detector k34b                    */
+    #define uswtk38a         (FCMAX +  75) /* Aansturing waitsignaal detector k38a                    */
+    #define uswtk38b         (FCMAX +  76) /* Aansturing waitsignaal detector k38b                    */
+    #define uswtk81          (FCMAX +  77) /* Aansturing waitsignaal detector k81                     */
+    #define uswtk82          (FCMAX +  78) /* Aansturing waitsignaal detector k82                     */
+    #define uswtk84          (FCMAX +  79) /* Aansturing waitsignaal detector k84                     */
+    #define usisgtijd02      (FCMAX +  80) /* Verklikken PRIO 02 tbv interfunc                        */
+    #define usisgtijd03      (FCMAX +  81) /* Verklikken PRIO 03 tbv interfunc                        */
+    #define usisgtijd05      (FCMAX +  82) /* Verklikken PRIO 05 tbv interfunc                        */
+    #define usisgtijd08      (FCMAX +  83) /* Verklikken PRIO 08 tbv interfunc                        */
+    #define usisgtijd09      (FCMAX +  84) /* Verklikken PRIO 09 tbv interfunc                        */
+    #define usisgtijd11      (FCMAX +  85) /* Verklikken PRIO 11 tbv interfunc                        */
+    #define usisgtijd21      (FCMAX +  86) /* Verklikken PRIO 21 tbv interfunc                        */
+    #define usisgtijd22      (FCMAX +  87) /* Verklikken PRIO 22 tbv interfunc                        */
+    #define usisgtijd24      (FCMAX +  88) /* Verklikken PRIO 24 tbv interfunc                        */
+    #define usisgtijd26      (FCMAX +  89) /* Verklikken PRIO 26 tbv interfunc                        */
+    #define usisgtijd28      (FCMAX +  90) /* Verklikken PRIO 28 tbv interfunc                        */
+    #define usisgtijd31      (FCMAX +  91) /* Verklikken PRIO 31 tbv interfunc                        */
+    #define usisgtijd32      (FCMAX +  92) /* Verklikken PRIO 32 tbv interfunc                        */
+    #define usisgtijd33      (FCMAX +  93) /* Verklikken PRIO 33 tbv interfunc                        */
+    #define usisgtijd34      (FCMAX +  94) /* Verklikken PRIO 34 tbv interfunc                        */
+    #define usisgtijd38      (FCMAX +  95) /* Verklikken PRIO 38 tbv interfunc                        */
+    #define usisgtijd61      (FCMAX +  96) /* Verklikken PRIO 61 tbv interfunc                        */
+    #define usisgtijd62      (FCMAX +  97) /* Verklikken PRIO 62 tbv interfunc                        */
+    #define usisgtijd67      (FCMAX +  98) /* Verklikken PRIO 67 tbv interfunc                        */
+    #define usisgtijd68      (FCMAX +  99) /* Verklikken PRIO 68 tbv interfunc                        */
+    #define usisgtijd81      (FCMAX + 100) /* Verklikken PRIO 81 tbv interfunc                        */
+    #define usisgtijd82      (FCMAX + 101) /* Verklikken PRIO 82 tbv interfunc                        */
+    #define usisgtijd84      (FCMAX + 102) /* Verklikken PRIO 84 tbv interfunc                        */
     #define USMAX1           (FCMAX + 103)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* detectie */
 /* -------- */
@@ -902,22 +857,13 @@
     #define tfo0522                    284 /* Fictieve ontruimingstijd van 22 naar fase 05                          */
     #define tvs3205                    285 /* Voorstarttijd fase 32 op fase 05                                      */
     #define tfo0532                    286 /* Fictieve ontruimingstijd van 32 naar fase 05                          */
-    #define tfo2611                    287 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
-    #define tinl3132                   288 /* Inlooptijd fase 31                                                    */
-    #define tinl3231                   289 /* Inlooptijd fase 32                                                    */
-    #define tinl3334                   290 /* Inlooptijd fase 33                                                    */
-    #define tinl3433                   291 /* Inlooptijd fase 34                                                    */
-    #define txnl0262                   292 /* Tijd tegenhouden voedende richting naloop van 02 naar 62              */
-    #define txnl0868                   293 /* Tijd tegenhouden voedende richting naloop van 08 naar 68              */
-    #define txnl1168                   294 /* Tijd tegenhouden voedende richting naloop van 11 naar 68              */
-    #define txnl2221                   295 /* Tijd tegenhouden voedende richting naloop van 22 naar 21              */
-    #define txnl3132                   296 /* Tijd tegenhouden voedende richting naloop van 31 naar 32              */
-    #define txnl3231                   297 /* Tijd tegenhouden voedende richting naloop van 32 naar 31              */
-    #define txnl3334                   298 /* Tijd tegenhouden voedende richting naloop van 33 naar 34              */
-    #define txnl3433                   299 /* Tijd tegenhouden voedende richting naloop van 34 naar 33              */
-    #define txnl8281                   300 /* Tijd tegenhouden voedende richting naloop van 82 naar 81              */
-    #define tlr2611                    301 /* Late release tijd fase 26 naar fase 11                                */
-    #define TMMAX1                     302
+    #define tlr2611                    287 /* Late release tijd fase 26 naar fase 11                                */
+    #define tfo2611                    288 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
+    #define tinl3132                   289 /* Inlooptijd fase 31                                                    */
+    #define tinl3231                   290 /* Inlooptijd fase 32                                                    */
+    #define tinl3334                   291 /* Inlooptijd fase 33                                                    */
+    #define tinl3433                   292 /* Inlooptijd fase 34                                                    */
+    #define TMMAX1                     293
 
 /* teller elementen */
 /* ---------------- */
@@ -1441,6 +1387,15 @@
     #define prmprml81              240 /* Toewijzen PRML voor fase 81 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     #define prmprml82              241 /* Toewijzen PRML voor fase 82 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     #define prmprml84              242 /* Toewijzen PRML voor fase 84 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
+    #define prmxnl0262             243 /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
+    #define prmxnl0868             244 /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
+    #define prmxnl1168             245 /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
+    #define prmxnl2221             246 /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
+    #define prmxnl3132             247 /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
+    #define prmxnl3231             248 /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
+    #define prmxnl3334             249 /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
+    #define prmxnl3433             250 /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
+    #define prmxnl8281             251 /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
     #define prmOVtstpgrensvroeg    252 /* Grens waarboven een OV voertuig als te vroeg wordt aangemerkt                                                                  */
     #define prmOVtstpgrenslaat     253 /* Grens waarboven een OV voertuig als te laat wordt aangemerkt                                                                   */
     #define prmovstipttevroeg02bus 254 /* Prioriteitsnveau OV te vroeg bij 02 Bus                                                                                        */

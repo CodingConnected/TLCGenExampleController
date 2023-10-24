@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   17-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable) voor Interfunc - aanpassing PRIO
+ * 12.4.0   24-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
  *
  ************************************************************************************/
 
@@ -52,6 +52,8 @@
     #include "extra_func_prio.h"
 
 boolv vertraag_kar_uitm[prioFCMAX];
+
+#include "prioisg.c" /* Interstartgroen prio functies */
 
 #define MAX_AANTAL_INMELDINGEN           10
 #define DEFAULT_MAX_WACHTTIJD           120

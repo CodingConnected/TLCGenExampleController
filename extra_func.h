@@ -98,7 +98,7 @@ extern int Knipper_2Hz;
    boolv ControleerGS(count fc1, count fc2, boolv cond, boolv halt);
    boolv ControleerVS(count fc1, count fc2, boolv cond, boolv halt);
    boolv ControleerNaloopEG(count voedend, count volg, count tnlfg, count tnleg, count tnldet, boolv halt);
-   boolv ControleerInrijden(count voedend, count volg, count prmxnl, boolv halt);
+   boolv ControleerInrijden(count voedend, count volg, boolv tinr, boolv halt);
 #endif 
 #endif 
 
