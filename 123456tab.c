@@ -3957,6 +3957,33 @@ void control_parameters(void)
     US_type[fc82] = FTS_type;
     US_type[fc84] = FTS_type;
 
+    /* Multivalente ingangen */
+#if !defined NO_VLOG_300
+    US_type[usisgtijd02] = USM_type;
+    US_type[usisgtijd03] = USM_type;
+    US_type[usisgtijd05] = USM_type;
+    US_type[usisgtijd08] = USM_type;
+    US_type[usisgtijd09] = USM_type;
+    US_type[usisgtijd11] = USM_type;
+    US_type[usisgtijd21] = USM_type;
+    US_type[usisgtijd22] = USM_type;
+    US_type[usisgtijd24] = USM_type;
+    US_type[usisgtijd26] = USM_type;
+    US_type[usisgtijd28] = USM_type;
+    US_type[usisgtijd31] = USM_type;
+    US_type[usisgtijd32] = USM_type;
+    US_type[usisgtijd33] = USM_type;
+    US_type[usisgtijd34] = USM_type;
+    US_type[usisgtijd38] = USM_type;
+    US_type[usisgtijd61] = USM_type;
+    US_type[usisgtijd62] = USM_type;
+    US_type[usisgtijd67] = USM_type;
+    US_type[usisgtijd68] = USM_type;
+    US_type[usisgtijd81] = USM_type;
+    US_type[usisgtijd82] = USM_type;
+    US_type[usisgtijd84] = USM_type;
+#endif /* NO_VLOG_300 */
+
 #ifdef VISSIM
     D_code[d02_1a] = "0211";
     D_code[d02_1b] = "0212";
