@@ -275,7 +275,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2023-10-24T00:00:00</Datum>
+      <Datum>2023-11-17T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (laastste portable)</Commentaar>
     </Versie>
@@ -2120,7 +2120,7 @@
         <Naam>isgtijd02</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -2340,7 +2340,7 @@
         <Naam>isgtijd03</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -2560,7 +2560,7 @@
         <Naam>isgtijd05</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -3038,7 +3038,7 @@
         <Naam>isgtijd08</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -3298,7 +3298,7 @@
         <Naam>isgtijd09</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -3604,7 +3604,7 @@
         <Naam>isgtijd11</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -3834,7 +3834,7 @@
         <Naam>isgtijd21</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -4062,7 +4062,7 @@
         <Naam>isgtijd22</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -4389,7 +4389,7 @@
         <Naam>isgtijd24</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -4620,7 +4620,7 @@
         <Naam>isgtijd26</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -4897,7 +4897,7 @@
         <Naam>isgtijd28</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -5142,7 +5142,7 @@
         <Naam>isgtijd31</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -5382,7 +5382,7 @@
         <Naam>isgtijd32</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -5628,7 +5628,7 @@
         <Naam>isgtijd33</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -5868,7 +5868,7 @@
         <Naam>isgtijd34</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -6108,7 +6108,7 @@
         <Naam>isgtijd38</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -6324,7 +6324,7 @@
         <Naam>isgtijd61</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -6630,7 +6630,7 @@
         <Naam>isgtijd62</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -6850,7 +6850,7 @@
         <Naam>isgtijd67</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -7240,7 +7240,7 @@
         <Naam>isgtijd68</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -7470,7 +7470,7 @@
         <Naam>isgtijd81</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -7696,7 +7696,7 @@
         <Naam>isgtijd82</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -7924,7 +7924,7 @@
         <Naam>isgtijd84</Naam>
         <Dummy>false</Dummy>
         <ElementType>Output</ElementType>
-        <Multivalent>false</Multivalent>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -10444,7 +10444,7 @@
           <GroenNaTXDTijd>0</GroenNaTXDTijd>
         </HalfstarIngreepData>
         <PrioInmeldingBitmapData>
-          <Naam>prioinm02bus</Naam>
+          <Naam>ovinm02bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -10676,7 +10676,7 @@
           <GroenNaTXDTijd>0</GroenNaTXDTijd>
         </HalfstarIngreepData>
         <PrioInmeldingBitmapData>
-          <Naam>prioinm03bus</Naam>
+          <Naam>ovinm03bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -10908,7 +10908,7 @@
           <GroenNaTXDTijd>0</GroenNaTXDTijd>
         </HalfstarIngreepData>
         <PrioInmeldingBitmapData>
-          <Naam>prioinm05bus</Naam>
+          <Naam>ovinm05bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -11140,7 +11140,7 @@
           <GroenNaTXDTijd>0</GroenNaTXDTijd>
         </HalfstarIngreepData>
         <PrioInmeldingBitmapData>
-          <Naam>prioinm08bus</Naam>
+          <Naam>ovinm08bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -11372,7 +11372,7 @@
           <GroenNaTXDTijd>0</GroenNaTXDTijd>
         </HalfstarIngreepData>
         <PrioInmeldingBitmapData>
-          <Naam>prioinm09bus</Naam>
+          <Naam>ovinm09bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -11604,7 +11604,7 @@
           <GroenNaTXDTijd>0</GroenNaTXDTijd>
         </HalfstarIngreepData>
         <PrioInmeldingBitmapData>
-          <Naam>prioinm11bus</Naam>
+          <Naam>ovinm11bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -19352,6 +19352,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit68</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -19568,13 +19575,6 @@
         <Naam>dummykarin02bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin02bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit68</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

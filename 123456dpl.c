@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   24-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
+ * 12.4.0   17-11-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
  *
  ************************************************************************************/
 
@@ -222,12 +222,12 @@ void display_parameters(void)
     X_us[usmaxwt] = 275; Y_us[usmaxwt] = 36;
     X_us[uskarmelding] = 276; Y_us[uskarmelding] = 11;
     X_us[uskarog] = 277; Y_us[uskarog] = 24;
-    X_us[usprioinm02bus] = 151; Y_us[usprioinm02bus] = 30;
-    X_us[usprioinm03bus] = 149; Y_us[usprioinm03bus] = 44;
-    X_us[usprioinm05bus] = 152; Y_us[usprioinm05bus] = 59;
-    X_us[usprioinm08bus] = 152; Y_us[usprioinm08bus] = 72;
-    X_us[usprioinm09bus] = 149; Y_us[usprioinm09bus] = 84;
-    X_us[usprioinm11bus] = 151; Y_us[usprioinm11bus] = 98;
+    X_us[usovinm02bus] = 151; Y_us[usovinm02bus] = 30;
+    X_us[usovinm03bus] = 149; Y_us[usovinm03bus] = 44;
+    X_us[usovinm05bus] = 152; Y_us[usovinm05bus] = 59;
+    X_us[usovinm08bus] = 152; Y_us[usovinm08bus] = 72;
+    X_us[usovinm09bus] = 149; Y_us[usovinm09bus] = 84;
+    X_us[usovinm11bus] = 151; Y_us[usovinm11bus] = 98;
     X_us[ushdinm02] = 66; Y_us[ushdinm02] = 31;
     X_us[ushdinm02_1] = 167; Y_us[ushdinm02_1] = 29; NR_us[ushdinm02_1] = ushdinm02;
     X_us[ushdinm03] = 70; Y_us[ushdinm03] = 44;

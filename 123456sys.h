@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   24-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
+ * 12.4.0   17-11-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20231024"
+#define VERSION "12.4.0 20231117"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 
 /* fasecycli */
@@ -87,12 +87,12 @@
     #define usmaxwt          (FCMAX +  32) /* Verklikken maximale wachttijd overschreden              */
     #define uskarmelding     (FCMAX +  33) /* Verklikken ontvangst melding KAR                        */
     #define uskarog          (FCMAX +  34) /* Verklikken ondergedrag KAR                              */
-    #define usprioinm02bus   (FCMAX +  35) /* Verklikken inmelding OV fase 02                         */
-    #define usprioinm03bus   (FCMAX +  36) /* Verklikken inmelding OV fase 03                         */
-    #define usprioinm05bus   (FCMAX +  37) /* Verklikken inmelding OV fase 05                         */
-    #define usprioinm08bus   (FCMAX +  38) /* Verklikken inmelding OV fase 08                         */
-    #define usprioinm09bus   (FCMAX +  39) /* Verklikken inmelding OV fase 09                         */
-    #define usprioinm11bus   (FCMAX +  40) /* Verklikken inmelding OV fase 11                         */
+    #define usovinm02bus     (FCMAX +  35) /* Verklikken inmelding OV fase 02                         */
+    #define usovinm03bus     (FCMAX +  36) /* Verklikken inmelding OV fase 03                         */
+    #define usovinm05bus     (FCMAX +  37) /* Verklikken inmelding OV fase 05                         */
+    #define usovinm08bus     (FCMAX +  38) /* Verklikken inmelding OV fase 08                         */
+    #define usovinm09bus     (FCMAX +  39) /* Verklikken inmelding OV fase 09                         */
+    #define usovinm11bus     (FCMAX +  40) /* Verklikken inmelding OV fase 11                         */
     #define ushdinm02        (FCMAX +  41) /* Verklikken inmelding HD fase 02                         */
     #define ushdinm03        (FCMAX +  42) /* Verklikken inmelding HD fase 03                         */
     #define ushdinm05        (FCMAX +  43) /* Verklikken inmelding HD fase 05                         */
@@ -863,16 +863,16 @@
     #define tinl3231                   290 /* Inlooptijd fase 32                                                    */
     #define tinl3334                   291 /* Inlooptijd fase 33                                                    */
     #define tinl3433                   292 /* Inlooptijd fase 34                                                    */
-    #define txnl0262                   293 /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
-    #define txnl0868                   294 /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
-    #define txnl1168                   295 /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
-    #define txnl2221                   296 /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
-    #define txnl3132                   297 /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
-    #define txnl3231                   298 /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
-    #define txnl3334                   299 /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
-    #define txnl3433                   300 /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
-    #define txnl8281                   301 /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
-    #define TMMAX1                     303
+    #define txnl0262                   293 /* Tegenhouden fase 02 tbv naloop naar fase 62                           */
+    #define txnl0868                   294 /* Tegenhouden fase 08 tbv naloop naar fase 68                           */
+    #define txnl1168                   295 /* Tegenhouden fase 11 tbv naloop naar fase 68                           */
+    #define txnl2221                   296 /* Tegenhouden fase 22 tbv naloop naar fase 21                           */
+    #define txnl3132                   297 /* Tegenhouden fase 31 tbv naloop naar fase 32                           */
+    #define txnl3231                   298 /* Tegenhouden fase 32 tbv naloop naar fase 31                           */
+    #define txnl3334                   299 /* Tegenhouden fase 33 tbv naloop naar fase 34                           */
+    #define txnl3433                   300 /* Tegenhouden fase 34 tbv naloop naar fase 33                           */
+    #define txnl8281                   301 /* Tegenhouden fase 82 tbv naloop naar fase 81                           */
+    #define TMMAX1                     302
 
 /* teller elementen */
 /* ---------------- */
@@ -1396,6 +1396,15 @@
     #define prmprml81              240 /* Toewijzen PRML voor fase 81 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     #define prmprml82              241 /* Toewijzen PRML voor fase 82 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     #define prmprml84              242 /* Toewijzen PRML voor fase 84 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
+    #define prmxnl0262             243 /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
+    #define prmxnl0868             244 /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
+    #define prmxnl1168             245 /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
+    #define prmxnl2221             246 /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
+    #define prmxnl3132             247 /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
+    #define prmxnl3231             248 /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
+    #define prmxnl3334             249 /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
+    #define prmxnl3433             250 /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
+    #define prmxnl8281             251 /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
     #define prmOVtstpgrensvroeg    252 /* Grens waarboven een OV voertuig als te vroeg wordt aangemerkt                                                                  */
     #define prmOVtstpgrenslaat     253 /* Grens waarboven een OV voertuig als te laat wordt aangemerkt                                                                   */
     #define prmovstipttevroeg02bus 254 /* Prioriteitsnveau OV te vroeg bij 02 Bus                                                                                        */

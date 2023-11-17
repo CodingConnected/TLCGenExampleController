@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   24-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
+ * 12.4.0   17-11-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
  *
  ************************************************************************************/
 
@@ -76,7 +76,7 @@
     #include "MirakelMonitor.h"
 #endif /* MIRMON */
     #include "dynamischhiaat.c"
-#include "isgfunc.c" /* Interstartgroenfuncties */
+#include "isgfunc.c" /* Interstartgroen functies */
 
 mulv DB_old[DPMAX];
 mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
@@ -93,10 +93,8 @@ boolv init_tvg;
 #endif
 
 #include "123456reg.add"
-
-/* prioriteitsingrepen */
 #include "123456prio.c"
-#include "prioisg.c"
+#include "isgfunc_prio.c" /* Interstartgroen prio functies */
 #include "123456tab.c"
 
 void PreApplication(void)
@@ -2228,12 +2226,12 @@ void system_application(void)
 
     /* PRIO verklikking */
     /* ---------------- */
-    CIF_GUS[usprioinm02bus] = C[cvc02bus];
-    CIF_GUS[usprioinm03bus] = C[cvc03bus];
-    CIF_GUS[usprioinm05bus] = C[cvc05bus];
-    CIF_GUS[usprioinm08bus] = C[cvc08bus];
-    CIF_GUS[usprioinm09bus] = C[cvc09bus];
-    CIF_GUS[usprioinm11bus] = C[cvc11bus];
+    CIF_GUS[usovinm02bus] = C[cvc02bus];
+    CIF_GUS[usovinm03bus] = C[cvc03bus];
+    CIF_GUS[usovinm05bus] = C[cvc05bus];
+    CIF_GUS[usovinm08bus] = C[cvc08bus];
+    CIF_GUS[usovinm09bus] = C[cvc09bus];
+    CIF_GUS[usovinm11bus] = C[cvc11bus];
     CIF_GUS[ushdinm02] = C[cvchd02];
     CIF_GUS[ushdinm03] = C[cvchd03];
     CIF_GUS[ushdinm05] = C[cvchd05];

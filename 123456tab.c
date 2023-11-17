@@ -3,7 +3,7 @@
 
 /* KRUISPUNT: 123456
               123456
-              123456;r 
+              123456
               123456
 
    BESTAND:   123456tab.c
@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   24-10-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
+ * 12.4.0   17-11-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
  *
  ************************************************************************************/
 
@@ -483,12 +483,12 @@ void control_parameters(void)
     US_code[usmaxwt]          = "maxwt";                                     /* Verklikken maximale wachttijd overschreden              */
     US_code[uskarmelding]     = "karmelding";                                /* Verklikken ontvangst melding KAR                        */
     US_code[uskarog]          = "karog";                                     /* Verklikken ondergedrag KAR                              */
-    US_code[usprioinm02bus]   = "prioinm02bus";                              /* Verklikken inmelding OV fase 02                         */
-    US_code[usprioinm03bus]   = "prioinm03bus";                              /* Verklikken inmelding OV fase 03                         */
-    US_code[usprioinm05bus]   = "prioinm05bus";                              /* Verklikken inmelding OV fase 05                         */
-    US_code[usprioinm08bus]   = "prioinm08bus";                              /* Verklikken inmelding OV fase 08                         */
-    US_code[usprioinm09bus]   = "prioinm09bus";                              /* Verklikken inmelding OV fase 09                         */
-    US_code[usprioinm11bus]   = "prioinm11bus";                              /* Verklikken inmelding OV fase 11                         */
+    US_code[usovinm02bus]     = "ovinm02bus";                                /* Verklikken inmelding OV fase 02                         */
+    US_code[usovinm03bus]     = "ovinm03bus";                                /* Verklikken inmelding OV fase 03                         */
+    US_code[usovinm05bus]     = "ovinm05bus";                                /* Verklikken inmelding OV fase 05                         */
+    US_code[usovinm08bus]     = "ovinm08bus";                                /* Verklikken inmelding OV fase 08                         */
+    US_code[usovinm09bus]     = "ovinm09bus";                                /* Verklikken inmelding OV fase 09                         */
+    US_code[usovinm11bus]     = "ovinm11bus";                                /* Verklikken inmelding OV fase 11                         */
     US_code[ushdinm02]        = "hdinm02";                                   /* Verklikken inmelding HD fase 02                         */
     US_code[ushdinm03]        = "hdinm03";                                   /* Verklikken inmelding HD fase 03                         */
     US_code[ushdinm05]        = "hdinm05";                                   /* Verklikken inmelding HD fase 05                         */
@@ -1382,15 +1382,15 @@ void control_parameters(void)
     T_code[tinl3231]                   = "inl3231";                   T_max[tinl3231]                   = 30;   T_type[tinl3231]                   = TE_type; /* Inlooptijd fase 32                                                    */
     T_code[tinl3334]                   = "inl3334";                   T_max[tinl3334]                   = 30;   T_type[tinl3334]                   = TE_type; /* Inlooptijd fase 33                                                    */
     T_code[tinl3433]                   = "inl3433";                   T_max[tinl3433]                   = 30;   T_type[tinl3433]                   = TE_type; /* Inlooptijd fase 34                                                    */
-    T_code[txnl0262] = "xnl0262";             T_max[txnl0262] = 30;    T_type[txnl0262] = TE_type; /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
-    T_code[txnl0868] = "xnl0868";             T_max[txnl0868] = 30;    T_type[txnl0868] = TE_type; /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
-    T_code[txnl1168] = "xnl1168";             T_max[txnl1168] = 30;    T_type[txnl1168] = TE_type; /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
-    T_code[txnl2221] = "xnl2221";             T_max[txnl2221] = 20;    T_type[txnl2221] = TE_type; /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
-    T_code[txnl3132] = "xnl3132";             T_max[txnl3132] = 30;    T_type[txnl3132] = TE_type; /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
-    T_code[txnl3231] = "xnl3231";             T_max[txnl3231] = 30;    T_type[txnl3231] = TE_type; /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
-    T_code[txnl3334] = "xnl3334";             T_max[txnl3334] = 30;    T_type[txnl3334] = TE_type; /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
-    T_code[txnl3433] = "xnl3433";             T_max[txnl3433] = 30;    T_type[txnl3433] = TE_type; /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
-    T_code[txnl8281] = "xnl8281";             T_max[txnl8281] = 30;    T_type[txnl8281] = TE_type; /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
+    T_code[txnl0262]                   = "xnl0262";                   T_max[txnl0262]                   = 30;   T_type[txnl0262]                   = TE_type; /* Tegenhouden fase 02 tbv naloop naar fase 62                           */
+    T_code[txnl0868]                   = "xnl0868";                   T_max[txnl0868]                   = 30;   T_type[txnl0868]                   = TE_type; /* Tegenhouden fase 08 tbv naloop naar fase 68                           */
+    T_code[txnl1168]                   = "xnl1168";                   T_max[txnl1168]                   = 30;   T_type[txnl1168]                   = TE_type; /* Tegenhouden fase 11 tbv naloop naar fase 68                           */
+    T_code[txnl2221]                   = "xnl2221";                   T_max[txnl2221]                   = 20;   T_type[txnl2221]                   = TE_type; /* Tegenhouden fase 22 tbv naloop naar fase 21                           */
+    T_code[txnl3132]                   = "xnl3132";                   T_max[txnl3132]                   = 30;   T_type[txnl3132]                   = TE_type; /* Tegenhouden fase 31 tbv naloop naar fase 32                           */
+    T_code[txnl3231]                   = "xnl3231";                   T_max[txnl3231]                   = 30;   T_type[txnl3231]                   = TE_type; /* Tegenhouden fase 32 tbv naloop naar fase 31                           */
+    T_code[txnl3334]                   = "xnl3334";                   T_max[txnl3334]                   = 30;   T_type[txnl3334]                   = TE_type; /* Tegenhouden fase 33 tbv naloop naar fase 34                           */
+    T_code[txnl3433]                   = "xnl3433";                   T_max[txnl3433]                   = 30;   T_type[txnl3433]                   = TE_type; /* Tegenhouden fase 34 tbv naloop naar fase 33                           */
+    T_code[txnl8281]                   = "xnl8281";                   T_max[txnl8281]                   = 30;   T_type[txnl8281]                   = TE_type; /* Tegenhouden fase 82 tbv naloop naar fase 81                           */
 
 /* teller elementen */
 /* ---------------- */
@@ -1912,6 +1912,15 @@ void control_parameters(void)
     PRM_code[prmprml81]              = "prml81";              PRM[prmprml81]              = 2;                                                 /* Toewijzen PRML voor fase 81 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     PRM_code[prmprml82]              = "prml82";              PRM[prmprml82]              = 2;                                                 /* Toewijzen PRML voor fase 82 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
     PRM_code[prmprml84]              = "prml84";              PRM[prmprml84]              = 1;                                                 /* Toewijzen PRML voor fase 84 (bitwise BIT0 tot en met BIT14; gebruik BIT10 indien niet toegewezen)                              */
+    PRM_code[prmxnl0262]             = "xnl0262";             PRM[prmxnl0262]             = 30;    PRM_type[prmxnl0262]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                                                       */
+    PRM_code[prmxnl0868]             = "xnl0868";             PRM[prmxnl0868]             = 30;    PRM_type[prmxnl0868]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                                                       */
+    PRM_code[prmxnl1168]             = "xnl1168";             PRM[prmxnl1168]             = 30;    PRM_type[prmxnl1168]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                                                       */
+    PRM_code[prmxnl2221]             = "xnl2221";             PRM[prmxnl2221]             = 20;    PRM_type[prmxnl2221]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                                                       */
+    PRM_code[prmxnl3132]             = "xnl3132";             PRM[prmxnl3132]             = 30;    PRM_type[prmxnl3132]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                                                       */
+    PRM_code[prmxnl3231]             = "xnl3231";             PRM[prmxnl3231]             = 30;    PRM_type[prmxnl3231]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                                                       */
+    PRM_code[prmxnl3334]             = "xnl3334";             PRM[prmxnl3334]             = 30;    PRM_type[prmxnl3334]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                                                       */
+    PRM_code[prmxnl3433]             = "xnl3433";             PRM[prmxnl3433]             = 30;    PRM_type[prmxnl3433]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                                                       */
+    PRM_code[prmxnl8281]             = "xnl8281";             PRM[prmxnl8281]             = 30;    PRM_type[prmxnl8281]             = TE_type; /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                                                       */
     PRM_code[prmOVtstpgrensvroeg]    = "OVtstpgrensvroeg";    PRM[prmOVtstpgrensvroeg]    = 60;    PRM_type[prmOVtstpgrensvroeg]    = TS_type; /* Grens waarboven een OV voertuig als te vroeg wordt aangemerkt                                                                  */
     PRM_code[prmOVtstpgrenslaat]     = "OVtstpgrenslaat";     PRM[prmOVtstpgrenslaat]     = 120;   PRM_type[prmOVtstpgrenslaat]     = TS_type; /* Grens waarboven een OV voertuig als te laat wordt aangemerkt                                                                   */
     PRM_code[prmovstipttevroeg02bus] = "ovstipttevroeg02bus"; PRM[prmovstipttevroeg02bus] = 2;                                                 /* Prioriteitsnveau OV te vroeg bij 02 Bus                                                                                        */
@@ -2994,15 +3003,15 @@ void control_parameters(void)
     T_cat[tfo0532]                 = CAT_Basisfuncties;    T_subcat[tfo0532]                    = SUBCAT_Deelconflicten;
     T_cat[tlr2611]                 = CAT_Basisfuncties;    T_subcat[tlr2611]                    = SUBCAT_Deelconflicten;
     T_cat[tfo2611]                 = CAT_Basisfuncties;    T_subcat[tfo2611]                    = SUBCAT_Deelconflicten;
-    T_cat[txnl0262] = CAT_Basisfuncties;    T_subcat[txnl0262] = SUBCAT_HardeKoppeling;
-    T_cat[txnl0868] = CAT_Basisfuncties;    T_subcat[txnl0868] = SUBCAT_HardeKoppeling;
-    T_cat[txnl1168] = CAT_Basisfuncties;    T_subcat[txnl1168] = SUBCAT_HardeKoppeling;
-    T_cat[txnl2221] = CAT_Basisfuncties;    T_subcat[txnl2221] = SUBCAT_HardeKoppeling;
-    T_cat[txnl3132] = CAT_Basisfuncties;    T_subcat[txnl3132] = SUBCAT_HardeKoppeling;
-    T_cat[txnl3231] = CAT_Basisfuncties;    T_subcat[txnl3231] = SUBCAT_HardeKoppeling;
-    T_cat[txnl3334] = CAT_Basisfuncties;    T_subcat[txnl3334] = SUBCAT_HardeKoppeling;
-    T_cat[txnl3433] = CAT_Basisfuncties;    T_subcat[txnl3433] = SUBCAT_HardeKoppeling;
-    T_cat[txnl8281] = CAT_Basisfuncties;    T_subcat[txnl8281] = SUBCAT_HardeKoppeling;
+    T_cat[txnl0262]                = CAT_Basisfuncties;    T_subcat[txnl0262]                   = SUBCAT_HardeKoppeling;
+    T_cat[txnl0868]                = CAT_Basisfuncties;    T_subcat[txnl0868]                   = SUBCAT_HardeKoppeling;
+    T_cat[txnl1168]                = CAT_Basisfuncties;    T_subcat[txnl1168]                   = SUBCAT_HardeKoppeling;
+    T_cat[txnl2221]                = CAT_Basisfuncties;    T_subcat[txnl2221]                   = SUBCAT_HardeKoppeling;
+    T_cat[txnl3132]                = CAT_Basisfuncties;    T_subcat[txnl3132]                   = SUBCAT_HardeKoppeling;
+    T_cat[txnl3231]                = CAT_Basisfuncties;    T_subcat[txnl3231]                   = SUBCAT_HardeKoppeling;
+    T_cat[txnl3334]                = CAT_Basisfuncties;    T_subcat[txnl3334]                   = SUBCAT_HardeKoppeling;
+    T_cat[txnl3433]                = CAT_Basisfuncties;    T_subcat[txnl3433]                   = SUBCAT_HardeKoppeling;
+    T_cat[txnl8281]                = CAT_Basisfuncties;    T_subcat[txnl8281]                   = SUBCAT_HardeKoppeling;
     PRM_cat[prmspringverleng_08_1a] = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_1a] = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_08_1b] = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_1b] = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_08_2a] = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_2a] = SUBCAT_Verlengen;
@@ -3246,6 +3255,15 @@ void control_parameters(void)
     PRM_cat[prmprml81]           = CAT_Module;           PRM_subcat[prmprml81]              = SUBCAT_Plantijden;
     PRM_cat[prmprml82]           = CAT_Module;           PRM_subcat[prmprml82]              = SUBCAT_Plantijden;
     PRM_cat[prmprml84]           = CAT_Module;           PRM_subcat[prmprml84]              = SUBCAT_Plantijden;
+    PRM_cat[prmxnl0262]          = CAT_Basisfuncties;    PRM_subcat[prmxnl0262]             = SUBCAT_HardeKoppeling;
+    PRM_cat[prmxnl0868]          = CAT_Basisfuncties;    PRM_subcat[prmxnl0868]             = SUBCAT_HardeKoppeling;
+    PRM_cat[prmxnl1168]          = CAT_Basisfuncties;    PRM_subcat[prmxnl1168]             = SUBCAT_HardeKoppeling;
+    PRM_cat[prmxnl2221]          = CAT_Basisfuncties;    PRM_subcat[prmxnl2221]             = SUBCAT_HardeKoppeling;
+    PRM_cat[prmxnl3132]          = CAT_Basisfuncties;    PRM_subcat[prmxnl3132]             = SUBCAT_HardeKoppeling;
+    PRM_cat[prmxnl3231]          = CAT_Basisfuncties;    PRM_subcat[prmxnl3231]             = SUBCAT_HardeKoppeling;
+    PRM_cat[prmxnl3334]          = CAT_Basisfuncties;    PRM_subcat[prmxnl3334]             = SUBCAT_HardeKoppeling;
+    PRM_cat[prmxnl3433]          = CAT_Basisfuncties;    PRM_subcat[prmxnl3433]             = SUBCAT_HardeKoppeling;
+    PRM_cat[prmxnl8281]          = CAT_Basisfuncties;    PRM_subcat[prmxnl8281]             = SUBCAT_HardeKoppeling;
     PRM_cat[prmOVtstpgrensvroeg] = CAT_Prioriteren;      PRM_subcat[prmOVtstpgrensvroeg]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmOVtstpgrenslaat]  = CAT_Prioriteren;      PRM_subcat[prmOVtstpgrenslaat]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmovstipttevroeg02bus] = CAT_Prioriteren;      PRM_subcat[prmovstipttevroeg02bus] = SUBCAT_OpenbaarVervoer;
