@@ -2206,9 +2206,6 @@ void application(void)
     max_wachttijd_modulen_primair_ISG(PRML, ML, MLMAX, twacht);
     RealisatieAfhandeling();
     FileVerwerking();
-#ifndef NO_PRIO
-    AfhandelingPrio();
-#endif /* NO_PRIO */
     Fixatie(isfix, 0, FCMAX-1, SCH[schbmfix], PRML, ML);
 
     PostApplication();
