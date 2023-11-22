@@ -8496,7 +8496,7 @@ boolv ym_max_tig_REALISATIETIJD(count i, count prmomx) /* todo fc22 moet met 5 m
     register count n, j, k, m;
     boolv ym;
 
-    if (MG[i]||TRUE)
+    if (MG[i])
     {     /* let op! i.v.m. snelheid alleen in MG[] behandeld	*/
         ym = TRUE;
         for (n = 0; n < FKFC_MAX[i]; ++n)

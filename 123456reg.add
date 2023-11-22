@@ -80,7 +80,13 @@ void KlokPerioden_Add(void)
 
 void Aanvragen_Add(void)
 {
+   IH[hnlak31a] = IH[hmadk31a];
+   IH[hnlak32a] = IH[hmadk32a];
+   IH[hnlak33a] = IH[hmadk33a];
+   IH[hnlak34a] = IH[hmadk34a];
 
+   mee_aanvraag(fc24, (boolv)RA[fc84]);
+   mee_aanvraag(fc84, (boolv)RA[fc24]);
 }
 
 void Maxgroen_Add(void)
