@@ -1403,7 +1403,7 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
     PrioTegenhoudenISG(); /* Houdt richtingen die conflicterend zijn met priorealisatie als er niet meer genoeg ruimte voor realisatie is  */
     PasRealisatieTijdenAanVanwegeRRPrio(); /* Pas realisatietijden aan voor richtingen conflicterend met prioriteitsrealisatie*/
     Bepaal_Realisatietijd_per_richting();
-    PasRealisatieTijdenAanVanwegeBRLateRelease(fc26);
+    PasRealisatieTijdenAanVanwegeBRLateRelease(fc26); //@Menno:@@## hardcoded; alleen als er een later release is ? 
     Bepaal_Realisatietijd_per_richting();
 
 
@@ -1413,7 +1413,8 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
 
 void Wachtgroen(void)
 {
-    int fc;
+   int fc;
+   int fc1;
 
     for (fc = 0; fc < FCMAX; ++fc)
         RW[fc] &= ~BIT4;  /* reset BIT-sturing */
@@ -1482,6 +1483,18 @@ void Wachtgroen(void)
     /* Geen wachtstand bij file stroomafwaarts */
     if (IH[hfileFile68af]) WS[fc08] &= ~BIT4;
     if (IH[hfileFile68af]) WS[fc11] &= ~BIT4;
+
+    /* Op tijd beeindingen wachtgroen (bv voor TWL's of andere wachtstand richtingen  */
+#ifndef NO_PRIO
+    PrioAanwezig();
+    for (fc = 0; fc < FCMAX; ++fc)
+    {
+       for (fc1 = 0; fc1 < FCMAX; ++fc1)
+       {
+          if ((TIG_max[fc][fc1] >= 0) && PRIOFC[fc]) RW[fc1] &= ~BIT4;  /* reset BIT-sturing */
+       }
+    }
+#endif
 
     Wachtgroen_Add();
 }
@@ -1635,6 +1648,11 @@ void Meetkriterium(void)
     NaloopVtg(fc33, fc34, dk33a, hmadk33a, hnlsg3334, NG, tnlsgd3334);
     NaloopVtg(fc34, fc33, dk34a, hmadk34a, hnlsg3433, NG, tnlsgd3433);
     NaloopEG(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281, d82_1, END);
+
+    IH[hnlak31a] = IH[hmadk31a];
+    IH[hnlak32a] = IH[hmadk32a];
+    IH[hnlak33a] = IH[hmadk33a];
+    IH[hnlak34a] = IH[hmadk34a];
 
     Meetkriterium_Add();
 }
@@ -2206,7 +2224,11 @@ void application(void)
     max_wachttijd_modulen_primair_ISG(PRML, ML, MLMAX, twacht);
     RealisatieAfhandeling();
     FileVerwerking();
+#ifndef NO_PRIO
+    PrioDebug_Add();
+#endif /* NO_PRIO */
     Fixatie(isfix, 0, FCMAX-1, SCH[schbmfix], PRML, ML);
+    IsgDebug(); 
 
     PostApplication();
 }
