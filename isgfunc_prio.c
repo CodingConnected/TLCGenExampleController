@@ -11,7 +11,6 @@ mulv TISG_BR[FCMAX][FCMAX];
 mulv TVG_max_voor_afkap[FCMAX];
 mulv TVG_AR_voor_afkap[FCMAX];
 
-
 boolv TVG_max_opgehoogd[FCMAX];
 boolv TVG_AR_opgehoogd[FCMAX];
 boolv RW_OV[FCMAX] = { 0 };
