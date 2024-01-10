@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   17-11-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
+ * 12.4.0   10-01-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable)
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20231117"
+#define VERSION "12.4.0 20240110"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 
 /* fasecycli */

@@ -275,7 +275,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2023-11-17T00:00:00</Datum>
+      <Datum>2024-01-10T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (laastste portable)</Commentaar>
     </Versie>
@@ -19359,6 +19359,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykarin02bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin02bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -19568,13 +19575,6 @@
         <Naam>dummykarin03bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin03bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin02bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin02bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
