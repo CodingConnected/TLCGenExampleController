@@ -808,6 +808,7 @@ void PrioriteitsToekenning_ISG(void)
 
     PrioriteitsToekenningExtra();
 }
+
 void PrioriteitsToekenning_ISG_Add(void) {
     /* -----------------------------------------
        Pas hier zonodig de Prioriteit aan, bijv:
@@ -907,9 +908,8 @@ void PasRealisatieTijdenAanVanwegeBRLateRelease(count fc)
     }
 }
 
-void ResetIsgPrioVars(void)
+void ResetIsgVars(void)
 {
-/* prioriteitsingrepen */
 /* zet alle interstartgroentijden op -1 */
    count i, j;
    for (i = 0; i < FC_MAX; i++)
