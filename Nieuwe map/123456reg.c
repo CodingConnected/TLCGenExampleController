@@ -102,11 +102,7 @@ boolv init_tvg;
 
 void PreApplication(void)
 {
-
-   /* Instellen TFB_max */
-   TFB_max = PRM[prmfb];
-
-   /* Opschonen wagennummer buffers */
+    /* Opschonen wagennummer buffers */
     WDNST_cleanup();
 
     /* Robuuste Groenverdeler */
@@ -124,9 +120,7 @@ void PreApplication(void)
     IH[hopdrempelen09] = SCH[schopdrempelen09];
     IH[hopdrempelen11] = SCH[schopdrempelen11];
 
-    ResetIsgVars(); /* zet alle interstartgroentijden op -1 @@ niet isgfunc_prio.c maar isgfunc.c @@ @@ aanroepen net voor bepalen isg tijden en niet hier @@ */
-  
-    /* Aanroepen tbv prioriteitsingrepen */
+    ResetIsgPrioVars();
     RijTijdScenario();
     RijTijdScenario_Add();
     InUitMelden();
@@ -141,10 +135,8 @@ void PreApplication(void)
     OnderMaximum_Add();
     BlokkeringsTijd();
     BlokkeringsTijd_Add();
-
-    /* Aanroepen tbv prioriteitsingrepen ISG */
-    PrioriteitsToekenning_ISG(); /* prioGKFC_MAX *gewijzigd naar prioFKFC_MAX tov functie in prio.c */
-    PrioriteitsToekenning_ISG_Add(); /*@@ deze functie aanroep laten staan maar de functie zelf moet in moet in de 123456prio_add file @@ */
+    PrioriteitsToekenning_ISG();
+    PrioriteitsToekenning_ISG_Add();
 
     PreApplication_Add();
 
@@ -892,17 +884,12 @@ void Aanvragen(void)
     IH[hmadk33a] = G[fc33] && !SG[fc33] ? FALSE : IH[hmadk33a] || D[dk33a] && A[fc33];
     IH[hmadk34a] = G[fc34] && !SG[fc34] ? FALSE : IH[hmadk34a] || D[dk34a] && A[fc34];
 
-    /* openbaar vervoer aanvragen */
-    PrioAanvragen(); 
-
-    /* ISG deelconflict aanvragen; tevens wordt de AA en BR opgezet @@ tijdelijk tot we code hebben dat de deelconflicten niet hard mee moeten komen @@ @@ aanvraag hoort hier wel maar de AA en BR op een andere plek plaatsen @@*/
+    PrioAanvragen();
     PrioMeerealisatieDeelconflictVoorstart(fc22, fc05, tvs2205);
     PrioMeerealisatieDeelconflictVoorstart(fc32, fc05, tvs3205);
     PrioMeerealisatieDeelconflictLateRelease(fc26, fc11, tlr2611);
 
-    /* ISG deelconflict aanvragen */
     DetectieStoring_Aanvraag();
-
     Aanvragen_Add();
 }
 
@@ -912,20 +899,18 @@ void BepaalRealisatieTijden(void)
     count j;
     boolv wijziging = TRUE;
 
-    /* TIGR */
-    /* Correctie tijdens omdat bv fc22 hard meeverlengt met fc05 en dus bij naloop fc22-->fc21 deze maatgevend kan worden. */
-    BepaalTIGRTijden(); /* initialisatie TIGR[][] */
+    BepaalIntergroenTijden();
+
     corrigeerTIGRvoorNalopen(fc02, fc62, tnleg0262, tnlegd0262, tvgnaloop0262);
     corrigeerTIGRvoorNalopen(fc08, fc68, tnleg0868, tnlegd0868, tvgnaloop0868);
     corrigeerTIGRvoorNalopen(fc11, fc68, tnleg1168, tnlegd1168, tvgnaloop1168);
     corrigeerTIGRvoorNalopen(fc22, fc21, tnleg2221, tnlegd2221, tvgnaloop2221);
     corrigeerTIGRvoorNalopen(fc82, fc81, tnleg8281, tnlegd8281, tvgnaloop8281);
 
-    /* Realisatietijden */
-    InitRealisatieTijden(); /* initialisatie REALISATIETIJD[][] */
-    RealisatieTijden_VulHardeConflictenIn();
-    RealisatieTijden_VulGroenGroenConflictenIn(); /* @@ in principe zijn er geen groen groen conflicten @@*/
-    CorrigeerRealisatieTijdenObvGarantieTijden(); /* een richting mag na groen niet direct weer realiseren (eerst GL en TRG) */
+    InitRealisatieTijden();
+    RealisatieTijden_VulHaldeConflictenIn();
+    RealisatieTijden_VulGroenGroenConflictenIn();
+    CorrigeerRealisatieTijdenObvGarantieTijden();
 
     /* Pas realisatietijden aan a.g.v. nalopen */
     Realisatietijd_NLEG(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
@@ -937,15 +922,14 @@ void BepaalRealisatieTijden(void)
     Realisatietijd_NLSG(fc32, fc31, tnlsg3231, tnlsgd3231);
     Realisatietijd_NLSG(fc33, fc34, NG, tnlsgd3334);
     Realisatietijd_NLSG(fc34, fc33, NG, tnlsgd3433);
-    Realisatietijd_HardMeeverlengenDeelconflict(fc05, fc22);
-    Realisatietijd_HardMeeverlengenDeelconflict(fc11, fc26);
-    Realisatietijd_HardMeeverlengenDeelconflict(fc05, fc32);
+    Realisatietijd_MeeverlengenDeelconflict(fc05, fc22);
+    Realisatietijd_MeeverlengenDeelconflict(fc11, fc26);
+    Realisatietijd_MeeverlengenDeelconflict(fc05, fc32);
 
     /* Pas realisatietijden aan a.g.v ontruimende deelconflicten */
-    Realisatietijd_Ontruiming_Deelconflict_Voorstart(fc05, fc22, tfo0522);
-    Realisatietijd_Ontruiming_Deelconflict_Voorstart(fc05, fc32, tfo0532);
-    Realisatietijd_Ontruiming_Deelconflict_LateRelease(fc11, fc26, tlr2611, tfo2611);
-    //@@ @Menno Realisatietijd_Ontruiming_Deelconflict_Gelijkstart ipv Ontruiming_Deelconflict_Gelijkstart
+    Ontruiming_Deelconflict_Voorstart(fc05, fc22, tfo0522);
+    Ontruiming_Deelconflict_Voorstart(fc05, fc32, tfo0532);
+    Ontruiming_Deelconflict_LateRelease(fc11, fc26, tlr2611, tfo2611);
 
     /* Pas realisatietijden aan a.g.v. deelconflicten/voorstarts die nog groen moeten worden */
     do
@@ -972,7 +956,7 @@ void BepaalRealisatieTijden(void)
         wijziging |= CorrectieRealisatieTijd_Add();
     } while (wijziging);
 
-    Bepaal_Realisatietijd_per_richting(); /* bepaal de maximale realisatietijd voor een richting */
+    Bepaal_Realisatietijd_per_richting();
 
     BepaalRealisatieTijden_Add();
 }
@@ -982,7 +966,7 @@ void BepaalInterStartGroenTijden(void)
     boolv wijziging = TRUE;
 
     InitInterStartGroenTijden();
-    InterStartGroenTijden_VulHardeConflictenIn();
+    InterStartGroenTijden_VulHaldeConflictenIn();
     InterStartGroenTijden_VulGroenGroenConflictenIn();
 
     /* Pas interstartgroentijden aan a.g.v. nalopen */
@@ -995,9 +979,9 @@ void BepaalInterStartGroenTijden(void)
     InterStartGroenTijd_NLSG(fc33, fc34, NG, tnlsgd3334);
     InterStartGroenTijd_NLSG(fc34, fc33, NG, tnlsgd3433);
     InterStartGroenTijd_NLEG(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281);
-    InterStartGroentijd_HardMeeverlengenDeelconflict(fc05, fc22);
-    InterStartGroentijd_HardMeeverlengenDeelconflict(fc11, fc26);
-    InterStartGroentijd_HardMeeverlengenDeelconflict(fc05, fc32);
+    InterStartGroentijd_MeeverlengenDeelconflict(fc05, fc22);
+    InterStartGroentijd_MeeverlengenDeelconflict(fc11, fc26);
+    InterStartGroentijd_MeeverlengenDeelconflict(fc05, fc32);
 
     do
     {
@@ -1254,7 +1238,6 @@ void Verlenggroen(void)
                               (va_mulv) PRM[prmvg7_84], (va_mulv) (MM[mperiod] == 7),
                               (va_mulv) TVGA_max[fc84], (va_count) END);
 
-
     /* AANROEP EN RAPPOTEREN ROBUGROVER */
     if (IH[hrgvact] != 0)
     {
@@ -1302,23 +1285,24 @@ void Verlenggroen(void)
 
         CIF_GUS[usrgv] = FALSE;
     }
+
     /* percentage MG bij filemelding < 100% */
-    if (G[fc08] && !MG[fc08] && IH[hfileFile68af] && (PRM[prmfpercFile68af08] < 100)) MM[mfilemem08] = TRUE;
-    if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)) MM[mfilemem11] = TRUE;
+if (G[fc08] && !MG[fc08] && IH[hfileFile68af] && (PRM[prmfpercFile68af08] < 100)) MM[mfilemem08] = TRUE;
+if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)) MM[mfilemem11] = TRUE;
 
     /* percentage MG bij filemelding */
     if (IH[hfileFile68af] && SCH[schfileFile68af] && SCH[schfiledoserenFile68af])
     {
-       if (MM[mfilemem08] && G[fc08] && !MG[fc08])
-       {
-          PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmfpercFile68af08],
-             8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
-       }
-       if (MM[mfilemem11] && G[fc11] && !MG[fc11])
-       {
-          PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmfpercFile68af11],
-             8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
-       }
+    if (MM[mfilemem08] && G[fc08] && !MG[fc08])
+    {
+            PercentageVerlengGroenTijden(fc08, mperiod, PRM[prmfpercFile68af08],
+                                         8, TVGA_max[fc08], PRM[prmvg1_08], PRM[prmvg2_08], PRM[prmvg3_08], PRM[prmvg4_08], PRM[prmvg5_08], PRM[prmvg6_08], PRM[prmvg7_08]);
+    }
+    if (MM[mfilemem11] && G[fc11] && !MG[fc11])
+    {
+            PercentageVerlengGroenTijden(fc11, mperiod, PRM[prmfpercFile68af11],
+                                         8, TVGA_max[fc11], PRM[prmvg1_11], PRM[prmvg2_11], PRM[prmvg3_11], PRM[prmvg4_11], PRM[prmvg5_11], PRM[prmvg6_11], PRM[prmvg7_11]);
+    }
     }
 
     /* Afkappen tijdens file ingreep File68af */
@@ -1364,10 +1348,6 @@ void Verlenggroen(void)
     if (EVG[fc08]) MM[mfilemem08] = FALSE;
     if (EVG[fc11]) MM[mfilemem11] = FALSE;
 
-    /* TVG_max aanpassen bij detectiestoring */
-    DetectieStoring_VerlengGroen();
-
-   /* TVG_max alleen aanpassen op EVG van de primaire richting of tijdens initialisatie */
     for (fc = 0; fc < FCMAX; ++fc)
     {
         if (EVG[fc] && PR[fc] || init_tvg)
@@ -1381,9 +1361,9 @@ void Verlenggroen(void)
     }
     init_tvg = FALSE;
 
-    ResetNietGroentijdOphogen(); /* @@ verplaatsen naar isgfunc.c @@ */
+    ResetNietGroentijdOphogen();
 
-    /* groentijd conflict volgrichting  mag niet opgehoogd worden tijdens inlopen @@ verplaatsen naar isgfunc.c @@*/
+    /* groentijd conflict volgrichting  mag niet opgehoogd worden tijdens inlopen */
     VerhoogGroentijdNietTijdensInrijden(fc02, fc62, txnl0262);
     VerhoogGroentijdNietTijdensInrijden(fc08, fc68, txnl0868);
     VerhoogGroentijdNietTijdensInrijden(fc11, fc68, txnl1168);
@@ -1394,7 +1374,7 @@ void Verlenggroen(void)
     VerhoogGroentijdNietTijdensInrijden(fc34, fc33, txnl3433);
     VerhoogGroentijdNietTijdensInrijden(fc82, fc81, txnl8281);
 
-    /* Bepaal de minimale maximale verlengroentijd bij alternatieve realisaties @@ hoeft niet iedere tiende aangeroepen te worden; alleen bij initialisatie of parameterwijziging of wijziging TFG_max @@ */
+    /* Bepaal de minimale maximale verlengroentijd bij alternatieve realisaties */
     TVG_AR[fc02] = ((PRM[prmaltg02] - TFG_max[fc02]) >= 0) ? PRM[prmaltg02] - TFG_max[fc02] : NG;
     TVG_AR[fc03] = ((PRM[prmaltg03] - TFG_max[fc03]) >= 0) ? PRM[prmaltg03] - TFG_max[fc03] : NG;
     TVG_AR[fc05] = ((PRM[prmaltg05] - TFG_max[fc05]) >= 0) ? PRM[prmaltg05] - TFG_max[fc05] : NG;
@@ -1419,6 +1399,8 @@ void Verlenggroen(void)
     TVG_AR[fc82] = ((PRM[prmaltg82] - TFG_max[fc82]) >= 0) ? PRM[prmaltg82] - TFG_max[fc82] : NG;
     TVG_AR[fc84] = ((PRM[prmaltg84] - TFG_max[fc84]) >= 0) ? PRM[prmaltg84] - TFG_max[fc84] : NG;
 
+    DetectieStoring_VerlengGroen();
+
     AfkapGroen();
     AfkapGroenExtra();
 #ifdef PRIO_ADDFILE
@@ -1427,9 +1409,9 @@ void Verlenggroen(void)
 
     for (fc = 0; fc < FCMAX; ++fc)
     {
-        TVG_afkap[fc] = ((iAfkapGroenTijd[fc] - TFG_max[fc]) > 0) ? iAfkapGroenTijd[fc] - TFG_max[fc] : 0; /* Vullen groentijd die gemaakt mag worden als er een prioriteitsingreep is */
+        TVG_afkap[fc] = ((iAfkapGroenTijd[fc] - TFG_max[fc]) > 0) ? iAfkapGroenTijd[fc] - TFG_max[fc] : 0;
     }
-    BepaalTVG_BR(); /* Maximale verlenggroentijd bijzondere realisatie als deze nog niet groen is */
+    BepaalTVG_BR(); /* Maximale verlenggroentijd bijzondere realisatie als deze nog niet groen*/
     VerhoogTVG_maxDoorPrio(); /* Voldoende verlenggroentijd om prioriteitsrealisatie te faciliteren */
     for (fc = 0; fc < FCMAX; ++fc)
     {
@@ -1437,7 +1419,7 @@ void Verlenggroen(void)
         TVG_AR_voor_afkap[fc] = TVG_AR[fc];
     }
     VerlaagTVG_maxDoorConfPrio(); /* Geef richtingen minder groen door conflicterende prioriteitsrealisatie */
-    /* Niet verhogen TVG_max tijdens groen. Bijvoorbeeld als prioriteitsingreep of file ingreep wegvalt @@ Peter past commentaar nog aan @@ */
+    /* Niet verhogen TVG_max tijdens groen Bijvoorbeeld als ov-ingreep of file ingreep wegvalt*/
     for (fc = 0; fc < FCMAX; ++fc)
     {
         if (SG[fc])
@@ -2186,9 +2168,8 @@ void init_application(void)
     #endif
 
     init_tvg = TRUE;
-
-    PrioInit_ISG(); /* initialisatie prioriteits instellingen @@ functienaam wijzigen / ISG weghalen @@ */
-    PrioInitExtra(); /* initialisatie variabelen vertraag_kar_uitm */
+    PrioInit_ISG();
+    PrioInitExtra();
 
     post_init_application();
 }
@@ -2279,6 +2260,8 @@ void PostApplication(void)
 void application(void)
 {
     PreApplication();
+
+    TFB_max = PRM[prmfb];
     KlokPerioden();
     Aanvragen();
     Verlenggroen();
