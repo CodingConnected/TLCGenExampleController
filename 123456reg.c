@@ -90,7 +90,7 @@ mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
 #endif
 mulv C_counter_old[CTMAX];
 boolv init_tvg;
-
+boolv rgvinit = TRUE;
 #if !defined AUTOMAAT && !defined AUTOMAAT_TEST
     extern boolv display;
 #endif
@@ -915,6 +915,7 @@ void BepaalRealisatieTijden(void)
     /* TIGR */
     /* Correctie tijdens omdat bv fc22 hard meeverlengt met fc05 en dus bij naloop fc22-->fc21 deze maatgevend kan worden. */
     BepaalTIGRTijden(); /* initialisatie TIGR[][] */
+    /* Neem EG-naloopconflicten ook mee in TIGR[][] */
     corrigeerTIGRvoorNalopen(fc02, fc62, tnleg0262, tnlegd0262, tvgnaloop0262);
     corrigeerTIGRvoorNalopen(fc08, fc68, tnleg0868, tnlegd0868, tvgnaloop0868);
     corrigeerTIGRvoorNalopen(fc11, fc68, tnleg1168, tnlegd1168, tvgnaloop1168);
@@ -1254,14 +1255,52 @@ void Verlenggroen(void)
                               (va_mulv) PRM[prmvg7_84], (va_mulv) (MM[mperiod] == 7),
                               (va_mulv) TVGA_max[fc84], (va_count) END);
 
+    /* Bepaal de minimale maximale verlengroentijd bij alternatieve realisaties */
+    TVG_AR[fc02] = ((PRM[prmaltg02] - TFG_max[fc02]) >= 0) ? PRM[prmaltg02] - TFG_max[fc02] : NG;
+    TVG_AR[fc03] = ((PRM[prmaltg03] - TFG_max[fc03]) >= 0) ? PRM[prmaltg03] - TFG_max[fc03] : NG;
+    TVG_AR[fc05] = ((PRM[prmaltg05] - TFG_max[fc05]) >= 0) ? PRM[prmaltg05] - TFG_max[fc05] : NG;
+    TVG_AR[fc08] = ((PRM[prmaltg08] - TFG_max[fc08]) >= 0) ? PRM[prmaltg08] - TFG_max[fc08] : NG;
+    TVG_AR[fc09] = ((PRM[prmaltg09] - TFG_max[fc09]) >= 0) ? PRM[prmaltg09] - TFG_max[fc09] : NG;
+    TVG_AR[fc11] = ((PRM[prmaltg11] - TFG_max[fc11]) >= 0) ? PRM[prmaltg11] - TFG_max[fc11] : NG;
+    TVG_AR[fc21] = ((PRM[prmaltg21] - TFG_max[fc21]) >= 0) ? PRM[prmaltg21] - TFG_max[fc21] : NG;
+    TVG_AR[fc22] = ((PRM[prmaltg22] - TFG_max[fc22]) >= 0) ? PRM[prmaltg22] - TFG_max[fc22] : NG;
+    TVG_AR[fc24] = ((PRM[prmaltg24] - TFG_max[fc24]) >= 0) ? PRM[prmaltg24] - TFG_max[fc24] : NG;
+    TVG_AR[fc26] = ((PRM[prmaltg26] - TFG_max[fc26]) >= 0) ? PRM[prmaltg26] - TFG_max[fc26] : NG;
+    TVG_AR[fc28] = ((PRM[prmaltg28] - TFG_max[fc28]) >= 0) ? PRM[prmaltg28] - TFG_max[fc28] : NG;
+    TVG_AR[fc31] = ((PRM[prmaltg31] - TFG_max[fc31]) >= 0) ? PRM[prmaltg31] - TFG_max[fc31] : NG;
+    TVG_AR[fc32] = ((PRM[prmaltg32] - TFG_max[fc32]) >= 0) ? PRM[prmaltg32] - TFG_max[fc32] : NG;
+    TVG_AR[fc33] = ((PRM[prmaltg33] - TFG_max[fc33]) >= 0) ? PRM[prmaltg33] - TFG_max[fc33] : NG;
+    TVG_AR[fc34] = ((PRM[prmaltg34] - TFG_max[fc34]) >= 0) ? PRM[prmaltg34] - TFG_max[fc34] : NG;
+    TVG_AR[fc38] = ((PRM[prmaltg38] - TFG_max[fc38]) >= 0) ? PRM[prmaltg38] - TFG_max[fc38] : NG;
+    TVG_AR[fc61] = ((PRM[prmaltg61] - TFG_max[fc61]) >= 0) ? PRM[prmaltg61] - TFG_max[fc61] : NG;
+    TVG_AR[fc62] = ((PRM[prmaltg62] - TFG_max[fc62]) >= 0) ? PRM[prmaltg62] - TFG_max[fc62] : NG;
+    TVG_AR[fc67] = ((PRM[prmaltg67] - TFG_max[fc67]) >= 0) ? PRM[prmaltg67] - TFG_max[fc67] : NG;
+    TVG_AR[fc68] = ((PRM[prmaltg68] - TFG_max[fc68]) >= 0) ? PRM[prmaltg68] - TFG_max[fc68] : NG;
+    TVG_AR[fc81] = ((PRM[prmaltg81] - TFG_max[fc81]) >= 0) ? PRM[prmaltg81] - TFG_max[fc81] : NG;
+    TVG_AR[fc82] = ((PRM[prmaltg82] - TFG_max[fc82]) >= 0) ? PRM[prmaltg82] - TFG_max[fc82] : NG;
+    TVG_AR[fc84] = ((PRM[prmaltg84] - TFG_max[fc84]) >= 0) ? PRM[prmaltg84] - TFG_max[fc84] : NG;
 
+    DetectieStoring_VerlengGroen(); 
+
+    BepaalInterStartGroenTijden();
     /* AANROEP EN RAPPOTEREN ROBUGROVER */
     if (IH[hrgvact] != 0)
     {
         int teller = 0;
+        int i;
+        if (rgvinit)
+        {
+            for (i = 0; i < FCMAX; ++i) TVG_rgv[i] = TVG_max[i];
+            rgvinit = 0;
+        }
 
-        TC[teller++] = berekencyclustijd_va_arg(fc02, fc09, fc05, fc11, END);
-        TC[teller++] = berekencyclustijd_va_arg(fc08, fc11, fc03, fc05, END);
+        /* kopieer de basis waarden van TVG_max */
+        /* ------------------------------------ */
+        for (i = 0; i < FCMAX; ++i) TVG_basis[i] = TVG_max[i] > 0 ? TVG_max[i] : 1;
+        BepaalInterStartGroenTijden_rgv();
+
+        TC[teller++] = berekencyclustijd_ISG_va_arg(fc02, fc09, fc11, END);
+        TC[teller++] = berekencyclustijd_ISG_va_arg(fc08, fc03, fc05, fc11, END);
 
         TC_max = TC[0];
 
@@ -1283,7 +1322,7 @@ void Verlenggroen(void)
 
         /* AANROEP ROBUUSTE GROENTIJD VERDELER */
         /* ================================== */
-        rgv_add();
+        rgv_ISG_add();
 
         CIF_GUS[usrgv] = TRUE;
     }
@@ -1302,6 +1341,18 @@ void Verlenggroen(void)
 
         CIF_GUS[usrgv] = FALSE;
     }
+    for (fc = 0; fc < FCMAX; ++fc)
+    {
+        if (EVG[fc] && PR[fc] || init_tvg)
+        {
+            TVG_PR[fc] = TVG_max[fc];
+        }
+        else
+        {
+            TVG_max[fc] = TVG_PR[fc];
+        }
+    }
+    init_tvg = FALSE;
     /* percentage MG bij filemelding < 100% */
     if (G[fc08] && !MG[fc08] && IH[hfileFile68af] && (PRM[prmfpercFile68af08] < 100)) MM[mfilemem08] = TRUE;
     if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)) MM[mfilemem11] = TRUE;
@@ -1394,31 +1445,6 @@ void Verlenggroen(void)
     VerhoogGroentijdNietTijdensInrijden(fc34, fc33, txnl3433);
     VerhoogGroentijdNietTijdensInrijden(fc82, fc81, txnl8281);
 
-    /* Bepaal de minimale maximale verlengroentijd bij alternatieve realisaties @@ hoeft niet iedere tiende aangeroepen te worden; alleen bij initialisatie of parameterwijziging of wijziging TFG_max @@ */
-    TVG_AR[fc02] = ((PRM[prmaltg02] - TFG_max[fc02]) >= 0) ? PRM[prmaltg02] - TFG_max[fc02] : NG;
-    TVG_AR[fc03] = ((PRM[prmaltg03] - TFG_max[fc03]) >= 0) ? PRM[prmaltg03] - TFG_max[fc03] : NG;
-    TVG_AR[fc05] = ((PRM[prmaltg05] - TFG_max[fc05]) >= 0) ? PRM[prmaltg05] - TFG_max[fc05] : NG;
-    TVG_AR[fc08] = ((PRM[prmaltg08] - TFG_max[fc08]) >= 0) ? PRM[prmaltg08] - TFG_max[fc08] : NG;
-    TVG_AR[fc09] = ((PRM[prmaltg09] - TFG_max[fc09]) >= 0) ? PRM[prmaltg09] - TFG_max[fc09] : NG;
-    TVG_AR[fc11] = ((PRM[prmaltg11] - TFG_max[fc11]) >= 0) ? PRM[prmaltg11] - TFG_max[fc11] : NG;
-    TVG_AR[fc21] = ((PRM[prmaltg21] - TFG_max[fc21]) >= 0) ? PRM[prmaltg21] - TFG_max[fc21] : NG;
-    TVG_AR[fc22] = ((PRM[prmaltg22] - TFG_max[fc22]) >= 0) ? PRM[prmaltg22] - TFG_max[fc22] : NG;
-    TVG_AR[fc24] = ((PRM[prmaltg24] - TFG_max[fc24]) >= 0) ? PRM[prmaltg24] - TFG_max[fc24] : NG;
-    TVG_AR[fc26] = ((PRM[prmaltg26] - TFG_max[fc26]) >= 0) ? PRM[prmaltg26] - TFG_max[fc26] : NG;
-    TVG_AR[fc28] = ((PRM[prmaltg28] - TFG_max[fc28]) >= 0) ? PRM[prmaltg28] - TFG_max[fc28] : NG;
-    TVG_AR[fc31] = ((PRM[prmaltg31] - TFG_max[fc31]) >= 0) ? PRM[prmaltg31] - TFG_max[fc31] : NG;
-    TVG_AR[fc32] = ((PRM[prmaltg32] - TFG_max[fc32]) >= 0) ? PRM[prmaltg32] - TFG_max[fc32] : NG;
-    TVG_AR[fc33] = ((PRM[prmaltg33] - TFG_max[fc33]) >= 0) ? PRM[prmaltg33] - TFG_max[fc33] : NG;
-    TVG_AR[fc34] = ((PRM[prmaltg34] - TFG_max[fc34]) >= 0) ? PRM[prmaltg34] - TFG_max[fc34] : NG;
-    TVG_AR[fc38] = ((PRM[prmaltg38] - TFG_max[fc38]) >= 0) ? PRM[prmaltg38] - TFG_max[fc38] : NG;
-    TVG_AR[fc61] = ((PRM[prmaltg61] - TFG_max[fc61]) >= 0) ? PRM[prmaltg61] - TFG_max[fc61] : NG;
-    TVG_AR[fc62] = ((PRM[prmaltg62] - TFG_max[fc62]) >= 0) ? PRM[prmaltg62] - TFG_max[fc62] : NG;
-    TVG_AR[fc67] = ((PRM[prmaltg67] - TFG_max[fc67]) >= 0) ? PRM[prmaltg67] - TFG_max[fc67] : NG;
-    TVG_AR[fc68] = ((PRM[prmaltg68] - TFG_max[fc68]) >= 0) ? PRM[prmaltg68] - TFG_max[fc68] : NG;
-    TVG_AR[fc81] = ((PRM[prmaltg81] - TFG_max[fc81]) >= 0) ? PRM[prmaltg81] - TFG_max[fc81] : NG;
-    TVG_AR[fc82] = ((PRM[prmaltg82] - TFG_max[fc82]) >= 0) ? PRM[prmaltg82] - TFG_max[fc82] : NG;
-    TVG_AR[fc84] = ((PRM[prmaltg84] - TFG_max[fc84]) >= 0) ? PRM[prmaltg84] - TFG_max[fc84] : NG;
-
     AfkapGroen();
     AfkapGroenExtra();
 #ifdef PRIO_ADDFILE
@@ -1453,7 +1479,14 @@ void Verlenggroen(void)
             TVG_old[fc] = TVG_max[fc];
         }
     }
-
+    
+    /* Corrigeer TVG_timer[] i.r.t. TVG_max[] */
+    for (fc = 0; fc < FCMAX; ++fc) 
+    {
+        if (MG[fc])  TVG_timer[fc] = TVG_max[fc];
+        if (TVG_timer[fc] > TVG_max[fc]) TVG_timer[fc] = TVG_max[fc];
+    }
+	
     BepaalRealisatieTijden();
 
     BepaalStartGroenMomentenPrioIngrepen(); /* bepaal wanneer prioriteitsrealisatie mag komen */
