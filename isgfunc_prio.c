@@ -1,6 +1,7 @@
 /* isgfunc_prio.c - gegenereerd met TLCGen 12.4.0.0 */
 
 /* merk op: deze file heeft _geen_ bijbehorende header */
+/* @@: Peter moet deze functies nog verkorten net zoals hij bij isgfunc.c heeft gedaan */
 
 #define    PRIO_AA_BIT      BIT6
 
@@ -17,9 +18,9 @@ boolv RW_OV[FCMAX] = { 0 };
 void BepaalInterStartGroenTijden_PRIO(void);
 void InterStartGroenTijd_NLEG_PRIO(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);
 void InterStartGroenTijd_NLSG_PRIO(count i, count j, count tnlsg, count tnlsgd);
-boolv Correctie_TISG_Voorstart_PRIO(count fcvs, count fcns, count tvs);
-boolv Correctie_TISG_Gelijkstart_PRIO(count fc1, count fc2);
-boolv Correctie_TISG_LateRelease_PRIO(count fclr, count fcvs, count tlr);
+boolv TISG_Voorstart_PRIO_Correctie(count fcvs, count fcns, count tvs);
+boolv TISG_Gelijkstart_PRIO_Correctie(count fc1, count fc2);
+boolv TISG_LateRelease_PRIO_Correctie(count fclr, count fcvs, count tlr);
 void BepaalTVG_BR(void);
 void VerhoogTVG_maxDoorPrio(void);
 void VerlaagTVG_maxDoorConfPrio(void);
@@ -213,7 +214,7 @@ void InterStartGroenTijd_NLSG_PRIO(count i, count j, count tnlsg, count tnlsgd)
         }
     }
 }
-boolv Correctie_TISG_Voorstart_PRIO(count fcvs, count fcns, count tvs)
+boolv TISG_Voorstart_PRIO_Correctie(count fcvs, count fcns, count tvs)
 {
     count n;
     boolv result;
@@ -233,7 +234,7 @@ boolv Correctie_TISG_Voorstart_PRIO(count fcvs, count fcns, count tvs)
     }
     return result;
 }
-boolv Correctie_TISG_Gelijkstart_PRIO(count fc1, count fc2)
+boolv TISG_Gelijkstart_PRIO_Correctie(count fc1, count fc2)
 {
     count n;
     boolv result;
@@ -269,7 +270,7 @@ boolv Correctie_TISG_Gelijkstart_PRIO(count fc1, count fc2)
     }
     return result;
 }
-boolv Correctie_TISG_LateRelease_PRIO(count fclr, count fcvs, count tlr)
+boolv TISG_LateRelease_PRIO_Correctie(count fclr, count fcvs, count tlr)
 {
     count n;
     boolv result;

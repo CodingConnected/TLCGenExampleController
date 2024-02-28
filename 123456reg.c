@@ -914,7 +914,7 @@ void BepaalRealisatieTijden(void)
 
     /* TIGR */
     /* Correctie tijdens omdat bv fc22 hard meeverlengt met fc05 en dus bij naloop fc22-->fc21 deze maatgevend kan worden. */
-    BepaalTIGRTijden(); /* initialisatie TIGR[][] */
+    BepaalIntergroenTijden(); /* initialisatie TIGR[][] */
     /* Neem EG-naloopconflicten ook mee in TIGR[][] */
     corrigeerTIGRvoorNalopen(fc02, fc62, tnleg0262, tnlegd0262, tvgnaloop0262);
     corrigeerTIGRvoorNalopen(fc08, fc68, tnleg0868, tnlegd0868, tvgnaloop0868);
@@ -943,10 +943,10 @@ void BepaalRealisatieTijden(void)
     Realisatietijd_HardMeeverlengenDeelconflict(fc05, fc32);
 
     /* Pas realisatietijden aan a.g.v ontruimende deelconflicten */
-    Realisatietijd_Ontruiming_Deelconflict_Voorstart(fc05, fc22, tfo0522);
-    Realisatietijd_Ontruiming_Deelconflict_Voorstart(fc05, fc32, tfo0532);
-    Realisatietijd_Ontruiming_Deelconflict_LateRelease(fc11, fc26, tlr2611, tfo2611);
-    //@@ @Menno Realisatietijd_Ontruiming_Deelconflict_Gelijkstart ipv Ontruiming_Deelconflict_Gelijkstart
+    Realisatietijd_Ontruiming_Voorstart(fc05, fc22, tfo0522);
+    Realisatietijd_Ontruiming_Voorstart(fc05, fc32, tfo0532);
+    Realisatietijd_Ontruiming_LateRelease(fc11, fc26, tlr2611, tfo2611);
+    //@@ @Menno Realisatietijd_Ontruiming_Gelijkstart ipv Ontruiming_Deelconflict_Gelijkstart
 
     /* Pas realisatietijden aan a.g.v. deelconflicten/voorstarts die nog groen moeten worden */
     do
@@ -954,21 +954,21 @@ void BepaalRealisatieTijden(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-    if (SCH[schgs2484]) wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc24);
-    wijziging |= Correctie_REALISATIETIJD_Voorstart(fc22, fc05, tvs2205);
-    wijziging |= Correctie_REALISATIETIJD_Voorstart(fc32, fc05, tvs3205);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc26, fc11, tlr2611);
+    if (SCH[schgs2484]) wijziging |= Realisatietijd_Gelijkstart_Correctie(fc84, fc24);
+    wijziging |= Realisatietijd_Voorstart_Correctie(fc22, fc05, tvs2205);
+    wijziging |= Realisatietijd_Voorstart_Correctie(fc32, fc05, tvs3205);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc26, fc11, tlr2611);
 
     /* Inlopen / inrijden nalopen */
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc62, fc02, txnl0262);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc68, fc08, txnl0868);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc68, fc11, txnl1168);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc21, fc22, txnl2221);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc32, fc31, txnl3132);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc31, fc32, txnl3231);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc34, fc33, txnl3334);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc33, fc34, txnl3433);
-    wijziging |= Correctie_REALISATIETIJD_LateRelease(fc81, fc82, txnl8281);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc62, fc02, txnl0262);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc08, txnl0868);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc11, txnl1168);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc21, fc22, txnl2221);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc32, fc31, txnl3132);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc31, fc32, txnl3231);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc34, fc33, txnl3334);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc33, fc34, txnl3433);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc81, fc82, txnl8281);
 
         wijziging |= CorrectieRealisatieTijd_Add();
     } while (wijziging);
@@ -1005,21 +1005,21 @@ void BepaalInterStartGroenTijden(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-    if (SCH[schgs2484])         wijziging |= Correctie_TISG_Gelijkstart(fc84, fc24);
-        wijziging |= Correctie_TISG_Voorstart(fc22, fc05, tvs2205);
-        wijziging |= Correctie_TISG_Voorstart(fc32, fc05, tvs3205);
-        wijziging |= Correctie_TISG_LateRelease(fc26, fc11, tlr2611);
+    if (SCH[schgs2484])         wijziging |= InterStartGroenTijd_Gelijkstart_Correctie(fc84, fc24);
+        wijziging |= InterStartGroenTijd_Voorstart_Correctie(fc22, fc05, tvs2205);
+        wijziging |= InterStartGroenTijd_Voorstart_Correctie(fc32, fc05, tvs3205);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc26, fc11, tlr2611);
 
         /* Inlopen / inrijden */
-        wijziging |= Correctie_TISG_LateRelease(fc62, fc02, txnl0262);
-        wijziging |= Correctie_TISG_LateRelease(fc68, fc08, txnl0868);
-        wijziging |= Correctie_TISG_LateRelease(fc68, fc11, txnl1168);
-        wijziging |= Correctie_TISG_LateRelease(fc21, fc22, txnl2221);
-        wijziging |= Correctie_TISG_LateRelease(fc32, fc31, txnl3132);
-        wijziging |= Correctie_TISG_LateRelease(fc31, fc32, txnl3231);
-        wijziging |= Correctie_TISG_LateRelease(fc34, fc33, txnl3334);
-        wijziging |= Correctie_TISG_LateRelease(fc33, fc34, txnl3433);
-        wijziging |= Correctie_TISG_LateRelease(fc81, fc82, txnl8281);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc62, fc02, txnl0262);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc68, fc08, txnl0868);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc68, fc11, txnl1168);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc21, fc22, txnl2221);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc32, fc31, txnl3132);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc31, fc32, txnl3231);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc34, fc33, txnl3334);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc33, fc34, txnl3433);
+        wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc81, fc82, txnl8281);
 
         wijziging |= Correctie_TISG_add();
     } while (wijziging);
@@ -1051,19 +1051,19 @@ void BepaalInterStartGroenTijden_PRIO(void)
     {
         wijziging = FALSE;
         /* Pas realisatietijden aan a.g.v. nalopen */
-        if (SCH[schgs2484]) wijziging |= Correctie_TISG_Gelijkstart_PRIO(fc24, fc84);
-        wijziging |= Correctie_TISG_Voorstart_PRIO(fc22, fc05, tvs2205);
-        wijziging |= Correctie_TISG_Voorstart_PRIO(fc32, fc05, tvs3205);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc26, fc11, tlr2611);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc62, fc02, txnl0262);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc68, fc08, txnl0868);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc68, fc11, txnl1168);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc21, fc22, txnl2221);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc81, fc82, txnl8281);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc32, fc31, tinl3132);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc31, fc32, tinl3231);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc34, fc33, tinl3334);
-        wijziging |= Correctie_TISG_LateRelease_PRIO(fc33, fc34, tinl3433);
+        if (SCH[schgs2484]) wijziging |= TISG_Gelijkstart_PRIO_Correctie(fc24, fc84);
+        wijziging |= TISG_Voorstart_PRIO_Correctie(fc22, fc05, tvs2205);
+        wijziging |= TISG_Voorstart_PRIO_Correctie(fc32, fc05, tvs3205);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc26, fc11, tlr2611);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc62, fc02, txnl0262);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc68, fc08, txnl0868);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc68, fc11, txnl1168);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc21, fc22, txnl2221);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc81, fc82, txnl8281);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc32, fc31, tinl3132);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc31, fc32, tinl3231);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc34, fc33, tinl3334);
+        wijziging |= TISG_LateRelease_PRIO_Correctie(fc33, fc34, tinl3433);
 
         wijziging |= Correctie_InterStartGroentijdTijd_PRIO_Add();
     } while (wijziging);
@@ -1765,29 +1765,29 @@ void Meeverlengen(void)
         YM[fc] &= ~BIT4;  /* reset BIT-sturing */
     }
 
-    YM[fc02] |= SCH[schmv02] && ym_max_tig_REALISATIETIJD(fc02, prmmv02) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc03] |= SCH[schmv03] && ym_max_tig_REALISATIETIJD(fc03, prmmv03) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc05] |= SCH[schmv05] && ym_max_tig_REALISATIETIJD(fc05, prmmv05) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc08] |= SCH[schmv08] && ym_max_tig_REALISATIETIJD(fc08, prmmv08) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc09] |= SCH[schmv09] && ym_max_tig_REALISATIETIJD(fc09, prmmv09) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc11] |= SCH[schmv11] && ym_max_tig_REALISATIETIJD(fc11, prmmv11) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc21] |= SCH[schmv21] && ym_max_tig_REALISATIETIJD(fc21, prmmv21) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc22] |= SCH[schmv22] && ym_max_tig_REALISATIETIJD(fc22, prmmv22) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc24] |= SCH[schmv24] && ym_max_tig_REALISATIETIJD(fc24, prmmv24) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc26] |= SCH[schmv26] && ym_max_tig_REALISATIETIJD(fc26, prmmv26) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc28] |= SCH[schmv28] && ym_max_tig_REALISATIETIJD(fc28, prmmv28) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc31] |= SCH[schmv31] && ym_max_tig_REALISATIETIJD(fc31, prmmv31) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc32] |= SCH[schmv32] && ym_max_tig_REALISATIETIJD(fc32, prmmv32) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc33] |= SCH[schmv33] && ym_max_tig_REALISATIETIJD(fc33, prmmv33) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc34] |= SCH[schmv34] && ym_max_tig_REALISATIETIJD(fc34, prmmv34) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc38] |= SCH[schmv38] && ym_max_tig_REALISATIETIJD(fc38, prmmv38) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc61] |= SCH[schmv61] && ym_max_tig_REALISATIETIJD(fc61, prmmv61) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc62] |= SCH[schmv62] && ym_max_tig_REALISATIETIJD(fc62, prmmv62) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc67] |= SCH[schmv67] && ym_max_tig_REALISATIETIJD(fc67, prmmv67) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc68] |= SCH[schmv68] && ym_max_tig_REALISATIETIJD(fc68, prmmv68) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc81] |= SCH[schmv81] && ym_max_tig_REALISATIETIJD(fc81, prmmv81) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc82] |= SCH[schmv82] && ym_max_tig_REALISATIETIJD(fc82, prmmv82) && hf_wsg_nlISG() ? BIT4 : 0;
-    YM[fc84] |= SCH[schmv84] && ym_max_tig_REALISATIETIJD(fc84, prmmv84) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc02] |= SCH[schmv02] && ym_max_tig_Realisatietijd(fc02, prmmv02) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc03] |= SCH[schmv03] && ym_max_tig_Realisatietijd(fc03, prmmv03) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc05] |= SCH[schmv05] && ym_max_tig_Realisatietijd(fc05, prmmv05) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc08] |= SCH[schmv08] && ym_max_tig_Realisatietijd(fc08, prmmv08) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc09] |= SCH[schmv09] && ym_max_tig_Realisatietijd(fc09, prmmv09) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc11] |= SCH[schmv11] && ym_max_tig_Realisatietijd(fc11, prmmv11) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc21] |= SCH[schmv21] && ym_max_tig_Realisatietijd(fc21, prmmv21) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc22] |= SCH[schmv22] && ym_max_tig_Realisatietijd(fc22, prmmv22) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc24] |= SCH[schmv24] && ym_max_tig_Realisatietijd(fc24, prmmv24) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc26] |= SCH[schmv26] && ym_max_tig_Realisatietijd(fc26, prmmv26) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc28] |= SCH[schmv28] && ym_max_tig_Realisatietijd(fc28, prmmv28) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc31] |= SCH[schmv31] && ym_max_tig_Realisatietijd(fc31, prmmv31) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc32] |= SCH[schmv32] && ym_max_tig_Realisatietijd(fc32, prmmv32) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc33] |= SCH[schmv33] && ym_max_tig_Realisatietijd(fc33, prmmv33) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc34] |= SCH[schmv34] && ym_max_tig_Realisatietijd(fc34, prmmv34) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc38] |= SCH[schmv38] && ym_max_tig_Realisatietijd(fc38, prmmv38) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc61] |= SCH[schmv61] && ym_max_tig_Realisatietijd(fc61, prmmv61) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc62] |= SCH[schmv62] && ym_max_tig_Realisatietijd(fc62, prmmv62) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc67] |= SCH[schmv67] && ym_max_tig_Realisatietijd(fc67, prmmv67) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc68] |= SCH[schmv68] && ym_max_tig_Realisatietijd(fc68, prmmv68) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc81] |= SCH[schmv81] && ym_max_tig_Realisatietijd(fc81, prmmv81) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc82] |= SCH[schmv82] && ym_max_tig_Realisatietijd(fc82, prmmv82) && hf_wsg_nlISG() ? BIT4 : 0;
+    YM[fc84] |= SCH[schmv84] && ym_max_tig_Realisatietijd(fc84, prmmv84) && hf_wsg_nlISG() ? BIT4 : 0;
 
     /* Niet meeverlengen tijdens file (meting na ss) */
     if (IH[hfileFile68af]) YM[fc08] &= ~BIT4;
