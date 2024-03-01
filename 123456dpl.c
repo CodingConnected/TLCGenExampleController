@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   17-11-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
+ * 12.4.0   10-01-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable)
  *
  ************************************************************************************/
 
@@ -259,6 +259,7 @@ void display_parameters(void)
     X_us[usper5] = 624; Y_us[usper5] = 69;
     X_us[usper6] = 624; Y_us[usper6] = 84;
     X_us[usper7] = 625; Y_us[usper7] = 98;
+    X_us[usrgv] = 275; Y_us[usrgv] = 107;
     X_us[uswtk21] = 376; Y_us[uswtk21] = 219;
     X_us[uswtk22] = 434; Y_us[uswtk22] = 214;
     X_us[uswtk24] = 504; Y_us[uswtk24] = 301;

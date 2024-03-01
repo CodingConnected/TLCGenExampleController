@@ -275,7 +275,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2023-11-17T00:00:00</Datum>
+      <Datum>2024-01-10T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (laastste portable)</Commentaar>
     </Versie>
@@ -17403,8 +17403,8 @@
   </ModuleMolen>
   <MultiModuleMolens />
   <RoBuGrover>
-    <RoBuGrover>false</RoBuGrover>
-    <RoBuGroverVenster>false</RoBuGroverVenster>
+    <RoBuGrover>true</RoBuGrover>
+    <RoBuGroverVenster>true</RoBuGroverVenster>
     <MinimaleCyclustijd>900</MinimaleCyclustijd>
     <MaximaleCyclustijd>1500</MaximaleCyclustijd>
     <GroentijdVerschil>50</GroentijdVerschil>
@@ -17413,7 +17413,7 @@
     <GroenVerlaagFactor>20</GroenVerlaagFactor>
     <GroenVerlaagFactorNietPrimair>50</GroenVerlaagFactorNietPrimair>
     <OphogenTijdensGroen>false</OphogenTijdensGroen>
-    <ToestaanNietConflictenInConflictGroepen>false</ToestaanNietConflictenInConflictGroepen>
+    <ToestaanNietConflictenInConflictGroepen>true</ToestaanNietConflictenInConflictGroepen>
     <BitmapData>
       <Naam>rgv</Naam>
       <Dummy>false</Dummy>
@@ -17426,8 +17426,180 @@
         </Coordinaat>
       </BitmapCoordinaten>
     </BitmapData>
-    <ConflictGroepen />
-    <SignaalGroepInstellingen />
+    <ConflictGroepen>
+      <RoBuGroverConflictGroep>
+        <Fasen>
+          <RoBuGroverConflictGroepFase>
+            <FaseCyclus>02</FaseCyclus>
+          </RoBuGroverConflictGroepFase>
+          <RoBuGroverConflictGroepFase>
+            <FaseCyclus>09</FaseCyclus>
+          </RoBuGroverConflictGroepFase>
+          <RoBuGroverConflictGroepFase>
+            <FaseCyclus>05</FaseCyclus>
+          </RoBuGroverConflictGroepFase>
+          <RoBuGroverConflictGroepFase>
+            <FaseCyclus>11</FaseCyclus>
+          </RoBuGroverConflictGroepFase>
+        </Fasen>
+      </RoBuGroverConflictGroep>
+      <RoBuGroverConflictGroep>
+        <Fasen>
+          <RoBuGroverConflictGroepFase>
+            <FaseCyclus>08</FaseCyclus>
+          </RoBuGroverConflictGroepFase>
+          <RoBuGroverConflictGroepFase>
+            <FaseCyclus>11</FaseCyclus>
+          </RoBuGroverConflictGroepFase>
+          <RoBuGroverConflictGroepFase>
+            <FaseCyclus>03</FaseCyclus>
+          </RoBuGroverConflictGroepFase>
+          <RoBuGroverConflictGroepFase>
+            <FaseCyclus>05</FaseCyclus>
+          </RoBuGroverConflictGroepFase>
+        </Fasen>
+      </RoBuGroverConflictGroep>
+    </ConflictGroepen>
+    <SignaalGroepInstellingen>
+      <RoBuGroverSignaalGroepInstelling>
+        <FaseCyclus>02</FaseCyclus>
+        <MinGroenTijd>100</MinGroenTijd>
+        <MaxGroenTijd>500</MaxGroenTijd>
+        <FileDetectoren>
+          <RoBuGroverFileDetector>
+            <Detector>02_1a</Detector>
+            <FileTijd>60</FileTijd>
+          </RoBuGroverFileDetector>
+          <RoBuGroverFileDetector>
+            <Detector>02_1b</Detector>
+            <FileTijd>60</FileTijd>
+          </RoBuGroverFileDetector>
+        </FileDetectoren>
+        <HiaatDetectoren>
+          <RoBuGroverHiaatDetector>
+            <Detector>02_2a</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+          <RoBuGroverHiaatDetector>
+            <Detector>02_2b</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+          <RoBuGroverHiaatDetector>
+            <Detector>02_3a</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+          <RoBuGroverHiaatDetector>
+            <Detector>02_3b</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+        </HiaatDetectoren>
+      </RoBuGroverSignaalGroepInstelling>
+      <RoBuGroverSignaalGroepInstelling>
+        <FaseCyclus>03</FaseCyclus>
+        <MinGroenTijd>100</MinGroenTijd>
+        <MaxGroenTijd>500</MaxGroenTijd>
+        <FileDetectoren>
+          <RoBuGroverFileDetector>
+            <Detector>03_1</Detector>
+            <FileTijd>60</FileTijd>
+          </RoBuGroverFileDetector>
+        </FileDetectoren>
+        <HiaatDetectoren>
+          <RoBuGroverHiaatDetector>
+            <Detector>03_2</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+        </HiaatDetectoren>
+      </RoBuGroverSignaalGroepInstelling>
+      <RoBuGroverSignaalGroepInstelling>
+        <FaseCyclus>05</FaseCyclus>
+        <MinGroenTijd>100</MinGroenTijd>
+        <MaxGroenTijd>500</MaxGroenTijd>
+        <FileDetectoren>
+          <RoBuGroverFileDetector>
+            <Detector>05_1</Detector>
+            <FileTijd>60</FileTijd>
+          </RoBuGroverFileDetector>
+        </FileDetectoren>
+        <HiaatDetectoren>
+          <RoBuGroverHiaatDetector>
+            <Detector>05_2</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+        </HiaatDetectoren>
+      </RoBuGroverSignaalGroepInstelling>
+      <RoBuGroverSignaalGroepInstelling>
+        <FaseCyclus>08</FaseCyclus>
+        <MinGroenTijd>100</MinGroenTijd>
+        <MaxGroenTijd>500</MaxGroenTijd>
+        <FileDetectoren>
+          <RoBuGroverFileDetector>
+            <Detector>08_1a</Detector>
+            <FileTijd>60</FileTijd>
+          </RoBuGroverFileDetector>
+          <RoBuGroverFileDetector>
+            <Detector>08_1b</Detector>
+            <FileTijd>60</FileTijd>
+          </RoBuGroverFileDetector>
+        </FileDetectoren>
+        <HiaatDetectoren>
+          <RoBuGroverHiaatDetector>
+            <Detector>08_2a</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+          <RoBuGroverHiaatDetector>
+            <Detector>08_2b</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+          <RoBuGroverHiaatDetector>
+            <Detector>08_3a</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+          <RoBuGroverHiaatDetector>
+            <Detector>08_3b</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+        </HiaatDetectoren>
+      </RoBuGroverSignaalGroepInstelling>
+      <RoBuGroverSignaalGroepInstelling>
+        <FaseCyclus>09</FaseCyclus>
+        <MinGroenTijd>100</MinGroenTijd>
+        <MaxGroenTijd>500</MaxGroenTijd>
+        <FileDetectoren>
+          <RoBuGroverFileDetector>
+            <Detector>09_1</Detector>
+            <FileTijd>60</FileTijd>
+          </RoBuGroverFileDetector>
+        </FileDetectoren>
+        <HiaatDetectoren>
+          <RoBuGroverHiaatDetector>
+            <Detector>09_2</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+        </HiaatDetectoren>
+      </RoBuGroverSignaalGroepInstelling>
+      <RoBuGroverSignaalGroepInstelling>
+        <FaseCyclus>11</FaseCyclus>
+        <MinGroenTijd>100</MinGroenTijd>
+        <MaxGroenTijd>500</MaxGroenTijd>
+        <FileDetectoren>
+          <RoBuGroverFileDetector>
+            <Detector>11_1</Detector>
+            <FileTijd>60</FileTijd>
+          </RoBuGroverFileDetector>
+        </FileDetectoren>
+        <HiaatDetectoren>
+          <RoBuGroverHiaatDetector>
+            <Detector>11_2</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+          <RoBuGroverHiaatDetector>
+            <Detector>11_3</Detector>
+            <HiaatTijd>10</HiaatTijd>
+          </RoBuGroverHiaatDetector>
+        </HiaatDetectoren>
+      </RoBuGroverSignaalGroepInstelling>
+    </SignaalGroepInstellingen>
   </RoBuGrover>
   <Signalen>
     <WaarschuwingsGroepen />
@@ -19359,6 +19531,20 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykarin02bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin02bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin03bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin03bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -19561,20 +19747,6 @@
         <Naam>dummykarin05bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin05bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin03bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin03bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin02bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin02bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

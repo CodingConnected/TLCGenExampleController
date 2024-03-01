@@ -1,6 +1,7 @@
 /* isgfunc_prio.c - gegenereerd met TLCGen 12.4.0.0 */
 
 /* merk op: deze file heeft _geen_ bijbehorende header */
+/* @@: Peter moet deze functies nog verkorten net zoals hij bij isgfunc.c heeft gedaan */
 
 #define    PRIO_AA_BIT      BIT6
 
@@ -11,23 +12,22 @@ mulv TISG_BR[FCMAX][FCMAX];
 mulv TVG_max_voor_afkap[FCMAX];
 mulv TVG_AR_voor_afkap[FCMAX];
 
-
 boolv TVG_max_opgehoogd[FCMAX];
 boolv TVG_AR_opgehoogd[FCMAX];
 boolv RW_OV[FCMAX] = { 0 };
 void BepaalInterStartGroenTijden_PRIO(void);
 void InterStartGroenTijd_NLEG_PRIO(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);
 void InterStartGroenTijd_NLSG_PRIO(count i, count j, count tnlsg, count tnlsgd);
-boolv Correctie_TISG_Voorstart_PRIO(count fcvs, count fcns, count tvs);
-boolv Correctie_TISG_Gelijkstart_PRIO(count fc1, count fc2);
-boolv Correctie_TISG_LateRelease_PRIO(count fclr, count fcvs, count tlr);
+boolv TISG_Voorstart_PRIO_Correctie(count fcvs, count fcns, count tvs);
+boolv TISG_Gelijkstart_PRIO_Correctie(count fc1, count fc2);
+boolv TISG_LateRelease_PRIO_Correctie(count fclr, count fcvs, count tlr);
 void BepaalTVG_BR(void);
 void VerhoogTVG_maxDoorPrio(void);
 void VerlaagTVG_maxDoorConfPrio(void);
 void PrioMeetKriteriumISG(void);
 void BepaalStartGroenMomentenPrioIngrepen(void);
 void PasTVG_maxAanStartGroenMomentenPrioIngrepen(void);
-void TegenHoudenStartGroenISG(int fc, int iStartGroenFC);
+void TegenHoudenStartGroenISG(int fc, int iStartGroenFC, boolv Afkappen);
 void PrioBijzonderRealiserenISG(void);
 void PrioTegenhoudenISG(void);
 void MeeverlengenUitDoorPrio(void);
@@ -214,7 +214,7 @@ void InterStartGroenTijd_NLSG_PRIO(count i, count j, count tnlsg, count tnlsgd)
         }
     }
 }
-boolv Correctie_TISG_Voorstart_PRIO(count fcvs, count fcns, count tvs)
+boolv TISG_Voorstart_PRIO_Correctie(count fcvs, count fcns, count tvs)
 {
     count n;
     boolv result;
@@ -234,7 +234,7 @@ boolv Correctie_TISG_Voorstart_PRIO(count fcvs, count fcns, count tvs)
     }
     return result;
 }
-boolv Correctie_TISG_Gelijkstart_PRIO(count fc1, count fc2)
+boolv TISG_Gelijkstart_PRIO_Correctie(count fc1, count fc2)
 {
     count n;
     boolv result;
@@ -270,7 +270,7 @@ boolv Correctie_TISG_Gelijkstart_PRIO(count fc1, count fc2)
     }
     return result;
 }
-boolv Correctie_TISG_LateRelease_PRIO(count fclr, count fcvs, count tlr)
+boolv TISG_LateRelease_PRIO_Correctie(count fclr, count fcvs, count tlr)
 {
     count n;
     boolv result;
@@ -524,7 +524,7 @@ void PrioTegenhoudenISG(void)
         if (iPrioriteit[prio] && iPrioriteitsOpties[prio] & poBijzonderRealiseren)
         {
             fc = iFC_PRIOix[prio];
-            TegenHoudenStartGroenISG(fc, iStartGroen[prio]);
+            TegenHoudenStartGroenISG(fc, iStartGroen[prio], (iPrioriteitsOpties[prio] & poAfkappenKonfliktRichtingen)!=0);
             if (iPrioriteitsOpties[prio] & poNoodDienst)
             {
                 RTFB |= PRIO_RTFB_BIT;
@@ -533,7 +533,7 @@ void PrioTegenhoudenISG(void)
     }
     TegenhoudenConflictenExtra();
 }
-void TegenHoudenStartGroenISG(int fc, int iStartGroenFC)
+void TegenHoudenStartGroenISG(int fc, int iStartGroenFC, boolv Afkappen)
 {
     int i, k;
     for (i = 0; i < FKFC_MAX[fc]; ++i)
@@ -543,9 +543,19 @@ void TegenHoudenStartGroenISG(int fc, int iStartGroenFC)
 #else
         k = TO_pointer[fc][i];
 #endif
-        if (iStartGroenFC <= (TISG_afkap[k][fc] + REALISATIETIJD_max[k]) || AfslaandDeelconflict[k])
+        if (Afkappen)
         {
-            RR[k] |= PRIO_RR_BIT;
+            if (iStartGroenFC <= (TISG_afkap[k][fc] + REALISATIETIJD_max[k]) || AfslaandDeelconflict[k])
+            {
+                RR[k] |= PRIO_RR_BIT;
+            }
+        }
+        else
+        {
+            if (iStartGroenFC <= (TISG_PR[k][fc] + REALISATIETIJD_max[k]) || AfslaandDeelconflict[k])
+            {
+                RR[k] |= PRIO_RR_BIT;
+            }
         }
     }
 }
@@ -604,13 +614,16 @@ void PasRealisatieTijdenAanVanwegeRRPrio(void)
     count prio, fc, n, k;
     for (prio = 0; prio < prioFCMAX; ++prio)
     {
-        fc = iFC_PRIOix[prio];
-        for (n = 0; n < FKFC_MAX[fc]; ++n)
+        if (iPrioriteit[prio] && (iPrioriteitsOpties[prio] & poBijzonderRealiseren))
         {
-            k = KF_pointer[fc][n];
-            if ((RR[k] & PRIO_RR_BIT) && AAPR[k] && R[k] && R[fc])
+            fc = iFC_PRIOix[prio];
+            for (n = 0; n < FKFC_MAX[fc]; ++n)
             {
-                if (REALISATIETIJD[fc][k] < (iStartGroen[prio] + TISG_BR[fc][k])) REALISATIETIJD[fc][k] = iStartGroen[prio] + TISG_BR[fc][k];
+                k = KF_pointer[fc][n];
+                if ((RR[k] & PRIO_RR_BIT) && AAPR[k] && R[k] && R[fc])
+                {
+                    if (REALISATIETIJD[fc][k] < (iStartGroen[prio] + TISG_BR[fc][k])) REALISATIETIJD[fc][k] = iStartGroen[prio] + TISG_BR[fc][k];
+                }
             }
         }
     }
@@ -908,8 +921,9 @@ void PasRealisatieTijdenAanVanwegeBRLateRelease(count fc)
     }
 }
 
-void ResetIsgPrioVars(void)
+void ResetIsgVars(void)
 {
+						 
 /* prioriteitsingrepen */
 /* zet alle interstartgroentijden op -1 */
    count i, j;
