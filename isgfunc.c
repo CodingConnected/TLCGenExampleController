@@ -8502,7 +8502,7 @@ boolv ym_max_tig_REALISATIETIJD(count i, count prmomx) /* todo fc22 moet met 5 m
         for (n = 0; n < FKFC_MAX[i]; ++n)
         {
             k = KF_pointer[i][n];
-            if ((RA[k] || AAPR[k]) && !(FK_type[i][k] == FK_SG) && !(FK_type[i][k] == FK_EVG) && (REALISATIETIJD_max[k] >= 0))
+            if ((RA[k] || AAPR[k]) && !(FK_type[i][k] == FK_SG) && !(FK_type[i][k] == FK_EVG) && (REALISATIETIJD_max[k] > 0))
                {
                 ym = FALSE;
                 for (j = 0; j < FKFC_MAX[k]; j++)

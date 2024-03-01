@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   10-01-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable)
+ * 12.4.0   17-11-2023   TLCGen      Ontwikkel versie TLCGen (laastste portable)
  *
  ************************************************************************************/
 
@@ -931,7 +931,7 @@ void BepaalRealisatieTijden(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-    if (SCH[schgs2484]) wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc24);
+    wijziging |= Correctie_REALISATIETIJD_Gelijkstart(fc84, fc24);
     wijziging |= Correctie_REALISATIETIJD_Voorstart(fc22, fc05, tvs2205);
     wijziging |= Correctie_REALISATIETIJD_Voorstart(fc32, fc05, tvs3205);
     wijziging |= Correctie_REALISATIETIJD_LateRelease(fc26, fc11, tlr2611);
@@ -982,7 +982,7 @@ void BepaalInterStartGroenTijden(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-    if (SCH[schgs2484])         wijziging |= Correctie_TISG_Gelijkstart(fc84, fc24);
+        wijziging |= Correctie_TISG_Gelijkstart(fc84, fc24);
         wijziging |= Correctie_TISG_Voorstart(fc22, fc05, tvs2205);
         wijziging |= Correctie_TISG_Voorstart(fc32, fc05, tvs3205);
         wijziging |= Correctie_TISG_LateRelease(fc26, fc11, tlr2611);
@@ -1403,7 +1403,7 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
     PrioTegenhoudenISG(); /* Houdt richtingen die conflicterend zijn met priorealisatie als er niet meer genoeg ruimte voor realisatie is  */
     PasRealisatieTijdenAanVanwegeRRPrio(); /* Pas realisatietijden aan voor richtingen conflicterend met prioriteitsrealisatie*/
     Bepaal_Realisatietijd_per_richting();
-    PasRealisatieTijdenAanVanwegeBRLateRelease(fc26);
+    PasRealisatieTijdenAanVanwegeBRLateRelease(fc26); //@Menno:@@## hardcoded; alleen als er een later release is ? 
     Bepaal_Realisatietijd_per_richting();
 
 
@@ -1413,7 +1413,8 @@ if (G[fc11] && !MG[fc11] && IH[hfileFile68af] && (PRM[prmfpercFile68af11] < 100)
 
 void Wachtgroen(void)
 {
-    int fc;
+   int fc;
+   int fc1;
 
     for (fc = 0; fc < FCMAX; ++fc)
         RW[fc] &= ~BIT4;  /* reset BIT-sturing */
@@ -1486,8 +1487,14 @@ void Wachtgroen(void)
     /* Op tijd beeindingen wachtgroen (bv voor TWL's of andere wachtstand richtingen  */
 #ifndef NO_PRIO
     PrioAanwezig();
-    BeeindigenWachtgroenPrioConflicten();
-#endif /* NO_PRIO */
+    for (fc = 0; fc < FCMAX; ++fc)
+    {
+       for (fc1 = 0; fc1 < FCMAX; ++fc1)
+       {
+          if ((TIG_max[fc][fc1] >= 0) && PRIOFC[fc]) RW[fc1] &= ~BIT4;  /* reset BIT-sturing */
+       }
+    }
+#endif
 
     Wachtgroen_Add();
 }
@@ -1965,7 +1972,6 @@ void RealisatieAfhandeling(void)
     Alternatief_Add();
 
     langstwachtende_alternatief_modulen(PRML, ML, ML_MAX);
-    langstwachtende_alternatief();
     PrioBijzonderRealiserenISG();
 
     YML[ML] = yml_cv_pr_nl_ISG(PRML, ML, ML_MAX);
@@ -2222,7 +2228,7 @@ void application(void)
     PrioDebug_Add();
 #endif /* NO_PRIO */
     Fixatie(isfix, 0, FCMAX-1, SCH[schbmfix], PRML, ML);
-    IsgDebug();
+    IsgDebug(); 
 
     PostApplication();
 }

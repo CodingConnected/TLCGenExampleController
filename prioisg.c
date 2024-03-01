@@ -1,7 +1,3 @@
-/* isgfunc_prio.c - gegenereerd met TLCGen 12.4.0.0 */
-
-/* merk op: deze file heeft _geen_ bijbehorende header */
-
 #define    PRIO_AA_BIT      BIT6
 
 mulv TVG_BR[FCMAX];
@@ -35,7 +31,6 @@ void PasRealisatieTijdenAanVanwegeRRPrio(void);
 void PrioriteitsToekenning_ISG(void);
 void PrioInit_ISG(void);
 void PrioriteitsToekenning_ISG_Add(void);
-
 void InterStartGroenTijd_NLEG_PRIO(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop)
 {
     int k, n;
@@ -977,7 +972,7 @@ void VerhoogGroentijdNietTijdensInrijden(count fc1, count fc2, count txnlfc1fc2)
             fc = KF_pointer[fc2][n];
             NietGroentijdOphogen[fc] = TRUE;
          }
-         for (n = KFC_MAX[fc2]; n < FKFC_MAX[fc2]; ++n)
+         for (KFC_MAX[fc2] = 0; n < FKFC_MAX[fc2]; ++n)
          {
             fc = KF_pointer[fc2][n];
             if (FK_type[fc][fc2] != FK_SG) NietGroentijdOphogen[fc] = TRUE;
