@@ -130,6 +130,10 @@ void PreApplication(void)
 {
     int fc;
 
+    /* Instelling TFB_max */
+    /* ------------------ */
+    TFB_max = PRM[prmfb];
+
     /* Nalopen */
     /* ------- */
     gk_ResetGK();
@@ -526,7 +530,10 @@ void Aanvragen(void)
 
     for (fc = 0; fc < FCMAX; ++fc) RR[fc] &= ~BIT9;  /* reset BIT-sturing t.b.v. reset A */
 
-    aanvraag_richtinggevoelig_reset(fc24, d24_2, d24_3, trgad24_3, trgavd24_3, SCH[schrgadd24_3]);
+    if (SCH[schrgad242243])
+    {
+       aanvraag_richtinggevoelig_reset(fc24, d24_2, d24_3, trgad24_3, trgavd24_3, SCH[schrgadd24_3]);
+    }
 
     /* Vaste aanvragen */
     /* --------------- */
@@ -2797,8 +2804,6 @@ void PostApplication(void)
 void application(void)
 {
     PreApplication();
-
-    TFB_max = PRM[prmfb];
     KlokPerioden();
     Aanvragen();
     BepaalRealisatieTijden();

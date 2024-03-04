@@ -1799,8 +1799,9 @@
     #define schsneld81_1              380 /* Aanvraag snel voor detector 81_1 aan of uit                    */
     #define schsneld82_1              381 /* Aanvraag snel voor detector 82_1 aan of uit                    */
     #define schsneld84_1              382 /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    #define schtraffick2tlcgen        383 /* Activeren Traffick functies                                    */
-    #define SCHMAX1                   384
+    #define schrgad242243             383 /* Schakelbaere richtinggevoelige aanvraag                        */
+    #define schtraffick2tlcgen        384 /* Activeren Traffick functies                                    */
+    #define SCHMAX1                   385
 
 /* parameters */
 /* ---------- */

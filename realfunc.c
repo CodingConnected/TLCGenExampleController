@@ -10,23 +10,24 @@ BESTAND:   realfunc.c
 *
 * 1.0     05-08-2020  OK Geregeld:  Functies t.b.v. realisatietijd en correcties
 * 2.0     07-03-2021  Cyril         Geschikt gemaakt voor UC4
-*                                   - CCA/PSN   04022021: REALTIJD_min REALTIJD_max ook rekening houden met fictieve OT deelconflictrichtingen
-*                                   - CCA/PSN   04022021: min max tijd toegevoegd
-*                                   - CCA       10022021: kijken naar fictieve OT toegevoegd
-*                                   - CCA/Ddo   04032021: (AAPR[fc1] && (AAPR[fc1]<BIT6)) aangevuld bij AAPR[fc1]
-*                                   - CCA/Ddo   07032021: Alleen ophogin minend en maxend tijd toegestaan
-*                                   - CCA/DDo   08032021: && !(P[fc1] || P[fc2])
-* 3.0     14-04-2021                - CCA       14042021: Aanpassingen Steven van Oostendorp verwerkt:
-*                                                         Bugfix REALTIJD[fc2] ivm voorstart > 0, regel 217(11112020)
-*                                                         Bij realtijd<=1 geen sync als RV[fc1] , regel 204 (07122020) 
-*                                                         VTG3_Real_Los gewijzigd                                                   
-*                                                         Minder argumenten voetgangersfuncties + detailwijzigingen (10032021) 
-* 3.1     16-10-2021                - CCA       Corr_Min_nl gemaakt waarniet naar de aanwezigheid voor A voor de naloop wordt gekeken
-*                                               _temp interne variabelen verwijderd (CCA/Ddo 07032021)
-* 3.2     09-11-2021                - CCA       MG && TGG toegevoegd in berekeningen
-* 3.3     06-12-2021                - CCA       _temp interne variabelen wederom toegevoegd
-* 3.4     09-03-2023                - CCA       MLNLTEST toegevoegd ivm onterechte PG (optioneel zelf te activeren)
-* 3.5     07-04-2023                - CCA       MLNLTEST register count toegevoegd
+*                                   - CCA/PSN    04022021: REALTIJD_min REALTIJD_max ook rekening houden met fictieve OT deelconflictrichtingen
+*                                   - CCA/PSN    04022021: min max tijd toegevoegd
+*                                   - CCA        10022021: kijken naar fictieve OT toegevoegd
+*                                   - CCA/Ddo    04032021: (AAPR[fc1] && (AAPR[fc1]<BIT6)) aangevuld bij AAPR[fc1]
+*                                   - CCA/Ddo    07032021: Alleen ophogin minend en maxend tijd toegestaan
+*                                   - CCA/DDo    08032021: && !(P[fc1] || P[fc2])
+* 3.0     14-04-2021                - CCA        14042021: Aanpassingen Steven van Oostendorp verwerkt:
+*                                                          Bugfix REALTIJD[fc2] ivm voorstart > 0, regel 217(11112020)
+*                                                          Bij realtijd<=1 geen sync als RV[fc1] , regel 204 (07122020) 
+*                                                          VTG3_Real_Los gewijzigd                                                   
+*                                                          Minder argumenten voetgangersfuncties + detailwijzigingen (10032021) 
+* 3.1     16-10-2021                - CCA        Corr_Min_nl gemaakt waarniet naar de aanwezigheid voor A voor de naloop wordt gekeken
+*                                                _temp interne variabelen verwijderd (CCA/Ddo 07032021)
+* 3.2     09-11-2021                - CCA        MG && TGG toegevoegd in berekeningen
+* 3.3     06-12-2021                - CCA        _temp interne variabelen wederom toegevoegd
+* 3.4     09-03-2023                - CCA        MLNLTEST toegevoegd ivm onterechte PG (optioneel zelf te activeren)
+* 3.5     07-04-2023                - CCA        MLNLTEST register count toegevoegd
+* 3.6     04-03-2023                - CCA/AW/DDO Aanpassing Synchroniseer_FO met een controle dat beide fc's moeten in dezelfde module moeten zitten
 ************************************************************************************/
 
 mulv REALTIJD[FCMAX];
@@ -858,9 +859,19 @@ void Synchroniseer_FO(void)
 
       if (REAL_SYN[fc2][fc1] &&
          !REAL_FOT[fc2][fc1] &&
-          REAL_FOT[fc1][fc2] && G[fc2] && !G[fc1] && A[fc1] && (RA[fc1] || AAPR[fc1] && !PG[fc1]) && !RR[fc1] && !BL[fc1] && !kaa(fc1) && (REALTIJD[fc1] <= (TGL_max[fc2]+TRG_max[fc2])))
+         REAL_FOT[fc1][fc2] && G[fc2] && !G[fc1] && A[fc1] && (RA[fc1] || AAPR[fc1] && !PG[fc1]) && !RR[fc1] && !BL[fc1] && !kaa(fc1) && !kaa(fc2)
+#if MLMAX
+         && PRML[ML][fc1] & PRIMAIR_VERSNELD && PRML[ML][fc2] & PRIMAIR_VERSNELD
+#endif
+#if MLAMAX
+         && PRMLA[MLA][fc1] & PRIMAIR_VERSNELD && PRMLA[MLA][fc2] & PRIMAIR_VERSNELD
+#endif
+#if MLBMAX
+         && PRMLB[MLB][fc1] & PRIMAIR_VERSNELD && PRMLB[MLB][fc2] & PRIMAIR_VERSNELD
+#endif
+         && (REALTIJD[fc1] <= (TGL_max[fc2] + TRG_max[fc2])))
       {
-        RW[fc2] |= BIT1;
+         RW[fc2] |= BIT1;
       }
     }
   }

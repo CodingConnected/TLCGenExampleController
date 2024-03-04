@@ -2253,7 +2253,8 @@ void control_parameters(void)
     SCH_code[schsneld81_1]              = "sneld81_1";              SCH[schsneld81_1]              = 0;                                         /* Aanvraag snel voor detector 81_1 aan of uit                    */
     SCH_code[schsneld82_1]              = "sneld82_1";              SCH[schsneld82_1]              = 0;                                         /* Aanvraag snel voor detector 82_1 aan of uit                    */
     SCH_code[schsneld84_1]              = "sneld84_1";              SCH[schsneld84_1]              = 0;                                         /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 1;                                         /* Activeren Traffick functies                                    */
+    SCH_code[schrgad242243]              = "schrgad242243";         SCH[schrgad242243]             = 1;                                         /* Aanvraag snel voor detector 84_1 aan of uit                    */
+    SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 0;                                         /* Activeren Traffick functies                                    */
 
 /* parameters */
 /* ---------- */
@@ -4200,6 +4201,7 @@ void control_parameters(void)
     SCH_cat[schsneld81_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld81_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld82_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld82_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld84_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld84_1]              = SUBCAT_MaximumGroentijden;
+    SCH_cat[schrgad242243]          = CAT_Signaalgroep;     SCH_subcat[schrgad242243]             = SUBCAT_Aanvraag;
     SCH_cat[schtraffick2tlcgen]     = CAT_Basisfuncties;    SCH_subcat[schtraffick2tlcgen]        = SUBCAT_Testen;
     T_cat[t08_1a_1]                = CAT_Basisfuncties;    T_subcat[t08_1a_1]                   = SUBCAT_Verlengen;
     T_cat[t08_1a_2]                = CAT_Basisfuncties;    T_subcat[t08_1a_2]                   = SUBCAT_Verlengen;
