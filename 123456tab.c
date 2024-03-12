@@ -8,14 +8,14 @@
 
    BESTAND:   123456tab.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.2
-   CCOLGEN:   12.4.0.2
+    TLCGEN:   12.4.0.5
+   CCOLGEN:   12.4.0.5
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
+ * 12.4.0.4   12-03-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -1812,12 +1812,6 @@ void control_parameters(void)
     T_code[tfo0522]                    = "fo0522";                    T_max[tfo0522]                    = 40;   T_type[tfo0522]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
     T_code[tfo1126]                    = "fo1126";                    T_max[tfo1126]                    = 0;    T_type[tfo1126]                    = TE_type; /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
     T_code[tfo0532]                    = "fo0532";                    T_max[tfo0532]                    = 50;   T_type[tfo0532]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
-    T_code[tarmvt02]                   = "armvt02";                   T_max[tarmvt02]                   = 101;  T_type[tarmvt02]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 02                                               */
-    T_code[tarmvt03]                   = "armvt03";                   T_max[tarmvt03]                   = 100;  T_type[tarmvt03]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 03                                               */
-    T_code[tarmvt05]                   = "armvt05";                   T_max[tarmvt05]                   = 100;  T_type[tarmvt05]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 05                                               */
-    T_code[tarmvt08]                   = "armvt08";                   T_max[tarmvt08]                   = 100;  T_type[tarmvt08]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 08                                               */
-    T_code[tarmvt09]                   = "armvt09";                   T_max[tarmvt09]                   = 100;  T_type[tarmvt09]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 09                                               */
-    T_code[tarmvt11]                   = "armvt11";                   T_max[tarmvt11]                   = 100;  T_type[tarmvt11]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 11                                               */
 
 /* teller elementen */
 /* ---------------- */
@@ -2110,6 +2104,8 @@ void control_parameters(void)
     SCH_code[schrisaanvraag]            = "risaanvraag";            SCH[schrisaanvraag]            = 1;                                         /* Globaal in of uitschakelen aanvragen via RIS                   */
     SCH_code[schrisverlengen]           = "risverlengen";           SCH[schrisverlengen]           = 1;                                         /* Globaal in of uitschakelen verlengen via RIS                   */
     SCH_code[schrgadd24_3]              = "rgadd24_3";              SCH[schrgadd24_3]              = 1;                                         /* Type richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2     */
+    SCH_code[schrgad24_3]               = "rgad24_3";               SCH[schrgad24_3]               = 1;                                         /* Richtinggevoelig aanvragen fase 24 aan/uit van 24_3 naar 24_2  */
+    SCH_code[schrgvd24_3]               = "rgvd24_3";               SCH[schrgvd24_3]               = 1;                                         /* Richtinggevoelig verlengen fase 24 aan/uit van 24_3 naar 24_2  */
     SCH_code[schrgv]                    = "rgv";                    SCH[schrgv]                    = 0;                                         /* RoBuGrover aan of uit                                          */
     SCH_code[schrgv_snel]               = "rgv_snel";               SCH[schrgv_snel]               = 0;                                         /* RoBuGrover versneld ophogen of verlagen                        */
     SCH_code[schschoolingreep33]        = "schoolingreep33";        SCH[schschoolingreep33]        = 0;                                         /* Schoolingreep aan of uit voor fase 33                          */
@@ -2253,8 +2249,6 @@ void control_parameters(void)
     SCH_code[schsneld81_1]              = "sneld81_1";              SCH[schsneld81_1]              = 0;                                         /* Aanvraag snel voor detector 81_1 aan of uit                    */
     SCH_code[schsneld82_1]              = "sneld82_1";              SCH[schsneld82_1]              = 0;                                         /* Aanvraag snel voor detector 82_1 aan of uit                    */
     SCH_code[schsneld84_1]              = "sneld84_1";              SCH[schsneld84_1]              = 0;                                         /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    SCH_code[schrgad242243]              = "schrgad242243";         SCH[schrgad242243]             = 1;                                         /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 0;                                         /* Activeren Traffick functies                                    */
 
 /* parameters */
 /* ---------- */
@@ -2275,7 +2269,7 @@ void control_parameters(void)
     PRM_code[prmspringverleng_11_4]       = "springverleng_11_4";       PRM[prmspringverleng_11_4]       = 0;                                                      /* Dyn. hiaattij instelling voor det. 11_4 (via bitsturing)                                                                       */
     PRM_code[prmfb]                       = "fb";                       PRM[prmfb]                       = 240;   PRM_type[prmfb]                       = TS_type; /* Instelling fasebewaking                                                                                                        */
     PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 12;                                                     /* Versiebeheer xx                                                                                                                */
-    PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 4;                                                      /* Versiebeheer yy                                                                                                                */
+    PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 5;                                                      /* Versiebeheer yy                                                                                                                */
     PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 0;                                                      /* Versiebeheer zz                                                                                                                */
     PRM_code[prmovmextragroen_02]         = "ovmextragroen_02";         PRM[prmovmextragroen_02]         = 0;     PRM_type[prmovmextragroen_02]         = TE_type;
     PRM_code[prmovmmindergroen_02]        = "ovmmindergroen_02";        PRM[prmovmmindergroen_02]        = 0;     PRM_type[prmovmmindergroen_02]        = TE_type;
@@ -2692,6 +2686,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole02risov]        = "rissubrole02risov";        PRM[prmrissubrole02risov]        = 8191;                                                  
     PRM_code[prmrisimportance02risov]     = "risimportance02risov";     PRM[prmrisimportance02risov]     = 2048;                                                  
     PRM_code[prmrisstationtype02risov]    = "risstationtype02risov";    PRM[prmrisstationtype02risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype02risov]  = "risgrenspriotype02risov";  PRM[prmrisgrenspriotype02risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 02                                                                                  */
     PRM_code[prmrisapproachid02risov]     = "risapproachid02risov";     PRM[prmrisapproachid02risov]     = 999;                                                   
     PRM_code[prmrislaneid02risov_1]       = "rislaneid02risov_1";       PRM[prmrislaneid02risov_1]       = 1;                                                     
     PRM_code[prmrislaneid02risov_2]       = "rislaneid02risov_2";       PRM[prmrislaneid02risov_2]       = 2;                                                     
@@ -2707,6 +2702,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole02risvrw]       = "rissubrole02risvrw";       PRM[prmrissubrole02risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance02risvrw]    = "risimportance02risvrw";    PRM[prmrisimportance02risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype02risvrw]   = "risstationtype02risvrw";   PRM[prmrisstationtype02risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype02risvrw] = "risgrenspriotype02risvrw"; PRM[prmrisgrenspriotype02risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 02                                                                                  */
     PRM_code[prmrisapproachid02risvrw]    = "risapproachid02risvrw";    PRM[prmrisapproachid02risvrw]    = 999;                                                   
     PRM_code[prmrislaneid02risvrw_1]      = "rislaneid02risvrw_1";      PRM[prmrislaneid02risvrw_1]      = 1;                                                     
     PRM_code[prmrislaneid02risvrw_2]      = "rislaneid02risvrw_2";      PRM[prmrislaneid02risvrw_2]      = 2;                                                     
@@ -2728,6 +2724,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole03risov]        = "rissubrole03risov";        PRM[prmrissubrole03risov]        = 8191;                                                  
     PRM_code[prmrisimportance03risov]     = "risimportance03risov";     PRM[prmrisimportance03risov]     = 2048;                                                  
     PRM_code[prmrisstationtype03risov]    = "risstationtype03risov";    PRM[prmrisstationtype03risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype03risov]  = "risgrenspriotype03risov";  PRM[prmrisgrenspriotype03risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 03                                                                                  */
     PRM_code[prmrisapproachid03risov]     = "risapproachid03risov";     PRM[prmrisapproachid03risov]     = 999;                                                   
     PRM_code[prmrislaneid03risov_1]       = "rislaneid03risov_1";       PRM[prmrislaneid03risov_1]       = 3;                                                     
     PRM_code[prmrto03risvrw]              = "rto03risvrw";              PRM[prmrto03risvrw]              = 140;   PRM_type[prmrto03risvrw]              = TE_type; /* Ongehinderde rijtijd prioriteit fase 03                                                                                        */
@@ -2742,6 +2739,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole03risvrw]       = "rissubrole03risvrw";       PRM[prmrissubrole03risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance03risvrw]    = "risimportance03risvrw";    PRM[prmrisimportance03risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype03risvrw]   = "risstationtype03risvrw";   PRM[prmrisstationtype03risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype03risvrw] = "risgrenspriotype03risvrw"; PRM[prmrisgrenspriotype03risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 03                                                                                  */
     PRM_code[prmrisapproachid03risvrw]    = "risapproachid03risvrw";    PRM[prmrisapproachid03risvrw]    = 999;                                                   
     PRM_code[prmrislaneid03risvrw_1]      = "rislaneid03risvrw_1";      PRM[prmrislaneid03risvrw_1]      = 3;                                                     
     PRM_code[prmrto05bus]                 = "rto05bus";                 PRM[prmrto05bus]                 = 140;   PRM_type[prmrto05bus]                 = TE_type; /* Ongehinderde rijtijd prioriteit fase 05                                                                                        */
@@ -2762,6 +2760,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole05risov]        = "rissubrole05risov";        PRM[prmrissubrole05risov]        = 8191;                                                  
     PRM_code[prmrisimportance05risov]     = "risimportance05risov";     PRM[prmrisimportance05risov]     = 2048;                                                  
     PRM_code[prmrisstationtype05risov]    = "risstationtype05risov";    PRM[prmrisstationtype05risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype05risov]  = "risgrenspriotype05risov";  PRM[prmrisgrenspriotype05risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 05                                                                                  */
     PRM_code[prmrisapproachid05risov]     = "risapproachid05risov";     PRM[prmrisapproachid05risov]     = 999;                                                   
     PRM_code[prmrislaneid05risov_1]       = "rislaneid05risov_1";       PRM[prmrislaneid05risov_1]       = 4;                                                     
     PRM_code[prmrto05risvrw]              = "rto05risvrw";              PRM[prmrto05risvrw]              = 140;   PRM_type[prmrto05risvrw]              = TE_type; /* Ongehinderde rijtijd prioriteit fase 05                                                                                        */
@@ -2776,6 +2775,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole05risvrw]       = "rissubrole05risvrw";       PRM[prmrissubrole05risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance05risvrw]    = "risimportance05risvrw";    PRM[prmrisimportance05risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype05risvrw]   = "risstationtype05risvrw";   PRM[prmrisstationtype05risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype05risvrw] = "risgrenspriotype05risvrw"; PRM[prmrisgrenspriotype05risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 05                                                                                  */
     PRM_code[prmrisapproachid05risvrw]    = "risapproachid05risvrw";    PRM[prmrisapproachid05risvrw]    = 999;                                                   
     PRM_code[prmrislaneid05risvrw_1]      = "rislaneid05risvrw_1";      PRM[prmrislaneid05risvrw_1]      = 4;                                                     
     PRM_code[prmrto08bus]                 = "rto08bus";                 PRM[prmrto08bus]                 = 140;   PRM_type[prmrto08bus]                 = TE_type; /* Ongehinderde rijtijd prioriteit fase 08                                                                                        */
@@ -2796,6 +2796,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole08risov]        = "rissubrole08risov";        PRM[prmrissubrole08risov]        = 8191;                                                  
     PRM_code[prmrisimportance08risov]     = "risimportance08risov";     PRM[prmrisimportance08risov]     = 2048;                                                  
     PRM_code[prmrisstationtype08risov]    = "risstationtype08risov";    PRM[prmrisstationtype08risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype08risov]  = "risgrenspriotype08risov";  PRM[prmrisgrenspriotype08risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 08                                                                                  */
     PRM_code[prmrisapproachid08risov]     = "risapproachid08risov";     PRM[prmrisapproachid08risov]     = 999;                                                   
     PRM_code[prmrislaneid08risov_1]       = "rislaneid08risov_1";       PRM[prmrislaneid08risov_1]       = 5;                                                     
     PRM_code[prmrislaneid08risov_2]       = "rislaneid08risov_2";       PRM[prmrislaneid08risov_2]       = 6;                                                     
@@ -2811,6 +2812,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole08risvrw]       = "rissubrole08risvrw";       PRM[prmrissubrole08risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance08risvrw]    = "risimportance08risvrw";    PRM[prmrisimportance08risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype08risvrw]   = "risstationtype08risvrw";   PRM[prmrisstationtype08risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype08risvrw] = "risgrenspriotype08risvrw"; PRM[prmrisgrenspriotype08risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 08                                                                                  */
     PRM_code[prmrisapproachid08risvrw]    = "risapproachid08risvrw";    PRM[prmrisapproachid08risvrw]    = 999;                                                   
     PRM_code[prmrislaneid08risvrw_1]      = "rislaneid08risvrw_1";      PRM[prmrislaneid08risvrw_1]      = 5;                                                     
     PRM_code[prmrislaneid08risvrw_2]      = "rislaneid08risvrw_2";      PRM[prmrislaneid08risvrw_2]      = 6;                                                     
@@ -2832,6 +2834,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole09risov]        = "rissubrole09risov";        PRM[prmrissubrole09risov]        = 8191;                                                  
     PRM_code[prmrisimportance09risov]     = "risimportance09risov";     PRM[prmrisimportance09risov]     = 2048;                                                  
     PRM_code[prmrisstationtype09risov]    = "risstationtype09risov";    PRM[prmrisstationtype09risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype09risov]  = "risgrenspriotype09risov";  PRM[prmrisgrenspriotype09risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 09                                                                                  */
     PRM_code[prmrisapproachid09risov]     = "risapproachid09risov";     PRM[prmrisapproachid09risov]     = 999;                                                   
     PRM_code[prmrislaneid09risov_1]       = "rislaneid09risov_1";       PRM[prmrislaneid09risov_1]       = 7;                                                     
     PRM_code[prmrto09risvrw]              = "rto09risvrw";              PRM[prmrto09risvrw]              = 140;   PRM_type[prmrto09risvrw]              = TE_type; /* Ongehinderde rijtijd prioriteit fase 09                                                                                        */
@@ -2846,6 +2849,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole09risvrw]       = "rissubrole09risvrw";       PRM[prmrissubrole09risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance09risvrw]    = "risimportance09risvrw";    PRM[prmrisimportance09risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype09risvrw]   = "risstationtype09risvrw";   PRM[prmrisstationtype09risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype09risvrw] = "risgrenspriotype09risvrw"; PRM[prmrisgrenspriotype09risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 09                                                                                  */
     PRM_code[prmrisapproachid09risvrw]    = "risapproachid09risvrw";    PRM[prmrisapproachid09risvrw]    = 999;                                                   
     PRM_code[prmrislaneid09risvrw_1]      = "rislaneid09risvrw_1";      PRM[prmrislaneid09risvrw_1]      = 7;                                                     
     PRM_code[prmrto11bus]                 = "rto11bus";                 PRM[prmrto11bus]                 = 140;   PRM_type[prmrto11bus]                 = TE_type; /* Ongehinderde rijtijd prioriteit fase 11                                                                                        */
@@ -2866,6 +2870,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole11risov]        = "rissubrole11risov";        PRM[prmrissubrole11risov]        = 8191;                                                  
     PRM_code[prmrisimportance11risov]     = "risimportance11risov";     PRM[prmrisimportance11risov]     = 2048;                                                  
     PRM_code[prmrisstationtype11risov]    = "risstationtype11risov";    PRM[prmrisstationtype11risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype11risov]  = "risgrenspriotype11risov";  PRM[prmrisgrenspriotype11risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 11                                                                                  */
     PRM_code[prmrisapproachid11risov]     = "risapproachid11risov";     PRM[prmrisapproachid11risov]     = 999;                                                   
     PRM_code[prmrislaneid11risov_1]       = "rislaneid11risov_1";       PRM[prmrislaneid11risov_1]       = 8;                                                     
     PRM_code[prmrto11risvrw]              = "rto11risvrw";              PRM[prmrto11risvrw]              = 140;   PRM_type[prmrto11risvrw]              = TE_type; /* Ongehinderde rijtijd prioriteit fase 11                                                                                        */
@@ -2880,6 +2885,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole11risvrw]       = "rissubrole11risvrw";       PRM[prmrissubrole11risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance11risvrw]    = "risimportance11risvrw";    PRM[prmrisimportance11risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype11risvrw]   = "risstationtype11risvrw";   PRM[prmrisstationtype11risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype11risvrw] = "risgrenspriotype11risvrw"; PRM[prmrisgrenspriotype11risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 11                                                                                  */
     PRM_code[prmrisapproachid11risvrw]    = "risapproachid11risvrw";    PRM[prmrisapproachid11risvrw]    = 999;                                                   
     PRM_code[prmrislaneid11risvrw_1]      = "rislaneid11risvrw_1";      PRM[prmrislaneid11risvrw_1]      = 8;                                                     
     PRM_code[prmftsblok22fietsfiets]      = "ftsblok22fietsfiets";      PRM[prmftsblok22fietsfiets]      = 1023;                                                   /* Blokken waarin fiets peloton prio actief mag zijn voor fase 22                                                                 */
@@ -2898,6 +2904,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole22fiets]        = "rissubrole22fiets";        PRM[prmrissubrole22fiets]        = 0;                                                     
     PRM_code[prmrisimportance22fiets]     = "risimportance22fiets";     PRM[prmrisimportance22fiets]     = 0;                                                     
     PRM_code[prmrisstationtype22fiets]    = "risstationtype22fiets";    PRM[prmrisstationtype22fiets]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype22fiets]  = "risgrenspriotype22fiets";  PRM[prmrisgrenspriotype22fiets]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 22                                                                                  */
     PRM_code[prmrisapproachid22fiets]     = "risapproachid22fiets";     PRM[prmrisapproachid22fiets]     = 999;                                                   
     PRM_code[prmrislaneid22fiets_1]       = "rislaneid22fiets_1";       PRM[prmrislaneid22fiets_1]       = 10;                                                    
     PRM_code[prmrislaneid22fiets_2]       = "rislaneid22fiets_2";       PRM[prmrislaneid22fiets_2]       = 99;                                                    
@@ -2917,6 +2924,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole28fiets]        = "rissubrole28fiets";        PRM[prmrissubrole28fiets]        = 1;                                                     
     PRM_code[prmrisimportance28fiets]     = "risimportance28fiets";     PRM[prmrisimportance28fiets]     = 0;                                                     
     PRM_code[prmrisstationtype28fiets]    = "risstationtype28fiets";    PRM[prmrisstationtype28fiets]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype28fiets]  = "risgrenspriotype28fiets";  PRM[prmrisgrenspriotype28fiets]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 28                                                                                  */
     PRM_code[prmrisapproachid28fiets]     = "risapproachid28fiets";     PRM[prmrisapproachid28fiets]     = 999;                                                   
     PRM_code[prmrislaneid28fiets_1]       = "rislaneid28fiets_1";       PRM[prmrislaneid28fiets_1]       = 13;                                                    
     PRM_code[prmrto61bus]                 = "rto61bus";                 PRM[prmrto61bus]                 = 140;   PRM_type[prmrto61bus]                 = TE_type; /* Ongehinderde rijtijd prioriteit fase 61                                                                                        */
@@ -2937,6 +2945,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole61risov]        = "rissubrole61risov";        PRM[prmrissubrole61risov]        = 8191;                                                  
     PRM_code[prmrisimportance61risov]     = "risimportance61risov";     PRM[prmrisimportance61risov]     = 2048;                                                  
     PRM_code[prmrisstationtype61risov]    = "risstationtype61risov";    PRM[prmrisstationtype61risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype61risov]  = "risgrenspriotype61risov";  PRM[prmrisgrenspriotype61risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 61                                                                                  */
     PRM_code[prmrisapproachid61risov]     = "risapproachid61risov";     PRM[prmrisapproachid61risov]     = 999;                                                   
     PRM_code[prmrislaneid61risov_1]       = "rislaneid61risov_1";       PRM[prmrislaneid61risov_1]       = 24;                                                    
     PRM_code[prmrto61risvrw]              = "rto61risvrw";              PRM[prmrto61risvrw]              = 140;   PRM_type[prmrto61risvrw]              = TE_type; /* Ongehinderde rijtijd prioriteit fase 61                                                                                        */
@@ -2951,6 +2960,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole61risvrw]       = "rissubrole61risvrw";       PRM[prmrissubrole61risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance61risvrw]    = "risimportance61risvrw";    PRM[prmrisimportance61risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype61risvrw]   = "risstationtype61risvrw";   PRM[prmrisstationtype61risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype61risvrw] = "risgrenspriotype61risvrw"; PRM[prmrisgrenspriotype61risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 61                                                                                  */
     PRM_code[prmrisapproachid61risvrw]    = "risapproachid61risvrw";    PRM[prmrisapproachid61risvrw]    = 999;                                                   
     PRM_code[prmrislaneid61risvrw_1]      = "rislaneid61risvrw_1";      PRM[prmrislaneid61risvrw_1]      = 24;                                                    
     PRM_code[prmrto62bus]                 = "rto62bus";                 PRM[prmrto62bus]                 = 140;   PRM_type[prmrto62bus]                 = TE_type; /* Ongehinderde rijtijd prioriteit fase 62                                                                                        */
@@ -2971,6 +2981,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole62risov]        = "rissubrole62risov";        PRM[prmrissubrole62risov]        = 8191;                                                  
     PRM_code[prmrisimportance62risov]     = "risimportance62risov";     PRM[prmrisimportance62risov]     = 2048;                                                  
     PRM_code[prmrisstationtype62risov]    = "risstationtype62risov";    PRM[prmrisstationtype62risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype62risov]  = "risgrenspriotype62risov";  PRM[prmrisgrenspriotype62risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 62                                                                                  */
     PRM_code[prmrisapproachid62risov]     = "risapproachid62risov";     PRM[prmrisapproachid62risov]     = 999;                                                   
     PRM_code[prmrislaneid62risov_1]       = "rislaneid62risov_1";       PRM[prmrislaneid62risov_1]       = 25;                                                    
     PRM_code[prmrislaneid62risov_2]       = "rislaneid62risov_2";       PRM[prmrislaneid62risov_2]       = 26;                                                    
@@ -2986,6 +2997,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole62risvrw]       = "rissubrole62risvrw";       PRM[prmrissubrole62risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance62risvrw]    = "risimportance62risvrw";    PRM[prmrisimportance62risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype62risvrw]   = "risstationtype62risvrw";   PRM[prmrisstationtype62risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype62risvrw] = "risgrenspriotype62risvrw"; PRM[prmrisgrenspriotype62risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 62                                                                                  */
     PRM_code[prmrisapproachid62risvrw]    = "risapproachid62risvrw";    PRM[prmrisapproachid62risvrw]    = 999;                                                   
     PRM_code[prmrislaneid62risvrw_1]      = "rislaneid62risvrw_1";      PRM[prmrislaneid62risvrw_1]      = 25;                                                    
     PRM_code[prmrislaneid62risvrw_2]      = "rislaneid62risvrw_2";      PRM[prmrislaneid62risvrw_2]      = 26;                                                    
@@ -3007,6 +3019,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole67risov]        = "rissubrole67risov";        PRM[prmrissubrole67risov]        = 8191;                                                  
     PRM_code[prmrisimportance67risov]     = "risimportance67risov";     PRM[prmrisimportance67risov]     = 2048;                                                  
     PRM_code[prmrisstationtype67risov]    = "risstationtype67risov";    PRM[prmrisstationtype67risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype67risov]  = "risgrenspriotype67risov";  PRM[prmrisgrenspriotype67risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 67                                                                                  */
     PRM_code[prmrisapproachid67risov]     = "risapproachid67risov";     PRM[prmrisapproachid67risov]     = 999;                                                   
     PRM_code[prmrislaneid67risov_1]       = "rislaneid67risov_1";       PRM[prmrislaneid67risov_1]       = 27;                                                    
     PRM_code[prmrto67risvrw]              = "rto67risvrw";              PRM[prmrto67risvrw]              = 140;   PRM_type[prmrto67risvrw]              = TE_type; /* Ongehinderde rijtijd prioriteit fase 67                                                                                        */
@@ -3021,6 +3034,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole67risvrw]       = "rissubrole67risvrw";       PRM[prmrissubrole67risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance67risvrw]    = "risimportance67risvrw";    PRM[prmrisimportance67risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype67risvrw]   = "risstationtype67risvrw";   PRM[prmrisstationtype67risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype67risvrw] = "risgrenspriotype67risvrw"; PRM[prmrisgrenspriotype67risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 67                                                                                  */
     PRM_code[prmrisapproachid67risvrw]    = "risapproachid67risvrw";    PRM[prmrisapproachid67risvrw]    = 999;                                                   
     PRM_code[prmrislaneid67risvrw_1]      = "rislaneid67risvrw_1";      PRM[prmrislaneid67risvrw_1]      = 27;                                                    
     PRM_code[prmrto68bus]                 = "rto68bus";                 PRM[prmrto68bus]                 = 140;   PRM_type[prmrto68bus]                 = TE_type; /* Ongehinderde rijtijd prioriteit fase 68                                                                                        */
@@ -3041,6 +3055,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole68risov]        = "rissubrole68risov";        PRM[prmrissubrole68risov]        = 8191;                                                  
     PRM_code[prmrisimportance68risov]     = "risimportance68risov";     PRM[prmrisimportance68risov]     = 2048;                                                  
     PRM_code[prmrisstationtype68risov]    = "risstationtype68risov";    PRM[prmrisstationtype68risov]    = 0;                                                     
+    PRM_code[prmrisgrenspriotype68risov]  = "risgrenspriotype68risov";  PRM[prmrisgrenspriotype68risov]  = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 68                                                                                  */
     PRM_code[prmrisapproachid68risov]     = "risapproachid68risov";     PRM[prmrisapproachid68risov]     = 999;                                                   
     PRM_code[prmrislaneid68risov_1]       = "rislaneid68risov_1";       PRM[prmrislaneid68risov_1]       = 28;                                                    
     PRM_code[prmrislaneid68risov_2]       = "rislaneid68risov_2";       PRM[prmrislaneid68risov_2]       = 29;                                                    
@@ -3056,6 +3071,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole68risvrw]       = "rissubrole68risvrw";       PRM[prmrissubrole68risvrw]       = 8191;                                                  
     PRM_code[prmrisimportance68risvrw]    = "risimportance68risvrw";    PRM[prmrisimportance68risvrw]    = 2048;                                                  
     PRM_code[prmrisstationtype68risvrw]   = "risstationtype68risvrw";   PRM[prmrisstationtype68risvrw]   = 0;                                                     
+    PRM_code[prmrisgrenspriotype68risvrw] = "risgrenspriotype68risvrw"; PRM[prmrisgrenspriotype68risvrw] = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 68                                                                                  */
     PRM_code[prmrisapproachid68risvrw]    = "risapproachid68risvrw";    PRM[prmrisapproachid68risvrw]    = 999;                                                   
     PRM_code[prmrislaneid68risvrw_1]      = "rislaneid68risvrw_1";      PRM[prmrislaneid68risvrw_1]      = 28;                                                    
     PRM_code[prmrislaneid68risvrw_2]      = "rislaneid68risvrw_2";      PRM[prmrislaneid68risvrw_2]      = 29;                                                    
@@ -3070,6 +3086,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole02hd]           = "rissubrole02hd";           PRM[prmrissubrole02hd]           = 32;                                                    
     PRM_code[prmrisimportance02hd]        = "risimportance02hd";        PRM[prmrisimportance02hd]        = 16384;                                                 
     PRM_code[prmrisstationtype02hd]       = "risstationtype02hd";       PRM[prmrisstationtype02hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype02hd]     = "risgrenspriotype02hd";     PRM[prmrisgrenspriotype02hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 02                                                                                  */
     PRM_code[prmrisapproachid02hd]        = "risapproachid02hd";        PRM[prmrisapproachid02hd]        = 1;                                                     
     PRM_code[prmrislaneid02hd_1]          = "rislaneid02hd_1";          PRM[prmrislaneid02hd_1]          = 1;                                                     
     PRM_code[prmrislaneid02hd_2]          = "rislaneid02hd_2";          PRM[prmrislaneid02hd_2]          = 2;                                                     
@@ -3084,6 +3101,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole03hd]           = "rissubrole03hd";           PRM[prmrissubrole03hd]           = 32;                                                    
     PRM_code[prmrisimportance03hd]        = "risimportance03hd";        PRM[prmrisimportance03hd]        = 16384;                                                 
     PRM_code[prmrisstationtype03hd]       = "risstationtype03hd";       PRM[prmrisstationtype03hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype03hd]     = "risgrenspriotype03hd";     PRM[prmrisgrenspriotype03hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 03                                                                                  */
     PRM_code[prmrisapproachid03hd]        = "risapproachid03hd";        PRM[prmrisapproachid03hd]        = 1;                                                     
     PRM_code[prmrislaneid03hd_1]          = "rislaneid03hd_1";          PRM[prmrislaneid03hd_1]          = 3;                                                     
     PRM_code[prmpriohd05]                 = "priohd05";                 PRM[prmpriohd05]                 = 9005;                                                   /* Prioriteitsinstelling HD fase 05                                                                                               */
@@ -3097,6 +3115,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole05hd]           = "rissubrole05hd";           PRM[prmrissubrole05hd]           = 32;                                                    
     PRM_code[prmrisimportance05hd]        = "risimportance05hd";        PRM[prmrisimportance05hd]        = 16384;                                                 
     PRM_code[prmrisstationtype05hd]       = "risstationtype05hd";       PRM[prmrisstationtype05hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype05hd]     = "risgrenspriotype05hd";     PRM[prmrisgrenspriotype05hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 05                                                                                  */
     PRM_code[prmrisapproachid05hd]        = "risapproachid05hd";        PRM[prmrisapproachid05hd]        = 2;                                                     
     PRM_code[prmrislaneid05hd_1]          = "rislaneid05hd_1";          PRM[prmrislaneid05hd_1]          = 4;                                                     
     PRM_code[prmpriohd08]                 = "priohd08";                 PRM[prmpriohd08]                 = 9005;                                                   /* Prioriteitsinstelling HD fase 08                                                                                               */
@@ -3110,6 +3129,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole08hd]           = "rissubrole08hd";           PRM[prmrissubrole08hd]           = 32;                                                    
     PRM_code[prmrisimportance08hd]        = "risimportance08hd";        PRM[prmrisimportance08hd]        = 16384;                                                 
     PRM_code[prmrisstationtype08hd]       = "risstationtype08hd";       PRM[prmrisstationtype08hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype08hd]     = "risgrenspriotype08hd";     PRM[prmrisgrenspriotype08hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 08                                                                                  */
     PRM_code[prmrisapproachid08hd]        = "risapproachid08hd";        PRM[prmrisapproachid08hd]        = 3;                                                     
     PRM_code[prmrislaneid08hd_1]          = "rislaneid08hd_1";          PRM[prmrislaneid08hd_1]          = 5;                                                     
     PRM_code[prmrislaneid08hd_2]          = "rislaneid08hd_2";          PRM[prmrislaneid08hd_2]          = 6;                                                     
@@ -3124,6 +3144,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole09hd]           = "rissubrole09hd";           PRM[prmrissubrole09hd]           = 32;                                                    
     PRM_code[prmrisimportance09hd]        = "risimportance09hd";        PRM[prmrisimportance09hd]        = 16384;                                                 
     PRM_code[prmrisstationtype09hd]       = "risstationtype09hd";       PRM[prmrisstationtype09hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype09hd]     = "risgrenspriotype09hd";     PRM[prmrisgrenspriotype09hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 09                                                                                  */
     PRM_code[prmrisapproachid09hd]        = "risapproachid09hd";        PRM[prmrisapproachid09hd]        = 3;                                                     
     PRM_code[prmrislaneid09hd_1]          = "rislaneid09hd_1";          PRM[prmrislaneid09hd_1]          = 7;                                                     
     PRM_code[prmpriohd11]                 = "priohd11";                 PRM[prmpriohd11]                 = 9005;                                                   /* Prioriteitsinstelling HD fase 11                                                                                               */
@@ -3137,6 +3158,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole11hd]           = "rissubrole11hd";           PRM[prmrissubrole11hd]           = 32;                                                    
     PRM_code[prmrisimportance11hd]        = "risimportance11hd";        PRM[prmrisimportance11hd]        = 16384;                                                 
     PRM_code[prmrisstationtype11hd]       = "risstationtype11hd";       PRM[prmrisstationtype11hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype11hd]     = "risgrenspriotype11hd";     PRM[prmrisgrenspriotype11hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 11                                                                                  */
     PRM_code[prmrisapproachid11hd]        = "risapproachid11hd";        PRM[prmrisapproachid11hd]        = 4;                                                     
     PRM_code[prmrislaneid11hd_1]          = "rislaneid11hd_1";          PRM[prmrislaneid11hd_1]          = 8;                                                     
     PRM_code[prmpriohd61]                 = "priohd61";                 PRM[prmpriohd61]                 = 9005;                                                   /* Prioriteitsinstelling HD fase 61                                                                                               */
@@ -3150,6 +3172,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole61hd]           = "rissubrole61hd";           PRM[prmrissubrole61hd]           = 32;                                                    
     PRM_code[prmrisimportance61hd]        = "risimportance61hd";        PRM[prmrisimportance61hd]        = 16384;                                                 
     PRM_code[prmrisstationtype61hd]       = "risstationtype61hd";       PRM[prmrisstationtype61hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype61hd]     = "risgrenspriotype61hd";     PRM[prmrisgrenspriotype61hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 61                                                                                  */
     PRM_code[prmrisapproachid61hd]        = "risapproachid61hd";        PRM[prmrisapproachid61hd]        = 9;                                                     
     PRM_code[prmrislaneid61hd_1]          = "rislaneid61hd_1";          PRM[prmrislaneid61hd_1]          = 24;                                                    
     PRM_code[prmpriohd62]                 = "priohd62";                 PRM[prmpriohd62]                 = 9005;                                                   /* Prioriteitsinstelling HD fase 62                                                                                               */
@@ -3163,6 +3186,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole62hd]           = "rissubrole62hd";           PRM[prmrissubrole62hd]           = 32;                                                    
     PRM_code[prmrisimportance62hd]        = "risimportance62hd";        PRM[prmrisimportance62hd]        = 16384;                                                 
     PRM_code[prmrisstationtype62hd]       = "risstationtype62hd";       PRM[prmrisstationtype62hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype62hd]     = "risgrenspriotype62hd";     PRM[prmrisgrenspriotype62hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 62                                                                                  */
     PRM_code[prmrisapproachid62hd]        = "risapproachid62hd";        PRM[prmrisapproachid62hd]        = 9;                                                     
     PRM_code[prmrislaneid62hd_1]          = "rislaneid62hd_1";          PRM[prmrislaneid62hd_1]          = 25;                                                    
     PRM_code[prmrislaneid62hd_2]          = "rislaneid62hd_2";          PRM[prmrislaneid62hd_2]          = 26;                                                    
@@ -3177,6 +3201,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole67hd]           = "rissubrole67hd";           PRM[prmrissubrole67hd]           = 32;                                                    
     PRM_code[prmrisimportance67hd]        = "risimportance67hd";        PRM[prmrisimportance67hd]        = 16384;                                                 
     PRM_code[prmrisstationtype67hd]       = "risstationtype67hd";       PRM[prmrisstationtype67hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype67hd]     = "risgrenspriotype67hd";     PRM[prmrisgrenspriotype67hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 67                                                                                  */
     PRM_code[prmrisapproachid67hd]        = "risapproachid67hd";        PRM[prmrisapproachid67hd]        = 10;                                                    
     PRM_code[prmrislaneid67hd_1]          = "rislaneid67hd_1";          PRM[prmrislaneid67hd_1]          = 27;                                                    
     PRM_code[prmpriohd68]                 = "priohd68";                 PRM[prmpriohd68]                 = 9005;                                                   /* Prioriteitsinstelling HD fase 68                                                                                               */
@@ -3190,6 +3215,7 @@ void control_parameters(void)
     PRM_code[prmrissubrole68hd]           = "rissubrole68hd";           PRM[prmrissubrole68hd]           = 32;                                                    
     PRM_code[prmrisimportance68hd]        = "risimportance68hd";        PRM[prmrisimportance68hd]        = 16384;                                                 
     PRM_code[prmrisstationtype68hd]       = "risstationtype68hd";       PRM[prmrisstationtype68hd]       = 0;                                                     
+    PRM_code[prmrisgrenspriotype68hd]     = "risgrenspriotype68hd";     PRM[prmrisgrenspriotype68hd]     = 9;                                                      /* Greenswaarde type prioriteit RIS voor fase 68                                                                                  */
     PRM_code[prmrisapproachid68hd]        = "risapproachid68hd";        PRM[prmrisapproachid68hd]        = 10;                                                    
     PRM_code[prmrislaneid68hd_1]          = "rislaneid68hd_1";          PRM[prmrislaneid68hd_1]          = 28;                                                    
     PRM_code[prmrislaneid68hd_2]          = "rislaneid68hd_2";          PRM[prmrislaneid68hd_2]          = 29;                                                    
@@ -4062,6 +4088,8 @@ void control_parameters(void)
     SCH_cat[schrisaanvraag]         = CAT_Optimaliseren;    SCH_subcat[schrisaanvraag]            = SUBCAT_Aanvraag;
     SCH_cat[schrisverlengen]        = CAT_Optimaliseren;    SCH_subcat[schrisverlengen]           = SUBCAT_Verlengen;
     SCH_cat[schrgadd24_3]           = CAT_Basisfuncties;    SCH_subcat[schrgadd24_3]              = SUBCAT_Verlengen;
+    SCH_cat[schrgad24_3]            = CAT_Basisfuncties;    SCH_subcat[schrgad24_3]               = SUBCAT_Aanvraag;
+    SCH_cat[schrgvd24_3]            = CAT_Basisfuncties;    SCH_subcat[schrgvd24_3]               = SUBCAT_Verlengen;
     SCH_cat[schrgv]                 = CAT_Signaalgroep;     SCH_subcat[schrgv]                    = SUBCAT_MaximumGroentijden;
     SCH_cat[schrgv_snel]            = CAT_Signaalgroep;     SCH_subcat[schrgv_snel]               = SUBCAT_MaximumGroentijden;
     SCH_cat[schschoolingreep33]     = CAT_SpecialeIngrepen; SCH_subcat[schschoolingreep33]        = SUBCAT_Verlengen;
@@ -4201,8 +4229,6 @@ void control_parameters(void)
     SCH_cat[schsneld81_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld81_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld82_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld82_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld84_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld84_1]              = SUBCAT_MaximumGroentijden;
-    SCH_cat[schrgad242243]          = CAT_Signaalgroep;     SCH_subcat[schrgad242243]             = SUBCAT_Aanvraag;
-    SCH_cat[schtraffick2tlcgen]     = CAT_Basisfuncties;    SCH_subcat[schtraffick2tlcgen]        = SUBCAT_Testen;
     T_cat[t08_1a_1]                = CAT_Basisfuncties;    T_subcat[t08_1a_1]                   = SUBCAT_Verlengen;
     T_cat[t08_1a_2]                = CAT_Basisfuncties;    T_subcat[t08_1a_2]                   = SUBCAT_Verlengen;
     T_cat[ttdh_08_1a_1]            = CAT_Basisfuncties;    T_subcat[ttdh_08_1a_1]               = SUBCAT_Verlengen;
@@ -4685,12 +4711,6 @@ void control_parameters(void)
     T_cat[tfo0522]                 = CAT_Basisfuncties;    T_subcat[tfo0522]                    = SUBCAT_Deelconflicten;
     T_cat[tfo1126]                 = CAT_Basisfuncties;    T_subcat[tfo1126]                    = SUBCAT_Deelconflicten;
     T_cat[tfo0532]                 = CAT_Basisfuncties;    T_subcat[tfo0532]                    = SUBCAT_Deelconflicten;
-    T_cat[tarmvt02]                = CAT_Basisfuncties;    T_subcat[tarmvt02]                   = SUBCAT_Testen;
-    T_cat[tarmvt03]                = CAT_Basisfuncties;    T_subcat[tarmvt03]                   = SUBCAT_Testen;
-    T_cat[tarmvt05]                = CAT_Basisfuncties;    T_subcat[tarmvt05]                   = SUBCAT_Testen;
-    T_cat[tarmvt08]                = CAT_Basisfuncties;    T_subcat[tarmvt08]                   = SUBCAT_Testen;
-    T_cat[tarmvt09]                = CAT_Basisfuncties;    T_subcat[tarmvt09]                   = SUBCAT_Testen;
-    T_cat[tarmvt11]                = CAT_Basisfuncties;    T_subcat[tarmvt11]                   = SUBCAT_Testen;
     PRM_cat[prmspringverleng_08_1a]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_1a]      = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_08_1b]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_1b]      = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_08_2a]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_2a]      = SUBCAT_Verlengen;
@@ -5125,6 +5145,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole02risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole02risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance02risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance02risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype02risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype02risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype02risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype02risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid02risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid02risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid02risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid02risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid02risov_2]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid02risov_2]       = SUBCAT_OpenbaarVervoer;
@@ -5140,6 +5161,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole02risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole02risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance02risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance02risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype02risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype02risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype02risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype02risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid02risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid02risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid02risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid02risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid02risvrw_2]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid02risvrw_2]      = SUBCAT_OpenbaarVervoer;
@@ -5161,6 +5183,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole03risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole03risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance03risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance03risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype03risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype03risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype03risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype03risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid03risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid03risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid03risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid03risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto03risvrw]           = CAT_Prioriteren;      PRM_subcat[prmrto03risvrw]              = SUBCAT_OpenbaarVervoer;
@@ -5175,6 +5198,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole03risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole03risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance03risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance03risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype03risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype03risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype03risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype03risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid03risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid03risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid03risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid03risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto05bus]              = CAT_Prioriteren;      PRM_subcat[prmrto05bus]                 = SUBCAT_OpenbaarVervoer;
@@ -5195,6 +5219,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole05risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole05risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance05risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance05risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype05risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype05risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype05risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype05risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid05risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid05risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid05risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid05risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto05risvrw]           = CAT_Prioriteren;      PRM_subcat[prmrto05risvrw]              = SUBCAT_OpenbaarVervoer;
@@ -5209,6 +5234,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole05risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole05risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance05risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance05risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype05risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype05risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype05risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype05risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid05risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid05risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid05risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid05risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto08bus]              = CAT_Prioriteren;      PRM_subcat[prmrto08bus]                 = SUBCAT_OpenbaarVervoer;
@@ -5229,6 +5255,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole08risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole08risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance08risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance08risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype08risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype08risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype08risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype08risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid08risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid08risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid08risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid08risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid08risov_2]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid08risov_2]       = SUBCAT_OpenbaarVervoer;
@@ -5244,6 +5271,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole08risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole08risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance08risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance08risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype08risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype08risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype08risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype08risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid08risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid08risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid08risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid08risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid08risvrw_2]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid08risvrw_2]      = SUBCAT_OpenbaarVervoer;
@@ -5265,6 +5293,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole09risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole09risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance09risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance09risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype09risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype09risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype09risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype09risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid09risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid09risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid09risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid09risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto09risvrw]           = CAT_Prioriteren;      PRM_subcat[prmrto09risvrw]              = SUBCAT_OpenbaarVervoer;
@@ -5279,6 +5308,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole09risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole09risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance09risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance09risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype09risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype09risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype09risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype09risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid09risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid09risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid09risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid09risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto11bus]              = CAT_Prioriteren;      PRM_subcat[prmrto11bus]                 = SUBCAT_OpenbaarVervoer;
@@ -5299,6 +5329,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole11risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole11risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance11risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance11risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype11risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype11risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype11risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype11risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid11risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid11risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid11risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid11risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto11risvrw]           = CAT_Prioriteren;      PRM_subcat[prmrto11risvrw]              = SUBCAT_OpenbaarVervoer;
@@ -5313,6 +5344,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole11risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole11risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance11risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance11risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype11risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype11risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype11risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype11risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid11risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid11risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid11risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid11risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmftsblok22fietsfiets]   = CAT_Prioriteren;      PRM_subcat[prmftsblok22fietsfiets]      = SUBCAT_OpenbaarVervoer;
@@ -5331,6 +5363,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole22fiets]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole22fiets]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance22fiets]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance22fiets]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype22fiets] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype22fiets]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype22fiets] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype22fiets]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid22fiets]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid22fiets]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid22fiets_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid22fiets_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid22fiets_2]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid22fiets_2]       = SUBCAT_OpenbaarVervoer;
@@ -5350,6 +5383,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole28fiets]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole28fiets]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance28fiets]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance28fiets]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype28fiets] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype28fiets]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype28fiets] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype28fiets]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid28fiets]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid28fiets]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid28fiets_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid28fiets_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto61bus]              = CAT_Prioriteren;      PRM_subcat[prmrto61bus]                 = SUBCAT_OpenbaarVervoer;
@@ -5370,6 +5404,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole61risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole61risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance61risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance61risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype61risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype61risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype61risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype61risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid61risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid61risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid61risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid61risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto61risvrw]           = CAT_Prioriteren;      PRM_subcat[prmrto61risvrw]              = SUBCAT_OpenbaarVervoer;
@@ -5384,6 +5419,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole61risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole61risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance61risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance61risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype61risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype61risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype61risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype61risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid61risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid61risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid61risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid61risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto62bus]              = CAT_Prioriteren;      PRM_subcat[prmrto62bus]                 = SUBCAT_OpenbaarVervoer;
@@ -5404,6 +5440,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole62risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole62risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance62risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance62risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype62risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype62risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype62risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype62risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid62risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid62risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid62risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid62risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid62risov_2]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid62risov_2]       = SUBCAT_OpenbaarVervoer;
@@ -5419,6 +5456,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole62risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole62risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance62risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance62risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype62risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype62risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype62risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype62risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid62risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid62risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid62risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid62risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid62risvrw_2]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid62risvrw_2]      = SUBCAT_OpenbaarVervoer;
@@ -5440,6 +5478,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole67risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole67risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance67risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance67risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype67risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype67risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype67risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype67risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid67risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid67risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid67risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid67risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto67risvrw]           = CAT_Prioriteren;      PRM_subcat[prmrto67risvrw]              = SUBCAT_OpenbaarVervoer;
@@ -5454,6 +5493,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole67risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole67risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance67risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance67risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype67risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype67risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype67risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype67risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid67risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid67risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid67risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid67risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrto68bus]              = CAT_Prioriteren;      PRM_subcat[prmrto68bus]                 = SUBCAT_OpenbaarVervoer;
@@ -5474,6 +5514,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole68risov]     = CAT_Prioriteren;      PRM_subcat[prmrissubrole68risov]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance68risov]  = CAT_Prioriteren;      PRM_subcat[prmrisimportance68risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype68risov] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype68risov]    = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype68risov] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype68risov]  = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid68risov]  = CAT_Prioriteren;      PRM_subcat[prmrisapproachid68risov]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid68risov_1]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid68risov_1]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid68risov_2]    = CAT_Prioriteren;      PRM_subcat[prmrislaneid68risov_2]       = SUBCAT_OpenbaarVervoer;
@@ -5489,6 +5530,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole68risvrw]    = CAT_Prioriteren;      PRM_subcat[prmrissubrole68risvrw]       = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance68risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisimportance68risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype68risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisstationtype68risvrw]   = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype68risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype68risvrw] = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid68risvrw] = CAT_Prioriteren;      PRM_subcat[prmrisapproachid68risvrw]    = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid68risvrw_1]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid68risvrw_1]      = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid68risvrw_2]   = CAT_Prioriteren;      PRM_subcat[prmrislaneid68risvrw_2]      = SUBCAT_OpenbaarVervoer;
@@ -5503,6 +5545,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole02hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole02hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance02hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance02hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype02hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype02hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype02hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype02hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid02hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid02hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid02hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid02hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid02hd_2]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid02hd_2]          = SUBCAT_OpenbaarVervoer;
@@ -5517,6 +5560,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole03hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole03hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance03hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance03hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype03hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype03hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype03hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype03hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid03hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid03hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid03hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid03hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmpriohd05]              = CAT_Prioriteren;      PRM_subcat[prmpriohd05]                 = SUBCAT_OpenbaarVervoer;
@@ -5530,6 +5574,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole05hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole05hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance05hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance05hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype05hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype05hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype05hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype05hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid05hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid05hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid05hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid05hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmpriohd08]              = CAT_Prioriteren;      PRM_subcat[prmpriohd08]                 = SUBCAT_OpenbaarVervoer;
@@ -5543,6 +5588,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole08hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole08hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance08hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance08hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype08hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype08hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype08hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype08hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid08hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid08hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid08hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid08hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid08hd_2]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid08hd_2]          = SUBCAT_OpenbaarVervoer;
@@ -5557,6 +5603,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole09hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole09hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance09hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance09hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype09hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype09hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype09hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype09hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid09hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid09hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid09hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid09hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmpriohd11]              = CAT_Prioriteren;      PRM_subcat[prmpriohd11]                 = SUBCAT_OpenbaarVervoer;
@@ -5570,6 +5617,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole11hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole11hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance11hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance11hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype11hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype11hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype11hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype11hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid11hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid11hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid11hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid11hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmpriohd61]              = CAT_Prioriteren;      PRM_subcat[prmpriohd61]                 = SUBCAT_OpenbaarVervoer;
@@ -5583,6 +5631,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole61hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole61hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance61hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance61hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype61hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype61hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype61hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype61hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid61hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid61hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid61hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid61hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmpriohd62]              = CAT_Prioriteren;      PRM_subcat[prmpriohd62]                 = SUBCAT_OpenbaarVervoer;
@@ -5596,6 +5645,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole62hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole62hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance62hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance62hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype62hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype62hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype62hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype62hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid62hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid62hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid62hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid62hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid62hd_2]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid62hd_2]          = SUBCAT_OpenbaarVervoer;
@@ -5610,6 +5660,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole67hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole67hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance67hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance67hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype67hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype67hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype67hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype67hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid67hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid67hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid67hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid67hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmpriohd68]              = CAT_Prioriteren;      PRM_subcat[prmpriohd68]                 = SUBCAT_OpenbaarVervoer;
@@ -5623,6 +5674,7 @@ void control_parameters(void)
     PRM_cat[prmrissubrole68hd]        = CAT_Prioriteren;      PRM_subcat[prmrissubrole68hd]           = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisimportance68hd]     = CAT_Prioriteren;      PRM_subcat[prmrisimportance68hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisstationtype68hd]    = CAT_Prioriteren;      PRM_subcat[prmrisstationtype68hd]       = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmrisgrenspriotype68hd]  = CAT_Prioriteren;      PRM_subcat[prmrisgrenspriotype68hd]     = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrisapproachid68hd]     = CAT_Prioriteren;      PRM_subcat[prmrisapproachid68hd]        = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid68hd_1]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid68hd_1]          = SUBCAT_OpenbaarVervoer;
     PRM_cat[prmrislaneid68hd_2]       = CAT_Prioriteren;      PRM_subcat[prmrislaneid68hd_2]          = SUBCAT_OpenbaarVervoer;

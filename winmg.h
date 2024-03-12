@@ -1,4 +1,4 @@
-/* winmg.h - gegenereerd met TLCGen 12.4.0.2 */
+/* winmg.h - gegenereerd met TLCGen 12.4.0.5 */
 
 /*
 *

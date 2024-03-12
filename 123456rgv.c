@@ -8,14 +8,14 @@
 
    BESTAND:   123456rgv.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.2
-   CCOLGEN:   12.4.0.2
+    TLCGEN:   12.4.0.5
+   CCOLGEN:   12.4.0.5
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
+ * 12.4.0.4   12-03-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 

@@ -1,4 +1,4 @@
-/* extra_func_ris.h - gegenereerd met TLCGen 12.4.0.2 */
+/* extra_func_ris.h - gegenereerd met TLCGen 12.4.0.5 */
 
 /* EXTRA_FUNC_RIS.H */
 /* ================ */
@@ -27,7 +27,7 @@
    rif_int ris_srm_put_signalgroup(count fc, rif_int approach_id, rif_int role_bits, rif_int subrole_bits, count prm_line_first, count prm_line_max);
 
 #if defined prioFCMAX && (prioFCMAX > 0) /* alleen indien PRIO */
-   rif_int ris_verstuur_ssm(rif_int priotypefc_id);
+   rif_int ris_verstuur_ssm(rif_int priotypefc_id, rif_int risgrenspriotype);
    void Bepaal_Granted_Verstrekt(void);
 #endif
     

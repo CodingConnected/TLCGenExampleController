@@ -8,14 +8,14 @@
 
    BESTAND:   123456prio.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.2
-   CCOLGEN:   12.4.0.2
+    TLCGEN:   12.4.0.5
+   CCOLGEN:   12.4.0.5
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
+ * 12.4.0.4   12-03-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -60,10 +60,6 @@
     #include "extra_func_prio.h"
 
 boolv vertraag_kar_uitm[prioFCMAX];
-
-/* Traffick2TLCGen */
-#define TRAFFICK
-#include "traffick2tlcgen.h"
 
 #define MAX_AANTAL_INMELDINGEN           10
 #define DEFAULT_MAX_WACHTTIJD           120
@@ -2179,14 +2175,6 @@ void InUitMelden(void)
     if (granted_verstrekt[fc03] == 2) granted_verstrekt[fc02] = 2;
 #endif /* NO_RIS */
 
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen])
-    {
-        fiets_voorrang_module();
-        buffer_stiptheid_info();
-        busbaan_verlos_prioriteit();
-    }
-
 
     /* Bijhouden melding en ondergedrag KAR */
     RT[tkarmelding] = CIF_DSIWIJZ != 0 && CIF_DSI[CIF_DSI_LUS] == 0;
@@ -2349,24 +2337,12 @@ void PrioriteitsOpties(void)
     /* Geen prioriteit bij file stroom afwaarts */
     if (IH[hfileFile68af])
     {
-        iInstPrioriteitsOpties[prioFC08bus] = poGeenPrioriteit;
-        iInstPrioriteitsOpties[prioFC08risov] = poGeenPrioriteit;
-        iInstPrioriteitsOpties[prioFC08risvrw] = poGeenPrioriteit;
-        iInstPrioriteitsOpties[prioFC11bus] = poGeenPrioriteit;
-        iInstPrioriteitsOpties[prioFC11risov] = poGeenPrioriteit;
-        iInstPrioriteitsOpties[prioFC11risvrw] = poGeenPrioriteit;
-    }
-
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen])
-    {
-        Traffick2TLCgen_PRIO_OPTIES();
-        Traffick2TLCgen_HLPD_nal(fc02, T_max[tarmvt02]);
-        Traffick2TLCgen_HLPD_nal(fc03, T_max[tarmvt03]);
-        Traffick2TLCgen_HLPD_nal(fc05, T_max[tarmvt05]);
-        Traffick2TLCgen_HLPD_nal(fc08, T_max[tarmvt08]);
-        Traffick2TLCgen_HLPD_nal(fc09, T_max[tarmvt09]);
-        Traffick2TLCgen_HLPD_nal(fc11, T_max[tarmvt11]);
+        iPrioriteitsOpties[prioFC08bus] = poAanvraag;
+        iPrioriteitsOpties[prioFC08risov] = poAanvraag;
+        iPrioriteitsOpties[prioFC08risvrw] = poAanvraag;
+        iPrioriteitsOpties[prioFC11bus] = poAanvraag;
+        iPrioriteitsOpties[prioFC11risov] = poAanvraag;
+        iPrioriteitsOpties[prioFC11risvrw] = poAanvraag;
     }
 
     #ifdef PRIO_ADDFILE
@@ -2605,12 +2581,13 @@ void PrioPARCorrecties(void)
     /* PAR-correcties 10 keer checken ivm onderlinge afhankelijkheden */
     for (fc = 0; fc < 10; ++fc)
     {
-        /* PAR-correcties nalopen voetgagners stap 2: beide PAR of los OK */
+        /* PAR-correcties nalopen voetgangers stap 2: beide PAR of los OK */
         PAR[fc31] = PAR[fc31] && (PAR[fc32] || IH[hlos31]);
         PAR[fc32] = PAR[fc32] && (PAR[fc31] || IH[hlos32]);
         PAR[fc33] = PAR[fc33] && (PAR[fc34] || IH[hlos33]);
         PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
 
+/* PAR = PAR */
         PAR[fc05] = PAR[fc05] && PAR[fc22];
         PAR[fc11] = PAR[fc11] && PAR[fc26];
         PAR[fc05] = PAR[fc05] && PAR[fc32];

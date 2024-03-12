@@ -1,7 +1,3 @@
-/* BEGIN GEGENEREERDE HEADER */
-/* REGEL BESTAND, GEBRUIKERS TOEVOEGINGEN              */
-/* --------------------------------------------------- */
-
 /* KRUISPUNT: 123456
               123456
               123456
@@ -9,17 +5,16 @@
 
    BESTAND:   123456reg.add
       CCOL:   12.0
-    TLCGEN:   12.4.0.2
-   CCOLGEN:   12.4.0.2
+    TLCGEN:   12.4.0.4
+   CCOLGEN:   12.4.0.4
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.2   09-09-2023   TLCGen      Release versie TLCGen
+ * 12.4.0.5   05-03-2024   TLCGen      Ontwikkelversie versie TLCGen
  *
  ************************************************************************************/
-/* EINDE GEGENEREERDE HEADER */
 
 #ifdef CCOL_IS_SPECIAL
 void SpecialSignals_Add(void)
@@ -126,10 +121,10 @@ void PostApplication_Add(void)
    if (TS &&
       (CIF_KLOK[CIF_JAAR] == 2099) && 
       (CIF_KLOK[CIF_MAAND] == 1) &&
-      (CIF_KLOK[CIF_DAG] == 1) &&
-      (CIF_KLOK[CIF_UUR] == 1) &&
-      (CIF_KLOK[CIF_MINUUT] == 1) && 
-      (CIF_KLOK[CIF_SECONDE] == 1))
+      (CIF_KLOK[CIF_DAG] == 2) &&
+      (CIF_KLOK[CIF_UUR] == 3) &&
+      (CIF_KLOK[CIF_MINUUT] == 31) && 
+      (CIF_KLOK[CIF_SECONDE] == 46))
    {
       stuffkey(F3KEY);
       stuffkey(F5KEY);
@@ -138,64 +133,6 @@ void PostApplication_Add(void)
       //stuffkey(F10KEY); 
    }
 #endif
-
-#ifndef AUTOMAAT
-    /* TESTOMGEVING */
-    /* ============ */
-
-//  if (!CIF_GUS[usstar01]) { 
-
-//     if (ET[tlr2611] && G[fc11] && A[fc26] && R[fc26] && !C[cvchd11]) {
-//      /* Schrijf naar de CCOL-terminal */
-//      code helpstr[30];  /* help string */
-//      uber_puts(PROMPT_code);
-//      uber_puts("Ongewenste situatie: !VS fc");
-//      uber_puts(FC_code[fc26]);
-//      uber_puts(" en fc");
-//      uber_puts(FC_code[fc11]);
-//      uber_puts("");
-//      uber_puts(" / ");
-//      datetostr(helpstr);
-//      uber_puts(helpstr);
-//      uber_puts(" / ");
-//      timetostr(helpstr);
-//      uber_puts(helpstr);
-//      uber_puts("\n");
-//
-//      /* Schrijf naar de debugwindow in de testomgeving */
-//      xyprintf(0, 0, "Ongewenste situatie: LR niet gerespecteerd. Zie terminal.");
-//
-//      /* Halteer */
-//      stuffkey(F5KEY);
-//
-//   }
-//
-
-  ControleerNaloopEG(fc22, fc21, tnlfg2221, tnleg2221, NG, TRUE);
-  ControleerNaloopEG(fc82, fc81, tnlfg8281, tnleg8281, NG, TRUE);
-  ControleerNaloopEG(fc02, fc62, tnlfg0262, tnleg0262, NG, TRUE);
-  ControleerNaloopEG(fc11, fc68, tnlfg1168, tnleg1168, NG, TRUE);
-  ControleerNaloopEG(fc08, fc68, tnlfg0868, tnleg0868, NG, TRUE);
-
-  /* @#@ Fick, aantal machine slagen marge genomen */
-  if (!ControleerInrijden(fc22, fc21, tlr2122, FALSE) && G[fc22] && R[fc21] && (TG_timer[fc22] > T_max[tlr2122] + 3)) stuffkey(F5KEY);
-  if (!ControleerInrijden(fc82, fc81, tlr8182, FALSE) && G[fc82] && R[fc81] && (TG_timer[fc82] > T_max[tlr8182] + 3)) stuffkey(F5KEY);
-  if (!ControleerInrijden(fc02, fc62, tlr6202, FALSE) && G[fc02] && R[fc62] && (TG_timer[fc02] > T_max[tlr6202] + 3)) stuffkey(F5KEY);
-  if (!ControleerInrijden(fc08, fc68, tlr6808, FALSE) && G[fc08] && R[fc68] && (TG_timer[fc08] > T_max[tlr6808] + 3)) stuffkey(F5KEY);
-  if (!ControleerInrijden(fc11, fc68, tlr6811, FALSE) && G[fc11] && R[fc68] && (TG_timer[fc11] > T_max[tlr6811] + 3)) stuffkey(F5KEY);
-
-  ControleerVS(fc05, fc32, TRUE, TRUE);
-// }
-#endif
-
-
-#ifndef AUTOMAAT
-//    xyprintf(92, 0, "  d     Hm   Ht   Am   Dm");
-//    xyprintf(92, 1, "%s:  %3d  %3d  %3d  %3d", D_code[d11_1], TDH_max[d11_1], TDH_timer[d11_1], TDHA_max[d11_1], TDHDYN_max[d11_1]);
-//    xyprintf(92, 2, "%s:  %3d  %3d  %3d  %3d", D_code[d11_2], TDH_max[d11_2], TDH_timer[d11_2], TDHA_max[d11_2], TDHDYN_max[d11_2]);
-//    xyprintf(92, 3, "%s:  %3d  %3d  %3d  %3d", D_code[d11_3], TDH_max[d11_3], TDH_timer[d11_3], TDHA_max[d11_3], TDHDYN_max[d11_3]);
-//    xyprintf(92, 4, "%s:  %3d  %3d  %3d  %3d", D_code[d11_4], TDH_max[d11_4], TDH_timer[d11_4], TDHA_max[d11_4], TDHDYN_max[d11_4]);
-#endif	
 
 }
 
@@ -216,59 +153,10 @@ void post_system_application(void)
 
 void pre_msg_fctiming(void)
 {
-
 }
-
-mulv MAXEND_set[FCMAX] = { 0 }; /* uitgestuurde MaxEnd tijd */
-mulv ESTATE_cur[FCMAX] = { -1 }; /* huidige EventState       */
-mulv MAXEND_tim[FCMAX] = { 0 }; /* lopende timer            */
 
 void post_system_application2(void)
 {
-
-#if !defined AUTOMAAT && !defined AUTOMAAT_TEST
-//   if (display) {
-      int i;
-
-      //xyprintf(115, 6, "MES   MET   ESH");
-
-      for (i = 0; i < FC_MAX; ++i) {
-         if (CIF_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME] != -1) { // maxend tijdanders dan -1
-
-            if (MAXEND_tim[i] == 0) {
-               ESTATE_cur[i] = CIF_FC_TIMING[i][0][CIF_TIMING_EVENTSTATE]; /* status signaalgroep (bv rood / geel / groen) */
-               MAXEND_set[i] = CIF_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME]; /* hier wordt opgeslagen wat de uitgestuurde waarde is om later mee te vergelijken */
-            }
-            MAXEND_tim[i] += TE; // iedere machineslag ophogen tot de waarde maxend weer -1 is
-         }
-
-         if (CIF_FC_TIMING[i][0][CIF_TIMING_EVENTSTATE] != ESTATE_cur[i]) {
-
-            if (MAXEND_tim[i] > MAXEND_set[i]) { // check of gemeten maxend tijd hoger is dan de gemeten tijd, als waar dan stuffkey
-               /* Schrijf naar de CCOL-terminal */
-               code helpstr[30]; /* help string */
-               uber_puts(PROMPT_code);
-               uber_puts("Ongewenste situatie: TIMINGS fc");
-               uber_puts(FC_code[i]);
-               uber_puts(" / ");
-               datetostr(helpstr);
-               uber_puts(helpstr);
-               uber_puts(" / ");
-               timetostr(helpstr);
-               uber_puts(helpstr);
-               uber_puts("\n");
-               //stuffkey(F5KEY);
-            }
-            MAXEND_tim[i] = 0;
-            MAXEND_set[i] = 0;
-            ESTATE_cur[i] = -1;
-
-         }
-         //xyprintf(115, 7 + i, "%3d   %3d   %3d", MAXEND_set[i], MAXEND_tim[i], ESTATE_cur[i]);
-      //}
-   }
-#endif   
-
 }
 
 void post_dump_application(void)

@@ -1,4 +1,4 @@
-/* extra_func.c - gegenereerd met TLCGen 12.4.0.0 */
+/* extra_func.c - gegenereerd met TLCGen 12.4.0.5 */
 
 #include "extra_func.h"
 
@@ -208,6 +208,8 @@ boolv ym_max_prmV1(count i, count prm, mulv to_verschil)
     case 10:
        return ym_max_toV2(i, to_verschil);
     case 11:
+		return ym_maxV2(i, to_verschil) || MK[i] && ym_max_toV2(i, to_verschil);
+    case 12:
        return ym_max_vtgV2(i);
 	}
 	return FALSE;
@@ -1715,7 +1717,9 @@ boolv ControleerNaloopEG(count voedend, count volg, count tnlfg, count tnleg, co
       xyprintf(0, 0, "Ongewenste situatie: naloop niet gerespecteerd. Zie terminal.");
       if (halt)
       {
+#ifndef VISSIM
          stuffkey(F5KEY);
+#endif
       }
       return FALSE;
    }
@@ -1760,7 +1764,9 @@ boolv ControleerInrijden(count voedend, count volg, boolv tinr, boolv halt)
       xyprintf(31, 2, "Ongewenste situatie: naloop niet gerespecteerd. Zie terminal.");
       if (halt)
       {
+#ifndef VISSIM
          stuffkey(F5KEY);
+#endif
       }
       return FALSE;
    }
@@ -1796,7 +1802,9 @@ boolv ControleerGS(count fc1, count fc2, boolv cond, boolv halt)
             xyprintf(0, 0, "Ongewenste situatie: gelijstart niet gerespecteerd. Zie terminal.");
             if (halt)
             {
+#ifndef VISSIM
                stuffkey(F5KEY);
+#endif
             }
             return FALSE;
          }
@@ -1835,7 +1843,9 @@ boolv ControleerVS(count fc1, count fc2, boolv cond, boolv halt)
             xyprintf(0, 0, "Ongewenste situatie: VS niet gerespecteerd. Zie terminal.");
             if (halt)
             {
+#ifndef VISSIM
                stuffkey(F5KEY);
+#endif
             }
             return FALSE;
          }

@@ -1,4 +1,4 @@
-/* prio.h - gegenereerd met TLCGen 12.4.0.2 */
+/* prio.h - gegenereerd met TLCGen 12.4.0.5 */
 
 #ifndef __PRIOH
 #define __PRIOH
