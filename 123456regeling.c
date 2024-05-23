@@ -21,7 +21,7 @@
 
 /* Functionaliteiten regeling:
     RIS: ja
-    PTP: nee
+    PTP: ja
     Intergroen: ja
 */
 
@@ -33,6 +33,7 @@
         #pragma comment(lib, "stdfunc.lib")
         #pragma comment(lib, "ccolvlog.lib")
         #pragma comment(lib, "dsifunc.lib")
+        #pragma comment(lib, "ccolks.lib")
         #pragma comment(lib, "ccolmain.lib")
         #pragma comment(lib, "risfunc.lib")
         #pragma comment(lib, "rissimfunc.lib")
@@ -47,6 +48,9 @@
     #define CCOLTIG
 #endif
 
+#ifndef AUTOMAAT
+    #include "PTPWIN.C"
+#endif
 #include "123456sys.h"
 #include "123456reg.c"
 #include "123456prio.c"

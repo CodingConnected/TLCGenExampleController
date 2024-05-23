@@ -295,6 +295,7 @@ void display_parameters(void)
     X_us[ushdinm67_1] = 167; Y_us[ushdinm67_1] = 136; NR_us[ushdinm67_1] = ushdinm67;
     X_us[ushdinm68] = 66; Y_us[ushdinm68] = 148;
     X_us[ushdinm68_1] = 168; Y_us[ushdinm68_1] = 147; NR_us[ushdinm68_1] = ushdinm68;
+    X_us[uspelinKOP02] = 15; Y_us[uspelinKOP02] = 433;
     X_us[usperdef] = NG; Y_us[usperdef] = NG;
     X_us[usper1] = 625; Y_us[usper1] = 14;
     X_us[usperoFietsprio1] = NG; Y_us[usperoFietsprio1] = NG;
@@ -306,6 +307,8 @@ void display_parameters(void)
     X_us[usper5] = 624; Y_us[usper5] = 69;
     X_us[usper6] = 624; Y_us[usper6] = 84;
     X_us[usper7] = 625; Y_us[usper7] = 98;
+    X_us[usptp_ptp123456oke] = 43; Y_us[usptp_ptp123456oke] = 379;
+    X_us[usptp_ptp123456err] = 43; Y_us[usptp_ptp123456err] = 392;
     X_us[usrgv] = 275; Y_us[usrgv] = 107;
     X_us[uswtk21] = 376; Y_us[uswtk21] = 219;
     X_us[uswtk22] = 434; Y_us[uswtk22] = 214;

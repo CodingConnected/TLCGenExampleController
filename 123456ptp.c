@@ -8,14 +8,14 @@
 
    BESTAND:   123456ptp.c
       CCOL:   12.0
-    TLCGEN:   0.12.0.0
-   CCOLGEN:   0.12.0.0
+    TLCGEN:   12.4.0.5
+   CCOLGEN:   12.4.0.5
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie   Datum        Ontwerper   Commentaar
- * 11.1.b   01-07-2022   Cyril       Nieuwe versie TLCGen (development)
+ * Versie     Datum        Ontwerper   Commentaar
+ * 12.4.0.5   23-05-2024   TLCGen      Release versie TLCGen 
  *
  ************************************************************************************/
 
@@ -26,13 +26,13 @@
 /* ------------------- */
 /*
     --------------------------------------------------
-    VRI             PTP
+    VRI         PTP
     --------------------------------------------------
-    ptpkruising02   (4)*/
+    ptp123456   (12)*/
 
 /* macrodefinitie voor gebruik PTP-poorten */
 /* ======================================= */
-#define PTP_ptpkruising02PORT /* @ define van de te koppelen VRI */
+#define PTP_ptp123456PORT /* @ define van de te koppelen VRI */
 
 /* include files */
 /* ============= */
@@ -50,9 +50,9 @@
 
 /* definitie structuren t.b.v. PTP-koppeling(en) */
 /* --------------------------------------------- */
-#ifdef PTP_ptpkruising02PORT
-    struct ptpstruct   PTP_ptpkruising02;
-    struct ptpksstruct PTP_ptpkruising02KS;
+#ifdef PTP_ptp123456PORT
+    struct ptpstruct   PTP_ptp123456;
+    struct ptpksstruct PTP_ptp123456KS;
 #endif
 
 /* PTP CONTROL PARAMETERS */
@@ -66,27 +66,27 @@
 void ptp_control_parameters (void)
 {
 
-    #ifdef PTP_ptpkruising02PORT
-        /* ptp-parameters t.b.v. koppeling met PTP_ptpkruising02 */
+    #ifdef PTP_ptp123456PORT
+        /* ptp-parameters t.b.v. koppeling met PTP_ptp123456 */
         /* ----------------------------------------- */
     #if (defined AUTOMAAT)
-        PTP_ptpkruising02.PORTNR = 2;        /* poortnummer in het regeltoestel     */  /* @ door fabrikant aanpassen */
+        PTP_ptp123456.PORTNR = 1;        /* poortnummer in het regeltoestel     */  /* @ door fabrikant aanpassen */
     #else
-        PTP_ptpkruising02.PORTNR = 1;        /* poortnr. testomgeving (schrijvend) */ /* @ nummer van KS-buffer */
+        PTP_ptp123456.PORTNR = 3;        /* poortnr. testomgeving (schrijvend) */ /* @ nummer van KS-buffer */
     #endif
-        PTP_ptpkruising02.SRC  = 3;       /* nummer van source                   */ /* @ maximaal 255 */
-        PTP_ptpkruising02.DEST = 4;       /* nummer van destination              */ /* @ maximaal 255 */
+        PTP_ptp123456.SRC  = 11;       /* nummer van source                   */ /* @ maximaal 255 */
+        PTP_ptp123456.DEST = 12;       /* nummer van destination              */ /* @ maximaal 255 */
 
-        PTP_ptpkruising02.TMSGW_max= 200;   /* wait  time-out             */
-        PTP_ptpkruising02.TMSGS_max=  10;   /* send  time-out             */
-        PTP_ptpkruising02.TMSGA_max=  10;   /* alive time-out             */
-        PTP_ptpkruising02.CMSG_max=    3;   /* max. berichtenteller tbv. herhaling */
+        PTP_ptp123456.TMSGW_max= 200;   /* wait  time-out             */
+        PTP_ptp123456.TMSGS_max=  10;   /* send  time-out             */
+        PTP_ptp123456.TMSGA_max=  10;   /* alive time-out             */
+        PTP_ptp123456.CMSG_max=    3;   /* max. berichtenteller tbv. herhaling */
 
-        PTP_ptpkruising02KS.IKS_MAX = 16;   /* aantal inkomende koppelsignalen    */ /* @ verhogen in stappen van 8 */
-        PTP_ptpkruising02KS.UKS_MAX = 16;   /* aantal uitgaande koppelsignalen    */ /* @ verhogen in stappen van 8 */
+        PTP_ptp123456KS.IKS_MAX = 16;   /* aantal inkomende koppelsignalen    */ /* @ verhogen in stappen van 8 */
+        PTP_ptp123456KS.UKS_MAX = 16;   /* aantal uitgaande koppelsignalen    */ /* @ verhogen in stappen van 8 */
     #if (CCOL_V >= 110) && !defined NO_PTP_MULTIVALENT
-        PTP_ptpkruising02KS.IKSM_MAX = 16;
-        PTP_ptpkruising02KS.UKSM_MAX = 16;
+        PTP_ptp123456KS.IKSM_MAX = 0;
+        PTP_ptp123456KS.UKSM_MAX = 0;
     #endif
     #endif
 
@@ -115,8 +115,8 @@ void ptp_pre_system_app(void)
         
         /* initialisatie van PTP-koppelingen */
         /* --------------------------------- */
-        #ifdef PTP_ptpkruising02PORT
-            ptp_init(&PTP_ptpkruising02);
+        #ifdef PTP_ptp123456PORT
+            ptp_init(&PTP_ptp123456);
         #endif
 
     }
@@ -130,134 +130,134 @@ void ptp_pre_system_app(void)
     /* ------------------------------------ */
     CIF_GPS[AUTSTATUS] &= ~CIFA_COMF;
 
-        /* opzetten signalen van en naar ptpkruising02 */
-#ifdef PTP_ptpkruising02PORT
+        /* opzetten signalen van en naar ptp123456 */
+#ifdef PTP_ptp123456PORT
 
         /* nalopen in en uitgangssignalen */
         
-        /* opzetten van uitgaande koppelsignalen PTP_ptpkruising02 */
+        /* opzetten van uitgaande koppelsignalen PTP_ptp123456 */
         /* ------------------------------------------------- */      
         if (CIF_WPS[CIF_PROG_STATUS] == CIF_STAT_REG) /* status regelen - set uitgaande koppelsignalen  */
         {
-            for (i = 0; i < PTP_ptpkruising02KS.UKS_MAX; ++i) {
+            for (i = 0; i < PTP_ptp123456KS.UKS_MAX; ++i) {
     #if (CCOL_V >= 110) && !defined NO_PTP_MULTIVALENT
-                if (i < (PTP_ptpkruising02KS.UKS_MAX - PTP_ptpkruising02KS.UKSM_MAX)) {
+                if (i < (PTP_ptp123456KS.UKS_MAX - PTP_ptp123456KS.UKSM_MAX)) {
     #endif
-                    PTP_ptpkruising02KS.UKS[i] = IH[hptpkruising02uks01 + i] && PRM[prmptpkruising02uks01 + i] >= 2 || PRM[prmptpkruising02uks01 + i] == 1;
+                    PTP_ptp123456KS.UKS[i] = IH[hptp123456uks01 + i] && PRM[prmptp123456uks01 + i] >= 2 || PRM[prmptp123456uks01 + i] == 1;
     #if (CCOL_V >= 110) && !defined NO_PTP_MULTIVALENT
                 }
                 else {
-                    PTP_ptpkruising02KS.UKS[i] = (PRM[prmptpkruising02uks01 + i] >= 2) ? IH[hptpkruising02uks01 + i] : 0;
+                    PTP_ptp123456KS.UKS[i] = (PRM[prmptp123456uks01 + i] >= 2) ? IH[hptp123456uks01 + i] : 0;
                 }
     #endif
             }
         }
         else /* niet regelen - reset uitgaande koppelsignalen */
         {
-            for(i = 0; i < PTP_ptpkruising02KS.UKS_MAX; ++i) PTP_ptpkruising02KS.UKS[i] = FALSE;
+            for(i = 0; i < PTP_ptp123456KS.UKS_MAX; ++i) PTP_ptp123456KS.UKS[i] = FALSE;
         }
 
-        /* opzetten van inkomende koppelsignalen PTP_ptpkruising02 */
+        /* opzetten van inkomende koppelsignalen PTP_ptp123456 */
         /* ---------------------------------------------- */
-        if (PTP_ptpkruising02KS.OKE) /* goede verbinding - set inkomende koppelsignalen */
+        if (PTP_ptp123456KS.OKE) /* goede verbinding - set inkomende koppelsignalen */
         {
-            for(i = 0; i < PTP_ptpkruising02KS.IKS_MAX; ++i) {
+            for(i = 0; i < PTP_ptp123456KS.IKS_MAX; ++i) {
     #if (CCOL_V >= 110) && !defined NO_PTP_MULTIVALENT
-                if (i < (PTP_ptpkruising02KS.IKS_MAX - PTP_ptpkruising02KS.IKSM_MAX)) {
+                if (i < (PTP_ptp123456KS.IKS_MAX - PTP_ptp123456KS.IKSM_MAX)) {
     #endif
-                    IH[hptpkruising02iks01 + i] = PTP_ptpkruising02KS.IKS[i] && PRM[prmptpkruising02iks01 + i] >= 2 || PRM[prmptpkruising02iks01 + i] == 1;
+                    IH[hptp123456iks01 + i] = PTP_ptp123456KS.IKS[i] && PRM[prmptp123456iks01 + i] >= 2 || PRM[prmptp123456iks01 + i] == 1;
     #if (CCOL_V >= 110) && !defined NO_PTP_MULTIVALENT
                 }
                 else {
-                    IH[hptpkruising02iks01 + i] = (PRM[prmptpkruising02iks01 + i] >= 2) ? PTP_ptpkruising02KS.IKS[i] : 0;
+                    IH[hptp123456iks01 + i] = (PRM[prmptp123456iks01 + i] >= 2) ? PTP_ptp123456KS.IKS[i] : 0;
                 }
     #endif
             }
         }
         else /* geen goede verbinding - reset inkomende koppelsignalen */
         {
-            for(i = 0; i < PTP_ptpkruising02KS.IKS_MAX; ++i)
+            for(i = 0; i < PTP_ptp123456KS.IKS_MAX; ++i)
             {
-                if (PRM[prmptpkruising02iks01 + i] == 1)
+                if (PRM[prmptp123456iks01 + i] == 1)
                 {
-                    IH[hptpkruising02iks01 + i] = TRUE;
+                    IH[hptp123456iks01 + i] = TRUE;
                 }
                 else
                 {
-                    IH[hptpkruising02iks01 + i] = FALSE;
+                    IH[hptp123456iks01 + i] = FALSE;
                 }
             }
         }
 
         /* aanroep ptp-functies */
         /* -------------------- */
-        ptp_application_ks(&PTP_ptpkruising02, &PTP_ptpkruising02KS);
-        ptp_control(&PTP_ptpkruising02);
+        ptp_application_ks(&PTP_ptp123456, &PTP_ptp123456KS);
+        ptp_control(&PTP_ptp123456);
 
         /* opzetten hulpelementen */
         /* ---------------------- */
-        IH[hptp_ptpkruising02oke]  = PTP_ptpkruising02KS.OKE;
-        IH[hptp_ptpkruising02err]  = PTP_ptpkruising02.COMERROR;
-        IH[hptp_ptpkruising02err0] = PTP_ptpkruising02.COMERROR & BIT0;
-        IH[hptp_ptpkruising02err1] = PTP_ptpkruising02.COMERROR & BIT1;
-        IH[hptp_ptpkruising02err2] = PTP_ptpkruising02.COMERROR & BIT2;
+        IH[hptp_ptp123456oke]  = PTP_ptp123456KS.OKE;
+        IH[hptp_ptp123456err]  = PTP_ptp123456.COMERROR;
+        IH[hptp_ptp123456err0] = PTP_ptp123456.COMERROR & BIT0;
+        IH[hptp_ptp123456err1] = PTP_ptp123456.COMERROR & BIT1;
+        IH[hptp_ptp123456err2] = PTP_ptp123456.COMERROR & BIT2;
 
         /* Bijhouden ptp errors   */
         /* ---------------------- */
-        if (SH[hptp_ptpkruising02oke])
+        if (SH[hptp_ptp123456oke])
         {
-            if((PRM[prmptp_ptpkruising02oke] + 1) >= 32767)
+            if((PRM[prmptp_ptp123456oke] + 1) >= 32767)
             {
-                PRM[prmptp_ptpkruising02oke] = 0;
+                PRM[prmptp_ptp123456oke] = 0;
             }
-            PRM[prmptp_ptpkruising02oke]++;
+            PRM[prmptp_ptp123456oke]++;
             CIF_PARM1WIJZAP = CIF_MEER_PARMWIJZ;
         }
-        if (SH[hptp_ptpkruising02err])
+        if (SH[hptp_ptp123456err])
         {
-            if((PRM[prmptp_ptpkruising02err] + 1) >= 32767)
+            if((PRM[prmptp_ptp123456err] + 1) >= 32767)
             {
-                PRM[prmptp_ptpkruising02err] = 0;
+                PRM[prmptp_ptp123456err] = 0;
             }
-            PRM[prmptp_ptpkruising02err]++;
+            PRM[prmptp_ptp123456err]++;
             CIF_PARM1WIJZAP = CIF_MEER_PARMWIJZ;
         }
-        if (SH[hptp_ptpkruising02err0])
+        if (SH[hptp_ptp123456err0])
         {
-            if((PRM[prmptp_ptpkruising02err0] + 1) >= 32767)
+            if((PRM[prmptp_ptp123456err0] + 1) >= 32767)
             {
-                PRM[prmptp_ptpkruising02err0] = 0;
+                PRM[prmptp_ptp123456err0] = 0;
             }
-            PRM[prmptp_ptpkruising02err0]++;
+            PRM[prmptp_ptp123456err0]++;
             CIF_PARM1WIJZAP = CIF_MEER_PARMWIJZ;
         }
-        if (SH[hptp_ptpkruising02err1])
+        if (SH[hptp_ptp123456err1])
         {
-            if((PRM[prmptp_ptpkruising02err1] + 1) >= 32767)
+            if((PRM[prmptp_ptp123456err1] + 1) >= 32767)
             {
-                PRM[prmptp_ptpkruising02err1] = 0;
+                PRM[prmptp_ptp123456err1] = 0;
             }
-            PRM[prmptp_ptpkruising02err1]++;
+            PRM[prmptp_ptp123456err1]++;
             CIF_PARM1WIJZAP = CIF_MEER_PARMWIJZ;
         }
-        if (SH[hptp_ptpkruising02err2])
+        if (SH[hptp_ptp123456err2])
         {
-            if((PRM[prmptp_ptpkruising02err2] + 1) >= 32767)
+            if((PRM[prmptp_ptp123456err2] + 1) >= 32767)
             {
-                PRM[prmptp_ptpkruising02err2] = 0;
+                PRM[prmptp_ptp123456err2] = 0;
             }
-            PRM[prmptp_ptpkruising02err2]++; 
+            PRM[prmptp_ptp123456err2]++; 
             CIF_PARM1WIJZAP = CIF_MEER_PARMWIJZ;
         }
 
         /* aansturing led op handbedieningspaneel en via IVERA op krspnt plaatje */
         /* --------------------------------------------------------------------- */
-        CIF_GUS[usptp_ptpkruising02oke] = PTP_ptpkruising02KS.OKE;  
-        CIF_GUS[usptp_ptpkruising02err] = PTP_ptpkruising02.COMERROR;
+        CIF_GUS[usptp_ptp123456oke] = PTP_ptp123456KS.OKE;  
+        CIF_GUS[usptp_ptp123456err] = PTP_ptp123456.COMERROR;
 
     /* opzetten van statusbit in CIF_GPS[5] */
     /* ------------------------------------ */
-    if (!PTP_ptpkruising02KS.OKE)
+    if (!PTP_ptp123456KS.OKE)
     {
         CIF_GPS[AUTSTATUS] |= CIFA_COMF;
     }
@@ -290,8 +290,8 @@ void CCOL_exit(void)
 
     void ptp_application_reset(struct ptpstruct *PTP, struct ptpksstruct *PTPKS); /* PTPWIN.C */
 
-    #ifdef PTP_ptpkruising02PORT
-        ptp_application_reset(&PTP_ptpkruising02, &PTP_ptpkruising02KS);
+    #ifdef PTP_ptp123456PORT
+        ptp_application_reset(&PTP_ptp123456, &PTP_ptp123456KS);
     #endif
 
 }

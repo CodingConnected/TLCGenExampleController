@@ -68,7 +68,7 @@
     <ParameterwijzigingPBBijTVGMax>false</ParameterwijzigingPBBijTVGMax>
     <NietGebruikenBitmap>false</NietGebruikenBitmap>
     <CCOLCodeCase>OriginalCase</CCOLCodeCase>
-    <CCOLMulti>false</CCOLMulti>
+    <CCOLMulti>true</CCOLMulti>
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
@@ -10308,7 +10308,111 @@
     </VAOntruimenFase>
   </VAOntruimenFasen>
   <PelotonKoppelingenData>
-    <PelotonKoppelingen />
+    <PelotonKoppelingen>
+      <PelotonKoppeling>
+        <KoppelingNaam>KOP02</KoppelingNaam>
+        <GekoppeldeSignaalGroep>02</GekoppeldeSignaalGroep>
+        <Type>DenHaag</Type>
+        <Meetperiode>100</Meetperiode>
+        <MaximaalHiaat>50</MaximaalHiaat>
+        <MinimaalAantalVoertuigen>8</MinimaalAantalVoertuigen>
+        <Verschuiving>0</Verschuiving>
+        <TijdTotAanvraag>200</TijdTotAanvraag>
+        <TijdTotRetourWachtgroen>150</TijdTotRetourWachtgroen>
+        <TijdRetourWachtgroen>100</TijdRetourWachtgroen>
+        <MaxTijdToepassenRetourWachtgroen>400</MaxTijdToepassenRetourWachtgroen>
+        <ToepassenAanvraag>SchAan</ToepassenAanvraag>
+        <ToepassenMeetkriterium>SchAan</ToepassenMeetkriterium>
+        <ToepassenRetourWachtgroen>SchAan</ToepassenRetourWachtgroen>
+        <IsIntern>false</IsIntern>
+        <PTPKruising>ptp123456</PTPKruising>
+        <KoppelWijze>PTP</KoppelWijze>
+        <Richting>Inkomend</Richting>
+        <PelotonKoppelingDetector>
+          <PelotonKoppelingDetectorModel>
+            <DetectorNaam>021</DetectorNaam>
+          </PelotonKoppelingDetectorModel>
+          <PelotonKoppelingDetectorModel>
+            <DetectorNaam>022</DetectorNaam>
+          </PelotonKoppelingDetectorModel>
+        </PelotonKoppelingDetector>
+        <InkomendVerklikking>
+          <Naam>pelinKOP02</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten>
+            <Coordinaat>
+              <X>15</X>
+              <Y>433</Y>
+            </Coordinaat>
+          </BitmapCoordinaten>
+        </InkomendVerklikking>
+        <KoppelSignalen>
+          <KoppelSignaalModel>
+            <Count>1</Count>
+            <Id>1</Id>
+            <Name>KOP02g02</Name>
+            <Description>KOP02 groen 02</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>2</Count>
+            <Id>2</Id>
+            <Name>KOP02d021</Name>
+            <Description>KOP02 det. 021</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>3</Count>
+            <Id>3</Id>
+            <Name>KOP02d022</Name>
+            <Description>KOP02 det. 022</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+        </KoppelSignalen>
+      </PelotonKoppeling>
+      <PelotonKoppeling>
+        <KoppelingNaam>KOP68_uit</KoppelingNaam>
+        <GekoppeldeSignaalGroep>68</GekoppeldeSignaalGroep>
+        <Type>DenHaag</Type>
+        <Meetperiode>0</Meetperiode>
+        <MaximaalHiaat>0</MaximaalHiaat>
+        <MinimaalAantalVoertuigen>0</MinimaalAantalVoertuigen>
+        <Verschuiving>0</Verschuiving>
+        <TijdTotAanvraag>0</TijdTotAanvraag>
+        <TijdTotRetourWachtgroen>0</TijdTotRetourWachtgroen>
+        <TijdRetourWachtgroen>0</TijdRetourWachtgroen>
+        <MaxTijdToepassenRetourWachtgroen>0</MaxTijdToepassenRetourWachtgroen>
+        <ToepassenAanvraag>Nooit</ToepassenAanvraag>
+        <ToepassenMeetkriterium>Nooit</ToepassenMeetkriterium>
+        <ToepassenRetourWachtgroen>Nooit</ToepassenRetourWachtgroen>
+        <IsIntern>false</IsIntern>
+        <PTPKruising>ptp123456</PTPKruising>
+        <KoppelWijze>PTP</KoppelWijze>
+        <Richting>Uitgaand</Richting>
+        <PelotonKoppelingDetector />
+        <InkomendVerklikking>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </InkomendVerklikking>
+        <KoppelSignalen>
+          <KoppelSignaalModel>
+            <Count>1</Count>
+            <Id>1</Id>
+            <Name>KOP68_uitg68</Name>
+            <Description>KOP68_uit groen 68</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>Uit</Richting>
+          </KoppelSignaalModel>
+        </KoppelSignalen>
+      </PelotonKoppeling>
+    </PelotonKoppelingen>
   </PelotonKoppelingenData>
   <AlternatievenPerBlokData>
     <ToepassenAlternatievenPerBlok>true</ToepassenAlternatievenPerBlok>
@@ -10591,7 +10695,47 @@
   </PeriodenData>
   <PTPData>
     <PTPInstellingenInParameters>false</PTPInstellingenInParameters>
-    <PTPKoppelingen />
+    <PTPKoppelingen>
+      <PTPKoppeling>
+        <TeKoppelenKruispunt>ptp123456</TeKoppelenKruispunt>
+        <AantalsignalenIn>16</AantalsignalenIn>
+        <AantalsignalenUit>16</AantalsignalenUit>
+        <AantalsignalenMultivalentIn>0</AantalsignalenMultivalentIn>
+        <AantalsignalenMultivalentUit>0</AantalsignalenMultivalentUit>
+        <PortnummerSimuatieOmgeving>3</PortnummerSimuatieOmgeving>
+        <PortnummerAutomaatOmgeving>1</PortnummerAutomaatOmgeving>
+        <NummerSource>11</NummerSource>
+        <NummerDestination>12</NummerDestination>
+        <OkBitmapData>
+          <Naam>ptp_ptp123456oke</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten>
+            <Coordinaat>
+              <X>43</X>
+              <Y>379</Y>
+            </Coordinaat>
+          </BitmapCoordinaten>
+        </OkBitmapData>
+        <ErrorBitmapData>
+          <Naam>ptp_ptp123456err</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten>
+            <Coordinaat>
+              <X>43</X>
+              <Y>392</Y>
+            </Coordinaat>
+          </BitmapCoordinaten>
+        </ErrorBitmapData>
+        <Dummy>false</Dummy>
+        <MaakIO>false</MaakIO>
+        <PtpIoIngangen />
+        <PtpIoUitgangen />
+      </PTPKoppeling>
+    </PTPKoppelingen>
   </PTPData>
   <PrioData>
     <PrioIngreepType>GeneriekePrioriteit</PrioIngreepType>
@@ -22167,8 +22311,8 @@
         <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
       </HalfstarFaseCyclusInstellingenModel>
       <HalfstarFaseCyclusInstellingenModel>
-        <FaseCyclus>81</FaseCyclus>
-        <AlternatiefToestaan>true</AlternatiefToestaan>
+        <FaseCyclus>26</FaseCyclus>
+        <AlternatiefToestaan>false</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
         <AanvraagOpTxB>false</AanvraagOpTxB>
         <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
@@ -22188,14 +22332,21 @@
         <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
       </HalfstarFaseCyclusInstellingenModel>
       <HalfstarFaseCyclusInstellingenModel>
-        <FaseCyclus>68</FaseCyclus>
+        <FaseCyclus>82</FaseCyclus>
         <AlternatiefToestaan>false</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
         <AanvraagOpTxB>false</AanvraagOpTxB>
         <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
       </HalfstarFaseCyclusInstellingenModel>
       <HalfstarFaseCyclusInstellingenModel>
-        <FaseCyclus>82</FaseCyclus>
+        <FaseCyclus>81</FaseCyclus>
+        <AlternatiefToestaan>true</AlternatiefToestaan>
+        <AlternatieveRuimte>0</AlternatieveRuimte>
+        <AanvraagOpTxB>false</AanvraagOpTxB>
+        <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
+      </HalfstarFaseCyclusInstellingenModel>
+      <HalfstarFaseCyclusInstellingenModel>
+        <FaseCyclus>68</FaseCyclus>
         <AlternatiefToestaan>false</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
         <AanvraagOpTxB>false</AanvraagOpTxB>
@@ -22259,13 +22410,6 @@
       </HalfstarFaseCyclusInstellingenModel>
       <HalfstarFaseCyclusInstellingenModel>
         <FaseCyclus>28</FaseCyclus>
-        <AlternatiefToestaan>false</AlternatiefToestaan>
-        <AlternatieveRuimte>0</AlternatieveRuimte>
-        <AanvraagOpTxB>false</AanvraagOpTxB>
-        <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
-      </HalfstarFaseCyclusInstellingenModel>
-      <HalfstarFaseCyclusInstellingenModel>
-        <FaseCyclus>26</FaseCyclus>
         <AlternatiefToestaan>false</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
         <AanvraagOpTxB>false</AanvraagOpTxB>

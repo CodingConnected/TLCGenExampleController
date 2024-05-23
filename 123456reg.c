@@ -83,6 +83,7 @@
     #include "ccolfunc.c"
     #include "realfunc.c"
     #include "fixatie.c"
+    #include "123456ptp.c" /* PTP seriele koppeling */
 #ifdef MIRMON
     #include "MirakelMonitor.h"
 #endif /* MIRMON */
@@ -98,6 +99,8 @@
 
 mulv DB_old[DPMAX];
 mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
+
+s_int16 CCOL_SLAVE = 0;
 
     /* Robuuste Groenverdeler */
     #include "123456rgv.c"
@@ -139,6 +142,13 @@ void PreApplication(void)
 
     /* Opschonen wagennummer buffers */
     WDNST_cleanup();
+
+    IH[hpeltegenhKOP02] = FALSE;
+    /* Afzetten hulpelementen inkomende peloton koppelingen */
+    IH[hpelinKOP02] = FALSE;
+
+    /* Inkomende peloton koppeling van KOP02 */
+    IH[hpelinKOP02] |= proc_pel_in_V1(hptp123456iks01, tpelmeetKOP02, tpelmaxhiaatKOP02, prmpelgrensKOP02, mpelvtgKOP02, mpelinKOP02, hptp123456iks02, hptp123456iks03, END);
 
     /* Robuuste Groenverdeler */
     IH[hrgvact] = SCH[schrgv];
@@ -1411,6 +1421,46 @@ void Meetkriterium(void)
                                  trgrd24_3_d24_2, trgvd24_3_d24_2,
                                  hrgvd24_3_d24_2), (mulv)PRM[prmmkrgd24_3],
                                  (count)END);
+
+    /* Inkomende peloton koppeling KOP02 naar fase 02 */
+    /* timer resetten om aanvraag te zetten */
+    RT[tpelaKOP02] = IH[hpelinKOP02] && !T[tpelaKOP02];
+    /* timer resetten maximale tijd toepassen RW vanaf SG */
+    RT[tpelrwmaxKOP02] = SG[fc02];
+    /* timer resetten om gebied open te houden */
+    RT[tpelstartrwKOP02] = IH[hpelinKOP02] && !T[tpelstartrwKOP02];
+
+    /* zet aanvraag als timer is afgelopen */
+    if (ET[tpelaKOP02] && SCH[schpelaKOP02]) A[fc02] |= BIT12;
+
+    /* start vasthoud timer bij einde timer en als de timer nog niet loopt */
+    RT[tpelrwKOP02] = ET[tpelstartrwKOP02] && !T[tpelrwKOP02];
+
+    MK[fc02] &= ~BIT12;
+
+    /* zet meetkriterium als de vasthoudperiode loopt */
+    if (T[tpelrwKOP02] && SCH[schpelmkKOP02])
+    {
+        MK[fc02] |= BIT2 | BIT12;
+    }
+
+    /* houd groen vast als de vasthoudperiode loopt,
+       de maximale wachttijd nog niet bereikt is,
+       tenzij de timer al loopt (besluit wordt niet teruggenomen) */
+    if (T[tpelrwKOP02] && SCH[schpelrwKOP02] && T[tpelrwmaxKOP02] && !IH[hpeltegenhKOP02])
+    {
+        RW[fc02] |= BIT12;
+        PP[fc02] |= BIT12;
+        PAR[fc02] |= BIT12;
+    }
+    else
+    {
+        PP[fc02] &= ~BIT12;
+    }
+    if (!(T[tpelrwKOP02] && SCH[schpelrwKOP02]))
+    {
+        RW[fc02] &= ~BIT12;
+    }
 
     /* School ingreep: reset BITs */
     RW[fc33] &= ~BIT8;
@@ -2778,6 +2828,9 @@ void PostApplication(void)
 
     CyclustijdMeting(tcycl, schcycl, SML && (ML == ML1), schcycl_reset, mlcycl);
 
+/* Verklikken inkomende pelotons */
+    CIF_GUS[uspelinKOP02] = IH[hpelinKOP02];
+
     /* Tbv parametreerbare blokindeling: reset A voor niet toegedeeld fasen */
     for (fc = 0; fc < FCMAX; ++fc)
     {
@@ -2821,6 +2874,9 @@ void application(void)
 void system_application(void)
 {
     int ov = 0;
+
+    /* aanroepen PTP loop tbv seriele koppeling */
+    ptp_pre_system_app();
 
     pre_system_application();
 
@@ -2935,6 +2991,9 @@ void system_application(void)
     check_tgg_min();
     check_tgl_min();
     check_trg_min();
+
+    /* aanroepen PTP loop tbv seriele koppeling */
+    ptp_post_system_app();
 
     SegmentSturing(ML+1, ussegm1, ussegm2, ussegm3, ussegm4, ussegm5, ussegm6, ussegm7);
 
