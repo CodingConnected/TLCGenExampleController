@@ -1,5 +1,7 @@
+/* traffick2tlcgen.h - gegenereerd met TLCGen 12.4.0.5 */
+
 /* -------------------------------------------------------------------------------------------------------- */
-/* Traffick2TLCGen                                                               Versie 1.0.1 / 14 sep 2024 */
+/* Traffick2TLCGen                                                               Versie 1.0.1 / 14 sep 2023 */
 /* -------------------------------------------------------------------------------------------------------- */
 
 /* Deze include file bevat hulp functies voor verkeerskundige Traffick functionaliteiten.                   */

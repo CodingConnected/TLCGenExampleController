@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.4   12-03-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.5   23-05-2024   TLCGen      Release versie TLCGen 
  *
  ************************************************************************************/
 
@@ -1146,7 +1146,6 @@ void control_parameters(void)
     H_code[hprreal11]               = "prreal11";                                                 /* Bijhouden primaire realisatie fase 11                              */
     H_code[hprreal22]               = "prreal22";                                                 /* Bijhouden primaire realisatie fase 22                              */
     H_code[hprreal28]               = "prreal28";                                                 /* Bijhouden primaire realisatie fase 28                              */
-    H_code[hprreal68]               = "prreal68";                                                 /* Bijhouden primaire realisatie fase 68                              */
     H_code[hschoolingreepdk33a]     = "schoolingreepdk33a";                                       /* Onthouden actief zijn schoolingreep voor fase 33 via detector k33a */
     H_code[hschoolingreepdk33b]     = "schoolingreepdk33b";                                       /* Onthouden actief zijn schoolingreep voor fase 33 via detector k33b */
     H_code[hschoolingreepdk34a]     = "schoolingreepdk34a";                                       /* Onthouden actief zijn schoolingreep voor fase 34 via detector k34a */
@@ -1741,10 +1740,6 @@ void control_parameters(void)
     T_code[thd22_1]                    = "hd22_1";                    T_max[thd22_1]                    = 10;   T_type[thd22_1]                    = TE_type; /* RoBuGrover hiaat meting fase 22 detector 22_1                                            */
     T_code[tfd28_1]                    = "fd28_1";                    T_max[tfd28_1]                    = 60;   T_type[tfd28_1]                    = TE_type; /* File meting RoBuGrover fase 28 detector 28_1                                             */
     T_code[thd28_1]                    = "hd28_1";                    T_max[thd28_1]                    = 10;   T_type[thd28_1]                    = TE_type; /* RoBuGrover hiaat meting fase 28 detector 28_1                                            */
-    T_code[tfd68_1a]                   = "fd68_1a";                   T_max[tfd68_1a]                   = 60;   T_type[tfd68_1a]                   = TE_type; /* File meting RoBuGrover fase 68 detector 68_1a                                            */
-    T_code[tfd68_1b]                   = "fd68_1b";                   T_max[tfd68_1b]                   = 60;   T_type[tfd68_1b]                   = TE_type; /* File meting RoBuGrover fase 68 detector 68_1b                                            */
-    T_code[thd68_2a]                   = "hd68_2a";                   T_max[thd68_2a]                   = 10;   T_type[thd68_2a]                   = TE_type; /* RoBuGrover hiaat meting fase 68 detector 68_2a                                           */
-    T_code[thd68_2b]                   = "hd68_2b";                   T_max[thd68_2b]                   = 10;   T_type[thd68_2b]                   = TE_type; /* RoBuGrover hiaat meting fase 68 detector 68_2b                                           */
     T_code[tschoolingreepmaxg33]       = "schoolingreepmaxg33";       T_max[tschoolingreepmaxg33]       = 500;  T_type[tschoolingreepmaxg33]       = TE_type; /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 33                        */
     T_code[tdbsidk33a]                 = "dbsidk33a";                 T_max[tdbsidk33a]                 = 60;   T_type[tdbsidk33a]                 = TE_type; /* Bezettijd detector k33a t.b.v. schoolingreep                                             */
     T_code[tdbsidk33b]                 = "dbsidk33b";                 T_max[tdbsidk33b]                 = 60;   T_type[tdbsidk33b]                 = TE_type; /* Bezettijd detector k33b t.b.v. schoolingreep                                             */
@@ -1812,6 +1807,12 @@ void control_parameters(void)
     T_code[tfo0522]                    = "fo0522";                    T_max[tfo0522]                    = 40;   T_type[tfo0522]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
     T_code[tfo1126]                    = "fo1126";                    T_max[tfo1126]                    = 0;    T_type[tfo1126]                    = TE_type; /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
     T_code[tfo0532]                    = "fo0532";                    T_max[tfo0532]                    = 50;   T_type[tfo0532]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
+    T_code[tarmvt02]                   = "armvt02";                   T_max[tarmvt02]                   = 101;  T_type[tarmvt02]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 02                                               */
+    T_code[tarmvt03]                   = "armvt03";                   T_max[tarmvt03]                   = 100;  T_type[tarmvt03]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 03                                               */
+    T_code[tarmvt05]                   = "armvt05";                   T_max[tarmvt05]                   = 100;  T_type[tarmvt05]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 05                                               */
+    T_code[tarmvt08]                   = "armvt08";                   T_max[tarmvt08]                   = 100;  T_type[tarmvt08]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 08                                               */
+    T_code[tarmvt09]                   = "armvt09";                   T_max[tarmvt09]                   = 100;  T_type[tarmvt09]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 09                                               */
+    T_code[tarmvt11]                   = "armvt11";                   T_max[tarmvt11]                   = 100;  T_type[tarmvt11]                   = TE_type; /* Volgtijd van arm naar volgarm voor fase 11                                               */
 
 /* teller elementen */
 /* ---------------- */
@@ -2249,6 +2250,7 @@ void control_parameters(void)
     SCH_code[schsneld81_1]              = "sneld81_1";              SCH[schsneld81_1]              = 0;                                         /* Aanvraag snel voor detector 81_1 aan of uit                    */
     SCH_code[schsneld82_1]              = "sneld82_1";              SCH[schsneld82_1]              = 0;                                         /* Aanvraag snel voor detector 82_1 aan of uit                    */
     SCH_code[schsneld84_1]              = "sneld84_1";              SCH[schsneld84_1]              = 0;                                         /* Aanvraag snel voor detector 84_1 aan of uit                    */
+    SCH_code[schtraffick2tlcgen]        = "traffick2tlcgen";        SCH[schtraffick2tlcgen]        = 1;                                         /* Activeren Traffick functies                                    */
 
 /* parameters */
 /* ---------- */
@@ -2268,9 +2270,9 @@ void control_parameters(void)
     PRM_code[prmspringverleng_11_3]       = "springverleng_11_3";       PRM[prmspringverleng_11_3]       = 9;                                                      /* Dyn. hiaattij instelling voor det. 11_3 (via bitsturing)                                                                       */
     PRM_code[prmspringverleng_11_4]       = "springverleng_11_4";       PRM[prmspringverleng_11_4]       = 0;                                                      /* Dyn. hiaattij instelling voor det. 11_4 (via bitsturing)                                                                       */
     PRM_code[prmfb]                       = "fb";                       PRM[prmfb]                       = 240;   PRM_type[prmfb]                       = TS_type; /* Instelling fasebewaking                                                                                                        */
-    PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 12;                                                     /* Versiebeheer xx                                                                                                                */
-    PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 5;                                                      /* Versiebeheer yy                                                                                                                */
-    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 0;                                                      /* Versiebeheer zz                                                                                                                */
+    PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 4;                                                      /* Versiebeheer xx                                                                                                                */
+    PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 0;                                                      /* Versiebeheer yy                                                                                                                */
+    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 5;                                                      /* Versiebeheer zz                                                                                                                */
     PRM_code[prmovmextragroen_02]         = "ovmextragroen_02";         PRM[prmovmextragroen_02]         = 0;     PRM_type[prmovmextragroen_02]         = TE_type;
     PRM_code[prmovmmindergroen_02]        = "ovmmindergroen_02";        PRM[prmovmmindergroen_02]        = 0;     PRM_type[prmovmmindergroen_02]        = TE_type;
     PRM_code[prmovmextragroen_03]         = "ovmextragroen_03";         PRM[prmovmextragroen_03]         = 0;     PRM_type[prmovmextragroen_03]         = TE_type;
@@ -3723,8 +3725,6 @@ void control_parameters(void)
     PRM_code[prmmaxtvg_22]                = "maxtvg_22";                PRM[prmmaxtvg_22]                = 150;   PRM_type[prmmaxtvg_22]                = TE_type; /* Maximale verlenggroentijd fase 22                                                                                              */
     PRM_code[prmmintvg_28]                = "mintvg_28";                PRM[prmmintvg_28]                = 40;    PRM_type[prmmintvg_28]                = TE_type; /* Minimale verlenggroentijd fase 28                                                                                              */
     PRM_code[prmmaxtvg_28]                = "maxtvg_28";                PRM[prmmaxtvg_28]                = 150;   PRM_type[prmmaxtvg_28]                = TE_type; /* Maximale verlenggroentijd fase 28                                                                                              */
-    PRM_code[prmmintvg_68]                = "mintvg_68";                PRM[prmmintvg_68]                = 100;   PRM_type[prmmintvg_68]                = TE_type; /* Minimale verlenggroentijd fase 68                                                                                              */
-    PRM_code[prmmaxtvg_68]                = "maxtvg_68";                PRM[prmmaxtvg_68]                = 500;   PRM_type[prmmaxtvg_68]                = TE_type; /* Maximale verlenggroentijd fase 68                                                                                              */
     PRM_code[prmsiexgrperc33]             = "siexgrperc33";             PRM[prmsiexgrperc33]             = 50;                                                     /* Extra groen percentage tov. TFG voor senioreningreep op fase 33                                                                */
     PRM_code[prmsiexgrperc34]             = "siexgrperc34";             PRM[prmsiexgrperc34]             = 50;                                                     /* Extra groen percentage tov. TFG voor senioreningreep op fase 34                                                                */
     PRM_code[prmmaxtvgvlog]               = "maxtvgvlog";               PRM[prmmaxtvgvlog]               = 5;     PRM_type[prmmaxtvgvlog]               = CT_type; /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
@@ -4229,6 +4229,7 @@ void control_parameters(void)
     SCH_cat[schsneld81_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld81_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld82_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld82_1]              = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld84_1]           = CAT_Signaalgroep;     SCH_subcat[schsneld84_1]              = SUBCAT_MaximumGroentijden;
+    SCH_cat[schtraffick2tlcgen]     = CAT_Basisfuncties;    SCH_subcat[schtraffick2tlcgen]        = SUBCAT_Testen;
     T_cat[t08_1a_1]                = CAT_Basisfuncties;    T_subcat[t08_1a_1]                   = SUBCAT_Verlengen;
     T_cat[t08_1a_2]                = CAT_Basisfuncties;    T_subcat[t08_1a_2]                   = SUBCAT_Verlengen;
     T_cat[ttdh_08_1a_1]            = CAT_Basisfuncties;    T_subcat[ttdh_08_1a_1]               = SUBCAT_Verlengen;
@@ -4711,6 +4712,12 @@ void control_parameters(void)
     T_cat[tfo0522]                 = CAT_Basisfuncties;    T_subcat[tfo0522]                    = SUBCAT_Deelconflicten;
     T_cat[tfo1126]                 = CAT_Basisfuncties;    T_subcat[tfo1126]                    = SUBCAT_Deelconflicten;
     T_cat[tfo0532]                 = CAT_Basisfuncties;    T_subcat[tfo0532]                    = SUBCAT_Deelconflicten;
+    T_cat[tarmvt02]                = CAT_Basisfuncties;    T_subcat[tarmvt02]                   = SUBCAT_Testen;
+    T_cat[tarmvt03]                = CAT_Basisfuncties;    T_subcat[tarmvt03]                   = SUBCAT_Testen;
+    T_cat[tarmvt05]                = CAT_Basisfuncties;    T_subcat[tarmvt05]                   = SUBCAT_Testen;
+    T_cat[tarmvt08]                = CAT_Basisfuncties;    T_subcat[tarmvt08]                   = SUBCAT_Testen;
+    T_cat[tarmvt09]                = CAT_Basisfuncties;    T_subcat[tarmvt09]                   = SUBCAT_Testen;
+    T_cat[tarmvt11]                = CAT_Basisfuncties;    T_subcat[tarmvt11]                   = SUBCAT_Testen;
     PRM_cat[prmspringverleng_08_1a]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_1a]      = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_08_1b]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_1b]      = SUBCAT_Verlengen;
     PRM_cat[prmspringverleng_08_2a]   = CAT_Basisfuncties;    PRM_subcat[prmspringverleng_08_2a]      = SUBCAT_Verlengen;
@@ -6152,8 +6159,6 @@ void control_parameters(void)
     PRM_cat[prmmaxtvg_22]             = CAT_Signaalgroep;     PRM_subcat[prmmaxtvg_22]                = SUBCAT_MaximumGroentijden;
     PRM_cat[prmmintvg_28]             = CAT_Signaalgroep;     PRM_subcat[prmmintvg_28]                = SUBCAT_MaximumGroentijden;
     PRM_cat[prmmaxtvg_28]             = CAT_Signaalgroep;     PRM_subcat[prmmaxtvg_28]                = SUBCAT_MaximumGroentijden;
-    PRM_cat[prmmintvg_68]             = CAT_Signaalgroep;     PRM_subcat[prmmintvg_68]                = SUBCAT_MaximumGroentijden;
-    PRM_cat[prmmaxtvg_68]             = CAT_Signaalgroep;     PRM_subcat[prmmaxtvg_68]                = SUBCAT_MaximumGroentijden;
     PRM_cat[prmsiexgrperc33]          = CAT_SpecialeIngrepen; PRM_subcat[prmsiexgrperc33]             = SUBCAT_Verlengen;
     PRM_cat[prmsiexgrperc34]          = CAT_SpecialeIngrepen; PRM_subcat[prmsiexgrperc34]             = SUBCAT_Verlengen;
     PRM_cat[prmmaxtvgvlog]            = CAT_TestenLoggen;     PRM_subcat[prmmaxtvgvlog]               = SUBCAT_Loggen;

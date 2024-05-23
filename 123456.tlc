@@ -70,16 +70,16 @@
     <CCOLCodeCase>OriginalCase</CCOLCodeCase>
     <CCOLMulti>false</CCOLMulti>
     <CCOLMultiSlave>0</CCOLMultiSlave>
-    <HuidigeVersieMajor>12</HuidigeVersieMajor>
-    <HuidigeVersieMinor>4</HuidigeVersieMinor>
-    <HuidigeVersieRevision>0</HuidigeVersieRevision>
+    <HuidigeVersieMajor>4</HuidigeVersieMajor>
+    <HuidigeVersieMinor>0</HuidigeVersieMinor>
+    <HuidigeVersieRevision>5</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <StoreCurrentController>false</StoreCurrentController>
     <ToevoegenOVM>true</ToevoegenOVM>
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.2</TLCGenVersie>
+    <TLCGenVersie>12.4.0.5</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -288,10 +288,10 @@
       </FixatieBitmapData>
     </FixatieData>
     <Versie>
-      <Versie>12.4.0.2</Versie>
-      <Datum>2023-09-09T00:00:00</Datum>
+      <Versie>12.4.0.5</Versie>
+      <Datum>2024-05-23T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Release versie TLCGen</Commentaar>
+      <Commentaar>Release versie TLCGen </Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -8356,6 +8356,7 @@
       <NaarDetector>24_2</NaarDetector>
       <MaxTijdsVerschil>10</MaxTijdsVerschil>
       <ResetAanvraag>true</ResetAanvraag>
+      <AltijdAanUit>SchAan</AltijdAanUit>
       <ResetAanvraagTijdsduur>60</ResetAanvraagTijdsduur>
     </RichtingGevoeligeAanvraag>
   </RichtingGevoeligeAanvragen>
@@ -8367,6 +8368,7 @@
       <MaxTijdsVerschil>10</MaxTijdsVerschil>
       <VerlengTijd>50</VerlengTijd>
       <TypeVerlengen>MK2</TypeVerlengen>
+      <AltijdAanUit>SchAan</AltijdAanUit>
     </RichtingGevoeligVerleng>
   </RichtingGevoeligVerlengen>
   <InterSignaalGroep>
@@ -10748,7 +10750,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin02bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -10822,7 +10824,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit02bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -11270,7 +11272,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin03bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -11344,7 +11346,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit03bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -11792,7 +11794,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin05bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -11866,7 +11868,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit05bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -12314,7 +12316,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin08bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -12388,7 +12390,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit08bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -12836,7 +12838,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin09bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -12910,7 +12912,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit09bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -13358,7 +13360,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin11bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -13432,7 +13434,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit11bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -14172,7 +14174,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin61bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -14246,7 +14248,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit61bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -14694,7 +14696,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin62bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -14768,7 +14770,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit62bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -15216,7 +15218,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin67bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -15290,7 +15292,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit67bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -15738,7 +15740,7 @@
               <DummyKARMelding>
                 <Naam>dummykarin68bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -15812,7 +15814,7 @@
               <DummyKARMelding>
                 <Naam>dummykaruit68bus</Naam>
                 <Dummy>true</Dummy>
-                <ElementType>FaseCyclus</ElementType>
+                <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
                 <BitmapCoordinaten>
                   <Coordinaat>
@@ -16166,6 +16168,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd>10</OpticomInmeldingFilterTijd>
@@ -16196,7 +16199,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin02</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16236,7 +16239,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit02</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16286,6 +16289,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -16315,7 +16319,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin03</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16357,7 +16361,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit03</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16407,6 +16411,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd>10</OpticomInmeldingFilterTijd>
@@ -16437,7 +16442,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin05</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16479,7 +16484,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit05</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16529,6 +16534,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd>10</OpticomInmeldingFilterTijd>
@@ -16559,7 +16565,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin08</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16601,7 +16607,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit08</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16651,6 +16657,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -16680,7 +16687,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin09</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16722,7 +16729,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit09</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16772,6 +16779,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd>10</OpticomInmeldingFilterTijd>
@@ -16802,7 +16810,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin11</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16844,7 +16852,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit11</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16894,6 +16902,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -16923,7 +16932,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin61</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -16965,7 +16974,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit61</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -17015,6 +17024,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -17044,7 +17054,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin62</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -17086,7 +17096,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit62</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -17136,6 +17146,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -17165,7 +17176,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin67</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -17207,7 +17218,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit67</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -17257,6 +17268,7 @@
         <RisEta>900</RisEta>
         <RisImportance>I14</RisImportance>
         <Opticom>false</Opticom>
+        <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
         <OpticomInmeldingFilterTijd xsi:nil="true" />
@@ -17286,7 +17298,7 @@
         <DummyKARInmelding>
           <Naam>dummyhdkarin68</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -17328,7 +17340,7 @@
         <DummyKARUitmelding>
           <Naam>dummyhdkaruit68</Naam>
           <Dummy>true</Dummy>
-          <ElementType>FaseCyclus</ElementType>
+          <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten>
             <Coordinaat>
@@ -21773,7 +21785,7 @@
     <GroenVerlaagFactor>20</GroenVerlaagFactor>
     <GroenVerlaagFactorNietPrimair>50</GroenVerlaagFactorNietPrimair>
     <OphogenTijdensGroen>false</OphogenTijdensGroen>
-    <ToestaanNietConflictenInConflictGroepen>false</ToestaanNietConflictenInConflictGroepen>
+    <ToestaanNietConflictenInConflictGroepen>true</ToestaanNietConflictenInConflictGroepen>
     <BitmapData>
       <Naam>rgv</Naam>
       <Dummy>false</Dummy>
@@ -21793,17 +21805,10 @@
             <FaseCyclus>03</FaseCyclus>
           </RoBuGroverConflictGroepFase>
           <RoBuGroverConflictGroepFase>
-            <FaseCyclus>68</FaseCyclus>
-          </RoBuGroverConflictGroepFase>
-          <RoBuGroverConflictGroepFase>
             <FaseCyclus>05</FaseCyclus>
           </RoBuGroverConflictGroepFase>
-        </Fasen>
-      </RoBuGroverConflictGroep>
-      <RoBuGroverConflictGroep>
-        <Fasen>
           <RoBuGroverConflictGroepFase>
-            <FaseCyclus>05</FaseCyclus>
+            <FaseCyclus>08</FaseCyclus>
           </RoBuGroverConflictGroepFase>
         </Fasen>
       </RoBuGroverConflictGroep>
@@ -21813,24 +21818,7 @@
             <FaseCyclus>02</FaseCyclus>
           </RoBuGroverConflictGroepFase>
           <RoBuGroverConflictGroepFase>
-            <FaseCyclus>05</FaseCyclus>
-          </RoBuGroverConflictGroepFase>
-        </Fasen>
-      </RoBuGroverConflictGroep>
-      <RoBuGroverConflictGroep>
-        <Fasen>
-          <RoBuGroverConflictGroepFase>
-            <FaseCyclus>08</FaseCyclus>
-          </RoBuGroverConflictGroepFase>
-          <RoBuGroverConflictGroepFase>
-            <FaseCyclus>11</FaseCyclus>
-          </RoBuGroverConflictGroepFase>
-        </Fasen>
-      </RoBuGroverConflictGroep>
-      <RoBuGroverConflictGroep>
-        <Fasen>
-          <RoBuGroverConflictGroepFase>
-            <FaseCyclus>08</FaseCyclus>
+            <FaseCyclus>09</FaseCyclus>
           </RoBuGroverConflictGroepFase>
           <RoBuGroverConflictGroepFase>
             <FaseCyclus>11</FaseCyclus>
@@ -21997,31 +21985,6 @@
         <HiaatDetectoren>
           <RoBuGroverHiaatDetector>
             <Detector>28_1</Detector>
-            <HiaatTijd>10</HiaatTijd>
-          </RoBuGroverHiaatDetector>
-        </HiaatDetectoren>
-      </RoBuGroverSignaalGroepInstelling>
-      <RoBuGroverSignaalGroepInstelling>
-        <FaseCyclus>68</FaseCyclus>
-        <MinGroenTijd>100</MinGroenTijd>
-        <MaxGroenTijd>500</MaxGroenTijd>
-        <FileDetectoren>
-          <RoBuGroverFileDetector>
-            <Detector>68_1a</Detector>
-            <FileTijd>60</FileTijd>
-          </RoBuGroverFileDetector>
-          <RoBuGroverFileDetector>
-            <Detector>68_1b</Detector>
-            <FileTijd>60</FileTijd>
-          </RoBuGroverFileDetector>
-        </FileDetectoren>
-        <HiaatDetectoren>
-          <RoBuGroverHiaatDetector>
-            <Detector>68_2a</Detector>
-            <HiaatTijd>10</HiaatTijd>
-          </RoBuGroverHiaatDetector>
-          <RoBuGroverHiaatDetector>
-            <Detector>68_2b</Detector>
             <HiaatTijd>10</HiaatTijd>
           </RoBuGroverHiaatDetector>
         </HiaatDetectoren>
@@ -23886,6 +23849,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkaruit02</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummyhdkaruit02</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -24221,13 +24191,6 @@
         <Naam>dummyhdkaruit03</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit02</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummyhdkaruit02</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

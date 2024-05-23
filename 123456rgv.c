@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.4   12-03-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.5   23-05-2024   TLCGen      Release versie TLCGen 
  *
  ************************************************************************************/
 
 /* defines voor ROBUGROVER */
-#define MAX_AANTAL_CONFLICTGROEPEN 5
+#define MAX_AANTAL_CONFLICTGROEPEN 2
 mulv TC[MAX_AANTAL_CONFLICTGROEPEN];
 mulv TC_max, DD_anyfase;
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
@@ -138,7 +138,6 @@ void rgv_add(void)
         TVG_rgv[fc11] = TVG_max[fc11];
         TVG_rgv[fc22] = TVG_max[fc22];
         TVG_rgv[fc28] = TVG_max[fc28];
-        TVG_rgv[fc68] = TVG_max[fc68];
         rgvinit = 0;
     }
 
@@ -152,7 +151,6 @@ void rgv_add(void)
     TVG_basis[fc11] = TVG_max[fc11] > 0 ? TVG_max[fc11] : 1;
     TVG_basis[fc22] = TVG_max[fc22] > 0 ? TVG_max[fc22] : 1;
     TVG_basis[fc28] = TVG_max[fc28] > 0 ? TVG_max[fc28] : 1;
-    TVG_basis[fc68] = TVG_max[fc68] > 0 ? TVG_max[fc68] : 1;
 
     /* detectiestoringen voor de fasecycli */
     /* ----------------------------------- */
@@ -165,8 +163,6 @@ void rgv_add(void)
     RT[tfd11_1] = SD[d11_1] || ED[d11_1] || !VG[fc11]; 
     RT[tfd22_1] = SD[d22_1] || ED[d22_1] || !VG[fc22]; 
     RT[tfd28_1] = SD[d28_1] || ED[d28_1] || !VG[fc28]; 
-    RT[tfd68_1a] = SD[d68_1a] || ED[d68_1a] || !VG[fc68]; 
-    RT[tfd68_1b] = SD[d68_1b] || ED[d68_1b] || !VG[fc68]; 
 
     DD_anyfase = 0;
     #if (defined AUTOMAAT || defined AUTOMAAT_TEST)
@@ -193,9 +189,6 @@ void rgv_add(void)
         DD[fc28] = (CIF_IS[d28_1] >= CIF_DET_STORING)
                     || (CIF_IS[d28_1] >= CIF_DET_STORING)
                     || (!T[tfd28_1]);
-        DD[fc68] = (CIF_IS[d68_1a] >= CIF_DET_STORING) || (CIF_IS[d68_1b] >= CIF_DET_STORING)
-                    || (CIF_IS[d68_2a] >= CIF_DET_STORING) || (CIF_IS[d68_2b] >= CIF_DET_STORING)
-                    || (!T[tfd68_1a] && !T[tfd68_1b]);
     #else
         DD[fc02] = FALSE;
         DD[fc03] = FALSE;
@@ -204,7 +197,6 @@ void rgv_add(void)
         DD[fc11] = IH[hfileFile68af] ? TRUE : FALSE;
         DD[fc22] = FALSE;
         DD[fc28] = FALSE;
-        DD[fc68] = FALSE;
     #endif
 
     DD_anyfase |= DD[fc02];
@@ -214,7 +206,6 @@ void rgv_add(void)
     DD_anyfase |= DD[fc11];
     DD_anyfase |= DD[fc22];
     DD_anyfase |= DD[fc28];
-    DD_anyfase |= DD[fc68];
 
     /* Meetkriterium MK */
     /* ---------------- */
@@ -236,10 +227,6 @@ void rgv_add(void)
     RT[thd22_1] = D[d22_1];
     MK1[fc22] = SVG[fc22] || G[fc22] && MK1[fc22] && (RT[thd22_1] || T[thd22_1]);
     MK1[fc28] = SVG[fc28] || G[fc28] && MK1[fc28] && MK[fc28];
-    RT[thd68_2a] = D[d68_2a];
-    RT[thd68_2b] = D[d68_2b];
-    MK1[fc68] = SVG[fc68] || G[fc68] && MK1[fc68] && (RT[thd68_2a] || T[thd68_2a]);
-    MK2[fc68] = SVG[fc68] || G[fc68] && MK2[fc68] && (RT[thd68_2b] || T[thd68_2b]);
 
     /* Opslaan 'oudste' TVG tijd volgens RoBuGrover */
     /* -------------------------------------------- */
@@ -254,7 +241,6 @@ void rgv_add(void)
     rgv_verlenggroentijd1(fc11, PRM[prmmintvg_11], PRM[prmmaxtvg_11], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc11], (boolv)!SCH[schrgv_snel], (boolv)DD[fc11], (boolv)(MK1[fc11]));
     rgv_verlenggroentijd2(fc22, PRM[prmmintvg_22], PRM[prmmaxtvg_22], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc22], (boolv)!SCH[schrgv_snel], (boolv)DD[fc22], (boolv)(MK1[fc22] && MK2[fc22]));
     rgv_verlenggroentijd1(fc28, PRM[prmmintvg_28], PRM[prmmaxtvg_28], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc28], (boolv)!SCH[schrgv_snel], (boolv)DD[fc28], (boolv)(MK1[fc28]));
-    rgv_verlenggroentijd2(fc68, PRM[prmmintvg_68], PRM[prmmaxtvg_68], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc68], (boolv)!SCH[schrgv_snel], (boolv)DD[fc68], (boolv)(MK1[fc68] && MK2[fc68]));
 
     /* Verlaag de verlenggroentijd indien geen primaire realisatie in de cyclus */
     /* ------------------------------------------------------------------------ */
@@ -265,7 +251,6 @@ void rgv_add(void)
     rgv_niet_primair(fc11, PRML, ML, SML, ML_MAX, hprreal11, PRM[prmmintvg_11], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc11]));
     rgv_niet_primair(fc22, PRML, ML, SML, ML_MAX, hprreal22, PRM[prmmintvg_22], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc22]));
     rgv_niet_primair(fc28, PRML, ML, SML, ML_MAX, hprreal28, PRM[prmmintvg_28], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc28]));
-    rgv_niet_primair(fc68, PRML, ML, SML, ML_MAX, hprreal68, PRM[prmmintvg_68], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc68]));
 
     /* Opslaan 'oude' TVG tijd volgens RoBuGrover */
     /* ------------------------------------------ */
@@ -274,28 +259,19 @@ void rgv_add(void)
     /* correctie verlenggroentijden t.o.v. de maximum gewenste cyclustijd */
     /* ------------------------------------------------------------------ */
     #if (defined AUTOMAAT || defined AUTOMAAT_TEST) && (!defined VISSIM)
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc68, fc05, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc05, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc05, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc08, fc11, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc08, fc11, END);
+        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #else
         for (teller = 0; teller < MAX_AANTAL_CONFLICTGROEPEN; ++teller) TC_rgv[teller] = 0;
         teller = 0;
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc68, fc05, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc05, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc05, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc08, fc11, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc08, fc11, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #endif
 
     #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || (defined VISSIM)
         teller = 0;
-        TC_string$[teller++] = "03 68 05";
-        TC_string$[teller++] = "05";
-        TC_string$[teller++] = "02 05";
-        TC_string$[teller++] = "08 11";
-        TC_string$[teller++] = "08 11";
+        TC_string$[teller++] = "03 05 08";
+        TC_string$[teller++] = "02 09 11";
     #endif
 
     /* corrigeer voor te veel verlaagde groentijden */
@@ -313,19 +289,13 @@ void rgv_add(void)
                 }
             }
     #if (defined AUTOMAAT || defined AUTOMAAT_TEST) && (!defined VISSIM)
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc68, fc05, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc05, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc05, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc08, fc11, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc08, fc11, END);
+        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #else
         for (teller = 0; teller < MAX_AANTAL_CONFLICTGROEPEN; ++teller) TC_rgv[teller] = 0;
         teller = 0;
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc68, fc05, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc05, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc05, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc08, fc11, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc08, fc11, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #endif
         }
     }
@@ -340,7 +310,6 @@ void rgv_add(void)
     TVG_max[fc11] = TVG_rgv[fc11];
     TVG_max[fc22] = TVG_rgv[fc22];
     TVG_max[fc28] = TVG_rgv[fc28];
-    TVG_max[fc68] = TVG_rgv[fc68];
 
     #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || (defined (VISSIM))
         /* Toon de waarden in de testomgeving */
@@ -359,7 +328,6 @@ void rgv_add(void)
         xyprintf (32, teller + 7, "TVG11=%4d", TVG_max[fc11]);
         xyprintf (32, teller + 8, "TVG22=%4d", TVG_max[fc22]);
         xyprintf (32, teller + 9, "TVG28=%4d", TVG_max[fc28]);
-        xyprintf (32, teller + 10, "TVG68=%4d", TVG_max[fc68]);
         
         */
     #endif 
