@@ -1,4 +1,4 @@
-/* extra_func_ris.h - gegenereerd met TLCGen 12.4.0.5 */
+/* extra_func_ris.h - gegenereerd met TLCGen 12.4.0.6 */
 
 /* EXTRA_FUNC_RIS.H */
 /* ================ */

@@ -8,14 +8,14 @@
 
    BESTAND:   123456sim.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.5
-   CCOLGEN:   12.4.0.5
+    TLCGEN:   12.4.0.6
+   CCOLGEN:   12.4.0.6
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.5   23-05-2024   TLCGen      Release versie TLCGen 
+ * 12.4.0.6   24-05-2024   TLCGen      Release versie TLCGen 
  *
  ************************************************************************************/
 
@@ -786,15 +786,15 @@ void simulation_parameters(void)
     Q4[73] = 0;
 
 #if (!defined AUTOMAAT_TEST)
-    LNK_code[74] = "dummykarin02bus";
-    IS_nr[74] = ddummykarin02bus;
+    LNK_code[74] = "dummykarin02karbus";
+    IS_nr[74] = ddummykarin02karbus;
     FC_nr[74] = NG;
     S_generator[74] = NG;
-    S_stopline[74] = 1800;
-    Q1[74] = 1;
-    Q2[74] = 1;
-    Q3[74] = 2;
-    Q4[74] = 1;
+    S_stopline[74] = 0;
+    Q1[74] = 0;
+    Q2[74] = 0;
+    Q3[74] = 0;
+    Q4[74] = 0;
 
     LNK_code[75] = "dummykarin03bus";
     IS_nr[75] = ddummykarin03bus;
@@ -886,15 +886,15 @@ void simulation_parameters(void)
     Q3[83] = 2;
     Q4[83] = 1;
 
-    LNK_code[84] = "dummykaruit02bus";
-    IS_nr[84] = ddummykaruit02bus;
+    LNK_code[84] = "dummykaruit02karbus";
+    IS_nr[84] = ddummykaruit02karbus;
     FC_nr[84] = NG;
     S_generator[84] = NG;
-    S_stopline[84] = 1800;
-    Q1[84] = 200;
-    Q2[84] = 200;
-    Q3[84] = 200;
-    Q4[84] = 200;
+    S_stopline[84] = 0;
+    Q1[84] = 0;
+    Q2[84] = 0;
+    Q3[84] = 0;
+    Q4[84] = 0;
 
     LNK_code[85] = "dummykaruit03bus";
     IS_nr[85] = ddummykaruit03bus;

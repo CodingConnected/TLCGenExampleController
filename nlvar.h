@@ -1,4 +1,4 @@
-/* nlvar.h - gegenereerd met TLCGen 12.4.0.5 */
+/* nlvar.h - gegenereerd met TLCGen 12.4.0.6 */
 
 #ifndef __NLVAR
 #define __NLVAR

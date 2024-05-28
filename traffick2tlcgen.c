@@ -1,4 +1,4 @@
-/* traffick2tlcgen.c - gegenereerd met TLCGen 12.4.0.5 */
+/* traffick2tlcgen.c - gegenereerd met TLCGen 12.4.0.6 */
 
 /* -------------------------------------------------------------------------------------------------------- */
 /* Traffick2TLCGen                                                               Versie 1.0.1 / 14 sep 2023 */

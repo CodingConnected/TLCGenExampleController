@@ -1,4 +1,4 @@
-/* extra_func.h - gegenereerd met TLCGen 12.4.0.5 */
+/* extra_func.h - gegenereerd met TLCGen 12.4.0.6 */
 
 #ifndef EXTRA_FUNC
 #define EXTRA_FUNC

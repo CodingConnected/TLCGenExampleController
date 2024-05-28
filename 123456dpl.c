@@ -8,14 +8,14 @@
 
    BESTAND:   123456dpl.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.5
-   CCOLGEN:   12.4.0.5
+    TLCGEN:   12.4.0.6
+   CCOLGEN:   12.4.0.6
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.5   23-05-2024   TLCGen      Release versie TLCGen 
+ * 12.4.0.6   24-05-2024   TLCGen      Release versie TLCGen 
  *
  ************************************************************************************/
 
@@ -151,7 +151,7 @@ void display_parameters(void)
     X_is[dopt08] = 39; Y_is[dopt08] = 317;
     X_is[dopt11] = 38; Y_is[dopt11] = 333;
 #if (!defined AUTOMAAT_TEST)
-    X_is[ddummykarin02bus] = 781; Y_is[ddummykarin02bus] = 32;
+    X_is[ddummykarin02karbus] = 785; Y_is[ddummykarin02karbus] = 30;
     X_is[ddummykarin03bus] = 781; Y_is[ddummykarin03bus] = 46;
     X_is[ddummykarin05bus] = 784; Y_is[ddummykarin05bus] = 59;
     X_is[ddummykarin08bus] = 779; Y_is[ddummykarin08bus] = 72;
@@ -161,7 +161,7 @@ void display_parameters(void)
     X_is[ddummykarin62bus] = 778; Y_is[ddummykarin62bus] = 123;
     X_is[ddummykarin67bus] = 779; Y_is[ddummykarin67bus] = 136;
     X_is[ddummykarin68bus] = 784; Y_is[ddummykarin68bus] = 152;
-    X_is[ddummykaruit02bus] = 796; Y_is[ddummykaruit02bus] = 33;
+    X_is[ddummykaruit02karbus] = 797; Y_is[ddummykaruit02karbus] = 33;
     X_is[ddummykaruit03bus] = 796; Y_is[ddummykaruit03bus] = 45;
     X_is[ddummykaruit05bus] = 793; Y_is[ddummykaruit05bus] = 60;
     X_is[ddummykaruit08bus] = 799; Y_is[ddummykaruit08bus] = 72;
@@ -210,9 +210,16 @@ void display_parameters(void)
     X_us[usincontrol] = NG; Y_us[usincontrol] = NG;
     X_us[usnocontrol] = NG; Y_us[usnocontrol] = NG;
     X_us[usFile68af] = 524; Y_us[usFile68af] = 101;
-    X_us[usovtevroeg02bus] = NG; Y_us[usovtevroeg02bus] = NG;
-    X_us[usovoptijd02bus] = NG; Y_us[usovoptijd02bus] = NG;
-    X_us[usovtelaat02bus] = NG; Y_us[usovtelaat02bus] = NG;
+    X_us[usplact] = 167; Y_us[usplact] = 205;
+    X_us[uskpact] = NG; Y_us[uskpact] = NG;
+    X_us[usmlact] = 167; Y_us[usmlact] = 191;
+    X_us[usmlpl] = NG; Y_us[usmlpl] = NG;
+    X_us[ustxtimer] = NG; Y_us[ustxtimer] = NG;
+    X_us[usklok] = NG; Y_us[usklok] = NG;
+    X_us[ushand] = NG; Y_us[ushand] = NG;
+    X_us[usPL1] = 167; Y_us[usPL1] = 220;
+    X_us[usPL2] = 168; Y_us[usPL2] = 232;
+    X_us[usPL3] = 171; Y_us[usPL3] = 243;
     X_us[usovtevroeg03bus] = NG; Y_us[usovtevroeg03bus] = NG;
     X_us[usovoptijd03bus] = NG; Y_us[usovoptijd03bus] = NG;
     X_us[usovtelaat03bus] = NG; Y_us[usovtelaat03bus] = NG;
@@ -243,9 +250,9 @@ void display_parameters(void)
     X_us[usmaxwt] = 275; Y_us[usmaxwt] = 36;
     X_us[uskarmelding] = 276; Y_us[uskarmelding] = 11;
     X_us[uskarog] = 277; Y_us[uskarog] = 24;
-    X_us[usovinm02bus] = 151; Y_us[usovinm02bus] = 30;
-    X_us[usovinm02risov] = 50; Y_us[usovinm02risov] = 33;
-    X_us[usovinm02risvrw] = 84; Y_us[usovinm02risvrw] = 34;
+    X_us[usovinm02karbus] = 152; Y_us[usovinm02karbus] = 33;
+    X_us[usovinm02risov] = 51; Y_us[usovinm02risov] = 35;
+    X_us[usovinm02risvrw] = 85; Y_us[usovinm02risvrw] = 34;
     X_us[usovinm03bus] = 149; Y_us[usovinm03bus] = 44;
     X_us[usovinm03risov] = 52; Y_us[usovinm03risov] = 45;
     X_us[usovinm03risvrw] = 83; Y_us[usovinm03risvrw] = 45;
@@ -310,6 +317,10 @@ void display_parameters(void)
     X_us[usptp_ptp123456oke] = 43; Y_us[usptp_ptp123456oke] = 379;
     X_us[usptp_ptp123456err] = 43; Y_us[usptp_ptp123456err] = 392;
     X_us[usrgv] = 275; Y_us[usrgv] = 107;
+    X_us[uswtv22] = NG; Y_us[uswtv22] = NG;
+    X_us[uswtv24] = NG; Y_us[uswtv24] = NG;
+    X_us[uswtv26] = NG; Y_us[uswtv26] = NG;
+    X_us[uswtv28] = NG; Y_us[uswtv28] = NG;
     X_us[uswtk21] = 376; Y_us[uswtk21] = 219;
     X_us[uswtk22] = 434; Y_us[uswtk22] = 214;
     X_us[uswtk24] = 504; Y_us[uswtk24] = 301;

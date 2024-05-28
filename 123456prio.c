@@ -8,14 +8,14 @@
 
    BESTAND:   123456prio.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.5
-   CCOLGEN:   12.4.0.5
+    TLCGEN:   12.4.0.6
+   CCOLGEN:   12.4.0.6
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.5   23-05-2024   TLCGen      Release versie TLCGen 
+ * 12.4.0.6   24-05-2024   TLCGen      Release versie TLCGen 
  *
  ************************************************************************************/
 
@@ -61,23 +61,21 @@
 
 boolv vertraag_kar_uitm[prioFCMAX];
 
-/* Traffick2TLCGen */
-#define TRAFFICK
-#include "traffick2tlcgen.h"
-
 #define MAX_AANTAL_INMELDINGEN           10
 #define DEFAULT_MAX_WACHTTIJD           120
 #define NO_REALISEREN_TOEGESTAAN
 
+/* Declareren OV settings functie halfstar */
+
 extern mulv DB_old[];
 
 #include "prio.c"
+#include "halfstar_prio.h"
 
 /* Variabele tbv start KAR ondergedrag timer bij starten regeling */
 static char startkarog = FALSE;
 
 /* Variabelen tbv registreren stiptheid bij inmelding via KAR: tbv bepalen prioriteit in OV.ADD */
-int iKARInSTP02bus[MAX_AANTAL_INMELDINGEN] = { 0 }; int iAantInm02bus = 0;
 int iKARInSTP03bus[MAX_AANTAL_INMELDINGEN] = { 0 }; int iAantInm03bus = 0;
 int iKARInSTP05bus[MAX_AANTAL_INMELDINGEN] = { 0 }; int iAantInm05bus = 0;
 int iKARInSTP08bus[MAX_AANTAL_INMELDINGEN] = { 0 }; int iAantInm08bus = 0;
@@ -181,6 +179,8 @@ void PrioInitExtra(void)
 
     int i;
 
+    PrioHalfstarInit();
+
     /* initialisatie variabelen vertraag_kar_uitm */
     /* ------------------------------------------ */
     for (i = 0; i < prioFCMAX; ++i)
@@ -207,7 +207,7 @@ void PrioInstellingen(void)
 
 
     /* Fasecyclus voor richtingen met PRIO */
-    iFC_PRIOix[prioFC02bus] = fc02;
+    iFC_PRIOix[prioFC02karbus] = fc02;
     iFC_PRIOix[prioFC02risov] = fc02;
     iFC_PRIOix[prioFC02risvrw] = fc02;
     iFC_PRIOix[prioFC03bus] = fc03;
@@ -251,7 +251,7 @@ void PrioInstellingen(void)
     iFC_PRIOix[hdFC68] = fc68;
 
     /* Index van de groenbewakingstimer */
-    iT_GBix[prioFC02bus] = tgb02bus;
+    iT_GBix[prioFC02karbus] = tgb02karbus;
     iT_GBix[prioFC02risov] = tgb02risov;
     iT_GBix[prioFC02risvrw] = tgb02risvrw;
     iT_GBix[prioFC03bus] = tgb03bus;
@@ -295,7 +295,7 @@ void PrioInstellingen(void)
     iT_GBix[hdFC68] = tgbhd68;
 
     /* Index van het hulpelement voor de ingreep */
-    iH_PRIOix[prioFC02bus] = hprio02bus;
+    iH_PRIOix[prioFC02karbus] = hprio02karbus;
     iH_PRIOix[prioFC02risov] = hprio02risov;
     iH_PRIOix[prioFC02risvrw] = hprio02risvrw;
     iH_PRIOix[prioFC03bus] = hprio03bus;
@@ -339,7 +339,7 @@ void PrioInstellingen(void)
     iH_PRIOix[hdFC68] = hhd68;
 
     /* Prioriteitsniveau */
-    iInstPrioriteitsNiveau[prioFC02bus] = PRM[prmprio02bus]/1000L;
+    iInstPrioriteitsNiveau[prioFC02karbus] = PRM[prmprio02karbus]/1000L;
     iInstPrioriteitsNiveau[prioFC02risov] = PRM[prmprio02risov]/1000L;
     iInstPrioriteitsNiveau[prioFC02risvrw] = PRM[prmprio02risvrw]/1000L;
     iInstPrioriteitsNiveau[prioFC03bus] = PRM[prmprio03bus]/1000L;
@@ -383,7 +383,7 @@ void PrioInstellingen(void)
     iInstPrioriteitsNiveau[hdFC68] = PRM[prmpriohd68]/1000L;
 
     /* Prioriteitsopties */
-    iInstPrioriteitsOpties[prioFC02bus] = BepaalPrioriteitsOpties(prmprio02bus);
+    iInstPrioriteitsOpties[prioFC02karbus] = BepaalPrioriteitsOpties(prmprio02karbus);
     iInstPrioriteitsOpties[prioFC02risov] = BepaalPrioriteitsOpties(prmprio02risov);
     iInstPrioriteitsOpties[prioFC02risvrw] = BepaalPrioriteitsOpties(prmprio02risvrw);
     iInstPrioriteitsOpties[prioFC03bus] = BepaalPrioriteitsOpties(prmprio03bus);
@@ -427,7 +427,7 @@ void PrioInstellingen(void)
     iInstPrioriteitsOpties[hdFC68] = BepaalPrioriteitsOpties(prmpriohd68);
 
     /* Groenbewakingstijd */
-    iGroenBewakingsTijd[prioFC02bus] = T_max[tgb02bus];
+    iGroenBewakingsTijd[prioFC02karbus] = T_max[tgb02karbus];
     iGroenBewakingsTijd[prioFC02risov] = T_max[tgb02risov];
     iGroenBewakingsTijd[prioFC02risvrw] = T_max[tgb02risvrw];
     iGroenBewakingsTijd[prioFC03bus] = T_max[tgb03bus];
@@ -471,7 +471,7 @@ void PrioInstellingen(void)
     iGroenBewakingsTijd[hdFC68] = T_max[tgbhd68];
 
     /* Ongehinderde rijtijd */
-    iRTSOngehinderd[prioFC02bus] = PRM[prmrto02bus];
+    iRTSOngehinderd[prioFC02karbus] = PRM[prmrto02karbus];
     iRTSOngehinderd[prioFC02risov] = PRM[prmrto02risov];
     iRTSOngehinderd[prioFC02risvrw] = PRM[prmrto02risvrw];
     iRTSOngehinderd[prioFC03bus] = PRM[prmrto03bus];
@@ -515,7 +515,7 @@ void PrioInstellingen(void)
     iRTSOngehinderd[hdFC68] = PRM[prmrtohd68];
 
     /* Beperkt gehinderde rijtijd */
-    iRTSBeperktGehinderd[prioFC02bus] = PRM[prmrtbg02bus];
+    iRTSBeperktGehinderd[prioFC02karbus] = PRM[prmrtbg02karbus];
     iRTSBeperktGehinderd[prioFC02risov] = PRM[prmrtbg02risov];
     iRTSBeperktGehinderd[prioFC02risvrw] = PRM[prmrtbg02risvrw];
     iRTSBeperktGehinderd[prioFC03bus] = PRM[prmrtbg03bus];
@@ -559,7 +559,7 @@ void PrioInstellingen(void)
     iRTSBeperktGehinderd[hdFC68] = PRM[prmrtbghd68];
 
     /* Gehinderde rijtijd */
-    iRTSGehinderd[prioFC02bus] = PRM[prmrtg02bus];
+    iRTSGehinderd[prioFC02karbus] = PRM[prmrtg02karbus];
     iRTSGehinderd[prioFC02risov] = PRM[prmrtg02risov];
     iRTSGehinderd[prioFC02risvrw] = PRM[prmrtg02risvrw];
     iRTSGehinderd[prioFC03bus] = PRM[prmrtg03bus];
@@ -603,7 +603,7 @@ void PrioInstellingen(void)
     iRTSGehinderd[hdFC68] = PRM[prmrtghd68];
 
     /* Ondermaximum */
-    iOnderMaximum[prioFC02bus] = PRM[prmomx02bus];
+    iOnderMaximum[prioFC02karbus] = PRM[prmomx02karbus];
     iOnderMaximum[prioFC02risov] = PRM[prmomx02risov];
     iOnderMaximum[prioFC02risvrw] = PRM[prmomx02risvrw];
     iOnderMaximum[prioFC03bus] = PRM[prmomx03bus];
@@ -647,7 +647,7 @@ void PrioInstellingen(void)
     iOnderMaximum[hdFC68] = 0;
 
     /* Blokkeringstijd */
-    iBlokkeringsTijd[prioFC02bus] = T_max[tblk02bus];
+    iBlokkeringsTijd[prioFC02karbus] = T_max[tblk02karbus];
     iBlokkeringsTijd[prioFC02risov] = T_max[tblk02risov];
     iBlokkeringsTijd[prioFC02risvrw] = T_max[tblk02risvrw];
     iBlokkeringsTijd[prioFC03bus] = T_max[tblk03bus];
@@ -692,7 +692,7 @@ void PrioInstellingen(void)
 
     /* Na aanspreken groenbewaking wordt de selectieve 
 	   detectie niet langer betrouwbaar gevonden */
-    iSelDetFoutNaGB[prioFC02bus] = SCH[schupinagb02bus];
+    iSelDetFoutNaGB[prioFC02karbus] = SCH[schupinagb02karbus];
     iSelDetFoutNaGB[prioFC02risov] = SCH[schupinagb02risov];
     iSelDetFoutNaGB[prioFC02risvrw] = SCH[schupinagb02risvrw];
     iSelDetFoutNaGB[prioFC03bus] = SCH[schupinagb03bus];
@@ -943,6 +943,8 @@ void PrioInstellingen(void)
     iPRM_ALTP[fc84] = PRM[prmaltp243384];
 
     /* Richting mag alternatief realiseren tijdens een OV ingreep */
+    if (IH[hmlact])
+    {
     iSCH_ALTG[fc02] = SCH[schaltg02];
     iSCH_ALTG[fc03] = SCH[schaltg03];
     iSCH_ALTG[fc05] = SCH[schaltg05];
@@ -950,22 +952,49 @@ void PrioInstellingen(void)
     iSCH_ALTG[fc09] = SCH[schaltg09];
     iSCH_ALTG[fc11] = SCH[schaltg11];
     iSCH_ALTG[fc21] = SCH[schaltg21];
-    iSCH_ALTG[fc22] = SCH[schaltg2232];
-    iSCH_ALTG[fc24] = SCH[schaltg243484];
+        iSCH_ALTG[fc22] = SCH[schaltg2232];
+        iSCH_ALTG[fc24] = SCH[schaltg243484];
     iSCH_ALTG[fc26] = SCH[schaltg26];
-    iSCH_ALTG[fc28] = SCH[schaltg2838];
+        iSCH_ALTG[fc28] = SCH[schaltg2838];
     iSCH_ALTG[fc31] = SCH[schaltg31];
-    iSCH_ALTG[fc32] = SCH[schaltg2232];
-    iSCH_ALTG[fc33] = SCH[schaltg3384];
-    iSCH_ALTG[fc34] = SCH[schaltg2434];
-    iSCH_ALTG[fc38] = SCH[schaltg2838];
+        iSCH_ALTG[fc32] = SCH[schaltg2232];
+        iSCH_ALTG[fc33] = SCH[schaltg3384];
+        iSCH_ALTG[fc34] = SCH[schaltg2434];
+        iSCH_ALTG[fc38] = SCH[schaltg2838];
     iSCH_ALTG[fc61] = SCH[schaltg61];
     iSCH_ALTG[fc62] = SCH[schaltg62];
     iSCH_ALTG[fc67] = SCH[schaltg67];
     iSCH_ALTG[fc68] = SCH[schaltg68];
     iSCH_ALTG[fc81] = SCH[schaltg81];
     iSCH_ALTG[fc82] = SCH[schaltg82];
-    iSCH_ALTG[fc84] = SCH[schaltg243384];
+        iSCH_ALTG[fc84] = SCH[schaltg243384];
+    }
+    else
+    {
+        iSCH_ALTG[fc02] = SCH[schaltghst02];
+        iSCH_ALTG[fc03] = SCH[schaltghst03];
+        iSCH_ALTG[fc05] = SCH[schaltghst05];
+        iSCH_ALTG[fc08] = SCH[schaltghst08];
+        iSCH_ALTG[fc09] = SCH[schaltghst09];
+        iSCH_ALTG[fc11] = SCH[schaltghst11];
+        iSCH_ALTG[fc21] = SCH[schaltghst21];
+        iSCH_ALTG[fc22] = SCH[schaltghst2232];
+        iSCH_ALTG[fc24] = SCH[schaltghst243484];
+        iSCH_ALTG[fc26] = SCH[schaltghst26];
+        iSCH_ALTG[fc28] = SCH[schaltghst2838];
+        iSCH_ALTG[fc31] = SCH[schaltghst31];
+        iSCH_ALTG[fc32] = SCH[schaltghst2232];
+        iSCH_ALTG[fc33] = SCH[schaltghst3384];
+        iSCH_ALTG[fc34] = SCH[schaltghst2434];
+        iSCH_ALTG[fc38] = SCH[schaltghst2838];
+        iSCH_ALTG[fc61] = SCH[schaltghst61];
+        iSCH_ALTG[fc62] = SCH[schaltghst62];
+        iSCH_ALTG[fc67] = SCH[schaltghst67];
+        iSCH_ALTG[fc68] = SCH[schaltghst68];
+        iSCH_ALTG[fc81] = SCH[schaltghst81];
+        iSCH_ALTG[fc82] = SCH[schaltghst82];
+        iSCH_ALTG[fc84] = SCH[schaltghst243384];
+    }
 
     /* Alternatieve realisatie mag worden
        afgekapt tijdens een OV ingreep als
@@ -1000,6 +1029,7 @@ void PrioInstellingen(void)
     /* De regeling maakt gebruik van langstwachtende alternatief */
     iLangstWachtendeAlternatief = 1;
 
+    PrioHalfstarSettings();
 }
 
 /* -----------------------------------------------------------
@@ -1013,10 +1043,10 @@ void PrioInstellingen(void)
 void RijTijdScenario(void)
 {
     /* Vaststellen rijtijdscenarios */
-    PrioRijTijdScenario(prioFC02bus, d02_1a, d02_2a, tbtovg02bus);
-    PrioRijTijdScenario(prioFC02bus, d02_1b, d02_2b, tbtovg02bus);
-    PrioRijTijdScenario(prioFC02bus, NG, d02_3a, NG);
-    PrioRijTijdScenario(prioFC02bus, NG, d02_3b, NG);
+    PrioRijTijdScenario(prioFC02karbus, d02_1a, d02_2a, tbtovg02karbus);
+    PrioRijTijdScenario(prioFC02karbus, d02_1b, d02_2b, tbtovg02karbus);
+    PrioRijTijdScenario(prioFC02karbus, NG, d02_3a, NG);
+    PrioRijTijdScenario(prioFC02karbus, NG, d02_3b, NG);
 
     PrioRijTijdScenario(prioFC02risov, d02_1a, d02_2a, tbtovg02risov);
     PrioRijTijdScenario(prioFC02risov, d02_1b, d02_2b, tbtovg02risov);
@@ -1126,7 +1156,7 @@ void RijTijdScenario(void)
 
 
 #ifndef NO_TIMETOX
-    if ((P[fc02] & BIT11) && C[cvc02bus] && (iRijTimer[prioFC02bus] < iRijTijd[prioFC02bus])) iRijTijd[prioFC02bus] = 0;
+    if ((P[fc02] & BIT11) && C[cvc02karbus] && (iRijTimer[prioFC02karbus] < iRijTijd[prioFC02karbus])) iRijTijd[prioFC02karbus] = 0;
     if ((P[fc02] & BIT11) && C[cvc02risov] && (iRijTimer[prioFC02risov] < iRijTijd[prioFC02risov])) iRijTijd[prioFC02risov] = 0;
     if ((P[fc02] & BIT11) && C[cvc02risvrw] && (iRijTimer[prioFC02risvrw] < iRijTijd[prioFC02risvrw])) iRijTijd[prioFC02risvrw] = 0;
     if ((P[fc03] & BIT11) && C[cvc03bus] && (iRijTimer[prioFC03bus] < iRijTijd[prioFC03bus])) iRijTijd[prioFC03bus] = 0;
@@ -1188,7 +1218,7 @@ void InUitMelden(void)
     int i = 0;
 
     /* Pririteit-inmeldingen */
-    PrioInmelden(prioFC02bus, SH[hprioin02bus], iInstPrioriteitsNiveau[prioFC02bus], iInstPrioriteitsOpties[prioFC02bus], 0, 0);
+    PrioInmelden(prioFC02karbus, SH[hprioin02karbus], iInstPrioriteitsNiveau[prioFC02karbus], iInstPrioriteitsOpties[prioFC02karbus], 0, 0);
     PrioInmelden(prioFC02risov, SH[hprioin02risov], iInstPrioriteitsNiveau[prioFC02risov], iInstPrioriteitsOpties[prioFC02risov], 0, 0);
     PrioInmelden(prioFC02risvrw, SH[hprioin02risvrw], iInstPrioriteitsNiveau[prioFC02risvrw], iInstPrioriteitsOpties[prioFC02risvrw], 0, 0);
     PrioInmelden(prioFC03bus, SH[hprioin03bus], iInstPrioriteitsNiveau[prioFC03bus], iInstPrioriteitsOpties[prioFC03bus], 0, 0);
@@ -1222,7 +1252,7 @@ void InUitMelden(void)
     PrioInmelden(prioFC68risvrw, SH[hprioin68risvrw], iInstPrioriteitsNiveau[prioFC68risvrw], iInstPrioriteitsOpties[prioFC68risvrw], 0, 0);
 
     /* Pririteit-uitmeldingen */
-    PrioUitmelden(prioFC02bus, SH[hpriouit02bus]);
+    PrioUitmelden(prioFC02karbus, SH[hpriouit02karbus]);
     PrioUitmelden(prioFC02risov, SH[hpriouit02risov]);
     PrioUitmelden(prioFC02risvrw, SH[hpriouit02risvrw]);
     PrioUitmelden(prioFC03bus, SH[hpriouit03bus]);
@@ -1292,35 +1322,35 @@ void InUitMelden(void)
 
 
     /* Inmelding fc02 type Bus */
-    IH[hprioin02bus] = IH[hprioin02buskar] = FALSE;
-    if (SCH[schprioin02buskar])
+    IH[hprioin02karbus] = IH[hprioin02karbuskar] = FALSE;
+    if (SCH[schprioin02karbuskar])
     {
-        IH[hprioin02buskar] = DSIMeldingPRIO_V1(0, PRM[prmvtgcat02bus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSIN, WDNST_check_in(fc02));
+        IH[hprioin02karbuskar] = RT[tprioin02karbuskar] = !T[tprioin02karbus] && !T[tprioin02karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat02karbus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSIN, TRUE);
     }
-    IH[hprioin02bus] = IH[hprioin02buskar];
+    IH[hprioin02karbus] = RT[tprioin02karbus] = IH[hprioin02karbuskar];
 
     /* Uitmelding fc02 type Bus */
-    IH[hpriouit02bus] = IH[hpriouit02buskar] = FALSE;
-    if (SCH[schpriouit02buskar])
+    IH[hpriouit02karbus] = IH[hpriouit02karbuskar] = FALSE;
+    if (SCH[schpriouit02karbuskar])
     {
-        IH[hpriouit02buskar] = DSIMeldingPRIO_V2(fc02, prioFC02bus, 0, PRM[prmvtgcat02bus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSUIT, WDNST_check_uit(fc02));
+        IH[hpriouit02karbuskar] = RT[tpriouit02karbuskar] = !T[tpriouit02karbus] && !T[tpriouit02karbuskar] && DSIMeldingPRIO_V2(fc02, prioFC02karbus, 0, PRM[prmvtgcat02karbus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSUIT, TRUE);
     }
-    IH[hpriouit02bus] = IH[hpriouit02buskar];
+    IH[hpriouit02karbus] = RT[tpriouit02karbus] = IH[hpriouit02karbuskar];
 
-    /* Inmelding fc02 type NG */
+    /* Inmelding fc02 type Bus */
     IH[hprioin02risov] = IH[hprioin02risovris] = FALSE;
 #ifndef NO_RIS
     if (SCH[schprioin02risovris])
     {
-        IH[hprioin02risovris] = RT[tprioin02risovris] = 
+        IH[hprioin02risovris] = 
             ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risov], SYSTEM_ITF1, PRM[prmrislaneid02risov_1], PRM[prmrisstationtype02risov], PRM[prmrisstart02risov], PRM[prmrisend02risov], PRM[prmrisrole02risov], PRM[prmrissubrole02risov], PRM[prmrisimportance02risov], PRM[prmriseta02risov], prioFC02risov) ||
             ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risov], SYSTEM_ITF1, PRM[prmrislaneid02risov_2], PRM[prmrisstationtype02risov], PRM[prmrisstart02risov], PRM[prmrisend02risov], PRM[prmrisrole02risov], PRM[prmrissubrole02risov], PRM[prmrisimportance02risov], PRM[prmriseta02risov], prioFC02risov);
         if (IH[hprioin02risovris]) iPrioriteitNooitAfkappen[prioFC02risov] = TRUE;
     }
 #endif /* NO_RIS */
-    IH[hprioin02risov] = IH[hprioin02risovris];
+    IH[hprioin02risov] = RT[tprioin02risov] = IH[hprioin02risovris];
 
-    /* Uitmelding fc02 type NG */
+    /* Uitmelding fc02 type Bus */
     IH[hpriouit02risov] = IH[hpriouit02risovris] = FALSE;
 #ifndef NO_RIS
     if (SCH[schpriouit02risovris])
@@ -1336,13 +1366,13 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schprioin02risvrwris])
     {
-        IH[hprioin02risvrwris] = RT[tprioin02risvrwris] = 
+        IH[hprioin02risvrwris] = 
             ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risvrw], SYSTEM_ITF1, PRM[prmrislaneid02risvrw_1], PRM[prmrisstationtype02risvrw], PRM[prmrisstart02risvrw], PRM[prmrisend02risvrw], PRM[prmrisrole02risvrw], PRM[prmrissubrole02risvrw], PRM[prmrisimportance02risvrw], PRM[prmriseta02risvrw], prioFC02risvrw) ||
             ris_inmelding_selectief(fc02, PRM[prmrisapproachid02risvrw], SYSTEM_ITF1, PRM[prmrislaneid02risvrw_2], PRM[prmrisstationtype02risvrw], PRM[prmrisstart02risvrw], PRM[prmrisend02risvrw], PRM[prmrisrole02risvrw], PRM[prmrissubrole02risvrw], PRM[prmrisimportance02risvrw], PRM[prmriseta02risvrw], prioFC02risvrw);
         if (IH[hprioin02risvrwris]) iPrioriteitNooitAfkappen[prioFC02risvrw] = TRUE;
     }
 #endif /* NO_RIS */
-    IH[hprioin02risvrw] = IH[hprioin02risvrwris];
+    IH[hprioin02risvrw] = RT[tprioin02risvrw] = IH[hprioin02risvrwris];
 
     /* Uitmelding fc02 type Vrachtwagen */
     IH[hpriouit02risvrw] = IH[hpriouit02risvrwris] = FALSE;
@@ -2080,70 +2110,70 @@ void InUitMelden(void)
     IH[hhdin68] = IH[hhdin68kar] || IH[hhdin68ris];
 
     /* Uitmelding HD fc02 */
-    IH[hhduit02kar] = RT[thduit02kar] = !T[thduit02kar] && SCH[schhduit02kar] && (DSIMelding_HD_V1(2, CIF_DSUIT, FALSE));
+    IH[hhduit02kar] = RT[thduit02kar] = !T[thduit02kar] && SCH[schhduit02kar] && (DSIMelding_HD_V1(PRM[prmkarsghd02], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit02ris] = SCH[schhduit02ris] && (ris_uitmelding_selectief(hdFC02));
 #endif /* NO_RIS */
     IH[hhduit02] = IH[hhduit02kar] || IH[hhduit02ris];
 
     /* Uitmelding HD fc03 */
-    IH[hhduit03kar] = RT[thduit03kar] = !T[thduit03kar] && SCH[schhduit03kar] && (DSIMelding_HD_V1(3, CIF_DSUIT, FALSE));
+    IH[hhduit03kar] = RT[thduit03kar] = !T[thduit03kar] && SCH[schhduit03kar] && (DSIMelding_HD_V1(PRM[prmkarsghd03], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit03ris] = SCH[schhduit03ris] && (ris_uitmelding_selectief(hdFC03));
 #endif /* NO_RIS */
     IH[hhduit03] = IH[hhduit03kar] || IH[hhduit03ris];
 
     /* Uitmelding HD fc05 */
-    IH[hhduit05kar] = RT[thduit05kar] = !T[thduit05kar] && SCH[schhduit05kar] && (DSIMelding_HD_V1(5, CIF_DSUIT, FALSE));
+    IH[hhduit05kar] = RT[thduit05kar] = !T[thduit05kar] && SCH[schhduit05kar] && (DSIMelding_HD_V1(PRM[prmkarsghd05], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit05ris] = SCH[schhduit05ris] && (ris_uitmelding_selectief(hdFC05));
 #endif /* NO_RIS */
     IH[hhduit05] = IH[hhduit05kar] || IH[hhduit05ris];
 
     /* Uitmelding HD fc08 */
-    IH[hhduit08kar] = RT[thduit08kar] = !T[thduit08kar] && SCH[schhduit08kar] && (DSIMelding_HD_V1(8, CIF_DSUIT, FALSE));
+    IH[hhduit08kar] = RT[thduit08kar] = !T[thduit08kar] && SCH[schhduit08kar] && (DSIMelding_HD_V1(PRM[prmkarsghd08], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit08ris] = SCH[schhduit08ris] && (ris_uitmelding_selectief(hdFC08));
 #endif /* NO_RIS */
     IH[hhduit08] = IH[hhduit08kar] || IH[hhduit08ris];
 
     /* Uitmelding HD fc09 */
-    IH[hhduit09kar] = RT[thduit09kar] = !T[thduit09kar] && SCH[schhduit09kar] && (DSIMelding_HD_V1(9, CIF_DSUIT, FALSE));
+    IH[hhduit09kar] = RT[thduit09kar] = !T[thduit09kar] && SCH[schhduit09kar] && (DSIMelding_HD_V1(PRM[prmkarsghd09], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit09ris] = SCH[schhduit09ris] && (ris_uitmelding_selectief(hdFC09));
 #endif /* NO_RIS */
     IH[hhduit09] = IH[hhduit09kar] || IH[hhduit09ris];
 
     /* Uitmelding HD fc11 */
-    IH[hhduit11kar] = RT[thduit11kar] = !T[thduit11kar] && SCH[schhduit11kar] && (DSIMelding_HD_V1(11, CIF_DSUIT, FALSE));
+    IH[hhduit11kar] = RT[thduit11kar] = !T[thduit11kar] && SCH[schhduit11kar] && (DSIMelding_HD_V1(PRM[prmkarsghd11], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit11ris] = SCH[schhduit11ris] && (ris_uitmelding_selectief(hdFC11));
 #endif /* NO_RIS */
     IH[hhduit11] = IH[hhduit11kar] || IH[hhduit11ris];
 
     /* Uitmelding HD fc61 */
-    IH[hhduit61kar] = RT[thduit61kar] = !T[thduit61kar] && SCH[schhduit61kar] && (DSIMelding_HD_V1(61, CIF_DSUIT, FALSE));
+    IH[hhduit61kar] = RT[thduit61kar] = !T[thduit61kar] && SCH[schhduit61kar] && (DSIMelding_HD_V1(PRM[prmkarsghd61], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit61ris] = SCH[schhduit61ris] && (ris_uitmelding_selectief(hdFC61));
 #endif /* NO_RIS */
     IH[hhduit61] = IH[hhduit61kar] || IH[hhduit61ris];
 
     /* Uitmelding HD fc62 */
-    IH[hhduit62kar] = RT[thduit62kar] = !T[thduit62kar] && SCH[schhduit62kar] && (DSIMelding_HD_V1(62, CIF_DSUIT, FALSE));
+    IH[hhduit62kar] = RT[thduit62kar] = !T[thduit62kar] && SCH[schhduit62kar] && (DSIMelding_HD_V1(PRM[prmkarsghd62], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit62ris] = SCH[schhduit62ris] && (ris_uitmelding_selectief(hdFC62));
 #endif /* NO_RIS */
     IH[hhduit62] = IH[hhduit62kar] || IH[hhduit62ris];
 
     /* Uitmelding HD fc67 */
-    IH[hhduit67kar] = RT[thduit67kar] = !T[thduit67kar] && SCH[schhduit67kar] && (DSIMelding_HD_V1(67, CIF_DSUIT, FALSE));
+    IH[hhduit67kar] = RT[thduit67kar] = !T[thduit67kar] && SCH[schhduit67kar] && (DSIMelding_HD_V1(PRM[prmkarsghd67], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit67ris] = SCH[schhduit67ris] && (ris_uitmelding_selectief(hdFC67));
 #endif /* NO_RIS */
     IH[hhduit67] = IH[hhduit67kar] || IH[hhduit67ris];
 
     /* Uitmelding HD fc68 */
-    IH[hhduit68kar] = RT[thduit68kar] = !T[thduit68kar] && SCH[schhduit68kar] && (DSIMelding_HD_V1(68, CIF_DSUIT, FALSE));
+    IH[hhduit68kar] = RT[thduit68kar] = !T[thduit68kar] && SCH[schhduit68kar] && (DSIMelding_HD_V1(PRM[prmkarsghd68], CIF_DSUIT, FALSE));
 #ifndef NO_RIS
     IH[hhduit68ris] = SCH[schhduit68ris] && (ris_uitmelding_selectief(hdFC68));
 #endif /* NO_RIS */
@@ -2151,7 +2181,6 @@ void InUitMelden(void)
 
     /* Bijhouden stiptheidsklassen ingemelde voertuigen */
     /* Bij inmelding: registeren stiptheidsklasse achterste voertuig */
-    TrackStiptObvTSTP(hprioin02bus, hpriouit02bus, &iAantInm02bus, iKARInSTP02bus, hprio02bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
     TrackStiptObvTSTP(hprioin03bus, hpriouit03bus, &iAantInm03bus, iKARInSTP03bus, hprio03bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
     TrackStiptObvTSTP(hprioin05bus, hpriouit05bus, &iAantInm05bus, iKARInSTP05bus, hprio05bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
     TrackStiptObvTSTP(hprioin08bus, hpriouit08bus, &iAantInm08bus, iKARInSTP08bus, hprio08bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
@@ -2161,7 +2190,6 @@ void InUitMelden(void)
     TrackStiptObvTSTP(hprioin62bus, hpriouit62bus, &iAantInm62bus, iKARInSTP62bus, hprio62bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
     TrackStiptObvTSTP(hprioin67bus, hpriouit67bus, &iAantInm67bus, iKARInSTP67bus, hprio67bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
     TrackStiptObvTSTP(hprioin68bus, hpriouit68bus, &iAantInm68bus, iKARInSTP68bus, hprio68bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
-    MM[mstp02bus] = iAantInm02bus > 0 ? iKARInSTP02bus[0] : 0;
     MM[mstp03bus] = iAantInm03bus > 0 ? iKARInSTP03bus[0] : 0;
     MM[mstp05bus] = iAantInm05bus > 0 ? iKARInSTP05bus[0] : 0;
     MM[mstp08bus] = iAantInm08bus > 0 ? iKARInSTP08bus[0] : 0;
@@ -2179,14 +2207,6 @@ void InUitMelden(void)
     if (granted_verstrekt[fc03] == 2) granted_verstrekt[fc02] = 2;
 #endif /* NO_RIS */
 
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen])
-    {
-        fiets_voorrang_module();
-        buffer_stiptheid_info();
-        busbaan_verlos_prioriteit();
-    }
-
 
     /* Bijhouden melding en ondergedrag KAR */
     RT[tkarmelding] = CIF_DSIWIJZ != 0 && CIF_DSI[CIF_DSI_LUS] == 0;
@@ -2201,16 +2221,24 @@ void InUitMelden(void)
 
 void OnderMaximumExtra(void)
 {
+    if (SCH[schovpriople]) PrioHalfstarOnderMaximum();
+
 }
 void AfkapGroenExtra(void)
 {
+    if (SCH[schovpriople]) PrioHalfstarAfkapGroen();
+
 }
 void StartGroenMomentenExtra(void)
 {
+    if (SCH[schovpriople]) PrioHalfstarStartGroenMomenten();
+
 }
 void PrioAfkappenExtra(void)
 {
     int fc;
+
+    if (SCH[schovpriople]) PrioHalfstarAfkappen();
 
 #ifndef NO_TIMETOX
 if (SCH[schconfidence15fix])
@@ -2292,59 +2320,126 @@ if (SCH[schconfidence15fix])
 }
 void PrioTerugkomGroenExtra(void)
 {
+    if (SCH[schovpriople]) PrioHalfstarTerugkomGroen();
+
 }
 void PrioGroenVasthoudenExtra(void)
 {
+    if (SCH[schovpriople]) PrioHalfstarGroenVasthouden();
+
 }
 void PrioMeetKriteriumExtra(void)
 {
+    if (SCH[schovpriople]) PrioHalfstarMeetKriterium();
+
 }
 /* ------------------------------------
    Prioriteitsopties voor PRIO ingrepen
    ------------------------------------ */
 void PrioriteitsOpties(void)
 {
+    int fc;
+
     /* Geconditioneerde prioriteit instellen */
-    IH[hstp02bus] = !C[cvchd02] && !C[cvchd03] && SCH[schovstipt02bus];
-    IH[hstp03bus] = !C[cvchd03] && SCH[schovstipt03bus];
-    IH[hstp05bus] = !C[cvchd05] && SCH[schovstipt05bus];
-    IH[hstp08bus] = !C[cvchd08] && SCH[schovstipt08bus];
-    IH[hstp09bus] = !C[cvchd09] && SCH[schovstipt09bus];
-    IH[hstp11bus] = !C[cvchd11] && SCH[schovstipt11bus];
-    IH[hstp61bus] = !C[cvchd61] && SCH[schovstipt61bus];
-    IH[hstp62bus] = !C[cvchd62] && SCH[schovstipt62bus];
-    IH[hstp67bus] = !C[cvchd67] && SCH[schovstipt67bus];
-    IH[hstp68bus] = !C[cvchd68] && SCH[schovstipt68bus];
-    if (IH[hstp02bus] && (MM[mstp02bus] == CIF_TE_VROEG || !MM[mstp02bus])) iPrioriteitsOpties[prioFC02bus] = BepaalPrioriteitsOpties(prmovstipttevroeg02bus);
-    if (IH[hstp03bus] && (MM[mstp03bus] == CIF_TE_VROEG || !MM[mstp03bus])) iPrioriteitsOpties[prioFC03bus] = BepaalPrioriteitsOpties(prmovstipttevroeg03bus);
-    if (IH[hstp05bus] && (MM[mstp05bus] == CIF_TE_VROEG || !MM[mstp05bus])) iPrioriteitsOpties[prioFC05bus] = BepaalPrioriteitsOpties(prmovstipttevroeg05bus);
-    if (IH[hstp08bus] && (MM[mstp08bus] == CIF_TE_VROEG || !MM[mstp08bus])) iPrioriteitsOpties[prioFC08bus] = BepaalPrioriteitsOpties(prmovstipttevroeg08bus);
-    if (IH[hstp09bus] && (MM[mstp09bus] == CIF_TE_VROEG || !MM[mstp09bus])) iPrioriteitsOpties[prioFC09bus] = BepaalPrioriteitsOpties(prmovstipttevroeg09bus);
-    if (IH[hstp11bus] && (MM[mstp11bus] == CIF_TE_VROEG || !MM[mstp11bus])) iPrioriteitsOpties[prioFC11bus] = BepaalPrioriteitsOpties(prmovstipttevroeg11bus);
-    if (IH[hstp61bus] && (MM[mstp61bus] == CIF_TE_VROEG || !MM[mstp61bus])) iPrioriteitsOpties[prioFC61bus] = BepaalPrioriteitsOpties(prmovstipttevroeg61bus);
-    if (IH[hstp62bus] && (MM[mstp62bus] == CIF_TE_VROEG || !MM[mstp62bus])) iPrioriteitsOpties[prioFC62bus] = BepaalPrioriteitsOpties(prmovstipttevroeg62bus);
-    if (IH[hstp67bus] && (MM[mstp67bus] == CIF_TE_VROEG || !MM[mstp67bus])) iPrioriteitsOpties[prioFC67bus] = BepaalPrioriteitsOpties(prmovstipttevroeg67bus);
-    if (IH[hstp68bus] && (MM[mstp68bus] == CIF_TE_VROEG || !MM[mstp68bus])) iPrioriteitsOpties[prioFC68bus] = BepaalPrioriteitsOpties(prmovstipttevroeg68bus);
-    if (IH[hstp02bus] && (MM[mstp02bus] == CIF_OP_TIJD || !MM[mstp02bus])) iPrioriteitsOpties[prioFC02bus] = BepaalPrioriteitsOpties(prmovstiptoptijd02bus);
-    if (IH[hstp03bus] && (MM[mstp03bus] == CIF_OP_TIJD || !MM[mstp03bus])) iPrioriteitsOpties[prioFC03bus] = BepaalPrioriteitsOpties(prmovstiptoptijd03bus);
-    if (IH[hstp05bus] && (MM[mstp05bus] == CIF_OP_TIJD || !MM[mstp05bus])) iPrioriteitsOpties[prioFC05bus] = BepaalPrioriteitsOpties(prmovstiptoptijd05bus);
-    if (IH[hstp08bus] && (MM[mstp08bus] == CIF_OP_TIJD || !MM[mstp08bus])) iPrioriteitsOpties[prioFC08bus] = BepaalPrioriteitsOpties(prmovstiptoptijd08bus);
-    if (IH[hstp09bus] && (MM[mstp09bus] == CIF_OP_TIJD || !MM[mstp09bus])) iPrioriteitsOpties[prioFC09bus] = BepaalPrioriteitsOpties(prmovstiptoptijd09bus);
-    if (IH[hstp11bus] && (MM[mstp11bus] == CIF_OP_TIJD || !MM[mstp11bus])) iPrioriteitsOpties[prioFC11bus] = BepaalPrioriteitsOpties(prmovstiptoptijd11bus);
-    if (IH[hstp61bus] && (MM[mstp61bus] == CIF_OP_TIJD || !MM[mstp61bus])) iPrioriteitsOpties[prioFC61bus] = BepaalPrioriteitsOpties(prmovstiptoptijd61bus);
-    if (IH[hstp62bus] && (MM[mstp62bus] == CIF_OP_TIJD || !MM[mstp62bus])) iPrioriteitsOpties[prioFC62bus] = BepaalPrioriteitsOpties(prmovstiptoptijd62bus);
-    if (IH[hstp67bus] && (MM[mstp67bus] == CIF_OP_TIJD || !MM[mstp67bus])) iPrioriteitsOpties[prioFC67bus] = BepaalPrioriteitsOpties(prmovstiptoptijd67bus);
-    if (IH[hstp68bus] && (MM[mstp68bus] == CIF_OP_TIJD || !MM[mstp68bus])) iPrioriteitsOpties[prioFC68bus] = BepaalPrioriteitsOpties(prmovstiptoptijd68bus);
-    if (IH[hstp02bus] && (MM[mstp02bus] == CIF_TE_LAAT || !MM[mstp02bus])) iPrioriteitsOpties[prioFC02bus] = BepaalPrioriteitsOpties(prmovstipttelaat02bus);
-    if (IH[hstp03bus] && (MM[mstp03bus] == CIF_TE_LAAT || !MM[mstp03bus])) iPrioriteitsOpties[prioFC03bus] = BepaalPrioriteitsOpties(prmovstipttelaat03bus);
-    if (IH[hstp05bus] && (MM[mstp05bus] == CIF_TE_LAAT || !MM[mstp05bus])) iPrioriteitsOpties[prioFC05bus] = BepaalPrioriteitsOpties(prmovstipttelaat05bus);
-    if (IH[hstp08bus] && (MM[mstp08bus] == CIF_TE_LAAT || !MM[mstp08bus])) iPrioriteitsOpties[prioFC08bus] = BepaalPrioriteitsOpties(prmovstipttelaat08bus);
-    if (IH[hstp09bus] && (MM[mstp09bus] == CIF_TE_LAAT || !MM[mstp09bus])) iPrioriteitsOpties[prioFC09bus] = BepaalPrioriteitsOpties(prmovstipttelaat09bus);
-    if (IH[hstp11bus] && (MM[mstp11bus] == CIF_TE_LAAT || !MM[mstp11bus])) iPrioriteitsOpties[prioFC11bus] = BepaalPrioriteitsOpties(prmovstipttelaat11bus);
-    if (IH[hstp61bus] && (MM[mstp61bus] == CIF_TE_LAAT || !MM[mstp61bus])) iPrioriteitsOpties[prioFC61bus] = BepaalPrioriteitsOpties(prmovstipttelaat61bus);
-    if (IH[hstp62bus] && (MM[mstp62bus] == CIF_TE_LAAT || !MM[mstp62bus])) iPrioriteitsOpties[prioFC62bus] = BepaalPrioriteitsOpties(prmovstipttelaat62bus);
-    if (IH[hstp67bus] && (MM[mstp67bus] == CIF_TE_LAAT || !MM[mstp67bus])) iPrioriteitsOpties[prioFC67bus] = BepaalPrioriteitsOpties(prmovstipttelaat67bus);
-    if (IH[hstp68bus] && (MM[mstp68bus] == CIF_TE_LAAT || !MM[mstp68bus])) iPrioriteitsOpties[prioFC68bus] = BepaalPrioriteitsOpties(prmovstipttelaat68bus);
+    /* Geconditioneerde prioriteit werkt nog niet in combinatie met prioriteit tijdens PL regelen */
+    if (!IH[hplact])
+    {
+        IH[hstp03bus] = !C[cvchd03] && SCH[schovstipt03bus];
+        IH[hstp05bus] = !C[cvchd05] && SCH[schovstipt05bus];
+        IH[hstp08bus] = !C[cvchd08] && SCH[schovstipt08bus];
+        IH[hstp09bus] = !C[cvchd09] && SCH[schovstipt09bus];
+        IH[hstp11bus] = !C[cvchd11] && SCH[schovstipt11bus];
+        IH[hstp61bus] = !C[cvchd61] && SCH[schovstipt61bus];
+        IH[hstp62bus] = !C[cvchd62] && SCH[schovstipt62bus];
+        IH[hstp67bus] = !C[cvchd67] && SCH[schovstipt67bus];
+        IH[hstp68bus] = !C[cvchd68] && SCH[schovstipt68bus];
+        if (IH[hstp03bus] && (MM[mstp03bus] == CIF_TE_VROEG || !MM[mstp03bus])) iPrioriteitsOpties[prioFC03bus] = BepaalPrioriteitsOpties(prmovstipttevroeg03bus);
+        if (IH[hstp05bus] && (MM[mstp05bus] == CIF_TE_VROEG || !MM[mstp05bus])) iPrioriteitsOpties[prioFC05bus] = BepaalPrioriteitsOpties(prmovstipttevroeg05bus);
+        if (IH[hstp08bus] && (MM[mstp08bus] == CIF_TE_VROEG || !MM[mstp08bus])) iPrioriteitsOpties[prioFC08bus] = BepaalPrioriteitsOpties(prmovstipttevroeg08bus);
+        if (IH[hstp09bus] && (MM[mstp09bus] == CIF_TE_VROEG || !MM[mstp09bus])) iPrioriteitsOpties[prioFC09bus] = BepaalPrioriteitsOpties(prmovstipttevroeg09bus);
+        if (IH[hstp11bus] && (MM[mstp11bus] == CIF_TE_VROEG || !MM[mstp11bus])) iPrioriteitsOpties[prioFC11bus] = BepaalPrioriteitsOpties(prmovstipttevroeg11bus);
+        if (IH[hstp61bus] && (MM[mstp61bus] == CIF_TE_VROEG || !MM[mstp61bus])) iPrioriteitsOpties[prioFC61bus] = BepaalPrioriteitsOpties(prmovstipttevroeg61bus);
+        if (IH[hstp62bus] && (MM[mstp62bus] == CIF_TE_VROEG || !MM[mstp62bus])) iPrioriteitsOpties[prioFC62bus] = BepaalPrioriteitsOpties(prmovstipttevroeg62bus);
+        if (IH[hstp67bus] && (MM[mstp67bus] == CIF_TE_VROEG || !MM[mstp67bus])) iPrioriteitsOpties[prioFC67bus] = BepaalPrioriteitsOpties(prmovstipttevroeg67bus);
+        if (IH[hstp68bus] && (MM[mstp68bus] == CIF_TE_VROEG || !MM[mstp68bus])) iPrioriteitsOpties[prioFC68bus] = BepaalPrioriteitsOpties(prmovstipttevroeg68bus);
+        if (IH[hstp03bus] && (MM[mstp03bus] == CIF_OP_TIJD || !MM[mstp03bus])) iPrioriteitsOpties[prioFC03bus] = BepaalPrioriteitsOpties(prmovstiptoptijd03bus);
+        if (IH[hstp05bus] && (MM[mstp05bus] == CIF_OP_TIJD || !MM[mstp05bus])) iPrioriteitsOpties[prioFC05bus] = BepaalPrioriteitsOpties(prmovstiptoptijd05bus);
+        if (IH[hstp08bus] && (MM[mstp08bus] == CIF_OP_TIJD || !MM[mstp08bus])) iPrioriteitsOpties[prioFC08bus] = BepaalPrioriteitsOpties(prmovstiptoptijd08bus);
+        if (IH[hstp09bus] && (MM[mstp09bus] == CIF_OP_TIJD || !MM[mstp09bus])) iPrioriteitsOpties[prioFC09bus] = BepaalPrioriteitsOpties(prmovstiptoptijd09bus);
+        if (IH[hstp11bus] && (MM[mstp11bus] == CIF_OP_TIJD || !MM[mstp11bus])) iPrioriteitsOpties[prioFC11bus] = BepaalPrioriteitsOpties(prmovstiptoptijd11bus);
+        if (IH[hstp61bus] && (MM[mstp61bus] == CIF_OP_TIJD || !MM[mstp61bus])) iPrioriteitsOpties[prioFC61bus] = BepaalPrioriteitsOpties(prmovstiptoptijd61bus);
+        if (IH[hstp62bus] && (MM[mstp62bus] == CIF_OP_TIJD || !MM[mstp62bus])) iPrioriteitsOpties[prioFC62bus] = BepaalPrioriteitsOpties(prmovstiptoptijd62bus);
+        if (IH[hstp67bus] && (MM[mstp67bus] == CIF_OP_TIJD || !MM[mstp67bus])) iPrioriteitsOpties[prioFC67bus] = BepaalPrioriteitsOpties(prmovstiptoptijd67bus);
+        if (IH[hstp68bus] && (MM[mstp68bus] == CIF_OP_TIJD || !MM[mstp68bus])) iPrioriteitsOpties[prioFC68bus] = BepaalPrioriteitsOpties(prmovstiptoptijd68bus);
+        if (IH[hstp03bus] && (MM[mstp03bus] == CIF_TE_LAAT || !MM[mstp03bus])) iPrioriteitsOpties[prioFC03bus] = BepaalPrioriteitsOpties(prmovstipttelaat03bus);
+        if (IH[hstp05bus] && (MM[mstp05bus] == CIF_TE_LAAT || !MM[mstp05bus])) iPrioriteitsOpties[prioFC05bus] = BepaalPrioriteitsOpties(prmovstipttelaat05bus);
+        if (IH[hstp08bus] && (MM[mstp08bus] == CIF_TE_LAAT || !MM[mstp08bus])) iPrioriteitsOpties[prioFC08bus] = BepaalPrioriteitsOpties(prmovstipttelaat08bus);
+        if (IH[hstp09bus] && (MM[mstp09bus] == CIF_TE_LAAT || !MM[mstp09bus])) iPrioriteitsOpties[prioFC09bus] = BepaalPrioriteitsOpties(prmovstipttelaat09bus);
+        if (IH[hstp11bus] && (MM[mstp11bus] == CIF_TE_LAAT || !MM[mstp11bus])) iPrioriteitsOpties[prioFC11bus] = BepaalPrioriteitsOpties(prmovstipttelaat11bus);
+        if (IH[hstp61bus] && (MM[mstp61bus] == CIF_TE_LAAT || !MM[mstp61bus])) iPrioriteitsOpties[prioFC61bus] = BepaalPrioriteitsOpties(prmovstipttelaat61bus);
+        if (IH[hstp62bus] && (MM[mstp62bus] == CIF_TE_LAAT || !MM[mstp62bus])) iPrioriteitsOpties[prioFC62bus] = BepaalPrioriteitsOpties(prmovstipttelaat62bus);
+        if (IH[hstp67bus] && (MM[mstp67bus] == CIF_TE_LAAT || !MM[mstp67bus])) iPrioriteitsOpties[prioFC67bus] = BepaalPrioriteitsOpties(prmovstipttelaat67bus);
+        if (IH[hstp68bus] && (MM[mstp68bus] == CIF_TE_LAAT || !MM[mstp68bus])) iPrioriteitsOpties[prioFC68bus] = BepaalPrioriteitsOpties(prmovstipttelaat68bus);
+    }
+
+    /* bijhouden of een hulpdienstingreep plaatsvindt */
+    IH[hplhd] = FALSE;
+    for (fc = 0; fc < prioFCMAX; ++fc)
+    {
+        if (iPrioriteitsOpties[fc] & poNoodDienst)
+            IH[hplhd] |= TRUE;
+    }
+
+    /* tijdens halfstar bedrijf alleen optie aanvraag voor OV richtingen */
+    if (IH[hplact] && SCH[schovpriople])
+    {
+        iPrioriteitsOpties[prioFC02karbus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst02karbus);
+        iPrioriteitsOpties[prioFC02risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst02risov);
+        iPrioriteitsOpties[prioFC02risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst02risvrw);
+        iPrioriteitsOpties[prioFC03bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst03bus);
+        iPrioriteitsOpties[prioFC03risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst03risov);
+        iPrioriteitsOpties[prioFC03risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst03risvrw);
+        iPrioriteitsOpties[prioFC05bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst05bus);
+        iPrioriteitsOpties[prioFC05risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst05risov);
+        iPrioriteitsOpties[prioFC05risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst05risvrw);
+        iPrioriteitsOpties[prioFC08bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst08bus);
+        iPrioriteitsOpties[prioFC08risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst08risov);
+        iPrioriteitsOpties[prioFC08risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst08risvrw);
+        iPrioriteitsOpties[prioFC09bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst09bus);
+        iPrioriteitsOpties[prioFC09risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst09risov);
+        iPrioriteitsOpties[prioFC09risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst09risvrw);
+        iPrioriteitsOpties[prioFC11bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst11bus);
+        iPrioriteitsOpties[prioFC11risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst11risov);
+        iPrioriteitsOpties[prioFC11risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst11risvrw);
+        iPrioriteitsOpties[prioFC22fiets] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst22fiets);
+        iPrioriteitsOpties[prioFC28fiets] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst28fiets);
+        iPrioriteitsOpties[prioFC61bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst61bus);
+        iPrioriteitsOpties[prioFC61risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst61risov);
+        iPrioriteitsOpties[prioFC61risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst61risvrw);
+        iPrioriteitsOpties[prioFC62bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst62bus);
+        iPrioriteitsOpties[prioFC62risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst62risov);
+        iPrioriteitsOpties[prioFC62risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst62risvrw);
+        iPrioriteitsOpties[prioFC67bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst67bus);
+        iPrioriteitsOpties[prioFC67risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst67risov);
+        iPrioriteitsOpties[prioFC67risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst67risvrw);
+        iPrioriteitsOpties[prioFC68bus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst68bus);
+        iPrioriteitsOpties[prioFC68risov] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst68risov);
+        iPrioriteitsOpties[prioFC68risvrw] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst68risvrw);
+    }
+
+
+    /* Geen prioriteit indien voorwaarden tegenhouden omschakelen waar zijn */
+    if (IH[homschtegenh] && IH[hplact] && SCH[schovpriople])
+    {
+        for (fc = 0; fc < prioFCMAX; ++fc)
+            iXPrio[fc] |= BIT6;
+    }
+    else
+    {
+        for (fc = 0; fc < prioFCMAX; ++fc)
+            iXPrio[fc] &= ~BIT6;
+    }
+
 
     /* Geen prioriteit bij file stroom afwaarts */
     if (IH[hfileFile68af])
@@ -2355,18 +2450,6 @@ void PrioriteitsOpties(void)
         iPrioriteitsOpties[prioFC11bus] = poAanvraag;
         iPrioriteitsOpties[prioFC11risov] = poAanvraag;
         iPrioriteitsOpties[prioFC11risvrw] = poAanvraag;
-    }
-
-    /* Traffick2TLCGen */
-    if (SCH[schtraffick2tlcgen])
-    {
-        Traffick2TLCgen_PRIO_OPTIES();
-        Traffick2TLCgen_HLPD_nal(fc02, T_max[tarmvt02]);
-        Traffick2TLCgen_HLPD_nal(fc03, T_max[tarmvt03]);
-        Traffick2TLCgen_HLPD_nal(fc05, T_max[tarmvt05]);
-        Traffick2TLCgen_HLPD_nal(fc08, T_max[tarmvt08]);
-        Traffick2TLCgen_HLPD_nal(fc09, T_max[tarmvt09]);
-        Traffick2TLCgen_HLPD_nal(fc11, T_max[tarmvt11]);
     }
 
     #ifdef PRIO_ADDFILE
@@ -2398,6 +2481,28 @@ void PrioriteitsToekenningExtra(void)
    ------------------------------------ */
 void TegenhoudenConflictenExtra(void)
 {
+    if (SCH[schovpriople]) PrioHalfstarTegenhouden();
+    if (MM[mwtvm22] && MM[mwtvm22] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc22] &= ~BIT6;
+        RR[fc21] &= ~BIT6;
+        RR[fc32] &= ~BIT6;
+    }
+    if (MM[mwtvm24] && MM[mwtvm24] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc24] &= ~BIT6;
+        RR[fc34] &= ~BIT6;
+        RR[fc84] &= ~BIT6;
+    }
+    if (MM[mwtvm26] && MM[mwtvm26] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc26] &= ~BIT6;
+    }
+    if (MM[mwtvm28] && MM[mwtvm28] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc28] &= ~BIT6;
+        RR[fc38] &= ~BIT6;
+    }
 #ifndef NO_TIMETOX
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc22] & BIT11)) { RR[fc32] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc32] & BIT11)) { RR[fc22] &= ~PRIO_RR_BIT; }
@@ -2421,13 +2526,19 @@ void TegenhoudenConflictenExtra(void)
 void PostAfhandelingPrio(void)
 {
     boolv isHD = FALSE;
+    boolv isWTV = FALSE;
     int i;
 
     /* Bepalen of een HD ingreep actief is */
     isHD = C[cvchd02] || C[cvchd03] || C[cvchd05] || C[cvchd08] || C[cvchd09] || C[cvchd11] || C[cvchd61] || C[cvchd62] || C[cvchd67] || C[cvchd68];
 
     /* Blokkeren alle langzaam verkeer (tevens niet-conflicten) */
-    if (isHD)
+    /* Blokkeren uitstellen indien een wachttijdvoorspeller onder het minimum is */
+    isWTV |= (MM[mwtvm22] && MM[mwtvm22] <= PRM[prmwtvnhaltmin]);
+    isWTV |= (MM[mwtvm24] && MM[mwtvm24] <= PRM[prmwtvnhaltmin]);
+    isWTV |= (MM[mwtvm26] && MM[mwtvm26] <= PRM[prmwtvnhaltmin]);
+    isWTV |= (MM[mwtvm28] && MM[mwtvm28] <= PRM[prmwtvnhaltmin]);
+    if (isHD && !isWTV)
     {
         RR[fc21] |= BIT6; Z[fc21] |= BIT6;
         RR[fc22] |= BIT6; Z[fc22] |= BIT6;
@@ -2700,7 +2811,7 @@ void PrioPARCorrecties(void)
    voor het richtingen met prioriteit.
    ------------------------------------------------------- */
 void PrioCcol(void) {
-    PrioCcolElementen(prioFC02bus, tgb02bus, trt02bus, hprio02bus, cvc02bus, tblk02bus);
+    PrioCcolElementen(prioFC02karbus, tgb02karbus, trt02karbus, hprio02karbus, cvc02karbus, tblk02karbus);
     PrioCcolElementen(prioFC02risov, tgb02risov, trt02risov, hprio02risov, cvc02risov, tblk02risov);
     PrioCcolElementen(prioFC02risvrw, tgb02risvrw, trt02risvrw, hprio02risvrw, cvc02risvrw, tblk02risvrw);
     PrioCcolElementen(prioFC03bus, tgb03bus, trt03bus, hprio03bus, cvc03bus, tblk03bus);
@@ -2758,48 +2869,48 @@ void PrioSpecialSignals(void)
     #endif
 
     /* Prioriteit ingrepen */
-    if (SD[ddummykarin02bus]) set_DSI_message(NG, CIF_BUS, 2, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit02bus]) set_DSI_message(NG, CIF_BUS, 2, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin03bus]) set_DSI_message(NG, CIF_BUS, 3, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit03bus]) set_DSI_message(NG, CIF_BUS, 3, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin05bus]) set_DSI_message(NG, CIF_BUS, 5, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit05bus]) set_DSI_message(NG, CIF_BUS, 5, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin08bus]) set_DSI_message(NG, CIF_BUS, 8, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit08bus]) set_DSI_message(NG, CIF_BUS, 8, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin09bus]) set_DSI_message(NG, CIF_BUS, 9, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit09bus]) set_DSI_message(NG, CIF_BUS, 9, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin11bus]) set_DSI_message(NG, CIF_BUS, 11, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit11bus]) set_DSI_message(NG, CIF_BUS, 11, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin61bus]) set_DSI_message(NG, CIF_BUS, 61, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit61bus]) set_DSI_message(NG, CIF_BUS, 61, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin62bus]) set_DSI_message(NG, CIF_BUS, 62, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit62bus]) set_DSI_message(NG, CIF_BUS, 62, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin67bus]) set_DSI_message(NG, CIF_BUS, 67, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit67bus]) set_DSI_message(NG, CIF_BUS, 67, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykarin68bus]) set_DSI_message(NG, CIF_BUS, 68, CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit68bus]) set_DSI_message(NG, CIF_BUS, 68, CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin02karbus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg02], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit02karbus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg02], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin03bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg03], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit03bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg03], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin05bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg05], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit05bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg05], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin08bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg08], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit08bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg08], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin09bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg09], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit09bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg09], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin11bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg11], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit11bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg11], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin61bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg61], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit61bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg61], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin62bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg62], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit62bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg62], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin67bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg67], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit67bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg67], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykarin68bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg68], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit68bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg68], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
 
     /* HD ingrepen */
-    if (SD[ddummyhdkarin02]) set_DSI_message(0, CIF_POL, 2, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit02]) set_DSI_message(0, CIF_POL, 2, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkarin03]) set_DSI_message(0, CIF_POL, 3, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit03]) set_DSI_message(0, CIF_POL, 3, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkarin05]) set_DSI_message(0, CIF_POL, 5, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit05]) set_DSI_message(0, CIF_POL, 5, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkarin08]) set_DSI_message(0, CIF_POL, 8, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit08]) set_DSI_message(0, CIF_POL, 8, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkarin09]) set_DSI_message(0, CIF_POL, 9, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit09]) set_DSI_message(0, CIF_POL, 9, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkarin11]) set_DSI_message(0, CIF_POL, 11, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit11]) set_DSI_message(0, CIF_POL, 11, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkarin61]) set_DSI_message(0, CIF_POL, 61, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit61]) set_DSI_message(0, CIF_POL, 61, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkarin62]) set_DSI_message(0, CIF_POL, 62, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit62]) set_DSI_message(0, CIF_POL, 62, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkarin67]) set_DSI_message(0, CIF_POL, 67, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit67]) set_DSI_message(0, CIF_POL, 67, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkarin68]) set_DSI_message(0, CIF_POL, 68, CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit68]) set_DSI_message(0, CIF_POL, 68, CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin02]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd02], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit02]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd02], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin03]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd03], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit03]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd03], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin05]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd05], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit05]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd05], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin08]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd08], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit08]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd08], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin09]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd09], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit09]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd09], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin11]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd11], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit11]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd11], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin61]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd61], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit61]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd61], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin62]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd62], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit62]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd62], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin67]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd67], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit67]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd67], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkarin68]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd68], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit68]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd68], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
 }
 #endif
 

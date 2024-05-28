@@ -273,7 +273,7 @@
     <ModulenInParameters>true</ModulenInParameters>
     <FixatieData>
       <FixatieMogelijk>true</FixatieMogelijk>
-      <BijkomenTijdensFixatie>false</BijkomenTijdensFixatie>
+      <BijkomenTijdensFixatie>true</BijkomenTijdensFixatie>
       <FixatieBitmapData>
         <Naam>fix</Naam>
         <Dummy>false</Dummy>
@@ -3450,7 +3450,7 @@
       <HardMeeverlengenFaseCycli />
     </FaseCyclus>
     <FaseCyclus>
-      <Naam>99</Naam>
+      <Naam>09</Naam>
       <Dummy>false</Dummy>
       <ElementType>FaseCyclus</ElementType>
       <Multivalent>false</Multivalent>
@@ -3460,12 +3460,12 @@
           <Y>556</Y>
         </Coordinaat>
       </BitmapCoordinaten>
-      <Type>Voetganger</Type>
-      <TFG>60</TFG>
-      <TGG>60</TGG>
-      <TGG_min>50</TGG_min>
+      <Type>Auto</Type>
+      <TFG>40</TFG>
+      <TGG>40</TGG>
+      <TGG_min>40</TGG_min>
       <TRG>20</TRG>
-      <TRG_min>10</TRG_min>
+      <TRG_min>20</TRG_min>
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
@@ -3474,36 +3474,36 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
-      <Meeverlengen>SchUit</Meeverlengen>
-      <MeeverlengenType>Voetganger</MeeverlengenType>
-      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
+      <Meeverlengen>SchAan</Meeverlengen>
+      <MeeverlengenType>Default</MeeverlengenType>
+      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
-      <MeeverlengenVerschil>0</MeeverlengenVerschil>
+      <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
-      <UitgesteldeVasteAanvraagTijdsduur>300</UitgesteldeVasteAanvraagTijdsduur>
+      <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
-      <AantalRijstroken>2</AantalRijstroken>
-      <HiaatKoplusBijDetectieStoring>false</HiaatKoplusBijDetectieStoring>
-      <VervangendHiaatKoplus xsi:nil="true" />
+      <AantalRijstroken>1</AantalRijstroken>
+      <HiaatKoplusBijDetectieStoring>true</HiaatKoplusBijDetectieStoring>
+      <VervangendHiaatKoplus>25</VervangendHiaatKoplus>
       <AanvraagBijDetectieStoring>true</AanvraagBijDetectieStoring>
       <AanvraagBijDetectieStoringVertraagd>true</AanvraagBijDetectieStoringVertraagd>
-      <AanvraagBijDetectieStoringVertraging>300</AanvraagBijDetectieStoringVertraging>
+      <AanvraagBijDetectieStoringVertraging>100</AanvraagBijDetectieStoringVertraging>
       <AanvraagBijDetectieStoringKoplusKnop>false</AanvraagBijDetectieStoringKoplusKnop>
-      <AanvraagBijDetectieStoringKopLang>false</AanvraagBijDetectieStoringKopLang>
-      <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
-      <PercentageGroen xsi:nil="true" />
-      <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
+      <AanvraagBijDetectieStoringKopLang>true</AanvraagBijDetectieStoringKopLang>
+      <PercentageGroenBijDetectieStoring>true</PercentageGroenBijDetectieStoring>
+      <PercentageGroen>65</PercentageGroen>
+      <VeiligheidsGroenMaximaal>80</VeiligheidsGroenMaximaal>
       <WachttijdVoorspeller>false</WachttijdVoorspeller>
-      <ToepassenMK2>false</ToepassenMK2>
-      <SchoolIngreep>SchUit</SchoolIngreep>
+      <ToepassenMK2>true</ToepassenMK2>
+      <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
       <SchoolIngreepBezetTijd>0</SchoolIngreepBezetTijd>
-      <SeniorenIngreep>SchUit</SeniorenIngreep>
+      <SeniorenIngreep>Nooit</SeniorenIngreep>
       <SeniorenIngreepBezetTijd>0</SeniorenIngreepBezetTijd>
       <SeniorenIngreepExtraGroenPercentage>0</SeniorenIngreepExtraGroenPercentage>
       <Detectoren>
         <Detector>
-          <Naam>99_1</Naam>
+          <Naam>09_1</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
@@ -3513,7 +3513,7 @@
               <Y>535</Y>
             </Coordinaat>
           </BitmapCoordinaten>
-          <VissimNaam>991</VissimNaam>
+          <VissimNaam>091</VissimNaam>
           <TDB>10</TDB>
           <TDH>30</TDH>
           <TOG>360</TOG>
@@ -3532,7 +3532,7 @@
             <Q3>0</Q3>
             <Q4>0</Q4>
             <Stopline>0</Stopline>
-            <FCNr>99</FCNr>
+            <FCNr>09</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>RnietTRG</Aanvraag>
@@ -3545,7 +3545,7 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
         <Detector>
-          <Naam>99_2</Naam>
+          <Naam>09_2</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
@@ -3555,7 +3555,7 @@
               <Y>595</Y>
             </Coordinaat>
           </BitmapCoordinaten>
-          <VissimNaam>992</VissimNaam>
+          <VissimNaam>092</VissimNaam>
           <TDB>0</TDB>
           <TDH>10</TDH>
           <TOG>360</TOG>
@@ -3574,7 +3574,7 @@
             <Q3>0</Q3>
             <Q4>0</Q4>
             <Stopline>0</Stopline>
-            <FCNr>99</FCNr>
+            <FCNr>09</FCNr>
           </Simulatie>
           <Type>Lang</Type>
           <Aanvraag>RnietTRG</Aanvraag>
@@ -3587,7 +3587,7 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
         <Detector>
-          <Naam>99_3</Naam>
+          <Naam>09_3</Naam>
           <Dummy>false</Dummy>
           <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
@@ -3597,7 +3597,7 @@
               <Y>639</Y>
             </Coordinaat>
           </BitmapCoordinaten>
-          <VissimNaam>993</VissimNaam>
+          <VissimNaam>093</VissimNaam>
           <TDB>0</TDB>
           <TDH>30</TDH>
           <TOG>360</TOG>
@@ -3616,7 +3616,7 @@
             <Q3>0</Q3>
             <Q4>0</Q4>
             <Stopline>0</Stopline>
-            <FCNr>99</FCNr>
+            <FCNr>09</FCNr>
           </Simulatie>
           <Type>Verweg</Type>
           <Aanvraag>Uit</Aanvraag>
@@ -8500,37 +8500,37 @@
         <Waarde>0</Waarde>
       </Conflict>
       <Conflict>
-        <FaseVan>99</FaseVan>
+        <FaseVan>09</FaseVan>
         <FaseNaar>11</FaseNaar>
         <GarantieWaarde>61</GarantieWaarde>
         <Waarde>61</Waarde>
       </Conflict>
       <Conflict>
-        <FaseVan>99</FaseVan>
+        <FaseVan>09</FaseVan>
         <FaseNaar>26</FaseNaar>
         <GarantieWaarde>10</GarantieWaarde>
         <Waarde>10</Waarde>
       </Conflict>
       <Conflict>
-        <FaseVan>99</FaseVan>
+        <FaseVan>09</FaseVan>
         <FaseNaar>28</FaseNaar>
         <GarantieWaarde>36</GarantieWaarde>
         <Waarde>36</Waarde>
       </Conflict>
       <Conflict>
-        <FaseVan>99</FaseVan>
+        <FaseVan>09</FaseVan>
         <FaseNaar>38</FaseNaar>
         <GarantieWaarde>51</GarantieWaarde>
         <Waarde>51</Waarde>
       </Conflict>
       <Conflict>
-        <FaseVan>99</FaseVan>
+        <FaseVan>09</FaseVan>
         <FaseNaar>61</FaseNaar>
         <GarantieWaarde>53</GarantieWaarde>
         <Waarde>53</Waarde>
       </Conflict>
       <Conflict>
-        <FaseVan>99</FaseVan>
+        <FaseVan>09</FaseVan>
         <FaseNaar>62</FaseNaar>
         <GarantieWaarde>44</GarantieWaarde>
         <Waarde>44</Waarde>
@@ -8543,7 +8543,7 @@
       </Conflict>
       <Conflict>
         <FaseVan>11</FaseVan>
-        <FaseNaar>99</FaseNaar>
+        <FaseNaar>09</FaseNaar>
         <GarantieWaarde>40</GarantieWaarde>
         <Waarde>40</Waarde>
       </Conflict>
@@ -8609,7 +8609,7 @@
       </Conflict>
       <Conflict>
         <FaseVan>26</FaseVan>
-        <FaseNaar>99</FaseNaar>
+        <FaseNaar>09</FaseNaar>
         <GarantieWaarde>50</GarantieWaarde>
         <Waarde>50</Waarde>
       </Conflict>
@@ -8621,7 +8621,7 @@
       </Conflict>
       <Conflict>
         <FaseVan>28</FaseVan>
-        <FaseNaar>99</FaseNaar>
+        <FaseNaar>09</FaseNaar>
         <GarantieWaarde>48</GarantieWaarde>
         <Waarde>48</Waarde>
       </Conflict>
@@ -8675,7 +8675,7 @@
       </Conflict>
       <Conflict>
         <FaseVan>38</FaseVan>
-        <FaseNaar>99</FaseNaar>
+        <FaseNaar>09</FaseNaar>
         <GarantieWaarde>90</GarantieWaarde>
         <Waarde>90</Waarde>
       </Conflict>
@@ -8693,7 +8693,7 @@
       </Conflict>
       <Conflict>
         <FaseVan>61</FaseVan>
-        <FaseNaar>99</FaseNaar>
+        <FaseNaar>09</FaseNaar>
         <GarantieWaarde>27</GarantieWaarde>
         <Waarde>27</Waarde>
       </Conflict>
@@ -8711,7 +8711,7 @@
       </Conflict>
       <Conflict>
         <FaseVan>62</FaseVan>
-        <FaseNaar>99</FaseNaar>
+        <FaseNaar>09</FaseNaar>
         <GarantieWaarde>40</GarantieWaarde>
         <Waarde>40</Waarde>
       </Conflict>
@@ -9466,6 +9466,10 @@
         <Waarde>200</Waarde>
       </Groentijd>
       <Groentijd>
+        <FaseCyclus>09</FaseCyclus>
+        <Waarde>150</Waarde>
+      </Groentijd>
+      <Groentijd>
         <FaseCyclus>11</FaseCyclus>
         <Waarde>150</Waarde>
       </Groentijd>
@@ -9535,10 +9539,6 @@
       </Groentijd>
       <Groentijd>
         <FaseCyclus>84</FaseCyclus>
-        <Waarde>150</Waarde>
-      </Groentijd>
-      <Groentijd>
-        <FaseCyclus>99</FaseCyclus>
         <Waarde>150</Waarde>
       </Groentijd>
     </GroentijdenSet>
@@ -9562,6 +9562,10 @@
         <Waarde>200</Waarde>
       </Groentijd>
       <Groentijd>
+        <FaseCyclus>09</FaseCyclus>
+        <Waarde>150</Waarde>
+      </Groentijd>
+      <Groentijd>
         <FaseCyclus>11</FaseCyclus>
         <Waarde>150</Waarde>
       </Groentijd>
@@ -9631,10 +9635,6 @@
       </Groentijd>
       <Groentijd>
         <FaseCyclus>84</FaseCyclus>
-        <Waarde>150</Waarde>
-      </Groentijd>
-      <Groentijd>
-        <FaseCyclus>99</FaseCyclus>
         <Waarde>150</Waarde>
       </Groentijd>
     </GroentijdenSet>
@@ -9658,6 +9658,10 @@
         <Waarde>200</Waarde>
       </Groentijd>
       <Groentijd>
+        <FaseCyclus>09</FaseCyclus>
+        <Waarde>150</Waarde>
+      </Groentijd>
+      <Groentijd>
         <FaseCyclus>11</FaseCyclus>
         <Waarde>150</Waarde>
       </Groentijd>
@@ -9727,10 +9731,6 @@
       </Groentijd>
       <Groentijd>
         <FaseCyclus>84</FaseCyclus>
-        <Waarde>150</Waarde>
-      </Groentijd>
-      <Groentijd>
-        <FaseCyclus>99</FaseCyclus>
         <Waarde>150</Waarde>
       </Groentijd>
     </GroentijdenSet>
@@ -9754,6 +9754,10 @@
         <Waarde>250</Waarde>
       </Groentijd>
       <Groentijd>
+        <FaseCyclus>09</FaseCyclus>
+        <Waarde>200</Waarde>
+      </Groentijd>
+      <Groentijd>
         <FaseCyclus>11</FaseCyclus>
         <Waarde>250</Waarde>
       </Groentijd>
@@ -9824,10 +9828,6 @@
       <Groentijd>
         <FaseCyclus>84</FaseCyclus>
         <Waarde>150</Waarde>
-      </Groentijd>
-      <Groentijd>
-        <FaseCyclus>99</FaseCyclus>
-        <Waarde>200</Waarde>
       </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
@@ -9850,6 +9850,10 @@
         <Waarde>250</Waarde>
       </Groentijd>
       <Groentijd>
+        <FaseCyclus>09</FaseCyclus>
+        <Waarde>200</Waarde>
+      </Groentijd>
+      <Groentijd>
         <FaseCyclus>11</FaseCyclus>
         <Waarde>250</Waarde>
       </Groentijd>
@@ -9920,10 +9924,6 @@
       <Groentijd>
         <FaseCyclus>84</FaseCyclus>
         <Waarde>150</Waarde>
-      </Groentijd>
-      <Groentijd>
-        <FaseCyclus>99</FaseCyclus>
-        <Waarde>200</Waarde>
       </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
@@ -9946,6 +9946,10 @@
         <Waarde>250</Waarde>
       </Groentijd>
       <Groentijd>
+        <FaseCyclus>09</FaseCyclus>
+        <Waarde>200</Waarde>
+      </Groentijd>
+      <Groentijd>
         <FaseCyclus>11</FaseCyclus>
         <Waarde>250</Waarde>
       </Groentijd>
@@ -10016,10 +10020,6 @@
       <Groentijd>
         <FaseCyclus>84</FaseCyclus>
         <Waarde>150</Waarde>
-      </Groentijd>
-      <Groentijd>
-        <FaseCyclus>99</FaseCyclus>
-        <Waarde>200</Waarde>
       </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
@@ -10042,6 +10042,10 @@
         <Waarde>250</Waarde>
       </Groentijd>
       <Groentijd>
+        <FaseCyclus>09</FaseCyclus>
+        <Waarde>200</Waarde>
+      </Groentijd>
+      <Groentijd>
         <FaseCyclus>11</FaseCyclus>
         <Waarde>250</Waarde>
       </Groentijd>
@@ -10113,10 +10117,6 @@
         <FaseCyclus>84</FaseCyclus>
         <Waarde>150</Waarde>
       </Groentijd>
-      <Groentijd>
-        <FaseCyclus>99</FaseCyclus>
-        <Waarde>200</Waarde>
-      </Groentijd>
     </GroentijdenSet>
     <GroentijdenSet>
       <Naam>VG8</Naam>
@@ -10135,6 +10135,10 @@
       </Groentijd>
       <Groentijd>
         <FaseCyclus>08</FaseCyclus>
+        <Waarde>300</Waarde>
+      </Groentijd>
+      <Groentijd>
+        <FaseCyclus>09</FaseCyclus>
         <Waarde>300</Waarde>
       </Groentijd>
       <Groentijd>
@@ -10208,10 +10212,6 @@
       <Groentijd>
         <FaseCyclus>84</FaseCyclus>
         <Waarde>150</Waarde>
-      </Groentijd>
-      <Groentijd>
-        <FaseCyclus>99</FaseCyclus>
-        <Waarde>300</Waarde>
       </Groentijd>
     </GroentijdenSet>
   </GroentijdenSets>
@@ -10290,7 +10290,7 @@
         <VADetector>
           <ConflicterendeFasen>
             <ConflictendeFase>
-              <FaseCyclus>99</FaseCyclus>
+              <FaseCyclus>09</FaseCyclus>
               <VAOntruimingsTijd>0</VAOntruimingsTijd>
             </ConflictendeFase>
             <ConflictendeFase>
@@ -10457,6 +10457,10 @@
         <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
+        <FaseCyclus>09</FaseCyclus>
+        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+      </FaseCyclusAlternatiefPerBlok>
+      <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>11</FaseCyclus>
         <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
@@ -10526,10 +10530,6 @@
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>84</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
-      </FaseCyclusAlternatiefPerBlok>
-      <FaseCyclusAlternatiefPerBlok>
-        <FaseCyclus>99</FaseCyclus>
         <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
     </AlternatievenPerBlok>
@@ -12902,7 +12902,7 @@
       </PrioIngreep>
       <PrioIngreep>
         <Naam>bus</Naam>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <Type>Bus</Type>
         <VersneldeInmeldingKoplus>SchUit</VersneldeInmeldingKoplus>
         <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
@@ -12937,7 +12937,7 @@
           <GroenNaTXDTijd>0</GroenNaTXDTijd>
         </HalfstarIngreepData>
         <PrioInmeldingBitmapData>
-          <Naam>ovinm99bus</Naam>
+          <Naam>ovinm09bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -12949,21 +12949,21 @@
           </BitmapCoordinaten>
         </PrioInmeldingBitmapData>
         <GeconditioneerdePrioTeVroegBitmapData>
-          <Naam>ovtevroeg99bus</Naam>
+          <Naam>ovtevroeg09bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeVroegBitmapData>
         <GeconditioneerdePrioOpTijdBitmapData>
-          <Naam>ovoptijd99bus</Naam>
+          <Naam>ovoptijd09bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
           <BitmapCoordinaten />
         </GeconditioneerdePrioOpTijdBitmapData>
         <GeconditioneerdePrioTeLaatBitmapData>
-          <Naam>ovtelaat99bus</Naam>
+          <Naam>ovtelaat09bus</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -13003,7 +13003,7 @@
               <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
               <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
               <DummyKARMelding>
-                <Naam>dummykarin99bus</Naam>
+                <Naam>dummykarin09bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
@@ -13077,7 +13077,7 @@
               <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
               <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
               <DummyKARMelding>
-                <Naam>dummykaruit99bus</Naam>
+                <Naam>dummykaruit09bus</Naam>
                 <Dummy>true</Dummy>
                 <ElementType>Detector</ElementType>
                 <Multivalent>false</Multivalent>
@@ -13134,7 +13134,7 @@
       </PrioIngreep>
       <PrioIngreep>
         <Naam>risov</Naam>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <Type>Bus</Type>
         <VersneldeInmeldingKoplus>SchUit</VersneldeInmeldingKoplus>
         <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
@@ -13169,7 +13169,7 @@
           <GroenNaTXDTijd>0</GroenNaTXDTijd>
         </HalfstarIngreepData>
         <PrioInmeldingBitmapData>
-          <Naam>ovinm99risov</Naam>
+          <Naam>ovinm09risov</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -13279,7 +13279,7 @@
       </PrioIngreep>
       <PrioIngreep>
         <Naam>risvrw</Naam>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <Type>Vrachtwagen</Type>
         <VersneldeInmeldingKoplus>SchUit</VersneldeInmeldingKoplus>
         <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
@@ -13314,7 +13314,7 @@
           <GroenNaTXDTijd>0</GroenNaTXDTijd>
         </HalfstarIngreepData>
         <PrioInmeldingBitmapData>
-          <Naam>ovinm99risvrw</Naam>
+          <Naam>ovinm09risvrw</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -16816,7 +16816,7 @@
         <MeerealiserendeFaseCycli />
       </HDIngreep>
       <HDIngreep>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <KAR>true</KAR>
         <RIS>true</RIS>
         <RisStart>0</RisStart>
@@ -16836,7 +16836,7 @@
         <RijTijdGehinderd>0</RijTijdGehinderd>
         <GroenBewaking>900</GroenBewaking>
         <HDInmeldingBitmapData>
-          <Naam>hdinm99</Naam>
+          <Naam>hdinm09</Naam>
           <Dummy>false</Dummy>
           <ElementType>Output</ElementType>
           <Multivalent>false</Multivalent>
@@ -16852,7 +16852,7 @@
           </BitmapCoordinaten>
         </HDInmeldingBitmapData>
         <DummyKARInmelding>
-          <Naam>dummyhdkarin99</Naam>
+          <Naam>dummyhdkarin09</Naam>
           <Dummy>true</Dummy>
           <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
@@ -16894,7 +16894,7 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </DummyKARInmelding>
         <DummyKARUitmelding>
-          <Naam>dummyhdkaruit99</Naam>
+          <Naam>dummyhdkaruit09</Naam>
           <Dummy>true</Dummy>
           <ElementType>Detector</ElementType>
           <Multivalent>false</Multivalent>
@@ -17588,7 +17588,7 @@
         <OphoogpercentageNaAfkappen>0</OphoogpercentageNaAfkappen>
       </PrioIngreepSignaalGroepParametersModel>
       <PrioIngreepSignaalGroepParametersModel>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <AantalKerenNietAfkappen>0</AantalKerenNietAfkappen>
         <MinimumGroentijdConflictOVRealisatie>0</MinimumGroentijdConflictOVRealisatie>
         <PercMaxGroentijdConflictOVRealisatie>0</PercMaxGroentijdConflictOVRealisatie>
@@ -18744,6 +18744,171 @@
                   </BitmapCoordinaten>
                 </StationBitmapData>
                 <Naam>ris082heavytruck</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+            </SimulatedStations>
+          </RISFaseCyclusLaneDataModel>
+        </LaneData>
+      </RISFaseCyclusDataModel>
+      <RISFaseCyclusDataModel>
+        <FaseCyclus>09</FaseCyclus>
+        <ApproachID>3</ApproachID>
+        <LaneData>
+          <RISFaseCyclusLaneDataModel>
+            <RijstrookIndex>1</RijstrookIndex>
+            <LaneID>7</LaneID>
+            <SystemITF>123456</SystemITF>
+            <UseHeading>false</UseHeading>
+            <Heading>0</Heading>
+            <HeadingMarge>0</HeadingMarge>
+            <SignalGroupName>09</SignalGroupName>
+            <SimulatedStations>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>PASSENGERCAR</Type>
+                <VehicleRole>DEFAULT</VehicleRole>
+                <VehicleSubrole>UNKNOWN</VehicleSubrole>
+                <Prioriteit>false</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>0</Importance>
+                <SimulationData>
+                  <RelatedName>ris091car</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>09</FCNr>
+                </SimulationData>
+                <SignalGroupName>09</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>7</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris091car</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>679</X>
+                      <Y>111</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris091car</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>BUS</Type>
+                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
+                <VehicleSubrole>BUS</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris091bus</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>09</FCNr>
+                </SimulationData>
+                <SignalGroupName>09</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>7</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris091bus</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>691</X>
+                      <Y>109</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris091bus</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>SPECIALVEHICLES</Type>
+                <VehicleRole>EMERGENCY</VehicleRole>
+                <VehicleSubrole>EMERGENCY</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>14</Importance>
+                <SimulationData>
+                  <RelatedName>ris091special</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>NG</FCNr>
+                </SimulationData>
+                <SignalGroupName>09</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>7</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris091special</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>711</X>
+                      <Y>111</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris091special</Naam>
+              </RISFaseCyclusLaneSimulatedStationModel>
+              <RISFaseCyclusLaneSimulatedStationModel>
+                <Type>HEAVYTRUCK</Type>
+                <VehicleRole>COMMERCIAL</VehicleRole>
+                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
+                <Prioriteit>true</Prioriteit>
+                <Flow>0</Flow>
+                <Snelheid>50</Snelheid>
+                <Afstand>300</Afstand>
+                <Importance>11</Importance>
+                <SimulationData>
+                  <RelatedName>ris091heavytruck</RelatedName>
+                  <Q1>0</Q1>
+                  <Q2>0</Q2>
+                  <Q3>0</Q3>
+                  <Q4>0</Q4>
+                  <Stopline>0</Stopline>
+                  <FCNr>09</FCNr>
+                </SimulationData>
+                <SignalGroupName>09</SignalGroupName>
+                <RijstrookIndex>1</RijstrookIndex>
+                <LaneID>7</LaneID>
+                <ApproachID>0</ApproachID>
+                <SystemITF>123456</SystemITF>
+                <StationBitmapData>
+                  <Naam>ris091heavytruck</Naam>
+                  <Dummy>false</Dummy>
+                  <ElementType>Input</ElementType>
+                  <Multivalent>false</Multivalent>
+                  <BitmapCoordinaten>
+                    <Coordinaat>
+                      <X>727</X>
+                      <Y>112</Y>
+                    </Coordinaat>
+                  </BitmapCoordinaten>
+                </StationBitmapData>
+                <Naam>ris091heavytruck</Naam>
               </RISFaseCyclusLaneSimulatedStationModel>
             </SimulatedStations>
           </RISFaseCyclusLaneDataModel>
@@ -20877,181 +21042,6 @@
           </RISFaseCyclusLaneDataModel>
         </LaneData>
       </RISFaseCyclusDataModel>
-      <RISFaseCyclusDataModel>
-        <FaseCyclus>99</FaseCyclus>
-        <ApproachID>3</ApproachID>
-        <LaneData>
-          <RISFaseCyclusLaneDataModel>
-            <RijstrookIndex>1</RijstrookIndex>
-            <LaneID>7</LaneID>
-            <SystemITF>123456</SystemITF>
-            <UseHeading>false</UseHeading>
-            <Heading>0</Heading>
-            <HeadingMarge>0</HeadingMarge>
-            <SignalGroupName>99</SignalGroupName>
-            <SimulatedStations>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>PASSENGERCAR</Type>
-                <VehicleRole>DEFAULT</VehicleRole>
-                <VehicleSubrole>UNKNOWN</VehicleSubrole>
-                <Prioriteit>false</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>0</Importance>
-                <SimulationData>
-                  <RelatedName>ris091car</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>99</FCNr>
-                </SimulationData>
-                <SignalGroupName>99</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>7</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris991car</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>679</X>
-                      <Y>111</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris991car</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>BUS</Type>
-                <VehicleRole>PUBLICTRANSPORT</VehicleRole>
-                <VehicleSubrole>BUS</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris091bus</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>99</FCNr>
-                </SimulationData>
-                <SignalGroupName>99</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>7</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris991bus</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>691</X>
-                      <Y>109</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris991bus</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>SPECIALVEHICLES</Type>
-                <VehicleRole>EMERGENCY</VehicleRole>
-                <VehicleSubrole>EMERGENCY</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>14</Importance>
-                <SimulationData>
-                  <RelatedName>ris091special</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>NG</FCNr>
-                </SimulationData>
-                <SignalGroupName>99</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>7</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris991special</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>711</X>
-                      <Y>111</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris991special</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-              <RISFaseCyclusLaneSimulatedStationModel>
-                <Type>HEAVYTRUCK</Type>
-                <VehicleRole>COMMERCIAL</VehicleRole>
-                <VehicleSubrole>EXPRESSTRANSIT</VehicleSubrole>
-                <Prioriteit>true</Prioriteit>
-                <Flow>0</Flow>
-                <Snelheid>50</Snelheid>
-                <Afstand>300</Afstand>
-                <Importance>11</Importance>
-                <SimulationData>
-                  <RelatedName>ris091heavytruck</RelatedName>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                  <FCNr>99</FCNr>
-                </SimulationData>
-                <SignalGroupName>99</SignalGroupName>
-                <RijstrookIndex>1</RijstrookIndex>
-                <LaneID>7</LaneID>
-                <ApproachID>0</ApproachID>
-                <SystemITF>123456</SystemITF>
-                <StationBitmapData>
-                  <Naam>ris991heavytruck</Naam>
-                  <Dummy>false</Dummy>
-                  <ElementType>Input</ElementType>
-                  <Multivalent>false</Multivalent>
-                  <BitmapCoordinaten>
-                    <Coordinaat>
-                      <X>727</X>
-                      <Y>112</Y>
-                    </Coordinaat>
-                  </BitmapCoordinaten>
-                </StationBitmapData>
-                <Naam>ris991heavytruck</Naam>
-              </RISFaseCyclusLaneSimulatedStationModel>
-            </SimulatedStations>
-          </RISFaseCyclusLaneDataModel>
-          <RISFaseCyclusLaneDataModel>
-            <RijstrookIndex>2</RijstrookIndex>
-            <LaneID>0</LaneID>
-            <SystemITF>123456</SystemITF>
-            <UseHeading>false</UseHeading>
-            <Heading>0</Heading>
-            <HeadingMarge>0</HeadingMarge>
-            <SignalGroupName>99</SignalGroupName>
-            <SimulatedStations />
-          </RISFaseCyclusLaneDataModel>
-        </LaneData>
-      </RISFaseCyclusDataModel>
     </RISFaseCyclusData>
     <RISLaneRequestData>
       <RISLaneRequestDataModel>
@@ -21087,6 +21077,16 @@
       <RISLaneRequestDataModel>
         <SignalGroupName>08</SignalGroupName>
         <RijstrookIndex>2</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>09</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
         <AanvraagStart>0</AanvraagStart>
         <AanvraagEnd>0</AanvraagEnd>
@@ -21333,16 +21333,6 @@
         <AanvraagStartSrm0>0</AanvraagStartSrm0>
         <AanvraagEndSrm0>0</AanvraagEndSrm0>
         <Type>CYCLIST</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>99</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
       </RISLaneRequestDataModel>
     </RISLaneRequestData>
     <RISLaneExtendData>
@@ -21387,6 +21377,16 @@
         <Type>MOTORVEHICLES</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
+        <SignalGroupName>09</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
         <SignalGroupName>11</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
@@ -21625,16 +21625,6 @@
         <VerlengenStartSrm0>0</VerlengenStartSrm0>
         <VerlengenEndSrm0>0</VerlengenEndSrm0>
         <Type>CYCLIST</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>99</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
       </RISLaneExtendDataModel>
     </RISLaneExtendData>
     <RISLanePelotonData>
@@ -21719,7 +21709,7 @@
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
-            <FaseCyclus>99</FaseCyclus>
+            <FaseCyclus>09</FaseCyclus>
             <Alternatieven />
           </FaseCyclus>
           <FaseCyclus>
@@ -21813,7 +21803,7 @@
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <ModulenVooruit>1</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
@@ -21995,7 +21985,7 @@
             <FaseCyclus>02</FaseCyclus>
           </RoBuGroverConflictGroepFase>
           <RoBuGroverConflictGroepFase>
-            <FaseCyclus>99</FaseCyclus>
+            <FaseCyclus>09</FaseCyclus>
           </RoBuGroverConflictGroepFase>
           <RoBuGroverConflictGroepFase>
             <FaseCyclus>11</FaseCyclus>
@@ -22105,7 +22095,7 @@
         </HiaatDetectoren>
       </RoBuGroverSignaalGroepInstelling>
       <RoBuGroverSignaalGroepInstelling>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <MinGroenTijd>100</MinGroenTijd>
         <MaxGroenTijd>500</MaxGroenTijd>
         <FileDetectoren />
@@ -22309,6 +22299,13 @@
         <PrivilegePeriodeOpzetten>true</PrivilegePeriodeOpzetten>
       </HalfstarFaseCyclusInstellingenModel>
       <HalfstarFaseCyclusInstellingenModel>
+        <FaseCyclus>09</FaseCyclus>
+        <AlternatiefToestaan>true</AlternatiefToestaan>
+        <AlternatieveRuimte>0</AlternatieveRuimte>
+        <AanvraagOpTxB>false</AanvraagOpTxB>
+        <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
+      </HalfstarFaseCyclusInstellingenModel>
+      <HalfstarFaseCyclusInstellingenModel>
         <FaseCyclus>11</FaseCyclus>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
@@ -22437,13 +22434,6 @@
       <HalfstarFaseCyclusInstellingenModel>
         <FaseCyclus>28</FaseCyclus>
         <AlternatiefToestaan>false</AlternatiefToestaan>
-        <AlternatieveRuimte>0</AlternatieveRuimte>
-        <AanvraagOpTxB>false</AanvraagOpTxB>
-        <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
-      </HalfstarFaseCyclusInstellingenModel>
-      <HalfstarFaseCyclusInstellingenModel>
-        <FaseCyclus>99</FaseCyclus>
-        <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
         <AanvraagOpTxB>false</AanvraagOpTxB>
         <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
@@ -22587,7 +22577,7 @@
         <Eind2 xsi:nil="true" />
       </Fase>
       <Fase>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <Start1>43</Start1>
         <Eind1>65</Eind1>
         <Start2 xsi:nil="true" />
@@ -22756,7 +22746,7 @@
         <Eind2 xsi:nil="true" />
       </Fase>
       <Fase>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <Start1>0</Start1>
         <Eind1>0</Eind1>
         <Start2 xsi:nil="true" />
@@ -22913,6 +22903,10 @@
         <ConflictType>Conflictvrij</ConflictType>
       </TimingsFaseCyclusDataModel>
       <TimingsFaseCyclusDataModel>
+        <FaseCyclus>09</FaseCyclus>
+        <ConflictType>Conflictvrij</ConflictType>
+      </TimingsFaseCyclusDataModel>
+      <TimingsFaseCyclusDataModel>
         <FaseCyclus>11</FaseCyclus>
         <ConflictType>Conflictvrij</ConflictType>
       </TimingsFaseCyclusDataModel>
@@ -22984,10 +22978,6 @@
         <FaseCyclus>84</FaseCyclus>
         <ConflictType>Conflictvrij</ConflictType>
       </TimingsFaseCyclusDataModel>
-      <TimingsFaseCyclusDataModel>
-        <FaseCyclus>99</FaseCyclus>
-        <ConflictType>Conflictvrij</ConflictType>
-      </TimingsFaseCyclusDataModel>
     </TimingsFaseCyclusData>
   </TimingsData>
   <CustomData>
@@ -23050,7 +23040,7 @@
         <KruispuntArmVolgTijd>100</KruispuntArmVolgTijd>
       </FasenMetKruispuntArmen>
       <FasenMetKruispuntArmen>
-        <FaseCyclus>99</FaseCyclus>
+        <FaseCyclus>09</FaseCyclus>
         <KruispuntArm>ARM3</KruispuntArm>
         <KruispuntArmVolg>ARM6</KruispuntArmVolg>
         <HasKruispuntArmVolgTijd>true</HasKruispuntArmVolgTijd>
@@ -23353,6 +23343,57 @@
         </DynamischHiaatDetector>
       </DynamischHiaatSignalGroupModel>
       <DynamischHiaatSignalGroupModel>
+        <SignalGroupName>09</SignalGroupName>
+        <HasDynamischHiaat>true</HasDynamischHiaat>
+        <Opdrempelen>false</Opdrempelen>
+        <Snelheid>50 km/u</Snelheid>
+        <KijkenNaarKoplus>true</KijkenNaarKoplus>
+        <DynamischHiaatDetector>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>09</SignalGroupName>
+            <DetectorName>09_1</DetectorName>
+            <Moment1>0</Moment1>
+            <Moment2>0</Moment2>
+            <TDH1>0</TDH1>
+            <TDH2>0</TDH2>
+            <Maxtijd>0</Maxtijd>
+            <SpringStart>false</SpringStart>
+            <VerlengNiet>false</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>false</DirectAftellen>
+            <SpringGroen>false</SpringGroen>
+          </DynamischHiaatDetectorModel>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>09</SignalGroupName>
+            <DetectorName>09_2</DetectorName>
+            <Moment1>0</Moment1>
+            <Moment2>0</Moment2>
+            <TDH1>0</TDH1>
+            <TDH2>0</TDH2>
+            <Maxtijd>0</Maxtijd>
+            <SpringStart>false</SpringStart>
+            <VerlengNiet>false</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>false</DirectAftellen>
+            <SpringGroen>false</SpringGroen>
+          </DynamischHiaatDetectorModel>
+          <DynamischHiaatDetectorModel>
+            <SignalGroupName>09</SignalGroupName>
+            <DetectorName>09_3</DetectorName>
+            <Moment1>0</Moment1>
+            <Moment2>0</Moment2>
+            <TDH1>0</TDH1>
+            <TDH2>0</TDH2>
+            <Maxtijd>0</Maxtijd>
+            <SpringStart>false</SpringStart>
+            <VerlengNiet>false</VerlengNiet>
+            <VerlengExtra>false</VerlengExtra>
+            <DirectAftellen>false</DirectAftellen>
+            <SpringGroen>false</SpringGroen>
+          </DynamischHiaatDetectorModel>
+        </DynamischHiaatDetector>
+      </DynamischHiaatSignalGroupModel>
+      <DynamischHiaatSignalGroupModel>
         <SignalGroupName>11</SignalGroupName>
         <HasDynamischHiaat>true</HasDynamischHiaat>
         <Opdrempelen>false</Opdrempelen>
@@ -23481,7 +23522,7 @@
         <SumoIds>17,18,19</SumoIds>
       </FaseCyclus>
       <FaseCyclus>
-        <Naam>99</Naam>
+        <Naam>09</Naam>
         <SumoIds>20</SumoIds>
       </FaseCyclus>
       <FaseCyclus>
@@ -23699,17 +23740,17 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>99_1</Naam>
+        <Naam>09_1</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>091</SumoNaam1>
       </Detector>
       <Detector>
-        <Naam>99_2</Naam>
+        <Naam>09_2</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>092</SumoNaam1>
       </Detector>
       <Detector>
-        <Naam>99_3</Naam>
+        <Naam>09_3</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>093</SumoNaam1>
       </Detector>
@@ -23933,7 +23974,7 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkarin99</Naam>
+        <Naam>dummyhdkarin09</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
@@ -24153,7 +24194,7 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummykaruit99bus</Naam>
+        <Naam>dummykaruit09bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit09bus</SumoNaam1>
         <SumoNaam2 />
@@ -24223,7 +24264,7 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummykarin99bus</Naam>
+        <Naam>dummykarin09bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin09bus</SumoNaam1>
         <SumoNaam2 />
@@ -24293,7 +24334,7 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit99</Naam>
+        <Naam>dummyhdkaruit09</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

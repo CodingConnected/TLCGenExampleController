@@ -8,14 +8,14 @@
 
    BESTAND:   123456regeling.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.5
-   CCOLGEN:   12.4.0.5
+    TLCGEN:   12.4.0.6
+   CCOLGEN:   12.4.0.6
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.5   23-05-2024   TLCGen      Release versie TLCGen 
+ * 12.4.0.6   24-05-2024   TLCGen      Release versie TLCGen 
  *
  ************************************************************************************/
 
@@ -35,6 +35,10 @@
         #pragma comment(lib, "dsifunc.lib")
         #pragma comment(lib, "ccolks.lib")
         #pragma comment(lib, "ccolmain.lib")
+        #pragma comment(lib, "plfunc.lib")
+        #pragma comment(lib, "plefunc.lib")
+        #pragma comment(lib, "tx_synch.lib")
+        #pragma comment(lib, "trigfunc.lib")
         #pragma comment(lib, "risfunc.lib")
         #pragma comment(lib, "rissimfunc.lib")
         #pragma comment(lib, "comctl32.lib")

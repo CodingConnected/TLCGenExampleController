@@ -1,4 +1,4 @@
-/* extra_func_prio.c - gegenereerd met TLCGen 12.4.0.5 */
+/* extra_func_prio.c - gegenereerd met TLCGen 12.4.0.6 */
 
 #include "extra_func_prio.h"
 #include "prio.h"
@@ -12,7 +12,7 @@ boolv DSIMeldingPRIO_V1(
 	count meldingtype,
 	boolv extra)
 {
-#if !defined (VISSIM) && DSMAX
+#if DSMAX
 	if (!DS_MSG || !extra) return FALSE;
 #endif
 
@@ -41,7 +41,7 @@ boolv DSIMeldingPRIO_V2(           /* Fik220201 */
    if (vertraag_kar_uitm[prio_fc]) PrioUitmelden(prio_fc, SG[fc]); /* vertraagde uitmelding op start groen */
    if (SG[fc]) vertraag_kar_uitm[prio_fc] = FALSE;
 
-#if !defined (VISSIM) && DSMAX
+#if DSMAX
    if (!DS_MSG || !extra) melding = FALSE;
 #endif
 
@@ -106,7 +106,7 @@ boolv DSIMelding_HD_V1(count dir,         /* 1. fc nummer of richtingnummer (201
 		(!check_sirene || (CIF_DSI[CIF_DSI_PRI] == CIF_SIR)) &&
 		(CIF_DSI[CIF_DSI_DIR] == dir) &&  /* geldt deze melding voor deze richting? */
 		(CIF_DSI[CIF_DSI_TYPE] == meldingtype)      /* is dit een in of een uitmelding? */
-#if !defined (VISSIM) && DSMAX
+#if DSMAX
 		&& DS_MSG
 #endif
 		) return TRUE;
