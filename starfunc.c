@@ -1,4 +1,3 @@
-/* starfunc.c - gegenereerd met TLCGen 12.4.0.6 */
 
 #include "starfunc.h"
 
@@ -147,8 +146,8 @@ void star_bepaal_omschakelen(count mgewenst, count mwerkelijk, count mprogwissel
         /* stuur alle signaalgroepen naar rood */
         for (fc = 0; fc < FCMAX; fc++)
         {
-            RR[fc] = (RW[fc]&BIT2 || YV[fc]&BIT2) ? FALSE : BIT14;
-            Z[fc] = (RW[fc]&BIT2 || YV[fc]&BIT2) ? FALSE : BIT14;
+            RR[fc] = (RW[fc]&BIT2 || YV[fc]&BIT2 || YV[fc]&YV_KOP_HALFSTAR || YM[fc]&YM_KOP_HALFSTAR) ? FALSE : BIT14;
+             Z[fc] = (RW[fc]&BIT2 || YV[fc]&BIT2 || YV[fc]&YV_KOP_HALFSTAR || YM[fc]&YM_KOP_HALFSTAR) ? FALSE : BIT14;
         }
     }
 }

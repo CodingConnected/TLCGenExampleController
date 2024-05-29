@@ -1570,403 +1570,409 @@
     #define schaltghst2434             39 /* Alternatief realiseren fasen 24, 34 toestaan tijdens halfstar regelen     */
     #define schaltghst3384             40 /* Alternatief realiseren fasen 33, 84 toestaan tijdens halfstar regelen     */
     #define schaltghst31               41 /* Alternatief realiseren fase 31 toestaan tijdens halfstar regelen          */
-    #define schinstprm                 42 /* Eenmalig kopieren signaalplan parameters naar signaalplannen              */
-    #define schinst                    43 /* Eenmalig instellen signaalplannen na wijziging                            */
-    #define schvaml                    44 /* Indien VA regelen, ML-bedrijf (1) of versneld PL-bedrijf (0)              */
-    #define schvar                     45 /* VA regelen aan of uit                                                     */
-    #define scharh                     46 /* Toestaan alternatieven voor hoofdrichtingen                               */
-    #define schvarstreng               47 /* VA regelen aan of uit voor gehele streng                                  */
-    #define schpervardef               48 /* VA regelen periode default                                                */
-    #define schpervar1                 49 /* VA regelen periode dag                                                    */
-    #define schpervar2                 50 /* VA regelen periode ochtend                                                */
-    #define schpervar3                 51 /* VA regelen periode avond                                                  */
-    #define schpervar4                 52 /* VA regelen periode koopavond                                              */
-    #define schpervar5                 53 /* VA regelen periode weekend                                                */
-    #define schpervar6                 54 /* VA regelen periode nacht                                                  */
-    #define schpervar7                 55 /* VA regelen periode reserve                                                */
-    #define schperarhdef               56 /* Alternatieven voor hoofdrichtingen periode default                        */
-    #define schperarh1                 57 /* Alternatieven voor hoofdrichtingen periode dag                            */
-    #define schperarh2                 58 /* Alternatieven voor hoofdrichtingen periode ochtend                        */
-    #define schperarh3                 59 /* Alternatieven voor hoofdrichtingen periode avond                          */
-    #define schperarh4                 60 /* Alternatieven voor hoofdrichtingen periode koopavond                      */
-    #define schperarh5                 61 /* Alternatieven voor hoofdrichtingen periode weekend                        */
-    #define schperarh6                 62 /* Alternatieven voor hoofdrichtingen periode nacht                          */
-    #define schperarh7                 63 /* Alternatieven voor hoofdrichtingen periode reserve                        */
-    #define schovpriople               64 /* Wel of niet toepassen prioriteit OV tijdens PL-bedrijf                    */
-    #define schma0261                  65 /* Meeaanvraag van 02 naar 61 actief                                         */
-    #define schma0262                  66 /* Meeaanvraag van 02 naar 62 actief                                         */
-    #define schma0521                  67 /* Meeaanvraag van 05 naar 21 actief                                         */
-    #define schma0522                  68 /* Meeaanvraag van 05 naar 22 actief                                         */
-    #define schma0532                  69 /* Meeaanvraag van 05 naar 32 actief                                         */
-    #define schma0868                  70 /* Meeaanvraag van 08 naar 68 actief                                         */
-    #define schma1126                  71 /* Meeaanvraag van 11 naar 26 actief                                         */
-    #define schma1168                  72 /* Meeaanvraag van 11 naar 68 actief                                         */
-    #define schma2221                  73 /* Meeaanvraag van 22 naar 21 actief                                         */
-    #define schma2611                  74 /* Meeaanvraag van 26 naar 11 actief                                         */
-    #define schma3122                  75 /* Meeaanvraag van 31 naar 22 actief                                         */
-    #define schma3132                  76 /* Meeaanvraag van 31 naar 32 actief                                         */
-    #define schma3222                  77 /* Meeaanvraag van 32 naar 22 actief                                         */
-    #define schma3231                  78 /* Meeaanvraag van 32 naar 31 actief                                         */
-    #define schma3324                  79 /* Meeaanvraag van 33 naar 24 actief                                         */
-    #define schma3334                  80 /* Meeaanvraag van 33 naar 34 actief                                         */
-    #define schma3384                  81 /* Meeaanvraag van 33 naar 84 actief                                         */
-    #define schma3424                  82 /* Meeaanvraag van 34 naar 24 actief                                         */
-    #define schma3433                  83 /* Meeaanvraag van 34 naar 33 actief                                         */
-    #define schma3484                  84 /* Meeaanvraag van 34 naar 84 actief                                         */
-    #define schma8281                  85 /* Meeaanvraag van 82 naar 81 actief                                         */
-    #define schmv02                    86 /* Meeverlengen fase 02                                                      */
-    #define schmv03                    87 /* Meeverlengen fase 03                                                      */
-    #define schmv05                    88 /* Meeverlengen fase 05                                                      */
-    #define schmv08                    89 /* Meeverlengen fase 08                                                      */
-    #define schmv09                    90 /* Meeverlengen fase 09                                                      */
-    #define schmv11                    91 /* Meeverlengen fase 11                                                      */
-    #define schmv21                    92 /* Meeverlengen fase 21                                                      */
-    #define schmv22                    93 /* Meeverlengen fase 22                                                      */
-    #define schhardmv2205              94 /* Hard meeverlengen fase 22 met fase 05                                     */
-    #define schmv24                    95 /* Meeverlengen fase 24                                                      */
-    #define schmv26                    96 /* Meeverlengen fase 26                                                      */
-    #define schhardmv2611              97 /* Hard meeverlengen fase 26 met fase 11                                     */
-    #define schmv28                    98 /* Meeverlengen fase 28                                                      */
-    #define schmv31                    99 /* Meeverlengen fase 31                                                      */
-    #define schmv32                   100 /* Meeverlengen fase 32                                                      */
-    #define schhardmv3205             101 /* Hard meeverlengen fase 32 met fase 05                                     */
-    #define schmv33                   102 /* Meeverlengen fase 33                                                      */
-    #define schmv34                   103 /* Meeverlengen fase 34                                                      */
-    #define schmv38                   104 /* Meeverlengen fase 38                                                      */
-    #define schmv61                   105 /* Meeverlengen fase 61                                                      */
-    #define schmv62                   106 /* Meeverlengen fase 62                                                      */
-    #define schmv67                   107 /* Meeverlengen fase 67                                                      */
-    #define schmv68                   108 /* Meeverlengen fase 68                                                      */
-    #define schmv81                   109 /* Meeverlengen fase 81                                                      */
-    #define schmv82                   110 /* Meeverlengen fase 82                                                      */
-    #define schmv84                   111 /* Meeverlengen fase 84                                                      */
-    #define schmlprm                  112 /* Toepassen parametriseerbare modulestructuur                               */
-    #define schovstipt03bus           113 /* Geconditioneerde prioteit voor OV bij 03 Bus                              */
-    #define schovstipt05bus           114 /* Geconditioneerde prioteit voor OV bij 05 Bus                              */
-    #define schovstipt08bus           115 /* Geconditioneerde prioteit voor OV bij 08 Bus                              */
-    #define schovstipt09bus           116 /* Geconditioneerde prioteit voor OV bij 09 Bus                              */
-    #define schovstipt11bus           117 /* Geconditioneerde prioteit voor OV bij 11 Bus                              */
-    #define schovstipt61bus           118 /* Geconditioneerde prioteit voor OV bij 61 Bus                              */
-    #define schovstipt62bus           119 /* Geconditioneerde prioteit voor OV bij 62 Bus                              */
-    #define schovstipt67bus           120 /* Geconditioneerde prioteit voor OV bij 67 Bus                              */
-    #define schovstipt68bus           121 /* Geconditioneerde prioteit voor OV bij 68 Bus                              */
-    #define schcovuber                122 /* Weergeven wijzigingen PRIO_teller via CIF_UBER                            */
-    #define schcheckdstype            123 /* Check type DSI bericht bij VECOM                                          */
-    #define schprioin02karbuskar      124 /* Inmelden 02 via Bus toestaan                                              */
-    #define schpriouit02karbuskar     125 /* Uitmelden 02 via Bus toestaan                                             */
-    #define schupinagb02karbus        126 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02             */
-    #define schprioin02risovris       127 /* Inmelden 02 via Bus toestaan                                              */
-    #define schpriouit02risovris      128 /* Uitmelden 02 via Bus toestaan                                             */
-    #define schupinagb02risov         129 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02             */
-    #define schprioin02risvrwris      130 /* Inmelden 02 via Vrachtwagen toestaan                                      */
-    #define schpriouit02risvrwris     131 /* Uitmelden 02 via Vrachtwagen toestaan                                     */
-    #define schupinagb02risvrw        132 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02             */
-    #define schprioin03buskar         133 /* Inmelden 03 via Bus toestaan                                              */
-    #define schpriouit03buskar        134 /* Uitmelden 03 via Bus toestaan                                             */
-    #define schupinagb03bus           135 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03             */
-    #define schprioin03risovris       136 /* Inmelden 03 via Bus toestaan                                              */
-    #define schpriouit03risovris      137 /* Uitmelden 03 via Bus toestaan                                             */
-    #define schupinagb03risov         138 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03             */
-    #define schprioin03risvrwris      139 /* Inmelden 03 via Vrachtwagen toestaan                                      */
-    #define schpriouit03risvrwris     140 /* Uitmelden 03 via Vrachtwagen toestaan                                     */
-    #define schupinagb03risvrw        141 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03             */
-    #define schprioin05buskar         142 /* Inmelden 05 via Bus toestaan                                              */
-    #define schpriouit05buskar        143 /* Uitmelden 05 via Bus toestaan                                             */
-    #define schupinagb05bus           144 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05             */
-    #define schprioin05risovris       145 /* Inmelden 05 via Bus toestaan                                              */
-    #define schpriouit05risovris      146 /* Uitmelden 05 via Bus toestaan                                             */
-    #define schupinagb05risov         147 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05             */
-    #define schprioin05risvrwris      148 /* Inmelden 05 via Vrachtwagen toestaan                                      */
-    #define schpriouit05risvrwris     149 /* Uitmelden 05 via Vrachtwagen toestaan                                     */
-    #define schupinagb05risvrw        150 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05             */
-    #define schprioin08buskar         151 /* Inmelden 08 via Bus toestaan                                              */
-    #define schpriouit08buskar        152 /* Uitmelden 08 via Bus toestaan                                             */
-    #define schupinagb08bus           153 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08             */
-    #define schprioin08risovris       154 /* Inmelden 08 via Bus toestaan                                              */
-    #define schpriouit08risovris      155 /* Uitmelden 08 via Bus toestaan                                             */
-    #define schupinagb08risov         156 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08             */
-    #define schprioin08risvrwris      157 /* Inmelden 08 via Vrachtwagen toestaan                                      */
-    #define schpriouit08risvrwris     158 /* Uitmelden 08 via Vrachtwagen toestaan                                     */
-    #define schupinagb08risvrw        159 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08             */
-    #define schprioin09buskar         160 /* Inmelden 09 via Bus toestaan                                              */
-    #define schpriouit09buskar        161 /* Uitmelden 09 via Bus toestaan                                             */
-    #define schupinagb09bus           162 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09             */
-    #define schprioin09risovris       163 /* Inmelden 09 via Bus toestaan                                              */
-    #define schpriouit09risovris      164 /* Uitmelden 09 via Bus toestaan                                             */
-    #define schupinagb09risov         165 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09             */
-    #define schprioin09risvrwris      166 /* Inmelden 09 via Vrachtwagen toestaan                                      */
-    #define schpriouit09risvrwris     167 /* Uitmelden 09 via Vrachtwagen toestaan                                     */
-    #define schupinagb09risvrw        168 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09             */
-    #define schprioin11buskar         169 /* Inmelden 11 via Bus toestaan                                              */
-    #define schpriouit11buskar        170 /* Uitmelden 11 via Bus toestaan                                             */
-    #define schupinagb11bus           171 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11             */
-    #define schprioin11risovris       172 /* Inmelden 11 via Bus toestaan                                              */
-    #define schpriouit11risovris      173 /* Uitmelden 11 via Bus toestaan                                             */
-    #define schupinagb11risov         174 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11             */
-    #define schprioin11risvrwris      175 /* Inmelden 11 via Vrachtwagen toestaan                                      */
-    #define schpriouit11risvrwris     176 /* Uitmelden 11 via Vrachtwagen toestaan                                     */
-    #define schupinagb11risvrw        177 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11             */
-    #define schprioin22fietsfiets22_1 178 /* Inmelden 22 via Fiets toestaan                                            */
-    #define schpriouit22fietsfiets    179 /* Uitmelden 22 via Fiets toestaan                                           */
-    #define schupinagb22fiets         180 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 22             */
-    #define schprioin28fietsfiets28_2 181 /* Inmelden 28 via Fiets toestaan                                            */
-    #define schpriouit28fietsfiets    182 /* Uitmelden 28 via Fiets toestaan                                           */
-    #define schupinagb28fiets         183 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 28             */
-    #define schprioin61buskar         184 /* Inmelden 61 via Bus toestaan                                              */
-    #define schpriouit61buskar        185 /* Uitmelden 61 via Bus toestaan                                             */
-    #define schupinagb61bus           186 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61             */
-    #define schprioin61risovris       187 /* Inmelden 61 via Bus toestaan                                              */
-    #define schpriouit61risovris      188 /* Uitmelden 61 via Bus toestaan                                             */
-    #define schupinagb61risov         189 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61             */
-    #define schprioin61risvrwris      190 /* Inmelden 61 via Vrachtwagen toestaan                                      */
-    #define schpriouit61risvrwris     191 /* Uitmelden 61 via Vrachtwagen toestaan                                     */
-    #define schupinagb61risvrw        192 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61             */
-    #define schprioin62buskar         193 /* Inmelden 62 via Bus toestaan                                              */
-    #define schpriouit62buskar        194 /* Uitmelden 62 via Bus toestaan                                             */
-    #define schupinagb62bus           195 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62             */
-    #define schprioin62risovris       196 /* Inmelden 62 via Bus toestaan                                              */
-    #define schpriouit62risovris      197 /* Uitmelden 62 via Bus toestaan                                             */
-    #define schupinagb62risov         198 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62             */
-    #define schprioin62risvrwris      199 /* Inmelden 62 via Vrachtwagen toestaan                                      */
-    #define schpriouit62risvrwris     200 /* Uitmelden 62 via Vrachtwagen toestaan                                     */
-    #define schupinagb62risvrw        201 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62             */
-    #define schprioin67buskar         202 /* Inmelden 67 via Bus toestaan                                              */
-    #define schpriouit67buskar        203 /* Uitmelden 67 via Bus toestaan                                             */
-    #define schupinagb67bus           204 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67             */
-    #define schprioin67risovris       205 /* Inmelden 67 via Bus toestaan                                              */
-    #define schpriouit67risovris      206 /* Uitmelden 67 via Bus toestaan                                             */
-    #define schupinagb67risov         207 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67             */
-    #define schprioin67risvrwris      208 /* Inmelden 67 via Vrachtwagen toestaan                                      */
-    #define schpriouit67risvrwris     209 /* Uitmelden 67 via Vrachtwagen toestaan                                     */
-    #define schupinagb67risvrw        210 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67             */
-    #define schprioin68buskar         211 /* Inmelden 68 via Bus toestaan                                              */
-    #define schpriouit68buskar        212 /* Uitmelden 68 via Bus toestaan                                             */
-    #define schupinagb68bus           213 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68             */
-    #define schprioin68risovris       214 /* Inmelden 68 via Bus toestaan                                              */
-    #define schpriouit68risovris      215 /* Uitmelden 68 via Bus toestaan                                             */
-    #define schupinagb68risov         216 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68             */
-    #define schprioin68risvrwris      217 /* Inmelden 68 via Vrachtwagen toestaan                                      */
-    #define schpriouit68risvrwris     218 /* Uitmelden 68 via Vrachtwagen toestaan                                     */
-    #define schupinagb68risvrw        219 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68             */
-    #define schupinagbhd02            220 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 02             */
-    #define schhdin02kar              221 /* Inmelden 02 via KAR HD toestaan                                           */
-    #define schhduit02kar             222 /* Uitmelden 02 via KAR HD toestaan                                          */
-    #define schchecksirene02          223 /* Bij HD meldingen bij 02 via DSI controleren op CIF_SIR                    */
-    #define schhdin02ris              224 /* Inmelden 02 via RIS HD toestaan                                           */
-    #define schhduit02ris             225 /* Uitmelden 02 via RIS HD toestaan                                          */
-    #define schupinagbhd03            226 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 03             */
-    #define schhdin03kar              227 /* Inmelden 03 via KAR HD toestaan                                           */
-    #define schhduit03kar             228 /* Uitmelden 03 via KAR HD toestaan                                          */
-    #define schchecksirene03          229 /* Bij HD meldingen bij 03 via DSI controleren op CIF_SIR                    */
-    #define schhdin03ris              230 /* Inmelden 03 via RIS HD toestaan                                           */
-    #define schhduit03ris             231 /* Uitmelden 03 via RIS HD toestaan                                          */
-    #define schupinagbhd05            232 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 05             */
-    #define schhdin05kar              233 /* Inmelden 05 via KAR HD toestaan                                           */
-    #define schhduit05kar             234 /* Uitmelden 05 via KAR HD toestaan                                          */
-    #define schchecksirene05          235 /* Bij HD meldingen bij 05 via DSI controleren op CIF_SIR                    */
-    #define schhdin05ris              236 /* Inmelden 05 via RIS HD toestaan                                           */
-    #define schhduit05ris             237 /* Uitmelden 05 via RIS HD toestaan                                          */
-    #define schupinagbhd08            238 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 08             */
-    #define schhdin08kar              239 /* Inmelden 08 via KAR HD toestaan                                           */
-    #define schhduit08kar             240 /* Uitmelden 08 via KAR HD toestaan                                          */
-    #define schchecksirene08          241 /* Bij HD meldingen bij 08 via DSI controleren op CIF_SIR                    */
-    #define schhdin08ris              242 /* Inmelden 08 via RIS HD toestaan                                           */
-    #define schhduit08ris             243 /* Uitmelden 08 via RIS HD toestaan                                          */
-    #define schupinagbhd09            244 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 09             */
-    #define schhdin09kar              245 /* Inmelden 09 via KAR HD toestaan                                           */
-    #define schhduit09kar             246 /* Uitmelden 09 via KAR HD toestaan                                          */
-    #define schchecksirene09          247 /* Bij HD meldingen bij 09 via DSI controleren op CIF_SIR                    */
-    #define schhdin09ris              248 /* Inmelden 09 via RIS HD toestaan                                           */
-    #define schhduit09ris             249 /* Uitmelden 09 via RIS HD toestaan                                          */
-    #define schupinagbhd11            250 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 11             */
-    #define schhdin11kar              251 /* Inmelden 11 via KAR HD toestaan                                           */
-    #define schhduit11kar             252 /* Uitmelden 11 via KAR HD toestaan                                          */
-    #define schchecksirene11          253 /* Bij HD meldingen bij 11 via DSI controleren op CIF_SIR                    */
-    #define schhdin11ris              254 /* Inmelden 11 via RIS HD toestaan                                           */
-    #define schhduit11ris             255 /* Uitmelden 11 via RIS HD toestaan                                          */
-    #define schupinagbhd61            256 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 61             */
-    #define schhdin61kar              257 /* Inmelden 61 via KAR HD toestaan                                           */
-    #define schhduit61kar             258 /* Uitmelden 61 via KAR HD toestaan                                          */
-    #define schchecksirene61          259 /* Bij HD meldingen bij 61 via DSI controleren op CIF_SIR                    */
-    #define schhdin61ris              260 /* Inmelden 61 via RIS HD toestaan                                           */
-    #define schhduit61ris             261 /* Uitmelden 61 via RIS HD toestaan                                          */
-    #define schupinagbhd62            262 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 62             */
-    #define schhdin62kar              263 /* Inmelden 62 via KAR HD toestaan                                           */
-    #define schhduit62kar             264 /* Uitmelden 62 via KAR HD toestaan                                          */
-    #define schchecksirene62          265 /* Bij HD meldingen bij 62 via DSI controleren op CIF_SIR                    */
-    #define schhdin62ris              266 /* Inmelden 62 via RIS HD toestaan                                           */
-    #define schhduit62ris             267 /* Uitmelden 62 via RIS HD toestaan                                          */
-    #define schupinagbhd67            268 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 67             */
-    #define schhdin67kar              269 /* Inmelden 67 via KAR HD toestaan                                           */
-    #define schhduit67kar             270 /* Uitmelden 67 via KAR HD toestaan                                          */
-    #define schchecksirene67          271 /* Bij HD meldingen bij 67 via DSI controleren op CIF_SIR                    */
-    #define schhdin67ris              272 /* Inmelden 67 via RIS HD toestaan                                           */
-    #define schhduit67ris             273 /* Uitmelden 67 via RIS HD toestaan                                          */
-    #define schupinagbhd68            274 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 68             */
-    #define schhdin68kar              275 /* Inmelden 68 via KAR HD toestaan                                           */
-    #define schhduit68kar             276 /* Uitmelden 68 via KAR HD toestaan                                          */
-    #define schchecksirene68          277 /* Bij HD meldingen bij 68 via DSI controleren op CIF_SIR                    */
-    #define schhdin68ris              278 /* Inmelden 68 via RIS HD toestaan                                           */
-    #define schhduit68ris             279 /* Uitmelden 68 via RIS HD toestaan                                          */
-    #define schpelrwKOP02             280 /* Toepassen retour wachtgroen na meting peloton bij voor KOP02 fase 02      */
-    #define schpelmkKOP02             281 /* Toepassen vasthouden MK na meting peloton voor KOP02 bij fase 02          */
-    #define schpelaKOP02              282 /* Toepassen aanvraag na meting peloton voor KOP02 bij fase 02               */
-    #define schpkuKOP68_uit68         283 /* Toepassen uitgaande koppeling vanaf fase 68 voor koppeling KOP68_uit      */
-    #define schrisgeencheckopsg       284 /* Niet checken op signaalgroep bij RIS aanvragen en verlengen               */
-    #define schrisaanvraag            285 /* Globaal in of uitschakelen aanvragen via RIS                              */
-    #define schrisverlengen           286 /* Globaal in of uitschakelen verlengen via RIS                              */
-    #define schrgadd24_3              287 /* Type richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2                */
-    #define schrgad24_3               288 /* Richtinggevoelig aanvragen fase 24 aan/uit van 24_3 naar 24_2             */
-    #define schrgvd24_3               289 /* Richtinggevoelig verlengen fase 24 aan/uit van 24_3 naar 24_2             */
-    #define schrgv                    290 /* RoBuGrover aan of uit                                                     */
-    #define schrgv_snel               291 /* RoBuGrover versneld ophogen of verlagen                                   */
-    #define schschoolingreep33        292 /* Schoolingreep aan of uit voor fase 33                                     */
-    #define schschoolingreep34        293 /* Schoolingreep aan of uit voor fase 34                                     */
-    #define schsi33                   294 /* Senioreningreep aan of uit voor fase 33                                   */
-    #define schsi34                   295 /* Senioreningreep aan of uit voor fase 34                                   */
-    #define schca02                   296 /* Cyclische aanvraag fase 02                                                */
-    #define schca03                   297 /* Cyclische aanvraag fase 03                                                */
-    #define schca05                   298 /* Cyclische aanvraag fase 05                                                */
-    #define schca08                   299 /* Cyclische aanvraag fase 08                                                */
-    #define schca09                   300 /* Cyclische aanvraag fase 09                                                */
-    #define schca11                   301 /* Cyclische aanvraag fase 11                                                */
-    #define schca21                   302 /* Cyclische aanvraag fase 21                                                */
-    #define schca22                   303 /* Cyclische aanvraag fase 22                                                */
-    #define schca24                   304 /* Cyclische aanvraag fase 24                                                */
-    #define schca26                   305 /* Cyclische aanvraag fase 26                                                */
-    #define schca28                   306 /* Cyclische aanvraag fase 28                                                */
-    #define schca31                   307 /* Cyclische aanvraag fase 31                                                */
-    #define schca32                   308 /* Cyclische aanvraag fase 32                                                */
-    #define schca33                   309 /* Cyclische aanvraag fase 33                                                */
-    #define schca34                   310 /* Cyclische aanvraag fase 34                                                */
-    #define schca38                   311 /* Cyclische aanvraag fase 38                                                */
-    #define schca61                   312 /* Cyclische aanvraag fase 61                                                */
-    #define schca62                   313 /* Cyclische aanvraag fase 62                                                */
-    #define schca67                   314 /* Cyclische aanvraag fase 67                                                */
-    #define schca68                   315 /* Cyclische aanvraag fase 68                                                */
-    #define schca81                   316 /* Cyclische aanvraag fase 81                                                */
-    #define schca82                   317 /* Cyclische aanvraag fase 82                                                */
-    #define schca84                   318 /* Cyclische aanvraag fase 84                                                */
-    #define schvg02_4a                319 /* Veiligheidsgroen detector 02_4a fase 02                                   */
-    #define schvg02_4b                320 /* Veiligheidsgroen detector 02_4b fase 02                                   */
-    #define schvg08_4a                321 /* Veiligheidsgroen detector 08_4a fase 08                                   */
-    #define schvg08_4b                322 /* Veiligheidsgroen detector 08_4b fase 08                                   */
-    #define schvg11_4                 323 /* Veiligheidsgroen detector 11_4 fase 11                                    */
-    #define schaltg02                 324 /* Alternatieve realisatie toestaan fase 02                                  */
-    #define schaltg03                 325 /* Alternatieve realisatie toestaan fase 03                                  */
-    #define schaltg05                 326 /* Alternatieve realisatie toestaan fase 05                                  */
-    #define schaltg08                 327 /* Alternatieve realisatie toestaan fase 08                                  */
-    #define schaltg09                 328 /* Alternatieve realisatie toestaan fase 09                                  */
-    #define schaltg11                 329 /* Alternatieve realisatie toestaan fase 11                                  */
-    #define schaltg21                 330 /* Alternatieve realisatie toestaan fase 21                                  */
-    #define schaltg2232               331 /* Alternatieve realisatie toestaan fasen 22, 32                             */
-    #define schaltg243484             332 /* Alternatieve realisatie toestaan fasen 24, 34, 84                         */
-    #define schaltg26                 333 /* Alternatieve realisatie toestaan fase 26                                  */
-    #define schaltg2838               334 /* Alternatieve realisatie toestaan fasen 28, 38                             */
-    #define schaltg31                 335 /* Alternatieve realisatie toestaan fase 31                                  */
-    #define schaltg3384               336 /* Alternatieve realisatie toestaan fasen 33, 84                             */
-    #define schaltg2434               337 /* Alternatieve realisatie toestaan fasen 24, 34                             */
-    #define schaltg61                 338 /* Alternatieve realisatie toestaan fase 61                                  */
-    #define schaltg62                 339 /* Alternatieve realisatie toestaan fase 62                                  */
-    #define schaltg67                 340 /* Alternatieve realisatie toestaan fase 67                                  */
-    #define schaltg68                 341 /* Alternatieve realisatie toestaan fase 68                                  */
-    #define schaltg81                 342 /* Alternatieve realisatie toestaan fase 81                                  */
-    #define schaltg82                 343 /* Alternatieve realisatie toestaan fase 82                                  */
-    #define schaltg243384             344 /* Alternatieve realisatie toestaan fasen 24, 33, 84                         */
-    #define schwg02                   345 /* Wachtstand groen fase 02                                                  */
-    #define schwg03                   346 /* Wachtstand groen fase 03                                                  */
-    #define schwg05                   347 /* Wachtstand groen fase 05                                                  */
-    #define schwg08                   348 /* Wachtstand groen fase 08                                                  */
-    #define schwg09                   349 /* Wachtstand groen fase 09                                                  */
-    #define schwg11                   350 /* Wachtstand groen fase 11                                                  */
-    #define schwg21                   351 /* Wachtstand groen fase 21                                                  */
-    #define schwg22                   352 /* Wachtstand groen fase 22                                                  */
-    #define schwg24                   353 /* Wachtstand groen fase 24                                                  */
-    #define schwg26                   354 /* Wachtstand groen fase 26                                                  */
-    #define schwg28                   355 /* Wachtstand groen fase 28                                                  */
-    #define schwg31                   356 /* Wachtstand groen fase 31                                                  */
-    #define schwg32                   357 /* Wachtstand groen fase 32                                                  */
-    #define schwg33                   358 /* Wachtstand groen fase 33                                                  */
-    #define schwg34                   359 /* Wachtstand groen fase 34                                                  */
-    #define schwg38                   360 /* Wachtstand groen fase 38                                                  */
-    #define schwg61                   361 /* Wachtstand groen fase 61                                                  */
-    #define schwg62                   362 /* Wachtstand groen fase 62                                                  */
-    #define schwg67                   363 /* Wachtstand groen fase 67                                                  */
-    #define schwg68                   364 /* Wachtstand groen fase 68                                                  */
-    #define schwg81                   365 /* Wachtstand groen fase 81                                                  */
-    #define schwg82                   366 /* Wachtstand groen fase 82                                                  */
-    #define schwg84                   367 /* Wachtstand groen fase 84                                                  */
-    #define schwtv22                  368 /* Aansturing wachttijdvoorspeller fase 22 aan of uit                        */
-    #define schwtv24                  369 /* Aansturing wachttijdvoorspeller fase 24 aan of uit                        */
-    #define schwtv26                  370 /* Aansturing wachttijdvoorspeller fase 26 aan of uit                        */
-    #define schwtv28                  371 /* Aansturing wachttijdvoorspeller fase 28 aan of uit                        */
-    #define schwtvbusbijhd            372 /* Aansturing wachttijdvoorspeller BUS licht bij HD ingreep                  */
-    #define schgs2232                 373 /* Schakelbare gelijkstart tussen fase 32 en 22                              */
-    #define schgs2434                 374 /* Schakelbare gelijkstart tussen fase 34 en 24                              */
-    #define schgs2484                 375 /* Schakelbare gelijkstart tussen fase 84 en 24                              */
-    #define schgs3384                 376 /* Schakelbare gelijkstart tussen fase 84 en 33                              */
-    #define schlos32_1                377 /* Toestaan los realiseren fase 32                                           */
-    #define schlos32_2                378 /* Toestaan los realiseren fase 32                                           */
-    #define schlos31_1                379 /* Toestaan los realiseren fase 31                                           */
-    #define schlos31_2                380 /* Toestaan los realiseren fase 31                                           */
-    #define schlos34_1                381 /* Toestaan los realiseren fase 34                                           */
-    #define schlos34_2                382 /* Toestaan los realiseren fase 34                                           */
-    #define schlos33_1                383 /* Toestaan los realiseren fase 33                                           */
-    #define schlos33_2                384 /* Toestaan los realiseren fase 33                                           */
-    #define schconfidence15fix        385
-    #define schtxconfidence15ar       386
-    #define schspatconfidence1        387
-    #define schspatconfidence3        388
-    #define schspatconfidence6        389
-    #define schspatconfidence9        390
-    #define schspatconfidence12       391
-    #define schspatconfidence15       392
-    #define schtimings02              393
-    #define schtimings03              394
-    #define schtimings05              395
-    #define schtimings08              396
-    #define schtimings09              397
-    #define schtimings11              398
-    #define schtimings21              399
-    #define schtimings22              400
-    #define schtimings24              401
-    #define schtimings26              402
-    #define schtimings28              403
-    #define schtimings31              404
-    #define schtimings32              405
-    #define schtimings33              406
-    #define schtimings34              407
-    #define schtimings38              408
-    #define schtimings61              409
-    #define schtimings62              410
-    #define schtimings67              411
-    #define schtimings68              412
-    #define schtimings81              413
-    #define schtimings82              414
-    #define schtimings84              415
-    #define schsneld02_1a             416 /* Aanvraag snel voor detector 02_1a aan of uit                              */
-    #define schsneld02_1b             417 /* Aanvraag snel voor detector 02_1b aan of uit                              */
-    #define schsneld03_1              418 /* Aanvraag snel voor detector 03_1 aan of uit                               */
-    #define schsneld05_1              419 /* Aanvraag snel voor detector 05_1 aan of uit                               */
-    #define schsneld08_1a             420 /* Aanvraag snel voor detector 08_1a aan of uit                              */
-    #define schsneld08_1b             421 /* Aanvraag snel voor detector 08_1b aan of uit                              */
-    #define schsneld09_1              422 /* Aanvraag snel voor detector 09_1 aan of uit                               */
-    #define schsneld11_1              423 /* Aanvraag snel voor detector 11_1 aan of uit                               */
-    #define schsneld211               424 /* Aanvraag snel voor detector 211 aan of uit                                */
-    #define schsneld22_1              425 /* Aanvraag snel voor detector 22_1 aan of uit                               */
-    #define schsneld24_1              426 /* Aanvraag snel voor detector 24_1 aan of uit                               */
-    #define schsneld261               427 /* Aanvraag snel voor detector 261 aan of uit                                */
-    #define schsneld28_1              428 /* Aanvraag snel voor detector 28_1 aan of uit                               */
-    #define schsneld61_1              429 /* Aanvraag snel voor detector 61_1 aan of uit                               */
-    #define schsneld62_1a             430 /* Aanvraag snel voor detector 62_1a aan of uit                              */
-    #define schsneld62_1b             431 /* Aanvraag snel voor detector 62_1b aan of uit                              */
-    #define schsneld67_1              432 /* Aanvraag snel voor detector 67_1 aan of uit                               */
-    #define schsneld68_1a             433 /* Aanvraag snel voor detector 68_1a aan of uit                              */
-    #define schsneld68_1b             434 /* Aanvraag snel voor detector 68_1b aan of uit                              */
-    #define schsneld81_1              435 /* Aanvraag snel voor detector 81_1 aan of uit                               */
-    #define schsneld82_1              436 /* Aanvraag snel voor detector 82_1 aan of uit                               */
-    #define schsneld84_1              437 /* Aanvraag snel voor detector 84_1 aan of uit                               */
-    #define SCHMAX1                   438
+    #define schtegenov02               42 /* Tegenhouden hoofdrichting 02 bij OV ingreep                               */
+    #define schafkwgov02               43 /* Afkappen WG hoofdrichting 02 bij OV ingreep                               */
+    #define schafkvgov02               44 /* Afkappen VG hoofdrichting 02 bij OV ingreep                               */
+    #define schtegenov08               45 /* Tegenhouden hoofdrichting 08 bij OV ingreep                               */
+    #define schafkwgov08               46 /* Afkappen WG hoofdrichting 08 bij OV ingreep                               */
+    #define schafkvgov08               47 /* Afkappen VG hoofdrichting 08 bij OV ingreep                               */
+    #define schinstprm                 48 /* Eenmalig kopieren signaalplan parameters naar signaalplannen              */
+    #define schinst                    49 /* Eenmalig instellen signaalplannen na wijziging                            */
+    #define schvaml                    50 /* Indien VA regelen, ML-bedrijf (1) of versneld PL-bedrijf (0)              */
+    #define schvar                     51 /* VA regelen aan of uit                                                     */
+    #define scharh                     52 /* Toestaan alternatieven voor hoofdrichtingen                               */
+    #define schvarstreng               53 /* VA regelen aan of uit voor gehele streng                                  */
+    #define schpervardef               54 /* VA regelen periode default                                                */
+    #define schpervar1                 55 /* VA regelen periode dag                                                    */
+    #define schpervar2                 56 /* VA regelen periode ochtend                                                */
+    #define schpervar3                 57 /* VA regelen periode avond                                                  */
+    #define schpervar4                 58 /* VA regelen periode koopavond                                              */
+    #define schpervar5                 59 /* VA regelen periode weekend                                                */
+    #define schpervar6                 60 /* VA regelen periode nacht                                                  */
+    #define schpervar7                 61 /* VA regelen periode reserve                                                */
+    #define schperarhdef               62 /* Alternatieven voor hoofdrichtingen periode default                        */
+    #define schperarh1                 63 /* Alternatieven voor hoofdrichtingen periode dag                            */
+    #define schperarh2                 64 /* Alternatieven voor hoofdrichtingen periode ochtend                        */
+    #define schperarh3                 65 /* Alternatieven voor hoofdrichtingen periode avond                          */
+    #define schperarh4                 66 /* Alternatieven voor hoofdrichtingen periode koopavond                      */
+    #define schperarh5                 67 /* Alternatieven voor hoofdrichtingen periode weekend                        */
+    #define schperarh6                 68 /* Alternatieven voor hoofdrichtingen periode nacht                          */
+    #define schperarh7                 69 /* Alternatieven voor hoofdrichtingen periode reserve                        */
+    #define schovpriople               70 /* Wel of niet toepassen prioriteit OV tijdens PL-bedrijf                    */
+    #define schma0261                  71 /* Meeaanvraag van 02 naar 61 actief                                         */
+    #define schma0262                  72 /* Meeaanvraag van 02 naar 62 actief                                         */
+    #define schma0521                  73 /* Meeaanvraag van 05 naar 21 actief                                         */
+    #define schma0522                  74 /* Meeaanvraag van 05 naar 22 actief                                         */
+    #define schma0532                  75 /* Meeaanvraag van 05 naar 32 actief                                         */
+    #define schma0868                  76 /* Meeaanvraag van 08 naar 68 actief                                         */
+    #define schma1126                  77 /* Meeaanvraag van 11 naar 26 actief                                         */
+    #define schma1168                  78 /* Meeaanvraag van 11 naar 68 actief                                         */
+    #define schma2221                  79 /* Meeaanvraag van 22 naar 21 actief                                         */
+    #define schma2611                  80 /* Meeaanvraag van 26 naar 11 actief                                         */
+    #define schma3122                  81 /* Meeaanvraag van 31 naar 22 actief                                         */
+    #define schma3132                  82 /* Meeaanvraag van 31 naar 32 actief                                         */
+    #define schma3222                  83 /* Meeaanvraag van 32 naar 22 actief                                         */
+    #define schma3231                  84 /* Meeaanvraag van 32 naar 31 actief                                         */
+    #define schma3324                  85 /* Meeaanvraag van 33 naar 24 actief                                         */
+    #define schma3334                  86 /* Meeaanvraag van 33 naar 34 actief                                         */
+    #define schma3384                  87 /* Meeaanvraag van 33 naar 84 actief                                         */
+    #define schma3424                  88 /* Meeaanvraag van 34 naar 24 actief                                         */
+    #define schma3433                  89 /* Meeaanvraag van 34 naar 33 actief                                         */
+    #define schma3484                  90 /* Meeaanvraag van 34 naar 84 actief                                         */
+    #define schma8281                  91 /* Meeaanvraag van 82 naar 81 actief                                         */
+    #define schmv02                    92 /* Meeverlengen fase 02                                                      */
+    #define schmv03                    93 /* Meeverlengen fase 03                                                      */
+    #define schmv05                    94 /* Meeverlengen fase 05                                                      */
+    #define schmv08                    95 /* Meeverlengen fase 08                                                      */
+    #define schmv09                    96 /* Meeverlengen fase 09                                                      */
+    #define schmv11                    97 /* Meeverlengen fase 11                                                      */
+    #define schmv21                    98 /* Meeverlengen fase 21                                                      */
+    #define schmv22                    99 /* Meeverlengen fase 22                                                      */
+    #define schhardmv2205             100 /* Hard meeverlengen fase 22 met fase 05                                     */
+    #define schmv24                   101 /* Meeverlengen fase 24                                                      */
+    #define schmv26                   102 /* Meeverlengen fase 26                                                      */
+    #define schhardmv2611             103 /* Hard meeverlengen fase 26 met fase 11                                     */
+    #define schmv28                   104 /* Meeverlengen fase 28                                                      */
+    #define schmv31                   105 /* Meeverlengen fase 31                                                      */
+    #define schmv32                   106 /* Meeverlengen fase 32                                                      */
+    #define schhardmv3205             107 /* Hard meeverlengen fase 32 met fase 05                                     */
+    #define schmv33                   108 /* Meeverlengen fase 33                                                      */
+    #define schmv34                   109 /* Meeverlengen fase 34                                                      */
+    #define schmv38                   110 /* Meeverlengen fase 38                                                      */
+    #define schmv61                   111 /* Meeverlengen fase 61                                                      */
+    #define schmv62                   112 /* Meeverlengen fase 62                                                      */
+    #define schmv67                   113 /* Meeverlengen fase 67                                                      */
+    #define schmv68                   114 /* Meeverlengen fase 68                                                      */
+    #define schmv81                   115 /* Meeverlengen fase 81                                                      */
+    #define schmv82                   116 /* Meeverlengen fase 82                                                      */
+    #define schmv84                   117 /* Meeverlengen fase 84                                                      */
+    #define schmlprm                  118 /* Toepassen parametriseerbare modulestructuur                               */
+    #define schovstipt03bus           119 /* Geconditioneerde prioteit voor OV bij 03 Bus                              */
+    #define schovstipt05bus           120 /* Geconditioneerde prioteit voor OV bij 05 Bus                              */
+    #define schovstipt08bus           121 /* Geconditioneerde prioteit voor OV bij 08 Bus                              */
+    #define schovstipt09bus           122 /* Geconditioneerde prioteit voor OV bij 09 Bus                              */
+    #define schovstipt11bus           123 /* Geconditioneerde prioteit voor OV bij 11 Bus                              */
+    #define schovstipt61bus           124 /* Geconditioneerde prioteit voor OV bij 61 Bus                              */
+    #define schovstipt62bus           125 /* Geconditioneerde prioteit voor OV bij 62 Bus                              */
+    #define schovstipt67bus           126 /* Geconditioneerde prioteit voor OV bij 67 Bus                              */
+    #define schovstipt68bus           127 /* Geconditioneerde prioteit voor OV bij 68 Bus                              */
+    #define schcovuber                128 /* Weergeven wijzigingen PRIO_teller via CIF_UBER                            */
+    #define schcheckdstype            129 /* Check type DSI bericht bij VECOM                                          */
+    #define schprioin02karbuskar      130 /* Inmelden 02 via Bus toestaan                                              */
+    #define schpriouit02karbuskar     131 /* Uitmelden 02 via Bus toestaan                                             */
+    #define schupinagb02karbus        132 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02             */
+    #define schprioin02risovris       133 /* Inmelden 02 via Bus toestaan                                              */
+    #define schpriouit02risovris      134 /* Uitmelden 02 via Bus toestaan                                             */
+    #define schupinagb02risov         135 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02             */
+    #define schprioin02risvrwris      136 /* Inmelden 02 via Vrachtwagen toestaan                                      */
+    #define schpriouit02risvrwris     137 /* Uitmelden 02 via Vrachtwagen toestaan                                     */
+    #define schupinagb02risvrw        138 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02             */
+    #define schprioin03buskar         139 /* Inmelden 03 via Bus toestaan                                              */
+    #define schpriouit03buskar        140 /* Uitmelden 03 via Bus toestaan                                             */
+    #define schupinagb03bus           141 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03             */
+    #define schprioin03risovris       142 /* Inmelden 03 via Bus toestaan                                              */
+    #define schpriouit03risovris      143 /* Uitmelden 03 via Bus toestaan                                             */
+    #define schupinagb03risov         144 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03             */
+    #define schprioin03risvrwris      145 /* Inmelden 03 via Vrachtwagen toestaan                                      */
+    #define schpriouit03risvrwris     146 /* Uitmelden 03 via Vrachtwagen toestaan                                     */
+    #define schupinagb03risvrw        147 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 03             */
+    #define schprioin05buskar         148 /* Inmelden 05 via Bus toestaan                                              */
+    #define schpriouit05buskar        149 /* Uitmelden 05 via Bus toestaan                                             */
+    #define schupinagb05bus           150 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05             */
+    #define schprioin05risovris       151 /* Inmelden 05 via Bus toestaan                                              */
+    #define schpriouit05risovris      152 /* Uitmelden 05 via Bus toestaan                                             */
+    #define schupinagb05risov         153 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05             */
+    #define schprioin05risvrwris      154 /* Inmelden 05 via Vrachtwagen toestaan                                      */
+    #define schpriouit05risvrwris     155 /* Uitmelden 05 via Vrachtwagen toestaan                                     */
+    #define schupinagb05risvrw        156 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 05             */
+    #define schprioin08buskar         157 /* Inmelden 08 via Bus toestaan                                              */
+    #define schpriouit08buskar        158 /* Uitmelden 08 via Bus toestaan                                             */
+    #define schupinagb08bus           159 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08             */
+    #define schprioin08risovris       160 /* Inmelden 08 via Bus toestaan                                              */
+    #define schpriouit08risovris      161 /* Uitmelden 08 via Bus toestaan                                             */
+    #define schupinagb08risov         162 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08             */
+    #define schprioin08risvrwris      163 /* Inmelden 08 via Vrachtwagen toestaan                                      */
+    #define schpriouit08risvrwris     164 /* Uitmelden 08 via Vrachtwagen toestaan                                     */
+    #define schupinagb08risvrw        165 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08             */
+    #define schprioin09buskar         166 /* Inmelden 09 via Bus toestaan                                              */
+    #define schpriouit09buskar        167 /* Uitmelden 09 via Bus toestaan                                             */
+    #define schupinagb09bus           168 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09             */
+    #define schprioin09risovris       169 /* Inmelden 09 via Bus toestaan                                              */
+    #define schpriouit09risovris      170 /* Uitmelden 09 via Bus toestaan                                             */
+    #define schupinagb09risov         171 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09             */
+    #define schprioin09risvrwris      172 /* Inmelden 09 via Vrachtwagen toestaan                                      */
+    #define schpriouit09risvrwris     173 /* Uitmelden 09 via Vrachtwagen toestaan                                     */
+    #define schupinagb09risvrw        174 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 09             */
+    #define schprioin11buskar         175 /* Inmelden 11 via Bus toestaan                                              */
+    #define schpriouit11buskar        176 /* Uitmelden 11 via Bus toestaan                                             */
+    #define schupinagb11bus           177 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11             */
+    #define schprioin11risovris       178 /* Inmelden 11 via Bus toestaan                                              */
+    #define schpriouit11risovris      179 /* Uitmelden 11 via Bus toestaan                                             */
+    #define schupinagb11risov         180 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11             */
+    #define schprioin11risvrwris      181 /* Inmelden 11 via Vrachtwagen toestaan                                      */
+    #define schpriouit11risvrwris     182 /* Uitmelden 11 via Vrachtwagen toestaan                                     */
+    #define schupinagb11risvrw        183 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11             */
+    #define schprioin22fietsfiets22_1 184 /* Inmelden 22 via Fiets toestaan                                            */
+    #define schpriouit22fietsfiets    185 /* Uitmelden 22 via Fiets toestaan                                           */
+    #define schupinagb22fiets         186 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 22             */
+    #define schprioin28fietsfiets28_2 187 /* Inmelden 28 via Fiets toestaan                                            */
+    #define schpriouit28fietsfiets    188 /* Uitmelden 28 via Fiets toestaan                                           */
+    #define schupinagb28fiets         189 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 28             */
+    #define schprioin61buskar         190 /* Inmelden 61 via Bus toestaan                                              */
+    #define schpriouit61buskar        191 /* Uitmelden 61 via Bus toestaan                                             */
+    #define schupinagb61bus           192 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61             */
+    #define schprioin61risovris       193 /* Inmelden 61 via Bus toestaan                                              */
+    #define schpriouit61risovris      194 /* Uitmelden 61 via Bus toestaan                                             */
+    #define schupinagb61risov         195 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61             */
+    #define schprioin61risvrwris      196 /* Inmelden 61 via Vrachtwagen toestaan                                      */
+    #define schpriouit61risvrwris     197 /* Uitmelden 61 via Vrachtwagen toestaan                                     */
+    #define schupinagb61risvrw        198 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 61             */
+    #define schprioin62buskar         199 /* Inmelden 62 via Bus toestaan                                              */
+    #define schpriouit62buskar        200 /* Uitmelden 62 via Bus toestaan                                             */
+    #define schupinagb62bus           201 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62             */
+    #define schprioin62risovris       202 /* Inmelden 62 via Bus toestaan                                              */
+    #define schpriouit62risovris      203 /* Uitmelden 62 via Bus toestaan                                             */
+    #define schupinagb62risov         204 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62             */
+    #define schprioin62risvrwris      205 /* Inmelden 62 via Vrachtwagen toestaan                                      */
+    #define schpriouit62risvrwris     206 /* Uitmelden 62 via Vrachtwagen toestaan                                     */
+    #define schupinagb62risvrw        207 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 62             */
+    #define schprioin67buskar         208 /* Inmelden 67 via Bus toestaan                                              */
+    #define schpriouit67buskar        209 /* Uitmelden 67 via Bus toestaan                                             */
+    #define schupinagb67bus           210 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67             */
+    #define schprioin67risovris       211 /* Inmelden 67 via Bus toestaan                                              */
+    #define schpriouit67risovris      212 /* Uitmelden 67 via Bus toestaan                                             */
+    #define schupinagb67risov         213 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67             */
+    #define schprioin67risvrwris      214 /* Inmelden 67 via Vrachtwagen toestaan                                      */
+    #define schpriouit67risvrwris     215 /* Uitmelden 67 via Vrachtwagen toestaan                                     */
+    #define schupinagb67risvrw        216 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 67             */
+    #define schprioin68buskar         217 /* Inmelden 68 via Bus toestaan                                              */
+    #define schpriouit68buskar        218 /* Uitmelden 68 via Bus toestaan                                             */
+    #define schupinagb68bus           219 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68             */
+    #define schprioin68risovris       220 /* Inmelden 68 via Bus toestaan                                              */
+    #define schpriouit68risovris      221 /* Uitmelden 68 via Bus toestaan                                             */
+    #define schupinagb68risov         222 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68             */
+    #define schprioin68risvrwris      223 /* Inmelden 68 via Vrachtwagen toestaan                                      */
+    #define schpriouit68risvrwris     224 /* Uitmelden 68 via Vrachtwagen toestaan                                     */
+    #define schupinagb68risvrw        225 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 68             */
+    #define schupinagbhd02            226 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 02             */
+    #define schhdin02kar              227 /* Inmelden 02 via KAR HD toestaan                                           */
+    #define schhduit02kar             228 /* Uitmelden 02 via KAR HD toestaan                                          */
+    #define schchecksirene02          229 /* Bij HD meldingen bij 02 via DSI controleren op CIF_SIR                    */
+    #define schhdin02ris              230 /* Inmelden 02 via RIS HD toestaan                                           */
+    #define schhduit02ris             231 /* Uitmelden 02 via RIS HD toestaan                                          */
+    #define schupinagbhd03            232 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 03             */
+    #define schhdin03kar              233 /* Inmelden 03 via KAR HD toestaan                                           */
+    #define schhduit03kar             234 /* Uitmelden 03 via KAR HD toestaan                                          */
+    #define schchecksirene03          235 /* Bij HD meldingen bij 03 via DSI controleren op CIF_SIR                    */
+    #define schhdin03ris              236 /* Inmelden 03 via RIS HD toestaan                                           */
+    #define schhduit03ris             237 /* Uitmelden 03 via RIS HD toestaan                                          */
+    #define schupinagbhd05            238 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 05             */
+    #define schhdin05kar              239 /* Inmelden 05 via KAR HD toestaan                                           */
+    #define schhduit05kar             240 /* Uitmelden 05 via KAR HD toestaan                                          */
+    #define schchecksirene05          241 /* Bij HD meldingen bij 05 via DSI controleren op CIF_SIR                    */
+    #define schhdin05ris              242 /* Inmelden 05 via RIS HD toestaan                                           */
+    #define schhduit05ris             243 /* Uitmelden 05 via RIS HD toestaan                                          */
+    #define schupinagbhd08            244 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 08             */
+    #define schhdin08kar              245 /* Inmelden 08 via KAR HD toestaan                                           */
+    #define schhduit08kar             246 /* Uitmelden 08 via KAR HD toestaan                                          */
+    #define schchecksirene08          247 /* Bij HD meldingen bij 08 via DSI controleren op CIF_SIR                    */
+    #define schhdin08ris              248 /* Inmelden 08 via RIS HD toestaan                                           */
+    #define schhduit08ris             249 /* Uitmelden 08 via RIS HD toestaan                                          */
+    #define schupinagbhd09            250 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 09             */
+    #define schhdin09kar              251 /* Inmelden 09 via KAR HD toestaan                                           */
+    #define schhduit09kar             252 /* Uitmelden 09 via KAR HD toestaan                                          */
+    #define schchecksirene09          253 /* Bij HD meldingen bij 09 via DSI controleren op CIF_SIR                    */
+    #define schhdin09ris              254 /* Inmelden 09 via RIS HD toestaan                                           */
+    #define schhduit09ris             255 /* Uitmelden 09 via RIS HD toestaan                                          */
+    #define schupinagbhd11            256 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 11             */
+    #define schhdin11kar              257 /* Inmelden 11 via KAR HD toestaan                                           */
+    #define schhduit11kar             258 /* Uitmelden 11 via KAR HD toestaan                                          */
+    #define schchecksirene11          259 /* Bij HD meldingen bij 11 via DSI controleren op CIF_SIR                    */
+    #define schhdin11ris              260 /* Inmelden 11 via RIS HD toestaan                                           */
+    #define schhduit11ris             261 /* Uitmelden 11 via RIS HD toestaan                                          */
+    #define schupinagbhd61            262 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 61             */
+    #define schhdin61kar              263 /* Inmelden 61 via KAR HD toestaan                                           */
+    #define schhduit61kar             264 /* Uitmelden 61 via KAR HD toestaan                                          */
+    #define schchecksirene61          265 /* Bij HD meldingen bij 61 via DSI controleren op CIF_SIR                    */
+    #define schhdin61ris              266 /* Inmelden 61 via RIS HD toestaan                                           */
+    #define schhduit61ris             267 /* Uitmelden 61 via RIS HD toestaan                                          */
+    #define schupinagbhd62            268 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 62             */
+    #define schhdin62kar              269 /* Inmelden 62 via KAR HD toestaan                                           */
+    #define schhduit62kar             270 /* Uitmelden 62 via KAR HD toestaan                                          */
+    #define schchecksirene62          271 /* Bij HD meldingen bij 62 via DSI controleren op CIF_SIR                    */
+    #define schhdin62ris              272 /* Inmelden 62 via RIS HD toestaan                                           */
+    #define schhduit62ris             273 /* Uitmelden 62 via RIS HD toestaan                                          */
+    #define schupinagbhd67            274 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 67             */
+    #define schhdin67kar              275 /* Inmelden 67 via KAR HD toestaan                                           */
+    #define schhduit67kar             276 /* Uitmelden 67 via KAR HD toestaan                                          */
+    #define schchecksirene67          277 /* Bij HD meldingen bij 67 via DSI controleren op CIF_SIR                    */
+    #define schhdin67ris              278 /* Inmelden 67 via RIS HD toestaan                                           */
+    #define schhduit67ris             279 /* Uitmelden 67 via RIS HD toestaan                                          */
+    #define schupinagbhd68            280 /* Selectieve detectie onbetrouwbaar na groenbewaking HD fase 68             */
+    #define schhdin68kar              281 /* Inmelden 68 via KAR HD toestaan                                           */
+    #define schhduit68kar             282 /* Uitmelden 68 via KAR HD toestaan                                          */
+    #define schchecksirene68          283 /* Bij HD meldingen bij 68 via DSI controleren op CIF_SIR                    */
+    #define schhdin68ris              284 /* Inmelden 68 via RIS HD toestaan                                           */
+    #define schhduit68ris             285 /* Uitmelden 68 via RIS HD toestaan                                          */
+    #define schpelrwKOP02             286 /* Toepassen retour wachtgroen na meting peloton bij voor KOP02 fase 02      */
+    #define schpelmkKOP02             287 /* Toepassen vasthouden MK na meting peloton voor KOP02 bij fase 02          */
+    #define schpelaKOP02              288 /* Toepassen aanvraag na meting peloton voor KOP02 bij fase 02               */
+    #define schpkuKOP68_uit68         289 /* Toepassen uitgaande koppeling vanaf fase 68 voor koppeling KOP68_uit      */
+    #define schrisgeencheckopsg       290 /* Niet checken op signaalgroep bij RIS aanvragen en verlengen               */
+    #define schrisaanvraag            291 /* Globaal in of uitschakelen aanvragen via RIS                              */
+    #define schrisverlengen           292 /* Globaal in of uitschakelen verlengen via RIS                              */
+    #define schrgadd24_3              293 /* Type richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2                */
+    #define schrgad24_3               294 /* Richtinggevoelig aanvragen fase 24 aan/uit van 24_3 naar 24_2             */
+    #define schrgvd24_3               295 /* Richtinggevoelig verlengen fase 24 aan/uit van 24_3 naar 24_2             */
+    #define schrgv                    296 /* RoBuGrover aan of uit                                                     */
+    #define schrgv_snel               297 /* RoBuGrover versneld ophogen of verlagen                                   */
+    #define schschoolingreep33        298 /* Schoolingreep aan of uit voor fase 33                                     */
+    #define schschoolingreep34        299 /* Schoolingreep aan of uit voor fase 34                                     */
+    #define schsi33                   300 /* Senioreningreep aan of uit voor fase 33                                   */
+    #define schsi34                   301 /* Senioreningreep aan of uit voor fase 34                                   */
+    #define schca02                   302 /* Cyclische aanvraag fase 02                                                */
+    #define schca03                   303 /* Cyclische aanvraag fase 03                                                */
+    #define schca05                   304 /* Cyclische aanvraag fase 05                                                */
+    #define schca08                   305 /* Cyclische aanvraag fase 08                                                */
+    #define schca09                   306 /* Cyclische aanvraag fase 09                                                */
+    #define schca11                   307 /* Cyclische aanvraag fase 11                                                */
+    #define schca21                   308 /* Cyclische aanvraag fase 21                                                */
+    #define schca22                   309 /* Cyclische aanvraag fase 22                                                */
+    #define schca24                   310 /* Cyclische aanvraag fase 24                                                */
+    #define schca26                   311 /* Cyclische aanvraag fase 26                                                */
+    #define schca28                   312 /* Cyclische aanvraag fase 28                                                */
+    #define schca31                   313 /* Cyclische aanvraag fase 31                                                */
+    #define schca32                   314 /* Cyclische aanvraag fase 32                                                */
+    #define schca33                   315 /* Cyclische aanvraag fase 33                                                */
+    #define schca34                   316 /* Cyclische aanvraag fase 34                                                */
+    #define schca38                   317 /* Cyclische aanvraag fase 38                                                */
+    #define schca61                   318 /* Cyclische aanvraag fase 61                                                */
+    #define schca62                   319 /* Cyclische aanvraag fase 62                                                */
+    #define schca67                   320 /* Cyclische aanvraag fase 67                                                */
+    #define schca68                   321 /* Cyclische aanvraag fase 68                                                */
+    #define schca81                   322 /* Cyclische aanvraag fase 81                                                */
+    #define schca82                   323 /* Cyclische aanvraag fase 82                                                */
+    #define schca84                   324 /* Cyclische aanvraag fase 84                                                */
+    #define schvg02_4a                325 /* Veiligheidsgroen detector 02_4a fase 02                                   */
+    #define schvg02_4b                326 /* Veiligheidsgroen detector 02_4b fase 02                                   */
+    #define schvg08_4a                327 /* Veiligheidsgroen detector 08_4a fase 08                                   */
+    #define schvg08_4b                328 /* Veiligheidsgroen detector 08_4b fase 08                                   */
+    #define schvg11_4                 329 /* Veiligheidsgroen detector 11_4 fase 11                                    */
+    #define schaltg02                 330 /* Alternatieve realisatie toestaan fase 02                                  */
+    #define schaltg03                 331 /* Alternatieve realisatie toestaan fase 03                                  */
+    #define schaltg05                 332 /* Alternatieve realisatie toestaan fase 05                                  */
+    #define schaltg08                 333 /* Alternatieve realisatie toestaan fase 08                                  */
+    #define schaltg09                 334 /* Alternatieve realisatie toestaan fase 09                                  */
+    #define schaltg11                 335 /* Alternatieve realisatie toestaan fase 11                                  */
+    #define schaltg21                 336 /* Alternatieve realisatie toestaan fase 21                                  */
+    #define schaltg2232               337 /* Alternatieve realisatie toestaan fasen 22, 32                             */
+    #define schaltg243484             338 /* Alternatieve realisatie toestaan fasen 24, 34, 84                         */
+    #define schaltg26                 339 /* Alternatieve realisatie toestaan fase 26                                  */
+    #define schaltg2838               340 /* Alternatieve realisatie toestaan fasen 28, 38                             */
+    #define schaltg31                 341 /* Alternatieve realisatie toestaan fase 31                                  */
+    #define schaltg3384               342 /* Alternatieve realisatie toestaan fasen 33, 84                             */
+    #define schaltg2434               343 /* Alternatieve realisatie toestaan fasen 24, 34                             */
+    #define schaltg61                 344 /* Alternatieve realisatie toestaan fase 61                                  */
+    #define schaltg62                 345 /* Alternatieve realisatie toestaan fase 62                                  */
+    #define schaltg67                 346 /* Alternatieve realisatie toestaan fase 67                                  */
+    #define schaltg68                 347 /* Alternatieve realisatie toestaan fase 68                                  */
+    #define schaltg81                 348 /* Alternatieve realisatie toestaan fase 81                                  */
+    #define schaltg82                 349 /* Alternatieve realisatie toestaan fase 82                                  */
+    #define schaltg243384             350 /* Alternatieve realisatie toestaan fasen 24, 33, 84                         */
+    #define schwg02                   351 /* Wachtstand groen fase 02                                                  */
+    #define schwg03                   352 /* Wachtstand groen fase 03                                                  */
+    #define schwg05                   353 /* Wachtstand groen fase 05                                                  */
+    #define schwg08                   354 /* Wachtstand groen fase 08                                                  */
+    #define schwg09                   355 /* Wachtstand groen fase 09                                                  */
+    #define schwg11                   356 /* Wachtstand groen fase 11                                                  */
+    #define schwg21                   357 /* Wachtstand groen fase 21                                                  */
+    #define schwg22                   358 /* Wachtstand groen fase 22                                                  */
+    #define schwg24                   359 /* Wachtstand groen fase 24                                                  */
+    #define schwg26                   360 /* Wachtstand groen fase 26                                                  */
+    #define schwg28                   361 /* Wachtstand groen fase 28                                                  */
+    #define schwg31                   362 /* Wachtstand groen fase 31                                                  */
+    #define schwg32                   363 /* Wachtstand groen fase 32                                                  */
+    #define schwg33                   364 /* Wachtstand groen fase 33                                                  */
+    #define schwg34                   365 /* Wachtstand groen fase 34                                                  */
+    #define schwg38                   366 /* Wachtstand groen fase 38                                                  */
+    #define schwg61                   367 /* Wachtstand groen fase 61                                                  */
+    #define schwg62                   368 /* Wachtstand groen fase 62                                                  */
+    #define schwg67                   369 /* Wachtstand groen fase 67                                                  */
+    #define schwg68                   370 /* Wachtstand groen fase 68                                                  */
+    #define schwg81                   371 /* Wachtstand groen fase 81                                                  */
+    #define schwg82                   372 /* Wachtstand groen fase 82                                                  */
+    #define schwg84                   373 /* Wachtstand groen fase 84                                                  */
+    #define schwtv22                  374 /* Aansturing wachttijdvoorspeller fase 22 aan of uit                        */
+    #define schwtv24                  375 /* Aansturing wachttijdvoorspeller fase 24 aan of uit                        */
+    #define schwtv26                  376 /* Aansturing wachttijdvoorspeller fase 26 aan of uit                        */
+    #define schwtv28                  377 /* Aansturing wachttijdvoorspeller fase 28 aan of uit                        */
+    #define schwtvbusbijhd            378 /* Aansturing wachttijdvoorspeller BUS licht bij HD ingreep                  */
+    #define schgs2232                 379 /* Schakelbare gelijkstart tussen fase 32 en 22                              */
+    #define schgs2434                 380 /* Schakelbare gelijkstart tussen fase 34 en 24                              */
+    #define schgs2484                 381 /* Schakelbare gelijkstart tussen fase 84 en 24                              */
+    #define schgs3384                 382 /* Schakelbare gelijkstart tussen fase 84 en 33                              */
+    #define schlos32_1                383 /* Toestaan los realiseren fase 32                                           */
+    #define schlos32_2                384 /* Toestaan los realiseren fase 32                                           */
+    #define schlos31_1                385 /* Toestaan los realiseren fase 31                                           */
+    #define schlos31_2                386 /* Toestaan los realiseren fase 31                                           */
+    #define schlos34_1                387 /* Toestaan los realiseren fase 34                                           */
+    #define schlos34_2                388 /* Toestaan los realiseren fase 34                                           */
+    #define schlos33_1                389 /* Toestaan los realiseren fase 33                                           */
+    #define schlos33_2                390 /* Toestaan los realiseren fase 33                                           */
+    #define schconfidence15fix        391
+    #define schtxconfidence15ar       392
+    #define schspatconfidence1        393
+    #define schspatconfidence3        394
+    #define schspatconfidence6        395
+    #define schspatconfidence9        396
+    #define schspatconfidence12       397
+    #define schspatconfidence15       398
+    #define schtimings02              399
+    #define schtimings03              400
+    #define schtimings05              401
+    #define schtimings08              402
+    #define schtimings09              403
+    #define schtimings11              404
+    #define schtimings21              405
+    #define schtimings22              406
+    #define schtimings24              407
+    #define schtimings26              408
+    #define schtimings28              409
+    #define schtimings31              410
+    #define schtimings32              411
+    #define schtimings33              412
+    #define schtimings34              413
+    #define schtimings38              414
+    #define schtimings61              415
+    #define schtimings62              416
+    #define schtimings67              417
+    #define schtimings68              418
+    #define schtimings81              419
+    #define schtimings82              420
+    #define schtimings84              421
+    #define schsneld02_1a             422 /* Aanvraag snel voor detector 02_1a aan of uit                              */
+    #define schsneld02_1b             423 /* Aanvraag snel voor detector 02_1b aan of uit                              */
+    #define schsneld03_1              424 /* Aanvraag snel voor detector 03_1 aan of uit                               */
+    #define schsneld05_1              425 /* Aanvraag snel voor detector 05_1 aan of uit                               */
+    #define schsneld08_1a             426 /* Aanvraag snel voor detector 08_1a aan of uit                              */
+    #define schsneld08_1b             427 /* Aanvraag snel voor detector 08_1b aan of uit                              */
+    #define schsneld09_1              428 /* Aanvraag snel voor detector 09_1 aan of uit                               */
+    #define schsneld11_1              429 /* Aanvraag snel voor detector 11_1 aan of uit                               */
+    #define schsneld211               430 /* Aanvraag snel voor detector 211 aan of uit                                */
+    #define schsneld22_1              431 /* Aanvraag snel voor detector 22_1 aan of uit                               */
+    #define schsneld24_1              432 /* Aanvraag snel voor detector 24_1 aan of uit                               */
+    #define schsneld261               433 /* Aanvraag snel voor detector 261 aan of uit                                */
+    #define schsneld28_1              434 /* Aanvraag snel voor detector 28_1 aan of uit                               */
+    #define schsneld61_1              435 /* Aanvraag snel voor detector 61_1 aan of uit                               */
+    #define schsneld62_1a             436 /* Aanvraag snel voor detector 62_1a aan of uit                              */
+    #define schsneld62_1b             437 /* Aanvraag snel voor detector 62_1b aan of uit                              */
+    #define schsneld67_1              438 /* Aanvraag snel voor detector 67_1 aan of uit                               */
+    #define schsneld68_1a             439 /* Aanvraag snel voor detector 68_1a aan of uit                              */
+    #define schsneld68_1b             440 /* Aanvraag snel voor detector 68_1b aan of uit                              */
+    #define schsneld81_1              441 /* Aanvraag snel voor detector 81_1 aan of uit                               */
+    #define schsneld82_1              442 /* Aanvraag snel voor detector 82_1 aan of uit                               */
+    #define schsneld84_1              443 /* Aanvraag snel voor detector 84_1 aan of uit                               */
+    #define SCHMAX1                   444
 
 /* parameters */
 /* ---------- */

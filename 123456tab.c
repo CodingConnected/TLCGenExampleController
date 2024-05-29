@@ -2041,6 +2041,12 @@ void control_parameters(void)
     SCH_code[schaltghst2434]            = "altghst2434";            SCH[schaltghst2434]            = 0;                                         /* Alternatief realiseren fasen 24, 34 toestaan tijdens halfstar regelen     */
     SCH_code[schaltghst3384]            = "altghst3384";            SCH[schaltghst3384]            = 0;                                         /* Alternatief realiseren fasen 33, 84 toestaan tijdens halfstar regelen     */
     SCH_code[schaltghst31]              = "altghst31";              SCH[schaltghst31]              = 0;                                         /* Alternatief realiseren fase 31 toestaan tijdens halfstar regelen          */
+    SCH_code[schtegenov02]              = "tegenov02";              SCH[schtegenov02]              = 0;                                         /* Tegenhouden hoofdrichting 02 bij OV ingreep                               */
+    SCH_code[schafkwgov02]              = "afkwgov02";              SCH[schafkwgov02]              = 0;                                         /* Afkappen WG hoofdrichting 02 bij OV ingreep                               */
+    SCH_code[schafkvgov02]              = "afkvgov02";              SCH[schafkvgov02]              = 0;                                         /* Afkappen VG hoofdrichting 02 bij OV ingreep                               */
+    SCH_code[schtegenov08]              = "tegenov08";              SCH[schtegenov08]              = 0;                                         /* Tegenhouden hoofdrichting 08 bij OV ingreep                               */
+    SCH_code[schafkwgov08]              = "afkwgov08";              SCH[schafkwgov08]              = 0;                                         /* Afkappen WG hoofdrichting 08 bij OV ingreep                               */
+    SCH_code[schafkvgov08]              = "afkvgov08";              SCH[schafkvgov08]              = 0;                                         /* Afkappen VG hoofdrichting 08 bij OV ingreep                               */
     SCH_code[schinstprm]                = "instprm";                SCH[schinstprm]                = 0;                                         /* Eenmalig kopieren signaalplan parameters naar signaalplannen              */
     SCH_code[schinst]                   = "inst";                   SCH[schinst]                   = 0;                                         /* Eenmalig instellen signaalplannen na wijziging                            */
     SCH_code[schvaml]                   = "vaml";                   SCH[schvaml]                   = 1;                                         /* Indien VA regelen, ML-bedrijf (1) of versneld PL-bedrijf (0)              */
@@ -4931,6 +4937,12 @@ void control_parameters(void)
     SCH_cat[schaltghst2434]         = CAT_Module;           SCH_subcat[schaltghst2434]            = SUBCAT_Plantijden;
     SCH_cat[schaltghst3384]         = CAT_Module;           SCH_subcat[schaltghst3384]            = SUBCAT_Plantijden;
     SCH_cat[schaltghst31]           = CAT_Module;           SCH_subcat[schaltghst31]              = SUBCAT_Plantijden;
+    SCH_cat[schtegenov02]           = CAT_Module;           SCH_subcat[schtegenov02]              = SUBCAT_Plantijden;
+    SCH_cat[schafkwgov02]           = CAT_Module;           SCH_subcat[schafkwgov02]              = SUBCAT_Plantijden;
+    SCH_cat[schafkvgov02]           = CAT_Module;           SCH_subcat[schafkvgov02]              = SUBCAT_Plantijden;
+    SCH_cat[schtegenov08]           = CAT_Module;           SCH_subcat[schtegenov08]              = SUBCAT_Plantijden;
+    SCH_cat[schafkwgov08]           = CAT_Module;           SCH_subcat[schafkwgov08]              = SUBCAT_Plantijden;
+    SCH_cat[schafkvgov08]           = CAT_Module;           SCH_subcat[schafkvgov08]              = SUBCAT_Plantijden;
     SCH_cat[schinstprm]             = CAT_Module;           SCH_subcat[schinstprm]                = SUBCAT_Plantijden;
     SCH_cat[schinst]                = CAT_Module;           SCH_subcat[schinst]                   = SUBCAT_Plantijden;
     SCH_cat[schvaml]                = CAT_Module;           SCH_subcat[schvaml]                   = SUBCAT_Plantijden;

@@ -74,6 +74,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>CCOL_IS_SPECIAL;WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CCOL_IS_SPECIAL;CCOLTIG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(CcolDir)\WIN32\INCLUDE;$(CcolDir)\INCLUDE;$(CcolDir)\PTP_Multivalent;$(CcolDir)\SOURCE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
