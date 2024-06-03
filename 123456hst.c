@@ -384,11 +384,11 @@ void Synchronisaties_halfstar(void)
     naloopSG_halfstar(fc33, fc34, dk33a, hnlak33a, tnlsgd3334);
     naloopSG_halfstar(fc34, fc33, dk34a, hnlak34a, tnlsgd3433);
     naloopEG_CV_halfstar(TRUE, fc82, fc81, T_max[tlr8182], tnlegd8281, tnleg8281);
-
     inloopSG_halfstar(fc31, fc32, dk31a, hnlak31a, til3132);
     inloopSG_halfstar(fc32, fc31, dk32a, hnlak32a, til3231);
     inloopSG_halfstar(fc33, fc34, dk33a, hnlak33a, til3334);
     inloopSG_halfstar(fc34, fc33, dk34a, hnlak34a, til3433);
+
 
     Synchronisaties_halfstar_Add();
 }
@@ -528,30 +528,6 @@ void RealisatieAfhandeling_halfstar(void)
         }
     }
 
-    /* vooruitrealiseren tijdens PL
-     *
-     * Wanneer hoofdrichtingen in PL bedrijf vooruit realiseren bestaat de modelijkheid
-     * - dat ze kort voor het TxB moment uit groen gaan (en niet tijdig meer groen kunnen worden)
-     * - dat ze sowieso niet meer komen tussen TxB en TxD omdat ze al primair gerealiseerd zijn.
-     * Beide zijn conflicterend met het idee van een groene golf.
-     * Daarom hoofdrichtingen die kort voor TxB al groen wijn, sowieso vasthouden tot TxB en
-     * hoofdrichtingen altijd mogelijk maken primair te komen op TxB (maw PG afzetten).
-     *
-     * @Menno: Welke richtingen de hoofdrichtingen zijn is door de programmeur opgegeven in TLCGen.
-     */
-
-     /* vasthouden groen hoofdrichtingen gedurende periode voorafgaand aan TxB moment (indien eerder groen gestuurd) */
-    RW[fc02] |= (G[fc02] && TOTXB_PL[fc02] && (TOTXB_PL[fc02] < 100)) ? RW_WG_HALFSTAR : 0; /* ivm vooruitrealiseren */
-    YW[fc02] |= (G[fc02] && TOTXB_PL[fc02] && (TOTXB_PL[fc02] < 100)) ? YW_PL_HALFSTAR : 0; /* ivm vooruitrealiseren */
-
-    RW[fc08] |= (G[fc08] && TOTXB_PL[fc08] && (TOTXB_PL[fc08] < 100)) ? RW_WG_HALFSTAR : 0; /* ivm vooruitrealiseren */
-    YW[fc08] |= (G[fc08] && TOTXB_PL[fc08] && (TOTXB_PL[fc08] < 100)) ? YW_PL_HALFSTAR : 0; /* ivm vooruitrealiseren */
-
-    /* intrekken PG[] (primair en versneld primair) gedurende periode voorafgaand aan TxB moment (indien al eerder gerealiseerd) */
-    if (R[fc02] && TOTXB_PL[fc02] && (TOTXB_PL[fc02] < TFG_max[fc02])) PG[fc02] &= ~(PRIMAIR_VERSNELD);
-    if (R[fc08] && TOTXB_PL[fc08] && (TOTXB_PL[fc08] < TFG_max[fc08])) PG[fc08] &= ~(PRIMAIR_VERSNELD);
-
-
     RealisatieAfhandeling_halfstar_Add();
 }
 
@@ -568,7 +544,6 @@ void DetectieStoring_halfstar(void)
 
 void PostApplication_halfstar(void)
 {
-
     /* Knipperpuls generator */
     /* --------------------- */
     RT[tleven] = !T[tleven]; /* timer herstarten */

@@ -179,38 +179,38 @@ void PreApplication(void)
         T[tnlfgd8281] ||
         T[tnleg8281] ||
         T[tnlegd8281] ||
-        (T[til3231] || RT[til3231]) ||
-        (T[til3132] || RT[til3132]) ||
-        (T[til3433] || RT[til3433]) ||
-        (T[til3334] || RT[til3334]) ||
-        (T[tlr6202] || RT[tlr6202]) ||
-        (T[tlr6808] || RT[tlr6808]) ||
-        (T[tlr6811] || RT[tlr6811]) ||
-        (T[tlr2122] || RT[tlr2122]) ||
-        (T[tlr8182] || RT[tlr8182]);
+        T[tlr6202] || RT[tlr6202] ||
+        T[tlr6808] || RT[tlr6808] ||
+        T[tlr6811] || RT[tlr6811] ||
+        T[tlr2122] || RT[tlr2122] ||
+        T[til3132] || RT[til3132]  ||
+        T[til3231] || RT[til3231]  ||
+        T[til3334] || RT[til3334]  ||
+        T[til3433] || RT[til3433]  ||
+        T[tlr8182] || RT[tlr8182];
 
+    
     /* Wenselijk is dat pas wordt omgeschakeld naar PL wanneer nalopen zijn afgemaakt; echter andere (voedende)
-    * richtingen moeten in deze tijd niet groen kunnen worden, anders bestaat het risico dat er permanent
-    * wordt gewacht op nieuwe nalopen.
-    */
+     * richtingen moeten in deze tijd niet groen kunnen worden, anders bestaat het risico dat er permanent
+     * wordt gewacht op nieuwe nalopen.
+     */
     /* reset */
     for (fc = 0; fc < FCMAX; ++fc)
     {
-       RR[fc] &= ~RR_INSCH_HALFSTAR;
+        RR[fc] &= ~RR_INSCH_HALFSTAR;
     }
     /* set voor alle richtingen waar een richting al inloopt of inrijdt */
     if (IH[homschtegenh]) /* tegenhouden inschakelen naar PL */
     {
-       /*@Menno: hier alle voedende richtingen opnemen startgroen en einde groen koppelingen */
-       RR[fc32] |= RR_INSCH_HALFSTAR;
-       RR[fc31] |= RR_INSCH_HALFSTAR;
-       RR[fc34] |= RR_INSCH_HALFSTAR;
-       RR[fc33] |= RR_INSCH_HALFSTAR;
-       RR[fc02] |= RR_INSCH_HALFSTAR;
-       RR[fc08] |= RR_INSCH_HALFSTAR;
-       RR[fc11] |= RR_INSCH_HALFSTAR;
-       RR[fc22] |= RR_INSCH_HALFSTAR;
-       RR[fc82] |= RR_INSCH_HALFSTAR;
+        RR[fc02] |= RR_INSCH_HALFSTAR;
+        RR[fc08] |= RR_INSCH_HALFSTAR;
+        RR[fc11] |= RR_INSCH_HALFSTAR;
+        RR[fc22] |= RR_INSCH_HALFSTAR;
+        RR[fc31] |= RR_INSCH_HALFSTAR;
+        RR[fc32] |= RR_INSCH_HALFSTAR;
+        RR[fc33] |= RR_INSCH_HALFSTAR;
+        RR[fc34] |= RR_INSCH_HALFSTAR;
+        RR[fc82] |= RR_INSCH_HALFSTAR;
     }
 
     /* Opschonen wagennummer buffers */
@@ -911,12 +911,11 @@ void BepaalRealisatieTijden(void)
     RT[til3132] = SG[fc31] && H[hinl31]; AT[til3132] = G[fc32];
     RT[til3433] = SG[fc34] && H[hinl34]; AT[til3433] = G[fc33];
     RT[til3334] = SG[fc33] && H[hinl33]; AT[til3334] = G[fc34];
-
-    RT[tlr6202] = SG[fc02];              AT[tlr6202] = G[fc62];
-    RT[tlr6808] = SG[fc08];              AT[tlr6808] = G[fc68];
-    RT[tlr6811] = SG[fc11];              AT[tlr6811] = G[fc68];
-    RT[tlr2122] = SG[fc22];              AT[tlr2122] = G[fc21];
-    RT[tlr8182] = SG[fc82];              AT[tlr8182] = G[fc81];
+    RT[tlr6202] = SG[fc02]; AT[tlr6202] = G[fc62];
+    RT[tlr6808] = SG[fc08]; AT[tlr6808] = G[fc68];
+    RT[tlr6811] = SG[fc11]; AT[tlr6811] = G[fc68];
+    RT[tlr2122] = SG[fc22]; AT[tlr2122] = G[fc21];
+    RT[tlr8182] = SG[fc82]; AT[tlr8182] = G[fc81];
 
     /* correctie realisatietijd berekenen (max. 100 iteraties) */
     for (i = 0; i < 100; ++i)
