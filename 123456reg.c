@@ -1555,10 +1555,13 @@ void Meetkriterium(void)
         if (ris_verlengen_heading(fc26, SYSTEM_ITF1, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisvstartsrm026fts1], PRM[prmrisvendsrm026fts1], !SCH[schrisgeencheckopsg], PRM[prmrislaneheading26_1], PRM[prmrislaneheadingmarge26_1])) MK[fc26] |= BIT13;
         if (ris_verlengen_heading(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisvstart24fts1], PRM[prmrisvend24fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading24_1], PRM[prmrislaneheadingmarge24_1])) MK[fc24] |= BIT10;
         if (ris_verlengen_heading(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisvstartsrm024fts1], PRM[prmrisvendsrm024fts1], !SCH[schrisgeencheckopsg], PRM[prmrislaneheading24_1], PRM[prmrislaneheadingmarge24_1])) MK[fc24] |= BIT13;
-        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstart22fts2], PRM[prmrisvend22fts2], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_2], PRM[prmrislaneheadingmarge22_2])) MK[fc22] |= BIT10;
-        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstartsrm022fts2], PRM[prmrisvendsrm022fts2], !SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_2], PRM[prmrislaneheadingmarge22_2])) MK[fc22] |= BIT13;
+
+        /* @Menno: onderstaande voor alle richtingen; gelijk aan aanvragen_heading; er worden al wel twee regels aangemaakt. De volgorde is hier niet goed meer (ook bij aanvragen) */
         if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstart22fts1], PRM[prmrisvend22fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_1], PRM[prmrislaneheadingmarge22_1])) MK[fc22] |= BIT10;
-        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstartsrm022fts1], PRM[prmrisvendsrm022fts1], !SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_1], PRM[prmrislaneheadingmarge22_1])) MK[fc22] |= BIT13;
+        if (ris_verlengen(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstart22fts1], PRM[prmrisvend22fts1], !SCH[schrisgeencheckopsg])) MK[fc22] |= BIT13;
+        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstartsrm022fts2], PRM[prmrisvendsrm022fts2], !SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_2], PRM[prmrislaneheadingmarge22_2])) MK[fc22] |= BIT10;
+        if (ris_verlengen(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstart22fts2], PRM[prmrisvend22fts2], !SCH[schrisgeencheckopsg])) MK[fc22] |= BIT13;
+
         if (ris_verlengen_heading(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisvstart21fts1], PRM[prmrisvend21fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading21_1], PRM[prmrislaneheadingmarge21_1])) MK[fc21] |= BIT10;
         if (ris_verlengen_heading(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisvstartsrm021fts1], PRM[prmrisvendsrm021fts1], !SCH[schrisgeencheckopsg], PRM[prmrislaneheading21_1], PRM[prmrislaneheadingmarge21_1])) MK[fc21] |= BIT13;
         if (ris_verlengen(fc11, SYSTEM_ITF1, PRM[prmrislaneid11_1], RIS_MOTORVEHICLES, PRM[prmrisvstart11mveh1], PRM[prmrisvend11mveh1], SCH[schrisgeencheckopsg])) MK[fc11] |= BIT10;

@@ -2236,7 +2236,6 @@ void StartGroenMomentenExtra(void)
 }
 void PrioAfkappenExtra(void)
 {
-    int fc;
 
     if (SCH[schovpriople]) PrioHalfstarAfkappen();
 
@@ -2296,26 +2295,6 @@ if (SCH[schconfidence15fix])
         if (G[fc81] && R[fc82] && (P[fc82] & BIT11)) Z[fc81] &= ~PRIO_Z_BIT;
     }
 #endif
-
-    /* Niet afkappen tijdens fixeren */
-    if (IS[isfix])
-    {
-        for (fc = 0; fc < FCMAX; ++fc)
-        {
-            Z[fc] &= ~PRIO_Z_BIT;
-            FM[fc] &= ~PRIO_FM_BIT;
-        }
-    }
-
-    /* Niet afkappen hard meeverlengen */
-    for (fc = 0; fc < FCMAX; ++fc)
-    {
-        if (YM[fc] & BIT1)
-        {
-            Z[fc] &= ~PRIO_Z_BIT;
-            FM[fc] &= ~PRIO_FM_BIT;
-        }
-    }
 
 }
 void PrioTerugkomGroenExtra(void)
@@ -2528,6 +2507,7 @@ void PostAfhandelingPrio(void)
     boolv isHD = FALSE;
     boolv isWTV = FALSE;
     int i;
+    int fc; 
 
     /* Bepalen of een HD ingreep actief is */
     isHD = C[cvchd02] || C[cvchd03] || C[cvchd05] || C[cvchd08] || C[cvchd09] || C[cvchd11] || C[cvchd61] || C[cvchd62] || C[cvchd67] || C[cvchd68];
@@ -2553,6 +2533,26 @@ void PostAfhandelingPrio(void)
         RR[fc81] |= BIT6; Z[fc81] |= BIT6;
         RR[fc82] |= BIT6; Z[fc82] |= BIT6;
         RR[fc84] |= BIT6; Z[fc84] |= BIT6;
+    }
+
+    /* Niet afkappen tijdens fixeren */
+    if (IS[isfix])
+    {
+       for (fc = 0; fc < FCMAX; ++fc)
+       {
+          Z[fc] &= ~PRIO_Z_BIT;
+          FM[fc] &= ~PRIO_FM_BIT;
+       }
+    }
+
+    /* Niet afkappen hard meeverlengen */
+    for (fc = 0; fc < FCMAX; ++fc)
+    {
+       if (YM[fc] & BIT1)
+       {
+          Z[fc] &= ~PRIO_Z_BIT;
+          FM[fc] &= ~PRIO_FM_BIT;
+       }
     }
 
     /* Niet afkappen naloop richtingen wanneer een naloop tijd nog loopt */
