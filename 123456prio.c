@@ -2510,7 +2510,7 @@ void PostAfhandelingPrio(void)
     int fc; 
 
     /* Bepalen of een HD ingreep actief is */
-    isHD = C[cvchd02] || C[cvchd03] || C[cvchd05] || C[cvchd08] || C[cvchd09] || C[cvchd11] || C[cvchd61] || C[cvchd62] || C[cvchd67] || C[cvchd68];
+    isHD = C[cvchd02] && !BL[fc02] || C[cvchd03] && !BL[fc03] || C[cvchd05] && !BL[fc05] || C[cvchd08] && !BL[fc08] || C[cvchd09] && !BL[fc09] || C[cvchd11] && !BL[fc11] || C[cvchd61] && !BL[fc61] || C[cvchd62] && !BL[fc62] || C[cvchd67] && !BL[fc67] || C[cvchd68] && !BL[fc68];
 
     /* Blokkeren alle langzaam verkeer (tevens niet-conflicten) */
     /* Blokkeren uitstellen indien een wachttijdvoorspeller onder het minimum is */
