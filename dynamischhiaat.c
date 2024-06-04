@@ -1,5 +1,3 @@
-/* dynamischhiaat.c - gegenereerd met TLCGen 12.4.0.6 */
-
 /* 
    BESTAND:   dynamischhiaat.c
 
@@ -11,7 +9,7 @@
    * 2.1.0    24-12-2018   ddo         Diverse aanpassingen na Vissim simulatie
    * 2.2.0    01-02-2019   ddo         Correctie veiligheidsgroen verwijderd
    * 2.3.0    15-02-2019   ddo         Veiligstellen hiaattijden aangepast
-   * 2.4.0    20-06-2019   ddo         Niet afzetten MK[fc] BIT3 tijdens MG[fc] tot er een conflictaanvraag is
+   * 2.4.0    20-06-2019   ddo         Niet afzetten MK[fc] BIT3 tijdens MG[fc] tot er een conflictaanvraag is (melding RHDHV / Kristiaan Langelaar).
    * 2.5.0    21-06-2019   ddo         Niet afzetten MK[fc] BIT3 tijdens WG[fc] en 'extra verlengen in WG' geselecteerd
    * 2.5.0a   20-09-2019   ddo         Commentaar toegevoegd mbt 'extra verlengen in WG' en SCH[schdynhiaat<fc>]
    * 2.6.0    21-10-2021   ddo         Fix voor 'nietToepassen' (else toegevoegd)
@@ -26,8 +24,9 @@
    * 4.0.0    11-08-2022   ddo         Maatregel bij slechts 2 mvt op StartGroen, n.a.v. functionele analyse Rotterdam / Sweco (Peter Zondag).
    *                                      Het tweede voertuig staat dan nog voor de 1e verlenglus waardoor groen soms te snel beeindigd 
    *                                      wordt; in dat geval wordt de SG nu enige tijd vastgehouden in VOORSTART groen.
-   * 4.1.0    03-04-2023   ddo         Aflopen detectoren die tot maxgroen moeten verlengen halteren tijdens wachtgroen (Rotterdam / Peter Snijders)
+   * 4.1.0    03-04-2023   ddo         Aflopen detectoren die tot maxgroen moeten verlengen halteren tijdens wachtgroen (Rotterdam / Peter Snijders).
    * 4.2.0    11-08-2023   ddo         Fix voor aanpassing zoals aangegeven bij versie 4.0.0.
+   * 5.0.0    04-06-2024   ddo         Fix voor onterecht niet meenemen van TVG aanpassing (melding Goudappel / Willem Kinzel).
    *
    ***********************************************************************************************************
 
@@ -99,8 +98,9 @@
    -  array-nummer tijdelement - moment 2
    -  array-nummer tijdelement - hiaattijd 1
    -  array-nummer tijdelement - hiaattijd 2
-   -  array-nummer tijdelement - maximum groentijd (wanneer '0' wordt ingevuld, gebruikt de code de vigerende
-                   maximum groentijd TFG_max[] + TVG_max[]     
+   -  array-nummer tijdelement - maximum detectortijd (tijd na SG[fc] of ED[koplus] dat de detector meedoet voor het 
+                                 meetkriterium); wanneer '0' wordt ingevuld, kan verlengd worden gedurende de gehele  
+								 maximum groentijd TFG_max[] + TVG_max[]     
    -- array-nummer parameter detectorvoorwaarden (zie hieronder)
    -- array-nummer hulpelement extra verlengvoorwaarde (zie hieronder)
 
@@ -264,6 +264,7 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
 
   /* maatregel bij slechts 2 mvt op StartGroen */
   RS[fc] &= ~DYNH_RS_BIT;
+
   if (FG[fc] && TS) {
     for (rijstrook = 0; rijstrook < RIJSTRMAX; rijstrook++)
     {
@@ -308,7 +309,6 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
     } while (rijstrook >= 0);
     va_end(argpt);                     /* maak var. arg-lijst leeg */
   }
-
   
   /* vaststellen detectiestoring, alleen tijdens RV[], eens per seconde ivm beperken rekentijd */ /*-*/
   if (RV[fc] && TS) {
@@ -352,7 +352,7 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
         t2         = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - moment 2                */
         tdh1       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - hiaattijd 1             */
         tdh2       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - hiaattijd 2             */
-        tmax       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - maximum groentijd       */
+        tmax       = va_arg(argpt, va_count);         /* lees array-nummer tijdelement - maximum detectortijd    */
         prmdetvw   = va_arg(argpt, va_count);         /* lees array-nummer parameter   - detectorvoorwaarden     */
         hevlvw     = va_arg(argpt, va_count);         /* lees array-nummer hulpelement - extra verlengvoorwaarde */
         
@@ -384,7 +384,7 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
           RS[fc] |= (G[fc] && (TUSSEND_TELLER[fc][rijstrook] == 1) && (TFG_max[fc] < mindynhgroen) && D[dpnr] && (GROEN_TIJD[fc] < (mindynhgroen - TFG_max[fc]))) ? DYNH_RS_BIT : 0;
         }
 
-        if (T_max[tmax]==0)       T_max[tmax] = (TFG_max[fc]+TVG_max[fc]);          /*-*/ /* overnemen max groentijd      */ 
+		//if (T_max[tmax] == 0) T_max[tmax] = (TFG_max[fc] + TVG_max[fc]);          /*-*/ /* overnemen max groentijd */ /*---*/ /* verwijderd in 5.0.0 */
         
         /* actuele hiaattijd bepalen */
         RT[t1]   =
@@ -397,7 +397,7 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
           if (G[fc] && ET[t2])  TDHDYN_max[dpnr] = T_max[tdh2];
           if (G[fc] && !RT[t1] && !T[t1] && T[t2]) {
             /* hiaattijd wijzigt tussen t1 en t2 lineair, van tdh1 naar tdh2 */
-            /* -------y------- = -------------x----------- * -----------------richtingsco?ffici?nt=a-------------- + ----b------ */
+            /* -----y------- = |------------x----------| * |----------------- richtingscoefficient = a --------| + |----b----| */
             TDHDYN_max[dpnr] = (T_timer[t2] - T_max[t1]) * (T_max[tdh2] - T_max[tdh1]) / (T_max[t2] - T_max[t1]) + T_max[tdh1];
           }
 
@@ -418,16 +418,17 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
 
           /* Er mag verlengd worden op deze lus tot de timer is afgelopen     */
           /* of wanneer extra verlengvoorwaarde evlvw aanwezig is             */
-          if ((RT[tmax] || T[tmax] || evlvw) && G[fc] && TDHDYN[dpnr]) {                                /*-*/ /* evlvw toegevoegd            */
-             verlengen[rijstrook] = TRUE;
+		  /* of wanneer de lus altijd mag verlengen (instelling T tmax == 0)  */
+          if ((RT[tmax] || T[tmax] || evlvw || (T_max[tmax] == 0)) && G[fc] && TDHDYN[dpnr]) {                    /*-*/   /* evlvw toegevoegd               */
+             verlengen[rijstrook] = TRUE;                                                                         /*---*/ /* || T_max[tmax == 0) toegevoegd */
           }
 
           /* Bepaal eerste actieve verlenglus, vanaf de stopstreep gerekend   */
           if ((RT[tmax] || T[tmax]            /* maximum tijd loopt nog voor deze detector                         */
-            || evlvw) &&     /* of extra verlengvoorwaarde is aktief                              */ /*-*/
-            G[fc] &&     /* signaalgroep is groen                                             */
-  /*        TDHDYN[dpnr]             && */  /* hiaattijd van de detector loopt                                   */ /* uitgecommentaard in Goudappel code */
-            eavl[fc][rijstrook] == 0) {  /* eerste actieve verlenglus is op deze rijstrook nog niet ingesteld */
+            || evlvw) &&                      /* of extra verlengvoorwaarde is aktief                              */ /*-*/
+            G[fc] &&                          /* signaalgroep is groen                                             */
+  /*        TDHDYN[dpnr]             && */    /* hiaattijd van de detector loopt                                   */ /* uitgecommentaard in Goudappel code */
+            eavl[fc][rijstrook] == 0) {       /* eerste actieve verlenglus is op deze rijstrook nog niet ingesteld */
             eavl[fc][rijstrook] = dp_teller;
           }
 
@@ -470,7 +471,7 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
             }
           }
         }
-      }
+      } // end if (rijstrook>=0 && (detstor[fc] != TRUE))
     } while (rijstrook>=0);
     va_end(argpt);    /* maak var. arg-lijst leeg */
 	
@@ -483,8 +484,8 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
     {
       if ((verlengen[rijstrook] || detstor[fc])      /* zolang er verlengd wordt, of bij een aanwezige detectiestoring */
          || (!(verlengen[rijstrook] || detstor[fc])  /*       of                                                       */
-  		   && !fka(fc) && (MG[fc] ||                   /* bij geen (fictieve) conflictaanvraag en MG[]                   */
-  		   WG[fc] && extra_in_wg))) {                  /* danwel bij geen fict.confl.aanvr en WG[] en meeverlengen in WG */
+  		   && !fka(fc) && (MG[fc] ||                 /* bij geen (fictieve) conflictaanvraag en MG[]                   */
+  		   WG[fc] && extra_in_wg))) {                /* danwel bij geen fict.confl.aanvr en WG[] en meeverlengen in WG */
         hulp_bit3 = TRUE;                            /* blijft hulp_bit 3 waar en wordt dus MK[] BIT3 niet af gezet    */
       }
       else {
@@ -508,5 +509,5 @@ void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_i
     if (!hulp_bit3) {                  /* als er geen enkele strook is waarop verlengd mag worden, ook BIT3 resetten */
       MK[fc] &= ~BIT3;                 /* reset meetkriterium BIT 3 */
     }
-  } 
+  }
 }
