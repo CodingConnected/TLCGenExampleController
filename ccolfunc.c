@@ -1,7 +1,5 @@
 /* ccolfunc.c - gegenereerd met TLCGen 12.4.0.6 */
 
-/* ccolfunc.c - gegenereerd met TLCGen 0.8.2.0 */
-
 #include <stdarg.h>
 
 #include "ccolfunc.h"
@@ -40,18 +38,18 @@ void aanvraag_detectie_reset_prm_va_arg(count fc, ...)
 {
     va_list argpt;                       /* variabele argumentenlijst    */
     count dpnr,                          /* arraynummer detectie-element */
-        tav;                           /* arraynummer tijdelement      */
-    mulv  prm;                           /* aanvraag parameter           */
+        tav = 0;                         /* arraynummer tijdelement      */
+    mulv  prm = 0;                       /* aanvraag parameter           */
 
     va_start(argpt, fc);
     do {
-        dpnr = va_arg(argpt, va_count); /* lees array-nummer detecctie */
+        dpnr = (count) va_arg(argpt, va_count); /* lees array-nummer detecctie */
         if (dpnr >= 0)
         {
-            tav = va_arg(argpt, va_count); /* lees array-nummer tijdelement */
+            tav = (count) va_arg(argpt, va_count); /* lees array-nummer tijdelement */
             if (tav >= 0)
             {
-                prm = va_arg(argpt, va_mulv); /* lees waarde parameter */
+                prm = (mulv) va_arg(argpt, va_mulv); /* lees waarde parameter */
                 if (prm > END)
                 {
                     if (prm <= 0)
@@ -639,7 +637,7 @@ mulv max_tar_ov(count i, ...)            /* i=alt.ri.                        */
     va_list argpt;
 
     /* ov=ov-richting vb=vecombewakingstijd h=ov-hulpelement */
-    register count k, n = 0, ov, vb, h;
+    register count k, n = 0, ov, vb = 0, h = 0;
     mulv totxb_min = 0, totxb_tmp;
     mulv to_max = 0, to_tmp;
     mulv t_aa_max = 0;
@@ -662,7 +660,7 @@ mulv max_tar_ov(count i, ...)            /* i=alt.ri.                        */
                 if (h >= 0 && IH[h] && (TO_max[ov][i] == NG) && T[vb])
 #endif
                 {
-                    if (!kcv(i)||TRUE) /* let op! i.v.m. snelheid alleen tijdens !kcv behandeld */
+                    if (!kcv(i) || TRUE) /* let op! i.v.m. snelheid alleen tijdens !kcv behandeld */ //@@ TRUE is constant; warning C4127: conditional expression is constant
                     {
                         t_aa_max = 0;
                         totxb_min = 0;
@@ -789,7 +787,7 @@ mulv max_tar_ov(count i, ...)            /* i=alt.ri.                        */
  *  - fcprim    primaire richting in wiens schaduw fcalt mag komen
  *  - paltg         minimaal gewenste alternatieve groentijd
  **************************************************************************/
-boolv AlternatieveRuimte(count fcalt, count fcprim, count paltg)
+boolv AlternatieveRuimte(count fcalt, count fcprim, count paltg)     //@@  warning C4100: 'fcalt' : unreferenced formal parameter
 {
     return (TVG_max[fcprim] - TVG_timer[fcprim] >= PRM[paltg]);
 }

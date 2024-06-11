@@ -60,7 +60,7 @@ boolv NaarConfidence9_15prio(count i)
 
 
 static void timings_uc4(count fc, count mrealtijd, count mrealtijdmin, count mrealtijdmax, count prm_ttxconfidence15, count s_conf15ar, count s_timingsfc)
-{
+{                                                                           //@@ warning C4100: 'prm_ttxconfidence15' : unreferenced formal parameter
    int real = mrealtijd;    
    int min  = mrealtijdmin; /* eerst MM min met daarna FCMAX x MM */
    int max  = mrealtijdmax; /* eerst MM max met daarna FCMAX x MM */

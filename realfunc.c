@@ -47,7 +47,7 @@ mulv TIME_FOT[FCMAX][FCMAX];   /* Timer tbv fictieve ontruiming, FOT loopt, rest
 /* ========================================================================================================================================================================================================== */
 /* REALISATIETIJD ALGEMEEN                                                                                                                                                                                    */
 /* ========================================================================================================================================================================================================== */
-void Realisatietijd(count fc, count hsignaalplan, mulv correctie_sp)
+void Realisatietijd(count fc, count hsignaalplan, mulv correctie_sp)    //@@ warning C4100: 'correctie_sp' : unreferenced formal parameter
 {
   register count n, k;
 
@@ -200,7 +200,7 @@ eigentijd_uncorrected =
 /* ========================================================================================================================================================================================================== */
 /* REALISATIETIJD ALGEMEEN                                                                                                                                                                                    */
 /* ========================================================================================================================================================================================================== */
-void Realisatietijd_min(count fc, count hsignaalplan, mulv correctie_sp)
+void Realisatietijd_min(count fc, count hsignaalplan, mulv correctie_sp)      //@@ warning C4100: 'correctie_sp' : unreferenced formal parameter
 {
    register count n, k;
 
@@ -868,12 +868,6 @@ void Synchroniseer_FO(void)
 #endif
 #if MLBMAX
          && PRMLB[MLB][fc1] & PRIMAIR_VERSNELD && PRMLB[MLB][fc2] & PRIMAIR_VERSNELD
-#endif
-#if MLCMAX
-         && PRMLC[MLC][fc1] & PRIMAIR_VERSNELD && PRMLC[MLC][fc2] & PRIMAIR_VERSNELD
-#endif
-#if MLDMAX
-         && PRMLD[MLD][fc1] & PRIMAIR_VERSNELD && PRMLD[MLD][fc2] & PRIMAIR_VERSNELD
 #endif
          && (REALTIJD[fc1] <= (TGL_max[fc2] + TRG_max[fc2])))
       {

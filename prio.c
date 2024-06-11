@@ -272,7 +272,7 @@ void TerugKomGroen(void)
     {
         if (iTerugKomGroenTijd[fc] > 0 && !iTerugKomen[fc])
         {
-            TVG_max[fc] = iTerugKomGroenTijd[fc] - TFG_max[fc];
+            TVG_max[fc] = (mulv) iTerugKomGroenTijd[fc] - TFG_max[fc];
             if (TVG_max[fc] < 0)
             {
                 TVG_max[fc] = 0;
@@ -429,21 +429,21 @@ void WachtTijdBewaking(void)
     /* Onderstaande code wordt gebruikt in de gemeente Utrecht (Jonathan de Vries) en hier opgenomen en op termijn in de TLCGen toegevoegd */
     for (prio = 0; prio < prioFCMAX; ++prio)/* toegevoegd tbv bijzonder realiseren JDV */
     {
-        iMaximumWachtTijdOverschreden_BR[prio] = 0; 
-        fc = iFC_PRIOix[prio];
-        for (i = 0; i < GKFC_MAX[fc] && !iMaximumWachtTijdOverschreden_BR[prio]; ++i)
-        {
+       iMaximumWachtTijdOverschreden_BR[prio] = 0;
+       fc = iFC_PRIOix[prio];
+       for (i = 0; i < GKFC_MAX[fc] && !iMaximumWachtTijdOverschreden_BR[prio]; ++i)
+       {
 #if (CCOL_V >= 95)
-            k = KF_pointer[fc][i];
+          k = KF_pointer[fc][i];
 #else
-            k = TO_pointer[fc][i];
+          k = TO_pointer[fc][i];
 #endif
-            iMaximumWachtTijdOverschreden_BR[prio] |= A[k] && TFB_timer[k] >= iMaximumWachtTijd_BR[k];
-        }
-        for (i = 0; i < FCMAX && !iMaximumWachtTijdOverschreden_BR[prio]; ++i)
-        {
-            iMaximumWachtTijdOverschreden_BR[prio] |= A[i] && TFB_timer[i] >= iMaximumWachtTijd_BR[i] && !iSCH_ALTG[i];
-        }
+          iMaximumWachtTijdOverschreden_BR[prio] |= A[k] && TFB_timer[k] >= iMaximumWachtTijd_BR[k];
+       }
+       for (i = 0; i < FCMAX && !iMaximumWachtTijdOverschreden_BR[prio]; ++i)
+       {
+          iMaximumWachtTijdOverschreden_BR[prio] |= A[i] && TFB_timer[i] >= iMaximumWachtTijd_BR[i] && !iSCH_ALTG[i];
+       }
     }
 #endif
 }
@@ -542,8 +542,6 @@ void BlokkeringsTijd(void)
                     iWachtOpKonflikt[prio] = 0;
                 }
             }
-            /* Blokkeringstimer resetten op SG omdat deze nog actief kan zijn van een vorige inmelding */
-            iBlokkeringsTimer[prio] = SG[fc] ? iBlokkeringsTijd[prio] : iBlokkeringsTimer[prio];
         }
     }
 }
@@ -845,9 +843,9 @@ void StelInTimer(int iIndex, int iActueleWaarde, int iInstelling)
 {
     if (iIndex >= 0 && iIndex < TM_MAX)
     {
-        T_timer[iIndex] = iActueleWaarde;
-        T_max[iIndex]   = iInstelling;
-        T[iIndex]       = iActueleWaarde < iInstelling;
+        T_timer[iIndex] = (mulv) iActueleWaarde;   //@@ (mulv) toegevoegd
+        T_max[iIndex]   = (mulv) iInstelling;      //@@ (mulv) toegevoegd
+        T[iIndex]       = (boolv) (iActueleWaarde < iInstelling); //@@ (boolv) toegevoegd
     }
 }
 
@@ -861,8 +859,8 @@ void StelInCounter(int iIndex, int iActueleWaarde, int iInstelling)
 {
     if (iIndex >= 0 && iIndex < CT_MAX)
     {
-        C_counter[iIndex] = iActueleWaarde;
-        C_max[iIndex] = iInstelling;
+        C_counter[iIndex] = (mulv) iActueleWaarde;    //@@ (mulv) toegevoegd
+        C_max[iIndex] = (mulv) iInstelling;           //@@ (mulv) toegevoegd
         C[iIndex] = iActueleWaarde > 0 && iActueleWaarde < iInstelling;
     }
 }
@@ -882,30 +880,30 @@ void PrioCcolElementen(int prio, int tgb, int trt, int hprio, int cvc, int tblk)
     {
         if (tgb >= 0 && tgb < TM_MAX)
         {
-            T_max[tgb]   = iGroenBewakingsTijd[prio];
-            T[tgb]       = iGroenBewakingsTimer[prio] < iGroenBewakingsTijd[prio];
-            T_timer[tgb] = T[tgb] ? iGroenBewakingsTimer[prio] : T_max[tgb];
+            T_max[tgb]   = (mulv) iGroenBewakingsTijd[prio];                                  //@@ (mulv) toegevoegd
+            T[tgb]       = (boolv) (iGroenBewakingsTimer[prio] < iGroenBewakingsTijd[prio]);  //@@ (boolv) toegevoegd
+            T_timer[tgb] = T[tgb] ? (mulv) iGroenBewakingsTimer[prio] : T_max[tgb];           //@@ (mulv) toegevoegd
         }
         if (trt >= 0 && trt < TM_MAX)
         {
-            T_max[trt]   = iRijTijd[prio];
-            T[trt]       = iRijTimer[prio] < iRijTijd[prio];
-            T_timer[trt] = T[trt] ? iRijTimer[prio] : T_max[trt];
+            T_max[trt]   = (mulv) iRijTijd[prio];                          //@@ (mulv) toegevoegd
+            T[trt]       = (boolv) (iRijTimer[prio] < iRijTijd[prio]);     //@@ (boolv) toegevoegd
+            T_timer[trt] = T[trt] ? (mulv) iRijTimer[prio] : T_max[trt];   //@@ (mulv) toegevoegd
         }
         if (hprio >= 0 && hprio < HE_MAX)
         {
-            IH[hprio] = iPrioriteit[prio];
+            IH[hprio] = (boolv) iPrioriteit[prio];    //@@ (boolv) toegevoegd    @@@@ welke waarden kan iPrioriteit aannemen?
         }
         if (cvc >= 0 && cvc < CT_MAX)
         {
-            C_counter[cvc] = iAantalInmeldingen[prio];
-            C[cvc]         = iAantalInmeldingen[prio] > 0;
+            C_counter[cvc] = (mulv) iAantalInmeldingen[prio];        //@@ (mulv) toegevoegd
+            C[cvc]         = (boolv) (iAantalInmeldingen[prio] > 0); //@@ (boolv) toegevoegd
         }
         if (tblk >= 0 && tblk < TM_MAX)
         {
-            T_max[tblk]   = iBlokkeringsTijd[prio];
-            T[tblk]       = iBlokkeringsTimer[prio] < iBlokkeringsTijd[prio];
-            T_timer[tblk] = T[tblk] ? iBlokkeringsTimer[prio] : T_max[tblk];
+            T_max[tblk]   = (mulv) iBlokkeringsTijd[prio];                                //@@ (mulv) toegevoegd
+            T[tblk]       = (boolv) (iBlokkeringsTimer[prio] < iBlokkeringsTijd[prio]);   //@@ (boolv) toegevoegd
+            T_timer[tblk] = T[tblk] ? (mulv) iBlokkeringsTimer[prio] : T_max[tblk];       //@@ (mulv) toegevoegd
         }
     }
 }
@@ -1180,30 +1178,10 @@ int StartGroenFC(int fc, int iGewenstStartGroen, int iPrioriteitsOptiesFC)
                     }
                 }
 #ifdef NALOPEN
-
-               if (iPrioriteitsOptiesFC & poAfkappenKonfliktRichtingen &&
-                        !iNietAfkappen[k])
-               {
-              		if (TNL[k] && iRestGroen < TNL_max[k] - TNL_timer[k])
-              		{
-                  	if ((TNL_max[k] - TNL_timer[k] - TVG_max[k]) >=0)
-                  	{
-                  		iRestGroen = TNL_max[k] - TNL_timer[k] - TVG_max[k];
-									 /* Corrigeren voor TVG_max[k] ;
-										 - te hoge iRestgroen op nalooprichting geeft te hoge waarde voor iStartGroenFC prioriteitsrichting
-										 - gevolg is dat de voedende richting NIET meer wordt afgekapt										 			 */
-							}
-							else iRestGroen=0;
-               	}
-					}
-					else /* oorspronkelijke code TLCgen */
-					{
                 if (TNL[k] && iRestGroen < TNL_max[k] - TNL_timer[k])
                 {
                     iRestGroen = TNL_max[k] - TNL_timer[k];
                 }
-					}
-
 #endif
             }
             else
@@ -1227,7 +1205,7 @@ int StartGroenFC(int fc, int iGewenstStartGroen, int iPrioriteitsOptiesFC)
             iRestTO = TO_max[k][fc] >= 0 ? TO_max[k][fc] - TO_timer[k] :
 #endif
 #ifdef NALOPEN
-               TGK[k][fc] ? TGK_max[k][fc] - TGK_timer[k] - ( (iPrioriteitsOptiesFC & poAfkappenKonfliktRichtingen && !iNietAfkappen[k])? TVG_max[k] : 0):
+                TGK[k][fc] ? TGK_max[k][fc] - TGK_timer[k] :
 #endif
                 0;
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
@@ -1396,15 +1374,12 @@ void RealisatieTijden(int fc, int iPrioriteitsOptiesFC)
             }
             else
             {
-                iRealisatieTijd[fc][k] = iKonfliktTijd[k] + iGroenTijd + (TGL_max[k] > 0 ? TGL_max[k] : 1) +
+                iRealisatieTijd[fc][k] = iKonfliktTijd[k] + iGroenTijd +
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
                 TIG_max[k][fc];
 #else
-#ifdef NALOPEN
-						TGK_max[k][fc] +
+                (TGL_max[k] > 0 ? TGL_max[k] : 1) + TO_max[k][fc];
 #endif
-						(TO_max[k][fc]>=0 ? TO_max[k][fc] : 0);	
-#endif	  
             }
         }
         else
@@ -1417,7 +1392,7 @@ void RealisatieTijden(int fc, int iPrioriteitsOptiesFC)
 void TegenHoudenStartGroen(int fc, int iStartGroenFC)
 {
     int i, k;
-    for (i = 0; i < FKFC_MAX[fc]; ++i)
+    for (i = 0; i < GKFC_MAX[fc]; ++i)
     {
 #if (CCOL_V >= 95)
         k = KF_pointer[fc][i];
@@ -1492,25 +1467,17 @@ void AfkappenStartGroen(int fc, int iStartGr)
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
             (TIG_max[k][fc] >= 0 && TIG_max[k][fc] >= iStartGr ||
 #else
-            (TO_max[k][fc] >= 0 && (TGL_max[k] > 0 ? TGL_max[k] : 1) + TO_max[k][fc] >= (iStartGr -5) ||
+            (TO_max[k][fc] >= 0 && (TGL_max[k] > 0 ? TGL_max[k] : 1) + TO_max[k][fc] >= iStartGr ||
 #endif
 #if (CCOL_V >= 95) && !defined NO_TIGMAX
              TIG_max[k][fc] == GK && iStartGr <= 0 ||
              TIG_max[k][fc] == GKL 
 #else
              TO_max[k][fc] == GK && iStartGr <= 0 ||
-            (TO_max[k][fc] == GKL || TO_max[k][fc] == GK)
+             TO_max[k][fc] == GKL 
 #endif
 #ifdef NALOPEN
-#if (CCOL_V >= 95) && !defined NO_TIGMAX
-               && TGK_max[k][fc] >= (iStartGr - 5)
-               || (TIG_max[k][fc] >= 0) && (TGK_max[k][fc] >= (iStartGr - 5)) /* nalopen als voedende richting ook hard conflict is */
-               && !TNL[k] /* indien voedende richting tevens naloop is niet voortijdig afkappen */
-#else
-               && TGK_max[k][fc] >= (iStartGr - 5)
-               || (TO_max[k][fc] >= 0) && (TGK_max[k][fc] >= (iStartGr - 5)) /* nalopen als voedende richting ook hard conflict is */
-               && !TNL[k] /* indien voedende richting tevens naloop is niet voortijdig afkappen */
-#endif
+				&& TGK_max[k][fc] >= iStartGr
 #endif
             ))
         {

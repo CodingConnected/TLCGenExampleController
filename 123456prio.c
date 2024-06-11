@@ -1355,7 +1355,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit02risovris])
     {
-        IH[hpriouit02risovris] = ris_uitmelding_selectief(prioFC02risov);
+        IH[hpriouit02risovris] = (boolv) ris_uitmelding_selectief(prioFC02risov);
         if (IH[hpriouit02risovris] && iAantalInmeldingen[prioFC02risov] == 0) iPrioriteitNooitAfkappen[prioFC02risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1379,7 +1379,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit02risvrwris])
     {
-        IH[hpriouit02risvrwris] = ris_uitmelding_selectief(prioFC02risvrw);
+        IH[hpriouit02risvrwris] = (boolv) ris_uitmelding_selectief(prioFC02risvrw);
         if (IH[hpriouit02risvrwris] && iAantalInmeldingen[prioFC02risvrw] == 0) iPrioriteitNooitAfkappen[prioFC02risvrw] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1418,7 +1418,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit03risovris])
     {
-        IH[hpriouit03risovris] = ris_uitmelding_selectief(prioFC03risov);
+        IH[hpriouit03risovris] = (boolv) ris_uitmelding_selectief(prioFC03risov);
         if (IH[hpriouit03risovris] && iAantalInmeldingen[prioFC03risov] == 0) iPrioriteitNooitAfkappen[prioFC03risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1441,7 +1441,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit03risvrwris])
     {
-        IH[hpriouit03risvrwris] = ris_uitmelding_selectief(prioFC03risvrw);
+        IH[hpriouit03risvrwris] = (boolv) ris_uitmelding_selectief(prioFC03risvrw);
         if (IH[hpriouit03risvrwris] && iAantalInmeldingen[prioFC03risvrw] == 0) iPrioriteitNooitAfkappen[prioFC03risvrw] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1480,7 +1480,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit05risovris])
     {
-        IH[hpriouit05risovris] = ris_uitmelding_selectief(prioFC05risov);
+        IH[hpriouit05risovris] = (boolv) ris_uitmelding_selectief(prioFC05risov);
         if (IH[hpriouit05risovris] && iAantalInmeldingen[prioFC05risov] == 0) iPrioriteitNooitAfkappen[prioFC05risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1503,7 +1503,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit05risvrwris])
     {
-        IH[hpriouit05risvrwris] = ris_uitmelding_selectief(prioFC05risvrw);
+        IH[hpriouit05risvrwris] = (boolv) ris_uitmelding_selectief(prioFC05risvrw);
         if (IH[hpriouit05risvrwris] && iAantalInmeldingen[prioFC05risvrw] == 0) iPrioriteitNooitAfkappen[prioFC05risvrw] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1543,7 +1543,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit08risovris])
     {
-        IH[hpriouit08risovris] = ris_uitmelding_selectief(prioFC08risov);
+        IH[hpriouit08risovris] = (boolv) ris_uitmelding_selectief(prioFC08risov);
         if (IH[hpriouit08risovris] && iAantalInmeldingen[prioFC08risov] == 0) iPrioriteitNooitAfkappen[prioFC08risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1567,7 +1567,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit08risvrwris])
     {
-        IH[hpriouit08risvrwris] = ris_uitmelding_selectief(prioFC08risvrw);
+        IH[hpriouit08risvrwris] = (boolv) ris_uitmelding_selectief(prioFC08risvrw);
         if (IH[hpriouit08risvrwris] && iAantalInmeldingen[prioFC08risvrw] == 0) iPrioriteitNooitAfkappen[prioFC08risvrw] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1606,7 +1606,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit09risovris])
     {
-        IH[hpriouit09risovris] = ris_uitmelding_selectief(prioFC09risov);
+        IH[hpriouit09risovris] = (boolv) ris_uitmelding_selectief(prioFC09risov);
         if (IH[hpriouit09risovris] && iAantalInmeldingen[prioFC09risov] == 0) iPrioriteitNooitAfkappen[prioFC09risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1629,7 +1629,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit09risvrwris])
     {
-        IH[hpriouit09risvrwris] = ris_uitmelding_selectief(prioFC09risvrw);
+        IH[hpriouit09risvrwris] = (boolv) ris_uitmelding_selectief(prioFC09risvrw);
         if (IH[hpriouit09risvrwris] && iAantalInmeldingen[prioFC09risvrw] == 0) iPrioriteitNooitAfkappen[prioFC09risvrw] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1668,7 +1668,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit11risovris])
     {
-        IH[hpriouit11risovris] = ris_uitmelding_selectief(prioFC11risov);
+        IH[hpriouit11risovris] = (boolv) ris_uitmelding_selectief(prioFC11risov);
         if (IH[hpriouit11risovris] && iAantalInmeldingen[prioFC11risov] == 0) iPrioriteitNooitAfkappen[prioFC11risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1691,7 +1691,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit11risvrwris])
     {
-        IH[hpriouit11risvrwris] = ris_uitmelding_selectief(prioFC11risvrw);
+        IH[hpriouit11risvrwris] = (boolv) ris_uitmelding_selectief(prioFC11risvrw);
         if (IH[hpriouit11risvrwris] && iAantalInmeldingen[prioFC11risvrw] == 0) iPrioriteitNooitAfkappen[prioFC11risvrw] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1773,7 +1773,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit61risovris])
     {
-        IH[hpriouit61risovris] = ris_uitmelding_selectief(prioFC61risov);
+        IH[hpriouit61risovris] = (boolv) ris_uitmelding_selectief(prioFC61risov);
         if (IH[hpriouit61risovris] && iAantalInmeldingen[prioFC61risov] == 0) iPrioriteitNooitAfkappen[prioFC61risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1796,7 +1796,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit61risvrwris])
     {
-        IH[hpriouit61risvrwris] = ris_uitmelding_selectief(prioFC61risvrw);
+        IH[hpriouit61risvrwris] = (boolv) ris_uitmelding_selectief(prioFC61risvrw);
         if (IH[hpriouit61risvrwris] && iAantalInmeldingen[prioFC61risvrw] == 0) iPrioriteitNooitAfkappen[prioFC61risvrw] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1836,7 +1836,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit62risovris])
     {
-        IH[hpriouit62risovris] = ris_uitmelding_selectief(prioFC62risov);
+        IH[hpriouit62risovris] = (boolv) ris_uitmelding_selectief(prioFC62risov);
         if (IH[hpriouit62risovris] && iAantalInmeldingen[prioFC62risov] == 0) iPrioriteitNooitAfkappen[prioFC62risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1860,7 +1860,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit62risvrwris])
     {
-        IH[hpriouit62risvrwris] = ris_uitmelding_selectief(prioFC62risvrw);
+        IH[hpriouit62risvrwris] = (boolv) ris_uitmelding_selectief(prioFC62risvrw);
         if (IH[hpriouit62risvrwris] && iAantalInmeldingen[prioFC62risvrw] == 0) iPrioriteitNooitAfkappen[prioFC62risvrw] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1899,7 +1899,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit67risovris])
     {
-        IH[hpriouit67risovris] = ris_uitmelding_selectief(prioFC67risov);
+        IH[hpriouit67risovris] = (boolv) ris_uitmelding_selectief(prioFC67risov);
         if (IH[hpriouit67risovris] && iAantalInmeldingen[prioFC67risov] == 0) iPrioriteitNooitAfkappen[prioFC67risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1922,7 +1922,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit67risvrwris])
     {
-        IH[hpriouit67risvrwris] = ris_uitmelding_selectief(prioFC67risvrw);
+        IH[hpriouit67risvrwris] = (boolv) ris_uitmelding_selectief(prioFC67risvrw);
         if (IH[hpriouit67risvrwris] && iAantalInmeldingen[prioFC67risvrw] == 0) iPrioriteitNooitAfkappen[prioFC67risvrw] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1962,7 +1962,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit68risovris])
     {
-        IH[hpriouit68risovris] = ris_uitmelding_selectief(prioFC68risov);
+        IH[hpriouit68risovris] = (boolv) ris_uitmelding_selectief(prioFC68risov);
         if (IH[hpriouit68risovris] && iAantalInmeldingen[prioFC68risov] == 0) iPrioriteitNooitAfkappen[prioFC68risov] = FALSE;
     }
 #endif /* NO_RIS */
@@ -1986,7 +1986,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
     if (SCH[schpriouit68risvrwris])
     {
-        IH[hpriouit68risvrwris] = ris_uitmelding_selectief(prioFC68risvrw);
+        IH[hpriouit68risvrwris] = (boolv) ris_uitmelding_selectief(prioFC68risvrw);
         if (IH[hpriouit68risvrwris] && iAantalInmeldingen[prioFC68risvrw] == 0) iPrioriteitNooitAfkappen[prioFC68risvrw] = FALSE;
     }
 #endif /* NO_RIS */

@@ -50,7 +50,7 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;CCOL_IS_SPECIAL;CCOLTIG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\CCOL120\WIN32\INCLUDE;C:\CCOL120\INCLUDE;C:\CCOL120\SOURCE;C:\CCOL120\PTP;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -62,7 +62,7 @@
       <AdditionalDependencies>%(AdditionalDependencies)ccolks.lib;ccolmainms.lib;ccolreg.lib;ccolsim.lib;ccolvlog.lib;comctl32.lib;dsifunc.lib;htmlhelp.lib;legacy_stdio_definitions.lib;lwmlfunc.lib;plefunc.lib;plfunc.lib;risfunc.lib;rissimfunc.lib;stdfunc.lib;trigfunc.lib;tx_synch.lib;</AdditionalDependencies>
       <AdditionalIncludeDirectories>C:\CCOL120\WIN32\INCLUDE;C:\CCOL120\INCLUDE;C:\CCOL120\SOURCE;C:\CCOL120\PTP;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD</IgnoreSpecificDefaultLibraries>
-            <AdditionalLibraryDirectories>C:\CCOL120\WIN32\LIB\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\CCOL120\WIN32\LIB\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -81,7 +81,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>%(AdditionalDependencies)ccolks.lib;ccolmainms.lib;ccolreg.lib;ccolsim.lib;ccolvlog.lib;comctl32.lib;dsifunc.lib;htmlhelp.lib;legacy_stdio_definitions.lib;lwmlfunc.lib;plefunc.lib;plfunc.lib;risfunc.lib;rissimfunc.lib;stdfunc.lib;trigfunc.lib;tx_synch.lib;</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD</IgnoreSpecificDefaultLibraries>
-            <AdditionalLibraryDirectories>C:\CCOL120\WIN32\LIB\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\CCOL120\WIN32\LIB\</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
@@ -91,9 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="123456dpl.c" />
-        <ClCompile Include="123456prio.c" />
+    <ClCompile Include="123456prio.c" />
     <ClCompile Include="123456reg.c" />
-        <ClCompile Include="123456rissim.c" />
+    <ClCompile Include="123456rissim.c" />
     <ClCompile Include="123456sim.c" />
     <ClCompile Include="123456tab.c" />
     <ClCompile Include="PTPWIN.C" />

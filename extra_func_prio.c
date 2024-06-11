@@ -13,7 +13,7 @@ boolv DSIMeldingPRIO_V1(
 	boolv extra)
 {
 #if DSMAX
-	if (!DS_MSG || !extra) return FALSE;
+   if (!DS_MSG || !extra) return FALSE;
 #endif
 
 	if (dslus != NG && dslus != CIF_DSI[CIF_DSI_LUS]) return FALSE;
@@ -41,7 +41,7 @@ boolv DSIMeldingPRIO_V2(           /* Fik220201 */
    if (vertraag_kar_uitm[prio_fc]) PrioUitmelden(prio_fc, SG[fc]); /* vertraagde uitmelding op start groen */
    if (SG[fc]) vertraag_kar_uitm[prio_fc] = FALSE;
 
-#if DSMAX
+#if !defined (VISSIM) && DSMAX
    if (!DS_MSG || !extra) melding = FALSE;
 #endif
 
@@ -107,7 +107,7 @@ boolv DSIMelding_HD_V1(count dir,         /* 1. fc nummer of richtingnummer (201
 		(CIF_DSI[CIF_DSI_DIR] == dir) &&  /* geldt deze melding voor deze richting? */
 		(CIF_DSI[CIF_DSI_TYPE] == meldingtype)      /* is dit een in of een uitmelding? */
 #if DSMAX
-		&& DS_MSG
+	   && DS_MSG
 #endif
 		) return TRUE;
 
@@ -494,7 +494,7 @@ boolv fietsprio_inmelding(
      count prm_priocyc,      /* Maximum aantal keer prio per cyclus */
      count prm_priocount,    /* Minimum aantal voertuigen voor prio */
      count prm_priowt,       /* Minimum wachttijd voor prio */
-     boolv prioin,            /* Hulpelement inmelding prio */
+     boolv prioin,            /* Hulpelement inmelding prio */    //@@ warning C4100: 'prioin' : unreferenced formal parameter
      count ml,               /* Actieve module */
      count me_priocount,     /* Memory-element tellen voertuigen RIS */
      count prm_priocountris) /* Minimum aantal voertuigen voor prio RIS */
