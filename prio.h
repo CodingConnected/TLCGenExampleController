@@ -117,7 +117,6 @@ void AfkappenStartGroen(int fc, int iStartGr);
 void VLOG_mon5_buffer(void);
 
 #ifdef PRIO_ADDFILE
-extern int iStartGroenFC[];
 
 void RijTijdScenario_Add(void);
 void InUitMelden_Add(void);

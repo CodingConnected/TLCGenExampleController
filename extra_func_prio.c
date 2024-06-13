@@ -219,7 +219,7 @@ void reset_DSI_message(void)
 -  geeft alle variabelen de juiste waarde en zet de wijzigvlag CIF_DSIWIJZ op.
 -  dient in de testomgeving te worden aangeroepen vanuit de is_special_signals().
 */
-void set_DSI_message(mulv ds, s_int16 vtg, s_int16 dir, count type, s_int16 stiptheid, s_int16 aantalsecvertr, s_int16 PRM_lijnnr, s_int16 PRM_ritcat, s_int16 prio)
+void set_DSI_message(mulv ds, s_int16 vtg, s_int16 dir, s_int16 type, s_int16 stiptheid, s_int16 aantalsecvertr, s_int16 PRM_lijnnr, s_int16 PRM_ritcat, s_int16 prio)
 {
 	CIF_DSI[CIF_DSI_LUS] = (s_int16)(ds < 0 ? 0 : ds);
 	CIF_DSI[CIF_DSI_VTG] = (vtg < 0 ? 0 : vtg);

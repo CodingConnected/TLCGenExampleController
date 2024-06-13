@@ -51,7 +51,6 @@ void pre_application_halfstar(void)
 
 void KlokPerioden_halfstar(void)
 {
-    char volgMaster = TRUE;
 
     /* BepaalKoppeling */
     /* --------------- */
@@ -585,7 +584,6 @@ void pre_system_application_halfstar(void)
     /* -------------------------------------------------- */
     if (SCH[schinstprm])
     {
-        short pl = 0;
         short error = FALSE;
         if (!error)
         {

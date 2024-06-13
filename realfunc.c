@@ -929,7 +929,7 @@ void Synchroniseer_FO1_2(count fc1, count fc2)   /* Gelijk aan bovenstaande alle
 void Synchroniseer_PG(void)
 {
 #ifdef MLNLTEST
-  register count  mlfc1, mlfc2, ml_1, ml_2;
+  register count  mlfc1, mlfc2, ml_1=0, ml_2=0;
 #endif
   register count fc1, fc2;
 

@@ -375,14 +375,14 @@ int PrioHalfstarBepaalPrioriteitsOpties(int prm_prio) {
 /*                         (va_count) END);                                               */
 /*                                                                                        */
 /* -------------------------------------------------------------------------------------- */
-void PrioHalfstarBepaalHoofdrichtingOpties(int dummy, ...)
+void PrioHalfstarBepaalHoofdrichtingOpties(int dummy_hs, ...)
 {
-	va_list argpt;                                     /*  variabele argumentenlijst       */
-	count fc;                                          /*  arraynummer fc hoofdrichting    */
-	mulv sch_tegen;                                    /*  boolv tegenhouden hoofdrichting  */
-	mulv sch_afkapywpl;                                /*  boolv afkappen hoofdrichting     */
-	mulv sch_afkapyvpl;                                /*  boolv afkappen hoofdrichting     */
-	int t_mingroen;                                    /*  tijdsduur minimum groen uitstel */
+	va_list argpt;                                     /*  variabele argumentenlijst        */
+	count fc;                                          /*  arraynummer fc hoofdrichting     */
+	mulv sch_tegen=0;                                  /*  boolv tegenhouden hoofdrichting  */
+	mulv sch_afkapywpl=0;                              /*  boolv afkappen hoofdrichting     */
+	mulv sch_afkapyvpl=0;                              /*  boolv afkappen hoofdrichting     */
+	int t_mingroen=0;                                  /*  tijdsduur minimum groen uitstel  */
 	int i;
 
 	for (i = 0; i < FC_MAX; i++)
@@ -394,17 +394,17 @@ void PrioHalfstarBepaalHoofdrichtingOpties(int dummy, ...)
 		iMinimumGroenUitgesteldeHoofdrichting[i] = TFG_max[i];
 	}
 
-	va_start(argpt, dummy);                             /*  start var. argumentenlijst      */
+	va_start(argpt, dummy_hs);                             /*  start var. argumentenlijst      */
 	do
 	{
 		fc = va_arg(argpt, va_count);                    /*  lees array-nummer hoofdrichting */
 
 		if (fc >= 0)
 		{
-			sch_tegen = va_arg(argpt, va_mulv);      /* lees waarde schakelaar           */
-			sch_afkapywpl = va_arg(argpt, va_mulv);      /* lees waarde schakelaar           */
-			sch_afkapyvpl = va_arg(argpt, va_mulv);      /* lees waarde schakelaar           */
-			t_mingroen = va_arg(argpt, va_mulv);      /* lees waarde tijdsduur            */
+			sch_tegen = (mulv) va_arg(argpt, va_mulv);          /* lees waarde schakelaar           */
+			sch_afkapywpl = (mulv) va_arg(argpt, va_mulv);      /* lees waarde schakelaar           */
+			sch_afkapyvpl = (mulv) va_arg(argpt, va_mulv);      /* lees waarde schakelaar           */
+			t_mingroen = va_arg(argpt, va_mulv);                /* lees waarde tijdsduur            */
 
 			HoofdRichting[fc] = TRUE;
 			HoofdRichtingTegenhouden[fc] = (sch_tegen >= END) ? sch_tegen : FALSE;

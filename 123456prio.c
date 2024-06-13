@@ -2190,15 +2190,15 @@ void InUitMelden(void)
     TrackStiptObvTSTP(hprioin62bus, hpriouit62bus, &iAantInm62bus, iKARInSTP62bus, hprio62bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
     TrackStiptObvTSTP(hprioin67bus, hpriouit67bus, &iAantInm67bus, iKARInSTP67bus, hprio67bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
     TrackStiptObvTSTP(hprioin68bus, hpriouit68bus, &iAantInm68bus, iKARInSTP68bus, hprio68bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
-    MM[mstp03bus] = iAantInm03bus > 0 ? iKARInSTP03bus[0] : 0;
-    MM[mstp05bus] = iAantInm05bus > 0 ? iKARInSTP05bus[0] : 0;
-    MM[mstp08bus] = iAantInm08bus > 0 ? iKARInSTP08bus[0] : 0;
-    MM[mstp09bus] = iAantInm09bus > 0 ? iKARInSTP09bus[0] : 0;
-    MM[mstp11bus] = iAantInm11bus > 0 ? iKARInSTP11bus[0] : 0;
-    MM[mstp61bus] = iAantInm61bus > 0 ? iKARInSTP61bus[0] : 0;
-    MM[mstp62bus] = iAantInm62bus > 0 ? iKARInSTP62bus[0] : 0;
-    MM[mstp67bus] = iAantInm67bus > 0 ? iKARInSTP67bus[0] : 0;
-    MM[mstp68bus] = iAantInm68bus > 0 ? iKARInSTP68bus[0] : 0;
+    MM[mstp03bus] = (mulv) (iAantInm03bus > 0 ? iKARInSTP03bus[0] : 0);
+    MM[mstp05bus] = (mulv) (iAantInm05bus > 0 ? iKARInSTP05bus[0] : 0);
+    MM[mstp08bus] = (mulv) (iAantInm08bus > 0 ? iKARInSTP08bus[0] : 0);
+    MM[mstp09bus] = (mulv) (iAantInm09bus > 0 ? iKARInSTP09bus[0] : 0);
+    MM[mstp11bus] = (mulv) (iAantInm11bus > 0 ? iKARInSTP11bus[0] : 0);
+    MM[mstp61bus] = (mulv) (iAantInm61bus > 0 ? iKARInSTP61bus[0] : 0);
+    MM[mstp62bus] = (mulv) (iAantInm62bus > 0 ? iKARInSTP62bus[0] : 0);
+    MM[mstp67bus] = (mulv) (iAantInm67bus > 0 ? iKARInSTP67bus[0] : 0);
+    MM[mstp68bus] = (mulv) (iAantInm68bus > 0 ? iKARInSTP68bus[0] : 0);
 
 #ifndef NO_RIS
     /* Bijhouden granted verstrekt */
