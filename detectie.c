@@ -204,7 +204,7 @@ boolv RichtingVerlengen(count fc,   /* de richting die verlengd wordt           
 void MeetKriteriumRGprm(count fc, count tkopmaxnr, ...)
 {
     va_list argpt;         /* variabele argumentenlijst             */
-    boolv   iRgFunc;       /* boolv uit richtinggevoelige functie   */
+    boolv   iRgFunc;        /* boolv uit richtinggevoelige functie   */
     mulv    prm = 0;       /* waarde verlengparameter               */
     count   hmk4_6, hmk7;  /* hulpwaarden meetkriterium             */
 

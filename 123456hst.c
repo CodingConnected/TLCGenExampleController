@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.6   24-05-2024   TLCGen      Release versie TLCGen 
+ * 12.4.0.6   26-06-2024   TLCGen      Release versie TLCGen 26062024
  *
  ************************************************************************************/
 
@@ -51,7 +51,6 @@ void pre_application_halfstar(void)
 
 void KlokPerioden_halfstar(void)
 {
-
     /* BepaalKoppeling */
     /* --------------- */
     MM[mklok] = FALSE;
@@ -274,13 +273,13 @@ void Meetkriterium_halfstar(void)
     for (fc = 0; fc < FCMAX; ++fc)
     {
             /* afzetten BITJES van ML-bedrijf */
-             Z[fc] &= ~BIT6;
-            FM[fc] &= ~BIT6;
-            RW[fc] &= ~BIT6;
-            RR[fc] &= ~BIT6;
-            YV[fc] &= ~BIT6;
-            MK[fc] &= ~BIT11;  /* Hier geen BIT6 wegens conflict met MeetKriteriumRGprm */
-            PP[fc] &= ~BIT6;
+             Z[fc] &= ~PRIO_Z_BIT;
+            FM[fc] &= ~PRIO_FM_BIT;
+            RW[fc] &= ~PRIO_RW_BIT;
+            RR[fc] &= ~PRIO_RR_BIT;
+            YV[fc] &= ~PRIO_YV_BIT;
+            MK[fc] &= ~PRIO_MK_BIT;
+            PP[fc] &= ~PRIO_PP_BIT;
     }
 
     if (SCH[schovpriople])
@@ -521,31 +520,31 @@ void RealisatieAfhandeling_halfstar(void)
     /* anders kan PG op blijven staan, waardoor richting eenmaal wordt overgeslagen en de regeling kan vastlopen */
     if (SH[hmlact] || SH[hplact] || SPL)
     {
-       for (fc = 0; fc < FCMAX; ++fc)
-       {
-          PG[fc] = FALSE;
-       }
-
-       /* vooruitrealiseren tijdens PL
-        *
-        * Wanneer hoofdrichtingen in PL bedrijf vooruit realiseren bestaat de modelijkheid
-        * - dat ze kort voor het TxB moment uit groen gaan (en niet tijdig meer groen kunnen worden)
-        * - dat ze sowieso niet meer komen tussen TxB en TxD omdat ze al primair gerealiseerd zijn.
-        * Beide zijn conflicterend met het idee van een groene golf.
-        * Daarom hoofdrichtingen die kort voor TxB al groen wijn, sowieso vasthouden tot TxB en
-        * hoofdrichtingen altijd mogelijk maken primair te komen op TxB (maw PG afzetten).
-        */
-
-        /* vasthouden groen hoofdrichtingen gedurende periode voorafgaand aan TxB moment (indien eerder groen gestuurd) */
-       RW[fc02] |= (G[fc02] && TOTXB_PL[fc02] && (TOTXB_PL[fc02] < 100)) ? RW_WG_HALFSTAR : 0; /* ivm vooruitrealiseren */
-       YW[fc02] |= (G[fc02] && TOTXB_PL[fc02] && (TOTXB_PL[fc02] < 100)) ? YW_PL_HALFSTAR : 0; /* ivm vooruitrealiseren */
-       RW[fc08] |= (G[fc08] && TOTXB_PL[fc08] && (TOTXB_PL[fc08] < 100)) ? RW_WG_HALFSTAR : 0; /* ivm vooruitrealiseren */
-       YW[fc08] |= (G[fc08] && TOTXB_PL[fc08] && (TOTXB_PL[fc08] < 100)) ? YW_PL_HALFSTAR : 0; /* ivm vooruitrealiseren */
-
-       /* intrekken PG[] (primair en versneld primair) gedurende periode voorafgaand aan TxB moment (indien al eerder gerealiseerd) */
-       if (R[fc02] && TOTXB_PL[fc02] && (TOTXB_PL[fc02] < TFG_max[fc02])) PG[fc02] &= ~(PRIMAIR_VERSNELD);
-       if (R[fc08] && TOTXB_PL[fc08] && (TOTXB_PL[fc08] < TFG_max[fc08])) PG[fc08] &= ~(PRIMAIR_VERSNELD);
+        for (fc = 0; fc < FCMAX; ++fc)
+        {
+            PG[fc] = FALSE;
+        }
     }
+
+    /* vooruitrealiseren tijdens PL
+     *
+     * Wanneer hoofdrichtingen in PL bedrijf vooruit realiseren bestaat de modelijkheid
+     * - dat ze kort voor het TxB moment uit groen gaan (en niet tijdig meer groen kunnen worden)
+     * - dat ze sowieso niet meer komen tussen TxB en TxD omdat ze al primair gerealiseerd zijn.
+     * Beide zijn conflicterend met het idee van een groene golf.
+     * Daarom hoofdrichtingen die kort voor TxB al groen wijn, sowieso vasthouden tot TxB en
+     * hoofdrichtingen altijd mogelijk maken primair te komen op TxB (maw PG afzetten).
+     */
+
+    /* vasthouden groen hoofdrichtingen gedurende periode voorafgaand aan TxB moment (indien eerder groen gestuurd) */
+    RW[fc02] |= (G[fc02] && TOTXB_PL[fc02] && (TOTXB_PL[fc02] < 100)) ? RW_WG_HALFSTAR : 0; /* ivm vooruitrealiseren */
+    YW[fc02] |= (G[fc02] && TOTXB_PL[fc02] && (TOTXB_PL[fc02] < 100)) ? YW_PL_HALFSTAR : 0; /* ivm vooruitrealiseren */
+    RW[fc08] |= (G[fc08] && TOTXB_PL[fc08] && (TOTXB_PL[fc08] < 100)) ? RW_WG_HALFSTAR : 0; /* ivm vooruitrealiseren */
+    YW[fc08] |= (G[fc08] && TOTXB_PL[fc08] && (TOTXB_PL[fc08] < 100)) ? YW_PL_HALFSTAR : 0; /* ivm vooruitrealiseren */
+
+    /* intrekken PG[] (primair en versneld primair) gedurende periode voorafgaand aan TxB moment (indien al eerder gerealiseerd) */
+    if (R[fc02] && TOTXB_PL[fc02] && (TOTXB_PL[fc02] < TFG_max[fc02])) PG[fc02] &= ~(PRIMAIR_VERSNELD);
+    if (R[fc08] && TOTXB_PL[fc08] && (TOTXB_PL[fc08] < TFG_max[fc08])) PG[fc08] &= ~(PRIMAIR_VERSNELD);
 
     RealisatieAfhandeling_halfstar_Add();
 }

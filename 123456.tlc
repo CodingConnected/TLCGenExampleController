@@ -289,9 +289,9 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0.6</Versie>
-      <Datum>2024-05-24T00:00:00</Datum>
+      <Datum>2024-06-26T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Release versie TLCGen </Commentaar>
+      <Commentaar>Release versie TLCGen 26062024</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -21038,24 +21038,64 @@
         <Type>MOTORVEHICLES</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
-        <SignalGroupName>22</SignalGroupName>
+        <SignalGroupName>03</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>20</AanvraagStart>
-        <AanvraagEnd>40</AanvraagEnd>
+        <AanvraagStart>1</AanvraagStart>
+        <AanvraagEnd>1</AanvraagEnd>
         <AanvraagStartSrm0>0</AanvraagStartSrm0>
         <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>CYCLIST</Type>
+        <Type>MOTORVEHICLES</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
-        <SignalGroupName>22</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
+        <SignalGroupName>05</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>20</AanvraagStart>
-        <AanvraagEnd>40</AanvraagEnd>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
         <AanvraagStartSrm0>0</AanvraagStartSrm0>
         <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>CYCLIST</Type>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>08</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>08</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>09</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>11</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
         <SignalGroupName>84</SignalGroupName>
@@ -21278,7 +21318,17 @@
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
-        <SignalGroupName>21</SignalGroupName>
+        <SignalGroupName>22</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>22</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
         <AanvraagStart>20</AanvraagStart>
@@ -21288,64 +21338,14 @@
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
-        <SignalGroupName>11</SignalGroupName>
+        <SignalGroupName>21</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
         <AanvraagStartSrm0>0</AanvraagStartSrm0>
         <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>09</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>08</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>08</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>05</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>03</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>1</AanvraagStart>
-        <AanvraagEnd>1</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
+        <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
     </RISLaneRequestData>
     <RISLaneExtendData>
@@ -21370,24 +21370,64 @@
         <Type>MOTORVEHICLES</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
-        <SignalGroupName>22</SignalGroupName>
+        <SignalGroupName>03</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>20</VerlengenStart>
-        <VerlengenEnd>40</VerlengenEnd>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
         <VerlengenStartSrm0>0</VerlengenStartSrm0>
         <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>CYCLIST</Type>
+        <Type>MOTORVEHICLES</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
-        <SignalGroupName>22</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
+        <SignalGroupName>05</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>20</VerlengenStart>
-        <VerlengenEnd>40</VerlengenEnd>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
         <VerlengenStartSrm0>0</VerlengenStartSrm0>
         <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>CYCLIST</Type>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>08</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>08</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>09</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>11</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
         <SignalGroupName>84</SignalGroupName>
@@ -21610,7 +21650,17 @@
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
-        <SignalGroupName>21</SignalGroupName>
+        <SignalGroupName>22</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>22</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
         <VerlengenStart>20</VerlengenStart>
@@ -21620,64 +21670,14 @@
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
-        <SignalGroupName>11</SignalGroupName>
+        <SignalGroupName>21</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
         <VerlengenStartSrm0>0</VerlengenStartSrm0>
         <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>09</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>08</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>08</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>05</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>03</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
+        <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
     </RISLaneExtendData>
     <RISLanePelotonData>
@@ -22285,31 +22285,37 @@
     <HalfstarPeriodenData>
       <HalfstarPeriodeDataModel>
         <Periode>dag</Periode>
+        <Signaalplan>PL3</Signaalplan>
         <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>ochtend</Periode>
-        <VARegelen>true</VARegelen>
+        <Signaalplan>PL1</Signaalplan>
+        <VARegelen>false</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>avond</Periode>
-        <VARegelen>true</VARegelen>
+        <Signaalplan>PL2</Signaalplan>
+        <VARegelen>false</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>koopavond</Periode>
+        <Signaalplan>PL2</Signaalplan>
         <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>weekend</Periode>
+        <Signaalplan>PL3</Signaalplan>
         <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>nacht</Periode>
+        <Signaalplan>PL3</Signaalplan>
         <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
@@ -23359,6 +23365,13 @@
         <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
       </HalfstarFaseCyclusInstellingenModel>
       <HalfstarFaseCyclusInstellingenModel>
+        <FaseCyclus>28</FaseCyclus>
+        <AlternatiefToestaan>false</AlternatiefToestaan>
+        <AlternatieveRuimte>0</AlternatieveRuimte>
+        <AanvraagOpTxB>false</AanvraagOpTxB>
+        <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
+      </HalfstarFaseCyclusInstellingenModel>
+      <HalfstarFaseCyclusInstellingenModel>
         <FaseCyclus>88</FaseCyclus>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
@@ -23444,13 +23457,6 @@
       </HalfstarFaseCyclusInstellingenModel>
       <HalfstarFaseCyclusInstellingenModel>
         <FaseCyclus>31</FaseCyclus>
-        <AlternatiefToestaan>false</AlternatiefToestaan>
-        <AlternatieveRuimte>0</AlternatieveRuimte>
-        <AanvraagOpTxB>false</AanvraagOpTxB>
-        <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
-      </HalfstarFaseCyclusInstellingenModel>
-      <HalfstarFaseCyclusInstellingenModel>
-        <FaseCyclus>28</FaseCyclus>
         <AlternatiefToestaan>false</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
         <AanvraagOpTxB>false</AanvraagOpTxB>
@@ -24195,7 +24201,12 @@
   <GebruikersOpties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Uitgangen />
     <Ingangen />
-    <HulpElementen />
+    <HulpElementen>
+      <HulpElement>
+        <Naam>inschpl</Naam>
+        <Dummy>false</Dummy>
+      </HulpElement>
+    </HulpElementen>
     <Timers />
     <Counters />
     <Schakelaars />
@@ -24510,9 +24521,6 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
-  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <SimulationEntries />
-  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>false</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -25079,9 +25087,37 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummykarin08bus</Naam>
+        <Naam>dummyhdkaruit61</Naam>
         <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin08bus</SumoNaam1>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit62</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit67</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkaruit68</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin02karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin02karbus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -25151,23 +25187,9 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummykarin05bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin05bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
         <Naam>k33b</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>33b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin03bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin03bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -25179,23 +25201,9 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummykarin02karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin02karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
         <Naam>k32b</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>32b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit68</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -25207,13 +25215,6 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit67</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
         <Naam>k31b</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>31b</SumoNaam1>
@@ -25221,23 +25222,9 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
-        <Naam>dummyhdkaruit62</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
         <Naam>k31a</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>31a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkaruit61</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -25379,6 +25366,27 @@
         <Naam>dummykarin09bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin09bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin08bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin08bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin05bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin05bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin03bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin03bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
