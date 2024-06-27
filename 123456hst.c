@@ -108,24 +108,23 @@ void KlokPerioden_halfstar(void)
             break;
         }
     }
+
     /* Klokbepaling voor VA-bedrijf */
-    if (!IH[homschtegenh])
+    if (
+       (SCH[schpervardef] && (MM[mperiod] == 0)) ||
+       (SCH[schpervar1] && (MM[mperiod] == 1)) || 
+       (SCH[schpervar2] && (MM[mperiod] == 2)) || 
+       (SCH[schpervar3] && (MM[mperiod] == 3)) || 
+       (SCH[schpervar4] && (MM[mperiod] == 4)) || 
+       (SCH[schpervar5] && (MM[mperiod] == 5)) || 
+       (SCH[schpervar6] && (MM[mperiod] == 6)) || 
+       (SCH[schpervar7] && (MM[mperiod] == 7)))   
     {
-        if ((SCH[schpervardef] && (MM[mperiod] == 0)) ||
-            (SCH[schpervar1] && (MM[mperiod] == 1)) ||
-            (SCH[schpervar2] && (MM[mperiod] == 2)) ||
-            (SCH[schpervar3] && (MM[mperiod] == 3)) ||
-            (SCH[schpervar4] && (MM[mperiod] == 4)) ||
-            (SCH[schpervar5] && (MM[mperiod] == 5)) ||
-            (SCH[schpervar6] && (MM[mperiod] == 6)) ||
-            (SCH[schpervar7] && (MM[mperiod] == 7)))
-        {
-            IH[hpervar] = TRUE;
-        }
-        else
-        {
-            IH[hpervar] = FALSE;
-        }
+       IH[hpervar] = TRUE;
+    }
+    else
+    {
+       IH[hpervar] = FALSE;
     }
 
     /* Klokbepaling voor alternatieve realisaties voor de hoofdrichtingen */
@@ -164,7 +163,7 @@ void KlokPerioden_halfstar(void)
         MM[mhand]   = TRUE;
     }
     /* Koppelen actief */
-    if (H[hpervar] || SCH[schvar] || SCH[schvarstreng])
+    if (H[hpervar] || SCH[schvar] || SCH[schvarstreng] || IH[homschtegenh]) 
         IH[hkpact] = FALSE;
     else
         IH[hkpact] = TRUE;
@@ -176,7 +175,7 @@ void KlokPerioden_halfstar(void)
             IH[hmlact] = TRUE;
             IH[hplact] = FALSE;
         }
-        else
+        else 
         {
             IH[hplact] = TRUE;
             IH[hmlact] = FALSE;
@@ -655,9 +654,9 @@ void pre_system_application_halfstar(void)
     GUS[usmlact] = IH[hmlact];
     GUS[uskpact] = IH[hkpact];
     GUS[usmlpl] = IH[hplact] ? (s_int16)(PL+1): (s_int16)(ML+1);
-    GUS[usPL1] = PL == PL1;
-    GUS[usPL2] = PL == PL2;
-    GUS[usPL3] = PL == PL3;
+    GUS[usPL1] = IH[hplact] && (PL == PL1);
+    GUS[usPL2] = IH[hplact] && (PL == PL2);
+    GUS[usPL3] = IH[hplact] && (PL == PL3);
     GUS[ustxtimer] = IH[hplact] ? (s_int16)(TX_timer): 0;
     GUS[usklok] = MM[mklok];
     GUS[ushand] = MM[mhand];

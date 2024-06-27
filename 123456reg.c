@@ -143,52 +143,18 @@ void PreApplication(void)
 
     int fc;
 
-    /* bepalen of regeling mag omschakelen */
-    IH[homschtegenh] = FALSE;
-
     /* Nalopen */
     /* ------- */
     gk_ResetGK();
     gk_ResetNL();
 
+    /* bepalen of regeling mag omschakelen */
     /* Tegenhouden inschakelen naar PL als een naloop nog actief is of als inrijden/inlopen actief is */
-    IH[homschtegenh] |=
-        T[tnlfg0262] ||
-        T[tnlfgd0262] ||
-        T[tnleg0262] ||
-        T[tnlegd0262] ||
-        T[tnlfg0868] ||
-        T[tnlfgd0868] ||
-        T[tnleg0868] ||
-        T[tnlegd0868] ||
-        T[tnlfg1168] ||
-        T[tnlfgd1168] ||
-        T[tnleg1168] ||
-        T[tnlegd1168] ||
-        T[tnlfg2221] ||
-        T[tnlfgd2221] ||
-        T[tnleg2221] ||
-        T[tnlegd2221] ||
-        T[tnlsg3132] ||
-        T[tnlsgd3132] ||
-        T[tnlsg3231] ||
-        T[tnlsgd3231] ||
-        T[tnlsgd3334] ||
-        T[tnlsgd3433] ||
-        T[tnlfg8281] ||
-        T[tnlfgd8281] ||
-        T[tnleg8281] ||
-        T[tnlegd8281] ||
-        T[tlr6202] || RT[tlr6202] ||
-        T[tlr6808] || RT[tlr6808] ||
-        T[tlr6811] || RT[tlr6811] ||
-        T[tlr2122] || RT[tlr2122] ||
-        T[til3132] || RT[til3132]  ||
-        T[til3231] || RT[til3231]  ||
-        T[til3334] || RT[til3334]  ||
-        T[til3433] || RT[til3433]  ||
-        T[tlr8182] || RT[tlr8182];
-
+    /* Opzetten IH[homschtegenh] */
+    if (!IH[hkpact] && !IH[hpervar] && !SCH[schvar] && !SCH[schvarstreng] && !IH[hplhd]) 
+    {
+          IH[homschtegenh] = TRUE;
+    }
     
     /* Wenselijk is dat pas wordt omgeschakeld naar PL wanneer nalopen zijn afgemaakt; echter andere (voedende)
      * richtingen moeten in deze tijd niet groen kunnen worden, anders bestaat het risico dat er permanent
@@ -197,20 +163,74 @@ void PreApplication(void)
     /* reset */
     for (fc = 0; fc < FCMAX; ++fc)
     {
-        RR[fc] &= ~RR_INSCH_HALFSTAR;
+       RR[fc] &= ~RR_INSCH_HALFSTAR;
+       Z[fc]  &=  ~Z_INSCH_HALFSTAR;
     }
     /* set voor alle richtingen waar een richting al inloopt of inrijdt */
     if (IH[homschtegenh]) /* tegenhouden inschakelen naar PL */
     {
-        RR[fc02] |= RR_INSCH_HALFSTAR;
-        RR[fc08] |= RR_INSCH_HALFSTAR;
-        RR[fc11] |= RR_INSCH_HALFSTAR;
-        RR[fc22] |= RR_INSCH_HALFSTAR;
-        RR[fc31] |= RR_INSCH_HALFSTAR;
-        RR[fc32] |= RR_INSCH_HALFSTAR;
-        RR[fc33] |= RR_INSCH_HALFSTAR;
-        RR[fc34] |= RR_INSCH_HALFSTAR;
-        RR[fc82] |= RR_INSCH_HALFSTAR;
+       RR[fc02] |= RR_INSCH_HALFSTAR;
+       RR[fc08] |= RR_INSCH_HALFSTAR;
+       RR[fc11] |= RR_INSCH_HALFSTAR;
+       RR[fc22] |= RR_INSCH_HALFSTAR;
+       if (!(T[til3231] || RT[til3231])) RR[fc31] |= RR_INSCH_HALFSTAR;
+       if (!(T[til3132] || RT[til3132])) RR[fc32] |= RR_INSCH_HALFSTAR;
+       if (!(T[til3433] || RT[til3433])) RR[fc33] |= RR_INSCH_HALFSTAR;
+       if (!(T[til3334] || RT[til3334])) RR[fc34] |= RR_INSCH_HALFSTAR;
+       RR[fc82] |= RR_INSCH_HALFSTAR;
+
+       if (!(VS[fc02] || FG[fc02])) Z[fc02] |= Z_INSCH_HALFSTAR;
+       if (!(VS[fc08] || FG[fc08])) Z[fc08] |= Z_INSCH_HALFSTAR;
+       if (!(VS[fc11] || FG[fc11])) Z[fc11] |= Z_INSCH_HALFSTAR;
+       if (!(VS[fc22] || FG[fc22])) Z[fc22] |= Z_INSCH_HALFSTAR;
+       if (!(VS[fc31] || FG[fc31] || T[tnlsgd3231])) Z[fc31] |= Z_INSCH_HALFSTAR;
+       if (!(VS[fc32] || FG[fc32] || T[tnlsgd3132])) Z[fc32] |= Z_INSCH_HALFSTAR;
+       if (!(VS[fc33] || FG[fc33] || T[tnlsgd3433])) Z[fc33] |= Z_INSCH_HALFSTAR;
+       if (!(VS[fc34] || FG[fc34] || T[tnlsgd3334])) Z[fc34] |= Z_INSCH_HALFSTAR;
+       if (!(VS[fc82] || FG[fc82])) Z[fc82] |= Z_INSCH_HALFSTAR;
+    }
+
+    /* Afzetten IH[homschtegenh] */
+    if (!IH[hkpact] && !IH[hpervar] && !SCH[schvar] && !SCH[schvarstreng] && !IH[hplhd])
+    {
+       if(!T[tnlfg0262] && !RT[tnlfg0262] &&
+          !T[tnlfgd0262] && !RT[tnlfgd0262] &&
+          !T[tnleg0262] && !RT[tnleg0262] &&
+          !T[tnlegd0262] && !RT[tnlegd0262] &&
+          !T[tnlfg0868] && !RT[tnlfg0868] &&
+          !T[tnlfgd0868] && !RT[tnlfgd0868] &&
+          !T[tnleg0868] && !RT[tnleg0868] &&
+          !T[tnlegd0868] && !RT[tnlegd0868] &&
+          !T[tnlfg1168] && !RT[tnlfg1168] &&
+          !T[tnlfgd1168] && !RT[tnlfgd1168] &&
+          !T[tnleg1168] && !RT[tnleg1168] &&
+          !T[tnlegd1168] && !RT[tnlegd1168] &&
+          !T[tnlfg2221] && !RT[tnlfg2221] &&
+          !T[tnlfgd2221] && !RT[tnlfgd2221] &&
+          !T[tnleg2221] && !RT[tnleg2221] &&
+          !T[tnlegd2221] && !RT[tnlegd2221] &&
+          !T[tnlsg3132] && !RT[tnlsg3132] &&
+          !T[tnlsgd3132] && !RT[tnlsgd3132] &&
+          !T[tnlsg3231] && !RT[tnlsg3231] &&
+          !T[tnlsgd3231] && !RT[tnlsgd3231] &&
+          !T[tnlsgd3334] && !RT[tnlsgd3334] &&
+          !T[tnlsgd3433] && !RT[tnlsgd3433] &&
+          !T[tnlfg8281] && !RT[tnlfg8281] &&
+          !T[tnlfgd8281] && !RT[tnlfgd8281] &&
+          !T[tnleg8281] && !RT[tnleg8281] &&
+          !T[tnlegd8281] && !RT[tnlegd8281] &&
+          !T[tlr6202] && !RT[tlr6202] &&
+          !T[tlr6808] && !RT[tlr6808] &&
+          !T[tlr6811] && !RT[tlr6811] &&
+          !T[tlr2122] && !RT[tlr2122] &&
+          !T[til3132] && !RT[til3132] &&
+          !T[til3231] && !RT[til3231] &&
+          !T[til3334] && !RT[til3334] &&
+          !T[til3433] && !RT[til3433] &&
+          !T[tlr8182] && !RT[tlr8182]) 
+       {
+          IH[homschtegenh] = FALSE;
+       }
     }
 
     /* Opschonen wagennummer buffers */

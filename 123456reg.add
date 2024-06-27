@@ -34,7 +34,19 @@ void PreApplication_Add(void)
       SCH[schcovuber] = 0;
    #endif
 #endif
+
+#ifndef AUTOMAAT
+//      DIH[hkpact] = 1;
+//      DIH[hpervar] = 1;
+//      DIH[homschtegenh] = 1;
+//      DIUS[uskpact] = 1;
+//      DIUS[usplact] = 1;
+//      DIUS[usmlact] = 1;
+#endif
+
+
 }
+
 
 void KlokPerioden_Add(void)
 {
@@ -122,9 +134,9 @@ void PostApplication_Add(void)
       (CIF_KLOK[CIF_JAAR] == 2099) && 
       (CIF_KLOK[CIF_MAAND] == 1) &&
       (CIF_KLOK[CIF_DAG] == 2) &&
-      (CIF_KLOK[CIF_UUR] == 3) &&
-      (CIF_KLOK[CIF_MINUUT] == 31) && 
-      (CIF_KLOK[CIF_SECONDE] == 46))
+      (CIF_KLOK[CIF_UUR] == 1) &&
+      (CIF_KLOK[CIF_MINUUT] == 47) && 
+      (CIF_KLOK[CIF_SECONDE] == 17))
    {
       stuffkey(F3KEY);
       stuffkey(F5KEY);
