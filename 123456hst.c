@@ -8,14 +8,14 @@
 
    BESTAND:   123456hst.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.6
-   CCOLGEN:   12.4.0.6
+    TLCGEN:   12.4.0.7
+   CCOLGEN:   12.4.0.7
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.6   26-06-2024   TLCGen      Release versie TLCGen 26062024
+ * 12.4.0.7   04-07-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -108,23 +108,21 @@ void KlokPerioden_halfstar(void)
             break;
         }
     }
-
     /* Klokbepaling voor VA-bedrijf */
-    if (
-       (SCH[schpervardef] && (MM[mperiod] == 0)) ||
-       (SCH[schpervar1] && (MM[mperiod] == 1)) || 
-       (SCH[schpervar2] && (MM[mperiod] == 2)) || 
-       (SCH[schpervar3] && (MM[mperiod] == 3)) || 
-       (SCH[schpervar4] && (MM[mperiod] == 4)) || 
-       (SCH[schpervar5] && (MM[mperiod] == 5)) || 
-       (SCH[schpervar6] && (MM[mperiod] == 6)) || 
-       (SCH[schpervar7] && (MM[mperiod] == 7)))   
+    if ((SCH[schpervardef] && (MM[mperiod] == 0)) ||
+        (SCH[schpervar1] && (MM[mperiod] == 1)) ||
+        (SCH[schpervar2] && (MM[mperiod] == 2)) ||
+        (SCH[schpervar3] && (MM[mperiod] == 3)) ||
+        (SCH[schpervar4] && (MM[mperiod] == 4)) ||
+        (SCH[schpervar5] && (MM[mperiod] == 5)) ||
+        (SCH[schpervar6] && (MM[mperiod] == 6)) ||
+        (SCH[schpervar7] && (MM[mperiod] == 7)))
     {
-       IH[hpervar] = TRUE;
+        IH[hpervar] = TRUE;
     }
     else
     {
-       IH[hpervar] = FALSE;
+        IH[hpervar] = FALSE;
     }
 
     /* Klokbepaling voor alternatieve realisaties voor de hoofdrichtingen */
@@ -163,7 +161,7 @@ void KlokPerioden_halfstar(void)
         MM[mhand]   = TRUE;
     }
     /* Koppelen actief */
-    if (H[hpervar] || SCH[schvar] || SCH[schvarstreng] || IH[homschtegenh]) 
+    if (H[hpervar] || SCH[schvar] || SCH[schvarstreng] || IH[homschtegenh])
         IH[hkpact] = FALSE;
     else
         IH[hkpact] = TRUE;
@@ -175,7 +173,7 @@ void KlokPerioden_halfstar(void)
             IH[hmlact] = TRUE;
             IH[hplact] = FALSE;
         }
-        else 
+        else
         {
             IH[hplact] = TRUE;
             IH[hmlact] = FALSE;

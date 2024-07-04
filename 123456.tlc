@@ -72,14 +72,14 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>6</HuidigeVersieRevision>
+    <HuidigeVersieRevision>7</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <StoreCurrentController>false</StoreCurrentController>
     <ToevoegenOVM>true</ToevoegenOVM>
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.6</TLCGenVersie>
+    <TLCGenVersie>12.4.0.7</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -288,10 +288,10 @@
       </FixatieBitmapData>
     </FixatieData>
     <Versie>
-      <Versie>12.4.0.6</Versie>
-      <Datum>2024-06-26T00:00:00</Datum>
+      <Versie>12.4.0.7</Versie>
+      <Datum>2024-07-04T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Release versie TLCGen 26062024</Commentaar>
+      <Commentaar>Release versie TLCGen</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -2558,7 +2558,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -2770,7 +2770,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -2982,7 +2982,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -3452,7 +3452,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -3704,7 +3704,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -4002,7 +4002,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -4218,11 +4218,11 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
-      <Meeverlengen>SchUit</Meeverlengen>
-      <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <Meeverlengen>SchAan</Meeverlengen>
+      <MeeverlengenType>Default2</MeeverlengenType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
-      <MeeverlengenVerschil xsi:nil="true" />
+      <MeeverlengenVerschil>0</MeeverlengenVerschil>
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
       <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
@@ -4237,7 +4237,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>true</WachttijdVoorspeller>
+      <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -4453,7 +4453,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -4470,7 +4470,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>true</WachttijdVoorspeller>
+      <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -4765,7 +4765,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -4782,7 +4782,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>true</WachttijdVoorspeller>
+      <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -4990,7 +4990,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -5007,7 +5007,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>true</WachttijdVoorspeller>
+      <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -5259,7 +5259,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -5491,7 +5491,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -5729,7 +5729,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -5961,7 +5961,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -6193,7 +6193,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -6425,7 +6425,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -6637,7 +6637,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -6935,7 +6935,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -7147,7 +7147,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -7529,7 +7529,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -7745,11 +7745,11 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
-      <Meeverlengen>SchUit</Meeverlengen>
-      <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <Meeverlengen>SchAan</Meeverlengen>
+      <MeeverlengenType>Default2</MeeverlengenType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
-      <MeeverlengenVerschil xsi:nil="true" />
+      <MeeverlengenVerschil>0</MeeverlengenVerschil>
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
       <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
@@ -7965,7 +7965,7 @@
       <Wachtgroen>SchUit</Wachtgroen>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
-      <AlternatieveRuimteType>RealRuimte</AlternatieveRuimteType>
+      <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
       <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
@@ -21108,6 +21108,56 @@
         <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
+        <SignalGroupName>22</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>22</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>24</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>26</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>28</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>20</AanvraagStart>
+        <AanvraagEnd>40</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
@@ -21296,56 +21346,6 @@
         <AanvraagStartSrm0>0</AanvraagStartSrm0>
         <AanvraagEndSrm0>0</AanvraagEndSrm0>
         <Type>PEDESTRIAN</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>28</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>20</AanvraagStart>
-        <AanvraagEnd>40</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>CYCLIST</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>26</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>20</AanvraagStart>
-        <AanvraagEnd>40</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>CYCLIST</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>24</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>20</AanvraagStart>
-        <AanvraagEnd>40</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>CYCLIST</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>22</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>20</AanvraagStart>
-        <AanvraagEnd>40</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>CYCLIST</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>22</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>20</AanvraagStart>
-        <AanvraagEnd>40</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>CYCLIST</Type>
       </RISLaneRequestDataModel>
     </RISLaneRequestData>
     <RISLaneExtendData>
@@ -21440,6 +21440,56 @@
         <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
+        <SignalGroupName>22</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>22</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>24</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>26</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>28</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>20</VerlengenStart>
+        <VerlengenEnd>40</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>CYCLIST</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
@@ -21628,56 +21678,6 @@
         <VerlengenStartSrm0>0</VerlengenStartSrm0>
         <VerlengenEndSrm0>0</VerlengenEndSrm0>
         <Type>PEDESTRIAN</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>28</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>20</VerlengenStart>
-        <VerlengenEnd>40</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>CYCLIST</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>26</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>20</VerlengenStart>
-        <VerlengenEnd>40</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>CYCLIST</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>24</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>20</VerlengenStart>
-        <VerlengenEnd>40</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>CYCLIST</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>22</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>20</VerlengenStart>
-        <VerlengenEnd>40</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>CYCLIST</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>22</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>20</VerlengenStart>
-        <VerlengenEnd>40</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>CYCLIST</Type>
       </RISLaneExtendDataModel>
     </RISLaneExtendData>
     <RISLanePelotonData>
@@ -22284,6 +22284,12 @@
     <PlantijdenInParameters>true</PlantijdenInParameters>
     <HalfstarPeriodenData>
       <HalfstarPeriodeDataModel>
+        <Periode>nacht</Periode>
+        <Signaalplan>PL3</Signaalplan>
+        <VARegelen>true</VARegelen>
+        <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
+      </HalfstarPeriodeDataModel>
+      <HalfstarPeriodeDataModel>
         <Periode>dag</Periode>
         <Signaalplan>PL3</Signaalplan>
         <VARegelen>true</VARegelen>
@@ -22304,17 +22310,11 @@
       <HalfstarPeriodeDataModel>
         <Periode>koopavond</Periode>
         <Signaalplan>PL2</Signaalplan>
-        <VARegelen>false</VARegelen>
-        <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
-      </HalfstarPeriodeDataModel>
-      <HalfstarPeriodeDataModel>
-        <Periode>weekend</Periode>
-        <Signaalplan>PL3</Signaalplan>
         <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
-        <Periode>nacht</Periode>
+        <Periode>weekend</Periode>
         <Signaalplan>PL3</Signaalplan>
         <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
@@ -23372,6 +23372,13 @@
         <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
       </HalfstarFaseCyclusInstellingenModel>
       <HalfstarFaseCyclusInstellingenModel>
+        <FaseCyclus>31</FaseCyclus>
+        <AlternatiefToestaan>false</AlternatiefToestaan>
+        <AlternatieveRuimte>0</AlternatieveRuimte>
+        <AanvraagOpTxB>false</AanvraagOpTxB>
+        <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
+      </HalfstarFaseCyclusInstellingenModel>
+      <HalfstarFaseCyclusInstellingenModel>
         <FaseCyclus>88</FaseCyclus>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
@@ -23450,13 +23457,6 @@
       </HalfstarFaseCyclusInstellingenModel>
       <HalfstarFaseCyclusInstellingenModel>
         <FaseCyclus>32</FaseCyclus>
-        <AlternatiefToestaan>false</AlternatiefToestaan>
-        <AlternatieveRuimte>0</AlternatieveRuimte>
-        <AanvraagOpTxB>false</AanvraagOpTxB>
-        <PrivilegePeriodeOpzetten>false</PrivilegePeriodeOpzetten>
-      </HalfstarFaseCyclusInstellingenModel>
-      <HalfstarFaseCyclusInstellingenModel>
-        <FaseCyclus>31</FaseCyclus>
         <AlternatiefToestaan>false</AlternatiefToestaan>
         <AlternatieveRuimte>0</AlternatieveRuimte>
         <AanvraagOpTxB>false</AanvraagOpTxB>
@@ -25124,6 +25124,41 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykarin05bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin05bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin08bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin08bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin09bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin09bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin11bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin11bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin61bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin61bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -25347,41 +25382,6 @@
         <Naam>dummykarin62bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin62bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin61bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin61bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin11bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin11bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin09bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin09bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin08bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin08bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin05bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin05bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

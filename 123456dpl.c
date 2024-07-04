@@ -8,14 +8,14 @@
 
    BESTAND:   123456dpl.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.6
-   CCOLGEN:   12.4.0.6
+    TLCGEN:   12.4.0.7
+   CCOLGEN:   12.4.0.7
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.6   26-06-2024   TLCGen      Release versie TLCGen 26062024
+ * 12.4.0.7   04-07-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -317,10 +317,6 @@ void display_parameters(void)
     X_us[usptp_ptp123456oke] = 43; Y_us[usptp_ptp123456oke] = 379;
     X_us[usptp_ptp123456err] = 43; Y_us[usptp_ptp123456err] = 392;
     X_us[usrgv] = 275; Y_us[usrgv] = 107;
-    X_us[uswtv22] = NG; Y_us[uswtv22] = NG;
-    X_us[uswtv24] = NG; Y_us[uswtv24] = NG;
-    X_us[uswtv26] = NG; Y_us[uswtv26] = NG;
-    X_us[uswtv28] = NG; Y_us[uswtv28] = NG;
     X_us[uswtk21] = 376; Y_us[uswtk21] = 219;
     X_us[uswtk22] = 434; Y_us[uswtk22] = 214;
     X_us[uswtk24] = 504; Y_us[uswtk24] = 301;

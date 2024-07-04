@@ -16,6 +16,9 @@
  *
  ************************************************************************************/
 
+void CorrectieNaloopCV(count fc2);
+
+
 #ifdef CCOL_IS_SPECIAL
 void SpecialSignals_Add(void)
 {
@@ -34,16 +37,6 @@ void PreApplication_Add(void)
       SCH[schcovuber] = 0;
    #endif
 #endif
-
-#ifndef AUTOMAAT
-//      DIH[hkpact] = 1;
-//      DIH[hpervar] = 1;
-//      DIH[homschtegenh] = 1;
-//      DIUS[uskpact] = 1;
-//      DIUS[usplact] = 1;
-//      DIUS[usmlact] = 1;
-#endif
-
 
 }
 
@@ -89,6 +82,20 @@ void Meetkriterium_Add(void)
 
 void Meeverlengen_Add(void)
 {
+
+     CorrectieNaloopCV(fc21);
+      CorrectieNaloopCV(fc62);
+      CorrectieNaloopCV(fc68);
+      CorrectieNaloopCV(fc81);
+
+#ifndef AUTOMAAT
+   int fc;
+   for (fc = 0; fc < FCMAX; ++fc)
+   {
+      xyprintf(100, fc, "fc%2s CALW = %4d", FC_code[fc], CALW[fc]);
+      xyprintf(120, fc, "PRI_CALW = %4d", PRI_CALW);
+   }
+#endif
 }
 
 void Synchronisaties_Add(void)
@@ -131,12 +138,12 @@ void PostApplication_Add(void)
    /* ============ */
 
    if (TS &&
-      (CIF_KLOK[CIF_JAAR] == 2099) && 
+      (CIF_KLOK[CIF_JAAR] == 2001) && 
       (CIF_KLOK[CIF_MAAND] == 1) &&
-      (CIF_KLOK[CIF_DAG] == 2) &&
-      (CIF_KLOK[CIF_UUR] == 1) &&
-      (CIF_KLOK[CIF_MINUUT] == 47) && 
-      (CIF_KLOK[CIF_SECONDE] == 17))
+      (CIF_KLOK[CIF_DAG] == 1) &&
+      (CIF_KLOK[CIF_UUR] == 12) &&
+      (CIF_KLOK[CIF_MINUUT] == 57) && 
+      (CIF_KLOK[CIF_SECONDE] == 2))
    {
       stuffkey(F3KEY);
       stuffkey(F5KEY);
@@ -175,3 +182,29 @@ void post_dump_application(void)
 {
 }
 
+
+
+void CorrectieNaloopCV(count fc2)
+
+{
+ /*  03/04/2024 Jonathan de Vries
+   * Doel:
+   * conflicten van nalooprichtingen alternatief realiseren en daarmee meeverlenggroen voedende richting beeindigen
+   *
+   * de functie kcv(i) in mlefunc.c wordt aangeroepen door max_tar_to(i) voor het bepalen van PAR[i];
+   * indien CV[k] waar is retourneert max_tar_to(i) ruimte NG. Dan geen alternatieve realisatie.
+   * Indien k een nalooprichting is en de voedende richting in MG[] staat blijft de alternatieve realisatie onterecht uit.
+   *
+   * Indien de PAR[i] waar is, mag deze volgens langstwachtende_alternatief_modulen() worden geraliseerd. Binnen deze functie
+   * leidt de functie set_ARLWML() niet tot een AA[i] wegens het opstaan van CV[k] als van de aanwezigheid van een RW[k]
+   *
+   * Onderstaande correctie op nalopen betreft het tijdelijk intrekken van de CV[] variabele als van tijdelijke verplaatsing van RW[k]&BIT2 naar YW[k]&BIT2]
+   * correctie toepassen eind Meeverlengen_Add, voorafgaand RealisatieAfhandeling(void)
+   */
+
+   YW[fc2] &= ~BIT2;
+   YW[fc2] |= (WG[fc2] && (RW[fc2] == BIT2)) ? BIT2 : FALSE;
+   RW[fc2] = (WG[fc2] && (YW[fc2] & BIT2)) ? FALSE : RW[fc2];
+   CV[fc2] = (WG[fc2] && (YW[fc2] == BIT2)) ? FALSE : CV[fc2];
+   CV[fc2] |= EWG[fc2];
+}
