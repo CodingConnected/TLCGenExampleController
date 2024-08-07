@@ -487,6 +487,3 @@ void copy_TVG_max_to_TVG_basis (void)
  *
  * functie maken om actuele cyclustijd te tonen.
  */
-
-
-

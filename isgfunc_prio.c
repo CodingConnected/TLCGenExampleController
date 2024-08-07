@@ -1,7 +1,6 @@
 /* isgfunc_prio.c - gegenereerd met TLCGen 12.4.0.0 */
 
 /* merk op: deze file heeft _geen_ bijbehorende header */
-/* @@: Peter moet deze functies nog verkorten net zoals hij bij isgfunc.c heeft gedaan */
 
 #define    PRIO_AA_BIT      BIT6
 

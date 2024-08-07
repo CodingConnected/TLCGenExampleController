@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   10-01-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable)
+ * 12.4.0   07-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -1159,19 +1159,19 @@ void PostAfhandelingPrio(void)
 {
 
     /* Niet afkappen naloop richtingen wanneer een naloop tijd nog loopt */
-    if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
+    if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnleg2221] || T[tnleg2221])
     {
         Z[fc21] &= ~BIT6;
         RR[fc21] &= ~BIT6;
         FM[fc21] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlsg3231] || T[tnlsg3231] || RT[tnlsgd3231] || T[tnlsgd3231])
+    if (RT[tnlsgd3231] || T[tnlsgd3231])
     {
         Z[fc31] &= ~BIT6;
         RR[fc31] &= ~BIT6;
         FM[fc31] &= ~PRIO_FM_BIT;
     }
-    if (RT[tnlsg3132] || T[tnlsg3132] || RT[tnlsgd3132] || T[tnlsgd3132])
+    if (RT[tnlsgd3132] || T[tnlsgd3132])
     {
         Z[fc32] &= ~BIT6;
         RR[fc32] &= ~BIT6;
