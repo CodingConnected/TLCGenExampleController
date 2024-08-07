@@ -72,6 +72,9 @@
     #include "detectie.c"
     #include "ccolfunc.c"
     #include "fixatie.c"
+/* Include files wachttijdvoorspeller*/
+#include "wtvfunc.c" /* berekening van de wachttijden voorspelling */
+#include "wtlleds.c" /* aansturing van de wachttijdlantaarn met leds */
 #ifdef MIRMON
     #include "MirakelMonitor.h"
 #endif /* MIRMON */
@@ -89,6 +92,10 @@ mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     code SCJ_code[] = "123456";
 #endif
+/* tijden t.b.v. wachttijdvoorspellers */
+/* ----------------------------------- */
+mulv t_wacht[FCMAX]; /* berekende wachttijd */
+mulv rr_twacht[FCMAX]; /* halteren wachttijd */
 mulv C_counter_old[CTMAX];
 boolv init_tvg;
 
@@ -148,6 +155,8 @@ void PreApplication(void)
 
     PreApplication_Add();
 
+    /* Genereren knippersignalen */
+    UpdateKnipperSignalen();
 }
 
 void DetectieStoring_Aanvraag(void)
@@ -1835,17 +1844,14 @@ void RealisatieAfhandeling(void)
 
     /* zet richtingen die alternatief gaan realiseren         */
     /* terug naar RV als er geen alternatieve ruimte meer is. */
+    /* Dit gebeurt niet voor fasen met een wachttijd voorspeller, */
+    /* of fasen waarvan de voedende richting die heeft. */
     RR[fc02] |= R[fc02] && AR[fc02] && (!PAR[fc02] || ERA[fc02]) ? BIT5 : 0;
     RR[fc03] |= R[fc03] && AR[fc03] && (!PAR[fc03] || ERA[fc03]) ? BIT5 : 0;
     RR[fc05] |= R[fc05] && AR[fc05] && (!PAR[fc05] || ERA[fc05]) ? BIT5 : 0;
     RR[fc08] |= R[fc08] && AR[fc08] && (!PAR[fc08] || ERA[fc08]) ? BIT5 : 0;
     RR[fc09] |= R[fc09] && AR[fc09] && (!PAR[fc09] || ERA[fc09]) ? BIT5 : 0;
     RR[fc11] |= R[fc11] && AR[fc11] && (!PAR[fc11] || ERA[fc11]) ? BIT5 : 0;
-    RR[fc21] |= R[fc21] && AR[fc21] && (!PAR[fc21] || ERA[fc21]) ? BIT5 : 0;
-    RR[fc22] |= R[fc22] && AR[fc22] && (!PAR[fc22] || ERA[fc22]) ? BIT5 : 0;
-    RR[fc24] |= R[fc24] && AR[fc24] && (!PAR[fc24] || ERA[fc24]) ? BIT5 : 0;
-    RR[fc26] |= R[fc26] && AR[fc26] && (!PAR[fc26] || ERA[fc26]) ? BIT5 : 0;
-    RR[fc28] |= R[fc28] && AR[fc28] && (!PAR[fc28] || ERA[fc28]) ? BIT5 : 0;
     RR[fc31] |= R[fc31] && AR[fc31] && (!PAR[fc31] || ERA[fc31]) ? BIT5 : 0;
     RR[fc32] |= R[fc32] && AR[fc32] && (!PAR[fc32] || ERA[fc32]) ? BIT5 : 0;
     RR[fc33] |= R[fc33] && AR[fc33] && (!PAR[fc33] || ERA[fc33]) ? BIT5 : 0;
@@ -2136,6 +2142,13 @@ void init_application(void)
         stuffkey(CTRLF4KEY);
 #endif
 
+    /* Aansturing hulpelement aansturing wachttijdvoorspellers */
+    IH[hwtv21] = SCH[schwtv21];
+    IH[hwtv22] = SCH[schwtv22];
+    IH[hwtv24] = SCH[schwtv24];
+    IH[hwtv26] = SCH[schwtv26];
+    IH[hwtv28] = SCH[schwtv28];
+
     /* TESTOMGEVING */
     /* ============ */
     #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
@@ -2368,6 +2381,143 @@ void system_application(void)
     CIF_GUS[uswtk81] = (D[dk81] && !SD[dk81] || ED[dk81]) && A[fc81] && !G[fc81] && REG ? TRUE : CIF_GUS[uswtk81] && !G[fc81] && REG;
     CIF_GUS[uswtk82] = (D[dk82] && !SD[dk82] || ED[dk82]) && A[fc82] && !G[fc82] && REG ? TRUE : CIF_GUS[uswtk82] && !G[fc82] && REG;
     CIF_GUS[uswtk84] = (D[dk84] && !SD[dk84] || ED[dk84]) && A[fc84] && !G[fc84] && REG ? TRUE : CIF_GUS[uswtk84] && !G[fc84] && REG;
+
+    /* Wachttijdvoorspellers */
+
+    /* verlenggroentijd gekoppelde richtingen */
+    TVG_max[fc62] = T_max[tnlfgd0262] > TVG_max[fc62] ? T_max[tnlfgd0262] : TVG_max[fc62];
+    TVG_max[fc68] = T_max[tnlfgd0868] > TVG_max[fc68] ? T_max[tnlfgd0868] : TVG_max[fc68];
+    TVG_max[fc68] = T_max[tnlfgd1168] > TVG_max[fc68] ? T_max[tnlfgd1168] : TVG_max[fc68];
+    TVG_max[fc21] = T_max[tnlfg2221] > TVG_max[fc21] ? T_max[tnlfg2221] : TVG_max[fc21];
+    TVG_max[fc32] = T_max[tnlsgd3132] > TVG_max[fc32] ? T_max[tnlsgd3132] : TVG_max[fc32];
+    TVG_max[fc31] = T_max[tnlsgd3231] > TVG_max[fc31] ? T_max[tnlsgd3231] : TVG_max[fc31];
+    TVG_max[fc34] = T_max[tnlsgd3334] > TVG_max[fc34] ? T_max[tnlsgd3334] : TVG_max[fc34];
+    TVG_max[fc33] = T_max[tnlsgd3433] > TVG_max[fc33] ? T_max[tnlsgd3433] : TVG_max[fc33];
+    TVG_max[fc81] = T_max[tnlfgd8281] > TVG_max[fc81] ? T_max[tnlfgd8281] : TVG_max[fc81];
+
+    /* bereken de primaire wachttijd van alle richtingen */
+    max_wachttijd_modulen_primair(PRML, ML, ML_MAX, t_wacht);
+
+    /* bereken de alternatieve wachttijd van de richtingen met wachttijdvoorspeller */
+    max_wachttijd_alternatief(fc21, t_wacht);
+    max_wachttijd_alternatief(fc22, t_wacht);
+    max_wachttijd_alternatief(fc24, t_wacht);
+    max_wachttijd_alternatief(fc26, t_wacht);
+    max_wachttijd_alternatief(fc28, t_wacht);
+
+    /* corrigeer waarde i.v.m. gelijkstart fietsers */
+    wachttijd_correctie_gelijkstart(fc24, fc84, t_wacht);
+
+    /* check of richting wordt tegengehouden door OV/HD */
+    rr_modulen_primair(PRML, ML, ML_MAX, rr_twacht);
+
+    /* Eventuele correctie op berekende wachttijd door gebruiker */
+    WachttijdvoorspellersWachttijd_Add();
+
+    /* aansturing wachttijd lantaarns (niet tijdens fixatie of prio ingreep) */
+    if (!CIF_IS[isfix])
+    {
+        if (!MM[mwtv21] || MM[mwtv21] >= PRM[prmwtvnhaltmax] || MM[mwtv21] <= PRM[prmwtvnhaltmin]) rr_twacht[fc21] = 0;
+        if (!MM[mwtv22] || MM[mwtv22] >= PRM[prmwtvnhaltmax] || MM[mwtv22] <= PRM[prmwtvnhaltmin]) rr_twacht[fc22] = 0;
+        if (!MM[mwtv24] || MM[mwtv24] >= PRM[prmwtvnhaltmax] || MM[mwtv24] <= PRM[prmwtvnhaltmin]) rr_twacht[fc24] = 0;
+        if (!MM[mwtv26] || MM[mwtv26] >= PRM[prmwtvnhaltmax] || MM[mwtv26] <= PRM[prmwtvnhaltmin]) rr_twacht[fc26] = 0;
+        if (!MM[mwtv28] || MM[mwtv28] >= PRM[prmwtvnhaltmax] || MM[mwtv28] <= PRM[prmwtvnhaltmin]) rr_twacht[fc28] = 0;
+        if (rr_twacht[fc21] < 1 || G[fc21]) wachttijd_leds_mm(fc21, mwtv21, twtv21, t_wacht[fc21], PRM[prmminwtv]);
+        if (rr_twacht[fc22] < 1 || G[fc22]) wachttijd_leds_mm(fc22, mwtv22, twtv22, t_wacht[fc22], PRM[prmminwtv]);
+        if (rr_twacht[fc24] < 1 || G[fc24]) wachttijd_leds_mm(fc24, mwtv24, twtv24, t_wacht[fc24], PRM[prmminwtv]);
+        if (rr_twacht[fc26] < 1 || G[fc26]) wachttijd_leds_mm(fc26, mwtv26, twtv26, t_wacht[fc26], PRM[prmminwtv]);
+        if (rr_twacht[fc28] < 1 || G[fc28]) wachttijd_leds_mm(fc28, mwtv28, twtv28, t_wacht[fc28], PRM[prmminwtv]);
+    }
+
+    /* laatste ledje laten knipperen bij ov/hd-ingreep of fixatie */
+    wachttijd_leds_knip(fc21, mwtv21, mwtvm21, rr_twacht[fc21], isfix);
+    wachttijd_leds_knip(fc22, mwtv22, mwtvm22, rr_twacht[fc22], isfix);
+    wachttijd_leds_knip(fc24, mwtv24, mwtvm24, rr_twacht[fc24], isfix);
+    wachttijd_leds_knip(fc26, mwtv26, mwtvm26, rr_twacht[fc26], isfix);
+    wachttijd_leds_knip(fc28, mwtv28, mwtvm28, rr_twacht[fc28], isfix);
+
+    /* beveiliging op afzetten tijdens bedrijf */
+    if (G[fc21])  IH[hwtv21] = SCH[schwtv21];
+    if (G[fc22])  IH[hwtv22] = SCH[schwtv22];
+    if (G[fc24])  IH[hwtv24] = SCH[schwtv24];
+    if (G[fc26])  IH[hwtv26] = SCH[schwtv26];
+    if (G[fc28])  IH[hwtv28] = SCH[schwtv28];
+
+    /* Aansturen wachttijdlantaarn fase 21 */
+    if (IH[hwtv21] && R[fc21])
+    {
+        CIF_GUS[uswtv21] = MM[mwtvm21];
+    }
+    else
+    {
+        CIF_GUS[uswtv21] = 0;
+    }
+    CIF_GUS[uswtv21] &= ~BIT8;
+    if (CIF_GUS[uswtv21] && (RR[fc21] & BIT6) && rr_twacht[fc21] && IH[hwtv21] && (SCH[schwtvbusbijhd] || !(RTFB & PRIO_RTFB_BIT)))
+    {
+        CIF_GUS[uswtv21] |= BIT8;
+    }
+
+    /* Aansturen wachttijdlantaarn fase 22 */
+    if (IH[hwtv22] && R[fc22])
+    {
+        CIF_GUS[uswtv22] = MM[mwtvm22];
+    }
+    else
+    {
+        CIF_GUS[uswtv22] = 0;
+    }
+    CIF_GUS[uswtv22] &= ~BIT8;
+    if (CIF_GUS[uswtv22] && (RR[fc22] & BIT6) && rr_twacht[fc22] && IH[hwtv22] && (SCH[schwtvbusbijhd] || !(RTFB & PRIO_RTFB_BIT)))
+    {
+        CIF_GUS[uswtv22] |= BIT8;
+    }
+
+    /* Aansturen wachttijdlantaarn fase 24 */
+    if (IH[hwtv24] && R[fc24])
+    {
+        CIF_GUS[uswtv24] = MM[mwtvm24];
+    }
+    else
+    {
+        CIF_GUS[uswtv24] = 0;
+    }
+    CIF_GUS[uswtv24] &= ~BIT8;
+    if (CIF_GUS[uswtv24] && (RR[fc24] & BIT6) && rr_twacht[fc24] && IH[hwtv24] && (SCH[schwtvbusbijhd] || !(RTFB & PRIO_RTFB_BIT)))
+    {
+        CIF_GUS[uswtv24] |= BIT8;
+    }
+
+    /* Aansturen wachttijdlantaarn fase 26 */
+    if (IH[hwtv26] && R[fc26])
+    {
+        CIF_GUS[uswtv26] = MM[mwtvm26];
+    }
+    else
+    {
+        CIF_GUS[uswtv26] = 0;
+    }
+    CIF_GUS[uswtv26] &= ~BIT8;
+    if (CIF_GUS[uswtv26] && (RR[fc26] & BIT6) && rr_twacht[fc26] && IH[hwtv26] && (SCH[schwtvbusbijhd] || !(RTFB & PRIO_RTFB_BIT)))
+    {
+        CIF_GUS[uswtv26] |= BIT8;
+    }
+
+    /* Aansturen wachttijdlantaarn fase 28 */
+    if (IH[hwtv28] && R[fc28])
+    {
+        CIF_GUS[uswtv28] = MM[mwtvm28];
+    }
+    else
+    {
+        CIF_GUS[uswtv28] = 0;
+    }
+    CIF_GUS[uswtv28] &= ~BIT8;
+    if (CIF_GUS[uswtv28] && (RR[fc28] & BIT6) && rr_twacht[fc28] && IH[hwtv28] && (SCH[schwtvbusbijhd] || !(RTFB & PRIO_RTFB_BIT)))
+    {
+        CIF_GUS[uswtv28] |= BIT8;
+    }
+
 
     #ifdef AUTOMAAT
         /* verklikken of applicatie daadwerkelijk de TLC aanstuurt */

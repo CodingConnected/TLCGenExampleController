@@ -1150,6 +1150,28 @@ void PrioriteitsToekenningExtra(void)
    ------------------------------------ */
 void TegenhoudenConflictenExtra(void)
 {
+    if (MM[mwtvm21] && MM[mwtvm21] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc21] &= ~BIT6;
+    }
+    if (MM[mwtvm22] && MM[mwtvm22] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc22] &= ~BIT6;
+        RR[fc21] &= ~BIT6;
+    }
+    if (MM[mwtvm24] && MM[mwtvm24] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc24] &= ~BIT6;
+        RR[fc84] &= ~BIT6;
+    }
+    if (MM[mwtvm26] && MM[mwtvm26] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc26] &= ~BIT6;
+    }
+    if (MM[mwtvm28] && MM[mwtvm28] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc28] &= ~BIT6;
+    }
 }
 
 /* ---------------------------

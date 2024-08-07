@@ -115,48 +115,53 @@
     #define usper6           (FCMAX +  60) /* Periode Weekend actief                                  */
     #define usper7           (FCMAX +  61) /* Periode Reserve actief                                  */
     #define usrgv            (FCMAX +  62) /* Verklikken actief zijn RoBuGrover                       */
-    #define uswtk21          (FCMAX +  63) /* Aansturing waitsignaal detector k21                     */
-    #define uswtk22          (FCMAX +  64) /* Aansturing waitsignaal detector k22                     */
-    #define uswtk24          (FCMAX +  65) /* Aansturing waitsignaal detector k24                     */
-    #define uswtk26          (FCMAX +  66) /* Aansturing waitsignaal detector k26                     */
-    #define uswtk28          (FCMAX +  67) /* Aansturing waitsignaal detector k28                     */
-    #define uswtk31a         (FCMAX +  68) /* Aansturing waitsignaal detector k31a                    */
-    #define uswtk31b         (FCMAX +  69) /* Aansturing waitsignaal detector k31b                    */
-    #define uswtk32a         (FCMAX +  70) /* Aansturing waitsignaal detector k32a                    */
-    #define uswtk32b         (FCMAX +  71) /* Aansturing waitsignaal detector k32b                    */
-    #define uswtk33a         (FCMAX +  72) /* Aansturing waitsignaal detector k33a                    */
-    #define uswtk33b         (FCMAX +  73) /* Aansturing waitsignaal detector k33b                    */
-    #define uswtk34a         (FCMAX +  74) /* Aansturing waitsignaal detector k34a                    */
-    #define uswtk34b         (FCMAX +  75) /* Aansturing waitsignaal detector k34b                    */
-    #define uswtk38a         (FCMAX +  76) /* Aansturing waitsignaal detector k38a                    */
-    #define uswtk38b         (FCMAX +  77) /* Aansturing waitsignaal detector k38b                    */
-    #define uswtk81          (FCMAX +  78) /* Aansturing waitsignaal detector k81                     */
-    #define uswtk82          (FCMAX +  79) /* Aansturing waitsignaal detector k82                     */
-    #define uswtk84          (FCMAX +  80) /* Aansturing waitsignaal detector k84                     */
-    #define usisgtijd02      (FCMAX +  81) /* Verklikken PRIO 02 tbv interfunc                        */
-    #define usisgtijd03      (FCMAX +  82) /* Verklikken PRIO 03 tbv interfunc                        */
-    #define usisgtijd05      (FCMAX +  83) /* Verklikken PRIO 05 tbv interfunc                        */
-    #define usisgtijd08      (FCMAX +  84) /* Verklikken PRIO 08 tbv interfunc                        */
-    #define usisgtijd09      (FCMAX +  85) /* Verklikken PRIO 09 tbv interfunc                        */
-    #define usisgtijd11      (FCMAX +  86) /* Verklikken PRIO 11 tbv interfunc                        */
-    #define usisgtijd21      (FCMAX +  87) /* Verklikken PRIO 21 tbv interfunc                        */
-    #define usisgtijd22      (FCMAX +  88) /* Verklikken PRIO 22 tbv interfunc                        */
-    #define usisgtijd24      (FCMAX +  89) /* Verklikken PRIO 24 tbv interfunc                        */
-    #define usisgtijd26      (FCMAX +  90) /* Verklikken PRIO 26 tbv interfunc                        */
-    #define usisgtijd28      (FCMAX +  91) /* Verklikken PRIO 28 tbv interfunc                        */
-    #define usisgtijd31      (FCMAX +  92) /* Verklikken PRIO 31 tbv interfunc                        */
-    #define usisgtijd32      (FCMAX +  93) /* Verklikken PRIO 32 tbv interfunc                        */
-    #define usisgtijd33      (FCMAX +  94) /* Verklikken PRIO 33 tbv interfunc                        */
-    #define usisgtijd34      (FCMAX +  95) /* Verklikken PRIO 34 tbv interfunc                        */
-    #define usisgtijd38      (FCMAX +  96) /* Verklikken PRIO 38 tbv interfunc                        */
-    #define usisgtijd61      (FCMAX +  97) /* Verklikken PRIO 61 tbv interfunc                        */
-    #define usisgtijd62      (FCMAX +  98) /* Verklikken PRIO 62 tbv interfunc                        */
-    #define usisgtijd67      (FCMAX +  99) /* Verklikken PRIO 67 tbv interfunc                        */
-    #define usisgtijd68      (FCMAX + 100) /* Verklikken PRIO 68 tbv interfunc                        */
-    #define usisgtijd81      (FCMAX + 101) /* Verklikken PRIO 81 tbv interfunc                        */
-    #define usisgtijd82      (FCMAX + 102) /* Verklikken PRIO 82 tbv interfunc                        */
-    #define usisgtijd84      (FCMAX + 103) /* Verklikken PRIO 84 tbv interfunc                        */
-    #define USMAX1           (FCMAX + 104)
+    #define uswtv21          (FCMAX +  63) /* Verklikken aansturing wachttijdvoorspeller fase 21      */
+    #define uswtv22          (FCMAX +  64) /* Verklikken aansturing wachttijdvoorspeller fase 22      */
+    #define uswtv24          (FCMAX +  65) /* Verklikken aansturing wachttijdvoorspeller fase 24      */
+    #define uswtv26          (FCMAX +  66) /* Verklikken aansturing wachttijdvoorspeller fase 26      */
+    #define uswtv28          (FCMAX +  67) /* Verklikken aansturing wachttijdvoorspeller fase 28      */
+    #define uswtk21          (FCMAX +  68) /* Aansturing waitsignaal detector k21                     */
+    #define uswtk22          (FCMAX +  69) /* Aansturing waitsignaal detector k22                     */
+    #define uswtk24          (FCMAX +  70) /* Aansturing waitsignaal detector k24                     */
+    #define uswtk26          (FCMAX +  71) /* Aansturing waitsignaal detector k26                     */
+    #define uswtk28          (FCMAX +  72) /* Aansturing waitsignaal detector k28                     */
+    #define uswtk31a         (FCMAX +  73) /* Aansturing waitsignaal detector k31a                    */
+    #define uswtk31b         (FCMAX +  74) /* Aansturing waitsignaal detector k31b                    */
+    #define uswtk32a         (FCMAX +  75) /* Aansturing waitsignaal detector k32a                    */
+    #define uswtk32b         (FCMAX +  76) /* Aansturing waitsignaal detector k32b                    */
+    #define uswtk33a         (FCMAX +  77) /* Aansturing waitsignaal detector k33a                    */
+    #define uswtk33b         (FCMAX +  78) /* Aansturing waitsignaal detector k33b                    */
+    #define uswtk34a         (FCMAX +  79) /* Aansturing waitsignaal detector k34a                    */
+    #define uswtk34b         (FCMAX +  80) /* Aansturing waitsignaal detector k34b                    */
+    #define uswtk38a         (FCMAX +  81) /* Aansturing waitsignaal detector k38a                    */
+    #define uswtk38b         (FCMAX +  82) /* Aansturing waitsignaal detector k38b                    */
+    #define uswtk81          (FCMAX +  83) /* Aansturing waitsignaal detector k81                     */
+    #define uswtk82          (FCMAX +  84) /* Aansturing waitsignaal detector k82                     */
+    #define uswtk84          (FCMAX +  85) /* Aansturing waitsignaal detector k84                     */
+    #define usisgtijd02      (FCMAX +  86) /* Verklikken PRIO 02 tbv interfunc                        */
+    #define usisgtijd03      (FCMAX +  87) /* Verklikken PRIO 03 tbv interfunc                        */
+    #define usisgtijd05      (FCMAX +  88) /* Verklikken PRIO 05 tbv interfunc                        */
+    #define usisgtijd08      (FCMAX +  89) /* Verklikken PRIO 08 tbv interfunc                        */
+    #define usisgtijd09      (FCMAX +  90) /* Verklikken PRIO 09 tbv interfunc                        */
+    #define usisgtijd11      (FCMAX +  91) /* Verklikken PRIO 11 tbv interfunc                        */
+    #define usisgtijd21      (FCMAX +  92) /* Verklikken PRIO 21 tbv interfunc                        */
+    #define usisgtijd22      (FCMAX +  93) /* Verklikken PRIO 22 tbv interfunc                        */
+    #define usisgtijd24      (FCMAX +  94) /* Verklikken PRIO 24 tbv interfunc                        */
+    #define usisgtijd26      (FCMAX +  95) /* Verklikken PRIO 26 tbv interfunc                        */
+    #define usisgtijd28      (FCMAX +  96) /* Verklikken PRIO 28 tbv interfunc                        */
+    #define usisgtijd31      (FCMAX +  97) /* Verklikken PRIO 31 tbv interfunc                        */
+    #define usisgtijd32      (FCMAX +  98) /* Verklikken PRIO 32 tbv interfunc                        */
+    #define usisgtijd33      (FCMAX +  99) /* Verklikken PRIO 33 tbv interfunc                        */
+    #define usisgtijd34      (FCMAX + 100) /* Verklikken PRIO 34 tbv interfunc                        */
+    #define usisgtijd38      (FCMAX + 101) /* Verklikken PRIO 38 tbv interfunc                        */
+    #define usisgtijd61      (FCMAX + 102) /* Verklikken PRIO 61 tbv interfunc                        */
+    #define usisgtijd62      (FCMAX + 103) /* Verklikken PRIO 62 tbv interfunc                        */
+    #define usisgtijd67      (FCMAX + 104) /* Verklikken PRIO 67 tbv interfunc                        */
+    #define usisgtijd68      (FCMAX + 105) /* Verklikken PRIO 68 tbv interfunc                        */
+    #define usisgtijd81      (FCMAX + 106) /* Verklikken PRIO 81 tbv interfunc                        */
+    #define usisgtijd82      (FCMAX + 107) /* Verklikken PRIO 82 tbv interfunc                        */
+    #define usisgtijd84      (FCMAX + 108) /* Verklikken PRIO 84 tbv interfunc                        */
+    #define USMAX1           (FCMAX + 109)
 
 /* detectie */
 /* -------- */
@@ -519,15 +524,20 @@
     #define hprreal08          158 /* Bijhouden primaire realisatie fase 08                              */
     #define hprreal09          159 /* Bijhouden primaire realisatie fase 09                              */
     #define hprreal11          160 /* Bijhouden primaire realisatie fase 11                              */
-    #define hlos31             161 /* Toestaan los realiseren fase 31                                    */
-    #define hlos32             162 /* Toestaan los realiseren fase 32                                    */
-    #define hlos33             163 /* Toestaan los realiseren fase 33                                    */
-    #define hlos34             164 /* Toestaan los realiseren fase 34                                    */
-    #define hmadk31b           165 /* Onthouden melding binnen drukknop k31b                             */
-    #define hmadk32b           166 /* Onthouden melding binnen drukknop k32b                             */
-    #define hmadk33b           167 /* Onthouden melding binnen drukknop k33b                             */
-    #define hmadk34b           168 /* Onthouden melding binnen drukknop k34b                             */
-    #define HEMAX1             169
+    #define hwtv21             161 /* Onthouden aansturing wachttijdvoorspeller fase 21                  */
+    #define hwtv22             162 /* Onthouden aansturing wachttijdvoorspeller fase 22                  */
+    #define hwtv24             163 /* Onthouden aansturing wachttijdvoorspeller fase 24                  */
+    #define hwtv26             164 /* Onthouden aansturing wachttijdvoorspeller fase 26                  */
+    #define hwtv28             165 /* Onthouden aansturing wachttijdvoorspeller fase 28                  */
+    #define hlos31             166 /* Toestaan los realiseren fase 31                                    */
+    #define hlos32             167 /* Toestaan los realiseren fase 32                                    */
+    #define hlos33             168 /* Toestaan los realiseren fase 33                                    */
+    #define hlos34             169 /* Toestaan los realiseren fase 34                                    */
+    #define hmadk31b           170 /* Onthouden melding binnen drukknop k31b                             */
+    #define hmadk32b           171 /* Onthouden melding binnen drukknop k32b                             */
+    #define hmadk33b           172 /* Onthouden melding binnen drukknop k33b                             */
+    #define hmadk34b           173 /* Onthouden melding binnen drukknop k34b                             */
+    #define HEMAX1             174
 
 /* geheugen elementen */
 /* ------------------ */
@@ -550,30 +560,40 @@
     #define mstp08bus  16 /* Stiptheid voorste OV voertuig bij 08 Bus                                    */
     #define mstp09bus  17 /* Stiptheid voorste OV voertuig bij 09 Bus                                    */
     #define mstp11bus  18 /* Stiptheid voorste OV voertuig bij 11 Bus                                    */
-    #define mar02      19 /* Alternatieve ruimte fase 02                                                 */
-    #define mar03      20 /* Alternatieve ruimte fase 03                                                 */
-    #define mar05      21 /* Alternatieve ruimte fase 05                                                 */
-    #define mar08      22 /* Alternatieve ruimte fase 08                                                 */
-    #define mar09      23 /* Alternatieve ruimte fase 09                                                 */
-    #define mar11      24 /* Alternatieve ruimte fase 11                                                 */
-    #define mar21      25 /* Alternatieve ruimte fase 21                                                 */
-    #define mar22      26 /* Alternatieve ruimte fase 22                                                 */
-    #define mar24      27 /* Alternatieve ruimte fase 24                                                 */
-    #define mar26      28 /* Alternatieve ruimte fase 26                                                 */
-    #define mar28      29 /* Alternatieve ruimte fase 28                                                 */
-    #define mar31      30 /* Alternatieve ruimte fase 31                                                 */
-    #define mar32      31 /* Alternatieve ruimte fase 32                                                 */
-    #define mar33      32 /* Alternatieve ruimte fase 33                                                 */
-    #define mar34      33 /* Alternatieve ruimte fase 34                                                 */
-    #define mar38      34 /* Alternatieve ruimte fase 38                                                 */
-    #define mar61      35 /* Alternatieve ruimte fase 61                                                 */
-    #define mar62      36 /* Alternatieve ruimte fase 62                                                 */
-    #define mar67      37 /* Alternatieve ruimte fase 67                                                 */
-    #define mar68      38 /* Alternatieve ruimte fase 68                                                 */
-    #define mar81      39 /* Alternatieve ruimte fase 81                                                 */
-    #define mar82      40 /* Alternatieve ruimte fase 82                                                 */
-    #define mar84      41 /* Alternatieve ruimte fase 84                                                 */
-    #define MEMAX1     42
+    #define mwtv21     19 /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 21                  */
+    #define mwtvm21    20 /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 21                 */
+    #define mwtv22     21 /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 22                  */
+    #define mwtvm22    22 /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 22                 */
+    #define mwtv24     23 /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 24                  */
+    #define mwtvm24    24 /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 24                 */
+    #define mwtv26     25 /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 26                  */
+    #define mwtvm26    26 /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 26                 */
+    #define mwtv28     27 /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 28                  */
+    #define mwtvm28    28 /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 28                 */
+    #define mar02      29 /* Alternatieve ruimte fase 02                                                 */
+    #define mar03      30 /* Alternatieve ruimte fase 03                                                 */
+    #define mar05      31 /* Alternatieve ruimte fase 05                                                 */
+    #define mar08      32 /* Alternatieve ruimte fase 08                                                 */
+    #define mar09      33 /* Alternatieve ruimte fase 09                                                 */
+    #define mar11      34 /* Alternatieve ruimte fase 11                                                 */
+    #define mar21      35 /* Alternatieve ruimte fase 21                                                 */
+    #define mar22      36 /* Alternatieve ruimte fase 22                                                 */
+    #define mar24      37 /* Alternatieve ruimte fase 24                                                 */
+    #define mar26      38 /* Alternatieve ruimte fase 26                                                 */
+    #define mar28      39 /* Alternatieve ruimte fase 28                                                 */
+    #define mar31      40 /* Alternatieve ruimte fase 31                                                 */
+    #define mar32      41 /* Alternatieve ruimte fase 32                                                 */
+    #define mar33      42 /* Alternatieve ruimte fase 33                                                 */
+    #define mar34      43 /* Alternatieve ruimte fase 34                                                 */
+    #define mar38      44 /* Alternatieve ruimte fase 38                                                 */
+    #define mar61      45 /* Alternatieve ruimte fase 61                                                 */
+    #define mar62      46 /* Alternatieve ruimte fase 62                                                 */
+    #define mar67      47 /* Alternatieve ruimte fase 67                                                 */
+    #define mar68      48 /* Alternatieve ruimte fase 68                                                 */
+    #define mar81      49 /* Alternatieve ruimte fase 81                                                 */
+    #define mar82      50 /* Alternatieve ruimte fase 82                                                 */
+    #define mar84      51 /* Alternatieve ruimte fase 84                                                 */
+    #define MEMAX1     52
 
 /* tijd elementen */
 /* -------------- */
@@ -877,26 +897,31 @@
     #define tuitgestca81               297 /* Uitgestelde cyclische aanvraag fase 81                                */
     #define tuitgestca82               298 /* Uitgestelde cyclische aanvraag fase 82                                */
     #define tuitgestca84               299 /* Uitgestelde cyclische aanvraag fase 84                                */
-    #define tvs2205                    300 /* Voorstarttijd fase 22 op fase 05                                      */
-    #define tfo0522                    301 /* Fictieve ontruimingstijd van 22 naar fase 05                          */
-    #define tvs3205                    302 /* Voorstarttijd fase 32 op fase 05                                      */
-    #define tfo0532                    303 /* Fictieve ontruimingstijd van 32 naar fase 05                          */
-    #define tlr2611                    304 /* Late release tijd fase 26 naar fase 11                                */
-    #define tfo2611                    305 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
-    #define tinl3132                   306 /* Inlooptijd fase 31                                                    */
-    #define tinl3231                   307 /* Inlooptijd fase 32                                                    */
-    #define tinl3334                   308 /* Inlooptijd fase 33                                                    */
-    #define tinl3433                   309 /* Inlooptijd fase 34                                                    */
-    #define txnl0262                   310 /* Tegenhouden fase 02 tbv naloop naar fase 62                           */
-    #define txnl0868                   311 /* Tegenhouden fase 08 tbv naloop naar fase 68                           */
-    #define txnl1168                   312 /* Tegenhouden fase 11 tbv naloop naar fase 68                           */
-    #define txnl2221                   313 /* Tegenhouden fase 22 tbv naloop naar fase 21                           */
-    #define txnl3132                   314 /* Tegenhouden fase 31 tbv naloop naar fase 32                           */
-    #define txnl3231                   315 /* Tegenhouden fase 32 tbv naloop naar fase 31                           */
-    #define txnl3334                   316 /* Tegenhouden fase 33 tbv naloop naar fase 34                           */
-    #define txnl3433                   317 /* Tegenhouden fase 34 tbv naloop naar fase 33                           */
-    #define txnl8281                   318 /* Tegenhouden fase 82 tbv naloop naar fase 81                           */
-    #define TMMAX1                     319
+    #define twtv21                     300 /* T.b.v. aansturing wachttijdvoorspeller fase 21                        */
+    #define twtv22                     301 /* T.b.v. aansturing wachttijdvoorspeller fase 22                        */
+    #define twtv24                     302 /* T.b.v. aansturing wachttijdvoorspeller fase 24                        */
+    #define twtv26                     303 /* T.b.v. aansturing wachttijdvoorspeller fase 26                        */
+    #define twtv28                     304 /* T.b.v. aansturing wachttijdvoorspeller fase 28                        */
+    #define tvs2205                    305 /* Voorstarttijd fase 22 op fase 05                                      */
+    #define tfo0522                    306 /* Fictieve ontruimingstijd van 22 naar fase 05                          */
+    #define tvs3205                    307 /* Voorstarttijd fase 32 op fase 05                                      */
+    #define tfo0532                    308 /* Fictieve ontruimingstijd van 32 naar fase 05                          */
+    #define tlr2611                    309 /* Late release tijd fase 26 naar fase 11                                */
+    #define tfo2611                    310 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
+    #define tinl3132                   311 /* Inlooptijd fase 31                                                    */
+    #define tinl3231                   312 /* Inlooptijd fase 32                                                    */
+    #define tinl3334                   313 /* Inlooptijd fase 33                                                    */
+    #define tinl3433                   314 /* Inlooptijd fase 34                                                    */
+    #define txnl0262                   315 /* Tegenhouden fase 02 tbv naloop naar fase 62                           */
+    #define txnl0868                   316 /* Tegenhouden fase 08 tbv naloop naar fase 68                           */
+    #define txnl1168                   317 /* Tegenhouden fase 11 tbv naloop naar fase 68                           */
+    #define txnl2221                   318 /* Tegenhouden fase 22 tbv naloop naar fase 21                           */
+    #define txnl3132                   319 /* Tegenhouden fase 31 tbv naloop naar fase 32                           */
+    #define txnl3231                   320 /* Tegenhouden fase 32 tbv naloop naar fase 31                           */
+    #define txnl3334                   321 /* Tegenhouden fase 33 tbv naloop naar fase 34                           */
+    #define txnl3433                   322 /* Tegenhouden fase 34 tbv naloop naar fase 33                           */
+    #define txnl8281                   323 /* Tegenhouden fase 82 tbv naloop naar fase 81                           */
+    #define TMMAX1                     324
 
 /* teller elementen */
 /* ---------------- */
@@ -1145,37 +1170,43 @@
     #define schwg81                  222 /* Wachtstand groen fase 81                                       */
     #define schwg82                  223 /* Wachtstand groen fase 82                                       */
     #define schwg84                  224 /* Wachtstand groen fase 84                                       */
-    #define schlos31_1               225 /* Wel/niet toestaan losse realisatie 31                          */
-    #define schlos31_2               226 /* Wel/niet toestaan losse realisatie 31                          */
-    #define schlos32_1               227 /* Wel/niet toestaan losse realisatie 32                          */
-    #define schlos32_2               228 /* Wel/niet toestaan losse realisatie 32                          */
-    #define schlos33_1               229 /* Wel/niet toestaan losse realisatie 33                          */
-    #define schlos33_2               230 /* Wel/niet toestaan losse realisatie 33                          */
-    #define schlos34_1               231 /* Wel/niet toestaan losse realisatie 34                          */
-    #define schlos34_2               232 /* Wel/niet toestaan losse realisatie 34                          */
-    #define schsneld02_1a            233 /* Aanvraag snel voor detector 02_1a aan of uit                   */
-    #define schsneld02_1b            234 /* Aanvraag snel voor detector 02_1b aan of uit                   */
-    #define schsneld03_1             235 /* Aanvraag snel voor detector 03_1 aan of uit                    */
-    #define schsneld05_1             236 /* Aanvraag snel voor detector 05_1 aan of uit                    */
-    #define schsneld08_1a            237 /* Aanvraag snel voor detector 08_1a aan of uit                   */
-    #define schsneld08_1b            238 /* Aanvraag snel voor detector 08_1b aan of uit                   */
-    #define schsneld09_1             239 /* Aanvraag snel voor detector 09_1 aan of uit                    */
-    #define schsneld11_1             240 /* Aanvraag snel voor detector 11_1 aan of uit                    */
-    #define schsneld211              241 /* Aanvraag snel voor detector 211 aan of uit                     */
-    #define schsneld22_1             242 /* Aanvraag snel voor detector 22_1 aan of uit                    */
-    #define schsneld24_1             243 /* Aanvraag snel voor detector 24_1 aan of uit                    */
-    #define schsneld261              244 /* Aanvraag snel voor detector 261 aan of uit                     */
-    #define schsneld28_1             245 /* Aanvraag snel voor detector 28_1 aan of uit                    */
-    #define schsneld61_1             246 /* Aanvraag snel voor detector 61_1 aan of uit                    */
-    #define schsneld62_1a            247 /* Aanvraag snel voor detector 62_1a aan of uit                   */
-    #define schsneld62_1b            248 /* Aanvraag snel voor detector 62_1b aan of uit                   */
-    #define schsneld67_1             249 /* Aanvraag snel voor detector 67_1 aan of uit                    */
-    #define schsneld68_1a            250 /* Aanvraag snel voor detector 68_1a aan of uit                   */
-    #define schsneld68_1b            251 /* Aanvraag snel voor detector 68_1b aan of uit                   */
-    #define schsneld81_1             252 /* Aanvraag snel voor detector 81_1 aan of uit                    */
-    #define schsneld82_1             253 /* Aanvraag snel voor detector 82_1 aan of uit                    */
-    #define schsneld84_1             254 /* Aanvraag snel voor detector 84_1 aan of uit                    */
-    #define SCHMAX1                  255
+    #define schwtv21                 225 /* Aansturing wachttijdvoorspeller fase 21 aan of uit             */
+    #define schwtv22                 226 /* Aansturing wachttijdvoorspeller fase 22 aan of uit             */
+    #define schwtv24                 227 /* Aansturing wachttijdvoorspeller fase 24 aan of uit             */
+    #define schwtv26                 228 /* Aansturing wachttijdvoorspeller fase 26 aan of uit             */
+    #define schwtv28                 229 /* Aansturing wachttijdvoorspeller fase 28 aan of uit             */
+    #define schwtvbusbijhd           230 /* Aansturing wachttijdvoorspeller BUS licht bij HD ingreep       */
+    #define schlos31_1               231 /* Wel/niet toestaan losse realisatie 31                          */
+    #define schlos31_2               232 /* Wel/niet toestaan losse realisatie 31                          */
+    #define schlos32_1               233 /* Wel/niet toestaan losse realisatie 32                          */
+    #define schlos32_2               234 /* Wel/niet toestaan losse realisatie 32                          */
+    #define schlos33_1               235 /* Wel/niet toestaan losse realisatie 33                          */
+    #define schlos33_2               236 /* Wel/niet toestaan losse realisatie 33                          */
+    #define schlos34_1               237 /* Wel/niet toestaan losse realisatie 34                          */
+    #define schlos34_2               238 /* Wel/niet toestaan losse realisatie 34                          */
+    #define schsneld02_1a            239 /* Aanvraag snel voor detector 02_1a aan of uit                   */
+    #define schsneld02_1b            240 /* Aanvraag snel voor detector 02_1b aan of uit                   */
+    #define schsneld03_1             241 /* Aanvraag snel voor detector 03_1 aan of uit                    */
+    #define schsneld05_1             242 /* Aanvraag snel voor detector 05_1 aan of uit                    */
+    #define schsneld08_1a            243 /* Aanvraag snel voor detector 08_1a aan of uit                   */
+    #define schsneld08_1b            244 /* Aanvraag snel voor detector 08_1b aan of uit                   */
+    #define schsneld09_1             245 /* Aanvraag snel voor detector 09_1 aan of uit                    */
+    #define schsneld11_1             246 /* Aanvraag snel voor detector 11_1 aan of uit                    */
+    #define schsneld211              247 /* Aanvraag snel voor detector 211 aan of uit                     */
+    #define schsneld22_1             248 /* Aanvraag snel voor detector 22_1 aan of uit                    */
+    #define schsneld24_1             249 /* Aanvraag snel voor detector 24_1 aan of uit                    */
+    #define schsneld261              250 /* Aanvraag snel voor detector 261 aan of uit                     */
+    #define schsneld28_1             251 /* Aanvraag snel voor detector 28_1 aan of uit                    */
+    #define schsneld61_1             252 /* Aanvraag snel voor detector 61_1 aan of uit                    */
+    #define schsneld62_1a            253 /* Aanvraag snel voor detector 62_1a aan of uit                   */
+    #define schsneld62_1b            254 /* Aanvraag snel voor detector 62_1b aan of uit                   */
+    #define schsneld67_1             255 /* Aanvraag snel voor detector 67_1 aan of uit                    */
+    #define schsneld68_1a            256 /* Aanvraag snel voor detector 68_1a aan of uit                   */
+    #define schsneld68_1b            257 /* Aanvraag snel voor detector 68_1b aan of uit                   */
+    #define schsneld81_1             258 /* Aanvraag snel voor detector 81_1 aan of uit                    */
+    #define schsneld82_1             259 /* Aanvraag snel voor detector 82_1 aan of uit                    */
+    #define schsneld84_1             260 /* Aanvraag snel voor detector 84_1 aan of uit                    */
+    #define SCHMAX1                  261
 
 /* parameters */
 /* ---------- */
@@ -1974,13 +2005,16 @@
     #define prmaltg82              792 /* Minimale groentijd bij alternatieve realisatie fase 82                                                                         */
     #define prmaltp82              793 /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
     #define prmaltg84              794 /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
+    #define prmminwtv              795 /* Minimale tijd die een LED moet branden tijdens aftellen                                                                        */
+    #define prmwtvnhaltmax         796 /* Niet halteren wachttijdvoorspellers indien meer dan of zoveel leds branden                                                     */
+    #define prmwtvnhaltmin         797 /* Niet halteren wachttijdvoorspellers indien minder dan of zoveel leds branden                                                   */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
-    #define prmtestdsivert         795 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
-    #define prmtestdsilyn          796 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
-    #define prmtestdsicat          797 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
-    #define PRMMAX1                798
+    #define prmtestdsivert         798 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
+    #define prmtestdsilyn          799 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
+    #define prmtestdsicat          800 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
+    #define PRMMAX1                801
 #else
-    #define PRMMAX1                795
+    #define PRMMAX1                798
 #endif
 
 /* Selectieve detectie */
