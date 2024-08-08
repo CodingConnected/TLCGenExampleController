@@ -275,7 +275,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2024-08-07T00:00:00</Datum>
+      <Datum>2024-08-08T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (laastste portable) ISG</Commentaar>
     </Versie>
@@ -4192,7 +4192,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>true</WachttijdVoorspeller>
+      <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -4745,7 +4745,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>true</WachttijdVoorspeller>
+      <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -7502,8 +7502,9 @@
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
+        <Naam>wtv81</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
+        <ElementType>Output</ElementType>
         <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
@@ -7728,8 +7729,9 @@
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
+        <Naam>wtv82</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
+        <ElementType>Output</ElementType>
         <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
@@ -7961,8 +7963,9 @@
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
+        <Naam>wtv84</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
+        <ElementType>Output</ElementType>
         <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
@@ -19561,6 +19564,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykaruit02bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit02bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -19728,13 +19738,6 @@
         <Naam>dummykaruit03bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit03bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit02bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit02bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

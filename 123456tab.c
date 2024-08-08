@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   07-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   08-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -513,9 +513,7 @@ void control_parameters(void)
     US_code[usrgv]            = "rgv";                                       /* Verklikken actief zijn RoBuGrover                       */
     US_code[uswtv21]          = "wtv21";                                     /* Verklikken aansturing wachttijdvoorspeller fase 21      */
     US_code[uswtv22]          = "wtv22";                                     /* Verklikken aansturing wachttijdvoorspeller fase 22      */
-    US_code[uswtv24]          = "wtv24";                                     /* Verklikken aansturing wachttijdvoorspeller fase 24      */
     US_code[uswtv26]          = "wtv26";                                     /* Verklikken aansturing wachttijdvoorspeller fase 26      */
-    US_code[uswtv28]          = "wtv28";                                     /* Verklikken aansturing wachttijdvoorspeller fase 28      */
     US_code[uswtk21]          = "wtk21";                                     /* Aansturing waitsignaal detector k21                     */
     US_code[uswtk22]          = "wtk22";                                     /* Aansturing waitsignaal detector k22                     */
     US_code[uswtk24]          = "wtk24";                                     /* Aansturing waitsignaal detector k24                     */
@@ -1047,9 +1045,7 @@ void control_parameters(void)
     H_code[hprreal11]          = "prreal11";                                          /* Bijhouden primaire realisatie fase 11                              */
     H_code[hwtv21]             = "wtv21";                                             /* Onthouden aansturing wachttijdvoorspeller fase 21                  */
     H_code[hwtv22]             = "wtv22";                                             /* Onthouden aansturing wachttijdvoorspeller fase 22                  */
-    H_code[hwtv24]             = "wtv24";                                             /* Onthouden aansturing wachttijdvoorspeller fase 24                  */
     H_code[hwtv26]             = "wtv26";                                             /* Onthouden aansturing wachttijdvoorspeller fase 26                  */
-    H_code[hwtv28]             = "wtv28";                                             /* Onthouden aansturing wachttijdvoorspeller fase 28                  */
     H_code[hlos31]             = "los31";                                             /* Toestaan los realiseren fase 31                                    */
     H_code[hlos32]             = "los32";                                             /* Toestaan los realiseren fase 32                                    */
     H_code[hlos33]             = "los33";                                             /* Toestaan los realiseren fase 33                                    */
@@ -1084,12 +1080,8 @@ void control_parameters(void)
     MM_code[mwtvm21]    = "wtvm21";                         /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 21                 */
     MM_code[mwtv22]     = "wtv22";                          /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 22                  */
     MM_code[mwtvm22]    = "wtvm22";                         /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 22                 */
-    MM_code[mwtv24]     = "wtv24";                          /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 24                  */
-    MM_code[mwtvm24]    = "wtvm24";                         /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 24                 */
     MM_code[mwtv26]     = "wtv26";                          /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 26                  */
     MM_code[mwtvm26]    = "wtvm26";                         /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 26                 */
-    MM_code[mwtv28]     = "wtv28";                          /* Onthouden aantal actieve LEDs wachttijdvoorspeller fase 28                  */
-    MM_code[mwtvm28]    = "wtvm28";                         /* Aansturing aantal actieve LEDs wachttijdvoorspeller fase 28                 */
     MM_code[mar02]      = "ar02";                           /* Alternatieve ruimte fase 02                                                 */
     MM_code[mar03]      = "ar03";                           /* Alternatieve ruimte fase 03                                                 */
     MM_code[mar05]      = "ar05";                           /* Alternatieve ruimte fase 05                                                 */
@@ -1418,9 +1410,7 @@ void control_parameters(void)
     T_code[tuitgestca84]               = "uitgestca84";               T_max[tuitgestca84]               = 100;  T_type[tuitgestca84]               = TE_type; /* Uitgestelde cyclische aanvraag fase 84                                */
     T_code[twtv21]                     = "wtv21";                     T_max[twtv21]                     = 999;  T_type[twtv21]                     = TE_type; /* T.b.v. aansturing wachttijdvoorspeller fase 21                        */
     T_code[twtv22]                     = "wtv22";                     T_max[twtv22]                     = 999;  T_type[twtv22]                     = TE_type; /* T.b.v. aansturing wachttijdvoorspeller fase 22                        */
-    T_code[twtv24]                     = "wtv24";                     T_max[twtv24]                     = 999;  T_type[twtv24]                     = TE_type; /* T.b.v. aansturing wachttijdvoorspeller fase 24                        */
     T_code[twtv26]                     = "wtv26";                     T_max[twtv26]                     = 999;  T_type[twtv26]                     = TE_type; /* T.b.v. aansturing wachttijdvoorspeller fase 26                        */
-    T_code[twtv28]                     = "wtv28";                     T_max[twtv28]                     = 999;  T_type[twtv28]                     = TE_type; /* T.b.v. aansturing wachttijdvoorspeller fase 28                        */
     T_code[tvs2205]                    = "vs2205";                    T_max[tvs2205]                    = 20;   T_type[tvs2205]                    = TE_type; /* Voorstarttijd fase 22 op fase 05                                      */
     T_code[tfo0522]                    = "fo0522";                    T_max[tfo0522]                    = 40;   T_type[tfo0522]                    = TE_type; /* Fictieve ontruimingstijd van 22 naar fase 05                          */
     T_code[tvs3205]                    = "vs3205";                    T_max[tvs3205]                    = 20;   T_type[tvs3205]                    = TE_type; /* Voorstarttijd fase 32 op fase 05                                      */
@@ -1689,9 +1679,7 @@ void control_parameters(void)
     SCH_code[schwg84]                  = "wg84";                  SCH[schwg84]                  = 0;                                        /* Wachtstand groen fase 84                                       */
     SCH_code[schwtv21]                 = "wtv21";                 SCH[schwtv21]                 = 1;                                        /* Aansturing wachttijdvoorspeller fase 21 aan of uit             */
     SCH_code[schwtv22]                 = "wtv22";                 SCH[schwtv22]                 = 1;                                        /* Aansturing wachttijdvoorspeller fase 22 aan of uit             */
-    SCH_code[schwtv24]                 = "wtv24";                 SCH[schwtv24]                 = 1;                                        /* Aansturing wachttijdvoorspeller fase 24 aan of uit             */
     SCH_code[schwtv26]                 = "wtv26";                 SCH[schwtv26]                 = 1;                                        /* Aansturing wachttijdvoorspeller fase 26 aan of uit             */
-    SCH_code[schwtv28]                 = "wtv28";                 SCH[schwtv28]                 = 1;                                        /* Aansturing wachttijdvoorspeller fase 28 aan of uit             */
     SCH_code[schwtvbusbijhd]           = "wtvbusbijhd";           SCH[schwtvbusbijhd]           = 0;                                        /* Aansturing wachttijdvoorspeller BUS licht bij HD ingreep       */
     SCH_code[schlos31_1]               = "los31_1";               SCH[schlos31_1]               = 0;                                        /* Wel/niet toestaan losse realisatie 31                          */
     SCH_code[schlos31_2]               = "los31_2";               SCH[schlos31_2]               = 0;                                        /* Wel/niet toestaan losse realisatie 31                          */
@@ -2775,9 +2763,7 @@ void control_parameters(void)
     SCH_cat[schwg84]               = CAT_Basisfuncties;    SCH_subcat[schwg84]                  = SUBCAT_Wachtgroen;
     SCH_cat[schwtv21]              = CAT_Informeren;       SCH_subcat[schwtv21]                 = SUBCAT_Wachttijdvoorspeller;
     SCH_cat[schwtv22]              = CAT_Informeren;       SCH_subcat[schwtv22]                 = SUBCAT_Wachttijdvoorspeller;
-    SCH_cat[schwtv24]              = CAT_Informeren;       SCH_subcat[schwtv24]                 = SUBCAT_Wachttijdvoorspeller;
     SCH_cat[schwtv26]              = CAT_Informeren;       SCH_subcat[schwtv26]                 = SUBCAT_Wachttijdvoorspeller;
-    SCH_cat[schwtv28]              = CAT_Informeren;       SCH_subcat[schwtv28]                 = SUBCAT_Wachttijdvoorspeller;
     SCH_cat[schwtvbusbijhd]        = CAT_Informeren;       SCH_subcat[schwtvbusbijhd]           = SUBCAT_Wachttijdvoorspeller;
     SCH_cat[schsneld02_1a]         = CAT_Signaalgroep;     SCH_subcat[schsneld02_1a]            = SUBCAT_MaximumGroentijden;
     SCH_cat[schsneld02_1b]         = CAT_Signaalgroep;     SCH_subcat[schsneld02_1b]            = SUBCAT_MaximumGroentijden;
@@ -3082,9 +3068,7 @@ void control_parameters(void)
     T_cat[tuitgestca84]            = CAT_Basisfuncties;    T_subcat[tuitgestca84]               = SUBCAT_Aanvraag;
     T_cat[twtv21]                  = CAT_Informeren;       T_subcat[twtv21]                     = SUBCAT_Wachttijdvoorspeller;
     T_cat[twtv22]                  = CAT_Informeren;       T_subcat[twtv22]                     = SUBCAT_Wachttijdvoorspeller;
-    T_cat[twtv24]                  = CAT_Informeren;       T_subcat[twtv24]                     = SUBCAT_Wachttijdvoorspeller;
     T_cat[twtv26]                  = CAT_Informeren;       T_subcat[twtv26]                     = SUBCAT_Wachttijdvoorspeller;
-    T_cat[twtv28]                  = CAT_Informeren;       T_subcat[twtv28]                     = SUBCAT_Wachttijdvoorspeller;
     T_cat[tvs2205]                 = CAT_Basisfuncties;    T_subcat[tvs2205]                    = SUBCAT_Deelconflicten;
     T_cat[tfo0522]                 = CAT_Basisfuncties;    T_subcat[tfo0522]                    = SUBCAT_Deelconflicten;
     T_cat[tvs3205]                 = CAT_Basisfuncties;    T_subcat[tvs3205]                    = SUBCAT_Deelconflicten;
@@ -4089,9 +4073,7 @@ void control_parameters(void)
 #if !defined NO_VLOG_300
     US_type[uswtv21] = USM_type;
     US_type[uswtv22] = USM_type;
-    US_type[uswtv24] = USM_type;
     US_type[uswtv26] = USM_type;
-    US_type[uswtv28] = USM_type;
     US_type[usisgtijd02] = USM_type;
     US_type[usisgtijd03] = USM_type;
     US_type[usisgtijd05] = USM_type;

@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   07-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   08-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -1159,18 +1159,9 @@ void TegenhoudenConflictenExtra(void)
         RR[fc22] &= ~BIT6;
         RR[fc21] &= ~BIT6;
     }
-    if (MM[mwtvm24] && MM[mwtvm24] <= PRM[prmwtvnhaltmin])
-    {
-        RR[fc24] &= ~BIT6;
-        RR[fc84] &= ~BIT6;
-    }
     if (MM[mwtvm26] && MM[mwtvm26] <= PRM[prmwtvnhaltmin])
     {
         RR[fc26] &= ~BIT6;
-    }
-    if (MM[mwtvm28] && MM[mwtvm28] <= PRM[prmwtvnhaltmin])
-    {
-        RR[fc28] &= ~BIT6;
     }
 }
 
