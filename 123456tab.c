@@ -2439,7 +2439,7 @@ void control_parameters(void)
     PRM_code[prmmaxtvg_09]           = "maxtvg_09";           PRM[prmmaxtvg_09]           = 500;   PRM_type[prmmaxtvg_09]           = TE_type; /* Maximale verlenggroentijd fase 09                                                                                              */
     PRM_code[prmmintvg_11]           = "mintvg_11";           PRM[prmmintvg_11]           = 100;   PRM_type[prmmintvg_11]           = TE_type; /* Minimale verlenggroentijd fase 11                                                                                              */
     PRM_code[prmmaxtvg_11]           = "maxtvg_11";           PRM[prmmaxtvg_11]           = 500;   PRM_type[prmmaxtvg_11]           = TE_type; /* Maximale verlenggroentijd fase 11                                                                                              */
-    PRM_code[prmmaxtvgvlog]          = "maxtvgvlog";          PRM[prmmaxtvgvlog]          = 5;     PRM_type[prmmaxtvgvlog]          = CT_type; /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
+    PRM_code[prmmaxtvg]              = "maxtvg";              PRM[prmmaxtvg]              = 5;     PRM_type[prmmaxtvg]              = CT_type; /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
     PRM_code[prmmaxtfbvlog]          = "maxtfbvlog";          PRM[prmmaxtfbvlog]          = 90;    PRM_type[prmmaxtfbvlog]          = TS_type; /* Parameter VLOG max. wachttijd na aanvraag                                                                                      */
     PRM_code[prmmlfpr02]             = "mlfpr02";             PRM[prmmlfpr02]             = 3;                                                 /* Maximaal aantal modules vooruit fase 02                                                                                        */
     PRM_code[prmmlfpr03]             = "mlfpr03";             PRM[prmmlfpr03]             = 3;                                                 /* Maximaal aantal modules vooruit fase 03                                                                                        */
@@ -3779,7 +3779,6 @@ void control_parameters(void)
     PRM_cat[prmmaxtvg_09]        = CAT_Signaalgroep;     PRM_subcat[prmmaxtvg_09]           = SUBCAT_MaximumGroentijden;
     PRM_cat[prmmintvg_11]        = CAT_Signaalgroep;     PRM_subcat[prmmintvg_11]           = SUBCAT_MaximumGroentijden;
     PRM_cat[prmmaxtvg_11]        = CAT_Signaalgroep;     PRM_subcat[prmmaxtvg_11]           = SUBCAT_MaximumGroentijden;
-    PRM_cat[prmmaxtvgvlog]       = CAT_TestenLoggen;     PRM_subcat[prmmaxtvgvlog]          = SUBCAT_Loggen;
     PRM_cat[prmmaxtfbvlog]       = CAT_TestenLoggen;     PRM_subcat[prmmaxtfbvlog]          = SUBCAT_Loggen;
     PRM_cat[prmmlfpr02]          = CAT_Module;           PRM_subcat[prmmlfpr02]             = SUBCAT_Plantijden;
     PRM_cat[prmmlfpr03]          = CAT_Module;           PRM_subcat[prmmlfpr03]             = SUBCAT_Plantijden;

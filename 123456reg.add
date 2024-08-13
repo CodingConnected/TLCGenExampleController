@@ -46,11 +46,14 @@ void post_init_application()
    fprintf(fpt, " prio08,");
    fprintf(fpt, " prio09,");
    fprintf(fpt, " prio11,");
+   fprintf(fpt, " uswtv21,");
+   fprintf(fpt, " uswtv22,");
+   fprintf(fpt, " uswtv26,");
    fprintf(fpt, "\n");
    fclose(fpt);
-   //    stuffkey(F2KEY);
-   //    stuffkey(CTRLALTF3KEY);
-   //    stuffkey(F4KEY);
+   stuffkey(F2KEY);
+   stuffkey(CTRLALTF3KEY);
+   stuffkey(F4KEY);
 #endif
 }
 
@@ -161,20 +164,42 @@ void PostApplication_Add(void)
     fprintf(fpt, "%7d,", (H[hprio08bus]) * 50);
     fprintf(fpt, "%7d,", (H[hprio09bus]) * 50);
     fprintf(fpt, "%7d,", (H[hprio11bus]) * 50);
+    fprintf(fpt, "%7d,", CIF_GUS[uswtv21] & ~BIT8);
+    fprintf(fpt, "%7d,", CIF_GUS[uswtv22] & ~BIT8);
+    fprintf(fpt, "%7d,", CIF_GUS[uswtv26] & ~BIT8);
     fprintf(fpt, "\n");
     fclose(fpt);
     }
+
+#endif
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
+   if (TS &&
+       (CIF_KLOK[CIF_JAAR] == 2001) &&
+       (CIF_KLOK[CIF_MAAND] == 1) &&
+       (CIF_KLOK[CIF_DAG] == 1) &&
+       (CIF_KLOK[CIF_UUR] == 12) &&
+       (CIF_KLOK[CIF_MINUUT] == 2) &&
+       (CIF_KLOK[CIF_SECONDE] == 42))
+   {
+       //stuffkey(F2KEY);
+       stuffkey(F5KEY);
+       //stuffkey(F4KEY);
+       //stuffkey(F10KEY); 
+   }
 #endif
 }
 
-void WachttijdvoorspellersWachttijd_Add()
+void WachttijdvoorspellersWachttijd_Add(void)
 {
-    
+
 }
 
 void pre_system_application(void)
 {
-
+    xyprintf(0, 0, "rr_twacht[fc22] = %3d", rr_twacht[fc22]);
+    xyprintf(0, 1, "t_wacht[fc22] = %3d", t_wacht[fc22]);
+    xyprintf(0, 2, "t_twacht_old[fc22] = %3d", t_wacht_old[fc22]);
+    xyprintf(0, 3, "CIF_GUS[uswtv22] = %3d", CIF_GUS[uswtv22]);
 }
 
 void post_system_application(void)
@@ -218,5 +243,9 @@ boolv CorrectieRealisatieTijd_Add(void)
 boolv Correctie_InterStartGroentijdTijd_PRIO_Add(void)
 {
     return FALSE;
+}
+void max_wachttijd_modulen_primair_ISG_Add(void)
+{
+
 }
 

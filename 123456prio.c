@@ -1152,16 +1152,16 @@ void TegenhoudenConflictenExtra(void)
 {
     if (MM[mwtvm21] && MM[mwtvm21] <= PRM[prmwtvnhaltmin])
     {
-        RR[fc21] &= ~BIT6;
+        RR[fc21] &= ~PRIO_RR_BIT;
     }
     if (MM[mwtvm22] && MM[mwtvm22] <= PRM[prmwtvnhaltmin])
     {
-        RR[fc22] &= ~BIT6;
-        RR[fc21] &= ~BIT6;
+        RR[fc22] &= ~PRIO_RR_BIT;
+        RR[fc21] &= ~PRIO_RR_BIT;
     }
     if (MM[mwtvm26] && MM[mwtvm26] <= PRM[prmwtvnhaltmin])
     {
-        RR[fc26] &= ~BIT6;
+        RR[fc26] &= ~PRIO_RR_BIT;
     }
 }
 
