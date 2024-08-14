@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   08-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   14-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -1159,9 +1159,31 @@ void TegenhoudenConflictenExtra(void)
         RR[fc22] &= ~PRIO_RR_BIT;
         RR[fc21] &= ~PRIO_RR_BIT;
     }
+    if (MM[mwtvm24] && MM[mwtvm24] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc24] &= ~PRIO_RR_BIT;
+        RR[fc84] &= ~PRIO_RR_BIT;
+    }
     if (MM[mwtvm26] && MM[mwtvm26] <= PRM[prmwtvnhaltmin])
     {
         RR[fc26] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm28] && MM[mwtvm28] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc28] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm81] && MM[mwtvm81] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc81] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm82] && MM[mwtvm82] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc82] &= ~PRIO_RR_BIT;
+        RR[fc81] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm84] && MM[mwtvm84] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc84] &= ~PRIO_RR_BIT;
     }
 }
 

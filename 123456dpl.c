@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   08-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   14-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -262,7 +262,12 @@ void display_parameters(void)
     X_us[usrgv] = 275; Y_us[usrgv] = 107;
     X_us[uswtv21] = NG; Y_us[uswtv21] = NG;
     X_us[uswtv22] = NG; Y_us[uswtv22] = NG;
+    X_us[uswtv24] = NG; Y_us[uswtv24] = NG;
     X_us[uswtv26] = NG; Y_us[uswtv26] = NG;
+    X_us[uswtv28] = NG; Y_us[uswtv28] = NG;
+    X_us[uswtv81] = NG; Y_us[uswtv81] = NG;
+    X_us[uswtv82] = NG; Y_us[uswtv82] = NG;
+    X_us[uswtv84] = NG; Y_us[uswtv84] = NG;
     X_us[uswtk21] = 376; Y_us[uswtk21] = 219;
     X_us[uswtk22] = 434; Y_us[uswtk22] = 214;
     X_us[uswtk24] = 504; Y_us[uswtk24] = 301;
