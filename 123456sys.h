@@ -1409,12 +1409,12 @@
     #define tvghiaat11_4               508 /* Hiaattijd bij actief zijn veiligheidsgroen detector 11_4 van fase 11                     */
     #define tvs2205                    509 /* Voorstarttijd fase 22 op fase 05                                                         */
     #define tvs3205                    510 /* Voorstarttijd fase 32 op fase 05                                                         */
-    #define tlr2611                    511 /* Late release tijd fase 26 naar fase 11                                                   */
-    #define tlr6202                    512 /* Late release tijd fase 62 naar fase 02                                                   */
-    #define tlr6808                    513 /* Late release tijd fase 68 naar fase 08                                                   */
-    #define tlr6811                    514 /* Late release tijd fase 68 naar fase 11                                                   */
-    #define tlr2122                    515 /* Late release tijd fase 21 naar fase 22                                                   */
-    #define tlr8182                    516 /* Late release tijd fase 81 naar fase 82                                                   */
+    #define tlr2611                    511 /* Late release tijd fase 26 na fase 11                                                     */
+    #define tlr6202                    512 /* Late release tijd fase 62 na fase 02                                                     */
+    #define tlr6808                    513 /* Late release tijd fase 68 na fase 08                                                     */
+    #define tlr6811                    514 /* Late release tijd fase 68 na fase 11                                                     */
+    #define tlr2122                    515 /* Late release tijd fase 21 na fase 22                                                     */
+    #define tlr8182                    516 /* Late release tijd fase 81 na fase 82                                                     */
     #define til3231                    517 /* Inloop tijd fase 32 naar fase 31                                                         */
     #define til3132                    518 /* Inloop tijd fase 31 naar fase 32                                                         */
     #define til3433                    519 /* Inloop tijd fase 34 naar fase 33                                                         */

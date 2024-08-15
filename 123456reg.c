@@ -928,7 +928,7 @@ void BepaalRealisatieTijden(void)
         /* Gelijkstart / voorstart / late release */
         wijziging |= Corr_Pls(fc22, fc05, T_max[tvs2205], !C[cvchd05]);
         wijziging |= Corr_Pls(fc32, fc05, T_max[tvs3205], !C[cvchd05]);
-        wijziging |= Corr_Min(fc11, fc26, T_max[tlr1126], !C[cvchd11]);
+        wijziging |= Corr_Min(fc26, fc11, T_max[tlr2611], !C[cvchd11]);
         wijziging |= Corr_Min_nl(fc62, fc02, T_max[tlr6202], TRUE);
         wijziging |= Corr_Min_nl(fc68, fc08, T_max[tlr6808], TRUE);
         wijziging |= Corr_Min_nl(fc68, fc11, T_max[tlr6811], TRUE);
