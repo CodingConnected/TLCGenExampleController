@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.7   07-08-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.7   15-08-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -2254,8 +2254,8 @@ if (SCH[schconfidence15fix])
         if (SCH[schgs3384] && (P[fc33] & BIT11)) { Z[fc84] &= ~PRIO_Z_BIT; }
         if (SCH[schgs3384] && (P[fc84] & BIT11)) { Z[fc33] &= ~PRIO_Z_BIT; }
         if ((P[fc05] & BIT11)) { Z[fc22] &= ~PRIO_Z_BIT; }
-        if ((P[fc11] & BIT11)) { Z[fc26] &= ~PRIO_Z_BIT; }
         if ((P[fc05] & BIT11)) { Z[fc32] &= ~PRIO_Z_BIT; }
+        if ((P[fc11] & BIT11)) { Z[fc26] &= ~PRIO_Z_BIT; }
         /* Correctie gelijkstart <> gelijkstart
          * Bij een gelijkstart die een fase deelt met een andere gelijsktart
          * kan de max-end tijd worden verhoogd op start-geel, daarom wordt
@@ -2494,8 +2494,8 @@ void TegenhoudenConflictenExtra(void)
     if (SCH[schconfidence15fix] && SCH[schgs3384] && (P[fc33] & BIT11)) { RR[fc84] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs3384] && (P[fc84] & BIT11)) { RR[fc33] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && (P[fc05] & BIT11)) { RR[fc22] &= ~PRIO_RR_BIT; }
-    if (SCH[schconfidence15fix] && (P[fc11] & BIT11)) { RR[fc26] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && (P[fc05] & BIT11)) { RR[fc32] &= ~PRIO_RR_BIT; }
+    if (SCH[schconfidence15fix] && (P[fc11] & BIT11)) { RR[fc26] &= ~PRIO_RR_BIT; }
 #endif
 }
 
@@ -2599,6 +2599,16 @@ void PostAfhandelingPrio(void)
         FM[fc81] &= ~PRIO_FM_BIT;
     }
 
+    /* Niet afkappen late release richtingen wanneer de laterelease tijd nog loopt */
+    RT[tlr2611] = ER[fc11];
+    if (RT[tlr2611] || T[tlr2611])
+    {
+        Z[fc26] &= ~BIT6;
+        RR[fc26] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+        FM[fc26] &= ~PRIO_FM_BIT;
+    }
+
+
     #ifndef NO_RIS
     /* nooit einde groen als granted verstrekt */
     /* --------------------------------------- */
@@ -2679,16 +2689,20 @@ void PostAfhandelingPrio(void)
         FM[fc22] &= ~PRIO_FM_BIT;
     }
 
-    if (P[fc11] & BIT11) {
-         Z[fc26] &= ~BIT6;
-        RR[fc26] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
-        FM[fc26] &= ~PRIO_FM_BIT;
-    }
-
     if (P[fc05] & BIT11) {
          Z[fc32] &= ~BIT6;
         RR[fc32] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
         FM[fc32] &= ~PRIO_FM_BIT;
+    }
+
+    #endif // NO_TIMETOX
+
+    #ifndef NO_TIMETOX
+    /* Niet afkappen laterelease richting wanneer voedende een P[]&BIT11 heeft */
+    if (P[fc11] & BIT11) {
+         Z[fc26] &= ~BIT6;
+        RR[fc26] &= ~(BIT1 | BIT2 | BIT4 | BIT6);
+        FM[fc26] &= ~PRIO_FM_BIT;
     }
 
     #endif // NO_TIMETOX
@@ -2718,8 +2732,8 @@ void PrioPARCorrecties(void)
 
 /* PAR = PAR */
         PAR[fc05] = PAR[fc05] && PAR[fc22];
-        PAR[fc11] = PAR[fc11] && PAR[fc26];
         PAR[fc05] = PAR[fc05] && PAR[fc32];
+        PAR[fc11] = PAR[fc11] && PAR[fc26];
         PAR[fc02] = PAR[fc02] && PAR[fc62];
         PAR[fc08] = PAR[fc08] && PAR[fc68];
         PAR[fc11] = PAR[fc11] && PAR[fc68];
@@ -2741,8 +2755,8 @@ void PrioPARCorrecties(void)
 
     /* PAR correcties eenzijdige synchronisaties */
     PAR[fc22] = PAR[fc22] || G[fc05];
-    PAR[fc26] = PAR[fc26] || G[fc11];
     PAR[fc32] = PAR[fc32] || G[fc05];
+    PAR[fc26] = PAR[fc26] || G[fc11];
     PAR[fc62] = PAR[fc62] || G[fc02];
     PAR[fc68] = PAR[fc68] || G[fc08];
     PAR[fc68] = PAR[fc68] || G[fc11];
@@ -2795,8 +2809,8 @@ void PrioPARCorrecties(void)
     if (SCH[schgs3384] && (P[fc33] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
     if (SCH[schgs3384] && (P[fc84] & BIT11) && R[fc33] && !kp(fc33) && A[fc33]) { PAR[fc33] |= BIT11; P[fc33] |= BIT11; }
     if ((P[fc05] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
-    if ((P[fc11] & BIT11) && R[fc26] && !kp(fc26) && A[fc26]) { PAR[fc26] |= BIT11; P[fc26] |= BIT11; }
     if ((P[fc05] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
+    if ((P[fc11] & BIT11) && R[fc26] && !kp(fc26) && A[fc26]) { PAR[fc26] |= BIT11; P[fc26] |= BIT11; }
     #endif
 }
 

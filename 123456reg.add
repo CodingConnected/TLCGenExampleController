@@ -82,8 +82,8 @@ void Meetkriterium_Add(void)
 
 void Meeverlengen_Add(void)
 {
-
-     CorrectieNaloopCV(fc21);
+/*
+      CorrectieNaloopCV(fc21);
       CorrectieNaloopCV(fc62);
       CorrectieNaloopCV(fc68);
       CorrectieNaloopCV(fc81);
@@ -96,6 +96,7 @@ void Meeverlengen_Add(void)
       xyprintf(120, fc, "PRI_CALW = %4d", PRI_CALW);
    }
 #endif
+*/
 }
 
 void Synchronisaties_Add(void)
@@ -138,12 +139,12 @@ void PostApplication_Add(void)
    /* ============ */
 
    if (TS &&
-      (CIF_KLOK[CIF_JAAR] == 2001) && 
+      (CIF_KLOK[CIF_JAAR] == 2099) && 
       (CIF_KLOK[CIF_MAAND] == 1) &&
       (CIF_KLOK[CIF_DAG] == 1) &&
-      (CIF_KLOK[CIF_UUR] == 12) &&
-      (CIF_KLOK[CIF_MINUUT] == 57) && 
-      (CIF_KLOK[CIF_SECONDE] == 2))
+      (CIF_KLOK[CIF_UUR] == 1) &&
+      (CIF_KLOK[CIF_MINUUT] == 1) && 
+      (CIF_KLOK[CIF_SECONDE] == 1))
    {
       stuffkey(F3KEY);
       stuffkey(F5KEY);

@@ -289,7 +289,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0.7</Versie>
-      <Datum>2024-08-07T00:00:00</Datum>
+      <Datum>2024-08-15T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Release versie TLCGen</Commentaar>
     </Versie>
@@ -8817,12 +8817,6 @@
         <VoorstartOntruimingstijd>40</VoorstartOntruimingstijd>
       </Voorstart>
       <Voorstart>
-        <FaseVan>26</FaseVan>
-        <FaseNaar>11</FaseNaar>
-        <VoorstartTijd>0</VoorstartTijd>
-        <VoorstartOntruimingstijd>0</VoorstartOntruimingstijd>
-      </Voorstart>
-      <Voorstart>
         <FaseVan>32</FaseVan>
         <FaseNaar>05</FaseNaar>
         <VoorstartTijd>20</VoorstartTijd>
@@ -9422,7 +9416,14 @@
         <Detectoren />
       </Meeaanvraag>
     </Meeaanvragen>
-    <LateReleases />
+    <LateReleases>
+      <LateRelease>
+        <FaseVan>26</FaseVan>
+        <FaseNaar>11</FaseNaar>
+        <LateReleaseTijd>10</LateReleaseTijd>
+        <LateReleaseOntruimingstijd>30</LateReleaseOntruimingstijd>
+      </LateRelease>
+    </LateReleases>
   </InterSignaalGroep>
   <GroentijdenSets>
     <GroentijdenSet>
@@ -21168,6 +21169,16 @@
         <Type>PEDESTRIAN</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
+        <SignalGroupName>31</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>PEDESTRIAN</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
@@ -21330,16 +21341,6 @@
       <RISLaneRequestDataModel>
         <SignalGroupName>32</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>PEDESTRIAN</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>31</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
         <AanvraagStart>0</AanvraagStart>
         <AanvraagEnd>0</AanvraagEnd>
@@ -21500,6 +21501,16 @@
         <Type>PEDESTRIAN</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
+        <SignalGroupName>31</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>PEDESTRIAN</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
@@ -21662,16 +21673,6 @@
       <RISLaneExtendDataModel>
         <SignalGroupName>32</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>PEDESTRIAN</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>31</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
         <VerlengenStart>0</VerlengenStart>
         <VerlengenEnd>0</VerlengenEnd>
@@ -25166,6 +25167,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykarin67bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin67bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -25375,13 +25383,6 @@
         <Naam>dummykarin68bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykarin68bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin67bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin67bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
