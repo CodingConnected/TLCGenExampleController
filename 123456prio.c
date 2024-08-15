@@ -24,6 +24,7 @@
 
 /*include files */
 /*------------- */
+#ifndef PRACTICE_TEST
     #include "123456sys.h"
     #include "stdfunc.h"  /* standaard functies                */
     #include "prio.h"     /* prio header                       */
@@ -58,6 +59,7 @@
     #include "extra_func.h"
     #define PRIO_CHECK_WAGENNMR /* check op wagendienstnummer          */
     #include "extra_func_prio.h"
+#endif /* PRACTICE_TEST */
 
 boolv vertraag_kar_uitm[prioFCMAX];
 
@@ -69,7 +71,12 @@ boolv vertraag_kar_uitm[prioFCMAX];
 
 extern mulv DB_old[];
 
+#ifndef PRACTICE_TEST
 #include "prio.c"
+#else
+#include "prio.h"
+const code *iFC_PRIO_code[prioFCMAX];
+#endif
 #include "halfstar_prio.h"
 
 /* Variabele tbv start KAR ondergedrag timer bij starten regeling */
@@ -249,6 +256,52 @@ void PrioInstellingen(void)
     iFC_PRIOix[hdFC62] = fc62;
     iFC_PRIOix[hdFC67] = fc67;
     iFC_PRIOix[hdFC68] = fc68;
+
+    /* Code voor richtingen met PRIO */
+    #ifdef PRACTICE_TEST
+        iFC_PRIO_code[prioFC02karbus] = "prio02karbus";
+        iFC_PRIO_code[prioFC02risov] = "prio02risov";
+        iFC_PRIO_code[prioFC02risvrw] = "prio02risvrw";
+        iFC_PRIO_code[prioFC03bus] = "prio03bus";
+        iFC_PRIO_code[prioFC03risov] = "prio03risov";
+        iFC_PRIO_code[prioFC03risvrw] = "prio03risvrw";
+        iFC_PRIO_code[prioFC05bus] = "prio05bus";
+        iFC_PRIO_code[prioFC05risov] = "prio05risov";
+        iFC_PRIO_code[prioFC05risvrw] = "prio05risvrw";
+        iFC_PRIO_code[prioFC08bus] = "prio08bus";
+        iFC_PRIO_code[prioFC08risov] = "prio08risov";
+        iFC_PRIO_code[prioFC08risvrw] = "prio08risvrw";
+        iFC_PRIO_code[prioFC09bus] = "prio09bus";
+        iFC_PRIO_code[prioFC09risov] = "prio09risov";
+        iFC_PRIO_code[prioFC09risvrw] = "prio09risvrw";
+        iFC_PRIO_code[prioFC11bus] = "prio11bus";
+        iFC_PRIO_code[prioFC11risov] = "prio11risov";
+        iFC_PRIO_code[prioFC11risvrw] = "prio11risvrw";
+        iFC_PRIO_code[prioFC22fiets] = "prio22fiets";
+        iFC_PRIO_code[prioFC28fiets] = "prio28fiets";
+        iFC_PRIO_code[prioFC61bus] = "prio61bus";
+        iFC_PRIO_code[prioFC61risov] = "prio61risov";
+        iFC_PRIO_code[prioFC61risvrw] = "prio61risvrw";
+        iFC_PRIO_code[prioFC62bus] = "prio62bus";
+        iFC_PRIO_code[prioFC62risov] = "prio62risov";
+        iFC_PRIO_code[prioFC62risvrw] = "prio62risvrw";
+        iFC_PRIO_code[prioFC67bus] = "prio67bus";
+        iFC_PRIO_code[prioFC67risov] = "prio67risov";
+        iFC_PRIO_code[prioFC67risvrw] = "prio67risvrw";
+        iFC_PRIO_code[prioFC68bus] = "prio68bus";
+        iFC_PRIO_code[prioFC68risov] = "prio68risov";
+        iFC_PRIO_code[prioFC68risvrw] = "prio68risvrw";
+        iFC_PRIO_code[hdFC02] = "hd02";
+        iFC_PRIO_code[hdFC03] = "hd03";
+        iFC_PRIO_code[hdFC05] = "hd05";
+        iFC_PRIO_code[hdFC08] = "hd08";
+        iFC_PRIO_code[hdFC09] = "hd09";
+        iFC_PRIO_code[hdFC11] = "hd11";
+        iFC_PRIO_code[hdFC61] = "hd61";
+        iFC_PRIO_code[hdFC62] = "hd62";
+        iFC_PRIO_code[hdFC67] = "hd67";
+        iFC_PRIO_code[hdFC68] = "hd68";
+    #endif /* PRACTICE_TEST */
 
     /* Index van de groenbewakingstimer */
     iT_GBix[prioFC02karbus] = tgb02karbus;
@@ -1215,6 +1268,9 @@ void RijTijdScenario(void)
    ---------------------------------------------------------------- */
 void InUitMelden(void)
 {
+#if defined PRACTICE_TEST && defined CCOL_IS_SPECIAL
+    is_special_signals();
+#endif
     int i = 0;
 
     /* Pririteit-inmeldingen */
@@ -2876,6 +2932,7 @@ void PrioSpecialSignals(void)
         reset_DSI_message();
     #endif
 
+    #if !defined AUTOMAAT || defined PRACTICE_TEST
     /* Prioriteit ingrepen */
     if (SD[ddummykarin02karbus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg02], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykaruit02karbus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg02], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
@@ -2919,9 +2976,14 @@ void PrioSpecialSignals(void)
     if (SD[ddummyhdkaruit67]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd67], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin68]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd68], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkaruit68]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd68], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    #endif /* !defined AUTOMAAT || defined PRACTICE_TEST */
 }
 #endif
 
 #ifdef PRIO_ADDFILE
     #include "123456prio.add"
 #endif /* PRIO_ADDFILE */
+
+#ifdef PRACTICE_TEST
+#include "prio.c"
+#endif

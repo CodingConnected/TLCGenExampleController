@@ -116,7 +116,9 @@ void ptp_pre_system_app(void)
         /* initialisatie van PTP-koppelingen */
         /* --------------------------------- */
         #ifdef PTP_ptp123456PORT
+        #ifndef PRACTICE_TEST
             ptp_init(&PTP_ptp123456);
+        #endif
         #endif
 
     }
@@ -191,8 +193,10 @@ void ptp_pre_system_app(void)
 
         /* aanroep ptp-functies */
         /* -------------------- */
+        #ifndef PRACTICE_TEST
         ptp_application_ks(&PTP_ptp123456, &PTP_ptp123456KS);
         ptp_control(&PTP_ptp123456);
+        #endif
 
         /* opzetten hulpelementen */
         /* ---------------------- */
