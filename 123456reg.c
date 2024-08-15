@@ -110,7 +110,6 @@ s_int16 CCOL_SLAVE = 0;
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     code SCJ_code[] = "123456";
 #endif
-mulv itvgmaxprm[aanttvgmaxprm]; /* fasecycli met max. verlenggroen parameter */
 mulv C_counter_old[CTMAX];
 
 #ifndef NO_RIS
@@ -1247,14 +1246,6 @@ void Verlenggroen(void)
 
     Maxgroen_Add();
     gk_ControlGK();
-    if(CIF_PARM1WIJZPB != CIF_GEEN_PARMWIJZ)
-    {
-        MM[mwijzpb]= CIF_PARM1WIJZPB; /* indexnummer van gewijzigde max.verlengroentijd of andere gewijzigde parameter uit PARM1 buffer */
-        if (set_parm1wijzpb_tvgmax (MM[mperiod], prmvg1_02, itvgmaxprm, aanttvgmaxprm)) /* argumenten: actuele periode, index eerste verlenggroen parameter, array van fc met prmvg#_$$ */
-        {
-            ++MM[maantalvgtwijzpb];
-        }
-    }
 }
 
 
