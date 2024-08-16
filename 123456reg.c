@@ -1904,9 +1904,9 @@ void RealisatieAfhandeling(void)
         PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
 
 /* PAR = PAR */
-        PAR[fc05] = PAR[fc05] && PAR[fc22];
-        PAR[fc05] = PAR[fc05] && PAR[fc32];
-        PAR[fc11] = PAR[fc11] && PAR[fc26];
+        PAR[fc05] = PAR[fc05] && (PAR[fc22] || !A[fc22]); /* @Menno: alleen bij deelconflicten */
+        PAR[fc05] = PAR[fc05] && (PAR[fc32] || !A[fc32]);
+        PAR[fc11] = PAR[fc11] && (PAR[fc26] || !A[fc26]);
         PAR[fc02] = PAR[fc02] && PAR[fc62];
         PAR[fc08] = PAR[fc08] && PAR[fc68];
         PAR[fc11] = PAR[fc11] && PAR[fc68];
