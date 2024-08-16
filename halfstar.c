@@ -155,6 +155,11 @@ void getrapte_fietser_halfstar(count fc1, /* fc1 */
     count voorstartfc1fc2, /* maximale voorstart fc1 -> fc2 (mag NG) */ //@@ warning 'voorstartfc1fc2': unreferenced formal parameter
     count voorstartfc2fc1) /* maximale voorstart fc2 -> fc1 (mag NG) */ //@@ warning 'voorstartfc2fc1': unreferenced formal parameter
 {
+
+   /* Unreferenced formale parameter een waarde gegeven */
+   voorstartfc1fc2 = 0;
+   voorstartfc2fc1 = 0;
+
     /* nalopen */
     RT[tkopfc1fc2] = (boolv)((RA[fc1] || TFG[fc1]) && a_bui_fc1);
     AT[tkopfc1fc2] = (boolv)((ERA[fc1] && SRV[fc1]));
@@ -1077,6 +1082,9 @@ void var_txc(count fc, boolv condition)
 /* Voorstartgroen tijdens voorstart t.o.v. sg-plan */
 void vs_ple(count fc, count prmtotxa, boolv condition) //@@ warning C4100: 'prmtotxa': unreferenced formal parameter
 {
+   /* Unreferenced formal parameter een waarde gegeven */
+   prmtotxa = 0;
+
     /*RS[fc] |= YS_PL[fc] && PR[fc] ||
     ((TOTXA_PL[fc]>0) && (TOTXA_PL[fc]<PRM[prmtotxa])) ? RS_HALFSTAR : 0;*/
     RS[fc] |= condition /*&& YS_PL[fc]*/ && (TXA_PL[fc]> 0) && (tussen_txa_en_txb(fc) && PP[fc]) ? RS_HALFSTAR : 0;
@@ -1604,6 +1612,10 @@ void inloopSG_halfstar(count fc1,        /* fc1                                 
 	               count hd_bui_fc1, /* onthouden buitendrukknopaanvraag fc1 */ //@@  warning C4100: 'hd_bui_fc1': unreferenced formal parameter
 	               count tinlfc1fc2) /* inloop (SG) fc1 -> fc2               */
 {
+       /* Unreferenced formal parameter een waarde gegeven */
+       dk_bui_fc1 = 0;
+       hd_bui_fc1 = 0;
+
 	if (tinlfc1fc2 > NG)
 	{
 		/* aanvoerende richting niet te snel realiseren */

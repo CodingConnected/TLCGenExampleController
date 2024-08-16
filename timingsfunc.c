@@ -149,6 +149,9 @@ void msg_fctiming(mulv latency_minEndSG)  //@@ warning C4100: 'latency_minEndSG'
    static s_int16 WPS_old= 0;       /* oude programmastatus		*/
    static boolv init = 0;           /* initialisatievlag                */
 
+   /* Unreferenced formal parameter een waarde gegeven */
+   latency_minEndSG = 0;
+
    for (i=0; i<FC_MAX; i++) {
 
       if ( (CCOL_FC_EVENTSTATE[i][CIF_ROOD] != CIF_TIMING_ONBEKEND) &&   /* geen SPAT versturen indien er geen eventstate is opgegeven. bijvoorbeeld voor verschijnborden */

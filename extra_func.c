@@ -826,6 +826,9 @@ boolv Rateltikkers_HoeflakeDimming(count fc,        /* fase  */                 
                          count prmasndim, /* dimnivo periode niet dimmen (0-10, 10 = tikker uit) of NG  */ 
                          count prmasdim)  /* dimnivo periode dimmen (0-10, 10 = tikker uit) of NG  */
 {
+   /* Unreferenced formal parameter een waarde gegeven */
+   fc = 0;
+   
   boolv uitsturing = FALSE; /* uitsturing (kan boolean dimsignaal of dimnivo blokgolf zijn) */
   int dimblokgolf = CIF_KLOK[CIF_SECONDE] - (CIF_KLOK[CIF_SECONDE] / 10 * 10 - 1);
 
@@ -1066,6 +1069,9 @@ void wachttijd_leds_knip(count fc, count mmwtv, count mmwtm, count RR_T_wacht, c
 	/* fc    - fasecyclusnummer                            */
 	/* mmwtv - berekende  aantal leds wachttijdlantaarn    */
 	/* mmwtm - uitsturing aantal leds wachttijdlantaarn    */
+
+        /* Unreferenced formal parameter een waarde gegeven */
+        fc = 0;
 
 	if (((fix != NG && CIF_IS[fix]) || (RR_T_wacht > 0)) && MM[mmwtm])         /* fixatie of prio-ingreep terwijl wachttijdlantaarn aan staat  */
 	{
