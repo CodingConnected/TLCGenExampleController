@@ -65,7 +65,7 @@
     <WachttijdvoorspellerAansturenBusHD>false</WachttijdvoorspellerAansturenBusHD>
     <Intergroen>true</Intergroen>
     <PracticeOmgeving>false</PracticeOmgeving>
-    <ParameterwijzigingPBBijTVGMax>false</ParameterwijzigingPBBijTVGMax>
+    <ParameterwijzigingPBBijTVGMax>true</ParameterwijzigingPBBijTVGMax>
     <NietGebruikenBitmap>false</NietGebruikenBitmap>
     <CCOLCodeCase>OriginalCase</CCOLCodeCase>
     <CCOLMulti>true</CCOLMulti>

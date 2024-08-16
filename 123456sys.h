@@ -894,7 +894,9 @@
     #define mar81                  116 /* Alternatieve ruimte fase 81                                             */
     #define mar82                  117 /* Alternatieve ruimte fase 82                                             */
     #define mar84                  118 /* Alternatieve ruimte fase 84                                             */
-    #define MEMAX1                 119
+    #define mwijzpb                119 /* Wijziging aan PB doorgeven                                              */
+    #define maantalvgtwijzpb       120 /* Aantal doorgegeven wijzigingen aan PB bijhouden                         */
+    #define MEMAX1                 121
 
 /* tijd elementen */
 /* -------------- */
@@ -4420,6 +4422,26 @@
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined PRACTICE_TEST
     #define TESTOMGEVING
 #endif
+
+    #define tvgmaxprm02 0 /* fc02 heeft prmvg#_02 parameters */
+    #define tvgmaxprm03 1 /* fc03 heeft prmvg#_03 parameters */
+    #define tvgmaxprm05 2 /* fc05 heeft prmvg#_05 parameters */
+    #define tvgmaxprm08 3 /* fc08 heeft prmvg#_08 parameters */
+    #define tvgmaxprm09 4 /* fc09 heeft prmvg#_09 parameters */
+    #define tvgmaxprm11 5 /* fc11 heeft prmvg#_11 parameters */
+    #define tvgmaxprm21 6 /* fc21 heeft prmvg#_21 parameters */
+    #define tvgmaxprm22 7 /* fc22 heeft prmvg#_22 parameters */
+    #define tvgmaxprm24 8 /* fc24 heeft prmvg#_24 parameters */
+    #define tvgmaxprm26 9 /* fc26 heeft prmvg#_26 parameters */
+    #define tvgmaxprm28 10 /* fc28 heeft prmvg#_28 parameters */
+    #define tvgmaxprm61 11 /* fc61 heeft prmvg#_61 parameters */
+    #define tvgmaxprm62 12 /* fc62 heeft prmvg#_62 parameters */
+    #define tvgmaxprm67 13 /* fc67 heeft prmvg#_67 parameters */
+    #define tvgmaxprm68 14 /* fc68 heeft prmvg#_68 parameters */
+    #define tvgmaxprm81 15 /* fc81 heeft prmvg#_81 parameters */
+    #define tvgmaxprm82 16 /* fc82 heeft prmvg#_82 parameters */
+    #define tvgmaxprm84 17 /* fc84 heeft prmvg#_84 parameters */
+    #define aanttvgmaxprm 18 /* aantal fc met max. verlenggroenparameters (prmvg#_$$, ..)  */
 
 /* Systeem naam in het topologiebestand */
 /* ------------------------------------ */

@@ -1,1 +1,10 @@
-﻿
+﻿  123456dpl.c
+  123456prio.c
+  123456reg.c
+  123456rissim.c
+  123456sim.c
+  123456tab.c
+  PTPWIN.C
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  123456_Visual_2022.vcxproj -> C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\Debug\123456_Visual_2022.exe

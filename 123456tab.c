@@ -57,7 +57,9 @@ void signaalplan_instellingen(void);
 
     void Timings_Eventstate_Definition(void);
 
-
+#ifndef PRACTICE_TEST /* toegevoegd omdat de compiler van Amsterdam onderstaande code als nieuwe declaratie ziet */
+   extern mulv itvgmaxprm[]; /* fasecycli met max. verlenggroen parameter (gedeclareerd in reg.c) */
+#endif
 
 void control_defaults(void)
 {
@@ -1368,6 +1370,8 @@ void control_parameters(void)
     MM_code[mar81]                  = "ar81";                                                   /* Alternatieve ruimte fase 81                                             */
     MM_code[mar82]                  = "ar82";                                                   /* Alternatieve ruimte fase 82                                             */
     MM_code[mar84]                  = "ar84";                                                   /* Alternatieve ruimte fase 84                                             */
+    MM_code[mwijzpb]                = "wijzpb";                                                 /* Wijziging aan PB doorgeven                                              */
+    MM_code[maantalvgtwijzpb]       = "aantalvgtwijzpb";                                        /* Aantal doorgegeven wijzigingen aan PB bijhouden                         */
 
 /* tijd elementen */
 /* -------------- */
@@ -8484,6 +8488,25 @@ void control_parameters(void)
     D_code[d84_1] = "8410";
     D_code[dk84] = "8401";
 #endif
+
+    itvgmaxprm[tvgmaxprm02] = fc02;
+    itvgmaxprm[tvgmaxprm03] = fc03;
+    itvgmaxprm[tvgmaxprm05] = fc05;
+    itvgmaxprm[tvgmaxprm08] = fc08;
+    itvgmaxprm[tvgmaxprm09] = fc09;
+    itvgmaxprm[tvgmaxprm11] = fc11;
+    itvgmaxprm[tvgmaxprm21] = fc21;
+    itvgmaxprm[tvgmaxprm22] = fc22;
+    itvgmaxprm[tvgmaxprm24] = fc24;
+    itvgmaxprm[tvgmaxprm26] = fc26;
+    itvgmaxprm[tvgmaxprm28] = fc28;
+    itvgmaxprm[tvgmaxprm61] = fc61;
+    itvgmaxprm[tvgmaxprm62] = fc62;
+    itvgmaxprm[tvgmaxprm67] = fc67;
+    itvgmaxprm[tvgmaxprm68] = fc68;
+    itvgmaxprm[tvgmaxprm81] = fc81;
+    itvgmaxprm[tvgmaxprm82] = fc82;
+    itvgmaxprm[tvgmaxprm84] = fc84;
 
     #ifndef NO_TIMETOX
     Timings_Eventstate_Definition();
