@@ -1,10 +1,18 @@
 ﻿  123456dpl.c
   123456prio.c
   123456reg.c
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\extra_func_prio.c(497,8): warning C4100: 'prioin': unreferenced formal parameter
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\extra_func.c(824,42): warning C4100: 'fc': unreferenced formal parameter
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\extra_func.c(1064,32): warning C4100: 'fc': unreferenced formal parameter
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\ccolfunc.c(790,32): warning C4100: 'fcalt': unreferenced formal parameter
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\halfstar.c(156,11): warning C4100: 'voorstartfc2fc1': unreferenced formal parameter
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\halfstar.c(155,11): warning C4100: 'voorstartfc1fc2': unreferenced formal parameter
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\halfstar.c(1078,29): warning C4100: 'prmtotxa': unreferenced formal parameter
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\halfstar.c(1604,23): warning C4100: 'hd_bui_fc1': unreferenced formal parameter
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\halfstar.c(1603,23): warning C4100: 'dk_bui_fc1': unreferenced formal parameter
+C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\timingsfunc.c(146,24): warning C4100: 'latency_minEndSG': unreferenced formal parameter
   123456rissim.c
   123456sim.c
   123456tab.c
-  PTPWIN.C
   Generating Code...
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   123456_Visual_2022.vcxproj -> C:\Users\ccapp\source\repos\CodingConnected\TLCGenExampleController\Debug\123456_Visual_2022.exe

@@ -494,14 +494,11 @@ boolv fietsprio_inmelding(
 	count prm_priocyc,      /* Maximum aantal keer prio per cyclus */
 	count prm_priocount,    /* Minimum aantal voertuigen voor prio */
 	count prm_priowt,       /* Minimum wachttijd voor prio */
-	boolv prioin,           /* Hulpelement inmelding prio */    //@@ warning C4100: 'prioin' : unreferenced formal parameter
+	boolv prioin,            /* Hulpelement inmelding prio */    //@@ warning C4100: 'prioin' : unreferenced formal parameter
 	count ml,               /* Actieve module */
 	count me_priocount,     /* Memory-element tellen voertuigen RIS */
 	count prm_priocountris) /* Minimum aantal voertuigen voor prio RIS */
 {
-       /* Unreferenced formal parameter een waarde gegeven */
-       prioin = 0;
-
 	/* Check juiste blok */
 	if (!(PRM[prm_prioblok] & (1 << ml))) return FALSE;
 

@@ -18,7 +18,7 @@ void signaalplan_instellingen(void);
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.7   15-08-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   16-08-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -57,9 +57,9 @@ void signaalplan_instellingen(void);
 
     void Timings_Eventstate_Definition(void);
 
-#ifndef PRACTICE_TEST /* toegevoegd omdat de compiler van Amsterdam onderstaande code als nieuwe declaratie ziet */
-   extern mulv itvgmaxprm[]; /* fasecycli met max. verlenggroen parameter (gedeclareerd in reg.c) */
-#endif
+
+extern mulv itvgmaxprm[]; /* fasecycli met max. verlenggroen parameter (gedeclareerd in reg.c) */
+
 
 void control_defaults(void)
 {
@@ -1886,12 +1886,12 @@ void control_parameters(void)
     T_code[tvghiaat11_4]               = "vghiaat11_4";               T_max[tvghiaat11_4]               = 20;   T_type[tvghiaat11_4]               = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 11_4 van fase 11                     */
     T_code[tvs2205]                    = "vs2205";                    T_max[tvs2205]                    = 20;   T_type[tvs2205]                    = TE_type; /* Voorstarttijd fase 22 op fase 05                                                         */
     T_code[tvs3205]                    = "vs3205";                    T_max[tvs3205]                    = 20;   T_type[tvs3205]                    = TE_type; /* Voorstarttijd fase 32 op fase 05                                                         */
-    T_code[tlr2611]                    = "lr2611";                    T_max[tlr2611]                    = 10;   T_type[tlr2611]                    = TE_type; /* Late release tijd fase 26 naar fase 11                                                   */
-    T_code[tlr6202]                    = "lr6202";                    T_max[tlr6202]                    = 30;   T_type[tlr6202]                    = TE_type; /* Late release tijd fase 62 naar fase 02                                                   */
-    T_code[tlr6808]                    = "lr6808";                    T_max[tlr6808]                    = 30;   T_type[tlr6808]                    = TE_type; /* Late release tijd fase 68 naar fase 08                                                   */
-    T_code[tlr6811]                    = "lr6811";                    T_max[tlr6811]                    = 30;   T_type[tlr6811]                    = TE_type; /* Late release tijd fase 68 naar fase 11                                                   */
-    T_code[tlr2122]                    = "lr2122";                    T_max[tlr2122]                    = 20;   T_type[tlr2122]                    = TE_type; /* Late release tijd fase 21 naar fase 22                                                   */
-    T_code[tlr8182]                    = "lr8182";                    T_max[tlr8182]                    = 30;   T_type[tlr8182]                    = TE_type; /* Late release tijd fase 81 naar fase 82                                                   */
+    T_code[tlr2611]                    = "lr2611";                    T_max[tlr2611]                    = 10;   T_type[tlr2611]                    = TE_type; /* Late release tijd fase 26 na fase 11                                                     */
+    T_code[tlr6202]                    = "lr6202";                    T_max[tlr6202]                    = 30;   T_type[tlr6202]                    = TE_type; /* Late release tijd fase 62 na fase 02                                                     */
+    T_code[tlr6808]                    = "lr6808";                    T_max[tlr6808]                    = 30;   T_type[tlr6808]                    = TE_type; /* Late release tijd fase 68 na fase 08                                                     */
+    T_code[tlr6811]                    = "lr6811";                    T_max[tlr6811]                    = 30;   T_type[tlr6811]                    = TE_type; /* Late release tijd fase 68 na fase 11                                                     */
+    T_code[tlr2122]                    = "lr2122";                    T_max[tlr2122]                    = 20;   T_type[tlr2122]                    = TE_type; /* Late release tijd fase 21 na fase 22                                                     */
+    T_code[tlr8182]                    = "lr8182";                    T_max[tlr8182]                    = 30;   T_type[tlr8182]                    = TE_type; /* Late release tijd fase 81 na fase 82                                                     */
     T_code[til3231]                    = "il3231";                    T_max[til3231]                    = 30;   T_type[til3231]                    = TE_type; /* Inloop tijd fase 32 naar fase 31                                                         */
     T_code[til3132]                    = "il3132";                    T_max[til3132]                    = 30;   T_type[til3132]                    = TE_type; /* Inloop tijd fase 31 naar fase 32                                                         */
     T_code[til3433]                    = "il3433";                    T_max[til3433]                    = 30;   T_type[til3433]                    = TE_type; /* Inloop tijd fase 34 naar fase 33                                                         */
@@ -2443,7 +2443,7 @@ void control_parameters(void)
     PRM_code[prmfb]                       = "fb";                       PRM[prmfb]                       = 240;   PRM_type[prmfb]                       = TS_type; /* Instelling fasebewaking                                                                                                        */
     PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 4;                                                      /* Versiebeheer xx                                                                                                                */
     PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 0;                                                      /* Versiebeheer yy                                                                                                                */
-    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 7;                                                      /* Versiebeheer zz                                                                                                                */
+    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 8;                                                      /* Versiebeheer zz                                                                                                                */
     PRM_code[prmovmextragroen_02]         = "ovmextragroen_02";         PRM[prmovmextragroen_02]         = 0;     PRM_type[prmovmextragroen_02]         = TE_type;
     PRM_code[prmovmmindergroen_02]        = "ovmmindergroen_02";        PRM[prmovmmindergroen_02]        = 0;     PRM_type[prmovmmindergroen_02]        = TE_type;
     PRM_code[prmovmextragroen_03]         = "ovmextragroen_03";         PRM[prmovmextragroen_03]         = 0;     PRM_type[prmovmextragroen_03]         = TE_type;
@@ -4490,6 +4490,8 @@ void control_parameters(void)
     PRM_code[prmrisastartsrm031vtg2]      = "risastartsrm031vtg2";      PRM[prmrisastartsrm031vtg2]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 31                                                              */
     PRM_code[prmrisastart32vtg1]          = "risastart32vtg1";          PRM[prmrisastart32vtg1]          = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 32                                                               */
     PRM_code[prmrisastartsrm032vtg1]      = "risastartsrm032vtg1";      PRM[prmrisastartsrm032vtg1]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 32                                                              */
+    PRM_code[prmrisastart32vtg2]          = "risastart32vtg2";          PRM[prmrisastart32vtg2]          = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 32                                                               */
+    PRM_code[prmrisastartsrm032vtg2]      = "risastartsrm032vtg2";      PRM[prmrisastartsrm032vtg2]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 32                                                              */
     PRM_code[prmrisastart84fts1]          = "risastart84fts1";          PRM[prmrisastart84fts1]          = 20;                                                     /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 84                                                               */
     PRM_code[prmrisastartsrm084fts1]      = "risastartsrm084fts1";      PRM[prmrisastartsrm084fts1]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 84                                                              */
     PRM_code[prmrisastart82fts1]          = "risastart82fts1";          PRM[prmrisastart82fts1]          = 20;                                                     /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 82                                                               */
@@ -4520,8 +4522,6 @@ void control_parameters(void)
     PRM_code[prmrisastartsrm033vtg2]      = "risastartsrm033vtg2";      PRM[prmrisastartsrm033vtg2]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 33                                                              */
     PRM_code[prmrisastart33vtg1]          = "risastart33vtg1";          PRM[prmrisastart33vtg1]          = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 33                                                               */
     PRM_code[prmrisastartsrm033vtg1]      = "risastartsrm033vtg1";      PRM[prmrisastartsrm033vtg1]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 33                                                              */
-    PRM_code[prmrisastart32vtg2]          = "risastart32vtg2";          PRM[prmrisastart32vtg2]          = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 32                                                               */
-    PRM_code[prmrisastartsrm032vtg2]      = "risastartsrm032vtg2";      PRM[prmrisastartsrm032vtg2]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 32                                                              */
     PRM_code[prmrisaend02mveh1]           = "risaend02mveh1";           PRM[prmrisaend02mveh1]           = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 02                                                               */
     PRM_code[prmrisaendsrm002mveh1]       = "risaendsrm002mveh1";       PRM[prmrisaendsrm002mveh1]       = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 02                                                              */
     PRM_code[prmrisaend02mveh2]           = "risaend02mveh2";           PRM[prmrisaend02mveh2]           = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 02                                                               */
@@ -4556,6 +4556,8 @@ void control_parameters(void)
     PRM_code[prmrisaendsrm031vtg2]        = "risaendsrm031vtg2";        PRM[prmrisaendsrm031vtg2]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 31                                                              */
     PRM_code[prmrisaend32vtg1]            = "risaend32vtg1";            PRM[prmrisaend32vtg1]            = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 32                                                               */
     PRM_code[prmrisaendsrm032vtg1]        = "risaendsrm032vtg1";        PRM[prmrisaendsrm032vtg1]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 32                                                              */
+    PRM_code[prmrisaend32vtg2]            = "risaend32vtg2";            PRM[prmrisaend32vtg2]            = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 32                                                               */
+    PRM_code[prmrisaendsrm032vtg2]        = "risaendsrm032vtg2";        PRM[prmrisaendsrm032vtg2]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 32                                                              */
     PRM_code[prmrisaend84fts1]            = "risaend84fts1";            PRM[prmrisaend84fts1]            = 40;                                                     /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 84                                                               */
     PRM_code[prmrisaendsrm084fts1]        = "risaendsrm084fts1";        PRM[prmrisaendsrm084fts1]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 84                                                              */
     PRM_code[prmrisaend82fts1]            = "risaend82fts1";            PRM[prmrisaend82fts1]            = 40;                                                     /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 82                                                               */
@@ -4586,8 +4588,6 @@ void control_parameters(void)
     PRM_code[prmrisaendsrm033vtg2]        = "risaendsrm033vtg2";        PRM[prmrisaendsrm033vtg2]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 33                                                              */
     PRM_code[prmrisaend33vtg1]            = "risaend33vtg1";            PRM[prmrisaend33vtg1]            = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 33                                                               */
     PRM_code[prmrisaendsrm033vtg1]        = "risaendsrm033vtg1";        PRM[prmrisaendsrm033vtg1]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 33                                                              */
-    PRM_code[prmrisaend32vtg2]            = "risaend32vtg2";            PRM[prmrisaend32vtg2]            = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 32                                                               */
-    PRM_code[prmrisaendsrm032vtg2]        = "risaendsrm032vtg2";        PRM[prmrisaendsrm032vtg2]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 32                                                              */
     PRM_code[prmrisvstart02mveh1]         = "risvstart02mveh1";         PRM[prmrisvstart02mveh1]         = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 02                                                                */
     PRM_code[prmrisvstartsrm002mveh1]     = "risvstartsrm002mveh1";     PRM[prmrisvstartsrm002mveh1]     = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 02                                                               */
     PRM_code[prmrisvstart02mveh2]         = "risvstart02mveh2";         PRM[prmrisvstart02mveh2]         = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 02                                                                */
@@ -4622,6 +4622,8 @@ void control_parameters(void)
     PRM_code[prmrisvstartsrm031vtg2]      = "risvstartsrm031vtg2";      PRM[prmrisvstartsrm031vtg2]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 31                                                               */
     PRM_code[prmrisvstart32vtg1]          = "risvstart32vtg1";          PRM[prmrisvstart32vtg1]          = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 32                                                                */
     PRM_code[prmrisvstartsrm032vtg1]      = "risvstartsrm032vtg1";      PRM[prmrisvstartsrm032vtg1]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 32                                                               */
+    PRM_code[prmrisvstart32vtg2]          = "risvstart32vtg2";          PRM[prmrisvstart32vtg2]          = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 32                                                                */
+    PRM_code[prmrisvstartsrm032vtg2]      = "risvstartsrm032vtg2";      PRM[prmrisvstartsrm032vtg2]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 32                                                               */
     PRM_code[prmrisvstart84fts1]          = "risvstart84fts1";          PRM[prmrisvstart84fts1]          = 20;                                                     /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 84                                                                */
     PRM_code[prmrisvstartsrm084fts1]      = "risvstartsrm084fts1";      PRM[prmrisvstartsrm084fts1]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 84                                                               */
     PRM_code[prmrisvstart82fts1]          = "risvstart82fts1";          PRM[prmrisvstart82fts1]          = 20;                                                     /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 82                                                                */
@@ -4652,8 +4654,6 @@ void control_parameters(void)
     PRM_code[prmrisvstartsrm033vtg2]      = "risvstartsrm033vtg2";      PRM[prmrisvstartsrm033vtg2]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 33                                                               */
     PRM_code[prmrisvstart33vtg1]          = "risvstart33vtg1";          PRM[prmrisvstart33vtg1]          = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 33                                                                */
     PRM_code[prmrisvstartsrm033vtg1]      = "risvstartsrm033vtg1";      PRM[prmrisvstartsrm033vtg1]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 33                                                               */
-    PRM_code[prmrisvstart32vtg2]          = "risvstart32vtg2";          PRM[prmrisvstart32vtg2]          = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 32                                                                */
-    PRM_code[prmrisvstartsrm032vtg2]      = "risvstartsrm032vtg2";      PRM[prmrisvstartsrm032vtg2]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 32                                                               */
     PRM_code[prmrisvend02mveh1]           = "risvend02mveh1";           PRM[prmrisvend02mveh1]           = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 02                                                                */
     PRM_code[prmrisvendsrm002mveh1]       = "risvendsrm002mveh1";       PRM[prmrisvendsrm002mveh1]       = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 02                                                               */
     PRM_code[prmrisvend02mveh2]           = "risvend02mveh2";           PRM[prmrisvend02mveh2]           = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 02                                                                */
@@ -4688,6 +4688,8 @@ void control_parameters(void)
     PRM_code[prmrisvendsrm031vtg2]        = "risvendsrm031vtg2";        PRM[prmrisvendsrm031vtg2]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 31                                                               */
     PRM_code[prmrisvend32vtg1]            = "risvend32vtg1";            PRM[prmrisvend32vtg1]            = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 32                                                                */
     PRM_code[prmrisvendsrm032vtg1]        = "risvendsrm032vtg1";        PRM[prmrisvendsrm032vtg1]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 32                                                               */
+    PRM_code[prmrisvend32vtg2]            = "risvend32vtg2";            PRM[prmrisvend32vtg2]            = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 32                                                                */
+    PRM_code[prmrisvendsrm032vtg2]        = "risvendsrm032vtg2";        PRM[prmrisvendsrm032vtg2]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 32                                                               */
     PRM_code[prmrisvend84fts1]            = "risvend84fts1";            PRM[prmrisvend84fts1]            = 40;                                                     /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 84                                                                */
     PRM_code[prmrisvendsrm084fts1]        = "risvendsrm084fts1";        PRM[prmrisvendsrm084fts1]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 84                                                               */
     PRM_code[prmrisvend82fts1]            = "risvend82fts1";            PRM[prmrisvend82fts1]            = 40;                                                     /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 82                                                                */
@@ -4718,8 +4720,6 @@ void control_parameters(void)
     PRM_code[prmrisvendsrm033vtg2]        = "risvendsrm033vtg2";        PRM[prmrisvendsrm033vtg2]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 33                                                               */
     PRM_code[prmrisvend33vtg1]            = "risvend33vtg1";            PRM[prmrisvend33vtg1]            = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 33                                                                */
     PRM_code[prmrisvendsrm033vtg1]        = "risvendsrm033vtg1";        PRM[prmrisvendsrm033vtg1]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 33                                                               */
-    PRM_code[prmrisvend32vtg2]            = "risvend32vtg2";            PRM[prmrisvend32vtg2]            = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 32                                                                */
-    PRM_code[prmrisvendsrm032vtg2]        = "risvendsrm032vtg2";        PRM[prmrisvendsrm032vtg2]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 32                                                               */
     PRM_code[prmrispstart22fts1]          = "rispstart22fts1";          PRM[prmrispstart22fts1]          = 50;                                                     /* Afstand van stopstreep tot start peloton bepaal gebied RIS fase 22                                                             */
     PRM_code[prmrispstart22fts2]          = "rispstart22fts2";          PRM[prmrispstart22fts2]          = 50;                                                     /* Afstand van stopstreep tot start peloton bepaal gebied RIS fase 22                                                             */
     PRM_code[prmrispstart28fts1]          = "rispstart28fts1";          PRM[prmrispstart28fts1]          = 50;                                                     /* Afstand van stopstreep tot start peloton bepaal gebied RIS fase 28                                                             */
@@ -7862,6 +7862,8 @@ void control_parameters(void)
     PRM_cat[prmrisastartsrm031vtg2]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm031vtg2]      = SUBCAT_Aanvraag;
     PRM_cat[prmrisastart32vtg1]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart32vtg1]          = SUBCAT_Aanvraag;
     PRM_cat[prmrisastartsrm032vtg1]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm032vtg1]      = SUBCAT_Aanvraag;
+    PRM_cat[prmrisastart32vtg2]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart32vtg2]          = SUBCAT_Aanvraag;
+    PRM_cat[prmrisastartsrm032vtg2]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm032vtg2]      = SUBCAT_Aanvraag;
     PRM_cat[prmrisastart84fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart84fts1]          = SUBCAT_Aanvraag;
     PRM_cat[prmrisastartsrm084fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm084fts1]      = SUBCAT_Aanvraag;
     PRM_cat[prmrisastart82fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart82fts1]          = SUBCAT_Aanvraag;
@@ -7892,8 +7894,6 @@ void control_parameters(void)
     PRM_cat[prmrisastartsrm033vtg2]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm033vtg2]      = SUBCAT_Aanvraag;
     PRM_cat[prmrisastart33vtg1]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart33vtg1]          = SUBCAT_Aanvraag;
     PRM_cat[prmrisastartsrm033vtg1]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm033vtg1]      = SUBCAT_Aanvraag;
-    PRM_cat[prmrisastart32vtg2]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart32vtg2]          = SUBCAT_Aanvraag;
-    PRM_cat[prmrisastartsrm032vtg2]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm032vtg2]      = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend02mveh1]        = CAT_Optimaliseren;    PRM_subcat[prmrisaend02mveh1]           = SUBCAT_Aanvraag;
     PRM_cat[prmrisaendsrm002mveh1]    = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm002mveh1]       = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend02mveh2]        = CAT_Optimaliseren;    PRM_subcat[prmrisaend02mveh2]           = SUBCAT_Aanvraag;
@@ -7928,6 +7928,8 @@ void control_parameters(void)
     PRM_cat[prmrisaendsrm031vtg2]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm031vtg2]        = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend32vtg1]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend32vtg1]            = SUBCAT_Aanvraag;
     PRM_cat[prmrisaendsrm032vtg1]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm032vtg1]        = SUBCAT_Aanvraag;
+    PRM_cat[prmrisaend32vtg2]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend32vtg2]            = SUBCAT_Aanvraag;
+    PRM_cat[prmrisaendsrm032vtg2]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm032vtg2]        = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend84fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend84fts1]            = SUBCAT_Aanvraag;
     PRM_cat[prmrisaendsrm084fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm084fts1]        = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend82fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend82fts1]            = SUBCAT_Aanvraag;
@@ -7958,8 +7960,6 @@ void control_parameters(void)
     PRM_cat[prmrisaendsrm033vtg2]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm033vtg2]        = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend33vtg1]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend33vtg1]            = SUBCAT_Aanvraag;
     PRM_cat[prmrisaendsrm033vtg1]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm033vtg1]        = SUBCAT_Aanvraag;
-    PRM_cat[prmrisaend32vtg2]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend32vtg2]            = SUBCAT_Aanvraag;
-    PRM_cat[prmrisaendsrm032vtg2]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm032vtg2]        = SUBCAT_Aanvraag;
     PRM_cat[prmrisvstart02mveh1]      = CAT_Optimaliseren;    PRM_subcat[prmrisvstart02mveh1]         = SUBCAT_Verlengen;
     PRM_cat[prmrisvstartsrm002mveh1]  = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm002mveh1]     = SUBCAT_Verlengen;
     PRM_cat[prmrisvstart02mveh2]      = CAT_Optimaliseren;    PRM_subcat[prmrisvstart02mveh2]         = SUBCAT_Verlengen;
@@ -7994,6 +7994,8 @@ void control_parameters(void)
     PRM_cat[prmrisvstartsrm031vtg2]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm031vtg2]      = SUBCAT_Verlengen;
     PRM_cat[prmrisvstart32vtg1]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart32vtg1]          = SUBCAT_Verlengen;
     PRM_cat[prmrisvstartsrm032vtg1]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm032vtg1]      = SUBCAT_Verlengen;
+    PRM_cat[prmrisvstart32vtg2]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart32vtg2]          = SUBCAT_Verlengen;
+    PRM_cat[prmrisvstartsrm032vtg2]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm032vtg2]      = SUBCAT_Verlengen;
     PRM_cat[prmrisvstart84fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart84fts1]          = SUBCAT_Verlengen;
     PRM_cat[prmrisvstartsrm084fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm084fts1]      = SUBCAT_Verlengen;
     PRM_cat[prmrisvstart82fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart82fts1]          = SUBCAT_Verlengen;
@@ -8024,8 +8026,6 @@ void control_parameters(void)
     PRM_cat[prmrisvstartsrm033vtg2]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm033vtg2]      = SUBCAT_Verlengen;
     PRM_cat[prmrisvstart33vtg1]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart33vtg1]          = SUBCAT_Verlengen;
     PRM_cat[prmrisvstartsrm033vtg1]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm033vtg1]      = SUBCAT_Verlengen;
-    PRM_cat[prmrisvstart32vtg2]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart32vtg2]          = SUBCAT_Verlengen;
-    PRM_cat[prmrisvstartsrm032vtg2]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm032vtg2]      = SUBCAT_Verlengen;
     PRM_cat[prmrisvend02mveh1]        = CAT_Optimaliseren;    PRM_subcat[prmrisvend02mveh1]           = SUBCAT_Verlengen;
     PRM_cat[prmrisvendsrm002mveh1]    = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm002mveh1]       = SUBCAT_Verlengen;
     PRM_cat[prmrisvend02mveh2]        = CAT_Optimaliseren;    PRM_subcat[prmrisvend02mveh2]           = SUBCAT_Verlengen;
@@ -8060,6 +8060,8 @@ void control_parameters(void)
     PRM_cat[prmrisvendsrm031vtg2]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm031vtg2]        = SUBCAT_Verlengen;
     PRM_cat[prmrisvend32vtg1]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend32vtg1]            = SUBCAT_Verlengen;
     PRM_cat[prmrisvendsrm032vtg1]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm032vtg1]        = SUBCAT_Verlengen;
+    PRM_cat[prmrisvend32vtg2]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend32vtg2]            = SUBCAT_Verlengen;
+    PRM_cat[prmrisvendsrm032vtg2]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm032vtg2]        = SUBCAT_Verlengen;
     PRM_cat[prmrisvend84fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend84fts1]            = SUBCAT_Verlengen;
     PRM_cat[prmrisvendsrm084fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm084fts1]        = SUBCAT_Verlengen;
     PRM_cat[prmrisvend82fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend82fts1]            = SUBCAT_Verlengen;
@@ -8090,8 +8092,6 @@ void control_parameters(void)
     PRM_cat[prmrisvendsrm033vtg2]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm033vtg2]        = SUBCAT_Verlengen;
     PRM_cat[prmrisvend33vtg1]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend33vtg1]            = SUBCAT_Verlengen;
     PRM_cat[prmrisvendsrm033vtg1]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm033vtg1]        = SUBCAT_Verlengen;
-    PRM_cat[prmrisvend32vtg2]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend32vtg2]            = SUBCAT_Verlengen;
-    PRM_cat[prmrisvendsrm032vtg2]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm032vtg2]        = SUBCAT_Verlengen;
     PRM_cat[prmrispstart22fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrispstart22fts1]          = SUBCAT_CAM_PelotonFiets;
     PRM_cat[prmrispstart22fts2]       = CAT_Optimaliseren;    PRM_subcat[prmrispstart22fts2]          = SUBCAT_CAM_PelotonFiets;
     PRM_cat[prmrispstart28fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrispstart28fts1]          = SUBCAT_CAM_PelotonFiets;

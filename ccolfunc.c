@@ -789,10 +789,7 @@ mulv max_tar_ov(count i, ...)            /* i=alt.ri.                        */
  **************************************************************************/
 boolv AlternatieveRuimte(count fcalt, count fcprim, count paltg)     //@@  warning C4100: 'fcalt' : unreferenced formal parameter
 {
-   /* Unreferenced formal parameter een waarde gegeven */
-   fcalt = 0;
-
-   return (TVG_max[fcprim] - TVG_timer[fcprim] >= PRM[paltg]);
+    return (TVG_max[fcprim] - TVG_timer[fcprim] >= PRM[paltg]);
 }
 boolv no_conflict(count fc1par, count fc2ov)
 {

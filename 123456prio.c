@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.7   15-08-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   16-08-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -2730,10 +2730,10 @@ void PrioPARCorrecties(void)
         PAR[fc33] = PAR[fc33] && (PAR[fc34] || IH[hlos33]);
         PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
 
-/* PAR = PAR */
-        PAR[fc05] = PAR[fc05] && PAR[fc22];
-        PAR[fc05] = PAR[fc05] && PAR[fc32];
-        PAR[fc11] = PAR[fc11] && PAR[fc26];
+        /* PAR = PAR */
+        PAR[fc05] = PAR[fc05] && (PAR[fc22] || !A[fc22]);
+        PAR[fc05] = PAR[fc05] && (PAR[fc32] || !A[fc32]);
+        PAR[fc11] = PAR[fc11] && (PAR[fc26] || !A[fc26]);
         PAR[fc02] = PAR[fc02] && PAR[fc62];
         PAR[fc08] = PAR[fc08] && PAR[fc68];
         PAR[fc11] = PAR[fc11] && PAR[fc68];
