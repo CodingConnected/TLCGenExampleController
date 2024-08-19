@@ -2396,14 +2396,14 @@ void system_application(void)
     t_wacht_old[fc81] = t_wacht[fc81];
     t_wacht_old[fc82] = t_wacht[fc82];
     t_wacht_old[fc84] = t_wacht[fc84];
-    t_wacht[fc21] = (AR[fc21] && (twacht_AR[fc21] < twacht[fc21])) ? twacht_AR[fc21] : twacht[fc21];
-    t_wacht[fc22] = (AR[fc22] && (twacht_AR[fc22] < twacht[fc22])) ? twacht_AR[fc22] : twacht[fc22];
-    t_wacht[fc24] = (AR[fc24] && (twacht_AR[fc24] < twacht[fc24])) ? twacht_AR[fc24] : twacht[fc24];
-    t_wacht[fc26] = (AR[fc26] && (twacht_AR[fc26] < twacht[fc26])) ? twacht_AR[fc26] : twacht[fc26];
-    t_wacht[fc28] = (AR[fc28] && (twacht_AR[fc28] < twacht[fc28])) ? twacht_AR[fc28] : twacht[fc28];
-    t_wacht[fc81] = (AR[fc81] && (twacht_AR[fc81] < twacht[fc81])) ? twacht_AR[fc81] : twacht[fc81];
-    t_wacht[fc82] = (AR[fc82] && (twacht_AR[fc82] < twacht[fc82])) ? twacht_AR[fc82] : twacht[fc82];
-    t_wacht[fc84] = (AR[fc84] && (twacht_AR[fc84] < twacht[fc84])) ? twacht_AR[fc84] : twacht[fc84];
+    t_wacht[fc21] = (AR[fc21] && (twacht_AR[fc21] < twacht[fc21]) || (twacht[fc21] < 0)) ? twacht_AR[fc21] : twacht[fc21];
+    t_wacht[fc22] = (AR[fc22] && (twacht_AR[fc22] < twacht[fc22]) || (twacht[fc22] < 0)) ? twacht_AR[fc22] : twacht[fc22];
+    t_wacht[fc24] = (AR[fc24] && (twacht_AR[fc24] < twacht[fc24]) || (twacht[fc24] < 0)) ? twacht_AR[fc24] : twacht[fc24];
+    t_wacht[fc26] = (AR[fc26] && (twacht_AR[fc26] < twacht[fc26]) || (twacht[fc26] < 0)) ? twacht_AR[fc26] : twacht[fc26];
+    t_wacht[fc28] = (AR[fc28] && (twacht_AR[fc28] < twacht[fc28]) || (twacht[fc28] < 0)) ? twacht_AR[fc28] : twacht[fc28];
+    t_wacht[fc81] = (AR[fc81] && (twacht_AR[fc81] < twacht[fc81]) || (twacht[fc81] < 0)) ? twacht_AR[fc81] : twacht[fc81];
+    t_wacht[fc82] = (AR[fc82] && (twacht_AR[fc82] < twacht[fc82]) || (twacht[fc82] < 0)) ? twacht_AR[fc82] : twacht[fc82];
+    t_wacht[fc84] = (AR[fc84] && (twacht_AR[fc84] < twacht[fc84]) || (twacht[fc84] < 0)) ? twacht_AR[fc84] : twacht[fc84];
     if ((t_wacht_old[fc21] < t_wacht[fc21]) && CIF_GUS[uswtv21] && (t_wacht_old[fc21] > 0))
     {
         t_wacht_halt[fc21] = t_wacht_old[fc21];
