@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   14-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   22-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -929,7 +929,6 @@ void BepaalRealisatieTijden(void)
     corrigeerTIGRvoorNalopen(fc02, fc62, tnleg0262, tnlegd0262, tvgnaloop0262);
     corrigeerTIGRvoorNalopen(fc08, fc68, tnleg0868, tnlegd0868, tvgnaloop0868);
     corrigeerTIGRvoorNalopen(fc11, fc68, tnleg1168, tnlegd1168, tvgnaloop1168);
-    corrigeerTIGRvoorNalopen(fc22, fc21, tnleg2221, NG, tvgnaloop2221);
     corrigeerTIGRvoorNalopen(fc82, fc81, tnleg8281, tnlegd8281, tvgnaloop8281);
 
     /* Realisatietijden */
@@ -942,7 +941,6 @@ void BepaalRealisatieTijden(void)
     Realisatietijd_NLEG(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
     Realisatietijd_NLEG(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868);
     Realisatietijd_NLEG(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168);
-    Realisatietijd_NLEG(fc22, fc21, tnlfg2221, NG, tnleg2221, NG, tvgnaloop2221);
     Realisatietijd_NLEG(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281);
     Realisatietijd_NLSG(fc31, fc32, NG, tnlsgd3132);
     Realisatietijd_NLSG(fc32, fc31, NG, tnlsgd3231);
@@ -999,7 +997,6 @@ void BepaalInterStartGroenTijden(void)
     InterStartGroenTijd_NLEG(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
     InterStartGroenTijd_NLEG(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868);
     InterStartGroenTijd_NLEG(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168);
-    InterStartGroenTijd_NLEG(fc22, fc21, tnlfg2221, NG, tnleg2221, NG, tvgnaloop2221);
     InterStartGroenTijd_NLSG(fc31, fc32, NG, tnlsgd3132);
     InterStartGroenTijd_NLSG(fc32, fc31, NG, tnlsgd3231);
     InterStartGroenTijd_NLSG(fc33, fc34, NG, tnlsgd3334);
@@ -1046,7 +1043,6 @@ void BepaalInterStartGroenTijden_PRIO(void)
     InterStartGroenTijd_NLEG_PRIO(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
     InterStartGroenTijd_NLEG_PRIO(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868);
     InterStartGroenTijd_NLEG_PRIO(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168);
-    InterStartGroenTijd_NLEG_PRIO(fc22, fc21, tnlfg2221, NG, tnleg2221, NG, tvgnaloop2221);
     InterStartGroenTijd_NLSG_PRIO(fc31, fc32, NG, tnlsgd3132);
     InterStartGroenTijd_NLSG_PRIO(fc32, fc31, NG, tnlsgd3231);
     InterStartGroenTijd_NLSG_PRIO(fc33, fc34, NG, tnlsgd3334);
@@ -1067,7 +1063,6 @@ void BepaalInterStartGroenTijden_PRIO(void)
         wijziging |= TISG_LateRelease_PRIO_Correctie(fc62, fc02, txnl0262);
         wijziging |= TISG_LateRelease_PRIO_Correctie(fc68, fc08, txnl0868);
         wijziging |= TISG_LateRelease_PRIO_Correctie(fc68, fc11, txnl1168);
-        wijziging |= TISG_LateRelease_PRIO_Correctie(fc21, fc22, txnl2221);
         wijziging |= TISG_LateRelease_PRIO_Correctie(fc81, fc82, txnl8281);
         wijziging |= TISG_LateRelease_PRIO_Correctie(fc32, fc31, tinl3132);
         wijziging |= TISG_LateRelease_PRIO_Correctie(fc31, fc32, tinl3231);
@@ -1474,7 +1469,6 @@ void Verlenggroen(void)
     NaloopEG_TVG_Correctie(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
     NaloopEG_TVG_Correctie(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868);
     NaloopEG_TVG_Correctie(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168);
-    NaloopEG_TVG_Correctie(fc22, fc21, tnlfg2221, NG, tnleg2221, NG, tvgnaloop2221);
     NaloopVtg_TVG_Correctie(fc31, fc32, NG, tnlsgd3132);
     NaloopVtg_TVG_Correctie(fc32, fc31, NG, tnlsgd3231);
     NaloopVtg_TVG_Correctie(fc33, fc34, NG, tnlsgd3334);
@@ -1718,7 +1712,6 @@ void Meetkriterium(void)
     NaloopEG(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262, d02_1a, d02_1b, END);
     NaloopEG(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868, d08_1a, d08_1b, END);
     NaloopEG(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168, d11_1, END);
-    NaloopEG(fc22, fc21, tnlfg2221, NG, tnleg2221, NG, tvgnaloop2221, END);
     NaloopVtg(fc31, fc32, dk31a, hmadk31a, hnlsg3132, NG, tnlsgd3132);
     NaloopVtg(fc32, fc31, dk32a, hmadk32a, hnlsg3231, NG, tnlsgd3231);
     NaloopVtg(fc33, fc34, dk33a, hmadk33a, hnlsg3334, NG, tnlsgd3334);
@@ -2396,14 +2389,14 @@ void system_application(void)
     t_wacht_old[fc81] = t_wacht[fc81];
     t_wacht_old[fc82] = t_wacht[fc82];
     t_wacht_old[fc84] = t_wacht[fc84];
-    t_wacht[fc21] = (AR[fc21] && (twacht_AR[fc21] < twacht[fc21]) || (twacht[fc21] < 0)) ? twacht_AR[fc21] : twacht[fc21];
-    t_wacht[fc22] = (AR[fc22] && (twacht_AR[fc22] < twacht[fc22]) || (twacht[fc22] < 0)) ? twacht_AR[fc22] : twacht[fc22];
-    t_wacht[fc24] = (AR[fc24] && (twacht_AR[fc24] < twacht[fc24]) || (twacht[fc24] < 0)) ? twacht_AR[fc24] : twacht[fc24];
-    t_wacht[fc26] = (AR[fc26] && (twacht_AR[fc26] < twacht[fc26]) || (twacht[fc26] < 0)) ? twacht_AR[fc26] : twacht[fc26];
-    t_wacht[fc28] = (AR[fc28] && (twacht_AR[fc28] < twacht[fc28]) || (twacht[fc28] < 0)) ? twacht_AR[fc28] : twacht[fc28];
-    t_wacht[fc81] = (AR[fc81] && (twacht_AR[fc81] < twacht[fc81]) || (twacht[fc81] < 0)) ? twacht_AR[fc81] : twacht[fc81];
-    t_wacht[fc82] = (AR[fc82] && (twacht_AR[fc82] < twacht[fc82]) || (twacht[fc82] < 0)) ? twacht_AR[fc82] : twacht[fc82];
-    t_wacht[fc84] = (AR[fc84] && (twacht_AR[fc84] < twacht[fc84]) || (twacht[fc84] < 0)) ? twacht_AR[fc84] : twacht[fc84];
+    t_wacht[fc21] = (AR[fc21] && (twacht_AR[fc21] < twacht[fc21])) ? twacht_AR[fc21] : twacht[fc21];
+    t_wacht[fc22] = (AR[fc22] && (twacht_AR[fc22] < twacht[fc22])) ? twacht_AR[fc22] : twacht[fc22];
+    t_wacht[fc24] = (AR[fc24] && (twacht_AR[fc24] < twacht[fc24])) ? twacht_AR[fc24] : twacht[fc24];
+    t_wacht[fc26] = (AR[fc26] && (twacht_AR[fc26] < twacht[fc26])) ? twacht_AR[fc26] : twacht[fc26];
+    t_wacht[fc28] = (AR[fc28] && (twacht_AR[fc28] < twacht[fc28])) ? twacht_AR[fc28] : twacht[fc28];
+    t_wacht[fc81] = (AR[fc81] && (twacht_AR[fc81] < twacht[fc81])) ? twacht_AR[fc81] : twacht[fc81];
+    t_wacht[fc82] = (AR[fc82] && (twacht_AR[fc82] < twacht[fc82])) ? twacht_AR[fc82] : twacht[fc82];
+    t_wacht[fc84] = (AR[fc84] && (twacht_AR[fc84] < twacht[fc84])) ? twacht_AR[fc84] : twacht[fc84];
     if ((t_wacht_old[fc21] < t_wacht[fc21]) && CIF_GUS[uswtv21] && (t_wacht_old[fc21] > 0))
     {
         t_wacht_halt[fc21] = t_wacht_old[fc21];

@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   14-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   22-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -1194,7 +1194,7 @@ void PostAfhandelingPrio(void)
 {
 
     /* Niet afkappen naloop richtingen wanneer een naloop tijd nog loopt */
-    if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnleg2221] || T[tnleg2221])
+    if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnlcv2221] || T[tnlcv2221] || RT[tnlcvd2221] || T[tnlcvd2221])
     {
         Z[fc21] &= ~BIT6;
         RR[fc21] &= ~BIT6;

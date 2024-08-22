@@ -275,7 +275,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2024-08-14T00:00:00</Datum>
+      <Datum>2024-08-22T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (laastste portable) ISG</Commentaar>
     </Versie>
@@ -8789,10 +8789,10 @@
       <Naloop>
         <FaseVan>22</FaseVan>
         <FaseNaar>21</FaseNaar>
-        <Type>EindeGroen</Type>
+        <Type>CyclischVerlengGroen</Type>
         <VasteNaloop>true</VasteNaloop>
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
-        <DetectieAfhankelijk>false</DetectieAfhankelijk>
+        <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>20</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <Detectoren>
@@ -8807,8 +8807,16 @@
             <Waarde>30</Waarde>
           </NaloopTijden>
           <NaloopTijden>
-            <Type>EindeGroen</Type>
-            <Waarde>40</Waarde>
+            <Type>VastGroenDetectie</Type>
+            <Waarde>30</Waarde>
+          </NaloopTijden>
+          <NaloopTijden>
+            <Type>EindeVerlengGroen</Type>
+            <Waarde>30</Waarde>
+          </NaloopTijden>
+          <NaloopTijden>
+            <Type>EindeVerlengGroenDetectie</Type>
+            <Waarde>30</Waarde>
           </NaloopTijden>
         </Tijden>
       </Naloop>
@@ -19578,6 +19586,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykaruit05bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit05bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -19731,13 +19746,6 @@
         <Naam>dummykaruit08bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit08bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit05bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit05bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

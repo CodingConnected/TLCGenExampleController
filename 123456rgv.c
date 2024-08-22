@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   14-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   22-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -65,7 +65,7 @@ void BepaalInterStartGroenTijden_rgv(void)
     InterStartGroenTijd_NLEG_rgv(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
     InterStartGroenTijd_NLEG_rgv(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868);
     InterStartGroenTijd_NLEG_rgv(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168);
-    InterStartGroenTijd_NLEG_rgv(fc22, fc21, tnlfg2221, NG, tnleg2221, NG, tvgnaloop2221);
+    InterStartGroenTijd_NLEG_rgv(fc22, fc21, tnlfg2221, tnlfgd2221, NG, NG, tvgnaloop2221);
     InterStartGroenTijd_NLSG_rgv(fc31, fc32, NG, tnlsgd3132);
     InterStartGroenTijd_NLSG_rgv(fc32, fc31, NG, tnlsgd3231);
     InterStartGroenTijd_NLSG_rgv(fc33, fc34, NG, tnlsgd3334);

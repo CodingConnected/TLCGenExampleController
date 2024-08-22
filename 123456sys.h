@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   14-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   22-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20240814"
+#define VERSION "12.4.0 20240822"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 
 /* fasecycli */
@@ -401,149 +401,150 @@
     #define hnla08_1a           32 /* Onthouden detectiemelding detector 08_1a tbv naloop van 08 naar 68 */
     #define hnla08_1b           33 /* Onthouden detectiemelding detector 08_1b tbv naloop van 08 naar 68 */
     #define hnla11_1            34 /* Onthouden detectiemelding detector 11_1 tbv naloop van 11 naar 68  */
-    #define hnlsg3132           35 /* Hulpelement naloop SG van 31 naar 32                               */
-    #define hnlak31a            36 /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
-    #define hnlsg3231           37 /* Hulpelement naloop SG van 32 naar 31                               */
-    #define hnlak32a            38 /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
-    #define hnlsg3334           39 /* Hulpelement naloop SG van 33 naar 34                               */
-    #define hnlak33a            40 /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
-    #define hnlsg3433           41 /* Hulpelement naloop SG van 34 naar 33                               */
-    #define hnlak34a            42 /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
-    #define hnla82_1            43 /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
-    #define hstp02bus           44 /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
-    #define hstp03bus           45 /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
-    #define hstp05bus           46 /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
-    #define hstp08bus           47 /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
-    #define hstp09bus           48 /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
-    #define hstp11bus           49 /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
-    #define hprio02bus          50 /* Bijhouden actief zijn prioriteit fase 02                           */
-    #define hprioin02bus        51 /* Prioriteit inmelding fase 02 Bus                                   */
-    #define hpriouit02bus       52 /* Prioriteit uitmelding 02 Bus                                       */
-    #define hprioin02buskar     53 /* Prioriteit inmelding fase 02 Bus                                   */
-    #define hpriouit02buskar    54 /* Prioriteit uitmelding 02 Bus                                       */
-    #define hprio03bus          55 /* Bijhouden actief zijn prioriteit fase 03                           */
-    #define hprioin03bus        56 /* Prioriteit inmelding fase 03 Bus                                   */
-    #define hpriouit03bus       57 /* Prioriteit uitmelding 03 Bus                                       */
-    #define hprioin03buskar     58 /* Prioriteit inmelding fase 03 Bus                                   */
-    #define hpriouit03buskar    59 /* Prioriteit uitmelding 03 Bus                                       */
-    #define hprio05bus          60 /* Bijhouden actief zijn prioriteit fase 05                           */
-    #define hprioin05bus        61 /* Prioriteit inmelding fase 05 Bus                                   */
-    #define hpriouit05bus       62 /* Prioriteit uitmelding 05 Bus                                       */
-    #define hprioin05buskar     63 /* Prioriteit inmelding fase 05 Bus                                   */
-    #define hpriouit05buskar    64 /* Prioriteit uitmelding 05 Bus                                       */
-    #define hprio08bus          65 /* Bijhouden actief zijn prioriteit fase 08                           */
-    #define hprioin08bus        66 /* Prioriteit inmelding fase 08 Bus                                   */
-    #define hpriouit08bus       67 /* Prioriteit uitmelding 08 Bus                                       */
-    #define hprioin08buskar     68 /* Prioriteit inmelding fase 08 Bus                                   */
-    #define hpriouit08buskar    69 /* Prioriteit uitmelding 08 Bus                                       */
-    #define hprio09bus          70 /* Bijhouden actief zijn prioriteit fase 09                           */
-    #define hprioin09bus        71 /* Prioriteit inmelding fase 09 Bus                                   */
-    #define hpriouit09bus       72 /* Prioriteit uitmelding 09 Bus                                       */
-    #define hprioin09buskar     73 /* Prioriteit inmelding fase 09 Bus                                   */
-    #define hpriouit09buskar    74 /* Prioriteit uitmelding 09 Bus                                       */
-    #define hprio11bus          75 /* Bijhouden actief zijn prioriteit fase 11                           */
-    #define hprioin11bus        76 /* Prioriteit inmelding fase 11 Bus                                   */
-    #define hpriouit11bus       77 /* Prioriteit uitmelding 11 Bus                                       */
-    #define hprioin11buskar     78 /* Prioriteit inmelding fase 11 Bus                                   */
-    #define hpriouit11buskar    79 /* Prioriteit uitmelding 11 Bus                                       */
-    #define hhd02               80 /* Bijhouden aanwezigheid HD fase 02                                  */
-    #define hhdin02             81 /* HD inmelding 02                                                    */
-    #define hhduit02            82 /* HD uitmelding 02                                                   */
-    #define hhdin02kar          83 /* HD inmelding 02                                                    */
-    #define hhduit02kar         84 /* HD uitmelding 02                                                   */
-    #define hhdin02ris          85 /* HD inmelding 02                                                    */
-    #define hhduit02ris         86 /* HD uitmelding 02                                                   */
-    #define hhd03               87 /* Bijhouden aanwezigheid HD fase 03                                  */
-    #define hhdin03             88 /* HD inmelding 03                                                    */
-    #define hhduit03            89 /* HD uitmelding 03                                                   */
-    #define hhdin03kar          90 /* HD inmelding 03                                                    */
-    #define hhduit03kar         91 /* HD uitmelding 03                                                   */
-    #define hhdin03ris          92 /* HD inmelding 03                                                    */
-    #define hhduit03ris         93 /* HD uitmelding 03                                                   */
-    #define hhd05               94 /* Bijhouden aanwezigheid HD fase 05                                  */
-    #define hhdin05             95 /* HD inmelding 05                                                    */
-    #define hhduit05            96 /* HD uitmelding 05                                                   */
-    #define hhdin05kar          97 /* HD inmelding 05                                                    */
-    #define hhduit05kar         98 /* HD uitmelding 05                                                   */
-    #define hhdin05ris          99 /* HD inmelding 05                                                    */
-    #define hhduit05ris        100 /* HD uitmelding 05                                                   */
-    #define hhd08              101 /* Bijhouden aanwezigheid HD fase 08                                  */
-    #define hhdin08            102 /* HD inmelding 08                                                    */
-    #define hhduit08           103 /* HD uitmelding 08                                                   */
-    #define hhdin08kar         104 /* HD inmelding 08                                                    */
-    #define hhduit08kar        105 /* HD uitmelding 08                                                   */
-    #define hhdin08ris         106 /* HD inmelding 08                                                    */
-    #define hhduit08ris        107 /* HD uitmelding 08                                                   */
-    #define hhd09              108 /* Bijhouden aanwezigheid HD fase 09                                  */
-    #define hhdin09            109 /* HD inmelding 09                                                    */
-    #define hhduit09           110 /* HD uitmelding 09                                                   */
-    #define hhdin09kar         111 /* HD inmelding 09                                                    */
-    #define hhduit09kar        112 /* HD uitmelding 09                                                   */
-    #define hhdin09ris         113 /* HD inmelding 09                                                    */
-    #define hhduit09ris        114 /* HD uitmelding 09                                                   */
-    #define hhd11              115 /* Bijhouden aanwezigheid HD fase 11                                  */
-    #define hhdin11            116 /* HD inmelding 11                                                    */
-    #define hhduit11           117 /* HD uitmelding 11                                                   */
-    #define hhdin11kar         118 /* HD inmelding 11                                                    */
-    #define hhduit11kar        119 /* HD uitmelding 11                                                   */
-    #define hhdin11ris         120 /* HD inmelding 11                                                    */
-    #define hhduit11ris        121 /* HD uitmelding 11                                                   */
-    #define hhd61              122 /* Bijhouden aanwezigheid HD fase 61                                  */
-    #define hhdin61            123 /* HD inmelding 61                                                    */
-    #define hhduit61           124 /* HD uitmelding 61                                                   */
-    #define hhdin61kar         125 /* HD inmelding 61                                                    */
-    #define hhduit61kar        126 /* HD uitmelding 61                                                   */
-    #define hhdin61ris         127 /* HD inmelding 61                                                    */
-    #define hhduit61ris        128 /* HD uitmelding 61                                                   */
-    #define hhd62              129 /* Bijhouden aanwezigheid HD fase 62                                  */
-    #define hhdin62            130 /* HD inmelding 62                                                    */
-    #define hhduit62           131 /* HD uitmelding 62                                                   */
-    #define hhdin62kar         132 /* HD inmelding 62                                                    */
-    #define hhduit62kar        133 /* HD uitmelding 62                                                   */
-    #define hhdin62ris         134 /* HD inmelding 62                                                    */
-    #define hhduit62ris        135 /* HD uitmelding 62                                                   */
-    #define hhd67              136 /* Bijhouden aanwezigheid HD fase 67                                  */
-    #define hhdin67            137 /* HD inmelding 67                                                    */
-    #define hhduit67           138 /* HD uitmelding 67                                                   */
-    #define hhdin67kar         139 /* HD inmelding 67                                                    */
-    #define hhduit67kar        140 /* HD uitmelding 67                                                   */
-    #define hhdin67ris         141 /* HD inmelding 67                                                    */
-    #define hhduit67ris        142 /* HD uitmelding 67                                                   */
-    #define hhd68              143 /* Bijhouden aanwezigheid HD fase 68                                  */
-    #define hhdin68            144 /* HD inmelding 68                                                    */
-    #define hhduit68           145 /* HD uitmelding 68                                                   */
-    #define hhdin68kar         146 /* HD inmelding 68                                                    */
-    #define hhduit68kar        147 /* HD uitmelding 68                                                   */
-    #define hhdin68ris         148 /* HD inmelding 68                                                    */
-    #define hhduit68ris        149 /* HD uitmelding 68                                                   */
-    #define hperiodFietsprio1  150 /* Periode Fietsprio1 actief                                          */
-    #define hperiodFietsprio2  151 /* Periode Fietsprio2 actief                                          */
-    #define hperiodFietsprio3  152 /* Periode Fietsprio3 actief                                          */
-    #define hrgvd24_3_d24_2    153 /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
-    #define hrgvact            154 /* Bijhouden actief zijn RoBuGrover                                   */
-    #define hprreal02          155 /* Bijhouden primaire realisatie fase 02                              */
-    #define hprreal03          156 /* Bijhouden primaire realisatie fase 03                              */
-    #define hprreal05          157 /* Bijhouden primaire realisatie fase 05                              */
-    #define hprreal08          158 /* Bijhouden primaire realisatie fase 08                              */
-    #define hprreal09          159 /* Bijhouden primaire realisatie fase 09                              */
-    #define hprreal11          160 /* Bijhouden primaire realisatie fase 11                              */
-    #define hwtv21             161 /* Onthouden aansturing wachttijdvoorspeller fase 21                  */
-    #define hwtv22             162 /* Onthouden aansturing wachttijdvoorspeller fase 22                  */
-    #define hwtv24             163 /* Onthouden aansturing wachttijdvoorspeller fase 24                  */
-    #define hwtv26             164 /* Onthouden aansturing wachttijdvoorspeller fase 26                  */
-    #define hwtv28             165 /* Onthouden aansturing wachttijdvoorspeller fase 28                  */
-    #define hwtv81             166 /* Onthouden aansturing wachttijdvoorspeller fase 81                  */
-    #define hwtv82             167 /* Onthouden aansturing wachttijdvoorspeller fase 82                  */
-    #define hwtv84             168 /* Onthouden aansturing wachttijdvoorspeller fase 84                  */
-    #define hlos31             169 /* Toestaan los realiseren fase 31                                    */
-    #define hlos32             170 /* Toestaan los realiseren fase 32                                    */
-    #define hlos33             171 /* Toestaan los realiseren fase 33                                    */
-    #define hlos34             172 /* Toestaan los realiseren fase 34                                    */
-    #define hmadk31b           173 /* Onthouden melding binnen drukknop k31b                             */
-    #define hmadk32b           174 /* Onthouden melding binnen drukknop k32b                             */
-    #define hmadk33b           175 /* Onthouden melding binnen drukknop k33b                             */
-    #define hmadk34b           176 /* Onthouden melding binnen drukknop k34b                             */
-    #define HEMAX1             177
+    #define hnla22_1            35 /* Onthouden detectiemelding detector 22_1 tbv naloop van 22 naar 21  */
+    #define hnlsg3132           36 /* Hulpelement naloop SG van 31 naar 32                               */
+    #define hnlak31a            37 /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
+    #define hnlsg3231           38 /* Hulpelement naloop SG van 32 naar 31                               */
+    #define hnlak32a            39 /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
+    #define hnlsg3334           40 /* Hulpelement naloop SG van 33 naar 34                               */
+    #define hnlak33a            41 /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
+    #define hnlsg3433           42 /* Hulpelement naloop SG van 34 naar 33                               */
+    #define hnlak34a            43 /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
+    #define hnla82_1            44 /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
+    #define hstp02bus           45 /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
+    #define hstp03bus           46 /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
+    #define hstp05bus           47 /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
+    #define hstp08bus           48 /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
+    #define hstp09bus           49 /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
+    #define hstp11bus           50 /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
+    #define hprio02bus          51 /* Bijhouden actief zijn prioriteit fase 02                           */
+    #define hprioin02bus        52 /* Prioriteit inmelding fase 02 Bus                                   */
+    #define hpriouit02bus       53 /* Prioriteit uitmelding 02 Bus                                       */
+    #define hprioin02buskar     54 /* Prioriteit inmelding fase 02 Bus                                   */
+    #define hpriouit02buskar    55 /* Prioriteit uitmelding 02 Bus                                       */
+    #define hprio03bus          56 /* Bijhouden actief zijn prioriteit fase 03                           */
+    #define hprioin03bus        57 /* Prioriteit inmelding fase 03 Bus                                   */
+    #define hpriouit03bus       58 /* Prioriteit uitmelding 03 Bus                                       */
+    #define hprioin03buskar     59 /* Prioriteit inmelding fase 03 Bus                                   */
+    #define hpriouit03buskar    60 /* Prioriteit uitmelding 03 Bus                                       */
+    #define hprio05bus          61 /* Bijhouden actief zijn prioriteit fase 05                           */
+    #define hprioin05bus        62 /* Prioriteit inmelding fase 05 Bus                                   */
+    #define hpriouit05bus       63 /* Prioriteit uitmelding 05 Bus                                       */
+    #define hprioin05buskar     64 /* Prioriteit inmelding fase 05 Bus                                   */
+    #define hpriouit05buskar    65 /* Prioriteit uitmelding 05 Bus                                       */
+    #define hprio08bus          66 /* Bijhouden actief zijn prioriteit fase 08                           */
+    #define hprioin08bus        67 /* Prioriteit inmelding fase 08 Bus                                   */
+    #define hpriouit08bus       68 /* Prioriteit uitmelding 08 Bus                                       */
+    #define hprioin08buskar     69 /* Prioriteit inmelding fase 08 Bus                                   */
+    #define hpriouit08buskar    70 /* Prioriteit uitmelding 08 Bus                                       */
+    #define hprio09bus          71 /* Bijhouden actief zijn prioriteit fase 09                           */
+    #define hprioin09bus        72 /* Prioriteit inmelding fase 09 Bus                                   */
+    #define hpriouit09bus       73 /* Prioriteit uitmelding 09 Bus                                       */
+    #define hprioin09buskar     74 /* Prioriteit inmelding fase 09 Bus                                   */
+    #define hpriouit09buskar    75 /* Prioriteit uitmelding 09 Bus                                       */
+    #define hprio11bus          76 /* Bijhouden actief zijn prioriteit fase 11                           */
+    #define hprioin11bus        77 /* Prioriteit inmelding fase 11 Bus                                   */
+    #define hpriouit11bus       78 /* Prioriteit uitmelding 11 Bus                                       */
+    #define hprioin11buskar     79 /* Prioriteit inmelding fase 11 Bus                                   */
+    #define hpriouit11buskar    80 /* Prioriteit uitmelding 11 Bus                                       */
+    #define hhd02               81 /* Bijhouden aanwezigheid HD fase 02                                  */
+    #define hhdin02             82 /* HD inmelding 02                                                    */
+    #define hhduit02            83 /* HD uitmelding 02                                                   */
+    #define hhdin02kar          84 /* HD inmelding 02                                                    */
+    #define hhduit02kar         85 /* HD uitmelding 02                                                   */
+    #define hhdin02ris          86 /* HD inmelding 02                                                    */
+    #define hhduit02ris         87 /* HD uitmelding 02                                                   */
+    #define hhd03               88 /* Bijhouden aanwezigheid HD fase 03                                  */
+    #define hhdin03             89 /* HD inmelding 03                                                    */
+    #define hhduit03            90 /* HD uitmelding 03                                                   */
+    #define hhdin03kar          91 /* HD inmelding 03                                                    */
+    #define hhduit03kar         92 /* HD uitmelding 03                                                   */
+    #define hhdin03ris          93 /* HD inmelding 03                                                    */
+    #define hhduit03ris         94 /* HD uitmelding 03                                                   */
+    #define hhd05               95 /* Bijhouden aanwezigheid HD fase 05                                  */
+    #define hhdin05             96 /* HD inmelding 05                                                    */
+    #define hhduit05            97 /* HD uitmelding 05                                                   */
+    #define hhdin05kar          98 /* HD inmelding 05                                                    */
+    #define hhduit05kar         99 /* HD uitmelding 05                                                   */
+    #define hhdin05ris         100 /* HD inmelding 05                                                    */
+    #define hhduit05ris        101 /* HD uitmelding 05                                                   */
+    #define hhd08              102 /* Bijhouden aanwezigheid HD fase 08                                  */
+    #define hhdin08            103 /* HD inmelding 08                                                    */
+    #define hhduit08           104 /* HD uitmelding 08                                                   */
+    #define hhdin08kar         105 /* HD inmelding 08                                                    */
+    #define hhduit08kar        106 /* HD uitmelding 08                                                   */
+    #define hhdin08ris         107 /* HD inmelding 08                                                    */
+    #define hhduit08ris        108 /* HD uitmelding 08                                                   */
+    #define hhd09              109 /* Bijhouden aanwezigheid HD fase 09                                  */
+    #define hhdin09            110 /* HD inmelding 09                                                    */
+    #define hhduit09           111 /* HD uitmelding 09                                                   */
+    #define hhdin09kar         112 /* HD inmelding 09                                                    */
+    #define hhduit09kar        113 /* HD uitmelding 09                                                   */
+    #define hhdin09ris         114 /* HD inmelding 09                                                    */
+    #define hhduit09ris        115 /* HD uitmelding 09                                                   */
+    #define hhd11              116 /* Bijhouden aanwezigheid HD fase 11                                  */
+    #define hhdin11            117 /* HD inmelding 11                                                    */
+    #define hhduit11           118 /* HD uitmelding 11                                                   */
+    #define hhdin11kar         119 /* HD inmelding 11                                                    */
+    #define hhduit11kar        120 /* HD uitmelding 11                                                   */
+    #define hhdin11ris         121 /* HD inmelding 11                                                    */
+    #define hhduit11ris        122 /* HD uitmelding 11                                                   */
+    #define hhd61              123 /* Bijhouden aanwezigheid HD fase 61                                  */
+    #define hhdin61            124 /* HD inmelding 61                                                    */
+    #define hhduit61           125 /* HD uitmelding 61                                                   */
+    #define hhdin61kar         126 /* HD inmelding 61                                                    */
+    #define hhduit61kar        127 /* HD uitmelding 61                                                   */
+    #define hhdin61ris         128 /* HD inmelding 61                                                    */
+    #define hhduit61ris        129 /* HD uitmelding 61                                                   */
+    #define hhd62              130 /* Bijhouden aanwezigheid HD fase 62                                  */
+    #define hhdin62            131 /* HD inmelding 62                                                    */
+    #define hhduit62           132 /* HD uitmelding 62                                                   */
+    #define hhdin62kar         133 /* HD inmelding 62                                                    */
+    #define hhduit62kar        134 /* HD uitmelding 62                                                   */
+    #define hhdin62ris         135 /* HD inmelding 62                                                    */
+    #define hhduit62ris        136 /* HD uitmelding 62                                                   */
+    #define hhd67              137 /* Bijhouden aanwezigheid HD fase 67                                  */
+    #define hhdin67            138 /* HD inmelding 67                                                    */
+    #define hhduit67           139 /* HD uitmelding 67                                                   */
+    #define hhdin67kar         140 /* HD inmelding 67                                                    */
+    #define hhduit67kar        141 /* HD uitmelding 67                                                   */
+    #define hhdin67ris         142 /* HD inmelding 67                                                    */
+    #define hhduit67ris        143 /* HD uitmelding 67                                                   */
+    #define hhd68              144 /* Bijhouden aanwezigheid HD fase 68                                  */
+    #define hhdin68            145 /* HD inmelding 68                                                    */
+    #define hhduit68           146 /* HD uitmelding 68                                                   */
+    #define hhdin68kar         147 /* HD inmelding 68                                                    */
+    #define hhduit68kar        148 /* HD uitmelding 68                                                   */
+    #define hhdin68ris         149 /* HD inmelding 68                                                    */
+    #define hhduit68ris        150 /* HD uitmelding 68                                                   */
+    #define hperiodFietsprio1  151 /* Periode Fietsprio1 actief                                          */
+    #define hperiodFietsprio2  152 /* Periode Fietsprio2 actief                                          */
+    #define hperiodFietsprio3  153 /* Periode Fietsprio3 actief                                          */
+    #define hrgvd24_3_d24_2    154 /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
+    #define hrgvact            155 /* Bijhouden actief zijn RoBuGrover                                   */
+    #define hprreal02          156 /* Bijhouden primaire realisatie fase 02                              */
+    #define hprreal03          157 /* Bijhouden primaire realisatie fase 03                              */
+    #define hprreal05          158 /* Bijhouden primaire realisatie fase 05                              */
+    #define hprreal08          159 /* Bijhouden primaire realisatie fase 08                              */
+    #define hprreal09          160 /* Bijhouden primaire realisatie fase 09                              */
+    #define hprreal11          161 /* Bijhouden primaire realisatie fase 11                              */
+    #define hwtv21             162 /* Onthouden aansturing wachttijdvoorspeller fase 21                  */
+    #define hwtv22             163 /* Onthouden aansturing wachttijdvoorspeller fase 22                  */
+    #define hwtv24             164 /* Onthouden aansturing wachttijdvoorspeller fase 24                  */
+    #define hwtv26             165 /* Onthouden aansturing wachttijdvoorspeller fase 26                  */
+    #define hwtv28             166 /* Onthouden aansturing wachttijdvoorspeller fase 28                  */
+    #define hwtv81             167 /* Onthouden aansturing wachttijdvoorspeller fase 81                  */
+    #define hwtv82             168 /* Onthouden aansturing wachttijdvoorspeller fase 82                  */
+    #define hwtv84             169 /* Onthouden aansturing wachttijdvoorspeller fase 84                  */
+    #define hlos31             170 /* Toestaan los realiseren fase 31                                    */
+    #define hlos32             171 /* Toestaan los realiseren fase 32                                    */
+    #define hlos33             172 /* Toestaan los realiseren fase 33                                    */
+    #define hlos34             173 /* Toestaan los realiseren fase 34                                    */
+    #define hmadk31b           174 /* Onthouden melding binnen drukknop k31b                             */
+    #define hmadk32b           175 /* Onthouden melding binnen drukknop k32b                             */
+    #define hmadk33b           176 /* Onthouden melding binnen drukknop k33b                             */
+    #define hmadk34b           177 /* Onthouden melding binnen drukknop k34b                             */
+    #define HEMAX1             178
 
 /* geheugen elementen */
 /* ------------------ */
@@ -609,334 +610,336 @@
 
 /* tijd elementen */
 /* -------------- */
-    #define t08_1a_1                     0 /* Dynamische hiaattijden moment 1 voor detector 08_1a                   */
-    #define t08_1a_2                     1 /* Dynamische hiaattijden moment 2 voor detector 08_1a                   */
-    #define ttdh_08_1a_1                 2 /* Dynamische hiaattijden TDH 1 voor detector 08_1a                      */
-    #define ttdh_08_1a_2                 3 /* Dynamische hiaattijden TDH 2 voor detector 08_1a                      */
-    #define tmax_08_1a                   4 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_1a            */
-    #define t08_1b_1                     5 /* Dynamische hiaattijden moment 1 voor detector 08_1b                   */
-    #define t08_1b_2                     6 /* Dynamische hiaattijden moment 2 voor detector 08_1b                   */
-    #define ttdh_08_1b_1                 7 /* Dynamische hiaattijden TDH 1 voor detector 08_1b                      */
-    #define ttdh_08_1b_2                 8 /* Dynamische hiaattijden TDH 2 voor detector 08_1b                      */
-    #define tmax_08_1b                   9 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_1b            */
-    #define t08_2a_1                    10 /* Dynamische hiaattijden moment 1 voor detector 08_2a                   */
-    #define t08_2a_2                    11 /* Dynamische hiaattijden moment 2 voor detector 08_2a                   */
-    #define ttdh_08_2a_1                12 /* Dynamische hiaattijden TDH 1 voor detector 08_2a                      */
-    #define ttdh_08_2a_2                13 /* Dynamische hiaattijden TDH 2 voor detector 08_2a                      */
-    #define tmax_08_2a                  14 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_2a            */
-    #define t08_2b_1                    15 /* Dynamische hiaattijden moment 1 voor detector 08_2b                   */
-    #define t08_2b_2                    16 /* Dynamische hiaattijden moment 2 voor detector 08_2b                   */
-    #define ttdh_08_2b_1                17 /* Dynamische hiaattijden TDH 1 voor detector 08_2b                      */
-    #define ttdh_08_2b_2                18 /* Dynamische hiaattijden TDH 2 voor detector 08_2b                      */
-    #define tmax_08_2b                  19 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_2b            */
-    #define t08_3a_1                    20 /* Dynamische hiaattijden moment 1 voor detector 08_3a                   */
-    #define t08_3a_2                    21 /* Dynamische hiaattijden moment 2 voor detector 08_3a                   */
-    #define ttdh_08_3a_1                22 /* Dynamische hiaattijden TDH 1 voor detector 08_3a                      */
-    #define ttdh_08_3a_2                23 /* Dynamische hiaattijden TDH 2 voor detector 08_3a                      */
-    #define tmax_08_3a                  24 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_3a            */
-    #define t08_3b_1                    25 /* Dynamische hiaattijden moment 1 voor detector 08_3b                   */
-    #define t08_3b_2                    26 /* Dynamische hiaattijden moment 2 voor detector 08_3b                   */
-    #define ttdh_08_3b_1                27 /* Dynamische hiaattijden TDH 1 voor detector 08_3b                      */
-    #define ttdh_08_3b_2                28 /* Dynamische hiaattijden TDH 2 voor detector 08_3b                      */
-    #define tmax_08_3b                  29 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_3b            */
-    #define t08_4a_1                    30 /* Dynamische hiaattijden moment 1 voor detector 08_4a                   */
-    #define t08_4a_2                    31 /* Dynamische hiaattijden moment 2 voor detector 08_4a                   */
-    #define ttdh_08_4a_1                32 /* Dynamische hiaattijden TDH 1 voor detector 08_4a                      */
-    #define ttdh_08_4a_2                33 /* Dynamische hiaattijden TDH 2 voor detector 08_4a                      */
-    #define tmax_08_4a                  34 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_4a            */
-    #define t08_4b_1                    35 /* Dynamische hiaattijden moment 1 voor detector 08_4b                   */
-    #define t08_4b_2                    36 /* Dynamische hiaattijden moment 2 voor detector 08_4b                   */
-    #define ttdh_08_4b_1                37 /* Dynamische hiaattijden TDH 1 voor detector 08_4b                      */
-    #define ttdh_08_4b_2                38 /* Dynamische hiaattijden TDH 2 voor detector 08_4b                      */
-    #define tmax_08_4b                  39 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_4b            */
-    #define t09_1_1                     40 /* Dynamische hiaattijden moment 1 voor detector 09_1                    */
-    #define t09_1_2                     41 /* Dynamische hiaattijden moment 2 voor detector 09_1                    */
-    #define ttdh_09_1_1                 42 /* Dynamische hiaattijden TDH 1 voor detector 09_1                       */
-    #define ttdh_09_1_2                 43 /* Dynamische hiaattijden TDH 2 voor detector 09_1                       */
-    #define tmax_09_1                   44 /* Dynamische hiaattijden maximale tijd 2 voor detector 09_1             */
-    #define t09_2_1                     45 /* Dynamische hiaattijden moment 1 voor detector 09_2                    */
-    #define t09_2_2                     46 /* Dynamische hiaattijden moment 2 voor detector 09_2                    */
-    #define ttdh_09_2_1                 47 /* Dynamische hiaattijden TDH 1 voor detector 09_2                       */
-    #define ttdh_09_2_2                 48 /* Dynamische hiaattijden TDH 2 voor detector 09_2                       */
-    #define tmax_09_2                   49 /* Dynamische hiaattijden maximale tijd 2 voor detector 09_2             */
-    #define t09_3_1                     50 /* Dynamische hiaattijden moment 1 voor detector 09_3                    */
-    #define t09_3_2                     51 /* Dynamische hiaattijden moment 2 voor detector 09_3                    */
-    #define ttdh_09_3_1                 52 /* Dynamische hiaattijden TDH 1 voor detector 09_3                       */
-    #define ttdh_09_3_2                 53 /* Dynamische hiaattijden TDH 2 voor detector 09_3                       */
-    #define tmax_09_3                   54 /* Dynamische hiaattijden maximale tijd 2 voor detector 09_3             */
-    #define t11_1_1                     55 /* Dynamische hiaattijden moment 1 voor detector 11_1                    */
-    #define t11_1_2                     56 /* Dynamische hiaattijden moment 2 voor detector 11_1                    */
-    #define ttdh_11_1_1                 57 /* Dynamische hiaattijden TDH 1 voor detector 11_1                       */
-    #define ttdh_11_1_2                 58 /* Dynamische hiaattijden TDH 2 voor detector 11_1                       */
-    #define tmax_11_1                   59 /* Dynamische hiaattijden maximale tijd 2 voor detector 11_1             */
-    #define t11_2_1                     60 /* Dynamische hiaattijden moment 1 voor detector 11_2                    */
-    #define t11_2_2                     61 /* Dynamische hiaattijden moment 2 voor detector 11_2                    */
-    #define ttdh_11_2_1                 62 /* Dynamische hiaattijden TDH 1 voor detector 11_2                       */
-    #define ttdh_11_2_2                 63 /* Dynamische hiaattijden TDH 2 voor detector 11_2                       */
-    #define tmax_11_2                   64 /* Dynamische hiaattijden maximale tijd 2 voor detector 11_2             */
-    #define t11_3_1                     65 /* Dynamische hiaattijden moment 1 voor detector 11_3                    */
-    #define t11_3_2                     66 /* Dynamische hiaattijden moment 2 voor detector 11_3                    */
-    #define ttdh_11_3_1                 67 /* Dynamische hiaattijden TDH 1 voor detector 11_3                       */
-    #define ttdh_11_3_2                 68 /* Dynamische hiaattijden TDH 2 voor detector 11_3                       */
-    #define tmax_11_3                   69 /* Dynamische hiaattijden maximale tijd 2 voor detector 11_3             */
-    #define t11_4_1                     70 /* Dynamische hiaattijden moment 1 voor detector 11_4                    */
-    #define t11_4_2                     71 /* Dynamische hiaattijden moment 2 voor detector 11_4                    */
-    #define ttdh_11_4_1                 72 /* Dynamische hiaattijden TDH 1 voor detector 11_4                       */
-    #define ttdh_11_4_2                 73 /* Dynamische hiaattijden TDH 2 voor detector 11_4                       */
-    #define tmax_11_4                   74 /* Dynamische hiaattijden maximale tijd 2 voor detector 11_4             */
-    #define tcycl                       75 /* Bijhouden actuele cyclustijd                                          */
-    #define tav28_2                     76 /* Tijd na afvallen detector 28_2 tbv verwijderen aanvraag               */
-    #define tkm02                       77 /* Kop maximum voor detector 02                                          */
-    #define tkm03                       78 /* Kop maximum voor detector 03                                          */
-    #define tkm05                       79 /* Kop maximum voor detector 05                                          */
-    #define tkm08                       80 /* Kop maximum voor detector 08                                          */
-    #define tkm09                       81 /* Kop maximum voor detector 09                                          */
-    #define tkm11                       82 /* Kop maximum voor detector 11                                          */
-    #define tkm21                       83 /* Kop maximum voor detector 21                                          */
-    #define tkm22                       84 /* Kop maximum voor detector 22                                          */
-    #define tkm24                       85 /* Kop maximum voor detector 24                                          */
-    #define tkm26                       86 /* Kop maximum voor detector 26                                          */
-    #define tkm28                       87 /* Kop maximum voor detector 28                                          */
-    #define tkm61                       88 /* Kop maximum voor detector 61                                          */
-    #define tkm62                       89 /* Kop maximum voor detector 62                                          */
-    #define tkm67                       90 /* Kop maximum voor detector 67                                          */
-    #define tkm68                       91 /* Kop maximum voor detector 68                                          */
-    #define tkm81                       92 /* Kop maximum voor detector 81                                          */
-    #define tkm82                       93 /* Kop maximum voor detector 82                                          */
-    #define tkm84                       94 /* Kop maximum voor detector 84                                          */
-    #define thdvd02_1a                  95 /* Vervangend hiaat koplus fase 02 bij defect lange lus 02_1a            */
-    #define thdvd02_1b                  96 /* Vervangend hiaat koplus fase 02 bij defect lange lus 02_1b            */
-    #define tdstvert02                  97 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 02   */
-    #define thdvd03_1                   98 /* Vervangend hiaat koplus fase 03 bij defect lange lus 03_1             */
-    #define tdstvert03                  99 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 03   */
-    #define thdvd05_1                  100 /* Vervangend hiaat koplus fase 05 bij defect lange lus 05_1             */
-    #define tdstvert05                 101 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 05   */
-    #define thdvd08_1a                 102 /* Vervangend hiaat koplus fase 08 bij defect lange lus 08_1a            */
-    #define thdvd08_1b                 103 /* Vervangend hiaat koplus fase 08 bij defect lange lus 08_1b            */
-    #define tdstvert08                 104 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 08   */
-    #define thdvd09_1                  105 /* Vervangend hiaat koplus fase 09 bij defect lange lus 09_1             */
-    #define tdstvert09                 106 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 09   */
-    #define thdvd11_1                  107 /* Vervangend hiaat koplus fase 11 bij defect lange lus 11_1             */
-    #define tdstvert11                 108 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 11   */
-    #define tdstvert21                 109 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 21   */
-    #define thdvd22_1                  110 /* Vervangend hiaat koplus fase 22 bij defect lange lus 22_1             */
-    #define tdstvert22                 111 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 22   */
-    #define thdvd24_1                  112 /* Vervangend hiaat koplus fase 24 bij defect lange lus 24_1             */
-    #define tdstvert24                 113 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 24   */
-    #define tdstvert26                 114 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 26   */
-    #define thdvd28_1                  115 /* Vervangend hiaat koplus fase 28 bij defect lange lus 28_1             */
-    #define tdstvert28                 116 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 28   */
-    #define tdstvert31                 117 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 31   */
-    #define tdstvert32                 118 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 32   */
-    #define tdstvert33                 119 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 33   */
-    #define tdstvert34                 120 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 34   */
-    #define tdstvert38                 121 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 38   */
-    #define thdvd61_1                  122 /* Vervangend hiaat koplus fase 61 bij defect lange lus 61_1             */
-    #define tdstvert61                 123 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 61   */
-    #define thdvd62_1a                 124 /* Vervangend hiaat koplus fase 62 bij defect lange lus 62_1a            */
-    #define thdvd62_1b                 125 /* Vervangend hiaat koplus fase 62 bij defect lange lus 62_1b            */
-    #define tdstvert62                 126 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 62   */
-    #define thdvd67_1                  127 /* Vervangend hiaat koplus fase 67 bij defect lange lus 67_1             */
-    #define tdstvert67                 128 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 67   */
-    #define thdvd68_1a                 129 /* Vervangend hiaat koplus fase 68 bij defect lange lus 68_1a            */
-    #define thdvd68_1b                 130 /* Vervangend hiaat koplus fase 68 bij defect lange lus 68_1b            */
-    #define tdstvert68                 131 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 68   */
-    #define tdstvert81                 132 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 81   */
-    #define tdstvert82                 133 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 82   */
-    #define thdvd84_1                  134 /* Vervangend hiaat koplus fase 84 bij defect lange lus 84_1             */
-    #define tdstvert84                 135 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 84   */
-    #define tafvFile68af               136 /* Afval vertraging file File68af                                        */
-    #define tafv68_9a                  137 /* Afval vertraging file 68_9a                                           */
-    #define tbz68_9a                   138 /* Bezettijd file detector 68_9a                                         */
-    #define trij68_9a                  139 /* Rijtijd file detector 68_9a                                           */
-    #define tafv68_9b                  140 /* Afval vertraging file 68_9b                                           */
-    #define tbz68_9b                   141 /* Bezettijd file detector 68_9b                                         */
-    #define trij68_9b                  142 /* Rijtijd file detector 68_9b                                           */
-    #define tafkmingroen08fileFile68af 143 /* Minimale groentijd fase 08 vooraf aan afkappen bij start file ingreep */
-    #define tafkmingroen11fileFile68af 144 /* Minimale groentijd fase 11 vooraf aan afkappen bij start file ingreep */
-    #define tminrood08fileFile68af     145 /* Minimale roodtijd bij fase 08 voor file ingreep                       */
-    #define tminrood11fileFile68af     146 /* Minimale roodtijd bij fase 11 voor file ingreep                       */
-    #define tmaxgroen08fileFile68af    147 /* Maximale groentijd bij fase 08 voor file ingreep                      */
-    #define tmaxgroen11fileFile68af    148 /* Maximale groentijd bij fase 11 voor file ingreep                      */
-    #define tnlfg0262                  149 /* Naloop tijdens vastgroen van 02 naar 62                               */
-    #define tnlfgd0262                 150 /* Detectieafhankelijke naloop tijdens vastgroen van 02 naar 62          */
-    #define tnleg0262                  151 /* Naloop op einde groen van 02 naar 62                                  */
-    #define tnlegd0262                 152 /* Detectieafhankelijke naloop op einde groen van 02 naar 62             */
-    #define tvgnaloop0262              153 /* Timer naloop EG van 02 naar 62                                        */
-    #define tnlfg0868                  154 /* Naloop tijdens vastgroen van 08 naar 68                               */
-    #define tnlfgd0868                 155 /* Detectieafhankelijke naloop tijdens vastgroen van 08 naar 68          */
-    #define tnleg0868                  156 /* Naloop op einde groen van 08 naar 68                                  */
-    #define tnlegd0868                 157 /* Detectieafhankelijke naloop op einde groen van 08 naar 68             */
-    #define tvgnaloop0868              158 /* Timer naloop EG van 08 naar 68                                        */
-    #define tnlfg1168                  159 /* Naloop tijdens vastgroen van 11 naar 68                               */
-    #define tnlfgd1168                 160 /* Detectieafhankelijke naloop tijdens vastgroen van 11 naar 68          */
-    #define tnleg1168                  161 /* Naloop op einde groen van 11 naar 68                                  */
-    #define tnlegd1168                 162 /* Detectieafhankelijke naloop op einde groen van 11 naar 68             */
-    #define tvgnaloop1168              163 /* Timer naloop EG van 11 naar 68                                        */
-    #define tnlfg2221                  164 /* Naloop tijdens vastgroen van 22 naar 21                               */
-    #define tnleg2221                  165 /* Naloop op einde groen van 22 naar 21                                  */
-    #define tvgnaloop2221              166 /* Timer naloop EG van 22 naar 21                                        */
-    #define tnlsgd3132                 167 /* Detectieafhankelijke naloop op start groen van 31 naar 32             */
-    #define tnlsgd3231                 168 /* Detectieafhankelijke naloop op start groen van 32 naar 31             */
-    #define tnlsgd3334                 169 /* Detectieafhankelijke naloop op start groen van 33 naar 34             */
-    #define tnlsgd3433                 170 /* Detectieafhankelijke naloop op start groen van 34 naar 33             */
-    #define tnlfg8281                  171 /* Naloop tijdens vastgroen van 82 naar 81                               */
-    #define tnlfgd8281                 172 /* Detectieafhankelijke naloop tijdens vastgroen van 82 naar 81          */
-    #define tnleg8281                  173 /* Naloop op einde groen van 82 naar 81                                  */
-    #define tnlegd8281                 174 /* Detectieafhankelijke naloop op einde groen van 82 naar 81             */
-    #define tvgnaloop8281              175 /* Timer naloop EG van 82 naar 81                                        */
-    #define tkarmelding                176 /* Duur verklikking ontvangst melding KAR                                */
-    #define tkarog                     177 /* Ondergedrag KAR                                                       */
-    #define tbtovg02bus                178 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                 */
-    #define trt02bus                   179 /* Actuele rijtijd prio fase 02                                          */
-    #define tgb02bus                   180 /* Groenbewaking prioriteit fase 02                                      */
-    #define tblk02bus                  181 /* Blokkeertijd na prioriteitsingreep fase 02                            */
-    #define tbtovg03bus                182 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                 */
-    #define trt03bus                   183 /* Actuele rijtijd prio fase 03                                          */
-    #define tgb03bus                   184 /* Groenbewaking prioriteit fase 03                                      */
-    #define tblk03bus                  185 /* Blokkeertijd na prioriteitsingreep fase 03                            */
-    #define tbtovg05bus                186 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                 */
-    #define trt05bus                   187 /* Actuele rijtijd prio fase 05                                          */
-    #define tgb05bus                   188 /* Groenbewaking prioriteit fase 05                                      */
-    #define tblk05bus                  189 /* Blokkeertijd na prioriteitsingreep fase 05                            */
-    #define tbtovg08bus                190 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                 */
-    #define trt08bus                   191 /* Actuele rijtijd prio fase 08                                          */
-    #define tgb08bus                   192 /* Groenbewaking prioriteit fase 08                                      */
-    #define tblk08bus                  193 /* Blokkeertijd na prioriteitsingreep fase 08                            */
-    #define tbtovg09bus                194 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                 */
-    #define trt09bus                   195 /* Actuele rijtijd prio fase 09                                          */
-    #define tgb09bus                   196 /* Groenbewaking prioriteit fase 09                                      */
-    #define tblk09bus                  197 /* Blokkeertijd na prioriteitsingreep fase 09                            */
-    #define tbtovg11bus                198 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                 */
-    #define trt11bus                   199 /* Actuele rijtijd prio fase 11                                          */
-    #define tgb11bus                   200 /* Groenbewaking prioriteit fase 11                                      */
-    #define tblk11bus                  201 /* Blokkeertijd na prioriteitsingreep fase 11                            */
-    #define tgbhd02                    202 /* Groenbewaking HD fase 02                                              */
-    #define trthd02                    203 /* Actuele rijtijd HD fase 02                                            */
-    #define tbtovg02hd                 204 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                 */
-    #define thdin02kar                 205 /* Anti jutter tijd inmelden HD 02 KAR                                   */
-    #define thduit02kar                206 /* Anti jutter tijd uitmelden HD 02                                      */
-    #define tgbhd03                    207 /* Groenbewaking HD fase 03                                              */
-    #define trthd03                    208 /* Actuele rijtijd HD fase 03                                            */
-    #define tbtovg03hd                 209 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                 */
-    #define thdin03kar                 210 /* Anti jutter tijd inmelden HD 03 KAR                                   */
-    #define thduit03kar                211 /* Anti jutter tijd uitmelden HD 03                                      */
-    #define tgbhd05                    212 /* Groenbewaking HD fase 05                                              */
-    #define trthd05                    213 /* Actuele rijtijd HD fase 05                                            */
-    #define tbtovg05hd                 214 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                 */
-    #define thdin05kar                 215 /* Anti jutter tijd inmelden HD 05 KAR                                   */
-    #define thduit05kar                216 /* Anti jutter tijd uitmelden HD 05                                      */
-    #define tgbhd08                    217 /* Groenbewaking HD fase 08                                              */
-    #define trthd08                    218 /* Actuele rijtijd HD fase 08                                            */
-    #define tbtovg08hd                 219 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                 */
-    #define thdin08kar                 220 /* Anti jutter tijd inmelden HD 08 KAR                                   */
-    #define thduit08kar                221 /* Anti jutter tijd uitmelden HD 08                                      */
-    #define tgbhd09                    222 /* Groenbewaking HD fase 09                                              */
-    #define trthd09                    223 /* Actuele rijtijd HD fase 09                                            */
-    #define tbtovg09hd                 224 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                 */
-    #define thdin09kar                 225 /* Anti jutter tijd inmelden HD 09 KAR                                   */
-    #define thduit09kar                226 /* Anti jutter tijd uitmelden HD 09                                      */
-    #define tgbhd11                    227 /* Groenbewaking HD fase 11                                              */
-    #define trthd11                    228 /* Actuele rijtijd HD fase 11                                            */
-    #define tbtovg11hd                 229 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                 */
-    #define thdin11kar                 230 /* Anti jutter tijd inmelden HD 11 KAR                                   */
-    #define thduit11kar                231 /* Anti jutter tijd uitmelden HD 11                                      */
-    #define tgbhd61                    232 /* Groenbewaking HD fase 61                                              */
-    #define trthd61                    233 /* Actuele rijtijd HD fase 61                                            */
-    #define tbtovg61hd                 234 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                 */
-    #define thdin61kar                 235 /* Anti jutter tijd inmelden HD 61 KAR                                   */
-    #define thduit61kar                236 /* Anti jutter tijd uitmelden HD 61                                      */
-    #define tgbhd62                    237 /* Groenbewaking HD fase 62                                              */
-    #define trthd62                    238 /* Actuele rijtijd HD fase 62                                            */
-    #define tbtovg62hd                 239 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                 */
-    #define thdin62kar                 240 /* Anti jutter tijd inmelden HD 62 KAR                                   */
-    #define thduit62kar                241 /* Anti jutter tijd uitmelden HD 62                                      */
-    #define tgbhd67                    242 /* Groenbewaking HD fase 67                                              */
-    #define trthd67                    243 /* Actuele rijtijd HD fase 67                                            */
-    #define tbtovg67hd                 244 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                 */
-    #define thdin67kar                 245 /* Anti jutter tijd inmelden HD 67 KAR                                   */
-    #define thduit67kar                246 /* Anti jutter tijd uitmelden HD 67                                      */
-    #define tgbhd68                    247 /* Groenbewaking HD fase 68                                              */
-    #define trthd68                    248 /* Actuele rijtijd HD fase 68                                            */
-    #define tbtovg68hd                 249 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                 */
-    #define thdin68kar                 250 /* Anti jutter tijd inmelden HD 68 KAR                                   */
-    #define thduit68kar                251 /* Anti jutter tijd uitmelden HD 68                                      */
-    #define trgad24_3                  252 /* Richtinggevoelige aanvraag rijtijd fase 24 van 24_3 naar 24_2         */
-    #define trgavd24_3                 253 /* Timer reset richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2     */
-    #define trgrd24_3_d24_2            254 /* Richtinggevoelig verlengen rijtijd fase 24 van 24_3 naar 24_2         */
-    #define trgvd24_3_d24_2            255 /* Richtinggevoelig verlengen hiaattijd fase 24 van 24_3 naar 24_2       */
-    #define tfd02_1a                   256 /* File meting RoBuGrover fase 02 detector 02_1a                         */
-    #define tfd02_1b                   257 /* File meting RoBuGrover fase 02 detector 02_1b                         */
-    #define thd02_2a                   258 /* RoBuGrover hiaat meting fase 02 detector 02_2a                        */
-    #define thd02_2b                   259 /* RoBuGrover hiaat meting fase 02 detector 02_2b                        */
-    #define thd02_3a                   260 /* RoBuGrover hiaat meting fase 02 detector 02_3a                        */
-    #define thd02_3b                   261 /* RoBuGrover hiaat meting fase 02 detector 02_3b                        */
-    #define tfd03_1                    262 /* File meting RoBuGrover fase 03 detector 03_1                          */
-    #define thd03_2                    263 /* RoBuGrover hiaat meting fase 03 detector 03_2                         */
-    #define tfd05_1                    264 /* File meting RoBuGrover fase 05 detector 05_1                          */
-    #define thd05_2                    265 /* RoBuGrover hiaat meting fase 05 detector 05_2                         */
-    #define tfd08_1a                   266 /* File meting RoBuGrover fase 08 detector 08_1a                         */
-    #define tfd08_1b                   267 /* File meting RoBuGrover fase 08 detector 08_1b                         */
-    #define thd08_2a                   268 /* RoBuGrover hiaat meting fase 08 detector 08_2a                        */
-    #define thd08_2b                   269 /* RoBuGrover hiaat meting fase 08 detector 08_2b                        */
-    #define thd08_3a                   270 /* RoBuGrover hiaat meting fase 08 detector 08_3a                        */
-    #define thd08_3b                   271 /* RoBuGrover hiaat meting fase 08 detector 08_3b                        */
-    #define tfd09_1                    272 /* File meting RoBuGrover fase 09 detector 09_1                          */
-    #define thd09_2                    273 /* RoBuGrover hiaat meting fase 09 detector 09_2                         */
-    #define tfd11_1                    274 /* File meting RoBuGrover fase 11 detector 11_1                          */
-    #define thd11_2                    275 /* RoBuGrover hiaat meting fase 11 detector 11_2                         */
-    #define thd11_3                    276 /* RoBuGrover hiaat meting fase 11 detector 11_3                         */
-    #define tuitgestca02               277 /* Uitgestelde cyclische aanvraag fase 02                                */
-    #define tuitgestca03               278 /* Uitgestelde cyclische aanvraag fase 03                                */
-    #define tuitgestca05               279 /* Uitgestelde cyclische aanvraag fase 05                                */
-    #define tuitgestca08               280 /* Uitgestelde cyclische aanvraag fase 08                                */
-    #define tuitgestca09               281 /* Uitgestelde cyclische aanvraag fase 09                                */
-    #define tuitgestca11               282 /* Uitgestelde cyclische aanvraag fase 11                                */
-    #define tuitgestca21               283 /* Uitgestelde cyclische aanvraag fase 21                                */
-    #define tuitgestca22               284 /* Uitgestelde cyclische aanvraag fase 22                                */
-    #define tuitgestca24               285 /* Uitgestelde cyclische aanvraag fase 24                                */
-    #define tuitgestca26               286 /* Uitgestelde cyclische aanvraag fase 26                                */
-    #define tuitgestca28               287 /* Uitgestelde cyclische aanvraag fase 28                                */
-    #define tuitgestca31               288 /* Uitgestelde cyclische aanvraag fase 31                                */
-    #define tuitgestca32               289 /* Uitgestelde cyclische aanvraag fase 32                                */
-    #define tuitgestca33               290 /* Uitgestelde cyclische aanvraag fase 33                                */
-    #define tuitgestca34               291 /* Uitgestelde cyclische aanvraag fase 34                                */
-    #define tuitgestca38               292 /* Uitgestelde cyclische aanvraag fase 38                                */
-    #define tuitgestca61               293 /* Uitgestelde cyclische aanvraag fase 61                                */
-    #define tuitgestca62               294 /* Uitgestelde cyclische aanvraag fase 62                                */
-    #define tuitgestca67               295 /* Uitgestelde cyclische aanvraag fase 67                                */
-    #define tuitgestca68               296 /* Uitgestelde cyclische aanvraag fase 68                                */
-    #define tuitgestca81               297 /* Uitgestelde cyclische aanvraag fase 81                                */
-    #define tuitgestca82               298 /* Uitgestelde cyclische aanvraag fase 82                                */
-    #define tuitgestca84               299 /* Uitgestelde cyclische aanvraag fase 84                                */
-    #define twtv21                     300 /* T.b.v. aansturing wachttijdvoorspeller fase 21                        */
-    #define twtv22                     301 /* T.b.v. aansturing wachttijdvoorspeller fase 22                        */
-    #define twtv24                     302 /* T.b.v. aansturing wachttijdvoorspeller fase 24                        */
-    #define twtv26                     303 /* T.b.v. aansturing wachttijdvoorspeller fase 26                        */
-    #define twtv28                     304 /* T.b.v. aansturing wachttijdvoorspeller fase 28                        */
-    #define twtv81                     305 /* T.b.v. aansturing wachttijdvoorspeller fase 81                        */
-    #define twtv82                     306 /* T.b.v. aansturing wachttijdvoorspeller fase 82                        */
-    #define twtv84                     307 /* T.b.v. aansturing wachttijdvoorspeller fase 84                        */
-    #define tvs2205                    308 /* Voorstarttijd fase 22 op fase 05                                      */
-    #define tfo0522                    309 /* Fictieve ontruimingstijd van 22 naar fase 05                          */
-    #define tvs3205                    310 /* Voorstarttijd fase 32 op fase 05                                      */
-    #define tfo0532                    311 /* Fictieve ontruimingstijd van 32 naar fase 05                          */
-    #define tlr2611                    312 /* Late release tijd fase 26 naar fase 11                                */
-    #define tfo2611                    313 /* Fictieve ontruimingstijd van 26 naar fase 11                          */
-    #define tinl3132                   314 /* Inlooptijd fase 31                                                    */
-    #define tinl3231                   315 /* Inlooptijd fase 32                                                    */
-    #define tinl3334                   316 /* Inlooptijd fase 33                                                    */
-    #define tinl3433                   317 /* Inlooptijd fase 34                                                    */
-    #define txnl0262                   318 /* Tegenhouden fase 02 tbv naloop naar fase 62                           */
-    #define txnl0868                   319 /* Tegenhouden fase 08 tbv naloop naar fase 68                           */
-    #define txnl1168                   320 /* Tegenhouden fase 11 tbv naloop naar fase 68                           */
-    #define txnl2221                   321 /* Tegenhouden fase 22 tbv naloop naar fase 21                           */
-    #define txnl3132                   322 /* Tegenhouden fase 31 tbv naloop naar fase 32                           */
-    #define txnl3231                   323 /* Tegenhouden fase 32 tbv naloop naar fase 31                           */
-    #define txnl3334                   324 /* Tegenhouden fase 33 tbv naloop naar fase 34                           */
-    #define txnl3433                   325 /* Tegenhouden fase 34 tbv naloop naar fase 33                           */
-    #define txnl8281                   326 /* Tegenhouden fase 82 tbv naloop naar fase 81                           */
-    #define TMMAX1                     327
+    #define t08_1a_1                     0 /* Dynamische hiaattijden moment 1 voor detector 08_1a                      */
+    #define t08_1a_2                     1 /* Dynamische hiaattijden moment 2 voor detector 08_1a                      */
+    #define ttdh_08_1a_1                 2 /* Dynamische hiaattijden TDH 1 voor detector 08_1a                         */
+    #define ttdh_08_1a_2                 3 /* Dynamische hiaattijden TDH 2 voor detector 08_1a                         */
+    #define tmax_08_1a                   4 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_1a               */
+    #define t08_1b_1                     5 /* Dynamische hiaattijden moment 1 voor detector 08_1b                      */
+    #define t08_1b_2                     6 /* Dynamische hiaattijden moment 2 voor detector 08_1b                      */
+    #define ttdh_08_1b_1                 7 /* Dynamische hiaattijden TDH 1 voor detector 08_1b                         */
+    #define ttdh_08_1b_2                 8 /* Dynamische hiaattijden TDH 2 voor detector 08_1b                         */
+    #define tmax_08_1b                   9 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_1b               */
+    #define t08_2a_1                    10 /* Dynamische hiaattijden moment 1 voor detector 08_2a                      */
+    #define t08_2a_2                    11 /* Dynamische hiaattijden moment 2 voor detector 08_2a                      */
+    #define ttdh_08_2a_1                12 /* Dynamische hiaattijden TDH 1 voor detector 08_2a                         */
+    #define ttdh_08_2a_2                13 /* Dynamische hiaattijden TDH 2 voor detector 08_2a                         */
+    #define tmax_08_2a                  14 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_2a               */
+    #define t08_2b_1                    15 /* Dynamische hiaattijden moment 1 voor detector 08_2b                      */
+    #define t08_2b_2                    16 /* Dynamische hiaattijden moment 2 voor detector 08_2b                      */
+    #define ttdh_08_2b_1                17 /* Dynamische hiaattijden TDH 1 voor detector 08_2b                         */
+    #define ttdh_08_2b_2                18 /* Dynamische hiaattijden TDH 2 voor detector 08_2b                         */
+    #define tmax_08_2b                  19 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_2b               */
+    #define t08_3a_1                    20 /* Dynamische hiaattijden moment 1 voor detector 08_3a                      */
+    #define t08_3a_2                    21 /* Dynamische hiaattijden moment 2 voor detector 08_3a                      */
+    #define ttdh_08_3a_1                22 /* Dynamische hiaattijden TDH 1 voor detector 08_3a                         */
+    #define ttdh_08_3a_2                23 /* Dynamische hiaattijden TDH 2 voor detector 08_3a                         */
+    #define tmax_08_3a                  24 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_3a               */
+    #define t08_3b_1                    25 /* Dynamische hiaattijden moment 1 voor detector 08_3b                      */
+    #define t08_3b_2                    26 /* Dynamische hiaattijden moment 2 voor detector 08_3b                      */
+    #define ttdh_08_3b_1                27 /* Dynamische hiaattijden TDH 1 voor detector 08_3b                         */
+    #define ttdh_08_3b_2                28 /* Dynamische hiaattijden TDH 2 voor detector 08_3b                         */
+    #define tmax_08_3b                  29 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_3b               */
+    #define t08_4a_1                    30 /* Dynamische hiaattijden moment 1 voor detector 08_4a                      */
+    #define t08_4a_2                    31 /* Dynamische hiaattijden moment 2 voor detector 08_4a                      */
+    #define ttdh_08_4a_1                32 /* Dynamische hiaattijden TDH 1 voor detector 08_4a                         */
+    #define ttdh_08_4a_2                33 /* Dynamische hiaattijden TDH 2 voor detector 08_4a                         */
+    #define tmax_08_4a                  34 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_4a               */
+    #define t08_4b_1                    35 /* Dynamische hiaattijden moment 1 voor detector 08_4b                      */
+    #define t08_4b_2                    36 /* Dynamische hiaattijden moment 2 voor detector 08_4b                      */
+    #define ttdh_08_4b_1                37 /* Dynamische hiaattijden TDH 1 voor detector 08_4b                         */
+    #define ttdh_08_4b_2                38 /* Dynamische hiaattijden TDH 2 voor detector 08_4b                         */
+    #define tmax_08_4b                  39 /* Dynamische hiaattijden maximale tijd 2 voor detector 08_4b               */
+    #define t09_1_1                     40 /* Dynamische hiaattijden moment 1 voor detector 09_1                       */
+    #define t09_1_2                     41 /* Dynamische hiaattijden moment 2 voor detector 09_1                       */
+    #define ttdh_09_1_1                 42 /* Dynamische hiaattijden TDH 1 voor detector 09_1                          */
+    #define ttdh_09_1_2                 43 /* Dynamische hiaattijden TDH 2 voor detector 09_1                          */
+    #define tmax_09_1                   44 /* Dynamische hiaattijden maximale tijd 2 voor detector 09_1                */
+    #define t09_2_1                     45 /* Dynamische hiaattijden moment 1 voor detector 09_2                       */
+    #define t09_2_2                     46 /* Dynamische hiaattijden moment 2 voor detector 09_2                       */
+    #define ttdh_09_2_1                 47 /* Dynamische hiaattijden TDH 1 voor detector 09_2                          */
+    #define ttdh_09_2_2                 48 /* Dynamische hiaattijden TDH 2 voor detector 09_2                          */
+    #define tmax_09_2                   49 /* Dynamische hiaattijden maximale tijd 2 voor detector 09_2                */
+    #define t09_3_1                     50 /* Dynamische hiaattijden moment 1 voor detector 09_3                       */
+    #define t09_3_2                     51 /* Dynamische hiaattijden moment 2 voor detector 09_3                       */
+    #define ttdh_09_3_1                 52 /* Dynamische hiaattijden TDH 1 voor detector 09_3                          */
+    #define ttdh_09_3_2                 53 /* Dynamische hiaattijden TDH 2 voor detector 09_3                          */
+    #define tmax_09_3                   54 /* Dynamische hiaattijden maximale tijd 2 voor detector 09_3                */
+    #define t11_1_1                     55 /* Dynamische hiaattijden moment 1 voor detector 11_1                       */
+    #define t11_1_2                     56 /* Dynamische hiaattijden moment 2 voor detector 11_1                       */
+    #define ttdh_11_1_1                 57 /* Dynamische hiaattijden TDH 1 voor detector 11_1                          */
+    #define ttdh_11_1_2                 58 /* Dynamische hiaattijden TDH 2 voor detector 11_1                          */
+    #define tmax_11_1                   59 /* Dynamische hiaattijden maximale tijd 2 voor detector 11_1                */
+    #define t11_2_1                     60 /* Dynamische hiaattijden moment 1 voor detector 11_2                       */
+    #define t11_2_2                     61 /* Dynamische hiaattijden moment 2 voor detector 11_2                       */
+    #define ttdh_11_2_1                 62 /* Dynamische hiaattijden TDH 1 voor detector 11_2                          */
+    #define ttdh_11_2_2                 63 /* Dynamische hiaattijden TDH 2 voor detector 11_2                          */
+    #define tmax_11_2                   64 /* Dynamische hiaattijden maximale tijd 2 voor detector 11_2                */
+    #define t11_3_1                     65 /* Dynamische hiaattijden moment 1 voor detector 11_3                       */
+    #define t11_3_2                     66 /* Dynamische hiaattijden moment 2 voor detector 11_3                       */
+    #define ttdh_11_3_1                 67 /* Dynamische hiaattijden TDH 1 voor detector 11_3                          */
+    #define ttdh_11_3_2                 68 /* Dynamische hiaattijden TDH 2 voor detector 11_3                          */
+    #define tmax_11_3                   69 /* Dynamische hiaattijden maximale tijd 2 voor detector 11_3                */
+    #define t11_4_1                     70 /* Dynamische hiaattijden moment 1 voor detector 11_4                       */
+    #define t11_4_2                     71 /* Dynamische hiaattijden moment 2 voor detector 11_4                       */
+    #define ttdh_11_4_1                 72 /* Dynamische hiaattijden TDH 1 voor detector 11_4                          */
+    #define ttdh_11_4_2                 73 /* Dynamische hiaattijden TDH 2 voor detector 11_4                          */
+    #define tmax_11_4                   74 /* Dynamische hiaattijden maximale tijd 2 voor detector 11_4                */
+    #define tcycl                       75 /* Bijhouden actuele cyclustijd                                             */
+    #define tav28_2                     76 /* Tijd na afvallen detector 28_2 tbv verwijderen aanvraag                  */
+    #define tkm02                       77 /* Kop maximum voor detector 02                                             */
+    #define tkm03                       78 /* Kop maximum voor detector 03                                             */
+    #define tkm05                       79 /* Kop maximum voor detector 05                                             */
+    #define tkm08                       80 /* Kop maximum voor detector 08                                             */
+    #define tkm09                       81 /* Kop maximum voor detector 09                                             */
+    #define tkm11                       82 /* Kop maximum voor detector 11                                             */
+    #define tkm21                       83 /* Kop maximum voor detector 21                                             */
+    #define tkm22                       84 /* Kop maximum voor detector 22                                             */
+    #define tkm24                       85 /* Kop maximum voor detector 24                                             */
+    #define tkm26                       86 /* Kop maximum voor detector 26                                             */
+    #define tkm28                       87 /* Kop maximum voor detector 28                                             */
+    #define tkm61                       88 /* Kop maximum voor detector 61                                             */
+    #define tkm62                       89 /* Kop maximum voor detector 62                                             */
+    #define tkm67                       90 /* Kop maximum voor detector 67                                             */
+    #define tkm68                       91 /* Kop maximum voor detector 68                                             */
+    #define tkm81                       92 /* Kop maximum voor detector 81                                             */
+    #define tkm82                       93 /* Kop maximum voor detector 82                                             */
+    #define tkm84                       94 /* Kop maximum voor detector 84                                             */
+    #define thdvd02_1a                  95 /* Vervangend hiaat koplus fase 02 bij defect lange lus 02_1a               */
+    #define thdvd02_1b                  96 /* Vervangend hiaat koplus fase 02 bij defect lange lus 02_1b               */
+    #define tdstvert02                  97 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 02      */
+    #define thdvd03_1                   98 /* Vervangend hiaat koplus fase 03 bij defect lange lus 03_1                */
+    #define tdstvert03                  99 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 03      */
+    #define thdvd05_1                  100 /* Vervangend hiaat koplus fase 05 bij defect lange lus 05_1                */
+    #define tdstvert05                 101 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 05      */
+    #define thdvd08_1a                 102 /* Vervangend hiaat koplus fase 08 bij defect lange lus 08_1a               */
+    #define thdvd08_1b                 103 /* Vervangend hiaat koplus fase 08 bij defect lange lus 08_1b               */
+    #define tdstvert08                 104 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 08      */
+    #define thdvd09_1                  105 /* Vervangend hiaat koplus fase 09 bij defect lange lus 09_1                */
+    #define tdstvert09                 106 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 09      */
+    #define thdvd11_1                  107 /* Vervangend hiaat koplus fase 11 bij defect lange lus 11_1                */
+    #define tdstvert11                 108 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 11      */
+    #define tdstvert21                 109 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 21      */
+    #define thdvd22_1                  110 /* Vervangend hiaat koplus fase 22 bij defect lange lus 22_1                */
+    #define tdstvert22                 111 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 22      */
+    #define thdvd24_1                  112 /* Vervangend hiaat koplus fase 24 bij defect lange lus 24_1                */
+    #define tdstvert24                 113 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 24      */
+    #define tdstvert26                 114 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 26      */
+    #define thdvd28_1                  115 /* Vervangend hiaat koplus fase 28 bij defect lange lus 28_1                */
+    #define tdstvert28                 116 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 28      */
+    #define tdstvert31                 117 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 31      */
+    #define tdstvert32                 118 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 32      */
+    #define tdstvert33                 119 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 33      */
+    #define tdstvert34                 120 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 34      */
+    #define tdstvert38                 121 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 38      */
+    #define thdvd61_1                  122 /* Vervangend hiaat koplus fase 61 bij defect lange lus 61_1                */
+    #define tdstvert61                 123 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 61      */
+    #define thdvd62_1a                 124 /* Vervangend hiaat koplus fase 62 bij defect lange lus 62_1a               */
+    #define thdvd62_1b                 125 /* Vervangend hiaat koplus fase 62 bij defect lange lus 62_1b               */
+    #define tdstvert62                 126 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 62      */
+    #define thdvd67_1                  127 /* Vervangend hiaat koplus fase 67 bij defect lange lus 67_1                */
+    #define tdstvert67                 128 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 67      */
+    #define thdvd68_1a                 129 /* Vervangend hiaat koplus fase 68 bij defect lange lus 68_1a               */
+    #define thdvd68_1b                 130 /* Vervangend hiaat koplus fase 68 bij defect lange lus 68_1b               */
+    #define tdstvert68                 131 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 68      */
+    #define tdstvert81                 132 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 81      */
+    #define tdstvert82                 133 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 82      */
+    #define thdvd84_1                  134 /* Vervangend hiaat koplus fase 84 bij defect lange lus 84_1                */
+    #define tdstvert84                 135 /* Vertraging vaste aanvraag bij storing op alle detectie voor fase 84      */
+    #define tafvFile68af               136 /* Afval vertraging file File68af                                           */
+    #define tafv68_9a                  137 /* Afval vertraging file 68_9a                                              */
+    #define tbz68_9a                   138 /* Bezettijd file detector 68_9a                                            */
+    #define trij68_9a                  139 /* Rijtijd file detector 68_9a                                              */
+    #define tafv68_9b                  140 /* Afval vertraging file 68_9b                                              */
+    #define tbz68_9b                   141 /* Bezettijd file detector 68_9b                                            */
+    #define trij68_9b                  142 /* Rijtijd file detector 68_9b                                              */
+    #define tafkmingroen08fileFile68af 143 /* Minimale groentijd fase 08 vooraf aan afkappen bij start file ingreep    */
+    #define tafkmingroen11fileFile68af 144 /* Minimale groentijd fase 11 vooraf aan afkappen bij start file ingreep    */
+    #define tminrood08fileFile68af     145 /* Minimale roodtijd bij fase 08 voor file ingreep                          */
+    #define tminrood11fileFile68af     146 /* Minimale roodtijd bij fase 11 voor file ingreep                          */
+    #define tmaxgroen08fileFile68af    147 /* Maximale groentijd bij fase 08 voor file ingreep                         */
+    #define tmaxgroen11fileFile68af    148 /* Maximale groentijd bij fase 11 voor file ingreep                         */
+    #define tnlfg0262                  149 /* Naloop tijdens vastgroen van 02 naar 62                                  */
+    #define tnlfgd0262                 150 /* Detectieafhankelijke naloop tijdens vastgroen van 02 naar 62             */
+    #define tnleg0262                  151 /* Naloop op einde groen van 02 naar 62                                     */
+    #define tnlegd0262                 152 /* Detectieafhankelijke naloop op einde groen van 02 naar 62                */
+    #define tvgnaloop0262              153 /* Timer naloop EG van 02 naar 62                                           */
+    #define tnlfg0868                  154 /* Naloop tijdens vastgroen van 08 naar 68                                  */
+    #define tnlfgd0868                 155 /* Detectieafhankelijke naloop tijdens vastgroen van 08 naar 68             */
+    #define tnleg0868                  156 /* Naloop op einde groen van 08 naar 68                                     */
+    #define tnlegd0868                 157 /* Detectieafhankelijke naloop op einde groen van 08 naar 68                */
+    #define tvgnaloop0868              158 /* Timer naloop EG van 08 naar 68                                           */
+    #define tnlfg1168                  159 /* Naloop tijdens vastgroen van 11 naar 68                                  */
+    #define tnlfgd1168                 160 /* Detectieafhankelijke naloop tijdens vastgroen van 11 naar 68             */
+    #define tnleg1168                  161 /* Naloop op einde groen van 11 naar 68                                     */
+    #define tnlegd1168                 162 /* Detectieafhankelijke naloop op einde groen van 11 naar 68                */
+    #define tvgnaloop1168              163 /* Timer naloop EG van 11 naar 68                                           */
+    #define tnlfg2221                  164 /* Naloop tijdens vastgroen van 22 naar 21                                  */
+    #define tnlfgd2221                 165 /* Detectieafhankelijke naloop tijdens vastgroen van 22 naar 21             */
+    #define tnlcv2221                  166 /* Naloop tijdens cyclisch verlenggroen van 22 naar 21                      */
+    #define tnlcvd2221                 167 /* Detectieafhankelijke naloop tijdens cyclisch verlenggroen van 22 naar 21 */
+    #define tvgnaloop2221              168 /* Timer naloop EG van 22 naar 21                                           */
+    #define tnlsgd3132                 169 /* Detectieafhankelijke naloop op start groen van 31 naar 32                */
+    #define tnlsgd3231                 170 /* Detectieafhankelijke naloop op start groen van 32 naar 31                */
+    #define tnlsgd3334                 171 /* Detectieafhankelijke naloop op start groen van 33 naar 34                */
+    #define tnlsgd3433                 172 /* Detectieafhankelijke naloop op start groen van 34 naar 33                */
+    #define tnlfg8281                  173 /* Naloop tijdens vastgroen van 82 naar 81                                  */
+    #define tnlfgd8281                 174 /* Detectieafhankelijke naloop tijdens vastgroen van 82 naar 81             */
+    #define tnleg8281                  175 /* Naloop op einde groen van 82 naar 81                                     */
+    #define tnlegd8281                 176 /* Detectieafhankelijke naloop op einde groen van 82 naar 81                */
+    #define tvgnaloop8281              177 /* Timer naloop EG van 82 naar 81                                           */
+    #define tkarmelding                178 /* Duur verklikking ontvangst melding KAR                                   */
+    #define tkarog                     179 /* Ondergedrag KAR                                                          */
+    #define tbtovg02bus                180 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                    */
+    #define trt02bus                   181 /* Actuele rijtijd prio fase 02                                             */
+    #define tgb02bus                   182 /* Groenbewaking prioriteit fase 02                                         */
+    #define tblk02bus                  183 /* Blokkeertijd na prioriteitsingreep fase 02                               */
+    #define tbtovg03bus                184 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                    */
+    #define trt03bus                   185 /* Actuele rijtijd prio fase 03                                             */
+    #define tgb03bus                   186 /* Groenbewaking prioriteit fase 03                                         */
+    #define tblk03bus                  187 /* Blokkeertijd na prioriteitsingreep fase 03                               */
+    #define tbtovg05bus                188 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                    */
+    #define trt05bus                   189 /* Actuele rijtijd prio fase 05                                             */
+    #define tgb05bus                   190 /* Groenbewaking prioriteit fase 05                                         */
+    #define tblk05bus                  191 /* Blokkeertijd na prioriteitsingreep fase 05                               */
+    #define tbtovg08bus                192 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                    */
+    #define trt08bus                   193 /* Actuele rijtijd prio fase 08                                             */
+    #define tgb08bus                   194 /* Groenbewaking prioriteit fase 08                                         */
+    #define tblk08bus                  195 /* Blokkeertijd na prioriteitsingreep fase 08                               */
+    #define tbtovg09bus                196 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                    */
+    #define trt09bus                   197 /* Actuele rijtijd prio fase 09                                             */
+    #define tgb09bus                   198 /* Groenbewaking prioriteit fase 09                                         */
+    #define tblk09bus                  199 /* Blokkeertijd na prioriteitsingreep fase 09                               */
+    #define tbtovg11bus                200 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                    */
+    #define trt11bus                   201 /* Actuele rijtijd prio fase 11                                             */
+    #define tgb11bus                   202 /* Groenbewaking prioriteit fase 11                                         */
+    #define tblk11bus                  203 /* Blokkeertijd na prioriteitsingreep fase 11                               */
+    #define tgbhd02                    204 /* Groenbewaking HD fase 02                                                 */
+    #define trthd02                    205 /* Actuele rijtijd HD fase 02                                               */
+    #define tbtovg02hd                 206 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                    */
+    #define thdin02kar                 207 /* Anti jutter tijd inmelden HD 02 KAR                                      */
+    #define thduit02kar                208 /* Anti jutter tijd uitmelden HD 02                                         */
+    #define tgbhd03                    209 /* Groenbewaking HD fase 03                                                 */
+    #define trthd03                    210 /* Actuele rijtijd HD fase 03                                               */
+    #define tbtovg03hd                 211 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                    */
+    #define thdin03kar                 212 /* Anti jutter tijd inmelden HD 03 KAR                                      */
+    #define thduit03kar                213 /* Anti jutter tijd uitmelden HD 03                                         */
+    #define tgbhd05                    214 /* Groenbewaking HD fase 05                                                 */
+    #define trthd05                    215 /* Actuele rijtijd HD fase 05                                               */
+    #define tbtovg05hd                 216 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                    */
+    #define thdin05kar                 217 /* Anti jutter tijd inmelden HD 05 KAR                                      */
+    #define thduit05kar                218 /* Anti jutter tijd uitmelden HD 05                                         */
+    #define tgbhd08                    219 /* Groenbewaking HD fase 08                                                 */
+    #define trthd08                    220 /* Actuele rijtijd HD fase 08                                               */
+    #define tbtovg08hd                 221 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                    */
+    #define thdin08kar                 222 /* Anti jutter tijd inmelden HD 08 KAR                                      */
+    #define thduit08kar                223 /* Anti jutter tijd uitmelden HD 08                                         */
+    #define tgbhd09                    224 /* Groenbewaking HD fase 09                                                 */
+    #define trthd09                    225 /* Actuele rijtijd HD fase 09                                               */
+    #define tbtovg09hd                 226 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                    */
+    #define thdin09kar                 227 /* Anti jutter tijd inmelden HD 09 KAR                                      */
+    #define thduit09kar                228 /* Anti jutter tijd uitmelden HD 09                                         */
+    #define tgbhd11                    229 /* Groenbewaking HD fase 11                                                 */
+    #define trthd11                    230 /* Actuele rijtijd HD fase 11                                               */
+    #define tbtovg11hd                 231 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                    */
+    #define thdin11kar                 232 /* Anti jutter tijd inmelden HD 11 KAR                                      */
+    #define thduit11kar                233 /* Anti jutter tijd uitmelden HD 11                                         */
+    #define tgbhd61                    234 /* Groenbewaking HD fase 61                                                 */
+    #define trthd61                    235 /* Actuele rijtijd HD fase 61                                               */
+    #define tbtovg61hd                 236 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                    */
+    #define thdin61kar                 237 /* Anti jutter tijd inmelden HD 61 KAR                                      */
+    #define thduit61kar                238 /* Anti jutter tijd uitmelden HD 61                                         */
+    #define tgbhd62                    239 /* Groenbewaking HD fase 62                                                 */
+    #define trthd62                    240 /* Actuele rijtijd HD fase 62                                               */
+    #define tbtovg62hd                 241 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                    */
+    #define thdin62kar                 242 /* Anti jutter tijd inmelden HD 62 KAR                                      */
+    #define thduit62kar                243 /* Anti jutter tijd uitmelden HD 62                                         */
+    #define tgbhd67                    244 /* Groenbewaking HD fase 67                                                 */
+    #define trthd67                    245 /* Actuele rijtijd HD fase 67                                               */
+    #define tbtovg67hd                 246 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                    */
+    #define thdin67kar                 247 /* Anti jutter tijd inmelden HD 67 KAR                                      */
+    #define thduit67kar                248 /* Anti jutter tijd uitmelden HD 67                                         */
+    #define tgbhd68                    249 /* Groenbewaking HD fase 68                                                 */
+    #define trthd68                    250 /* Actuele rijtijd HD fase 68                                               */
+    #define tbtovg68hd                 251 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                    */
+    #define thdin68kar                 252 /* Anti jutter tijd inmelden HD 68 KAR                                      */
+    #define thduit68kar                253 /* Anti jutter tijd uitmelden HD 68                                         */
+    #define trgad24_3                  254 /* Richtinggevoelige aanvraag rijtijd fase 24 van 24_3 naar 24_2            */
+    #define trgavd24_3                 255 /* Timer reset richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2        */
+    #define trgrd24_3_d24_2            256 /* Richtinggevoelig verlengen rijtijd fase 24 van 24_3 naar 24_2            */
+    #define trgvd24_3_d24_2            257 /* Richtinggevoelig verlengen hiaattijd fase 24 van 24_3 naar 24_2          */
+    #define tfd02_1a                   258 /* File meting RoBuGrover fase 02 detector 02_1a                            */
+    #define tfd02_1b                   259 /* File meting RoBuGrover fase 02 detector 02_1b                            */
+    #define thd02_2a                   260 /* RoBuGrover hiaat meting fase 02 detector 02_2a                           */
+    #define thd02_2b                   261 /* RoBuGrover hiaat meting fase 02 detector 02_2b                           */
+    #define thd02_3a                   262 /* RoBuGrover hiaat meting fase 02 detector 02_3a                           */
+    #define thd02_3b                   263 /* RoBuGrover hiaat meting fase 02 detector 02_3b                           */
+    #define tfd03_1                    264 /* File meting RoBuGrover fase 03 detector 03_1                             */
+    #define thd03_2                    265 /* RoBuGrover hiaat meting fase 03 detector 03_2                            */
+    #define tfd05_1                    266 /* File meting RoBuGrover fase 05 detector 05_1                             */
+    #define thd05_2                    267 /* RoBuGrover hiaat meting fase 05 detector 05_2                            */
+    #define tfd08_1a                   268 /* File meting RoBuGrover fase 08 detector 08_1a                            */
+    #define tfd08_1b                   269 /* File meting RoBuGrover fase 08 detector 08_1b                            */
+    #define thd08_2a                   270 /* RoBuGrover hiaat meting fase 08 detector 08_2a                           */
+    #define thd08_2b                   271 /* RoBuGrover hiaat meting fase 08 detector 08_2b                           */
+    #define thd08_3a                   272 /* RoBuGrover hiaat meting fase 08 detector 08_3a                           */
+    #define thd08_3b                   273 /* RoBuGrover hiaat meting fase 08 detector 08_3b                           */
+    #define tfd09_1                    274 /* File meting RoBuGrover fase 09 detector 09_1                             */
+    #define thd09_2                    275 /* RoBuGrover hiaat meting fase 09 detector 09_2                            */
+    #define tfd11_1                    276 /* File meting RoBuGrover fase 11 detector 11_1                             */
+    #define thd11_2                    277 /* RoBuGrover hiaat meting fase 11 detector 11_2                            */
+    #define thd11_3                    278 /* RoBuGrover hiaat meting fase 11 detector 11_3                            */
+    #define tuitgestca02               279 /* Uitgestelde cyclische aanvraag fase 02                                   */
+    #define tuitgestca03               280 /* Uitgestelde cyclische aanvraag fase 03                                   */
+    #define tuitgestca05               281 /* Uitgestelde cyclische aanvraag fase 05                                   */
+    #define tuitgestca08               282 /* Uitgestelde cyclische aanvraag fase 08                                   */
+    #define tuitgestca09               283 /* Uitgestelde cyclische aanvraag fase 09                                   */
+    #define tuitgestca11               284 /* Uitgestelde cyclische aanvraag fase 11                                   */
+    #define tuitgestca21               285 /* Uitgestelde cyclische aanvraag fase 21                                   */
+    #define tuitgestca22               286 /* Uitgestelde cyclische aanvraag fase 22                                   */
+    #define tuitgestca24               287 /* Uitgestelde cyclische aanvraag fase 24                                   */
+    #define tuitgestca26               288 /* Uitgestelde cyclische aanvraag fase 26                                   */
+    #define tuitgestca28               289 /* Uitgestelde cyclische aanvraag fase 28                                   */
+    #define tuitgestca31               290 /* Uitgestelde cyclische aanvraag fase 31                                   */
+    #define tuitgestca32               291 /* Uitgestelde cyclische aanvraag fase 32                                   */
+    #define tuitgestca33               292 /* Uitgestelde cyclische aanvraag fase 33                                   */
+    #define tuitgestca34               293 /* Uitgestelde cyclische aanvraag fase 34                                   */
+    #define tuitgestca38               294 /* Uitgestelde cyclische aanvraag fase 38                                   */
+    #define tuitgestca61               295 /* Uitgestelde cyclische aanvraag fase 61                                   */
+    #define tuitgestca62               296 /* Uitgestelde cyclische aanvraag fase 62                                   */
+    #define tuitgestca67               297 /* Uitgestelde cyclische aanvraag fase 67                                   */
+    #define tuitgestca68               298 /* Uitgestelde cyclische aanvraag fase 68                                   */
+    #define tuitgestca81               299 /* Uitgestelde cyclische aanvraag fase 81                                   */
+    #define tuitgestca82               300 /* Uitgestelde cyclische aanvraag fase 82                                   */
+    #define tuitgestca84               301 /* Uitgestelde cyclische aanvraag fase 84                                   */
+    #define twtv21                     302 /* T.b.v. aansturing wachttijdvoorspeller fase 21                           */
+    #define twtv22                     303 /* T.b.v. aansturing wachttijdvoorspeller fase 22                           */
+    #define twtv24                     304 /* T.b.v. aansturing wachttijdvoorspeller fase 24                           */
+    #define twtv26                     305 /* T.b.v. aansturing wachttijdvoorspeller fase 26                           */
+    #define twtv28                     306 /* T.b.v. aansturing wachttijdvoorspeller fase 28                           */
+    #define twtv81                     307 /* T.b.v. aansturing wachttijdvoorspeller fase 81                           */
+    #define twtv82                     308 /* T.b.v. aansturing wachttijdvoorspeller fase 82                           */
+    #define twtv84                     309 /* T.b.v. aansturing wachttijdvoorspeller fase 84                           */
+    #define tvs2205                    310 /* Voorstarttijd fase 22 op fase 05                                         */
+    #define tfo0522                    311 /* Fictieve ontruimingstijd van 22 naar fase 05                             */
+    #define tvs3205                    312 /* Voorstarttijd fase 32 op fase 05                                         */
+    #define tfo0532                    313 /* Fictieve ontruimingstijd van 32 naar fase 05                             */
+    #define tlr2611                    314 /* Late release tijd fase 26 naar fase 11                                   */
+    #define tfo2611                    315 /* Fictieve ontruimingstijd van 26 naar fase 11                             */
+    #define tinl3132                   316 /* Inlooptijd fase 31                                                       */
+    #define tinl3231                   317 /* Inlooptijd fase 32                                                       */
+    #define tinl3334                   318 /* Inlooptijd fase 33                                                       */
+    #define tinl3433                   319 /* Inlooptijd fase 34                                                       */
+    #define txnl0262                   320 /* Tegenhouden fase 02 tbv naloop naar fase 62                              */
+    #define txnl0868                   321 /* Tegenhouden fase 08 tbv naloop naar fase 68                              */
+    #define txnl1168                   322 /* Tegenhouden fase 11 tbv naloop naar fase 68                              */
+    #define txnl2221                   323 /* Tegenhouden fase 22 tbv naloop naar fase 21                              */
+    #define txnl3132                   324 /* Tegenhouden fase 31 tbv naloop naar fase 32                              */
+    #define txnl3231                   325 /* Tegenhouden fase 32 tbv naloop naar fase 31                              */
+    #define txnl3334                   326 /* Tegenhouden fase 33 tbv naloop naar fase 34                              */
+    #define txnl3433                   327 /* Tegenhouden fase 34 tbv naloop naar fase 33                              */
+    #define txnl8281                   328 /* Tegenhouden fase 82 tbv naloop naar fase 81                              */
+    #define TMMAX1                     329
 
 /* teller elementen */
 /* ---------------- */
