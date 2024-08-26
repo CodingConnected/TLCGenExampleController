@@ -54,7 +54,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>CCOL_EXIT;CCOL_IS_SPECIAL;NO_RIS;WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;CCOLTIG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Personal Applications\CCOL120\WIN32\INCLUDE;C:\Personal Applications\\CCOL120\INCLUDE;C:\Personal Applications\CCOL120\SOURCE;C:\Personal Applications\CCOL120\PTP;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\CCOL120\WIN32\INCLUDE;C:\CCOL120\INCLUDE;C:\CCOL120\SOURCE;C:\CCOL120\PTP;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -62,7 +62,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>%(AdditionalDependencies);ccolmain.lib;ccolreg.lib;ccolsim.lib;ccolvlog.lib;comctl32.lib;dsifunc.lib;htmlhelp.lib;legacy_stdio_definitions.lib;lwmlfunc.lib;plefunc.lib;plfunc.lib;risfunc.lib;rissimfunc.lib;stdfunc.lib;trigfunc.lib;tx_synch.lib;</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD</IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>C:\Personal Applications\CCOL120\WIN32\LIB\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\CCOL120\WIN32\LIB\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
