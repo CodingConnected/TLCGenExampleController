@@ -3,20 +3,13 @@
 ################################################################################
 
 /.vs
+/Obj
+*.xlsx
+*.csv
+*.vlg
+*.vlog
+*.zip
 /Debug
 /Release
-/traffick2tlcgen-21-09-2022
-/TLCGen_portable_latest ISG 13092023
-/TLCGen_portable_latest Master 13092023.zip
-/123456_20010101_120000.vlg
 /123456_Visual_2022.sln
-/MyFile.csv
-/123456_V.dbe2b6ae/Debug/123456dpl.obj
-/123456_V.dbe2b6ae/Debug/123456reg.obj
-/123456_V.dbe2b6ae/Debug/123456sim.obj
-/123456_V.dbe2b6ae/Debug/123456_V.dbe2b6ae.tlog/link.read.1.tlog
-/123456_V.dbe2b6ae/Debug/123456_Visual_2022.ilk
-/123456_V.dbe2b6ae/Debug/123456_Visual_2022.log
-/123456_V.dbe2b6ae/Debug/vc143.idb
-/123456_V.dbe2b6ae/Debug/vc143.pdb
 /.gitignore
