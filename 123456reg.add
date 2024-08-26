@@ -27,32 +27,38 @@
 #if defined CCOL_IS_SPECIAL && !defined NO_PRIO
 void SpecialSignals_Add(void)
 {
-
 }
 #endif
+
+void CCOL_exit(void)
+{
+    if (fpt) fclose(fpt);
+}
 
 void post_init_application()
 {
 #ifndef AUTOMAAT
    int i;
    fpt = fopen("MyFile.csv", "w");
-   for (i = 0; i < FCMAX; ++i)
+   if (fpt)
    {
-      fprintf(fpt, "%4s,", FC_code[i]);
+       for (i = 0; i < FCMAX; ++i)
+       {
+           fprintf(fpt, "%4s,", FC_code[i]);
+       }
+       fprintf(fpt, " prio02,");
+       fprintf(fpt, " prio03,");
+       fprintf(fpt, " prio05,");
+       fprintf(fpt, " prio08,");
+       fprintf(fpt, " prio09,");
+       fprintf(fpt, " prio11,");
+       fprintf(fpt, " uswtv21,");
+       fprintf(fpt, " uswtv22,");
+       fprintf(fpt, " uswtv26,");
+       fprintf(fpt, "\n");
    }
-   fprintf(fpt, " prio02,");
-   fprintf(fpt, " prio03,");
-   fprintf(fpt, " prio05,");
-   fprintf(fpt, " prio08,");
-   fprintf(fpt, " prio09,");
-   fprintf(fpt, " prio11,");
-   fprintf(fpt, " uswtv21,");
-   fprintf(fpt, " uswtv22,");
-   fprintf(fpt, " uswtv26,");
-   fprintf(fpt, "\n");
-   fclose(fpt);
    stuffkey(F2KEY);
-   stuffkey(CTRLALTF3KEY);
+   //stuffkey(CTRLALTF3KEY);
    stuffkey(F4KEY);
 #endif
 }
@@ -147,28 +153,31 @@ void PostApplication_Add(void)
    count prio;
    if (TS)
 {
-    fpt = fopen("MyFile.csv", "a");    
+    //fpt = fopen("MyFile.csv", "a");    
     for (prio=0;prio<prioFCMAX;++prio)
     {
         x = iFC_PRIOix[prio];
         if (iPrioriteit[prio] && (iStartGroen[prio] < twacht[x])) twacht[x] = iStartGroen[prio]; 
     }
 
-    for (x = 0; x < FCMAX; ++x)
+    if (fpt)
     {
-        fprintf(fpt, "%4d,", twacht[x] * (A[x] != 0 || PRIOFC[x]) * R[x]);
+        for (x = 0; x < FCMAX; ++x)
+        {
+            fprintf(fpt, "%4d,", twacht[x] * (A[x] != 0 || PRIOFC[x]) * R[x]);
+        }
+        fprintf(fpt, "%7d,", (H[hprio02bus]) * 50);
+        fprintf(fpt, "%7d,", (H[hprio03bus]) * 50);
+        fprintf(fpt, "%7d,", (H[hprio05bus]) * 50);
+        fprintf(fpt, "%7d,", (H[hprio08bus]) * 50);
+        fprintf(fpt, "%7d,", (H[hprio09bus]) * 50);
+        fprintf(fpt, "%7d,", (H[hprio11bus]) * 50);
+        fprintf(fpt, "%7d,", CIF_GUS[uswtv21] & ~BIT8);
+        fprintf(fpt, "%7d,", CIF_GUS[uswtv22] & ~BIT8);
+        fprintf(fpt, "%7d,", CIF_GUS[uswtv26] & ~BIT8);
+        fprintf(fpt, "\n");
     }
-    fprintf(fpt, "%7d,", (H[hprio02bus]) * 50);
-    fprintf(fpt, "%7d,", (H[hprio03bus]) * 50);
-    fprintf(fpt, "%7d,", (H[hprio05bus]) * 50);
-    fprintf(fpt, "%7d,", (H[hprio08bus]) * 50);
-    fprintf(fpt, "%7d,", (H[hprio09bus]) * 50);
-    fprintf(fpt, "%7d,", (H[hprio11bus]) * 50);
-    fprintf(fpt, "%7d,", CIF_GUS[uswtv21] & ~BIT8);
-    fprintf(fpt, "%7d,", CIF_GUS[uswtv22] & ~BIT8);
-    fprintf(fpt, "%7d,", CIF_GUS[uswtv26] & ~BIT8);
-    fprintf(fpt, "\n");
-    fclose(fpt);
+    //fclose(fpt);
     }
 
 #endif

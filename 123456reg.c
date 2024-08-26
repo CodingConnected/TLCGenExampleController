@@ -942,8 +942,8 @@ void BepaalRealisatieTijden(void)
     Realisatietijd_NLEG(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
     Realisatietijd_NLEG(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868);
     Realisatietijd_NLEG(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168);
-    Realisatietijd_NLEVG(fc22, fc21, tnlfg2221, tnlfgd2221, tnlcv2221, tnlcvd2221, tvgnaloop2221);
     Realisatietijd_NLEG(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281);
+    Realisatietijd_NLEVG(fc22, fc21, tnlfg2221, tnlfgd2221, tnlcv2221, tnlcvd2221, tvgnaloop2221);
     Realisatietijd_NLSG(fc31, fc32, NG, tnlsgd3132);
     Realisatietijd_NLSG(fc32, fc31, NG, tnlsgd3231);
     Realisatietijd_NLSG(fc33, fc34, NG, tnlsgd3334);
@@ -2305,7 +2305,7 @@ void application(void)
     PrioDebug_Add();
 #endif /* NO_PRIO */
     Fixatie(isfix, 0, FCMAX-1, SCH[schbmfix], PRML, ML);
-    IsgDebug();
+    //IsgDebug();
 
     PostApplication();
 }
