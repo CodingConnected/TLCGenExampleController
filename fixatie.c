@@ -7,7 +7,7 @@
  *************************************************************************
  * Bepaalt of een fasecyclus conflicterend groen heeft.
  */
-boolv konf_groen(count fc)
+bool konf_groen(count fc)
 {
     register count i, j;
 
@@ -41,9 +41,9 @@ boolv konf_groen(count fc)
  *    Fixatie(isFix, 0, FCMAX-1, SCH[schbmfix], PRML, ML);
  *************************************************************************/
 #if defined MLMAX || defined MLAMAX
-void Fixatie(count isFix, count first, count last, boolv bijkomen, boolv *prml[], count ml)
+void Fixatie(count isFix, count first, count last, bool bijkomen, bool *prml[], count ml)
 #else
-void Fixatie(count isFix, count first, count last, boolv bijkomen)
+void Fixatie(count isFix, count first, count last, bool bijkomen)
 #endif
 {
     register count fc;

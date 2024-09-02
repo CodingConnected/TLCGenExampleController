@@ -51,10 +51,10 @@ void Aanvragen_Add(void)
 
 }
 
-boolv CorrectieRealisatieTijd_Add(void)
+bool CorrectieRealisatieTijd_Add(void)
 {
     /* let op! deze functie wordt in een loop aangeroepen (max. 100 iteraties). */
-    boolv aanpassing = FALSE;
+    bool aanpassing = FALSE;
     
     /* Voeg hier zonodig eigen code toe, bijv:
      * aanpassing |= VTG2_Real_Los(fc32, fc31, T_max[tinl3231], T_max[tinl3132], hinl32, hinl31, hlos32, hlos31, (IH[hdrtk311] && IH[hdrtk321]));

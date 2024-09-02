@@ -3,14 +3,14 @@
 #include "extra_func_prio.h"
 #include "prio.h"
 
-boolv DSIMeldingPRIO_V1(
+bool DSIMeldingPRIO_V1(
 	count dslus,
 	count vtgtype,
-	boolv checkfcnmr,
+	bool checkfcnmr,
 	count fcnmr,
-	boolv checktype,
+	bool checktype,
 	count meldingtype,
-	boolv extra)
+	bool extra)
 {
 #if DSMAX
 	if (!DS_MSG || !extra) return FALSE;
@@ -24,18 +24,18 @@ boolv DSIMeldingPRIO_V1(
 	return TRUE;
 }
 
-boolv DSIMeldingPRIO_V2(           /* Fik220201 */
+bool DSIMeldingPRIO_V2(           /* Fik220201 */
 	count fc,                       /* fasecyclus */
 	count prio_fc,                  /* index prioriteit */
 	count dslus,                    /* lusnummer in Kar bericht */
 	count vtgtype,                  /* voertuigtype */
-	boolv checkfcnmr,               /* controleer fasecyclus nummer in Kar bericht */
+	bool checkfcnmr,               /* controleer fasecyclus nummer in Kar bericht */
 	count fcnmr,                    /* ... -> ... fasecyclus nummer in Kar bericht */
-	boolv checktype,                /* controleer meldingstype in Kar bericht */
+	bool checktype,                /* controleer meldingstype in Kar bericht */
 	count meldingtype,              /* ... -> ... meldingstype in Kar bericht */
-	boolv extra)                    /* */
+	bool extra)                    /* */
 {
-	boolv melding = TRUE;
+	bool melding = TRUE;
 
 	/* Correctie uitmelding van eerste bus fc tijdens rood */
 	if (vertraag_kar_uitm[prio_fc]) PrioUitmelden(prio_fc, SG[fc]); /* vertraagde uitmelding op start groen */
@@ -70,7 +70,7 @@ boolv DSIMeldingPRIO_V2(           /* Fik220201 */
 	return melding;
 }
 
-boolv DSIMeldingPRIO_LijnNummer_V1(count lijnparm, count lijnmax)
+bool DSIMeldingPRIO_LijnNummer_V1(count lijnparm, count lijnmax)
 {
 	int index = 0;
 	if (PRM[lijnparm]) return TRUE;
@@ -82,7 +82,7 @@ boolv DSIMeldingPRIO_LijnNummer_V1(count lijnparm, count lijnmax)
 	return FALSE;
 }
 
-boolv DSIMeldingPRIO_LijnNummerEnRitCategorie_V1(count lijnparm, count lijnmax)
+bool DSIMeldingPRIO_LijnNummerEnRitCategorie_V1(count lijnparm, count lijnmax)
 {
 	int index = 0;
 	if (PRM[lijnparm]) return TRUE;
@@ -96,9 +96,9 @@ boolv DSIMeldingPRIO_LijnNummerEnRitCategorie_V1(count lijnparm, count lijnmax)
 	return FALSE;
 }
 
-boolv DSIMelding_HD_V1(count dir,         /* 1. fc nummer of richtingnummer (201, 202, 203)  */
+bool DSIMelding_HD_V1(count dir,         /* 1. fc nummer of richtingnummer (201, 202, 203)  */
 	count meldingtype, /* 2. Type melding: in of uit */
-	boolv check_sirene) /* 3. Check SIRENE */
+	bool check_sirene) /* 3. Check SIRENE */
 {
 	if ((CIF_DSI[CIF_DSI_VTG] == CIF_POL ||
 		CIF_DSI[CIF_DSI_VTG] == CIF_BRA ||
@@ -322,11 +322,11 @@ void WDNST_cleanup(void)
 	}
 }
 
-boolv WDNST_check_in(count fc)
+bool WDNST_check_in(count fc)
 {
 	count listnr;
 	int firstempty = 999;
-	boolv WDNSTbestaatniet = TRUE;
+	bool WDNSTbestaatniet = TRUE;
 	int richting = atoi(FC_code[fc]) < 201 ? atoi(FC_code[fc]) : atoi(FC_code[fc]) - 200;
 
 	if ((CIF_DSIWIJZ == 1) && (CIF_DSI[CIF_DSI_WDNST] != 0) && (CIF_DSI[CIF_DSI_TYPE] == CIF_DSIN) &&
@@ -355,11 +355,11 @@ boolv WDNST_check_in(count fc)
 	return WDNSTbestaatniet;
 }
 
-boolv WDNST_check_uit(count fc)
+bool WDNST_check_uit(count fc)
 {
 	count listnr, listnr2;
 	int firstempty = 999;
-	boolv WDNSTbestaatniet = TRUE;
+	bool WDNSTbestaatniet = TRUE;
 	int richting = atoi(FC_code[fc]) < 201 ? atoi(FC_code[fc]) : atoi(FC_code[fc]) - 200;
 
 	if ((CIF_DSIWIJZ == 1) && (CIF_DSI[CIF_DSI_WDNST] != 0) && (CIF_DSI[CIF_DSI_TYPE] == CIF_DSUIT) &&
@@ -470,7 +470,7 @@ void fietsprio_update(
 	count dvw,         /* Verweg detector */
 	count c_priocount, /* Counter tellen voertuigen */
 	count c_priocyc,   /* Counter aantal keer prio per cyclus */
-	boolv prioin,      /* Hulpelement inmelding prio */
+	bool prioin,      /* Hulpelement inmelding prio */
 	count ml)          /* Actieve module */
 {
 	/* fietsprioriteit */
@@ -485,7 +485,7 @@ void fietsprio_update(
 	}
 }
 
-boolv fietsprio_inmelding(
+bool fietsprio_inmelding(
 	count fc,               /* Fasecyclus */
 	count dvw,              /* Verweg detector */
 	count c_priocount,      /* Counter tellen voertuigen */
@@ -494,7 +494,7 @@ boolv fietsprio_inmelding(
 	count prm_priocyc,      /* Maximum aantal keer prio per cyclus */
 	count prm_priocount,    /* Minimum aantal voertuigen voor prio */
 	count prm_priowt,       /* Minimum wachttijd voor prio */
-	boolv prioin,            /* Hulpelement inmelding prio */    //@@ warning C4100: 'prioin' : unreferenced formal parameter
+	bool prioin,            /* Hulpelement inmelding prio */    //@@ warning C4100: 'prioin' : unreferenced formal parameter
 	count ml,               /* Actieve module */
 	count me_priocount,     /* Memory-element tellen voertuigen RIS */
 	count prm_priocountris) /* Minimum aantal voertuigen voor prio RIS */
