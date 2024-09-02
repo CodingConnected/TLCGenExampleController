@@ -23,6 +23,17 @@
 #define SYSTEM "123456"
 #define VERSION "12.5.0 20240828"
 
+/* Toevoegingen AMSTERDAM_PC (vinkje Practice omgeving in TLCGen) */
+#ifdef PRACTICE_TEST
+#define AMSTERDAM_PC
+#define XTND_DIC
+#define CCOL_IS_SPECIAL
+#endif
+#ifndef AUTOMAAT
+#define AMSTERDAM_PC
+#endif
+
+
 /* fasecycli */
 /* --------- */
     #define fc02   0
@@ -173,7 +184,7 @@
     #define d1141             74
     #define d1142             75
     #define d6141             76
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
+#if defined AMSTERDAM_PC || (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     #define ddummykarin02bus  77
     #define ddummykarin08bus  78
     #define ddummykarin11bus  79
@@ -561,7 +572,7 @@
     #define mar82            52 /* Alternatieve ruimte fase 82                                             */
     #define mar84            53 /* Alternatieve ruimte fase 84                                             */
     #define mwijzpb          54 /* Wijziging aan PB doorgeven                                              */
-    #define maantalvgtwijzpb 55 /* Aantal doorgegeven wijzigingen aan PB bijhouden                         */
+    #define mfci             55 /* index fc met gewijzigde TVG_max[]                                       */
     #define MEMAX1           56
 
 /* tijd elementen */
@@ -2061,7 +2072,7 @@
     #define prmaltp82                  922 /* Minimale ruimte tbv alternatieve realisatie fase 82                                               */
     #define prmaltg84                  923 /* Minimale groentijd bij alternatieve realisatie fase 84                                            */
     #define prmaltp84                  924 /* Minimale ruimte tbv alternatieve realisatie fase 84                                               */
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
+#if defined AMSTERDAM_PC || (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     #define prmtestdsivert             925 /* Testen vertraging in DSI bericht in testomgeving                                                  */
     #define prmtestdsilyn              926 /* Testen lijnnummer DSI bericht in testomgeving                                                     */
     #define prmtestdsicat              927 /* Testen ritcategorie DSI bericht in testomgeving                                                   */
@@ -2109,7 +2120,7 @@
 /* ------- */
     #define MPERIODMAX 8 /* aantal groenperioden */
 
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined PRACTICE_TEST
+#if defined AMSTERDAM_PC || (!defined AUTOMAAT && !defined AUTOMAAT_TEST)
     #define TESTOMGEVING
 #endif
 

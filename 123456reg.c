@@ -104,6 +104,10 @@ mulv C_counter_old[CTMAX];
         extern bool display;
     #endif
 
+#ifdef XTND_DIC /* alleen bij PRACTICE_TEST */
+#include "xtnd_dic.c"
+#endif
+
     #include "123456reg.add"
 
 void PreApplication(void)
@@ -867,10 +871,7 @@ void Verlenggroen(void)
     if(CIF_PARM1WIJZPB != CIF_GEEN_PARMWIJZ)
     {
         MM[mwijzpb]= CIF_PARM1WIJZPB; /* indexnummer van gewijzigde max.verlengroentijd of andere gewijzigde parameter uit PARM1 buffer */
-        if (set_parm1wijzpb_tvgmax (MM[mperiod], prmvg1_02, itvgmaxprm, aanttvgmaxprm)) /* argumenten: actuele periode, index eerste verlenggroen parameter, array van fc met prmvg#_$$ */
-        {
-            ++MM[maantalvgtwijzpb];
-        }
+        MM[mfci] = set_parm1wijzpb_tvgmax(MM[mperiod], prmvg1_02, itvgmaxprm, aanttvgmaxprm); /* argumenten: actuele periode, index eerste verlenggroen parameter, array van fc met prmvg#_$$ */
     }
 }
 
@@ -1150,10 +1151,10 @@ void Meeverlengen(void)
     YM[fc24] |= SCH[schmv24] && !Maatgevend_Groen(fc24) && hf_wsg() ? BIT4 : 0;
     YM[fc26] |= SCH[schmv26] && !Maatgevend_Groen(fc26) && hf_wsg() ? BIT4 : 0;
     YM[fc28] |= SCH[schmv28] && !Maatgevend_Groen(fc28) && hf_wsg() ? BIT4 : 0;
-    YM[fc31] |= SCH[schmv31] && !Maatgevend_Groen(fc31) && hf_wsg() ? BIT4 : 0;
-    YM[fc32] |= SCH[schmv32] && !Maatgevend_Groen(fc32) && hf_wsg() ? BIT4 : 0;
-    YM[fc33] |= SCH[schmv33] && !Maatgevend_Groen(fc33) && hf_wsg() ? BIT4 : 0;
-    YM[fc34] |= SCH[schmv34] && !Maatgevend_Groen(fc34) && hf_wsg() ? BIT4 : 0;
+    YM[fc31] |= SCH[schmv31] && !Maatgevend_Groen(fc31) && hf_wsg() && !kcv(fc32) ? BIT4 : 0; /* @Menno: !kcv(fc32) toevoegen indien inlopen 31-32 is gedefinieerd in de generator */
+    YM[fc32] |= SCH[schmv32] && !Maatgevend_Groen(fc32) && hf_wsg() && !kcv(fc31) ? BIT4 : 0;
+    YM[fc33] |= SCH[schmv33] && !Maatgevend_Groen(fc33) && hf_wsg() && !kcv(fc34) ? BIT4 : 0;
+    YM[fc34] |= SCH[schmv34] && !Maatgevend_Groen(fc34) && hf_wsg() && !kcv(fc33) ? BIT4 : 0;
     YM[fc38] |= SCH[schmv38] && !Maatgevend_Groen(fc38) && hf_wsg() ? BIT4 : 0;
     YM[fc61] |= SCH[schmv61] && !Maatgevend_Groen(fc61) && hf_wsg() ? BIT4 : 0;
     YM[fc62] |= SCH[schmv62] && !Maatgevend_Groen(fc62) && hf_wsg() ? BIT4 : 0;
@@ -1375,7 +1376,7 @@ void RealisatieAfhandeling(void)
     IH[hnlsg3334] = Naloop_OK(fc33, mar34, tnlsgd3334);
     IH[hnlsg3433] = Naloop_OK(fc34, mar33, tnlsgd3433);
 
-     /* PAR-correcties nalopen voetgagners stap 1: naloop past of los OK */
+     /* PAR-correcties nalopen voetgangers stap 1: naloop past of los OK */
     PAR[fc31] = PAR[fc31] && (IH[hnlsg3132] || IH[hlos31]);
     PAR[fc32] = PAR[fc32] && (IH[hnlsg3231] || IH[hlos32]);
     PAR[fc33] = PAR[fc33] && (IH[hnlsg3334] || IH[hlos33]);
@@ -1394,12 +1395,12 @@ void RealisatieAfhandeling(void)
         PAR[fc05] = PAR[fc05] && (PAR[fc22] || !A[fc22]);
         PAR[fc05] = PAR[fc05] && (PAR[fc32] || !A[fc32]);
         PAR[fc11] = PAR[fc11] && (PAR[fc26] || !A[fc26]);
-        PAR[fc02] = PAR[fc02] && PAR[fc62];
-        PAR[fc05] = PAR[fc05] && PAR[fc62];
-        PAR[fc08] = PAR[fc08] && PAR[fc68];
-        PAR[fc11] = PAR[fc11] && PAR[fc68];
-        PAR[fc22] = PAR[fc22] && PAR[fc21];
-        PAR[fc82] = PAR[fc82] && PAR[fc81];
+        PAR[fc02] = PAR[fc02] && Naloop_OK(fc02, mar62, tnlegd0262);
+        PAR[fc05] = PAR[fc05] && Naloop_OK(fc05, mar62, tnlegd0562);
+        PAR[fc08] = PAR[fc08] && Naloop_OK(fc08, mar68, tnlegd0868);
+        PAR[fc11] = PAR[fc11] && Naloop_OK(fc11, mar68, tnlegd1168);
+        PAR[fc22] = PAR[fc22] && Naloop_OK(fc22, mar21, tnlegd2221);
+        PAR[fc82] = PAR[fc82] && Naloop_OK(fc82, mar81, tnlegd8281);
     }
 
     /* PAR correcties eenzijdige synchronisaties */
@@ -1875,8 +1876,10 @@ void init_application(void)
     for (i = 0; i < DPMAX; ++i) {
         TBG_max[i]=NG;
         TOG_max[i]=NG;
+#if !defined NO_DDFLUTTER
         TFL_max[i]=NG;
         CFL_max[i]=NG;
+#endif
     }
 #endif
 

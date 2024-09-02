@@ -1,5 +1,3 @@
-#define CCOL_IS_SPECIAL
-#define XTND_DIC
 
 #include "lwmlfunc.c"
 #include "fbericht.c"
@@ -10,6 +8,4 @@
 
 #include "ccol_mon.c"
 
-#include "syncfunc.c"
 #include "dsifunc.c"
-#include "xtnd_dic.c"

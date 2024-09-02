@@ -1049,7 +1049,7 @@ void control_parameters(void)
     MM_code[mar82]            = "ar82";                                       /* Alternatieve ruimte fase 82                                             */
     MM_code[mar84]            = "ar84";                                       /* Alternatieve ruimte fase 84                                             */
     MM_code[mwijzpb]          = "wijzpb";                                     /* Wijziging aan PB doorgeven                                              */
-    MM_code[maantalvgtwijzpb] = "aantalvgtwijzpb";                            /* Aantal doorgegeven wijzigingen aan PB bijhouden                         */
+    MM_code[mfci] = "fci";                                        /* index fc met gewijzigde TVG_max[]                                       */
 
 /* tijd elementen */
 /* -------------- */
