@@ -184,7 +184,7 @@
     #define d1141             74
     #define d1142             75
     #define d6141             76
-#if defined AMSTERDAM_PC || (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
+#if defined AMSTERDAM_PC /* Aleen deze define opnemen als het vinkje practice aanstaat */
     #define ddummykarin02bus  77
     #define ddummykarin08bus  78
     #define ddummykarin11bus  79
@@ -2072,7 +2072,7 @@
     #define prmaltp82                  922 /* Minimale ruimte tbv alternatieve realisatie fase 82                                               */
     #define prmaltg84                  923 /* Minimale groentijd bij alternatieve realisatie fase 84                                            */
     #define prmaltp84                  924 /* Minimale ruimte tbv alternatieve realisatie fase 84                                               */
-#if defined AMSTERDAM_PC || (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
+#if defined AMSTERDAM_PC /* Aleen deze define opnemen als het vinkje practice aanstaat */
     #define prmtestdsivert             925 /* Testen vertraging in DSI bericht in testomgeving                                                  */
     #define prmtestdsilyn              926 /* Testen lijnnummer DSI bericht in testomgeving                                                     */
     #define prmtestdsicat              927 /* Testen ritcategorie DSI bericht in testomgeving                                                   */
@@ -2120,8 +2120,8 @@
 /* ------- */
     #define MPERIODMAX 8 /* aantal groenperioden */
 
-#if defined AMSTERDAM_PC || (!defined AUTOMAAT && !defined AUTOMAAT_TEST)
-    #define TESTOMGEVING
+#if defined AMSTERDAM_PC /* Aleen deze define opnemen als het vinkje practice aanstaat */
+#define TESTOMGEVING
 #endif
 
     #define tvgmaxprm02 0 /* fc02 heeft prmvg#_02 parameters */

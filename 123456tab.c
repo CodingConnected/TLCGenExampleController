@@ -668,8 +668,8 @@ void control_parameters(void)
     TFL_max[d1142] = 30; CFL_max[d1142] = 10;
     TFL_max[d6141] = 30; CFL_max[d6141] = 10;
 #endif /* !defined NO_DDFLUTTER */
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined PRACTICE_TEST
-    D_code[ddummykarin02bus]  = "dummykarin02bus";  
+#if defined AMSTERDAM_PC /* Aleen deze define opnemen als het vinkje practice aanstaat */
+    D_code[ddummykarin02bus]  = "dummykarin02bus";
     D_code[ddummykarin08bus]  = "dummykarin08bus";  
     D_code[ddummykarin11bus]  = "dummykarin11bus";  
     D_code[ddummykarin61bus]  = "dummykarin61bus";  
@@ -2545,7 +2545,7 @@ void control_parameters(void)
     PRM_code[prmaltp82]                  = "altp82";                  PRM[prmaltp82]                  = 60;   PRM_type[prmaltp82]                  = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 82                                               */
     PRM_code[prmaltg84]                  = "altg84";                  PRM[prmaltg84]                  = 60;   PRM_type[prmaltg84]                  = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 84                                            */
     PRM_code[prmaltp84]                  = "altp84";                  PRM[prmaltp84]                  = 60;   PRM_type[prmaltp84]                  = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 84                                               */
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
+#if defined AMSTERDAM_PC /* Aleen deze define opnemen als het vinkje practice aanstaat */
     PRM_code[prmtestdsivert]             = "testdsivert";             PRM[prmtestdsivert]             = 120;  PRM_type[prmtestdsivert]             = TS_type; /* Testen vertraging in DSI bericht in testomgeving                                                  */
     PRM_code[prmtestdsilyn]              = "testdsilyn";              PRM[prmtestdsilyn]              = 0;                                         /* Testen lijnnummer DSI bericht in testomgeving                                                     */
     PRM_code[prmtestdsicat]              = "testdsicat";              PRM[prmtestdsicat]              = 10;                                        /* Testen ritcategorie DSI bericht in testomgeving                                                   */
