@@ -1932,8 +1932,8 @@ void application(void)
 
     KlokPerioden();
     Aanvragen();
-    BepaalRealisatieTijden();
     Verlenggroen();
+    BepaalRealisatieTijden();
     Wachtgroen();
     Meetkriterium();
     Meeverlengen();

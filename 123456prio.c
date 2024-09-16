@@ -414,23 +414,23 @@ void PrioInstellingen(void)
 
     /* Na aanspreken groenbewaking wordt de selectieve 
 	   detectie niet langer betrouwbaar gevonden */
-    iSelDetFoutNaGB[prioFC02] = SCH[schupinagb02];
-    iSelDetFoutNaGB[prioFC08] = SCH[schupinagb08];
-    iSelDetFoutNaGB[prioFC11] = SCH[schupinagb11];
-    iSelDetFoutNaGB[prioFC22] = SCH[schupinagb22];
-    iSelDetFoutNaGB[prioFC24] = SCH[schupinagb24];
-    iSelDetFoutNaGB[prioFC61] = SCH[schupinagb61];
-    iSelDetFoutNaGB[prioFC84] = SCH[schupinagb84];
-    iSelDetFoutNaGB[hdFC02] = SCH[schupinagbhd02];
-    iSelDetFoutNaGB[hdFC03] = SCH[schupinagbhd03];
-    iSelDetFoutNaGB[hdFC05] = SCH[schupinagbhd05];
-    iSelDetFoutNaGB[hdFC08] = SCH[schupinagbhd08];
-    iSelDetFoutNaGB[hdFC09] = SCH[schupinagbhd09];
-    iSelDetFoutNaGB[hdFC11] = SCH[schupinagbhd11];
-    iSelDetFoutNaGB[hdFC61] = SCH[schupinagbhd61];
-    iSelDetFoutNaGB[hdFC62] = SCH[schupinagbhd62];
-    iSelDetFoutNaGB[hdFC67] = SCH[schupinagbhd67];
-    iSelDetFoutNaGB[hdFC68] = SCH[schupinagbhd68];
+    iSelDetFoutNaGB[prioFC02] = PRM[prmupinagb02]; //@@Menno: schakelaar moet paramer worden met defaultinstelling 0 (niet in de GUI instelbaar);
+    iSelDetFoutNaGB[prioFC08] = PRM[prmhupinagb08];
+    iSelDetFoutNaGB[prioFC11] = PRM[prmhupinagb11];
+    iSelDetFoutNaGB[prioFC22] = PRM[prmhupinagb22];
+    iSelDetFoutNaGB[prioFC24] = PRM[prmhupinagb24];
+    iSelDetFoutNaGB[prioFC61] = PRM[prmhupinagb61];
+    iSelDetFoutNaGB[prioFC84] = PRM[prmhupinagb84];
+    iSelDetFoutNaGB[hdFC02] = PRM[prmupinagbhd02];
+    iSelDetFoutNaGB[hdFC03] = PRM[prmupinagbhd03];
+    iSelDetFoutNaGB[hdFC05] = PRM[prmupinagbhd05];
+    iSelDetFoutNaGB[hdFC08] = PRM[prmupinagbhd08];
+    iSelDetFoutNaGB[hdFC09] = PRM[prmupinagbhd09];
+    iSelDetFoutNaGB[hdFC11] = PRM[prmupinagbhd11];
+    iSelDetFoutNaGB[hdFC61] = PRM[prmupinagbhd61];
+    iSelDetFoutNaGB[hdFC62] = PRM[prmupinagbhd62];
+    iSelDetFoutNaGB[hdFC67] = PRM[prmupinagbhd67];
+    iSelDetFoutNaGB[hdFC68] = PRM[prmupinagbhd68];
 
     /* =============================== */
     /* Instellingen overige richtingen */

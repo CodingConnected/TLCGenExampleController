@@ -969,17 +969,17 @@
     #define schprioin02sd0242SD   55 /* Inmelden 02 via Bus toestaan                                         */
     #define schpriouit02kar       56 /* Uitmelden 02 via Bus toestaan                                        */
     #define schpriouit02sd0241SD  57 /* Uitmelden 02 via Bus toestaan                                        */
-    #define schupinagb02          58 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02        */
+    #define prmupinagb02          58 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02        */ //@@hier even aangepast; in de tab.c ook aanpassen en in de sys.h bij de parametersopnemen
     #define schprioin08kar        59 /* Inmelden 08 via Bus toestaan                                         */
     #define schprioin08sd0842SD   60 /* Inmelden 08 via Bus toestaan                                         */
     #define schpriouit08kar       61 /* Uitmelden 08 via Bus toestaan                                        */
     #define schpriouit08sd0841SD  62 /* Uitmelden 08 via Bus toestaan                                        */
-    #define schupinagb08          63 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08        */
+    #define prmupinagb08          63 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 08        */
     #define schprioin11kar        64 /* Inmelden 11 via Bus toestaan                                         */
     #define schprioin11sd1142SD   65 /* Inmelden 11 via Bus toestaan                                         */
     #define schpriouit11kar       66 /* Uitmelden 11 via Bus toestaan                                        */
     #define schpriouit11sd1141SD  67 /* Uitmelden 11 via Bus toestaan                                        */
-    #define schupinagb11          68 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11        */
+    #define prmupinagb11          68 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 11        */
     #define schprioin22fiets      69 /* Inmelden 22 via Fiets toestaan                                       */
     #define schpriouit22fiets     70 /* Uitmelden 22 via Fiets toestaan                                      */
     #define schupinagb22          71 /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 22        */

@@ -1446,7 +1446,7 @@ void control_parameters(void)
     SCH_code[schprioin02sd0242SD]  = "prioin02sd0242SD";  SCH[schprioin02sd0242SD]  = 1;                                    /* Inmelden 02 via Bus toestaan                                         */
     SCH_code[schpriouit02kar]      = "priouit02kar";      SCH[schpriouit02kar]      = 1;                                    /* Uitmelden 02 via Bus toestaan                                        */
     SCH_code[schpriouit02sd0241SD] = "priouit02sd0241SD"; SCH[schpriouit02sd0241SD] = 1;                                    /* Uitmelden 02 via Bus toestaan                                        */
-    SCH_code[schupinagb02]         = "upinagb02";         SCH[schupinagb02]         = 0;                                    /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02        */
+    PRM_code[prmupinagb02]         = "upinagb02";         PRM[prmupinagb02]         = 0;                                    /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02        */
     SCH_code[schprioin08kar]       = "prioin08kar";       SCH[schprioin08kar]       = 1;                                    /* Inmelden 08 via Bus toestaan                                         */
     SCH_code[schprioin08sd0842SD]  = "prioin08sd0842SD";  SCH[schprioin08sd0842SD]  = 1;                                    /* Inmelden 08 via Bus toestaan                                         */
     SCH_code[schpriouit08kar]      = "priouit08kar";      SCH[schpriouit08kar]      = 1;                                    /* Uitmelden 08 via Bus toestaan                                        */
