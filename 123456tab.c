@@ -5035,7 +5035,7 @@ void control_parameters(void)
     SCH_cat[schcheckdstype]         = CAT_Prioriteren;      SCH_subcat[schcheckdstype]            = SUBCAT_OpenbaarVervoer;
     SCH_cat[schprioin02karbuskar]   = CAT_Prioriteren;      SCH_subcat[schprioin02karbuskar]      = SUBCAT_OpenbaarVervoer;
     SCH_cat[schpriouit02karbuskar]  = CAT_Prioriteren;      SCH_subcat[schpriouit02karbuskar]     = SUBCAT_OpenbaarVervoer;
-    SCH_cat[schupinagb02karbus]     = CAT_Prioriteren;      SCH_subcat[schupinagb02karbus]        = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmupinagb02karbus]     = CAT_Prioriteren;      PRM_subcat[prmupinagb02karbus]        = SUBCAT_OpenbaarVervoer;
     SCH_cat[schprioin02risovris]    = CAT_Prioriteren;      SCH_subcat[schprioin02risovris]       = SUBCAT_OpenbaarVervoer;
     SCH_cat[schpriouit02risovris]   = CAT_Prioriteren;      SCH_subcat[schpriouit02risovris]      = SUBCAT_OpenbaarVervoer;
     SCH_cat[schupinagb02risov]      = CAT_Prioriteren;      SCH_subcat[schupinagb02risov]         = SUBCAT_OpenbaarVervoer;
