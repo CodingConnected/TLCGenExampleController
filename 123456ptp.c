@@ -7,7 +7,7 @@
               123456
 
    BESTAND:   123456ptp.c
-      CCOL:   8.0
+      CCOL:   12.1
     TLCGEN:   12.4.0.7
    CCOLGEN:   12.4.0.7
 */
@@ -16,9 +16,11 @@
  *
  * Versie     Datum        Ontwerper   Commentaar
  * 12.4.0.8   16-08-2024   TLCGen      Release versie TLCGen
- * 12.5.0     28-08-2024   Wiersma     CCOL8 versie 
  *
  ************************************************************************************/
+
+#define AUTSTATUS    5 /* status automaat */
+#define CIFA_COMF 2048 /* communicatiefout PTP-protocol */
 
 /* koppelingen via PTP */
 /* ------------------- */
@@ -114,9 +116,7 @@ void ptp_pre_system_app(void)
         /* initialisatie van PTP-koppelingen */
         /* --------------------------------- */
         #ifdef PTP_ptp123456PORT
-        #ifndef PRACTICE_TEST
             ptp_init(&PTP_ptp123456);
-        #endif
         #endif
 
     }
@@ -125,6 +125,10 @@ void ptp_pre_system_app(void)
         #ifdef FABRIKANT_DRIVER
             communicatieprogramma(GEEN_INIT);
         #endif
+
+    /* afzetten van statusbit in CIF_GPS[5] */
+    /* ------------------------------------ */
+    CIF_GPS[AUTSTATUS] &= ~CIFA_COMF;
 
         /* opzetten signalen van en naar ptp123456 */
 #ifdef PTP_ptp123456PORT
@@ -187,10 +191,8 @@ void ptp_pre_system_app(void)
 
         /* aanroep ptp-functies */
         /* -------------------- */
-        #ifndef PRACTICE_TEST
         ptp_application_ks(&PTP_ptp123456, &PTP_ptp123456KS);
         ptp_control(&PTP_ptp123456);
-        #endif
 
         /* opzetten hulpelementen */
         /* ---------------------- */
@@ -253,6 +255,12 @@ void ptp_pre_system_app(void)
         CIF_GUS[usptp_ptp123456oke] = PTP_ptp123456KS.OKE;  
         CIF_GUS[usptp_ptp123456err] = PTP_ptp123456.COMERROR;
 
+    /* opzetten van statusbit in CIF_GPS[5] */
+    /* ------------------------------------ */
+    if (!PTP_ptp123456KS.OKE)
+    {
+        CIF_GPS[AUTSTATUS] |= CIFA_COMF;
+    }
 #endif
 
     }

@@ -7,7 +7,7 @@
               123456
 
    BESTAND:   123456fctimings.c
-      CCOL:   8.0
+      CCOL:   12.1
     TLCGEN:   12.4.0.7
    CCOLGEN:   12.4.0.7
 */
@@ -16,7 +16,6 @@
  *
  * Versie     Datum        Ontwerper   Commentaar
  * 12.4.0.8   16-08-2024   TLCGen      Release versie TLCGen
- * 12.5.0     28-08-2024   Wiersma     CCOL8 versie 
  *
  ************************************************************************************/
 

@@ -11,7 +11,7 @@
 #define TIMING_CONFIDENCE_RD_GROEN_DEFINITIEF   15    /* Richting is Rood, ... , wordt zeker groen */
 #define TIMING_CONFIDENCE_RD_MAX                16    /* hoogste waarde stadium ( wordt gebruikt voor interne Array ) */
 
-bool NaarConfidence9(count i)
+boolv NaarConfidence9(count i)
 {
    /* De functie NaarConfidence9 wordt gebruik voor de overgang van de confidence stadium 6-->9. 
    * De functie bepaalt of alle primaire conflicten uit het voorgaande blokeen PG hebben.  
@@ -35,7 +35,7 @@ bool NaarConfidence9(count i)
    }
 }
 
-bool NaarConfidence9_15prio(count i)
+boolv NaarConfidence9_15prio(count i)
 {
    /* De functie NaarConfidence9_15prio wordt gebruik voor de overgang van de confidence stadium 6-->9 en van 12-->15. 
     * De functie bepaalt of alle conflicten worden tegengehouden met RR BIT6 && !P tijdens geel of rood en of de eigen richting YV BIT6 of YM BIT6 heeft.  

@@ -7,7 +7,7 @@
               123456
 
    BESTAND:   123456rgv.c
-      CCOL:   8.0
+      CCOL:   12.1
     TLCGEN:   12.4.0.7
    CCOLGEN:   12.4.0.7
 */
@@ -16,7 +16,6 @@
  *
  * Versie     Datum        Ontwerper   Commentaar
  * 12.4.0.8   16-08-2024   TLCGen      Release versie TLCGen
- * 12.5.0     28-08-2024   Wiersma     CCOL8 versie 
  *
  ************************************************************************************/
 
@@ -24,7 +23,11 @@
 #define MAX_AANTAL_CONFLICTGROEPEN 2
 mulv TC[MAX_AANTAL_CONFLICTGROEPEN];
 mulv TC_max, DD_anyfase;
-mulv TO_ontwerp[FCMAX][FCMAX];
+#if (CCOL_V >= 95) && !defined NO_TIGMAX
+    mulv TIG_ontwerp[FCMAX][FCMAX];
+#else
+    mulv TO_ontwerp[FCMAX][FCMAX];
+#endif
 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || (defined VISSIM)
     mulv TC_rgv[MAX_AANTAL_CONFLICTGROEPEN];
@@ -38,9 +41,9 @@ mulv TO_ontwerp[FCMAX][FCMAX];
 
 void rgv_add(void)
 {
-    static bool DD[FCMAX];            /* Detectie storing (Detection Disabled) */
-    static bool MK1[FCMAX];           /* Meetkriterium op rijstrook 1 */
-    static bool MK2[FCMAX];           /* Meetkriterium op rijstrook 2 */
+    static boolv DD[FCMAX];            /* Detectie storing (Detection Disabled) */
+    static boolv MK1[FCMAX];           /* Meetkriterium op rijstrook 1 */
+    static boolv MK2[FCMAX];           /* Meetkriterium op rijstrook 2 */
     static mulv TVG_rgv_old[FCMAX];   /* Opslag 'old' TVG tijden */
     static mulv TVG_rgv_older[FCMAX]; /* Opslag 'older' TVG tijden */
     static mulv rgvinit = 1;          /* Onthouden initialisatie */
@@ -54,43 +57,74 @@ void rgv_add(void)
     {
         for(j = 0; j < FCMAX; ++j) 
         {
-            TO_ontwerp[i][j] = TO_max[i][j];
+            #if (CCOL_V >= 95) && !defined NO_TIGMAX
+                TIG_ontwerp[i][j] = TIG_max[i][j];
+            #else
+                TO_ontwerp[i][j] = TO_max[i][j];
+            #endif
         }
     }
 
     /* Fictieve ontwerp ontruimingstijden obv nalooptijden
        - voor nalopen op CV of EG wordt TO_ontwerp gecorrigeerd */
     /* Fase 02 en conflicten van naloop 62 */
-    TO_ontwerp[fc02][fc09] = TO_max[fc62][fc09] + T_max[tnlegd0262];
-    TO_ontwerp[fc02][fc11] = TO_max[fc62][fc11] + T_max[tnlegd0262];
-    TO_ontwerp[fc02][fc26] = TO_max[fc62][fc26] + T_max[tnlegd0262];
-
-    /* Fase 05 en conflicten van naloop 62 */
-    TO_ontwerp[fc05][fc09] = TO_max[fc62][fc09] + T_max[tnlegd0562];
-    TO_ontwerp[fc05][fc11] = TO_max[fc62][fc11] + T_max[tnlegd0562];
-    TO_ontwerp[fc05][fc26] = TO_max[fc62][fc26] + T_max[tnlegd0562];
+    #if (CCOL_V >= 95) && !defined NO_TIGMAX
+        TIG_ontwerp[fc02][fc09] = TIG_max[fc62][fc09] + T_max[tnlegd0262];
+        TIG_ontwerp[fc02][fc11] = TIG_max[fc62][fc11] + T_max[tnlegd0262];
+        TIG_ontwerp[fc02][fc26] = TIG_max[fc62][fc26] + T_max[tnlegd0262];
+    #else
+        TO_ontwerp[fc02][fc09] = TO_max[fc62][fc09] + T_max[tnlegd0262];
+        TO_ontwerp[fc02][fc11] = TO_max[fc62][fc11] + T_max[tnlegd0262];
+        TO_ontwerp[fc02][fc26] = TO_max[fc62][fc26] + T_max[tnlegd0262];
+    #endif
 
     /* Fase 08 en conflicten van naloop 68 */
-    TO_ontwerp[fc08][fc03] = TO_max[fc68][fc03] + T_max[tnlegd0868];
-    TO_ontwerp[fc08][fc05] = TO_max[fc68][fc05] + T_max[tnlegd0868];
-    TO_ontwerp[fc08][fc22] = TO_max[fc68][fc22] + T_max[tnlegd0868];
-    TO_ontwerp[fc08][fc32] = TO_max[fc68][fc32] + T_max[tnlegd0868];
-    TO_ontwerp[fc08][fc81] = TO_max[fc68][fc81] + T_max[tnlegd0868];
+    #if (CCOL_V >= 95) && !defined NO_TIGMAX
+        TIG_ontwerp[fc08][fc03] = TIG_max[fc68][fc03] + T_max[tnlegd0868];
+        TIG_ontwerp[fc08][fc05] = TIG_max[fc68][fc05] + T_max[tnlegd0868];
+        TIG_ontwerp[fc08][fc22] = TIG_max[fc68][fc22] + T_max[tnlegd0868];
+        TIG_ontwerp[fc08][fc32] = TIG_max[fc68][fc32] + T_max[tnlegd0868];
+        TIG_ontwerp[fc08][fc81] = TIG_max[fc68][fc81] + T_max[tnlegd0868];
+    #else
+        TO_ontwerp[fc08][fc03] = TO_max[fc68][fc03] + T_max[tnlegd0868];
+        TO_ontwerp[fc08][fc05] = TO_max[fc68][fc05] + T_max[tnlegd0868];
+        TO_ontwerp[fc08][fc22] = TO_max[fc68][fc22] + T_max[tnlegd0868];
+        TO_ontwerp[fc08][fc32] = TO_max[fc68][fc32] + T_max[tnlegd0868];
+        TO_ontwerp[fc08][fc81] = TO_max[fc68][fc81] + T_max[tnlegd0868];
+    #endif
 
     /* Fase 11 en conflicten van naloop 68 */
-    TO_ontwerp[fc11][fc03] = TO_max[fc68][fc03] + T_max[tnlegd1168];
-    TO_ontwerp[fc11][fc05] = TO_max[fc68][fc05] + T_max[tnlegd1168];
-    TO_ontwerp[fc11][fc22] = TO_max[fc68][fc22] + T_max[tnlegd1168];
-    TO_ontwerp[fc11][fc32] = TO_max[fc68][fc32] + T_max[tnlegd1168];
-    TO_ontwerp[fc11][fc81] = TO_max[fc68][fc81] + T_max[tnlegd1168];
+    #if (CCOL_V >= 95) && !defined NO_TIGMAX
+        TIG_ontwerp[fc11][fc03] = TIG_max[fc68][fc03] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc05] = TIG_max[fc68][fc05] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc22] = TIG_max[fc68][fc22] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc32] = TIG_max[fc68][fc32] + T_max[tnlegd1168];
+        TIG_ontwerp[fc11][fc81] = TIG_max[fc68][fc81] + T_max[tnlegd1168];
+    #else
+        TO_ontwerp[fc11][fc03] = TO_max[fc68][fc03] + T_max[tnlegd1168];
+        TO_ontwerp[fc11][fc05] = TO_max[fc68][fc05] + T_max[tnlegd1168];
+        TO_ontwerp[fc11][fc22] = TO_max[fc68][fc22] + T_max[tnlegd1168];
+        TO_ontwerp[fc11][fc32] = TO_max[fc68][fc32] + T_max[tnlegd1168];
+        TO_ontwerp[fc11][fc81] = TO_max[fc68][fc81] + T_max[tnlegd1168];
+    #endif
 
     /* Fase 22 en conflicten van naloop 21 */
-    TO_ontwerp[fc22][fc02] = TO_max[fc21][fc02] + T_max[tnlegd2221];
-    TO_ontwerp[fc22][fc03] = TO_max[fc21][fc03] + T_max[tnlegd2221];
+    #if (CCOL_V >= 95) && !defined NO_TIGMAX
+        TIG_ontwerp[fc22][fc02] = TIG_max[fc21][fc02] + T_max[tnlegd2221];
+        TIG_ontwerp[fc22][fc03] = TIG_max[fc21][fc03] + T_max[tnlegd2221];
+    #else
+        TO_ontwerp[fc22][fc02] = TO_max[fc21][fc02] + T_max[tnlegd2221];
+        TO_ontwerp[fc22][fc03] = TO_max[fc21][fc03] + T_max[tnlegd2221];
+    #endif
 
     /* Fase 82 en conflicten van naloop 81 */
-    TO_ontwerp[fc82][fc67] = TO_max[fc81][fc67] + T_max[tnlegd8281];
-    TO_ontwerp[fc82][fc68] = TO_max[fc81][fc68] + T_max[tnlegd8281];
+    #if (CCOL_V >= 95) && !defined NO_TIGMAX
+        TIG_ontwerp[fc82][fc67] = TIG_max[fc81][fc67] + T_max[tnlegd8281];
+        TIG_ontwerp[fc82][fc68] = TIG_max[fc81][fc68] + T_max[tnlegd8281];
+    #else
+        TO_ontwerp[fc82][fc67] = TO_max[fc81][fc67] + T_max[tnlegd8281];
+        TO_ontwerp[fc82][fc68] = TO_max[fc81][fc68] + T_max[tnlegd8281];
+    #endif
 
     /* intitieer waarden TGV_rgv */
     /* ------------------------- */
@@ -120,47 +154,47 @@ void rgv_add(void)
 
     /* detectiestoringen voor de fasecycli */
     /* ----------------------------------- */
-    RT[tfd0201] = SD[d0201] || ED[d0201] || !VG[fc02]; 
-    RT[tfd0202] = SD[d0202] || ED[d0202] || !VG[fc02]; 
-    RT[tfd0301] = SD[d0301] || ED[d0301] || !VG[fc03]; 
-    RT[tfd0501] = SD[d0501] || ED[d0501] || !VG[fc05]; 
-    RT[tfd0801] = SD[d0801] || ED[d0801] || !VG[fc08]; 
-    RT[tfd0802] = SD[d0802] || ED[d0802] || !VG[fc08]; 
-    RT[tfd1101] = SD[d1101] || ED[d1101] || !VG[fc11]; 
-    RT[tfd2201] = SD[d2201] || ED[d2201] || !VG[fc22]; 
-    RT[tfd2801] = SD[d2801] || ED[d2801] || !VG[fc28]; 
+    RT[tfd02_1a] = SD[d02_1a] || ED[d02_1a] || !VG[fc02]; 
+    RT[tfd02_1b] = SD[d02_1b] || ED[d02_1b] || !VG[fc02]; 
+    RT[tfd03_1] = SD[d03_1] || ED[d03_1] || !VG[fc03]; 
+    RT[tfd05_1] = SD[d05_1] || ED[d05_1] || !VG[fc05]; 
+    RT[tfd08_1a] = SD[d08_1a] || ED[d08_1a] || !VG[fc08]; 
+    RT[tfd08_1b] = SD[d08_1b] || ED[d08_1b] || !VG[fc08]; 
+    RT[tfd11_1] = SD[d11_1] || ED[d11_1] || !VG[fc11]; 
+    RT[tfd22_1] = SD[d22_1] || ED[d22_1] || !VG[fc22]; 
+    RT[tfd28_1] = SD[d28_1] || ED[d28_1] || !VG[fc28]; 
 
     DD_anyfase = 0;
     #if (defined AUTOMAAT || defined AUTOMAAT_TEST)
-        DD[fc02] = (CIF_IS[d0201] >= CIF_DET_STORING) || (CIF_IS[d0202] >= CIF_DET_STORING)
-                    || (CIF_IS[d0203] >= CIF_DET_STORING) || (CIF_IS[d0204] >= CIF_DET_STORING) || (CIF_IS[d0205] >= CIF_DET_STORING) || (CIF_IS[d0206] >= CIF_DET_STORING)
-                    || (!T[tfd0201] && !T[tfd0202]);
-        DD[fc03] = (CIF_IS[d0301] >= CIF_DET_STORING)
-                    || (CIF_IS[d0302] >= CIF_DET_STORING)
-                    || (!T[tfd0301]);
-        DD[fc05] = (CIF_IS[d0501] >= CIF_DET_STORING)
-                    || (CIF_IS[d0502] >= CIF_DET_STORING)
-                    || (!T[tfd0501]);
-        DD[fc08] = (CIF_IS[d0801] >= CIF_DET_STORING) || (CIF_IS[d0802] >= CIF_DET_STORING)
-                    || (CIF_IS[d0803] >= CIF_DET_STORING) || (CIF_IS[d0804] >= CIF_DET_STORING) || (CIF_IS[d0805] >= CIF_DET_STORING) || (CIF_IS[d0806] >= CIF_DET_STORING)
-                    || (IH[hfile68af])
-                    || (!T[tfd0801] && !T[tfd0802]);
-        DD[fc11] = (CIF_IS[d1101] >= CIF_DET_STORING)
-                    || (CIF_IS[d1102] >= CIF_DET_STORING) || (CIF_IS[d1103] >= CIF_DET_STORING)
-                    || (IH[hfile68af])
-                    || (!T[tfd1101]);
-        DD[fc22] = (CIF_IS[d2201] >= CIF_DET_STORING)
-                    || (CIF_IS[d2201] >= CIF_DET_STORING)
-                    || (!T[tfd2201]);
-        DD[fc28] = (CIF_IS[d2801] >= CIF_DET_STORING)
-                    || (CIF_IS[d2801] >= CIF_DET_STORING)
-                    || (!T[tfd2801]);
+        DD[fc02] = (CIF_IS[d02_1a] >= CIF_DET_STORING) || (CIF_IS[d02_1b] >= CIF_DET_STORING)
+                    || (CIF_IS[d02_2a] >= CIF_DET_STORING) || (CIF_IS[d02_2b] >= CIF_DET_STORING) || (CIF_IS[d02_3a] >= CIF_DET_STORING) || (CIF_IS[d02_3b] >= CIF_DET_STORING)
+                    || (!T[tfd02_1a] && !T[tfd02_1b]);
+        DD[fc03] = (CIF_IS[d03_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d03_2] >= CIF_DET_STORING)
+                    || (!T[tfd03_1]);
+        DD[fc05] = (CIF_IS[d05_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d05_2] >= CIF_DET_STORING)
+                    || (!T[tfd05_1]);
+        DD[fc08] = (CIF_IS[d08_1a] >= CIF_DET_STORING) || (CIF_IS[d08_1b] >= CIF_DET_STORING)
+                    || (CIF_IS[d08_2a] >= CIF_DET_STORING) || (CIF_IS[d08_2b] >= CIF_DET_STORING) || (CIF_IS[d08_3a] >= CIF_DET_STORING) || (CIF_IS[d08_3b] >= CIF_DET_STORING)
+                    || (IH[hfileFile68af])
+                    || (!T[tfd08_1a] && !T[tfd08_1b]);
+        DD[fc11] = (CIF_IS[d11_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d11_2] >= CIF_DET_STORING) || (CIF_IS[d11_3] >= CIF_DET_STORING)
+                    || (IH[hfileFile68af])
+                    || (!T[tfd11_1]);
+        DD[fc22] = (CIF_IS[d22_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d22_1] >= CIF_DET_STORING)
+                    || (!T[tfd22_1]);
+        DD[fc28] = (CIF_IS[d28_1] >= CIF_DET_STORING)
+                    || (CIF_IS[d28_1] >= CIF_DET_STORING)
+                    || (!T[tfd28_1]);
     #else
         DD[fc02] = FALSE;
         DD[fc03] = FALSE;
         DD[fc05] = FALSE;
-        DD[fc08] = IH[hfile68af] ? TRUE : FALSE;
-        DD[fc11] = IH[hfile68af] ? TRUE : FALSE;
+        DD[fc08] = IH[hfileFile68af] ? TRUE : FALSE;
+        DD[fc11] = IH[hfileFile68af] ? TRUE : FALSE;
         DD[fc22] = FALSE;
         DD[fc28] = FALSE;
     #endif
@@ -175,23 +209,23 @@ void rgv_add(void)
 
     /* Meetkriterium MK */
     /* ---------------- */
-    RT[thd0203] = D[d0203];
-    RT[thd0204] = D[d0204];
-    RT[thd0205] = D[d0205];
-    RT[thd0206] = D[d0206];
-    MK1[fc02] = SVG[fc02] || G[fc02] && MK1[fc02] && (RT[thd0203] || T[thd0203] || RT[thd0205] || T[thd0205]);
-    MK2[fc02] = SVG[fc02] || G[fc02] && MK2[fc02] && (RT[thd0204] || T[thd0204] || RT[thd0206] || T[thd0206]);
+    RT[thd02_2a] = D[d02_2a];
+    RT[thd02_2b] = D[d02_2b];
+    RT[thd02_3a] = D[d02_3a];
+    RT[thd02_3b] = D[d02_3b];
+    MK1[fc02] = SVG[fc02] || G[fc02] && MK1[fc02] && (RT[thd02_2a] || T[thd02_2a] || RT[thd02_3a] || T[thd02_3a]);
+    MK2[fc02] = SVG[fc02] || G[fc02] && MK2[fc02] && (RT[thd02_2b] || T[thd02_2b] || RT[thd02_3b] || T[thd02_3b]);
     MK1[fc03] = SVG[fc03] || G[fc03] && MK1[fc03] && MK[fc03];
     MK1[fc05] = SVG[fc05] || G[fc05] && MK1[fc05] && MK[fc05];
-    RT[thd0803] = D[d0803];
-    RT[thd0804] = D[d0804];
-    RT[thd0805] = D[d0805];
-    RT[thd0806] = D[d0806];
-    MK1[fc08] = SVG[fc08] || G[fc08] && MK1[fc08] && (RT[thd0803] || T[thd0803] || RT[thd0805] || T[thd0805]);
-    MK2[fc08] = SVG[fc08] || G[fc08] && MK2[fc08] && (RT[thd0804] || T[thd0804] || RT[thd0806] || T[thd0806]);
+    RT[thd08_2a] = D[d08_2a];
+    RT[thd08_2b] = D[d08_2b];
+    RT[thd08_3a] = D[d08_3a];
+    RT[thd08_3b] = D[d08_3b];
+    MK1[fc08] = SVG[fc08] || G[fc08] && MK1[fc08] && (RT[thd08_2a] || T[thd08_2a] || RT[thd08_3a] || T[thd08_3a]);
+    MK2[fc08] = SVG[fc08] || G[fc08] && MK2[fc08] && (RT[thd08_2b] || T[thd08_2b] || RT[thd08_3b] || T[thd08_3b]);
     MK1[fc11] = SVG[fc11] || G[fc11] && MK1[fc11] && MK[fc11];
-    RT[thd2201] = D[d2201];
-    MK1[fc22] = SVG[fc22] || G[fc22] && MK1[fc22] && (RT[thd2201] || T[thd2201]);
+    RT[thd22_1] = D[d22_1];
+    MK1[fc22] = SVG[fc22] || G[fc22] && MK1[fc22] && (RT[thd22_1] || T[thd22_1]);
     MK1[fc28] = SVG[fc28] || G[fc28] && MK1[fc28] && MK[fc28];
 
     /* Opslaan 'oudste' TVG tijd volgens RoBuGrover */
@@ -200,23 +234,23 @@ void rgv_add(void)
 
     /* Aanpassen verlenggroentijden op einde verlenggroen */
     /* -------------------------------------------------- */
-    rgv_verlenggroentijd2(fc02, PRM[prmmintvg_02], PRM[prmmaxtvg_02], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc02], (bool)!SCH[schrgv_snel], (bool)DD[fc02], (bool)(MK1[fc02] && MK2[fc02]));
-    rgv_verlenggroentijd1(fc03, PRM[prmmintvg_03], PRM[prmmaxtvg_03], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc03], (bool)!SCH[schrgv_snel], (bool)DD[fc03], (bool)(MK1[fc03]));
-    rgv_verlenggroentijd1(fc05, PRM[prmmintvg_05], PRM[prmmaxtvg_05], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc05], (bool)!SCH[schrgv_snel], (bool)DD[fc05], (bool)(MK1[fc05]));
-    rgv_verlenggroentijd2(fc08, PRM[prmmintvg_08], PRM[prmmaxtvg_08], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc08], (bool)!SCH[schrgv_snel], (bool)DD[fc08], (bool)(MK1[fc08] && MK2[fc08]));
-    rgv_verlenggroentijd1(fc11, PRM[prmmintvg_11], PRM[prmmaxtvg_11], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc11], (bool)!SCH[schrgv_snel], (bool)DD[fc11], (bool)(MK1[fc11]));
-    rgv_verlenggroentijd2(fc22, PRM[prmmintvg_22], PRM[prmmaxtvg_22], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc22], (bool)!SCH[schrgv_snel], (bool)DD[fc22], (bool)(MK1[fc22] && MK2[fc22]));
-    rgv_verlenggroentijd1(fc28, PRM[prmmintvg_28], PRM[prmmaxtvg_28], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc28], (bool)!SCH[schrgv_snel], (bool)DD[fc28], (bool)(MK1[fc28]));
+    rgv_verlenggroentijd2(fc02, PRM[prmmintvg_02], PRM[prmmaxtvg_02], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc02], (boolv)!SCH[schrgv_snel], (boolv)DD[fc02], (boolv)(MK1[fc02] && MK2[fc02]));
+    rgv_verlenggroentijd1(fc03, PRM[prmmintvg_03], PRM[prmmaxtvg_03], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc03], (boolv)!SCH[schrgv_snel], (boolv)DD[fc03], (boolv)(MK1[fc03]));
+    rgv_verlenggroentijd1(fc05, PRM[prmmintvg_05], PRM[prmmaxtvg_05], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc05], (boolv)!SCH[schrgv_snel], (boolv)DD[fc05], (boolv)(MK1[fc05]));
+    rgv_verlenggroentijd2(fc08, PRM[prmmintvg_08], PRM[prmmaxtvg_08], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc08], (boolv)!SCH[schrgv_snel], (boolv)DD[fc08], (boolv)(MK1[fc08] && MK2[fc08]));
+    rgv_verlenggroentijd1(fc11, PRM[prmmintvg_11], PRM[prmmaxtvg_11], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc11], (boolv)!SCH[schrgv_snel], (boolv)DD[fc11], (boolv)(MK1[fc11]));
+    rgv_verlenggroentijd2(fc22, PRM[prmmintvg_22], PRM[prmmaxtvg_22], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc22], (boolv)!SCH[schrgv_snel], (boolv)DD[fc22], (boolv)(MK1[fc22] && MK2[fc22]));
+    rgv_verlenggroentijd1(fc28, PRM[prmmintvg_28], PRM[prmmaxtvg_28], PRM[prmtvg_omhoog], PRM[prmtvg_omlaag], PRM[prmtvg_verschil], TVG_max[fc28], (boolv)!SCH[schrgv_snel], (boolv)DD[fc28], (boolv)(MK1[fc28]));
 
     /* Verlaag de verlenggroentijd indien geen primaire realisatie in de cyclus */
     /* ------------------------------------------------------------------------ */
-    rgv_niet_primair(fc02, PRML, ML, SML, ML_MAX, hprreal02, PRM[prmmintvg_02], PRM[prmtvg_npr_omlaag], (bool)(DD[fc02]));
-    rgv_niet_primair(fc03, PRML, ML, SML, ML_MAX, hprreal03, PRM[prmmintvg_03], PRM[prmtvg_npr_omlaag], (bool)(DD[fc03]));
-    rgv_niet_primair(fc05, PRML, ML, SML, ML_MAX, hprreal05, PRM[prmmintvg_05], PRM[prmtvg_npr_omlaag], (bool)(DD[fc05]));
-    rgv_niet_primair(fc08, PRML, ML, SML, ML_MAX, hprreal08, PRM[prmmintvg_08], PRM[prmtvg_npr_omlaag], (bool)(DD[fc08]));
-    rgv_niet_primair(fc11, PRML, ML, SML, ML_MAX, hprreal11, PRM[prmmintvg_11], PRM[prmtvg_npr_omlaag], (bool)(DD[fc11]));
-    rgv_niet_primair(fc22, PRML, ML, SML, ML_MAX, hprreal22, PRM[prmmintvg_22], PRM[prmtvg_npr_omlaag], (bool)(DD[fc22]));
-    rgv_niet_primair(fc28, PRML, ML, SML, ML_MAX, hprreal28, PRM[prmmintvg_28], PRM[prmtvg_npr_omlaag], (bool)(DD[fc28]));
+    rgv_niet_primair(fc02, PRML, ML, SML, ML_MAX, hprreal02, PRM[prmmintvg_02], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc02]));
+    rgv_niet_primair(fc03, PRML, ML, SML, ML_MAX, hprreal03, PRM[prmmintvg_03], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc03]));
+    rgv_niet_primair(fc05, PRML, ML, SML, ML_MAX, hprreal05, PRM[prmmintvg_05], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc05]));
+    rgv_niet_primair(fc08, PRML, ML, SML, ML_MAX, hprreal08, PRM[prmmintvg_08], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc08]));
+    rgv_niet_primair(fc11, PRML, ML, SML, ML_MAX, hprreal11, PRM[prmmintvg_11], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc11]));
+    rgv_niet_primair(fc22, PRML, ML, SML, ML_MAX, hprreal22, PRM[prmmintvg_22], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc22]));
+    rgv_niet_primair(fc28, PRML, ML, SML, ML_MAX, hprreal28, PRM[prmmintvg_28], PRM[prmtvg_npr_omlaag], (boolv)(DD[fc28]));
 
     /* Opslaan 'oude' TVG tijd volgens RoBuGrover */
     /* ------------------------------------------ */
@@ -225,19 +259,19 @@ void rgv_add(void)
     /* correctie verlenggroentijden t.o.v. de maximum gewenste cyclustijd */
     /* ------------------------------------------------------------------ */
     #if (defined AUTOMAAT || defined AUTOMAAT_TEST) && (!defined VISSIM)
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, fc11, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, fc05, END);
+        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #else
         for (teller = 0; teller < MAX_AANTAL_CONFLICTGROEPEN; ++teller) TC_rgv[teller] = 0;
         teller = 0;
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, fc11, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, fc05, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #endif
 
     #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || (defined VISSIM)
         teller = 0;
-        TC_string$[teller++] = "03 05 08 11";
-        TC_string$[teller++] = "02 09 11 05";
+        TC_string$[teller++] = "03 05 08";
+        TC_string$[teller++] = "02 09 11";
     #endif
 
     /* corrigeer voor te veel verlaagde groentijden */
@@ -255,13 +289,13 @@ void rgv_add(void)
                 }
             }
     #if (defined AUTOMAAT || defined AUTOMAAT_TEST) && (!defined VISSIM)
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, fc11, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, fc05, END);
+        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #else
         for (teller = 0; teller < MAX_AANTAL_CONFLICTGROEPEN; ++teller) TC_rgv[teller] = 0;
         teller = 0;
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, fc11, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, fc05, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #endif
         }
     }

@@ -180,7 +180,7 @@ mulv mindynhkopbezet                  = 15;      /* minimale bezettijd koplus vo
 #if (CCOL_V >= 110 /* && !defined TDHAMAX */) || (CCOL_V < 110)
 
    /* TDHDYN variabelen */
-   bool TDHDYN[DPMAX];        /* dynamische hiaattijd - logische waarde */
+   boolv TDHDYN[DPMAX];        /* dynamische hiaattijd - logische waarde */
    mulv  TDHDYN_timer0[DPMAX]; /* dynamische hiaattijd - hulp waarde     */
    mulv  TDHDYN_timer[DPMAX];  /* dynamische hiaattijd - actuele waarde  */
    mulv  TDHDYN_max[DPMAX];    /* maximum waarde dynamische hiaattijd    */
@@ -241,7 +241,7 @@ void tdhdyn(count dp, count fc) /* verwerk TDHDYN per detector */
 static int eavl[FCMAX][RIJSTRMAX];
 static int detstor[FCMAX];
 
-void hiaattijden_verlenging(bool nietToepassen, bool vrijkomkop, bool extra_in_wg, count mmk, bool opdr, count fc, ...)
+void hiaattijden_verlenging(boolv nietToepassen, boolv vrijkomkop, boolv extra_in_wg, count mmk, boolv opdr, count fc, ...)
 {
   va_list argpt;                                    /* variabele argumentenlijst                                 */
   count dpnr;                                       /* arraynummer detectie-element                              */
@@ -251,7 +251,7 @@ void hiaattijden_verlenging(bool nietToepassen, bool vrijkomkop, bool extra_in_w
   count rijstrook_old = -1;                         /* vorige rijstrooknummer                                    */
   count rijstrook;                                  /* rijstrooknummer                                           */
   count max_rijstrook = 1;                          /* hoogste rijstrooknummer                                   */
-  bool svw, vvw, evlvw, daft, svwG, hulp_bit3, verlengen[RIJSTRMAX], tdh_saw[RIJSTRMAX];
+  boolv svw, vvw, evlvw, daft, svwG, hulp_bit3, verlengen[RIJSTRMAX], tdh_saw[RIJSTRMAX];
   count dp_teller=0;                                /* telt aantal lussen vanaf stopstreep op bepaalde rijstrook */
 
   /* initialisatie */

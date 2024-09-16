@@ -242,7 +242,7 @@ void MG_Fasen_Venster_init(LPCTSTR lpWindowName, ...)
 			}
 		}
 
-		/* opzetten init bool */
+		/* opzetten init boolv */
 		g_initialised = 1;
 	}
 }
