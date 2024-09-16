@@ -1592,7 +1592,7 @@ void Meetkriterium(void)
     /* verlengen RIS loggen in VLOG */
     for (fc = 0; fc < FCMAX; ++fc)
     {
-        if (A[fc] & BIT10) CIF_VLOG_FC_CAM[fc] |= BIT1;
+       if ((MK[fc] & BIT10) || (MK[fc] & BIT13)) CIF_VLOG_FC_CAM[fc] |= BIT0;
     }
 
     hiaattijden_verlenging(IH[hgeendynhiaat08], SCH[schedkop_08], FALSE, mmk08, IH[hopdrempelen08], fc08, 
