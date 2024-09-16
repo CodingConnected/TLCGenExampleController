@@ -147,7 +147,7 @@ void msg_fctiming(mulv latency_minEndSG)  //@@ warning C4100: 'latency_minEndSG'
 {
    register count i;
    static s_int16 WPS_old= 0;       /* oude programmastatus		*/
-   static bool init = 0;           /* initialisatievlag                */
+   static boolv init = 0;           /* initialisatievlag                */
 
    for (i=0; i<FC_MAX; i++) {
 
