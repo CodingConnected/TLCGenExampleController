@@ -66,7 +66,7 @@
  * van de gerealiseerde verlenggroenperiode.
  *
  * voorbeeld:
- * rgv_verlenggroentijd(fc01, 50, 300 ,50, 20, 40, 200, (boolv) (BG[d011] || OG[d011]));
+ * rgv_verlenggroentijd(fc01, 50, 300 ,50, 20, 40, 200, (bool) (BG[d011] || OG[d011]));
  * 
  */
 
@@ -79,11 +79,11 @@ void rgv_verlenggroentijd1(
         mulv PRM_tvgverschil, /* parameter grenswaarde voor verlagen         */
         mulv PRM_maxtvg_dd,   /* parameter maximum verlenggroenttijd bij DD  */
 #ifdef TVG_VEVG
-        boolv SCH_schrgvwtvs,  /* schakelaar verhogen verlenggroenttijd       */
+        bool SCH_schrgvwtvs,  /* schakelaar verhogen verlenggroenttijd       */
                               /* TVG_VEVG voor einde verlenggroen            */
 #endif
-        boolv DD_fc,
-        boolv MK_speciaal)           /* status detectiestoring voor fasecyclus      */
+        bool DD_fc,
+        bool MK_speciaal)           /* status detectiestoring voor fasecyclus      */
 {
    mulv tvg_verschil;     /* restant verlenggroentijd - tijdelijke variabele */
 	if (DD_fc) 
@@ -140,7 +140,7 @@ void rgv_verlenggroentijd1(
  * het speciale meetkriterium moet daarvoor voor meerdere rijstroken nog actief zijn.
  *
  * voorbeeld:
- * rgv_verlenggroentijd(fc01, 50, 300 ,50, 20, 40, 200, (boolv) (BG[d011] || OG[d011]), (boolv) (H[mmk02sepc]));
+ * rgv_verlenggroentijd(fc01, 50, 300 ,50, 20, 40, 200, (bool) (BG[d011] || OG[d011]), (bool) (H[mmk02sepc]));
  * 
  */
 
@@ -153,11 +153,11 @@ void rgv_verlenggroentijd2(
         mulv PRM_tvgverschil, /* parameter grenswaarde voor verlagen         */
         mulv PRM_maxtvg_dd,   /* parameter maximum verlenggroenttijd bij DD  */
 #ifdef TVG_VEVG
-        boolv SCH_schrgvwtvs,  /* schakelaar verhogen verlenggroenttijd       */
+        bool SCH_schrgvwtvs,  /* schakelaar verhogen verlenggroenttijd       */
                               /* TVG_VEVG voor einde verlenggroen            */
 #endif
-        boolv DD_fc,           /* status detectiestoring voor fasecyclus      */
-        boolv MK_speciaal)     /* speciaal meetkriterium voor de              */
+        bool DD_fc,           /* status detectiestoring voor fasecyclus      */
+        bool MK_speciaal)     /* speciaal meetkriterium voor de              */
                               /* afzonderlijke rijstroken van de fasecyclus  */
 {
    mulv tvg_verschil;   /* tijdelijke variabele */

@@ -21209,6 +21209,16 @@
         <Type>PEDESTRIAN</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
+        <SignalGroupName>33</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>PEDESTRIAN</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
@@ -21331,16 +21341,6 @@
       <RISLaneRequestDataModel>
         <SignalGroupName>34</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>PEDESTRIAN</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>33</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
         <AanvraagStart>0</AanvraagStart>
         <AanvraagEnd>0</AanvraagEnd>
@@ -21541,6 +21541,16 @@
         <Type>PEDESTRIAN</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
+        <SignalGroupName>33</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>PEDESTRIAN</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
@@ -21663,16 +21673,6 @@
       <RISLaneExtendDataModel>
         <SignalGroupName>34</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>PEDESTRIAN</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>33</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
         <VerlengenStart>0</VerlengenStart>
         <VerlengenEnd>0</VerlengenEnd>
@@ -25198,6 +25198,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykaruit05bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit05bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -25379,13 +25386,6 @@
         <Naam>dummykaruit08bus</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>dummykaruit08bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit05bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit05bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
