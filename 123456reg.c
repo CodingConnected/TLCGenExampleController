@@ -835,11 +835,6 @@ void Aanvragen(void)
         }
     }
 
-    /* aanvragen RIS loggen in VLOG */
-    for (fc = 0; fc < FCMAX; ++fc)
-    {
-        if (A[fc] & BIT10) CIF_VLOG_FC_CAM[fc] |= BIT0;
-    }
 
         #if defined RIS_SSM && !defined NO_PRIO
             /* Ris PRIO: verstuur SSM */
@@ -1595,11 +1590,6 @@ void Meetkriterium(void)
         }
     }
 
-    /* verlengen RIS loggen in VLOG */
-    for (fc = 0; fc < FCMAX; ++fc)
-    {
-        if (A[fc] & BIT10) CIF_VLOG_FC_CAM[fc] |= BIT1;
-    }
 
     hiaattijden_verlenging(IH[hgeendynhiaat08], SCH[schedkop_08], FALSE, mmk08, IH[hopdrempelen08], fc08, 
         1, d08_1a, t08_1a_1, t08_1a_2, ttdh_08_1a_1, ttdh_08_1a_2, tmax_08_1a, prmspringverleng_08_1a, hverleng_08_1a, 
