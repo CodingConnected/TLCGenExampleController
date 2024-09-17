@@ -2115,7 +2115,7 @@ void control_parameters(void)
     SCH_code[schcheckdstype]            = "checkdstype";            SCH[schcheckdstype]            = 1;                                         /* Check type DSI bericht bij VECOM                                          */
     SCH_code[schprioin02karbuskar]      = "prioin02karbuskar";      SCH[schprioin02karbuskar]      = 1;                                         /* Inmelden 02 via Bus toestaan                                              */
     SCH_code[schpriouit02karbuskar]     = "priouit02karbuskar";     SCH[schpriouit02karbuskar]     = 1;                                         /* Uitmelden 02 via Bus toestaan                                             */
-    SCH_code[schupinagb02karbus]        = "upinagb02karbus";        SCH[schupinagb02karbus]        = 0;                                         /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02             */
+    PRM_code[prmupinagb02karbus]        = "upinagb02karbus";        PRM[prmupinagb02karbus]        = 0;                                         /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02             */
     SCH_code[schprioin02risovris]       = "prioin02risovris";       SCH[schprioin02risovris]       = 1;                                         /* Inmelden 02 via Bus toestaan                                              */
     SCH_code[schpriouit02risovris]      = "priouit02risovris";      SCH[schpriouit02risovris]      = 1;                                         /* Uitmelden 02 via Bus toestaan                                             */
     SCH_code[schupinagb02risov]         = "upinagb02risov";         SCH[schupinagb02risov]         = 0;                                         /* Selectieve detectie onbetrouwbaar na groenbewaking OV fase 02             */
@@ -5035,7 +5035,7 @@ void control_parameters(void)
     SCH_cat[schcheckdstype]         = CAT_Prioriteren;      SCH_subcat[schcheckdstype]            = SUBCAT_OpenbaarVervoer;
     SCH_cat[schprioin02karbuskar]   = CAT_Prioriteren;      SCH_subcat[schprioin02karbuskar]      = SUBCAT_OpenbaarVervoer;
     SCH_cat[schpriouit02karbuskar]  = CAT_Prioriteren;      SCH_subcat[schpriouit02karbuskar]     = SUBCAT_OpenbaarVervoer;
-    SCH_cat[schupinagb02karbus]     = CAT_Prioriteren;      SCH_subcat[schupinagb02karbus]        = SUBCAT_OpenbaarVervoer;
+    PRM_cat[prmupinagb02karbus]     = CAT_Prioriteren;      PRM_subcat[prmupinagb02karbus]        = SUBCAT_OpenbaarVervoer;  //@@Menno deze aanpassing geldt voor alle signaalgroepen
     SCH_cat[schprioin02risovris]    = CAT_Prioriteren;      SCH_subcat[schprioin02risovris]       = SUBCAT_OpenbaarVervoer;
     SCH_cat[schpriouit02risovris]   = CAT_Prioriteren;      SCH_subcat[schpriouit02risovris]      = SUBCAT_OpenbaarVervoer;
     SCH_cat[schupinagb02risov]      = CAT_Prioriteren;      SCH_subcat[schupinagb02risov]         = SUBCAT_OpenbaarVervoer;
