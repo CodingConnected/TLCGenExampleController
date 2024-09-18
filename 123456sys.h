@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   17-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   18-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -28,7 +28,7 @@
 #define VLOG_APPLVERSION_CODE "CCOL 12.1.0"
 #define VLOG_APPLTYPE_CODE "Modulesturing"
 #define SYSTEM "123456"
-#define VERSION "12.4.0.8 20240917"
+#define VERSION "12.4.0.8 20240918"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
 

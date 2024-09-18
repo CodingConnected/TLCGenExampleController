@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   17-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   18-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -1855,62 +1855,62 @@ void Meetkriterium(void)
             MK[fc11] |= BIT13;
             CIF_VLOG_FC_CAM[fc11] |= BIT1;
         }
-        if (ris_verlengen_heading(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisvstart21fts1], PRM[prmrisvend21fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading21_1], PRM[prmrislaneheadingmarge21_1])) MK[fc21])
+        if (ris_verlengen_heading(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisvstart21fts1], PRM[prmrisvend21fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading21_1], PRM[prmrislaneheadingmarge21_1]))
         {
             MK[fc21] |= BIT10;
             CIF_VLOG_FC_CAM[fc21] |= BIT1;
         }
-        if (ris_verlengen(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisvstartsrm021fts1], PRM[prmrisvendsrm021fts1], !SCH[schrisgeencheckopsg])) MK[fc21] |= BIT13;
+        if (ris_verlengen(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisvstartsrm021fts1], PRM[prmrisvendsrm021fts1], !SCH[schrisgeencheckopsg]))
         {
             MK[fc21] |= BIT13;
             CIF_VLOG_FC_CAM[fc21] |= BIT1;
         }
-        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstart22fts1], PRM[prmrisvend22fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_1], PRM[prmrislaneheadingmarge22_1])) MK[fc22])
+        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstart22fts1], PRM[prmrisvend22fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_1], PRM[prmrislaneheadingmarge22_1]))
         {
             MK[fc22] |= BIT10;
             CIF_VLOG_FC_CAM[fc22] |= BIT1;
         }
-        if (ris_verlengen(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstartsrm022fts1], PRM[prmrisvendsrm022fts1], !SCH[schrisgeencheckopsg])) MK[fc22] |= BIT13;
+        if (ris_verlengen(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstartsrm022fts1], PRM[prmrisvendsrm022fts1], !SCH[schrisgeencheckopsg]))
         {
             MK[fc22] |= BIT13;
             CIF_VLOG_FC_CAM[fc22] |= BIT1;
         }
-        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstart22fts2], PRM[prmrisvend22fts2], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_2], PRM[prmrislaneheadingmarge22_2])) MK[fc22])
+        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstart22fts2], PRM[prmrisvend22fts2], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_2], PRM[prmrislaneheadingmarge22_2]))
         {
             MK[fc22] |= BIT10;
             CIF_VLOG_FC_CAM[fc22] |= BIT1;
         }
-        if (ris_verlengen(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstartsrm022fts2], PRM[prmrisvendsrm022fts2], !SCH[schrisgeencheckopsg])) MK[fc22] |= BIT13;
+        if (ris_verlengen(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstartsrm022fts2], PRM[prmrisvendsrm022fts2], !SCH[schrisgeencheckopsg]))
         {
             MK[fc22] |= BIT13;
             CIF_VLOG_FC_CAM[fc22] |= BIT1;
         }
-        if (ris_verlengen_heading(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisvstart24fts1], PRM[prmrisvend24fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading24_1], PRM[prmrislaneheadingmarge24_1])) MK[fc24])
+        if (ris_verlengen_heading(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisvstart24fts1], PRM[prmrisvend24fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading24_1], PRM[prmrislaneheadingmarge24_1]))
         {
             MK[fc24] |= BIT10;
             CIF_VLOG_FC_CAM[fc24] |= BIT1;
         }
-        if (ris_verlengen(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisvstartsrm024fts1], PRM[prmrisvendsrm024fts1], !SCH[schrisgeencheckopsg])) MK[fc24] |= BIT13;
+        if (ris_verlengen(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisvstartsrm024fts1], PRM[prmrisvendsrm024fts1], !SCH[schrisgeencheckopsg]))
         {
             MK[fc24] |= BIT13;
             CIF_VLOG_FC_CAM[fc24] |= BIT1;
         }
-        if (ris_verlengen_heading(fc26, SYSTEM_ITF1, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisvstart26fts1], PRM[prmrisvend26fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading26_1], PRM[prmrislaneheadingmarge26_1])) MK[fc26])
+        if (ris_verlengen_heading(fc26, SYSTEM_ITF1, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisvstart26fts1], PRM[prmrisvend26fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading26_1], PRM[prmrislaneheadingmarge26_1]))
         {
             MK[fc26] |= BIT10;
             CIF_VLOG_FC_CAM[fc26] |= BIT1;
         }
-        if (ris_verlengen(fc26, SYSTEM_ITF1, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisvstartsrm026fts1], PRM[prmrisvendsrm026fts1], !SCH[schrisgeencheckopsg])) MK[fc26] |= BIT13;
+        if (ris_verlengen(fc26, SYSTEM_ITF1, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisvstartsrm026fts1], PRM[prmrisvendsrm026fts1], !SCH[schrisgeencheckopsg]))
         {
             MK[fc26] |= BIT13;
             CIF_VLOG_FC_CAM[fc26] |= BIT1;
         }
-        if (ris_verlengen_heading(fc28, SYSTEM_ITF1, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisvstart28fts1], PRM[prmrisvend28fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading28_1], PRM[prmrislaneheadingmarge28_1])) MK[fc28])
+        if (ris_verlengen_heading(fc28, SYSTEM_ITF1, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisvstart28fts1], PRM[prmrisvend28fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading28_1], PRM[prmrislaneheadingmarge28_1]))
         {
             MK[fc28] |= BIT10;
             CIF_VLOG_FC_CAM[fc28] |= BIT1;
         }
-        if (ris_verlengen(fc28, SYSTEM_ITF1, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisvstartsrm028fts1], PRM[prmrisvendsrm028fts1], !SCH[schrisgeencheckopsg])) MK[fc28] |= BIT13;
+        if (ris_verlengen(fc28, SYSTEM_ITF1, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisvstartsrm028fts1], PRM[prmrisvendsrm028fts1], !SCH[schrisgeencheckopsg]))
         {
             MK[fc28] |= BIT13;
             CIF_VLOG_FC_CAM[fc28] |= BIT1;
