@@ -419,10 +419,10 @@ void Synchronisaties_halfstar(void)
     naloopSG_halfstar(fc33, fc34, dk33a, hnlak33a, tnlsgd3334);
     naloopSG_halfstar(fc34, fc33, dk34a, hnlak34a, tnlsgd3433);
     naloopEG_CV_halfstar(TRUE, fc82, fc81, T_max[tlr8182], tnlegd8281, tnleg8281);
-    inloopSG_halfstar(fc31, fc32, dk31a, hnlak31a, til3132);
-    inloopSG_halfstar(fc32, fc31, dk32a, hnlak32a, til3231);
-    inloopSG_halfstar(fc33, fc34, dk33a, hnlak33a, til3334);
-    inloopSG_halfstar(fc34, fc33, dk34a, hnlak34a, til3433);
+    inloopSG_halfstar(fc31, fc32, til3132);
+    inloopSG_halfstar(fc32, fc31, til3231);
+    inloopSG_halfstar(fc33, fc34, til3334);
+    inloopSG_halfstar(fc34, fc33, til3433);
 
 
     Synchronisaties_halfstar_Add();
@@ -519,7 +519,7 @@ void RealisatieAfhandeling_halfstar(void)
     for (fc = 0; fc < FCMAX; ++fc)
     {
         /* Voorstartgroen tijdens voorstart t.o.v. sg-plan, alleen als gekoppeld wordt geregeld */
-        vs_ple(fc, prmrstotxa, IH[hkpact]);
+        vs_ple(fc, IH[hkpact]);
 
         /* opzetten van YS en YW tijdens halfstar bedrijf */
         /* resetten */

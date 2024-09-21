@@ -821,8 +821,8 @@ boolv Rateltikkers_Accross(count fc,       /* fase */
    of
    GUS[usrtdim32] = RateltikkerDimming(fc32, hperiodrtdim, NG, NG) -> volume ingesteld in tikker unit.
 */
-boolv Rateltikkers_HoeflakeDimming(count fc,        /* fase  */                                          //@@ warning C4100: 'fc' : unreferenced formal parameter
-                         count hperasdim, /* hulpelement klokperiode gedimde uitsturing     */
+//@Menno: onderstaande eerste argurment ook uit de aanroep halen (zit niet in deze regeling)!
+boolv Rateltikkers_HoeflakeDimming(count hperasdim, /* hulpelement klokperiode gedimde uitsturing     */ 
                          count prmasndim, /* dimnivo periode niet dimmen (0-10, 10 = tikker uit) of NG  */ 
                          count prmasdim)  /* dimnivo periode dimmen (0-10, 10 = tikker uit) of NG  */
 {
@@ -1061,7 +1061,8 @@ boolv hf_wsg_nl_fcfc(count fc1, count fc2)
 	return (FALSE);
 }
 
-void wachttijd_leds_knip(count fc, count mmwtv, count mmwtm, count RR_T_wacht, count fix) //@@ warning C4100: 'fc' : unreferenced formal parameter
+//@Menno: onderstaande eerste argurment ook uit de aanroep halen (zit niet in deze regeling)!
+void wachttijd_leds_knip(count mmwtv, count mmwtm, count RR_T_wacht, count fix) //@@ warning C4100: 'fc' : unreferenced formal parameter
 {
 	/* fc    - fasecyclusnummer                            */
 	/* mmwtv - berekende  aantal leds wachttijdlantaarn    */

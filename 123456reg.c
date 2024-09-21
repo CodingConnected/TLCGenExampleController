@@ -51,8 +51,11 @@
         #include "logvar.c"   /* variabelen t.b.v. logging                     */
         #include "monvar.c"   /* variabelen t.b.v. realtime monitoring         */
         #include "fbericht.h"
-    #endif
-    #include "prio.h"       /* prio-afhandeling                  */
+        #if defined AMSTERDAM_PC //@Menno: deze teovoeging alleen als Pratice vinkje is aangevinkt (is voor Amsterdam).
+            #include "vlogfunc.c" 
+        #endif
+   #endif
+#include "prio.h"       /* prio-afhandeling                  */
     #ifndef NO_RIS
         #include "risvar.c" /* ccol ris controller */
         #include "risappl.c" /* RIS applicatiefuncties */
@@ -166,7 +169,7 @@ void PreApplication(void)
     /* Bepalen of regeling mag omschakelen */
     /* Tegenhouden inschakelen naar PL als een naloop nog actief is of als inrijden/inlopen actief is */
     /* Opzetten IH[homschtegenh] */
-    if (!IH[hkpact] && !IH[hpervar] && !SCH[schvar] && !SCH[schvarstreng] && !IH[hplhd])
+    if (!IH[hkpact] && !IH[hpervar] && !SCH[schvar] && !IH[hplhd])
     {
         IH[homschtegenh] = TRUE;
     }
@@ -205,7 +208,7 @@ void PreApplication(void)
     }
 
     /* Afzetten IH[homschtegenh] */
-    if (!IH[hkpact] && !IH[hpervar] && !SCH[schvar] && !SCH[schvarstreng] && !IH[hplhd])
+    if (!IH[hkpact] && !IH[hpervar] && !SCH[schvar] && !IH[hplhd])
     {
         if (!T[tnlfg0262] && !RT[tnlfg0262] && !T[tnleg0262] && !RT[tnleg0262] && !T[tnlegd0262] && !RT[tnlegd0262] && !T[tnlfgd0262] && !RT[tnlfgd0262] &&
             !T[tnlfg0868] && !RT[tnlfg0868] && !T[tnleg0868] && !RT[tnleg0868] && !T[tnlegd0868] && !RT[tnlegd0868] && !T[tnlfgd0868] && !RT[tnlfgd0868] &&

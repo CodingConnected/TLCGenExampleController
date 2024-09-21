@@ -787,7 +787,8 @@ mulv max_tar_ov(count i, ...)            /* i=alt.ri.                        */
  *  - fcprim    primaire richting in wiens schaduw fcalt mag komen
  *  - paltg         minimaal gewenste alternatieve groentijd
  **************************************************************************/
-boolv AlternatieveRuimte(count fcalt, count fcprim, count paltg)     //@@  warning C4100: 'fcalt' : unreferenced formal parameter
+ //@Menno: onderstaande eerste argurment ook uit de aanroep halen (zit niet in deze regeling)!
+boolv AlternatieveRuimte(count fcprim, count paltg)
 {
     return (TVG_max[fcprim] - TVG_timer[fcprim] >= PRM[paltg]);
 }

@@ -143,8 +143,9 @@ s_int16 reset_fctiming(mulv i, mulv eventnr)
  * 
  * latency_minEndSG_fc1 - hiermee wordt de latency correctie op startgroen ingesteld
  */
-void msg_fctiming(mulv latency_minEndSG)  //@@ warning C4100: 'latency_minEndSG' : unreferenced formal parameter
+void msg_fctiming(mulv latency_minEndSG)  
 {
+   latency_minEndSG = 0; 
    register count i;
    static s_int16 WPS_old= 0;       /* oude programmastatus		*/
    static boolv init = 0;           /* initialisatievlag                */
@@ -298,7 +299,7 @@ void msg_fctiming(mulv latency_minEndSG)  //@@ warning C4100: 'latency_minEndSG'
                      (mulv) 0,                                     /* event      */
                      (s_int16)(CIF_TIMING_MASK_EVENTSTATE | CIF_TIMING_MASK_STARTTIME | CIF_TIMING_MASK_MINENDTIME | CIF_TIMING_MASK_MAXENDTIME), /* mask */
                      (s_int16) CCOL_FC_EVENTSTATE[i][CIF_GROEN],   /* eventState */
-                     (s_int16) 0,                                  /* startTime  */
+                     (s_int16) latency_minEndSG,                   /* startTime  */
                      (s_int16) NG,                                 /* minEndTime */
                      (s_int16) NG,                                 /* maxEndTime */
                      (s_int16) NG,                                 /* likelyTime */

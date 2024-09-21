@@ -87,7 +87,7 @@ void extrawin_add_fc(short fc, short usbus, short type)
 	WCHAR tmpp[256];
 	mbstowcs(tmpp, FC_code[fc], strlen(FC_code[fc]));
 #else
-	CHAR tmpp[256];
+	char tmpp[256];
 	sprintf_s(tmpp, 256, FC_code[fc]);
 #endif
 	SendMessage(hWndComboBox, CB_ADDSTRING, (WPARAM)0, (LPARAM)tmpp);

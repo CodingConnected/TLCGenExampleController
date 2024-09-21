@@ -1707,7 +1707,7 @@ void InUitMelden(void)
         MM[mftstelris22fietsfiets] += ris_itsstations_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22fiets_1], RIS_CYCLIST, PRM[prmrispstart22fts1], PRM[prmrispend22fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_1], PRM[prmrislaneheadingmarge22_1]);
         MM[mftstelris22fietsfiets] += ris_itsstations_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22fiets_2], RIS_CYCLIST, PRM[prmrispstart22fts2], PRM[prmrispend22fts2], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_2], PRM[prmrislaneheadingmarge22_2]);
 #endif /* NO_RIS */
-        IH[hprioin22fietsfiets22_1] = !C[cvc22fiets] && fietsprio_inmelding(fc22, d22_1, cftsvtg22fietsfiets, cftscyc22fietsfiets, prmftsblok22fietsfiets, prmftsmaxpercyc22fietsfiets, prmftsminvtg22fietsfiets, prmftsminwt22fietsfiets, SH[hprioin22fietsfiets22_1], ML, mftstelris22fietsfiets, prmftsminvtgris22fietsfiets);
+        IH[hprioin22fietsfiets22_1] = !C[cvc22fiets] && fietsprio_inmelding(fc22, d22_1, cftsvtg22fietsfiets, cftscyc22fietsfiets, prmftsblok22fietsfiets, prmftsmaxpercyc22fietsfiets, prmftsminvtg22fietsfiets, prmftsminwt22fietsfiets, ML, mftstelris22fietsfiets, prmftsminvtgris22fietsfiets);
     }
     IH[hprioin22fiets] = IH[hprioin22fietsfiets22_1];
 
@@ -1728,7 +1728,7 @@ void InUitMelden(void)
 #ifndef NO_RIS
         MM[mftstelris28fietsfiets] += ris_itsstations_heading(fc28, SYSTEM_ITF1, PRM[prmrislaneid28fiets_1], RIS_CYCLIST, PRM[prmrispstart28fts1], PRM[prmrispend28fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading28_1], PRM[prmrislaneheadingmarge28_1]);
 #endif /* NO_RIS */
-        IH[hprioin28fietsfiets28_2] = RT[tprioin28fietsfiets28_2] = !T[tprioin28fietsfiets28_2] && !C[cvc28fiets] && fietsprio_inmelding(fc28, d28_2, cftsvtg28fietsfiets, cftscyc28fietsfiets, prmftsblok28fietsfiets, prmftsmaxpercyc28fietsfiets, prmftsminvtg28fietsfiets, prmftsminwt28fietsfiets, SH[hprioin28fietsfiets28_2], ML, mftstelris28fietsfiets, prmftsminvtgris28fietsfiets);
+        IH[hprioin28fietsfiets28_2] = RT[tprioin28fietsfiets28_2] = !T[tprioin28fietsfiets28_2] && !C[cvc28fiets] && fietsprio_inmelding(fc28, d28_2, cftsvtg28fietsfiets, cftscyc28fietsfiets, prmftsblok28fietsfiets, prmftsmaxpercyc28fietsfiets, prmftsminvtg28fietsfiets, prmftsminwt28fietsfiets, ML, mftstelris28fietsfiets, prmftsminvtgris28fietsfiets);
     }
     IH[hprioin28fiets] = IH[hprioin28fietsfiets28_2];
 

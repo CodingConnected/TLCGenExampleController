@@ -36,8 +36,7 @@ boolv Rateltikkers_Accross(count fc,       /* fase */
 	count has_aan_, /* hulpelement tikkers werking */
 	count has_cont_,/* hulpelement tikkers continu */
 	...);           /* drukknoppen */
-boolv Rateltikkers_HoeflakeDimming(count fc,/* fase                                           */
-                         count hperasdim,  /* hulpelement klokperiode gedimde uitsturing     */
+boolv Rateltikkers_HoeflakeDimming(count hperasdim,  /* hulpelement klokperiode gedimde uitsturing     */
                          count prmasndim,  /* dimnivo periode niet dimmen (0-10, 10 = tikker uit) of NG  */ 
                          count prmasdim);  /* dimnivo periode dimmen (0-10, 10 = tikker uit) of NG  */
 void Eerlijk_doseren_V1(count hfile,            /* hulpelement wel/geen file */
@@ -67,7 +66,7 @@ void mee_aanvraag_prm(count i, count j, count prm, boolv extra_condition);
 void UpdateKnipperSignalen();
 boolv hf_wsg_nl(void);
 boolv hf_wsg_nl_fcfc(count fc1, count fc2);
-void wachttijd_leds_knip(count fc, count mmwtv, count mmwtm, count RR_T_wacht, count fix);
+void wachttijd_leds_knip(count mmwtv, count mmwtm, count RR_T_wacht, count fix);
 boolv set_FPRML_fk_gkl(count i, boolv *prml[], count ml, count ml_max, boolv period);
 boolv kcv_primair_fk_gkl(count i);
 void veiligheidsgroen_V1(count fc, count tmaxvag4, ...);

@@ -42,7 +42,7 @@ void altcor_parfts_pl_halfstar(count fc1, count fc2, boolv voorwaarde);
 void altcor_parftsvtg_pl_halfstar(count fc1, count fc2, boolv voorwaarde);
 void alternatief_halfstar(count fc, mulv altp, boolv condition);
 void gelijkstart_va_arg_halfstar(count h_x, count h_rr, boolv  overslag, ...);
-void getrapte_fietser_halfstar(count fc1, count fc2, boolv  a_bui_fc1, boolv  a_bui_fc2, count tkopfc1fc2, count tkopfc2fc1, count voorstartfc1fc2,	count voorstartfc2fc1);
+void getrapte_fietser_halfstar(count fc1, count fc2, boolv  a_bui_fc1, boolv  a_bui_fc2, count tkopfc1fc2, count tkopfc2fc1);
 void mgcor_halfstar(count fcaan, count fcnal, count t_nal);
 void mgcor_halfstar_deelc(count fc1, count fc2);
 void naloopEG_CV_halfstar(boolv period, count fc1, count fc2, mulv tvs, count tnldet, count tnl);
@@ -75,7 +75,7 @@ void set_tx_change(count fc, count pl,
 boolv txb_gemist(count i, int marge);
 void var_txc(count fc, boolv condition);
 void Verlengroen_na_Meeverlenggroen_PL(count fc, count prmvgmg);
-void vs_ple(count fc, count prmtotxa, boolv condition);
+void vs_ple(count fc, boolv condition);
 void wachtstand_halfstar(count fc, boolv condition_hs, boolv condition_a, boolv condition_ws);
 void wg_ple(count fc, boolv condition);
 boolv ym_max_halfstar(count i, mulv koppeltijd);
@@ -86,7 +86,7 @@ void zachtekoppeling_halfstar(boolv period, count fc1, count fc2, count tvs, cou
 
 void SignalplanPrmsToTx(count pl, count txa1);
 boolv CheckSignalplanPrms(count pl, mulv txmax, count txa1);
-void inloopSG_halfstar(count fc1, count fc2, count dk_bui_fc1, count hd_bui_fc1, count tinlfc1fc2);
+void inloopSG_halfstar(count fc1, count fc2, count tinlfc1fc2);
 
 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST)

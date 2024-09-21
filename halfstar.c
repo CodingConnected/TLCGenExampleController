@@ -146,14 +146,14 @@ void gelijkstart_va_arg_halfstar(count h_x,
 }
 
 /**********************************************************************************/
+//@Menno: laatste twee argurmenten ook uit de aanroep halen (zit niet in deze regeling)! Kan even niet even niet vinden wanneer deze wordt aangeroepen ? 
+
 void getrapte_fietser_halfstar(count fc1, /* fc1 */
     count fc2, /* fc2 */
     boolv  a_bui_fc1, /* buitendrukknopaanvraag fc1 */
     boolv  a_bui_fc2, /* buitendrukknopaanvraag fc2 */
     count tkopfc1fc2, /* naloop (SG) fc1 -> fc2 */
-    count tkopfc2fc1, /* naloop (SG) fc2 -> fc1 */
-    count voorstartfc1fc2, /* maximale voorstart fc1 -> fc2 (mag NG) */ //@@ warning 'voorstartfc1fc2': unreferenced formal parameter
-    count voorstartfc2fc1) /* maximale voorstart fc2 -> fc1 (mag NG) */ //@@ warning 'voorstartfc2fc1': unreferenced formal parameter
+    count tkopfc2fc1) /* naloop (SG) fc2 -> fc1 */
 {
     /* nalopen */
     RT[tkopfc1fc2] = (boolv)((RA[fc1] || TFG[fc1]) && a_bui_fc1);
@@ -175,28 +175,6 @@ void getrapte_fietser_halfstar(count fc1, /* fc1 */
     /* meerealisaties */
     set_special_MR(fc1, fc2, (boolv)(PR[fc2] && a_bui_fc2 && R[fc2] && (A[fc2] != A_WS_HALFSTAR)));
     set_special_MR(fc2, fc1, (boolv)(PR[fc1] && a_bui_fc1 && R[fc1] && (A[fc1] != A_WS_HALFSTAR)));
-
-    /* aanvoerende richting niet te snel realiseren (maximale voorstarttijd gelijk aan nalooptijd) */
-    /*if (voorstartfc1fc2 != NG)
-    {
-    if ((voorstartfc1fc2 > 0) && a_bui_fc1)
-    {
-    if (x_aanvoer(fc2, (mulv)(voorstartfc1fc2)))
-    {
-    X[fc1] |= X_VOOR_HALFSTAR;
-    }
-    }
-    }
-    if (voorstartfc2fc1 != NG)
-    {
-    if ((voorstartfc2fc1 > 0) && a_bui_fc2)
-    {
-    if (x_aanvoer(fc1, (mulv)(voorstartfc2fc1)))
-    {
-    X[fc2] |= X_VOOR_HALFSTAR;
-    }
-    }
-    }*/
 }
 
 /**********************************************************************************/
@@ -1075,10 +1053,8 @@ void var_txc(count fc, boolv condition)
 
 /**********************************************************************************/
 /* Voorstartgroen tijdens voorstart t.o.v. sg-plan */
-void vs_ple(count fc, count prmtotxa, boolv condition) //@@ warning C4100: 'prmtotxa': unreferenced formal parameter
+void vs_ple(count fc, boolv condition) 
 {
-    /*RS[fc] |= YS_PL[fc] && PR[fc] ||
-    ((TOTXA_PL[fc]>0) && (TOTXA_PL[fc]<PRM[prmtotxa])) ? RS_HALFSTAR : 0;*/
     RS[fc] |= condition /*&& YS_PL[fc]*/ && (TXA_PL[fc]> 0) && (tussen_txa_en_txb(fc) && PP[fc]) ? RS_HALFSTAR : 0;
 }
 
@@ -1600,8 +1576,6 @@ boolv TX_between(int tx_value, int tx_first, int tx_second, int tx_max)
 
 void inloopSG_halfstar(count fc1,        /* fc1                                  */
 	               count fc2,        /* fc2                                  */
-	               count dk_bui_fc1, /* buitendrukknopaanvraag fc1           */ //@@  warning C4100: 'dk_bui_fc1': unreferenced formal parameter
-	               count hd_bui_fc1, /* onthouden buitendrukknopaanvraag fc1 */ //@@  warning C4100: 'hd_bui_fc1': unreferenced formal parameter
 	               count tinlfc1fc2) /* inloop (SG) fc1 -> fc2               */
 {
 	if (tinlfc1fc2 > NG)
