@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   18-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   21-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -220,6 +220,18 @@ void display_parameters(void)
     X_us[usPL1] = 167; Y_us[usPL1] = 220;
     X_us[usPL2] = 168; Y_us[usPL2] = 232;
     X_us[usPL3] = 171; Y_us[usPL3] = 243;
+    X_us[usmaster] = NG; Y_us[usmaster] = NG;
+    X_us[usslave] = NG; Y_us[usslave] = NG;
+    X_us[usin654321leven] = NG; Y_us[usin654321leven] = NG;
+    X_us[usin654321kpuls] = NG; Y_us[usin654321kpuls] = NG;
+    X_us[usin654321pervar] = NG; Y_us[usin654321pervar] = NG;
+    X_us[usin654321perarh] = NG; Y_us[usin654321perarh] = NG;
+    X_us[usin654321PL1] = NG; Y_us[usin654321PL1] = NG;
+    X_us[usin654321PL2] = NG; Y_us[usin654321PL2] = NG;
+    X_us[usin654321PL3] = NG; Y_us[usin654321PL3] = NG;
+    X_us[usuit654321leven] = NG; Y_us[usuit654321leven] = NG;
+    X_us[usuit654321syncok] = NG; Y_us[usuit654321syncok] = NG;
+    X_us[usuit654321txsok] = NG; Y_us[usuit654321txsok] = NG;
     X_us[usovtevroeg03bus] = NG; Y_us[usovtevroeg03bus] = NG;
     X_us[usovoptijd03bus] = NG; Y_us[usovoptijd03bus] = NG;
     X_us[usovtelaat03bus] = NG; Y_us[usovtelaat03bus] = NG;

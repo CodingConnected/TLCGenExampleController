@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   18-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   21-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -97,6 +97,9 @@
     #include "timings_uc4.c" /* FCTiming functies */
     #include "123456fctimings.c" /* FCTiming functies */
     #endif /* NO_TIMETOX */
+#ifdef SUMO
+#include "cctracic_public.h"
+#endif /* #ifdef SUMO */
 
 mulv DB_old[DPMAX];
 mulv DVG[DPMAX]; /* T.b.v. veiligheidsgroen */
@@ -123,6 +126,25 @@ mulv C_counter_old[CTMAX];
       "12.4.0"                 /* version            */
     };
 #endif /* NO_RIS */
+    #ifdef SUMO
+    /* SUMO KOPPELING */
+    /* ============== */
+    static char sumostart = TRUE;
+    static int isumo = 0;
+    static char csumotmp[64];
+    typedef struct sumoDetStruct {
+    	char SumoNamen[3][32];
+    	char Selectief;
+    } SUMODET;
+    char SUMOStateString[45];
+    extern int SUMOIds[44];
+    extern SUMODET SUMODetectors[DPMAX];
+    PROCESS_INFORMATION pi;
+    void CloseSumo(void)
+    {
+        TerminateProcess(pi.hProcess, 0);
+    }
+    #endif /* #ifdef SUMO */
 
     #if !defined AUTOMAAT && !defined AUTOMAAT_TEST
         extern boolv display;
@@ -214,14 +236,14 @@ void PreApplication(void)
     IH[hpeltegenhKOP02] = FALSE;
 
     /* Uitgaande peloton koppeling naar KOP68_uit */
-    IH[hptp123456uks01] = SCH[schpkuKOP68_uit68] && (SG[fc68] || FG[fc68]);
-    if (G[fc68] && ED[d68_1a]) IH[hptp123456uks02] = !IH[hptp123456uks02];
-    if (G[fc68] && ED[d68_1b]) IH[hptp123456uks03] = !IH[hptp123456uks03];
+    IH[hptp123456uks04] = SCH[schpkuKOP68_uit68] && (SG[fc68] || FG[fc68]);
+    if (G[fc68] && ED[d68_1a]) IH[hptp123456uks05] = !IH[hptp123456uks05];
+    if (G[fc68] && ED[d68_1b]) IH[hptp123456uks06] = !IH[hptp123456uks06];
     /* Afzetten hulpelementen inkomende peloton koppelingen */
     IH[hpelinKOP02] = FALSE;
 
     /* Inkomende peloton koppeling van KOP02 */
-    IH[hpelinKOP02] |= proc_pel_in_V1(hptp123456iks01, tpelmeetKOP02, tpelmaxhiaatKOP02, prmpelgrensKOP02, mpelvtgKOP02, mpelinKOP02, hptp123456iks02, hptp123456iks03, END);
+    IH[hpelinKOP02] |= proc_pel_in_V1(hptp123456iks10, tpelmeetKOP02, tpelmaxhiaatKOP02, prmpelgrensKOP02, mpelvtgKOP02, mpelinKOP02, hptp123456iks08, hptp123456iks09, END);
 
     /* Robuuste Groenverdeler */
     IH[hrgvact] = SCH[schrgv];
@@ -253,6 +275,36 @@ void PreApplication(void)
     IH[hopdrempelen08] = SCH[schopdrempelen08];
     IH[hopdrempelen09] = SCH[schopdrempelen09];
     IH[hopdrempelen11] = SCH[schopdrempelen11];
+
+    /* SUMO KOPPELING */
+    /* ============== */
+    #ifdef SUMO
+    if (sumostart)
+    {
+        sumostart = FALSE;
+        STARTUPINFO si;
+        ZeroMemory(&si, sizeof(si));
+        si.cb = sizeof(si);
+        ZeroMemory(&pi, sizeof(pi));
+
+        // Start SUMO!
+        if (!CreateProcess(NULL,
+        "\"C:\\Program Files (x86)\\Sumo\\bin\\sumo-gui.exe\" \".\\AS.sumocfg\"",
+        NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+        {
+            sprintf(csumotmp, "CreateProcess failed (%d).\n", GetLastError());
+            uber_puts(csumotmp);
+        }
+        else
+        {
+            atexit(CloseSumo);
+        }
+        TraCIConnect("127.0.0.1", "4001");
+        CIF_KLOK[CIF_UUR] = 16;
+        CIF_KLOK[CIF_MINUUT] = 0;
+           TraCISetOrder(0);
+    }
+    #endif /* #ifdef SUMO */
 
     PreApplication_Add();
     pre_application_halfstar();
@@ -990,6 +1042,46 @@ void Aanvragen(void)
             A[fc38] |= BIT13;
             CIF_VLOG_FC_CAM[fc38] |= BIT0;
         }
+        if (ris_aanvraag(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisastart38vtg2], PRM[prmrisaend38vtg2], SCH[schrisgeencheckopsg]))
+        {
+            A[fc38] |= BIT10;
+            CIF_VLOG_FC_CAM[fc38] |= BIT0;
+        }
+        if (ris_aanvraag(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisastartsrm038vtg2], PRM[prmrisaendsrm038vtg2], !SCH[schrisgeencheckopsg]))
+        {
+            A[fc38] |= BIT13;
+            CIF_VLOG_FC_CAM[fc38] |= BIT0;
+        }
+        if (ris_aanvraag(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisastart61mveh1], PRM[prmrisaend61mveh1], SCH[schrisgeencheckopsg]))
+        {
+            A[fc61] |= BIT10;
+            CIF_VLOG_FC_CAM[fc61] |= BIT0;
+        }
+        if (ris_aanvraag(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm061mveh1], PRM[prmrisaendsrm061mveh1], !SCH[schrisgeencheckopsg]))
+        {
+            A[fc61] |= BIT13;
+            CIF_VLOG_FC_CAM[fc61] |= BIT0;
+        }
+        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh1], PRM[prmrisaend62mveh1], SCH[schrisgeencheckopsg]))
+        {
+            A[fc62] |= BIT10;
+            CIF_VLOG_FC_CAM[fc62] |= BIT0;
+        }
+        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm062mveh1], PRM[prmrisaendsrm062mveh1], !SCH[schrisgeencheckopsg]))
+        {
+            A[fc62] |= BIT13;
+            CIF_VLOG_FC_CAM[fc62] |= BIT0;
+        }
+        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh2], PRM[prmrisaend62mveh2], SCH[schrisgeencheckopsg]))
+        {
+            A[fc62] |= BIT10;
+            CIF_VLOG_FC_CAM[fc62] |= BIT0;
+        }
+        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisastartsrm062mveh2], PRM[prmrisaendsrm062mveh2], !SCH[schrisgeencheckopsg]))
+        {
+            A[fc62] |= BIT13;
+            CIF_VLOG_FC_CAM[fc62] |= BIT0;
+        }
         if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg]))
         {
             A[fc84] |= BIT10;
@@ -1049,46 +1141,6 @@ void Aanvragen(void)
         {
             A[fc67] |= BIT13;
             CIF_VLOG_FC_CAM[fc67] |= BIT0;
-        }
-        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh2], PRM[prmrisaend62mveh2], SCH[schrisgeencheckopsg]))
-        {
-            A[fc62] |= BIT10;
-            CIF_VLOG_FC_CAM[fc62] |= BIT0;
-        }
-        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisastartsrm062mveh2], PRM[prmrisaendsrm062mveh2], !SCH[schrisgeencheckopsg]))
-        {
-            A[fc62] |= BIT13;
-            CIF_VLOG_FC_CAM[fc62] |= BIT0;
-        }
-        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh1], PRM[prmrisaend62mveh1], SCH[schrisgeencheckopsg]))
-        {
-            A[fc62] |= BIT10;
-            CIF_VLOG_FC_CAM[fc62] |= BIT0;
-        }
-        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm062mveh1], PRM[prmrisaendsrm062mveh1], !SCH[schrisgeencheckopsg]))
-        {
-            A[fc62] |= BIT13;
-            CIF_VLOG_FC_CAM[fc62] |= BIT0;
-        }
-        if (ris_aanvraag(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisastart61mveh1], PRM[prmrisaend61mveh1], SCH[schrisgeencheckopsg]))
-        {
-            A[fc61] |= BIT10;
-            CIF_VLOG_FC_CAM[fc61] |= BIT0;
-        }
-        if (ris_aanvraag(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm061mveh1], PRM[prmrisaendsrm061mveh1], !SCH[schrisgeencheckopsg]))
-        {
-            A[fc61] |= BIT13;
-            CIF_VLOG_FC_CAM[fc61] |= BIT0;
-        }
-        if (ris_aanvraag(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisastart38vtg2], PRM[prmrisaend38vtg2], SCH[schrisgeencheckopsg]))
-        {
-            A[fc38] |= BIT10;
-            CIF_VLOG_FC_CAM[fc38] |= BIT0;
-        }
-        if (ris_aanvraag(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisastartsrm038vtg2], PRM[prmrisaendsrm038vtg2], !SCH[schrisgeencheckopsg]))
-        {
-            A[fc38] |= BIT13;
-            CIF_VLOG_FC_CAM[fc38] |= BIT0;
         }
     /* aanvragen RIS schakelbaar, 1 schakelaar voor het schakelen van alle aanvragen */
     if (!SCH[schrisaanvraag])
@@ -2005,6 +2057,46 @@ void Meetkriterium(void)
             MK[fc38] |= BIT13;
             CIF_VLOG_FC_CAM[fc38] |= BIT1;
         }
+        if (ris_verlengen(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg2], PRM[prmrisvend38vtg2], SCH[schrisgeencheckopsg]))
+        {
+            MK[fc38] |= BIT10;
+            CIF_VLOG_FC_CAM[fc38] |= BIT1;
+        }
+        if (ris_verlengen(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstartsrm038vtg2], PRM[prmrisvendsrm038vtg2], !SCH[schrisgeencheckopsg]))
+        {
+            MK[fc38] |= BIT13;
+            CIF_VLOG_FC_CAM[fc38] |= BIT1;
+        }
+        if (ris_verlengen(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisvstart61mveh1], PRM[prmrisvend61mveh1], SCH[schrisgeencheckopsg]))
+        {
+            MK[fc61] |= BIT10;
+            CIF_VLOG_FC_CAM[fc61] |= BIT1;
+        }
+        if (ris_verlengen(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm061mveh1], PRM[prmrisvendsrm061mveh1], !SCH[schrisgeencheckopsg]))
+        {
+            MK[fc61] |= BIT13;
+            CIF_VLOG_FC_CAM[fc61] |= BIT1;
+        }
+        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh1], PRM[prmrisvend62mveh1], SCH[schrisgeencheckopsg]))
+        {
+            MK[fc62] |= BIT10;
+            CIF_VLOG_FC_CAM[fc62] |= BIT1;
+        }
+        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm062mveh1], PRM[prmrisvendsrm062mveh1], !SCH[schrisgeencheckopsg]))
+        {
+            MK[fc62] |= BIT13;
+            CIF_VLOG_FC_CAM[fc62] |= BIT1;
+        }
+        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh2], PRM[prmrisvend62mveh2], SCH[schrisgeencheckopsg]))
+        {
+            MK[fc62] |= BIT10;
+            CIF_VLOG_FC_CAM[fc62] |= BIT1;
+        }
+        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm062mveh2], PRM[prmrisvendsrm062mveh2], !SCH[schrisgeencheckopsg]))
+        {
+            MK[fc62] |= BIT13;
+            CIF_VLOG_FC_CAM[fc62] |= BIT1;
+        }
         if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg]))
         {
             MK[fc84] |= BIT10;
@@ -2064,46 +2156,6 @@ void Meetkriterium(void)
         {
             MK[fc67] |= BIT13;
             CIF_VLOG_FC_CAM[fc67] |= BIT1;
-        }
-        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh2], PRM[prmrisvend62mveh2], SCH[schrisgeencheckopsg]))
-        {
-            MK[fc62] |= BIT10;
-            CIF_VLOG_FC_CAM[fc62] |= BIT1;
-        }
-        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm062mveh2], PRM[prmrisvendsrm062mveh2], !SCH[schrisgeencheckopsg]))
-        {
-            MK[fc62] |= BIT13;
-            CIF_VLOG_FC_CAM[fc62] |= BIT1;
-        }
-        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh1], PRM[prmrisvend62mveh1], SCH[schrisgeencheckopsg]))
-        {
-            MK[fc62] |= BIT10;
-            CIF_VLOG_FC_CAM[fc62] |= BIT1;
-        }
-        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm062mveh1], PRM[prmrisvendsrm062mveh1], !SCH[schrisgeencheckopsg]))
-        {
-            MK[fc62] |= BIT13;
-            CIF_VLOG_FC_CAM[fc62] |= BIT1;
-        }
-        if (ris_verlengen(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisvstart61mveh1], PRM[prmrisvend61mveh1], SCH[schrisgeencheckopsg]))
-        {
-            MK[fc61] |= BIT10;
-            CIF_VLOG_FC_CAM[fc61] |= BIT1;
-        }
-        if (ris_verlengen(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm061mveh1], PRM[prmrisvendsrm061mveh1], !SCH[schrisgeencheckopsg]))
-        {
-            MK[fc61] |= BIT13;
-            CIF_VLOG_FC_CAM[fc61] |= BIT1;
-        }
-        if (ris_verlengen(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg2], PRM[prmrisvend38vtg2], SCH[schrisgeencheckopsg]))
-        {
-            MK[fc38] |= BIT10;
-            CIF_VLOG_FC_CAM[fc38] |= BIT1;
-        }
-        if (ris_verlengen(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstartsrm038vtg2], PRM[prmrisvendsrm038vtg2], !SCH[schrisgeencheckopsg]))
-        {
-            MK[fc38] |= BIT13;
-            CIF_VLOG_FC_CAM[fc38] |= BIT1;
         }
     #endif
 
@@ -3411,6 +3463,21 @@ void PostApplication(void)
         if (BL[fc] & BIT10) A[fc] = FALSE;
     }
 
+    #ifdef SUMO
+        for (isumo = 0; isumo < 44; ++isumo)
+        {
+            SUMOStateString[isumo] = 'O';
+            if (SUMOIds[isumo] != NG)
+            {
+                SUMOStateString[isumo] = G[SUMOIds[isumo]] ? 'G' : GL[SUMOIds[isumo]] ? 'y' : 'r';
+            }
+        }
+        SUMOStateString[44] = '\0';
+        TraCISetTrafficLightState("G5", SUMOStateString);
+
+        TraCIControlSimStep();
+    #endif /* #ifdef SUMO */
+
     PostApplication_Add();
     PostApplication_halfstar();
 }
@@ -3846,6 +3913,34 @@ void dump_application(void)
 void PrioSpecialSignals();
 void is_special_signals(void)
 {
+    #ifdef SUMO
+    for (isumo = 0; isumo < DPMAX; isumo++)
+    {
+        if (isumo == ddummyhdkarin03 || isumo == ddummyhdkarin05 || isumo == ddummyhdkarin08 || isumo == ddummyhdkarin09 || isumo == ddummyhdkarin11 || isumo == ddummyhdkarin61 || isumo == ddummyhdkarin62 || isumo == ddummyhdkarin67 || isumo == ddummyhdkarin68 || isumo == ddummyhdkaruit03 || isumo == ddummyhdkaruit05 || isumo == ddummyhdkaruit08 || isumo == ddummyhdkaruit09 || isumo == ddummyhdkaruit11 || isumo == ddummyhdkaruit61 || isumo == ddummyhdkaruit62 || isumo == ddummyhdkaruit67 || isumo == ddummyhdkaruit68 || isumo == dk84 || isumo == dk28 || isumo == dk24 || isumo == dk22        )
+        {
+            continue;
+        }
+        CIF_IS[isumo] = FALSE;
+        for (int d = 0; d < 3; ++d)
+        {
+            if (strlen(SUMODetectors[isumo].SumoNamen[d]) > 1)
+            {
+                if (!SUMODetectors[isumo].Selectief)
+                {
+                    double dd = TraCIGetLaneAreaLastStepOccupancy(SUMODetectors[isumo].SumoNamen[d]);
+                    if (dd > 0.1) CIF_IS[isumo] = TRUE;
+                }
+                else
+                {
+                    int dd = TraCIGetInductionLoopLastStepVehicleNumber(SUMODetectors[isumo].SumoNamen[d], 0);
+                    if (dd != 0) CIF_IS[isumo] = TRUE;
+                }
+            }
+        }
+    }
+    CIF_ISWIJZ = TRUE;
+    #endif /* #ifdef SUMO */
+
     PrioSpecialSignals();
     SpecialSignals_Add();
 }

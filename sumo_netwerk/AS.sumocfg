@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 05/10/19 10:32:54 by Eclipse SUMO Version v0_32_0+1842-f18d3e1494
+-->
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="G5.net.xml"/>
+        <additional-files value="G5.add.xml" />
+        <route-files value="vehicle_types.xml,trips_mvt_AS.xml,trips_fts_AS.xml,trips_vtg_AS.xml"/>
+    </input>
+
+    <routing>
+        <device.rerouting.adaptation-steps value="1200"/>
+    </routing>
+
+	<time>
+        <begin value="57600"/>
+        <end value="61200"/>
+    </time>
+
+    <processing>
+        <lateral-resolution value="1.0"/>
+        <default.speeddev value="0"/>
+    </processing>
+
+    <step-length value="0.1" />
+
+    <remote-port value="4001" />
+    <num-clients>1</num-clients>
+
+   <start value="true" />
+
+    <!--<report>
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="true"/>
+    </report>-->
+
+    <gui_only>
+        <gui-settings-file value="simview.xml"/>
+    </gui_only>
+
+</configuration>

@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   18-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   21-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -51,103 +51,143 @@ void pre_application_halfstar(void)
 
 void KlokPerioden_halfstar(void)
 {
+    char volgMaster = TRUE;
+
     /* BepaalKoppeling */
     /* --------------- */
     MM[mklok] = FALSE;
     MM[mhand] = FALSE;
+    MM[mmaster] = FALSE;
+    MM[mslave] = FALSE;
     IH[hkpact] = TRUE;
     IH[hplact] = TRUE;
     IH[hmlact] = FALSE;
     APL = NG;
 
-    switch (MM[mperiod])
+/* Master bepaalt wat er gaat gebeuren */
+    if (MM[mleven654321] && !SCH[schslavebep])
     {
-        case 0: /* default */
+        MM[mmaster] = TRUE;
+
+        if      (IH[hptp123456iks05]) APL = PL1;
+        else if (IH[hptp123456iks06]) APL = PL2;
+        else if (IH[hptp123456iks07]) APL = PL3;
+        else APL = PL1;
+
+        if (PRM[prmvolgmasterpl] > 0)
         {
-            APL = PRM[prmplxperdef] - 1;
-            break;
+            if (                (APL == PL1) && !(PRM[prmvolgmasterpl] & BIT1) ||
+                (APL == PL2) && !(PRM[prmvolgmasterpl] & BIT2) ||
+                (APL == PL3) && !(PRM[prmvolgmasterpl] & BIT3))
+            {
+                volgMaster = FALSE;
+            }
         }
-        case 1: /* default */
+        if (volgMaster == FALSE)
         {
-            APL = PRM[prmplxper1] - 1;
-            break;
+            IH[hkpact] = FALSE;
         }
-        case 2: /* default */
+        else
         {
-            APL = PRM[prmplxper2] - 1;
-            break;
-        }
-        case 3: /* default */
-        {
-            APL = PRM[prmplxper3] - 1;
-            break;
-        }
-        case 4: /* default */
-        {
-            APL = PRM[prmplxper4] - 1;
-            break;
-        }
-        case 5: /* default */
-        {
-            APL = PRM[prmplxper5] - 1;
-            break;
-        }
-        case 6: /* default */
-        {
-            APL = PRM[prmplxper6] - 1;
-            break;
-        }
-        case 7: /* default */
-        {
-            APL = PRM[prmplxper7] - 1;
-            break;
-        }
-        default:
-        {
-            APL = PRM[prmplxperdef] - 1;
-            break;
+            IH[hpervar] =  IH[hptp123456iks04];
+            IH[hperarh] =  IH[hptp123456iks03];
         }
     }
-    /* Klokbepaling voor VA-bedrijf */
-    if ((SCH[schpervardef] && (MM[mperiod] == 0)) ||
-        (SCH[schpervar1] && (MM[mperiod] == 1)) ||
-        (SCH[schpervar2] && (MM[mperiod] == 2)) ||
-        (SCH[schpervar3] && (MM[mperiod] == 3)) ||
-        (SCH[schpervar4] && (MM[mperiod] == 4)) ||
-        (SCH[schpervar5] && (MM[mperiod] == 5)) ||
-        (SCH[schpervar6] && (MM[mperiod] == 6)) ||
-        (SCH[schpervar7] && (MM[mperiod] == 7)))
-    {
-        IH[hpervar] = TRUE;
-    }
+    /* Bij afwezigheid Master bepaalt Slave zelf wat er gaat gebeuren. In dit geval neemt de slave de functie van Master over */
     else
     {
-        IH[hpervar] = FALSE;
-    }
+        MM[mslave] = TRUE;
+        switch (MM[mperiod])
+        {
+            case 0: /* default */
+            {
+                APL = PRM[prmplxperdef] - 1;
+                break;
+            }
+            case 1: /* default */
+            {
+                APL = PRM[prmplxper1] - 1;
+                break;
+            }
+            case 2: /* default */
+            {
+                APL = PRM[prmplxper2] - 1;
+                break;
+            }
+            case 3: /* default */
+            {
+                APL = PRM[prmplxper3] - 1;
+                break;
+            }
+            case 4: /* default */
+            {
+                APL = PRM[prmplxper4] - 1;
+                break;
+            }
+            case 5: /* default */
+            {
+                APL = PRM[prmplxper5] - 1;
+                break;
+            }
+            case 6: /* default */
+            {
+                APL = PRM[prmplxper6] - 1;
+                break;
+            }
+            case 7: /* default */
+            {
+                APL = PRM[prmplxper7] - 1;
+                break;
+            }
+            default:
+            {
+                APL = PRM[prmplxperdef] - 1;
+                break;
+            }
+        }
+        /* Klokbepaling voor VA-bedrijf */
+        if ((SCH[schpervardef] && (MM[mperiod] == 0)) ||
+            (SCH[schpervar1] && (MM[mperiod] == 1)) ||
+            (SCH[schpervar2] && (MM[mperiod] == 2)) ||
+            (SCH[schpervar3] && (MM[mperiod] == 3)) ||
+            (SCH[schpervar4] && (MM[mperiod] == 4)) ||
+            (SCH[schpervar5] && (MM[mperiod] == 5)) ||
+            (SCH[schpervar6] && (MM[mperiod] == 6)) ||
+            (SCH[schpervar7] && (MM[mperiod] == 7)))
+        {
+            IH[hpervar] = TRUE;
+        }
+        else
+        {
+            IH[hpervar] = FALSE;
+        }
 
-    /* Klokbepaling voor alternatieve realisaties voor de hoofdrichtingen */
-    if ((SCH[schperarhdef] && (MM[mperiod] == 0)) ||
-        (SCH[schperarh1] && (MM[mperiod] == 1)) ||
-        (SCH[schperarh2] && (MM[mperiod] == 2)) ||
-        (SCH[schperarh3] && (MM[mperiod] == 3)) ||
-        (SCH[schperarh4] && (MM[mperiod] == 4)) ||
-        (SCH[schperarh5] && (MM[mperiod] == 5)) ||
-        (SCH[schperarh6] && (MM[mperiod] == 6)) ||
-        (SCH[schperarh7] && (MM[mperiod] == 7)))
-    {
-        IH[hperarh] = TRUE;
-    }
-    else
-    {
-        IH[hperarh] = FALSE;
+        /* Klokbepaling voor alternatieve realisaties voor de hoofdrichtingen */
+        if ((SCH[schperarhdef] && (MM[mperiod] == 0)) ||
+            (SCH[schperarh1] && (MM[mperiod] == 1)) ||
+            (SCH[schperarh2] && (MM[mperiod] == 2)) ||
+            (SCH[schperarh3] && (MM[mperiod] == 3)) ||
+            (SCH[schperarh4] && (MM[mperiod] == 4)) ||
+            (SCH[schperarh5] && (MM[mperiod] == 5)) ||
+            (SCH[schperarh6] && (MM[mperiod] == 6)) ||
+            (SCH[schperarh7] && (MM[mperiod] == 7)))
+        {
+            IH[hperarh] = TRUE;
+        }
+        else
+        {
+            IH[hperarh] = FALSE;
+        }
     }
 
     /* Klokbepaling voor VA-bedrijf */
-    if (SCH[schvar] || SCH[schvarstreng])
+    if (SCH[schvar])
     {
         /* Halfstar/va afhankelijk van schakelaar */
         IH[hkpact] = FALSE;
         MM[mhand]  = TRUE;
+        MM[mmaster]  = FALSE;
+        MM[mslave]  = FALSE;
     } 
     else
     {
@@ -161,7 +201,7 @@ void KlokPerioden_halfstar(void)
         MM[mhand]   = TRUE;
     }
     /* Koppelen actief */
-    if (H[hpervar] || SCH[schvar] || SCH[schvarstreng] || IH[homschtegenh])
+    if (H[hpervar] || SCH[schvar] || IH[homschtegenh])
         IH[hkpact] = FALSE;
     else
         IH[hkpact] = TRUE;
@@ -564,6 +604,9 @@ void PostApplication_halfstar(void)
     RT[tleven] = !T[tleven]; /* timer herstarten */
     if (ST[tleven])  IH[hleven] = !IH[hleven];   /* hulpwaarde aan/uit zetten */
 
+    /* Levensignaal van 654321 */
+    RT[tleven654321] = SH[hptp123456iks01];
+    MM[mleven654321] = T[tleven654321];
     /* herstart fasebewakingstimers bij wisseling tussen ML/PL en SPL */
     /* -------------------------------------------------------------- */
     RTFB &= ~RTFB_PLVA_HALFSTAR;
@@ -575,40 +618,6 @@ void PostApplication_halfstar(void)
 void pre_system_application_halfstar(void)
 {
     int fc;
-
-    /* kopieer signaalplantijden - vanuit parameter lijst */
-    /* -------------------------------------------------- */
-    if (SCH[schinstprm])
-    {
-        short error = FALSE;
-        if (!error)
-        {
-            error = CheckSignalplanPrms(PL1, TX_max[0], prmtxA1PL1_02);
-        }
-        if (!error)
-        {
-            error = CheckSignalplanPrms(PL2, TX_max[1], prmtxA1PL2_02);
-        }
-        if (!error)
-        {
-            error = CheckSignalplanPrms(PL3, TX_max[2], prmtxA1PL3_02);
-        }
-        if (!error)
-        {
-            SignalplanPrmsToTx(PL1, prmtxA1PL1_02);
-            SignalplanPrmsToTx(PL2, prmtxA1PL2_02);
-            SignalplanPrmsToTx(PL3, prmtxA1PL3_02);
-        }
-        if (!error)
-        {
-            copy_signalplan(PL);
-            create_trig();        /* creëer nieuwe TIG-tabel na wijzigingen geel-, ontruimingstijden */
-            correction_trig();    /* correcties TIG-tabel a.g.v. koppelingen e.d. */
-            check_signalplans(); /* check signalplans */
-        }
-        SCH[schinstprm] = 0;
-        CIF_PARM1WIJZAP = (s_int16) (&SCH[schinstprm] - CIF_PARM1);
-    }
 
     /* kopieer signaalplantijden - na wijziging */
     /* ---------------------------------------- */
@@ -634,6 +643,9 @@ void pre_system_application_halfstar(void)
     
     if (IH[hplact]) /* Code alleen bij PL-bedrijf */
     {
+        RT[toffset] = SH[hptp123456iks02]; /* offset starten op start koppelpuls */
+        SYN_TXS = ET[toffset]; /* synchronisatie einde offset timer */
+        synchronization_timer(SAPPLPROG, T_max[txmarge]);
         FTX = HTX = FALSE;  /* reset instructievariabelen van TX */
         
         if (!IH[hkpact] && !IH[hmlact])
@@ -646,7 +658,70 @@ void pre_system_application_halfstar(void)
             FTX = !H[homschtegenh] &&
                   versnel_tx(TRUE); /* voertuigafhankelijk */
         }
+        else
+        {
+            /* gekoppelde signaalplansturing */
+            /* ----------------------------- */
+            /* als TXS_SYNC, en daarmee ook TXS_OKE, de regeling zacht of hard synchroniseren afhankelijk van 
+                 positie ten opzichte van de master */
+            if (MM[mleven654321] && TXS_OKE && TXS_SYNC && (TXS_delta > 0) && (PL==APL))
+            {
+                /* regeling loopt iets vooruit (2 x marge) */
+                if (TXS_delta > 0 && (TXS_delta <= (2 * T_max[txmarge])))
+                {
+                    HTX = TRUE;
+                }
+                else
+                /* regeling loop iets achter (2 x marge) */
+                if (TXS_delta > 0 && (TXS_delta >= (TX_max[PL] - (2 * T_max[txmarge]))))
+                {
+                    FTX = versnel_tx(FALSE);
+                }
+                /* in alle andere gevallen is de afwijking te groot en moet, om lange synchronisatietijden te voorkomen,
+                     de regeling hard worden gesynschroniseerd */
+                else
+                {
+                    if (!H[homschtegenh]) /* koppelingen en pelotons mogen niet worden afgekapt     */
+                        TX_timer = TXS_timer; /* TX_timer gelijk maken aan de cyclustijd van de master */
+                }
+            }
+            else
+            {
+                /* do nothing */
+            }
+        }
     } /* Einde code PL-bedrijf */
+    /* tijdens VA bedrijf hard synchroniseren */
+    else
+    {
+        RTX = SH[hptp123456iks02];
+    }
+
+    /* Koppelsignalen (PTP) van 654321 */
+    GUS[usin654321leven] = IH[hptp123456iks01];
+    if (MM[mleven654321])
+    {
+        GUS[usin654321kpuls] = IH[hptp123456iks02];
+        GUS[usin654321pervar] = IH[hptp123456iks04];
+        GUS[usin654321perarh] = IH[hptp123456iks03];
+        GUS[usin654321PL1] = IH[hptp123456iks05];
+        GUS[usin654321PL2] = IH[hptp123456iks06];
+        GUS[usin654321PL3] = IH[hptp123456iks07];
+    }
+    else
+    {
+        GUS[usin654321kpuls] = FALSE;
+        GUS[usin654321pervar] = FALSE;
+        GUS[usin654321perarh] = FALSE;
+        GUS[usin654321PL1] = FALSE;
+        GUS[usin654321PL2] = FALSE;
+        GUS[usin654321PL3] = FALSE;
+    }
+
+    /* Koppelsignalen (PTP) naar 654321 */
+    GUS[usuit654321leven] = IH[hptp123456uks01] = IH[hleven];
+    GUS[usuit654321syncok] = IH[hptp123456uks02] = REG && (MM[mleven654321] && (TXS_delta == 0) && TXS_OKE);
+    GUS[usuit654321txsok] = IH[hptp123456uks03] = REG && MM[mleven654321] && TXS_OKE;
 
     GUS[usplact] = IH[hplact];
     GUS[usmlact] = IH[hmlact];
@@ -658,6 +733,8 @@ void pre_system_application_halfstar(void)
     GUS[ustxtimer] = IH[hplact] ? (s_int16)(TX_timer): 0;
     GUS[usklok] = MM[mklok];
     GUS[ushand] = MM[mhand];
+    GUS[usmaster] = MM[mmaster];
+    GUS[usslave] = MM[mslave];
 
 
     pre_system_application_halfstar_Add();

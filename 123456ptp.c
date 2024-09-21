@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   18-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   21-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -70,17 +70,17 @@ void ptp_control_parameters (void)
         /* ptp-parameters t.b.v. koppeling met PTP_ptp123456 */
         /* ----------------------------------------- */
     #if (defined AUTOMAAT)
-        PTP_ptp123456.PORTNR = 1;        /* poortnummer in het regeltoestel     */  /* @ door fabrikant aanpassen */
+        PTP_ptp123456.PORTNR = PRM[prmportnrptp123456];        /* poortnummer in het regeltoestel     */  /* @ door fabrikant aanpassen */
     #else
         PTP_ptp123456.PORTNR = 3;        /* poortnr. testomgeving (schrijvend) */ /* @ nummer van KS-buffer */
     #endif
-        PTP_ptp123456.SRC  = 11;       /* nummer van source                   */ /* @ maximaal 255 */
-        PTP_ptp123456.DEST = 12;       /* nummer van destination              */ /* @ maximaal 255 */
+        PTP_ptp123456.SRC  = (byte)PRM[prmsrcptp123456];        /* nummer van source                   */ /* @ maximaal 255 */
+        PTP_ptp123456.DEST = (byte)PRM[prmdestptp123456];       /* nummer van destination              */ /* @ maximaal 255 */
 
-        PTP_ptp123456.TMSGW_max= 200;   /* wait  time-out             */
-        PTP_ptp123456.TMSGS_max=  10;   /* send  time-out             */
-        PTP_ptp123456.TMSGA_max=  10;   /* alive time-out             */
-        PTP_ptp123456.CMSG_max=    3;   /* max. berichtenteller tbv. herhaling */
+        PTP_ptp123456.TMSGW_max= PRM[prmtmsgwptp123456];   /* wait  time-out             */
+        PTP_ptp123456.TMSGS_max= PRM[prmtmsgsptp123456];   /* send  time-out             */
+        PTP_ptp123456.TMSGA_max= PRM[prmtmsgaptp123456];   /* alive time-out             */
+        PTP_ptp123456.CMSG_max=  PRM[prmcmsgptp123456];    /* max. berichtenteller tbv. herhaling */
 
         PTP_ptp123456KS.IKS_MAX = 16;   /* aantal inkomende koppelsignalen    */ /* @ verhogen in stappen van 8 */
         PTP_ptp123456KS.UKS_MAX = 16;   /* aantal uitgaande koppelsignalen    */ /* @ verhogen in stappen van 8 */

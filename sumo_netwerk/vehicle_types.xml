@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vTypeDistribution id="4">
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar0" length="4.801" sigma="0.751" tau="1.825" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar1" length="3.705" sigma="0.613" tau="1.786" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar2" length="5.248" sigma="0.435" tau="1.683" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar3" length="6.201" sigma="0.890" tau="1.918" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar4" length="4.807" sigma="0.796" tau="2.031" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar5" length="3.974" sigma="0.369" tau="1.947" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar6" length="4.710" sigma="0.573" tau="1.706" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar7" length="5.030" sigma="0.083" tau="1.772" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar8" length="4.962" sigma="0.414" tau="1.707" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar9" length="6.988" sigma="0.763" tau="1.894" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar10" length="4.929" sigma="0.784" tau="1.746" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar11" length="4.541" sigma="0.673" tau="1.778" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar12" length="5.035" sigma="0.277" tau="1.679" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar13" length="3.556" sigma="0.675" tau="1.682" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar14" length="4.708" sigma="0.544" tau="1.800" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar15" length="5.104" sigma="0.430" tau="1.898" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar16" length="6.005" sigma="0.481" tau="1.662" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar17" length="4.950" sigma="0.351" tau="1.783" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar18" length="3.732" sigma="0.365" tau="1.778" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar19" length="4.501" sigma="0.228" tau="1.741" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar20" length="5.248" sigma="0.456" tau="1.744" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar21" length="6.657" sigma="0.451" tau="1.865" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar22" length="4.849" sigma="0.665" tau="1.920" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar23" length="4.863" sigma="0.359" tau="1.704" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+        <vType carFollowModel="Krauss" vClass="passenger" id="vehDistCar24" length="5.044" sigma="0.494" tau="1.809" decel="2.80" jmDriveAfterYellowTime="1" latAlignment="center"/>
+    </vTypeDistribution>
+
+    <vType carFollowModel="Krauss" vClass="bus" id="5" length="11.5" sigma="0.751" tau="1.825" guiShape="bus" decel="2.61" maxSpeed="12.50" jmDriveAfterYellowTime="1"/>
+
+    <vType carFollowModel="Krauss" vClass="pedestrian" id="7" length="1" sigma="0.751" tau="1.825" maxSpeed="1.30" latAlignment="right" laneChangeModel="SL2015" lcTimeToImpatience="30" lcSublane="2" jmDriveAfterYellowTime="2"/>
+
+    <vType carFollowModel="Krauss" vClass="bicycle" id="6" length="2" sigma="0.751" tau="1.825" decel="3.00" accel="1.10" maxSpeed="4.20" latAlignment="right" laneChangeModel="SL2015" lcTimeToImpatience="30" lcSublane="2"  jmDriveAfterYellowTime="2"/>
+
+    <vType carFollowModel="Krauss" vClass="emergency" id="8" length="6.5" sigma="0.751" tau="1.825" guiShape="emergency" speedFactor="1.5" />
+</routes>

@@ -1,0 +1,19 @@
+$VMR
+* vehicle type
+7
+* From-Time To-Time
+16.00 17.00
+* Factor:
+1.25
+*
+* Number of districts:
+6
+* Names:
+  31a   32a   33a   34a   38a   38b
+* Data:
+    0    50     0     0     0     0 
+   50     0     0     0     0     0 
+    0     0     0    50     0     0
+    0     0    50     0     0     0
+    0     0     0     0     0    50
+    0     0     0     0    50     0

@@ -1,0 +1,20 @@
+$VMR
+* vehicle type
+6
+* From-Time To-Time
+16.00 17.00
+* Factor:
+1.00
+*
+* Number of districts:
+4
+* Names:
+noord  oost  zuidfts  west
+* Data:
+    0    25      150    50
+   25     0       25    25
+  150    25        0    10
+   25    10      100     0
+
+
+

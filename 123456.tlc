@@ -289,7 +289,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0.8</Versie>
-      <Datum>2024-09-18T00:00:00</Datum>
+      <Datum>2024-09-21T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Release versie TLCGen</Commentaar>
     </Versie>
@@ -10331,7 +10331,7 @@
         </InkomendVerklikking>
         <KoppelSignalen>
           <KoppelSignaalModel>
-            <Count>1</Count>
+            <Count>10</Count>
             <Id>1</Id>
             <Name>KOP02g02</Name>
             <Description>KOP02 groen 02</Description>
@@ -10339,7 +10339,7 @@
             <Richting>In</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>2</Count>
+            <Count>8</Count>
             <Id>2</Id>
             <Name>KOP02d021</Name>
             <Description>KOP02 det. 021</Description>
@@ -10347,7 +10347,7 @@
             <Richting>In</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>3</Count>
+            <Count>9</Count>
             <Id>3</Id>
             <Name>KOP02d022</Name>
             <Description>KOP02 det. 022</Description>
@@ -10391,7 +10391,7 @@
         </InkomendVerklikking>
         <KoppelSignalen>
           <KoppelSignaalModel>
-            <Count>1</Count>
+            <Count>4</Count>
             <Id>1</Id>
             <Name>KOP68_uitg68</Name>
             <Description>KOP68_uit groen 68</Description>
@@ -10399,7 +10399,7 @@
             <Richting>Uit</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>2</Count>
+            <Count>5</Count>
             <Id>2</Id>
             <Name>KOP68_uitd68_1a</Name>
             <Description>KOP68_uit det. 68_1a</Description>
@@ -10407,7 +10407,7 @@
             <Richting>Uit</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>3</Count>
+            <Count>6</Count>
             <Id>3</Id>
             <Name>KOP68_uitd68_1b</Name>
             <Description>KOP68_uit det. 68_1b</Description>
@@ -10698,7 +10698,7 @@
     </Perioden>
   </PeriodenData>
   <PTPData>
-    <PTPInstellingenInParameters>false</PTPInstellingenInParameters>
+    <PTPInstellingenInParameters>true</PTPInstellingenInParameters>
     <PTPKoppelingen>
       <PTPKoppeling>
         <TeKoppelenKruispunt>ptp123456</TeKoppelenKruispunt>
@@ -21249,6 +21249,46 @@
         <Type>PEDESTRIAN</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
+        <SignalGroupName>38</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>PEDESTRIAN</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>61</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>62</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>62</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
@@ -21307,46 +21347,6 @@
         <AanvraagStartSrm0>0</AanvraagStartSrm0>
         <AanvraagEndSrm0>0</AanvraagEndSrm0>
         <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>62</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>62</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>61</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>38</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>PEDESTRIAN</Type>
       </RISLaneRequestDataModel>
     </RISLaneRequestData>
     <RISLaneExtendData>
@@ -21581,6 +21581,46 @@
         <Type>PEDESTRIAN</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
+        <SignalGroupName>38</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>PEDESTRIAN</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>61</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>62</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>62</SignalGroupName>
+        <RijstrookIndex>2</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
@@ -21639,46 +21679,6 @@
         <VerlengenStartSrm0>0</VerlengenStartSrm0>
         <VerlengenEndSrm0>0</VerlengenEndSrm0>
         <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>62</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>62</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>61</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>38</SignalGroupName>
-        <RijstrookIndex>2</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>PEDESTRIAN</Type>
       </RISLaneExtendDataModel>
     </RISLaneExtendData>
     <RISLanePelotonData>
@@ -22274,38 +22274,38 @@
   </Signalen>
   <HalfstarData>
     <IsHalfstar>true</IsHalfstar>
-    <Type>Master</Type>
+    <Type>Slave</Type>
     <DefaultPeriodeSignaalplan>PL1</DefaultPeriodeSignaalplan>
     <TypeVARegelen>ML</TypeVARegelen>
-    <DefaultPeriodeVARegelen>true</DefaultPeriodeVARegelen>
+    <DefaultPeriodeVARegelen>false</DefaultPeriodeVARegelen>
     <DefaultPeriodeAlternatievenVoorHoofdrichtingen>false</DefaultPeriodeAlternatievenVoorHoofdrichtingen>
     <OVPrioriteitPL>false</OVPrioriteitPL>
     <VARegelen>false</VARegelen>
     <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
-    <PlantijdenInParameters>true</PlantijdenInParameters>
+    <PlantijdenInParameters>false</PlantijdenInParameters>
     <HalfstarPeriodenData>
       <HalfstarPeriodeDataModel>
         <Periode>nacht</Periode>
         <Signaalplan>PL3</Signaalplan>
-        <VARegelen>true</VARegelen>
+        <VARegelen>false</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>dag</Periode>
         <Signaalplan>PL3</Signaalplan>
-        <VARegelen>true</VARegelen>
+        <VARegelen>false</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>ochtend</Periode>
         <Signaalplan>PL1</Signaalplan>
-        <VARegelen>false</VARegelen>
+        <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>avond</Periode>
         <Signaalplan>PL2</Signaalplan>
-        <VARegelen>false</VARegelen>
+        <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
@@ -22322,7 +22322,7 @@
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>reserve</Periode>
-        <VARegelen>true</VARegelen>
+        <VARegelen>false</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
     </HalfstarPeriodenData>
@@ -23279,7 +23279,233 @@
         </Fasen>
       </SignaalPlanModel>
     </SignaalPlannen>
-    <GekoppeldeKruisingen />
+    <GekoppeldeKruisingen>
+      <HalfstarGekoppeldeKruisingModel>
+        <KruisingNaam>654321</KruisingNaam>
+        <Type>Master</Type>
+        <KoppelWijze>PTP</KoppelWijze>
+        <PTPKruising>ptp123456</PTPKruising>
+        <InLeven>
+          <Naam>in654321leven</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </InLeven>
+        <InKoppelpuls>
+          <Naam>in654321kpuls</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </InKoppelpuls>
+        <InPeriodeVARegelen>
+          <Naam>in654321pervar</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </InPeriodeVARegelen>
+        <InPeriodenAlternatievenHoofdrichtingen>
+          <Naam>in654321perarh</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </InPeriodenAlternatievenHoofdrichtingen>
+        <InSynchronisatieOk>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </InSynchronisatieOk>
+        <InTxsOk>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </InTxsOk>
+        <UitLeven>
+          <Naam>uit654321leven</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </UitLeven>
+        <UitSynchronisatieOk>
+          <Naam>uit654321syncok</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </UitSynchronisatieOk>
+        <UitTxsOk>
+          <Naam>uit654321txsok</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </UitTxsOk>
+        <UitKoppelpuls>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </UitKoppelpuls>
+        <UitPeriodeVARegelen>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </UitPeriodeVARegelen>
+        <UitPeriodenAlternatievenHoofdrichtingen>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </UitPeriodenAlternatievenHoofdrichtingen>
+        <PlanUitgangen>
+          <HalfstarGekoppeldeKruisingPlanUitgangModel>
+            <Dummy>false</Dummy>
+            <ElementType>FaseCyclus</ElementType>
+            <Multivalent>false</Multivalent>
+            <BitmapCoordinaten />
+            <Plan>PL1</Plan>
+            <Kruising>654321</Kruising>
+            <Type>Master</Type>
+          </HalfstarGekoppeldeKruisingPlanUitgangModel>
+          <HalfstarGekoppeldeKruisingPlanUitgangModel>
+            <Dummy>false</Dummy>
+            <ElementType>FaseCyclus</ElementType>
+            <Multivalent>false</Multivalent>
+            <BitmapCoordinaten />
+            <Plan>PL2</Plan>
+            <Kruising>654321</Kruising>
+            <Type>Master</Type>
+          </HalfstarGekoppeldeKruisingPlanUitgangModel>
+          <HalfstarGekoppeldeKruisingPlanUitgangModel>
+            <Dummy>false</Dummy>
+            <ElementType>FaseCyclus</ElementType>
+            <Multivalent>false</Multivalent>
+            <BitmapCoordinaten />
+            <Plan>PL3</Plan>
+            <Kruising>654321</Kruising>
+            <Type>Master</Type>
+          </HalfstarGekoppeldeKruisingPlanUitgangModel>
+        </PlanUitgangen>
+        <PlanIngangen>
+          <HalfstarGekoppeldeKruisingPlanIngangModel>
+            <Naam>in654321PL1</Naam>
+            <Dummy>false</Dummy>
+            <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
+            <BitmapCoordinaten />
+            <Plan>PL1</Plan>
+            <Type>Master</Type>
+          </HalfstarGekoppeldeKruisingPlanIngangModel>
+          <HalfstarGekoppeldeKruisingPlanIngangModel>
+            <Naam>in654321PL2</Naam>
+            <Dummy>false</Dummy>
+            <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
+            <BitmapCoordinaten />
+            <Plan>PL2</Plan>
+            <Type>Master</Type>
+          </HalfstarGekoppeldeKruisingPlanIngangModel>
+          <HalfstarGekoppeldeKruisingPlanIngangModel>
+            <Naam>in654321PL3</Naam>
+            <Dummy>false</Dummy>
+            <ElementType>Output</ElementType>
+            <Multivalent>false</Multivalent>
+            <BitmapCoordinaten />
+            <Plan>PL3</Plan>
+            <Type>Master</Type>
+          </HalfstarGekoppeldeKruisingPlanIngangModel>
+        </PlanIngangen>
+        <KoppelSignalen>
+          <KoppelSignaalModel>
+            <Count>1</Count>
+            <Id>1</Id>
+            <Name>654321leven</Name>
+            <Description>Leven in</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>2</Count>
+            <Id>2</Id>
+            <Name>654321kpuls</Name>
+            <Description>Koppelpuls</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>3</Count>
+            <Id>3</Id>
+            <Name>654321perarh</Name>
+            <Description>Periode alt.hoofdr.</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>4</Count>
+            <Id>4</Id>
+            <Name>654321pervar</Name>
+            <Description>Periode VA regelen</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>5</Count>
+            <Id>5</Id>
+            <Name>654321plPL1</Name>
+            <Description>PL1</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>6</Count>
+            <Id>6</Id>
+            <Name>654321plPL2</Name>
+            <Description>PL2</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>7</Count>
+            <Id>7</Id>
+            <Name>654321plPL3</Name>
+            <Description>PL3</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>In</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>1</Count>
+            <Id>8</Id>
+            <Name>654321leven</Name>
+            <Description>Leven uit</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>Uit</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>2</Count>
+            <Id>9</Id>
+            <Name>654321syncok</Name>
+            <Description>Sync OK</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>Uit</Richting>
+          </KoppelSignaalModel>
+          <KoppelSignaalModel>
+            <Count>3</Count>
+            <Id>10</Id>
+            <Name>654321txsok</Name>
+            <Description>TXS OK</Description>
+            <Koppeling>ptp123456</Koppeling>
+            <Richting>Uit</Richting>
+          </KoppelSignaalModel>
+        </KoppelSignalen>
+      </HalfstarGekoppeldeKruisingModel>
+    </GekoppeldeKruisingen>
     <Hoofdrichtingen>
       <HalfstarHoofdrichtingModel>
         <FaseCyclus>02</FaseCyclus>
@@ -23524,14 +23750,16 @@
       <BitmapCoordinaten />
     </HandUitgang>
     <MasterUitgang>
+      <Naam>master</Naam>
       <Dummy>false</Dummy>
-      <ElementType>FaseCyclus</ElementType>
+      <ElementType>Output</ElementType>
       <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </MasterUitgang>
     <SlaveUitgang>
+      <Naam>slave</Naam>
       <Dummy>false</Dummy>
-      <ElementType>FaseCyclus</ElementType>
+      <ElementType>Output</ElementType>
       <Multivalent>false</Multivalent>
       <BitmapCoordinaten />
     </SlaveUitgang>
@@ -24521,7 +24749,7 @@
     <SimulationEntries />
   </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <GenererenSumoCode>false</GenererenSumoCode>
+    <GenererenSumoCode>true</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
     <SumoOrder>0</SumoOrder>
     <StartTijdUur>16</StartTijdUur>
@@ -24571,7 +24799,7 @@
       </FaseCyclus>
       <FaseCyclus>
         <Naam>26</Naam>
-        <SumoIds />
+        <SumoIds>21,22</SumoIds>
       </FaseCyclus>
       <FaseCyclus>
         <Naam>28</Naam>
@@ -25226,6 +25454,34 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykaruit61bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit61bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit62bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit62bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit67bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit67bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit68bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit68bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -25360,34 +25616,6 @@
         <Naam>k21</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>212</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit68bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit68bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit67bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit67bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit62bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit62bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit61bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit61bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
       </Detector>
     </Detectoren>
   </SumoKoppeling>
