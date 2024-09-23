@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   21-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   23-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -2482,6 +2482,12 @@ void PrioriteitsToekenningExtra(void)
 void TegenhoudenConflictenExtra(void)
 {
     if (SCH[schovpriople]) PrioHalfstarTegenhouden();
+    if (MM[mwtvm24] && MM[mwtvm24] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc24] &= ~BIT6;
+        RR[fc34] &= ~BIT6;
+        RR[fc84] &= ~BIT6;
+    }
 #ifndef NO_TIMETOX
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc22] & BIT11)) { RR[fc32] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc32] & BIT11)) { RR[fc22] &= ~PRIO_RR_BIT; }
@@ -2505,6 +2511,7 @@ void TegenhoudenConflictenExtra(void)
 void PostAfhandelingPrio(void)
 {
     boolv isHD = FALSE;
+    boolv isWTV = FALSE;
     int fc;
     int i;
 
@@ -2512,7 +2519,9 @@ void PostAfhandelingPrio(void)
     isHD = C[cvchd02] && !BL[fc02] || C[cvchd03] && !BL[fc03] || C[cvchd05] && !BL[fc05] || C[cvchd08] && !BL[fc08] || C[cvchd09] && !BL[fc09] || C[cvchd11] && !BL[fc11] || C[cvchd61] && !BL[fc61] || C[cvchd62] && !BL[fc62] || C[cvchd67] && !BL[fc67] || C[cvchd68] && !BL[fc68];
 
     /* Blokkeren alle langzaam verkeer (tevens niet-conflicten) */
-    if (isHD)
+    /* Blokkeren uitstellen indien een wachttijdvoorspeller onder het minimum is */
+    isWTV |= (MM[mwtvm24] && MM[mwtvm24] <= PRM[prmwtvnhaltmin]);
+    if (isHD && !isWTV)
     {
         RR[fc21] |= BIT6; Z[fc21] |= BIT6;
         RR[fc22] |= BIT6; Z[fc22] |= BIT6;

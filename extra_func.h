@@ -36,7 +36,8 @@ boolv Rateltikkers_Accross(count fc,       /* fase */
 	count has_aan_, /* hulpelement tikkers werking */
 	count has_cont_,/* hulpelement tikkers continu */
 	...);           /* drukknoppen */
-boolv Rateltikkers_HoeflakeDimming(count hperasdim,  /* hulpelement klokperiode gedimde uitsturing     */
+boolv Rateltikkers_HoeflakeDimming(
+                         count hperasdim,  /* hulpelement klokperiode gedimde uitsturing     */
                          count prmasndim,  /* dimnivo periode niet dimmen (0-10, 10 = tikker uit) of NG  */ 
                          count prmasdim);  /* dimnivo periode dimmen (0-10, 10 = tikker uit) of NG  */
 void Eerlijk_doseren_V1(count hfile,            /* hulpelement wel/geen file */

@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   21-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   23-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -329,6 +329,7 @@ void display_parameters(void)
     X_us[usptp_ptp123456oke] = 43; Y_us[usptp_ptp123456oke] = 379;
     X_us[usptp_ptp123456err] = 43; Y_us[usptp_ptp123456err] = 392;
     X_us[usrgv] = 275; Y_us[usrgv] = 107;
+    X_us[uswtv24] = NG; Y_us[uswtv24] = NG;
     X_us[uswtk21] = 376; Y_us[uswtk21] = 219;
     X_us[uswtk22] = 434; Y_us[uswtk22] = 214;
     X_us[uswtk24] = 504; Y_us[uswtk24] = 301;

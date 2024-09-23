@@ -289,7 +289,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0.8</Versie>
-      <Datum>2024-09-21T00:00:00</Datum>
+      <Datum>2024-09-23T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Release versie TLCGen</Commentaar>
     </Versie>
@@ -4470,7 +4470,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>false</WachttijdVoorspeller>
+      <WachttijdVoorspeller>true</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -21289,6 +21289,26 @@
         <Type>MOTORVEHICLES</Type>
       </RISLaneRequestDataModel>
       <RISLaneRequestDataModel>
+        <SignalGroupName>67</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
+        <SignalGroupName>68</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISAanvraag>true</RISAanvraag>
+        <AanvraagStart>0</AanvraagStart>
+        <AanvraagEnd>0</AanvraagEnd>
+        <AanvraagStartSrm0>0</AanvraagStartSrm0>
+        <AanvraagEndSrm0>0</AanvraagEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneRequestDataModel>
+      <RISLaneRequestDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
@@ -21321,26 +21341,6 @@
       <RISLaneRequestDataModel>
         <SignalGroupName>68</SignalGroupName>
         <RijstrookIndex>2</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>68</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISAanvraag>true</RISAanvraag>
-        <AanvraagStart>0</AanvraagStart>
-        <AanvraagEnd>0</AanvraagEnd>
-        <AanvraagStartSrm0>0</AanvraagStartSrm0>
-        <AanvraagEndSrm0>0</AanvraagEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneRequestDataModel>
-      <RISLaneRequestDataModel>
-        <SignalGroupName>67</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
         <RISAanvraag>true</RISAanvraag>
         <AanvraagStart>0</AanvraagStart>
         <AanvraagEnd>0</AanvraagEnd>
@@ -21621,6 +21621,26 @@
         <Type>MOTORVEHICLES</Type>
       </RISLaneExtendDataModel>
       <RISLaneExtendDataModel>
+        <SignalGroupName>67</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
+        <SignalGroupName>68</SignalGroupName>
+        <RijstrookIndex>1</RijstrookIndex>
+        <RISVerlengen>true</RISVerlengen>
+        <VerlengenStart>0</VerlengenStart>
+        <VerlengenEnd>0</VerlengenEnd>
+        <VerlengenStartSrm0>0</VerlengenStartSrm0>
+        <VerlengenEndSrm0>0</VerlengenEndSrm0>
+        <Type>MOTORVEHICLES</Type>
+      </RISLaneExtendDataModel>
+      <RISLaneExtendDataModel>
         <SignalGroupName>84</SignalGroupName>
         <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
@@ -21653,26 +21673,6 @@
       <RISLaneExtendDataModel>
         <SignalGroupName>68</SignalGroupName>
         <RijstrookIndex>2</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>68</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
-        <RISVerlengen>true</RISVerlengen>
-        <VerlengenStart>0</VerlengenStart>
-        <VerlengenEnd>0</VerlengenEnd>
-        <VerlengenStartSrm0>0</VerlengenStartSrm0>
-        <VerlengenEndSrm0>0</VerlengenEndSrm0>
-        <Type>MOTORVEHICLES</Type>
-      </RISLaneExtendDataModel>
-      <RISLaneExtendDataModel>
-        <SignalGroupName>67</SignalGroupName>
-        <RijstrookIndex>1</RijstrookIndex>
         <RISVerlengen>true</RISVerlengen>
         <VerlengenStart>0</VerlengenStart>
         <VerlengenEnd>0</VerlengenEnd>
@@ -25482,6 +25482,18 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>k21</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>212</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>k22</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -25604,18 +25616,6 @@
         <Naam>k24</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
-      </Detector>
-      <Detector>
-        <Naam>k22</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k21</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>212</SumoNaam1>
       </Detector>
     </Detectoren>
   </SumoKoppeling>

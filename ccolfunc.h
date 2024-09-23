@@ -30,7 +30,7 @@ void WachtStand(boolv *prml[], count ml, count ml_max);
 #endif
 mulv max_tar_to(count i);
 mulv max_tar_ov(count i, ...);
-boolv AlternatieveRuimte(count fcprim, count paltg);
+boolv AlternatieveRuimte`(count fcprim, count paltg);
 boolv no_conflict(count fc1, count fc2);
 boolv testpri_gk_calw(count i);
 boolv set_PRIRLW(count i, boolv period);

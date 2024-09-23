@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   21-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   23-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -51,11 +51,8 @@
         #include "logvar.c"   /* variabelen t.b.v. logging                     */
         #include "monvar.c"   /* variabelen t.b.v. realtime monitoring         */
         #include "fbericht.h"
-        #if defined AMSTERDAM_PC //@Menno: deze teovoeging alleen als Pratice vinkje is aangevinkt (is voor Amsterdam).
-            #include "vlogfunc.c" 
-        #endif
-   #endif
-#include "prio.h"       /* prio-afhandeling                  */
+    #endif
+    #include "prio.h"       /* prio-afhandeling                  */
     #ifndef NO_RIS
         #include "risvar.c" /* ccol ris controller */
         #include "risappl.c" /* RIS applicatiefuncties */
@@ -90,6 +87,10 @@
     #include "fixatie.c"
     #include "123456hst.c"
     #include "123456ptp.c" /* PTP seriele koppeling */
+/* Include files wachttijdvoorspeller*/
+#include "wtvfunc.c" /* berekening van de wachttijden voorspelling */
+#include "wtlleds.c" /* aansturing van de wachttijdlantaarn met leds */
+#include "halfstar_wtv.c"
 #ifdef MIRMON
     #include "MirakelMonitor.h"
 #endif /* MIRMON */
@@ -116,6 +117,10 @@ s_int16 CCOL_SLAVE = 0;
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
     code SCJ_code[] = "123456";
 #endif
+/* tijden t.b.v. wachttijdvoorspellers */
+/* ----------------------------------- */
+mulv t_wacht[FCMAX]; /* berekende wachttijd */
+mulv rr_twacht[FCMAX]; /* halteren wachttijd */
 mulv itvgmaxprm[aanttvgmaxprm]; /* fasecycli met max. verlenggroen parameter */
 mulv C_counter_old[CTMAX];
 
@@ -1085,6 +1090,26 @@ void Aanvragen(void)
             A[fc62] |= BIT13;
             CIF_VLOG_FC_CAM[fc62] |= BIT0;
         }
+        if (ris_aanvraag(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisastart67mveh1], PRM[prmrisaend67mveh1], SCH[schrisgeencheckopsg]))
+        {
+            A[fc67] |= BIT10;
+            CIF_VLOG_FC_CAM[fc67] |= BIT0;
+        }
+        if (ris_aanvraag(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm067mveh1], PRM[prmrisaendsrm067mveh1], !SCH[schrisgeencheckopsg]))
+        {
+            A[fc67] |= BIT13;
+            CIF_VLOG_FC_CAM[fc67] |= BIT0;
+        }
+        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh1], PRM[prmrisaend68mveh1], SCH[schrisgeencheckopsg]))
+        {
+            A[fc68] |= BIT10;
+            CIF_VLOG_FC_CAM[fc68] |= BIT0;
+        }
+        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm068mveh1], PRM[prmrisaendsrm068mveh1], !SCH[schrisgeencheckopsg]))
+        {
+            A[fc68] |= BIT13;
+            CIF_VLOG_FC_CAM[fc68] |= BIT0;
+        }
         if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg]))
         {
             A[fc84] |= BIT10;
@@ -1124,26 +1149,6 @@ void Aanvragen(void)
         {
             A[fc68] |= BIT13;
             CIF_VLOG_FC_CAM[fc68] |= BIT0;
-        }
-        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh1], PRM[prmrisaend68mveh1], SCH[schrisgeencheckopsg]))
-        {
-            A[fc68] |= BIT10;
-            CIF_VLOG_FC_CAM[fc68] |= BIT0;
-        }
-        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm068mveh1], PRM[prmrisaendsrm068mveh1], !SCH[schrisgeencheckopsg]))
-        {
-            A[fc68] |= BIT13;
-            CIF_VLOG_FC_CAM[fc68] |= BIT0;
-        }
-        if (ris_aanvraag(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisastart67mveh1], PRM[prmrisaend67mveh1], SCH[schrisgeencheckopsg]))
-        {
-            A[fc67] |= BIT10;
-            CIF_VLOG_FC_CAM[fc67] |= BIT0;
-        }
-        if (ris_aanvraag(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm067mveh1], PRM[prmrisaendsrm067mveh1], !SCH[schrisgeencheckopsg]))
-        {
-            A[fc67] |= BIT13;
-            CIF_VLOG_FC_CAM[fc67] |= BIT0;
         }
     /* aanvragen RIS schakelbaar, 1 schakelaar voor het schakelen van alle aanvragen */
     if (!SCH[schrisaanvraag])
@@ -2100,6 +2105,26 @@ void Meetkriterium(void)
             MK[fc62] |= BIT13;
             CIF_VLOG_FC_CAM[fc62] |= BIT1;
         }
+        if (ris_verlengen(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisvstart67mveh1], PRM[prmrisvend67mveh1], SCH[schrisgeencheckopsg]))
+        {
+            MK[fc67] |= BIT10;
+            CIF_VLOG_FC_CAM[fc67] |= BIT1;
+        }
+        if (ris_verlengen(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm067mveh1], PRM[prmrisvendsrm067mveh1], !SCH[schrisgeencheckopsg]))
+        {
+            MK[fc67] |= BIT13;
+            CIF_VLOG_FC_CAM[fc67] |= BIT1;
+        }
+        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh1], PRM[prmrisvend68mveh1], SCH[schrisgeencheckopsg]))
+        {
+            MK[fc68] |= BIT10;
+            CIF_VLOG_FC_CAM[fc68] |= BIT1;
+        }
+        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm068mveh1], PRM[prmrisvendsrm068mveh1], !SCH[schrisgeencheckopsg]))
+        {
+            MK[fc68] |= BIT13;
+            CIF_VLOG_FC_CAM[fc68] |= BIT1;
+        }
         if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg]))
         {
             MK[fc84] |= BIT10;
@@ -2139,26 +2164,6 @@ void Meetkriterium(void)
         {
             MK[fc68] |= BIT13;
             CIF_VLOG_FC_CAM[fc68] |= BIT1;
-        }
-        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh1], PRM[prmrisvend68mveh1], SCH[schrisgeencheckopsg]))
-        {
-            MK[fc68] |= BIT10;
-            CIF_VLOG_FC_CAM[fc68] |= BIT1;
-        }
-        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm068mveh1], PRM[prmrisvendsrm068mveh1], !SCH[schrisgeencheckopsg]))
-        {
-            MK[fc68] |= BIT13;
-            CIF_VLOG_FC_CAM[fc68] |= BIT1;
-        }
-        if (ris_verlengen(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisvstart67mveh1], PRM[prmrisvend67mveh1], SCH[schrisgeencheckopsg]))
-        {
-            MK[fc67] |= BIT10;
-            CIF_VLOG_FC_CAM[fc67] |= BIT1;
-        }
-        if (ris_verlengen(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm067mveh1], PRM[prmrisvendsrm067mveh1], !SCH[schrisgeencheckopsg]))
-        {
-            MK[fc67] |= BIT13;
-            CIF_VLOG_FC_CAM[fc67] |= BIT1;
         }
     #endif
 
@@ -2327,6 +2332,8 @@ void RealisatieAfhandeling(void)
 
     /* zet richtingen die alternatief gaan realiseren         */
     /* terug naar RV als er geen alternatieve ruimte meer is. */
+    /* Dit gebeurt niet voor fasen met een wachttijd voorspeller, */
+    /* of fasen waarvan de voedende richting die heeft. */
     RR[fc02] |= R[fc02] && AR[fc02] && (!PAR[fc02] || ERA[fc02]) ? BIT5 : 0;
     RR[fc03] |= R[fc03] && AR[fc03] && (!PAR[fc03] || ERA[fc03]) ? BIT5 : 0;
     RR[fc05] |= R[fc05] && AR[fc05] && (!PAR[fc05] || ERA[fc05]) ? BIT5 : 0;
@@ -2335,7 +2342,6 @@ void RealisatieAfhandeling(void)
     RR[fc11] |= R[fc11] && AR[fc11] && (!PAR[fc11] || ERA[fc11]) ? BIT5 : 0;
     RR[fc21] |= R[fc21] && AR[fc21] && (!PAR[fc21] || ERA[fc21]) ? BIT5 : 0;
     RR[fc22] |= R[fc22] && AR[fc22] && (!PAR[fc22] || ERA[fc22]) ? BIT5 : 0;
-    RR[fc24] |= R[fc24] && AR[fc24] && (!PAR[fc24] || ERA[fc24]) ? BIT5 : 0;
     RR[fc26] |= R[fc26] && AR[fc26] && (!PAR[fc26] || ERA[fc26]) ? BIT5 : 0;
     RR[fc28] |= R[fc28] && AR[fc28] && (!PAR[fc28] || ERA[fc28]) ? BIT5 : 0;
     RR[fc31] |= R[fc31] && AR[fc31] && (!PAR[fc31] || ERA[fc31]) ? BIT5 : 0;
@@ -3306,6 +3312,9 @@ void init_application(void)
         stuffkey(CTRLF4KEY);
 #endif
 
+    /* Aansturing hulpelement aansturing wachttijdvoorspellers */
+    IH[hwtv24] = SCH[schwtv24];
+
     /* Nalopen */
     /* ------- */
     gk_InitGK();
@@ -3643,6 +3652,70 @@ void system_application(void)
     CIF_GUS[uswtk82] = (D[dk82] && !SD[dk82] || ED[dk82]) && A[fc82] && !G[fc82] && REG ? TRUE : CIF_GUS[uswtk82] && !G[fc82] && REG;
     CIF_GUS[uswtk84] = (D[dk84] && !SD[dk84] || ED[dk84]) && A[fc84] && !G[fc84] && REG ? TRUE : CIF_GUS[uswtk84] && !G[fc84] && REG;
 
+    /* Wachttijdvoorspellers */
+
+    /* verlenggroentijd gekoppelde richtingen */
+    TVG_max[fc62] = T_max[tnlfgd0262] > TVG_max[fc62] ? T_max[tnlfgd0262] : TVG_max[fc62];
+    TVG_max[fc68] = T_max[tnlfgd0868] > TVG_max[fc68] ? T_max[tnlfgd0868] : TVG_max[fc68];
+    TVG_max[fc68] = T_max[tnlfgd1168] > TVG_max[fc68] ? T_max[tnlfgd1168] : TVG_max[fc68];
+    TVG_max[fc21] = T_max[tnlfgd2221] > TVG_max[fc21] ? T_max[tnlfgd2221] : TVG_max[fc21];
+    TVG_max[fc32] = T_max[tnlsgd3132] > TVG_max[fc32] ? T_max[tnlsgd3132] : TVG_max[fc32];
+    TVG_max[fc31] = T_max[tnlsgd3231] > TVG_max[fc31] ? T_max[tnlsgd3231] : TVG_max[fc31];
+    TVG_max[fc34] = T_max[tnlsgd3334] > TVG_max[fc34] ? T_max[tnlsgd3334] : TVG_max[fc34];
+    TVG_max[fc33] = T_max[tnlsgd3433] > TVG_max[fc33] ? T_max[tnlsgd3433] : TVG_max[fc33];
+    TVG_max[fc81] = T_max[tnlfgd8281] > TVG_max[fc81] ? T_max[tnlfgd8281] : TVG_max[fc81];
+
+    /* bereken de primaire wachttijd van alle richtingen */
+    max_wachttijd_modulen_primair(PRML, ML, ML_MAX, t_wacht);
+
+    /* bereken de alternatieve wachttijd van de richtingen met wachttijdvoorspeller */
+    max_wachttijd_alternatief(fc24, t_wacht);
+
+    /* Berekening wachttijd tijdens halfstar regelen */
+    max_wachttijd_halfstar(t_wacht, hplact, PL);
+
+    /* corrigeer waarde i.v.m. gelijkstart fietsers */
+    wachttijd_correctie_gelijkstart(fc22, fc32, t_wacht);
+    wachttijd_correctie_gelijkstart(fc24, fc34, t_wacht);
+    wachttijd_correctie_gelijkstart(fc24, fc84, t_wacht);
+    wachttijd_correctie_gelijkstart(fc28, fc38, t_wacht);
+    wachttijd_correctie_gelijkstart(fc33, fc84, t_wacht);
+
+    /* check of richting wordt tegengehouden door OV/HD */
+    rr_modulen_primair(PRML, ML, ML_MAX, rr_twacht);
+
+    /* Eventuele correctie op berekende wachttijd door gebruiker */
+    WachttijdvoorspellersWachttijd_Add();
+
+    /* aansturing wachttijd lantaarns (niet tijdens fixatie of prio ingreep) */
+    if (!CIF_IS[isfix])
+    {
+        if (!MM[mwtv24] || MM[mwtv24] >= PRM[prmwtvnhaltmax] || MM[mwtv24] <= PRM[prmwtvnhaltmin]) rr_twacht[fc24] = 0;
+        if (rr_twacht[fc24] < 1 || G[fc24]) wachttijd_leds_mm(fc24, mwtv24, twtv24, t_wacht[fc24], PRM[prmminwtv]);
+    }
+
+    /* laatste ledje laten knipperen bij ov/hd-ingreep of fixatie */
+    wachttijd_leds_knip(mwtv24, mwtvm24, rr_twacht[fc24], isfix);
+
+    /* beveiliging op afzetten tijdens bedrijf */
+    if (G[fc24])  IH[hwtv24] = SCH[schwtv24];
+
+    /* Aansturen wachttijdlantaarn fase 24 */
+    if (IH[hwtv24] && R[fc24])
+    {
+        CIF_GUS[uswtv24] = MM[mwtvm24];
+    }
+    else
+    {
+        CIF_GUS[uswtv24] = 0;
+    }
+    CIF_GUS[uswtv24] &= ~BIT8;
+    if (CIF_GUS[uswtv24] && (RR[fc24] & BIT6) && rr_twacht[fc24] && IH[hwtv24] && (SCH[schwtvbusbijhd] || !(RTFB & PRIO_RTFB_BIT)))
+    {
+        CIF_GUS[uswtv24] |= BIT8;
+    }
+
+
     #ifdef AUTOMAAT
         /* verklikken of applicatie daadwerkelijk de TLC aanstuurt */
         CIF_GUS[usincontrol] = (CIF_WPS[CIF_PROG_CONTROL] == CIF_CONTROL_INCONTROL) ? TRUE : FALSE;
@@ -3794,7 +3867,7 @@ void system_application2(void)
 
         pre_msg_fctiming();
 
-        msg_fctiming(PRM[prmlatencyminendsg]);
+        msg_fctiming();
 
         /* Voedende richting fc02 alleen P als naloop een P heeft of al groen is */
         if (!((P[fc62] & BIT11) || G[fc02]) && (P[fc02] & BIT11)) P[fc02] &= ~BIT11;
@@ -3919,7 +3992,7 @@ void is_special_signals(void)
     #ifdef SUMO
     for (isumo = 0; isumo < DPMAX; isumo++)
     {
-        if (isumo == ddummyhdkarin03 || isumo == ddummyhdkarin05 || isumo == ddummyhdkarin08 || isumo == ddummyhdkarin09 || isumo == ddummyhdkarin11 || isumo == ddummyhdkarin61 || isumo == ddummyhdkarin62 || isumo == ddummyhdkarin67 || isumo == ddummyhdkarin68 || isumo == ddummyhdkaruit03 || isumo == ddummyhdkaruit05 || isumo == ddummyhdkaruit08 || isumo == ddummyhdkaruit09 || isumo == ddummyhdkaruit11 || isumo == ddummyhdkaruit61 || isumo == ddummyhdkaruit62 || isumo == ddummyhdkaruit67 || isumo == ddummyhdkaruit68 || isumo == dk84 || isumo == dk28 || isumo == dk24 || isumo == dk22        )
+        if (isumo == ddummyhdkarin03 || isumo == ddummyhdkarin05 || isumo == ddummyhdkarin08 || isumo == ddummyhdkarin09 || isumo == ddummyhdkarin11 || isumo == ddummyhdkarin61 || isumo == ddummyhdkarin62 || isumo == ddummyhdkarin67 || isumo == ddummyhdkarin68 || isumo == ddummyhdkaruit03 || isumo == ddummyhdkaruit05 || isumo == ddummyhdkaruit08 || isumo == ddummyhdkaruit09 || isumo == ddummyhdkaruit11 || isumo == ddummyhdkaruit61 || isumo == ddummyhdkaruit62 || isumo == ddummyhdkaruit67 || isumo == ddummyhdkaruit68 || isumo == dk22 || isumo == dk84 || isumo == dk28 || isumo == dk24        )
         {
             continue;
         }
