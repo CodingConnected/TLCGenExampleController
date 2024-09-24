@@ -1597,8 +1597,6 @@ boolv TX_between(int tx_value, int tx_first, int tx_second, int tx_max)
 
 void inloopSG_halfstar(count fc1,        /* fc1                                  */
 	               count fc2,        /* fc2                                  */
-	               count dk_bui_fc1, /* buitendrukknopaanvraag fc1           */ //@@  warning C4100: 'dk_bui_fc1': unreferenced formal parameter
-	               count hd_bui_fc1, /* onthouden buitendrukknopaanvraag fc1 */ //@@  warning C4100: 'hd_bui_fc1': unreferenced formal parameter
 	               count tinlfc1fc2) /* inloop (SG) fc1 -> fc2               */
 {
 	if (tinlfc1fc2 > NG)

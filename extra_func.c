@@ -1061,7 +1061,7 @@ boolv hf_wsg_nl_fcfc(count fc1, count fc2)
 	return (FALSE);
 }
 
-void wachttijd_leds_knip(count mmwtv, count mmwtm, count RR_T_wacht, count fix) //@@ warning C4100: 'fc' : unreferenced formal parameter
+void wachttijd_leds_knip(count mmwtv, count mmwtm, count RR_T_wacht, count fix) 
 {
 	/* mmwtv - berekende  aantal leds wachttijdlantaarn    */
 	/* mmwtm - uitsturing aantal leds wachttijdlantaarn    */
