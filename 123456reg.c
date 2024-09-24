@@ -90,6 +90,9 @@
 /* Include files wachttijdvoorspeller*/
 #include "wtvfunc.c" /* berekening van de wachttijden voorspelling */
 #include "wtlleds.c" /* aansturing van de wachttijdlantaarn met leds */
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) && !defined NO_WTV_WIN
+    #include "wtv_testwin.c"
+#endif
 #include "halfstar_wtv.c"
 #ifdef MIRMON
     #include "MirakelMonitor.h"
@@ -1110,6 +1113,16 @@ void Aanvragen(void)
             A[fc68] |= BIT13;
             CIF_VLOG_FC_CAM[fc68] |= BIT0;
         }
+        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh2], PRM[prmrisaend68mveh2], SCH[schrisgeencheckopsg]))
+        {
+            A[fc68] |= BIT10;
+            CIF_VLOG_FC_CAM[fc68] |= BIT0;
+        }
+        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisastartsrm068mveh2], PRM[prmrisaendsrm068mveh2], !SCH[schrisgeencheckopsg]))
+        {
+            A[fc68] |= BIT13;
+            CIF_VLOG_FC_CAM[fc68] |= BIT0;
+        }
         if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg]))
         {
             A[fc84] |= BIT10;
@@ -1139,16 +1152,6 @@ void Aanvragen(void)
         {
             A[fc81] |= BIT13;
             CIF_VLOG_FC_CAM[fc81] |= BIT0;
-        }
-        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh2], PRM[prmrisaend68mveh2], SCH[schrisgeencheckopsg]))
-        {
-            A[fc68] |= BIT10;
-            CIF_VLOG_FC_CAM[fc68] |= BIT0;
-        }
-        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisastartsrm068mveh2], PRM[prmrisaendsrm068mveh2], !SCH[schrisgeencheckopsg]))
-        {
-            A[fc68] |= BIT13;
-            CIF_VLOG_FC_CAM[fc68] |= BIT0;
         }
     /* aanvragen RIS schakelbaar, 1 schakelaar voor het schakelen van alle aanvragen */
     if (!SCH[schrisaanvraag])
@@ -2125,6 +2128,16 @@ void Meetkriterium(void)
             MK[fc68] |= BIT13;
             CIF_VLOG_FC_CAM[fc68] |= BIT1;
         }
+        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh2], PRM[prmrisvend68mveh2], SCH[schrisgeencheckopsg]))
+        {
+            MK[fc68] |= BIT10;
+            CIF_VLOG_FC_CAM[fc68] |= BIT1;
+        }
+        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm068mveh2], PRM[prmrisvendsrm068mveh2], !SCH[schrisgeencheckopsg]))
+        {
+            MK[fc68] |= BIT13;
+            CIF_VLOG_FC_CAM[fc68] |= BIT1;
+        }
         if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg]))
         {
             MK[fc84] |= BIT10;
@@ -2154,16 +2167,6 @@ void Meetkriterium(void)
         {
             MK[fc81] |= BIT13;
             CIF_VLOG_FC_CAM[fc81] |= BIT1;
-        }
-        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh2], PRM[prmrisvend68mveh2], SCH[schrisgeencheckopsg]))
-        {
-            MK[fc68] |= BIT10;
-            CIF_VLOG_FC_CAM[fc68] |= BIT1;
-        }
-        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm068mveh2], PRM[prmrisvendsrm068mveh2], !SCH[schrisgeencheckopsg]))
-        {
-            MK[fc68] |= BIT13;
-            CIF_VLOG_FC_CAM[fc68] |= BIT1;
         }
     #endif
 
@@ -3312,6 +3315,11 @@ void init_application(void)
         stuffkey(CTRLF4KEY);
 #endif
 
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) && !defined NO_WTV_WIN
+    extrawin_init(SYSTEM);
+    extrawin_add_fc(fc24, NG, TYPE_LEDS);
+#endif
+
     /* Aansturing hulpelement aansturing wachttijdvoorspellers */
     IH[hwtv24] = SCH[schwtv24];
 
@@ -3715,6 +3723,9 @@ void system_application(void)
         CIF_GUS[uswtv24] |= BIT8;
     }
 
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) && !defined NO_WTV_WIN
+    extrawin_wtv(fc24, mwtvm24);
+#endif
 
     #ifdef AUTOMAAT
         /* verklikken of applicatie daadwerkelijk de TLC aanstuurt */
@@ -3992,7 +4003,7 @@ void is_special_signals(void)
     #ifdef SUMO
     for (isumo = 0; isumo < DPMAX; isumo++)
     {
-        if (isumo == ddummyhdkarin03 || isumo == ddummyhdkarin05 || isumo == ddummyhdkarin08 || isumo == ddummyhdkarin09 || isumo == ddummyhdkarin11 || isumo == ddummyhdkarin61 || isumo == ddummyhdkarin62 || isumo == ddummyhdkarin67 || isumo == ddummyhdkarin68 || isumo == ddummyhdkaruit03 || isumo == ddummyhdkaruit05 || isumo == ddummyhdkaruit08 || isumo == ddummyhdkaruit09 || isumo == ddummyhdkaruit11 || isumo == ddummyhdkaruit61 || isumo == ddummyhdkaruit62 || isumo == ddummyhdkaruit67 || isumo == ddummyhdkaruit68 || isumo == dk22 || isumo == dk84 || isumo == dk28 || isumo == dk24        )
+        if (isumo == ddummyhdkarin03 || isumo == ddummyhdkarin05 || isumo == ddummyhdkarin08 || isumo == ddummyhdkarin09 || isumo == ddummyhdkarin11 || isumo == ddummyhdkarin61 || isumo == ddummyhdkarin62 || isumo == ddummyhdkarin67 || isumo == ddummyhdkarin68 || isumo == ddummyhdkaruit03 || isumo == ddummyhdkaruit05 || isumo == ddummyhdkaruit08 || isumo == ddummyhdkaruit09 || isumo == ddummyhdkaruit11 || isumo == ddummyhdkaruit61 || isumo == ddummyhdkaruit62 || isumo == ddummyhdkaruit67 || isumo == ddummyhdkaruit68 || isumo == dk22 || isumo == dk24 || isumo == dk84 || isumo == dk28        )
         {
             continue;
         }
