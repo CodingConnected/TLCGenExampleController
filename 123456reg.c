@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   23-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen
  *
  ************************************************************************************/
 
@@ -1123,6 +1123,16 @@ void Aanvragen(void)
             A[fc68] |= BIT13;
             CIF_VLOG_FC_CAM[fc68] |= BIT0;
         }
+        if (ris_aanvraag(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisastart81fts1], PRM[prmrisaend81fts1], SCH[schrisgeencheckopsg]))
+        {
+            A[fc81] |= BIT10;
+            CIF_VLOG_FC_CAM[fc81] |= BIT0;
+        }
+        if (ris_aanvraag(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisastartsrm081fts1], PRM[prmrisaendsrm081fts1], !SCH[schrisgeencheckopsg]))
+        {
+            A[fc81] |= BIT13;
+            CIF_VLOG_FC_CAM[fc81] |= BIT0;
+        }
         if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg]))
         {
             A[fc84] |= BIT10;
@@ -1142,16 +1152,6 @@ void Aanvragen(void)
         {
             A[fc82] |= BIT13;
             CIF_VLOG_FC_CAM[fc82] |= BIT0;
-        }
-        if (ris_aanvraag(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisastart81fts1], PRM[prmrisaend81fts1], SCH[schrisgeencheckopsg]))
-        {
-            A[fc81] |= BIT10;
-            CIF_VLOG_FC_CAM[fc81] |= BIT0;
-        }
-        if (ris_aanvraag(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisastartsrm081fts1], PRM[prmrisaendsrm081fts1], !SCH[schrisgeencheckopsg]))
-        {
-            A[fc81] |= BIT13;
-            CIF_VLOG_FC_CAM[fc81] |= BIT0;
         }
     /* aanvragen RIS schakelbaar, 1 schakelaar voor het schakelen van alle aanvragen */
     if (!SCH[schrisaanvraag])
@@ -2138,6 +2138,16 @@ void Meetkriterium(void)
             MK[fc68] |= BIT13;
             CIF_VLOG_FC_CAM[fc68] |= BIT1;
         }
+        if (ris_verlengen(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisvstart81fts1], PRM[prmrisvend81fts1], SCH[schrisgeencheckopsg]))
+        {
+            MK[fc81] |= BIT10;
+            CIF_VLOG_FC_CAM[fc81] |= BIT1;
+        }
+        if (ris_verlengen(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisvstartsrm081fts1], PRM[prmrisvendsrm081fts1], !SCH[schrisgeencheckopsg]))
+        {
+            MK[fc81] |= BIT13;
+            CIF_VLOG_FC_CAM[fc81] |= BIT1;
+        }
         if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg]))
         {
             MK[fc84] |= BIT10;
@@ -2157,16 +2167,6 @@ void Meetkriterium(void)
         {
             MK[fc82] |= BIT13;
             CIF_VLOG_FC_CAM[fc82] |= BIT1;
-        }
-        if (ris_verlengen(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisvstart81fts1], PRM[prmrisvend81fts1], SCH[schrisgeencheckopsg]))
-        {
-            MK[fc81] |= BIT10;
-            CIF_VLOG_FC_CAM[fc81] |= BIT1;
-        }
-        if (ris_verlengen(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisvstartsrm081fts1], PRM[prmrisvendsrm081fts1], !SCH[schrisgeencheckopsg]))
-        {
-            MK[fc81] |= BIT13;
-            CIF_VLOG_FC_CAM[fc81] |= BIT1;
         }
     #endif
 
