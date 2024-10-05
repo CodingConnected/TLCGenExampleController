@@ -1,4 +1,4 @@
-/* halfstar.c - gegenereerd met TLCGen 12.4.0.7 */
+/* halfstar.c - gegenereerd met TLCGen 12.4.0.8 */
 
 #include "halfstar.h"
 #if defined prioFCMAX && (prioFCMAX > 0)
@@ -1592,7 +1592,7 @@ boolv TX_between(int tx_value, int tx_first, int tx_second, int tx_max)
  *
  * inlopen van voetgangers wordt niet behandeld in PL bedrijf.
  *
- * aanroep: inloopSG_halfstar(fc33, fc34, dk331, hnlak331, tinl3334);
+ * aanroep: inloopSG_halfstar(fc33, fc34, tinl3334);
  */
 
 void inloopSG_halfstar(count fc1,        /* fc1                                  */

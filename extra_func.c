@@ -1,4 +1,4 @@
-/* extra_func.c - gegenereerd met TLCGen 12.4.0.7 */
+/* extra_func.c - gegenereerd met TLCGen 12.4.0.8 */
 
 #include "extra_func.h"
 
@@ -1061,7 +1061,7 @@ boolv hf_wsg_nl_fcfc(count fc1, count fc2)
 	return (FALSE);
 }
 
-void wachttijd_leds_knip(count mmwtv, count mmwtm, count RR_T_wacht, count fix) 
+void wachttijd_leds_knip(count mmwtv, count mmwtm, count RR_T_wacht, count fix)
 {
 	/* mmwtv - berekende  aantal leds wachttijdlantaarn    */
 	/* mmwtm - uitsturing aantal leds wachttijdlantaarn    */

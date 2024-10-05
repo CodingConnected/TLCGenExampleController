@@ -11,14 +11,14 @@ void signaalplan_instellingen(void);
 
    BESTAND:   123456tab.c
       CCOL:   12.1
-    TLCGEN:   12.4.0.7
-   CCOLGEN:   12.4.0.7
+    TLCGEN:   12.4.0.8
+   CCOLGEN:   12.4.0.8
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen 12.4.0.8
  *
  ************************************************************************************/
 
@@ -1244,10 +1244,16 @@ void control_parameters(void)
     H_code[hprreal11]               = "prreal11";                                                 /* Bijhouden primaire realisatie fase 11                              */
     H_code[hprreal22]               = "prreal22";                                                 /* Bijhouden primaire realisatie fase 22                              */
     H_code[hprreal28]               = "prreal28";                                                 /* Bijhouden primaire realisatie fase 28                              */
+    H_code[hschoolingreepdk31a]     = "schoolingreepdk31a";                                       /* Onthouden actief zijn schoolingreep voor fase 31 via detector k31a */
+    H_code[hschoolingreepdk31b]     = "schoolingreepdk31b";                                       /* Onthouden actief zijn schoolingreep voor fase 31 via detector k31b */
+    H_code[hschoolingreepdk32a]     = "schoolingreepdk32a";                                       /* Onthouden actief zijn schoolingreep voor fase 32 via detector k32a */
+    H_code[hschoolingreepdk32b]     = "schoolingreepdk32b";                                       /* Onthouden actief zijn schoolingreep voor fase 32 via detector k32b */
     H_code[hschoolingreepdk33a]     = "schoolingreepdk33a";                                       /* Onthouden actief zijn schoolingreep voor fase 33 via detector k33a */
     H_code[hschoolingreepdk33b]     = "schoolingreepdk33b";                                       /* Onthouden actief zijn schoolingreep voor fase 33 via detector k33b */
     H_code[hschoolingreepdk34a]     = "schoolingreepdk34a";                                       /* Onthouden actief zijn schoolingreep voor fase 34 via detector k34a */
     H_code[hschoolingreepdk34b]     = "schoolingreepdk34b";                                       /* Onthouden actief zijn schoolingreep voor fase 34 via detector k34b */
+    H_code[hsiexgr31]               = "siexgr31";                                                 /* Onthouden actief zijn senioreningreep bij fase 31                  */
+    H_code[hsiexgr32]               = "siexgr32";                                                 /* Onthouden actief zijn senioreningreep bij fase 32                  */
     H_code[hsiexgr33]               = "siexgr33";                                                 /* Onthouden actief zijn senioreningreep bij fase 33                  */
     H_code[hsiexgr34]               = "siexgr34";                                                 /* Onthouden actief zijn senioreningreep bij fase 34                  */
     H_code[hnleg0262]               = "nleg0262";                                                
@@ -1864,12 +1870,24 @@ void control_parameters(void)
     T_code[thd22_1]                    = "hd22_1";                    T_max[thd22_1]                    = 10;   T_type[thd22_1]                    = TE_type; /* RoBuGrover hiaat meting fase 22 detector 22_1                                            */
     T_code[tfd28_1]                    = "fd28_1";                    T_max[tfd28_1]                    = 60;   T_type[tfd28_1]                    = TE_type; /* File meting RoBuGrover fase 28 detector 28_1                                             */
     T_code[thd28_1]                    = "hd28_1";                    T_max[thd28_1]                    = 10;   T_type[thd28_1]                    = TE_type; /* RoBuGrover hiaat meting fase 28 detector 28_1                                            */
+    T_code[tschoolingreepmaxg31]       = "schoolingreepmaxg31";       T_max[tschoolingreepmaxg31]       = 500;  T_type[tschoolingreepmaxg31]       = TE_type; /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 31                        */
+    T_code[tdbsidk31a]                 = "dbsidk31a";                 T_max[tdbsidk31a]                 = 60;   T_type[tdbsidk31a]                 = TE_type; /* Bezettijd detector k31a t.b.v. schoolingreep                                             */
+    T_code[tdbsidk31b]                 = "dbsidk31b";                 T_max[tdbsidk31b]                 = 60;   T_type[tdbsidk31b]                 = TE_type; /* Bezettijd detector k31b t.b.v. schoolingreep                                             */
+    T_code[tschoolingreepmaxg32]       = "schoolingreepmaxg32";       T_max[tschoolingreepmaxg32]       = 500;  T_type[tschoolingreepmaxg32]       = TE_type; /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 32                        */
+    T_code[tdbsidk32a]                 = "dbsidk32a";                 T_max[tdbsidk32a]                 = 60;   T_type[tdbsidk32a]                 = TE_type; /* Bezettijd detector k32a t.b.v. schoolingreep                                             */
+    T_code[tdbsidk32b]                 = "dbsidk32b";                 T_max[tdbsidk32b]                 = 60;   T_type[tdbsidk32b]                 = TE_type; /* Bezettijd detector k32b t.b.v. schoolingreep                                             */
     T_code[tschoolingreepmaxg33]       = "schoolingreepmaxg33";       T_max[tschoolingreepmaxg33]       = 500;  T_type[tschoolingreepmaxg33]       = TE_type; /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 33                        */
     T_code[tdbsidk33a]                 = "dbsidk33a";                 T_max[tdbsidk33a]                 = 60;   T_type[tdbsidk33a]                 = TE_type; /* Bezettijd detector k33a t.b.v. schoolingreep                                             */
     T_code[tdbsidk33b]                 = "dbsidk33b";                 T_max[tdbsidk33b]                 = 60;   T_type[tdbsidk33b]                 = TE_type; /* Bezettijd detector k33b t.b.v. schoolingreep                                             */
     T_code[tschoolingreepmaxg34]       = "schoolingreepmaxg34";       T_max[tschoolingreepmaxg34]       = 500;  T_type[tschoolingreepmaxg34]       = TE_type; /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 34                        */
     T_code[tdbsidk34a]                 = "dbsidk34a";                 T_max[tdbsidk34a]                 = 60;   T_type[tdbsidk34a]                 = TE_type; /* Bezettijd detector k34a t.b.v. schoolingreep                                             */
     T_code[tdbsidk34b]                 = "dbsidk34b";                 T_max[tdbsidk34b]                 = 60;   T_type[tdbsidk34b]                 = TE_type; /* Bezettijd detector k34b t.b.v. schoolingreep                                             */
+    T_code[tsiexgr31]                  = "siexgr31";                  T_max[tsiexgr31]                  = 999;  T_type[tsiexgr31]                  = TE_type; /* Meten duur extra groen bij senioreningreep op fase 31                                    */
+    T_code[tdbsiexgrdk31a]             = "dbsiexgrdk31a";             T_max[tdbsiexgrdk31a]             = 30;   T_type[tdbsiexgrdk31a]             = TE_type; /* Bezettijd detector k31a t.b.v. Senioreningreep                                           */
+    T_code[tdbsiexgrdk31b]             = "dbsiexgrdk31b";             T_max[tdbsiexgrdk31b]             = 30;   T_type[tdbsiexgrdk31b]             = TE_type; /* Bezettijd detector k31b t.b.v. Senioreningreep                                           */
+    T_code[tsiexgr32]                  = "siexgr32";                  T_max[tsiexgr32]                  = 999;  T_type[tsiexgr32]                  = TE_type; /* Meten duur extra groen bij senioreningreep op fase 32                                    */
+    T_code[tdbsiexgrdk32a]             = "dbsiexgrdk32a";             T_max[tdbsiexgrdk32a]             = 30;   T_type[tdbsiexgrdk32a]             = TE_type; /* Bezettijd detector k32a t.b.v. Senioreningreep                                           */
+    T_code[tdbsiexgrdk32b]             = "dbsiexgrdk32b";             T_max[tdbsiexgrdk32b]             = 30;   T_type[tdbsiexgrdk32b]             = TE_type; /* Bezettijd detector k32b t.b.v. Senioreningreep                                           */
     T_code[tsiexgr33]                  = "siexgr33";                  T_max[tsiexgr33]                  = 999;  T_type[tsiexgr33]                  = TE_type; /* Meten duur extra groen bij senioreningreep op fase 33                                    */
     T_code[tdbsiexgrdk33a]             = "dbsiexgrdk33a";             T_max[tdbsiexgrdk33a]             = 30;   T_type[tdbsiexgrdk33a]             = TE_type; /* Bezettijd detector k33a t.b.v. Senioreningreep                                           */
     T_code[tdbsiexgrdk33b]             = "dbsiexgrdk33b";             T_max[tdbsiexgrdk33b]             = 30;   T_type[tdbsiexgrdk33b]             = TE_type; /* Bezettijd detector k33b t.b.v. Senioreningreep                                           */
@@ -2069,14 +2087,14 @@ void control_parameters(void)
     SCH_code[schvaml]                   = "vaml";                   SCH[schvaml]                   = 1;                                         /* Indien VA regelen, ML-bedrijf (1) of versneld PL-bedrijf (0)              */
     SCH_code[schvar]                    = "var";                    SCH[schvar]                    = 0;                                         /* VA regelen aan of uit                                                     */
     SCH_code[scharh]                    = "arh";                    SCH[scharh]                    = 0;                                         /* Toestaan alternatieven voor hoofdrichtingen                               */
-    SCH_code[schpervardef]              = "pervardef";              SCH[schpervardef]              = 0;                                         /* VA regelen periode default                                                */
-    SCH_code[schpervar1]                = "pervar1";                SCH[schpervar1]                = 0;                                         /* VA regelen periode nacht                                                  */
-    SCH_code[schpervar2]                = "pervar2";                SCH[schpervar2]                = 0;                                         /* VA regelen periode dag                                                    */
-    SCH_code[schpervar3]                = "pervar3";                SCH[schpervar3]                = 1;                                         /* VA regelen periode ochtend                                                */
-    SCH_code[schpervar4]                = "pervar4";                SCH[schpervar4]                = 1;                                         /* VA regelen periode avond                                                  */
+    SCH_code[schpervardef]              = "pervardef";              SCH[schpervardef]              = 1;                                         /* VA regelen periode default                                                */
+    SCH_code[schpervar1]                = "pervar1";                SCH[schpervar1]                = 1;                                         /* VA regelen periode nacht                                                  */
+    SCH_code[schpervar2]                = "pervar2";                SCH[schpervar2]                = 1;                                         /* VA regelen periode dag                                                    */
+    SCH_code[schpervar3]                = "pervar3";                SCH[schpervar3]                = 0;                                         /* VA regelen periode ochtend                                                */
+    SCH_code[schpervar4]                = "pervar4";                SCH[schpervar4]                = 0;                                         /* VA regelen periode avond                                                  */
     SCH_code[schpervar5]                = "pervar5";                SCH[schpervar5]                = 1;                                         /* VA regelen periode koopavond                                              */
     SCH_code[schpervar6]                = "pervar6";                SCH[schpervar6]                = 1;                                         /* VA regelen periode weekend                                                */
-    SCH_code[schpervar7]                = "pervar7";                SCH[schpervar7]                = 0;                                         /* VA regelen periode reserve                                                */
+    SCH_code[schpervar7]                = "pervar7";                SCH[schpervar7]                = 1;                                         /* VA regelen periode reserve                                                */
     SCH_code[schperarhdef]              = "perarhdef";              SCH[schperarhdef]              = 0;                                         /* Alternatieven voor hoofdrichtingen periode default                        */
     SCH_code[schperarh1]                = "perarh1";                SCH[schperarh1]                = 0;                                         /* Alternatieven voor hoofdrichtingen periode nacht                          */
     SCH_code[schperarh2]                = "perarh2";                SCH[schperarh2]                = 0;                                         /* Alternatieven voor hoofdrichtingen periode dag                            */
@@ -2271,8 +2289,12 @@ void control_parameters(void)
     SCH_code[schrgvd24_3]               = "rgvd24_3";               SCH[schrgvd24_3]               = 1;                                         /* Richtinggevoelig verlengen fase 24 aan/uit van 24_3 naar 24_2             */
     SCH_code[schrgv]                    = "rgv";                    SCH[schrgv]                    = 0;                                         /* RoBuGrover aan of uit                                                     */
     SCH_code[schrgv_snel]               = "rgv_snel";               SCH[schrgv_snel]               = 0;                                         /* RoBuGrover versneld ophogen of verlagen                                   */
+    SCH_code[schschoolingreep31]        = "schoolingreep31";        SCH[schschoolingreep31]        = 1;                                         /* Schoolingreep aan of uit voor fase 31                                     */
+    SCH_code[schschoolingreep32]        = "schoolingreep32";        SCH[schschoolingreep32]        = 1;                                         /* Schoolingreep aan of uit voor fase 32                                     */
     SCH_code[schschoolingreep33]        = "schoolingreep33";        SCH[schschoolingreep33]        = 0;                                         /* Schoolingreep aan of uit voor fase 33                                     */
     SCH_code[schschoolingreep34]        = "schoolingreep34";        SCH[schschoolingreep34]        = 0;                                         /* Schoolingreep aan of uit voor fase 34                                     */
+    SCH_code[schsi31]                   = "si31";                   SCH[schsi31]                   = 1;                                         /* Senioreningreep aan of uit voor fase 31                                   */
+    SCH_code[schsi32]                   = "si32";                   SCH[schsi32]                   = 1;                                         /* Senioreningreep aan of uit voor fase 32                                   */
     SCH_code[schsi33]                   = "si33";                   SCH[schsi33]                   = 0;                                         /* Senioreningreep aan of uit voor fase 33                                   */
     SCH_code[schsi34]                   = "si34";                   SCH[schsi34]                   = 0;                                         /* Senioreningreep aan of uit voor fase 34                                   */
     SCH_code[schca02]                   = "ca02";                   SCH[schca02]                   = 0;                                         /* Cyclische aanvraag fase 02                                                */
@@ -3900,10 +3922,10 @@ void control_parameters(void)
     PRM_code[prmrisastartsrm068mveh2]     = "risastartsrm068mveh2";     PRM[prmrisastartsrm068mveh2]     = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 68                                                              */
     PRM_code[prmrisastart81fts1]          = "risastart81fts1";          PRM[prmrisastart81fts1]          = 20;                                                     /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 81                                                               */
     PRM_code[prmrisastartsrm081fts1]      = "risastartsrm081fts1";      PRM[prmrisastartsrm081fts1]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 81                                                              */
-    PRM_code[prmrisastart84fts1]          = "risastart84fts1";          PRM[prmrisastart84fts1]          = 20;                                                     /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 84                                                               */
-    PRM_code[prmrisastartsrm084fts1]      = "risastartsrm084fts1";      PRM[prmrisastartsrm084fts1]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 84                                                              */
     PRM_code[prmrisastart82fts1]          = "risastart82fts1";          PRM[prmrisastart82fts1]          = 20;                                                     /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 82                                                               */
     PRM_code[prmrisastartsrm082fts1]      = "risastartsrm082fts1";      PRM[prmrisastartsrm082fts1]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 82                                                              */
+    PRM_code[prmrisastart84fts1]          = "risastart84fts1";          PRM[prmrisastart84fts1]          = 20;                                                     /* Afstand van stopstreep tot start aanvraag gebied RIS CAM fase 84                                                               */
+    PRM_code[prmrisastartsrm084fts1]      = "risastartsrm084fts1";      PRM[prmrisastartsrm084fts1]      = 0;                                                      /* Afstand van stopstreep tot start aanvraag gebied RIS SRM0 fase 84                                                              */
     PRM_code[prmrisaend02mveh1]           = "risaend02mveh1";           PRM[prmrisaend02mveh1]           = 40;                                                     /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 02                                                               */
     PRM_code[prmrisaendsrm002mveh1]       = "risaendsrm002mveh1";       PRM[prmrisaendsrm002mveh1]       = 40;                                                     /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 02                                                              */
     PRM_code[prmrisaend02mveh2]           = "risaend02mveh2";           PRM[prmrisaend02mveh2]           = 40;                                                     /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 02                                                               */
@@ -3966,10 +3988,10 @@ void control_parameters(void)
     PRM_code[prmrisaendsrm068mveh2]       = "risaendsrm068mveh2";       PRM[prmrisaendsrm068mveh2]       = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 68                                                              */
     PRM_code[prmrisaend81fts1]            = "risaend81fts1";            PRM[prmrisaend81fts1]            = 40;                                                     /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 81                                                               */
     PRM_code[prmrisaendsrm081fts1]        = "risaendsrm081fts1";        PRM[prmrisaendsrm081fts1]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 81                                                              */
-    PRM_code[prmrisaend84fts1]            = "risaend84fts1";            PRM[prmrisaend84fts1]            = 40;                                                     /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 84                                                               */
-    PRM_code[prmrisaendsrm084fts1]        = "risaendsrm084fts1";        PRM[prmrisaendsrm084fts1]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 84                                                              */
     PRM_code[prmrisaend82fts1]            = "risaend82fts1";            PRM[prmrisaend82fts1]            = 40;                                                     /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 82                                                               */
     PRM_code[prmrisaendsrm082fts1]        = "risaendsrm082fts1";        PRM[prmrisaendsrm082fts1]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 82                                                              */
+    PRM_code[prmrisaend84fts1]            = "risaend84fts1";            PRM[prmrisaend84fts1]            = 40;                                                     /* Afstand van stopstreep tot einde aanvraag gebied RIS CAM fase 84                                                               */
+    PRM_code[prmrisaendsrm084fts1]        = "risaendsrm084fts1";        PRM[prmrisaendsrm084fts1]        = 0;                                                      /* Afstand van stopstreep tot einde aanvraag gebied RIS SRM0 fase 84                                                              */
     PRM_code[prmrisvstart02mveh1]         = "risvstart02mveh1";         PRM[prmrisvstart02mveh1]         = 20;                                                     /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 02                                                                */
     PRM_code[prmrisvstartsrm002mveh1]     = "risvstartsrm002mveh1";     PRM[prmrisvstartsrm002mveh1]     = 20;                                                     /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 02                                                               */
     PRM_code[prmrisvstart02mveh2]         = "risvstart02mveh2";         PRM[prmrisvstart02mveh2]         = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 02                                                                */
@@ -4032,10 +4054,10 @@ void control_parameters(void)
     PRM_code[prmrisvstartsrm068mveh2]     = "risvstartsrm068mveh2";     PRM[prmrisvstartsrm068mveh2]     = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 68                                                               */
     PRM_code[prmrisvstart81fts1]          = "risvstart81fts1";          PRM[prmrisvstart81fts1]          = 20;                                                     /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 81                                                                */
     PRM_code[prmrisvstartsrm081fts1]      = "risvstartsrm081fts1";      PRM[prmrisvstartsrm081fts1]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 81                                                               */
-    PRM_code[prmrisvstart84fts1]          = "risvstart84fts1";          PRM[prmrisvstart84fts1]          = 20;                                                     /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 84                                                                */
-    PRM_code[prmrisvstartsrm084fts1]      = "risvstartsrm084fts1";      PRM[prmrisvstartsrm084fts1]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 84                                                               */
     PRM_code[prmrisvstart82fts1]          = "risvstart82fts1";          PRM[prmrisvstart82fts1]          = 20;                                                     /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 82                                                                */
     PRM_code[prmrisvstartsrm082fts1]      = "risvstartsrm082fts1";      PRM[prmrisvstartsrm082fts1]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 82                                                               */
+    PRM_code[prmrisvstart84fts1]          = "risvstart84fts1";          PRM[prmrisvstart84fts1]          = 20;                                                     /* Afstand van stopstreep tot start verleng gebied RIS CAM fase 84                                                                */
+    PRM_code[prmrisvstartsrm084fts1]      = "risvstartsrm084fts1";      PRM[prmrisvstartsrm084fts1]      = 0;                                                      /* Afstand van stopstreep tot start verleng gebied RIS SRM0 fase 84                                                               */
     PRM_code[prmrisvend02mveh1]           = "risvend02mveh1";           PRM[prmrisvend02mveh1]           = 100;                                                    /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 02                                                                */
     PRM_code[prmrisvendsrm002mveh1]       = "risvendsrm002mveh1";       PRM[prmrisvendsrm002mveh1]       = 100;                                                    /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 02                                                               */
     PRM_code[prmrisvend02mveh2]           = "risvend02mveh2";           PRM[prmrisvend02mveh2]           = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 02                                                                */
@@ -4098,10 +4120,10 @@ void control_parameters(void)
     PRM_code[prmrisvendsrm068mveh2]       = "risvendsrm068mveh2";       PRM[prmrisvendsrm068mveh2]       = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 68                                                               */
     PRM_code[prmrisvend81fts1]            = "risvend81fts1";            PRM[prmrisvend81fts1]            = 40;                                                     /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 81                                                                */
     PRM_code[prmrisvendsrm081fts1]        = "risvendsrm081fts1";        PRM[prmrisvendsrm081fts1]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 81                                                               */
-    PRM_code[prmrisvend84fts1]            = "risvend84fts1";            PRM[prmrisvend84fts1]            = 40;                                                     /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 84                                                                */
-    PRM_code[prmrisvendsrm084fts1]        = "risvendsrm084fts1";        PRM[prmrisvendsrm084fts1]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 84                                                               */
     PRM_code[prmrisvend82fts1]            = "risvend82fts1";            PRM[prmrisvend82fts1]            = 40;                                                     /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 82                                                                */
     PRM_code[prmrisvendsrm082fts1]        = "risvendsrm082fts1";        PRM[prmrisvendsrm082fts1]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 82                                                               */
+    PRM_code[prmrisvend84fts1]            = "risvend84fts1";            PRM[prmrisvend84fts1]            = 40;                                                     /* Afstand van stopstreep tot einde verleng gebied RIS CAM fase 84                                                                */
+    PRM_code[prmrisvendsrm084fts1]        = "risvendsrm084fts1";        PRM[prmrisvendsrm084fts1]        = 0;                                                      /* Afstand van stopstreep tot einde verleng gebied RIS SRM0 fase 84                                                               */
     PRM_code[prmrispstart22fts1]          = "rispstart22fts1";          PRM[prmrispstart22fts1]          = 50;                                                     /* Afstand van stopstreep tot start peloton bepaal gebied RIS fase 22                                                             */
     PRM_code[prmrispstart22fts2]          = "rispstart22fts2";          PRM[prmrispstart22fts2]          = 50;                                                     /* Afstand van stopstreep tot start peloton bepaal gebied RIS fase 22                                                             */
     PRM_code[prmrispstart28fts1]          = "rispstart28fts1";          PRM[prmrispstart28fts1]          = 50;                                                     /* Afstand van stopstreep tot start peloton bepaal gebied RIS fase 28                                                             */
@@ -4130,6 +4152,8 @@ void control_parameters(void)
     PRM_code[prmmaxtvg_22]                = "maxtvg_22";                PRM[prmmaxtvg_22]                = 150;   PRM_type[prmmaxtvg_22]                = TE_type; /* Maximale verlenggroentijd fase 22                                                                                              */
     PRM_code[prmmintvg_28]                = "mintvg_28";                PRM[prmmintvg_28]                = 40;    PRM_type[prmmintvg_28]                = TE_type; /* Minimale verlenggroentijd fase 28                                                                                              */
     PRM_code[prmmaxtvg_28]                = "maxtvg_28";                PRM[prmmaxtvg_28]                = 150;   PRM_type[prmmaxtvg_28]                = TE_type; /* Maximale verlenggroentijd fase 28                                                                                              */
+    PRM_code[prmsiexgrperc31]             = "siexgrperc31";             PRM[prmsiexgrperc31]             = 50;                                                     /* Extra groen percentage tov. TFG voor senioreningreep op fase 31                                                                */
+    PRM_code[prmsiexgrperc32]             = "siexgrperc32";             PRM[prmsiexgrperc32]             = 50;                                                     /* Extra groen percentage tov. TFG voor senioreningreep op fase 32                                                                */
     PRM_code[prmsiexgrperc33]             = "siexgrperc33";             PRM[prmsiexgrperc33]             = 50;                                                     /* Extra groen percentage tov. TFG voor senioreningreep op fase 33                                                                */
     PRM_code[prmsiexgrperc34]             = "siexgrperc34";             PRM[prmsiexgrperc34]             = 50;                                                     /* Extra groen percentage tov. TFG voor senioreningreep op fase 34                                                                */
     PRM_code[prmmaxtvgvlog]               = "maxtvgvlog";               PRM[prmmaxtvgvlog]               = 5;     PRM_type[prmmaxtvgvlog]               = CT_type; /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
@@ -4543,8 +4567,12 @@ void control_parameters(void)
     SCH_cat[schrgvd24_3]            = CAT_Basisfuncties;    SCH_subcat[schrgvd24_3]               = SUBCAT_Verlengen;
     SCH_cat[schrgv]                 = CAT_Signaalgroep;     SCH_subcat[schrgv]                    = SUBCAT_MaximumGroentijden;
     SCH_cat[schrgv_snel]            = CAT_Signaalgroep;     SCH_subcat[schrgv_snel]               = SUBCAT_MaximumGroentijden;
+    SCH_cat[schschoolingreep31]     = CAT_SpecialeIngrepen; SCH_subcat[schschoolingreep31]        = SUBCAT_Verlengen;
+    SCH_cat[schschoolingreep32]     = CAT_SpecialeIngrepen; SCH_subcat[schschoolingreep32]        = SUBCAT_Verlengen;
     SCH_cat[schschoolingreep33]     = CAT_SpecialeIngrepen; SCH_subcat[schschoolingreep33]        = SUBCAT_Verlengen;
     SCH_cat[schschoolingreep34]     = CAT_SpecialeIngrepen; SCH_subcat[schschoolingreep34]        = SUBCAT_Verlengen;
+    SCH_cat[schsi31]                = CAT_SpecialeIngrepen; SCH_subcat[schsi31]                   = SUBCAT_Verlengen;
+    SCH_cat[schsi32]                = CAT_SpecialeIngrepen; SCH_subcat[schsi32]                   = SUBCAT_Verlengen;
     SCH_cat[schsi33]                = CAT_SpecialeIngrepen; SCH_subcat[schsi33]                   = SUBCAT_Verlengen;
     SCH_cat[schsi34]                = CAT_SpecialeIngrepen; SCH_subcat[schsi34]                   = SUBCAT_Verlengen;
     SCH_cat[schca02]                = CAT_Basisfuncties;    SCH_subcat[schca02]                   = SUBCAT_Aanvraag;
@@ -5119,12 +5147,24 @@ void control_parameters(void)
     T_cat[trgavd24_3]              = CAT_Basisfuncties;    T_subcat[trgavd24_3]                 = SUBCAT_Aanvraag;
     T_cat[trgrd24_3_d24_2]         = CAT_Basisfuncties;    T_subcat[trgrd24_3_d24_2]            = SUBCAT_Verlengen;
     T_cat[trgvd24_3_d24_2]         = CAT_Basisfuncties;    T_subcat[trgvd24_3_d24_2]            = SUBCAT_Verlengen;
+    T_cat[tschoolingreepmaxg31]    = CAT_SpecialeIngrepen; T_subcat[tschoolingreepmaxg31]       = SUBCAT_Verlengen;
+    T_cat[tdbsidk31a]              = CAT_SpecialeIngrepen; T_subcat[tdbsidk31a]                 = SUBCAT_Verlengen;
+    T_cat[tdbsidk31b]              = CAT_SpecialeIngrepen; T_subcat[tdbsidk31b]                 = SUBCAT_Verlengen;
+    T_cat[tschoolingreepmaxg32]    = CAT_SpecialeIngrepen; T_subcat[tschoolingreepmaxg32]       = SUBCAT_Verlengen;
+    T_cat[tdbsidk32a]              = CAT_SpecialeIngrepen; T_subcat[tdbsidk32a]                 = SUBCAT_Verlengen;
+    T_cat[tdbsidk32b]              = CAT_SpecialeIngrepen; T_subcat[tdbsidk32b]                 = SUBCAT_Verlengen;
     T_cat[tschoolingreepmaxg33]    = CAT_SpecialeIngrepen; T_subcat[tschoolingreepmaxg33]       = SUBCAT_Verlengen;
     T_cat[tdbsidk33a]              = CAT_SpecialeIngrepen; T_subcat[tdbsidk33a]                 = SUBCAT_Verlengen;
     T_cat[tdbsidk33b]              = CAT_SpecialeIngrepen; T_subcat[tdbsidk33b]                 = SUBCAT_Verlengen;
     T_cat[tschoolingreepmaxg34]    = CAT_SpecialeIngrepen; T_subcat[tschoolingreepmaxg34]       = SUBCAT_Verlengen;
     T_cat[tdbsidk34a]              = CAT_SpecialeIngrepen; T_subcat[tdbsidk34a]                 = SUBCAT_Verlengen;
     T_cat[tdbsidk34b]              = CAT_SpecialeIngrepen; T_subcat[tdbsidk34b]                 = SUBCAT_Verlengen;
+    T_cat[tsiexgr31]               = CAT_SpecialeIngrepen; T_subcat[tsiexgr31]                  = SUBCAT_Verlengen;
+    T_cat[tdbsiexgrdk31a]          = CAT_SpecialeIngrepen; T_subcat[tdbsiexgrdk31a]             = SUBCAT_Verlengen;
+    T_cat[tdbsiexgrdk31b]          = CAT_SpecialeIngrepen; T_subcat[tdbsiexgrdk31b]             = SUBCAT_Verlengen;
+    T_cat[tsiexgr32]               = CAT_SpecialeIngrepen; T_subcat[tsiexgr32]                  = SUBCAT_Verlengen;
+    T_cat[tdbsiexgrdk32a]          = CAT_SpecialeIngrepen; T_subcat[tdbsiexgrdk32a]             = SUBCAT_Verlengen;
+    T_cat[tdbsiexgrdk32b]          = CAT_SpecialeIngrepen; T_subcat[tdbsiexgrdk32b]             = SUBCAT_Verlengen;
     T_cat[tsiexgr33]               = CAT_SpecialeIngrepen; T_subcat[tsiexgr33]                  = SUBCAT_Verlengen;
     T_cat[tdbsiexgrdk33a]          = CAT_SpecialeIngrepen; T_subcat[tdbsiexgrdk33a]             = SUBCAT_Verlengen;
     T_cat[tdbsiexgrdk33b]          = CAT_SpecialeIngrepen; T_subcat[tdbsiexgrdk33b]             = SUBCAT_Verlengen;
@@ -6628,10 +6668,10 @@ void control_parameters(void)
     PRM_cat[prmrisastartsrm068mveh2]  = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm068mveh2]     = SUBCAT_Aanvraag;
     PRM_cat[prmrisastart81fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart81fts1]          = SUBCAT_Aanvraag;
     PRM_cat[prmrisastartsrm081fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm081fts1]      = SUBCAT_Aanvraag;
-    PRM_cat[prmrisastart84fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart84fts1]          = SUBCAT_Aanvraag;
-    PRM_cat[prmrisastartsrm084fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm084fts1]      = SUBCAT_Aanvraag;
     PRM_cat[prmrisastart82fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart82fts1]          = SUBCAT_Aanvraag;
     PRM_cat[prmrisastartsrm082fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm082fts1]      = SUBCAT_Aanvraag;
+    PRM_cat[prmrisastart84fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisastart84fts1]          = SUBCAT_Aanvraag;
+    PRM_cat[prmrisastartsrm084fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisastartsrm084fts1]      = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend02mveh1]        = CAT_Optimaliseren;    PRM_subcat[prmrisaend02mveh1]           = SUBCAT_Aanvraag;
     PRM_cat[prmrisaendsrm002mveh1]    = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm002mveh1]       = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend02mveh2]        = CAT_Optimaliseren;    PRM_subcat[prmrisaend02mveh2]           = SUBCAT_Aanvraag;
@@ -6694,10 +6734,10 @@ void control_parameters(void)
     PRM_cat[prmrisaendsrm068mveh2]    = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm068mveh2]       = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend81fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend81fts1]            = SUBCAT_Aanvraag;
     PRM_cat[prmrisaendsrm081fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm081fts1]        = SUBCAT_Aanvraag;
-    PRM_cat[prmrisaend84fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend84fts1]            = SUBCAT_Aanvraag;
-    PRM_cat[prmrisaendsrm084fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm084fts1]        = SUBCAT_Aanvraag;
     PRM_cat[prmrisaend82fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend82fts1]            = SUBCAT_Aanvraag;
     PRM_cat[prmrisaendsrm082fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm082fts1]        = SUBCAT_Aanvraag;
+    PRM_cat[prmrisaend84fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisaend84fts1]            = SUBCAT_Aanvraag;
+    PRM_cat[prmrisaendsrm084fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisaendsrm084fts1]        = SUBCAT_Aanvraag;
     PRM_cat[prmrisvstart02mveh1]      = CAT_Optimaliseren;    PRM_subcat[prmrisvstart02mveh1]         = SUBCAT_Verlengen;
     PRM_cat[prmrisvstartsrm002mveh1]  = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm002mveh1]     = SUBCAT_Verlengen;
     PRM_cat[prmrisvstart02mveh2]      = CAT_Optimaliseren;    PRM_subcat[prmrisvstart02mveh2]         = SUBCAT_Verlengen;
@@ -6760,10 +6800,10 @@ void control_parameters(void)
     PRM_cat[prmrisvstartsrm068mveh2]  = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm068mveh2]     = SUBCAT_Verlengen;
     PRM_cat[prmrisvstart81fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart81fts1]          = SUBCAT_Verlengen;
     PRM_cat[prmrisvstartsrm081fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm081fts1]      = SUBCAT_Verlengen;
-    PRM_cat[prmrisvstart84fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart84fts1]          = SUBCAT_Verlengen;
-    PRM_cat[prmrisvstartsrm084fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm084fts1]      = SUBCAT_Verlengen;
     PRM_cat[prmrisvstart82fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart82fts1]          = SUBCAT_Verlengen;
     PRM_cat[prmrisvstartsrm082fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm082fts1]      = SUBCAT_Verlengen;
+    PRM_cat[prmrisvstart84fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrisvstart84fts1]          = SUBCAT_Verlengen;
+    PRM_cat[prmrisvstartsrm084fts1]   = CAT_Optimaliseren;    PRM_subcat[prmrisvstartsrm084fts1]      = SUBCAT_Verlengen;
     PRM_cat[prmrisvend02mveh1]        = CAT_Optimaliseren;    PRM_subcat[prmrisvend02mveh1]           = SUBCAT_Verlengen;
     PRM_cat[prmrisvendsrm002mveh1]    = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm002mveh1]       = SUBCAT_Verlengen;
     PRM_cat[prmrisvend02mveh2]        = CAT_Optimaliseren;    PRM_subcat[prmrisvend02mveh2]           = SUBCAT_Verlengen;
@@ -6826,10 +6866,10 @@ void control_parameters(void)
     PRM_cat[prmrisvendsrm068mveh2]    = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm068mveh2]       = SUBCAT_Verlengen;
     PRM_cat[prmrisvend81fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend81fts1]            = SUBCAT_Verlengen;
     PRM_cat[prmrisvendsrm081fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm081fts1]        = SUBCAT_Verlengen;
-    PRM_cat[prmrisvend84fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend84fts1]            = SUBCAT_Verlengen;
-    PRM_cat[prmrisvendsrm084fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm084fts1]        = SUBCAT_Verlengen;
     PRM_cat[prmrisvend82fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend82fts1]            = SUBCAT_Verlengen;
     PRM_cat[prmrisvendsrm082fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm082fts1]        = SUBCAT_Verlengen;
+    PRM_cat[prmrisvend84fts1]         = CAT_Optimaliseren;    PRM_subcat[prmrisvend84fts1]            = SUBCAT_Verlengen;
+    PRM_cat[prmrisvendsrm084fts1]     = CAT_Optimaliseren;    PRM_subcat[prmrisvendsrm084fts1]        = SUBCAT_Verlengen;
     PRM_cat[prmrispstart22fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrispstart22fts1]          = SUBCAT_CAM_PelotonFiets;
     PRM_cat[prmrispstart22fts2]       = CAT_Optimaliseren;    PRM_subcat[prmrispstart22fts2]          = SUBCAT_CAM_PelotonFiets;
     PRM_cat[prmrispstart28fts1]       = CAT_Optimaliseren;    PRM_subcat[prmrispstart28fts1]          = SUBCAT_CAM_PelotonFiets;
@@ -6858,6 +6898,8 @@ void control_parameters(void)
     PRM_cat[prmmaxtvg_22]             = CAT_Signaalgroep;     PRM_subcat[prmmaxtvg_22]                = SUBCAT_MaximumGroentijden;
     PRM_cat[prmmintvg_28]             = CAT_Signaalgroep;     PRM_subcat[prmmintvg_28]                = SUBCAT_MaximumGroentijden;
     PRM_cat[prmmaxtvg_28]             = CAT_Signaalgroep;     PRM_subcat[prmmaxtvg_28]                = SUBCAT_MaximumGroentijden;
+    PRM_cat[prmsiexgrperc31]          = CAT_SpecialeIngrepen; PRM_subcat[prmsiexgrperc31]             = SUBCAT_Verlengen;
+    PRM_cat[prmsiexgrperc32]          = CAT_SpecialeIngrepen; PRM_subcat[prmsiexgrperc32]             = SUBCAT_Verlengen;
     PRM_cat[prmsiexgrperc33]          = CAT_SpecialeIngrepen; PRM_subcat[prmsiexgrperc33]             = SUBCAT_Verlengen;
     PRM_cat[prmsiexgrperc34]          = CAT_SpecialeIngrepen; PRM_subcat[prmsiexgrperc34]             = SUBCAT_Verlengen;
     PRM_cat[prmmaxtvgvlog]            = CAT_TestenLoggen;     PRM_subcat[prmmaxtvgvlog]               = SUBCAT_Loggen;
@@ -7122,17 +7164,10 @@ void control_parameters(void)
     IS_type[dk82] = DK_type;
     IS_type[d84_1] = DKOP_type;
     IS_type[dk84] = DK_type;
-#ifndef NO_CVN_50
     IS_type[dopt02] = DSI_type;
     IS_type[dopt05] = DSI_type;
     IS_type[dopt08] = DSI_type;
     IS_type[dopt11] = DSI_type;
-#else
-    IS_type[dopt02] = DS_type;
-    IS_type[dopt05] = DS_type;
-    IS_type[dopt08] = DS_type;
-    IS_type[dopt11] = DS_type;
-#endif
 
 /* Typen uitgangen */
 /* --------------- */
@@ -7269,79 +7304,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d02_1a].SumoNamen[0], 32, "%s", "02_1a");
     sprintf_s(SUMODetectors[d02_1b].SumoNamen[0], 32, "%s", "02_1b");
     sprintf_s(SUMODetectors[d02_2a].SumoNamen[0], 32, "%s", "02_2a");
-    sprintf_s(SUMODetectors[d02_2b].SumoNamen[0], 32, "%s", "02_2b");
-    sprintf_s(SUMODetectors[d02_3a].SumoNamen[0], 32, "%s", "02_3a");
-    sprintf_s(SUMODetectors[d02_3b].SumoNamen[0], 32, "%s", "02_3b");
-    sprintf_s(SUMODetectors[d02_4a].SumoNamen[0], 32, "%s", "02_4a");
-    sprintf_s(SUMODetectors[d02_4b].SumoNamen[0], 32, "%s", "02_4b");
-    sprintf_s(SUMODetectors[d03_1].SumoNamen[0], 32, "%s", "03_1");
-    sprintf_s(SUMODetectors[d03_2].SumoNamen[0], 32, "%s", "03_2");
-    sprintf_s(SUMODetectors[d05_1].SumoNamen[0], 32, "%s", "05_1");
-    sprintf_s(SUMODetectors[d05_2].SumoNamen[0], 32, "%s", "05_2");
-    sprintf_s(SUMODetectors[d08_1a].SumoNamen[0], 32, "%s", "08_1a");
-    sprintf_s(SUMODetectors[d08_1b].SumoNamen[0], 32, "%s", "08_1b");
-    sprintf_s(SUMODetectors[d08_2a].SumoNamen[0], 32, "%s", "08_2a");
-    sprintf_s(SUMODetectors[d08_2b].SumoNamen[0], 32, "%s", "08_2b");
-    sprintf_s(SUMODetectors[d08_3a].SumoNamen[0], 32, "%s", "08_3a");
-    sprintf_s(SUMODetectors[d08_3b].SumoNamen[0], 32, "%s", "08_3b");
-    sprintf_s(SUMODetectors[d08_4a].SumoNamen[0], 32, "%s", "08_4a");
-    sprintf_s(SUMODetectors[d08_4b].SumoNamen[0], 32, "%s", "08_4b");
-    sprintf_s(SUMODetectors[d09_1].SumoNamen[0], 32, "%s", "091");
-    sprintf_s(SUMODetectors[d09_2].SumoNamen[0], 32, "%s", "092");
-    sprintf_s(SUMODetectors[d09_3].SumoNamen[0], 32, "%s", "093");
-    sprintf_s(SUMODetectors[d11_1].SumoNamen[0], 32, "%s", "11_1");
-    sprintf_s(SUMODetectors[d11_2].SumoNamen[0], 32, "%s", "11_2");
-    sprintf_s(SUMODetectors[d11_3].SumoNamen[0], 32, "%s", "11_3");
-    sprintf_s(SUMODetectors[d11_4].SumoNamen[0], 32, "%s", "11_4");
-    sprintf_s(SUMODetectors[d211].SumoNamen[0], 32, "%s", "211");
-    sprintf_s(SUMODetectors[d22_1].SumoNamen[0], 32, "%s", "22_1");
-    sprintf_s(SUMODetectors[d24_1].SumoNamen[0], 32, "%s", "24_1");
-    sprintf_s(SUMODetectors[d24_2].SumoNamen[0], 32, "%s", "24_2");
-    sprintf_s(SUMODetectors[d24_3].SumoNamen[0], 32, "%s", "24_3");
-    sprintf_s(SUMODetectors[d261].SumoNamen[0], 32, "%s", "261");
-    sprintf_s(SUMODetectors[d28_1].SumoNamen[0], 32, "%s", "28_1");
-    sprintf_s(SUMODetectors[d28_2].SumoNamen[0], 32, "%s", "28_2");
-    sprintf_s(SUMODetectors[d61_1].SumoNamen[0], 32, "%s", "61_1");
-    sprintf_s(SUMODetectors[d61_2].SumoNamen[0], 32, "%s", "61_2");
-    sprintf_s(SUMODetectors[d62_1a].SumoNamen[0], 32, "%s", "62_1a");
-    sprintf_s(SUMODetectors[d62_1b].SumoNamen[0], 32, "%s", "62_1b");
-    sprintf_s(SUMODetectors[d62_2a].SumoNamen[0], 32, "%s", "62_2a");
-    sprintf_s(SUMODetectors[d62_2b].SumoNamen[0], 32, "%s", "62_2b");
-    sprintf_s(SUMODetectors[d67_1].SumoNamen[0], 32, "%s", "67_1");
-    sprintf_s(SUMODetectors[d67_2].SumoNamen[0], 32, "%s", "67_2");
-    sprintf_s(SUMODetectors[d68_1a].SumoNamen[0], 32, "%s", "68_1a");
-    sprintf_s(SUMODetectors[d68_1b].SumoNamen[0], 32, "%s", "68_1b");
-    sprintf_s(SUMODetectors[d68_2a].SumoNamen[0], 32, "%s", "68_2a");
-    sprintf_s(SUMODetectors[d68_2b].SumoNamen[0], 32, "%s", "68_2b");
-    sprintf_s(SUMODetectors[d68_9a].SumoNamen[0], 32, "%s", "681");
-    sprintf_s(SUMODetectors[d68_9b].SumoNamen[0], 32, "%s", "682");
-    sprintf_s(SUMODetectors[d81_1].SumoNamen[0], 32, "%s", "811");
-    sprintf_s(SUMODetectors[d82_1].SumoNamen[0], 32, "%s", "821");
-    sprintf_s(SUMODetectors[d84_1].SumoNamen[0], 32, "%s", "84_1");
-    sprintf_s(SUMODetectors[ddummyhdkarin02].SumoNamen[0], 32, "%s", "dummyhdkarin02");
-    sprintf_s(SUMODetectors[ddummyhdkaruit02].SumoNamen[0], 32, "%s", "dummyhdkaruit02");
-    sprintf_s(SUMODetectors[ddummykarin02karbus].SumoNamen[0], 32, "%s", "dummykarin02karbus");
-    sprintf_s(SUMODetectors[ddummykarin03bus].SumoNamen[0], 32, "%s", "dummykarin03bus");
-    sprintf_s(SUMODetectors[ddummykarin05bus].SumoNamen[0], 32, "%s", "dummykarin05bus");
-    sprintf_s(SUMODetectors[ddummykarin08bus].SumoNamen[0], 32, "%s", "dummykarin08bus");
-    sprintf_s(SUMODetectors[ddummykarin09bus].SumoNamen[0], 32, "%s", "dummykarin09bus");
-    sprintf_s(SUMODetectors[ddummykarin11bus].SumoNamen[0], 32, "%s", "dummykarin11bus");
-    sprintf_s(SUMODetectors[ddummykarin61bus].SumoNamen[0], 32, "%s", "dummykarin61bus");
-    sprintf_s(SUMODetectors[ddummykarin62bus].SumoNamen[0], 32, "%s", "dummykarin62bus");
-    sprintf_s(SUMODetectors[ddummykarin67bus].SumoNamen[0], 32, "%s", "dummykarin67bus");
-    sprintf_s(SUMODetectors[ddummykarin68bus].SumoNamen[0], 32, "%s", "dummykarin68bus");
-    sprintf_s(SUMODetectors[ddummykaruit02karbus].SumoNamen[0], 32, "%s", "dummykaruit02karbus");
-    sprintf_s(SUMODetectors[ddummykaruit03bus].SumoNamen[0], 32, "%s", "dummykaruit03bus");
-    sprintf_s(SUMODetectors[ddummykaruit05bus].SumoNamen[0], 32, "%s", "dummykaruit05bus");
-    sprintf_s(SUMODetectors[ddummykaruit08bus].SumoNamen[0], 32, "%s", "dummykaruit08bus");
-    sprintf_s(SUMODetectors[ddummykaruit09bus].SumoNamen[0], 32, "%s", "dummykaruit09bus");
-    sprintf_s(SUMODetectors[ddummykaruit11bus].SumoNamen[0], 32, "%s", "dummykaruit11bus");
-    sprintf_s(SUMODetectors[ddummykaruit61bus].SumoNamen[0], 32, "%s", "dummykaruit61bus");
-    sprintf_s(SUMODetectors[ddummykaruit62bus].SumoNamen[0], 32, "%s", "dummykaruit62bus");
-    sprintf_s(SUMODetectors[ddummykaruit67bus].SumoNamen[0], 32, "%s", "dummykaruit67bus");
-    sprintf_s(SUMODetectors[ddummykaruit68bus].SumoNamen[0], 32, "%s", "dummykaruit68bus");
-    sprintf_s(SUMODetectors[dk21].SumoNamen[0], 32, "%s", "212");
-    sprintf_s(SUMODetectors[dk26].SumoNamen[0], 32, "%s", "262");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -7358,6 +7320,79 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[dk32a].SumoNamen[0], 32, "%s", "32a");
     sprintf_s(SUMODetectors[dk31b].SumoNamen[0], 32, "%s", "31b");
     sprintf_s(SUMODetectors[dk31a].SumoNamen[0], 32, "%s", "31a");
+    sprintf_s(SUMODetectors[dk26].SumoNamen[0], 32, "%s", "262");
+    sprintf_s(SUMODetectors[dk21].SumoNamen[0], 32, "%s", "212");
+    sprintf_s(SUMODetectors[ddummykaruit68bus].SumoNamen[0], 32, "%s", "dummykaruit68bus");
+    sprintf_s(SUMODetectors[ddummykaruit67bus].SumoNamen[0], 32, "%s", "dummykaruit67bus");
+    sprintf_s(SUMODetectors[ddummykaruit62bus].SumoNamen[0], 32, "%s", "dummykaruit62bus");
+    sprintf_s(SUMODetectors[ddummykaruit61bus].SumoNamen[0], 32, "%s", "dummykaruit61bus");
+    sprintf_s(SUMODetectors[ddummykaruit11bus].SumoNamen[0], 32, "%s", "dummykaruit11bus");
+    sprintf_s(SUMODetectors[ddummykaruit09bus].SumoNamen[0], 32, "%s", "dummykaruit09bus");
+    sprintf_s(SUMODetectors[ddummykaruit08bus].SumoNamen[0], 32, "%s", "dummykaruit08bus");
+    sprintf_s(SUMODetectors[ddummykaruit05bus].SumoNamen[0], 32, "%s", "dummykaruit05bus");
+    sprintf_s(SUMODetectors[ddummykaruit03bus].SumoNamen[0], 32, "%s", "dummykaruit03bus");
+    sprintf_s(SUMODetectors[ddummykaruit02karbus].SumoNamen[0], 32, "%s", "dummykaruit02karbus");
+    sprintf_s(SUMODetectors[ddummykarin68bus].SumoNamen[0], 32, "%s", "dummykarin68bus");
+    sprintf_s(SUMODetectors[ddummykarin67bus].SumoNamen[0], 32, "%s", "dummykarin67bus");
+    sprintf_s(SUMODetectors[ddummykarin62bus].SumoNamen[0], 32, "%s", "dummykarin62bus");
+    sprintf_s(SUMODetectors[ddummykarin61bus].SumoNamen[0], 32, "%s", "dummykarin61bus");
+    sprintf_s(SUMODetectors[ddummykarin11bus].SumoNamen[0], 32, "%s", "dummykarin11bus");
+    sprintf_s(SUMODetectors[ddummykarin09bus].SumoNamen[0], 32, "%s", "dummykarin09bus");
+    sprintf_s(SUMODetectors[ddummykarin08bus].SumoNamen[0], 32, "%s", "dummykarin08bus");
+    sprintf_s(SUMODetectors[ddummykarin05bus].SumoNamen[0], 32, "%s", "dummykarin05bus");
+    sprintf_s(SUMODetectors[ddummykarin03bus].SumoNamen[0], 32, "%s", "dummykarin03bus");
+    sprintf_s(SUMODetectors[ddummykarin02karbus].SumoNamen[0], 32, "%s", "dummykarin02karbus");
+    sprintf_s(SUMODetectors[ddummyhdkaruit02].SumoNamen[0], 32, "%s", "dummyhdkaruit02");
+    sprintf_s(SUMODetectors[ddummyhdkarin02].SumoNamen[0], 32, "%s", "dummyhdkarin02");
+    sprintf_s(SUMODetectors[d84_1].SumoNamen[0], 32, "%s", "84_1");
+    sprintf_s(SUMODetectors[d82_1].SumoNamen[0], 32, "%s", "821");
+    sprintf_s(SUMODetectors[d81_1].SumoNamen[0], 32, "%s", "811");
+    sprintf_s(SUMODetectors[d68_9b].SumoNamen[0], 32, "%s", "682");
+    sprintf_s(SUMODetectors[d68_9a].SumoNamen[0], 32, "%s", "681");
+    sprintf_s(SUMODetectors[d68_2b].SumoNamen[0], 32, "%s", "68_2b");
+    sprintf_s(SUMODetectors[d68_2a].SumoNamen[0], 32, "%s", "68_2a");
+    sprintf_s(SUMODetectors[d68_1b].SumoNamen[0], 32, "%s", "68_1b");
+    sprintf_s(SUMODetectors[d68_1a].SumoNamen[0], 32, "%s", "68_1a");
+    sprintf_s(SUMODetectors[d67_2].SumoNamen[0], 32, "%s", "67_2");
+    sprintf_s(SUMODetectors[d67_1].SumoNamen[0], 32, "%s", "67_1");
+    sprintf_s(SUMODetectors[d62_2b].SumoNamen[0], 32, "%s", "62_2b");
+    sprintf_s(SUMODetectors[d62_2a].SumoNamen[0], 32, "%s", "62_2a");
+    sprintf_s(SUMODetectors[d62_1b].SumoNamen[0], 32, "%s", "62_1b");
+    sprintf_s(SUMODetectors[d62_1a].SumoNamen[0], 32, "%s", "62_1a");
+    sprintf_s(SUMODetectors[d61_2].SumoNamen[0], 32, "%s", "61_2");
+    sprintf_s(SUMODetectors[d61_1].SumoNamen[0], 32, "%s", "61_1");
+    sprintf_s(SUMODetectors[d28_2].SumoNamen[0], 32, "%s", "28_2");
+    sprintf_s(SUMODetectors[d28_1].SumoNamen[0], 32, "%s", "28_1");
+    sprintf_s(SUMODetectors[d261].SumoNamen[0], 32, "%s", "261");
+    sprintf_s(SUMODetectors[d24_3].SumoNamen[0], 32, "%s", "24_3");
+    sprintf_s(SUMODetectors[d24_2].SumoNamen[0], 32, "%s", "24_2");
+    sprintf_s(SUMODetectors[d24_1].SumoNamen[0], 32, "%s", "24_1");
+    sprintf_s(SUMODetectors[d22_1].SumoNamen[0], 32, "%s", "22_1");
+    sprintf_s(SUMODetectors[d211].SumoNamen[0], 32, "%s", "211");
+    sprintf_s(SUMODetectors[d11_4].SumoNamen[0], 32, "%s", "11_4");
+    sprintf_s(SUMODetectors[d11_3].SumoNamen[0], 32, "%s", "11_3");
+    sprintf_s(SUMODetectors[d11_2].SumoNamen[0], 32, "%s", "11_2");
+    sprintf_s(SUMODetectors[d11_1].SumoNamen[0], 32, "%s", "11_1");
+    sprintf_s(SUMODetectors[d09_3].SumoNamen[0], 32, "%s", "093");
+    sprintf_s(SUMODetectors[d09_2].SumoNamen[0], 32, "%s", "092");
+    sprintf_s(SUMODetectors[d09_1].SumoNamen[0], 32, "%s", "091");
+    sprintf_s(SUMODetectors[d08_4b].SumoNamen[0], 32, "%s", "08_4b");
+    sprintf_s(SUMODetectors[d08_4a].SumoNamen[0], 32, "%s", "08_4a");
+    sprintf_s(SUMODetectors[d08_3b].SumoNamen[0], 32, "%s", "08_3b");
+    sprintf_s(SUMODetectors[d08_3a].SumoNamen[0], 32, "%s", "08_3a");
+    sprintf_s(SUMODetectors[d08_2b].SumoNamen[0], 32, "%s", "08_2b");
+    sprintf_s(SUMODetectors[d08_2a].SumoNamen[0], 32, "%s", "08_2a");
+    sprintf_s(SUMODetectors[d08_1b].SumoNamen[0], 32, "%s", "08_1b");
+    sprintf_s(SUMODetectors[d08_1a].SumoNamen[0], 32, "%s", "08_1a");
+    sprintf_s(SUMODetectors[d05_2].SumoNamen[0], 32, "%s", "05_2");
+    sprintf_s(SUMODetectors[d05_1].SumoNamen[0], 32, "%s", "05_1");
+    sprintf_s(SUMODetectors[d03_2].SumoNamen[0], 32, "%s", "03_2");
+    sprintf_s(SUMODetectors[d03_1].SumoNamen[0], 32, "%s", "03_1");
+    sprintf_s(SUMODetectors[d02_4b].SumoNamen[0], 32, "%s", "02_4b");
+    sprintf_s(SUMODetectors[d02_4a].SumoNamen[0], 32, "%s", "02_4a");
+    sprintf_s(SUMODetectors[d02_3b].SumoNamen[0], 32, "%s", "02_3b");
+    sprintf_s(SUMODetectors[d02_3a].SumoNamen[0], 32, "%s", "02_3a");
+    sprintf_s(SUMODetectors[d02_2b].SumoNamen[0], 32, "%s", "02_2b");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;
@@ -7378,6 +7413,7 @@ void control_parameters(void)
     SUMOIds[24] = fc11;
     SUMOIds[25] = fc11;
     SUMOIds[26] = fc11;
+    SUMOIds[99] = fc21;
     SUMOIds[15] = fc22;
     SUMOIds[5] = fc24;
     SUMOIds[6] = fc24;
@@ -7401,6 +7437,8 @@ void control_parameters(void)
     SUMOIds[7] = fc67;
     SUMOIds[8] = fc68;
     SUMOIds[9] = fc68;
+    SUMOIds[99] = fc81;
+    SUMOIds[99] = fc82;
     SUMOIds[0] = fc84;
 #endif /* #ifdef SUMO */
 

@@ -8,14 +8,14 @@
 
    BESTAND:   123456reg.c
       CCOL:   12.1
-    TLCGEN:   12.4.0.7
-   CCOLGEN:   12.4.0.7
+    TLCGEN:   12.4.0.8
+   CCOLGEN:   12.4.0.8
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen 12.4.0.8
  *
  ************************************************************************************/
 
@@ -90,9 +90,6 @@
 /* Include files wachttijdvoorspeller*/
 #include "wtvfunc.c" /* berekening van de wachttijden voorspelling */
 #include "wtlleds.c" /* aansturing van de wachttijdlantaarn met leds */
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) && !defined NO_WTV_WIN
-    #include "wtv_testwin.c"
-#endif
 #include "halfstar_wtv.c"
 #ifdef MIRMON
     #include "MirakelMonitor.h"
@@ -260,10 +257,18 @@ void PreApplication(void)
     IH[hrgvact] = SCH[schrgv];
 
     /* School ingreep */
+    RT[tdbsidk31a] = !D[dk31a];
+    RT[tdbsidk31b] = !D[dk31b];
+    RT[tdbsidk32a] = !D[dk32a];
+    RT[tdbsidk32b] = !D[dk32b];
     RT[tdbsidk33a] = !D[dk33a];
     RT[tdbsidk33b] = !D[dk33b];
     RT[tdbsidk34a] = !D[dk34a];
     RT[tdbsidk34b] = !D[dk34b];
+    IH[hschoolingreepdk31a] = D[dk31a] && !(RT[tdbsidk31a] || T[tdbsidk31a]) && !(CIF_IS[dk31a] >= CIF_DET_STORING) && (R[fc31] || G[fc31] || H[hschoolingreepdk31a]) || TDH[dk31a] && !(CIF_IS[dk31a] >= CIF_DET_STORING) && H[hschoolingreepdk31a];
+    IH[hschoolingreepdk31b] = D[dk31b] && !(RT[tdbsidk31b] || T[tdbsidk31b]) && !(CIF_IS[dk31b] >= CIF_DET_STORING) && (R[fc31] || G[fc31] || H[hschoolingreepdk31b]) || TDH[dk31b] && !(CIF_IS[dk31b] >= CIF_DET_STORING) && H[hschoolingreepdk31b];
+    IH[hschoolingreepdk32a] = D[dk32a] && !(RT[tdbsidk32a] || T[tdbsidk32a]) && !(CIF_IS[dk32a] >= CIF_DET_STORING) && (R[fc32] || G[fc32] || H[hschoolingreepdk32a]) || TDH[dk32a] && !(CIF_IS[dk32a] >= CIF_DET_STORING) && H[hschoolingreepdk32a];
+    IH[hschoolingreepdk32b] = D[dk32b] && !(RT[tdbsidk32b] || T[tdbsidk32b]) && !(CIF_IS[dk32b] >= CIF_DET_STORING) && (R[fc32] || G[fc32] || H[hschoolingreepdk32b]) || TDH[dk32b] && !(CIF_IS[dk32b] >= CIF_DET_STORING) && H[hschoolingreepdk32b];
     IH[hschoolingreepdk33a] = D[dk33a] && !(RT[tdbsidk33a] || T[tdbsidk33a]) && !(CIF_IS[dk33a] >= CIF_DET_STORING) && (R[fc33] || G[fc33] || H[hschoolingreepdk33a]) || TDH[dk33a] && !(CIF_IS[dk33a] >= CIF_DET_STORING) && H[hschoolingreepdk33a];
     IH[hschoolingreepdk33b] = D[dk33b] && !(RT[tdbsidk33b] || T[tdbsidk33b]) && !(CIF_IS[dk33b] >= CIF_DET_STORING) && (R[fc33] || G[fc33] || H[hschoolingreepdk33b]) || TDH[dk33b] && !(CIF_IS[dk33b] >= CIF_DET_STORING) && H[hschoolingreepdk33b];
     IH[hschoolingreepdk34a] = D[dk34a] && !(RT[tdbsidk34a] || T[tdbsidk34a]) && !(CIF_IS[dk34a] >= CIF_DET_STORING) && (R[fc34] || G[fc34] || H[hschoolingreepdk34a]) || TDH[dk34a] && !(CIF_IS[dk34a] >= CIF_DET_STORING) && H[hschoolingreepdk34a];
@@ -300,7 +305,7 @@ void PreApplication(void)
 
         // Start SUMO!
         if (!CreateProcess(NULL,
-        "\"C:\\Program Files (x86)\\Sumo\\bin\\sumo-gui.exe\" \".\\AS.sumocfg\"",
+        "\"C:\\Program Files (x86)\\Sumo\\bin\\sumo-gui.exe\" \"C:\\Users\\ccapp\\source\\repos\\CodingConnected\\TLCGenExampleController\\sumo_netwerk\\AS.sumocfg\"",
         NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
         {
             sprintf(csumotmp, "CreateProcess failed (%d).\n", GetLastError());
@@ -1133,16 +1138,6 @@ void Aanvragen(void)
             A[fc81] |= BIT13;
             CIF_VLOG_FC_CAM[fc81] |= BIT0;
         }
-        if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg]))
-        {
-            A[fc84] |= BIT10;
-            CIF_VLOG_FC_CAM[fc84] |= BIT0;
-        }
-        if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastartsrm084fts1], PRM[prmrisaendsrm084fts1], !SCH[schrisgeencheckopsg]))
-        {
-            A[fc84] |= BIT13;
-            CIF_VLOG_FC_CAM[fc84] |= BIT0;
-        }
         if (ris_aanvraag(fc82, SYSTEM_ITF1, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisastart82fts1], PRM[prmrisaend82fts1], SCH[schrisgeencheckopsg]))
         {
             A[fc82] |= BIT10;
@@ -1152,6 +1147,16 @@ void Aanvragen(void)
         {
             A[fc82] |= BIT13;
             CIF_VLOG_FC_CAM[fc82] |= BIT0;
+        }
+        if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg]))
+        {
+            A[fc84] |= BIT10;
+            CIF_VLOG_FC_CAM[fc84] |= BIT0;
+        }
+        if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastartsrm084fts1], PRM[prmrisaendsrm084fts1], !SCH[schrisgeencheckopsg]))
+        {
+            A[fc84] |= BIT13;
+            CIF_VLOG_FC_CAM[fc84] |= BIT0;
         }
     /* aanvragen RIS schakelbaar, 1 schakelaar voor het schakelen van alle aanvragen */
     if (!SCH[schrisaanvraag])
@@ -1567,6 +1572,8 @@ void Verlenggroen(void)
     }
 
     /* Seniorengroen (percentage van TFG extra als WG) */
+    if (SCH[schsi31]) SeniorenGroen(fc31, dk31a, tdbsiexgrdk31a, dk31b, tdbsiexgrdk31b, prmsiexgrperc31, hsiexgr31, tsiexgr31, tnlsgd3132, END);
+    if (SCH[schsi32]) SeniorenGroen(fc32, dk32a, tdbsiexgrdk32a, dk32b, tdbsiexgrdk32b, prmsiexgrperc32, hsiexgr32, tsiexgr32, tnlsgd3231, END);
     if (SCH[schsi33]) SeniorenGroen(fc33, dk33a, tdbsiexgrdk33a, dk33b, tdbsiexgrdk33b, prmsiexgrperc33, hsiexgr33, tsiexgr33, tnlsgd3334, END);
     if (SCH[schsi34]) SeniorenGroen(fc34, dk34a, tdbsiexgrdk34a, dk34b, tdbsiexgrdk34b, prmsiexgrperc34, hsiexgr34, tsiexgr34, tnlsgd3433, END);
 
@@ -1823,10 +1830,16 @@ void Meetkriterium(void)
     }
 
     /* School ingreep: reset BITs */
+    RW[fc31] &= ~BIT8;
+    RW[fc32] &= ~BIT8;
     RW[fc33] &= ~BIT8;
     RW[fc34] &= ~BIT8;
 
     /* School ingreep: set RW BIT8 */
+    if (SCH[schschoolingreep31] && H[hschoolingreepdk31a] && T[tschoolingreepmaxg31]) RW[fc31] |= BIT8;
+    if (SCH[schschoolingreep31] && H[hschoolingreepdk31b] && T[tschoolingreepmaxg31]) RW[fc31] |= BIT8;
+    if (SCH[schschoolingreep32] && H[hschoolingreepdk32a] && T[tschoolingreepmaxg32]) RW[fc32] |= BIT8;
+    if (SCH[schschoolingreep32] && H[hschoolingreepdk32b] && T[tschoolingreepmaxg32]) RW[fc32] |= BIT8;
     if (SCH[schschoolingreep33] && H[hschoolingreepdk33a] && T[tschoolingreepmaxg33]) RW[fc33] |= BIT8;
     if (SCH[schschoolingreep33] && H[hschoolingreepdk33b] && T[tschoolingreepmaxg33]) RW[fc33] |= BIT8;
     if (SCH[schschoolingreep34] && H[hschoolingreepdk34a] && T[tschoolingreepmaxg34]) RW[fc34] |= BIT8;
@@ -2148,16 +2161,6 @@ void Meetkriterium(void)
             MK[fc81] |= BIT13;
             CIF_VLOG_FC_CAM[fc81] |= BIT1;
         }
-        if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg]))
-        {
-            MK[fc84] |= BIT10;
-            CIF_VLOG_FC_CAM[fc84] |= BIT1;
-        }
-        if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstartsrm084fts1], PRM[prmrisvendsrm084fts1], !SCH[schrisgeencheckopsg]))
-        {
-            MK[fc84] |= BIT13;
-            CIF_VLOG_FC_CAM[fc84] |= BIT1;
-        }
         if (ris_verlengen(fc82, SYSTEM_ITF1, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisvstart82fts1], PRM[prmrisvend82fts1], SCH[schrisgeencheckopsg]))
         {
             MK[fc82] |= BIT10;
@@ -2167,6 +2170,16 @@ void Meetkriterium(void)
         {
             MK[fc82] |= BIT13;
             CIF_VLOG_FC_CAM[fc82] |= BIT1;
+        }
+        if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg]))
+        {
+            MK[fc84] |= BIT10;
+            CIF_VLOG_FC_CAM[fc84] |= BIT1;
+        }
+        if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstartsrm084fts1], PRM[prmrisvendsrm084fts1], !SCH[schrisgeencheckopsg]))
+        {
+            MK[fc84] |= BIT13;
+            CIF_VLOG_FC_CAM[fc84] |= BIT1;
         }
     #endif
 
@@ -2726,8 +2739,12 @@ void RealisatieAfhandeling(void)
     if (X[fc26] & BIT9) X[fc11] |= BIT9;
 
     /* School ingreep: bijhouden max groen & vasthouden naloop tijd */
+    RT[tschoolingreepmaxg31] = SG[fc31];
+    RT[tschoolingreepmaxg32] = SG[fc32];
     RT[tschoolingreepmaxg33] = SG[fc33];
     RT[tschoolingreepmaxg34] = SG[fc34];
+    HT[tnlsgd3132] = T[tschoolingreepmaxg31] && CV[fc31] && G[fc31] && IH[hschoolingreepdk31a];
+    HT[tnlsgd3231] = T[tschoolingreepmaxg32] && CV[fc32] && G[fc32] && IH[hschoolingreepdk32a];
     HT[tnlsgd3334] = T[tschoolingreepmaxg33] && CV[fc33] && G[fc33] && IH[hschoolingreepdk33a];
     HT[tnlsgd3433] = T[tschoolingreepmaxg34] && CV[fc34] && G[fc34] && IH[hschoolingreepdk34a];
 
@@ -2902,6 +2919,7 @@ void RealisatieAfhandeling(void)
 
 void FileVerwerking(void)
 {
+    #if !defined CUSTOM_FILEVERWERKING
     int fc;
 
     /* File afhandeling */
@@ -3014,11 +3032,13 @@ void FileVerwerking(void)
         BL[fc11] &= ~BIT5;
     }
 
+    #endif /* CUSTOM_FILEVERWERKING */
     FileVerwerking_Add();
 }
 
 void DetectieStoring(void)
 {
+    #if !defined CUSTOM_DETECTIESTORING
     int fc;
 
     /* reset MK-bits vooraf, ivm onderlinge verwijzing. */
@@ -3300,6 +3320,7 @@ void DetectieStoring(void)
 
     }
 
+    #endif /* CUSTOM_DETECTIESTORING */
     DetectieStoring_Add();
 }
 
@@ -3313,11 +3334,6 @@ void init_application(void)
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) && !defined VISSIM
     if (!SAPPLPROG)
         stuffkey(CTRLF4KEY);
-#endif
-
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) && !defined NO_WTV_WIN
-    extrawin_init(SYSTEM);
-    extrawin_add_fc(fc24, NG, TYPE_LEDS);
 #endif
 
     /* Aansturing hulpelement aansturing wachttijdvoorspellers */
@@ -3723,9 +3739,6 @@ void system_application(void)
         CIF_GUS[uswtv24] |= BIT8;
     }
 
-#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) && !defined NO_WTV_WIN
-    extrawin_wtv(fc24, mwtvm24);
-#endif
 
     #ifdef AUTOMAAT
         /* verklikken of applicatie daadwerkelijk de TLC aanstuurt */
@@ -3803,6 +3816,10 @@ void system_application(void)
     PRIO_teller(cvchd68, schcovuber);
 
     /* School ingreep: knipperen wachtlicht */
+    if (SCH[schschoolingreep31]) CIF_GUS[uswtk31a] = CIF_GUS[uswtk31a] && !(IH[hschoolingreepdk31a] && Knipper_1Hz) || G[fc31] && D[dk31a] && IH[hschoolingreepdk31a] && Knipper_1Hz;
+    if (SCH[schschoolingreep31]) CIF_GUS[uswtk31b] = CIF_GUS[uswtk31b] && !(IH[hschoolingreepdk31b] && Knipper_1Hz) || G[fc31] && D[dk31b] && IH[hschoolingreepdk31b] && Knipper_1Hz;
+    if (SCH[schschoolingreep32]) CIF_GUS[uswtk32a] = CIF_GUS[uswtk32a] && !(IH[hschoolingreepdk32a] && Knipper_1Hz) || G[fc32] && D[dk32a] && IH[hschoolingreepdk32a] && Knipper_1Hz;
+    if (SCH[schschoolingreep32]) CIF_GUS[uswtk32b] = CIF_GUS[uswtk32b] && !(IH[hschoolingreepdk32b] && Knipper_1Hz) || G[fc32] && D[dk32b] && IH[hschoolingreepdk32b] && Knipper_1Hz;
     if (SCH[schschoolingreep33]) CIF_GUS[uswtk33a] = CIF_GUS[uswtk33a] && !(IH[hschoolingreepdk33a] && Knipper_1Hz) || G[fc33] && D[dk33a] && IH[hschoolingreepdk33a] && Knipper_1Hz;
     if (SCH[schschoolingreep33]) CIF_GUS[uswtk33b] = CIF_GUS[uswtk33b] && !(IH[hschoolingreepdk33b] && Knipper_1Hz) || G[fc33] && D[dk33b] && IH[hschoolingreepdk33b] && Knipper_1Hz;
     if (SCH[schschoolingreep34]) CIF_GUS[uswtk34a] = CIF_GUS[uswtk34a] && !(IH[hschoolingreepdk34a] && Knipper_1Hz) || G[fc34] && D[dk34a] && IH[hschoolingreepdk34a] && Knipper_1Hz;
@@ -4003,7 +4020,7 @@ void is_special_signals(void)
     #ifdef SUMO
     for (isumo = 0; isumo < DPMAX; isumo++)
     {
-        if (isumo == ddummyhdkarin03 || isumo == ddummyhdkarin05 || isumo == ddummyhdkarin08 || isumo == ddummyhdkarin09 || isumo == ddummyhdkarin11 || isumo == ddummyhdkarin61 || isumo == ddummyhdkarin62 || isumo == ddummyhdkarin67 || isumo == ddummyhdkarin68 || isumo == ddummyhdkaruit03 || isumo == ddummyhdkaruit05 || isumo == ddummyhdkaruit08 || isumo == ddummyhdkaruit09 || isumo == ddummyhdkaruit11 || isumo == ddummyhdkaruit61 || isumo == ddummyhdkaruit62 || isumo == ddummyhdkaruit67 || isumo == ddummyhdkaruit68 || isumo == dk22 || isumo == dk24 || isumo == dk84 || isumo == dk28        )
+        if (isumo == dk84 || isumo == dk28 || isumo == dk24 || isumo == dk22 || isumo == ddummyhdkaruit68 || isumo == ddummyhdkaruit67 || isumo == ddummyhdkaruit62 || isumo == ddummyhdkaruit61 || isumo == ddummyhdkaruit11 || isumo == ddummyhdkaruit09 || isumo == ddummyhdkaruit08 || isumo == ddummyhdkaruit05 || isumo == ddummyhdkaruit03 || isumo == ddummyhdkarin68 || isumo == ddummyhdkarin67 || isumo == ddummyhdkarin62 || isumo == ddummyhdkarin61 || isumo == ddummyhdkarin11 || isumo == ddummyhdkarin09 || isumo == ddummyhdkarin08 || isumo == ddummyhdkarin05 || isumo == ddummyhdkarin03        )
         {
             continue;
         }

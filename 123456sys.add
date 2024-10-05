@@ -9,14 +9,14 @@
 
    BESTAND:   123456sys.add
       CCOL:   12.1
-    TLCGEN:   12.4.0.7
-   CCOLGEN:   12.4.0.7
+    TLCGEN:   12.4.0.8
+   CCOLGEN:   12.4.0.8
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen
+ * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen 12.4.0.8
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */

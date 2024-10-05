@@ -1,4 +1,4 @@
-/* prio.c - gegenereerd met TLCGen 12.4.0.7 */
+/* prio.c - gegenereerd met TLCGen 12.4.0.8 */
 
 /* OVPROGRAMMA */
 /* ----------- */
@@ -73,7 +73,7 @@ int* iInPrioriteitsOpties[prioFCMAX];
 int* iInRijTimer[prioFCMAX];
 int* iInGroenBewakingsTimer[prioFCMAX];
 int* iInOnderMaximumVerstreken[prioFCMAX];
-int* iInMaxWachtTijdOverschreden[prioFCMAX]; 
+int* iInMaxWachtTijdOverschreden[prioFCMAX];
 int* iInID[prioFCMAX];
 int* iPrioMeeRealisatie[FCMAX];
 
@@ -84,7 +84,7 @@ int iM_InRijTimer[prioFCMAX * MAX_AANTAL_INMELDINGEN];
 int iM_InGroenBewakingsTimer[prioFCMAX * MAX_AANTAL_INMELDINGEN];
 int iM_InOnderMaximumVerstreken[prioFCMAX * MAX_AANTAL_INMELDINGEN];
 int iM_InID[prioFCMAX * MAX_AANTAL_INMELDINGEN];
-int iM_InMaxWachtTijdOverschreden[prioFCMAX * MAX_AANTAL_INMELDINGEN]; 
+int iM_InMaxWachtTijdOverschreden[prioFCMAX * MAX_AANTAL_INMELDINGEN];
 int iM_PrioMeeRealisatie[FCMAX * FCMAX];
 
 int prioKFC_MAX[prioFCMAX];
@@ -609,7 +609,7 @@ void PrioInmeldenID(int prio,
         iInGroenBewakingsTimer[prio][inm] = iGBT;
         iInID[prio][inm] = iID;
         iInOnderMaximumVerstreken[prio][inm] = iOnderMaximumVerstreken[prio];
-        iInMaxWachtTijdOverschreden[prio][inm] = iMaximumWachtTijdOverschreden[prio];/* bijhouden of bij inmelding wachttijdcriterium overschreden was */
+        iInMaxWachtTijdOverschreden[prio][inm] = iMaximumWachtTijdOverschreden[prio];/* bijhouden of bij inmelding wachttijdcriterium overschreden was*/
         if (iPO & poNoodDienst)
         {
             VLOG_mon5[fc].inmhd = TRUE;
@@ -688,7 +688,7 @@ void PrioUitmeldenIndex(int prio,
             iInGroenBewakingsTimer[prio][i] = iInGroenBewakingsTimer[prio][i + 1];
             iInID[prio][i] = iInID[prio][i + 1];
             iInOnderMaximumVerstreken[prio][i] = iInOnderMaximumVerstreken[prio][i + 1];
-            iInMaxWachtTijdOverschreden[prio][i] = iInMaxWachtTijdOverschreden[prio][i + 1]; 
+            iInMaxWachtTijdOverschreden[prio][i] = iInMaxWachtTijdOverschreden[prio][i + 1];
         }
         (iAantalInmeldingen[prio])--;
         iSelDetFout[prio] = FALSE;
@@ -843,8 +843,8 @@ void StelInTimer(int iIndex, int iActueleWaarde, int iInstelling)
 {
     if (iIndex >= 0 && iIndex < TM_MAX)
     {
-        T_timer[iIndex] = (mulv)iActueleWaarde;   
-        T_max[iIndex] = (mulv)iInstelling;     
+        T_timer[iIndex] = (mulv)iActueleWaarde;
+        T_max[iIndex] = (mulv)iInstelling;
         T[iIndex] = (boolv)(iActueleWaarde < iInstelling);
     }
 }
@@ -859,8 +859,8 @@ void StelInCounter(int iIndex, int iActueleWaarde, int iInstelling)
 {
     if (iIndex >= 0 && iIndex < CT_MAX)
     {
-        C_counter[iIndex] = (mulv)iActueleWaarde;  
-        C_max[iIndex] = (mulv)iInstelling;         
+        C_counter[iIndex] = (mulv)iActueleWaarde;
+        C_max[iIndex] = (mulv)iInstelling;
         C[iIndex] = iActueleWaarde > 0 && iActueleWaarde < iInstelling;
     }
 }
@@ -880,30 +880,30 @@ void PrioCcolElementen(int prio, int tgb, int trt, int hprio, int cvc, int tblk)
     {
         if (tgb >= 0 && tgb < TM_MAX)
         {
-            T_max[tgb] = (mulv)iGroenBewakingsTijd[prio];                                
-            T[tgb] = (boolv)(iGroenBewakingsTimer[prio] < iGroenBewakingsTijd[prio]);  
-            T_timer[tgb] = T[tgb] ? (mulv)iGroenBewakingsTimer[prio] : T_max[tgb];       
+            T_max[tgb] = (mulv)iGroenBewakingsTijd[prio];
+            T[tgb] = (boolv)(iGroenBewakingsTimer[prio] < iGroenBewakingsTijd[prio]);
+            T_timer[tgb] = T[tgb] ? (mulv)iGroenBewakingsTimer[prio] : T_max[tgb];
         }
         if (trt >= 0 && trt < TM_MAX)
         {
-            T_max[trt] = (mulv)iRijTijd[prio];                  
-            T[trt] = (boolv)(iRijTimer[prio] < iRijTijd[prio]);   
+            T_max[trt] = (mulv)iRijTijd[prio];
+            T[trt] = (boolv)(iRijTimer[prio] < iRijTijd[prio]);
             T_timer[trt] = T[trt] ? (mulv)iRijTimer[prio] : T_max[trt];
         }
         if (hprio >= 0 && hprio < HE_MAX)
         {
-            IH[hprio] = (boolv)iPrioriteit[prio];    
+            IH[hprio] = (boolv)iPrioriteit[prio];
         }
         if (cvc >= 0 && cvc < CT_MAX)
         {
-            C_counter[cvc] = (mulv)iAantalInmeldingen[prio]; 
+            C_counter[cvc] = (mulv)iAantalInmeldingen[prio];
             C[cvc] = (boolv)(iAantalInmeldingen[prio] > 0);
         }
         if (tblk >= 0 && tblk < TM_MAX)
         {
-            T_max[tblk] = (mulv)iBlokkeringsTijd[prio];                            
-            T[tblk] = (boolv)(iBlokkeringsTimer[prio] < iBlokkeringsTijd[prio]); 
-            T_timer[tblk] = T[tblk] ? (mulv)iBlokkeringsTimer[prio] : T_max[tblk];    
+            T_max[tblk] = (mulv)iBlokkeringsTijd[prio];
+            T[tblk] = (boolv)(iBlokkeringsTimer[prio] < iBlokkeringsTijd[prio]);
+            T_timer[tblk] = T[tblk] ? (mulv)iBlokkeringsTimer[prio] : T_max[tblk];
         }
     }
 }
