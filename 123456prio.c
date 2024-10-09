@@ -1150,6 +1150,8 @@ void PrioriteitsToekenningExtra(void)
    ------------------------------------ */
 void TegenhoudenConflictenExtra(void)
 {
+    
+    
     if (MM[mwtvm21] && MM[mwtvm21] <= PRM[prmwtvnhaltmin])
     {
         RR[fc21] &= ~PRIO_RR_BIT;
@@ -1183,8 +1185,12 @@ void TegenhoudenConflictenExtra(void)
     }
     if (MM[mwtvm84] && MM[mwtvm84] <= PRM[prmwtvnhaltmin])
     {
+        RR[fc24] &= ~PRIO_RR_BIT; /* @Menno: bij fc84 fc 24 hierboven gaat het wel goed. */
         RR[fc84] &= ~PRIO_RR_BIT;
     }
+
+    if (RR[fc24] & PRIO_RR_BIT) RR[fc84] |= PRIO_RR_BIT; /* @Menno: voor alle gelijkstartende richtingen. */
+    if (RR[fc84] & PRIO_RR_BIT) RR[fc24] |= PRIO_RR_BIT;
 }
 
 /* ---------------------------

@@ -100,6 +100,8 @@ mulv t_wacht_halt[FCMAX] = { 0 }; /* gehalteerde berekende wachttijd */
 mulv rr_twacht[FCMAX]; /* halteren wachttijd */
 mulv C_counter_old[CTMAX];
 boolv init_tvg;
+boolv PAR_los[FCMAX] = { 0 };
+boolv PAR_los_old[FCMAX] = { 0 };
 
 #if !defined AUTOMAAT && !defined AUTOMAAT_TEST
     extern boolv display;
@@ -110,7 +112,7 @@ boolv init_tvg;
 #include "isgfunc_prio.c" /* Interstartgroen prio functies */
 #include "123456tab.c"
 
-void PreApplication(void)
+    void PreApplication(void)
 {
     /* Instellen TFB_max */
     TFB_max = PRM[prmfb];
@@ -902,6 +904,10 @@ void Aanvragen(void)
     IH[hmadk32a] = G[fc32] && !SG[fc32] ? FALSE : IH[hmadk32a] || D[dk32a] && A[fc32];
     IH[hmadk33a] = G[fc33] && !SG[fc33] ? FALSE : IH[hmadk33a] || D[dk33a] && A[fc33];
     IH[hmadk34a] = G[fc34] && !SG[fc34] ? FALSE : IH[hmadk34a] || D[dk34a] && A[fc34];
+    IH[hmadk31b] = G[fc31] && !SG[fc31] ? FALSE : IH[hmadk31b] || D[dk31b] && A[fc31];
+    IH[hmadk32b] = G[fc32] && !SG[fc32] ? FALSE : IH[hmadk32b] || D[dk32b] && A[fc32];
+    IH[hmadk33b] = G[fc33] && !SG[fc33] ? FALSE : IH[hmadk33b] || D[dk33b] && A[fc33];
+    IH[hmadk34b] = G[fc34] && !SG[fc34] ? FALSE : IH[hmadk34b] || D[dk34b] && A[fc34];
 
     /* openbaar vervoer aanvragen */
     PrioAanvragen();
@@ -937,7 +943,7 @@ void BepaalRealisatieTijden(void)
     RealisatieTijden_VulHardeConflictenIn();
     RealisatieTijden_VulGroenGroenConflictenIn(); /* @@ in principe zijn er geen groen groen conflicten @@*/
     CorrigeerRealisatieTijdenObvGarantieTijden(); /* een richting mag na groen niet direct weer realiseren (eerst GL en TRG) */
-
+   
     /* Pas realisatietijden aan a.g.v. nalopen */
     Realisatietijd_NLEG(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
     Realisatietijd_NLEG(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868);
@@ -1463,7 +1469,7 @@ void Verlenggroen(void)
         }
     }
 
-    IsgCorrectieTvgTimerTvgMax();
+    //IsgCorrectieTvgTimerTvgMax();
     BepaalRealisatieTijden();
 
     BepaalStartGroenMomentenPrioIngrepen(); /* bepaal wanneer prioriteitsrealisatie mag komen */
@@ -1473,10 +1479,11 @@ void Verlenggroen(void)
     NaloopEG_TVG_Correctie(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
     NaloopEG_TVG_Correctie(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868);
     NaloopEG_TVG_Correctie(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168);
-    NaloopVtg_TVG_Correctie(fc31, fc32, NG, tnlsgd3132);
-    NaloopVtg_TVG_Correctie(fc32, fc31, NG, tnlsgd3231);
-    NaloopVtg_TVG_Correctie(fc33, fc34, NG, tnlsgd3334);
-    NaloopVtg_TVG_Correctie(fc34, fc33, NG, tnlsgd3433);
+    NaloopVtg_TVG_Correctie(fc31, fc32, hnlsg3132, NG, tnlsgd3132);
+    NaloopVtg_TVG_Correctie(fc32, fc31, hnlsg3231, NG, tnlsgd3231);
+    NaloopVtg_TVG_Correctie(fc33, fc34, hnlsg3334, NG, tnlsgd3334);
+    NaloopVtg_TVG_Correctie(fc34, fc33, hnlsg3433, NG, tnlsgd3433);
+    NaloopEVG_TVG_Correctie(fc22, fc21, tnlfg2221, tnlfgd2221, tnlcv2221, tnlcvd2221, tvgnaloop2221); /* @Menno: voor CV koppelingen toevoegen */
     NaloopEG_TVG_Correctie(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281);
     BepaalRealisatieTijden();
     BepaalInterStartGroenTijden();
@@ -1716,6 +1723,7 @@ void Meetkriterium(void)
     NaloopEG(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262, d02_1a, d02_1b, END);
     NaloopEG(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868, d08_1a, d08_1b, END);
     NaloopEG(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168, d11_1, END);
+    NaloopEVG(fc22, fc21, tnlfg2221, tnlfgd2221, tnlcv2221, tnlcvd2221, tvgnaloop2221, d11_1, END);/* @Menno: voor CV koppelingen toevoegen */
     NaloopVtg(fc31, fc32, dk31a, hmadk31a, hnlsg3132, NG, tnlsgd3132);
     NaloopVtg(fc32, fc31, dk32a, hmadk32a, hnlsg3231, NG, tnlsgd3231);
     NaloopVtg(fc33, fc34, dk33a, hmadk33a, hnlsg3334, NG, tnlsgd3334);
@@ -1842,25 +1850,22 @@ void RealisatieAfhandeling(void)
         FM[fc] &= ~BIT5;
     }
 
-    /* zet richtingen die alternatief gaan realiseren         */
-    /* terug naar RV als er geen alternatieve ruimte meer is. */
-    /* Dit gebeurt niet voor fasen met een wachttijd voorspeller, */
-    /* of fasen waarvan de voedende richting die heeft. */
-    RR[fc02] |= R[fc02] && AR[fc02] && (!PAR[fc02] || ERA[fc02]) ? BIT5 : 0;
-    RR[fc03] |= R[fc03] && AR[fc03] && (!PAR[fc03] || ERA[fc03]) ? BIT5 : 0;
-    RR[fc05] |= R[fc05] && AR[fc05] && (!PAR[fc05] || ERA[fc05]) ? BIT5 : 0;
-    RR[fc08] |= R[fc08] && AR[fc08] && (!PAR[fc08] || ERA[fc08]) ? BIT5 : 0;
-    RR[fc09] |= R[fc09] && AR[fc09] && (!PAR[fc09] || ERA[fc09]) ? BIT5 : 0;
-    RR[fc11] |= R[fc11] && AR[fc11] && (!PAR[fc11] || ERA[fc11]) ? BIT5 : 0;
-    RR[fc31] |= R[fc31] && AR[fc31] && (!PAR[fc31] || ERA[fc31]) ? BIT5 : 0;
-    RR[fc32] |= R[fc32] && AR[fc32] && (!PAR[fc32] || ERA[fc32]) ? BIT5 : 0;
-    RR[fc33] |= R[fc33] && AR[fc33] && (!PAR[fc33] || ERA[fc33]) ? BIT5 : 0;
-    RR[fc34] |= R[fc34] && AR[fc34] && (!PAR[fc34] || ERA[fc34]) ? BIT5 : 0;
-    RR[fc38] |= R[fc38] && AR[fc38] && (!PAR[fc38] || ERA[fc38]) ? BIT5 : 0;
-    RR[fc61] |= R[fc61] && AR[fc61] && (!PAR[fc61] || ERA[fc61]) ? BIT5 : 0;
-    RR[fc62] |= R[fc62] && AR[fc62] && (!PAR[fc62] || ERA[fc62]) ? BIT5 : 0;
-    RR[fc67] |= R[fc67] && AR[fc67] && (!PAR[fc67] || ERA[fc67]) ? BIT5 : 0;
-    RR[fc68] |= R[fc68] && AR[fc68] && (!PAR[fc68] || ERA[fc68]) ? BIT5 : 0;
+   /* @Peter: nog wijzigen minmale wachttijd en de wachttijdvoorspeller is actief ? */
+    // RR[fc02] |= R[fc02] && AR[fc02] && (!PAR[fc02] || ERA[fc02]) ? BIT5 : 0;
+    // RR[fc03] |= R[fc03] && AR[fc03] && (!PAR[fc03] || ERA[fc03]) ? BIT5 : 0;
+    // RR[fc05] |= R[fc05] && AR[fc05] && (!PAR[fc05] || ERA[fc05]) ? BIT5 : 0;
+    // RR[fc08] |= R[fc08] && AR[fc08] && (!PAR[fc08] || ERA[fc08]) ? BIT5 : 0;
+    // RR[fc09] |= R[fc09] && AR[fc09] && (!PAR[fc09] || ERA[fc09]) ? BIT5 : 0;
+    // RR[fc11] |= R[fc11] && AR[fc11] && (!PAR[fc11] || ERA[fc11]) ? BIT5 : 0;
+    // RR[fc31] |= R[fc31] && AR[fc31] && (!PAR[fc31] || ERA[fc31]) ? BIT5 : 0;
+    // RR[fc32] |= R[fc32] && AR[fc32] && (!PAR[fc32] || ERA[fc32]) ? BIT5 : 0;
+    // RR[fc33] |= R[fc33] && AR[fc33] && (!PAR[fc33] || ERA[fc33]) ? BIT5 : 0;
+    // RR[fc34] |= R[fc34] && AR[fc34] && (!PAR[fc34] || ERA[fc34]) ? BIT5 : 0;
+    // RR[fc38] |= R[fc38] && AR[fc38] && (!PAR[fc38] || ERA[fc38]) ? BIT5 : 0;
+    // RR[fc61] |= R[fc61] && AR[fc61] && (!PAR[fc61] || ERA[fc61]) ? BIT5 : 0;
+    // RR[fc62] |= R[fc62] && AR[fc62] && (!PAR[fc62] || ERA[fc62]) ? BIT5 : 0;
+    // RR[fc67] |= R[fc67] && AR[fc67] && (!PAR[fc67] || ERA[fc67]) ? BIT5 : 0;
+    // RR[fc68] |= R[fc68] && AR[fc68] && (!PAR[fc68] || ERA[fc68]) ? BIT5 : 0;
 
 
     /* Niet intrekken alternatief nalooprichting tijdens inlopen voedende richting */
@@ -1931,51 +1936,61 @@ void RealisatieAfhandeling(void)
     if (RT[tnlsgd3433] || T[tnlsgd3433]) { RR[fc33] &= ~BIT5; FM[fc33] &= ~BIT5; }
     if (RT[tvgnaloop8281] || T[tvgnaloop8281]) { RR[fc81] &= ~BIT5; FM[fc81] &= ~BIT5; }
 
-    PAR[fc02] = max_par(fc02) && SCH[schaltg02];
-    PAR[fc03] = max_par(fc03) && SCH[schaltg03];
-    PAR[fc05] = max_par(fc05) && SCH[schaltg05];
-    PAR[fc08] = max_par(fc08) && SCH[schaltg08];
-    PAR[fc09] = max_par(fc09) && SCH[schaltg09];
-    PAR[fc11] = max_par(fc11) && SCH[schaltg11];
-    PAR[fc21] = max_par(fc21) && SCH[schaltg21];
-    PAR[fc22] = max_par(fc22) && SCH[schaltg22];
-    PAR[fc24] = max_par(fc24) && SCH[schaltg2484];
-    PAR[fc26] = max_par(fc26) && SCH[schaltg26];
-    PAR[fc28] = max_par(fc28) && SCH[schaltg28];
-    PAR[fc31] = max_par(fc31) && SCH[schaltg31];
-    PAR[fc32] = max_par(fc32) && SCH[schaltg32];
-    PAR[fc33] = max_par(fc33) && SCH[schaltg33];
-    PAR[fc34] = max_par(fc34) && SCH[schaltg34];
-    PAR[fc38] = max_par(fc38) && SCH[schaltg38];
-    PAR[fc61] = max_par(fc61) && SCH[schaltg61];
-    PAR[fc62] = max_par(fc62) && SCH[schaltg62];
-    PAR[fc67] = max_par(fc67) && SCH[schaltg67];
-    PAR[fc68] = max_par(fc68) && SCH[schaltg68];
-    PAR[fc81] = max_par(fc81) && SCH[schaltg81];
-    PAR[fc82] = max_par(fc82) && SCH[schaltg82];
-    PAR[fc84] = max_par(fc84) && SCH[schaltg2484];
-
+    PAR[fc02] = max_par(fc02,PRML,ML) && SCH[schaltg02];
+    PAR[fc03] = max_par(fc03,PRML,ML) && SCH[schaltg03];
+    PAR[fc05] = max_par(fc05,PRML,ML) && SCH[schaltg05];
+    PAR[fc08] = max_par(fc08,PRML,ML) && SCH[schaltg08];
+    PAR[fc09] = max_par(fc09,PRML,ML) && SCH[schaltg09];
+    PAR[fc11] = max_par(fc11,PRML,ML) && SCH[schaltg11];
+    PAR[fc21] = max_par(fc21,PRML,ML) && SCH[schaltg21];
+    PAR[fc22] = max_par(fc22,PRML,ML) && SCH[schaltg22];
+    PAR[fc24] = max_par(fc24,PRML,ML) && SCH[schaltg2484];
+    PAR[fc26] = max_par(fc26,PRML,ML) && SCH[schaltg26];
+    PAR[fc28] = max_par(fc28,PRML,ML) && SCH[schaltg28];
+    PAR[fc31] = max_par(fc31,PRML,ML) && SCH[schaltg31];
+    PAR[fc32] = max_par(fc32,PRML,ML) && SCH[schaltg32];
+    PAR[fc33] = max_par(fc33,PRML,ML) && SCH[schaltg33];
+    PAR[fc34] = max_par(fc34,PRML,ML) && SCH[schaltg34];
+    PAR[fc38] = max_par(fc38,PRML,ML) && SCH[schaltg38];
+    PAR[fc61] = max_par(fc61,PRML,ML) && SCH[schaltg61];
+    PAR[fc62] = max_par(fc62,PRML,ML) && SCH[schaltg62];
+    PAR[fc67] = max_par(fc67,PRML,ML) && SCH[schaltg67];
+    PAR[fc68] = max_par(fc68,PRML,ML) && SCH[schaltg68];
+    PAR[fc81] = max_par(fc81,PRML,ML) && SCH[schaltg81];
+    PAR[fc82] = max_par(fc82,PRML,ML) && SCH[schaltg82];
+    PAR[fc84] = max_par(fc84,PRML,ML) && SCH[schaltg2484];
     /* Tegenrichting moet ook kunnen koppelen bij koppelaanvraag */
-    PAR[fc32] = PAR[fc32] && (!IH[hnlak31a] || PAR[fc31]);
-    PAR[fc31] = PAR[fc31] && (!IH[hnlak32a] || PAR[fc32]);
-    PAR[fc34] = PAR[fc34] && (!IH[hnlak33a] || PAR[fc33]);
-    PAR[fc33] = PAR[fc33] && (!IH[hnlak34a] || PAR[fc34]);
+    PAR[fc32] = PAR[fc32] && (/*!IH[hnlak31a] ||*/ PAR[fc31]);
+    PAR[fc31] = PAR[fc31] && (/*!IH[hnlak32a] ||*/ PAR[fc32]);
+    PAR[fc34] = PAR[fc34] && (/*!IH[hnlak33a] ||*/ PAR[fc33]);
+    PAR[fc33] = PAR[fc33] && (/*!IH[hnlak34a] ||*/ PAR[fc34]);
 
     /* Bepaal naloop voetgangers wel/niet toegestaan */
-    IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc32]) && IH[hnlak31a];
-    IH[hnlsg3231] = (PR[fc32] || AR[fc32] && PAR[fc31]) && IH[hnlak32a];
-    IH[hnlsg3334] = (PR[fc33] || AR[fc33] && PAR[fc34]) && IH[hnlak33a];
-    IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc33]) && IH[hnlak34a];
+    IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc31]) /*&& IH[hnlak31a]*/;
+    IH[hnlsg3231] = (PR[fc32] || AR[fc32] && PAR[fc32]) /*&& IH[hnlak32a]*/;
+    IH[hnlsg3334] = (PR[fc33] || AR[fc33] && PAR[fc33]) /*&& IH[hnlak33a]*/;
+    IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc34]) /*&& IH[hnlak34a]*/;
 
     /* PAR-ongecoordineerd */
-    PAR[fc31] = PAR[fc31] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
-    PAR[fc32] = PAR[fc32] || IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]);
-    PAR[fc33] = PAR[fc33] || IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]);
-    PAR[fc34] = PAR[fc34] || IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]);
+    PAR_los[fc31] = !PAR[fc31] && IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]) || PAR_los_old[fc31] && RA[fc31];
+    PAR_los[fc32] = !PAR[fc32] && IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]) || PAR_los_old[fc32] && RA[fc32];
+    PAR_los[fc33] = !PAR[fc33] && IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]) || PAR_los_old[fc33] && RA[fc33];
+    PAR_los[fc34] = !PAR[fc34] && IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]) || PAR_los_old[fc34] && RA[fc34];
 
-    /* PAR correcties gelijkstart synchronisaties */
-    if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
-    if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
+    PAR[fc31] = PAR[fc31] || PAR_los[fc31];
+    PAR[fc32] = PAR[fc32] || PAR_los[fc32];
+    PAR[fc33] = PAR[fc33] || PAR_los[fc33];
+    PAR[fc34] = PAR[fc34] || PAR_los[fc34];
+
+    for (fc = 0; fc < FCMAX; ++fc)
+    {
+        PAR_los_old[fc] = PAR_los[fc];
+    }
+             
+          /* PAR correcties gelijkstart synchronisaties */
+    if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && PAR[fc24];
+    if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && PAR[fc84];
+
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
     set_MRLW_nl(fc62, fc02, (boolv)(G[fc02] && !G[fc62] && A[fc62]));
@@ -2733,7 +2748,7 @@ void system_application(void)
 void system_application2(void)
 {
 #ifndef NO_VLOG
-    mon3_mon4_buffers(SAPPLPROG, PRM[prmmaxtvgvlog], PRM[prmmaxtfbvlog]);
+    mon3_mon4_buffers(SAPPLPROG, PRM[prmmaxtvg], PRM[prmmaxtfbvlog]);
     #if !defined NO_VLOG_200 && !defined NO_PRIO
         VLOG_mon5_buffer();
     #endif 

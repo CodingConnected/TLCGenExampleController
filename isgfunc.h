@@ -57,13 +57,13 @@ boolv InterStartGroenTijd_LateRelease_Correctie(count fclr, count fcvs, count tl
 
 void NaloopEG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);
 void NaloopEVG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop);
-void NaloopVtg_TVG_Correctie(count fc1, count fc2, count tnlsg, count tnlsgd);
+void NaloopVtg_TVG_Correctie(count fc1, count fc2, count hnlsg, count tnlsg, count tnlsgd);
 
 void NaloopVtg(count fc1, count fc2, count dk, count hdk, boolv hnlsg, count tnlsg, count tnlsgd);
 void NaloopEG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop, ...);
 void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop, ...);
 
-boolv max_par(count fc);
+boolv max_par(count fc, boolv* prml[], count ml);
 boolv max_par_los(fc);
 void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mulv twacht[]);
 boolv yml_cv_pr_nl_ISG(boolv* prml[], count ml, count ml_max);

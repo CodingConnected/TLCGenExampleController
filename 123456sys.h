@@ -1956,7 +1956,7 @@
     #define prmmaxtvg_09           722 /* Maximale verlenggroentijd fase 09                                                                                              */
     #define prmmintvg_11           723 /* Minimale verlenggroentijd fase 11                                                                                              */
     #define prmmaxtvg_11           724 /* Maximale verlenggroentijd fase 11                                                                                              */
-    #define prmmaxtvgvlog          725 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
+    #define prmmaxtvg              725 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
     #define prmmaxtfbvlog          726 /* Parameter VLOG max. wachttijd na aanvraag                                                                                      */
     #define prmmlfpr02             727 /* Maximaal aantal modules vooruit fase 02                                                                                        */
     #define prmmlfpr03             728 /* Maximaal aantal modules vooruit fase 03                                                                                        */

@@ -128,7 +128,7 @@ void VersneldPrimair_Add(void)
 
 void Alternatief_Add(void)
 {
-
+ 
 }
 
 void Modules_Add(void)
@@ -164,7 +164,7 @@ void PostApplication_Add(void)
     {
         for (x = 0; x < FCMAX; ++x)
         {
-            fprintf(fpt, "%4d,", twacht[x] * (A[x] != 0 || PRIOFC[x]) * R[x]);
+            fprintf(fpt, "%4d,", ((twacht_AR[x] >= 0) && (twacht_AR[x] < twacht[x])) ? twacht_AR[x] : twacht[x] * (A[x] != 0 || PRIOFC[x]) * R[x]);
         }
         fprintf(fpt, "%7d,", (H[hprio02bus]) * 50);
         fprintf(fpt, "%7d,", (H[hprio03bus]) * 50);
@@ -183,12 +183,12 @@ void PostApplication_Add(void)
 #endif
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
    if (TS &&
-       (CIF_KLOK[CIF_JAAR] == 2099) &&
+       (CIF_KLOK[CIF_JAAR] == 2001) &&
        (CIF_KLOK[CIF_MAAND] == 1) &&
        (CIF_KLOK[CIF_DAG] == 1) &&
-       (CIF_KLOK[CIF_UUR] == 1) &&
-       (CIF_KLOK[CIF_MINUUT] == 1) &&
-       (CIF_KLOK[CIF_SECONDE] == 1))
+       (CIF_KLOK[CIF_UUR] == 12) &&
+       (CIF_KLOK[CIF_MINUUT] == 33) &&
+       (CIF_KLOK[CIF_SECONDE] == 45))
    {
        //stuffkey(F2KEY);
        stuffkey(F5KEY);
@@ -205,10 +205,6 @@ void WachttijdvoorspellersWachttijd_Add(void)
 
 void pre_system_application(void)
 {
-    xyprintf(0, 0, "rr_twacht[fc22] = %3d", rr_twacht[fc22]);
-    xyprintf(0, 1, "t_wacht[fc22] = %3d", t_wacht[fc22]);
-    xyprintf(0, 2, "t_twacht_old[fc22] = %3d", t_wacht_old[fc22]);
-    xyprintf(0, 3, "CIF_GUS[uswtv22] = %3d", CIF_GUS[uswtv22]);
 }
 
 void post_system_application(void)

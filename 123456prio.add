@@ -175,6 +175,6 @@ void PostAfhandelingPrio_Add(void) {
 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM
 void PrioDebug_Add(void) {
-   PrioDebug(NG);
+  PrioDebug(NG);
 }
 #endif
