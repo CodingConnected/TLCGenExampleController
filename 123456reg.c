@@ -1850,22 +1850,36 @@ void RealisatieAfhandeling(void)
         FM[fc] &= ~BIT5;
     }
 
-   /* @Peter: nog wijzigen minmale wachttijd en de wachttijdvoorspeller is actief ? */
-    // RR[fc02] |= R[fc02] && AR[fc02] && (!PAR[fc02] || ERA[fc02]) ? BIT5 : 0;
-    // RR[fc03] |= R[fc03] && AR[fc03] && (!PAR[fc03] || ERA[fc03]) ? BIT5 : 0;
-    // RR[fc05] |= R[fc05] && AR[fc05] && (!PAR[fc05] || ERA[fc05]) ? BIT5 : 0;
-    // RR[fc08] |= R[fc08] && AR[fc08] && (!PAR[fc08] || ERA[fc08]) ? BIT5 : 0;
-    // RR[fc09] |= R[fc09] && AR[fc09] && (!PAR[fc09] || ERA[fc09]) ? BIT5 : 0;
-    // RR[fc11] |= R[fc11] && AR[fc11] && (!PAR[fc11] || ERA[fc11]) ? BIT5 : 0;
-    // RR[fc31] |= R[fc31] && AR[fc31] && (!PAR[fc31] || ERA[fc31]) ? BIT5 : 0;
-    // RR[fc32] |= R[fc32] && AR[fc32] && (!PAR[fc32] || ERA[fc32]) ? BIT5 : 0;
-    // RR[fc33] |= R[fc33] && AR[fc33] && (!PAR[fc33] || ERA[fc33]) ? BIT5 : 0;
-    // RR[fc34] |= R[fc34] && AR[fc34] && (!PAR[fc34] || ERA[fc34]) ? BIT5 : 0;
-    // RR[fc38] |= R[fc38] && AR[fc38] && (!PAR[fc38] || ERA[fc38]) ? BIT5 : 0;
-    // RR[fc61] |= R[fc61] && AR[fc61] && (!PAR[fc61] || ERA[fc61]) ? BIT5 : 0;
-    // RR[fc62] |= R[fc62] && AR[fc62] && (!PAR[fc62] || ERA[fc62]) ? BIT5 : 0;
-    // RR[fc67] |= R[fc67] && AR[fc67] && (!PAR[fc67] || ERA[fc67]) ? BIT5 : 0;
-    // RR[fc68] |= R[fc68] && AR[fc68] && (!PAR[fc68] || ERA[fc68]) ? BIT5 : 0;
+    /* zet richtingen die alternatief gaan realiseren         */
+    /* terug naar RV als er geen alternatieve ruimte meer is. */
+    RR[fc02] |= (R[fc02] && AR[fc02] && (!PAR[fc02] || ERA[fc02])) ? BIT5 : 0;
+    RR[fc03] |= (R[fc03] && AR[fc03] && (!PAR[fc03] || ERA[fc03])) ? BIT5 : 0;
+    RR[fc05] |= (R[fc05] && AR[fc05] && (!PAR[fc05] || ERA[fc05])) ? BIT5 : 0;
+    RR[fc08] |= (R[fc08] && AR[fc08] && (!PAR[fc08] || ERA[fc08])) ? BIT5 : 0;
+    RR[fc09] |= (R[fc09] && AR[fc09] && (!PAR[fc09] || ERA[fc09])) ? BIT5 : 0;
+    RR[fc11] |= (R[fc11] && AR[fc11] && (!PAR[fc11] || ERA[fc11])) ? BIT5 : 0;
+    RR[fc21] |= (R[fc21] && AR[fc21] && (!PAR[fc21] || ERA[fc21]) && MM[mwtvm21] > PRM[prmwtvnhaltmin]) ? BIT5 : 0;
+    RR[fc22] |= (R[fc22] && AR[fc22] && (!PAR[fc22] || ERA[fc22]) && MM[mwtvm22] > PRM[prmwtvnhaltmin]) ? BIT5 : 0;
+    RR[fc24] |= (R[fc24] && AR[fc24] && (!PAR[fc24] || ERA[fc24]) && MM[mwtvm24] > PRM[prmwtvnhaltmin]) ? BIT5 : 0;
+    RR[fc26] |= (R[fc26] && AR[fc26] && (!PAR[fc26] || ERA[fc26]) && MM[mwtvm26] > PRM[prmwtvnhaltmin]) ? BIT5 : 0;
+    RR[fc31] |= (R[fc31] && AR[fc31] && (!PAR[fc31] || ERA[fc31])) ? BIT5 : 0;
+    RR[fc32] |= (R[fc32] && AR[fc32] && (!PAR[fc32] || ERA[fc32])) ? BIT5 : 0;
+    RR[fc33] |= (R[fc33] && AR[fc33] && (!PAR[fc33] || ERA[fc33])) ? BIT5 : 0;
+    RR[fc34] |= (R[fc34] && AR[fc34] && (!PAR[fc34] || ERA[fc34])) ? BIT5 : 0;
+    RR[fc38] |= (R[fc38] && AR[fc38] && (!PAR[fc38] || ERA[fc38])) ? BIT5 : 0;
+    RR[fc61] |= (R[fc61] && AR[fc61] && (!PAR[fc61] || ERA[fc61])) ? BIT5 : 0;
+    RR[fc62] |= (R[fc62] && AR[fc62] && (!PAR[fc62] || ERA[fc62])) ? BIT5 : 0;
+    RR[fc67] |= (R[fc67] && AR[fc67] && (!PAR[fc67] || ERA[fc67])) ? BIT5 : 0;
+    RR[fc68] |= (R[fc68] && AR[fc68] && (!PAR[fc68] || ERA[fc68])) ? BIT5 : 0;
+    RR[fc81] |= (R[fc81] && AR[fc81] && (!PAR[fc81] || ERA[fc81]) && MM[mwtvm81] > PRM[prmwtvnhaltmin]) ? BIT5 : 0;
+    RR[fc82] |= (R[fc82] && AR[fc82] && (!PAR[fc82] || ERA[fc82]) && MM[mwtvm82] > PRM[prmwtvnhaltmin]) ? BIT5 : 0;
+    RR[fc84] |= (R[fc84] && AR[fc84] && (!PAR[fc84] || ERA[fc84]) && MM[mwtvm84] > PRM[prmwtvnhaltmin]) ? BIT5 : 0;
+
+    /* Correctie gelijkstart */
+    if (!(RR[fc24] & BIT5)) RR[fc84] &= ~BIT5;
+    if (!(RR[fc84] & BIT5)) RR[fc24] &= ~BIT5;
+    /* Correctie Late Release */
+    if (!((RR[fc11] & BIT5)||G[fc11])) RR[fc26] &= ~BIT5;
 
 
     /* Niet intrekken alternatief nalooprichting tijdens inlopen voedende richting */
