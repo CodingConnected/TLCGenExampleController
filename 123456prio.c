@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   26-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   12-10-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -1150,8 +1150,6 @@ void PrioriteitsToekenningExtra(void)
    ------------------------------------ */
 void TegenhoudenConflictenExtra(void)
 {
-    
-    
     if (MM[mwtvm21] && MM[mwtvm21] <= PRM[prmwtvnhaltmin])
     {
         RR[fc21] &= ~PRIO_RR_BIT;
@@ -1185,11 +1183,10 @@ void TegenhoudenConflictenExtra(void)
     }
     if (MM[mwtvm84] && MM[mwtvm84] <= PRM[prmwtvnhaltmin])
     {
-        RR[fc24] &= ~PRIO_RR_BIT; /* @Menno: bij fc84 fc 24 hierboven gaat het wel goed. */
         RR[fc84] &= ~PRIO_RR_BIT;
+        RR[fc24] &= ~PRIO_RR_BIT;
     }
-
-    if (RR[fc24] & PRIO_RR_BIT) RR[fc84] |= PRIO_RR_BIT; /* @Menno: voor alle gelijkstartende richtingen. */
+    if (RR[fc24] & PRIO_RR_BIT) RR[fc84] |= PRIO_RR_BIT;
     if (RR[fc84] & PRIO_RR_BIT) RR[fc24] |= PRIO_RR_BIT;
 }
 
@@ -1268,26 +1265,31 @@ void PrioPARCorrecties(void)
 {
     int fc;
     /* Tegenrichting moet ook kunnen koppelen bij koppelaanvraag */
-    PAR[fc32] = PAR[fc32] && (!IH[hnlak31a] || PAR[fc31]);
-    PAR[fc31] = PAR[fc31] && (!IH[hnlak32a] || PAR[fc32]);
-    PAR[fc34] = PAR[fc34] && (!IH[hnlak33a] || PAR[fc33]);
-    PAR[fc33] = PAR[fc33] && (!IH[hnlak34a] || PAR[fc34]);
+    PAR[fc32] = PAR[fc32] && PAR[fc31];
+    PAR[fc31] = PAR[fc31] && PAR[fc32];
+    PAR[fc34] = PAR[fc34] && PAR[fc33];
+    PAR[fc33] = PAR[fc33] && PAR[fc34];
 
     /* Bepaal naloop voetgangers wel/niet toegestaan */
-    IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc32]) && IH[hnlak31a];
-    IH[hnlsg3231] = (PR[fc32] || AR[fc32] && PAR[fc31]) && IH[hnlak32a];
-    IH[hnlsg3334] = (PR[fc33] || AR[fc33] && PAR[fc34]) && IH[hnlak33a];
-    IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc33]) && IH[hnlak34a];
+    IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc31]);
+    IH[hnlsg3231] = (PR[fc32] || AR[fc32] && PAR[fc32]);
+    IH[hnlsg3334] = (PR[fc33] || AR[fc33] && PAR[fc33]);
+    IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc34]);
 
     /* PAR-ongecoordineerd */
-    PAR[fc31] = PAR[fc31] || IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]);
-    PAR[fc32] = PAR[fc32] || IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]);
-    PAR[fc33] = PAR[fc33] || IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]);
-    PAR[fc34] = PAR[fc34] || IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]);
+    if (!PAR[fc31] && IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]) || PAR_los[fc31] && RA[fc31]) PAR_los[fc31] = TRUE;
+    if (!PAR[fc32] && IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]) || PAR_los[fc32] && RA[fc32]) PAR_los[fc32] = TRUE;
+    if (!PAR[fc33] && IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]) || PAR_los[fc33] && RA[fc33]) PAR_los[fc33] = TRUE;
+    if (!PAR[fc34] && IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]) || PAR_los[fc34] && RA[fc34]) PAR_los[fc34] = TRUE;
+
+    PAR[fc31] = PAR[fc31] || PAR_los[fc31];
+    PAR[fc32] = PAR[fc32] || PAR_los[fc32];
+    PAR[fc33] = PAR[fc33] || PAR_los[fc33];
+    PAR[fc34] = PAR[fc34] || PAR_los[fc34];
 
     /* PAR correcties gelijkstart synchronisaties */
-    if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
-    if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
+    if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && PAR[fc24];
+    if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && PAR[fc84];
 
     /* Niet alternatief komen tijdens file (meting na ss) */
     if (IH[hfileFile68af]) PAR[fc08] = FALSE;

@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   26-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   12-10-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0 20240826"
+#define VERSION "12.4.0 20241012"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 
 /* fasecycli */
@@ -388,163 +388,167 @@
     #define hverleng_11_3       19 /* Instructie verlengen op detector 11_3 ongeacht dynamische hiaat    */
     #define hverleng_11_4       20 /* Instructie verlengen op detector 11_4 ongeacht dynamische hiaat    */
     #define hmadk31a            21 /* Hulpelement onthouden melding meeaanvraag detector k31a            */
-    #define hmadk32a            22 /* Hulpelement onthouden melding meeaanvraag detector k32a            */
-    #define hmadk33a            23 /* Hulpelement onthouden melding meeaanvraag detector k33a            */
-    #define hmadk34a            24 /* Hulpelement onthouden melding meeaanvraag detector k34a            */
-    #define hfileFile68af       25 /* File File68af actief                                               */
-    #define hfile68_9a          26 /* File 68_9a actief                                                  */
-    #define hfile68_9b          27 /* File 68_9b actief                                                  */
-    #define hafk08fileFile68af  28 /* Onthouden afkappen fase 08 bij start file ingreep                  */
-    #define hafk11fileFile68af  29 /* Onthouden afkappen fase 11 bij start file ingreep                  */
-    #define hnla02_1a           30 /* Onthouden detectiemelding detector 02_1a tbv naloop van 02 naar 62 */
-    #define hnla02_1b           31 /* Onthouden detectiemelding detector 02_1b tbv naloop van 02 naar 62 */
-    #define hnla08_1a           32 /* Onthouden detectiemelding detector 08_1a tbv naloop van 08 naar 68 */
-    #define hnla08_1b           33 /* Onthouden detectiemelding detector 08_1b tbv naloop van 08 naar 68 */
-    #define hnla11_1            34 /* Onthouden detectiemelding detector 11_1 tbv naloop van 11 naar 68  */
-    #define hnla22_1            35 /* Onthouden detectiemelding detector 22_1 tbv naloop van 22 naar 21  */
-    #define hnlsg3132           36 /* Hulpelement naloop SG van 31 naar 32                               */
-    #define hnlak31a            37 /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
-    #define hnlsg3231           38 /* Hulpelement naloop SG van 32 naar 31                               */
-    #define hnlak32a            39 /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
-    #define hnlsg3334           40 /* Hulpelement naloop SG van 33 naar 34                               */
-    #define hnlak33a            41 /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
-    #define hnlsg3433           42 /* Hulpelement naloop SG van 34 naar 33                               */
-    #define hnlak34a            43 /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
-    #define hnla82_1            44 /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
-    #define hstp02bus           45 /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
-    #define hstp03bus           46 /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
-    #define hstp05bus           47 /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
-    #define hstp08bus           48 /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
-    #define hstp09bus           49 /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
-    #define hstp11bus           50 /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
-    #define hprio02bus          51 /* Bijhouden actief zijn prioriteit fase 02                           */
-    #define hprioin02bus        52 /* Prioriteit inmelding fase 02 Bus                                   */
-    #define hpriouit02bus       53 /* Prioriteit uitmelding 02 Bus                                       */
-    #define hprioin02buskar     54 /* Prioriteit inmelding fase 02 Bus                                   */
-    #define hpriouit02buskar    55 /* Prioriteit uitmelding 02 Bus                                       */
-    #define hprio03bus          56 /* Bijhouden actief zijn prioriteit fase 03                           */
-    #define hprioin03bus        57 /* Prioriteit inmelding fase 03 Bus                                   */
-    #define hpriouit03bus       58 /* Prioriteit uitmelding 03 Bus                                       */
-    #define hprioin03buskar     59 /* Prioriteit inmelding fase 03 Bus                                   */
-    #define hpriouit03buskar    60 /* Prioriteit uitmelding 03 Bus                                       */
-    #define hprio05bus          61 /* Bijhouden actief zijn prioriteit fase 05                           */
-    #define hprioin05bus        62 /* Prioriteit inmelding fase 05 Bus                                   */
-    #define hpriouit05bus       63 /* Prioriteit uitmelding 05 Bus                                       */
-    #define hprioin05buskar     64 /* Prioriteit inmelding fase 05 Bus                                   */
-    #define hpriouit05buskar    65 /* Prioriteit uitmelding 05 Bus                                       */
-    #define hprio08bus          66 /* Bijhouden actief zijn prioriteit fase 08                           */
-    #define hprioin08bus        67 /* Prioriteit inmelding fase 08 Bus                                   */
-    #define hpriouit08bus       68 /* Prioriteit uitmelding 08 Bus                                       */
-    #define hprioin08buskar     69 /* Prioriteit inmelding fase 08 Bus                                   */
-    #define hpriouit08buskar    70 /* Prioriteit uitmelding 08 Bus                                       */
-    #define hprio09bus          71 /* Bijhouden actief zijn prioriteit fase 09                           */
-    #define hprioin09bus        72 /* Prioriteit inmelding fase 09 Bus                                   */
-    #define hpriouit09bus       73 /* Prioriteit uitmelding 09 Bus                                       */
-    #define hprioin09buskar     74 /* Prioriteit inmelding fase 09 Bus                                   */
-    #define hpriouit09buskar    75 /* Prioriteit uitmelding 09 Bus                                       */
-    #define hprio11bus          76 /* Bijhouden actief zijn prioriteit fase 11                           */
-    #define hprioin11bus        77 /* Prioriteit inmelding fase 11 Bus                                   */
-    #define hpriouit11bus       78 /* Prioriteit uitmelding 11 Bus                                       */
-    #define hprioin11buskar     79 /* Prioriteit inmelding fase 11 Bus                                   */
-    #define hpriouit11buskar    80 /* Prioriteit uitmelding 11 Bus                                       */
-    #define hhd02               81 /* Bijhouden aanwezigheid HD fase 02                                  */
-    #define hhdin02             82 /* HD inmelding 02                                                    */
-    #define hhduit02            83 /* HD uitmelding 02                                                   */
-    #define hhdin02kar          84 /* HD inmelding 02                                                    */
-    #define hhduit02kar         85 /* HD uitmelding 02                                                   */
-    #define hhdin02ris          86 /* HD inmelding 02                                                    */
-    #define hhduit02ris         87 /* HD uitmelding 02                                                   */
-    #define hhd03               88 /* Bijhouden aanwezigheid HD fase 03                                  */
-    #define hhdin03             89 /* HD inmelding 03                                                    */
-    #define hhduit03            90 /* HD uitmelding 03                                                   */
-    #define hhdin03kar          91 /* HD inmelding 03                                                    */
-    #define hhduit03kar         92 /* HD uitmelding 03                                                   */
-    #define hhdin03ris          93 /* HD inmelding 03                                                    */
-    #define hhduit03ris         94 /* HD uitmelding 03                                                   */
-    #define hhd05               95 /* Bijhouden aanwezigheid HD fase 05                                  */
-    #define hhdin05             96 /* HD inmelding 05                                                    */
-    #define hhduit05            97 /* HD uitmelding 05                                                   */
-    #define hhdin05kar          98 /* HD inmelding 05                                                    */
-    #define hhduit05kar         99 /* HD uitmelding 05                                                   */
-    #define hhdin05ris         100 /* HD inmelding 05                                                    */
-    #define hhduit05ris        101 /* HD uitmelding 05                                                   */
-    #define hhd08              102 /* Bijhouden aanwezigheid HD fase 08                                  */
-    #define hhdin08            103 /* HD inmelding 08                                                    */
-    #define hhduit08           104 /* HD uitmelding 08                                                   */
-    #define hhdin08kar         105 /* HD inmelding 08                                                    */
-    #define hhduit08kar        106 /* HD uitmelding 08                                                   */
-    #define hhdin08ris         107 /* HD inmelding 08                                                    */
-    #define hhduit08ris        108 /* HD uitmelding 08                                                   */
-    #define hhd09              109 /* Bijhouden aanwezigheid HD fase 09                                  */
-    #define hhdin09            110 /* HD inmelding 09                                                    */
-    #define hhduit09           111 /* HD uitmelding 09                                                   */
-    #define hhdin09kar         112 /* HD inmelding 09                                                    */
-    #define hhduit09kar        113 /* HD uitmelding 09                                                   */
-    #define hhdin09ris         114 /* HD inmelding 09                                                    */
-    #define hhduit09ris        115 /* HD uitmelding 09                                                   */
-    #define hhd11              116 /* Bijhouden aanwezigheid HD fase 11                                  */
-    #define hhdin11            117 /* HD inmelding 11                                                    */
-    #define hhduit11           118 /* HD uitmelding 11                                                   */
-    #define hhdin11kar         119 /* HD inmelding 11                                                    */
-    #define hhduit11kar        120 /* HD uitmelding 11                                                   */
-    #define hhdin11ris         121 /* HD inmelding 11                                                    */
-    #define hhduit11ris        122 /* HD uitmelding 11                                                   */
-    #define hhd61              123 /* Bijhouden aanwezigheid HD fase 61                                  */
-    #define hhdin61            124 /* HD inmelding 61                                                    */
-    #define hhduit61           125 /* HD uitmelding 61                                                   */
-    #define hhdin61kar         126 /* HD inmelding 61                                                    */
-    #define hhduit61kar        127 /* HD uitmelding 61                                                   */
-    #define hhdin61ris         128 /* HD inmelding 61                                                    */
-    #define hhduit61ris        129 /* HD uitmelding 61                                                   */
-    #define hhd62              130 /* Bijhouden aanwezigheid HD fase 62                                  */
-    #define hhdin62            131 /* HD inmelding 62                                                    */
-    #define hhduit62           132 /* HD uitmelding 62                                                   */
-    #define hhdin62kar         133 /* HD inmelding 62                                                    */
-    #define hhduit62kar        134 /* HD uitmelding 62                                                   */
-    #define hhdin62ris         135 /* HD inmelding 62                                                    */
-    #define hhduit62ris        136 /* HD uitmelding 62                                                   */
-    #define hhd67              137 /* Bijhouden aanwezigheid HD fase 67                                  */
-    #define hhdin67            138 /* HD inmelding 67                                                    */
-    #define hhduit67           139 /* HD uitmelding 67                                                   */
-    #define hhdin67kar         140 /* HD inmelding 67                                                    */
-    #define hhduit67kar        141 /* HD uitmelding 67                                                   */
-    #define hhdin67ris         142 /* HD inmelding 67                                                    */
-    #define hhduit67ris        143 /* HD uitmelding 67                                                   */
-    #define hhd68              144 /* Bijhouden aanwezigheid HD fase 68                                  */
-    #define hhdin68            145 /* HD inmelding 68                                                    */
-    #define hhduit68           146 /* HD uitmelding 68                                                   */
-    #define hhdin68kar         147 /* HD inmelding 68                                                    */
-    #define hhduit68kar        148 /* HD uitmelding 68                                                   */
-    #define hhdin68ris         149 /* HD inmelding 68                                                    */
-    #define hhduit68ris        150 /* HD uitmelding 68                                                   */
-    #define hperiodFietsprio1  151 /* Periode Fietsprio1 actief                                          */
-    #define hperiodFietsprio2  152 /* Periode Fietsprio2 actief                                          */
-    #define hperiodFietsprio3  153 /* Periode Fietsprio3 actief                                          */
-    #define hrgvd24_3_d24_2    154 /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
-    #define hrgvact            155 /* Bijhouden actief zijn RoBuGrover                                   */
-    #define hprreal02          156 /* Bijhouden primaire realisatie fase 02                              */
-    #define hprreal03          157 /* Bijhouden primaire realisatie fase 03                              */
-    #define hprreal05          158 /* Bijhouden primaire realisatie fase 05                              */
-    #define hprreal08          159 /* Bijhouden primaire realisatie fase 08                              */
-    #define hprreal09          160 /* Bijhouden primaire realisatie fase 09                              */
-    #define hprreal11          161 /* Bijhouden primaire realisatie fase 11                              */
-    #define hwtv21             162 /* Onthouden aansturing wachttijdvoorspeller fase 21                  */
-    #define hwtv22             163 /* Onthouden aansturing wachttijdvoorspeller fase 22                  */
-    #define hwtv24             164 /* Onthouden aansturing wachttijdvoorspeller fase 24                  */
-    #define hwtv26             165 /* Onthouden aansturing wachttijdvoorspeller fase 26                  */
-    #define hwtv28             166 /* Onthouden aansturing wachttijdvoorspeller fase 28                  */
-    #define hwtv81             167 /* Onthouden aansturing wachttijdvoorspeller fase 81                  */
-    #define hwtv82             168 /* Onthouden aansturing wachttijdvoorspeller fase 82                  */
-    #define hwtv84             169 /* Onthouden aansturing wachttijdvoorspeller fase 84                  */
-    #define hlos31             170 /* Toestaan los realiseren fase 31                                    */
-    #define hlos32             171 /* Toestaan los realiseren fase 32                                    */
-    #define hlos33             172 /* Toestaan los realiseren fase 33                                    */
-    #define hlos34             173 /* Toestaan los realiseren fase 34                                    */
-    #define hmadk31b           174 /* Onthouden melding binnen drukknop k31b                             */
-    #define hmadk32b           175 /* Onthouden melding binnen drukknop k32b                             */
-    #define hmadk33b           176 /* Onthouden melding binnen drukknop k33b                             */
-    #define hmadk34b           177 /* Onthouden melding binnen drukknop k34b                             */
-    #define HEMAX1             178
+    #define hmadk31b            22 /* Hulpelement onthouden melding meeaanvraag detector k31b            */
+    #define hmadk32a            23 /* Hulpelement onthouden melding meeaanvraag detector k32a            */
+    #define hmadk32b            24 /* Hulpelement onthouden melding meeaanvraag detector k32b            */
+    #define hmadk33a            25 /* Hulpelement onthouden melding meeaanvraag detector k33a            */
+    #define hmadk33b            26 /* Hulpelement onthouden melding meeaanvraag detector k33b            */
+    #define hmadk34a            27 /* Hulpelement onthouden melding meeaanvraag detector k34a            */
+    #define hmadk34b            28 /* Hulpelement onthouden melding meeaanvraag detector k34b            */
+    #define hfileFile68af       29 /* File File68af actief                                               */
+    #define hfile68_9a          30 /* File 68_9a actief                                                  */
+    #define hfile68_9b          31 /* File 68_9b actief                                                  */
+    #define hafk08fileFile68af  32 /* Onthouden afkappen fase 08 bij start file ingreep                  */
+    #define hafk11fileFile68af  33 /* Onthouden afkappen fase 11 bij start file ingreep                  */
+    #define hnla02_1a           34 /* Onthouden detectiemelding detector 02_1a tbv naloop van 02 naar 62 */
+    #define hnla02_1b           35 /* Onthouden detectiemelding detector 02_1b tbv naloop van 02 naar 62 */
+    #define hnla08_1a           36 /* Onthouden detectiemelding detector 08_1a tbv naloop van 08 naar 68 */
+    #define hnla08_1b           37 /* Onthouden detectiemelding detector 08_1b tbv naloop van 08 naar 68 */
+    #define hnla11_1            38 /* Onthouden detectiemelding detector 11_1 tbv naloop van 11 naar 68  */
+    #define hnla22_1            39 /* Onthouden detectiemelding detector 22_1 tbv naloop van 22 naar 21  */
+    #define hnlsg3132           40 /* Hulpelement naloop SG van 31 naar 32                               */
+    #define hnlak31a            41 /* Onthouden detectiemelding detector k31a tbv naloop van 31 naar 32  */
+    #define hnlsg3231           42 /* Hulpelement naloop SG van 32 naar 31                               */
+    #define hnlak32a            43 /* Onthouden detectiemelding detector k32a tbv naloop van 32 naar 31  */
+    #define hnlsg3334           44 /* Hulpelement naloop SG van 33 naar 34                               */
+    #define hnlak33a            45 /* Onthouden detectiemelding detector k33a tbv naloop van 33 naar 34  */
+    #define hnlsg3433           46 /* Hulpelement naloop SG van 34 naar 33                               */
+    #define hnlak34a            47 /* Onthouden detectiemelding detector k34a tbv naloop van 34 naar 33  */
+    #define hnla82_1            48 /* Onthouden detectiemelding detector 82_1 tbv naloop van 82 naar 81  */
+    #define hstp02bus           49 /* Geconditioneerde prio OV mogelijk bij 02 Bus                       */
+    #define hstp03bus           50 /* Geconditioneerde prio OV mogelijk bij 03 Bus                       */
+    #define hstp05bus           51 /* Geconditioneerde prio OV mogelijk bij 05 Bus                       */
+    #define hstp08bus           52 /* Geconditioneerde prio OV mogelijk bij 08 Bus                       */
+    #define hstp09bus           53 /* Geconditioneerde prio OV mogelijk bij 09 Bus                       */
+    #define hstp11bus           54 /* Geconditioneerde prio OV mogelijk bij 11 Bus                       */
+    #define hprio02bus          55 /* Bijhouden actief zijn prioriteit fase 02                           */
+    #define hprioin02bus        56 /* Prioriteit inmelding fase 02 Bus                                   */
+    #define hpriouit02bus       57 /* Prioriteit uitmelding 02 Bus                                       */
+    #define hprioin02buskar     58 /* Prioriteit inmelding fase 02 Bus                                   */
+    #define hpriouit02buskar    59 /* Prioriteit uitmelding 02 Bus                                       */
+    #define hprio03bus          60 /* Bijhouden actief zijn prioriteit fase 03                           */
+    #define hprioin03bus        61 /* Prioriteit inmelding fase 03 Bus                                   */
+    #define hpriouit03bus       62 /* Prioriteit uitmelding 03 Bus                                       */
+    #define hprioin03buskar     63 /* Prioriteit inmelding fase 03 Bus                                   */
+    #define hpriouit03buskar    64 /* Prioriteit uitmelding 03 Bus                                       */
+    #define hprio05bus          65 /* Bijhouden actief zijn prioriteit fase 05                           */
+    #define hprioin05bus        66 /* Prioriteit inmelding fase 05 Bus                                   */
+    #define hpriouit05bus       67 /* Prioriteit uitmelding 05 Bus                                       */
+    #define hprioin05buskar     68 /* Prioriteit inmelding fase 05 Bus                                   */
+    #define hpriouit05buskar    69 /* Prioriteit uitmelding 05 Bus                                       */
+    #define hprio08bus          70 /* Bijhouden actief zijn prioriteit fase 08                           */
+    #define hprioin08bus        71 /* Prioriteit inmelding fase 08 Bus                                   */
+    #define hpriouit08bus       72 /* Prioriteit uitmelding 08 Bus                                       */
+    #define hprioin08buskar     73 /* Prioriteit inmelding fase 08 Bus                                   */
+    #define hpriouit08buskar    74 /* Prioriteit uitmelding 08 Bus                                       */
+    #define hprio09bus          75 /* Bijhouden actief zijn prioriteit fase 09                           */
+    #define hprioin09bus        76 /* Prioriteit inmelding fase 09 Bus                                   */
+    #define hpriouit09bus       77 /* Prioriteit uitmelding 09 Bus                                       */
+    #define hprioin09buskar     78 /* Prioriteit inmelding fase 09 Bus                                   */
+    #define hpriouit09buskar    79 /* Prioriteit uitmelding 09 Bus                                       */
+    #define hprio11bus          80 /* Bijhouden actief zijn prioriteit fase 11                           */
+    #define hprioin11bus        81 /* Prioriteit inmelding fase 11 Bus                                   */
+    #define hpriouit11bus       82 /* Prioriteit uitmelding 11 Bus                                       */
+    #define hprioin11buskar     83 /* Prioriteit inmelding fase 11 Bus                                   */
+    #define hpriouit11buskar    84 /* Prioriteit uitmelding 11 Bus                                       */
+    #define hhd02               85 /* Bijhouden aanwezigheid HD fase 02                                  */
+    #define hhdin02             86 /* HD inmelding 02                                                    */
+    #define hhduit02            87 /* HD uitmelding 02                                                   */
+    #define hhdin02kar          88 /* HD inmelding 02                                                    */
+    #define hhduit02kar         89 /* HD uitmelding 02                                                   */
+    #define hhdin02ris          90 /* HD inmelding 02                                                    */
+    #define hhduit02ris         91 /* HD uitmelding 02                                                   */
+    #define hhd03               92 /* Bijhouden aanwezigheid HD fase 03                                  */
+    #define hhdin03             93 /* HD inmelding 03                                                    */
+    #define hhduit03            94 /* HD uitmelding 03                                                   */
+    #define hhdin03kar          95 /* HD inmelding 03                                                    */
+    #define hhduit03kar         96 /* HD uitmelding 03                                                   */
+    #define hhdin03ris          97 /* HD inmelding 03                                                    */
+    #define hhduit03ris         98 /* HD uitmelding 03                                                   */
+    #define hhd05               99 /* Bijhouden aanwezigheid HD fase 05                                  */
+    #define hhdin05            100 /* HD inmelding 05                                                    */
+    #define hhduit05           101 /* HD uitmelding 05                                                   */
+    #define hhdin05kar         102 /* HD inmelding 05                                                    */
+    #define hhduit05kar        103 /* HD uitmelding 05                                                   */
+    #define hhdin05ris         104 /* HD inmelding 05                                                    */
+    #define hhduit05ris        105 /* HD uitmelding 05                                                   */
+    #define hhd08              106 /* Bijhouden aanwezigheid HD fase 08                                  */
+    #define hhdin08            107 /* HD inmelding 08                                                    */
+    #define hhduit08           108 /* HD uitmelding 08                                                   */
+    #define hhdin08kar         109 /* HD inmelding 08                                                    */
+    #define hhduit08kar        110 /* HD uitmelding 08                                                   */
+    #define hhdin08ris         111 /* HD inmelding 08                                                    */
+    #define hhduit08ris        112 /* HD uitmelding 08                                                   */
+    #define hhd09              113 /* Bijhouden aanwezigheid HD fase 09                                  */
+    #define hhdin09            114 /* HD inmelding 09                                                    */
+    #define hhduit09           115 /* HD uitmelding 09                                                   */
+    #define hhdin09kar         116 /* HD inmelding 09                                                    */
+    #define hhduit09kar        117 /* HD uitmelding 09                                                   */
+    #define hhdin09ris         118 /* HD inmelding 09                                                    */
+    #define hhduit09ris        119 /* HD uitmelding 09                                                   */
+    #define hhd11              120 /* Bijhouden aanwezigheid HD fase 11                                  */
+    #define hhdin11            121 /* HD inmelding 11                                                    */
+    #define hhduit11           122 /* HD uitmelding 11                                                   */
+    #define hhdin11kar         123 /* HD inmelding 11                                                    */
+    #define hhduit11kar        124 /* HD uitmelding 11                                                   */
+    #define hhdin11ris         125 /* HD inmelding 11                                                    */
+    #define hhduit11ris        126 /* HD uitmelding 11                                                   */
+    #define hhd61              127 /* Bijhouden aanwezigheid HD fase 61                                  */
+    #define hhdin61            128 /* HD inmelding 61                                                    */
+    #define hhduit61           129 /* HD uitmelding 61                                                   */
+    #define hhdin61kar         130 /* HD inmelding 61                                                    */
+    #define hhduit61kar        131 /* HD uitmelding 61                                                   */
+    #define hhdin61ris         132 /* HD inmelding 61                                                    */
+    #define hhduit61ris        133 /* HD uitmelding 61                                                   */
+    #define hhd62              134 /* Bijhouden aanwezigheid HD fase 62                                  */
+    #define hhdin62            135 /* HD inmelding 62                                                    */
+    #define hhduit62           136 /* HD uitmelding 62                                                   */
+    #define hhdin62kar         137 /* HD inmelding 62                                                    */
+    #define hhduit62kar        138 /* HD uitmelding 62                                                   */
+    #define hhdin62ris         139 /* HD inmelding 62                                                    */
+    #define hhduit62ris        140 /* HD uitmelding 62                                                   */
+    #define hhd67              141 /* Bijhouden aanwezigheid HD fase 67                                  */
+    #define hhdin67            142 /* HD inmelding 67                                                    */
+    #define hhduit67           143 /* HD uitmelding 67                                                   */
+    #define hhdin67kar         144 /* HD inmelding 67                                                    */
+    #define hhduit67kar        145 /* HD uitmelding 67                                                   */
+    #define hhdin67ris         146 /* HD inmelding 67                                                    */
+    #define hhduit67ris        147 /* HD uitmelding 67                                                   */
+    #define hhd68              148 /* Bijhouden aanwezigheid HD fase 68                                  */
+    #define hhdin68            149 /* HD inmelding 68                                                    */
+    #define hhduit68           150 /* HD uitmelding 68                                                   */
+    #define hhdin68kar         151 /* HD inmelding 68                                                    */
+    #define hhduit68kar        152 /* HD uitmelding 68                                                   */
+    #define hhdin68ris         153 /* HD inmelding 68                                                    */
+    #define hhduit68ris        154 /* HD uitmelding 68                                                   */
+    #define hperiodFietsprio1  155 /* Periode Fietsprio1 actief                                          */
+    #define hperiodFietsprio2  156 /* Periode Fietsprio2 actief                                          */
+    #define hperiodFietsprio3  157 /* Periode Fietsprio3 actief                                          */
+    #define hrgvd24_3_d24_2    158 /* Onthouden detector melding 24 richtinggevoelig verlengen fase 24_3 */
+    #define hrgvact            159 /* Bijhouden actief zijn RoBuGrover                                   */
+    #define hprreal02          160 /* Bijhouden primaire realisatie fase 02                              */
+    #define hprreal03          161 /* Bijhouden primaire realisatie fase 03                              */
+    #define hprreal05          162 /* Bijhouden primaire realisatie fase 05                              */
+    #define hprreal08          163 /* Bijhouden primaire realisatie fase 08                              */
+    #define hprreal09          164 /* Bijhouden primaire realisatie fase 09                              */
+    #define hprreal11          165 /* Bijhouden primaire realisatie fase 11                              */
+    #define hwtv21             166 /* Onthouden aansturing wachttijdvoorspeller fase 21                  */
+    #define hwtv22             167 /* Onthouden aansturing wachttijdvoorspeller fase 22                  */
+    #define hwtv24             168 /* Onthouden aansturing wachttijdvoorspeller fase 24                  */
+    #define hwtv26             169 /* Onthouden aansturing wachttijdvoorspeller fase 26                  */
+    #define hwtv28             170 /* Onthouden aansturing wachttijdvoorspeller fase 28                  */
+    #define hwtv81             171 /* Onthouden aansturing wachttijdvoorspeller fase 81                  */
+    #define hwtv82             172 /* Onthouden aansturing wachttijdvoorspeller fase 82                  */
+    #define hwtv84             173 /* Onthouden aansturing wachttijdvoorspeller fase 84                  */
+    #define hlos31             174 /* Toestaan los realiseren fase 31                                    */
+    #define hlos32             175 /* Toestaan los realiseren fase 32                                    */
+    #define hlos33             176 /* Toestaan los realiseren fase 33                                    */
+    #define hlos34             177 /* Toestaan los realiseren fase 34                                    */
+    #define hmadk31b           178 /* Onthouden melding binnen drukknop k31b                             */
+    #define hmadk32b           179 /* Onthouden melding binnen drukknop k32b                             */
+    #define hmadk33b           180 /* Onthouden melding binnen drukknop k33b                             */
+    #define hmadk34b           181 /* Onthouden melding binnen drukknop k34b                             */
+    #define HEMAX1             182
 
 /* geheugen elementen */
 /* ------------------ */
@@ -1956,7 +1960,7 @@
     #define prmmaxtvg_09           722 /* Maximale verlenggroentijd fase 09                                                                                              */
     #define prmmintvg_11           723 /* Minimale verlenggroentijd fase 11                                                                                              */
     #define prmmaxtvg_11           724 /* Maximale verlenggroentijd fase 11                                                                                              */
-    #define prmmaxtvg              725 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
+    #define prmmaxtvgvlog          725 /* Parameter VLOG max. aantal volledige verlenggroen                                                                              */
     #define prmmaxtfbvlog          726 /* Parameter VLOG max. wachttijd na aanvraag                                                                                      */
     #define prmmlfpr02             727 /* Maximaal aantal modules vooruit fase 02                                                                                        */
     #define prmmlfpr03             728 /* Maximaal aantal modules vooruit fase 03                                                                                        */

@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   26-08-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   12-10-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -911,10 +911,10 @@ void simulation_parameters(void)
     FC_nr[86] = NG;
     S_generator[86] = NG;
     S_stopline[86] = 1800;
-    Q1[86] = 0;
-    Q2[86] = 0;
-    Q3[86] = 0;
-    Q4[86] = 0;
+    Q1[86] = 1;
+    Q2[86] = 2;
+    Q3[86] = 1;
+    Q4[86] = 2;
 
     LNK_code[87] = "dummyhdkaruit02";
     IS_nr[87] = ddummyhdkaruit02;
@@ -931,10 +931,10 @@ void simulation_parameters(void)
     FC_nr[88] = NG;
     S_generator[88] = NG;
     S_stopline[88] = 1800;
-    Q1[88] = 0;
-    Q2[88] = 0;
-    Q3[88] = 0;
-    Q4[88] = 0;
+    Q1[88] = 3;
+    Q2[88] = 5;
+    Q3[88] = 2;
+    Q4[88] = 1;
 
     LNK_code[89] = "dummyhdkaruit03";
     IS_nr[89] = ddummyhdkaruit03;
@@ -951,10 +951,10 @@ void simulation_parameters(void)
     FC_nr[90] = NG;
     S_generator[90] = NG;
     S_stopline[90] = 1800;
-    Q1[90] = 0;
-    Q2[90] = 0;
-    Q3[90] = 0;
-    Q4[90] = 0;
+    Q1[90] = 3;
+    Q2[90] = 5;
+    Q3[90] = 2;
+    Q4[90] = 1;
 
     LNK_code[91] = "dummyhdkaruit05";
     IS_nr[91] = ddummyhdkaruit05;
@@ -971,10 +971,10 @@ void simulation_parameters(void)
     FC_nr[92] = NG;
     S_generator[92] = NG;
     S_stopline[92] = 1800;
-    Q1[92] = 0;
-    Q2[92] = 0;
-    Q3[92] = 0;
-    Q4[92] = 0;
+    Q1[92] = 3;
+    Q2[92] = 5;
+    Q3[92] = 2;
+    Q4[92] = 1;
 
     LNK_code[93] = "dummyhdkaruit08";
     IS_nr[93] = ddummyhdkaruit08;
@@ -991,10 +991,10 @@ void simulation_parameters(void)
     FC_nr[94] = NG;
     S_generator[94] = NG;
     S_stopline[94] = 1800;
-    Q1[94] = 0;
-    Q2[94] = 0;
-    Q3[94] = 0;
-    Q4[94] = 0;
+    Q1[94] = 3;
+    Q2[94] = 5;
+    Q3[94] = 2;
+    Q4[94] = 1;
 
     LNK_code[95] = "dummyhdkaruit09";
     IS_nr[95] = ddummyhdkaruit09;
@@ -1011,10 +1011,10 @@ void simulation_parameters(void)
     FC_nr[96] = NG;
     S_generator[96] = NG;
     S_stopline[96] = 1800;
-    Q1[96] = 0;
-    Q2[96] = 0;
-    Q3[96] = 0;
-    Q4[96] = 0;
+    Q1[96] = 3;
+    Q2[96] = 5;
+    Q3[96] = 2;
+    Q4[96] = 1;
 
     LNK_code[97] = "dummyhdkaruit11";
     IS_nr[97] = ddummyhdkaruit11;
@@ -1031,10 +1031,10 @@ void simulation_parameters(void)
     FC_nr[98] = NG;
     S_generator[98] = NG;
     S_stopline[98] = 1800;
-    Q1[98] = 0;
-    Q2[98] = 0;
-    Q3[98] = 0;
-    Q4[98] = 0;
+    Q1[98] = 3;
+    Q2[98] = 5;
+    Q3[98] = 2;
+    Q4[98] = 1;
 
     LNK_code[99] = "dummyhdkaruit61";
     IS_nr[99] = ddummyhdkaruit61;
@@ -1051,10 +1051,10 @@ void simulation_parameters(void)
     FC_nr[100] = NG;
     S_generator[100] = NG;
     S_stopline[100] = 1800;
-    Q1[100] = 0;
-    Q2[100] = 0;
-    Q3[100] = 0;
-    Q4[100] = 0;
+    Q1[100] = 3;
+    Q2[100] = 5;
+    Q3[100] = 2;
+    Q4[100] = 1;
 
     LNK_code[101] = "dummyhdkaruit62";
     IS_nr[101] = ddummyhdkaruit62;
@@ -1071,10 +1071,10 @@ void simulation_parameters(void)
     FC_nr[102] = NG;
     S_generator[102] = NG;
     S_stopline[102] = 1800;
-    Q1[102] = 0;
-    Q2[102] = 0;
-    Q3[102] = 0;
-    Q4[102] = 0;
+    Q1[102] = 3;
+    Q2[102] = 5;
+    Q3[102] = 2;
+    Q4[102] = 1;
 
     LNK_code[103] = "dummyhdkaruit67";
     IS_nr[103] = ddummyhdkaruit67;
@@ -1091,10 +1091,10 @@ void simulation_parameters(void)
     FC_nr[104] = NG;
     S_generator[104] = NG;
     S_stopline[104] = 1800;
-    Q1[104] = 0;
-    Q2[104] = 0;
-    Q3[104] = 0;
-    Q4[104] = 0;
+    Q1[104] = 3;
+    Q2[104] = 5;
+    Q3[104] = 2;
+    Q4[104] = 1;
 
     LNK_code[105] = "dummyhdkaruit68";
     IS_nr[105] = ddummyhdkaruit68;
