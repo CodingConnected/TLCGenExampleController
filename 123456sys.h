@@ -544,11 +544,7 @@
     #define hlos32             175 /* Toestaan los realiseren fase 32                                    */
     #define hlos33             176 /* Toestaan los realiseren fase 33                                    */
     #define hlos34             177 /* Toestaan los realiseren fase 34                                    */
-    #define hmadk31b           178 /* Onthouden melding binnen drukknop k31b                             */
-    #define hmadk32b           179 /* Onthouden melding binnen drukknop k32b                             */
-    #define hmadk33b           180 /* Onthouden melding binnen drukknop k33b                             */
-    #define hmadk34b           181 /* Onthouden melding binnen drukknop k34b                             */
-    #define HEMAX1             182
+    #define HEMAX1             178
 
 /* geheugen elementen */
 /* ------------------ */
