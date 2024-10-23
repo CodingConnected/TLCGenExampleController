@@ -275,7 +275,7 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0</Versie>
-      <Datum>2024-08-26T00:00:00</Datum>
+      <Datum>2024-10-23T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
       <Commentaar>Ontwikkel versie TLCGen (laastste portable) ISG</Commentaar>
     </Versie>
@@ -19600,6 +19600,20 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummykaruit09bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit09bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit11bus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit11bus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -19734,20 +19748,6 @@
         <Naam>k21</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>212</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit11bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit11bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit09bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit09bus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
       </Detector>
     </Detectoren>
   </SumoKoppeling>
