@@ -10,15 +10,15 @@ void signaalplan_instellingen(void);
               123456
 
    BESTAND:   123456tab.c
-      CCOL:   12.1
-    TLCGEN:   12.4.0.8
-   CCOLGEN:   12.4.0.8
+      CCOL:   12.0
+    TLCGEN:   12.4.0.9
+   CCOLGEN:   12.4.0.9
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen 12.4.0.8
+ * 12.4.0.9   16-11-2024   TLCGen      Release versie TLCGen 12.4.0.9
  *
  ************************************************************************************/
 
@@ -2457,7 +2457,7 @@ void control_parameters(void)
     PRM_code[prmfb]                       = "fb";                       PRM[prmfb]                       = 240;   PRM_type[prmfb]                       = TS_type; /* Instelling fasebewaking                                                                                                        */
     PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 4;                                                      /* Versiebeheer xx                                                                                                                */
     PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 0;                                                      /* Versiebeheer yy                                                                                                                */
-    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 8;                                                      /* Versiebeheer zz                                                                                                                */
+    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 9;                                                      /* Versiebeheer zz                                                                                                                */
     PRM_code[prmovmextragroen_02]         = "ovmextragroen_02";         PRM[prmovmextragroen_02]         = 0;     PRM_type[prmovmextragroen_02]         = TE_type;
     PRM_code[prmovmmindergroen_02]        = "ovmmindergroen_02";        PRM[prmovmmindergroen_02]        = 0;     PRM_type[prmovmmindergroen_02]        = TE_type;
     PRM_code[prmovmextragroen_03]         = "ovmextragroen_03";         PRM[prmovmextragroen_03]         = 0;     PRM_type[prmovmextragroen_03]         = TE_type;
@@ -7080,14 +7080,6 @@ void control_parameters(void)
     MONTYPE[MONTYPE_CRC] = 3;
     MONTYPE[MONTYPE_CFG] = 1;
     MONPRM[MONPRM_EVENT] = 6;
-    /* LOGTYPE[LOGTYPE_SRM] en MONTYPE[MONTYPE_SRM] BIT0 opzetten */
-    /* ---------------------------------------------------------- */
-    LOGTYPE[LOGTYPE_SRM] = BIT0;
-    MONTYPE[MONTYPE_SRM] = BIT0;
-    /* LOGTYPE[LOGTYPE_SSM] en MONTYPE[MONTYPE_SSM] BIT0 opzetten */
-    /* ---------------------------------------------------------- */
-    LOGTYPE[LOGTYPE_SSM] = BIT0;
-    MONTYPE[MONTYPE_SSM] = BIT0;
 #endif
     MONPRM[MONPRM_VLOGMODE] = VLOGMODE_MON_ASCII;
 #endif /* NO_VLOG */

@@ -1,4 +1,4 @@
-/* extra_func_prio.c - gegenereerd met TLCGen 12.4.0.8 */
+/* extra_func_prio.c - gegenereerd met TLCGen 12.4.0.9 */
 
 #include "extra_func_prio.h"
 #include "prio.h"

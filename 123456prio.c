@@ -7,15 +7,15 @@
               123456
 
    BESTAND:   123456prio.c
-      CCOL:   12.1
-    TLCGEN:   12.4.0.8
-   CCOLGEN:   12.4.0.8
+      CCOL:   12.0
+    TLCGEN:   12.4.0.9
+   CCOLGEN:   12.4.0.9
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen 12.4.0.8
+ * 12.4.0.9   16-11-2024   TLCGen      Release versie TLCGen 12.4.0.9
  *
  ************************************************************************************/
 

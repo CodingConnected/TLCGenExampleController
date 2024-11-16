@@ -1,4 +1,4 @@
-/* halfstar_prio.h - gegenereerd met TLCGen 12.4.0.8 */
+/* halfstar_prio.h - gegenereerd met TLCGen 12.4.0.9 */
 
 /* -------------------------------------------------------------------------------------- */
 /*                                                                                        */

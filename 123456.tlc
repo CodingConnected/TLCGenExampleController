@@ -8,7 +8,7 @@
     <BitmapNaam>123456.bmp</BitmapNaam>
     <VissimNaam>123456</VissimNaam>
     <Fasebewaking>240</Fasebewaking>
-    <CCOLVersie>CCOL121</CCOLVersie>
+    <CCOLVersie>CCOL120</CCOLVersie>
     <KWCType>Geen</KWCType>
     <KWCUitgebreid>false</KWCUitgebreid>
     <VLOGType>Filebased</VLOGType>
@@ -72,14 +72,14 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>8</HuidigeVersieRevision>
+    <HuidigeVersieRevision>9</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <StoreCurrentController>false</StoreCurrentController>
     <ToevoegenOVM>true</ToevoegenOVM>
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.8</TLCGenVersie>
+    <TLCGenVersie>12.4.0.9</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -288,10 +288,10 @@
       </FixatieBitmapData>
     </FixatieData>
     <Versie>
-      <Versie>12.4.0.8</Versie>
-      <Datum>2024-09-24T00:00:00</Datum>
+      <Versie>12.4.0.9</Versie>
+      <Datum>2024-11-16T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Release versie TLCGen 12.4.0.8</Commentaar>
+      <Commentaar>Release versie TLCGen 12.4.0.9</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -24867,6 +24867,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>02_2a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>02_2a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -25604,13 +25611,6 @@
         <Naam>02_2b</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>02_2b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>02_2a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>02_2a</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

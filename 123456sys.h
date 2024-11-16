@@ -7,28 +7,20 @@
               123456
 
    BESTAND:   123456sys.h
-      CCOL:   12.1
-    TLCGEN:   12.4.0.8
-   CCOLGEN:   12.4.0.8
+      CCOL:   12.0
+    TLCGEN:   12.4.0.9
+   CCOLGEN:   12.4.0.9
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.8   24-09-2024   TLCGen      Release versie TLCGen 12.4.0.8
+ * 12.4.0.9   16-11-2024   TLCGen      Release versie TLCGen 12.4.0.9
  *
  ************************************************************************************/
 
-/* Applicatie informatie (voor V-Log) */
-/* ---------------------------------- */
-#define VLOG_PRODNAME_CODE "TLCGen"
-#define VLOG_PRODVERSION_MAJOR 12
-#define VLOG_PRODVERSION_MINOR 4
-#define VLOG_PRODVERSION_PATCH 0
-#define VLOG_APPLVERSION_CODE "CCOL 12.1.0"
-#define VLOG_APPLTYPE_CODE "Modulesturing"
 #define SYSTEM "123456"
-#define VERSION "12.4.0.8 20240924"
+#define VERSION "12.4.0.9 20241116"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
 

@@ -1,4 +1,4 @@
-/* halfstar.h - gegenereerd met TLCGen 12.4.0.8 */
+/* halfstar.h - gegenereerd met TLCGen 12.4.0.9 */
 
 #ifndef __HALFSTARH__
 #define __HALFSTARH__
