@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   23-10-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   16-11-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -641,7 +641,6 @@ void PrioInstellingen(void)
     iInstAfkapGroenAlt[fc84] = PRM[prmaltg84];
 
     /* definitie van de meerealisaties voor de hulpdiensten */
-    iPrioMeeRealisatie[fc02][0] = fc03;
 
     /* De regeling maakt gebruik van langstwachtende alternatief */
     iLangstWachtendeAlternatief = 1;
@@ -865,20 +864,11 @@ void InUitMelden(void)
 
     /* Inmelding HD fc02 */
     IH[hhdin02kar] = RT[thdin02kar] = !T[thdin02kar] && SCH[schhdin02kar] && (DSIMelding_HD_V1(2, CIF_DSIN, SCH[schchecksirene02]));
-#ifndef NO_RIS
-    IH[hhdin02ris] = SCH[schhdin02ris] && (
-            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02hd], SYSTEM_ITF, PRM[prmrislaneid02hd_1], PRM[prmrisstationtype02hd], PRM[prmrisstart02hd], PRM[prmrisend02hd], PRM[prmrisrole02hd], PRM[prmrissubrole02hd], PRM[prmrisimportance02hd], PRM[prmriseta02hd], hdFC02) ||
-            ris_inmelding_selectief(fc02, PRM[prmrisapproachid02hd], SYSTEM_ITF, PRM[prmrislaneid02hd_2], PRM[prmrisstationtype02hd], PRM[prmrisstart02hd], PRM[prmrisend02hd], PRM[prmrisrole02hd], PRM[prmrissubrole02hd], PRM[prmrisimportance02hd], PRM[prmriseta02hd], hdFC02));
-#endif /* NO_RIS */
-    IH[hhdin02] = IH[hhdin02kar] || IH[hhdin02ris];
+    IH[hhdin02] = IH[hhdin02kar];
 
     /* Inmelding HD fc03 */
     IH[hhdin03kar] = RT[thdin03kar] = !T[thdin03kar] && SCH[schhdin03kar] && (DSIMelding_HD_V1(3, CIF_DSIN, SCH[schchecksirene03]));
-#ifndef NO_RIS
-    IH[hhdin03ris] = SCH[schhdin03ris] && (
-            ris_inmelding_selectief(fc03, PRM[prmrisapproachid03hd], SYSTEM_ITF, PRM[prmrislaneid03hd_1], PRM[prmrisstationtype03hd], PRM[prmrisstart03hd], PRM[prmrisend03hd], PRM[prmrisrole03hd], PRM[prmrissubrole03hd], PRM[prmrisimportance03hd], PRM[prmriseta03hd], hdFC03));
-#endif /* NO_RIS */
-    IH[hhdin03] = IH[hhdin03kar] || IH[hhdin03ris];
+    IH[hhdin03] = IH[hhdin03kar];
 
     /* Inmelding HD fc05 */
     IH[hhdin05kar] = RT[thdin05kar] = !T[thdin05kar] && SCH[schhdin05kar] && (DSIMelding_HD_V1(5, CIF_DSIN, SCH[schchecksirene05]));
@@ -949,17 +939,11 @@ void InUitMelden(void)
 
     /* Uitmelding HD fc02 */
     IH[hhduit02kar] = RT[thduit02kar] = !T[thduit02kar] && SCH[schhduit02kar] && (DSIMelding_HD_V1(2, CIF_DSUIT, FALSE));
-#ifndef NO_RIS
-    IH[hhduit02ris] = SCH[schhduit02ris] && (ris_uitmelding_selectief(hdFC02));
-#endif /* NO_RIS */
-    IH[hhduit02] = IH[hhduit02kar] || IH[hhduit02ris];
+    IH[hhduit02] = IH[hhduit02kar];
 
     /* Uitmelding HD fc03 */
     IH[hhduit03kar] = RT[thduit03kar] = !T[thduit03kar] && SCH[schhduit03kar] && (DSIMelding_HD_V1(3, CIF_DSUIT, FALSE));
-#ifndef NO_RIS
-    IH[hhduit03ris] = SCH[schhduit03ris] && (ris_uitmelding_selectief(hdFC03));
-#endif /* NO_RIS */
-    IH[hhduit03] = IH[hhduit03kar] || IH[hhduit03ris];
+    IH[hhduit03] = IH[hhduit03kar];
 
     /* Uitmelding HD fc05 */
     IH[hhduit05kar] = RT[thduit05kar] = !T[thduit05kar] && SCH[schhduit05kar] && (DSIMelding_HD_V1(5, CIF_DSUIT, FALSE));
@@ -1037,8 +1021,6 @@ void InUitMelden(void)
     RT[tkarmelding] = CIF_DSIWIJZ != 0 && CIF_DSI[CIF_DSI_LUS] == 0;
     RT[tkarog] = T[tkarmelding] || !startkarog;
     if (!startkarog) startkarog = TRUE;
-    /* Doorzetten HD inmeldingen */
-    IH[hhdin03] |= IH[hhdin02]; IH[hhduit03] |= IH[hhduit02];
 #if defined CCOL_IS_SPECIAL && defined PRACTICE_TEST && !defined NO_PRIO
     is_special_signals();
 #endif
@@ -1093,7 +1075,7 @@ void PrioMeetKriteriumExtra(void)
 void PrioriteitsOpties(void)
 {
     /* Geconditioneerde prioriteit instellen */
-    IH[hstp02bus] = !C[cvchd02] && !C[cvchd03] && SCH[schovstipt02bus];
+    IH[hstp02bus] = !C[cvchd02] && SCH[schovstipt02bus];
     IH[hstp03bus] = !C[cvchd03] && SCH[schovstipt03bus];
     IH[hstp05bus] = !C[cvchd05] && SCH[schovstipt05bus];
     IH[hstp08bus] = !C[cvchd08] && SCH[schovstipt08bus];

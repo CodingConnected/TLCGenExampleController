@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   23-10-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   16-11-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -654,91 +654,85 @@ void Aanvragen(void)
     /* Meeaanvragen */
     /* ------------ */
 
-    if (SCH[schma0261])
-    {
-        mee_aanvraag_prm(fc61, fc02, prmtypema0261, (boolv)(TRUE));
-    }
     if (SCH[schma0262])
     {
-        mee_aanvraag_prm(fc62, fc02, prmtypema0262, (boolv)(TRUE));
+        mee_aanvraag(fc62, (boolv) (SG[fc02]));
     }
     if (SCH[schma0521])
     {
-        mee_aanvraag_prm(fc21, fc05, prmtypema0521, (boolv)(TRUE));
+        mee_aanvraag(fc21, (boolv) (SG[fc05]));
     }
     if (SCH[schma0522])
     {
-        mee_aanvraag_prm(fc22, fc05, prmtypema0522, (boolv)(TRUE));
+        mee_aanvraag(fc22, (boolv) (RA[fc05]));
     }
     if (SCH[schma0532])
     {
-        mee_aanvraag_prm(fc32, fc05, prmtypema0532, (boolv)(TRUE));
+        mee_aanvraag(fc32, (boolv) (RA[fc05]));
     }
     if (SCH[schma0868])
     {
-        mee_aanvraag_prm(fc68, fc08, prmtypema0868, (boolv)(TRUE));
+        mee_aanvraag(fc68, (boolv) (SG[fc08]));
     }
     if (SCH[schma1126])
     {
-        mee_aanvraag_prm(fc26, fc11, prmtypema1126, (boolv)(TRUE));
+        mee_aanvraag(fc26, (boolv) (RA[fc11]));
     }
     if (SCH[schma1168])
     {
-        mee_aanvraag_prm(fc68, fc11, prmtypema1168, (boolv)(TRUE));
+        mee_aanvraag(fc68, (boolv) (SG[fc11]));
     }
     if (SCH[schma2221])
     {
-        mee_aanvraag_prm(fc21, fc22, prmtypema2221, (boolv)(TRUE));
+        mee_aanvraag(fc21, (boolv) (SG[fc22]));
     }
-    if (SCH[schma2611])
-    {
-        mee_aanvraag_prm(fc11, fc26, prmtypema2611, (boolv)(TRUE));
-    }
+    mee_aanvraag(fc84, (boolv) (RA[fc24]));
     if (SCH[schma3122])
     {
-        mee_aanvraag_prm(fc22, fc31, prmtypema3122, (boolv)((H[hmadk31a])));
+        mee_aanvraag(fc22, (boolv) ((H[hmadk31a]) && SG[fc31]));
     }
     if (SCH[schma3132])
     {
-        mee_aanvraag_prm(fc32, fc31, prmtypema3132, (boolv)((H[hmadk31a])));
+        mee_aanvraag(fc32, (boolv) ((H[hmadk31a]) && SG[fc31]));
     }
     if (SCH[schma3222])
     {
-        mee_aanvraag_prm(fc22, fc32, prmtypema3222, (boolv)((H[hmadk32a])));
+        mee_aanvraag(fc22, (boolv) ((H[hmadk32a]) && SG[fc32]));
     }
     if (SCH[schma3231])
     {
-        mee_aanvraag_prm(fc31, fc32, prmtypema3231, (boolv)((H[hmadk32a])));
+        mee_aanvraag(fc31, (boolv) ((H[hmadk32a]) && SG[fc32]));
     }
     if (SCH[schma3324])
     {
-        mee_aanvraag_prm(fc24, fc33, prmtypema3324, (boolv)((H[hmadk33a])));
+        mee_aanvraag(fc24, (boolv) ((H[hmadk33a]) && SG[fc33]));
     }
     if (SCH[schma3334])
     {
-        mee_aanvraag_prm(fc34, fc33, prmtypema3334, (boolv)((H[hmadk33a])));
+        mee_aanvraag(fc34, (boolv) ((H[hmadk33a]) && SG[fc33]));
     }
     if (SCH[schma3384])
     {
-        mee_aanvraag_prm(fc84, fc33, prmtypema3384, (boolv)((H[hmadk33a])));
+        mee_aanvraag(fc84, (boolv) ((H[hmadk33a]) && SG[fc33]));
     }
     if (SCH[schma3424])
     {
-        mee_aanvraag_prm(fc24, fc34, prmtypema3424, (boolv)((H[hmadk34a])));
+        mee_aanvraag(fc24, (boolv) ((H[hmadk34a]) && SG[fc34]));
     }
     if (SCH[schma3433])
     {
-        mee_aanvraag_prm(fc33, fc34, prmtypema3433, (boolv)((H[hmadk34a])));
+        mee_aanvraag(fc33, (boolv) ((H[hmadk34a]) && SG[fc34]));
     }
     if (SCH[schma3484])
     {
-        mee_aanvraag_prm(fc84, fc34, prmtypema3484, (boolv)((H[hmadk34a])));
+        mee_aanvraag(fc84, (boolv) ((H[hmadk34a]) && SG[fc34]));
     }
-    mee_aanvraag_prm(fc28, fc38, prmtypema3828, (boolv)(TRUE));
+    mee_aanvraag(fc28, (boolv) (SG[fc38]));
     if (SCH[schma8281])
     {
-        mee_aanvraag_prm(fc81, fc82, prmtypema8281, (boolv)(TRUE));
+        mee_aanvraag(fc81, (boolv) (SG[fc82]));
     }
+    mee_aanvraag(fc24, (boolv) (RA[fc84]));
 
     /* Richtinggevoelige aanvragen */
     /* --------------------------- */

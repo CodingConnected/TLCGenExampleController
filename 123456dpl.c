@@ -15,24 +15,22 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   23-10-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   16-11-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
 /* aantal ingangs-/uitgangs signalen */
 /* --------------------------------- */
-    #define ushdinm02_1 (USMAX + 0)
-    #define ushdinm03_1 (USMAX + 1)
-    #define ushdinm05_1 (USMAX + 2)
-    #define ushdinm08_1 (USMAX + 3)
-    #define ushdinm09_1 (USMAX + 4)
-    #define ushdinm11_1 (USMAX + 5)
-    #define ushdinm61_1 (USMAX + 6)
-    #define ushdinm62_1 (USMAX + 7)
-    #define ushdinm67_1 (USMAX + 8)
-    #define ushdinm68_1 (USMAX + 9)
+    #define ushdinm05_1 (USMAX + 0)
+    #define ushdinm08_1 (USMAX + 1)
+    #define ushdinm09_1 (USMAX + 2)
+    #define ushdinm11_1 (USMAX + 3)
+    #define ushdinm61_1 (USMAX + 4)
+    #define ushdinm62_1 (USMAX + 5)
+    #define ushdinm67_1 (USMAX + 6)
+    #define ushdinm68_1 (USMAX + 7)
 
-    #define USDPLMAX (USMAX + 10)
+    #define USDPLMAX (USMAX + 8)
     #define ISDPLMAX (ISMAX + 0)
 
 /* include files */
@@ -163,10 +161,10 @@ void display_parameters(void)
     X_is[ddummykaruit08bus] = 799; Y_is[ddummykaruit08bus] = 72;
     X_is[ddummykaruit09bus] = 794; Y_is[ddummykaruit09bus] = 85;
     X_is[ddummykaruit11bus] = 799; Y_is[ddummykaruit11bus] = 100;
-    X_is[ddummyhdkarin02] = 815; Y_is[ddummyhdkarin02] = 37;
-    X_is[ddummyhdkaruit02] = 831; Y_is[ddummyhdkaruit02] = 36;
-    X_is[ddummyhdkarin03] = 816; Y_is[ddummyhdkarin03] = 44;
-    X_is[ddummyhdkaruit03] = 827; Y_is[ddummyhdkaruit03] = 45;
+    X_is[ddummyhdkarin02] = 812; Y_is[ddummyhdkarin02] = 34;
+    X_is[ddummyhdkaruit02] = 830; Y_is[ddummyhdkaruit02] = 32;
+    X_is[ddummyhdkarin03] = 817; Y_is[ddummyhdkarin03] = 46;
+    X_is[ddummyhdkaruit03] = 830; Y_is[ddummyhdkaruit03] = 46;
     X_is[ddummyhdkarin05] = 809; Y_is[ddummyhdkarin05] = 61;
     X_is[ddummyhdkaruit05] = 830; Y_is[ddummyhdkaruit05] = 60;
     X_is[ddummyhdkarin08] = 815; Y_is[ddummyhdkarin08] = 73;
@@ -228,10 +226,8 @@ void display_parameters(void)
     X_us[usovinm08bus] = 152; Y_us[usovinm08bus] = 72;
     X_us[usovinm09bus] = 149; Y_us[usovinm09bus] = 84;
     X_us[usovinm11bus] = 151; Y_us[usovinm11bus] = 98;
-    X_us[ushdinm02] = 66; Y_us[ushdinm02] = 31;
-    X_us[ushdinm02_1] = 167; Y_us[ushdinm02_1] = 29; NR_us[ushdinm02_1] = ushdinm02;
-    X_us[ushdinm03] = 70; Y_us[ushdinm03] = 44;
-    X_us[ushdinm03_1] = 167; Y_us[ushdinm03_1] = 45; NR_us[ushdinm03_1] = ushdinm03;
+    X_us[ushdinm02] = 166; Y_us[ushdinm02] = 29;
+    X_us[ushdinm03] = 166; Y_us[ushdinm03] = 43;
     X_us[ushdinm05] = 67; Y_us[ushdinm05] = 58;
     X_us[ushdinm05_1] = 169; Y_us[ushdinm05_1] = 59; NR_us[ushdinm05_1] = ushdinm05;
     X_us[ushdinm08] = 68; Y_us[ushdinm08] = 70;

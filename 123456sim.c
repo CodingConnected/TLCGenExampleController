@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie   Datum        Ontwerper   Commentaar
- * 12.4.0   23-10-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
+ * 12.4.0   16-11-2024   TLCGen      Ontwikkel versie TLCGen (laastste portable) ISG
  *
  ************************************************************************************/
 
@@ -910,201 +910,201 @@ void simulation_parameters(void)
     IS_nr[86] = ddummyhdkarin02;
     FC_nr[86] = NG;
     S_generator[86] = NG;
-    S_stopline[86] = 1800;
-    Q1[86] = 1;
-    Q2[86] = 2;
-    Q3[86] = 1;
-    Q4[86] = 2;
+    S_stopline[86] = 0;
+    Q1[86] = 0;
+    Q2[86] = 0;
+    Q3[86] = 0;
+    Q4[86] = 0;
 
     LNK_code[87] = "dummyhdkaruit02";
     IS_nr[87] = ddummyhdkaruit02;
     FC_nr[87] = NG;
     S_generator[87] = NG;
-    S_stopline[87] = 1800;
-    Q1[87] = 200;
-    Q2[87] = 200;
-    Q3[87] = 200;
-    Q4[87] = 200;
+    S_stopline[87] = 0;
+    Q1[87] = 0;
+    Q2[87] = 0;
+    Q3[87] = 0;
+    Q4[87] = 0;
 
     LNK_code[88] = "dummyhdkarin03";
     IS_nr[88] = ddummyhdkarin03;
     FC_nr[88] = NG;
     S_generator[88] = NG;
-    S_stopline[88] = 1800;
-    Q1[88] = 3;
-    Q2[88] = 5;
-    Q3[88] = 2;
-    Q4[88] = 1;
+    S_stopline[88] = 0;
+    Q1[88] = 0;
+    Q2[88] = 0;
+    Q3[88] = 0;
+    Q4[88] = 0;
 
     LNK_code[89] = "dummyhdkaruit03";
     IS_nr[89] = ddummyhdkaruit03;
     FC_nr[89] = NG;
     S_generator[89] = NG;
-    S_stopline[89] = 1800;
-    Q1[89] = 200;
-    Q2[89] = 200;
-    Q3[89] = 200;
-    Q4[89] = 200;
+    S_stopline[89] = 0;
+    Q1[89] = 0;
+    Q2[89] = 0;
+    Q3[89] = 0;
+    Q4[89] = 0;
 
     LNK_code[90] = "dummyhdkarin05";
     IS_nr[90] = ddummyhdkarin05;
     FC_nr[90] = NG;
     S_generator[90] = NG;
     S_stopline[90] = 1800;
-    Q1[90] = 3;
-    Q2[90] = 5;
-    Q3[90] = 2;
-    Q4[90] = 1;
+    Q1[90] = 0;
+    Q2[90] = 0;
+    Q3[90] = 0;
+    Q4[90] = 0;
 
     LNK_code[91] = "dummyhdkaruit05";
     IS_nr[91] = ddummyhdkaruit05;
     FC_nr[91] = NG;
     S_generator[91] = NG;
     S_stopline[91] = 1800;
-    Q1[91] = 200;
-    Q2[91] = 200;
-    Q3[91] = 200;
-    Q4[91] = 200;
+    Q1[91] = 0;
+    Q2[91] = 0;
+    Q3[91] = 0;
+    Q4[91] = 0;
 
     LNK_code[92] = "dummyhdkarin08";
     IS_nr[92] = ddummyhdkarin08;
     FC_nr[92] = NG;
     S_generator[92] = NG;
     S_stopline[92] = 1800;
-    Q1[92] = 3;
-    Q2[92] = 5;
-    Q3[92] = 2;
-    Q4[92] = 1;
+    Q1[92] = 0;
+    Q2[92] = 0;
+    Q3[92] = 0;
+    Q4[92] = 0;
 
     LNK_code[93] = "dummyhdkaruit08";
     IS_nr[93] = ddummyhdkaruit08;
     FC_nr[93] = NG;
     S_generator[93] = NG;
     S_stopline[93] = 1800;
-    Q1[93] = 200;
-    Q2[93] = 200;
-    Q3[93] = 200;
-    Q4[93] = 200;
+    Q1[93] = 0;
+    Q2[93] = 0;
+    Q3[93] = 0;
+    Q4[93] = 0;
 
     LNK_code[94] = "dummyhdkarin09";
     IS_nr[94] = ddummyhdkarin09;
     FC_nr[94] = NG;
     S_generator[94] = NG;
     S_stopline[94] = 1800;
-    Q1[94] = 3;
-    Q2[94] = 5;
-    Q3[94] = 2;
-    Q4[94] = 1;
+    Q1[94] = 0;
+    Q2[94] = 0;
+    Q3[94] = 0;
+    Q4[94] = 0;
 
     LNK_code[95] = "dummyhdkaruit09";
     IS_nr[95] = ddummyhdkaruit09;
     FC_nr[95] = NG;
     S_generator[95] = NG;
     S_stopline[95] = 1800;
-    Q1[95] = 200;
-    Q2[95] = 200;
-    Q3[95] = 200;
-    Q4[95] = 200;
+    Q1[95] = 0;
+    Q2[95] = 0;
+    Q3[95] = 0;
+    Q4[95] = 0;
 
     LNK_code[96] = "dummyhdkarin11";
     IS_nr[96] = ddummyhdkarin11;
     FC_nr[96] = NG;
     S_generator[96] = NG;
     S_stopline[96] = 1800;
-    Q1[96] = 3;
-    Q2[96] = 5;
-    Q3[96] = 2;
-    Q4[96] = 1;
+    Q1[96] = 0;
+    Q2[96] = 0;
+    Q3[96] = 0;
+    Q4[96] = 0;
 
     LNK_code[97] = "dummyhdkaruit11";
     IS_nr[97] = ddummyhdkaruit11;
     FC_nr[97] = NG;
     S_generator[97] = NG;
     S_stopline[97] = 1800;
-    Q1[97] = 200;
-    Q2[97] = 200;
-    Q3[97] = 200;
-    Q4[97] = 200;
+    Q1[97] = 0;
+    Q2[97] = 0;
+    Q3[97] = 0;
+    Q4[97] = 0;
 
     LNK_code[98] = "dummyhdkarin61";
     IS_nr[98] = ddummyhdkarin61;
     FC_nr[98] = NG;
     S_generator[98] = NG;
     S_stopline[98] = 1800;
-    Q1[98] = 3;
-    Q2[98] = 5;
-    Q3[98] = 2;
-    Q4[98] = 1;
+    Q1[98] = 0;
+    Q2[98] = 0;
+    Q3[98] = 0;
+    Q4[98] = 0;
 
     LNK_code[99] = "dummyhdkaruit61";
     IS_nr[99] = ddummyhdkaruit61;
     FC_nr[99] = NG;
     S_generator[99] = NG;
     S_stopline[99] = 1800;
-    Q1[99] = 200;
-    Q2[99] = 200;
-    Q3[99] = 200;
-    Q4[99] = 200;
+    Q1[99] = 0;
+    Q2[99] = 0;
+    Q3[99] = 0;
+    Q4[99] = 0;
 
     LNK_code[100] = "dummyhdkarin62";
     IS_nr[100] = ddummyhdkarin62;
     FC_nr[100] = NG;
     S_generator[100] = NG;
     S_stopline[100] = 1800;
-    Q1[100] = 3;
-    Q2[100] = 5;
-    Q3[100] = 2;
-    Q4[100] = 1;
+    Q1[100] = 0;
+    Q2[100] = 0;
+    Q3[100] = 0;
+    Q4[100] = 0;
 
     LNK_code[101] = "dummyhdkaruit62";
     IS_nr[101] = ddummyhdkaruit62;
     FC_nr[101] = NG;
     S_generator[101] = NG;
     S_stopline[101] = 1800;
-    Q1[101] = 200;
-    Q2[101] = 200;
-    Q3[101] = 200;
-    Q4[101] = 200;
+    Q1[101] = 0;
+    Q2[101] = 0;
+    Q3[101] = 0;
+    Q4[101] = 0;
 
     LNK_code[102] = "dummyhdkarin67";
     IS_nr[102] = ddummyhdkarin67;
     FC_nr[102] = NG;
     S_generator[102] = NG;
     S_stopline[102] = 1800;
-    Q1[102] = 3;
-    Q2[102] = 5;
-    Q3[102] = 2;
-    Q4[102] = 1;
+    Q1[102] = 0;
+    Q2[102] = 0;
+    Q3[102] = 0;
+    Q4[102] = 0;
 
     LNK_code[103] = "dummyhdkaruit67";
     IS_nr[103] = ddummyhdkaruit67;
     FC_nr[103] = NG;
     S_generator[103] = NG;
     S_stopline[103] = 1800;
-    Q1[103] = 200;
-    Q2[103] = 200;
-    Q3[103] = 200;
-    Q4[103] = 200;
+    Q1[103] = 0;
+    Q2[103] = 0;
+    Q3[103] = 0;
+    Q4[103] = 0;
 
     LNK_code[104] = "dummyhdkarin68";
     IS_nr[104] = ddummyhdkarin68;
     FC_nr[104] = NG;
     S_generator[104] = NG;
     S_stopline[104] = 1800;
-    Q1[104] = 3;
-    Q2[104] = 5;
-    Q3[104] = 2;
-    Q4[104] = 1;
+    Q1[104] = 0;
+    Q2[104] = 0;
+    Q3[104] = 0;
+    Q4[104] = 0;
 
     LNK_code[105] = "dummyhdkaruit68";
     IS_nr[105] = ddummyhdkaruit68;
     FC_nr[105] = NG;
     S_generator[105] = NG;
     S_stopline[105] = 1800;
-    Q1[105] = 200;
-    Q2[105] = 200;
-    Q3[105] = 200;
-    Q4[105] = 200;
+    Q1[105] = 0;
+    Q2[105] = 0;
+    Q3[105] = 0;
+    Q4[105] = 0;
 
 #endif
 
