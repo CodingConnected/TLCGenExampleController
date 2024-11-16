@@ -368,7 +368,7 @@ void Realisatietijd_Ontruiming_Voorstart(count fcns, count fcvs, count tfo)
    RT[tfo] = G[fcns];
    if (T[tfo] && !G[fcvs])
    {
-      REALISATIETIJD[fcns][fcvs] = TFG_max[fcns] - TFG_timer[fcns] + (((TVG_max[fcns] - TVG_timer[fcns]) > 0) ? (TVG_max[fcns] - TVG_timer[fcns]) : 0) + T_max[tfo] - T_timer[tfo];
+      REALISATIETIJD[fcns][fcvs] = TFG_max[fcns] - TFG_timer[fcns] + (((G[fcns] && !MG[fcns] && (TVG_max[fcns] - TVG_timer[fcns]) > 0)) ? (TVG_max[fcns] - TVG_timer[fcns]) : 0) + T_max[tfo] - T_timer[tfo];
    }
 }
 
@@ -377,12 +377,12 @@ void Realisatietijd_Ontruiming_Gelijkstart(count fc1, count fc2, count tfo12, co
    RT[tfo12] = G[fc1];
    if (T[tfo12] && !G[fc2])
    {
-      REALISATIETIJD[fc2][fc1] = TFG_max[fc1] - TFG_timer[fc1] + (((TVG_max[fc1] - TVG_timer[fc1]) > 0) ? (TVG_max[fc1] - TVG_timer[fc1]) : 0) + T_max[tfo12] - T_timer[tfo12];
+      REALISATIETIJD[fc2][fc1] = TFG_max[fc1] - TFG_timer[fc1] + (((G[fc2] && !MG[fc2] && (TVG_max[fc1] - TVG_timer[fc1]) > 0)) ? (TVG_max[fc1] - TVG_timer[fc1]) : 0) + T_max[tfo12] - T_timer[tfo12];
    }
    RT[tfo21] = G[fc2];
    if (T[tfo21] && !G[fc1])
    {
-      REALISATIETIJD[fc1][fc2] = TFG_max[fc2] - TFG_timer[fc2] + (((TVG_max[fc1] - TVG_timer[fc1]) > 0) ? (TVG_max[fc1] - TVG_timer[fc1]) : 0) + T_max[tfo21] - T_timer[tfo21];
+      REALISATIETIJD[fc1][fc2] = TFG_max[fc2] - TFG_timer[fc2] + (((G[fc2] && !MG[fc2] && (TVG_max[fc2] - TVG_timer[fc2]) > 0)) ? (TVG_max[fc2] - TVG_timer[fc2]) : 0) + T_max[tfo21] - T_timer[tfo21];
    }
 }
 
@@ -391,7 +391,7 @@ void Realisatietijd_Ontruiming_LateRelease(count fcvs, count fclr, count tlr, co
    RT[tfo] = G[fcvs] && (TG_timer[fcvs] > T_max[tlr]);
    if (T[tfo] && !G[fclr])
    {
-      REALISATIETIJD[fclr][fcvs] = TFG_max[fcvs] - TFG_timer[fcvs] + (((TVG_max[fcvs] - TVG_timer[fcvs]) > 0) ? (TVG_max[fcvs] - TVG_timer[fcvs]) : 0) + T_max[tfo] - T_timer[tfo];
+      REALISATIETIJD[fclr][fcvs] = TFG_max[fcvs] - TFG_timer[fcvs] + (((G[fcvs] && !MG[fcvs] && (TVG_max[fcvs] - TVG_timer[fcvs]) > 0)) ? (TVG_max[fcvs] - TVG_timer[fcvs]) : 0) + T_max[tfo] - T_timer[tfo];
    }
 }
 
@@ -547,7 +547,7 @@ void TegenhoudenDoorRealisatietijden()
       for (j = 0; j < FCMAX; ++j)
       {
          if (REALISATIETIJD[i][j] > 0) X[j] |= BIT1; /* Als er een realisatietijd loopt van (fictief) conflict i, wordt richting j nog tegengehouden */
-         if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1; /*  150 tijdelijk moet afhankleijk gemaakt wordt van de tijd de een richting eerder mag starten dan de volgrichting */
+         if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1; /*  150 tijdelijk moet afhankeLijk gemaakt wordt van de tijd de een richting eerder mag starten dan de volgrichting */
       }
    }
 }
