@@ -1259,10 +1259,10 @@ void PrioPARCorrecties(void)
     IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc34]);
 
     /* PAR-ongecoordineerd */
-    if (!PAR[fc31] && IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]) || PAR_los[fc31] && RA[fc31]) PAR_los[fc31] = TRUE;
-    if (!PAR[fc32] && IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]) || PAR_los[fc32] && RA[fc32]) PAR_los[fc32] = TRUE;
-    if (!PAR[fc33] && IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]) || PAR_los[fc33] && RA[fc33]) PAR_los[fc33] = TRUE;
-    if (!PAR[fc34] && IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]) || PAR_los[fc34] && RA[fc34]) PAR_los[fc34] = TRUE;
+    if (!PAR[fc31] && IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]) || PAR_los[fc31] && RA[fc31]) PAR_los[fc31] = TRUE; else PAR_los[fc31] = FALSE;
+    if (!PAR[fc32] && IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]) || PAR_los[fc32] && RA[fc32]) PAR_los[fc32] = TRUE; else PAR_los[fc32] = FALSE;
+    if (!PAR[fc33] && IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]) || PAR_los[fc33] && RA[fc33]) PAR_los[fc33] = TRUE; else PAR_los[fc33] = FALSE;
+    if (!PAR[fc34] && IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]) || PAR_los[fc34] && RA[fc34]) PAR_los[fc34] = TRUE; else PAR_los[fc34] = FALSE;
 
     PAR[fc31] = PAR[fc31] || PAR_los[fc31];
     PAR[fc32] = PAR[fc32] || PAR_los[fc32];

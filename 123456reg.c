@@ -973,13 +973,13 @@ void BepaalRealisatieTijden(void)
     wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc11, txnl1168);
     wijziging |= Realisatietijd_LateRelease_Correctie(fc21, fc22, txnl2221);
     IH[hlos31] = RA[fc31] && (!H[hmadk31a] || SCH[schlos31_1] && H[hmadk31b]) || H[hlos31] && !SG[fc31];
-    wijziging |= (!IH[hlos31])? Realisatietijd_LateRelease_Correctie(fc32, fc31, txnl3132) : 0;
+    wijziging |= (!IH[hlos31]) ? Realisatietijd_LateRelease_Correctie(fc32, fc31, txnl3132) : 0;
     IH[hlos32] = RA[fc32] && (!H[hmadk32a] || SCH[schlos32_1] && H[hmadk32b]) || H[hlos32] && !SG[fc32];
-    wijziging |= (!IH[hlos32])? Realisatietijd_LateRelease_Correctie(fc31, fc32, txnl3231) : 0;
+    wijziging |= (!IH[hlos32]) ? Realisatietijd_LateRelease_Correctie(fc31, fc32, txnl3231) : 0;
     IH[hlos33] = RA[fc33] && (!H[hmadk33a] || SCH[schlos33_1] && H[hmadk33b]) || H[hlos33] && !SG[fc33];
-    wijziging |= (!IH[hlos33])? Realisatietijd_LateRelease_Correctie(fc34, fc33, txnl3334) : 0;
+    wijziging |= (!IH[hlos33]) ? Realisatietijd_LateRelease_Correctie(fc34, fc33, txnl3334) : 0;
     IH[hlos34] = RA[fc34] && (!H[hmadk34a] || SCH[schlos34_1] && H[hmadk34b]) || H[hlos34] && !SG[fc34];
-    wijziging |= (!IH[hlos34])? Realisatietijd_LateRelease_Correctie(fc33, fc34, txnl3433) : 0;
+    wijziging |= (!IH[hlos34]) ? Realisatietijd_LateRelease_Correctie(fc33, fc34, txnl3433) : 0;
     wijziging |= Realisatietijd_LateRelease_Correctie(fc81, fc82, txnl8281);
 
         wijziging |= CorrectieRealisatieTijd_Add();
@@ -1772,9 +1772,9 @@ void Meeverlengen(void)
     if (IH[hfileFile68af]) YM[fc08] &= ~BIT4;
     if (IH[hfileFile68af]) YM[fc11] &= ~BIT4;
 
-    /* Meeverlengen Deelconflicten */
+    /* Hard meeverlengen */
     if (SCH[schhardmv2205] && G[fc05] || RA[fc05] || R[fc05] && AA[fc05] || A[fc05] && (twacht[fc05] >= 0) && (twacht[fc05] <= (TGL_max[fc22] + TRG_max[fc22] + T_max[tvs2205]))) YM[fc22] |= BIT1;
-    if (SCH[schhardmv2611] && G[fc11] || RA[fc11] || R[fc11] && AA[fc05] || A[fc11] && (twacht[fc11] >= 0) && (twacht[fc11] <= (TGL_max[fc26] + TRG_max[fc26] - T_max[tlr2611]))) YM[fc26] |= BIT1;
+    if (SCH[schhardmv2611] && G[fc11] || RA[fc11] || R[fc11] && AA[fc11] || A[fc11] && (twacht[fc11] >= 0) && (twacht[fc11] <= (TGL_max[fc26] + TRG_max[fc26] - T_max[tlr2611]))) YM[fc26] |= BIT1;
     if (SCH[schhardmv3205] && G[fc05] || RA[fc05] || R[fc05] && AA[fc05] || A[fc05] && (twacht[fc05] >= 0) && (twacht[fc05] <= (TGL_max[fc32] + TRG_max[fc32] + T_max[tvs3205]))) YM[fc32] |= BIT1;
 
     MeeverlengenUitDoorPrio();
@@ -1985,10 +1985,10 @@ void RealisatieAfhandeling(void)
     IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc34]);
 
     /* PAR-ongecoordineerd */
-    if (!PAR[fc31] && IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]) || PAR_los[fc31] && RA[fc31]) PAR_los[fc31] = TRUE; PAR_los[fc31] = FALSE;
-    if (!PAR[fc32] && IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]) || PAR_los[fc32] && RA[fc32]) PAR_los[fc32] = TRUE; PAR_los[fc32] = FALSE;
-    if (!PAR[fc33] && IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]) || PAR_los[fc33] && RA[fc33]) PAR_los[fc33] = TRUE; PAR_los[fc33] = FALSE;
-    if (!PAR[fc34] && IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]) || PAR_los[fc34] && RA[fc34]) PAR_los[fc34] = TRUE; PAR_los[fc34] = FALSE;
+    if (!PAR[fc31] && IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]) || PAR_los[fc31] && RA[fc31]) PAR_los[fc31] = TRUE; else PAR_los[fc31] = FALSE;
+    if (!PAR[fc32] && IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]) || PAR_los[fc32] && RA[fc32]) PAR_los[fc32] = TRUE; else PAR_los[fc32] = FALSE;
+    if (!PAR[fc33] && IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]) || PAR_los[fc33] && RA[fc33]) PAR_los[fc33] = TRUE; else PAR_los[fc33] = FALSE;
+    if (!PAR[fc34] && IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]) || PAR_los[fc34] && RA[fc34]) PAR_los[fc34] = TRUE; else PAR_los[fc34] = FALSE;
 
     PAR[fc31] = PAR[fc31] || PAR_los[fc31];
     PAR[fc32] = PAR[fc32] || PAR_los[fc32];
