@@ -69,6 +69,7 @@
     #endif
     #include "prsvar.c"   /* parameters parser                 */
     #include "control.c"  /* controller interface              */
+    #include "realfunc.c"
     #include "rtappl.h"   /* applicatie routines               */
     #define PRIO_CHECK_WAGENNMR /* check op wagendienstnummer          */
     #include "extra_func_prio.c" /* extra standaard functies OV     */
@@ -84,7 +85,6 @@
 
     #include "detectie.c"
     #include "ccolfunc.c"
-    #include "realfunc.c"
     #include "fixatie.c"
     #include "123456hst.c"
     #include "123456ptp.c" /* PTP seriele koppeling */
