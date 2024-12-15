@@ -42,8 +42,6 @@ boolv REAL_SYN[FCMAX][FCMAX];  /* Vlag tbv synchronisatie      obv REALTIJD */
 boolv REAL_FOT[FCMAX][FCMAX];  /* Vlag tbv fictieve ontruiming obv REALTIJD */
 mulv TIME_FOT[FCMAX][FCMAX];   /* Timer tbv fictieve ontruiming, FOT loopt, resterende tijd */
 
-#define REALFUNC
-
 /* ========================================================================================================================================================================================================== */
 /* REALISATIETIJD ALGEMEEN                                                                                                                                                                                    */
 /* ========================================================================================================================================================================================================== */

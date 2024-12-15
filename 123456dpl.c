@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   16-11-2024   TLCGen      Release versie TLCGen 12.4.0.9
+ * 12.4.0.9   15-12-2024   TLCGen      Release versie TLCGen 12.4.0.9
  *
  ************************************************************************************/
 
@@ -315,7 +315,6 @@ void display_parameters(void)
     X_us[ushdinm68] = 66; Y_us[ushdinm68] = 148;
     X_us[ushdinm68_1] = 168; Y_us[ushdinm68_1] = 147; NR_us[ushdinm68_1] = ushdinm68;
     X_us[uspelinKOP02] = 15; Y_us[uspelinKOP02] = 433;
-    X_us[usperdef] = NG; Y_us[usperdef] = NG;
     X_us[usper1] = 625; Y_us[usper1] = 14;
     X_us[usperoFietsprio1] = NG; Y_us[usperoFietsprio1] = NG;
     X_us[usperoFietsprio2] = NG; Y_us[usperoFietsprio2] = NG;

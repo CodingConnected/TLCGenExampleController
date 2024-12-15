@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   16-11-2024   TLCGen      Release versie TLCGen 12.4.0.9
+ * 12.4.0.9   15-12-2024   TLCGen      Release versie TLCGen 12.4.0.9
  *
  ************************************************************************************/
 
@@ -1217,7 +1217,7 @@ void InUitMelden(void)
 {
     int i = 0;
 
-    /* Pririteit-inmeldingen */
+    /* Prioriteit-inmeldingen */
     PrioInmelden(prioFC02karbus, SH[hprioin02karbus], iInstPrioriteitsNiveau[prioFC02karbus], iInstPrioriteitsOpties[prioFC02karbus], 0, 0);
     PrioInmelden(prioFC02risov, SH[hprioin02risov], iInstPrioriteitsNiveau[prioFC02risov], iInstPrioriteitsOpties[prioFC02risov], 0, 0);
     PrioInmelden(prioFC02risvrw, SH[hprioin02risvrw], iInstPrioriteitsNiveau[prioFC02risvrw], iInstPrioriteitsOpties[prioFC02risvrw], 0, 0);
@@ -1251,7 +1251,7 @@ void InUitMelden(void)
     PrioInmelden(prioFC68risov, SH[hprioin68risov], iInstPrioriteitsNiveau[prioFC68risov], iInstPrioriteitsOpties[prioFC68risov], 0, 0);
     PrioInmelden(prioFC68risvrw, SH[hprioin68risvrw], iInstPrioriteitsNiveau[prioFC68risvrw], iInstPrioriteitsOpties[prioFC68risvrw], 0, 0);
 
-    /* Pririteit-uitmeldingen */
+    /* Prioriteit-uitmeldingen */
     PrioUitmelden(prioFC02karbus, SH[hpriouit02karbus]);
     PrioUitmelden(prioFC02risov, SH[hpriouit02risov]);
     PrioUitmelden(prioFC02risvrw, SH[hpriouit02risvrw]);

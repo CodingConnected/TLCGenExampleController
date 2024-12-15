@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   16-11-2024   TLCGen      Release versie TLCGen 12.4.0.9
+ * 12.4.0.9   15-12-2024   TLCGen      Release versie TLCGen 12.4.0.9
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0.9 20241116"
+#define VERSION "12.4.0.9 20241215"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
 
@@ -163,40 +163,39 @@
     #define ushdinm67          (FCMAX + 107) /* Verklikken inmelding HD fase 67                                             */
     #define ushdinm68          (FCMAX + 108) /* Verklikken inmelding HD fase 68                                             */
     #define uspelinKOP02       (FCMAX + 109) /* Verklikken inkomend peloton gezien tbv peloton koppeling KOP02 naar fase 02 */
-    #define usperdef           (FCMAX + 110) /* Default periode actief                                                      */
-    #define usper1             (FCMAX + 111) /* Periode Reserve actief                                                      */
-    #define usperoFietsprio1   (FCMAX + 112) /* Periode actief                                                              */
-    #define usperoFietsprio2   (FCMAX + 113) /* Periode actief                                                              */
-    #define usperoFietsprio3   (FCMAX + 114) /* Periode actief                                                              */
-    #define usper2             (FCMAX + 115) /* Periode Dag periode actief                                                  */
-    #define usper3             (FCMAX + 116) /* Periode Ochtendspits actief                                                 */
-    #define usper4             (FCMAX + 117) /* Periode Avondspits actief                                                   */
-    #define usper5             (FCMAX + 118) /* Periode Koopavond actief                                                    */
-    #define usper6             (FCMAX + 119) /* Periode Weekend actief                                                      */
-    #define usper7             (FCMAX + 120) /* Periode Reserve actief                                                      */
-    #define usptp_ptp123456oke (FCMAX + 121) /* Verklikken PTP oke ptp123456                                                */
-    #define usptp_ptp123456err (FCMAX + 122) /* Verklikken PTP error ptp123456                                              */
-    #define usrgv              (FCMAX + 123) /* Verklikken actief zijn RoBuGrover                                           */
-    #define uswtv24            (FCMAX + 124) /* Verklikken aansturing wachttijdvoorspeller fase 24                          */
-    #define uswtk21            (FCMAX + 125) /* Aansturing waitsignaal detector k21                                         */
-    #define uswtk22            (FCMAX + 126) /* Aansturing waitsignaal detector k22                                         */
-    #define uswtk24            (FCMAX + 127) /* Aansturing waitsignaal detector k24                                         */
-    #define uswtk26            (FCMAX + 128) /* Aansturing waitsignaal detector k26                                         */
-    #define uswtk28            (FCMAX + 129) /* Aansturing waitsignaal detector k28                                         */
-    #define uswtk31a           (FCMAX + 130) /* Aansturing waitsignaal detector k31a                                        */
-    #define uswtk31b           (FCMAX + 131) /* Aansturing waitsignaal detector k31b                                        */
-    #define uswtk32a           (FCMAX + 132) /* Aansturing waitsignaal detector k32a                                        */
-    #define uswtk32b           (FCMAX + 133) /* Aansturing waitsignaal detector k32b                                        */
-    #define uswtk33a           (FCMAX + 134) /* Aansturing waitsignaal detector k33a                                        */
-    #define uswtk33b           (FCMAX + 135) /* Aansturing waitsignaal detector k33b                                        */
-    #define uswtk34a           (FCMAX + 136) /* Aansturing waitsignaal detector k34a                                        */
-    #define uswtk34b           (FCMAX + 137) /* Aansturing waitsignaal detector k34b                                        */
-    #define uswtk38a           (FCMAX + 138) /* Aansturing waitsignaal detector k38a                                        */
-    #define uswtk38b           (FCMAX + 139) /* Aansturing waitsignaal detector k38b                                        */
-    #define uswtk81            (FCMAX + 140) /* Aansturing waitsignaal detector k81                                         */
-    #define uswtk82            (FCMAX + 141) /* Aansturing waitsignaal detector k82                                         */
-    #define uswtk84            (FCMAX + 142) /* Aansturing waitsignaal detector k84                                         */
-    #define USMAX1             (FCMAX + 143)
+    #define usper1             (FCMAX + 110) /* Periode Reserve actief                                                      */
+    #define usperoFietsprio1   (FCMAX + 111) /* Periode actief                                                              */
+    #define usperoFietsprio2   (FCMAX + 112) /* Periode actief                                                              */
+    #define usperoFietsprio3   (FCMAX + 113) /* Periode actief                                                              */
+    #define usper2             (FCMAX + 114) /* Periode Dag periode actief                                                  */
+    #define usper3             (FCMAX + 115) /* Periode Ochtendspits actief                                                 */
+    #define usper4             (FCMAX + 116) /* Periode Avondspits actief                                                   */
+    #define usper5             (FCMAX + 117) /* Periode Koopavond actief                                                    */
+    #define usper6             (FCMAX + 118) /* Periode Weekend actief                                                      */
+    #define usper7             (FCMAX + 119) /* Periode Reserve actief                                                      */
+    #define usptp_ptp123456oke (FCMAX + 120) /* Verklikken PTP oke ptp123456                                                */
+    #define usptp_ptp123456err (FCMAX + 121) /* Verklikken PTP error ptp123456                                              */
+    #define usrgv              (FCMAX + 122) /* Verklikken actief zijn RoBuGrover                                           */
+    #define uswtv24            (FCMAX + 123) /* Multivalente aansturing wachttijdvoorspeller fase 24                        */
+    #define uswtk21            (FCMAX + 124) /* Aansturing waitsignaal detector k21                                         */
+    #define uswtk22            (FCMAX + 125) /* Aansturing waitsignaal detector k22                                         */
+    #define uswtk24            (FCMAX + 126) /* Aansturing waitsignaal detector k24                                         */
+    #define uswtk26            (FCMAX + 127) /* Aansturing waitsignaal detector k26                                         */
+    #define uswtk28            (FCMAX + 128) /* Aansturing waitsignaal detector k28                                         */
+    #define uswtk31a           (FCMAX + 129) /* Aansturing waitsignaal detector k31a                                        */
+    #define uswtk31b           (FCMAX + 130) /* Aansturing waitsignaal detector k31b                                        */
+    #define uswtk32a           (FCMAX + 131) /* Aansturing waitsignaal detector k32a                                        */
+    #define uswtk32b           (FCMAX + 132) /* Aansturing waitsignaal detector k32b                                        */
+    #define uswtk33a           (FCMAX + 133) /* Aansturing waitsignaal detector k33a                                        */
+    #define uswtk33b           (FCMAX + 134) /* Aansturing waitsignaal detector k33b                                        */
+    #define uswtk34a           (FCMAX + 135) /* Aansturing waitsignaal detector k34a                                        */
+    #define uswtk34b           (FCMAX + 136) /* Aansturing waitsignaal detector k34b                                        */
+    #define uswtk38a           (FCMAX + 137) /* Aansturing waitsignaal detector k38a                                        */
+    #define uswtk38b           (FCMAX + 138) /* Aansturing waitsignaal detector k38b                                        */
+    #define uswtk81            (FCMAX + 139) /* Aansturing waitsignaal detector k81                                         */
+    #define uswtk82            (FCMAX + 140) /* Aansturing waitsignaal detector k82                                         */
+    #define uswtk84            (FCMAX + 141) /* Aansturing waitsignaal detector k84                                         */
+    #define USMAX1             (FCMAX + 142)
 
 /* detectie */
 /* -------- */

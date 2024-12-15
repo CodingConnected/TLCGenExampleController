@@ -18,7 +18,7 @@ void signaalplan_instellingen(void);
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   16-11-2024   TLCGen      Release versie TLCGen 12.4.0.9
+ * 12.4.0.9   15-12-2024   TLCGen      Release versie TLCGen 12.4.0.9
  *
  ************************************************************************************/
 
@@ -525,7 +525,6 @@ void control_parameters(void)
     US_code[ushdinm67]          = "hdinm67";                                       /* Verklikken inmelding HD fase 67                                             */
     US_code[ushdinm68]          = "hdinm68";                                       /* Verklikken inmelding HD fase 68                                             */
     US_code[uspelinKOP02]       = "pelinKOP02";                                    /* Verklikken inkomend peloton gezien tbv peloton koppeling KOP02 naar fase 02 */
-    US_code[usperdef]           = "perdef";                                        /* Default periode actief                                                      */
     US_code[usper1]             = "per1";                                          /* Periode Reserve actief                                                      */
     US_code[usperoFietsprio1]   = "peroFietsprio1";                                /* Periode actief                                                              */
     US_code[usperoFietsprio2]   = "peroFietsprio2";                                /* Periode actief                                                              */
@@ -539,7 +538,7 @@ void control_parameters(void)
     US_code[usptp_ptp123456oke] = "ptp_ptp123456oke";                              /* Verklikken PTP oke ptp123456                                                */
     US_code[usptp_ptp123456err] = "ptp_ptp123456err";                              /* Verklikken PTP error ptp123456                                              */
     US_code[usrgv]              = "rgv";                                           /* Verklikken actief zijn RoBuGrover                                           */
-    US_code[uswtv24]            = "wtv24";                                         /* Verklikken aansturing wachttijdvoorspeller fase 24                          */
+    US_code[uswtv24]            = "wtv24";                                         /* Multivalente aansturing wachttijdvoorspeller fase 24                        */
     US_code[uswtk21]            = "wtk21";                                         /* Aansturing waitsignaal detector k21                                         */
     US_code[uswtk22]            = "wtk22";                                         /* Aansturing waitsignaal detector k22                                         */
     US_code[uswtk24]            = "wtk24";                                         /* Aansturing waitsignaal detector k24                                         */
@@ -7296,6 +7295,7 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d02_1a].SumoNamen[0], 32, "%s", "02_1a");
     sprintf_s(SUMODetectors[d02_1b].SumoNamen[0], 32, "%s", "02_1b");
     sprintf_s(SUMODetectors[d02_2a].SumoNamen[0], 32, "%s", "02_2a");
+    sprintf_s(SUMODetectors[d02_2b].SumoNamen[0], 32, "%s", "02_2b");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -7384,7 +7384,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d02_4a].SumoNamen[0], 32, "%s", "02_4a");
     sprintf_s(SUMODetectors[d02_3b].SumoNamen[0], 32, "%s", "02_3b");
     sprintf_s(SUMODetectors[d02_3a].SumoNamen[0], 32, "%s", "02_3a");
-    sprintf_s(SUMODetectors[d02_2b].SumoNamen[0], 32, "%s", "02_2b");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;

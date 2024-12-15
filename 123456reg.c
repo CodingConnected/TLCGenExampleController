@@ -15,12 +15,13 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   16-11-2024   TLCGen      Release versie TLCGen 12.4.0.9
+ * 12.4.0.9   15-12-2024   TLCGen      Release versie TLCGen 12.4.0.9
  *
  ************************************************************************************/
 
 #define REG (CIF_WPS[CIF_PROG_STATUS] == CIF_STAT_REG)
 #define NALOPEN
+#define REALFUNC
 #define PRIO_ADDFILE
 
 /* include files */
@@ -68,7 +69,6 @@
     #endif
     #include "prsvar.c"   /* parameters parser                 */
     #include "control.c"  /* controller interface              */
-    #include "realfunc.c"
     #include "rtappl.h"   /* applicatie routines               */
     #define PRIO_CHECK_WAGENNMR /* check op wagendienstnummer          */
     #include "extra_func_prio.c" /* extra standaard functies OV     */
@@ -84,6 +84,7 @@
 
     #include "detectie.c"
     #include "ccolfunc.c"
+    #include "realfunc.c"
     #include "fixatie.c"
     #include "123456hst.c"
     #include "123456ptp.c" /* PTP seriele koppeling */
@@ -3116,7 +3117,6 @@ void system_application(void)
 
     /* periode verklikking */
     /* ------------------- */
-    CIF_GUS[usperdef] = (MM[mperiod] == 0);
     CIF_GUS[usper1] = (MM[mperiod] == 1);
     CIF_GUS[usper2] = (MM[mperiod] == 2);
     CIF_GUS[usper3] = (MM[mperiod] == 3);
@@ -3231,9 +3231,6 @@ void system_application(void)
     check_tgg_min();
     check_tgl_min();
     check_trg_min();
-
-    /* aanroepen PTP loop tbv seriele koppeling */
-    ptp_post_system_app();
 
     SegmentSturing(ML+1, ussegm1, ussegm2, ussegm3, ussegm4, ussegm5, ussegm6, ussegm7);
 
