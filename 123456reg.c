@@ -69,7 +69,6 @@
     #endif
     #include "prsvar.c"   /* parameters parser                 */
     #include "control.c"  /* controller interface              */
-    #include "realfunc.c"
     #include "rtappl.h"   /* applicatie routines               */
     #define PRIO_CHECK_WAGENNMR /* check op wagendienstnummer          */
     #include "extra_func_prio.c" /* extra standaard functies OV     */
@@ -85,6 +84,7 @@
 
     #include "detectie.c"
     #include "ccolfunc.c"
+    #include "realfunc.c"
     #include "fixatie.c"
     #include "123456hst.c"
     #include "123456ptp.c" /* PTP seriele koppeling */
@@ -3180,6 +3180,7 @@ void system_application(void)
 
     /* check of richting wordt tegengehouden door OV/HD */
     rr_modulen_primair(PRML, ML, ML_MAX, rr_twacht);
+
 
     /* Eventuele correctie op berekende wachttijd door gebruiker */
     WachttijdvoorspellersWachttijd_Add();

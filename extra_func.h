@@ -91,6 +91,10 @@ boolv set_parm1wijzpb_tvgmax(mulv periode, count startprm, mulv *ifc_prm, count 
 boolv kp(count i);
 #endif
 
+#if defined(REALFUNC)
+	boolv Maatgevend_Groen(count fc);
+#endif
+
 extern mulv FC_type[];
 extern mulv DVG[];
 extern mulv Knipper_1Hz;
