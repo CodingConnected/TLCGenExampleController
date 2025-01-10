@@ -1440,12 +1440,18 @@ void PrioTegenhouden(void)
 #ifdef PRIO_ADDFILE
     RealisatieTijden_Add();
 #endif
+    HDAANWEZIG = FALSE;
     for (prio = 0; prio < prioFCMAX; ++prio)
     {
         if (iPrioriteit[prio] && iPrioriteitsOpties[prio] & poBijzonderRealiseren)
         {
             fc = iFC_PRIOix[prio];
             TegenHoudenStartGroen(fc, iStartGroen[prio]);
+            if (iPrioriteitsOpties[prio] & poNoodDienst)
+            {
+               HDAANWEZIG = TRUE;
+            }
+
         }
     }
     TegenhoudenConflictenExtra();

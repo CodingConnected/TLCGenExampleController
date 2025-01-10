@@ -15,6 +15,8 @@
 #define  PRIO_PAR_BIT      BIT6
 #define PRIO_RTFB_BIT      BIT6
 
+boolv HDAANWEZIG; /* herkennen of hulpdienst aanwezig is */
+
 typedef enum
 {
 	poGeenPrioriteit = 0,

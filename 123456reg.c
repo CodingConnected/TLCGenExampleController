@@ -3208,7 +3208,7 @@ void system_application(void)
         CIF_GUS[uswtv24] = 0;
     }
     CIF_GUS[uswtv24] &= ~BIT8;
-    if (CIF_GUS[uswtv24] && (RR[fc24] & BIT6) && rr_twacht[fc24] && IH[hwtv24] && (SCH[schwtvbusbijhd] || !(RTFB & PRIO_RTFB_BIT)))
+    if (CIF_GUS[uswtv24] && (RR[fc24] & BIT6) && rr_twacht[fc24] && IH[hwtv24] && (SCH[schwtvbusbijhd] || !(HDAANWEZIG)))
     {
         CIF_GUS[uswtv24] |= BIT8;
     }
