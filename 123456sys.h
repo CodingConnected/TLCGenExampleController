@@ -15,12 +15,12 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   15-12-2024   TLCGen      Release versie TLCGen 12.4.0.9
+ * 12.4.0.9   14-01-2025   TLCGen      Release versie TLCGen 12.4.0.10
  *
  ************************************************************************************/
 
 #define SYSTEM "123456"
-#define VERSION "12.4.0.9 20241215"
+#define VERSION "12.4.0.9 20250114"
 #define TVGAMAX /* gebruik van TVGA_max[] */
 #define RIS_GEEN_INDEXERING
 

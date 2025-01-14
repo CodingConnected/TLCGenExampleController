@@ -15,8 +15,6 @@
 #define  PRIO_PAR_BIT      BIT6
 #define PRIO_RTFB_BIT      BIT6
 
-boolv HDAANWEZIG; /* herkennen of hulpdienst aanwezig is */
-
 typedef enum
 {
 	poGeenPrioriteit = 0,
@@ -211,5 +209,7 @@ extern int* iPrioMeeRealisatie[];
 extern int prioKFC_MAX[];
 extern int* prioTO_pointer[];
 extern int iLangstWachtendeAlternatief;
+
+extern boolv bHDAanwezig;
 
 #endif // __PRIOH

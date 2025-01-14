@@ -93,6 +93,8 @@ int* prioTO_pointer[prioFCMAX];
 int prioM_TO_pointer[prioFCMAX * prioFCMAX];
 int iLangstWachtendeAlternatief;
 
+boolv bHDAanwezig;
+
 void PrioInit(void)
 {
     int prio1, prio2, fc1, fc2, fc;
@@ -1440,7 +1442,7 @@ void PrioTegenhouden(void)
 #ifdef PRIO_ADDFILE
     RealisatieTijden_Add();
 #endif
-    HDAANWEZIG = FALSE;
+    bHDAanwezig = FALSE;
     for (prio = 0; prio < prioFCMAX; ++prio)
     {
         if (iPrioriteit[prio] && iPrioriteitsOpties[prio] & poBijzonderRealiseren)
@@ -1449,7 +1451,7 @@ void PrioTegenhouden(void)
             TegenHoudenStartGroen(fc, iStartGroen[prio]);
             if (iPrioriteitsOpties[prio] & poNoodDienst)
             {
-               HDAANWEZIG = TRUE;
+                bHDAanwezig = TRUE;
             }
 
         }

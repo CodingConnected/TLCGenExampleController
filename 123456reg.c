@@ -15,7 +15,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   15-12-2024   TLCGen      Release versie TLCGen 12.4.0.9
+ * 12.4.0.9   14-01-2025   TLCGen      Release versie TLCGen 12.4.0.10
  *
  ************************************************************************************/
 
@@ -3208,7 +3208,7 @@ void system_application(void)
         CIF_GUS[uswtv24] = 0;
     }
     CIF_GUS[uswtv24] &= ~BIT8;
-    if (CIF_GUS[uswtv24] && (RR[fc24] & BIT6) && rr_twacht[fc24] && IH[hwtv24] && (SCH[schwtvbusbijhd] || !(HDAANWEZIG)))
+    if (CIF_GUS[uswtv24] && (RR[fc24] & BIT6) && rr_twacht[fc24] && IH[hwtv24] && (SCH[schwtvbusbijhd] || !(bHDAanwezig)))
     {
         CIF_GUS[uswtv24] |= BIT8;
     }

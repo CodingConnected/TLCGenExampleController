@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>9</HuidigeVersieRevision>
+    <HuidigeVersieRevision>10</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -290,9 +290,9 @@
     </FixatieData>
     <Versie>
       <Versie>12.4.0.9</Versie>
-      <Datum>2024-12-15T00:00:00</Datum>
+      <Datum>2025-01-14T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Release versie TLCGen 12.4.0.9</Commentaar>
+      <Commentaar>Release versie TLCGen 12.4.0.10</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -24890,6 +24890,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>02_3a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>02_3a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -25613,13 +25620,6 @@
         <Naam>02_3b</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>02_3b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>02_3a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>02_3a</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

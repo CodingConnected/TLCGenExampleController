@@ -16,7 +16,7 @@
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   15-12-2024   TLCGen      Release versie TLCGen 12.4.0.9
+ * 12.4.0.9   14-01-2025   TLCGen      Release versie TLCGen 12.4.0.10
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
@@ -34,7 +34,7 @@ void InUitMelden_Add(void) {
      Pas hier zo nodig de instructie voor de hulpelementen
      aan t.b.v. de in- en uitmeldingen.
      ----------------------------------------------------- */
-}
+   }
 
 void PrioInstellingen_Add(void) {
   /* -------------------------------------------------------------
