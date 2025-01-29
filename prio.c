@@ -872,7 +872,6 @@ void StelInCounter(int iIndex, int iActueleWaarde, int iInstelling)
    CCOL-elementen voor het OV:
    - de groenbewakingstimer tgb.
    - de rijtimer trt.
-   - het hulpelement voor de prioriteit hprio.
    - de counter voor het aantal OV-inmeldingen cvc.
    - de blokkeringstimer tblk.
    -------------------------------------------------------- */
