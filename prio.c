@@ -876,7 +876,7 @@ void StelInCounter(int iIndex, int iActueleWaarde, int iInstelling)
    - de counter voor het aantal OV-inmeldingen cvc.
    - de blokkeringstimer tblk.
    -------------------------------------------------------- */
-void PrioCcolElementen(int prio, int tgb, int trt, int hprio, int cvc, int tblk)
+void PrioCcolElementen(int prio, int tgb, int trt, int cvc, int tblk)
 {
     if (prio >= 0 && prio < prioFCMAX)
     {
@@ -891,13 +891,6 @@ void PrioCcolElementen(int prio, int tgb, int trt, int hprio, int cvc, int tblk)
             T_max[trt] = (mulv)iRijTijd[prio];
             T[trt] = (boolv)(iRijTimer[prio] < iRijTijd[prio]);
             T_timer[trt] = T[trt] ? (mulv)iRijTimer[prio] : T_max[trt];
-        }
-        if (hprio >= 0 && hprio < HE_MAX)
-        {
-            IH[hprio] = (boolv)iPrioriteit[prio];
-            RTFB |= ((SH[hprio]) && (    iPrioriteitsOpties[prio] & poNoodDienst)) ? PRIO_RTFB_BIT : FALSE; /* Eenmalig herstarten bij start en einde hulpdiensten van TFB */
-            RTFB |= ((EH[hprio]) && (iInstPrioriteitsOpties[prio] & poNoodDienst)) ? PRIO_RTFB_BIT : FALSE; /* Eenmalig herstarten bij start en einde hulpdiensten van TFB */
-
         }
         if (cvc >= 0 && cvc < CT_MAX)
         {
@@ -1417,7 +1410,7 @@ void TegenHoudenStartGroen(int fc, int iStartGroenFC)
    Daartoe wordt het OV-bitje van de instructievariabele
    RR[fc] gebruikt.
    Bij een nooddienstinmelding wordt tevens het OV-bitje
-   van de instructievariabele RTFB opgezet.
+   van de instructievariabele RTFB opgezet bij in- of uitmelding HD.
    Een konflikt wordt tegengehouden als een realisatie
    zou veroorzaken dat het startgroenmoment van een
    OV-richting niet meer haalbaar is.

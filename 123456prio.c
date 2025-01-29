@@ -2179,6 +2179,28 @@ void InUitMelden(void)
 #endif /* NO_RIS */
     IH[hhduit68] = IH[hhduit68kar] || IH[hhduit68ris];
 
+    /* herstarten FB_timer bij in- of uitmelding HD */
+    RTFB = (IH[hhdin02] ||
+            IH[hhdin03] ||
+            IH[hhdin05] ||
+            IH[hhdin08] ||
+            IH[hhdin09] ||
+            IH[hhdin11] ||
+            IH[hhdin61] ||
+            IH[hhdin62] ||
+            IH[hhdin67] ||
+            IH[hhdin68] ||
+            IH[hhduit02] ||
+            IH[hhduit03] ||
+            IH[hhduit05] ||
+            IH[hhduit08] ||
+            IH[hhduit09] ||
+            IH[hhduit11] ||
+            IH[hhduit61] ||
+            IH[hhduit62] ||
+            IH[hhduit67] ||
+            IH[hhduit68]);
+
     /* Bijhouden stiptheidsklassen ingemelde voertuigen */
     /* Bij inmelding: registeren stiptheidsklasse achterste voertuig */
     TrackStiptObvTSTP(hprioin03bus, hpriouit03bus, &iAantInm03bus, iKARInSTP03bus, hprio03bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
@@ -2214,10 +2236,13 @@ void InUitMelden(void)
     if (!startkarog) startkarog = TRUE;
     /* Doorzetten HD inmeldingen */
     IH[hhdin03] |= IH[hhdin02]; IH[hhduit03] |= IH[hhduit02];
+ 
 #if defined CCOL_IS_SPECIAL && defined PRACTICE_TEST
     is_special_signals();
 #endif
 }
+
+
 
 void OnderMaximumExtra(void)
 {
@@ -2828,48 +2853,48 @@ void PrioPARCorrecties(void)
    voor het richtingen met prioriteit.
    ------------------------------------------------------- */
 void PrioCcol(void) {
-    PrioCcolElementen(prioFC02karbus, tgb02karbus, trt02karbus, hprio02karbus, cvc02karbus, tblk02karbus);
-    PrioCcolElementen(prioFC02risov, tgb02risov, trt02risov, hprio02risov, cvc02risov, tblk02risov);
-    PrioCcolElementen(prioFC02risvrw, tgb02risvrw, trt02risvrw, hprio02risvrw, cvc02risvrw, tblk02risvrw);
-    PrioCcolElementen(prioFC03bus, tgb03bus, trt03bus, hprio03bus, cvc03bus, tblk03bus);
-    PrioCcolElementen(prioFC03risov, tgb03risov, trt03risov, hprio03risov, cvc03risov, tblk03risov);
-    PrioCcolElementen(prioFC03risvrw, tgb03risvrw, trt03risvrw, hprio03risvrw, cvc03risvrw, tblk03risvrw);
-    PrioCcolElementen(prioFC05bus, tgb05bus, trt05bus, hprio05bus, cvc05bus, tblk05bus);
-    PrioCcolElementen(prioFC05risov, tgb05risov, trt05risov, hprio05risov, cvc05risov, tblk05risov);
-    PrioCcolElementen(prioFC05risvrw, tgb05risvrw, trt05risvrw, hprio05risvrw, cvc05risvrw, tblk05risvrw);
-    PrioCcolElementen(prioFC08bus, tgb08bus, trt08bus, hprio08bus, cvc08bus, tblk08bus);
-    PrioCcolElementen(prioFC08risov, tgb08risov, trt08risov, hprio08risov, cvc08risov, tblk08risov);
-    PrioCcolElementen(prioFC08risvrw, tgb08risvrw, trt08risvrw, hprio08risvrw, cvc08risvrw, tblk08risvrw);
-    PrioCcolElementen(prioFC09bus, tgb09bus, trt09bus, hprio09bus, cvc09bus, tblk09bus);
-    PrioCcolElementen(prioFC09risov, tgb09risov, trt09risov, hprio09risov, cvc09risov, tblk09risov);
-    PrioCcolElementen(prioFC09risvrw, tgb09risvrw, trt09risvrw, hprio09risvrw, cvc09risvrw, tblk09risvrw);
-    PrioCcolElementen(prioFC11bus, tgb11bus, trt11bus, hprio11bus, cvc11bus, tblk11bus);
-    PrioCcolElementen(prioFC11risov, tgb11risov, trt11risov, hprio11risov, cvc11risov, tblk11risov);
-    PrioCcolElementen(prioFC11risvrw, tgb11risvrw, trt11risvrw, hprio11risvrw, cvc11risvrw, tblk11risvrw);
-    PrioCcolElementen(prioFC22fiets, tgb22fiets, trt22fiets, hprio22fiets, cvc22fiets, tblk22fiets);
-    PrioCcolElementen(prioFC28fiets, tgb28fiets, trt28fiets, hprio28fiets, cvc28fiets, tblk28fiets);
-    PrioCcolElementen(prioFC61bus, tgb61bus, trt61bus, hprio61bus, cvc61bus, tblk61bus);
-    PrioCcolElementen(prioFC61risov, tgb61risov, trt61risov, hprio61risov, cvc61risov, tblk61risov);
-    PrioCcolElementen(prioFC61risvrw, tgb61risvrw, trt61risvrw, hprio61risvrw, cvc61risvrw, tblk61risvrw);
-    PrioCcolElementen(prioFC62bus, tgb62bus, trt62bus, hprio62bus, cvc62bus, tblk62bus);
-    PrioCcolElementen(prioFC62risov, tgb62risov, trt62risov, hprio62risov, cvc62risov, tblk62risov);
-    PrioCcolElementen(prioFC62risvrw, tgb62risvrw, trt62risvrw, hprio62risvrw, cvc62risvrw, tblk62risvrw);
-    PrioCcolElementen(prioFC67bus, tgb67bus, trt67bus, hprio67bus, cvc67bus, tblk67bus);
-    PrioCcolElementen(prioFC67risov, tgb67risov, trt67risov, hprio67risov, cvc67risov, tblk67risov);
-    PrioCcolElementen(prioFC67risvrw, tgb67risvrw, trt67risvrw, hprio67risvrw, cvc67risvrw, tblk67risvrw);
-    PrioCcolElementen(prioFC68bus, tgb68bus, trt68bus, hprio68bus, cvc68bus, tblk68bus);
-    PrioCcolElementen(prioFC68risov, tgb68risov, trt68risov, hprio68risov, cvc68risov, tblk68risov);
-    PrioCcolElementen(prioFC68risvrw, tgb68risvrw, trt68risvrw, hprio68risvrw, cvc68risvrw, tblk68risvrw);
-  PrioCcolElementen(hdFC02, tgbhd02, trthd02, hhd02, cvchd02, -1);
-  PrioCcolElementen(hdFC03, tgbhd03, trthd03, hhd03, cvchd03, -1);
-  PrioCcolElementen(hdFC05, tgbhd05, trthd05, hhd05, cvchd05, -1);
-  PrioCcolElementen(hdFC08, tgbhd08, trthd08, hhd08, cvchd08, -1);
-  PrioCcolElementen(hdFC09, tgbhd09, trthd09, hhd09, cvchd09, -1);
-  PrioCcolElementen(hdFC11, tgbhd11, trthd11, hhd11, cvchd11, -1);
-  PrioCcolElementen(hdFC61, tgbhd61, trthd61, hhd61, cvchd61, -1);
-  PrioCcolElementen(hdFC62, tgbhd62, trthd62, hhd62, cvchd62, -1);
-  PrioCcolElementen(hdFC67, tgbhd67, trthd67, hhd67, cvchd67, -1);
-  PrioCcolElementen(hdFC68, tgbhd68, trthd68, hhd68, cvchd68, -1);
+    PrioCcolElementen(prioFC02karbus, tgb02karbus, trt02karbus, cvc02karbus, tblk02karbus);
+    PrioCcolElementen(prioFC02risov, tgb02risov, trt02risov, cvc02risov, tblk02risov);
+    PrioCcolElementen(prioFC02risvrw, tgb02risvrw, trt02risvrw, cvc02risvrw, tblk02risvrw);
+    PrioCcolElementen(prioFC03bus, tgb03bus, trt03bus, cvc03bus, tblk03bus);
+    PrioCcolElementen(prioFC03risov, tgb03risov, trt03risov, cvc03risov, tblk03risov);
+    PrioCcolElementen(prioFC03risvrw, tgb03risvrw, trt03risvrw, cvc03risvrw, tblk03risvrw);
+    PrioCcolElementen(prioFC05bus, tgb05bus, trt05bus, cvc05bus, tblk05bus);
+    PrioCcolElementen(prioFC05risov, tgb05risov, trt05risov, cvc05risov, tblk05risov);
+    PrioCcolElementen(prioFC05risvrw, tgb05risvrw, trt05risvrw, cvc05risvrw, tblk05risvrw);
+    PrioCcolElementen(prioFC08bus, tgb08bus, trt08bus, cvc08bus, tblk08bus);
+    PrioCcolElementen(prioFC08risov, tgb08risov, trt08risov, cvc08risov, tblk08risov);
+    PrioCcolElementen(prioFC08risvrw, tgb08risvrw, trt08risvrw, cvc08risvrw, tblk08risvrw);
+    PrioCcolElementen(prioFC09bus, tgb09bus, trt09bus, cvc09bus, tblk09bus);
+    PrioCcolElementen(prioFC09risov, tgb09risov, trt09risov, cvc09risov, tblk09risov);
+    PrioCcolElementen(prioFC09risvrw, tgb09risvrw, trt09risvrw, cvc09risvrw, tblk09risvrw);
+    PrioCcolElementen(prioFC11bus, tgb11bus, trt11bus, cvc11bus, tblk11bus);
+    PrioCcolElementen(prioFC11risov, tgb11risov, trt11risov, cvc11risov, tblk11risov);
+    PrioCcolElementen(prioFC11risvrw, tgb11risvrw, trt11risvrw, cvc11risvrw, tblk11risvrw);
+    PrioCcolElementen(prioFC22fiets, tgb22fiets, trt22fiets, cvc22fiets, tblk22fiets);
+    PrioCcolElementen(prioFC28fiets, tgb28fiets, trt28fiets, cvc28fiets, tblk28fiets);
+    PrioCcolElementen(prioFC61bus, tgb61bus, trt61bus, cvc61bus, tblk61bus);
+    PrioCcolElementen(prioFC61risov, tgb61risov, trt61risov, cvc61risov, tblk61risov);
+    PrioCcolElementen(prioFC61risvrw, tgb61risvrw, trt61risvrw, cvc61risvrw, tblk61risvrw);
+    PrioCcolElementen(prioFC62bus, tgb62bus, trt62bus, cvc62bus, tblk62bus);
+    PrioCcolElementen(prioFC62risov, tgb62risov, trt62risov, cvc62risov, tblk62risov);
+    PrioCcolElementen(prioFC62risvrw, tgb62risvrw, trt62risvrw, cvc62risvrw, tblk62risvrw);
+    PrioCcolElementen(prioFC67bus, tgb67bus, trt67bus, cvc67bus, tblk67bus);
+    PrioCcolElementen(prioFC67risov, tgb67risov, trt67risov, cvc67risov, tblk67risov);
+    PrioCcolElementen(prioFC67risvrw, tgb67risvrw, trt67risvrw, cvc67risvrw, tblk67risvrw);
+    PrioCcolElementen(prioFC68bus, tgb68bus, trt68bus, cvc68bus, tblk68bus);
+    PrioCcolElementen(prioFC68risov, tgb68risov, trt68risov, cvc68risov, tblk68risov);
+    PrioCcolElementen(prioFC68risvrw, tgb68risvrw, trt68risvrw, cvc68risvrw, tblk68risvrw);
+  PrioCcolElementen(hdFC02, tgbhd02, trthd02, cvchd02, -1);
+  PrioCcolElementen(hdFC03, tgbhd03, trthd03, cvchd03, -1);
+  PrioCcolElementen(hdFC05, tgbhd05, trthd05, cvchd05, -1);
+  PrioCcolElementen(hdFC08, tgbhd08, trthd08, cvchd08, -1);
+  PrioCcolElementen(hdFC09, tgbhd09, trthd09, cvchd09, -1);
+  PrioCcolElementen(hdFC11, tgbhd11, trthd11, cvchd11, -1);
+  PrioCcolElementen(hdFC61, tgbhd61, trthd61, cvchd61, -1);
+  PrioCcolElementen(hdFC62, tgbhd62, trthd62, cvchd62, -1);
+  PrioCcolElementen(hdFC67, tgbhd67, trthd67, cvchd67, -1);
+  PrioCcolElementen(hdFC68, tgbhd68, trthd68, cvchd68, -1);
 }
 
 /* ----------------------------------------------------------------
