@@ -2180,26 +2180,29 @@ void InUitMelden(void)
     IH[hhduit68] = IH[hhduit68kar] || IH[hhduit68ris];
 
     /* herstarten FB_timer bij in- of uitmelding HD */
-    RTFB = (IH[hhdin02] ||
-            IH[hhdin03] ||
-            IH[hhdin05] ||
-            IH[hhdin08] ||
-            IH[hhdin09] ||
-            IH[hhdin11] ||
-            IH[hhdin61] ||
-            IH[hhdin62] ||
-            IH[hhdin67] ||
-            IH[hhdin68] ||
-            IH[hhduit02] ||
-            IH[hhduit03] ||
-            IH[hhduit05] ||
-            IH[hhduit08] ||
-            IH[hhduit09] ||
-            IH[hhduit11] ||
-            IH[hhduit61] ||
-            IH[hhduit62] ||
-            IH[hhduit67] ||
-            IH[hhduit68]);
+    if(IH[hhdin02] ||
+       IH[hhdin03] ||
+       IH[hhdin05] ||
+       IH[hhdin08] ||
+       IH[hhdin09] ||
+       IH[hhdin11] ||
+       IH[hhdin61] ||
+       IH[hhdin62] ||
+       IH[hhdin67] ||
+       IH[hhdin68] ||
+       IH[hhduit02] ||
+       IH[hhduit03] ||
+       IH[hhduit05] ||
+       IH[hhduit08] ||
+       IH[hhduit09] ||
+       IH[hhduit11] ||
+       IH[hhduit61] ||
+       IH[hhduit62] ||
+       IH[hhduit67] ||
+       IH[hhduit68]) 
+    {
+       RTFB |= PRIO_RTFB_BIT;
+    }
 
     /* Bijhouden stiptheidsklassen ingemelde voertuigen */
     /* Bij inmelding: registeren stiptheidsklasse achterste voertuig */
