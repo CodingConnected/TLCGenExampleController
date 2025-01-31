@@ -313,7 +313,6 @@ void PrioTimers(void)
         YM[fc] &= ~PRIO_YM_BIT;
         MK[fc] &= ~PRIO_MK_BIT;
         PP[fc] &= ~PRIO_PP_BIT;
-        RTFB &= ~PRIO_RTFB_BIT;
 
         if (G[fc])
         {

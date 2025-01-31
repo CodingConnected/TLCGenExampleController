@@ -2180,6 +2180,7 @@ void InUitMelden(void)
     IH[hhduit68] = IH[hhduit68kar] || IH[hhduit68ris];
 
     /* herstarten FB_timer bij in- of uitmelding HD */
+    RTFB &= ~PRIO_RTFB_BIT;
     if(IH[hhdin02] ||
        IH[hhdin03] ||
        IH[hhdin05] ||
