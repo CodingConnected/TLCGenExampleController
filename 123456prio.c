@@ -8,14 +8,14 @@
 
    BESTAND:   123456prio.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.9
-   CCOLGEN:   12.4.0.9
+    TLCGEN:   12.4.0.10
+   CCOLGEN:   12.4.0.10
 */
 
 /****************************** Versie commentaar ***********************************
  *
  * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   14-01-2025   TLCGen      Release versie TLCGen 12.4.0.10
+ * 12.4.0.10  14-01-2025   TLCGen      Release versie TLCGen 12.4.0.10
  *
  ************************************************************************************/
 
@@ -2179,32 +2179,6 @@ void InUitMelden(void)
 #endif /* NO_RIS */
     IH[hhduit68] = IH[hhduit68kar] || IH[hhduit68ris];
 
-    /* herstarten FB_timer bij in- of uitmelding HD */
-    RTFB &= ~PRIO_RTFB_BIT;
-    if(IH[hhdin02] ||
-       IH[hhdin03] ||
-       IH[hhdin05] ||
-       IH[hhdin08] ||
-       IH[hhdin09] ||
-       IH[hhdin11] ||
-       IH[hhdin61] ||
-       IH[hhdin62] ||
-       IH[hhdin67] ||
-       IH[hhdin68] ||
-       IH[hhduit02] ||
-       IH[hhduit03] ||
-       IH[hhduit05] ||
-       IH[hhduit08] ||
-       IH[hhduit09] ||
-       IH[hhduit11] ||
-       IH[hhduit61] ||
-       IH[hhduit62] ||
-       IH[hhduit67] ||
-       IH[hhduit68]) 
-    {
-       RTFB |= PRIO_RTFB_BIT;
-    }
-
     /* Bijhouden stiptheidsklassen ingemelde voertuigen */
     /* Bij inmelding: registeren stiptheidsklasse achterste voertuig */
     TrackStiptObvTSTP(hprioin03bus, hpriouit03bus, &iAantInm03bus, iKARInSTP03bus, hprio03bus, PRM[prmOVtstpgrensvroeg], PRM[prmOVtstpgrenslaat]);
@@ -2233,6 +2207,21 @@ void InUitMelden(void)
     if (granted_verstrekt[fc03] == 2) granted_verstrekt[fc02] = 2;
 #endif /* NO_RIS */
 
+    /* herstarten FB_timer bij in- of uitmelding HD of einde ingreep (door groenbewaking) */
+    RTFB &= ~PRIO_RTFB_BIT;    
+    if (IH[hhdin02] || IH[hhduit02] || EH[hhd02] ||
+        IH[hhdin03] || IH[hhduit03] || EH[hhd03] ||
+        IH[hhdin05] || IH[hhduit05] || EH[hhd05] ||
+        IH[hhdin08] || IH[hhduit08] || EH[hhd08] ||
+        IH[hhdin09] || IH[hhduit09] || EH[hhd09] ||
+        IH[hhdin11] || IH[hhduit11] || EH[hhd11] ||
+        IH[hhdin61] || IH[hhduit61] || EH[hhd61] ||
+        IH[hhdin62] || IH[hhduit62] || EH[hhd62] ||
+        IH[hhdin67] || IH[hhduit67] || EH[hhd67] ||
+        IH[hhdin68] || IH[hhduit68] || EH[hhd68])
+    {
+        RTFB |= PRIO_RTFB_BIT;
+    }
 
     /* Bijhouden melding en ondergedrag KAR */
     RT[tkarmelding] = CIF_DSIWIJZ != 0 && CIF_DSI[CIF_DSI_LUS] == 0;
@@ -2240,13 +2229,10 @@ void InUitMelden(void)
     if (!startkarog) startkarog = TRUE;
     /* Doorzetten HD inmeldingen */
     IH[hhdin03] |= IH[hhdin02]; IH[hhduit03] |= IH[hhduit02];
- 
 #if defined CCOL_IS_SPECIAL && defined PRACTICE_TEST
     is_special_signals();
 #endif
 }
-
-
 
 void OnderMaximumExtra(void)
 {

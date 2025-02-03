@@ -11,14 +11,14 @@ void signaalplan_instellingen(void);
 
    BESTAND:   123456tab.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.9
-   CCOLGEN:   12.4.0.9
+    TLCGEN:   12.4.0.10
+   CCOLGEN:   12.4.0.10
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.9   14-01-2025   TLCGen      Release versie TLCGen 12.4.0.10
+ * Versie      Datum        Ontwerper   Commentaar
+ * 12.4.0.10   14-01-2025   TLCGen      Release versie TLCGen 12.4.0.10
  *
  ************************************************************************************/
 
@@ -7297,6 +7297,7 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d02_2a].SumoNamen[0], 32, "%s", "02_2a");
     sprintf_s(SUMODetectors[d02_2b].SumoNamen[0], 32, "%s", "02_2b");
     sprintf_s(SUMODetectors[d02_3a].SumoNamen[0], 32, "%s", "02_3a");
+    sprintf_s(SUMODetectors[d02_3b].SumoNamen[0], 32, "%s", "02_3b");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -7383,7 +7384,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d03_1].SumoNamen[0], 32, "%s", "03_1");
     sprintf_s(SUMODetectors[d02_4b].SumoNamen[0], 32, "%s", "02_4b");
     sprintf_s(SUMODetectors[d02_4a].SumoNamen[0], 32, "%s", "02_4a");
-    sprintf_s(SUMODetectors[d02_3b].SumoNamen[0], 32, "%s", "02_3b");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;

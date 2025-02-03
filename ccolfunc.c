@@ -1,4 +1,4 @@
-/* ccolfunc.c - gegenereerd met TLCGen 12.4.0.9 */
+/* ccolfunc.c - gegenereerd met TLCGen 12.4.0.10 */
 
 #include <stdarg.h>
 
