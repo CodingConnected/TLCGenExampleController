@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>10</HuidigeVersieRevision>
+    <HuidigeVersieRevision>11</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -80,7 +80,7 @@
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.10</TLCGenVersie>
+    <TLCGenVersie>12.4.0.11</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -289,10 +289,10 @@
       </FixatieBitmapData>
     </FixatieData>
     <Versie>
-      <Versie>12.4.0.10</Versie>
-      <Datum>2025-01-14T00:00:00</Datum>
+      <Versie>12.4.0.11</Versie>
+      <Datum>2025-02-07T00:00:00</Datum>
       <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Release versie TLCGen 12.4.0.10</Commentaar>
+      <Commentaar>Release versie TLCGen 12.4.0.11</Commentaar>
     </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
@@ -24751,9 +24751,6 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
-  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <SimulationEntries />
-  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>true</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -24900,6 +24897,13 @@
         <Naam>02_3b</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>02_3b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>02_4a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>02_4a</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
@@ -25613,13 +25617,6 @@
         <Naam>02_4b</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>02_4b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>02_4a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>02_4a</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

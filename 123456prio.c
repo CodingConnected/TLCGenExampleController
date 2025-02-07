@@ -8,14 +8,14 @@
 
    BESTAND:   123456prio.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.10
-   CCOLGEN:   12.4.0.10
+    TLCGEN:   12.4.0.11
+   CCOLGEN:   12.4.0.11
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie     Datum        Ontwerper   Commentaar
- * 12.4.0.10  14-01-2025   TLCGen      Release versie TLCGen 12.4.0.10
+ * Versie      Datum        Ontwerper   Commentaar
+ * 12.4.0.11   07-02-2025   TLCGen      Release versie TLCGen 12.4.0.11
  *
  ************************************************************************************/
 
@@ -2208,17 +2208,17 @@ void InUitMelden(void)
 #endif /* NO_RIS */
 
     /* herstarten FB_timer bij in- of uitmelding HD of einde ingreep (door groenbewaking) */
-    RTFB &= ~PRIO_RTFB_BIT;    
-    if (IH[hhdin02] || IH[hhduit02] || EH[hhd02] ||
-        IH[hhdin03] || IH[hhduit03] || EH[hhd03] ||
-        IH[hhdin05] || IH[hhduit05] || EH[hhd05] ||
-        IH[hhdin08] || IH[hhduit08] || EH[hhd08] ||
-        IH[hhdin09] || IH[hhduit09] || EH[hhd09] ||
-        IH[hhdin11] || IH[hhduit11] || EH[hhd11] ||
-        IH[hhdin61] || IH[hhduit61] || EH[hhd61] ||
-        IH[hhdin62] || IH[hhduit62] || EH[hhd62] ||
-        IH[hhdin67] || IH[hhduit67] || EH[hhd67] ||
-        IH[hhdin68] || IH[hhduit68] || EH[hhd68])
+    RTFB &= ~PRIO_RTFB_BIT;
+    if (IH[hhdin02]|| IH[hhduit02] || EH[hhd02] ||
+        IH[hhdin03]|| IH[hhduit03] || EH[hhd03] ||
+        IH[hhdin05]|| IH[hhduit05] || EH[hhd05] ||
+        IH[hhdin08]|| IH[hhduit08] || EH[hhd08] ||
+        IH[hhdin09]|| IH[hhduit09] || EH[hhd09] ||
+        IH[hhdin11]|| IH[hhduit11] || EH[hhd11] ||
+        IH[hhdin61]|| IH[hhduit61] || EH[hhd61] ||
+        IH[hhdin62]|| IH[hhduit62] || EH[hhd62] ||
+        IH[hhdin67]|| IH[hhduit67] || EH[hhd67] ||
+        IH[hhdin68]|| IH[hhduit68] || EH[hhd68])
     {
         RTFB |= PRIO_RTFB_BIT;
     }

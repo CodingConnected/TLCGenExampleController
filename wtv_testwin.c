@@ -1,4 +1,4 @@
-/* wtv_testwin.c - gegenereerd met TLCGen 12.4.0.10 */
+/* wtv_testwin.c - gegenereerd met TLCGen 12.4.0.11 */
 
 #include "windows.h"
 #include "TCHAR.H"		/* voorkomen compiler warning voor gebruik van '_tcsstr' */
