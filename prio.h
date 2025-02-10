@@ -1,4 +1,4 @@
-/* prio.h - gegenereerd met TLCGen 12.4.0.11 */
+/* prio.h - gegenereerd met TLCGen 12.4.0.12 */
 
 #ifndef __PRIOH
 #define __PRIOH
@@ -104,7 +104,7 @@ void PrioRijTijdScenario(int ov,
 	int dkop,
 	int dlang,
 	int tbezet);
-void PrioCcolElementen(int ov, int tgb, int trt, int cvc, int tblk);
+void PrioCcolElementen(int prio, int tgb, int trt, int hprio, int cvc, int tblk);
 void PrioCcol(void);
 void KonfliktTijden(void);
 void SKVoorStarten(boolv period, count fcvs, count fcls, count tvs, boolv bit);

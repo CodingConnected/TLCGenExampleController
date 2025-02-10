@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>11</HuidigeVersieRevision>
+    <HuidigeVersieRevision>12</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -80,7 +80,7 @@
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.11</TLCGenVersie>
+    <TLCGenVersie>12.4.0.12</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -288,12 +288,6 @@
         </BitmapCoordinaten>
       </FixatieBitmapData>
     </FixatieData>
-    <Versie>
-      <Versie>12.4.0.11</Versie>
-      <Datum>2025-02-07T00:00:00</Datum>
-      <Ontwerper>TLCGen</Ontwerper>
-      <Commentaar>Release versie TLCGen 12.4.0.11</Commentaar>
-    </Versie>
     <RangeerData>
       <RangerenFasen>false</RangerenFasen>
       <RangerenDetectoren>false</RangerenDetectoren>
@@ -24908,6 +24902,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>02_4b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>02_4b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -25610,13 +25611,6 @@
         <Naam>03_1</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>03_1</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>02_4b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>02_4b</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

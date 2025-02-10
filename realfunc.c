@@ -1,4 +1,4 @@
-/* realfunc.c - gegenereerd met TLCGen 12.4.0.11 */
+/* realfunc.c - gegenereerd met TLCGen 12.4.0.12 */
 
 /*
 BESTAND:   realfunc.c

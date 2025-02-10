@@ -11,14 +11,13 @@ void signaalplan_instellingen(void);
 
    BESTAND:   123456tab.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.11
-   CCOLGEN:   12.4.0.11
+    TLCGEN:   12.4.0.12
+   CCOLGEN:   12.4.0.12
 */
 
 /****************************** Versie commentaar ***********************************
  *
- * Versie      Datum        Ontwerper   Commentaar
- * 12.4.0.11   07-02-2025   TLCGen      Release versie TLCGen 12.4.0.11
+ * Versie   Datum   Ontwerper   Commentaar
  *
  ************************************************************************************/
 
@@ -2456,7 +2455,7 @@ void control_parameters(void)
     PRM_code[prmfb]                       = "fb";                       PRM[prmfb]                       = 240;   PRM_type[prmfb]                       = TS_type; /* Instelling fasebewaking                                                                                                        */
     PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 4;                                                      /* Versiebeheer xx                                                                                                                */
     PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 0;                                                      /* Versiebeheer yy                                                                                                                */
-    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 11;                                                     /* Versiebeheer zz                                                                                                                */
+    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 12;                                                     /* Versiebeheer zz                                                                                                                */
     PRM_code[prmovmextragroen_02]         = "ovmextragroen_02";         PRM[prmovmextragroen_02]         = 0;     PRM_type[prmovmextragroen_02]         = TE_type;
     PRM_code[prmovmmindergroen_02]        = "ovmmindergroen_02";        PRM[prmovmmindergroen_02]        = 0;     PRM_type[prmovmmindergroen_02]        = TE_type;
     PRM_code[prmovmextragroen_03]         = "ovmextragroen_03";         PRM[prmovmextragroen_03]         = 0;     PRM_type[prmovmextragroen_03]         = TE_type;
@@ -7299,6 +7298,7 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d02_3a].SumoNamen[0], 32, "%s", "02_3a");
     sprintf_s(SUMODetectors[d02_3b].SumoNamen[0], 32, "%s", "02_3b");
     sprintf_s(SUMODetectors[d02_4a].SumoNamen[0], 32, "%s", "02_4a");
+    sprintf_s(SUMODetectors[d02_4b].SumoNamen[0], 32, "%s", "02_4b");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -7383,7 +7383,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d05_1].SumoNamen[0], 32, "%s", "05_1");
     sprintf_s(SUMODetectors[d03_2].SumoNamen[0], 32, "%s", "03_2");
     sprintf_s(SUMODetectors[d03_1].SumoNamen[0], 32, "%s", "03_1");
-    sprintf_s(SUMODetectors[d02_4b].SumoNamen[0], 32, "%s", "02_4b");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;
