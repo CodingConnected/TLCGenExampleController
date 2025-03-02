@@ -198,7 +198,14 @@
     #define usstarprogwissel     (FCMAX + 144) /* Verklikken actief zijn wisselen naar star programma                         */
     #define usstar01             (FCMAX + 145) /* Star programma star01 actief                                                */
     #define usstar02             (FCMAX + 146) /* Star programma star02 actief                                                */
-    #define USMAX1               (FCMAX + 147)
+    #define usLVS01              (FCMAX + 147) /* Verstarrings programma 1 actief                                             */
+    #define usLVS02              (FCMAX + 148) /* Verstarrings programma 2 actief                                             */
+    #define usLVS03              (FCMAX + 149) /* Verstarrings programma 3 actief                                             */
+    #define usLVS04              (FCMAX + 150) /* Verstarrings programma 4 actief                                             */
+    #define usLVS05              (FCMAX + 151) /* Verstarrings programma 5 actief                                             */
+    #define usLVS06              (FCMAX + 152) /* Verstarrings programma 6 actief                                             */
+    #define usLVS15              (FCMAX + 153) /* Verstarrings programma 11 actief (alles rood)                               */
+    #define USMAX1               (FCMAX + 154)
 
 /* detectie */
 /* -------- */
@@ -792,7 +799,8 @@
     #define hlos68                  381 /* Onthouden toestaan los realiseren fase 68                          */
     #define hlos21                  382 /* Onthouden toestaan los realiseren fase 21                          */
     #define hlos81                  383 /* Onthouden toestaan los realiseren fase 81                          */
-    #define HEMAX1                  384
+    #define hstarprogwissel         384 /* Onthouden wisseling star programma                                 */
+    #define HEMAX1                  385
 
 /* geheugen elementen */
 /* ------------------ */
@@ -3759,18 +3767,19 @@
     #define prmwtvnhaltmax              1793 /* Niet halteren wachttijdvoorspellers indien meer dan of zoveel leds branden                                                     */
     #define prmwtvnhaltmin              1794 /* Niet halteren wachttijdvoorspellers indien minder dan of zoveel leds branden                                                   */
     #define prmstarprogdef              1795 /* Default star programma                                                                                                         */
-    #define prmstarprogDaluren_weekend  1796 /* Noodprogramma bij periode Daluren_weekend                                                                                      */
-    #define prmstarprogDaluren_werkdag  1797 /* Noodprogramma bij periode Daluren_werkdag                                                                                      */
-    #define prmstarprogOerdag_werkdag   1798 /* Noodprogramma bij periode Oerdag_werkdag                                                                                       */
-    #define prmttxconfidence15          1799
-    #define prmlatencyminendsg          1800
+    #define prm_act_regeling            1796 /* Actuele actief star programma terugkoppeling naar Centrale                                                                     */
+    #define prmstarprogDaluren_weekend  1797 /* Noodprogramma bij periode Daluren_weekend                                                                                      */
+    #define prmstarprogDaluren_werkdag  1798 /* Noodprogramma bij periode Daluren_werkdag                                                                                      */
+    #define prmstarprogOerdag_werkdag   1799 /* Noodprogramma bij periode Oerdag_werkdag                                                                                       */
+    #define prmttxconfidence15          1800
+    #define prmlatencyminendsg          1801
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
-    #define prmtestdsivert              1801 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
-    #define prmtestdsilyn               1802 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
-    #define prmtestdsicat               1803 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
-    #define PRMMAX1                     1804
+    #define prmtestdsivert              1802 /* Testen vertraging in DSI bericht in testomgeving                                                                               */
+    #define prmtestdsilyn               1803 /* Testen lijnnummer DSI bericht in testomgeving                                                                                  */
+    #define prmtestdsicat               1804 /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
+    #define PRMMAX1                     1805
 #else
-    #define PRMMAX1                     1801
+    #define PRMMAX1                     1802
 #endif
 
 /* Selectieve detectie */

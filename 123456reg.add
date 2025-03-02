@@ -130,7 +130,7 @@ void DetectieStoring_Add(void)
 
 void PostApplication_Add(void)
 {
-   int fc; 
+//   int fc; 
 
    /* TESTOMGEVING */
    /* ============ */

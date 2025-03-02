@@ -3052,10 +3052,23 @@ void application(void)
     KlokPerioden();
     Aanvragen();
     star_reset_bits(MM[mstarprog] != 0);
-    if (MM[mstarprog] != 0)
+    if (MM[mstarprog] > 0)
     {
-        star_instellingen();
-        star_regelen();
+       if (MM[mstarprog] < 9) 
+       {
+          star_instellingen();
+          star_regelen();
+       }
+       else
+       {
+          Verstarringen(MM[mstarprog]);
+          IH[hstarprogwissel] = MM[mstarprogwissel];
+          if (EH[hstarprogwissel] || (PRM[prm_act_regeling] == 0))
+          {
+             PRM[prm_act_regeling] = MM[mstarprog];
+             set_parm1wijzap(&PRM[prm_act_regeling]);
+          }
+       }
     }
     else if (IH[hplact])
     {
