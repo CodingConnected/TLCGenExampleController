@@ -33,8 +33,8 @@
 #define SCHMAX (SCHMAX1+0) /* Totaal aantal gebruikte schakelaars    */
 #define PRMMAX (PRMMAX1+0) /* Totaal aantal gebruikte parameters     */
 #define MLMAX  (MLMAX1+0)  /* Totaal aantal gebruikte modulen        */
+#define PLMAX  (PLMAX1+0)  /* Totaal aantal gebruikte signaalplannen */
 #if !defined AUTOMAAT
 #define LNKMAX (LNKMAX1+0) /* Totaal aantal gebruikte simulatie elementen */
 #endif
 
-#define PLMAX (PLMAX1+0) /* Totaal aantal gebruikte signaalplannen */

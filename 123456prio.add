@@ -33,7 +33,7 @@ void InUitMelden_Add(void) {
      Pas hier zo nodig de instructie voor de hulpelementen
      aan t.b.v. de in- en uitmeldingen.
      ----------------------------------------------------- */
-   }
+}
 
 void PrioInstellingen_Add(void) {
   /* -------------------------------------------------------------
@@ -143,19 +143,19 @@ void PrioTegenhouden_Add(void) {
 }
 
 void PrioAfkappen_Add(void) {
-   /* --------------------------------------------------------
-      Pas hier zonodig het TerugKomen aan, bijv:
-      iTerugKomen[fc02] = FALSE;
-      --------------------------------------------------------
-      Pas hier zonodig de TerugKomGroenTijd aan, bijv:
-      iTerugKomGroenTijd[[fc02] = 0;
-      --------------------------------------------------------
-      Pas hier zonodig het NietAfkappen aan, bijv:
-      iNietAfkappen[fc02]=FALSE;
-      -------------------------------------------------------
-      Pas hier zonodig het AantalMalenNietAfkappen aan, bijv:
-      iAantalMalenNietAfkappen[fc02] = 3;
-      ------------------------------------------------------- */
+  /* --------------------------------------------------------
+     Pas hier zonodig het TerugKomen aan, bijv:
+     iTerugKomen[fc02] = FALSE;
+     --------------------------------------------------------
+     Pas hier zonodig de TerugKomGroenTijd aan, bijv:
+     iTerugKomGroenTijd[[fc02] = 0;
+     --------------------------------------------------------
+     Pas hier zonodig het NietAfkappen aan, bijv:
+     iNietAfkappen[fc02]=FALSE;
+     -------------------------------------------------------
+     Pas hier zonodig het AantalMalenNietAfkappen aan, bijv:
+     iAantalMalenNietAfkappen[fc02] = 3;
+     ------------------------------------------------------- */
 }
 
 void PrioAlternatieven_Add(void) {

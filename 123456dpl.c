@@ -317,7 +317,9 @@ void display_parameters(void)
     X_us[usper1] = 625; Y_us[usper1] = 14;
     X_us[usperoFietsprio1] = NG; Y_us[usperoFietsprio1] = NG;
     X_us[usperoFietsprio2] = NG; Y_us[usperoFietsprio2] = NG;
-    X_us[usperoFietsprio3] = NG; Y_us[usperoFietsprio3] = NG;
+    X_us[usperDaluren_werkdag] = NG; Y_us[usperDaluren_werkdag] = NG;
+    X_us[usperDaluren_weekend] = NG; Y_us[usperDaluren_weekend] = NG;
+    X_us[usperOerdag_werkdag] = NG; Y_us[usperOerdag_werkdag] = NG;
     X_us[usper2] = 625; Y_us[usper2] = 28;
     X_us[usper3] = 625; Y_us[usper3] = 42;
     X_us[usper4] = 625; Y_us[usper4] = 55;
@@ -346,6 +348,9 @@ void display_parameters(void)
     X_us[uswtk81] = 381; Y_us[uswtk81] = 330;
     X_us[uswtk82] = 287; Y_us[uswtk82] = 331;
     X_us[uswtk84] = 454; Y_us[uswtk84] = 237;
+    X_us[usstarprogwissel] = NG; Y_us[usstarprogwissel] = NG;
+    X_us[usstar01] = 168; Y_us[usstar01] = 255;
+    X_us[usstar02] = NG; Y_us[usstar02] = NG;
 
     /* overige ingangen */
     /* ---------------- */

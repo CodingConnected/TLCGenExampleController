@@ -23,38 +23,4 @@
 
 /* dit is een placeholder */
 /* ---------------------- */
-#ifndef AUTOMAAT
-/*
-   SCH[schconfidence15fix] = 1;
-   SCH[schtxconfidence15ar] = 1;
-   SCH[schspatconfidence1] = 0;
-   SCH[schspatconfidence3] = 0;
-   SCH[schspatconfidence6] = 0;
-   SCH[schspatconfidence9] = 0;
-   SCH[schspatconfidence12] = 0;
-   SCH[schspatconfidence15] = 1;
-   SCH[schtimings02] = 1;
-   SCH[schtimings03] = 1;
-   SCH[schtimings05] = 1;
-   SCH[schtimings08] = 1;
-   SCH[schtimings09] = 1;
-   SCH[schtimings11] = 1;
-   SCH[schtimings21] = 1;
-   SCH[schtimings22] = 1;
-   SCH[schtimings24] = 1;
-   SCH[schtimings26] = 1;
-   SCH[schtimings28] = 1;
-   SCH[schtimings31] = 1;
-   SCH[schtimings32] = 1;
-   SCH[schtimings33] = 1;
-   SCH[schtimings34] = 1;
-   SCH[schtimings38] = 1;
-   SCH[schtimings61] = 1;
-   SCH[schtimings62] = 1;
-   SCH[schtimings67] = 1;
-   SCH[schtimings68] = 1;
-   SCH[schtimings81] = 1;
-   SCH[schtimings82] = 1;
-   SCH[schtimings84] = 1;
-*/ 
-#endif
+

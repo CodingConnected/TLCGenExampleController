@@ -94,6 +94,8 @@
 #ifdef MIRMON
     #include "MirakelMonitor.h"
 #endif /* MIRMON */
+    #include "starfunc.c" /* Functies t.b.v. star regelen */
+    #include "starvar.c" /* Variabelen t.b.v. star regelen */
     #include "dynamischhiaat.c"
     #ifndef NO_TIMETOX
     #include "timingsvar.c" /* FCTiming functies */
@@ -123,6 +125,7 @@ mulv t_wacht[FCMAX]; /* berekende wachttijd */
 mulv rr_twacht[FCMAX]; /* halteren wachttijd */
 mulv itvgmaxprm[aanttvgmaxprm]; /* fasecycli met max. verlenggroen parameter */
 mulv C_counter_old[CTMAX];
+    extern mulv star_cyclustimer;
 
 #ifndef NO_RIS
     /* Definitie ProductInformatie ITSinfo */
@@ -280,6 +283,11 @@ void PreApplication(void)
         if (US_type[fc] & VTG_type) RW[fc] &= ~BIT7;
     }
 
+    if (SML && ML == ML1 && (MM[mstarprog] == 0))
+    {
+        star_cyclustimer = 0;
+    }
+
     /* Instellen basis waarde hulpelementen 'geen dynamisch hiaat gebruiken'.
        Dit hulpelement kan in gebruikers code worden gebruikt voor eigen aansturing. */
     IH[hgeendynhiaat08] = !SCH[schdynhiaat08];
@@ -377,6 +385,24 @@ void KlokPerioden(void)
         dagsoort(PRM[prmdckp7]))
         MM[mperiod] = 7;
 
+    /* klokperiode star regelen:  */
+    /* -------------------------- */
+    if (klokperiode(PRM[prmstkpDaluren_werkdag], PRM[prmetkpDaluren_werkdag]) &&
+        dagsoort(PRM[prmdckpDaluren_werkdag]))
+        MM[mperiodstar] = 1;
+
+    /* klokperiode star regelen:  */
+    /* -------------------------- */
+    if (klokperiode(PRM[prmstkpDaluren_weekend], PRM[prmetkpDaluren_weekend]) &&
+        dagsoort(PRM[prmdckpDaluren_weekend]))
+        MM[mperiodstar] = 2;
+
+    /* klokperiode star regelen:  */
+    /* -------------------------- */
+    if (klokperiode(PRM[prmstkpOerdag_werkdag], PRM[prmetkpOerdag_werkdag]) &&
+        dagsoort(PRM[prmdckpOerdag_werkdag]))
+        MM[mperiodstar] = 3;
+
     /* vrije klokperiode:  */
     /* ------------------- */
     IH[hperiodFietsprio1] = (klokperiode(PRM[prmstkpoFietsprio1], PRM[prmetkpoFietsprio1]) && dagsoort(PRM[prmdckpoFietsprio1]));
@@ -385,9 +411,29 @@ void KlokPerioden(void)
     /* ------------------- */
     IH[hperiodFietsprio2] = (klokperiode(PRM[prmstkpoFietsprio2], PRM[prmetkpoFietsprio2]) && dagsoort(PRM[prmdckpoFietsprio2]));
 
-    /* vrije klokperiode:  */
-    /* ------------------- */
-    IH[hperiodFietsprio3] = (klokperiode(PRM[prmstkpoFietsprio3], PRM[prmetkpoFietsprio3]) && dagsoort(PRM[prmdckpoFietsprio3]));
+    /* Bepalen actief star programma wens */
+    MM[mstarprogwens] = 0;
+    if (SCH[schstar])
+    {
+        /* Actief star programma o.b.v. kloksturing */
+        switch (MM[mperiodstar])
+        {
+            case 1:
+                MM[mstarprogwens] = PRM[prmstarprogDaluren_weekend];
+                break;
+            case 2:
+                MM[mstarprogwens] = PRM[prmstarprogDaluren_werkdag];
+                break;
+            case 3:
+                MM[mstarprogwens] = PRM[prmstarprogOerdag_werkdag];
+                break;
+            default:
+                break;
+        }
+
+        /* Actief star programma o.b.v. parameter */
+        if (PRM[prmstarprogdef] != 0) MM[mstarprogwens] = PRM[prmstarprogdef];
+    }
 
     KlokPerioden_Add();
     KlokPerioden_halfstar();
@@ -2966,6 +3012,15 @@ void PostApplication(void)
 /* Verklikken inkomende pelotons */
     CIF_GUS[uspelinKOP02] = IH[hpelinKOP02];
 
+    /* star programmawisseling */
+    star_bepaal_omschakelen(mstarprogwens, mstarprog, mstarprogwissel);
+    star_programma = MM[mstarprog];
+
+    /* verklikken actief star programma en wisseling*/
+    CIF_GUS[usstar01] = MM[mstarprog] == 1;
+    CIF_GUS[usstar02] = MM[mstarprog] == 2;
+    CIF_GUS[usstarprogwissel] = MM[mstarprogwissel] != 0 || MM[mstarprog] != 0 && MM[mstarprogwens] != MM[mstarprog];
+
     /* Tbv parametreerbare blokindeling: reset A voor niet toegedeeld fasen */
     for (fc = 0; fc < FCMAX; ++fc)
     {
@@ -2996,7 +3051,13 @@ void application(void)
 
     KlokPerioden();
     Aanvragen();
-    if (IH[hplact])
+    star_reset_bits(MM[mstarprog] != 0);
+    if (MM[mstarprog] != 0)
+    {
+        star_instellingen();
+        star_regelen();
+    }
+    else if (IH[hplact])
     {
         Verlenggroen_halfstar();
         Wachtgroen_halfstar();
@@ -3024,7 +3085,7 @@ void application(void)
         FileVerwerking();
         DetectieStoring();
     }
-    if (IH[hmlact] || SCH[schovpriople]) AfhandelingPrio();
+    if (MM[mstarprog] == 0 && (IH[hmlact] || SCH[schovpriople])) AfhandelingPrio();
     else
     {
         int fc;
@@ -3041,7 +3102,6 @@ void application(void)
             PP[fc] &= ~PRIO_PP_BIT;
         }
     }
-    Fixatie(isfix, 0, FCMAX-1, SCH[schbmfix], PRML, ML);
 
     PostApplication();
 }
@@ -3123,9 +3183,11 @@ void system_application(void)
     CIF_GUS[usper5] = (MM[mperiod] == 5);
     CIF_GUS[usper6] = (MM[mperiod] == 6);
     CIF_GUS[usper7] = (MM[mperiod] == 7);
+    CIF_GUS[usperDaluren_werkdag] = (MM[mperiodstar] == 1);
+    CIF_GUS[usperDaluren_weekend] = (MM[mperiodstar] == 2);
+    CIF_GUS[usperOerdag_werkdag] = (MM[mperiodstar] == 3);
     CIF_GUS[usperoFietsprio1] = (IH[hperiodFietsprio1] == TRUE);
     CIF_GUS[usperoFietsprio2] = (IH[hperiodFietsprio2] == TRUE);
-    CIF_GUS[usperoFietsprio3] = (IH[hperiodFietsprio3] == TRUE);
 
     /* wachtlicht uitsturing */
     /* --------------------- */
