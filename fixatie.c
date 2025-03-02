@@ -77,12 +77,12 @@ void Fixatie(count isFix, count first, count last, boolv bijkomen)
         if (CIF_IS[isFix])
         {
             langstwachtende_alternatief();
-        }
 #if MLMAX
-        for (fc = first; fc <= last; ++fc)
-        {
-            if (AR[fc]) prml[ml][fc] |= ALTERNATIEF;
-        }
+            for (fc = first; fc <= last; ++fc)
+            {
+               if (AR[fc]) prml[ml][fc] |= ALTERNATIEF;
+            }
 #endif
+        }
     }
 }
