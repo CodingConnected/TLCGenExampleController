@@ -305,12 +305,12 @@ void ris_simulation_application(void)
         sprintf(buffer, "");
         ris_simulation_put_itsstation_pb_ex(SYSTEM_ITF1, PRM[prmrislaneid11_1], fc11, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, NG, 50, 300, 1,RIF_VEHICLEROLE_COMMERCIAL,RIF_VEHICLESUBROLE_EXPRESSTRANSIT,25,fc11,PRM[prmrisapproachid11],buffer,123,11);
     }
-    if (SIS(isris211cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid21_1], fc21, RIF_STATIONTYPE_CYCLIST, 0, 1, NG, 15, 100, 1);
-    if (SIS(isris221cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid22_1], fc22, RIF_STATIONTYPE_CYCLIST, 0, 0, NG, 15, 100, 1);
-    if (SIS(isris222cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid22_2], fc22, RIF_STATIONTYPE_CYCLIST, 0, 0, NG, 15, 100, 1);
-    if (SIS(isris241cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid24_1], fc24, RIF_STATIONTYPE_CYCLIST, 0, 1, NG, 15, 100, 1);
-    if (SIS(isris261cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid26_1], fc26, RIF_STATIONTYPE_CYCLIST, 0, 1, NG, 15, 100, 1);
-    if (SIS(isris281cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid28_1], fc28, RIF_STATIONTYPE_CYCLIST, 0, 1, NG, 15, 100, 1);
+    if (SIS(isris211cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid21_1], fc21, RIF_STATIONTYPE_CYCLIST, 0, 1, PRM[prmrislaneheading21_1], 15, 100, 1);
+    if (SIS(isris221cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid22_1], fc22, RIF_STATIONTYPE_CYCLIST, 0, 0, PRM[prmrislaneheading22_1], 15, 100, 1);
+    if (SIS(isris222cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid22_2], fc22, RIF_STATIONTYPE_CYCLIST, 0, 0, PRM[prmrislaneheading22_2], 15, 100, 1);
+    if (SIS(isris241cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid24_1], fc24, RIF_STATIONTYPE_CYCLIST, 0, 1, PRM[prmrislaneheading24_1], 15, 100, 1);
+    if (SIS(isris261cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid26_1], fc26, RIF_STATIONTYPE_CYCLIST, 0, 1, PRM[prmrislaneheading26_1], 15, 100, 1);
+    if (SIS(isris281cyclist)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid28_1], fc28, RIF_STATIONTYPE_CYCLIST, 0, 1, PRM[prmrislaneheading28_1], 15, 100, 1);
     if (SIS(isris311pedestrian)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid31_1], fc31, RIF_STATIONTYPE_PEDESTRIAN, 0, 1, NG, 5, 15, 1);
     if (SIS(isris312pedestrian)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid31_2], fc31, RIF_STATIONTYPE_PEDESTRIAN, 0, 1, NG, 5, 15, 1);
     if (SIS(isris321pedestrian)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid32_1], fc32, RIF_STATIONTYPE_PEDESTRIAN, 0, 1, NG, 5, 15, 1);

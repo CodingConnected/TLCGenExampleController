@@ -24,29 +24,29 @@
 /* dit is een placeholder */
 /* ---------------------- */
 
-PRM[prmwg02] = 2;  PRM_code[prmwg02] = "wg02"; 
-PRM[prmwg03] = 2;  PRM_code[prmwg03] = "wg03"; 
-PRM[prmwg05] = 2;  PRM_code[prmwg05] = "wg05"; 
-PRM[prmwg08] = 2;  PRM_code[prmwg08] = "wg08"; 
-PRM[prmwg09] = 2;  PRM_code[prmwg09] = "wg09"; 
-PRM[prmwg11] = 2;  PRM_code[prmwg11] = "wg11"; 
-PRM[prmwg21] = 2;  PRM_code[prmwg21] = "wg21"; 
-PRM[prmwg22] = 2;  PRM_code[prmwg22] = "wg22"; 
-PRM[prmwg24] = 2;  PRM_code[prmwg24] = "wg24"; 
-PRM[prmwg26] = 2;  PRM_code[prmwg26] = "wg26"; 
-PRM[prmwg28] = 2;  PRM_code[prmwg28] = "wg28"; 
-PRM[prmwg31] = 2;  PRM_code[prmwg31] = "wg31"; 
-PRM[prmwg32] = 2;  PRM_code[prmwg32] = "wg32"; 
-PRM[prmwg33] = 2;  PRM_code[prmwg33] = "wg33"; 
-PRM[prmwg34] = 2;  PRM_code[prmwg34] = "wg34"; 
-PRM[prmwg38] = 2;  PRM_code[prmwg38] = "wg38"; 
-PRM[prmwg61] = 2;  PRM_code[prmwg61] = "wg61"; 
-PRM[prmwg62] = 2;  PRM_code[prmwg62] = "wg62"; 
-PRM[prmwg67] = 2;  PRM_code[prmwg67] = "wg67"; 
-PRM[prmwg68] = 2;  PRM_code[prmwg68] = "wg68"; 
-PRM[prmwg81] = 2;  PRM_code[prmwg81] = "wg81"; 
-PRM[prmwg82] = 2;  PRM_code[prmwg82] = "wg82"; 
-PRM[prmwg84] = 2;  PRM_code[prmwg84] = "wg84"; 
+PRM[prmwg02]  = 2;  PRM_code[prmwg02] = "wg02";               
+PRM[prmwg03]  = 2;  PRM_code[prmwg03] = "wg03";               
+PRM[prmwg05]  = 2;  PRM_code[prmwg05] = "wg05";               
+PRM[prmwg08]  = 2;  PRM_code[prmwg08] = "wg08";               
+PRM[prmwg09]  = 2;  PRM_code[prmwg09] = "wg09";               
+PRM[prmwg11]  = 2;  PRM_code[prmwg11] = "wg11";               
+PRM[prmwg21]  = 2;  PRM_code[prmwg21] = "wg21";               
+PRM[prmwg22]  = 2;  PRM_code[prmwg22] = "wg22";               
+PRM[prmwg24]  = 2;  PRM_code[prmwg24] = "wg24";               
+PRM[prmwg26]  = 2;  PRM_code[prmwg26] = "wg26";               
+PRM[prmwg28]  = 2;  PRM_code[prmwg28] = "wg28";               
+PRM[prmwg31]  = 2;  PRM_code[prmwg31] = "wg31";               
+PRM[prmwg32]  = 2;  PRM_code[prmwg32] = "wg32";               
+PRM[prmwg33]  = 2;  PRM_code[prmwg33] = "wg33";               
+PRM[prmwg34]  = 2;  PRM_code[prmwg34] = "wg34";               
+PRM[prmwg38]  = 2;  PRM_code[prmwg38] = "wg38";               
+PRM[prmwg61]  = 2;  PRM_code[prmwg61] = "wg61";               
+PRM[prmwg62]  = 2;  PRM_code[prmwg62] = "wg62";               
+PRM[prmwg67]  = 2;  PRM_code[prmwg67] = "wg67";               
+PRM[prmwg68]  = 2;  PRM_code[prmwg68] = "wg68";               
+PRM[prmwg81]  = 2;  PRM_code[prmwg81] = "wg81";               
+PRM[prmwg82]  = 2;  PRM_code[prmwg82] = "wg82";               
+PRM[prmwg84]  = 2;  PRM_code[prmwg84] = "wg84";               
 
 PRM[prmrto02karbus] = 0;
 PRM[prmrto03bus] = 0;
