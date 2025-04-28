@@ -169,6 +169,11 @@ void PreApplication(void)
 
     TFB_max = PRM[prmfb];
 
+    /* Soms is het wenselijk om een fixatie ingreep te kunnen uitstellen, */
+    /* bijvoorbeeld bij een AFT of WTV die laag staat; in dat geval kan   */
+    /* hulpelement IH[hfixatietegenh] hoog gemaakt worden.                */
+    IH[hfixatietegenh] = FALSE;
+
     /* Nalopen */
     /* ------- */
     gk_ResetGK();
@@ -222,8 +227,8 @@ void PreApplication(void)
             !T[tnlfg0868] && !RT[tnlfg0868] && !T[tnleg0868] && !RT[tnleg0868] && !T[tnlegd0868] && !RT[tnlegd0868] && !T[tnlfgd0868] && !RT[tnlfgd0868] &&
             !T[tnlfg1168] && !RT[tnlfg1168] && !T[tnleg1168] && !RT[tnleg1168] && !T[tnlegd1168] && !RT[tnlegd1168] && !T[tnlfgd1168] && !RT[tnlfgd1168] &&
             !T[tnlfg2221] && !RT[tnlfg2221] && !T[tnleg2221] && !RT[tnleg2221] && !T[tnlegd2221] && !RT[tnlegd2221] && !T[tnlfgd2221] && !RT[tnlfgd2221] &&
-            !T[tnlsg3132] && !RT[tnlsg3132] && !T[tnlsgd3132] && !RT[tnlsgd3132] &&
-            !T[tnlsg3231] && !RT[tnlsg3231] && !T[tnlsgd3231] && !RT[tnlsgd3231] &&
+            !T[tnlsgd3132] && !RT[tnlsgd3132] &&
+            !T[tnlsgd3231] && !RT[tnlsgd3231] &&
             !T[tnlsgd3334] && !RT[tnlsgd3334] &&
             !T[tnlsgd3433] && !RT[tnlsgd3433] &&
             !T[tnlfg8281] && !RT[tnlfg8281] && !T[tnleg8281] && !RT[tnleg8281] && !T[tnlegd8281] && !RT[tnlegd8281] && !T[tnlfgd8281] && !RT[tnlfgd8281] &&
@@ -1121,9 +1126,7 @@ void Verlenggroen(void)
     NaloopEG(fc22, fc21, tnleg2221);
     NaloopFGDet(fc22, fc21, tnlfgd2221, d22_1, END);
     NaloopEGDet(fc22, fc21, tnlegd2221, d22_1, END);
-    NaloopVtg(fc31, fc32, tnlsg3132);
     NaloopVtgDet(fc31, fc32, dk31a, hnlak31a, tnlsgd3132);
-    NaloopVtg(fc32, fc31, tnlsg3231);
     NaloopVtgDet(fc32, fc31, dk32a, hnlak32a, tnlsgd3231);
     NaloopVtgDet(fc33, fc34, dk33a, hnlak33a, tnlsgd3334);
     NaloopVtgDet(fc34, fc33, dk34a, hnlak34a, tnlsgd3433);
@@ -1892,11 +1895,11 @@ void RealisatieAfhandeling(void)
     {
         RR[fc21] &= ~BIT5;
     }
-    if (RT[tnlsg3231] || T[tnlsg3231] || RT[tnlsgd3231] || T[tnlsgd3231])
+    if (RT[tnlsgd3231] || T[tnlsgd3231])
     {
         RR[fc31] &= ~BIT5;
     }
-    if (RT[tnlsg3132] || T[tnlsg3132] || RT[tnlsgd3132] || T[tnlsgd3132])
+    if (RT[tnlsgd3132] || T[tnlsgd3132])
     {
         RR[fc32] &= ~BIT5;
     }
@@ -2490,49 +2493,55 @@ void FileVerwerking(void)
     }
 
     /* Afkappen tijdens file ingreep File68af */
-    /* Eenmalig afkappen fase 08 op start file ingreep */
-    RT[tafkmingroen08fileFile68af] = ER[fc08] && T_max[tafkmingroen08fileFile68af];
-    if (SH[hfileFile68af] && G[fc08]) IH[hafk08fileFile68af] = TRUE;
-    if (EG[fc08]) IH[hafk08fileFile68af] = FALSE;
-    /* Afkappen fase 08 op max. groentijd tijdens file ingreep */
-    RT[tmaxgroen08fileFile68af] = SG[fc08] && T_max[tmaxgroen08fileFile68af];
-    if (G[fc08] && IH[hfileFile68af])
+    if (SCH[schfileFile68af])
     {
-        if (IH[hafk08fileFile68af] && T_max[tafkmingroen08fileFile68af] &&
-            !RT[tafkmingroen08fileFile68af] && !T[tafkmingroen08fileFile68af] && !(MK[fc08] & PRIO_MK_BIT) || 
-            !RT[tmaxgroen08fileFile68af] && !T[tmaxgroen08fileFile68af])
+        /* Eenmalig afkappen fase 08 op start file ingreep */
+        RT[tafkmingroen08fileFile68af] = ER[fc08] && T_max[tafkmingroen08fileFile68af];
+        if (SH[hfileFile68af] && G[fc08]) IH[hafk08fileFile68af] = TRUE;
+        if (EG[fc08]) IH[hafk08fileFile68af] = FALSE;
+        /* Afkappen fase 08 op max. groentijd tijdens file ingreep */
+        RT[tmaxgroen08fileFile68af] = SG[fc08] && T_max[tmaxgroen08fileFile68af];
+        if (G[fc08] && IH[hfileFile68af])
         {
-            Z[fc08] |= BIT5;
+            if (IH[hafk08fileFile68af] && T_max[tafkmingroen08fileFile68af] &&
+                !RT[tafkmingroen08fileFile68af] && !T[tafkmingroen08fileFile68af] && !(MK[fc08] & PRIO_MK_BIT) || 
+                !RT[tmaxgroen08fileFile68af] && !T[tmaxgroen08fileFile68af])
+            {
+                Z[fc08] |= BIT5;
+            }
         }
-    }
-    /* Eenmalig afkappen fase 11 op start file ingreep */
-    RT[tafkmingroen11fileFile68af] = ER[fc11] && T_max[tafkmingroen11fileFile68af];
-    if (SH[hfileFile68af] && G[fc11]) IH[hafk11fileFile68af] = TRUE;
-    if (EG[fc11]) IH[hafk11fileFile68af] = FALSE;
-    /* Afkappen fase 11 op max. groentijd tijdens file ingreep */
-    RT[tmaxgroen11fileFile68af] = SG[fc11] && T_max[tmaxgroen11fileFile68af];
-    if (G[fc11] && IH[hfileFile68af])
-    {
-        if (IH[hafk11fileFile68af] && T_max[tafkmingroen11fileFile68af] &&
-            !RT[tafkmingroen11fileFile68af] && !T[tafkmingroen11fileFile68af] && !(MK[fc11] & PRIO_MK_BIT) || 
-            !RT[tmaxgroen11fileFile68af] && !T[tmaxgroen11fileFile68af])
+        /* Eenmalig afkappen fase 11 op start file ingreep */
+        RT[tafkmingroen11fileFile68af] = ER[fc11] && T_max[tafkmingroen11fileFile68af];
+        if (SH[hfileFile68af] && G[fc11]) IH[hafk11fileFile68af] = TRUE;
+        if (EG[fc11]) IH[hafk11fileFile68af] = FALSE;
+        /* Afkappen fase 11 op max. groentijd tijdens file ingreep */
+        RT[tmaxgroen11fileFile68af] = SG[fc11] && T_max[tmaxgroen11fileFile68af];
+        if (G[fc11] && IH[hfileFile68af])
         {
-            Z[fc11] |= BIT5;
+            if (IH[hafk11fileFile68af] && T_max[tafkmingroen11fileFile68af] &&
+                !RT[tafkmingroen11fileFile68af] && !T[tafkmingroen11fileFile68af] && !(MK[fc11] & PRIO_MK_BIT) || 
+                !RT[tmaxgroen11fileFile68af] && !T[tmaxgroen11fileFile68af])
+            {
+                Z[fc11] |= BIT5;
+            }
         }
     }
 
     /* Minimale roodtijden tijdens file ingreep File68af */
-    /* Minimale roodtijd fase 08 */
-    RT[tminrood08fileFile68af] = EGL[fc08] && T_max[tminrood08fileFile68af];
-    if (R[fc08] && T[tminrood08fileFile68af] && IH[hfileFile68af])
+    if (SCH[schfileFile68af])
     {
-        BL[fc08] |= BIT5;
-    }
-    /* Minimale roodtijd fase 11 */
-    RT[tminrood11fileFile68af] = EGL[fc11] && T_max[tminrood11fileFile68af];
-    if (R[fc11] && T[tminrood11fileFile68af] && IH[hfileFile68af])
-    {
-        BL[fc11] |= BIT5;
+        /* Minimale roodtijd fase 08 */
+        RT[tminrood08fileFile68af] = EGL[fc08] && T_max[tminrood08fileFile68af];
+        if (R[fc08] && T[tminrood08fileFile68af] && IH[hfileFile68af])
+        {
+            BL[fc08] |= BIT5;
+        }
+        /* Minimale roodtijd fase 11 */
+        RT[tminrood11fileFile68af] = EGL[fc11] && T_max[tminrood11fileFile68af];
+        if (R[fc11] && T[tminrood11fileFile68af] && IH[hfileFile68af])
+        {
+            BL[fc11] |= BIT5;
+        }
     }
 
     /* Als hulpdienst ingreep aktief is op kruispunt arm dan nooit uitstel of afbreken als gevolg van file stroomafwaarts */
@@ -3052,23 +3061,10 @@ void application(void)
     KlokPerioden();
     Aanvragen();
     star_reset_bits(MM[mstarprog] != 0);
-    if (MM[mstarprog] > 0)
+    if (MM[mstarprog] != 0)
     {
-       if (MM[mstarprog] < 9) 
-       {
-          star_instellingen();
-          star_regelen();
-       }
-       else
-       {
-          Verstarringen(MM[mstarprog]);
-          IH[hstarprogwissel] = MM[mstarprogwissel];
-          if (EH[hstarprogwissel] || (PRM[prm_act_regeling] == 0))
-          {
-             PRM[prm_act_regeling] = MM[mstarprog];
-             set_parm1wijzap(&PRM[prm_act_regeling]);
-          }
-       }
+        star_instellingen();
+        star_regelen();
     }
     else if (IH[hplact])
     {
@@ -3204,24 +3200,150 @@ void system_application(void)
 
     /* wachtlicht uitsturing */
     /* --------------------- */
-    CIF_GUS[uswtk21] = (D[dk21] && !SD[dk21] || ED[dk21]) && A[fc21] && !G[fc21] && REG ? TRUE : CIF_GUS[uswtk21] && !G[fc21] && REG;
-    CIF_GUS[uswtk22] = (D[dk22] && !SD[dk22] || ED[dk22]) && A[fc22] && !G[fc22] && REG ? TRUE : CIF_GUS[uswtk22] && !G[fc22] && REG;
-    CIF_GUS[uswtk24] = (D[dk24] && !SD[dk24] || ED[dk24]) && A[fc24] && !G[fc24] && REG ? TRUE : CIF_GUS[uswtk24] && !G[fc24] && REG;
-    CIF_GUS[uswtk26] = (D[dk26] && !SD[dk26] || ED[dk26]) && A[fc26] && !G[fc26] && REG ? TRUE : CIF_GUS[uswtk26] && !G[fc26] && REG;
-    CIF_GUS[uswtk28] = (D[dk28] && !SD[dk28] || ED[dk28]) && A[fc28] && !G[fc28] && REG ? TRUE : CIF_GUS[uswtk28] && !G[fc28] && REG;
-    CIF_GUS[uswtk31a] = (D[dk31a] && !SD[dk31a] || ED[dk31a]) && A[fc31] && !G[fc31] && REG ? TRUE : CIF_GUS[uswtk31a] && !G[fc31] && REG;
-    CIF_GUS[uswtk31b] = (D[dk31b] && !SD[dk31b] || ED[dk31b]) && A[fc31] && !G[fc31] && REG ? TRUE : CIF_GUS[uswtk31b] && !G[fc31] && REG;
-    CIF_GUS[uswtk32a] = (D[dk32a] && !SD[dk32a] || ED[dk32a]) && A[fc32] && !G[fc32] && REG ? TRUE : CIF_GUS[uswtk32a] && !G[fc32] && REG;
-    CIF_GUS[uswtk32b] = (D[dk32b] && !SD[dk32b] || ED[dk32b]) && A[fc32] && !G[fc32] && REG ? TRUE : CIF_GUS[uswtk32b] && !G[fc32] && REG;
-    CIF_GUS[uswtk33a] = (D[dk33a] && !SD[dk33a] || ED[dk33a]) && A[fc33] && !G[fc33] && REG ? TRUE : CIF_GUS[uswtk33a] && !G[fc33] && REG;
-    CIF_GUS[uswtk33b] = (D[dk33b] && !SD[dk33b] || ED[dk33b]) && A[fc33] && !G[fc33] && REG ? TRUE : CIF_GUS[uswtk33b] && !G[fc33] && REG;
-    CIF_GUS[uswtk34a] = (D[dk34a] && !SD[dk34a] || ED[dk34a]) && A[fc34] && !G[fc34] && REG ? TRUE : CIF_GUS[uswtk34a] && !G[fc34] && REG;
-    CIF_GUS[uswtk34b] = (D[dk34b] && !SD[dk34b] || ED[dk34b]) && A[fc34] && !G[fc34] && REG ? TRUE : CIF_GUS[uswtk34b] && !G[fc34] && REG;
-    CIF_GUS[uswtk38a] = (D[dk38a] && !SD[dk38a] || ED[dk38a]) && A[fc38] && !G[fc38] && REG ? TRUE : CIF_GUS[uswtk38a] && !G[fc38] && REG;
-    CIF_GUS[uswtk38b] = (D[dk38b] && !SD[dk38b] || ED[dk38b]) && A[fc38] && !G[fc38] && REG ? TRUE : CIF_GUS[uswtk38b] && !G[fc38] && REG;
-    CIF_GUS[uswtk81] = (D[dk81] && !SD[dk81] || ED[dk81]) && A[fc81] && !G[fc81] && REG ? TRUE : CIF_GUS[uswtk81] && !G[fc81] && REG;
-    CIF_GUS[uswtk82] = (D[dk82] && !SD[dk82] || ED[dk82]) && A[fc82] && !G[fc82] && REG ? TRUE : CIF_GUS[uswtk82] && !G[fc82] && REG;
-    CIF_GUS[uswtk84] = (D[dk84] && !SD[dk84] || ED[dk84]) && A[fc84] && !G[fc84] && REG ? TRUE : CIF_GUS[uswtk84] && !G[fc84] && REG;
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk21] = (D[dk21] && !SD[dk21] || ED[dk21]) && A[fc21] && !G[fc21] && REG ? TRUE : CIF_GUS[uswtk21] && !G[fc21] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk21] = !G[fc21] && A[fc21] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk22] = (D[dk22] && !SD[dk22] || ED[dk22]) && A[fc22] && !G[fc22] && REG ? TRUE : CIF_GUS[uswtk22] && !G[fc22] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk22] = !G[fc22] && A[fc22] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk24] = (D[dk24] && !SD[dk24] || ED[dk24]) && A[fc24] && !G[fc24] && REG ? TRUE : CIF_GUS[uswtk24] && !G[fc24] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk24] = !G[fc24] && A[fc24] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk26] = (D[dk26] && !SD[dk26] || ED[dk26]) && A[fc26] && !G[fc26] && REG ? TRUE : CIF_GUS[uswtk26] && !G[fc26] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk26] = !G[fc26] && A[fc26] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk28] = (D[dk28] && !SD[dk28] || ED[dk28]) && A[fc28] && !G[fc28] && REG ? TRUE : CIF_GUS[uswtk28] && !G[fc28] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk28] = !G[fc28] && A[fc28] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk31a] = (D[dk31a] && !SD[dk31a] || ED[dk31a]) && A[fc31] && !G[fc31] && REG ? TRUE : CIF_GUS[uswtk31a] && !G[fc31] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk31a] = !G[fc31] && A[fc31] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk31b] = (D[dk31b] && !SD[dk31b] || ED[dk31b]) && A[fc31] && !G[fc31] && REG ? TRUE : CIF_GUS[uswtk31b] && !G[fc31] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk31b] = !G[fc31] && A[fc31] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk32a] = (D[dk32a] && !SD[dk32a] || ED[dk32a]) && A[fc32] && !G[fc32] && REG ? TRUE : CIF_GUS[uswtk32a] && !G[fc32] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk32a] = !G[fc32] && A[fc32] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk32b] = (D[dk32b] && !SD[dk32b] || ED[dk32b]) && A[fc32] && !G[fc32] && REG ? TRUE : CIF_GUS[uswtk32b] && !G[fc32] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk32b] = !G[fc32] && A[fc32] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk33a] = (D[dk33a] && !SD[dk33a] || ED[dk33a]) && A[fc33] && !G[fc33] && REG ? TRUE : CIF_GUS[uswtk33a] && !G[fc33] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk33a] = !G[fc33] && A[fc33] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk33b] = (D[dk33b] && !SD[dk33b] || ED[dk33b]) && A[fc33] && !G[fc33] && REG ? TRUE : CIF_GUS[uswtk33b] && !G[fc33] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk33b] = !G[fc33] && A[fc33] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk34a] = (D[dk34a] && !SD[dk34a] || ED[dk34a]) && A[fc34] && !G[fc34] && REG ? TRUE : CIF_GUS[uswtk34a] && !G[fc34] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk34a] = !G[fc34] && A[fc34] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk34b] = (D[dk34b] && !SD[dk34b] || ED[dk34b]) && A[fc34] && !G[fc34] && REG ? TRUE : CIF_GUS[uswtk34b] && !G[fc34] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk34b] = !G[fc34] && A[fc34] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk38a] = (D[dk38a] && !SD[dk38a] || ED[dk38a]) && A[fc38] && !G[fc38] && REG ? TRUE : CIF_GUS[uswtk38a] && !G[fc38] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk38a] = !G[fc38] && A[fc38] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk38b] = (D[dk38b] && !SD[dk38b] || ED[dk38b]) && A[fc38] && !G[fc38] && REG ? TRUE : CIF_GUS[uswtk38b] && !G[fc38] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk38b] = !G[fc38] && A[fc38] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk81] = (D[dk81] && !SD[dk81] || ED[dk81]) && A[fc81] && !G[fc81] && REG ? TRUE : CIF_GUS[uswtk81] && !G[fc81] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk81] = !G[fc81] && A[fc81] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk82] = (D[dk82] && !SD[dk82] || ED[dk82]) && A[fc82] && !G[fc82] && REG ? TRUE : CIF_GUS[uswtk82] && !G[fc82] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk82] = !G[fc82] && A[fc82] && REG;
+    }
+    if (SCH[schtypeuswt])
+    {
+        CIF_GUS[uswtk84] = (D[dk84] && !SD[dk84] || ED[dk84]) && A[fc84] && !G[fc84] && REG ? TRUE : CIF_GUS[uswtk84] && !G[fc84] && REG;
+    }
+    else
+    {
+        CIF_GUS[uswtk84] = !G[fc84] && A[fc84] && REG;
+    }
 
     /* Wachttijdvoorspellers */
 

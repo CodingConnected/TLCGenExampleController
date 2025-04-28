@@ -563,14 +563,6 @@ void control_parameters(void)
     US_code[usstarprogwissel]     = "starprogwissel";                                    /* Verklikken actief zijn wisselen naar star programma                         */
     US_code[usstar01]             = "star01";                                            /* Star programma star01 actief                                                */
     US_code[usstar02]             = "star02";                                            /* Star programma star02 actief                                                */
-//@@Menno: alleen bij vink Amsterdam verstarringen
-    US_code[usLVS01]              = "LVS01";                                             /* Verstarrings programma 1 actief                                             */
-    US_code[usLVS02]              = "LVS02";                                             /* Verstarrings programma 2 actief                                             */
-    US_code[usLVS03]              = "LVS03";                                             /* Verstarrings programma 3 actief                                             */
-    US_code[usLVS04]              = "LVS04";                                             /* Verstarrings programma 4 actief                                             */
-    US_code[usLVS05]              = "LVS05";                                             /* Verstarrings programma 5 actief                                             */
-    US_code[usLVS06]              = "LVS06";                                             /* Verstarrings programma 6 actief                                             */
-    US_code[usLVS15]              = "LVS15";                                             /* Verstarrings programma 11 actief (alles rood)                               */
 
 /* detectie */
 /* -------- */
@@ -940,6 +932,7 @@ void control_parameters(void)
     H_code[hfile68_9b]              = "file68_9b";                                                /* File 68_9b actief                                                  */
     H_code[hafk08fileFile68af]      = "afk08fileFile68af";                                        /* Onthouden afkappen fase 08 bij start file ingreep                  */
     H_code[hafk11fileFile68af]      = "afk11fileFile68af";                                        /* Onthouden afkappen fase 11 bij start file ingreep                  */
+    H_code[hfixatietegenh]          = "fixatietegenh";                                            /* Fixatie tegenhouden                                                */
     H_code[hplhd]                   = "plhd";                                                     /* Bijhouden hulpdienstingreep tbv (tijdelijk) lokaal VA regelen      */
     H_code[hplact]                  = "plact";                                                    /* Halfstar actief                                                    */
     H_code[hkpact]                  = "kpact";                                                    /* Koppeling tbv halfstar actief                                      */
@@ -1595,9 +1588,7 @@ void control_parameters(void)
     T_code[tnlfgd2221]                 = "nlfgd2221";                 T_max[tnlfgd2221]                 = 40;   T_type[tnlfgd2221]                 = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 22 naar 21                             */
     T_code[tnleg2221]                  = "nleg2221";                  T_max[tnleg2221]                  = 40;   T_type[tnleg2221]                  = TE_type; /* Naloop op einde groen van 22 naar 21                                                     */
     T_code[tnlegd2221]                 = "nlegd2221";                 T_max[tnlegd2221]                 = 50;   T_type[tnlegd2221]                 = TE_type; /* Detectieafhankelijke naloop op einde groen van 22 naar 21                                */
-    T_code[tnlsg3132]                  = "nlsg3132";                  T_max[tnlsg3132]                  = 125;  T_type[tnlsg3132]                  = TE_type; /* Naloop op start groen van 31 naar 32                                                     */
     T_code[tnlsgd3132]                 = "nlsgd3132";                 T_max[tnlsgd3132]                 = 125;  T_type[tnlsgd3132]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 31 naar 32                                */
-    T_code[tnlsg3231]                  = "nlsg3231";                  T_max[tnlsg3231]                  = 115;  T_type[tnlsg3231]                  = TE_type; /* Naloop op start groen van 32 naar 31                                                     */
     T_code[tnlsgd3231]                 = "nlsgd3231";                 T_max[tnlsgd3231]                 = 115;  T_type[tnlsgd3231]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 32 naar 31                                */
     T_code[tnlsgd3334]                 = "nlsgd3334";                 T_max[tnlsgd3334]                 = 80;   T_type[tnlsgd3334]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 33 naar 34                                */
     T_code[tnlsgd3433]                 = "nlsgd3433";                 T_max[tnlsgd3433]                 = 95;   T_type[tnlsgd3433]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 34 naar 33                                */
@@ -2059,6 +2050,7 @@ void control_parameters(void)
     SCH_code[schdynhiaat11]             = "dynhiaat11";             SCH[schdynhiaat11]             = 1;                                         /* Toepassen dynamisch hiaat bij fase 11                                     */
     SCH_code[schopdrempelen11]          = "opdrempelen11";          SCH[schopdrempelen11]          = 0;                                         /* Opdrempelen toepassen voor fase 11                                        */
     SCH_code[schedkop_11]               = "edkop_11";               SCH[schedkop_11]               = 1;                                         /* Start timers dynamische hiaat fase 11 op einde detectie koplus            */
+    SCH_code[schtypeuswt]               = "typeuswt";               SCH[schtypeuswt]               = 1;                                         /* Type aansturing waitsignalering 1 = drukknopgebruik, 2 = aanvraag         */
     SCH_code[schcycl]                   = "cycl";                   SCH[schcycl]                   = 0;                                         /* Bijhouden actuele cyclustijd aan of uit                                   */
     SCH_code[schcycl_reset]             = "cycl_reset";             SCH[schcycl_reset]             = 0;                                         /* Reset meting cyclustijd                                                   */
     SCH_code[schdvakd02_1a]             = "dvakd02_1a";             SCH[schdvakd02_1a]             = 1;                                         /* Aanvraag fase 02 bij storing op detector 02_1a                            */
@@ -4249,13 +4241,12 @@ void control_parameters(void)
     PRM_code[prmaltg84]                   = "altg84";                   PRM[prmaltg84]                   = 60;    PRM_type[prmaltg84]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
     PRM_code[prmaltp243384]               = "altp243384";               PRM[prmaltp243384]               = 60;    PRM_type[prmaltp243384]               = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 24, 33, 84                                                                   */
     PRM_code[prmminwtv]                   = "minwtv";                   PRM[prmminwtv]                   = 2;     PRM_type[prmminwtv]                   = TE_type; /* Minimale tijd die een LED moet branden tijdens aftellen                                                                        */
-    PRM_code[prmwtvnhaltmax]              = "wtvnhaltmax";              PRM[prmwtvnhaltmax]              = 21;                                                      /* Niet halteren wachttijdvoorspellers indien meer dan of zoveel leds branden                                                    */
-    PRM_code[prmwtvnhaltmin]              = "wtvnhaltmin";              PRM[prmwtvnhaltmin]              = 5;                                                       /* Niet halteren wachttijdvoorspellers indien minder dan of zoveel leds branden                                                  */
-    PRM_code[prmstarprogdef]              = "starprogdef";              PRM[prmstarprogdef]              = 1;     PRM_type[prmstarprogdef]              = SCH_type; /* Default star programma                                                                                                        */
-    PRM_code[prm_act_regeling]            =  "act_regeling";            PRM[prm_act_regeling]            = 0;     PRM_type[prm_act_regeling]            = TE_type;  /* Actuele actief star programma terugkoppeling naar Centrale                                                                    */
-    PRM_code[prmstarprogDaluren_weekend]  = "starprogDaluren_weekend";  PRM[prmstarprogDaluren_weekend]  = 2;                                                       /* Noodprogramma bij periode Daluren_weekend                                                                                     */
-    PRM_code[prmstarprogDaluren_werkdag]  = "starprogDaluren_werkdag";  PRM[prmstarprogDaluren_werkdag]  = 2;                                                       /* Noodprogramma bij periode Daluren_werkdag                                                                                     */
-    PRM_code[prmstarprogOerdag_werkdag]   = "starprogOerdag_werkdag";   PRM[prmstarprogOerdag_werkdag]   = 1;                                                       /* Noodprogramma bij periode Oerdag_werkdag                                                                                      */
+    PRM_code[prmwtvnhaltmax]              = "wtvnhaltmax";              PRM[prmwtvnhaltmax]              = 21;                                                      /* Niet halteren wachttijdvoorspellers indien meer dan of zoveel leds branden                                                     */
+    PRM_code[prmwtvnhaltmin]              = "wtvnhaltmin";              PRM[prmwtvnhaltmin]              = 5;                                                       /* Niet halteren wachttijdvoorspellers indien minder dan of zoveel leds branden                                                   */
+    PRM_code[prmstarprogdef]              = "starprogdef";              PRM[prmstarprogdef]              = 1;     PRM_type[prmstarprogdef]              = SCH_type; /* Default star programma                                                                                                         */
+    PRM_code[prmstarprogDaluren_weekend]  = "starprogDaluren_weekend";  PRM[prmstarprogDaluren_weekend]  = 2;                                                       /* Noodprogramma bij periode Daluren_weekend                                                                                      */
+    PRM_code[prmstarprogDaluren_werkdag]  = "starprogDaluren_werkdag";  PRM[prmstarprogDaluren_werkdag]  = 2;                                                       /* Noodprogramma bij periode Daluren_werkdag                                                                                      */
+    PRM_code[prmstarprogOerdag_werkdag]   = "starprogOerdag_werkdag";   PRM[prmstarprogOerdag_werkdag]   = 1;                                                       /* Noodprogramma bij periode Oerdag_werkdag                                                                                       */
     PRM_code[prmttxconfidence15]          = "ttxconfidence15";          PRM[prmttxconfidence15]          = 30;                                                     
     PRM_code[prmlatencyminendsg]          = "latencyminendsg";          PRM[prmlatencyminendsg]          = 3;     PRM_type[prmlatencyminendsg]          = TE_type;
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || defined VISSIM || defined PRACTICE_TEST
@@ -4908,9 +4899,7 @@ void control_parameters(void)
     T_cat[tnlfgd2221]              = CAT_Basisfuncties;    T_subcat[tnlfgd2221]                 = SUBCAT_HardeKoppeling;
     T_cat[tnleg2221]               = CAT_Basisfuncties;    T_subcat[tnleg2221]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlegd2221]              = CAT_Basisfuncties;    T_subcat[tnlegd2221]                 = SUBCAT_HardeKoppeling;
-    T_cat[tnlsg3132]               = CAT_Basisfuncties;    T_subcat[tnlsg3132]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlsgd3132]              = CAT_Basisfuncties;    T_subcat[tnlsgd3132]                 = SUBCAT_HardeKoppeling;
-    T_cat[tnlsg3231]               = CAT_Basisfuncties;    T_subcat[tnlsg3231]                  = SUBCAT_HardeKoppeling;
     T_cat[tnlsgd3231]              = CAT_Basisfuncties;    T_subcat[tnlsgd3231]                 = SUBCAT_HardeKoppeling;
     T_cat[tnlsgd3334]              = CAT_Basisfuncties;    T_subcat[tnlsgd3334]                 = SUBCAT_HardeKoppeling;
     T_cat[tnlsgd3433]              = CAT_Basisfuncties;    T_subcat[tnlsgd3433]                 = SUBCAT_HardeKoppeling;
@@ -7335,6 +7324,11 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d02_4a].SumoNamen[0], 32, "%s", "02_4a");
     sprintf_s(SUMODetectors[d02_4b].SumoNamen[0], 32, "%s", "02_4b");
     sprintf_s(SUMODetectors[d03_1].SumoNamen[0], 32, "%s", "03_1");
+    sprintf_s(SUMODetectors[d03_2].SumoNamen[0], 32, "%s", "03_2");
+    sprintf_s(SUMODetectors[d05_1].SumoNamen[0], 32, "%s", "05_1");
+    sprintf_s(SUMODetectors[d05_2].SumoNamen[0], 32, "%s", "05_2");
+    sprintf_s(SUMODetectors[d08_1a].SumoNamen[0], 32, "%s", "08_1a");
+    sprintf_s(SUMODetectors[d08_1b].SumoNamen[0], 32, "%s", "08_1b");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -7413,11 +7407,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d08_3a].SumoNamen[0], 32, "%s", "08_3a");
     sprintf_s(SUMODetectors[d08_2b].SumoNamen[0], 32, "%s", "08_2b");
     sprintf_s(SUMODetectors[d08_2a].SumoNamen[0], 32, "%s", "08_2a");
-    sprintf_s(SUMODetectors[d08_1b].SumoNamen[0], 32, "%s", "08_1b");
-    sprintf_s(SUMODetectors[d08_1a].SumoNamen[0], 32, "%s", "08_1a");
-    sprintf_s(SUMODetectors[d05_2].SumoNamen[0], 32, "%s", "05_2");
-    sprintf_s(SUMODetectors[d05_1].SumoNamen[0], 32, "%s", "05_1");
-    sprintf_s(SUMODetectors[d03_2].SumoNamen[0], 32, "%s", "03_2");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;

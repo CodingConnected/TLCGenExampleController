@@ -24,3 +24,52 @@
 /* dit is een placeholder */
 /* ---------------------- */
 
+PRM[prmwg02] = 2;  PRM_code[prmwg02] = "wg02"; 
+PRM[prmwg03] = 2;  PRM_code[prmwg03] = "wg03"; 
+PRM[prmwg05] = 2;  PRM_code[prmwg05] = "wg05"; 
+PRM[prmwg08] = 2;  PRM_code[prmwg08] = "wg08"; 
+PRM[prmwg09] = 2;  PRM_code[prmwg09] = "wg09"; 
+PRM[prmwg11] = 2;  PRM_code[prmwg11] = "wg11"; 
+PRM[prmwg21] = 2;  PRM_code[prmwg21] = "wg21"; 
+PRM[prmwg22] = 2;  PRM_code[prmwg22] = "wg22"; 
+PRM[prmwg24] = 2;  PRM_code[prmwg24] = "wg24"; 
+PRM[prmwg26] = 2;  PRM_code[prmwg26] = "wg26"; 
+PRM[prmwg28] = 2;  PRM_code[prmwg28] = "wg28"; 
+PRM[prmwg31] = 2;  PRM_code[prmwg31] = "wg31"; 
+PRM[prmwg32] = 2;  PRM_code[prmwg32] = "wg32"; 
+PRM[prmwg33] = 2;  PRM_code[prmwg33] = "wg33"; 
+PRM[prmwg34] = 2;  PRM_code[prmwg34] = "wg34"; 
+PRM[prmwg38] = 2;  PRM_code[prmwg38] = "wg38"; 
+PRM[prmwg61] = 2;  PRM_code[prmwg61] = "wg61"; 
+PRM[prmwg62] = 2;  PRM_code[prmwg62] = "wg62"; 
+PRM[prmwg67] = 2;  PRM_code[prmwg67] = "wg67"; 
+PRM[prmwg68] = 2;  PRM_code[prmwg68] = "wg68"; 
+PRM[prmwg81] = 2;  PRM_code[prmwg81] = "wg81"; 
+PRM[prmwg82] = 2;  PRM_code[prmwg82] = "wg82"; 
+PRM[prmwg84] = 2;  PRM_code[prmwg84] = "wg84"; 
+
+PRM[prmrto02karbus] = 0;
+PRM[prmrto03bus] = 0;
+PRM[prmrto05bus] = 0;
+PRM[prmrto08bus] = 0;
+PRM[prmrto09bus] = 0;
+PRM[prmrto11bus] = 0;
+PRM[prmrto61bus] = 0;
+PRM[prmrto62bus] = 0;
+PRM[prmrto68bus] = 0;
+PRM[prmrto67bus] = 0;
+
+PRM[prmmwta] = 10;
+PRM[prmmwtfts] = 10;
+
+T_max[tgb02karbus] = 1200;
+
+PRM_code[prmvg1_02] = "vg1_02";                   PRM[prmvg1_02] = 100;   PRM_type[prmvg1_02] = TE_type; /* Verlenggroentijd VG1 02                                                                                                        */
+PRM_code[prmvg2_02] = "vg2_02";                   PRM[prmvg2_02] = 100;   PRM_type[prmvg2_02] = TE_type; /* Verlenggroentijd VG2 02                                                                                                        */
+PRM_code[prmvg3_02] = "vg3_02";                   PRM[prmvg3_02] = 100;   PRM_type[prmvg3_02] = TE_type; /* Verlenggroentijd VG3 02                                                                                                        */
+PRM_code[prmvg4_02] = "vg4_02";                   PRM[prmvg4_02] = 100;   PRM_type[prmvg4_02] = TE_type; /* Verlenggroentijd VG4 02                                                                                                        */
+PRM_code[prmvg5_02] = "vg5_02";                   PRM[prmvg5_02] = 100;   PRM_type[prmvg5_02] = TE_type; /* Verlenggroentijd VG5 02                                                                                                        */
+PRM_code[prmvg6_02] = "vg6_02";                   PRM[prmvg6_02] = 100;   PRM_type[prmvg6_02] = TE_type; /* Verlenggroentijd VG6 02                                                                                                        */
+
+
+/**/

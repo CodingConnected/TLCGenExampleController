@@ -136,8 +136,18 @@ void PostApplication_Add(void)
    /* ============ */
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
 
-//   xyprintf(100, 1, "AFTELLER_TE fc05: %4d", AFTELLER_TE[fc05]);
+//  xyprintf(115, 1, "MAGAFTELLEN fc02: %4d", MAGAFTELLEN[fc02]);
+//  xyprintf(115, 2, "MAGAFTELLEN fc03: %4d", MAGAFTELLEN[fc03]);
+//  xyprintf(115, 3, "MAGAFTELLEN fc05: %4d", MAGAFTELLEN[fc05]);
+//  xyprintf(115, 4, "MAGAFTELLEN fc08: %4d", MAGAFTELLEN[fc08]);
+//  xyprintf(115, 5, "MAGAFTELLEN fc09: %4d", MAGAFTELLEN[fc09]);
+//  xyprintf(115, 6, "MAGAFTELLEN fc11: %4d", MAGAFTELLEN[fc11]);
+//  xyprintf(115, 7, "MAGAFTELLEN fc61: %4d", MAGAFTELLEN[fc61]);
+//  xyprintf(115, 8, "MAGAFTELLEN fc62: %4d", MAGAFTELLEN[fc62]);
+//  xyprintf(115, 9, "MAGAFTELLEN fc67: %4d", MAGAFTELLEN[fc67]);
+//  xyprintf(115,10, "MAGAFTELLEN fc68: %4d", MAGAFTELLEN[fc68]);
 
+   //MAGAFTELLEN[fc02]
 //   for (fc = 0; fc < FC_MAX; ++fc) {
 //      X[fc] &= ~BIT14;
 //      if (AFTELLER_TE[fc] > 0) {
@@ -145,8 +155,9 @@ void PostApplication_Add(void)
 //      }
 //   }
 
+
    if (TS &&
-      (CIF_KLOK[CIF_JAAR] == 2001) &&
+      (CIF_KLOK[CIF_JAAR] == 2099) &&
       (CIF_KLOK[CIF_MAAND] == 1) &&
       (CIF_KLOK[CIF_DAG] == 1) &&
       (CIF_KLOK[CIF_UUR] == 12) &&

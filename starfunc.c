@@ -57,7 +57,6 @@ void star_reset_bits(boolv star)
 			MK[i] = FALSE;
 			A[i] = TRUE;
 			Z[i] = FALSE;
-			BL[i] = FALSE;
 
 			RR[i] |= BIT14;
 		}
@@ -143,6 +142,8 @@ void star_bepaal_omschakelen(count mgewenst, count mwerkelijk, count mprogwissel
     /* stuur alles rood tbv programmawisseling     */
     if (MM[mprogwissel])
     {
+       int fc;
+
         /* stuur alle signaalgroepen naar rood */
         for (fc = 0; fc < FCMAX; fc++)
         {
@@ -155,171 +156,4 @@ void star_bepaal_omschakelen(count mgewenst, count mwerkelijk, count mprogwissel
 #endif
         }
     }
-}
-
-void Verstarringen(mulv verstarringsprogramma)
-{
-    count i;
-
-    
-    if(verstarringsprogramma >= 9 && verstarringsprogramma <=15) {
-    	 for (i = 0; i < FCMAX; i++) {
-          Z[i] |= BIT15;
-          BL[i] |= BIT15;
-       }
-       switch (verstarringsprogramma) {
-       case 9:
-           #ifdef fc01 
-           X[fc01] = 0;  RR[fc01] = 0;  BL[fc01] &= ~BIT15;  Z[fc01] &= ~BIT15; AA[fc01] |= 1; RW[fc01] |= BIT15;
-           #endif
-           #ifdef fc02 
-           X[fc02] = 0;  RR[fc02] = 0;  BL[fc02] &= ~BIT15;  Z[fc02] &= ~BIT15; AA[fc02] |= 1; RW[fc02] |= BIT15;
-           #endif
-           #ifdef fc03 
-           X[fc03] = 0;  RR[fc03] = 0;  BL[fc03] &= ~BIT15;  Z[fc03] &= ~BIT15; AA[fc03] |= 1; RW[fc03] |= BIT15;
-           #endif
-           #ifdef fc61 
-           X[fc61] = 0;  RR[fc61] = 0;  BL[fc61] &= ~BIT15;  Z[fc61] &= ~BIT15; AA[fc61] |= 1; RW[fc61] |= BIT15;
-           #endif
-           #ifdef fc62 
-           X[fc62] = 0;  RR[fc62] = 0;  BL[fc62] &= ~BIT15;  Z[fc62] &= ~BIT15; AA[fc62] |= 1; RW[fc62] |= BIT15;
-           #endif
-           #ifdef fc63 
-           X[fc63] = 0;  RR[fc63] = 0;  BL[fc63] &= ~BIT15;  Z[fc63] &= ~BIT15; AA[fc63] |= 1; RW[fc63] |= BIT15;
-           #endif
-           break;
-       
-       case 10:
-           #ifdef fc04
-           X[fc04] = 0;  RR[fc04] = 0;  BL[fc04] &= ~BIT15;  Z[fc04] &= ~BIT15; AA[fc04] |= 1; RW[fc04] |= BIT15;
-           #endif
-           #ifdef fc05
-           X[fc05] = 0;  RR[fc05] = 0;  BL[fc05] &= ~BIT15;  Z[fc05] &= ~BIT15; AA[fc05] |= 1; RW[fc05] |= BIT15;
-           #endif
-           #ifdef fc06
-           X[fc06] = 0;  RR[fc06] = 0;  BL[fc06] &= ~BIT15;  Z[fc06] &= ~BIT15; AA[fc06] |= 1; RW[fc06] |= BIT5;
-           #endif
-           #ifdef fc64
-           X[fc64] = 0;  RR[fc64] = 0;  BL[fc64] &= ~BIT15;  Z[fc64] &= ~BIT15; AA[fc64] |= 1; RW[fc64] |= BIT15;
-           #endif
-           #ifdef fc65
-           X[fc65] = 0;  RR[fc65] = 0;  BL[fc65] &= ~BIT15;  Z[fc65] &= ~BIT15; AA[fc65] |= 1; RW[fc65] |= BIT15;
-           #endif
-           #ifdef fc66
-           X[fc66] = 0;  RR[fc66] = 0;  BL[fc66] &= ~BIT15;  Z[fc66] &= ~BIT15; AA[fc66] |= 1; RW[fc66] |= BIT5;
-           #endif
-           break;
-       case 11:
-           #ifdef fc07 
-           X[fc07] = 0;  RR[fc07] = 0;  BL[fc07] &= ~BIT15;  Z[fc07] &= ~BIT15; AA[fc07] |= 1; RW[fc07] |= BIT15;
-           #endif
-           #ifdef fc08 
-           X[fc08] = 0;  RR[fc08] = 0;  BL[fc08] &= ~BIT15;  Z[fc08] &= ~BIT15; AA[fc08] |= 1; RW[fc08] |= BIT15;
-           #endif
-           #ifdef fc09 
-           X[fc09] = 0;  RR[fc09] = 0;  BL[fc09] &= ~BIT15;  Z[fc09] &= ~BIT15; AA[fc09] |= 1; RW[fc09] |= BIT15;
-           #endif
-           #ifdef fc67 
-           X[fc67] = 0;  RR[fc67] = 0;  BL[fc67] &= ~BIT15;  Z[fc67] &= ~BIT15; AA[fc67] |= 1; RW[fc67] |= BIT15;
-           #endif
-           #ifdef fc68 
-           X[fc68] = 0;  RR[fc68] = 0;  BL[fc68] &= ~BIT15;  Z[fc68] &= ~BIT15; AA[fc68] |= 1; RW[fc68] |= BIT15;
-           #endif
-           #ifdef fc69 
-           X[fc69] = 0;  RR[fc69] = 0;  BL[fc69] &= ~BIT15;  Z[fc69] &= ~BIT15; AA[fc69] |= 1; RW[fc69] |= BIT15;
-           #endif
-           break;
-       
-       case 12:
-           #ifdef fc10 
-           X[fc10] = 0;  RR[fc10] = 0;  BL[fc10] &= ~BIT15;  Z[fc10] &= ~BIT15; AA[fc10] |= 1; RW[fc10] |= BIT15;
-           #endif
-           #ifdef fc11 
-           X[fc11] = 0;  RR[fc11] = 0;  BL[fc11] &= ~BIT15;  Z[fc11] &= ~BIT15; AA[fc11] |= 1; RW[fc11] |= BIT15;
-           #endif
-           #ifdef fc12 
-           X[fc12] = 0;  RR[fc12] = 0;  BL[fc12] &= ~BIT15;  Z[fc12] &= ~BIT15; AA[fc12] |= 1; RW[fc12] |= BIT15;
-           #endif
-           #ifdef fc70 
-           X[fc70] = 0;  RR[fc70] = 0;  BL[fc70] &= ~BIT15;  Z[fc70] &= ~BIT15; AA[fc70] |= 1; RW[fc70] |= BIT15;
-           #endif
-           #ifdef fc71 
-           X[fc71] = 0;  RR[fc71] = 0;  BL[fc71] &= ~BIT15;  Z[fc71] &= ~BIT15; AA[fc71] |= 1; RW[fc71] |= BIT15;
-           #endif
-           #ifdef fc72 
-           X[fc72] = 0;  RR[fc72] = 0;  BL[fc72] &= ~BIT15;  Z[fc72] &= ~BIT15; AA[fc72] |= 1; RW[fc72] |= BIT15;
-           #endif
-           break;
-       case 13:
-           #ifdef fc01 
-           X[fc01] = 0;  RR[fc01] = 0;  BL[fc01] &= ~BIT15;  Z[fc01] &= ~BIT15; AA[fc01] |= 1; RW[fc01] |= BIT15;
-           #endif
-           #ifdef fc02 
-           X[fc02] = 0;  RR[fc02] = 0;  BL[fc02] &= ~BIT15;  Z[fc02] &= ~BIT15; AA[fc02] |= 1; RW[fc02] |= BIT15;
-           #endif
-           #ifdef fc07 
-           X[fc07] = 0;  RR[fc07] = 0;  BL[fc07] &= ~BIT15;  Z[fc07] &= ~BIT15; AA[fc07] |= 1; RW[fc07] |= BIT15;
-           #endif
-           #ifdef fc08 
-           X[fc08] = 0;  RR[fc08] = 0;  BL[fc08] &= ~BIT15;  Z[fc08] &= ~BIT15; AA[fc08] |= 1; RW[fc08] |= BIT15;
-           #endif
-           #ifdef fc62 
-           X[fc62] = 0;  RR[fc62] = 0;  BL[fc62] &= ~BIT15;  Z[fc62] &= ~BIT15; AA[fc62] |= 1; RW[fc62] |= BIT15;
-           #endif
-           #ifdef fc68 
-           X[fc68] = 0;  RR[fc68] = 0;  BL[fc68] &= ~BIT15;  Z[fc68] &= ~BIT15; AA[fc68] |= 1; RW[fc68] |= BIT15;
-           #endif
-            break;
-       case 14:
-           #ifdef fc04 
-           X[fc04] = 0;  RR[fc04] = 0;  BL[fc04] &= ~BIT15;  Z[fc04] &= ~BIT15; AA[fc04] |= 1; RW[fc04] |= BIT15;
-           #endif
-           #ifdef fc05 
-           X[fc05] = 0;  RR[fc05] = 0;  BL[fc05] &= ~BIT15;  Z[fc05] &= ~BIT15; AA[fc05] |= 1; RW[fc05] |= BIT15;
-           #endif
-           #ifdef fc10 
-           X[fc10] = 0;  RR[fc10] = 0;  BL[fc10] &= ~BIT15;  Z[fc10] &= ~BIT15; AA[fc10] |= 1; RW[fc10] |= BIT15;
-           #endif
-           #ifdef fc11 
-           X[fc11] = 0;  RR[fc11] = 0;  BL[fc11] &= ~BIT15;  Z[fc11] &= ~BIT15; AA[fc11] |= 1; RW[fc11] |= BIT15;
-           #endif
-           #ifdef fc65 
-           X[fc65] = 0;  RR[fc65] = 0;  BL[fc65] &= ~BIT15;  Z[fc65] &= ~BIT15; AA[fc65] |= 1; RW[fc65] |= BIT15;
-           #endif
-           #ifdef fc71 
-           X[fc71] = 0;  RR[fc71] = 0;  BL[fc71] &= ~BIT15;  Z[fc71] &= ~BIT15; AA[fc71] |= 1; RW[fc71] |= BIT15;
-           #endif
-            break;
-       default:
-           break;
-       }
-    }
-    else {
-    	 for (i = 0; i < FCMAX; i++) {
-          Z[i] &= ~BIT15;
-          BL[i] &= ~BIT15;
-       }
-    }
-    
-    #if usLVS01
-    CIF_GUS[usLVS01] = verstarringsprogramma ==  9;
-    #endif
-    #if usLVS02
-    CIF_GUS[usLVS02] = verstarringsprogramma == 10;
-    #endif
-    #if usLVS03
-    CIF_GUS[usLVS03] = verstarringsprogramma == 11;
-    #endif
-    #if usLVS04
-    CIF_GUS[usLVS04] = verstarringsprogramma == 12;
-    #endif
-    #if usLVS05
-    CIF_GUS[usLVS05] = verstarringsprogramma == 13;
-    #endif
-    #if usLVS06
-    CIF_GUS[usLVS06] = verstarringsprogramma == 14;
-    #endif
-    #if usLVS15
-    CIF_GUS[usLVS15] = verstarringsprogramma == 15;
-    #endif
 }
