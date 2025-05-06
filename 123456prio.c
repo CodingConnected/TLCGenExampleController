@@ -8,8 +8,8 @@
 
    BESTAND:   123456prio.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.12
-   CCOLGEN:   12.4.0.12
+    TLCGEN:   12.4.1.0
+   CCOLGEN:   12.4.1.0
 */
 
 /****************************** Versie commentaar ***********************************
@@ -2739,8 +2739,6 @@ void PrioPARCorrecties(void)
 {
     int fc;
      /* PAR-correcties nalopen voetgangers stap 1: naloop past of los OK */
-    PAR[fc31] = PAR[fc31] && (IH[hnlsg3132] || IH[hlos31]);
-    PAR[fc32] = PAR[fc32] && (IH[hnlsg3231] || IH[hlos32]);
     PAR[fc33] = PAR[fc33] && (IH[hnlsg3334] || IH[hlos33]);
     PAR[fc34] = PAR[fc34] && (IH[hnlsg3433] || IH[hlos34]);
 
@@ -2748,8 +2746,6 @@ void PrioPARCorrecties(void)
     for (fc = 0; fc < 10; ++fc)
     {
         /* PAR-correcties nalopen voetgangers stap 2: beide PAR of los OK */
-        PAR[fc31] = PAR[fc31] && (PAR[fc32] || IH[hlos31]);
-        PAR[fc32] = PAR[fc32] && (PAR[fc31] || IH[hlos32]);
         PAR[fc33] = PAR[fc33] && (PAR[fc34] || IH[hlos33]);
         PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
 
@@ -2760,7 +2756,6 @@ void PrioPARCorrecties(void)
         PAR[fc02] = PAR[fc02] && PAR[fc62];
         PAR[fc08] = PAR[fc08] && PAR[fc68];
         PAR[fc11] = PAR[fc11] && PAR[fc68];
-        PAR[fc22] = PAR[fc22] && PAR[fc21];
         PAR[fc82] = PAR[fc82] && PAR[fc81];
 
         /* PAR correcties gelijkstart synchronisaties */
@@ -2783,7 +2778,6 @@ void PrioPARCorrecties(void)
     PAR[fc62] = PAR[fc62] || G[fc02];
     PAR[fc68] = PAR[fc68] || G[fc08];
     PAR[fc68] = PAR[fc68] || G[fc11];
-    PAR[fc21] = PAR[fc21] || G[fc22];
     PAR[fc81] = PAR[fc81] || G[fc82];
 
     /* Niet alternatief komen tijdens file (meting na ss) */

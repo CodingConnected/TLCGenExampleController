@@ -8,8 +8,8 @@
 
    BESTAND:   123456hst.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.12
-   CCOLGEN:   12.4.0.12
+    TLCGEN:   12.4.1.0
+   CCOLGEN:   12.4.1.0
 */
 
 /****************************** Versie commentaar ***********************************
@@ -275,8 +275,7 @@ void Verlenggroen_halfstar(void)
 void Wachtgroen_halfstar(void)
 {
     /* Retour wachtgroen bij wachtgroen richtingen, let op: inclusief aanvraag! */
-    wachtstand_halfstar(fc02, IH[hplact], (boolv)(SCH[schca02]), (boolv)(SCH[schwg02]));
-    wachtstand_halfstar(fc03, IH[hplact], (boolv)(SCH[schca03]), (boolv)(SCH[schwg03]));
+    wachtstand_halfstar(fc02, IH[hplact], (boolv)(TRUE), (boolv)(TRUE));
     wachtstand_halfstar(fc05, IH[hplact], (boolv)(SCH[schca05]), (boolv)(SCH[schwg05]));
     wachtstand_halfstar(fc08, IH[hplact], (boolv)(SCH[schca08]), (boolv)(SCH[schwg08]));
     wachtstand_halfstar(fc09, IH[hplact], (boolv)(SCH[schca09]), (boolv)(SCH[schwg09]));
@@ -412,14 +411,12 @@ void Synchronisaties_halfstar(void)
     naloopEG_CV_halfstar(TRUE, fc02, fc62, T_max[tlr6202], tnlegd0262, tnleg0262);
     naloopEG_CV_halfstar(TRUE, fc08, fc68, T_max[tlr6808], tnlegd0868, tnleg0868);
     naloopEG_CV_halfstar(TRUE, fc11, fc68, T_max[tlr6811], tnlegd1168, tnleg1168);
-    naloopEG_CV_halfstar(TRUE, fc22, fc21, T_max[tlr2122], tnlegd2221, tnleg2221);
+    naloopEG_CV_halfstar(TRUE, fc22, fc21, NG, tnlegd2221, tnleg2221);
     naloopSG_halfstar(fc31, fc32, dk31a, hnlak31a, tnlsgd3132);
     naloopSG_halfstar(fc32, fc31, dk32a, hnlak32a, tnlsgd3231);
     naloopSG_halfstar(fc33, fc34, dk33a, hnlak33a, tnlsgd3334);
     naloopSG_halfstar(fc34, fc33, dk34a, hnlak34a, tnlsgd3433);
     naloopEG_CV_halfstar(TRUE, fc82, fc81, T_max[tlr8182], tnlegd8281, tnleg8281);
-    inloopSG_halfstar(fc31, fc32, til3132);
-    inloopSG_halfstar(fc32, fc31, til3231);
     inloopSG_halfstar(fc33, fc34, til3334);
     inloopSG_halfstar(fc34, fc33, til3433);
 
@@ -627,7 +624,7 @@ void pre_system_application_halfstar(void)
     #endif
     {
         copy_signalplan(PL);
-        create_trig();        /* creëer nieuwe TIG-tabel na wijzigingen geel-, ontruimingstijden */
+        create_trig();        /* creÃ«er nieuwe TIG-tabel na wijzigingen geel-, ontruimingstijden */
         correction_trig();    /* correcties TIG-tabel a.g.v. koppelingen e.d. */
         check_signalplans(); /* check signalplans */
         SCH[schinst] = 0;

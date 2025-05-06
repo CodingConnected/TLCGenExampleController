@@ -9,8 +9,8 @@
 
    BESTAND:   123456sys.add
       CCOL:   12.0
-    TLCGEN:   12.4.0.12
-   CCOLGEN:   12.4.0.12
+    TLCGEN:   12.4.1.0
+   CCOLGEN:   12.4.1.0
 */
 
 /****************************** Versie commentaar ***********************************
@@ -37,28 +37,4 @@
 #define LNKMAX (LNKMAX1+0) /* Totaal aantal gebruikte simulatie elementen */
 #endif
 
-
-#define prmwg02  (PRMMAX1+0)
-#define prmwg03  (PRMMAX1+1)
-#define prmwg05  (PRMMAX1+2)
-#define prmwg08  (PRMMAX1+3)
-#define prmwg09  (PRMMAX1+4)
-#define prmwg11  (PRMMAX1+5)
-#define prmwg21  (PRMMAX1+6)
-#define prmwg22  (PRMMAX1+7)
-#define prmwg24  (PRMMAX1+8)
-#define prmwg26  (PRMMAX1+9)
-#define prmwg28  (PRMMAX1+10)
-#define prmwg31  (PRMMAX1+11)
-#define prmwg32  (PRMMAX1+12)
-#define prmwg33  (PRMMAX1+13)
-#define prmwg34  (PRMMAX1+14)
-#define prmwg38  (PRMMAX1+15)
-#define prmwg61  (PRMMAX1+16)
-#define prmwg62  (PRMMAX1+17)
-#define prmwg67  (PRMMAX1+18)
-#define prmwg68  (PRMMAX1+19)
-#define prmwg81  (PRMMAX1+20)
-#define prmwg82  (PRMMAX1+21)
-#define prmwg84  (PRMMAX1+22)
-#define PRMMAX   (PRMMAX1+23) /* Totaal aantal gebruikte parameters     */
+#define PRMMAX   (PRMMAX1+0) /* Totaal aantal gebruikte parameters     */

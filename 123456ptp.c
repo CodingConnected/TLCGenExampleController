@@ -8,8 +8,8 @@
 
    BESTAND:   123456ptp.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.12
-   CCOLGEN:   12.4.0.12
+    TLCGEN:   12.4.1.0
+   CCOLGEN:   12.4.1.0
 */
 
 /****************************** Versie commentaar ***********************************
@@ -19,7 +19,6 @@
  ************************************************************************************/
 
 #define AUTSTATUS    5 /* status automaat */
-#define CIFA_COMF 2048 /* communicatiefout PTP-protocol */
 
 /* koppelingen via PTP */
 /* ------------------- */
@@ -128,7 +127,7 @@ void ptp_pre_system_app(void)
 
         /* afzetten van statusbit in CIF_GPS[5] */
         /* ------------------------------------ */
-        CIF_GPS[AUTSTATUS] &= ~CIFA_COMF;
+        CIF_GPS[AUTSTATUS] &= ~CIF_PTP1_FOUT;
 
         /* opzetten signalen van en naar ptp123456 */
 #ifdef PTP_ptp123456PORT
@@ -266,7 +265,7 @@ void ptp_pre_system_app(void)
         /* ------------------------------------ */
         if (!PTP_ptp123456KS.OKE)
         {
-            CIF_GPS[AUTSTATUS] |= CIFA_COMF;
+            CIF_GPS[AUTSTATUS] |= CIF_PTP1_FOUT;
         }
 #endif
 

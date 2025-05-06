@@ -8,8 +8,8 @@
 
    BESTAND:   123456rissim.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.12
-   CCOLGEN:   12.4.0.12
+    TLCGEN:   12.4.1.0
+   CCOLGEN:   12.4.1.0
 */
 
 /****************************** Versie commentaar ***********************************
@@ -36,10 +36,10 @@
 /* RIS-FI - ObjectID<Intersection, LaneID en ObjectID<SIgnalGroupID> */
 /* ================================================================= */
 /* The ID of the intersection can be retrieved from the ITF controlData section, 
- * element ìnameî in ìcontrolledIntersectionî (SYSTEM_ITF).
+ * element ‚Äúname‚Äù in ‚ÄúcontrolledIntersection‚Äù (SYSTEM_ITF).
  * The LaneNr is a unique number within the intersection (LaneID).
  * The (TLC) ID of the signal group can be retrieved from the ITF controlData section, 
- * element ìnameî in ìsgî (FC_code[]).
+ * element ‚Äúname‚Äù in ‚Äúsg‚Äù (FC_code[]).
  */
 /*RIS SIMULATIE PARAMETERS */
 /*======================== */
