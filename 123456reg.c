@@ -830,7 +830,7 @@ void Aanvragen(void)
 
     /* Wachtstand groen aanvragen */
     /* -------------------------- */
-    aanvraag_wachtstand_exp(fc02, (PRM[prmwg02] >= 2));
+    aanvraag_wachtstand_exp(fc02, (boolv) (PRM[prmwg02] >= 2));
     aanvraag_wachtstand_exp(fc05, (boolv) (SCH[schwg05] && (PRM[prmwg05] >= 2)));
     aanvraag_wachtstand_exp(fc08, (boolv) (SCH[schwg08] && (PRM[prmwg08] >= 2)));
     aanvraag_wachtstand_exp(fc09, (boolv) (SCH[schwg09] && (PRM[prmwg09] >= 2)));
