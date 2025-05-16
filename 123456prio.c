@@ -8,8 +8,8 @@
 
    BESTAND:   123456prio.c
       CCOL:   12.0
-    TLCGEN:   12.4.1.0
-   CCOLGEN:   12.4.1.0
+    TLCGEN:   12.4.0.12
+   CCOLGEN:   12.4.0.12
 */
 
 /****************************** Versie commentaar ***********************************
@@ -2316,7 +2316,7 @@ if (SCH[schconfidence15fix])
     {
         for (fc = 0; fc < FCMAX; ++fc)
         {
-             Z[fc] &= ~PRIO_Z_BIT;
+            Z[fc] &= ~PRIO_Z_BIT;
             FM[fc] &= ~PRIO_FM_BIT;
         }
     }
@@ -2739,6 +2739,8 @@ void PrioPARCorrecties(void)
 {
     int fc;
      /* PAR-correcties nalopen voetgangers stap 1: naloop past of los OK */
+    PAR[fc31] = PAR[fc31] && (IH[hnlsg3132] || IH[hlos31]);
+    PAR[fc32] = PAR[fc32] && (IH[hnlsg3231] || IH[hlos32]);
     PAR[fc33] = PAR[fc33] && (IH[hnlsg3334] || IH[hlos33]);
     PAR[fc34] = PAR[fc34] && (IH[hnlsg3433] || IH[hlos34]);
 
@@ -2746,6 +2748,8 @@ void PrioPARCorrecties(void)
     for (fc = 0; fc < 10; ++fc)
     {
         /* PAR-correcties nalopen voetgangers stap 2: beide PAR of los OK */
+        PAR[fc31] = PAR[fc31] && (PAR[fc32] || IH[hlos31]);
+        PAR[fc32] = PAR[fc32] && (PAR[fc31] || IH[hlos32]);
         PAR[fc33] = PAR[fc33] && (PAR[fc34] || IH[hlos33]);
         PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
 
@@ -2756,6 +2760,7 @@ void PrioPARCorrecties(void)
         PAR[fc02] = PAR[fc02] && PAR[fc62];
         PAR[fc08] = PAR[fc08] && PAR[fc68];
         PAR[fc11] = PAR[fc11] && PAR[fc68];
+        PAR[fc22] = PAR[fc22] && PAR[fc21];
         PAR[fc82] = PAR[fc82] && PAR[fc81];
 
         /* PAR correcties gelijkstart synchronisaties */
@@ -2778,6 +2783,7 @@ void PrioPARCorrecties(void)
     PAR[fc62] = PAR[fc62] || G[fc02];
     PAR[fc68] = PAR[fc68] || G[fc08];
     PAR[fc68] = PAR[fc68] || G[fc11];
+    PAR[fc21] = PAR[fc21] || G[fc22];
     PAR[fc81] = PAR[fc81] || G[fc82];
 
     /* Niet alternatief komen tijdens file (meting na ss) */
@@ -2895,47 +2901,47 @@ void PrioSpecialSignals(void)
 
     /* Prioriteit ingrepen */
     if (SD[ddummykarin02karbus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg02], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit02karbus] && C[cvc02karbus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg02], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit02karbus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg02], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykarin03bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg03], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit03bus] && C[cvc03bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg03], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit03bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg03], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykarin05bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg05], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit05bus] && C[cvc05bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg05], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit05bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg05], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykarin08bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg08], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit08bus] && C[cvc08bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg08], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit08bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg08], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykarin09bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg09], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit09bus] && C[cvc09bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg09], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit09bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg09], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykarin11bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg11], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit11bus] && C[cvc11bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg11], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit11bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg11], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykarin61bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg61], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit61bus] && C[cvc61bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg61], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit61bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg61], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykarin62bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg62], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit62bus] && C[cvc62bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg62], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit62bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg62], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykarin67bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg67], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit67bus] && C[cvc67bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg67], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit67bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg67], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
     if (SD[ddummykarin68bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg68], CIF_DSIN, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
-    if (SD[ddummykaruit68bus] && C[cvc68bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg68], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
+    if (SD[ddummykaruit68bus]) set_DSI_message(NG, CIF_BUS, PRM[prmkarsg68], CIF_DSUIT, 1, PRM[prmtestdsivert] - 120, PRM[prmtestdsilyn], PRM[prmtestdsicat], 0);
 
     /* HD ingrepen */
     if (SD[ddummyhdkarin02]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd02], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit02] && C[cvchd02]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd02], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit02]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd02], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin03]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd03], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit03] && C[cvchd03]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd03], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit03]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd03], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin05]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd05], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit05] && C[cvchd05]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd05], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit05]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd05], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin08]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd08], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit08] && C[cvchd08]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd08], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit08]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd08], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin09]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd09], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit09] && C[cvchd09]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd09], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit09]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd09], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin11]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd11], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit11] && C[cvchd11]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd11], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit11]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd11], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin61]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd61], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit61] && C[cvchd61]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd61], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit61]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd61], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin62]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd62], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit62] && C[cvchd62]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd62], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit62]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd62], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin67]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd67], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit67] && C[cvchd67]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd67], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit67]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd67], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
     if (SD[ddummyhdkarin68]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd68], CIF_DSIN, 1, 0, 0, 0, CIF_SIR);
-    if (SD[ddummyhdkaruit68] && C[cvchd68]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd68], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
+    if (SD[ddummyhdkaruit68]) set_DSI_message(0, CIF_POL, PRM[prmkarsghd68], CIF_DSUIT, 1, 0, 0, 0, CIF_SIR);
 }
 #endif
 

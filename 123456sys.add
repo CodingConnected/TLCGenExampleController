@@ -9,8 +9,8 @@
 
    BESTAND:   123456sys.add
       CCOL:   12.0
-    TLCGEN:   12.4.1.0
-   CCOLGEN:   12.4.1.0
+    TLCGEN:   12.4.0.12
+   CCOLGEN:   12.4.0.12
 */
 
 /****************************** Versie commentaar ***********************************
@@ -20,7 +20,6 @@
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
 
-#define MLNLTEST
 
 #define FCMAX  (FCMAX1+0)  /* Totaal aantal gebruikte fasecycli      */
 #define USMAX  (USMAX1+0)  /* Totaal aantal gebruikte uitgangen      */
@@ -31,10 +30,10 @@
 #define TMMAX  (TMMAX1+0)  /* Totaal aantal gebruikte timers         */
 #define CTMAX  (CTMAX1+0)  /* Totaal aantal gebruikte tellers        */
 #define SCHMAX (SCHMAX1+0) /* Totaal aantal gebruikte schakelaars    */
+#define PRMMAX (PRMMAX1+0) /* Totaal aantal gebruikte parameters     */
 #define MLMAX  (MLMAX1+0)  /* Totaal aantal gebruikte modulen        */
 #define PLMAX  (PLMAX1+0)  /* Totaal aantal gebruikte signaalplannen */
 #if !defined AUTOMAAT
 #define LNKMAX (LNKMAX1+0) /* Totaal aantal gebruikte simulatie elementen */
 #endif
 
-#define PRMMAX   (PRMMAX1+0) /* Totaal aantal gebruikte parameters     */

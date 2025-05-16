@@ -9,8 +9,8 @@
 
    BESTAND:   123456tab.add
       CCOL:   12.0
-    TLCGEN:   12.4.1.0
-   CCOLGEN:   12.4.1.0
+    TLCGEN:   12.4.0.12
+   CCOLGEN:   12.4.0.12
 */
 
 /****************************** Versie commentaar ***********************************
@@ -24,29 +24,3 @@
 /* dit is een placeholder */
 /* ---------------------- */
 
-
-PRM[prmrto02karbus] = 0;
-PRM[prmrto03bus] = 0;
-PRM[prmrto05bus] = 0;
-PRM[prmrto08bus] = 0;
-PRM[prmrto09bus] = 0;
-PRM[prmrto11bus] = 0;
-PRM[prmrto61bus] = 0;
-PRM[prmrto62bus] = 0;
-PRM[prmrto68bus] = 0;
-PRM[prmrto67bus] = 0;
-
-PRM[prmmwta] = 10;
-PRM[prmmwtfts] = 10;
-
-T_max[tgb02karbus] = 1200;
-
-PRM_code[prmvg1_02] = "vg1_02";                   PRM[prmvg1_02] = 100;   PRM_type[prmvg1_02] = TE_type; /* Verlenggroentijd VG1 02                                                                                                        */
-PRM_code[prmvg2_02] = "vg2_02";                   PRM[prmvg2_02] = 100;   PRM_type[prmvg2_02] = TE_type; /* Verlenggroentijd VG2 02                                                                                                        */
-PRM_code[prmvg3_02] = "vg3_02";                   PRM[prmvg3_02] = 100;   PRM_type[prmvg3_02] = TE_type; /* Verlenggroentijd VG3 02                                                                                                        */
-PRM_code[prmvg4_02] = "vg4_02";                   PRM[prmvg4_02] = 100;   PRM_type[prmvg4_02] = TE_type; /* Verlenggroentijd VG4 02                                                                                                        */
-PRM_code[prmvg5_02] = "vg5_02";                   PRM[prmvg5_02] = 100;   PRM_type[prmvg5_02] = TE_type; /* Verlenggroentijd VG5 02                                                                                                        */
-PRM_code[prmvg6_02] = "vg6_02";                   PRM[prmvg6_02] = 100;   PRM_type[prmvg6_02] = TE_type; /* Verlenggroentijd VG6 02                                                                                                        */
-
-
-/**/

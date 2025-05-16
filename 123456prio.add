@@ -9,8 +9,8 @@
 
    BESTAND:   123456prio.add
       CCOL:   12.0
-    TLCGEN:   12.4.1.0
-   CCOLGEN:   12.4.1.0
+    TLCGEN:   12.4.0.12
+   CCOLGEN:   12.4.0.12
 */
 
 /****************************** Versie commentaar ***********************************
@@ -19,7 +19,6 @@
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
-
 
 void RijTijdScenario_Add(void) {
   /* -----------------------------------------------
@@ -91,6 +90,7 @@ void PrioriteitsNiveau_Add(void) {
      tegen, door gebruik te maken van iXPrio[fc], bijv:
      iXPrio[prioFC02] = TRUE;
      --------------------------------------------------- */
+
 }
 
 void PrioriteitsToekenning_Add(void) {
@@ -112,6 +112,7 @@ void StartGroenMomenten_Add(void) {
      Pas hier zonodig het StartGroenMoment aan, bijv:
      iStartGroen[prioFC02] = 0;
      ------------------------------------------------ */
+
 }
 
 void PrioAanvragen_Add(void) {
@@ -156,6 +157,7 @@ void PrioAfkappen_Add(void) {
      Pas hier zonodig het AantalMalenNietAfkappen aan, bijv:
      iAantalMalenNietAfkappen[fc02] = 3;
      ------------------------------------------------------- */
+
 }
 
 void PrioAlternatieven_Add(void) {
@@ -166,10 +168,7 @@ void PrioAlternatieven_Add(void) {
     ----------------------------------------------------- */
 }
 
-
-
 void PostAfhandelingPrio_Add(void) {
-
 
 }
 
