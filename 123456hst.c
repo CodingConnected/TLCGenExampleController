@@ -8,8 +8,8 @@
 
    BESTAND:   123456hst.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.12
-   CCOLGEN:   12.4.0.12
+    TLCGEN:   12.4.0.14
+   CCOLGEN:   12.4.0.14
 */
 
 /****************************** Versie commentaar ***********************************
@@ -626,7 +626,7 @@ void pre_system_application_halfstar(void)
     #endif
     {
         copy_signalplan(PL);
-        create_trig();        /* creëer nieuwe TIG-tabel na wijzigingen geel-, ontruimingstijden */
+        create_trig();        /* creÃ«er nieuwe TIG-tabel na wijzigingen geel-, ontruimingstijden */
         correction_trig();    /* correcties TIG-tabel a.g.v. koppelingen e.d. */
         check_signalplans(); /* check signalplans */
         SCH[schinst] = 0;

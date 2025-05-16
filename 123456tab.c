@@ -11,8 +11,8 @@ void signaalplan_instellingen(void);
 
    BESTAND:   123456tab.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.12
-   CCOLGEN:   12.4.0.12
+    TLCGEN:   12.4.0.14
+   CCOLGEN:   12.4.0.14
 */
 
 /****************************** Versie commentaar ***********************************
@@ -932,6 +932,7 @@ void control_parameters(void)
     H_code[hfile68_9b]              = "file68_9b";                                                /* File 68_9b actief                                                  */
     H_code[hafk08fileFile68af]      = "afk08fileFile68af";                                        /* Onthouden afkappen fase 08 bij start file ingreep                  */
     H_code[hafk11fileFile68af]      = "afk11fileFile68af";                                        /* Onthouden afkappen fase 11 bij start file ingreep                  */
+    H_code[hfixatietegenh]          = "fixatietegenh";                                            /* Fixatie tegenhouden                                                */
     H_code[hplhd]                   = "plhd";                                                     /* Bijhouden hulpdienstingreep tbv (tijdelijk) lokaal VA regelen      */
     H_code[hplact]                  = "plact";                                                    /* Halfstar actief                                                    */
     H_code[hkpact]                  = "kpact";                                                    /* Koppeling tbv halfstar actief                                      */
@@ -2049,6 +2050,7 @@ void control_parameters(void)
     SCH_code[schdynhiaat11]             = "dynhiaat11";             SCH[schdynhiaat11]             = 1;                                         /* Toepassen dynamisch hiaat bij fase 11                                     */
     SCH_code[schopdrempelen11]          = "opdrempelen11";          SCH[schopdrempelen11]          = 0;                                         /* Opdrempelen toepassen voor fase 11                                        */
     SCH_code[schedkop_11]               = "edkop_11";               SCH[schedkop_11]               = 1;                                         /* Start timers dynamische hiaat fase 11 op einde detectie koplus            */
+    SCH_code[schtypeuswt]               = "typeuswt";               SCH[schtypeuswt]               = 1;                                         /* Type aansturing waitsignalering 1 = drukknopgebruik, 2 = aanvraag         */
     SCH_code[schcycl]                   = "cycl";                   SCH[schcycl]                   = 0;                                         /* Bijhouden actuele cyclustijd aan of uit                                   */
     SCH_code[schcycl_reset]             = "cycl_reset";             SCH[schcycl_reset]             = 0;                                         /* Reset meting cyclustijd                                                   */
     SCH_code[schdvakd02_1a]             = "dvakd02_1a";             SCH[schdvakd02_1a]             = 1;                                         /* Aanvraag fase 02 bij storing op detector 02_1a                            */
@@ -2462,7 +2464,7 @@ void control_parameters(void)
     PRM_code[prmfb]                       = "fb";                       PRM[prmfb]                       = 240;   PRM_type[prmfb]                       = TS_type; /* Instelling fasebewaking                                                                                                        */
     PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 4;                                                       /* Versiebeheer xx                                                                                                                */
     PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 0;                                                       /* Versiebeheer yy                                                                                                                */
-    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 12;                                                      /* Versiebeheer zz                                                                                                                */
+    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 14;                                                      /* Versiebeheer zz                                                                                                                */
     PRM_code[prmovmextragroen_02]         = "ovmextragroen_02";         PRM[prmovmextragroen_02]         = 0;     PRM_type[prmovmextragroen_02]         = TE_type;
     PRM_code[prmovmmindergroen_02]        = "ovmmindergroen_02";        PRM[prmovmmindergroen_02]        = 0;     PRM_type[prmovmmindergroen_02]        = TE_type;
     PRM_code[prmovmextragroen_03]         = "ovmextragroen_03";         PRM[prmovmextragroen_03]         = 0;     PRM_type[prmovmextragroen_03]         = TE_type;
@@ -4236,6 +4238,28 @@ void control_parameters(void)
     PRM_code[prmaltp82]                   = "altp82";                   PRM[prmaltp82]                   = 60;    PRM_type[prmaltp82]                   = TE_type; /* Minimale ruimte tbv alternatieve realisatie fase 82                                                                            */
     PRM_code[prmaltg84]                   = "altg84";                   PRM[prmaltg84]                   = 60;    PRM_type[prmaltg84]                   = TE_type; /* Minimale groentijd bij alternatieve realisatie fase 84                                                                         */
     PRM_code[prmaltp243384]               = "altp243384";               PRM[prmaltp243384]               = 60;    PRM_type[prmaltp243384]               = TE_type; /* Minimale ruimte tbv alternatieve realisatie fasen 24, 33, 84                                                                   */
+    PRM_code[prmwg02]                     = "wg02";                     PRM[prmwg02]                     = 2;                                                       /* Type wachtstand groen fase 02 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg05]                     = "wg05";                     PRM[prmwg05]                     = 2;                                                       /* Type wachtstand groen fase 05 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg08]                     = "wg08";                     PRM[prmwg08]                     = 2;                                                       /* Type wachtstand groen fase 08 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg09]                     = "wg09";                     PRM[prmwg09]                     = 2;                                                       /* Type wachtstand groen fase 09 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg11]                     = "wg11";                     PRM[prmwg11]                     = 2;                                                       /* Type wachtstand groen fase 11 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg21]                     = "wg21";                     PRM[prmwg21]                     = 2;                                                       /* Type wachtstand groen fase 21 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg22]                     = "wg22";                     PRM[prmwg22]                     = 2;                                                       /* Type wachtstand groen fase 22 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg24]                     = "wg24";                     PRM[prmwg24]                     = 2;                                                       /* Type wachtstand groen fase 24 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg26]                     = "wg26";                     PRM[prmwg26]                     = 2;                                                       /* Type wachtstand groen fase 26 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg28]                     = "wg28";                     PRM[prmwg28]                     = 2;                                                       /* Type wachtstand groen fase 28 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg31]                     = "wg31";                     PRM[prmwg31]                     = 2;                                                       /* Type wachtstand groen fase 31 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg32]                     = "wg32";                     PRM[prmwg32]                     = 2;                                                       /* Type wachtstand groen fase 32 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg33]                     = "wg33";                     PRM[prmwg33]                     = 2;                                                       /* Type wachtstand groen fase 33 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg34]                     = "wg34";                     PRM[prmwg34]                     = 2;                                                       /* Type wachtstand groen fase 34 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg38]                     = "wg38";                     PRM[prmwg38]                     = 2;                                                       /* Type wachtstand groen fase 38 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg61]                     = "wg61";                     PRM[prmwg61]                     = 2;                                                       /* Type wachtstand groen fase 61 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg62]                     = "wg62";                     PRM[prmwg62]                     = 2;                                                       /* Type wachtstand groen fase 62 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg67]                     = "wg67";                     PRM[prmwg67]                     = 2;                                                       /* Type wachtstand groen fase 67 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg68]                     = "wg68";                     PRM[prmwg68]                     = 2;                                                       /* Type wachtstand groen fase 68 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg81]                     = "wg81";                     PRM[prmwg81]                     = 2;                                                       /* Type wachtstand groen fase 81 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg82]                     = "wg82";                     PRM[prmwg82]                     = 2;                                                       /* Type wachtstand groen fase 82 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
+    PRM_code[prmwg84]                     = "wg84";                     PRM[prmwg84]                     = 2;                                                       /* Type wachtstand groen fase 84 (1 = groen vasthouden, 2 = groen vasth. + aanvr)                                                 */
     PRM_code[prmminwtv]                   = "minwtv";                   PRM[prmminwtv]                   = 2;     PRM_type[prmminwtv]                   = TE_type; /* Minimale tijd die een LED moet branden tijdens aftellen                                                                        */
     PRM_code[prmwtvnhaltmax]              = "wtvnhaltmax";              PRM[prmwtvnhaltmax]              = 21;                                                      /* Niet halteren wachttijdvoorspellers indien meer dan of zoveel leds branden                                                     */
     PRM_code[prmwtvnhaltmin]              = "wtvnhaltmin";              PRM[prmwtvnhaltmin]              = 5;                                                       /* Niet halteren wachttijdvoorspellers indien minder dan of zoveel leds branden                                                   */
@@ -4251,7 +4275,7 @@ void control_parameters(void)
     PRM_code[prmtestdsicat]               = "testdsicat";               PRM[prmtestdsicat]               = 10;                                          /* Testen ritcategorie DSI bericht in testomgeving                                                                                */
 #endif
 
-/* instellingen categorieën */
+/* instellingen categorieÃ«n */
 /* ------------------------ */
     C_cat[cvchst02karbus]   = CAT_Module;      C_subcat[cvchst02karbus]      = SUBCAT_Plantijden;
     C_cat[cvchst02risov]    = CAT_Module;      C_subcat[cvchst02risov]       = SUBCAT_Plantijden;
@@ -6983,6 +7007,28 @@ void control_parameters(void)
     PRM_cat[prmaltp82]                = CAT_Module;           PRM_subcat[prmaltp82]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltg84]                = CAT_Module;           PRM_subcat[prmaltg84]                   = SUBCAT_Plantijden;
     PRM_cat[prmaltp243384]            = CAT_Module;           PRM_subcat[prmaltp243384]               = SUBCAT_Plantijden;
+    PRM_cat[prmwg02]                  = CAT_Basisfuncties;    PRM_subcat[prmwg02]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg05]                  = CAT_Basisfuncties;    PRM_subcat[prmwg05]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg08]                  = CAT_Basisfuncties;    PRM_subcat[prmwg08]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg09]                  = CAT_Basisfuncties;    PRM_subcat[prmwg09]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg11]                  = CAT_Basisfuncties;    PRM_subcat[prmwg11]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg21]                  = CAT_Basisfuncties;    PRM_subcat[prmwg21]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg22]                  = CAT_Basisfuncties;    PRM_subcat[prmwg22]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg24]                  = CAT_Basisfuncties;    PRM_subcat[prmwg24]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg26]                  = CAT_Basisfuncties;    PRM_subcat[prmwg26]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg28]                  = CAT_Basisfuncties;    PRM_subcat[prmwg28]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg31]                  = CAT_Basisfuncties;    PRM_subcat[prmwg31]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg32]                  = CAT_Basisfuncties;    PRM_subcat[prmwg32]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg33]                  = CAT_Basisfuncties;    PRM_subcat[prmwg33]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg34]                  = CAT_Basisfuncties;    PRM_subcat[prmwg34]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg38]                  = CAT_Basisfuncties;    PRM_subcat[prmwg38]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg61]                  = CAT_Basisfuncties;    PRM_subcat[prmwg61]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg62]                  = CAT_Basisfuncties;    PRM_subcat[prmwg62]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg67]                  = CAT_Basisfuncties;    PRM_subcat[prmwg67]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg68]                  = CAT_Basisfuncties;    PRM_subcat[prmwg68]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg81]                  = CAT_Basisfuncties;    PRM_subcat[prmwg81]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg82]                  = CAT_Basisfuncties;    PRM_subcat[prmwg82]                     = SUBCAT_Wachtgroen;
+    PRM_cat[prmwg84]                  = CAT_Basisfuncties;    PRM_subcat[prmwg84]                     = SUBCAT_Wachtgroen;
     PRM_cat[prmminwtv]                = CAT_Informeren;       PRM_subcat[prmminwtv]                   = SUBCAT_Wachttijdvoorspeller;
     PRM_cat[prmwtvnhaltmax]           = CAT_Informeren;       PRM_subcat[prmwtvnhaltmax]              = SUBCAT_Wachttijdvoorspeller;
     PRM_cat[prmwtvnhaltmin]           = CAT_Informeren;       PRM_subcat[prmwtvnhaltmin]              = SUBCAT_Wachttijdvoorspeller;
@@ -7329,6 +7375,7 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d08_3b].SumoNamen[0], 32, "%s", "08_3b");
     sprintf_s(SUMODetectors[d08_4a].SumoNamen[0], 32, "%s", "08_4a");
     sprintf_s(SUMODetectors[d08_4b].SumoNamen[0], 32, "%s", "08_4b");
+    sprintf_s(SUMODetectors[d09_1].SumoNamen[0], 32, "%s", "091");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -7400,7 +7447,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d11_1].SumoNamen[0], 32, "%s", "11_1");
     sprintf_s(SUMODetectors[d09_3].SumoNamen[0], 32, "%s", "093");
     sprintf_s(SUMODetectors[d09_2].SumoNamen[0], 32, "%s", "092");
-    sprintf_s(SUMODetectors[d09_1].SumoNamen[0], 32, "%s", "091");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;

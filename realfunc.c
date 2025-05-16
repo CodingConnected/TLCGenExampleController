@@ -1,4 +1,4 @@
-/* realfunc.c - gegenereerd met TLCGen 12.4.0.12 */
+/* realfunc.c - gegenereerd met TLCGen 12.4.0.14 */
 
 /*
 BESTAND:   realfunc.c
@@ -915,7 +915,7 @@ void Synchroniseer_FO1_2(count fc1, count fc2)   /* Gelijk aan bovenstaande alle
 /* Dan door synchronisatie       PG[fc2]  = PG[fc1]         , mits fc1 rood  is                                                                                                                               */
 /* Dan door fictieve ontruiming, PG[fc2] |= PRIMAIR_OVERSLAG, mits fc1 groen is                                                                                                                               */
 /*                                                                                                                                                                                                            */
-/* Verder nooit één van beide versneld primair, om te voorkomen dat PG's ongelijk geset worden. Dus:                                                                                                          */
+/* Verder nooit Ã©Ã©n van beide versneld primair, om te voorkomen dat PG's ongelijk geset worden. Dus:                                                                                                          */
 /* - beide moeten PFPR hebben                                                                                                                                                                                 */
 /* - beide moeten A    hebben                                                                                                                                                                                 */
 /* zo niet, dan gaat versneld primair niet door                                                                                                                                                               */
@@ -961,7 +961,7 @@ void Synchroniseer_PG(void)
           PG[fc2] |= TIME_FOT[fc1][fc2] && G[fc1] ? PRIMAIR_OVERSLAG : 0;
          }
 
-      /* voorkomen dat slechts één van beide verscneld primair komt, terwijl synchronsatie gewenst */
+      /* voorkomen dat slechts Ã©Ã©n van beide verscneld primair komt, terwijl synchronsatie gewenst */
       if(REAL_SYN[fc1][fc2] && A[fc1] && A[fc2] && (!PFPR[fc1] || !PFPR[fc2]))
          {
             PFPR[fc1] = FALSE;
@@ -981,7 +981,7 @@ void Synchroniseer_PG1_2(count fc1, count fc2)  /* Gelijk aan bovenstaande allee
           PG[fc2] |= TIME_FOT[fc1][fc2] && G[fc1] ? PRIMAIR_OVERSLAG : 0;
       }
 
-      /* voorkomen dat slechts één van beide verscneld primair komt, terwijl synchronsatie gewenst */
+      /* voorkomen dat slechts Ã©Ã©n van beide verscneld primair komt, terwijl synchronsatie gewenst */
       if(REAL_SYN[fc1][fc2] && !(PFPR[fc1] && PFPR[fc2] && A[fc1] && A[fc2]))
       {
         PFPR[fc1] = FALSE;

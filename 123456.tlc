@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>12</HuidigeVersieRevision>
+    <HuidigeVersieRevision>14</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -80,7 +80,7 @@
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.12</TLCGenVersie>
+    <TLCGenVersie>12.4.0.14</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -2309,6 +2309,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>Altijd</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -2779,6 +2780,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>Nooit</Wachtgroen>
+      <WachtgroenType>Geen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -2991,6 +2993,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchAan</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -3203,6 +3206,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -3673,6 +3677,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -3925,6 +3930,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -4223,6 +4229,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -4441,6 +4448,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default2</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -4674,6 +4682,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -4986,6 +4995,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -5211,6 +5221,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -5480,6 +5491,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -5712,6 +5724,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -5950,6 +5963,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -6182,6 +6196,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -6414,6 +6429,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Voetganger</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -6646,6 +6662,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -6858,6 +6875,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -7156,6 +7174,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -7368,6 +7387,7 @@
       <HDIngreep>true</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchUit</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -7750,6 +7770,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -7968,6 +7989,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default2</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -8186,6 +8208,7 @@
       <HDIngreep>false</HDIngreep>
       <VasteAanvraag>SchUit</VasteAanvraag>
       <Wachtgroen>SchUit</Wachtgroen>
+      <WachtgroenType>GroenVasthoudenEnAanvragen</WachtgroenType>
       <Meeverlengen>SchAan</Meeverlengen>
       <MeeverlengenType>Default</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
@@ -25000,6 +25023,9 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
+  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <SimulationEntries />
+  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>true</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -25246,6 +25272,11 @@
         <SumoNaam1>08_4b</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>09_1</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>091</SumoNaam1>
       </Detector>
       <Detector>
         <Naam>opt11</Naam>
@@ -25863,11 +25894,6 @@
         <Naam>09_2</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>092</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>09_1</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>091</SumoNaam1>
       </Detector>
     </Detectoren>
   </SumoKoppeling>
