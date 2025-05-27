@@ -1,4 +1,4 @@
-/* winmg.c - gegenereerd met TLCGen 12.4.0.14 */
+/* winmg.c - gegenereerd met TLCGen 12.4.0.16 */
 
 #ifndef ___MGBARSRGV
 #define ___MGBARSRGV

@@ -1,4 +1,4 @@
-/* halfstar.c - gegenereerd met TLCGen 12.4.0.14 */
+/* halfstar.c - gegenereerd met TLCGen 12.4.0.16 */
 
 #include "halfstar.h"
 #if defined prioFCMAX && (prioFCMAX > 0)

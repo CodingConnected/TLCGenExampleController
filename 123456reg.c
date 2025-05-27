@@ -8,8 +8,8 @@
 
    BESTAND:   123456reg.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.14
-   CCOLGEN:   12.4.0.14
+    TLCGEN:   12.4.0.16
+   CCOLGEN:   12.4.0.16
 */
 
 /****************************** Versie commentaar ***********************************
@@ -253,7 +253,7 @@ void PreApplication(void)
     IH[hpeltegenhKOP02] = FALSE;
 
     /* Uitgaande peloton koppeling naar KOP68_uit */
-    IH[hptp123456uks04] = SCH[schpkuKOP68_uit68] && (SG[fc68] || FG[fc68]);
+    IH[hptp123456uks03] = SCH[schpkuKOP68_uit68] && (SG[fc68] || FG[fc68]);
     if (G[fc68] && ED[d68_1a]) IH[hptp123456uks05] = !IH[hptp123456uks05];
     if (G[fc68] && ED[d68_1b]) IH[hptp123456uks06] = !IH[hptp123456uks06];
     /* Afzetten hulpelementen inkomende peloton koppelingen */

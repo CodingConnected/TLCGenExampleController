@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>14</HuidigeVersieRevision>
+    <HuidigeVersieRevision>16</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -80,7 +80,7 @@
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.14</TLCGenVersie>
+    <TLCGenVersie>12.4.0.16</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -9259,7 +9259,7 @@
         <VasteNaloop>false</VasteNaloop>
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
-        <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaximaleVoorstart>31</MaximaleVoorstart>
         <Detectoren>
           <NaloopDetector>
             <Detector>k31a</Detector>
@@ -9280,7 +9280,7 @@
         <VasteNaloop>false</VasteNaloop>
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
-        <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaximaleVoorstart>32</MaximaleVoorstart>
         <Detectoren>
           <NaloopDetector>
             <Detector>k32a</Detector>
@@ -9301,7 +9301,7 @@
         <VasteNaloop>false</VasteNaloop>
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
-        <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaximaleVoorstart>33</MaximaleVoorstart>
         <Detectoren>
           <NaloopDetector>
             <Detector>k33a</Detector>
@@ -9322,7 +9322,7 @@
         <VasteNaloop>false</VasteNaloop>
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
-        <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaximaleVoorstart>34</MaximaleVoorstart>
         <Detectoren>
           <NaloopDetector>
             <Detector>k34a</Detector>
@@ -10629,7 +10629,7 @@
         </InkomendVerklikking>
         <KoppelSignalen>
           <KoppelSignaalModel>
-            <Count>4</Count>
+            <Count>3</Count>
             <Id>1</Id>
             <Name>KOP68_uitg68</Name>
             <Description>KOP68_uit groen 68</Description>
@@ -23697,7 +23697,7 @@
             <Richting>In</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>2</Count>
+            <Count>6</Count>
             <Id>2</Id>
             <Name>654321kpuls</Name>
             <Description>Koppelpuls</Description>
@@ -23705,7 +23705,7 @@
             <Richting>In</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>3</Count>
+            <Count>2</Count>
             <Id>3</Id>
             <Name>654321perarh</Name>
             <Description>Periode alt.hoofdr.</Description>
@@ -23713,7 +23713,7 @@
             <Richting>In</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>4</Count>
+            <Count>7</Count>
             <Id>4</Id>
             <Name>654321pervar</Name>
             <Description>Periode VA regelen</Description>
@@ -23721,7 +23721,7 @@
             <Richting>In</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>5</Count>
+            <Count>3</Count>
             <Id>5</Id>
             <Name>654321plPL1</Name>
             <Description>PL1</Description>
@@ -23729,7 +23729,7 @@
             <Richting>In</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>6</Count>
+            <Count>4</Count>
             <Id>6</Id>
             <Name>654321plPL2</Name>
             <Description>PL2</Description>
@@ -23737,7 +23737,7 @@
             <Richting>In</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>7</Count>
+            <Count>5</Count>
             <Id>7</Id>
             <Name>654321plPL3</Name>
             <Description>PL3</Description>
@@ -23761,7 +23761,7 @@
             <Richting>Uit</Richting>
           </KoppelSignaalModel>
           <KoppelSignaalModel>
-            <Count>3</Count>
+            <Count>4</Count>
             <Id>10</Id>
             <Name>654321txsok</Name>
             <Description>TXS OK</Description>
@@ -25023,9 +25023,6 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
-  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <SimulationEntries />
-  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>true</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -25277,6 +25274,16 @@
         <Naam>09_1</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>091</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>09_2</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>092</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>09_3</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>093</SumoNaam1>
       </Detector>
       <Detector>
         <Naam>opt11</Naam>
@@ -25884,16 +25891,6 @@
         <SumoNaam1>11_1</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>09_3</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>093</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>09_2</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>092</SumoNaam1>
       </Detector>
     </Detectoren>
   </SumoKoppeling>

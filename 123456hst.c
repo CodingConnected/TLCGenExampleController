@@ -8,8 +8,8 @@
 
    BESTAND:   123456hst.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.14
-   CCOLGEN:   12.4.0.14
+    TLCGEN:   12.4.0.16
+   CCOLGEN:   12.4.0.16
 */
 
 /****************************** Versie commentaar ***********************************
@@ -68,9 +68,9 @@ void KlokPerioden_halfstar(void)
     {
         MM[mmaster] = TRUE;
 
-        if      (IH[hptp123456iks05]) APL = PL1;
-        else if (IH[hptp123456iks06]) APL = PL2;
-        else if (IH[hptp123456iks07]) APL = PL3;
+        if      (IH[hptp123456iks03]) APL = PL1;
+        else if (IH[hptp123456iks04]) APL = PL2;
+        else if (IH[hptp123456iks05]) APL = PL3;
         else APL = PL1;
 
         if (PRM[prmvolgmasterpl] > 0)
@@ -88,8 +88,8 @@ void KlokPerioden_halfstar(void)
         }
         else
         {
-            IH[hpervar] =  IH[hptp123456iks04];
-            IH[hperarh] =  IH[hptp123456iks03];
+            IH[hpervar] =  IH[hptp123456iks07];
+            IH[hperarh] =  IH[hptp123456iks02];
         }
     }
     /* Bij afwezigheid Master bepaalt Slave zelf wat er gaat gebeuren. In dit geval neemt de slave de functie van Master over */
@@ -641,7 +641,7 @@ void pre_system_application_halfstar(void)
     
     if (IH[hplact]) /* Code alleen bij PL-bedrijf */
     {
-        RT[toffset] = SH[hptp123456iks02]; /* offset starten op start koppelpuls */
+        RT[toffset] = SH[hptp123456iks06]; /* offset starten op start koppelpuls */
         SYN_TXS = ET[toffset]; /* synchronisatie einde offset timer */
         synchronization_timer(SAPPLPROG, T_max[txmarge]);
         FTX = HTX = FALSE;  /* reset instructievariabelen van TX */
@@ -692,19 +692,19 @@ void pre_system_application_halfstar(void)
     /* tijdens VA bedrijf hard synchroniseren */
     else
     {
-        RTX = SH[hptp123456iks02];
+        RTX = SH[hptp123456iks06];
     }
 
     /* Koppelsignalen (PTP) van 654321 */
     GUS[usin654321leven] = IH[hptp123456iks01];
     if (MM[mleven654321])
     {
-        GUS[usin654321kpuls] = IH[hptp123456iks02];
-        GUS[usin654321pervar] = IH[hptp123456iks04];
-        GUS[usin654321perarh] = IH[hptp123456iks03];
-        GUS[usin654321PL1] = IH[hptp123456iks05];
-        GUS[usin654321PL2] = IH[hptp123456iks06];
-        GUS[usin654321PL3] = IH[hptp123456iks07];
+        GUS[usin654321kpuls] = IH[hptp123456iks06];
+        GUS[usin654321pervar] = IH[hptp123456iks07];
+        GUS[usin654321perarh] = IH[hptp123456iks02];
+        GUS[usin654321PL1] = IH[hptp123456iks03];
+        GUS[usin654321PL2] = IH[hptp123456iks04];
+        GUS[usin654321PL3] = IH[hptp123456iks05];
     }
     else
     {
@@ -719,7 +719,7 @@ void pre_system_application_halfstar(void)
     /* Koppelsignalen (PTP) naar 654321 */
     GUS[usuit654321leven] = IH[hptp123456uks01] = IH[hleven];
     GUS[usuit654321syncok] = IH[hptp123456uks02] = REG && (MM[mleven654321] && (TXS_delta == 0) && TXS_OKE);
-    GUS[usuit654321txsok] = IH[hptp123456uks03] = REG && MM[mleven654321] && TXS_OKE;
+    GUS[usuit654321txsok] = IH[hptp123456uks04] = REG && MM[mleven654321] && TXS_OKE;
 
     GUS[usplact] = IH[hplact];
     GUS[usmlact] = IH[hmlact];

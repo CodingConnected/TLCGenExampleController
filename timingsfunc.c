@@ -1,4 +1,4 @@
-/* timingsfunc.c - gegenereerd met TLCGen 12.4.0.14 */
+/* timingsfunc.c - gegenereerd met TLCGen 12.4.0.16 */
 
 /* DEFINITIE FUNCTIE DEMO_MSG_FCTIMING */
 /* =================================== */

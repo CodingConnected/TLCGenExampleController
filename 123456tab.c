@@ -11,8 +11,8 @@ void signaalplan_instellingen(void);
 
    BESTAND:   123456tab.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.14
-   CCOLGEN:   12.4.0.14
+    TLCGEN:   12.4.0.16
+   CCOLGEN:   12.4.0.16
 */
 
 /****************************** Versie commentaar ***********************************
@@ -1950,10 +1950,10 @@ void control_parameters(void)
     T_code[tlr6811]                    = "lr6811";                    T_max[tlr6811]                    = 30;   T_type[tlr6811]                    = TE_type; /* Late release tijd fase 68 na fase 11                                                     */
     T_code[tlr2122]                    = "lr2122";                    T_max[tlr2122]                    = 30;   T_type[tlr2122]                    = TE_type; /* Late release tijd fase 21 na fase 22                                                     */
     T_code[tlr8182]                    = "lr8182";                    T_max[tlr8182]                    = 30;   T_type[tlr8182]                    = TE_type; /* Late release tijd fase 81 na fase 82                                                     */
-    T_code[til3231]                    = "il3231";                    T_max[til3231]                    = 30;   T_type[til3231]                    = TE_type; /* Inloop tijd fase 32 naar fase 31                                                         */
-    T_code[til3132]                    = "il3132";                    T_max[til3132]                    = 30;   T_type[til3132]                    = TE_type; /* Inloop tijd fase 31 naar fase 32                                                         */
-    T_code[til3433]                    = "il3433";                    T_max[til3433]                    = 30;   T_type[til3433]                    = TE_type; /* Inloop tijd fase 34 naar fase 33                                                         */
-    T_code[til3334]                    = "il3334";                    T_max[til3334]                    = 30;   T_type[til3334]                    = TE_type; /* Inloop tijd fase 33 naar fase 34                                                         */
+    T_code[til3231]                    = "il3231";                    T_max[til3231]                    = 32;   T_type[til3231]                    = TE_type; /* Inloop tijd fase 32 naar fase 31                                                         */
+    T_code[til3132]                    = "il3132";                    T_max[til3132]                    = 31;   T_type[til3132]                    = TE_type; /* Inloop tijd fase 31 naar fase 32                                                         */
+    T_code[til3433]                    = "il3433";                    T_max[til3433]                    = 34;   T_type[til3433]                    = TE_type; /* Inloop tijd fase 34 naar fase 33                                                         */
+    T_code[til3334]                    = "il3334";                    T_max[til3334]                    = 33;   T_type[til3334]                    = TE_type; /* Inloop tijd fase 33 naar fase 34                                                         */
     T_code[tfo0522]                    = "fo0522";                    T_max[tfo0522]                    = 40;   T_type[tfo0522]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 22                                             */
     T_code[tfo0532]                    = "fo0532";                    T_max[tfo0532]                    = 50;   T_type[tfo0532]                    = TE_type; /* Fictieve ontruimingstijd van 05 naar fase 32                                             */
     T_code[tfo1126]                    = "fo1126";                    T_max[tfo1126]                    = 30;   T_type[tfo1126]                    = TE_type; /* Fictieve ontruimingstijd van 11 naar fase 26                                             */
@@ -2464,7 +2464,7 @@ void control_parameters(void)
     PRM_code[prmfb]                       = "fb";                       PRM[prmfb]                       = 240;   PRM_type[prmfb]                       = TS_type; /* Instelling fasebewaking                                                                                                        */
     PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 4;                                                       /* Versiebeheer xx                                                                                                                */
     PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 0;                                                       /* Versiebeheer yy                                                                                                                */
-    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 14;                                                      /* Versiebeheer zz                                                                                                                */
+    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 16;                                                      /* Versiebeheer zz                                                                                                                */
     PRM_code[prmovmextragroen_02]         = "ovmextragroen_02";         PRM[prmovmextragroen_02]         = 0;     PRM_type[prmovmextragroen_02]         = TE_type;
     PRM_code[prmovmmindergroen_02]        = "ovmmindergroen_02";        PRM[prmovmmindergroen_02]        = 0;     PRM_type[prmovmmindergroen_02]        = TE_type;
     PRM_code[prmovmextragroen_03]         = "ovmextragroen_03";         PRM[prmovmextragroen_03]         = 0;     PRM_type[prmovmextragroen_03]         = TE_type;
@@ -7376,6 +7376,8 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d08_4a].SumoNamen[0], 32, "%s", "08_4a");
     sprintf_s(SUMODetectors[d08_4b].SumoNamen[0], 32, "%s", "08_4b");
     sprintf_s(SUMODetectors[d09_1].SumoNamen[0], 32, "%s", "091");
+    sprintf_s(SUMODetectors[d09_2].SumoNamen[0], 32, "%s", "092");
+    sprintf_s(SUMODetectors[d09_3].SumoNamen[0], 32, "%s", "093");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -7445,8 +7447,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d11_3].SumoNamen[0], 32, "%s", "11_3");
     sprintf_s(SUMODetectors[d11_2].SumoNamen[0], 32, "%s", "11_2");
     sprintf_s(SUMODetectors[d11_1].SumoNamen[0], 32, "%s", "11_1");
-    sprintf_s(SUMODetectors[d09_3].SumoNamen[0], 32, "%s", "093");
-    sprintf_s(SUMODetectors[d09_2].SumoNamen[0], 32, "%s", "092");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;
