@@ -1,4 +1,4 @@
-/* ccolfunc.c - gegenereerd met TLCGen 12.4.0.16 */
+/* ccolfunc.c - gegenereerd met TLCGen 12.4.0.17 */
 
 #include <stdarg.h>
 
@@ -875,7 +875,7 @@ boolv set_PRIRLW(count i, boolv period)
 
 boolv set_ARLW_bit6 (count i)
 {
-   if ((PAR[i] & BIT6) && A[i] && RV[i] && !TRG[i] && !AA[i] && !RR[i]
+   if (PAR[i] && A[i] && RV[i] && !TRG[i] && !AA[i] && !RR[i]
 	   && !BL[i] && !kcv(i) && !fkaa(i) && testar_fk_calw(i))
    {
       AA[i] = TRUE;		/* set actuation		*/

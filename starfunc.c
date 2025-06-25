@@ -1,4 +1,4 @@
-/* starfunc.c - gegenereerd met TLCGen 12.4.0.16 */
+/* starfunc.c - gegenereerd met TLCGen 12.4.0.17 */
 
 #include "starfunc.h"
 
@@ -142,8 +142,6 @@ void star_bepaal_omschakelen(count mgewenst, count mwerkelijk, count mprogwissel
     /* stuur alles rood tbv programmawisseling     */
     if (MM[mprogwissel])
     {
-       int fc;
-
         /* stuur alle signaalgroepen naar rood */
         for (fc = 0; fc < FCMAX; fc++)
         {

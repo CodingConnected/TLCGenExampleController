@@ -9,8 +9,8 @@
 
    BESTAND:   123456tab.add
       CCOL:   12.0
-    TLCGEN:   12.4.0.16
-   CCOLGEN:   12.4.0.16
+    TLCGEN:   12.4.0.17
+   CCOLGEN:   12.4.0.17
 */
 
 /****************************** Versie commentaar ***********************************
@@ -23,4 +23,11 @@
 
 /* dit is een placeholder */
 /* ---------------------- */
+#ifndef AUTOMAAT
+//SCH[schmlprm] = 1; 
+//PRM[prmprml02] = 17;
 
+//PRM[prmftsblok22fietsfiets] = 2;
+//PRM[prmftsminwt22fietsfiets] = 1;
+
+#endif

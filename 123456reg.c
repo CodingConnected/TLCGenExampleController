@@ -8,8 +8,8 @@
 
    BESTAND:   123456reg.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.16
-   CCOLGEN:   12.4.0.16
+    TLCGEN:   12.4.0.17
+   CCOLGEN:   12.4.0.17
 */
 
 /****************************** Versie commentaar ***********************************
@@ -833,7 +833,8 @@ void Aanvragen(void)
 
     /* Wachtstand groen aanvragen */
     /* -------------------------- */
-    aanvraag_wachtstand_exp(fc02, (PRM[prmwg02] >= 2));
+    aanvraag_wachtstand_exp(fc02, (boolv) (SCH[schwg02] && (PRM[prmwg02] >= 2)));
+    aanvraag_wachtstand_exp(fc03, (boolv) (SCH[schwg03] && (PRM[prmwg03] >= 2)));
     aanvraag_wachtstand_exp(fc05, (boolv) (SCH[schwg05] && (PRM[prmwg05] >= 2)));
     aanvraag_wachtstand_exp(fc08, (boolv) (SCH[schwg08] && (PRM[prmwg08] >= 2)));
     aanvraag_wachtstand_exp(fc09, (boolv) (SCH[schwg09] && (PRM[prmwg09] >= 2)));
@@ -1381,7 +1382,8 @@ void Wachtgroen(void)
     for (fc = 0; fc < FCMAX; ++fc)
         RW[fc] &= ~BIT4;  /* reset BIT-sturing */
 
-    RW[fc02] |= (yws_groen(fc02)) && (PRM[prmwg02] >= 1) && !fka(fc02) ? BIT4 : 0;
+    RW[fc02] |= (SCH[schwg02] && yws_groen(fc02)) && (PRM[prmwg02] >= 1) && !fka(fc02) ? BIT4 : 0;
+    RW[fc03] |= (SCH[schwg03] && yws_groen(fc03)) && (PRM[prmwg03] >= 1) && !fka(fc03) ? BIT4 : 0;
     RW[fc05] |= (SCH[schwg05] && yws_groen(fc05)) && (PRM[prmwg05] >= 1) && !fka(fc05) ? BIT4 : 0;
     RW[fc08] |= (SCH[schwg08] && yws_groen(fc08)) && (PRM[prmwg08] >= 1) && !fka(fc08) ? BIT4 : 0;
     RW[fc09] |= (SCH[schwg09] && yws_groen(fc09)) && (PRM[prmwg09] >= 1) && !fka(fc09) ? BIT4 : 0;
@@ -1413,7 +1415,8 @@ void Wachtgroen(void)
     for (fc = 0; fc < FCMAX; ++fc)
         WS[fc] &= ~BIT1;  /* reset BIT-sturing */
 
-    WS[fc02] |= (WG[fc02] && yws_groen(fc02)) ? BIT1 : 0;
+    WS[fc02] |= (WG[fc02] && SCH[schwg02] && yws_groen(fc02)) ? BIT1 : 0;
+    WS[fc03] |= (WG[fc03] && SCH[schwg03] && yws_groen(fc03)) ? BIT1 : 0;
     WS[fc05] |= (WG[fc05] && SCH[schwg05] && yws_groen(fc05)) ? BIT1 : 0;
     WS[fc08] |= (WG[fc08] && SCH[schwg08] && yws_groen(fc08)) ? BIT1 : 0;
     WS[fc09] |= (WG[fc09] && SCH[schwg09] && yws_groen(fc09)) ? BIT1 : 0;
@@ -2174,7 +2177,7 @@ void RealisatieAfhandeling(void)
                                                  !(iPrioriteitsOpties[prioFC05risov] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC05risvrw] & poBijzonderRealiseren)) &&
         (G[fc22] || !(YV[fc22] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC22fiets] & poBijzonderRealiseren))) RR[fc11] &= ~BIT10;
-    if ((G[fc02] || !(YV[fc02] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC02karbus] & poBijzonderRealiseren) &&
+    if ((G[fc02] || !(YV[fc02] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC02bus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC02risov] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC02risvrw] & poBijzonderRealiseren)) &&
         (G[fc03] || !(YV[fc03] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC03bus] & poBijzonderRealiseren) &&
@@ -2945,6 +2948,9 @@ void PostApplication(void)
     }
 
     /* Verklikken stiptheid OV */
+    CIF_GUS[usovtevroeg02bus] = MM[mstp02bus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd02bus] = MM[mstp02bus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat02bus] = MM[mstp02bus] == CIF_TE_LAAT;
     CIF_GUS[usovtevroeg03bus] = MM[mstp03bus] == CIF_TE_VROEG;
     CIF_GUS[usovoptijd03bus] = MM[mstp03bus] == CIF_OP_TIJD;
     CIF_GUS[usovtelaat03bus] = MM[mstp03bus] == CIF_TE_LAAT;
@@ -3129,7 +3135,7 @@ void system_application(void)
 
     /* PRIO verklikking */
     /* ---------------- */
-    CIF_GUS[usovinm02karbus] = C[cvc02karbus];
+    CIF_GUS[usovinm02bus] = C[cvc02bus];
     CIF_GUS[usovinm02risov] = C[cvc02risov];
     CIF_GUS[usovinm02risvrw] = C[cvc02risvrw];
     CIF_GUS[usovinm03bus] = C[cvc03bus];
@@ -3161,6 +3167,7 @@ void system_application(void)
     CIF_GUS[usovinm68bus] = C[cvc68bus];
     CIF_GUS[usovinm68risov] = C[cvc68risov];
     CIF_GUS[usovinm68risvrw] = C[cvc68risvrw];
+    CIF_GUS[usovinm84bus] = C[cvc84bus];
     CIF_GUS[ushdinm02] = C[cvchd02];
     CIF_GUS[ushdinm03] = C[cvchd03];
     CIF_GUS[ushdinm05] = C[cvchd05];
@@ -3437,7 +3444,7 @@ void system_application(void)
     CIF_GUS[usML5] = ML == ML5;
 
     /* Verklikken wijzigingen OV-teller */
-    PRIO_teller(cvc02karbus, schcovuber);
+    PRIO_teller(cvc02bus, schcovuber);
     PRIO_teller(cvc02risov, schcovuber);
     PRIO_teller(cvc02risvrw, schcovuber);
     PRIO_teller(cvc03bus, schcovuber);
@@ -3469,6 +3476,7 @@ void system_application(void)
     PRIO_teller(cvc68bus, schcovuber);
     PRIO_teller(cvc68risov, schcovuber);
     PRIO_teller(cvc68risvrw, schcovuber);
+    PRIO_teller(cvc84bus, schcovuber);
     PRIO_teller(cvchd02, schcovuber);
     PRIO_teller(cvchd03, schcovuber);
     PRIO_teller(cvchd05, schcovuber);
@@ -3617,7 +3625,7 @@ void system_application2(void)
 #if !(defined NO_PRIO)
     for (fc = 0; fc < FCMAX; ++fc)
     {
-        if (C[cvc02karbus] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc02bus] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc02risov] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc02risvrw] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
         if (C[cvc03bus] && R[fc] && TIG[fc03][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
@@ -3649,6 +3657,7 @@ void system_application2(void)
         if (C[cvc68bus] && R[fc] && TIG[fc68][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc68risov] && R[fc] && TIG[fc68][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc68risvrw] && R[fc] && TIG[fc68][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
+        if (C[cvc84bus] && R[fc] && TIG[fc84][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvchd02] && R[fc] && TIG[fc02][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
         if (C[cvchd03] && R[fc] && TIG[fc03][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
         if (C[cvchd05] && R[fc] && TIG[fc05][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;

@@ -8,8 +8,8 @@
 
    BESTAND:   123456hst.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.16
-   CCOLGEN:   12.4.0.16
+    TLCGEN:   12.4.0.17
+   CCOLGEN:   12.4.0.17
 */
 
 /****************************** Versie commentaar ***********************************
@@ -275,7 +275,8 @@ void Verlenggroen_halfstar(void)
 void Wachtgroen_halfstar(void)
 {
     /* Retour wachtgroen bij wachtgroen richtingen, let op: inclusief aanvraag! */
-    wachtstand_halfstar(fc02, IH[hplact], (boolv)(TRUE), (boolv)(TRUE));
+    wachtstand_halfstar(fc02, IH[hplact], (boolv)(SCH[schca02]), (boolv)(SCH[schwg02]));
+    wachtstand_halfstar(fc03, IH[hplact], (boolv)(SCH[schca03]), (boolv)(SCH[schwg03]));
     wachtstand_halfstar(fc05, IH[hplact], (boolv)(SCH[schca05]), (boolv)(SCH[schwg05]));
     wachtstand_halfstar(fc08, IH[hplact], (boolv)(SCH[schca08]), (boolv)(SCH[schwg08]));
     wachtstand_halfstar(fc09, IH[hplact], (boolv)(SCH[schca09]), (boolv)(SCH[schwg09]));
@@ -320,7 +321,7 @@ void Meetkriterium_halfstar(void)
     if (SCH[schovpriople])
     {
         /* Prio meetkriterium bij PL bedrijf */
-        yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02karbus]);
+        yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02bus]);
         yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02risov]);
         yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02risvrw]);
         yv_PRIO_pl_halfstar(fc03, BIT7, C[cvc03bus]);
@@ -352,6 +353,7 @@ void Meetkriterium_halfstar(void)
         yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68bus]);
         yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68risov]);
         yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68risvrw]);
+        yv_PRIO_pl_halfstar(fc84, BIT7, C[cvc84bus]);
     }
 
     Meetkriterium_halfstar_Add();
@@ -762,7 +764,7 @@ boolv application2_trig(void)
 void PrioHalfstarSettings(void)
 {
     /* Bepalen tijd na TXD t.b.v. verlengen bij OV ingreep */
-    iExtraGroenNaTXD[prioFC02karbus] = PRM[prmnatxdhst02karbus];
+    iExtraGroenNaTXD[prioFC02bus] = PRM[prmnatxdhst02bus];
     iExtraGroenNaTXD[prioFC02risov] = PRM[prmnatxdhst02risov];
     iExtraGroenNaTXD[prioFC02risvrw] = PRM[prmnatxdhst02risvrw];
     iExtraGroenNaTXD[prioFC03bus] = PRM[prmnatxdhst03bus];
@@ -794,6 +796,7 @@ void PrioHalfstarSettings(void)
     iExtraGroenNaTXD[prioFC68bus] = PRM[prmnatxdhst68bus];
     iExtraGroenNaTXD[prioFC68risov] = PRM[prmnatxdhst68risov];
     iExtraGroenNaTXD[prioFC68risvrw] = PRM[prmnatxdhst68risvrw];
+    iExtraGroenNaTXD[prioFC84bus] = PRM[prmnatxdhst84bus];
 
     /* PRIO opties hoofdrichtingen */
     PrioHalfstarBepaalHoofdrichtingOpties(NG, (va_count)fc02, (va_mulv)SCH[schtegenov02], (va_mulv)SCH[schafkwgov02], (va_mulv)SCH[schafkvgov02], TFG_max[fc02],

@@ -1,6 +1,10 @@
-/* extra_func.c - gegenereerd met TLCGen 12.4.0.16 */
+/* extra_func.c - gegenereerd met TLCGen 12.4.0.17 */
 
 #include "extra_func.h"
+
+#ifdef REALFUNC
+#include "realfunc.h"
+#endif
 
 mulv Knipper_1Hz = 0;
 mulv Knipper_2Hz = 0;
