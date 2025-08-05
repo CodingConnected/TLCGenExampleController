@@ -30,7 +30,23 @@
 #define TMMAX  (TMMAX1 + 0)  /* Totaal aantal gebruikte timers         */
 #define CTMAX  (CTMAX1 + 0)  /* Totaal aantal gebruikte tellers        */
 #define SCHMAX (SCHMAX1 + 0) /* Totaal aantal gebruikte schakelaars    */
-#define PRMMAX (PRMMAX1 + 0) /* Totaal aantal gebruikte parameters     */
+
+#define prmrisRIL1prio02risov  (PRMMAX1 + 0) 
+#define prmrisRIL2prio02risov  (PRMMAX1 + 1) 
+#define prmrisRIL3prio02risov  (PRMMAX1 + 2) 
+#define prmrisRIL4prio02risov  (PRMMAX1 + 3) 
+#define prmrisRIL5prio02risov  (PRMMAX1 + 4) 
+#define prmrisRIL6prio02risov  (PRMMAX1 + 5) 
+#define prmrisRIL7prio02risov  (PRMMAX1 + 6) 
+#define prmrisRIL8prio02risov  (PRMMAX1 + 7) 
+#define prmrisRIL9prio02risov  (PRMMAX1 + 8) 
+#define prmrisRIL10prio02risov (PRMMAX1 + 9) 
+#define prmrisRIL11prio02risov (PRMMAX1 + 10) 
+#define prmrisRIL12prio02risov (PRMMAX1 + 11) 
+#define prmrisRIL13prio02risov (PRMMAX1 + 12) 
+#define prmrisRIL14prio02risov (PRMMAX1 + 13) 
+#define PRMMAX (PRMMAX1 + 14) /* Totaal aantal gebruikte parameters     */
+
 #define MLMAX  (MLMAX1 + 0)  /* Totaal aantal gebruikte modulen        */
 #define PLMAX  (PLMAX1 + 0)  /* Totaal aantal gebruikte signaalplannen */
 #if !defined AUTOMAAT

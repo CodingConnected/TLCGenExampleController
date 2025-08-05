@@ -321,39 +321,49 @@ void Meetkriterium_halfstar(void)
     if (SCH[schovpriople])
     {
         /* Prio meetkriterium bij PL bedrijf */
-        yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02bus]);
+        yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02karbus]);
         yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02risov]);
         yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02risvrw]);
-        yv_PRIO_pl_halfstar(fc03, BIT7, C[cvc03bus]);
+        yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02risalg]);
+        yv_PRIO_pl_halfstar(fc03, BIT7, C[cvc03karbus]);
         yv_PRIO_pl_halfstar(fc03, BIT7, C[cvc03risov]);
         yv_PRIO_pl_halfstar(fc03, BIT7, C[cvc03risvrw]);
-        yv_PRIO_pl_halfstar(fc05, BIT7, C[cvc05bus]);
+        yv_PRIO_pl_halfstar(fc03, BIT7, C[cvc03risalg]);
+        yv_PRIO_pl_halfstar(fc05, BIT7, C[cvc05karbus]);
         yv_PRIO_pl_halfstar(fc05, BIT7, C[cvc05risov]);
         yv_PRIO_pl_halfstar(fc05, BIT7, C[cvc05risvrw]);
-        yv_PRIO_pl_halfstar(fc08, BIT7, C[cvc08bus]);
+        yv_PRIO_pl_halfstar(fc05, BIT7, C[cvc05risalg]);
+        yv_PRIO_pl_halfstar(fc08, BIT7, C[cvc08karbus]);
         yv_PRIO_pl_halfstar(fc08, BIT7, C[cvc08risov]);
         yv_PRIO_pl_halfstar(fc08, BIT7, C[cvc08risvrw]);
-        yv_PRIO_pl_halfstar(fc09, BIT7, C[cvc09bus]);
+        yv_PRIO_pl_halfstar(fc08, BIT7, C[cvc08risalg]);
+        yv_PRIO_pl_halfstar(fc09, BIT7, C[cvc09karbus]);
         yv_PRIO_pl_halfstar(fc09, BIT7, C[cvc09risov]);
         yv_PRIO_pl_halfstar(fc09, BIT7, C[cvc09risvrw]);
-        yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11bus]);
+        yv_PRIO_pl_halfstar(fc09, BIT7, C[cvc09risalg]);
+        yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11karbus]);
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risov]);
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risvrw]);
+        yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risalg]);
+        yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11bus]);
         yv_PRIO_pl_halfstar(fc22, BIT7, C[cvc22fiets]);
         yv_PRIO_pl_halfstar(fc28, BIT7, C[cvc28fiets]);
-        yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61bus]);
+        yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61karbus]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61risov]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61risvrw]);
-        yv_PRIO_pl_halfstar(fc62, BIT7, C[cvc62bus]);
+        yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61risalg]);
+        yv_PRIO_pl_halfstar(fc62, BIT7, C[cvc62karbus]);
         yv_PRIO_pl_halfstar(fc62, BIT7, C[cvc62risov]);
         yv_PRIO_pl_halfstar(fc62, BIT7, C[cvc62risvrw]);
-        yv_PRIO_pl_halfstar(fc67, BIT7, C[cvc67bus]);
+        yv_PRIO_pl_halfstar(fc62, BIT7, C[cvc62risalg]);
+        yv_PRIO_pl_halfstar(fc67, BIT7, C[cvc67karbus]);
         yv_PRIO_pl_halfstar(fc67, BIT7, C[cvc67risov]);
         yv_PRIO_pl_halfstar(fc67, BIT7, C[cvc67risvrw]);
-        yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68bus]);
+        yv_PRIO_pl_halfstar(fc67, BIT7, C[cvc67risalg]);
+        yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68karbus]);
         yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68risov]);
         yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68risvrw]);
-        yv_PRIO_pl_halfstar(fc84, BIT7, C[cvc84bus]);
+        yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68risalg]);
     }
 
     Meetkriterium_halfstar_Add();
@@ -423,7 +433,6 @@ void Synchronisaties_halfstar(void)
     inloopSG_halfstar(fc32, fc31, til3231);
     inloopSG_halfstar(fc33, fc34, til3334);
     inloopSG_halfstar(fc34, fc33, til3433);
-
 
     Synchronisaties_halfstar_Add();
 }
@@ -764,39 +773,49 @@ boolv application2_trig(void)
 void PrioHalfstarSettings(void)
 {
     /* Bepalen tijd na TXD t.b.v. verlengen bij OV ingreep */
-    iExtraGroenNaTXD[prioFC02bus] = PRM[prmnatxdhst02bus];
+    iExtraGroenNaTXD[prioFC02karbus] = PRM[prmnatxdhst02karbus];
     iExtraGroenNaTXD[prioFC02risov] = PRM[prmnatxdhst02risov];
     iExtraGroenNaTXD[prioFC02risvrw] = PRM[prmnatxdhst02risvrw];
-    iExtraGroenNaTXD[prioFC03bus] = PRM[prmnatxdhst03bus];
+    iExtraGroenNaTXD[prioFC02risalg] = PRM[prmnatxdhst02risalg];
+    iExtraGroenNaTXD[prioFC03karbus] = PRM[prmnatxdhst03karbus];
     iExtraGroenNaTXD[prioFC03risov] = PRM[prmnatxdhst03risov];
     iExtraGroenNaTXD[prioFC03risvrw] = PRM[prmnatxdhst03risvrw];
-    iExtraGroenNaTXD[prioFC05bus] = PRM[prmnatxdhst05bus];
+    iExtraGroenNaTXD[prioFC03risalg] = PRM[prmnatxdhst03risalg];
+    iExtraGroenNaTXD[prioFC05karbus] = PRM[prmnatxdhst05karbus];
     iExtraGroenNaTXD[prioFC05risov] = PRM[prmnatxdhst05risov];
     iExtraGroenNaTXD[prioFC05risvrw] = PRM[prmnatxdhst05risvrw];
-    iExtraGroenNaTXD[prioFC08bus] = PRM[prmnatxdhst08bus];
+    iExtraGroenNaTXD[prioFC05risalg] = PRM[prmnatxdhst05risalg];
+    iExtraGroenNaTXD[prioFC08karbus] = PRM[prmnatxdhst08karbus];
     iExtraGroenNaTXD[prioFC08risov] = PRM[prmnatxdhst08risov];
     iExtraGroenNaTXD[prioFC08risvrw] = PRM[prmnatxdhst08risvrw];
-    iExtraGroenNaTXD[prioFC09bus] = PRM[prmnatxdhst09bus];
+    iExtraGroenNaTXD[prioFC08risalg] = PRM[prmnatxdhst08risalg];
+    iExtraGroenNaTXD[prioFC09karbus] = PRM[prmnatxdhst09karbus];
     iExtraGroenNaTXD[prioFC09risov] = PRM[prmnatxdhst09risov];
     iExtraGroenNaTXD[prioFC09risvrw] = PRM[prmnatxdhst09risvrw];
-    iExtraGroenNaTXD[prioFC11bus] = PRM[prmnatxdhst11bus];
+    iExtraGroenNaTXD[prioFC09risalg] = PRM[prmnatxdhst09risalg];
+    iExtraGroenNaTXD[prioFC11karbus] = PRM[prmnatxdhst11karbus];
     iExtraGroenNaTXD[prioFC11risov] = PRM[prmnatxdhst11risov];
     iExtraGroenNaTXD[prioFC11risvrw] = PRM[prmnatxdhst11risvrw];
+    iExtraGroenNaTXD[prioFC11risalg] = PRM[prmnatxdhst11risalg];
+    iExtraGroenNaTXD[prioFC11bus] = PRM[prmnatxdhst11bus];
     iExtraGroenNaTXD[prioFC22fiets] = PRM[prmnatxdhst22fiets];
     iExtraGroenNaTXD[prioFC28fiets] = PRM[prmnatxdhst28fiets];
-    iExtraGroenNaTXD[prioFC61bus] = PRM[prmnatxdhst61bus];
+    iExtraGroenNaTXD[prioFC61karbus] = PRM[prmnatxdhst61karbus];
     iExtraGroenNaTXD[prioFC61risov] = PRM[prmnatxdhst61risov];
     iExtraGroenNaTXD[prioFC61risvrw] = PRM[prmnatxdhst61risvrw];
-    iExtraGroenNaTXD[prioFC62bus] = PRM[prmnatxdhst62bus];
+    iExtraGroenNaTXD[prioFC61risalg] = PRM[prmnatxdhst61risalg];
+    iExtraGroenNaTXD[prioFC62karbus] = PRM[prmnatxdhst62karbus];
     iExtraGroenNaTXD[prioFC62risov] = PRM[prmnatxdhst62risov];
     iExtraGroenNaTXD[prioFC62risvrw] = PRM[prmnatxdhst62risvrw];
-    iExtraGroenNaTXD[prioFC67bus] = PRM[prmnatxdhst67bus];
+    iExtraGroenNaTXD[prioFC62risalg] = PRM[prmnatxdhst62risalg];
+    iExtraGroenNaTXD[prioFC67karbus] = PRM[prmnatxdhst67karbus];
     iExtraGroenNaTXD[prioFC67risov] = PRM[prmnatxdhst67risov];
     iExtraGroenNaTXD[prioFC67risvrw] = PRM[prmnatxdhst67risvrw];
-    iExtraGroenNaTXD[prioFC68bus] = PRM[prmnatxdhst68bus];
+    iExtraGroenNaTXD[prioFC67risalg] = PRM[prmnatxdhst67risalg];
+    iExtraGroenNaTXD[prioFC68karbus] = PRM[prmnatxdhst68karbus];
     iExtraGroenNaTXD[prioFC68risov] = PRM[prmnatxdhst68risov];
     iExtraGroenNaTXD[prioFC68risvrw] = PRM[prmnatxdhst68risvrw];
-    iExtraGroenNaTXD[prioFC84bus] = PRM[prmnatxdhst84bus];
+    iExtraGroenNaTXD[prioFC68risalg] = PRM[prmnatxdhst68risalg];
 
     /* PRIO opties hoofdrichtingen */
     PrioHalfstarBepaalHoofdrichtingOpties(NG, (va_count)fc02, (va_mulv)SCH[schtegenov02], (va_mulv)SCH[schafkwgov02], (va_mulv)SCH[schafkvgov02], TFG_max[fc02],

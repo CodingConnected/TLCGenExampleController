@@ -23,6 +23,22 @@
 
 /* dit is een placeholder */
 /* ---------------------- */
+
+PRM_code[prmrisRIL1prio02risov] = "risRIL1prio02risov";           PRM[prmrisRIL1prio02risov] = 999;
+PRM_code[prmrisRIL2prio02risov] = "risRIL2prio02risov";           PRM[prmrisRIL2prio02risov] = 999;
+PRM_code[prmrisRIL3prio02risov] = "risRIL3prio02risov";           PRM[prmrisRIL3prio02risov] = 999;
+PRM_code[prmrisRIL4prio02risov] = "risRIL4prio02risov";           PRM[prmrisRIL4prio02risov] = 999;
+PRM_code[prmrisRIL5prio02risov] = "risRIL5prio02risov";           PRM[prmrisRIL5prio02risov] = 999;
+PRM_code[prmrisRIL6prio02risov] = "risRIL6prio02risov";           PRM[prmrisRIL6prio02risov] = 999;
+PRM_code[prmrisRIL7prio02risov] = "risRIL7prio02risov";           PRM[prmrisRIL7prio02risov] = 999;
+PRM_code[prmrisRIL8prio02risov] = "risRIL8prio02risov";           PRM[prmrisRIL8prio02risov] = 999;
+PRM_code[prmrisRIL9prio02risov] = "risRIL9prio02risov";           PRM[prmrisRIL9prio02risov] = 999;
+PRM_code[prmrisRIL10prio02risov] = "risRIL10prio02risov";          PRM[prmrisRIL10prio02risov] = 999;
+PRM_code[prmrisRIL11prio02risov] = "risRIL11prio02risov";          PRM[prmrisRIL11prio02risov] = 999;
+PRM_code[prmrisRIL12prio02risov] = "risRIL12prio02risov";          PRM[prmrisRIL12prio02risov] = 999;
+PRM_code[prmrisRIL13prio02risov] = "risRIL13prio02risov";          PRM[prmrisRIL13prio02risov] = 999;
+PRM_code[prmrisRIL14prio02risov] = "risRIL14prio02risov";          PRM[prmrisRIL14prio02risov] = 999;
+
 #ifndef AUTOMAAT
 //SCH[schmlprm] = 1; 
 //PRM[prmprml02] = 17;
@@ -30,4 +46,8 @@
 //PRM[prmftsblok22fietsfiets] = 2;
 //PRM[prmftsminwt22fietsfiets] = 1;
 
+PRM[prmrisimportance02risov] = 0;
+PRM[prmrisRIL11prio02risov] = 13;
+
 #endif
+

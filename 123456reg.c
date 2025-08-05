@@ -69,7 +69,6 @@
     #include "prsvar.c"   /* parameters parser                 */
     #include "control.c"  /* controller interface              */
     #include "rtappl.h"   /* applicatie routines               */
-    #define PRIO_CHECK_WAGENNMR /* check op wagendienstnummer          */
     #include "extra_func_prio.c" /* extra standaard functies OV     */
     #include "extra_func.c" /* extra standaard functies        */
 
@@ -246,9 +245,6 @@ void PreApplication(void)
             IH[homschtegenh] = FALSE;
         }
     }
-
-    /* Opschonen wagennummer buffers */
-    WDNST_cleanup();
 
     IH[hpeltegenhKOP02] = FALSE;
 
@@ -955,44 +951,64 @@ void Aanvragen(void)
             /* Ris PRIO: verstuur SSM */
             ris_srm_put_signalgroup(fc02, PRM[prmrisapproachid02], PRM[prmrisrole02risov], PRM[prmrissubrole02risov], NG, NG);
             ris_srm_put_signalgroup(fc02, PRM[prmrisapproachid02], PRM[prmrisrole02risvrw], PRM[prmrissubrole02risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc02, PRM[prmrisapproachid02], PRM[prmrisrole02risalg], PRM[prmrissubrole02risalg], NG, NG);
             ris_srm_put_signalgroup(fc03, PRM[prmrisapproachid03], PRM[prmrisrole03risov], PRM[prmrissubrole03risov], NG, NG);
             ris_srm_put_signalgroup(fc03, PRM[prmrisapproachid03], PRM[prmrisrole03risvrw], PRM[prmrissubrole03risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc03, PRM[prmrisapproachid03], PRM[prmrisrole03risalg], PRM[prmrissubrole03risalg], NG, NG);
             ris_srm_put_signalgroup(fc05, PRM[prmrisapproachid05], PRM[prmrisrole05risov], PRM[prmrissubrole05risov], NG, NG);
             ris_srm_put_signalgroup(fc05, PRM[prmrisapproachid05], PRM[prmrisrole05risvrw], PRM[prmrissubrole05risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc05, PRM[prmrisapproachid05], PRM[prmrisrole05risalg], PRM[prmrissubrole05risalg], NG, NG);
             ris_srm_put_signalgroup(fc08, PRM[prmrisapproachid08], PRM[prmrisrole08risov], PRM[prmrissubrole08risov], NG, NG);
             ris_srm_put_signalgroup(fc08, PRM[prmrisapproachid08], PRM[prmrisrole08risvrw], PRM[prmrissubrole08risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc08, PRM[prmrisapproachid08], PRM[prmrisrole08risalg], PRM[prmrissubrole08risalg], NG, NG);
             ris_srm_put_signalgroup(fc09, PRM[prmrisapproachid09], PRM[prmrisrole09risov], PRM[prmrissubrole09risov], NG, NG);
             ris_srm_put_signalgroup(fc09, PRM[prmrisapproachid09], PRM[prmrisrole09risvrw], PRM[prmrissubrole09risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc09, PRM[prmrisapproachid09], PRM[prmrisrole09risalg], PRM[prmrissubrole09risalg], NG, NG);
             ris_srm_put_signalgroup(fc11, PRM[prmrisapproachid11], PRM[prmrisrole11risov], PRM[prmrissubrole11risov], NG, NG);
             ris_srm_put_signalgroup(fc11, PRM[prmrisapproachid11], PRM[prmrisrole11risvrw], PRM[prmrissubrole11risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc11, PRM[prmrisapproachid11], PRM[prmrisrole11risalg], PRM[prmrissubrole11risalg], NG, NG);
             ris_srm_put_signalgroup(fc61, PRM[prmrisapproachid61], PRM[prmrisrole61risov], PRM[prmrissubrole61risov], NG, NG);
             ris_srm_put_signalgroup(fc61, PRM[prmrisapproachid61], PRM[prmrisrole61risvrw], PRM[prmrissubrole61risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc61, PRM[prmrisapproachid61], PRM[prmrisrole61risalg], PRM[prmrissubrole61risalg], NG, NG);
             ris_srm_put_signalgroup(fc62, PRM[prmrisapproachid62], PRM[prmrisrole62risov], PRM[prmrissubrole62risov], NG, NG);
             ris_srm_put_signalgroup(fc62, PRM[prmrisapproachid62], PRM[prmrisrole62risvrw], PRM[prmrissubrole62risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc62, PRM[prmrisapproachid62], PRM[prmrisrole62risalg], PRM[prmrissubrole62risalg], NG, NG);
             ris_srm_put_signalgroup(fc67, PRM[prmrisapproachid67], PRM[prmrisrole67risov], PRM[prmrissubrole67risov], NG, NG);
             ris_srm_put_signalgroup(fc67, PRM[prmrisapproachid67], PRM[prmrisrole67risvrw], PRM[prmrissubrole67risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc67, PRM[prmrisapproachid67], PRM[prmrisrole67risalg], PRM[prmrissubrole67risalg], NG, NG);
             ris_srm_put_signalgroup(fc68, PRM[prmrisapproachid68], PRM[prmrisrole68risov], PRM[prmrissubrole68risov], NG, NG);
             ris_srm_put_signalgroup(fc68, PRM[prmrisapproachid68], PRM[prmrisrole68risvrw], PRM[prmrissubrole68risvrw], NG, NG);
+            ris_srm_put_signalgroup(fc68, PRM[prmrisapproachid68], PRM[prmrisrole68risalg], PRM[prmrissubrole68risalg], NG, NG);
             ris_verstuur_ssm(prioFC02risov, PRM[prmrisgrenspriotype02risov]);
             ris_verstuur_ssm(prioFC02risvrw, PRM[prmrisgrenspriotype02risvrw]);
+            ris_verstuur_ssm(prioFC02risalg, PRM[prmrisgrenspriotype02risalg]);
             ris_verstuur_ssm(prioFC03risov, PRM[prmrisgrenspriotype03risov]);
             ris_verstuur_ssm(prioFC03risvrw, PRM[prmrisgrenspriotype03risvrw]);
+            ris_verstuur_ssm(prioFC03risalg, PRM[prmrisgrenspriotype03risalg]);
             ris_verstuur_ssm(prioFC05risov, PRM[prmrisgrenspriotype05risov]);
             ris_verstuur_ssm(prioFC05risvrw, PRM[prmrisgrenspriotype05risvrw]);
+            ris_verstuur_ssm(prioFC05risalg, PRM[prmrisgrenspriotype05risalg]);
             ris_verstuur_ssm(prioFC08risov, PRM[prmrisgrenspriotype08risov]);
             ris_verstuur_ssm(prioFC08risvrw, PRM[prmrisgrenspriotype08risvrw]);
+            ris_verstuur_ssm(prioFC08risalg, PRM[prmrisgrenspriotype08risalg]);
             ris_verstuur_ssm(prioFC09risov, PRM[prmrisgrenspriotype09risov]);
             ris_verstuur_ssm(prioFC09risvrw, PRM[prmrisgrenspriotype09risvrw]);
+            ris_verstuur_ssm(prioFC09risalg, PRM[prmrisgrenspriotype09risalg]);
             ris_verstuur_ssm(prioFC11risov, PRM[prmrisgrenspriotype11risov]);
             ris_verstuur_ssm(prioFC11risvrw, PRM[prmrisgrenspriotype11risvrw]);
+            ris_verstuur_ssm(prioFC11risalg, PRM[prmrisgrenspriotype11risalg]);
             ris_verstuur_ssm(prioFC61risov, PRM[prmrisgrenspriotype61risov]);
             ris_verstuur_ssm(prioFC61risvrw, PRM[prmrisgrenspriotype61risvrw]);
+            ris_verstuur_ssm(prioFC61risalg, PRM[prmrisgrenspriotype61risalg]);
             ris_verstuur_ssm(prioFC62risov, PRM[prmrisgrenspriotype62risov]);
             ris_verstuur_ssm(prioFC62risvrw, PRM[prmrisgrenspriotype62risvrw]);
+            ris_verstuur_ssm(prioFC62risalg, PRM[prmrisgrenspriotype62risalg]);
             ris_verstuur_ssm(prioFC67risov, PRM[prmrisgrenspriotype67risov]);
             ris_verstuur_ssm(prioFC67risvrw, PRM[prmrisgrenspriotype67risvrw]);
+            ris_verstuur_ssm(prioFC67risalg, PRM[prmrisgrenspriotype67risalg]);
             ris_verstuur_ssm(prioFC68risov, PRM[prmrisgrenspriotype68risov]);
             ris_verstuur_ssm(prioFC68risvrw, PRM[prmrisgrenspriotype68risvrw]);
+            ris_verstuur_ssm(prioFC68risalg, PRM[prmrisgrenspriotype68risalg]);
             ris_verstuur_ssm(hdFC02, PRM[prmrisgrenspriotype02hd]);
             ris_verstuur_ssm(hdFC03, PRM[prmrisgrenspriotype03hd]);
             ris_verstuur_ssm(hdFC05, PRM[prmrisgrenspriotype05hd]);
@@ -2157,38 +2173,49 @@ void RealisatieAfhandeling(void)
 
     /* Tegenhouden voedende richting, bij een conflicterende prio-ingreep van de nalooprichting */
     /* Afzetten RR */
-    if ((G[fc09] || !(YV[fc09] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC09bus] & poBijzonderRealiseren) &&
+    if ((G[fc09] || !(YV[fc09] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC09karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC09risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC09risvrw] & poBijzonderRealiseren)) &&
-        (G[fc11] || !(YV[fc11] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC11bus] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC09risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC09risalg] & poBijzonderRealiseren)) &&
+        (G[fc11] || !(YV[fc11] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC11karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC11risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC11risvrw] & poBijzonderRealiseren))) RR[fc02] &= ~BIT10;
-    if ((G[fc03] || !(YV[fc03] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC03bus] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC11risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC11risalg] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC11bus] & poBijzonderRealiseren))) RR[fc02] &= ~BIT10;
+    if ((G[fc03] || !(YV[fc03] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC03karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC03risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC03risvrw] & poBijzonderRealiseren)) &&
-        (G[fc05] || !(YV[fc05] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC05bus] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC03risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC03risalg] & poBijzonderRealiseren)) &&
+        (G[fc05] || !(YV[fc05] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC05karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC05risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC05risvrw] & poBijzonderRealiseren)) &&
+                                                 !(iPrioriteitsOpties[prioFC05risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC05risalg] & poBijzonderRealiseren)) &&
         (G[fc22] || !(YV[fc22] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC22fiets] & poBijzonderRealiseren))) RR[fc08] &= ~BIT10;
-    if ((G[fc03] || !(YV[fc03] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC03bus] & poBijzonderRealiseren) &&
+    if ((G[fc03] || !(YV[fc03] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC03karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC03risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC03risvrw] & poBijzonderRealiseren)) &&
-        (G[fc05] || !(YV[fc05] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC05bus] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC03risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC03risalg] & poBijzonderRealiseren)) &&
+        (G[fc05] || !(YV[fc05] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC05karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC05risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC05risvrw] & poBijzonderRealiseren)) &&
+                                                 !(iPrioriteitsOpties[prioFC05risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC05risalg] & poBijzonderRealiseren)) &&
         (G[fc22] || !(YV[fc22] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC22fiets] & poBijzonderRealiseren))) RR[fc11] &= ~BIT10;
-    if ((G[fc02] || !(YV[fc02] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC02bus] & poBijzonderRealiseren) &&
+    if ((G[fc02] || !(YV[fc02] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC02karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC02risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC02risvrw] & poBijzonderRealiseren)) &&
-        (G[fc03] || !(YV[fc03] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC03bus] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC02risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC02risalg] & poBijzonderRealiseren)) &&
+        (G[fc03] || !(YV[fc03] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC03karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC03risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC03risvrw] & poBijzonderRealiseren))) RR[fc22] &= ~BIT10;
-    if ((G[fc67] || !(YV[fc67] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC67bus] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC03risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC03risalg] & poBijzonderRealiseren))) RR[fc22] &= ~BIT10;
+    if ((G[fc67] || !(YV[fc67] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC67karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC67risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC67risvrw] & poBijzonderRealiseren)) &&
-        (G[fc68] || !(YV[fc68] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC68bus] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC67risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC67risalg] & poBijzonderRealiseren)) &&
+        (G[fc68] || !(YV[fc68] & PRIO_YV_BIT) || !(iPrioriteitsOpties[prioFC68karbus] & poBijzonderRealiseren) &&
                                                  !(iPrioriteitsOpties[prioFC68risov] & poBijzonderRealiseren) &&
-                                                 !(iPrioriteitsOpties[prioFC68risvrw] & poBijzonderRealiseren))) RR[fc82] &= ~BIT10;
+                                                 !(iPrioriteitsOpties[prioFC68risvrw] & poBijzonderRealiseren) &&
+                                                 !(iPrioriteitsOpties[prioFC68risalg] & poBijzonderRealiseren))) RR[fc82] &= ~BIT10;
 
     /* Opzetten RR */
     if (((Z[fc02] & PRIO_Z_BIT) && (YV[fc09] & PRIO_YV_BIT) && !G[fc09]) ||
@@ -2948,36 +2975,36 @@ void PostApplication(void)
     }
 
     /* Verklikken stiptheid OV */
-    CIF_GUS[usovtevroeg02bus] = MM[mstp02bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd02bus] = MM[mstp02bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat02bus] = MM[mstp02bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg03bus] = MM[mstp03bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd03bus] = MM[mstp03bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat03bus] = MM[mstp03bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg05bus] = MM[mstp05bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd05bus] = MM[mstp05bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat05bus] = MM[mstp05bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg08bus] = MM[mstp08bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd08bus] = MM[mstp08bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat08bus] = MM[mstp08bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg09bus] = MM[mstp09bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd09bus] = MM[mstp09bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat09bus] = MM[mstp09bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg11bus] = MM[mstp11bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd11bus] = MM[mstp11bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat11bus] = MM[mstp11bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg61bus] = MM[mstp61bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd61bus] = MM[mstp61bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat61bus] = MM[mstp61bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg62bus] = MM[mstp62bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd62bus] = MM[mstp62bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat62bus] = MM[mstp62bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg67bus] = MM[mstp67bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd67bus] = MM[mstp67bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat67bus] = MM[mstp67bus] == CIF_TE_LAAT;
-    CIF_GUS[usovtevroeg68bus] = MM[mstp68bus] == CIF_TE_VROEG;
-    CIF_GUS[usovoptijd68bus] = MM[mstp68bus] == CIF_OP_TIJD;
-    CIF_GUS[usovtelaat68bus] = MM[mstp68bus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg02karbus] = MM[mstp02karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd02karbus] = MM[mstp02karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat02karbus] = MM[mstp02karbus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg03karbus] = MM[mstp03karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd03karbus] = MM[mstp03karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat03karbus] = MM[mstp03karbus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg05karbus] = MM[mstp05karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd05karbus] = MM[mstp05karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat05karbus] = MM[mstp05karbus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg08karbus] = MM[mstp08karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd08karbus] = MM[mstp08karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat08karbus] = MM[mstp08karbus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg09karbus] = MM[mstp09karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd09karbus] = MM[mstp09karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat09karbus] = MM[mstp09karbus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg11karbus] = MM[mstp11karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd11karbus] = MM[mstp11karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat11karbus] = MM[mstp11karbus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg61karbus] = MM[mstp61karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd61karbus] = MM[mstp61karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat61karbus] = MM[mstp61karbus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg62karbus] = MM[mstp62karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd62karbus] = MM[mstp62karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat62karbus] = MM[mstp62karbus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg67karbus] = MM[mstp67karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd67karbus] = MM[mstp67karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat67karbus] = MM[mstp67karbus] == CIF_TE_LAAT;
+    CIF_GUS[usovtevroeg68karbus] = MM[mstp68karbus] == CIF_TE_VROEG;
+    CIF_GUS[usovoptijd68karbus] = MM[mstp68karbus] == CIF_OP_TIJD;
+    CIF_GUS[usovtelaat68karbus] = MM[mstp68karbus] == CIF_TE_LAAT;
 
     /* TESTOMGEVING */
     /* ============ */
@@ -3135,39 +3162,49 @@ void system_application(void)
 
     /* PRIO verklikking */
     /* ---------------- */
-    CIF_GUS[usovinm02bus] = C[cvc02bus];
+    CIF_GUS[usovinm02karbus] = C[cvc02karbus];
     CIF_GUS[usovinm02risov] = C[cvc02risov];
     CIF_GUS[usovinm02risvrw] = C[cvc02risvrw];
-    CIF_GUS[usovinm03bus] = C[cvc03bus];
+    CIF_GUS[usovinm02risalg] = C[cvc02risalg];
+    CIF_GUS[usovinm03karbus] = C[cvc03karbus];
     CIF_GUS[usovinm03risov] = C[cvc03risov];
     CIF_GUS[usovinm03risvrw] = C[cvc03risvrw];
-    CIF_GUS[usovinm05bus] = C[cvc05bus];
+    CIF_GUS[usovinm03risalg] = C[cvc03risalg];
+    CIF_GUS[usovinm05karbus] = C[cvc05karbus];
     CIF_GUS[usovinm05risov] = C[cvc05risov];
     CIF_GUS[usovinm05risvrw] = C[cvc05risvrw];
-    CIF_GUS[usovinm08bus] = C[cvc08bus];
+    CIF_GUS[usovinm05risalg] = C[cvc05risalg];
+    CIF_GUS[usovinm08karbus] = C[cvc08karbus];
     CIF_GUS[usovinm08risov] = C[cvc08risov];
     CIF_GUS[usovinm08risvrw] = C[cvc08risvrw];
-    CIF_GUS[usovinm09bus] = C[cvc09bus];
+    CIF_GUS[usovinm08risalg] = C[cvc08risalg];
+    CIF_GUS[usovinm09karbus] = C[cvc09karbus];
     CIF_GUS[usovinm09risov] = C[cvc09risov];
     CIF_GUS[usovinm09risvrw] = C[cvc09risvrw];
-    CIF_GUS[usovinm11bus] = C[cvc11bus];
+    CIF_GUS[usovinm09risalg] = C[cvc09risalg];
+    CIF_GUS[usovinm11karbus] = C[cvc11karbus];
     CIF_GUS[usovinm11risov] = C[cvc11risov];
     CIF_GUS[usovinm11risvrw] = C[cvc11risvrw];
+    CIF_GUS[usovinm11risalg] = C[cvc11risalg];
+    CIF_GUS[usovinm11bus] = C[cvc11bus];
     CIF_GUS[usovinm22fiets] = C[cvc22fiets];
     CIF_GUS[usovinm28fiets] = C[cvc28fiets];
-    CIF_GUS[usovinm61bus] = C[cvc61bus];
+    CIF_GUS[usovinm61karbus] = C[cvc61karbus];
     CIF_GUS[usovinm61risov] = C[cvc61risov];
     CIF_GUS[usovinm61risvrw] = C[cvc61risvrw];
-    CIF_GUS[usovinm62bus] = C[cvc62bus];
+    CIF_GUS[usovinm61risalg] = C[cvc61risalg];
+    CIF_GUS[usovinm62karbus] = C[cvc62karbus];
     CIF_GUS[usovinm62risov] = C[cvc62risov];
     CIF_GUS[usovinm62risvrw] = C[cvc62risvrw];
-    CIF_GUS[usovinm67bus] = C[cvc67bus];
+    CIF_GUS[usovinm62risalg] = C[cvc62risalg];
+    CIF_GUS[usovinm67karbus] = C[cvc67karbus];
     CIF_GUS[usovinm67risov] = C[cvc67risov];
     CIF_GUS[usovinm67risvrw] = C[cvc67risvrw];
-    CIF_GUS[usovinm68bus] = C[cvc68bus];
+    CIF_GUS[usovinm67risalg] = C[cvc67risalg];
+    CIF_GUS[usovinm68karbus] = C[cvc68karbus];
     CIF_GUS[usovinm68risov] = C[cvc68risov];
     CIF_GUS[usovinm68risvrw] = C[cvc68risvrw];
-    CIF_GUS[usovinm84bus] = C[cvc84bus];
+    CIF_GUS[usovinm68risalg] = C[cvc68risalg];
     CIF_GUS[ushdinm02] = C[cvchd02];
     CIF_GUS[ushdinm03] = C[cvchd03];
     CIF_GUS[ushdinm05] = C[cvchd05];
@@ -3444,39 +3481,49 @@ void system_application(void)
     CIF_GUS[usML5] = ML == ML5;
 
     /* Verklikken wijzigingen OV-teller */
-    PRIO_teller(cvc02bus, schcovuber);
+    PRIO_teller(cvc02karbus, schcovuber);
     PRIO_teller(cvc02risov, schcovuber);
     PRIO_teller(cvc02risvrw, schcovuber);
-    PRIO_teller(cvc03bus, schcovuber);
+    PRIO_teller(cvc02risalg, schcovuber);
+    PRIO_teller(cvc03karbus, schcovuber);
     PRIO_teller(cvc03risov, schcovuber);
     PRIO_teller(cvc03risvrw, schcovuber);
-    PRIO_teller(cvc05bus, schcovuber);
+    PRIO_teller(cvc03risalg, schcovuber);
+    PRIO_teller(cvc05karbus, schcovuber);
     PRIO_teller(cvc05risov, schcovuber);
     PRIO_teller(cvc05risvrw, schcovuber);
-    PRIO_teller(cvc08bus, schcovuber);
+    PRIO_teller(cvc05risalg, schcovuber);
+    PRIO_teller(cvc08karbus, schcovuber);
     PRIO_teller(cvc08risov, schcovuber);
     PRIO_teller(cvc08risvrw, schcovuber);
-    PRIO_teller(cvc09bus, schcovuber);
+    PRIO_teller(cvc08risalg, schcovuber);
+    PRIO_teller(cvc09karbus, schcovuber);
     PRIO_teller(cvc09risov, schcovuber);
     PRIO_teller(cvc09risvrw, schcovuber);
-    PRIO_teller(cvc11bus, schcovuber);
+    PRIO_teller(cvc09risalg, schcovuber);
+    PRIO_teller(cvc11karbus, schcovuber);
     PRIO_teller(cvc11risov, schcovuber);
     PRIO_teller(cvc11risvrw, schcovuber);
+    PRIO_teller(cvc11risalg, schcovuber);
+    PRIO_teller(cvc11bus, schcovuber);
     PRIO_teller(cvc22fiets, schcovuber);
     PRIO_teller(cvc28fiets, schcovuber);
-    PRIO_teller(cvc61bus, schcovuber);
+    PRIO_teller(cvc61karbus, schcovuber);
     PRIO_teller(cvc61risov, schcovuber);
     PRIO_teller(cvc61risvrw, schcovuber);
-    PRIO_teller(cvc62bus, schcovuber);
+    PRIO_teller(cvc61risalg, schcovuber);
+    PRIO_teller(cvc62karbus, schcovuber);
     PRIO_teller(cvc62risov, schcovuber);
     PRIO_teller(cvc62risvrw, schcovuber);
-    PRIO_teller(cvc67bus, schcovuber);
+    PRIO_teller(cvc62risalg, schcovuber);
+    PRIO_teller(cvc67karbus, schcovuber);
     PRIO_teller(cvc67risov, schcovuber);
     PRIO_teller(cvc67risvrw, schcovuber);
-    PRIO_teller(cvc68bus, schcovuber);
+    PRIO_teller(cvc67risalg, schcovuber);
+    PRIO_teller(cvc68karbus, schcovuber);
     PRIO_teller(cvc68risov, schcovuber);
     PRIO_teller(cvc68risvrw, schcovuber);
-    PRIO_teller(cvc84bus, schcovuber);
+    PRIO_teller(cvc68risalg, schcovuber);
     PRIO_teller(cvchd02, schcovuber);
     PRIO_teller(cvchd03, schcovuber);
     PRIO_teller(cvchd05, schcovuber);
@@ -3625,39 +3672,49 @@ void system_application2(void)
 #if !(defined NO_PRIO)
     for (fc = 0; fc < FCMAX; ++fc)
     {
-        if (C[cvc02bus] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc02karbus] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc02risov] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc02risvrw] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc03bus] && R[fc] && TIG[fc03][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc02risalg] && R[fc] && TIG[fc02][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_ONBEKEND;
+        if (C[cvc03karbus] && R[fc] && TIG[fc03][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc03risov] && R[fc] && TIG[fc03][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc03risvrw] && R[fc] && TIG[fc03][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc05bus] && R[fc] && TIG[fc05][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc03risalg] && R[fc] && TIG[fc03][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc05karbus] && R[fc] && TIG[fc05][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc05risov] && R[fc] && TIG[fc05][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc05risvrw] && R[fc] && TIG[fc05][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc08bus] && R[fc] && TIG[fc08][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc05risalg] && R[fc] && TIG[fc05][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc08karbus] && R[fc] && TIG[fc08][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc08risov] && R[fc] && TIG[fc08][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc08risvrw] && R[fc] && TIG[fc08][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc09bus] && R[fc] && TIG[fc09][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc08risalg] && R[fc] && TIG[fc08][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc09karbus] && R[fc] && TIG[fc09][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc09risov] && R[fc] && TIG[fc09][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc09risvrw] && R[fc] && TIG[fc09][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc11bus] && R[fc] && TIG[fc11][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc09risalg] && R[fc] && TIG[fc09][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc11karbus] && R[fc] && TIG[fc11][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc11risov] && R[fc] && TIG[fc11][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc11risvrw] && R[fc] && TIG[fc11][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
+        if (C[cvc11risalg] && R[fc] && TIG[fc11][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc11bus] && R[fc] && TIG[fc11][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc22fiets] && R[fc] && TIG[fc22][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_FIETS_PELOTON_INGREEP;
         if (C[cvc28fiets] && R[fc] && TIG[fc28][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_FIETS_PELOTON_INGREEP;
-        if (C[cvc61bus] && R[fc] && TIG[fc61][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc61karbus] && R[fc] && TIG[fc61][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc61risov] && R[fc] && TIG[fc61][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc61risvrw] && R[fc] && TIG[fc61][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc62bus] && R[fc] && TIG[fc62][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc61risalg] && R[fc] && TIG[fc61][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc62karbus] && R[fc] && TIG[fc62][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc62risov] && R[fc] && TIG[fc62][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc62risvrw] && R[fc] && TIG[fc62][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc67bus] && R[fc] && TIG[fc67][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc62risalg] && R[fc] && TIG[fc62][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc67karbus] && R[fc] && TIG[fc67][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc67risov] && R[fc] && TIG[fc67][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc67risvrw] && R[fc] && TIG[fc67][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc68bus] && R[fc] && TIG[fc68][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc67risalg] && R[fc] && TIG[fc67][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc68karbus] && R[fc] && TIG[fc68][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc68risov] && R[fc] && TIG[fc68][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvc68risvrw] && R[fc] && TIG[fc68][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc84bus] && R[fc] && TIG[fc84][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
+        if (C[cvc68risalg] && R[fc] && TIG[fc68][fc])  CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
         if (C[cvchd02] && R[fc] && TIG[fc02][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
         if (C[cvchd03] && R[fc] && TIG[fc03][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
         if (C[cvchd05] && R[fc] && TIG[fc05][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
@@ -3694,7 +3751,7 @@ void is_special_signals(void)
     #ifdef SUMO
     for (isumo = 0; isumo < DPMAX; isumo++)
     {
-        if (isumo == dk84 || isumo == dk28 || isumo == dk24 || isumo == dk22 || isumo == ddummyhdkaruit68 || isumo == ddummyhdkaruit67 || isumo == ddummyhdkaruit62 || isumo == ddummyhdkaruit61 || isumo == ddummyhdkaruit11 || isumo == ddummyhdkaruit09 || isumo == ddummyhdkaruit08 || isumo == ddummyhdkaruit05 || isumo == ddummyhdkaruit03 || isumo == ddummyhdkarin68 || isumo == ddummyhdkarin67 || isumo == ddummyhdkarin62 || isumo == ddummyhdkarin61 || isumo == ddummyhdkarin11 || isumo == ddummyhdkarin09 || isumo == ddummyhdkarin08 || isumo == ddummyhdkarin05 || isumo == ddummyhdkarin03        )
+        if (isumo == ddummyhdkaruit68 || isumo == ddummyhdkaruit67 || isumo == ddummyhdkaruit62 || isumo == ddummyhdkaruit61 || isumo == ddummyhdkaruit11 || isumo == dk84 || isumo == ddummyhdkaruit09 || isumo == ddummyhdkaruit08 || isumo == ddummyhdkaruit05 || isumo == ddummyhdkaruit03 || isumo == ddummyhdkarin68 || isumo == ddummyhdkarin67 || isumo == ddummyhdkarin62 || isumo == ddummyhdkarin61 || isumo == ddummyhdkarin11 || isumo == ddummyhdkarin09 || isumo == ddummyhdkarin08 || isumo == ddummyhdkarin05 || isumo == dk28 || isumo == ddummyhdkarin03 || isumo == dk24 || isumo == dk22        )
         {
             continue;
         }

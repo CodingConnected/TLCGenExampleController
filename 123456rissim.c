@@ -51,10 +51,10 @@ void ris_simulation_parameters(void)
     ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_1], fc02, RIF_STATIONTYPE_BUS, 0, 1, 0, 0, 50, 10, 300, 10, 1);
     ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_1], fc02, RIF_STATIONTYPE_SPECIALVEHICLES, 0, 1, 0, 0, 50, 10, 300, 10, 1);
     ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_1], fc02, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, 0, 0, 50, 10, 300, 10, 1);
-    ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_PASSENGERCAR, 0, 0, 200, 0, 50, 10, 300, 10, 1);
-    ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_BUS, 0, 1, 200, 0, 50, 10, 300, 10, 1);
-    ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_SPECIALVEHICLES, 0, 1, 200, 0, 50, 10, 300, 10, 1);
-    ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, 200, 0, 50, 10, 300, 10, 1);
+    ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_PASSENGERCAR, 0, 0, 0, 0, 50, 10, 300, 10, 1);
+    ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_BUS, 0, 1, 0, 0, 50, 10, 300, 10, 1);
+    ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_SPECIALVEHICLES, 0, 1, 0, 0, 50, 10, 300, 10, 1);
+    ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, 0, 0, 50, 10, 300, 10, 1);
     ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid03_1], fc03, RIF_STATIONTYPE_PASSENGERCAR, 0, 0, 0, 0, 50, 10, 300, 10, 1);
     ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid03_1], fc03, RIF_STATIONTYPE_BUS, 0, 1, 0, 0, 50, 10, 300, 10, 1);
     ris_simulation_itsstation_parameters(SYSTEM_ITF1, PRM[prmrislaneid03_1], fc03, RIF_STATIONTYPE_SPECIALVEHICLES, 0, 1, 0, 0, 50, 10, 300, 10, 1);
@@ -219,7 +219,7 @@ void ris_simulation_application(void)
     }
     if (SIS(isris021heavytruck)) {
         sprintf(buffer, "");
-        ris_simulation_put_itsstation_pb_ex(SYSTEM_ITF1, PRM[prmrislaneid02_1], fc02, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, NG, 50, 300, 1,RIF_VEHICLEROLE_COMMERCIAL,RIF_VEHICLESUBROLE_EXPRESSTRANSIT,25,fc02,PRM[prmrisapproachid02],buffer,123,11);
+        ris_simulation_put_itsstation_pb_ex(SYSTEM_ITF1, PRM[prmrislaneid02_1], fc02, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, NG, 50, 300, 1,RIF_VEHICLEROLE_COMMERCIAL,RIF_VEHICLESUBROLE_EXPRESSTRANSIT,25,fc02,PRM[prmrisapproachid02],buffer,123,6);
     }
     if (SIS(isris022car)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_PASSENGERCAR, 0, 0, NG, 50, 300, 1);
     if (SIS(isris022bus)) {
@@ -231,7 +231,7 @@ void ris_simulation_application(void)
     }
     if (SIS(isris022heavytruck)) {
         sprintf(buffer, "");
-        ris_simulation_put_itsstation_pb_ex(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, NG, 50, 300, 1,RIF_VEHICLEROLE_COMMERCIAL,RIF_VEHICLESUBROLE_EXPRESSTRANSIT,25,fc02,PRM[prmrisapproachid02],buffer,123,11);
+        ris_simulation_put_itsstation_pb_ex(SYSTEM_ITF1, PRM[prmrislaneid02_2], fc02, RIF_STATIONTYPE_HEAVYTRUCK, 0, 1, NG, 50, 300, 1,RIF_VEHICLEROLE_COMMERCIAL,RIF_VEHICLESUBROLE_EXPRESSTRANSIT,25,fc02,PRM[prmrisapproachid02],buffer,123,6);
     }
     if (SIS(isris031car)) ris_simulation_put_itsstation_pb(SYSTEM_ITF1, PRM[prmrislaneid03_1], fc03, RIF_STATIONTYPE_PASSENGERCAR, 0, 0, NG, 50, 300, 1);
     if (SIS(isris031bus)) {
