@@ -428,10 +428,10 @@ void Synchronisaties_halfstar(void)
     naloopSG_halfstar(fc33, fc34, dk33a, hnlak33a, tnlsgd3334);
     naloopSG_halfstar(fc34, fc33, dk34a, hnlak34a, tnlsgd3433);
     naloopEG_CV_halfstar(TRUE, fc82, fc81, T_max[tlr8182], tnlegd8281, tnleg8281);
-    inloopSG_halfstar(fc31, fc32, til3132);
-    inloopSG_halfstar(fc32, fc31, til3231);
-    inloopSG_halfstar(fc33, fc34, til3334);
-    inloopSG_halfstar(fc34, fc33, til3433);
+    inloopSG_halfstar(fc31, fc32, tinl3132);
+    inloopSG_halfstar(fc32, fc31, tinl3231);
+    inloopSG_halfstar(fc33, fc34, tinl3334);
+    inloopSG_halfstar(fc34, fc33, tinl3433);
 
     Synchronisaties_halfstar_Add();
 }

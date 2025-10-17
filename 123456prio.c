@@ -18,7 +18,6 @@
  *
  ************************************************************************************/
 
-#define NALOPEN
 #define PRIO_ADDFILE
 
 /*include files */
@@ -58,6 +57,8 @@
     #include "extra_func_prio.h"
 
 boolv vertraag_kar_uitm[prioFCMAX];
+
+#include "isgfunc_prio.h" /* voor prioriteitsingrepen */
 
 
 /* Declareren OV settings functie halfstar */
@@ -3016,49 +3017,49 @@ void PostAfhandelingPrio(void)
     if (RT[tnlfg2221] || T[tnlfg2221] || RT[tnlfgd2221] || T[tnlfgd2221] || RT[tnleg2221] || T[tnleg2221] || RT[tnlegd2221] || T[tnlegd2221])
     {
         Z[fc21] &= ~BIT6;
-        RR[fc21] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+        RR[fc21] &= ~BIT6;
         FM[fc21] &= ~PRIO_FM_BIT;
     }
     if (RT[tnlsgd3231] || T[tnlsgd3231])
     {
         Z[fc31] &= ~BIT6;
-        RR[fc31] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+        RR[fc31] &= ~BIT6;
         FM[fc31] &= ~PRIO_FM_BIT;
     }
     if (RT[tnlsgd3132] || T[tnlsgd3132])
     {
         Z[fc32] &= ~BIT6;
-        RR[fc32] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+        RR[fc32] &= ~BIT6;
         FM[fc32] &= ~PRIO_FM_BIT;
     }
     if (RT[tnlsgd3433] || T[tnlsgd3433])
     {
         Z[fc33] &= ~BIT6;
-        RR[fc33] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+        RR[fc33] &= ~BIT6;
         FM[fc33] &= ~PRIO_FM_BIT;
     }
     if (RT[tnlsgd3334] || T[tnlsgd3334])
     {
         Z[fc34] &= ~BIT6;
-        RR[fc34] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+        RR[fc34] &= ~BIT6;
         FM[fc34] &= ~PRIO_FM_BIT;
     }
     if (RT[tnlfg0262] || T[tnlfg0262] || RT[tnlfgd0262] || T[tnlfgd0262] || RT[tnleg0262] || T[tnleg0262] || RT[tnlegd0262] || T[tnlegd0262])
     {
         Z[fc62] &= ~BIT6;
-        RR[fc62] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+        RR[fc62] &= ~BIT6;
         FM[fc62] &= ~PRIO_FM_BIT;
     }
     if (RT[tnlfg0868] || T[tnlfg0868] || RT[tnlfgd0868] || T[tnlfgd0868] || RT[tnleg0868] || T[tnleg0868] || RT[tnlegd0868] || T[tnlegd0868] || RT[tnlfg1168] || T[tnlfg1168] || RT[tnlfgd1168] || T[tnlfgd1168] || RT[tnleg1168] || T[tnleg1168] || RT[tnlegd1168] || T[tnlegd1168])
     {
         Z[fc68] &= ~BIT6;
-        RR[fc68] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+        RR[fc68] &= ~BIT6;
         FM[fc68] &= ~PRIO_FM_BIT;
     }
     if (RT[tnlfg8281] || T[tnlfg8281] || RT[tnlfgd8281] || T[tnlfgd8281] || RT[tnleg8281] || T[tnleg8281] || RT[tnlegd8281] || T[tnlegd8281])
     {
         Z[fc81] &= ~BIT6;
-        RR[fc81] &= ~(BIT1 | BIT2 | BIT4 | BIT5 | BIT6);
+        RR[fc81] &= ~BIT6;
         FM[fc81] &= ~PRIO_FM_BIT;
     }
 
@@ -3178,53 +3179,40 @@ void PostAfhandelingPrio(void)
 void PrioPARCorrecties(void)
 {
     int fc;
-     /* PAR-correcties nalopen voetgangers stap 1: naloop past of los OK */
-    PAR[fc31] = PAR[fc31] && (IH[hnlsg3132] || IH[hlos31]);
-    PAR[fc32] = PAR[fc32] && (IH[hnlsg3231] || IH[hlos32]);
-    PAR[fc33] = PAR[fc33] && (IH[hnlsg3334] || IH[hlos33]);
-    PAR[fc34] = PAR[fc34] && (IH[hnlsg3433] || IH[hlos34]);
+    /* Tegenrichting moet ook kunnen koppelen bij koppelaanvraag */
+    PAR[fc32] = PAR[fc32] && PAR[fc31];
+    PAR[fc31] = PAR[fc31] && PAR[fc32];
+    PAR[fc34] = PAR[fc34] && PAR[fc33];
+    PAR[fc33] = PAR[fc33] && PAR[fc34];
 
-    /* PAR-correcties 10 keer checken ivm onderlinge afhankelijkheden */
-    for (fc = 0; fc < 10; ++fc)
-    {
-        /* PAR-correcties nalopen voetgangers stap 2: beide PAR of los OK */
-        PAR[fc31] = PAR[fc31] && (PAR[fc32] || IH[hlos31]);
-        PAR[fc32] = PAR[fc32] && (PAR[fc31] || IH[hlos32]);
-        PAR[fc33] = PAR[fc33] && (PAR[fc34] || IH[hlos33]);
-        PAR[fc34] = PAR[fc34] && (PAR[fc33] || IH[hlos34]);
+    /* Bepaal naloop voetgangers wel/niet toegestaan */
+    IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc31]);
+    IH[hnlsg3231] = (PR[fc32] || AR[fc32] && PAR[fc32]);
+    IH[hnlsg3334] = (PR[fc33] || AR[fc33] && PAR[fc33]);
+    IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc34]);
 
-        /* PAR = PAR */
-        PAR[fc05] = PAR[fc05] && (PAR[fc22] || !A[fc22]);
-        PAR[fc05] = PAR[fc05] && (PAR[fc32] || !A[fc32]);
-        PAR[fc11] = PAR[fc11] && (PAR[fc26] || !A[fc26]);
-        PAR[fc02] = PAR[fc02] && PAR[fc62];
-        PAR[fc08] = PAR[fc08] && PAR[fc68];
-        PAR[fc11] = PAR[fc11] && PAR[fc68];
-        PAR[fc22] = PAR[fc22] && PAR[fc21];
-        PAR[fc82] = PAR[fc82] && PAR[fc81];
+    /* PAR-ongecoordineerd */
+    if (!PAR[fc31] && IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]) || PAR_los[fc31] && RA[fc31]) PAR_los[fc31] = TRUE; else PAR_los[fc31] = FALSE;
+    if (!PAR[fc32] && IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]) || PAR_los[fc32] && RA[fc32]) PAR_los[fc32] = TRUE; else PAR_los[fc32] = FALSE;
+    if (!PAR[fc33] && IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]) || PAR_los[fc33] && RA[fc33]) PAR_los[fc33] = TRUE; else PAR_los[fc33] = FALSE;
+    if (!PAR[fc34] && IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]) || PAR_los[fc34] && RA[fc34]) PAR_los[fc34] = TRUE; else PAR_los[fc34] = FALSE;
 
-        /* PAR correcties gelijkstart synchronisaties */
-        if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && (PAR[fc32] || !A[fc32]);
-        if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && (PAR[fc22] || !A[fc22]);
-        if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && (PAR[fc34] || !A[fc34]);
-        if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && (PAR[fc24] || !A[fc24]);
-        if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && (PAR[fc84] || !A[fc84]);
-        if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && (PAR[fc24] || !A[fc24]);
-        PAR[fc28] = PAR[fc28] && (PAR[fc38] || !A[fc38]);
-        PAR[fc38] = PAR[fc38] && (PAR[fc28] || !A[fc28]);
-        if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && (PAR[fc84] || !A[fc84]);
-        if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && (PAR[fc33] || !A[fc33]);
-    }
+    PAR[fc31] = PAR[fc31] || PAR_los[fc31];
+    PAR[fc32] = PAR[fc32] || PAR_los[fc32];
+    PAR[fc33] = PAR[fc33] || PAR_los[fc33];
+    PAR[fc34] = PAR[fc34] || PAR_los[fc34];
 
-    /* PAR correcties eenzijdige synchronisaties */
-    PAR[fc22] = PAR[fc22] || G[fc05];
-    PAR[fc32] = PAR[fc32] || G[fc05];
-    PAR[fc26] = PAR[fc26] || G[fc11];
-    PAR[fc62] = PAR[fc62] || G[fc02];
-    PAR[fc68] = PAR[fc68] || G[fc08];
-    PAR[fc68] = PAR[fc68] || G[fc11];
-    PAR[fc21] = PAR[fc21] || G[fc22];
-    PAR[fc81] = PAR[fc81] || G[fc82];
+    /* PAR correcties gelijkstart synchronisaties */
+    if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && PAR[fc22];
+    if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && PAR[fc32];
+    if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && PAR[fc24];
+    if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && PAR[fc34];
+    if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && PAR[fc24];
+    if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && PAR[fc84];
+    PAR[fc38] = PAR[fc38] && PAR[fc28];
+    PAR[fc28] = PAR[fc28] && PAR[fc38];
+    if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && PAR[fc33];
+    if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && PAR[fc84];
 
     /* Niet alternatief komen tijdens file (meting na ss) */
     if (IH[hfileFile68af]) PAR[fc08] = FALSE;

@@ -54,7 +54,7 @@
     <MirakelMonitor>false</MirakelMonitor>
     <GenererenDuurtestCode>true</GenererenDuurtestCode>
     <GarantieOntruimingsTijden>true</GarantieOntruimingsTijden>
-    <SynchronisatiesType>RealFunc</SynchronisatiesType>
+    <SynchronisatiesType>InterFunc</SynchronisatiesType>
     <RealFuncBepaalRealisatieTijdenAltijd>true</RealFuncBepaalRealisatieTijdenAltijd>
     <ExtraMeeverlengenInWG>false</ExtraMeeverlengenInWG>
     <TypeGroentijden>VerlengGroentijden</TypeGroentijden>

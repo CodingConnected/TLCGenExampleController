@@ -364,6 +364,29 @@ void display_parameters(void)
     X_us[usstarprogwissel] = NG; Y_us[usstarprogwissel] = NG;
     X_us[usstar01] = 168; Y_us[usstar01] = 255;
     X_us[usstar02] = NG; Y_us[usstar02] = NG;
+    X_us[usisgtijd02] = NG; Y_us[usisgtijd02] = NG;
+    X_us[usisgtijd03] = NG; Y_us[usisgtijd03] = NG;
+    X_us[usisgtijd05] = NG; Y_us[usisgtijd05] = NG;
+    X_us[usisgtijd08] = NG; Y_us[usisgtijd08] = NG;
+    X_us[usisgtijd09] = NG; Y_us[usisgtijd09] = NG;
+    X_us[usisgtijd11] = NG; Y_us[usisgtijd11] = NG;
+    X_us[usisgtijd21] = NG; Y_us[usisgtijd21] = NG;
+    X_us[usisgtijd22] = NG; Y_us[usisgtijd22] = NG;
+    X_us[usisgtijd24] = NG; Y_us[usisgtijd24] = NG;
+    X_us[usisgtijd26] = NG; Y_us[usisgtijd26] = NG;
+    X_us[usisgtijd28] = NG; Y_us[usisgtijd28] = NG;
+    X_us[usisgtijd31] = NG; Y_us[usisgtijd31] = NG;
+    X_us[usisgtijd32] = NG; Y_us[usisgtijd32] = NG;
+    X_us[usisgtijd33] = NG; Y_us[usisgtijd33] = NG;
+    X_us[usisgtijd34] = NG; Y_us[usisgtijd34] = NG;
+    X_us[usisgtijd38] = NG; Y_us[usisgtijd38] = NG;
+    X_us[usisgtijd61] = NG; Y_us[usisgtijd61] = NG;
+    X_us[usisgtijd62] = NG; Y_us[usisgtijd62] = NG;
+    X_us[usisgtijd67] = NG; Y_us[usisgtijd67] = NG;
+    X_us[usisgtijd68] = NG; Y_us[usisgtijd68] = NG;
+    X_us[usisgtijd81] = NG; Y_us[usisgtijd81] = NG;
+    X_us[usisgtijd82] = NG; Y_us[usisgtijd82] = NG;
+    X_us[usisgtijd84] = NG; Y_us[usisgtijd84] = NG;
 
     /* overige ingangen */
     /* ---------------- */

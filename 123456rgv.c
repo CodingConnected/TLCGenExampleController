@@ -36,6 +36,63 @@ mulv TC_max, DD_anyfase;
 #include "rgvfunc.c"
 #include "rgv_overslag.c"
 
+mulv TISG_rgv[FCMAX][FCMAX];
+mulv TISG_basis[FCMAX][FCMAX];
+
+boolv Correctie_TISG_rgv_add(void)
+{
+    return FALSE;
+}
+
+void BepaalInterStartGroenTijden_rgv_Add(void)
+{
+}
+
+void BepaalInterStartGroenTijden_rgv(void)
+{
+    boolv wijziging = TRUE;
+
+    InitInterStartGroenTijden_rgv();
+    InterStartGroenTijden_VulHaldeConflictenIn_rgv();
+    InterStartGroenTijden_VulGroenGroenConflictenIn_rgv();
+
+    /* Pas interstartgroentijden aan a.g.v. nalopen */
+    InterStartGroenTijd_NLEG_rgv(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
+    InterStartGroenTijd_NLEG_rgv(fc08, fc68, tnlfg0868, tnlfgd0868, tnleg0868, tnlegd0868, tvgnaloop0868);
+    InterStartGroenTijd_NLEG_rgv(fc11, fc68, tnlfg1168, tnlfgd1168, tnleg1168, tnlegd1168, tvgnaloop1168);
+    InterStartGroenTijd_NLEG_rgv(fc22, fc21, tnlfg2221, tnlfgd2221, tnleg2221, tnlegd2221, tvgnaloop2221);
+    InterStartGroenTijd_NLSG_rgv(fc31, fc32, NG, tnlsgd3132);
+    InterStartGroenTijd_NLSG_rgv(fc32, fc31, NG, tnlsgd3231);
+    InterStartGroenTijd_NLSG_rgv(fc33, fc34, NG, tnlsgd3334);
+    InterStartGroenTijd_NLSG_rgv(fc34, fc33, NG, tnlsgd3433);
+    InterStartGroenTijd_NLEG_rgv(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281);
+    do
+    {
+        wijziging = FALSE;
+
+        /* Gelijkstart / voorstart / late release */
+        if (SCH[schgs2232]) wijziging |= Correctie_TISG_Gelijkstart_rgv(fc22, fc32);
+        if (SCH[schgs2434]) wijziging |= Correctie_TISG_Gelijkstart_rgv(fc24, fc34);
+        if (SCH[schgs2484]) wijziging |= Correctie_TISG_Gelijkstart_rgv(fc24, fc84);
+        wijziging |= Correctie_TISG_Gelijkstart_rgv(fc28, fc38);
+        if (SCH[schgs3384]) wijziging |= Correctie_TISG_Gelijkstart_rgv(fc33, fc84);
+        wijziging |= Correctie_TISG_Voorstart_rgv(fc22, fc05, tvs2205);
+        wijziging |= Correctie_TISG_Voorstart_rgv(fc32, fc05, tvs3205);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc26, fc11, tlr2611);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc02, fc62, prmxnl0262);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc08, fc68, prmxnl0868);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc11, fc68, prmxnl1168);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc22, fc21, prmxnl2221);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc31, fc32, prmxnl3132);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc32, fc31, prmxnl3231);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc33, fc34, prmxnl3334);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc34, fc33, prmxnl3433);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc82, fc81, prmxnl8281);
+        wijziging |= Correctie_TISG_rgv_add();
+    } while (wijziging);
+
+    BepaalInterStartGroenTijden_rgv_Add();
+}
 
 void rgv_add(void)
 {
@@ -50,106 +107,6 @@ void rgv_add(void)
     int fc;
 #endif
     int i, j;
-
-    for(i = 0; i < FCMAX; ++i)
-    {
-        for(j = 0; j < FCMAX; ++j) 
-        {
-            #if (CCOL_V >= 95) && !defined NO_TIGMAX
-                TIG_ontwerp[i][j] = TIG_max[i][j];
-            #else
-                TO_ontwerp[i][j] = TO_max[i][j];
-            #endif
-        }
-    }
-
-    /* Fictieve ontwerp ontruimingstijden obv nalooptijden
-       - voor nalopen op CV of EG wordt TO_ontwerp gecorrigeerd */
-    /* Fase 02 en conflicten van naloop 62 */
-    #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc02][fc09] = TIG_max[fc62][fc09] + T_max[tnlegd0262];
-        TIG_ontwerp[fc02][fc11] = TIG_max[fc62][fc11] + T_max[tnlegd0262];
-        TIG_ontwerp[fc02][fc26] = TIG_max[fc62][fc26] + T_max[tnlegd0262];
-    #else
-        TO_ontwerp[fc02][fc09] = TO_max[fc62][fc09] + T_max[tnlegd0262];
-        TO_ontwerp[fc02][fc11] = TO_max[fc62][fc11] + T_max[tnlegd0262];
-        TO_ontwerp[fc02][fc26] = TO_max[fc62][fc26] + T_max[tnlegd0262];
-    #endif
-
-    /* Fase 08 en conflicten van naloop 68 */
-    #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc08][fc03] = TIG_max[fc68][fc03] + T_max[tnlegd0868];
-        TIG_ontwerp[fc08][fc05] = TIG_max[fc68][fc05] + T_max[tnlegd0868];
-        TIG_ontwerp[fc08][fc22] = TIG_max[fc68][fc22] + T_max[tnlegd0868];
-        TIG_ontwerp[fc08][fc32] = TIG_max[fc68][fc32] + T_max[tnlegd0868];
-        TIG_ontwerp[fc08][fc81] = TIG_max[fc68][fc81] + T_max[tnlegd0868];
-    #else
-        TO_ontwerp[fc08][fc03] = TO_max[fc68][fc03] + T_max[tnlegd0868];
-        TO_ontwerp[fc08][fc05] = TO_max[fc68][fc05] + T_max[tnlegd0868];
-        TO_ontwerp[fc08][fc22] = TO_max[fc68][fc22] + T_max[tnlegd0868];
-        TO_ontwerp[fc08][fc32] = TO_max[fc68][fc32] + T_max[tnlegd0868];
-        TO_ontwerp[fc08][fc81] = TO_max[fc68][fc81] + T_max[tnlegd0868];
-    #endif
-
-    /* Fase 11 en conflicten van naloop 68 */
-    #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc11][fc03] = TIG_max[fc68][fc03] + T_max[tnlegd1168];
-        TIG_ontwerp[fc11][fc05] = TIG_max[fc68][fc05] + T_max[tnlegd1168];
-        TIG_ontwerp[fc11][fc22] = TIG_max[fc68][fc22] + T_max[tnlegd1168];
-        TIG_ontwerp[fc11][fc32] = TIG_max[fc68][fc32] + T_max[tnlegd1168];
-        TIG_ontwerp[fc11][fc81] = TIG_max[fc68][fc81] + T_max[tnlegd1168];
-    #else
-        TO_ontwerp[fc11][fc03] = TO_max[fc68][fc03] + T_max[tnlegd1168];
-        TO_ontwerp[fc11][fc05] = TO_max[fc68][fc05] + T_max[tnlegd1168];
-        TO_ontwerp[fc11][fc22] = TO_max[fc68][fc22] + T_max[tnlegd1168];
-        TO_ontwerp[fc11][fc32] = TO_max[fc68][fc32] + T_max[tnlegd1168];
-        TO_ontwerp[fc11][fc81] = TO_max[fc68][fc81] + T_max[tnlegd1168];
-    #endif
-
-    /* Fase 22 en conflicten van naloop 21 */
-    #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc22][fc02] = TIG_max[fc21][fc02] + T_max[tnlegd2221];
-        TIG_ontwerp[fc22][fc03] = TIG_max[fc21][fc03] + T_max[tnlegd2221];
-    #else
-        TO_ontwerp[fc22][fc02] = TO_max[fc21][fc02] + T_max[tnlegd2221];
-        TO_ontwerp[fc22][fc03] = TO_max[fc21][fc03] + T_max[tnlegd2221];
-    #endif
-
-    /* Fase 82 en conflicten van naloop 81 */
-    #if (CCOL_V >= 95) && !defined NO_TIGMAX
-        TIG_ontwerp[fc82][fc67] = TIG_max[fc81][fc67] + T_max[tnlegd8281];
-        TIG_ontwerp[fc82][fc68] = TIG_max[fc81][fc68] + T_max[tnlegd8281];
-    #else
-        TO_ontwerp[fc82][fc67] = TO_max[fc81][fc67] + T_max[tnlegd8281];
-        TO_ontwerp[fc82][fc68] = TO_max[fc81][fc68] + T_max[tnlegd8281];
-    #endif
-
-    /* intitieer waarden TGV_rgv */
-    /* ------------------------- */
-    if(rgvinit)
-    {
-        TVG_rgv[fc02] = TVG_max[fc02];
-        TVG_rgv[fc03] = TVG_max[fc03];
-        TVG_rgv[fc05] = TVG_max[fc05];
-        TVG_rgv[fc08] = TVG_max[fc08];
-        TVG_rgv[fc09] = TVG_max[fc09];
-        TVG_rgv[fc11] = TVG_max[fc11];
-        TVG_rgv[fc22] = TVG_max[fc22];
-        TVG_rgv[fc28] = TVG_max[fc28];
-        rgvinit = 0;
-    }
-
-    /* kopieer de basis waarden van TVG_max */
-    /* ------------------------------------ */
-    TVG_basis[fc02] = TVG_max[fc02] > 0 ? TVG_max[fc02] : 1;
-    TVG_basis[fc03] = TVG_max[fc03] > 0 ? TVG_max[fc03] : 1;
-    TVG_basis[fc05] = TVG_max[fc05] > 0 ? TVG_max[fc05] : 1;
-    TVG_basis[fc08] = TVG_max[fc08] > 0 ? TVG_max[fc08] : 1;
-    TVG_basis[fc09] = TVG_max[fc09] > 0 ? TVG_max[fc09] : 1;
-    TVG_basis[fc11] = TVG_max[fc11] > 0 ? TVG_max[fc11] : 1;
-    TVG_basis[fc22] = TVG_max[fc22] > 0 ? TVG_max[fc22] : 1;
-    TVG_basis[fc28] = TVG_max[fc28] > 0 ? TVG_max[fc28] : 1;
-
     /* detectiestoringen voor de fasecycli */
     /* ----------------------------------- */
     RT[tfd02_1a] = SD[d02_1a] || ED[d02_1a] || !VG[fc02]; 
@@ -257,13 +214,14 @@ void rgv_add(void)
     /* correctie verlenggroentijden t.o.v. de maximum gewenste cyclustijd */
     /* ------------------------------------------------------------------ */
     #if (defined AUTOMAAT || defined AUTOMAAT_TEST) && (!defined VISSIM)
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
+        rgv_verlenggroentijd_correctie_ISG_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        rgv_verlenggroentijd_correctie_ISG_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #else
+        BepaalInterStartGroenTijden_rgv();
         for (teller = 0; teller < MAX_AANTAL_CONFLICTGROEPEN; ++teller) TC_rgv[teller] = 0;
         teller = 0;
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_ISG_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_ISG_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #endif
 
     #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || (defined VISSIM)
@@ -287,13 +245,14 @@ void rgv_add(void)
                 }
             }
     #if (defined AUTOMAAT || defined AUTOMAAT_TEST) && (!defined VISSIM)
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
-        rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
+        rgv_verlenggroentijd_correctie_ISG_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        rgv_verlenggroentijd_correctie_ISG_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #else
+        BepaalInterStartGroenTijden_rgv();
         for (teller = 0; teller < MAX_AANTAL_CONFLICTGROEPEN; ++teller) TC_rgv[teller] = 0;
         teller = 0;
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
-        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_ISG_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc03, fc05, fc08, END);
+        TC_rgv[teller++] = rgv_verlenggroentijd_correctie_ISG_va_arg(PRM[prmrgv], DD_anyfase, PRM[prmmin_tcyclus], PRM[prmmax_tcyclus], fc02, fc09, fc11, END);
     #endif
         }
     }
