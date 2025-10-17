@@ -8,8 +8,8 @@
 
    BESTAND:   123456dpl.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.17
-   CCOLGEN:   12.4.0.17
+    TLCGEN:   12.4.0.18
+   CCOLGEN:   12.4.0.18
 */
 
 /****************************** Versie commentaar ***********************************
@@ -166,7 +166,6 @@ void display_parameters(void)
     X_is[ddummykaruit08karbus] = 797; Y_is[ddummykaruit08karbus] = 73;
     X_is[ddummykaruit09karbus] = 796; Y_is[ddummykaruit09karbus] = 85;
     X_is[ddummykaruit11karbus] = 798; Y_is[ddummykaruit11karbus] = 98;
-    X_is[ddummykaruit11bus] = NG; Y_is[ddummykaruit11bus] = NG;
     X_is[ddummykaruit61karbus] = 797; Y_is[ddummykaruit61karbus] = 109;
     X_is[ddummykaruit62karbus] = 797; Y_is[ddummykaruit62karbus] = 124;
     X_is[ddummykaruit67karbus] = 799; Y_is[ddummykaruit67karbus] = 135;
@@ -289,7 +288,6 @@ void display_parameters(void)
     X_us[usovinm11risov] = 44; Y_us[usovinm11risov] = 97;
     X_us[usovinm11risvrw] = 75; Y_us[usovinm11risvrw] = 97;
     X_us[usovinm11risalg] = 92; Y_us[usovinm11risalg] = 94;
-    X_us[usovinm11bus] = NG; Y_us[usovinm11bus] = NG;
     X_us[usovinm22fiets] = 276; Y_us[usovinm22fiets] = 144;
     X_us[usovinm28fiets] = 279; Y_us[usovinm28fiets] = 157;
     X_us[usovinm61karbus] = 153; Y_us[usovinm61karbus] = 111;

@@ -9,8 +9,8 @@
 
    BESTAND:   123456reg.add
       CCOL:   12.0
-    TLCGEN:   12.4.0.17
-   CCOLGEN:   12.4.0.17
+    TLCGEN:   12.4.0.18
+   CCOLGEN:   12.4.0.18
 */
 
 /****************************** Versie commentaar ***********************************
@@ -116,7 +116,17 @@ void FileVerwerking_Add(void)
 
 }
 
-void DetectieStoring_Add(void)
+void DetectieStoring_Aanvraag_Add(void)
+{
+
+}
+
+void DetectieStoring_Meetkriterium_Add(void)
+{
+
+}
+
+void DetectieStoring_VerlengGroen_Add(void)
 {
 
 }

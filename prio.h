@@ -1,4 +1,4 @@
-/* prio.h - gegenereerd met TLCGen 12.4.0.17 */
+/* prio.h - gegenereerd met TLCGen 12.4.0.18 */
 
 #ifndef __PRIOH
 #define __PRIOH
@@ -14,6 +14,12 @@
 #define   PRIO_PP_BIT      BIT6
 #define  PRIO_PAR_BIT      BIT6
 #define PRIO_RTFB_BIT      BIT6
+
+#define MAX_AANTAL_INMELDINGEN           10
+#define DEFAULT_MAX_WACHTTIJD           120
+#define NO_REALISEREN_TOEGESTAAN
+
+#define MAX_INT                       32767L
 
 typedef enum
 {
@@ -204,11 +210,26 @@ extern int* iInPrioriteitsOpties[];
 extern int* iInRijTimer[];
 extern int* iInGroenBewakingsTimer[];
 extern int* iInOnderMaximumVerstreken[];
+extern int* iInMaxWachtTijdOverschreden[];
+extern int* iInID[];
 extern int* iPrioMeeRealisatie[];
 
+extern int iM_RealisatieTijd[];
+extern int iM_InPrioriteitsNiveau[];
+extern int iM_InPrioriteitsOpties[];
+extern int iM_InRijTimer[];
+extern int iM_InGroenBewakingsTimer[];
+extern int iM_InOnderMaximumVerstreken[];
+extern int iM_InID[];
+extern int iM_InMaxWachtTijdOverschreden[];
+extern int iM_PrioMeeRealisatie[];
+
 extern int prioKFC_MAX[];
+extern int prioFKFC_MAX[];
+extern int prioGKFC_MAX[];
 extern int* prioTO_pointer[];
 extern int iLangstWachtendeAlternatief;
+extern int prioM_TO_pointer[prioFCMAX * prioFCMAX];
 
 extern boolv bHDAanwezig;
 

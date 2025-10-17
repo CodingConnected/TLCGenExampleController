@@ -8,8 +8,8 @@
 
    BESTAND:   123456rgv.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.17
-   CCOLGEN:   12.4.0.17
+    TLCGEN:   12.4.0.18
+   CCOLGEN:   12.4.0.18
 */
 
 /****************************** Versie commentaar ***********************************
@@ -27,7 +27,6 @@ mulv TC_max, DD_anyfase;
 #else
     mulv TO_ontwerp[FCMAX][FCMAX];
 #endif
-
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST) || (defined VISSIM)
     mulv TC_rgv[MAX_AANTAL_CONFLICTGROEPEN];
     char * TC_string$[MAX_AANTAL_CONFLICTGROEPEN];

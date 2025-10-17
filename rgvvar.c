@@ -1,4 +1,4 @@
-/* rgvvar.c - gegenereerd met TLCGen 12.4.0.17 */
+/* rgvvar.c - gegenereerd met TLCGen 12.4.0.18 */
 
 /* DEFINITIE FUNCTIES - ROBUUSTE GROENTIJD VERDELER */
 /* ================================================ */
@@ -50,8 +50,13 @@
 	   boolv SCH_schrgvwtvs,
 #endif
 	   boolv DD_fc, boolv MK_speciaal);
+#ifdef INTERFUNC
+   mulv rgv_verlenggroentijd_correctie_ISG_va_arg(va_mulv PRM_rgv, va_mulv DD_anyfc, va_mulv PRM_tcmin, va_mulv PRM_tcmax, ...);
+   mulv berekencyclustijd_ISG_va_arg(va_count fcnr_first, ...);
+#else
    mulv rgv_verlenggroentijd_correctie_va_arg(va_mulv PRM_rgv, va_mulv DD_anyfc, va_mulv PRM_tcmin, va_mulv PRM_tcmax, ...);
    mulv berekencyclustijd_va_arg(va_count fcnr_first, ...);
+#endif
    void copy_TVG_max_to_TVG_basis (void);
    void copy_TVG_rgv_to_TVG_max (void);
 

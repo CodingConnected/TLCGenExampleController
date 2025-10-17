@@ -1,9 +1,7 @@
-/* prio.c - gegenereerd met TLCGen 12.4.0.17 */
+/* prio.c - gegenereerd met TLCGen 12.4.0.18 */
 
 /* OVPROGRAMMA */
 /* ----------- */
-
-#define MAX_INT                       32767L
 
 #include "prio.h"
 
@@ -89,7 +87,8 @@ int iM_PrioMeeRealisatie[FCMAX * FCMAX];
 
 int prioKFC_MAX[prioFCMAX];
 int prioGKFC_MAX[prioFCMAX];
-int* prioTO_pointer[prioFCMAX];
+int prioFKFC_MAX[prioFCMAX];
+int *prioTO_pointer[prioFCMAX];
 int prioM_TO_pointer[prioFCMAX * prioFCMAX];
 int iLangstWachtendeAlternatief;
 

@@ -8,8 +8,8 @@
 
    BESTAND:   123456hst.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.17
-   CCOLGEN:   12.4.0.17
+    TLCGEN:   12.4.0.18
+   CCOLGEN:   12.4.0.18
 */
 
 /****************************** Versie commentaar ***********************************
@@ -345,7 +345,6 @@ void Meetkriterium_halfstar(void)
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risov]);
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risvrw]);
         yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11risalg]);
-        yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11bus]);
         yv_PRIO_pl_halfstar(fc22, BIT7, C[cvc22fiets]);
         yv_PRIO_pl_halfstar(fc28, BIT7, C[cvc28fiets]);
         yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61karbus]);
@@ -797,7 +796,6 @@ void PrioHalfstarSettings(void)
     iExtraGroenNaTXD[prioFC11risov] = PRM[prmnatxdhst11risov];
     iExtraGroenNaTXD[prioFC11risvrw] = PRM[prmnatxdhst11risvrw];
     iExtraGroenNaTXD[prioFC11risalg] = PRM[prmnatxdhst11risalg];
-    iExtraGroenNaTXD[prioFC11bus] = PRM[prmnatxdhst11bus];
     iExtraGroenNaTXD[prioFC22fiets] = PRM[prmnatxdhst22fiets];
     iExtraGroenNaTXD[prioFC28fiets] = PRM[prmnatxdhst28fiets];
     iExtraGroenNaTXD[prioFC61karbus] = PRM[prmnatxdhst61karbus];

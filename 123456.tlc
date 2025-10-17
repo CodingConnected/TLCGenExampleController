@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>17</HuidigeVersieRevision>
+    <HuidigeVersieRevision>18</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -80,7 +80,7 @@
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.17</TLCGenVersie>
+    <TLCGenVersie>12.4.0.18</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -269,6 +269,7 @@
     <UitgangPerModule>true</UitgangPerModule>
     <GenererenIncludesLijst>false</GenererenIncludesLijst>
     <GenererenEnkelCompilatieBestand>true</GenererenEnkelCompilatieBestand>
+    <LosseBrondbestanden>true</LosseBrondbestanden>
     <GeenDetectorGedragInAutomaatOmgeving>true</GeenDetectorGedragInAutomaatOmgeving>
     <MultiModuleReeksen>false</MultiModuleReeksen>
     <ModulenInParameters>true</ModulenInParameters>
@@ -877,12 +878,6 @@
           <Naam>09_3</Naam>
           <HasManualNaam>false</HasManualNaam>
           <RangeerIndex>76</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>dummykaruit11bus</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>89</RangeerIndex>
           <RangeerIndex2>-1</RangeerIndex2>
         </IOElementRangeerDataModel>
         <IOElementRangeerDataModel>
@@ -2028,6 +2023,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -2407,6 +2403,12 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm02</Naam>
         <Dummy>false</Dummy>
@@ -2499,6 +2501,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -2620,6 +2623,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm03</Naam>
         <Dummy>false</Dummy>
@@ -2712,6 +2721,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -2833,6 +2843,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm05</Naam>
         <Dummy>false</Dummy>
@@ -2925,6 +2941,7 @@
       <TGL>35</TGL>
       <TGL_min>35</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -3304,6 +3321,12 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm08</Naam>
         <Dummy>false</Dummy>
@@ -3396,6 +3419,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -3557,6 +3581,12 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm09</Naam>
         <Dummy>false</Dummy>
@@ -3649,6 +3679,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -3856,6 +3887,12 @@
           <VeiligheidsGroenVolgtijd>25</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm11</Naam>
         <Dummy>false</Dummy>
@@ -3948,6 +3985,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4079,6 +4117,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -4167,6 +4211,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4300,6 +4345,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm22</Naam>
         <Dummy>false</Dummy>
@@ -4401,6 +4452,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4620,6 +4672,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -4714,6 +4772,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4845,6 +4904,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -4940,6 +5005,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5116,6 +5182,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -5210,6 +5282,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5355,6 +5428,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -5443,6 +5522,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5588,6 +5668,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -5682,6 +5768,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5827,6 +5914,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -5915,6 +6008,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -6060,6 +6154,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -6148,6 +6248,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -6293,6 +6394,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -6381,6 +6488,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -6502,6 +6610,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm61</Naam>
         <Dummy>false</Dummy>
@@ -6594,6 +6708,7 @@
       <TGL>35</TGL>
       <TGL_min>35</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -6801,6 +6916,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm62</Naam>
         <Dummy>false</Dummy>
@@ -6893,6 +7014,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -7014,6 +7136,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm67</Naam>
         <Dummy>false</Dummy>
@@ -7106,6 +7234,7 @@
       <TGL>35</TGL>
       <TGL_min>35</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -7397,6 +7526,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Naam>ovinm68</Naam>
         <Dummy>false</Dummy>
@@ -7489,6 +7624,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -7620,6 +7756,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -7708,6 +7850,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>80</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -7839,6 +7982,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -7927,6 +8076,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
+      <Interfunc>false</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -8060,6 +8210,12 @@
           <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
         </Detector>
       </Detectoren>
+      <IsgTijdBitmapData>
+        <Dummy>false</Dummy>
+        <ElementType>FaseCyclus</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+      </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
         <Dummy>false</Dummy>
         <ElementType>FaseCyclus</ElementType>
@@ -8844,6 +9000,9 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
+        <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
             <Detector>02_1a</Detector>
@@ -8881,6 +9040,9 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
+        <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
             <Detector>08_1a</Detector>
@@ -8918,6 +9080,9 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
+        <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
             <Detector>11_1</Detector>
@@ -8951,6 +9116,9 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
+        <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
             <Detector>22_1</Detector>
@@ -8984,6 +9152,9 @@
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>31</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
+        <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
             <Detector>k31a</Detector>
@@ -9005,6 +9176,9 @@
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>32</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
+        <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
             <Detector>k32a</Detector>
@@ -9026,6 +9200,9 @@
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>33</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
+        <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
             <Detector>k33a</Detector>
@@ -9047,6 +9224,9 @@
         <InrijdenTijdensGroen>true</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>34</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
+        <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
             <Detector>k34a</Detector>
@@ -9068,6 +9248,9 @@
         <InrijdenTijdensGroen>false</InrijdenTijdensGroen>
         <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <MaximaleVoorstart>30</MaximaleVoorstart>
+        <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
+        <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
             <Detector>82_1</Detector>
@@ -10187,12 +10370,14 @@
           <BezetTijd>35</BezetTijd>
           <RijTijd>20</RijTijd>
           <AfvalVertraging>35</AfvalVertraging>
+          <IngreepNaamPerLus>false</IngreepNaamPerLus>
         </FileDetector>
         <FileDetector>
           <Detector>68_9b</Detector>
           <BezetTijd>35</BezetTijd>
           <RijTijd>20</RijTijd>
           <AfvalVertraging>35</AfvalVertraging>
+          <IngreepNaamPerLus>false</IngreepNaamPerLus>
         </FileDetector>
       </FileDetectoren>
       <TeDoserenSignaalGroepen>
@@ -14758,222 +14943,6 @@
           <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
           <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
           <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
-        </MeldingenData>
-      </PrioIngreep>
-      <PrioIngreep>
-        <Naam>bus</Naam>
-        <FaseCyclus>11</FaseCyclus>
-        <Type>Bus</Type>
-        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
-        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
-        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
-        <Koplus>NG</Koplus>
-        <RijTijdOngehinderd>140</RijTijdOngehinderd>
-        <RijTijdBeperktgehinderd>100</RijTijdBeperktgehinderd>
-        <RijTijdGehinderd>60</RijTijdGehinderd>
-        <OnderMaximum>150</OnderMaximum>
-        <GroenBewaking>300</GroenBewaking>
-        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
-        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
-        <MinimaleRoodtijd>70</MinimaleRoodtijd>
-        <AfkappenConflicten>true</AfkappenConflicten>
-        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
-        <VasthoudenGroen>true</VasthoudenGroen>
-        <TussendoorRealiseren>true</TussendoorRealiseren>
-        <PrioriteitsNiveau>0</PrioriteitsNiveau>
-        <CheckLijnNummer>true</CheckLijnNummer>
-        <CheckWagenNummer>false</CheckWagenNummer>
-        <CheckRitCategorie>true</CheckRitCategorie>
-        <AlleLijnen>true</AlleLijnen>
-        <AlleRitCategorien>false</AlleRitCategorien>
-        <CheckPeriode>false</CheckPeriode>
-        <GeenEigenVerklikking>false</GeenEigenVerklikking>
-        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
-        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
-        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
-        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
-        <HalfstarIngreepData>
-          <Prioriteit>0</Prioriteit>
-          <GroenNaTXDTijd>0</GroenNaTXDTijd>
-        </HalfstarIngreepData>
-        <PrioInmeldingBitmapData>
-          <Naam>ovinm11bus</Naam>
-          <Dummy>false</Dummy>
-          <ElementType>Output</ElementType>
-          <Multivalent>false</Multivalent>
-          <BitmapCoordinaten />
-        </PrioInmeldingBitmapData>
-        <GeconditioneerdePrioTeVroegBitmapData>
-          <Dummy>false</Dummy>
-          <ElementType>FaseCyclus</ElementType>
-          <Multivalent>false</Multivalent>
-          <BitmapCoordinaten />
-        </GeconditioneerdePrioTeVroegBitmapData>
-        <GeconditioneerdePrioOpTijdBitmapData>
-          <Dummy>false</Dummy>
-          <ElementType>FaseCyclus</ElementType>
-          <Multivalent>false</Multivalent>
-          <BitmapCoordinaten />
-        </GeconditioneerdePrioOpTijdBitmapData>
-        <GeconditioneerdePrioTeLaatBitmapData>
-          <Dummy>false</Dummy>
-          <ElementType>FaseCyclus</ElementType>
-          <Multivalent>false</Multivalent>
-          <BitmapCoordinaten />
-        </GeconditioneerdePrioTeLaatBitmapData>
-        <LijnNummers>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-          <LijnNummer>
-            <Nummer>0</Nummer>
-            <RitCategorie>999</RitCategorie>
-          </LijnNummer>
-        </LijnNummers>
-        <GerelateerdePerioden />
-        <MeldingenData>
-          <Inmeldingen>
-            <Inmelding>
-              <Naam>11busvecioin</Naam>
-              <InUit>Inmelding</InUit>
-              <Type>VecomViaDetector</Type>
-              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
-              <TweedeInput>false</TweedeInput>
-              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
-              <KijkNaarWisselStand>false</KijkNaarWisselStand>
-              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
-              <AlleenIndienRood>false</AlleenIndienRood>
-              <AntiJutterTijdToepassen>true</AntiJutterTijdToepassen>
-              <AntiJutterTijd>15</AntiJutterTijd>
-              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
-              <OpvangStoring>false</OpvangStoring>
-              <RisStart>0</RisStart>
-              <RisEnd>0</RisEnd>
-              <RisEta>0</RisEta>
-              <RisRole />
-              <RisSubrole />
-              <RisImportance />
-              <RisPeloton>false</RisPeloton>
-              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
-              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
-              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
-              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
-              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
-              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
-              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
-              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
-            </Inmelding>
-          </Inmeldingen>
-          <Uitmeldingen>
-            <Uitmelding>
-              <Naam>KAR</Naam>
-              <InUit>Uitmelding</InUit>
-              <Type>KARMelding</Type>
-              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
-              <TweedeInput>false</TweedeInput>
-              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
-              <KijkNaarWisselStand>false</KijkNaarWisselStand>
-              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
-              <AlleenIndienRood>false</AlleenIndienRood>
-              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
-              <AntiJutterTijd>0</AntiJutterTijd>
-              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
-              <OpvangStoring>false</OpvangStoring>
-              <RisStart>0</RisStart>
-              <RisEnd>0</RisEnd>
-              <RisEta>0</RisEta>
-              <RisRole />
-              <RisSubrole />
-              <RisImportance />
-              <RisPeloton>false</RisPeloton>
-              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
-              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
-              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
-              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
-              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
-              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
-              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
-              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
-              <DummyKARMelding>
-                <Naam>dummykaruit11bus</Naam>
-                <Dummy>true</Dummy>
-                <ElementType>Detector</ElementType>
-                <Multivalent>false</Multivalent>
-                <BitmapCoordinaten />
-                <TDB xsi:nil="true" />
-                <TDH xsi:nil="true" />
-                <TOG xsi:nil="true" />
-                <TBG xsi:nil="true" />
-                <TFL xsi:nil="true" />
-                <CFL xsi:nil="true" />
-                <ResetAanvraag>false</ResetAanvraag>
-                <ResetAanvraagTijdsduur>0</ResetAanvraagTijdsduur>
-                <AanvraagDirect>false</AanvraagDirect>
-                <AanvraagDirectSch>Nooit</AanvraagDirectSch>
-                <Wachtlicht>false</Wachtlicht>
-                <Rijstrook>1</Rijstrook>
-                <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
-                </Simulatie>
-                <Type>Kop</Type>
-                <Aanvraag>Geen</Aanvraag>
-                <AanvraagHardOpStraat>false</AanvraagHardOpStraat>
-                <Verlengen>Uit</Verlengen>
-                <VerlengenHardOpStraat>false</VerlengenHardOpStraat>
-                <AanvraagBijStoring>Nooit</AanvraagBijStoring>
-                <VeiligheidsGroen>Nooit</VeiligheidsGroen>
-                <VeiligheidsGroenHiaat>0</VeiligheidsGroenHiaat>
-                <VeiligheidsGroenVolgtijd>0</VeiligheidsGroenVolgtijd>
-              </DummyKARMelding>
-            </Uitmelding>
-          </Uitmeldingen>
-          <Wissel1>false</Wissel1>
-          <Wissel1Type>Ingang</Wissel1Type>
-          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
-          <Wissel2>false</Wissel2>
-          <Wissel2Type>Ingang</Wissel2Type>
-          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
-          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
-          <AntiJutterTijdVoorAlleInmeldingen>15</AntiJutterTijdVoorAlleInmeldingen>
-          <AntiJutterVoorAlleUitmeldingen>true</AntiJutterVoorAlleUitmeldingen>
-          <AntiJutterTijdVoorAlleUitmeldingen>15</AntiJutterTijdVoorAlleUitmeldingen>
         </MeldingenData>
       </PrioIngreep>
       <PrioIngreep>
@@ -26384,6 +26353,9 @@
       </DynamischHiaatSignalGroupModel>
     </SignaalGroepMetDynamischHiaat>
   </DynamischHiaat>
+  <MultiSimData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <SimulationEntries />
+  </MultiSimData>
   <SumoKoppeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <GenererenSumoCode>true</GenererenSumoCode>
     <SumoPort>4001</SumoPort>
@@ -26720,6 +26692,303 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>28_2</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>28_2</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>61_1</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>61_1</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>61_2</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>61_2</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>opt11</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>004</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>opt08</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>003</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>opt05</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>001</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>opt02</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>002</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>k84</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k82</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>822</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>k81</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>812</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>k38b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>38b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k38a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>38a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k34b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>34b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k34a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>34a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k33b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>33b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k33a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>33a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k32b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>32b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k32a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>32a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k31b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>31b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k31a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>31a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k28</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k26</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>262</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>k24</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+      </Detector>
+      <Detector>
+        <Naam>k22</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>k21</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>212</SumoNaam1>
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit68karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit68karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit67karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit67karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit62karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit62karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit61karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit61karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit11karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit11karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit09karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit09karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit08karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit08karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit05karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit05karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit03karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit03karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykaruit02karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykaruit02karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin68karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin68karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin67karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin67karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin62karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin62karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin61karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin61karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin11karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin11karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin09karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin09karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin08karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin08karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin05karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin05karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin03karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin03karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummykarin02karbus</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>dummykarin02karbus</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>dummyhdkaruit68</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
@@ -26953,310 +27222,6 @@
         <Naam>62_1a</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>62_1a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>61_2</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>61_2</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>61_1</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>61_1</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>28_2</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>28_2</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin02karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin02karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin03karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin03karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin05karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin05karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin08karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin08karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin09karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin09karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin11karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin11karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin61karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin61karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin62karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin62karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin67karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin67karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykarin68karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykarin68karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit02karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit02karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit03karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit03karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit05karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit05karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit08karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit08karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit09karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit09karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit11karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit11karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit61karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit61karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit62karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit62karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit67karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit67karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit68karbus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit68karbus</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>opt11</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>004</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>opt08</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>003</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>opt05</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>001</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>opt02</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>002</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>k84</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k82</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>822</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>k81</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>812</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>k38b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>38b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k38a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>38a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k34b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>34b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k34a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>34a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k33b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>33b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k33a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>33a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k32b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>32b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k32a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>32a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k31b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>31b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k31a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>31a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k28</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k26</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>262</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>k24</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-      </Detector>
-      <Detector>
-        <Naam>k22</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>k21</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>212</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>dummykaruit11bus</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>dummykaruit11bus</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>
