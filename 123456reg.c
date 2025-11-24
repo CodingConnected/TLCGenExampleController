@@ -1439,10 +1439,10 @@ void BepaalRealisatieTijden(void)
     wijziging |= Realisatietijd_LateRelease_Correctie(fc26, fc11, tlr2611);
 
     /* Inlopen / inrijden nalopen */
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc62, fc02, txnl0262);
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc08, txnl0868);
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc11, txnl1168);
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc21, fc22, txnl2221);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc62, fc02, tlr6202); /* gedacht van Peter is alles tlr maken maar daar hadden de gebrukers vorige keer moeite moee.*/
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc08, tlr6808);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc11, tlr6811);
+    wijziging |= Realisatietijd_LateRelease_Correctie(fc21, fc22, tlr2122);
     IH[hlos31] = RA[fc31] && (!H[hmadk31a] || SCH[schlos3132] && H[hmadk31b]) || H[hlos31] && !SG[fc31];
     wijziging |= (!IH[hlos31]) ? Realisatietijd_LateRelease_Correctie(fc32, fc31, txnl3132) : 0;
     IH[hlos32] = RA[fc32] && (!H[hmadk32a] || SCH[schlos3231] && H[hmadk32b]) || H[hlos32] && !SG[fc32];
