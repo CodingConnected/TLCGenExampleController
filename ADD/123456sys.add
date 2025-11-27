@@ -1,0 +1,57 @@
+/* BEGIN GEGENEREERDE HEADER */
+/* DEFINITIE BESTAND, GEBRUIKERS TOEVOEGINGEN          */
+/* --------------------------------------------------- */
+
+/* KRUISPUNT: 123456
+              123456
+              123456
+              123456
+
+   BESTAND:   123456sys.add
+      CCOL:   12.0
+    TLCGEN:   12.4.0.18
+   CCOLGEN:   12.4.0.18
+*/
+
+/****************************** Versie commentaar ***********************************
+ *
+ * Versie   Datum   Ontwerper   Commentaar
+ *
+ ************************************************************************************/
+/* EINDE GEGENEREERDE HEADER */
+
+
+#define FCMAX  (FCMAX1 + 0)  /* Totaal aantal gebruikte fasecycli      */
+#define USMAX  (USMAX1 + 0)  /* Totaal aantal gebruikte uitgangen      */
+#define DPMAX  (DPMAX1 + 0)  /* Totaal aantal gebruikte detectoren     */
+#define ISMAX  (ISMAX1 + 0)  /* Totaal aantal gebruikte ingangen       */
+#define hnleg0262   (HEMAX1 + 0)
+#define hnleg0868   (HEMAX1 + 1)
+#define hnleg1168   (HEMAX1 + 2)
+#define hnleg2221   (HEMAX1 + 3)
+#define hnleg8281   (HEMAX1 + 4)
+#define HEMAX       (HEMAX1 + 5)  /* Totaal aantal gebruikte hulpelementen  */
+#define MEMAX  (MEMAX1 + 0)  /* Totaal aantal gebruikte mem.elementen  */
+
+#define tlr6202 (TMMAX1 + 0)
+#define tlr6808 (TMMAX1 + 1)
+#define tlr6811 (TMMAX1 + 2)
+#define tlr2122 (TMMAX1 + 3)
+#define tlr3231 (TMMAX1 + 4)
+#define tlr3132 (TMMAX1 + 5)
+#define tlr3433 (TMMAX1 + 6)
+#define tlr3334 (TMMAX1 + 7)
+#define tlr8182 (TMMAX1 + 8)
+#define TMMAX   (TMMAX1 + 9)  /* Totaal aantal gebruikte timers         */
+
+#define CTMAX  (CTMAX1 + 0)  /* Totaal aantal gebruikte tellers        */
+
+#define schisgdebug (SCHMAX1 + 0) /* Totaal aantal gebruikte schakelaars    */
+#define SCHMAX (SCHMAX1 + 1) /* Totaal aantal gebruikte schakelaars    */
+
+#define PRMMAX (PRMMAX1 + 0) /* Totaal aantal gebruikte parameters     */
+#define MLMAX  (MLMAX1 + 0)  /* Totaal aantal gebruikte modulen        */
+#define PLMAX  (PLMAX1 + 0)  /* Totaal aantal gebruikte signaalplannen */
+#if !defined AUTOMAAT
+#define LNKMAX (LNKMAX1 + 0) /* Totaal aantal gebruikte simulatie elementen */
+#endif
