@@ -79,15 +79,15 @@ void BepaalInterStartGroenTijden_rgv(void)
         wijziging |= Correctie_TISG_Voorstart_rgv(fc22, fc05, tvs2205);
         wijziging |= Correctie_TISG_Voorstart_rgv(fc32, fc05, tvs3205);
         wijziging |= Correctie_TISG_LateRelease_rgv(fc26, fc11, tlr2611);
-        wijziging |= Correctie_TISG_LateRelease_rgv(fc02, fc62, prmxnl0262);
-        wijziging |= Correctie_TISG_LateRelease_rgv(fc08, fc68, prmxnl0868);
-        wijziging |= Correctie_TISG_LateRelease_rgv(fc11, fc68, prmxnl1168);
-        wijziging |= Correctie_TISG_LateRelease_rgv(fc22, fc21, prmxnl2221);
-        wijziging |= Correctie_TISG_LateRelease_rgv(fc31, fc32, prmxnl3132);
-        wijziging |= Correctie_TISG_LateRelease_rgv(fc32, fc31, prmxnl3231);
-        wijziging |= Correctie_TISG_LateRelease_rgv(fc33, fc34, prmxnl3334);
-        wijziging |= Correctie_TISG_LateRelease_rgv(fc34, fc33, prmxnl3433);
-        wijziging |= Correctie_TISG_LateRelease_rgv(fc82, fc81, prmxnl8281);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc02, fc62, txnl0262);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc08, fc68, txnl0868);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc11, fc68, txnl1168);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc22, fc21, txnl2221);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc31, fc32, txnl3132);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc32, fc31, txnl3231);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc33, fc34, txnl3334);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc34, fc33, txnl3433);
+        wijziging |= Correctie_TISG_LateRelease_rgv(fc82, fc81, txnl8281);
         wijziging |= Correctie_TISG_rgv_add();
     } while (wijziging);
 

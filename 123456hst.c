@@ -419,19 +419,19 @@ void Synchronisaties_halfstar(void)
          X[fc]&= ~(BIT1 | BIT2 |BIT3 | X_GELIJK_HALFSTAR | X_VOOR_HALFSTAR | X_DEELC_HALFSTAR);
     }
 
-    naloopEG_CV_halfstar(TRUE, fc02, fc62, T_max[tlr6202], tnlegd0262, tnleg0262);
-    naloopEG_CV_halfstar(TRUE, fc08, fc68, T_max[tlr6808], tnlegd0868, tnleg0868);
-    naloopEG_CV_halfstar(TRUE, fc11, fc68, T_max[tlr6811], tnlegd1168, tnleg1168);
-    naloopEG_CV_halfstar(TRUE, fc22, fc21, T_max[tlr2122], tnlegd2221, tnleg2221);
+    naloopEG_CV_halfstar(TRUE, fc02, fc62, T_max[txnl0262], tnlegd0262, tnleg0262);
+    naloopEG_CV_halfstar(TRUE, fc08, fc68, T_max[txnl0868], tnlegd0868, tnleg0868);
+    naloopEG_CV_halfstar(TRUE, fc11, fc68, T_max[txnl1168], tnlegd1168, tnleg1168);
+    naloopEG_CV_halfstar(TRUE, fc22, fc21, T_max[txnl2221], tnlegd2221, tnleg2221);
     naloopSG_halfstar(fc31, fc32, dk31a, hnlak31a, tnlsgd3132);
     naloopSG_halfstar(fc32, fc31, dk32a, hnlak32a, tnlsgd3231);
     naloopSG_halfstar(fc33, fc34, dk33a, hnlak33a, tnlsgd3334);
     naloopSG_halfstar(fc34, fc33, dk34a, hnlak34a, tnlsgd3433);
-    naloopEG_CV_halfstar(TRUE, fc82, fc81, T_max[tlr8182], tnlegd8281, tnleg8281);
-    inloopSG_halfstar(fc31, fc32, tinl3132);
-    inloopSG_halfstar(fc32, fc31, tinl3231);
-    inloopSG_halfstar(fc33, fc34, tinl3334);
-    inloopSG_halfstar(fc34, fc33, tinl3433);
+    naloopEG_CV_halfstar(TRUE, fc82, fc81, T_max[txnl8281], tnlegd8281, tnleg8281);
+    inloopSG_halfstar(fc31, fc32, txnl3132);
+    inloopSG_halfstar(fc32, fc31, txnl3231);
+    inloopSG_halfstar(fc33, fc34, txnl3334);
+    inloopSG_halfstar(fc34, fc33, txnl3433);
 
     Synchronisaties_halfstar_Add();
 }

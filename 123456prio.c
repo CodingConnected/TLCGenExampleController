@@ -3178,91 +3178,91 @@ void PostAfhandelingPrio(void)
    --------------------------------------- */
 void PrioPARCorrecties(void)
 {
-    int fc;
-    /* Tegenrichting moet ook kunnen koppelen bij koppelaanvraag */
-    PAR[fc32] = PAR[fc32] && PAR[fc31];
-    PAR[fc31] = PAR[fc31] && PAR[fc32];
-    PAR[fc34] = PAR[fc34] && PAR[fc33];
-    PAR[fc33] = PAR[fc33] && PAR[fc34];
-
-    /* Bepaal naloop voetgangers wel/niet toegestaan */
-    IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc31]);
-    IH[hnlsg3231] = (PR[fc32] || AR[fc32] && PAR[fc32]);
-    IH[hnlsg3334] = (PR[fc33] || AR[fc33] && PAR[fc33]);
-    IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc34]);
-
-    /* PAR-ongecoordineerd */
-    if (!PAR[fc31] && IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]) || PAR_los[fc31] && RA[fc31]) PAR_los[fc31] = TRUE; else PAR_los[fc31] = FALSE;
-    if (!PAR[fc32] && IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]) || PAR_los[fc32] && RA[fc32]) PAR_los[fc32] = TRUE; else PAR_los[fc32] = FALSE;
-    if (!PAR[fc33] && IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]) || PAR_los[fc33] && RA[fc33]) PAR_los[fc33] = TRUE; else PAR_los[fc33] = FALSE;
-    if (!PAR[fc34] && IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]) || PAR_los[fc34] && RA[fc34]) PAR_los[fc34] = TRUE; else PAR_los[fc34] = FALSE;
-
-    PAR[fc31] = PAR[fc31] || PAR_los[fc31];
-    PAR[fc32] = PAR[fc32] || PAR_los[fc32];
-    PAR[fc33] = PAR[fc33] || PAR_los[fc33];
-    PAR[fc34] = PAR[fc34] || PAR_los[fc34];
-
-    /* PAR correcties gelijkstart synchronisaties */
-    if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && PAR[fc22];
-    if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && PAR[fc32];
-    if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && PAR[fc24];
-    if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && PAR[fc34];
-    if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && PAR[fc24];
-    if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && PAR[fc84];
-    PAR[fc38] = PAR[fc38] && PAR[fc28];
-    PAR[fc28] = PAR[fc28] && PAR[fc38];
-    if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && PAR[fc33];
-    if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && PAR[fc84];
-
-    /* Niet alternatief komen tijdens file (meting na ss) */
-    if (IH[hfileFile68af]) PAR[fc08] = FALSE;
-    if (IH[hfileFile68af]) PAR[fc11] = FALSE;
-    /* BLOKGEBONDEN ALTERNATIEF */
-    /* ======================== */
-    /* Voor instellingen de volgende waarden voor het blok waarin het alternatief mag plaatsvinden optellen:
-     * 1  alternatief mogelijk in blok 1
-     * 2  alternatief mogelijk in blok 2
-     * 4  alternatief mogelijk in blok 3
-     * ...  etc  ... t/m 256 voor blok 9
-     */
-    if (!(PRM[prmaltb02] & (1 << ML))) PAR[fc02] = FALSE;
-    if (!(PRM[prmaltb03] & (1 << ML))) PAR[fc03] = FALSE;
-    if (!(PRM[prmaltb05] & (1 << ML))) PAR[fc05] = FALSE;
-    if (!(PRM[prmaltb08] & (1 << ML))) PAR[fc08] = FALSE;
-    if (!(PRM[prmaltb09] & (1 << ML))) PAR[fc09] = FALSE;
-    if (!(PRM[prmaltb11] & (1 << ML))) PAR[fc11] = FALSE;
-    if (!(PRM[prmaltb21] & (1 << ML))) PAR[fc21] = FALSE;
-    if (!(PRM[prmaltb22] & (1 << ML))) PAR[fc22] = FALSE;
-    if (!(PRM[prmaltb24] & (1 << ML))) PAR[fc24] = FALSE;
-    if (!(PRM[prmaltb26] & (1 << ML))) PAR[fc26] = FALSE;
-    if (!(PRM[prmaltb28] & (1 << ML))) PAR[fc28] = FALSE;
-    if (!(PRM[prmaltb31] & (1 << ML))) PAR[fc31] = FALSE;
-    if (!(PRM[prmaltb32] & (1 << ML))) PAR[fc32] = FALSE;
-    if (!(PRM[prmaltb33] & (1 << ML))) PAR[fc33] = FALSE;
-    if (!(PRM[prmaltb34] & (1 << ML))) PAR[fc34] = FALSE;
-    if (!(PRM[prmaltb38] & (1 << ML))) PAR[fc38] = FALSE;
-    if (!(PRM[prmaltb61] & (1 << ML))) PAR[fc61] = FALSE;
-    if (!(PRM[prmaltb62] & (1 << ML))) PAR[fc62] = FALSE;
-    if (!(PRM[prmaltb67] & (1 << ML))) PAR[fc67] = FALSE;
-    if (!(PRM[prmaltb68] & (1 << ML))) PAR[fc68] = FALSE;
-    if (!(PRM[prmaltb81] & (1 << ML))) PAR[fc81] = FALSE;
-    if (!(PRM[prmaltb82] & (1 << ML))) PAR[fc82] = FALSE;
-    if (!(PRM[prmaltb84] & (1 << ML))) PAR[fc84] = FALSE;
-    #ifndef NO_TIMETOX
-    if (SCH[schgs2232] && (P[fc22] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
-    if (SCH[schgs2232] && (P[fc32] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
-    if (SCH[schgs2434] && (P[fc24] & BIT11) && R[fc34] && !kp(fc34) && A[fc34]) { PAR[fc34] |= BIT11; P[fc34] |= BIT11; }
-    if (SCH[schgs2434] && (P[fc34] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
-    if (SCH[schgs2484] && (P[fc24] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
-    if (SCH[schgs2484] && (P[fc84] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
-    if ((P[fc28] & BIT11) && R[fc38] && !kp(fc38) && A[fc38]) { PAR[fc38] |= BIT11; P[fc38] |= BIT11; }
-    if ((P[fc38] & BIT11) && R[fc28] && !kp(fc28) && A[fc28]) { PAR[fc28] |= BIT11; P[fc28] |= BIT11; }
-    if (SCH[schgs3384] && (P[fc33] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
-    if (SCH[schgs3384] && (P[fc84] & BIT11) && R[fc33] && !kp(fc33) && A[fc33]) { PAR[fc33] |= BIT11; P[fc33] |= BIT11; }
-    if ((P[fc05] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
-    if ((P[fc05] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
-    if ((P[fc11] & BIT11) && R[fc26] && !kp(fc26) && A[fc26]) { PAR[fc26] |= BIT11; P[fc26] |= BIT11; }
-    #endif
+//    int fc;
+//    /* Tegenrichting moet ook kunnen koppelen bij koppelaanvraag */
+//    PAR[fc32] = PAR[fc32] && PAR[fc31];
+//    PAR[fc31] = PAR[fc31] && PAR[fc32];
+//    PAR[fc34] = PAR[fc34] && PAR[fc33];
+//    PAR[fc33] = PAR[fc33] && PAR[fc34];
+//
+//    /* Bepaal naloop voetgangers wel/niet toegestaan */
+//    IH[hnlsg3132] = (PR[fc31] || AR[fc31] && PAR[fc31]);
+//    IH[hnlsg3231] = (PR[fc32] || AR[fc32] && PAR[fc32]);
+//    IH[hnlsg3334] = (PR[fc33] || AR[fc33] && PAR[fc33]);
+//    IH[hnlsg3433] = (PR[fc34] || AR[fc34] && PAR[fc34]);
+//
+//    /* PAR-ongecoordineerd */
+//    if (!PAR[fc31] && IH[hmadk31b] && max_par_los(fc31) && (!IH[hmadk31a] || SCH[schlos31_1]) && (!H[hmadk32a] || SCH[schlos31_2]) || PAR_los[fc31] && RA[fc31]) PAR_los[fc31] = TRUE; else PAR_los[fc31] = FALSE;
+//    if (!PAR[fc32] && IH[hmadk32b] && max_par_los(fc32) && (!IH[hmadk32a] || SCH[schlos32_1]) && (!H[hmadk31a] || SCH[schlos32_2]) || PAR_los[fc32] && RA[fc32]) PAR_los[fc32] = TRUE; else PAR_los[fc32] = FALSE;
+//    if (!PAR[fc33] && IH[hmadk33b] && max_par_los(fc33) && (!IH[hmadk33a] || SCH[schlos33_1]) && (!H[hmadk34a] || SCH[schlos33_2]) || PAR_los[fc33] && RA[fc33]) PAR_los[fc33] = TRUE; else PAR_los[fc33] = FALSE;
+//    if (!PAR[fc34] && IH[hmadk34b] && max_par_los(fc34) && (!IH[hmadk34a] || SCH[schlos34_1]) && (!H[hmadk33a] || SCH[schlos34_2]) || PAR_los[fc34] && RA[fc34]) PAR_los[fc34] = TRUE; else PAR_los[fc34] = FALSE;
+//
+//    PAR[fc31] = PAR[fc31] || PAR_los[fc31];
+//    PAR[fc32] = PAR[fc32] || PAR_los[fc32];
+//    PAR[fc33] = PAR[fc33] || PAR_los[fc33];
+//    PAR[fc34] = PAR[fc34] || PAR_los[fc34];
+//
+//    /* PAR correcties gelijkstart synchronisaties */
+//    if (SCH[schgs2232]) PAR[fc32] = PAR[fc32] && PAR[fc22];
+//    if (SCH[schgs2232]) PAR[fc22] = PAR[fc22] && PAR[fc32];
+//    if (SCH[schgs2434]) PAR[fc34] = PAR[fc34] && PAR[fc24];
+//    if (SCH[schgs2434]) PAR[fc24] = PAR[fc24] && PAR[fc34];
+//    if (SCH[schgs2484]) PAR[fc84] = PAR[fc84] && PAR[fc24];
+//    if (SCH[schgs2484]) PAR[fc24] = PAR[fc24] && PAR[fc84];
+//    PAR[fc38] = PAR[fc38] && PAR[fc28];
+//    PAR[fc28] = PAR[fc28] && PAR[fc38];
+//    if (SCH[schgs3384]) PAR[fc84] = PAR[fc84] && PAR[fc33];
+//    if (SCH[schgs3384]) PAR[fc33] = PAR[fc33] && PAR[fc84];
+//
+//    /* Niet alternatief komen tijdens file (meting na ss) */
+//    if (IH[hfileFile68af]) PAR[fc08] = FALSE;
+//    if (IH[hfileFile68af]) PAR[fc11] = FALSE;
+//    /* BLOKGEBONDEN ALTERNATIEF */
+//    /* ======================== */
+//    /* Voor instellingen de volgende waarden voor het blok waarin het alternatief mag plaatsvinden optellen:
+//     * 1  alternatief mogelijk in blok 1
+//     * 2  alternatief mogelijk in blok 2
+//     * 4  alternatief mogelijk in blok 3
+//     * ...  etc  ... t/m 256 voor blok 9
+//     */
+//    if (!(PRM[prmaltb02] & (1 << ML))) PAR[fc02] = FALSE;
+//    if (!(PRM[prmaltb03] & (1 << ML))) PAR[fc03] = FALSE;
+//    if (!(PRM[prmaltb05] & (1 << ML))) PAR[fc05] = FALSE;
+//    if (!(PRM[prmaltb08] & (1 << ML))) PAR[fc08] = FALSE;
+//    if (!(PRM[prmaltb09] & (1 << ML))) PAR[fc09] = FALSE;
+//    if (!(PRM[prmaltb11] & (1 << ML))) PAR[fc11] = FALSE;
+//    if (!(PRM[prmaltb21] & (1 << ML))) PAR[fc21] = FALSE;
+//    if (!(PRM[prmaltb22] & (1 << ML))) PAR[fc22] = FALSE;
+//    if (!(PRM[prmaltb24] & (1 << ML))) PAR[fc24] = FALSE;
+//    if (!(PRM[prmaltb26] & (1 << ML))) PAR[fc26] = FALSE;
+//    if (!(PRM[prmaltb28] & (1 << ML))) PAR[fc28] = FALSE;
+//    if (!(PRM[prmaltb31] & (1 << ML))) PAR[fc31] = FALSE;
+//    if (!(PRM[prmaltb32] & (1 << ML))) PAR[fc32] = FALSE;
+//    if (!(PRM[prmaltb33] & (1 << ML))) PAR[fc33] = FALSE;
+//    if (!(PRM[prmaltb34] & (1 << ML))) PAR[fc34] = FALSE;
+//    if (!(PRM[prmaltb38] & (1 << ML))) PAR[fc38] = FALSE;
+//    if (!(PRM[prmaltb61] & (1 << ML))) PAR[fc61] = FALSE;
+//    if (!(PRM[prmaltb62] & (1 << ML))) PAR[fc62] = FALSE;
+//    if (!(PRM[prmaltb67] & (1 << ML))) PAR[fc67] = FALSE;
+//    if (!(PRM[prmaltb68] & (1 << ML))) PAR[fc68] = FALSE;
+//    if (!(PRM[prmaltb81] & (1 << ML))) PAR[fc81] = FALSE;
+//    if (!(PRM[prmaltb82] & (1 << ML))) PAR[fc82] = FALSE;
+//    if (!(PRM[prmaltb84] & (1 << ML))) PAR[fc84] = FALSE;
+//    #ifndef NO_TIMETOX
+//    if (SCH[schgs2232] && (P[fc22] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
+//    if (SCH[schgs2232] && (P[fc32] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
+//    if (SCH[schgs2434] && (P[fc24] & BIT11) && R[fc34] && !kp(fc34) && A[fc34]) { PAR[fc34] |= BIT11; P[fc34] |= BIT11; }
+//    if (SCH[schgs2434] && (P[fc34] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
+//    if (SCH[schgs2484] && (P[fc24] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
+//    if (SCH[schgs2484] && (P[fc84] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
+//    if ((P[fc28] & BIT11) && R[fc38] && !kp(fc38) && A[fc38]) { PAR[fc38] |= BIT11; P[fc38] |= BIT11; }
+//    if ((P[fc38] & BIT11) && R[fc28] && !kp(fc28) && A[fc28]) { PAR[fc28] |= BIT11; P[fc28] |= BIT11; }
+//    if (SCH[schgs3384] && (P[fc33] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
+//    if (SCH[schgs3384] && (P[fc84] & BIT11) && R[fc33] && !kp(fc33) && A[fc33]) { PAR[fc33] |= BIT11; P[fc33] |= BIT11; }
+//    if ((P[fc05] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
+//    if ((P[fc05] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
+//    if ((P[fc11] & BIT11) && R[fc26] && !kp(fc26) && A[fc26]) { PAR[fc26] |= BIT11; P[fc26] |= BIT11; }
+//    #endif
 }
 
 /* -------------------------------------------------------
