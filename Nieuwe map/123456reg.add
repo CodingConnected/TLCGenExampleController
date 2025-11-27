@@ -1,0 +1,292 @@
+/* BEGIN GEGENEREERDE HEADER */
+/* REGEL BESTAND, GEBRUIKERS TOEVOEGINGEN              */
+/* --------------------------------------------------- */
+
+/* KRUISPUNT: 123456
+              123456
+              123456
+              123456
+
+   BESTAND:   123456reg.add
+      CCOL:   12.0
+    TLCGEN:   12.4.0.18
+   CCOLGEN:   12.4.0.18
+*/
+
+/****************************** Versie commentaar ***********************************
+ *
+ * Versie   Datum   Ontwerper   Commentaar
+ *
+ ************************************************************************************/
+/* EINDE GEGENEREERDE HEADER */
+//@Menno: onderstaand is om te testen; niet overnemen. 
+
+#ifndef AUTOMAAT
+FILE* fpt;
+#endif
+
+#ifdef CCOL_IS_SPECIAL
+void SpecialSignals_Add(void)
+{
+
+}
+#endif
+
+void post_init_application()
+{
+   //@Menno: onderstaand is om te testen; niet overnemen. 
+#ifndef AUTOMAAT
+   int i;
+   fpt = fopen("MyFile.csv", "w");
+   if (fpt)
+   {
+       for (i = 0; i < FCMAX; ++i)
+       {
+           fprintf(fpt, "%4s,", FC_code[i]);
+       }
+       fprintf(fpt, " prio02,");
+       fprintf(fpt, " prio03,");
+       fprintf(fpt, " prio05,");
+       fprintf(fpt, " prio08,");
+       fprintf(fpt, " prio09,");
+       fprintf(fpt, " prio11,");
+       fprintf(fpt, " hd02,");
+       fprintf(fpt, " hd03,");
+       fprintf(fpt, " hd05,");
+       fprintf(fpt, " hd08,");
+       fprintf(fpt, " hd09,");
+       fprintf(fpt, " hd11,");
+       fprintf(fpt, " uswtv24,");
+       fprintf(fpt, "\n");
+   }
+    stuffkey(F2KEY);
+    stuffkey(CTRLALTF3KEY);
+    stuffkey(F4KEY);
+
+#endif
+}
+
+void PreApplication_Add(void)
+{
+   /* @Menno: moet in de generator. Anders heb je een vastloper... Even overleg wat handig is */
+    mee_aanvraag(fc22, RA[fc32]);
+    mee_aanvraag(fc24, RA[fc34]);
+    mee_aanvraag(fc24, RA[fc84]);
+    mee_aanvraag(fc28, RA[fc38]);
+    mee_aanvraag(fc32, RA[fc22]);
+    mee_aanvraag(fc33, RA[fc84]);
+    mee_aanvraag(fc34, RA[fc24]);
+    mee_aanvraag(fc38, RA[fc28]);
+    mee_aanvraag(fc84, RA[fc24]);
+    mee_aanvraag(fc84, RA[fc33]);
+}
+
+void KlokPerioden_Add(void)
+{
+
+}
+
+void Aanvragen_Add(void)
+{
+
+}
+
+void Maxgroen_Add(void)
+{
+
+}
+
+boolv CorrectieRealisatieTijd_Add(void)
+{
+    /* let op! deze functie wordt in een loop aangeroepen (max. 100 iteraties). */
+    boolv aanpassing = FALSE;
+    
+    /* Voeg hier zonodig eigen code toe, bijv:
+     * aanpassing |= VTG2_Real_Los(fc32, fc31, T_max[tinl3231], T_max[tinl3132], hinl32, hinl31, hlos32, hlos31, (IH[hdrtk311] && IH[hdrtk321]));
+     * aanpassing |= VTG2_Real_Los(fc31, fc32, T_max[tinl3132], T_max[tinl3231], hinl31, hinl32, hlos31, hlos32, (IH[hdrtk311] && IH[hdrtk321]));
+     */
+    
+    return aanpassing;
+}
+
+void BepaalRealisatieTijden_Add(void)
+{
+
+}
+
+void Wachtgroen_Add(void)
+{
+
+}
+
+void Meetkriterium_Add(void)
+{
+
+}
+
+void Meeverlengen_Add(void)
+{
+
+}
+
+void Synchronisaties_Add(void)
+{
+
+}
+
+void VersneldPrimair_Add(void)
+{
+
+}
+
+void Alternatief_Add(void)
+{
+
+}
+
+void Modules_Add(void)
+{
+
+}
+
+void RealisatieAfhandeling_Add(void)
+{
+
+}
+
+void FileVerwerking_Add(void)
+{
+
+}
+
+void DetectieStoring_Aanvraag_Add(void)
+{
+
+}
+
+void DetectieStoring_Meetkriterium_Add(void)
+{
+
+}
+
+void DetectieStoring_VerlengGroen_Add(void)
+{
+
+}
+
+void PostApplication_Add(void)
+{
+   //@Menno: onderstaand is om te testen; niet overnemen. 
+#ifndef AUTOMAAT
+    count x;
+    count prio;
+    if (TS)
+    {
+        //fpt = fopen("MyFile.csv", "a");    
+        for (prio = 0; prio < prioFCMAX; ++prio)
+        {
+            x = iFC_PRIOix[prio];
+            if (iPrioriteit[prio] && (iStartGroen[prio] < twacht[x])) twacht[x] = iStartGroen[prio];
+        }
+
+        if (fpt)
+        {
+            for (x = 0; x < FCMAX; ++x)
+            {
+                fprintf(fpt, "%4d,", ((twacht_AR[x] >= 0) && (twacht_AR[x] < twacht[x])) ? twacht_AR[x] : twacht[x] * (A[x] != 0 || PRIOFC[x]) * R[x]);
+            }
+            fprintf(fpt, "%7d,", (H[hprio02karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio03karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio05karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio08karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio09karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio11karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd02]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd03]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd05]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd08]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd09]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd11]) * 50);
+            fprintf(fpt, "%7d,", CIF_GUS[uswtv24] & ~BIT8);
+            fprintf(fpt, "\n");
+        }
+        //fclose(fpt);
+    }
+
+    //@Menno: onderstaand is om te testen; niet overnemen. 
+
+#endif
+#if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
+        if (TS &&
+            (CIF_KLOK[CIF_JAAR] == 2001) &&
+            (CIF_KLOK[CIF_MAAND] == 1) &&
+            (CIF_KLOK[CIF_DAG] == 1) &&
+            (CIF_KLOK[CIF_UUR] == 12) &&
+            (CIF_KLOK[CIF_MINUUT] == 43) &&
+            (CIF_KLOK[CIF_SECONDE] == 0))
+        {
+            //stuffkey(F2KEY);
+            stuffkey(F5KEY);
+            //stuffkey(F4KEY);
+            //stuffkey(F10KEY); 
+        }
+#endif
+}
+
+void WachttijdvoorspellersWachttijd_Add(void)
+{
+
+}
+
+void pre_system_application(void)
+{
+
+}
+
+void post_system_application(void)
+{
+
+}
+
+void post_system_application2(void)
+{
+
+}
+
+void pre_msg_fctiming()
+{
+
+}
+
+void post_dump_application(void)
+{
+
+}
+//@@toegevoegde functies. Deze dus weer aanmaken als ze er niet zijn en er is ISG.
+
+
+void BepaalInterStartGroenTijden_Add(void)
+{
+
+}
+
+boolv Correctie_TISG_add(void)
+{
+    return FALSE;
+}
+
+
+boolv Correctie_InterStartGroentijdTijd_PRIO_Add(void)
+{
+    return FALSE;
+}
+void max_wachttijd_modulen_primair_ISG_Add(void)
+{
+
+}
+void AlternatiefOngecoordineerd_Add(void)
+{
+
+}
+
+

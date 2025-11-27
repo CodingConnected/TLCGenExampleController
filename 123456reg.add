@@ -21,7 +21,7 @@
 /* EINDE GEGENEREERDE HEADER */
 
 
-#ifdef CCOL_IS_SPECIAL
+#if defined CCOL_IS_SPECIAL && !defined NO_PRIO
 void SpecialSignals_Add(void)
 {
 
@@ -38,6 +38,21 @@ void PreApplication_Add(void)
 
 }
 
+void DetectieStoring_Aanvraag_Add(void)
+{
+
+}
+
+void DetectieStoring_Meetkriterium_Add(void)
+{
+
+}
+
+void DetectieStoring_VerlengGroen_Add(void)
+{
+
+}
+
 void KlokPerioden_Add(void)
 {
 
@@ -49,24 +64,6 @@ void Aanvragen_Add(void)
 }
 
 void Maxgroen_Add(void)
-{
-
-}
-
-boolv CorrectieRealisatieTijd_Add(void)
-{
-    /* let op! deze functie wordt in een loop aangeroepen (max. 100 iteraties). */
-    boolv aanpassing = FALSE;
-    
-    /* Voeg hier zonodig eigen code toe, bijv:
-     * aanpassing |= VTG2_Real_Los(fc32, fc31, T_max[tinl3231], T_max[tinl3132], hinl32, hinl31, hlos32, hlos31, (IH[hdrtk311] && IH[hdrtk321]));
-     * aanpassing |= VTG2_Real_Los(fc31, fc32, T_max[tinl3132], T_max[tinl3231], hinl31, hinl32, hlos31, hlos32, (IH[hdrtk311] && IH[hdrtk321]));
-     */
-    
-    return aanpassing;
-}
-
-void BepaalRealisatieTijden_Add(void)
 {
 
 }
@@ -112,21 +109,6 @@ void RealisatieAfhandeling_Add(void)
 }
 
 void FileVerwerking_Add(void)
-{
-
-}
-
-void DetectieStoring_Aanvraag_Add(void)
-{
-
-}
-
-void DetectieStoring_Meetkriterium_Add(void)
-{
-
-}
-
-void DetectieStoring_VerlengGroen_Add(void)
 {
 
 }

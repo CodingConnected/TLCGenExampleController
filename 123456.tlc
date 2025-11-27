@@ -2023,7 +2023,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -2404,9 +2404,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd02</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -2501,7 +2502,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -2624,9 +2625,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd03</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -2721,7 +2723,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -2844,9 +2846,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd05</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -2941,7 +2944,7 @@
       <TGL>35</TGL>
       <TGL_min>35</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -3322,9 +3325,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd08</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -3419,7 +3423,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -3582,9 +3586,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd09</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -3679,7 +3684,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -3888,9 +3893,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd11</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -3985,7 +3991,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4118,9 +4124,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd21</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -4211,7 +4218,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4346,9 +4353,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd22</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -4452,7 +4460,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4673,9 +4681,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd24</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -4772,7 +4781,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -4905,9 +4914,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd26</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -5005,7 +5015,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5183,9 +5193,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd28</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -5282,7 +5293,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5429,9 +5440,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd31</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -5522,7 +5534,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5669,9 +5681,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd32</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -5768,7 +5781,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -5915,9 +5928,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd33</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -6008,7 +6022,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -6155,9 +6169,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd34</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -6248,7 +6263,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -6395,9 +6410,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd38</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -6488,7 +6504,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -6611,9 +6627,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd61</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -6708,7 +6725,7 @@
       <TGL>35</TGL>
       <TGL_min>35</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -6917,9 +6934,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd62</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -7014,7 +7032,7 @@
       <TGL>30</TGL>
       <TGL_min>30</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -7137,9 +7155,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd67</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -7234,7 +7253,7 @@
       <TGL>35</TGL>
       <TGL_min>35</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>true</HDIngreep>
@@ -7527,9 +7546,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd68</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -7624,7 +7644,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -7757,9 +7777,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd81</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -7850,7 +7871,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>80</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -7983,9 +8004,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd82</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -8076,7 +8098,7 @@
       <TGL>20</TGL>
       <TGL_min>20</TGL_min>
       <Kopmax>60</Kopmax>
-      <Interfunc>false</Interfunc>
+      <Interfunc>true</Interfunc>
       <PrioIngreep>false</PrioIngreep>
       <PrioIngreepGeconditioneerd>false</PrioIngreepGeconditioneerd>
       <HDIngreep>false</HDIngreep>
@@ -8211,9 +8233,10 @@
         </Detector>
       </Detectoren>
       <IsgTijdBitmapData>
+        <Naam>isgtijd84</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
-        <Multivalent>false</Multivalent>
+        <ElementType>Output</ElementType>
+        <Multivalent>true</Multivalent>
         <BitmapCoordinaten />
       </IsgTijdBitmapData>
       <PrioIngreepBitmapData>
@@ -23894,13 +23917,13 @@
       <HalfstarPeriodeDataModel>
         <Periode>ochtend</Periode>
         <Signaalplan>PL1</Signaalplan>
-        <VARegelen>false</VARegelen>
+        <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>avond</Periode>
         <Signaalplan>PL2</Signaalplan>
-        <VARegelen>false</VARegelen>
+        <VARegelen>true</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
@@ -26713,6 +26736,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>62_1a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>62_1a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -27215,13 +27245,6 @@
         <Naam>62_1b</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>62_1b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>62_1a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>62_1a</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
       </Detector>

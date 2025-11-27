@@ -2094,11 +2094,11 @@ void control_parameters(void)
     T_code[tvghiaat11_4]               = "vghiaat11_4";               T_max[tvghiaat11_4]               = 20;   T_type[tvghiaat11_4]               = TE_type; /* Hiaattijd bij actief zijn veiligheidsgroen detector 11_4 van fase 11                     */
     T_code[twtv24]                     = "wtv24";                     T_max[twtv24]                     = 999;  T_type[twtv24]                     = TE_type; /* T.b.v. aansturing wachttijdvoorspeller fase 24                                           */
     T_code[tvs2205]                    = "vs2205";                    T_max[tvs2205]                    = 20;   T_type[tvs2205]                    = TE_type; /* Voorstarttijd fase 22 op fase 05                                                         */
-    T_code[tfo0522]                    = "fo0522";                    T_max[tfo0522]                    = 40;   T_type[tfo0522]                    = TE_type; /* Fictieve ontruimingstijd van 22 naar fase 05                                             */
+    T_code[tfo0522]                    = "fo0522";                    T_max[tfo0522]                    = 40;   T_type[tfo0522]                    = TE_type; /* Fictieve ontruimingstijd/intergroentijd van 22 naar fase 05                              */
     T_code[tvs3205]                    = "vs3205";                    T_max[tvs3205]                    = 20;   T_type[tvs3205]                    = TE_type; /* Voorstarttijd fase 32 op fase 05                                                         */
-    T_code[tfo0532]                    = "fo0532";                    T_max[tfo0532]                    = 50;   T_type[tfo0532]                    = TE_type; /* Fictieve ontruimingstijd van 32 naar fase 05                                             */
+    T_code[tfo0532]                    = "fo0532";                    T_max[tfo0532]                    = 50;   T_type[tfo0532]                    = TE_type; /* Fictieve ontruimingstijd/intergroentijd van 32 naar fase 05                              */
     T_code[tlr2611]                    = "lr2611";                    T_max[tlr2611]                    = 10;   T_type[tlr2611]                    = TE_type; /* Late release tijd fase 26 naar fase 11                                                   */
-    T_code[tfo2611]                    = "fo2611";                    T_max[tfo2611]                    = 30;   T_type[tfo2611]                    = TE_type; /* Fictieve ontruimingstijd van 26 naar fase 11                                             */
+    T_code[tfo2611]                    = "fo2611";                    T_max[tfo2611]                    = 30;   T_type[tfo2611]                    = TE_type; /* Fictieve ontruimingstijd/intergroentijd van 26 naar fase 11                              */
     T_code[tinl3132]                   = "inl3132";                   T_max[tinl3132]                   = 31;   T_type[tinl3132]                   = TE_type; /* Inlooptijd fase 31                                                                       */
     T_code[tinl3231]                   = "inl3231";                   T_max[tinl3231]                   = 32;   T_type[tinl3231]                   = TE_type; /* Inlooptijd fase 32                                                                       */
     T_code[tinl3334]                   = "inl3334";                   T_max[tinl3334]                   = 33;   T_type[tinl3334]                   = TE_type; /* Inlooptijd fase 33                                                                       */
@@ -2271,8 +2271,8 @@ void control_parameters(void)
     SCH_code[schpervardef]             = "pervardef";             SCH[schpervardef]             = 1;                                        /* VA regelen periode default                                                */
     SCH_code[schpervar1]               = "pervar1";               SCH[schpervar1]               = 1;                                        /* VA regelen periode nacht                                                  */
     SCH_code[schpervar2]               = "pervar2";               SCH[schpervar2]               = 1;                                        /* VA regelen periode dag                                                    */
-    SCH_code[schpervar3]               = "pervar3";               SCH[schpervar3]               = 0;                                        /* VA regelen periode ochtend                                                */
-    SCH_code[schpervar4]               = "pervar4";               SCH[schpervar4]               = 0;                                        /* VA regelen periode avond                                                  */
+    SCH_code[schpervar3]               = "pervar3";               SCH[schpervar3]               = 1;                                        /* VA regelen periode ochtend                                                */
+    SCH_code[schpervar4]               = "pervar4";               SCH[schpervar4]               = 1;                                        /* VA regelen periode avond                                                  */
     SCH_code[schpervar5]               = "pervar5";               SCH[schpervar5]               = 1;                                        /* VA regelen periode koopavond                                              */
     SCH_code[schpervar6]               = "pervar6";               SCH[schpervar6]               = 1;                                        /* VA regelen periode weekend                                                */
     SCH_code[schpervar7]               = "pervar7";               SCH[schpervar7]               = 1;                                        /* VA regelen periode reserve                                                */
@@ -2697,10 +2697,10 @@ void control_parameters(void)
     PRM_code[prmaltb08]                   = "altb08";                   PRM[prmaltb08]                   = 31;                                                      /* Alternatief per blok voor fase 08                                                                                              */
     PRM_code[prmaltb09]                   = "altb09";                   PRM[prmaltb09]                   = 31;                                                      /* Alternatief per blok voor fase 09                                                                                              */
     PRM_code[prmaltb11]                   = "altb11";                   PRM[prmaltb11]                   = 31;                                                      /* Alternatief per blok voor fase 11                                                                                              */
-    PRM_code[prmaltb21]                   = "altb21";                   PRM[prmaltb21]                   = 1023;                                                    /* Alternatief per blok voor fase 21                                                                                              */
+    PRM_code[prmaltb21]                   = "altb21";                   PRM[prmaltb21]                   = 31;                                                      /* Alternatief per blok voor fase 21                                                                                              */
     PRM_code[prmaltb22]                   = "altb22";                   PRM[prmaltb22]                   = 31;                                                      /* Alternatief per blok voor fase 22                                                                                              */
     PRM_code[prmaltb24]                   = "altb24";                   PRM[prmaltb24]                   = 31;                                                      /* Alternatief per blok voor fase 24                                                                                              */
-    PRM_code[prmaltb26]                   = "altb26";                   PRM[prmaltb26]                   = 1023;                                                    /* Alternatief per blok voor fase 26                                                                                              */
+    PRM_code[prmaltb26]                   = "altb26";                   PRM[prmaltb26]                   = 31;                                                      /* Alternatief per blok voor fase 26                                                                                              */
     PRM_code[prmaltb28]                   = "altb28";                   PRM[prmaltb28]                   = 31;                                                      /* Alternatief per blok voor fase 28                                                                                              */
     PRM_code[prmaltb31]                   = "altb31";                   PRM[prmaltb31]                   = 31;                                                      /* Alternatief per blok voor fase 31                                                                                              */
     PRM_code[prmaltb32]                   = "altb32";                   PRM[prmaltb32]                   = 31;                                                      /* Alternatief per blok voor fase 32                                                                                              */
@@ -2711,8 +2711,8 @@ void control_parameters(void)
     PRM_code[prmaltb62]                   = "altb62";                   PRM[prmaltb62]                   = 31;                                                      /* Alternatief per blok voor fase 62                                                                                              */
     PRM_code[prmaltb67]                   = "altb67";                   PRM[prmaltb67]                   = 31;                                                      /* Alternatief per blok voor fase 67                                                                                              */
     PRM_code[prmaltb68]                   = "altb68";                   PRM[prmaltb68]                   = 31;                                                      /* Alternatief per blok voor fase 68                                                                                              */
-    PRM_code[prmaltb81]                   = "altb81";                   PRM[prmaltb81]                   = 1023;                                                    /* Alternatief per blok voor fase 81                                                                                              */
-    PRM_code[prmaltb82]                   = "altb82";                   PRM[prmaltb82]                   = 1023;                                                    /* Alternatief per blok voor fase 82                                                                                              */
+    PRM_code[prmaltb81]                   = "altb81";                   PRM[prmaltb81]                   = 31;                                                      /* Alternatief per blok voor fase 81                                                                                              */
+    PRM_code[prmaltb82]                   = "altb82";                   PRM[prmaltb82]                   = 31;                                                      /* Alternatief per blok voor fase 82                                                                                              */
     PRM_code[prmaltb84]                   = "altb84";                   PRM[prmaltb84]                   = 31;                                                      /* Alternatief per blok voor fase 84                                                                                              */
     PRM_code[prmda02_1a]                  = "da02_1a";                  PRM[prmda02_1a]                  = 1;                                                       /* Aanvraag functie voor detector 02_1a                                                                                           */
     PRM_code[prmda02_1b]                  = "da02_1b";                  PRM[prmda02_1b]                  = 1;                                                       /* Aanvraag functie voor detector 02_1b                                                                                           */
@@ -4179,7 +4179,6 @@ void control_parameters(void)
     PRM_code[prmptp_ptp123456err0]        = "ptp_ptp123456err0";        PRM[prmptp_ptp123456err0]        = 0;                                                       /* PTP error 0 ptp123456                                                                                                          */
     PRM_code[prmptp_ptp123456err1]        = "ptp_ptp123456err1";        PRM[prmptp_ptp123456err1]        = 0;                                                       /* PTP error 1 ptp123456                                                                                                          */
     PRM_code[prmptp_ptp123456err2]        = "ptp_ptp123456err2";        PRM[prmptp_ptp123456err2]        = 0;                                                       /* PTP error 2 ptp123456                                                                                                          */
-    PRM_code[prmportnrptp123456]          = "portnrptp123456";          PRM[prmportnrptp123456]          = 1;                                                       /* Poortnummer in het regeltoestel PTP ptp123456                                                                                  */
     PRM_code[prmsrcptp123456]             = "srcptp123456";             PRM[prmsrcptp123456]             = 11;                                                      /* Nummer van source PTP ptp123456                                                                                                */
     PRM_code[prmdestptp123456]            = "destptp123456";            PRM[prmdestptp123456]            = 12;                                                      /* Nummer van destination PTP ptp123456                                                                                           */
     PRM_code[prmtmsgwptp123456]           = "tmsgwptp123456";           PRM[prmtmsgwptp123456]           = 200;                                                     /* Wait timeout PTP ptp123456                                                                                                     */
@@ -7260,7 +7259,6 @@ void control_parameters(void)
     PRM_cat[prmptp_ptp123456err0]     = CAT_Basisfuncties;    PRM_subcat[prmptp_ptp123456err0]        = SUBCAT_Loggen;
     PRM_cat[prmptp_ptp123456err1]     = CAT_Basisfuncties;    PRM_subcat[prmptp_ptp123456err1]        = SUBCAT_Loggen;
     PRM_cat[prmptp_ptp123456err2]     = CAT_Basisfuncties;    PRM_subcat[prmptp_ptp123456err2]        = SUBCAT_Loggen;
-    PRM_cat[prmportnrptp123456]       = CAT_Basisfuncties;    PRM_subcat[prmportnrptp123456]          = SUBCAT_Loggen;
     PRM_cat[prmsrcptp123456]          = CAT_Basisfuncties;    PRM_subcat[prmsrcptp123456]             = SUBCAT_Loggen;
     PRM_cat[prmdestptp123456]         = CAT_Basisfuncties;    PRM_subcat[prmdestptp123456]            = SUBCAT_Loggen;
     PRM_cat[prmtmsgwptp123456]        = CAT_Basisfuncties;    PRM_subcat[prmtmsgwptp123456]           = SUBCAT_Loggen;
@@ -8109,6 +8107,8 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d28_2].SumoNamen[0], 32, "%s", "28_2");
     sprintf_s(SUMODetectors[d61_1].SumoNamen[0], 32, "%s", "61_1");
     sprintf_s(SUMODetectors[d61_2].SumoNamen[0], 32, "%s", "61_2");
+    sprintf_s(SUMODetectors[d62_1a].SumoNamen[0], 32, "%s", "62_1a");
+    sprintf_s(SUMODetectors[d62_1b].SumoNamen[0], 32, "%s", "62_1b");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -8162,8 +8162,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d67_1].SumoNamen[0], 32, "%s", "67_1");
     sprintf_s(SUMODetectors[d62_2b].SumoNamen[0], 32, "%s", "62_2b");
     sprintf_s(SUMODetectors[d62_2a].SumoNamen[0], 32, "%s", "62_2a");
-    sprintf_s(SUMODetectors[d62_1b].SumoNamen[0], 32, "%s", "62_1b");
-    sprintf_s(SUMODetectors[d62_1a].SumoNamen[0], 32, "%s", "62_1a");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;

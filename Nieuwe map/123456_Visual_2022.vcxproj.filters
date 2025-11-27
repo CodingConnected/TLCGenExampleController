@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6c3d3b89-a8b7-4855-a98c-209ad3d33843}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{edd675a6-2bad-44ab-809e-b437bfb1cda2}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{cff99128-1662-4d61-a228-da159420fedc}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;res;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="123456sys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="123456dpl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="123456reg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="123456sim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="123456tab.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="123456rissim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ccol120\CCOL120\PTP_Multivalent\ptpwin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="P:\SO\VV_Verkeersmanagement\VRI\VRI_Beheer\ccol120\CCOL120\WIN32\RES\Ccolmenu.res">
+      <Filter>Resource Files</Filter>
+    </Resource>
+  </ItemGroup>
+</Project>

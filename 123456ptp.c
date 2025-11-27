@@ -70,7 +70,7 @@ void ptp_control_parameters (void)
     /* ptp-parameters t.b.v. koppeling met PTP_ptp123456 */
     /* --------------------------------------------- */
   #if (defined AUTOMAAT)
-    PTP_ptp123456.PORTNR = PRM[prmportnrptp123456];        /* poortnummer in het regeltoestel     */  /* @ door fabrikant aanpassen */
+    PTP_ptp123456.PORTNR = 1;        /* poortnummer in het regeltoestel    */ /* @ af te stemmen tussen fabrikant met programmerende partij. PTP ID in de VRA of ITSApp (bij PTP over serieel is dit het COMpoort nummer). */
   #else
     PTP_ptp123456.PORTNR = 3;        /* poortnr. testomgeving (schrijvend) */ /* @ nummer van KS-buffer */
   #endif
