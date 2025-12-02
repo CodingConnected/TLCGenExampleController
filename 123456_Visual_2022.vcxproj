@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="123456dpl.c" />
+    <ClCompile Include="123456prio.c" />
     <ClCompile Include="123456reg.c" />
     <ClCompile Include="123456rissim.c" />
     <ClCompile Include="123456sim.c" />

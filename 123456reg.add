@@ -173,6 +173,7 @@ void DetectieStoring_VerlengGroen_Add(void)
 void PostApplication_Add(void)
 {
 #ifndef AUTOMAAT
+   #ifdef INTERFUNC
     count x;
     count prio;
     if (TS)
@@ -207,8 +208,9 @@ void PostApplication_Add(void)
         }
         //fclose(fpt);
     }
-
 #endif
+#endif
+
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
         if (TS &&
             (CIF_KLOK[CIF_JAAR] == 2001) &&

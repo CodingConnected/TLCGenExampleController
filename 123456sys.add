@@ -25,26 +25,11 @@
 #define USMAX  (USMAX1 + 0)  /* Totaal aantal gebruikte uitgangen      */
 #define DPMAX  (DPMAX1 + 0)  /* Totaal aantal gebruikte detectoren     */
 #define ISMAX  (ISMAX1 + 0)  /* Totaal aantal gebruikte ingangen       */
-
-#define hnleg0262   (HEMAX1 + 0)
-#define hnleg0868   (HEMAX1 + 1)
-#define hnleg1168   (HEMAX1 + 2)
-#define hnleg2221   (HEMAX1 + 3)
-#define hnleg8281   (HEMAX1 + 4)
-#define HEMAX  (HEMAX1 + 5)  /* Totaal aantal gebruikte hulpelementen  */
-
+#define HEMAX  (HEMAX1 + 0)  /* Totaal aantal gebruikte hulpelementen  */
 #define MEMAX  (MEMAX1 + 0)  /* Totaal aantal gebruikte mem.elementen  */
 #define TMMAX  (TMMAX1 + 0)  /* Totaal aantal gebruikte timers         */
 #define CTMAX  (CTMAX1 + 0)  /* Totaal aantal gebruikte tellers        */
-
-#ifndef AUTOMAAT
-   #define schisgdebug (SCHMAX1 + 0) /* Totaal aantal gebruikte schakelaars    */
-   #define SCHMAX (SCHMAX1 + 1) /* Totaal aantal gebruikte schakelaars    */
-#else
-   #define SCHMAX (SCHMAX1 + 0) /* Totaal aantal gebruikte schakelaars    */
-#endif
-
-
+#define SCHMAX (SCHMAX1 + 0) /* Totaal aantal gebruikte schakelaars    */
 #define PRMMAX (PRMMAX1 + 0) /* Totaal aantal gebruikte parameters     */
 #define MLMAX  (MLMAX1 + 0)  /* Totaal aantal gebruikte modulen        */
 #define PLMAX  (PLMAX1 + 0)  /* Totaal aantal gebruikte signaalplannen */
