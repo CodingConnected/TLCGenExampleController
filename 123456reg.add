@@ -33,6 +33,7 @@ void SpecialSignals_Add(void)
 void post_init_application()
 {
 #ifndef AUTOMAAT
+
    int i;
    fpt = fopen("MyFile.csv", "w");
    if (fpt)
@@ -213,17 +214,19 @@ void PostApplication_Add(void)
 
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
         if (TS &&
-            (CIF_KLOK[CIF_JAAR] == 2001) &&
+            (CIF_KLOK[CIF_JAAR] == 2099) &&
             (CIF_KLOK[CIF_MAAND] == 1) &&
             (CIF_KLOK[CIF_DAG] == 1) &&
-            (CIF_KLOK[CIF_UUR] == 12) &&
-            (CIF_KLOK[CIF_MINUUT] == 43) &&
-            (CIF_KLOK[CIF_SECONDE] == 0))
+            (CIF_KLOK[CIF_UUR] == 1) &&
+            (CIF_KLOK[CIF_MINUUT] == 1) && 
+            (CIF_KLOK[CIF_SECONDE] == 1))
         {
-            //stuffkey(F2KEY);
+            stuffkey(F3KEY);
             stuffkey(F5KEY);
-            //stuffkey(F4KEY);
-            //stuffkey(F10KEY); 
+            stuffkey(F7KEY);
+            stuffkey(F4KEY);
+            stuffkey(F10KEY);
+//          SCH[schisgdebug] = 1; 
         }
 #endif
 }

@@ -2933,16 +2933,16 @@ void TegenhoudenConflictenExtra(void)
         RR[fc34] &= ~PRIO_RR_BIT;
         RR[fc84] &= ~PRIO_RR_BIT;
     }
-    if (RR[fc22] & PRIO_RR_BIT) RR[fc32] |= PRIO_RR_BIT;
-    if (RR[fc32] & PRIO_RR_BIT) RR[fc22] |= PRIO_RR_BIT;
-    if (RR[fc24] & PRIO_RR_BIT) RR[fc34] |= PRIO_RR_BIT;
-    if (RR[fc34] & PRIO_RR_BIT) RR[fc24] |= PRIO_RR_BIT;
-    if (RR[fc24] & PRIO_RR_BIT) RR[fc84] |= PRIO_RR_BIT;
-    if (RR[fc84] & PRIO_RR_BIT) RR[fc24] |= PRIO_RR_BIT;
+    if (SCH[schgs2232] && (RR[fc22] & PRIO_RR_BIT)) RR[fc32] |= PRIO_RR_BIT;
+    if (SCH[schgs2232] && (RR[fc32] & PRIO_RR_BIT)) RR[fc22] |= PRIO_RR_BIT;
+    if (SCH[schgs2434] && (RR[fc24] & PRIO_RR_BIT)) RR[fc34] |= PRIO_RR_BIT;
+    if (SCH[schgs2434] && (RR[fc34] & PRIO_RR_BIT)) RR[fc24] |= PRIO_RR_BIT;
+    if (SCH[schgs2484] && (RR[fc24] & PRIO_RR_BIT)) RR[fc84] |= PRIO_RR_BIT;
+    if (SCH[schgs2484] && (RR[fc84] & PRIO_RR_BIT)) RR[fc24] |= PRIO_RR_BIT;
     if (RR[fc28] & PRIO_RR_BIT) RR[fc38] |= PRIO_RR_BIT;
     if (RR[fc38] & PRIO_RR_BIT) RR[fc28] |= PRIO_RR_BIT;
-    if (RR[fc33] & PRIO_RR_BIT) RR[fc84] |= PRIO_RR_BIT;
-    if (RR[fc84] & PRIO_RR_BIT) RR[fc33] |= PRIO_RR_BIT;
+    if (SCH[schgs3384] && (RR[fc33] & PRIO_RR_BIT)) RR[fc84] |= PRIO_RR_BIT;
+    if (SCH[schgs3384] && (RR[fc84] & PRIO_RR_BIT)) RR[fc33] |= PRIO_RR_BIT;
 #ifndef NO_TIMETOX
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc22] & BIT11)) { RR[fc32] &= ~PRIO_RR_BIT; }
     if (SCH[schconfidence15fix] && SCH[schgs2232] && (P[fc32] & BIT11)) { RR[fc22] &= ~PRIO_RR_BIT; }

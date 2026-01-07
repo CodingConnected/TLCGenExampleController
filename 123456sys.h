@@ -1100,485 +1100,476 @@
     #define tnleg0262                  155 /* Naloop op einde groen van 02 naar 62                                                     */
     #define tnlegd0262                 156 /* Detectieafhankelijke naloop op einde groen van 02 naar 62                                */
     #define tvgnaloop0262              157 /* Timer naloop EG van 02 naar 62                                                           */
-    #define txnl0262                   158 /* Tijd tegenhouden voedende richting naloop van 02 naar 62                                 */
-    #define tnlfg0868                  159 /* Naloop tijdens vastgroen van 08 naar 68                                                  */
-    #define tnlfgd0868                 160 /* Detectieafhankelijke naloop tijdens vastgroen van 08 naar 68                             */
-    #define tnleg0868                  161 /* Naloop op einde groen van 08 naar 68                                                     */
-    #define tnlegd0868                 162 /* Detectieafhankelijke naloop op einde groen van 08 naar 68                                */
-    #define tvgnaloop0868              163 /* Timer naloop EG van 08 naar 68                                                           */
-    #define txnl0868                   164 /* Tijd tegenhouden voedende richting naloop van 08 naar 68                                 */
-    #define tnlfg1168                  165 /* Naloop tijdens vastgroen van 11 naar 68                                                  */
-    #define tnlfgd1168                 166 /* Detectieafhankelijke naloop tijdens vastgroen van 11 naar 68                             */
-    #define tnleg1168                  167 /* Naloop op einde groen van 11 naar 68                                                     */
-    #define tnlegd1168                 168 /* Detectieafhankelijke naloop op einde groen van 11 naar 68                                */
-    #define tvgnaloop1168              169 /* Timer naloop EG van 11 naar 68                                                           */
-    #define txnl1168                   170 /* Tijd tegenhouden voedende richting naloop van 11 naar 68                                 */
-    #define tnlfg2221                  171 /* Naloop tijdens vastgroen van 22 naar 21                                                  */
-    #define tnlfgd2221                 172 /* Detectieafhankelijke naloop tijdens vastgroen van 22 naar 21                             */
-    #define tnleg2221                  173 /* Naloop op einde groen van 22 naar 21                                                     */
-    #define tnlegd2221                 174 /* Detectieafhankelijke naloop op einde groen van 22 naar 21                                */
-    #define tvgnaloop2221              175 /* Timer naloop EG van 22 naar 21                                                           */
-    #define txnl2221                   176 /* Tijd tegenhouden voedende richting naloop van 22 naar 21                                 */
-    #define tnlsgd3132                 177 /* Detectieafhankelijke naloop op start groen van 31 naar 32                                */
-    #define txnl3132                   178 /* Tijd tegenhouden voedende richting naloop van 31 naar 32                                 */
-    #define tnlsgd3231                 179 /* Detectieafhankelijke naloop op start groen van 32 naar 31                                */
-    #define txnl3231                   180 /* Tijd tegenhouden voedende richting naloop van 32 naar 31                                 */
-    #define tnlsgd3334                 181 /* Detectieafhankelijke naloop op start groen van 33 naar 34                                */
-    #define txnl3334                   182 /* Tijd tegenhouden voedende richting naloop van 33 naar 34                                 */
-    #define tnlsgd3433                 183 /* Detectieafhankelijke naloop op start groen van 34 naar 33                                */
-    #define txnl3433                   184 /* Tijd tegenhouden voedende richting naloop van 34 naar 33                                 */
-    #define tnlfg8281                  185 /* Naloop tijdens vastgroen van 82 naar 81                                                  */
-    #define tnlfgd8281                 186 /* Detectieafhankelijke naloop tijdens vastgroen van 82 naar 81                             */
-    #define tnleg8281                  187 /* Naloop op einde groen van 82 naar 81                                                     */
-    #define tnlegd8281                 188 /* Detectieafhankelijke naloop op einde groen van 82 naar 81                                */
-    #define tvgnaloop8281              189 /* Timer naloop EG van 82 naar 81                                                           */
-    #define txnl8281                   190 /* Tijd tegenhouden voedende richting naloop van 82 naar 81                                 */
-    #define tkarmelding                191 /* Duur verklikking ontvangst melding KAR                                                   */
-    #define tkarog                     192 /* Ondergedrag KAR                                                                          */
-    #define tprioin02karbuskar         193 /* Anti jutter tijd inmelden 02 Bus                                                         */
-    #define tpriouit02karbuskar        194 /* Anti jutter tijd uitmelden 02                                                            */
-    #define tprioin02karbus            195 /* Anti jutter tijd inmelden 02 Bus                                                         */
-    #define tpriouit02karbus           196 /* Anti jutter tijd uitmelden 02                                                            */
-    #define tbtovg02karbus             197 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
-    #define trt02karbus                198 /* Actuele rijtijd prio fase 02                                                             */
-    #define tgb02karbus                199 /* Groenbewaking prioriteit fase 02                                                         */
-    #define tblk02karbus               200 /* Blokkeertijd na prioriteitsingreep fase 02                                               */
-    #define tprioin02risov             201 /* Anti jutter tijd inmelden 02 Bus                                                         */
-    #define tpriouit02risov            202 /* Anti jutter tijd uitmelden 02                                                            */
-    #define tbtovg02risov              203 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
-    #define trt02risov                 204 /* Actuele rijtijd prio fase 02                                                             */
-    #define tgb02risov                 205 /* Groenbewaking prioriteit fase 02                                                         */
-    #define tblk02risov                206 /* Blokkeertijd na prioriteitsingreep fase 02                                               */
-    #define tprioin02risvrw            207 /* Anti jutter tijd inmelden 02 Vrachtwagen                                                 */
-    #define tpriouit02risvrw           208 /* Anti jutter tijd uitmelden 02                                                            */
-    #define tbtovg02risvrw             209 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
-    #define trt02risvrw                210 /* Actuele rijtijd prio fase 02                                                             */
-    #define tgb02risvrw                211 /* Groenbewaking prioriteit fase 02                                                         */
-    #define tblk02risvrw               212 /* Blokkeertijd na prioriteitsingreep fase 02                                               */
-    #define tprioin02risalg            213 /* Anti jutter tijd inmelden 02 NG                                                          */
-    #define tpriouit02risalg           214 /* Anti jutter tijd uitmelden 02                                                            */
-    #define tbtovg02risalg             215 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
-    #define trt02risalg                216 /* Actuele rijtijd prio fase 02                                                             */
-    #define tgb02risalg                217 /* Groenbewaking prioriteit fase 02                                                         */
-    #define tblk02risalg               218 /* Blokkeertijd na prioriteitsingreep fase 02                                               */
-    #define tprioin03karbuskar         219 /* Anti jutter tijd inmelden 03 Bus                                                         */
-    #define tpriouit03karbuskar        220 /* Anti jutter tijd uitmelden 03                                                            */
-    #define tprioin03karbus            221 /* Anti jutter tijd inmelden 03 Bus                                                         */
-    #define tpriouit03karbus           222 /* Anti jutter tijd uitmelden 03                                                            */
-    #define tbtovg03karbus             223 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
-    #define trt03karbus                224 /* Actuele rijtijd prio fase 03                                                             */
-    #define tgb03karbus                225 /* Groenbewaking prioriteit fase 03                                                         */
-    #define tblk03karbus               226 /* Blokkeertijd na prioriteitsingreep fase 03                                               */
-    #define tprioin03risov             227 /* Anti jutter tijd inmelden 03 Bus                                                         */
-    #define tpriouit03risov            228 /* Anti jutter tijd uitmelden 03                                                            */
-    #define tbtovg03risov              229 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
-    #define trt03risov                 230 /* Actuele rijtijd prio fase 03                                                             */
-    #define tgb03risov                 231 /* Groenbewaking prioriteit fase 03                                                         */
-    #define tblk03risov                232 /* Blokkeertijd na prioriteitsingreep fase 03                                               */
-    #define tprioin03risvrw            233 /* Anti jutter tijd inmelden 03 Vrachtwagen                                                 */
-    #define tpriouit03risvrw           234 /* Anti jutter tijd uitmelden 03                                                            */
-    #define tbtovg03risvrw             235 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
-    #define trt03risvrw                236 /* Actuele rijtijd prio fase 03                                                             */
-    #define tgb03risvrw                237 /* Groenbewaking prioriteit fase 03                                                         */
-    #define tblk03risvrw               238 /* Blokkeertijd na prioriteitsingreep fase 03                                               */
-    #define tbtovg03risalg             239 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
-    #define trt03risalg                240 /* Actuele rijtijd prio fase 03                                                             */
-    #define tgb03risalg                241 /* Groenbewaking prioriteit fase 03                                                         */
-    #define tblk03risalg               242 /* Blokkeertijd na prioriteitsingreep fase 03                                               */
-    #define tprioin05karbuskar         243 /* Anti jutter tijd inmelden 05 Bus                                                         */
-    #define tpriouit05karbuskar        244 /* Anti jutter tijd uitmelden 05                                                            */
-    #define tprioin05karbus            245 /* Anti jutter tijd inmelden 05 Bus                                                         */
-    #define tpriouit05karbus           246 /* Anti jutter tijd uitmelden 05                                                            */
-    #define tbtovg05karbus             247 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
-    #define trt05karbus                248 /* Actuele rijtijd prio fase 05                                                             */
-    #define tgb05karbus                249 /* Groenbewaking prioriteit fase 05                                                         */
-    #define tblk05karbus               250 /* Blokkeertijd na prioriteitsingreep fase 05                                               */
-    #define tprioin05risov             251 /* Anti jutter tijd inmelden 05 Bus                                                         */
-    #define tpriouit05risov            252 /* Anti jutter tijd uitmelden 05                                                            */
-    #define tbtovg05risov              253 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
-    #define trt05risov                 254 /* Actuele rijtijd prio fase 05                                                             */
-    #define tgb05risov                 255 /* Groenbewaking prioriteit fase 05                                                         */
-    #define tblk05risov                256 /* Blokkeertijd na prioriteitsingreep fase 05                                               */
-    #define tprioin05risvrw            257 /* Anti jutter tijd inmelden 05 Vrachtwagen                                                 */
-    #define tpriouit05risvrw           258 /* Anti jutter tijd uitmelden 05                                                            */
-    #define tbtovg05risvrw             259 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
-    #define trt05risvrw                260 /* Actuele rijtijd prio fase 05                                                             */
-    #define tgb05risvrw                261 /* Groenbewaking prioriteit fase 05                                                         */
-    #define tblk05risvrw               262 /* Blokkeertijd na prioriteitsingreep fase 05                                               */
-    #define tbtovg05risalg             263 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
-    #define trt05risalg                264 /* Actuele rijtijd prio fase 05                                                             */
-    #define tgb05risalg                265 /* Groenbewaking prioriteit fase 05                                                         */
-    #define tblk05risalg               266 /* Blokkeertijd na prioriteitsingreep fase 05                                               */
-    #define tprioin08karbuskar         267 /* Anti jutter tijd inmelden 08 Bus                                                         */
-    #define tpriouit08karbuskar        268 /* Anti jutter tijd uitmelden 08                                                            */
-    #define tprioin08karbus            269 /* Anti jutter tijd inmelden 08 Bus                                                         */
-    #define tpriouit08karbus           270 /* Anti jutter tijd uitmelden 08                                                            */
-    #define tbtovg08karbus             271 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
-    #define trt08karbus                272 /* Actuele rijtijd prio fase 08                                                             */
-    #define tgb08karbus                273 /* Groenbewaking prioriteit fase 08                                                         */
-    #define tblk08karbus               274 /* Blokkeertijd na prioriteitsingreep fase 08                                               */
-    #define tprioin08risov             275 /* Anti jutter tijd inmelden 08 Bus                                                         */
-    #define tpriouit08risov            276 /* Anti jutter tijd uitmelden 08                                                            */
-    #define tbtovg08risov              277 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
-    #define trt08risov                 278 /* Actuele rijtijd prio fase 08                                                             */
-    #define tgb08risov                 279 /* Groenbewaking prioriteit fase 08                                                         */
-    #define tblk08risov                280 /* Blokkeertijd na prioriteitsingreep fase 08                                               */
-    #define tprioin08risvrw            281 /* Anti jutter tijd inmelden 08 Vrachtwagen                                                 */
-    #define tpriouit08risvrw           282 /* Anti jutter tijd uitmelden 08                                                            */
-    #define tbtovg08risvrw             283 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
-    #define trt08risvrw                284 /* Actuele rijtijd prio fase 08                                                             */
-    #define tgb08risvrw                285 /* Groenbewaking prioriteit fase 08                                                         */
-    #define tblk08risvrw               286 /* Blokkeertijd na prioriteitsingreep fase 08                                               */
-    #define tbtovg08risalg             287 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
-    #define trt08risalg                288 /* Actuele rijtijd prio fase 08                                                             */
-    #define tgb08risalg                289 /* Groenbewaking prioriteit fase 08                                                         */
-    #define tblk08risalg               290 /* Blokkeertijd na prioriteitsingreep fase 08                                               */
-    #define tprioin09karbuskar         291 /* Anti jutter tijd inmelden 09 Bus                                                         */
-    #define tpriouit09karbuskar        292 /* Anti jutter tijd uitmelden 09                                                            */
-    #define tprioin09karbus            293 /* Anti jutter tijd inmelden 09 Bus                                                         */
-    #define tpriouit09karbus           294 /* Anti jutter tijd uitmelden 09                                                            */
-    #define tbtovg09karbus             295 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
-    #define trt09karbus                296 /* Actuele rijtijd prio fase 09                                                             */
-    #define tgb09karbus                297 /* Groenbewaking prioriteit fase 09                                                         */
-    #define tblk09karbus               298 /* Blokkeertijd na prioriteitsingreep fase 09                                               */
-    #define tprioin09risov             299 /* Anti jutter tijd inmelden 09 Bus                                                         */
-    #define tpriouit09risov            300 /* Anti jutter tijd uitmelden 09                                                            */
-    #define tbtovg09risov              301 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
-    #define trt09risov                 302 /* Actuele rijtijd prio fase 09                                                             */
-    #define tgb09risov                 303 /* Groenbewaking prioriteit fase 09                                                         */
-    #define tblk09risov                304 /* Blokkeertijd na prioriteitsingreep fase 09                                               */
-    #define tprioin09risvrw            305 /* Anti jutter tijd inmelden 09 Vrachtwagen                                                 */
-    #define tpriouit09risvrw           306 /* Anti jutter tijd uitmelden 09                                                            */
-    #define tbtovg09risvrw             307 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
-    #define trt09risvrw                308 /* Actuele rijtijd prio fase 09                                                             */
-    #define tgb09risvrw                309 /* Groenbewaking prioriteit fase 09                                                         */
-    #define tblk09risvrw               310 /* Blokkeertijd na prioriteitsingreep fase 09                                               */
-    #define tbtovg09risalg             311 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
-    #define trt09risalg                312 /* Actuele rijtijd prio fase 09                                                             */
-    #define tgb09risalg                313 /* Groenbewaking prioriteit fase 09                                                         */
-    #define tblk09risalg               314 /* Blokkeertijd na prioriteitsingreep fase 09                                               */
-    #define tprioin11karbuskar         315 /* Anti jutter tijd inmelden 11 Bus                                                         */
-    #define tpriouit11karbuskar        316 /* Anti jutter tijd uitmelden 11                                                            */
-    #define tprioin11karbus            317 /* Anti jutter tijd inmelden 11 Bus                                                         */
-    #define tpriouit11karbus           318 /* Anti jutter tijd uitmelden 11                                                            */
-    #define tbtovg11karbus             319 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
-    #define trt11karbus                320 /* Actuele rijtijd prio fase 11                                                             */
-    #define tgb11karbus                321 /* Groenbewaking prioriteit fase 11                                                         */
-    #define tblk11karbus               322 /* Blokkeertijd na prioriteitsingreep fase 11                                               */
-    #define tprioin11risov             323 /* Anti jutter tijd inmelden 11 Bus                                                         */
-    #define tpriouit11risov            324 /* Anti jutter tijd uitmelden 11                                                            */
-    #define tbtovg11risov              325 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
-    #define trt11risov                 326 /* Actuele rijtijd prio fase 11                                                             */
-    #define tgb11risov                 327 /* Groenbewaking prioriteit fase 11                                                         */
-    #define tblk11risov                328 /* Blokkeertijd na prioriteitsingreep fase 11                                               */
-    #define tprioin11risvrw            329 /* Anti jutter tijd inmelden 11 Vrachtwagen                                                 */
-    #define tpriouit11risvrw           330 /* Anti jutter tijd uitmelden 11                                                            */
-    #define tbtovg11risvrw             331 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
-    #define trt11risvrw                332 /* Actuele rijtijd prio fase 11                                                             */
-    #define tgb11risvrw                333 /* Groenbewaking prioriteit fase 11                                                         */
-    #define tblk11risvrw               334 /* Blokkeertijd na prioriteitsingreep fase 11                                               */
-    #define tbtovg11risalg             335 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
-    #define trt11risalg                336 /* Actuele rijtijd prio fase 11                                                             */
-    #define tgb11risalg                337 /* Groenbewaking prioriteit fase 11                                                         */
-    #define tblk11risalg               338 /* Blokkeertijd na prioriteitsingreep fase 11                                               */
-    #define tbtovg22fiets              339 /* Timer bezettijd prioriteit gehinderde rijtijd fase 22                                    */
-    #define trt22fiets                 340 /* Actuele rijtijd prio fase 22                                                             */
-    #define tgb22fiets                 341 /* Groenbewaking prioriteit fase 22                                                         */
-    #define tblk22fiets                342 /* Blokkeertijd na prioriteitsingreep fase 22                                               */
-    #define tbtovg28fiets              343 /* Timer bezettijd prioriteit gehinderde rijtijd fase 28                                    */
-    #define trt28fiets                 344 /* Actuele rijtijd prio fase 28                                                             */
-    #define tgb28fiets                 345 /* Groenbewaking prioriteit fase 28                                                         */
-    #define tblk28fiets                346 /* Blokkeertijd na prioriteitsingreep fase 28                                               */
-    #define tprioin61karbuskar         347 /* Anti jutter tijd inmelden 61 Bus                                                         */
-    #define tpriouit61karbuskar        348 /* Anti jutter tijd uitmelden 61                                                            */
-    #define tprioin61karbus            349 /* Anti jutter tijd inmelden 61 Bus                                                         */
-    #define tpriouit61karbus           350 /* Anti jutter tijd uitmelden 61                                                            */
-    #define tbtovg61karbus             351 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
-    #define trt61karbus                352 /* Actuele rijtijd prio fase 61                                                             */
-    #define tgb61karbus                353 /* Groenbewaking prioriteit fase 61                                                         */
-    #define tblk61karbus               354 /* Blokkeertijd na prioriteitsingreep fase 61                                               */
-    #define tprioin61risov             355 /* Anti jutter tijd inmelden 61 Bus                                                         */
-    #define tpriouit61risov            356 /* Anti jutter tijd uitmelden 61                                                            */
-    #define tbtovg61risov              357 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
-    #define trt61risov                 358 /* Actuele rijtijd prio fase 61                                                             */
-    #define tgb61risov                 359 /* Groenbewaking prioriteit fase 61                                                         */
-    #define tblk61risov                360 /* Blokkeertijd na prioriteitsingreep fase 61                                               */
-    #define tprioin61risvrw            361 /* Anti jutter tijd inmelden 61 Vrachtwagen                                                 */
-    #define tpriouit61risvrw           362 /* Anti jutter tijd uitmelden 61                                                            */
-    #define tbtovg61risvrw             363 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
-    #define trt61risvrw                364 /* Actuele rijtijd prio fase 61                                                             */
-    #define tgb61risvrw                365 /* Groenbewaking prioriteit fase 61                                                         */
-    #define tblk61risvrw               366 /* Blokkeertijd na prioriteitsingreep fase 61                                               */
-    #define tbtovg61risalg             367 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
-    #define trt61risalg                368 /* Actuele rijtijd prio fase 61                                                             */
-    #define tgb61risalg                369 /* Groenbewaking prioriteit fase 61                                                         */
-    #define tblk61risalg               370 /* Blokkeertijd na prioriteitsingreep fase 61                                               */
-    #define tprioin62karbuskar         371 /* Anti jutter tijd inmelden 62 Bus                                                         */
-    #define tpriouit62karbuskar        372 /* Anti jutter tijd uitmelden 62                                                            */
-    #define tprioin62karbus            373 /* Anti jutter tijd inmelden 62 Bus                                                         */
-    #define tpriouit62karbus           374 /* Anti jutter tijd uitmelden 62                                                            */
-    #define tbtovg62karbus             375 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
-    #define trt62karbus                376 /* Actuele rijtijd prio fase 62                                                             */
-    #define tgb62karbus                377 /* Groenbewaking prioriteit fase 62                                                         */
-    #define tblk62karbus               378 /* Blokkeertijd na prioriteitsingreep fase 62                                               */
-    #define tprioin62risov             379 /* Anti jutter tijd inmelden 62 Bus                                                         */
-    #define tpriouit62risov            380 /* Anti jutter tijd uitmelden 62                                                            */
-    #define tbtovg62risov              381 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
-    #define trt62risov                 382 /* Actuele rijtijd prio fase 62                                                             */
-    #define tgb62risov                 383 /* Groenbewaking prioriteit fase 62                                                         */
-    #define tblk62risov                384 /* Blokkeertijd na prioriteitsingreep fase 62                                               */
-    #define tprioin62risvrw            385 /* Anti jutter tijd inmelden 62 Vrachtwagen                                                 */
-    #define tpriouit62risvrw           386 /* Anti jutter tijd uitmelden 62                                                            */
-    #define tbtovg62risvrw             387 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
-    #define trt62risvrw                388 /* Actuele rijtijd prio fase 62                                                             */
-    #define tgb62risvrw                389 /* Groenbewaking prioriteit fase 62                                                         */
-    #define tblk62risvrw               390 /* Blokkeertijd na prioriteitsingreep fase 62                                               */
-    #define tbtovg62risalg             391 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
-    #define trt62risalg                392 /* Actuele rijtijd prio fase 62                                                             */
-    #define tgb62risalg                393 /* Groenbewaking prioriteit fase 62                                                         */
-    #define tblk62risalg               394 /* Blokkeertijd na prioriteitsingreep fase 62                                               */
-    #define tprioin67karbuskar         395 /* Anti jutter tijd inmelden 67 Bus                                                         */
-    #define tpriouit67karbuskar        396 /* Anti jutter tijd uitmelden 67                                                            */
-    #define tprioin67karbus            397 /* Anti jutter tijd inmelden 67 Bus                                                         */
-    #define tpriouit67karbus           398 /* Anti jutter tijd uitmelden 67                                                            */
-    #define tbtovg67karbus             399 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
-    #define trt67karbus                400 /* Actuele rijtijd prio fase 67                                                             */
-    #define tgb67karbus                401 /* Groenbewaking prioriteit fase 67                                                         */
-    #define tblk67karbus               402 /* Blokkeertijd na prioriteitsingreep fase 67                                               */
-    #define tprioin67risov             403 /* Anti jutter tijd inmelden 67 Bus                                                         */
-    #define tpriouit67risov            404 /* Anti jutter tijd uitmelden 67                                                            */
-    #define tbtovg67risov              405 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
-    #define trt67risov                 406 /* Actuele rijtijd prio fase 67                                                             */
-    #define tgb67risov                 407 /* Groenbewaking prioriteit fase 67                                                         */
-    #define tblk67risov                408 /* Blokkeertijd na prioriteitsingreep fase 67                                               */
-    #define tprioin67risvrw            409 /* Anti jutter tijd inmelden 67 Vrachtwagen                                                 */
-    #define tpriouit67risvrw           410 /* Anti jutter tijd uitmelden 67                                                            */
-    #define tbtovg67risvrw             411 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
-    #define trt67risvrw                412 /* Actuele rijtijd prio fase 67                                                             */
-    #define tgb67risvrw                413 /* Groenbewaking prioriteit fase 67                                                         */
-    #define tblk67risvrw               414 /* Blokkeertijd na prioriteitsingreep fase 67                                               */
-    #define tbtovg67risalg             415 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
-    #define trt67risalg                416 /* Actuele rijtijd prio fase 67                                                             */
-    #define tgb67risalg                417 /* Groenbewaking prioriteit fase 67                                                         */
-    #define tblk67risalg               418 /* Blokkeertijd na prioriteitsingreep fase 67                                               */
-    #define tprioin68karbuskar         419 /* Anti jutter tijd inmelden 68 Bus                                                         */
-    #define tpriouit68karbuskar        420 /* Anti jutter tijd uitmelden 68                                                            */
-    #define tprioin68karbus            421 /* Anti jutter tijd inmelden 68 Bus                                                         */
-    #define tpriouit68karbus           422 /* Anti jutter tijd uitmelden 68                                                            */
-    #define tbtovg68karbus             423 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
-    #define trt68karbus                424 /* Actuele rijtijd prio fase 68                                                             */
-    #define tgb68karbus                425 /* Groenbewaking prioriteit fase 68                                                         */
-    #define tblk68karbus               426 /* Blokkeertijd na prioriteitsingreep fase 68                                               */
-    #define tprioin68risov             427 /* Anti jutter tijd inmelden 68 Bus                                                         */
-    #define tpriouit68risov            428 /* Anti jutter tijd uitmelden 68                                                            */
-    #define tbtovg68risov              429 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
-    #define trt68risov                 430 /* Actuele rijtijd prio fase 68                                                             */
-    #define tgb68risov                 431 /* Groenbewaking prioriteit fase 68                                                         */
-    #define tblk68risov                432 /* Blokkeertijd na prioriteitsingreep fase 68                                               */
-    #define tprioin68risvrw            433 /* Anti jutter tijd inmelden 68 Vrachtwagen                                                 */
-    #define tpriouit68risvrw           434 /* Anti jutter tijd uitmelden 68                                                            */
-    #define tbtovg68risvrw             435 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
-    #define trt68risvrw                436 /* Actuele rijtijd prio fase 68                                                             */
-    #define tgb68risvrw                437 /* Groenbewaking prioriteit fase 68                                                         */
-    #define tblk68risvrw               438 /* Blokkeertijd na prioriteitsingreep fase 68                                               */
-    #define tbtovg68risalg             439 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
-    #define trt68risalg                440 /* Actuele rijtijd prio fase 68                                                             */
-    #define tgb68risalg                441 /* Groenbewaking prioriteit fase 68                                                         */
-    #define tblk68risalg               442 /* Blokkeertijd na prioriteitsingreep fase 68                                               */
-    #define tgbhd02                    443 /* Groenbewaking HD fase 02                                                                 */
-    #define trthd02                    444 /* Actuele rijtijd HD fase 02                                                               */
-    #define tbtovg02hd                 445 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
-    #define thdin02kar                 446 /* Anti jutter tijd inmelden HD 02 KAR                                                      */
-    #define thduit02kar                447 /* Anti jutter tijd uitmelden HD 02                                                         */
-    #define tgbhd03                    448 /* Groenbewaking HD fase 03                                                                 */
-    #define trthd03                    449 /* Actuele rijtijd HD fase 03                                                               */
-    #define tbtovg03hd                 450 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
-    #define thdin03kar                 451 /* Anti jutter tijd inmelden HD 03 KAR                                                      */
-    #define thduit03kar                452 /* Anti jutter tijd uitmelden HD 03                                                         */
-    #define tgbhd05                    453 /* Groenbewaking HD fase 05                                                                 */
-    #define trthd05                    454 /* Actuele rijtijd HD fase 05                                                               */
-    #define tbtovg05hd                 455 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
-    #define thdin05kar                 456 /* Anti jutter tijd inmelden HD 05 KAR                                                      */
-    #define thduit05kar                457 /* Anti jutter tijd uitmelden HD 05                                                         */
-    #define tgbhd08                    458 /* Groenbewaking HD fase 08                                                                 */
-    #define trthd08                    459 /* Actuele rijtijd HD fase 08                                                               */
-    #define tbtovg08hd                 460 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
-    #define thdin08kar                 461 /* Anti jutter tijd inmelden HD 08 KAR                                                      */
-    #define thduit08kar                462 /* Anti jutter tijd uitmelden HD 08                                                         */
-    #define tgbhd09                    463 /* Groenbewaking HD fase 09                                                                 */
-    #define trthd09                    464 /* Actuele rijtijd HD fase 09                                                               */
-    #define tbtovg09hd                 465 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
-    #define thdin09kar                 466 /* Anti jutter tijd inmelden HD 09 KAR                                                      */
-    #define thduit09kar                467 /* Anti jutter tijd uitmelden HD 09                                                         */
-    #define tgbhd11                    468 /* Groenbewaking HD fase 11                                                                 */
-    #define trthd11                    469 /* Actuele rijtijd HD fase 11                                                               */
-    #define tbtovg11hd                 470 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
-    #define thdin11kar                 471 /* Anti jutter tijd inmelden HD 11 KAR                                                      */
-    #define thduit11kar                472 /* Anti jutter tijd uitmelden HD 11                                                         */
-    #define tgbhd61                    473 /* Groenbewaking HD fase 61                                                                 */
-    #define trthd61                    474 /* Actuele rijtijd HD fase 61                                                               */
-    #define tbtovg61hd                 475 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
-    #define thdin61kar                 476 /* Anti jutter tijd inmelden HD 61 KAR                                                      */
-    #define thduit61kar                477 /* Anti jutter tijd uitmelden HD 61                                                         */
-    #define tgbhd62                    478 /* Groenbewaking HD fase 62                                                                 */
-    #define trthd62                    479 /* Actuele rijtijd HD fase 62                                                               */
-    #define tbtovg62hd                 480 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
-    #define thdin62kar                 481 /* Anti jutter tijd inmelden HD 62 KAR                                                      */
-    #define thduit62kar                482 /* Anti jutter tijd uitmelden HD 62                                                         */
-    #define tgbhd67                    483 /* Groenbewaking HD fase 67                                                                 */
-    #define trthd67                    484 /* Actuele rijtijd HD fase 67                                                               */
-    #define tbtovg67hd                 485 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
-    #define thdin67kar                 486 /* Anti jutter tijd inmelden HD 67 KAR                                                      */
-    #define thduit67kar                487 /* Anti jutter tijd uitmelden HD 67                                                         */
-    #define tgbhd68                    488 /* Groenbewaking HD fase 68                                                                 */
-    #define trthd68                    489 /* Actuele rijtijd HD fase 68                                                               */
-    #define tbtovg68hd                 490 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
-    #define thdin68kar                 491 /* Anti jutter tijd inmelden HD 68 KAR                                                      */
-    #define thduit68kar                492 /* Anti jutter tijd uitmelden HD 68                                                         */
-    #define tris02risov                493
-    #define tris02risvrw               494
-    #define tris02risalg               495
-    #define tris03risov                496
-    #define tris03risvrw               497
-    #define tris03risalg               498
-    #define tris05risov                499
-    #define tris05risvrw               500
-    #define tris05risalg               501
-    #define tris08risov                502
-    #define tris08risvrw               503
-    #define tris08risalg               504
-    #define tris09risov                505
-    #define tris09risvrw               506
-    #define tris09risalg               507
-    #define tris11risov                508
-    #define tris11risvrw               509
-    #define tris11risalg               510
-    #define tris61risov                511
-    #define tris61risvrw               512
-    #define tris61risalg               513
-    #define tris62risov                514
-    #define tris62risvrw               515
-    #define tris62risalg               516
-    #define tris67risov                517
-    #define tris67risvrw               518
-    #define tris67risalg               519
-    #define tris68risov                520
-    #define tris68risvrw               521
-    #define tris68risalg               522
-    #define tpelmeetKOP02              523 /* Meetperiode peloton koppeling KOP02 fase KOP02                                           */
-    #define tpelmaxhiaatKOP02          524 /* Maximaal hiaat tbv meting peloton koppeling KOP02 fase 02                                */
-    #define tpelrwKOP02                525 /* Tijdsduur toepassen RW na meting peloton bij KOP02 voor fase 02                          */
-    #define tpelrwmaxKOP02             526 /* Maximale tijdsduur toepassen RW vanaf SG voor peloton koppeling bij KOP02 voor fase 02   */
-    #define tpelstartrwKOP02           527 /* Tijdsduur vanaf meting peloton tot toepassen RW voor KOP02 bij fase 02                   */
-    #define tpelaKOP02                 528 /* Tijdsduur tot aanvraag na meting peloton voor KOP02 bij fase 02                          */
-    #define trgad24_3                  529 /* Richtinggevoelige aanvraag rijtijd fase 24 van 24_3 naar 24_2                            */
-    #define trgavd24_3                 530 /* Timer reset richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2                        */
-    #define trgrd24_3_d24_2            531 /* Richtinggevoelig verlengen rijtijd fase 24 van 24_3 naar 24_2                            */
-    #define trgvd24_3_d24_2            532 /* Richtinggevoelig verlengen hiaattijd fase 24 van 24_3 naar 24_2                          */
-    #define tfd02_1a                   533 /* File meting RoBuGrover fase 02 detector 02_1a                                            */
-    #define tfd02_1b                   534 /* File meting RoBuGrover fase 02 detector 02_1b                                            */
-    #define thd02_2a                   535 /* RoBuGrover hiaat meting fase 02 detector 02_2a                                           */
-    #define thd02_2b                   536 /* RoBuGrover hiaat meting fase 02 detector 02_2b                                           */
-    #define thd02_3a                   537 /* RoBuGrover hiaat meting fase 02 detector 02_3a                                           */
-    #define thd02_3b                   538 /* RoBuGrover hiaat meting fase 02 detector 02_3b                                           */
-    #define tfd03_1                    539 /* File meting RoBuGrover fase 03 detector 03_1                                             */
-    #define thd03_2                    540 /* RoBuGrover hiaat meting fase 03 detector 03_2                                            */
-    #define tfd05_1                    541 /* File meting RoBuGrover fase 05 detector 05_1                                             */
-    #define thd05_2                    542 /* RoBuGrover hiaat meting fase 05 detector 05_2                                            */
-    #define tfd08_1a                   543 /* File meting RoBuGrover fase 08 detector 08_1a                                            */
-    #define tfd08_1b                   544 /* File meting RoBuGrover fase 08 detector 08_1b                                            */
-    #define thd08_2a                   545 /* RoBuGrover hiaat meting fase 08 detector 08_2a                                           */
-    #define thd08_2b                   546 /* RoBuGrover hiaat meting fase 08 detector 08_2b                                           */
-    #define thd08_3a                   547 /* RoBuGrover hiaat meting fase 08 detector 08_3a                                           */
-    #define thd08_3b                   548 /* RoBuGrover hiaat meting fase 08 detector 08_3b                                           */
-    #define tfd11_1                    549 /* File meting RoBuGrover fase 11 detector 11_1                                             */
-    #define thd11_2                    550 /* RoBuGrover hiaat meting fase 11 detector 11_2                                            */
-    #define thd11_3                    551 /* RoBuGrover hiaat meting fase 11 detector 11_3                                            */
-    #define tfd22_1                    552 /* File meting RoBuGrover fase 22 detector 22_1                                             */
-    #define thd22_1                    553 /* RoBuGrover hiaat meting fase 22 detector 22_1                                            */
-    #define tfd28_1                    554 /* File meting RoBuGrover fase 28 detector 28_1                                             */
-    #define thd28_1                    555 /* RoBuGrover hiaat meting fase 28 detector 28_1                                            */
-    #define tschoolingreepmaxg31       556 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 31                        */
-    #define tdbsidk31a                 557 /* Bezettijd detector k31a t.b.v. schoolingreep                                             */
-    #define tdbsidk31b                 558 /* Bezettijd detector k31b t.b.v. schoolingreep                                             */
-    #define tschoolingreepmaxg32       559 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 32                        */
-    #define tdbsidk32a                 560 /* Bezettijd detector k32a t.b.v. schoolingreep                                             */
-    #define tdbsidk32b                 561 /* Bezettijd detector k32b t.b.v. schoolingreep                                             */
-    #define tschoolingreepmaxg33       562 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 33                        */
-    #define tdbsidk33a                 563 /* Bezettijd detector k33a t.b.v. schoolingreep                                             */
-    #define tdbsidk33b                 564 /* Bezettijd detector k33b t.b.v. schoolingreep                                             */
-    #define tschoolingreepmaxg34       565 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 34                        */
-    #define tdbsidk34a                 566 /* Bezettijd detector k34a t.b.v. schoolingreep                                             */
-    #define tdbsidk34b                 567 /* Bezettijd detector k34b t.b.v. schoolingreep                                             */
-    #define tsiexgr31                  568 /* Meten duur extra groen bij senioreningreep op fase 31                                    */
-    #define tdbsiexgrdk31a             569 /* Bezettijd detector k31a t.b.v. Senioreningreep                                           */
-    #define tdbsiexgrdk31b             570 /* Bezettijd detector k31b t.b.v. Senioreningreep                                           */
-    #define tsiexgr32                  571 /* Meten duur extra groen bij senioreningreep op fase 32                                    */
-    #define tdbsiexgrdk32a             572 /* Bezettijd detector k32a t.b.v. Senioreningreep                                           */
-    #define tdbsiexgrdk32b             573 /* Bezettijd detector k32b t.b.v. Senioreningreep                                           */
-    #define tsiexgr33                  574 /* Meten duur extra groen bij senioreningreep op fase 33                                    */
-    #define tdbsiexgrdk33a             575 /* Bezettijd detector k33a t.b.v. Senioreningreep                                           */
-    #define tdbsiexgrdk33b             576 /* Bezettijd detector k33b t.b.v. Senioreningreep                                           */
-    #define tsiexgr34                  577 /* Meten duur extra groen bij senioreningreep op fase 34                                    */
-    #define tdbsiexgrdk34a             578 /* Bezettijd detector k34a t.b.v. Senioreningreep                                           */
-    #define tdbsiexgrdk34b             579 /* Bezettijd detector k34b t.b.v. Senioreningreep                                           */
-    #define tvamax62                   580 /* Maximale tijd VA ontruimen na einde geel fase 62                                         */
-    #define tva6209_d62_1a             581 /* Tijdsduur VA ontruimen van 62 naar                                                       */
-    #define tva6211_d62_1a             582 /* Tijdsduur VA ontruimen van 62 naar                                                       */
-    #define tva6226_d62_1a             583 /* Tijdsduur VA ontruimen van 62 naar                                                       */
-    #define tuitgestca02               584 /* Uitgestelde cyclische aanvraag fase 02                                                   */
-    #define tuitgestca03               585 /* Uitgestelde cyclische aanvraag fase 03                                                   */
-    #define tuitgestca05               586 /* Uitgestelde cyclische aanvraag fase 05                                                   */
-    #define tuitgestca08               587 /* Uitgestelde cyclische aanvraag fase 08                                                   */
-    #define tuitgestca09               588 /* Uitgestelde cyclische aanvraag fase 09                                                   */
-    #define tuitgestca11               589 /* Uitgestelde cyclische aanvraag fase 11                                                   */
-    #define tuitgestca21               590 /* Uitgestelde cyclische aanvraag fase 21                                                   */
-    #define tuitgestca22               591 /* Uitgestelde cyclische aanvraag fase 22                                                   */
-    #define tuitgestca24               592 /* Uitgestelde cyclische aanvraag fase 24                                                   */
-    #define tuitgestca26               593 /* Uitgestelde cyclische aanvraag fase 26                                                   */
-    #define tuitgestca28               594 /* Uitgestelde cyclische aanvraag fase 28                                                   */
-    #define tuitgestca31               595 /* Uitgestelde cyclische aanvraag fase 31                                                   */
-    #define tuitgestca32               596 /* Uitgestelde cyclische aanvraag fase 32                                                   */
-    #define tuitgestca33               597 /* Uitgestelde cyclische aanvraag fase 33                                                   */
-    #define tuitgestca34               598 /* Uitgestelde cyclische aanvraag fase 34                                                   */
-    #define tuitgestca38               599 /* Uitgestelde cyclische aanvraag fase 38                                                   */
-    #define tuitgestca61               600 /* Uitgestelde cyclische aanvraag fase 61                                                   */
-    #define tuitgestca62               601 /* Uitgestelde cyclische aanvraag fase 62                                                   */
-    #define tuitgestca67               602 /* Uitgestelde cyclische aanvraag fase 67                                                   */
-    #define tuitgestca68               603 /* Uitgestelde cyclische aanvraag fase 68                                                   */
-    #define tuitgestca81               604 /* Uitgestelde cyclische aanvraag fase 81                                                   */
-    #define tuitgestca82               605 /* Uitgestelde cyclische aanvraag fase 82                                                   */
-    #define tuitgestca84               606 /* Uitgestelde cyclische aanvraag fase 84                                                   */
-    #define tvgmax02                   607 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
-    #define tvgvolg02_4a               608 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4a van fase 02 */
-    #define tvghiaat02_4a              609 /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4a van fase 02                    */
-    #define tvgvolg02_4b               610 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4b van fase 02 */
-    #define tvghiaat02_4b              611 /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4b van fase 02                    */
-    #define tvgmax08                   612 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
-    #define tvgvolg08_4a               613 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4a van fase 08 */
-    #define tvghiaat08_4a              614 /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4a van fase 08                    */
-    #define tvgvolg08_4b               615 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4b van fase 08 */
-    #define tvghiaat08_4b              616 /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4b van fase 08                    */
-    #define tvgmax11                   617 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
-    #define tvgvolg11_4                618 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 11_4 van fase 11  */
-    #define tvghiaat11_4               619 /* Hiaattijd bij actief zijn veiligheidsgroen detector 11_4 van fase 11                     */
-    #define twtv24                     620 /* T.b.v. aansturing wachttijdvoorspeller fase 24                                           */
-    #define tvs2205                    621 /* Voorstarttijd fase 22 op fase 05                                                         */
-    #define tfo0522                    622 /* Fictieve ontruimingstijd/intergroentijd van 22 naar fase 05                              */
-    #define tvs3205                    623 /* Voorstarttijd fase 32 op fase 05                                                         */
-    #define tfo0532                    624 /* Fictieve ontruimingstijd/intergroentijd van 32 naar fase 05                              */
-    #define tlr2611                    625 /* Late release tijd fase 26 naar fase 11                                                   */
-    #define tfo2611                    626 /* Fictieve ontruimingstijd/intergroentijd van 26 naar fase 11                              */
-    #define txnl0262                   627 /* Tegenhouden fase 02 tbv naloop naar fase 62                                              */
-    #define txnl0868                   628 /* Tegenhouden fase 08 tbv naloop naar fase 68                                              */
-    #define txnl1168                   629 /* Tegenhouden fase 11 tbv naloop naar fase 68                                              */
-    #define txnl2221                   630 /* Tegenhouden fase 22 tbv naloop naar fase 21                                              */
-    #define txnl3132                   631 /* Tegenhouden fase 31 tbv naloop naar fase 32                                              */
-    #define txnl3231                   632 /* Tegenhouden fase 32 tbv naloop naar fase 31                                              */
-    #define txnl3334                   633 /* Tegenhouden fase 33 tbv naloop naar fase 34                                              */
-    #define txnl3433                   634 /* Tegenhouden fase 34 tbv naloop naar fase 33                                              */
-    #define txnl8281                   635 /* Tegenhouden fase 82 tbv naloop naar fase 81                                              */
-    #define TMMAX1                     636
+    #define tnlfg0868                  158 /* Naloop tijdens vastgroen van 08 naar 68                                                  */
+    #define tnlfgd0868                 159 /* Detectieafhankelijke naloop tijdens vastgroen van 08 naar 68                             */
+    #define tnleg0868                  160 /* Naloop op einde groen van 08 naar 68                                                     */
+    #define tnlegd0868                 161 /* Detectieafhankelijke naloop op einde groen van 08 naar 68                                */
+    #define tvgnaloop0868              162 /* Timer naloop EG van 08 naar 68                                                           */
+    #define tnlfg1168                  163 /* Naloop tijdens vastgroen van 11 naar 68                                                  */
+    #define tnlfgd1168                 164 /* Detectieafhankelijke naloop tijdens vastgroen van 11 naar 68                             */
+    #define tnleg1168                  165 /* Naloop op einde groen van 11 naar 68                                                     */
+    #define tnlegd1168                 166 /* Detectieafhankelijke naloop op einde groen van 11 naar 68                                */
+    #define tvgnaloop1168              167 /* Timer naloop EG van 11 naar 68                                                           */
+    #define tnlfg2221                  168 /* Naloop tijdens vastgroen van 22 naar 21                                                  */
+    #define tnlfgd2221                 169 /* Detectieafhankelijke naloop tijdens vastgroen van 22 naar 21                             */
+    #define tnleg2221                  170 /* Naloop op einde groen van 22 naar 21                                                     */
+    #define tnlegd2221                 171 /* Detectieafhankelijke naloop op einde groen van 22 naar 21                                */
+    #define tvgnaloop2221              172 /* Timer naloop EG van 22 naar 21                                                           */
+    #define tnlsgd3132                 173 /* Detectieafhankelijke naloop op start groen van 31 naar 32                                */
+    #define tnlsgd3231                 174 /* Detectieafhankelijke naloop op start groen van 32 naar 31                                */
+    #define tnlsgd3334                 175 /* Detectieafhankelijke naloop op start groen van 33 naar 34                                */
+    #define tnlsgd3433                 176 /* Detectieafhankelijke naloop op start groen van 34 naar 33                                */
+    #define tnlfg8281                  177 /* Naloop tijdens vastgroen van 82 naar 81                                                  */
+    #define tnlfgd8281                 178 /* Detectieafhankelijke naloop tijdens vastgroen van 82 naar 81                             */
+    #define tnleg8281                  179 /* Naloop op einde groen van 82 naar 81                                                     */
+    #define tnlegd8281                 180 /* Detectieafhankelijke naloop op einde groen van 82 naar 81                                */
+    #define tvgnaloop8281              181 /* Timer naloop EG van 82 naar 81                                                           */
+    #define tkarmelding                182 /* Duur verklikking ontvangst melding KAR                                                   */
+    #define tkarog                     183 /* Ondergedrag KAR                                                                          */
+    #define tprioin02karbuskar         184 /* Anti jutter tijd inmelden 02 Bus                                                         */
+    #define tpriouit02karbuskar        185 /* Anti jutter tijd uitmelden 02                                                            */
+    #define tprioin02karbus            186 /* Anti jutter tijd inmelden 02 Bus                                                         */
+    #define tpriouit02karbus           187 /* Anti jutter tijd uitmelden 02                                                            */
+    #define tbtovg02karbus             188 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
+    #define trt02karbus                189 /* Actuele rijtijd prio fase 02                                                             */
+    #define tgb02karbus                190 /* Groenbewaking prioriteit fase 02                                                         */
+    #define tblk02karbus               191 /* Blokkeertijd na prioriteitsingreep fase 02                                               */
+    #define tprioin02risov             192 /* Anti jutter tijd inmelden 02 Bus                                                         */
+    #define tpriouit02risov            193 /* Anti jutter tijd uitmelden 02                                                            */
+    #define tbtovg02risov              194 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
+    #define trt02risov                 195 /* Actuele rijtijd prio fase 02                                                             */
+    #define tgb02risov                 196 /* Groenbewaking prioriteit fase 02                                                         */
+    #define tblk02risov                197 /* Blokkeertijd na prioriteitsingreep fase 02                                               */
+    #define tprioin02risvrw            198 /* Anti jutter tijd inmelden 02 Vrachtwagen                                                 */
+    #define tpriouit02risvrw           199 /* Anti jutter tijd uitmelden 02                                                            */
+    #define tbtovg02risvrw             200 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
+    #define trt02risvrw                201 /* Actuele rijtijd prio fase 02                                                             */
+    #define tgb02risvrw                202 /* Groenbewaking prioriteit fase 02                                                         */
+    #define tblk02risvrw               203 /* Blokkeertijd na prioriteitsingreep fase 02                                               */
+    #define tprioin02risalg            204 /* Anti jutter tijd inmelden 02 NG                                                          */
+    #define tpriouit02risalg           205 /* Anti jutter tijd uitmelden 02                                                            */
+    #define tbtovg02risalg             206 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
+    #define trt02risalg                207 /* Actuele rijtijd prio fase 02                                                             */
+    #define tgb02risalg                208 /* Groenbewaking prioriteit fase 02                                                         */
+    #define tblk02risalg               209 /* Blokkeertijd na prioriteitsingreep fase 02                                               */
+    #define tprioin03karbuskar         210 /* Anti jutter tijd inmelden 03 Bus                                                         */
+    #define tpriouit03karbuskar        211 /* Anti jutter tijd uitmelden 03                                                            */
+    #define tprioin03karbus            212 /* Anti jutter tijd inmelden 03 Bus                                                         */
+    #define tpriouit03karbus           213 /* Anti jutter tijd uitmelden 03                                                            */
+    #define tbtovg03karbus             214 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
+    #define trt03karbus                215 /* Actuele rijtijd prio fase 03                                                             */
+    #define tgb03karbus                216 /* Groenbewaking prioriteit fase 03                                                         */
+    #define tblk03karbus               217 /* Blokkeertijd na prioriteitsingreep fase 03                                               */
+    #define tprioin03risov             218 /* Anti jutter tijd inmelden 03 Bus                                                         */
+    #define tpriouit03risov            219 /* Anti jutter tijd uitmelden 03                                                            */
+    #define tbtovg03risov              220 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
+    #define trt03risov                 221 /* Actuele rijtijd prio fase 03                                                             */
+    #define tgb03risov                 222 /* Groenbewaking prioriteit fase 03                                                         */
+    #define tblk03risov                223 /* Blokkeertijd na prioriteitsingreep fase 03                                               */
+    #define tprioin03risvrw            224 /* Anti jutter tijd inmelden 03 Vrachtwagen                                                 */
+    #define tpriouit03risvrw           225 /* Anti jutter tijd uitmelden 03                                                            */
+    #define tbtovg03risvrw             226 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
+    #define trt03risvrw                227 /* Actuele rijtijd prio fase 03                                                             */
+    #define tgb03risvrw                228 /* Groenbewaking prioriteit fase 03                                                         */
+    #define tblk03risvrw               229 /* Blokkeertijd na prioriteitsingreep fase 03                                               */
+    #define tbtovg03risalg             230 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
+    #define trt03risalg                231 /* Actuele rijtijd prio fase 03                                                             */
+    #define tgb03risalg                232 /* Groenbewaking prioriteit fase 03                                                         */
+    #define tblk03risalg               233 /* Blokkeertijd na prioriteitsingreep fase 03                                               */
+    #define tprioin05karbuskar         234 /* Anti jutter tijd inmelden 05 Bus                                                         */
+    #define tpriouit05karbuskar        235 /* Anti jutter tijd uitmelden 05                                                            */
+    #define tprioin05karbus            236 /* Anti jutter tijd inmelden 05 Bus                                                         */
+    #define tpriouit05karbus           237 /* Anti jutter tijd uitmelden 05                                                            */
+    #define tbtovg05karbus             238 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
+    #define trt05karbus                239 /* Actuele rijtijd prio fase 05                                                             */
+    #define tgb05karbus                240 /* Groenbewaking prioriteit fase 05                                                         */
+    #define tblk05karbus               241 /* Blokkeertijd na prioriteitsingreep fase 05                                               */
+    #define tprioin05risov             242 /* Anti jutter tijd inmelden 05 Bus                                                         */
+    #define tpriouit05risov            243 /* Anti jutter tijd uitmelden 05                                                            */
+    #define tbtovg05risov              244 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
+    #define trt05risov                 245 /* Actuele rijtijd prio fase 05                                                             */
+    #define tgb05risov                 246 /* Groenbewaking prioriteit fase 05                                                         */
+    #define tblk05risov                247 /* Blokkeertijd na prioriteitsingreep fase 05                                               */
+    #define tprioin05risvrw            248 /* Anti jutter tijd inmelden 05 Vrachtwagen                                                 */
+    #define tpriouit05risvrw           249 /* Anti jutter tijd uitmelden 05                                                            */
+    #define tbtovg05risvrw             250 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
+    #define trt05risvrw                251 /* Actuele rijtijd prio fase 05                                                             */
+    #define tgb05risvrw                252 /* Groenbewaking prioriteit fase 05                                                         */
+    #define tblk05risvrw               253 /* Blokkeertijd na prioriteitsingreep fase 05                                               */
+    #define tbtovg05risalg             254 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
+    #define trt05risalg                255 /* Actuele rijtijd prio fase 05                                                             */
+    #define tgb05risalg                256 /* Groenbewaking prioriteit fase 05                                                         */
+    #define tblk05risalg               257 /* Blokkeertijd na prioriteitsingreep fase 05                                               */
+    #define tprioin08karbuskar         258 /* Anti jutter tijd inmelden 08 Bus                                                         */
+    #define tpriouit08karbuskar        259 /* Anti jutter tijd uitmelden 08                                                            */
+    #define tprioin08karbus            260 /* Anti jutter tijd inmelden 08 Bus                                                         */
+    #define tpriouit08karbus           261 /* Anti jutter tijd uitmelden 08                                                            */
+    #define tbtovg08karbus             262 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
+    #define trt08karbus                263 /* Actuele rijtijd prio fase 08                                                             */
+    #define tgb08karbus                264 /* Groenbewaking prioriteit fase 08                                                         */
+    #define tblk08karbus               265 /* Blokkeertijd na prioriteitsingreep fase 08                                               */
+    #define tprioin08risov             266 /* Anti jutter tijd inmelden 08 Bus                                                         */
+    #define tpriouit08risov            267 /* Anti jutter tijd uitmelden 08                                                            */
+    #define tbtovg08risov              268 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
+    #define trt08risov                 269 /* Actuele rijtijd prio fase 08                                                             */
+    #define tgb08risov                 270 /* Groenbewaking prioriteit fase 08                                                         */
+    #define tblk08risov                271 /* Blokkeertijd na prioriteitsingreep fase 08                                               */
+    #define tprioin08risvrw            272 /* Anti jutter tijd inmelden 08 Vrachtwagen                                                 */
+    #define tpriouit08risvrw           273 /* Anti jutter tijd uitmelden 08                                                            */
+    #define tbtovg08risvrw             274 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
+    #define trt08risvrw                275 /* Actuele rijtijd prio fase 08                                                             */
+    #define tgb08risvrw                276 /* Groenbewaking prioriteit fase 08                                                         */
+    #define tblk08risvrw               277 /* Blokkeertijd na prioriteitsingreep fase 08                                               */
+    #define tbtovg08risalg             278 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
+    #define trt08risalg                279 /* Actuele rijtijd prio fase 08                                                             */
+    #define tgb08risalg                280 /* Groenbewaking prioriteit fase 08                                                         */
+    #define tblk08risalg               281 /* Blokkeertijd na prioriteitsingreep fase 08                                               */
+    #define tprioin09karbuskar         282 /* Anti jutter tijd inmelden 09 Bus                                                         */
+    #define tpriouit09karbuskar        283 /* Anti jutter tijd uitmelden 09                                                            */
+    #define tprioin09karbus            284 /* Anti jutter tijd inmelden 09 Bus                                                         */
+    #define tpriouit09karbus           285 /* Anti jutter tijd uitmelden 09                                                            */
+    #define tbtovg09karbus             286 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
+    #define trt09karbus                287 /* Actuele rijtijd prio fase 09                                                             */
+    #define tgb09karbus                288 /* Groenbewaking prioriteit fase 09                                                         */
+    #define tblk09karbus               289 /* Blokkeertijd na prioriteitsingreep fase 09                                               */
+    #define tprioin09risov             290 /* Anti jutter tijd inmelden 09 Bus                                                         */
+    #define tpriouit09risov            291 /* Anti jutter tijd uitmelden 09                                                            */
+    #define tbtovg09risov              292 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
+    #define trt09risov                 293 /* Actuele rijtijd prio fase 09                                                             */
+    #define tgb09risov                 294 /* Groenbewaking prioriteit fase 09                                                         */
+    #define tblk09risov                295 /* Blokkeertijd na prioriteitsingreep fase 09                                               */
+    #define tprioin09risvrw            296 /* Anti jutter tijd inmelden 09 Vrachtwagen                                                 */
+    #define tpriouit09risvrw           297 /* Anti jutter tijd uitmelden 09                                                            */
+    #define tbtovg09risvrw             298 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
+    #define trt09risvrw                299 /* Actuele rijtijd prio fase 09                                                             */
+    #define tgb09risvrw                300 /* Groenbewaking prioriteit fase 09                                                         */
+    #define tblk09risvrw               301 /* Blokkeertijd na prioriteitsingreep fase 09                                               */
+    #define tbtovg09risalg             302 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
+    #define trt09risalg                303 /* Actuele rijtijd prio fase 09                                                             */
+    #define tgb09risalg                304 /* Groenbewaking prioriteit fase 09                                                         */
+    #define tblk09risalg               305 /* Blokkeertijd na prioriteitsingreep fase 09                                               */
+    #define tprioin11karbuskar         306 /* Anti jutter tijd inmelden 11 Bus                                                         */
+    #define tpriouit11karbuskar        307 /* Anti jutter tijd uitmelden 11                                                            */
+    #define tprioin11karbus            308 /* Anti jutter tijd inmelden 11 Bus                                                         */
+    #define tpriouit11karbus           309 /* Anti jutter tijd uitmelden 11                                                            */
+    #define tbtovg11karbus             310 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
+    #define trt11karbus                311 /* Actuele rijtijd prio fase 11                                                             */
+    #define tgb11karbus                312 /* Groenbewaking prioriteit fase 11                                                         */
+    #define tblk11karbus               313 /* Blokkeertijd na prioriteitsingreep fase 11                                               */
+    #define tprioin11risov             314 /* Anti jutter tijd inmelden 11 Bus                                                         */
+    #define tpriouit11risov            315 /* Anti jutter tijd uitmelden 11                                                            */
+    #define tbtovg11risov              316 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
+    #define trt11risov                 317 /* Actuele rijtijd prio fase 11                                                             */
+    #define tgb11risov                 318 /* Groenbewaking prioriteit fase 11                                                         */
+    #define tblk11risov                319 /* Blokkeertijd na prioriteitsingreep fase 11                                               */
+    #define tprioin11risvrw            320 /* Anti jutter tijd inmelden 11 Vrachtwagen                                                 */
+    #define tpriouit11risvrw           321 /* Anti jutter tijd uitmelden 11                                                            */
+    #define tbtovg11risvrw             322 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
+    #define trt11risvrw                323 /* Actuele rijtijd prio fase 11                                                             */
+    #define tgb11risvrw                324 /* Groenbewaking prioriteit fase 11                                                         */
+    #define tblk11risvrw               325 /* Blokkeertijd na prioriteitsingreep fase 11                                               */
+    #define tbtovg11risalg             326 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
+    #define trt11risalg                327 /* Actuele rijtijd prio fase 11                                                             */
+    #define tgb11risalg                328 /* Groenbewaking prioriteit fase 11                                                         */
+    #define tblk11risalg               329 /* Blokkeertijd na prioriteitsingreep fase 11                                               */
+    #define tbtovg22fiets              330 /* Timer bezettijd prioriteit gehinderde rijtijd fase 22                                    */
+    #define trt22fiets                 331 /* Actuele rijtijd prio fase 22                                                             */
+    #define tgb22fiets                 332 /* Groenbewaking prioriteit fase 22                                                         */
+    #define tblk22fiets                333 /* Blokkeertijd na prioriteitsingreep fase 22                                               */
+    #define tbtovg28fiets              334 /* Timer bezettijd prioriteit gehinderde rijtijd fase 28                                    */
+    #define trt28fiets                 335 /* Actuele rijtijd prio fase 28                                                             */
+    #define tgb28fiets                 336 /* Groenbewaking prioriteit fase 28                                                         */
+    #define tblk28fiets                337 /* Blokkeertijd na prioriteitsingreep fase 28                                               */
+    #define tprioin61karbuskar         338 /* Anti jutter tijd inmelden 61 Bus                                                         */
+    #define tpriouit61karbuskar        339 /* Anti jutter tijd uitmelden 61                                                            */
+    #define tprioin61karbus            340 /* Anti jutter tijd inmelden 61 Bus                                                         */
+    #define tpriouit61karbus           341 /* Anti jutter tijd uitmelden 61                                                            */
+    #define tbtovg61karbus             342 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
+    #define trt61karbus                343 /* Actuele rijtijd prio fase 61                                                             */
+    #define tgb61karbus                344 /* Groenbewaking prioriteit fase 61                                                         */
+    #define tblk61karbus               345 /* Blokkeertijd na prioriteitsingreep fase 61                                               */
+    #define tprioin61risov             346 /* Anti jutter tijd inmelden 61 Bus                                                         */
+    #define tpriouit61risov            347 /* Anti jutter tijd uitmelden 61                                                            */
+    #define tbtovg61risov              348 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
+    #define trt61risov                 349 /* Actuele rijtijd prio fase 61                                                             */
+    #define tgb61risov                 350 /* Groenbewaking prioriteit fase 61                                                         */
+    #define tblk61risov                351 /* Blokkeertijd na prioriteitsingreep fase 61                                               */
+    #define tprioin61risvrw            352 /* Anti jutter tijd inmelden 61 Vrachtwagen                                                 */
+    #define tpriouit61risvrw           353 /* Anti jutter tijd uitmelden 61                                                            */
+    #define tbtovg61risvrw             354 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
+    #define trt61risvrw                355 /* Actuele rijtijd prio fase 61                                                             */
+    #define tgb61risvrw                356 /* Groenbewaking prioriteit fase 61                                                         */
+    #define tblk61risvrw               357 /* Blokkeertijd na prioriteitsingreep fase 61                                               */
+    #define tbtovg61risalg             358 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
+    #define trt61risalg                359 /* Actuele rijtijd prio fase 61                                                             */
+    #define tgb61risalg                360 /* Groenbewaking prioriteit fase 61                                                         */
+    #define tblk61risalg               361 /* Blokkeertijd na prioriteitsingreep fase 61                                               */
+    #define tprioin62karbuskar         362 /* Anti jutter tijd inmelden 62 Bus                                                         */
+    #define tpriouit62karbuskar        363 /* Anti jutter tijd uitmelden 62                                                            */
+    #define tprioin62karbus            364 /* Anti jutter tijd inmelden 62 Bus                                                         */
+    #define tpriouit62karbus           365 /* Anti jutter tijd uitmelden 62                                                            */
+    #define tbtovg62karbus             366 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
+    #define trt62karbus                367 /* Actuele rijtijd prio fase 62                                                             */
+    #define tgb62karbus                368 /* Groenbewaking prioriteit fase 62                                                         */
+    #define tblk62karbus               369 /* Blokkeertijd na prioriteitsingreep fase 62                                               */
+    #define tprioin62risov             370 /* Anti jutter tijd inmelden 62 Bus                                                         */
+    #define tpriouit62risov            371 /* Anti jutter tijd uitmelden 62                                                            */
+    #define tbtovg62risov              372 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
+    #define trt62risov                 373 /* Actuele rijtijd prio fase 62                                                             */
+    #define tgb62risov                 374 /* Groenbewaking prioriteit fase 62                                                         */
+    #define tblk62risov                375 /* Blokkeertijd na prioriteitsingreep fase 62                                               */
+    #define tprioin62risvrw            376 /* Anti jutter tijd inmelden 62 Vrachtwagen                                                 */
+    #define tpriouit62risvrw           377 /* Anti jutter tijd uitmelden 62                                                            */
+    #define tbtovg62risvrw             378 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
+    #define trt62risvrw                379 /* Actuele rijtijd prio fase 62                                                             */
+    #define tgb62risvrw                380 /* Groenbewaking prioriteit fase 62                                                         */
+    #define tblk62risvrw               381 /* Blokkeertijd na prioriteitsingreep fase 62                                               */
+    #define tbtovg62risalg             382 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
+    #define trt62risalg                383 /* Actuele rijtijd prio fase 62                                                             */
+    #define tgb62risalg                384 /* Groenbewaking prioriteit fase 62                                                         */
+    #define tblk62risalg               385 /* Blokkeertijd na prioriteitsingreep fase 62                                               */
+    #define tprioin67karbuskar         386 /* Anti jutter tijd inmelden 67 Bus                                                         */
+    #define tpriouit67karbuskar        387 /* Anti jutter tijd uitmelden 67                                                            */
+    #define tprioin67karbus            388 /* Anti jutter tijd inmelden 67 Bus                                                         */
+    #define tpriouit67karbus           389 /* Anti jutter tijd uitmelden 67                                                            */
+    #define tbtovg67karbus             390 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
+    #define trt67karbus                391 /* Actuele rijtijd prio fase 67                                                             */
+    #define tgb67karbus                392 /* Groenbewaking prioriteit fase 67                                                         */
+    #define tblk67karbus               393 /* Blokkeertijd na prioriteitsingreep fase 67                                               */
+    #define tprioin67risov             394 /* Anti jutter tijd inmelden 67 Bus                                                         */
+    #define tpriouit67risov            395 /* Anti jutter tijd uitmelden 67                                                            */
+    #define tbtovg67risov              396 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
+    #define trt67risov                 397 /* Actuele rijtijd prio fase 67                                                             */
+    #define tgb67risov                 398 /* Groenbewaking prioriteit fase 67                                                         */
+    #define tblk67risov                399 /* Blokkeertijd na prioriteitsingreep fase 67                                               */
+    #define tprioin67risvrw            400 /* Anti jutter tijd inmelden 67 Vrachtwagen                                                 */
+    #define tpriouit67risvrw           401 /* Anti jutter tijd uitmelden 67                                                            */
+    #define tbtovg67risvrw             402 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
+    #define trt67risvrw                403 /* Actuele rijtijd prio fase 67                                                             */
+    #define tgb67risvrw                404 /* Groenbewaking prioriteit fase 67                                                         */
+    #define tblk67risvrw               405 /* Blokkeertijd na prioriteitsingreep fase 67                                               */
+    #define tbtovg67risalg             406 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
+    #define trt67risalg                407 /* Actuele rijtijd prio fase 67                                                             */
+    #define tgb67risalg                408 /* Groenbewaking prioriteit fase 67                                                         */
+    #define tblk67risalg               409 /* Blokkeertijd na prioriteitsingreep fase 67                                               */
+    #define tprioin68karbuskar         410 /* Anti jutter tijd inmelden 68 Bus                                                         */
+    #define tpriouit68karbuskar        411 /* Anti jutter tijd uitmelden 68                                                            */
+    #define tprioin68karbus            412 /* Anti jutter tijd inmelden 68 Bus                                                         */
+    #define tpriouit68karbus           413 /* Anti jutter tijd uitmelden 68                                                            */
+    #define tbtovg68karbus             414 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
+    #define trt68karbus                415 /* Actuele rijtijd prio fase 68                                                             */
+    #define tgb68karbus                416 /* Groenbewaking prioriteit fase 68                                                         */
+    #define tblk68karbus               417 /* Blokkeertijd na prioriteitsingreep fase 68                                               */
+    #define tprioin68risov             418 /* Anti jutter tijd inmelden 68 Bus                                                         */
+    #define tpriouit68risov            419 /* Anti jutter tijd uitmelden 68                                                            */
+    #define tbtovg68risov              420 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
+    #define trt68risov                 421 /* Actuele rijtijd prio fase 68                                                             */
+    #define tgb68risov                 422 /* Groenbewaking prioriteit fase 68                                                         */
+    #define tblk68risov                423 /* Blokkeertijd na prioriteitsingreep fase 68                                               */
+    #define tprioin68risvrw            424 /* Anti jutter tijd inmelden 68 Vrachtwagen                                                 */
+    #define tpriouit68risvrw           425 /* Anti jutter tijd uitmelden 68                                                            */
+    #define tbtovg68risvrw             426 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
+    #define trt68risvrw                427 /* Actuele rijtijd prio fase 68                                                             */
+    #define tgb68risvrw                428 /* Groenbewaking prioriteit fase 68                                                         */
+    #define tblk68risvrw               429 /* Blokkeertijd na prioriteitsingreep fase 68                                               */
+    #define tbtovg68risalg             430 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
+    #define trt68risalg                431 /* Actuele rijtijd prio fase 68                                                             */
+    #define tgb68risalg                432 /* Groenbewaking prioriteit fase 68                                                         */
+    #define tblk68risalg               433 /* Blokkeertijd na prioriteitsingreep fase 68                                               */
+    #define tgbhd02                    434 /* Groenbewaking HD fase 02                                                                 */
+    #define trthd02                    435 /* Actuele rijtijd HD fase 02                                                               */
+    #define tbtovg02hd                 436 /* Timer bezettijd prioriteit gehinderde rijtijd fase 02                                    */
+    #define thdin02kar                 437 /* Anti jutter tijd inmelden HD 02 KAR                                                      */
+    #define thduit02kar                438 /* Anti jutter tijd uitmelden HD 02                                                         */
+    #define tgbhd03                    439 /* Groenbewaking HD fase 03                                                                 */
+    #define trthd03                    440 /* Actuele rijtijd HD fase 03                                                               */
+    #define tbtovg03hd                 441 /* Timer bezettijd prioriteit gehinderde rijtijd fase 03                                    */
+    #define thdin03kar                 442 /* Anti jutter tijd inmelden HD 03 KAR                                                      */
+    #define thduit03kar                443 /* Anti jutter tijd uitmelden HD 03                                                         */
+    #define tgbhd05                    444 /* Groenbewaking HD fase 05                                                                 */
+    #define trthd05                    445 /* Actuele rijtijd HD fase 05                                                               */
+    #define tbtovg05hd                 446 /* Timer bezettijd prioriteit gehinderde rijtijd fase 05                                    */
+    #define thdin05kar                 447 /* Anti jutter tijd inmelden HD 05 KAR                                                      */
+    #define thduit05kar                448 /* Anti jutter tijd uitmelden HD 05                                                         */
+    #define tgbhd08                    449 /* Groenbewaking HD fase 08                                                                 */
+    #define trthd08                    450 /* Actuele rijtijd HD fase 08                                                               */
+    #define tbtovg08hd                 451 /* Timer bezettijd prioriteit gehinderde rijtijd fase 08                                    */
+    #define thdin08kar                 452 /* Anti jutter tijd inmelden HD 08 KAR                                                      */
+    #define thduit08kar                453 /* Anti jutter tijd uitmelden HD 08                                                         */
+    #define tgbhd09                    454 /* Groenbewaking HD fase 09                                                                 */
+    #define trthd09                    455 /* Actuele rijtijd HD fase 09                                                               */
+    #define tbtovg09hd                 456 /* Timer bezettijd prioriteit gehinderde rijtijd fase 09                                    */
+    #define thdin09kar                 457 /* Anti jutter tijd inmelden HD 09 KAR                                                      */
+    #define thduit09kar                458 /* Anti jutter tijd uitmelden HD 09                                                         */
+    #define tgbhd11                    459 /* Groenbewaking HD fase 11                                                                 */
+    #define trthd11                    460 /* Actuele rijtijd HD fase 11                                                               */
+    #define tbtovg11hd                 461 /* Timer bezettijd prioriteit gehinderde rijtijd fase 11                                    */
+    #define thdin11kar                 462 /* Anti jutter tijd inmelden HD 11 KAR                                                      */
+    #define thduit11kar                463 /* Anti jutter tijd uitmelden HD 11                                                         */
+    #define tgbhd61                    464 /* Groenbewaking HD fase 61                                                                 */
+    #define trthd61                    465 /* Actuele rijtijd HD fase 61                                                               */
+    #define tbtovg61hd                 466 /* Timer bezettijd prioriteit gehinderde rijtijd fase 61                                    */
+    #define thdin61kar                 467 /* Anti jutter tijd inmelden HD 61 KAR                                                      */
+    #define thduit61kar                468 /* Anti jutter tijd uitmelden HD 61                                                         */
+    #define tgbhd62                    469 /* Groenbewaking HD fase 62                                                                 */
+    #define trthd62                    470 /* Actuele rijtijd HD fase 62                                                               */
+    #define tbtovg62hd                 471 /* Timer bezettijd prioriteit gehinderde rijtijd fase 62                                    */
+    #define thdin62kar                 472 /* Anti jutter tijd inmelden HD 62 KAR                                                      */
+    #define thduit62kar                473 /* Anti jutter tijd uitmelden HD 62                                                         */
+    #define tgbhd67                    474 /* Groenbewaking HD fase 67                                                                 */
+    #define trthd67                    475 /* Actuele rijtijd HD fase 67                                                               */
+    #define tbtovg67hd                 476 /* Timer bezettijd prioriteit gehinderde rijtijd fase 67                                    */
+    #define thdin67kar                 477 /* Anti jutter tijd inmelden HD 67 KAR                                                      */
+    #define thduit67kar                478 /* Anti jutter tijd uitmelden HD 67                                                         */
+    #define tgbhd68                    479 /* Groenbewaking HD fase 68                                                                 */
+    #define trthd68                    480 /* Actuele rijtijd HD fase 68                                                               */
+    #define tbtovg68hd                 481 /* Timer bezettijd prioriteit gehinderde rijtijd fase 68                                    */
+    #define thdin68kar                 482 /* Anti jutter tijd inmelden HD 68 KAR                                                      */
+    #define thduit68kar                483 /* Anti jutter tijd uitmelden HD 68                                                         */
+    #define tris02risov                484
+    #define tris02risvrw               485
+    #define tris02risalg               486
+    #define tris03risov                487
+    #define tris03risvrw               488
+    #define tris03risalg               489
+    #define tris05risov                490
+    #define tris05risvrw               491
+    #define tris05risalg               492
+    #define tris08risov                493
+    #define tris08risvrw               494
+    #define tris08risalg               495
+    #define tris09risov                496
+    #define tris09risvrw               497
+    #define tris09risalg               498
+    #define tris11risov                499
+    #define tris11risvrw               500
+    #define tris11risalg               501
+    #define tris61risov                502
+    #define tris61risvrw               503
+    #define tris61risalg               504
+    #define tris62risov                505
+    #define tris62risvrw               506
+    #define tris62risalg               507
+    #define tris67risov                508
+    #define tris67risvrw               509
+    #define tris67risalg               510
+    #define tris68risov                511
+    #define tris68risvrw               512
+    #define tris68risalg               513
+    #define tpelmeetKOP02              514 /* Meetperiode peloton koppeling KOP02 fase KOP02                                           */
+    #define tpelmaxhiaatKOP02          515 /* Maximaal hiaat tbv meting peloton koppeling KOP02 fase 02                                */
+    #define tpelrwKOP02                516 /* Tijdsduur toepassen RW na meting peloton bij KOP02 voor fase 02                          */
+    #define tpelrwmaxKOP02             517 /* Maximale tijdsduur toepassen RW vanaf SG voor peloton koppeling bij KOP02 voor fase 02   */
+    #define tpelstartrwKOP02           518 /* Tijdsduur vanaf meting peloton tot toepassen RW voor KOP02 bij fase 02                   */
+    #define tpelaKOP02                 519 /* Tijdsduur tot aanvraag na meting peloton voor KOP02 bij fase 02                          */
+    #define trgad24_3                  520 /* Richtinggevoelige aanvraag rijtijd fase 24 van 24_3 naar 24_2                            */
+    #define trgavd24_3                 521 /* Timer reset richtinggevoelige aanvraag fase 24 van 24_3 naar 24_2                        */
+    #define trgrd24_3_d24_2            522 /* Richtinggevoelig verlengen rijtijd fase 24 van 24_3 naar 24_2                            */
+    #define trgvd24_3_d24_2            523 /* Richtinggevoelig verlengen hiaattijd fase 24 van 24_3 naar 24_2                          */
+    #define tfd02_1a                   524 /* File meting RoBuGrover fase 02 detector 02_1a                                            */
+    #define tfd02_1b                   525 /* File meting RoBuGrover fase 02 detector 02_1b                                            */
+    #define thd02_2a                   526 /* RoBuGrover hiaat meting fase 02 detector 02_2a                                           */
+    #define thd02_2b                   527 /* RoBuGrover hiaat meting fase 02 detector 02_2b                                           */
+    #define thd02_3a                   528 /* RoBuGrover hiaat meting fase 02 detector 02_3a                                           */
+    #define thd02_3b                   529 /* RoBuGrover hiaat meting fase 02 detector 02_3b                                           */
+    #define tfd03_1                    530 /* File meting RoBuGrover fase 03 detector 03_1                                             */
+    #define thd03_2                    531 /* RoBuGrover hiaat meting fase 03 detector 03_2                                            */
+    #define tfd05_1                    532 /* File meting RoBuGrover fase 05 detector 05_1                                             */
+    #define thd05_2                    533 /* RoBuGrover hiaat meting fase 05 detector 05_2                                            */
+    #define tfd08_1a                   534 /* File meting RoBuGrover fase 08 detector 08_1a                                            */
+    #define tfd08_1b                   535 /* File meting RoBuGrover fase 08 detector 08_1b                                            */
+    #define thd08_2a                   536 /* RoBuGrover hiaat meting fase 08 detector 08_2a                                           */
+    #define thd08_2b                   537 /* RoBuGrover hiaat meting fase 08 detector 08_2b                                           */
+    #define thd08_3a                   538 /* RoBuGrover hiaat meting fase 08 detector 08_3a                                           */
+    #define thd08_3b                   539 /* RoBuGrover hiaat meting fase 08 detector 08_3b                                           */
+    #define tfd11_1                    540 /* File meting RoBuGrover fase 11 detector 11_1                                             */
+    #define thd11_2                    541 /* RoBuGrover hiaat meting fase 11 detector 11_2                                            */
+    #define thd11_3                    542 /* RoBuGrover hiaat meting fase 11 detector 11_3                                            */
+    #define tfd22_1                    543 /* File meting RoBuGrover fase 22 detector 22_1                                             */
+    #define thd22_1                    544 /* RoBuGrover hiaat meting fase 22 detector 22_1                                            */
+    #define tfd28_1                    545 /* File meting RoBuGrover fase 28 detector 28_1                                             */
+    #define thd28_1                    546 /* RoBuGrover hiaat meting fase 28 detector 28_1                                            */
+    #define tschoolingreepmaxg31       547 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 31                        */
+    #define tdbsidk31a                 548 /* Bezettijd detector k31a t.b.v. schoolingreep                                             */
+    #define tdbsidk31b                 549 /* Bezettijd detector k31b t.b.v. schoolingreep                                             */
+    #define tschoolingreepmaxg32       550 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 32                        */
+    #define tdbsidk32a                 551 /* Bezettijd detector k32a t.b.v. schoolingreep                                             */
+    #define tdbsidk32b                 552 /* Bezettijd detector k32b t.b.v. schoolingreep                                             */
+    #define tschoolingreepmaxg33       553 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 33                        */
+    #define tdbsidk33a                 554 /* Bezettijd detector k33a t.b.v. schoolingreep                                             */
+    #define tdbsidk33b                 555 /* Bezettijd detector k33b t.b.v. schoolingreep                                             */
+    #define tschoolingreepmaxg34       556 /* Maximale duur groen vanaf startgroen bij schoolingreep op fase 34                        */
+    #define tdbsidk34a                 557 /* Bezettijd detector k34a t.b.v. schoolingreep                                             */
+    #define tdbsidk34b                 558 /* Bezettijd detector k34b t.b.v. schoolingreep                                             */
+    #define tsiexgr31                  559 /* Meten duur extra groen bij senioreningreep op fase 31                                    */
+    #define tdbsiexgrdk31a             560 /* Bezettijd detector k31a t.b.v. Senioreningreep                                           */
+    #define tdbsiexgrdk31b             561 /* Bezettijd detector k31b t.b.v. Senioreningreep                                           */
+    #define tsiexgr32                  562 /* Meten duur extra groen bij senioreningreep op fase 32                                    */
+    #define tdbsiexgrdk32a             563 /* Bezettijd detector k32a t.b.v. Senioreningreep                                           */
+    #define tdbsiexgrdk32b             564 /* Bezettijd detector k32b t.b.v. Senioreningreep                                           */
+    #define tsiexgr33                  565 /* Meten duur extra groen bij senioreningreep op fase 33                                    */
+    #define tdbsiexgrdk33a             566 /* Bezettijd detector k33a t.b.v. Senioreningreep                                           */
+    #define tdbsiexgrdk33b             567 /* Bezettijd detector k33b t.b.v. Senioreningreep                                           */
+    #define tsiexgr34                  568 /* Meten duur extra groen bij senioreningreep op fase 34                                    */
+    #define tdbsiexgrdk34a             569 /* Bezettijd detector k34a t.b.v. Senioreningreep                                           */
+    #define tdbsiexgrdk34b             570 /* Bezettijd detector k34b t.b.v. Senioreningreep                                           */
+    #define tvamax62                   571 /* Maximale tijd VA ontruimen na einde geel fase 62                                         */
+    #define tva6209_d62_1a             572 /* Tijdsduur VA ontruimen van 62 naar                                                       */
+    #define tva6211_d62_1a             573 /* Tijdsduur VA ontruimen van 62 naar                                                       */
+    #define tva6226_d62_1a             574 /* Tijdsduur VA ontruimen van 62 naar                                                       */
+    #define tuitgestca02               575 /* Uitgestelde cyclische aanvraag fase 02                                                   */
+    #define tuitgestca03               576 /* Uitgestelde cyclische aanvraag fase 03                                                   */
+    #define tuitgestca05               577 /* Uitgestelde cyclische aanvraag fase 05                                                   */
+    #define tuitgestca08               578 /* Uitgestelde cyclische aanvraag fase 08                                                   */
+    #define tuitgestca09               579 /* Uitgestelde cyclische aanvraag fase 09                                                   */
+    #define tuitgestca11               580 /* Uitgestelde cyclische aanvraag fase 11                                                   */
+    #define tuitgestca21               581 /* Uitgestelde cyclische aanvraag fase 21                                                   */
+    #define tuitgestca22               582 /* Uitgestelde cyclische aanvraag fase 22                                                   */
+    #define tuitgestca24               583 /* Uitgestelde cyclische aanvraag fase 24                                                   */
+    #define tuitgestca26               584 /* Uitgestelde cyclische aanvraag fase 26                                                   */
+    #define tuitgestca28               585 /* Uitgestelde cyclische aanvraag fase 28                                                   */
+    #define tuitgestca31               586 /* Uitgestelde cyclische aanvraag fase 31                                                   */
+    #define tuitgestca32               587 /* Uitgestelde cyclische aanvraag fase 32                                                   */
+    #define tuitgestca33               588 /* Uitgestelde cyclische aanvraag fase 33                                                   */
+    #define tuitgestca34               589 /* Uitgestelde cyclische aanvraag fase 34                                                   */
+    #define tuitgestca38               590 /* Uitgestelde cyclische aanvraag fase 38                                                   */
+    #define tuitgestca61               591 /* Uitgestelde cyclische aanvraag fase 61                                                   */
+    #define tuitgestca62               592 /* Uitgestelde cyclische aanvraag fase 62                                                   */
+    #define tuitgestca67               593 /* Uitgestelde cyclische aanvraag fase 67                                                   */
+    #define tuitgestca68               594 /* Uitgestelde cyclische aanvraag fase 68                                                   */
+    #define tuitgestca81               595 /* Uitgestelde cyclische aanvraag fase 81                                                   */
+    #define tuitgestca82               596 /* Uitgestelde cyclische aanvraag fase 82                                                   */
+    #define tuitgestca84               597 /* Uitgestelde cyclische aanvraag fase 84                                                   */
+    #define tvgmax02                   598 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
+    #define tvgvolg02_4a               599 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4a van fase 02 */
+    #define tvghiaat02_4a              600 /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4a van fase 02                    */
+    #define tvgvolg02_4b               601 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 02_4b van fase 02 */
+    #define tvghiaat02_4b              602 /* Hiaattijd bij actief zijn veiligheidsgroen detector 02_4b van fase 02                    */
+    #define tvgmax08                   603 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
+    #define tvgvolg08_4a               604 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4a van fase 08 */
+    #define tvghiaat08_4a              605 /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4a van fase 08                    */
+    #define tvgvolg08_4b               606 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 08_4b van fase 08 */
+    #define tvghiaat08_4b              607 /* Hiaattijd bij actief zijn veiligheidsgroen detector 08_4b van fase 08                    */
+    #define tvgmax11                   608 /* Maximale tijdsduur veiligheidsgroen voor fase                                            */
+    #define tvgvolg11_4                609 /* Volgtijd meting opeenvolgende voertuigen tbv veiligheidsgroen detector 11_4 van fase 11  */
+    #define tvghiaat11_4               610 /* Hiaattijd bij actief zijn veiligheidsgroen detector 11_4 van fase 11                     */
+    #define twtv24                     611 /* T.b.v. aansturing wachttijdvoorspeller fase 24                                           */
+    #define tvs2205                    612 /* Voorstarttijd fase 22 op fase 05                                                         */
+    #define tfo0522                    613 /* Fictieve ontruimingstijd/intergroentijd van 22 naar fase 05                              */
+    #define tvs3205                    614 /* Voorstarttijd fase 32 op fase 05                                                         */
+    #define tfo0532                    615 /* Fictieve ontruimingstijd/intergroentijd van 32 naar fase 05                              */
+    #define tlr2611                    616 /* Late release tijd fase 26 naar fase 11                                                   */
+    #define tfo2611                    617 /* Fictieve ontruimingstijd/intergroentijd van 26 naar fase 11                              */
+    #define txnl0262                   618 /* Tegenhouden fase 02 tbv naloop naar fase 62                                              */
+    #define txnl0868                   619 /* Tegenhouden fase 08 tbv naloop naar fase 68                                              */
+    #define txnl1168                   620 /* Tegenhouden fase 11 tbv naloop naar fase 68                                              */
+    #define txnl2221                   621 /* Tegenhouden fase 22 tbv naloop naar fase 21                                              */
+    #define txnl3132                   622 /* Tegenhouden fase 31 tbv naloop naar fase 32                                              */
+    #define txnl3231                   623 /* Tegenhouden fase 32 tbv naloop naar fase 31                                              */
+    #define txnl3334                   624 /* Tegenhouden fase 33 tbv naloop naar fase 34                                              */
+    #define txnl3433                   625 /* Tegenhouden fase 34 tbv naloop naar fase 33                                              */
+    #define txnl8281                   626 /* Tegenhouden fase 82 tbv naloop naar fase 81                                              */
+    #define TMMAX1                     627
 
 /* teller elementen */
 /* ---------------- */

@@ -21,6 +21,8 @@
 #define REG (CIF_WPS[CIF_PROG_STATUS] == CIF_STAT_REG)
 #define PRIO_ADDFILE
 
+#define INTERFUNC
+
 /* include files */
 /* ------------- */
     #include "123456sys.h"

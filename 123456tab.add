@@ -24,3 +24,10 @@
 /* dit is een placeholder */
 /* ---------------------- */
 
+SCH[schprioin22fietsfiets] = 0;
+SCH[schprioin28fietsfiets] = 0;
+
+SCH[schgs2232] = 0;
+SCH[schgs2434] = 0;
+SCH[schgs2484] = 0;
+SCH[schgs3384] = 0;
