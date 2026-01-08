@@ -2878,24 +2878,23 @@ void application(void)
         FileVerwerking();
     }
 #ifndef NO_PRIO
-    //@Menno: tijdens ISG moet de functie AFhandleingiPrio(); niet worden aangeroeopen. Peter heeft het zo opgelost maar mag wel wat mooier. Kan jij een voorzet doen. 
-    if (MM[mstarprog] == 0 && (IH[hmlact] || SCH[schovpriople]) && 0) AfhandelingPrio();
-    //if (MM[mstarprog] == 0 && (IH[hmlact] || SCH[schovpriople])) AfhandelingPrio();
-    else
-    {
-        int fc;
-        RTFB &= ~PRIO_RTFB_BIT;
-        for (fc = 0; fc < FCMAX; ++fc)
-        {
-            Z[fc] &= ~PRIO_Z_BIT;
-            FM[fc] &= ~PRIO_FM_BIT;
-            RW[fc] &= ~PRIO_RW_BIT;
-            RR[fc] &= ~PRIO_RR_BIT;
-            YV[fc] &= ~PRIO_YV_BIT;
-            YM[fc] &= ~PRIO_YM_BIT;
-            MK[fc] &= ~PRIO_MK_BIT;
-            PP[fc] &= ~PRIO_PP_BIT;
-        }
+//@@Menno: deze code mag helemaal weg tijdens ISG
+//    if (MM[mstarprog] == 0 && (IH[hmlact] || SCH[schovpriople])) AfhandelingPrio();
+//    else
+//    {
+//        int fc;
+//        RTFB &= ~PRIO_RTFB_BIT;
+//        for (fc = 0; fc < FCMAX; ++fc)
+//        {
+//            Z[fc] &= ~PRIO_Z_BIT;
+//            FM[fc] &= ~PRIO_FM_BIT;
+//            RW[fc] &= ~PRIO_RW_BIT;
+//            RR[fc] &= ~PRIO_RR_BIT;
+//            YV[fc] &= ~PRIO_YV_BIT;
+//            YM[fc] &= ~PRIO_YM_BIT;
+//            MK[fc] &= ~PRIO_MK_BIT;
+//            PP[fc] &= ~PRIO_PP_BIT;
+//        }
     }
 #endif /* NO_PRIO */
     if (SCH[schisgdebug]) IsgDebug();
