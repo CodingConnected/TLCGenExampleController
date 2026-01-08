@@ -18,7 +18,7 @@
  * Versie   Datum   Ontwerper   Commentaar
  *
  ************************************************************************************/
-/* EINDE GEGENEREERDE HEADER */
+ /* EINDE GEGENEREERDE HEADER */
 #ifndef AUTOMAAT
 FILE* fpt;
 #endif
@@ -33,33 +33,34 @@ void SpecialSignals_Add(void)
 void post_init_application()
 {
 #ifndef AUTOMAAT
-
-   int i;
-   fpt = fopen("MyFile.csv", "w");
-   if (fpt)
-   {
-       for (i = 0; i < FCMAX; ++i)
-       {
-           fprintf(fpt, "%4s,", FC_code[i]);
-       }
-       fprintf(fpt, " prio02,");
-       fprintf(fpt, " prio03,");
-       fprintf(fpt, " prio05,");
-       fprintf(fpt, " prio08,");
-       fprintf(fpt, " prio09,");
-       fprintf(fpt, " prio11,");
-       fprintf(fpt, " hd02,");
-       fprintf(fpt, " hd03,");
-       fprintf(fpt, " hd05,");
-       fprintf(fpt, " hd08,");
-       fprintf(fpt, " hd09,");
-       fprintf(fpt, " hd11,");
-       fprintf(fpt, " uswtv24,");
-       fprintf(fpt, "\n");
-   }
- //   stuffkey(F2KEY);
- //   stuffkey(CTRLALTF3KEY);
- //   stuffkey(F4KEY);
+    int i;
+    fpt = fopen("MyFile.csv", "w");
+    if (fpt)
+    {
+        for (i = 0; i < FCMAX; ++i)
+        {
+            fprintf(fpt, "%4s,", FC_code[i]);
+        }
+        fprintf(fpt, " prio02,");
+        fprintf(fpt, " prio03,");
+        fprintf(fpt, " prio05,");
+        fprintf(fpt, " prio08,");
+        fprintf(fpt, " prio09,");
+        fprintf(fpt, " prio11,");
+        fprintf(fpt, " hd02,");
+        fprintf(fpt, " hd03,");
+        fprintf(fpt, " hd05,");
+        fprintf(fpt, " hd08,");
+        fprintf(fpt, " hd09,");
+        fprintf(fpt, " hd11,");
+        fprintf(fpt, " fietsprio22,");
+        fprintf(fpt, " fietsprio28,");
+        fprintf(fpt, " uswtv24,");
+        fprintf(fpt, "\n");
+    }
+       stuffkey(F2KEY);
+       stuffkey(CTRLALTF3KEY);
+       stuffkey(F4KEY);
 
 #endif
 }
@@ -68,13 +69,7 @@ void PreApplication_Add(void)
 {
     mee_aanvraag(fc22, RA[fc32]);
     mee_aanvraag(fc24, RA[fc34]);
-    mee_aanvraag(fc24, RA[fc84]);
     mee_aanvraag(fc28, RA[fc38]);
-    mee_aanvraag(fc32, RA[fc22]);
-    mee_aanvraag(fc33, RA[fc84]);
-    mee_aanvraag(fc34, RA[fc24]);
-    mee_aanvraag(fc38, RA[fc28]);
-    mee_aanvraag(fc84, RA[fc24]);
     mee_aanvraag(fc84, RA[fc33]);
 }
 
@@ -97,12 +92,12 @@ boolv CorrectieRealisatieTijd_Add(void)
 {
     /* let op! deze functie wordt in een loop aangeroepen (max. 100 iteraties). */
     boolv aanpassing = FALSE;
-    
+
     /* Voeg hier zonodig eigen code toe, bijv:
      * aanpassing |= VTG2_Real_Los(fc32, fc31, T_max[tinl3231], T_max[tinl3132], hinl32, hinl31, hlos32, hlos31, (IH[hdrtk311] && IH[hdrtk321]));
      * aanpassing |= VTG2_Real_Los(fc31, fc32, T_max[tinl3132], T_max[tinl3231], hinl31, hinl32, hlos31, hlos32, (IH[hdrtk311] && IH[hdrtk321]));
      */
-    
+
     return aanpassing;
 }
 
@@ -174,7 +169,6 @@ void DetectieStoring_VerlengGroen_Add(void)
 void PostApplication_Add(void)
 {
 #ifndef AUTOMAAT
-   #ifdef INTERFUNC
     count x;
     count prio;
     if (TS)
@@ -204,30 +198,29 @@ void PostApplication_Add(void)
             fprintf(fpt, "%7d,", (H[hhd08]) * 50);
             fprintf(fpt, "%7d,", (H[hhd09]) * 50);
             fprintf(fpt, "%7d,", (H[hhd11]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio22fiets]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio28fiets]) * 50);
             fprintf(fpt, "%7d,", CIF_GUS[uswtv24] & ~BIT8);
             fprintf(fpt, "\n");
         }
         //fclose(fpt);
     }
-#endif
-#endif
 
+#endif
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
-        if (TS &&
-            (CIF_KLOK[CIF_JAAR] == 2099) &&
-            (CIF_KLOK[CIF_MAAND] == 1) &&
-            (CIF_KLOK[CIF_DAG] == 1) &&
-            (CIF_KLOK[CIF_UUR] == 1) &&
-            (CIF_KLOK[CIF_MINUUT] == 1) && 
-            (CIF_KLOK[CIF_SECONDE] == 1))
-        {
-            stuffkey(F3KEY);
-            stuffkey(F5KEY);
-            stuffkey(F7KEY);
-            stuffkey(F4KEY);
-            stuffkey(F10KEY);
-//          SCH[schisgdebug] = 1; 
-        }
+    if (TS &&
+        (CIF_KLOK[CIF_JAAR] == 2001) &&
+        (CIF_KLOK[CIF_MAAND] == 1) &&
+        (CIF_KLOK[CIF_DAG] == 1) &&
+        (CIF_KLOK[CIF_UUR] == 12) &&
+        (CIF_KLOK[CIF_MINUUT] == 42) &&
+        (CIF_KLOK[CIF_SECONDE] == 55))
+    {
+        //stuffkey(F2KEY);
+        stuffkey(F5KEY);
+        //stuffkey(F4KEY);
+        //stuffkey(F10KEY); 
+    }
 #endif
 }
 

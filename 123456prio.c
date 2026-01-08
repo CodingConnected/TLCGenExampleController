@@ -1555,7 +1555,7 @@ void PostAfhandelingPrio(void)
    --------------------------------------- */
 void PrioPARCorrecties(void)
 {
-    int fc;
+   int fc;
 }
 
 /* -------------------------------------------------------

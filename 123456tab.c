@@ -5115,8 +5115,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d62_2b].SumoNamen[0], 32, "%s", "62_2b");
     sprintf_s(SUMODetectors[d67_1].SumoNamen[0], 32, "%s", "67_1");
     sprintf_s(SUMODetectors[d67_2].SumoNamen[0], 32, "%s", "67_2");
-    sprintf_s(SUMODetectors[d68_1a].SumoNamen[0], 32, "%s", "68_1a");
-    sprintf_s(SUMODetectors[d68_1b].SumoNamen[0], 32, "%s", "68_1b");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -5164,6 +5162,8 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d68_9a].SumoNamen[0], 32, "%s", "681");
     sprintf_s(SUMODetectors[d68_2b].SumoNamen[0], 32, "%s", "68_2b");
     sprintf_s(SUMODetectors[d68_2a].SumoNamen[0], 32, "%s", "68_2a");
+    sprintf_s(SUMODetectors[d68_1b].SumoNamen[0], 32, "%s", "68_1b");
+    sprintf_s(SUMODetectors[d68_1a].SumoNamen[0], 32, "%s", "68_1a");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;

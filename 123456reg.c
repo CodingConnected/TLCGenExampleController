@@ -1211,8 +1211,6 @@ void Aanvragen(void)
 
 void BepaalRealisatieTijden(void)
 {
-    count i;
-    count j;
     boolv wijziging = TRUE;
 
     /* TIGR */
@@ -2191,6 +2189,11 @@ void Synchronisaties(void)
 void RealisatieAfhandeling(void)
 {
     int fc;
+    boolv wijziging;
+    wijziging = TRUE;
+    mulv PAR_old[FCMAX];
+    mulv PAR_los_old[FCMAX] = {0};
+
 
     /* versnelde primaire realisaties */
     /* ------------------------------ */
@@ -2340,6 +2343,49 @@ void RealisatieAfhandeling(void)
     PAR[fc82] = max_par(fc82, PRML, ML) && SCH[schaltg82];
     PAR[fc84] = max_par(fc84, PRML, ML) && SCH[schaltg84];
 
+    do
+    {
+        for (fc = 0; fc < FCMAX; fc++)
+        {
+            PAR_old[fc] = PAR[fc];
+            PAR_los_old[fc] = PAR_los[fc];
+        }
+        wijziging = FALSE;
+        PAR[fc31] = PAR[fc31] && PAR[fc32];
+        PAR_los[fc31] = max_par_los(fc31) && SCH[schlos3132] && (!IH[hnlak31a] || SCH[schlosgeennla3132_2]) || RA[fc31] && PAR_los[fc31];
+        PAR[fc32] = PAR[fc32] && PAR[fc31];
+        PAR_los[fc31] = max_par_los(fc31) && SCH[schlos3132] && (!IH[hnlak32a] || SCH[schlosgeennla3231_2]) || RA[fc32] && PAR_los[fc32];
+        PAR[fc33] = PAR[fc33] && PAR[fc34];
+        PAR_los[fc33] = max_par_los(fc33) && SCH[schlos3334] && (!IH[hnlak33a] || SCH[schlosgeennla3334_2]) || RA[fc33] && PAR_los[fc33];
+        PAR[fc34] = PAR[fc34] && PAR[fc33];
+        PAR_los[fc34] = max_par_los(fc34) && SCH[schlos3433] && (!IH[hnlak34a] || SCH[schlosgeennla3433_2]) || RA[fc34] && PAR_los[fc34];
+        PAR[fc32] = PAR[fc32] && PAR[fc22];
+        PAR_los[fc32] = PAR_los[fc32] && PAR[fc22];
+        PAR[fc33] = PAR[fc33] && PAR[fc84];
+        PAR_los[fc32] = PAR_los[fc32] && PAR[fc84];
+        PAR[fc34] = PAR[fc34] && PAR[fc24];
+        PAR_los[fc34] = PAR_los[fc34] && PAR[fc22];
+        PAR[fc05] = PAR[fc05] && PAR[fc22];
+        PAR[fc11] = PAR[fc11] && PAR[fc26];
+        PAR[fc38] = PAR[fc38] && PAR[fc28];
+        for (fc = 0; fc < FCMAX && !wijziging; fc++)
+        {
+            if ((PAR_old[fc] != PAR[fc]) || (PAR_los_old[fc] != PAR_los[fc])) wijziging = TRUE;
+        }
+
+
+    } while (wijziging);
+
+    IH[hnleg0262] = TRUE;
+    IH[hnleg0868] = TRUE;
+    IH[hnleg1168] = TRUE;
+    IH[hnleg2221] = TRUE;
+    IH[hnlsg3132] = PR[fc31] || PAR[fc31];
+    IH[hnlsg3231] = PR[fc32] || PAR[fc32];
+    IH[hnlsg3334] = PR[fc33] || PAR[fc33];
+    IH[hnlsg3433] = PR[fc34] || PAR[fc34];
+    IH[hnleg8281] = TRUE;
+
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
     set_MRLW_nl(fc62, fc02, (boolv)(G[fc02] && !G[fc62] && A[fc62] && IH[hnleg0262]));
@@ -2361,6 +2407,10 @@ void RealisatieAfhandeling(void)
     set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
     set_MRLW(fc84, fc33, (boolv) (RA[fc33] && (PR[fc33] || AR[fc33] || BR[fc33] || (AA[fc33] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
+    for (fc = 0; fc < FCMAX; fc++)
+    {
+        PAR[fc] = PAR[fc] || PAR_los[fc];
+    }
 
 
     /* Niet alternatief komen tijdens file */
@@ -2828,7 +2878,9 @@ void application(void)
         FileVerwerking();
     }
 #ifndef NO_PRIO
-    if (MM[mstarprog] == 0 && (IH[hmlact] || SCH[schovpriople])) AfhandelingPrio();
+    //@Menno: tijdens ISG moet de functie AFhandleingiPrio(); niet worden aangeroeopen. Peter heeft het zo opgelost maar mag wel wat mooier. Kan jij een voorzet doen. 
+    if (MM[mstarprog] == 0 && (IH[hmlact] || SCH[schovpriople]) && 0) AfhandelingPrio();
+    //if (MM[mstarprog] == 0 && (IH[hmlact] || SCH[schovpriople])) AfhandelingPrio();
     else
     {
         int fc;
