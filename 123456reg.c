@@ -55,19 +55,6 @@
 #ifndef NO_PRIO
     #include "prio.h"       /* prio-afhandeling                  */
 #endif /* NO_PRIO */
-    #ifndef NO_RIS
-        #include "risvar.c" /* ccol ris controller */
-        #include "risappl.c" /* RIS applicatiefuncties */
-        #if (CCOL_V > 100)
-        #define RIS_SSM  /* Gebruik in/uitmelden via RIS SSM */
-        #endif
-        #if (CCOL_V > 100)
-        #include "extra_func_ris.c" /* RIS extra functies */
-        #endif
-        #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST)
-            #include "rissimvar.h" /* ccol ris simulatie functie */
-        #endif
-    #endif
     #include "prsvar.c"   /* parameters parser                 */
     #include "control.c"  /* controller interface              */
     #include "rtappl.h"   /* applicatie routines               */
@@ -99,12 +86,6 @@
     #include "starfunc.c" /* Functies t.b.v. star regelen */
     #include "starvar.c" /* Variabelen t.b.v. star regelen */
     #include "dynamischhiaat.c"
-    #ifndef NO_TIMETOX
-    #include "timingsvar.c" /* FCTiming functies */
-    #include "timingsfunc.c" /* FCTiming functies */
-    #include "timings_uc4.c" /* FCTiming functies */
-    #include "123456fctimings.c" /* FCTiming functies */
-    #endif /* NO_TIMETOX */
 #include "isgfunc_prio.h" /* voor prioriteitsingrepen */
 #include "isgfunc.c" /* Interstartgroen functies */
 #ifdef SUMO
@@ -133,17 +114,6 @@ mulv rr_twacht[FCMAX]; /* halteren wachttijd */
 mulv itvgmaxprm[aanttvgmaxprm]; /* fasecycli met max. verlenggroen parameter */
 mulv C_counter_old[CTMAX];
     extern mulv star_cyclustimer;
-
-#ifndef NO_RIS
-    /* Definitie ProductInformatie ITSinfo */
-    /* ----------------------------------- */
-    const struct Rif_ProductInformation RIF_ITSINFO_AP = {
-      "Gemeente Rotterdam",    /* manufacturerName   */
-      "TLCGen",                /* certifiedName      */
-      "12.4.0",                /* certifiedVersion   */
-      "12.4.0"                 /* version            */
-    };
-#endif /* NO_RIS */
 boolv init_tvg;
     #ifdef SUMO
     /* SUMO KOPPELING */
@@ -1045,7 +1015,10 @@ void Aanvragen(void)
     {
         mee_aanvraag_prm(fc84, fc34, prmtypema3484, (boolv)((H[hmadk34a])));
     }
-    mee_aanvraag_prm(fc28, fc38, prmtypema3828, (boolv)(TRUE));
+    if (SCH[schma3828])
+    {
+        mee_aanvraag_prm(fc28, fc38, prmtypema3828, (boolv)(TRUE));
+    }
     if (SCH[schma8281])
     {
         mee_aanvraag_prm(fc81, fc82, prmtypema8281, (boolv)(TRUE));
@@ -1219,164 +1192,16 @@ void Aanvragen(void)
     IH[hmadk34a] = G[fc34] && !SG[fc34] ? FALSE : IH[hmadk34a] || D[dk34a] && A[fc34];
     IH[hmadk34b] = G[fc34] && !SG[fc34] ? FALSE : IH[hmadk34b] || D[dk34b] && A[fc34];
 
-    #ifndef NO_RIS
-        /* RIS aanvragen */
-        if (ris_aanvraag(fc02, SYSTEM_ITF1, PRM[prmrislaneid02_1], RIS_MOTORVEHICLES, PRM[prmrisastart02mveh1], PRM[prmrisaend02mveh1], SCH[schrisgeencheckopsg])) A[fc02] |= BIT10;
-        if (ris_aanvraag(fc02, SYSTEM_ITF1, PRM[prmrislaneid02_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm002mveh1], PRM[prmrisaendsrm002mveh1], !SCH[schrisgeencheckopsg])) A[fc02] |= BIT13;
-        if (ris_aanvraag(fc02, SYSTEM_ITF1, PRM[prmrislaneid02_2], RIS_MOTORVEHICLES, PRM[prmrisastart02mveh2], PRM[prmrisaend02mveh2], SCH[schrisgeencheckopsg])) A[fc02] |= BIT10;
-        if (ris_aanvraag(fc02, SYSTEM_ITF1, PRM[prmrislaneid02_2], RIS_MOTORVEHICLES, PRM[prmrisastartsrm002mveh2], PRM[prmrisaendsrm002mveh2], !SCH[schrisgeencheckopsg])) A[fc02] |= BIT13;
-        if (ris_aanvraag(fc03, SYSTEM_ITF1, PRM[prmrislaneid03_1], RIS_MOTORVEHICLES, PRM[prmrisastart03mveh1], PRM[prmrisaend03mveh1], SCH[schrisgeencheckopsg])) A[fc03] |= BIT10;
-        if (ris_aanvraag(fc03, SYSTEM_ITF1, PRM[prmrislaneid03_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm003mveh1], PRM[prmrisaendsrm003mveh1], !SCH[schrisgeencheckopsg])) A[fc03] |= BIT13;
-        if (ris_aanvraag(fc05, SYSTEM_ITF1, PRM[prmrislaneid05_1], RIS_MOTORVEHICLES, PRM[prmrisastart05mveh1], PRM[prmrisaend05mveh1], SCH[schrisgeencheckopsg])) A[fc05] |= BIT10;
-        if (ris_aanvraag(fc05, SYSTEM_ITF1, PRM[prmrislaneid05_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm005mveh1], PRM[prmrisaendsrm005mveh1], !SCH[schrisgeencheckopsg])) A[fc05] |= BIT13;
-        if (ris_aanvraag(fc08, SYSTEM_ITF1, PRM[prmrislaneid08_1], RIS_MOTORVEHICLES, PRM[prmrisastart08mveh1], PRM[prmrisaend08mveh1], SCH[schrisgeencheckopsg])) A[fc08] |= BIT10;
-        if (ris_aanvraag(fc08, SYSTEM_ITF1, PRM[prmrislaneid08_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm008mveh1], PRM[prmrisaendsrm008mveh1], !SCH[schrisgeencheckopsg])) A[fc08] |= BIT13;
-        if (ris_aanvraag(fc08, SYSTEM_ITF1, PRM[prmrislaneid08_2], RIS_MOTORVEHICLES, PRM[prmrisastart08mveh2], PRM[prmrisaend08mveh2], SCH[schrisgeencheckopsg])) A[fc08] |= BIT10;
-        if (ris_aanvraag(fc08, SYSTEM_ITF1, PRM[prmrislaneid08_2], RIS_MOTORVEHICLES, PRM[prmrisastartsrm008mveh2], PRM[prmrisaendsrm008mveh2], !SCH[schrisgeencheckopsg])) A[fc08] |= BIT13;
-        if (ris_aanvraag(fc09, SYSTEM_ITF1, PRM[prmrislaneid09_1], RIS_MOTORVEHICLES, PRM[prmrisastart09mveh1], PRM[prmrisaend09mveh1], SCH[schrisgeencheckopsg])) A[fc09] |= BIT10;
-        if (ris_aanvraag(fc09, SYSTEM_ITF1, PRM[prmrislaneid09_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm009mveh1], PRM[prmrisaendsrm009mveh1], !SCH[schrisgeencheckopsg])) A[fc09] |= BIT13;
-        if (ris_aanvraag(fc11, SYSTEM_ITF1, PRM[prmrislaneid11_1], RIS_MOTORVEHICLES, PRM[prmrisastart11mveh1], PRM[prmrisaend11mveh1], SCH[schrisgeencheckopsg])) A[fc11] |= BIT10;
-        if (ris_aanvraag(fc11, SYSTEM_ITF1, PRM[prmrislaneid11_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm011mveh1], PRM[prmrisaendsrm011mveh1], !SCH[schrisgeencheckopsg])) A[fc11] |= BIT13;
-        if (ris_aanvraag_heading(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisastart21fts1], PRM[prmrisaend21fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading21_1], PRM[prmrislaneheadingmarge21_1])) A[fc21] |= BIT10;
-        if (ris_aanvraag(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisastartsrm021fts1], PRM[prmrisaendsrm021fts1], !SCH[schrisgeencheckopsg])) A[fc21] |= BIT13;
-        if (ris_aanvraag_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisastart22fts1], PRM[prmrisaend22fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_1], PRM[prmrislaneheadingmarge22_1])) A[fc22] |= BIT10;
-        if (ris_aanvraag(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisastartsrm022fts1], PRM[prmrisaendsrm022fts1], !SCH[schrisgeencheckopsg])) A[fc22] |= BIT13;
-        if (ris_aanvraag_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisastart22fts2], PRM[prmrisaend22fts2], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_2], PRM[prmrislaneheadingmarge22_2])) A[fc22] |= BIT10;
-        if (ris_aanvraag(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisastartsrm022fts2], PRM[prmrisaendsrm022fts2], !SCH[schrisgeencheckopsg])) A[fc22] |= BIT13;
-        if (ris_aanvraag_heading(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisastart24fts1], PRM[prmrisaend24fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading24_1], PRM[prmrislaneheadingmarge24_1])) A[fc24] |= BIT10;
-        if (ris_aanvraag(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisastartsrm024fts1], PRM[prmrisaendsrm024fts1], !SCH[schrisgeencheckopsg])) A[fc24] |= BIT13;
-        if (ris_aanvraag_heading(fc26, SYSTEM_ITF1, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisastart26fts1], PRM[prmrisaend26fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading26_1], PRM[prmrislaneheadingmarge26_1])) A[fc26] |= BIT10;
-        if (ris_aanvraag(fc26, SYSTEM_ITF1, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisastartsrm026fts1], PRM[prmrisaendsrm026fts1], !SCH[schrisgeencheckopsg])) A[fc26] |= BIT13;
-        if (ris_aanvraag_heading(fc28, SYSTEM_ITF1, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisastart28fts1], PRM[prmrisaend28fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading28_1], PRM[prmrislaneheadingmarge28_1])) A[fc28] |= BIT10;
-        if (ris_aanvraag(fc28, SYSTEM_ITF1, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisastartsrm028fts1], PRM[prmrisaendsrm028fts1], !SCH[schrisgeencheckopsg])) A[fc28] |= BIT13;
-        if (ris_aanvraag(fc31, SYSTEM_ITF1, PRM[prmrislaneid31_1], RIS_PEDESTRIAN, PRM[prmrisastart31vtg1], PRM[prmrisaend31vtg1], SCH[schrisgeencheckopsg])) A[fc31] |= BIT10;
-        if (ris_aanvraag(fc31, SYSTEM_ITF1, PRM[prmrislaneid31_1], RIS_PEDESTRIAN, PRM[prmrisastartsrm031vtg1], PRM[prmrisaendsrm031vtg1], !SCH[schrisgeencheckopsg])) A[fc31] |= BIT13;
-        if (ris_aanvraag(fc31, SYSTEM_ITF1, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisastart31vtg2], PRM[prmrisaend31vtg2], SCH[schrisgeencheckopsg])) A[fc31] |= BIT10;
-        if (ris_aanvraag(fc31, SYSTEM_ITF1, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisastartsrm031vtg2], PRM[prmrisaendsrm031vtg2], !SCH[schrisgeencheckopsg])) A[fc31] |= BIT13;
-        if (ris_aanvraag(fc32, SYSTEM_ITF1, PRM[prmrislaneid32_1], RIS_PEDESTRIAN, PRM[prmrisastart32vtg1], PRM[prmrisaend32vtg1], SCH[schrisgeencheckopsg])) A[fc32] |= BIT10;
-        if (ris_aanvraag(fc32, SYSTEM_ITF1, PRM[prmrislaneid32_1], RIS_PEDESTRIAN, PRM[prmrisastartsrm032vtg1], PRM[prmrisaendsrm032vtg1], !SCH[schrisgeencheckopsg])) A[fc32] |= BIT13;
-        if (ris_aanvraag(fc32, SYSTEM_ITF1, PRM[prmrislaneid32_2], RIS_PEDESTRIAN, PRM[prmrisastart32vtg2], PRM[prmrisaend32vtg2], SCH[schrisgeencheckopsg])) A[fc32] |= BIT10;
-        if (ris_aanvraag(fc32, SYSTEM_ITF1, PRM[prmrislaneid32_2], RIS_PEDESTRIAN, PRM[prmrisastartsrm032vtg2], PRM[prmrisaendsrm032vtg2], !SCH[schrisgeencheckopsg])) A[fc32] |= BIT13;
-        if (ris_aanvraag(fc33, SYSTEM_ITF1, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisastart33vtg1], PRM[prmrisaend33vtg1], SCH[schrisgeencheckopsg])) A[fc33] |= BIT10;
-        if (ris_aanvraag(fc33, SYSTEM_ITF1, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisastartsrm033vtg1], PRM[prmrisaendsrm033vtg1], !SCH[schrisgeencheckopsg])) A[fc33] |= BIT13;
-        if (ris_aanvraag(fc33, SYSTEM_ITF1, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisastart33vtg2], PRM[prmrisaend33vtg2], SCH[schrisgeencheckopsg])) A[fc33] |= BIT10;
-        if (ris_aanvraag(fc33, SYSTEM_ITF1, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisastartsrm033vtg2], PRM[prmrisaendsrm033vtg2], !SCH[schrisgeencheckopsg])) A[fc33] |= BIT13;
-        if (ris_aanvraag(fc34, SYSTEM_ITF1, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisastart34vtg1], PRM[prmrisaend34vtg1], SCH[schrisgeencheckopsg])) A[fc34] |= BIT10;
-        if (ris_aanvraag(fc34, SYSTEM_ITF1, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisastartsrm034vtg1], PRM[prmrisaendsrm034vtg1], !SCH[schrisgeencheckopsg])) A[fc34] |= BIT13;
-        if (ris_aanvraag(fc34, SYSTEM_ITF1, PRM[prmrislaneid34_2], RIS_PEDESTRIAN, PRM[prmrisastart34vtg2], PRM[prmrisaend34vtg2], SCH[schrisgeencheckopsg])) A[fc34] |= BIT10;
-        if (ris_aanvraag(fc34, SYSTEM_ITF1, PRM[prmrislaneid34_2], RIS_PEDESTRIAN, PRM[prmrisastartsrm034vtg2], PRM[prmrisaendsrm034vtg2], !SCH[schrisgeencheckopsg])) A[fc34] |= BIT13;
-        if (ris_aanvraag(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisastart38vtg1], PRM[prmrisaend38vtg1], SCH[schrisgeencheckopsg])) A[fc38] |= BIT10;
-        if (ris_aanvraag(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisastartsrm038vtg1], PRM[prmrisaendsrm038vtg1], !SCH[schrisgeencheckopsg])) A[fc38] |= BIT13;
-        if (ris_aanvraag(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisastart38vtg2], PRM[prmrisaend38vtg2], SCH[schrisgeencheckopsg])) A[fc38] |= BIT10;
-        if (ris_aanvraag(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisastartsrm038vtg2], PRM[prmrisaendsrm038vtg2], !SCH[schrisgeencheckopsg])) A[fc38] |= BIT13;
-        if (ris_aanvraag(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisastart61mveh1], PRM[prmrisaend61mveh1], SCH[schrisgeencheckopsg])) A[fc61] |= BIT10;
-        if (ris_aanvraag(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm061mveh1], PRM[prmrisaendsrm061mveh1], !SCH[schrisgeencheckopsg])) A[fc61] |= BIT13;
-        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh1], PRM[prmrisaend62mveh1], SCH[schrisgeencheckopsg])) A[fc62] |= BIT10;
-        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm062mveh1], PRM[prmrisaendsrm062mveh1], !SCH[schrisgeencheckopsg])) A[fc62] |= BIT13;
-        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisastart62mveh2], PRM[prmrisaend62mveh2], SCH[schrisgeencheckopsg])) A[fc62] |= BIT10;
-        if (ris_aanvraag(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisastartsrm062mveh2], PRM[prmrisaendsrm062mveh2], !SCH[schrisgeencheckopsg])) A[fc62] |= BIT13;
-        if (ris_aanvraag(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisastart67mveh1], PRM[prmrisaend67mveh1], SCH[schrisgeencheckopsg])) A[fc67] |= BIT10;
-        if (ris_aanvraag(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm067mveh1], PRM[prmrisaendsrm067mveh1], !SCH[schrisgeencheckopsg])) A[fc67] |= BIT13;
-        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh1], PRM[prmrisaend68mveh1], SCH[schrisgeencheckopsg])) A[fc68] |= BIT10;
-        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisastartsrm068mveh1], PRM[prmrisaendsrm068mveh1], !SCH[schrisgeencheckopsg])) A[fc68] |= BIT13;
-        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisastart68mveh2], PRM[prmrisaend68mveh2], SCH[schrisgeencheckopsg])) A[fc68] |= BIT10;
-        if (ris_aanvraag(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisastartsrm068mveh2], PRM[prmrisaendsrm068mveh2], !SCH[schrisgeencheckopsg])) A[fc68] |= BIT13;
-        if (ris_aanvraag(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisastart81fts1], PRM[prmrisaend81fts1], SCH[schrisgeencheckopsg])) A[fc81] |= BIT10;
-        if (ris_aanvraag(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisastartsrm081fts1], PRM[prmrisaendsrm081fts1], !SCH[schrisgeencheckopsg])) A[fc81] |= BIT13;
-        if (ris_aanvraag(fc82, SYSTEM_ITF1, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisastart82fts1], PRM[prmrisaend82fts1], SCH[schrisgeencheckopsg])) A[fc82] |= BIT10;
-        if (ris_aanvraag(fc82, SYSTEM_ITF1, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisastartsrm082fts1], PRM[prmrisaendsrm082fts1], !SCH[schrisgeencheckopsg])) A[fc82] |= BIT13;
-        if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastart84fts1], PRM[prmrisaend84fts1], SCH[schrisgeencheckopsg])) A[fc84] |= BIT10;
-        if (ris_aanvraag(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisastartsrm084fts1], PRM[prmrisaendsrm084fts1], !SCH[schrisgeencheckopsg])) A[fc84] |= BIT13;
-    /* aanvragen RIS schakelbaar, 1 schakelaar voor het schakelen van alle aanvragen */
-    if (!SCH[schrisaanvraag])
-    {
-        for (fc = 0; fc < FCMAX; ++fc)
-        {
-            A[fc] &= ~(BIT10|BIT13);
-        }
-    }
-
-        #if defined RIS_SSM && !defined NO_PRIO
-            /* Ris PRIO: verstuur SSM */
-            ris_srm_put_signalgroup(fc02, PRM[prmrisapproachid02], PRM[prmrisrole02risov], PRM[prmrissubrole02risov], NG, NG);
-            ris_srm_put_signalgroup(fc02, PRM[prmrisapproachid02], PRM[prmrisrole02risvrw], PRM[prmrissubrole02risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc02, PRM[prmrisapproachid02], PRM[prmrisrole02risalg], PRM[prmrissubrole02risalg], NG, NG);
-            ris_srm_put_signalgroup(fc03, PRM[prmrisapproachid03], PRM[prmrisrole03risov], PRM[prmrissubrole03risov], NG, NG);
-            ris_srm_put_signalgroup(fc03, PRM[prmrisapproachid03], PRM[prmrisrole03risvrw], PRM[prmrissubrole03risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc03, PRM[prmrisapproachid03], PRM[prmrisrole03risalg], PRM[prmrissubrole03risalg], NG, NG);
-            ris_srm_put_signalgroup(fc05, PRM[prmrisapproachid05], PRM[prmrisrole05risov], PRM[prmrissubrole05risov], NG, NG);
-            ris_srm_put_signalgroup(fc05, PRM[prmrisapproachid05], PRM[prmrisrole05risvrw], PRM[prmrissubrole05risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc05, PRM[prmrisapproachid05], PRM[prmrisrole05risalg], PRM[prmrissubrole05risalg], NG, NG);
-            ris_srm_put_signalgroup(fc08, PRM[prmrisapproachid08], PRM[prmrisrole08risov], PRM[prmrissubrole08risov], NG, NG);
-            ris_srm_put_signalgroup(fc08, PRM[prmrisapproachid08], PRM[prmrisrole08risvrw], PRM[prmrissubrole08risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc08, PRM[prmrisapproachid08], PRM[prmrisrole08risalg], PRM[prmrissubrole08risalg], NG, NG);
-            ris_srm_put_signalgroup(fc09, PRM[prmrisapproachid09], PRM[prmrisrole09risov], PRM[prmrissubrole09risov], NG, NG);
-            ris_srm_put_signalgroup(fc09, PRM[prmrisapproachid09], PRM[prmrisrole09risvrw], PRM[prmrissubrole09risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc09, PRM[prmrisapproachid09], PRM[prmrisrole09risalg], PRM[prmrissubrole09risalg], NG, NG);
-            ris_srm_put_signalgroup(fc11, PRM[prmrisapproachid11], PRM[prmrisrole11risov], PRM[prmrissubrole11risov], NG, NG);
-            ris_srm_put_signalgroup(fc11, PRM[prmrisapproachid11], PRM[prmrisrole11risvrw], PRM[prmrissubrole11risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc11, PRM[prmrisapproachid11], PRM[prmrisrole11risalg], PRM[prmrissubrole11risalg], NG, NG);
-            ris_srm_put_signalgroup(fc61, PRM[prmrisapproachid61], PRM[prmrisrole61risov], PRM[prmrissubrole61risov], NG, NG);
-            ris_srm_put_signalgroup(fc61, PRM[prmrisapproachid61], PRM[prmrisrole61risvrw], PRM[prmrissubrole61risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc61, PRM[prmrisapproachid61], PRM[prmrisrole61risalg], PRM[prmrissubrole61risalg], NG, NG);
-            ris_srm_put_signalgroup(fc62, PRM[prmrisapproachid62], PRM[prmrisrole62risov], PRM[prmrissubrole62risov], NG, NG);
-            ris_srm_put_signalgroup(fc62, PRM[prmrisapproachid62], PRM[prmrisrole62risvrw], PRM[prmrissubrole62risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc62, PRM[prmrisapproachid62], PRM[prmrisrole62risalg], PRM[prmrissubrole62risalg], NG, NG);
-            ris_srm_put_signalgroup(fc67, PRM[prmrisapproachid67], PRM[prmrisrole67risov], PRM[prmrissubrole67risov], NG, NG);
-            ris_srm_put_signalgroup(fc67, PRM[prmrisapproachid67], PRM[prmrisrole67risvrw], PRM[prmrissubrole67risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc67, PRM[prmrisapproachid67], PRM[prmrisrole67risalg], PRM[prmrissubrole67risalg], NG, NG);
-            ris_srm_put_signalgroup(fc68, PRM[prmrisapproachid68], PRM[prmrisrole68risov], PRM[prmrissubrole68risov], NG, NG);
-            ris_srm_put_signalgroup(fc68, PRM[prmrisapproachid68], PRM[prmrisrole68risvrw], PRM[prmrissubrole68risvrw], NG, NG);
-            ris_srm_put_signalgroup(fc68, PRM[prmrisapproachid68], PRM[prmrisrole68risalg], PRM[prmrissubrole68risalg], NG, NG);
-            ris_verstuur_ssm(prioFC02risov, PRM[prmrisgrenspriotype02risov]);
-            ris_verstuur_ssm(prioFC02risvrw, PRM[prmrisgrenspriotype02risvrw]);
-            ris_verstuur_ssm(prioFC02risalg, PRM[prmrisgrenspriotype02risalg]);
-            ris_verstuur_ssm(prioFC03risov, PRM[prmrisgrenspriotype03risov]);
-            ris_verstuur_ssm(prioFC03risvrw, PRM[prmrisgrenspriotype03risvrw]);
-            ris_verstuur_ssm(prioFC03risalg, PRM[prmrisgrenspriotype03risalg]);
-            ris_verstuur_ssm(prioFC05risov, PRM[prmrisgrenspriotype05risov]);
-            ris_verstuur_ssm(prioFC05risvrw, PRM[prmrisgrenspriotype05risvrw]);
-            ris_verstuur_ssm(prioFC05risalg, PRM[prmrisgrenspriotype05risalg]);
-            ris_verstuur_ssm(prioFC08risov, PRM[prmrisgrenspriotype08risov]);
-            ris_verstuur_ssm(prioFC08risvrw, PRM[prmrisgrenspriotype08risvrw]);
-            ris_verstuur_ssm(prioFC08risalg, PRM[prmrisgrenspriotype08risalg]);
-            ris_verstuur_ssm(prioFC09risov, PRM[prmrisgrenspriotype09risov]);
-            ris_verstuur_ssm(prioFC09risvrw, PRM[prmrisgrenspriotype09risvrw]);
-            ris_verstuur_ssm(prioFC09risalg, PRM[prmrisgrenspriotype09risalg]);
-            ris_verstuur_ssm(prioFC11risov, PRM[prmrisgrenspriotype11risov]);
-            ris_verstuur_ssm(prioFC11risvrw, PRM[prmrisgrenspriotype11risvrw]);
-            ris_verstuur_ssm(prioFC11risalg, PRM[prmrisgrenspriotype11risalg]);
-            ris_verstuur_ssm(prioFC61risov, PRM[prmrisgrenspriotype61risov]);
-            ris_verstuur_ssm(prioFC61risvrw, PRM[prmrisgrenspriotype61risvrw]);
-            ris_verstuur_ssm(prioFC61risalg, PRM[prmrisgrenspriotype61risalg]);
-            ris_verstuur_ssm(prioFC62risov, PRM[prmrisgrenspriotype62risov]);
-            ris_verstuur_ssm(prioFC62risvrw, PRM[prmrisgrenspriotype62risvrw]);
-            ris_verstuur_ssm(prioFC62risalg, PRM[prmrisgrenspriotype62risalg]);
-            ris_verstuur_ssm(prioFC67risov, PRM[prmrisgrenspriotype67risov]);
-            ris_verstuur_ssm(prioFC67risvrw, PRM[prmrisgrenspriotype67risvrw]);
-            ris_verstuur_ssm(prioFC67risalg, PRM[prmrisgrenspriotype67risalg]);
-            ris_verstuur_ssm(prioFC68risov, PRM[prmrisgrenspriotype68risov]);
-            ris_verstuur_ssm(prioFC68risvrw, PRM[prmrisgrenspriotype68risvrw]);
-            ris_verstuur_ssm(prioFC68risalg, PRM[prmrisgrenspriotype68risalg]);
-            ris_verstuur_ssm(hdFC02, PRM[prmrisgrenspriotype02hd]);
-            ris_verstuur_ssm(hdFC03, PRM[prmrisgrenspriotype03hd]);
-            ris_verstuur_ssm(hdFC05, PRM[prmrisgrenspriotype05hd]);
-            ris_verstuur_ssm(hdFC08, PRM[prmrisgrenspriotype08hd]);
-            ris_verstuur_ssm(hdFC09, PRM[prmrisgrenspriotype09hd]);
-            ris_verstuur_ssm(hdFC11, PRM[prmrisgrenspriotype11hd]);
-            ris_verstuur_ssm(hdFC61, PRM[prmrisgrenspriotype61hd]);
-            ris_verstuur_ssm(hdFC62, PRM[prmrisgrenspriotype62hd]);
-            ris_verstuur_ssm(hdFC67, PRM[prmrisgrenspriotype67hd]);
-            ris_verstuur_ssm(hdFC68, PRM[prmrisgrenspriotype68hd]);
-        #endif
-    #endif
-
     /* openbaar vervoer aanvragen */
     PrioAanvragen();
 
     /* ISG deelconflict aanvragen; tevens wordt de AA en BR opgezet @@ tijdelijk tot we code hebben dat de deelconflicten niet hard mee moeten komen @@ @@ aanvraag hoort hier wel maar de AA en BR op een andere plek plaatsen @@*/
     PrioMeerealisatieDeelconflictVoorstart(fc22, fc05, tvs2205);
+    PrioMeerealisatieDeelconflictVoorstart(fc22, fc32, tvs2232);
+    PrioMeerealisatieDeelconflictVoorstart(fc24, fc34, tvs2434);
+    PrioMeerealisatieDeelconflictVoorstart(fc28, fc38, tvs2838);
     PrioMeerealisatieDeelconflictVoorstart(fc32, fc05, tvs3205);
+    PrioMeerealisatieDeelconflictVoorstart(fc84, fc33, tvs8433);
     PrioMeerealisatieDeelconflictLateRelease(fc26, fc11, tlr2611);
 
     DetectieStoring_Aanvraag();
@@ -1423,7 +1248,11 @@ void BepaalRealisatieTijden(void)
 
     /* Pas realisatietijden aan a.g.v ontruimende deelconflicten */
     Realisatietijd_Ontruiming_Voorstart(fc05, fc22, tfo0522);
+    Realisatietijd_Ontruiming_Voorstart(fc32, fc22, tfo3222);
+    Realisatietijd_Ontruiming_Voorstart(fc34, fc24, tfo3424);
+    Realisatietijd_Ontruiming_Voorstart(fc38, fc28, tfo3828);
     Realisatietijd_Ontruiming_Voorstart(fc05, fc32, tfo0532);
+    Realisatietijd_Ontruiming_Voorstart(fc33, fc84, tfo3384);
     Realisatietijd_Ontruiming_LateRelease(fc11, fc26, tlr2611, tfo2611);
 
     /* Pas realisatietijden aan a.g.v. deelconflicten/voorstarts die nog groen moeten worden */
@@ -1432,13 +1261,12 @@ void BepaalRealisatieTijden(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-    if (SCH[schgs2232]) wijziging |= Realisatietijd_Gelijkstart_Correctie(fc32, fc22);
-    if (SCH[schgs2434]) wijziging |= Realisatietijd_Gelijkstart_Correctie(fc34, fc24);
-    if (SCH[schgs2484]) wijziging |= Realisatietijd_Gelijkstart_Correctie(fc84, fc24);
-    wijziging |= Realisatietijd_Gelijkstart_Correctie(fc38, fc28);
-    if (SCH[schgs3384]) wijziging |= Realisatietijd_Gelijkstart_Correctie(fc84, fc33);
     wijziging |= Realisatietijd_Voorstart_Correctie(fc22, fc05, tvs2205);
+    wijziging |= Realisatietijd_Voorstart_Correctie(fc22, fc32, tvs2232);
+    wijziging |= Realisatietijd_Voorstart_Correctie(fc24, fc34, tvs2434);
+    wijziging |= Realisatietijd_Voorstart_Correctie(fc28, fc38, tvs2838);
     wijziging |= Realisatietijd_Voorstart_Correctie(fc32, fc05, tvs3205);
+    wijziging |= Realisatietijd_Voorstart_Correctie(fc84, fc33, tvs8433);
     wijziging |= Realisatietijd_LateRelease_Correctie(fc26, fc11, tlr2611);
 
     /* Inlopen / inrijden nalopen */
@@ -1491,13 +1319,12 @@ void BepaalInterStartGroenTijden(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-    if (SCH[schgs2232])         wijziging |= InterStartGroenTijd_Gelijkstart_Correctie(fc32, fc22);
-    if (SCH[schgs2434])         wijziging |= InterStartGroenTijd_Gelijkstart_Correctie(fc34, fc24);
-    if (SCH[schgs2484])         wijziging |= InterStartGroenTijd_Gelijkstart_Correctie(fc84, fc24);
-            wijziging |= InterStartGroenTijd_Gelijkstart_Correctie(fc38, fc28);
-    if (SCH[schgs3384])         wijziging |= InterStartGroenTijd_Gelijkstart_Correctie(fc84, fc33);
         wijziging |= InterStartGroenTijd_Voorstart_Correctie(fc22, fc05, tvs2205);
+        wijziging |= InterStartGroenTijd_Voorstart_Correctie(fc22, fc32, tvs2232);
+        wijziging |= InterStartGroenTijd_Voorstart_Correctie(fc24, fc34, tvs2434);
+        wijziging |= InterStartGroenTijd_Voorstart_Correctie(fc28, fc38, tvs2838);
         wijziging |= InterStartGroenTijd_Voorstart_Correctie(fc32, fc05, tvs3205);
+        wijziging |= InterStartGroenTijd_Voorstart_Correctie(fc84, fc33, tvs8433);
         wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc26, fc11, tlr2611);
 
         /* Inlopen / inrijden */
@@ -1534,20 +1361,23 @@ void BepaalInterStartGroenTijden_PRIO(void)
     InterStartGroenTijd_NLSG_PRIO(fc34, fc33, NG, tnlsgd3433);
     InterStartGroenTijd_NLEG_PRIO(fc82, fc81, tnlfg8281, tnlfgd8281, tnleg8281, tnlegd8281, tvgnaloop8281);
     InterStartGroentijd_MeeverlengenDeelconflict_PRIO(fc05, fc22);
+    InterStartGroentijd_MeeverlengenDeelconflict_PRIO(fc32, fc22);
+    InterStartGroentijd_MeeverlengenDeelconflict_PRIO(fc34, fc24);
+    InterStartGroentijd_MeeverlengenDeelconflict_PRIO(fc38, fc28);
     InterStartGroentijd_MeeverlengenDeelconflict_PRIO(fc05, fc32);
+    InterStartGroentijd_MeeverlengenDeelconflict_PRIO(fc33, fc84);
     InterStartGroentijd_MeeverlengenDeelconflict_PRIO(fc11, fc26);
 
     do
     {
         wijziging = FALSE;
         /* Pas realisatietijden aan a.g.v. nalopen */
-        if (SCH[schgs2232]) wijziging |= TISG_Gelijkstart_PRIO_Correctie(fc22, fc32);
-        if (SCH[schgs2434]) wijziging |= TISG_Gelijkstart_PRIO_Correctie(fc24, fc34);
-        if (SCH[schgs2484]) wijziging |= TISG_Gelijkstart_PRIO_Correctie(fc24, fc84);
-        wijziging |= TISG_Gelijkstart_PRIO_Correctie(fc28, fc38);
-        if (SCH[schgs3384]) wijziging |= TISG_Gelijkstart_PRIO_Correctie(fc33, fc84);
         wijziging |= TISG_Voorstart_PRIO_Correctie(fc22, fc05, tvs2205);
+        wijziging |= TISG_Voorstart_PRIO_Correctie(fc22, fc32, tvs2232);
+        wijziging |= TISG_Voorstart_PRIO_Correctie(fc24, fc34, tvs2434);
+        wijziging |= TISG_Voorstart_PRIO_Correctie(fc28, fc38, tvs2838);
         wijziging |= TISG_Voorstart_PRIO_Correctie(fc32, fc05, tvs3205);
+        wijziging |= TISG_Voorstart_PRIO_Correctie(fc84, fc33, tvs8433);
         wijziging |= TISG_LateRelease_PRIO_Correctie(fc26, fc11, tlr2611);
         wijziging |= TISG_LateRelease_PRIO_Correctie(fc62, fc02, txnl0262);
         wijziging |= TISG_LateRelease_PRIO_Correctie(fc68, fc08, txnl0868);
@@ -2080,7 +1910,6 @@ void Meetkriterium(void)
 #if (defined TDHAMAX)
     int d;
 #endif
-    int fc;
 
     meetkriterium_prm_va_arg((count)fc02, (count)tkm02, 
                              (va_count)d02_1a, (va_mulv)PRM[prmmk02_1a],
@@ -2247,88 +2076,6 @@ void Meetkriterium(void)
     if (SCH[schschoolingreep34] && H[hschoolingreepdk34a] && T[tschoolingreepmaxg34]) RW[fc34] |= BIT8;
     if (SCH[schschoolingreep34] && H[hschoolingreepdk34b] && T[tschoolingreepmaxg34]) RW[fc34] |= BIT8;
 
-    #ifndef NO_RIS
-        for (fc = 0; fc < FCMAX; ++fc)
-        {
-            MK[fc] &= ~(BIT10|BIT13);
-        }
-        if (ris_verlengen(fc02, SYSTEM_ITF1, PRM[prmrislaneid02_1], RIS_MOTORVEHICLES, PRM[prmrisvstart02mveh1], PRM[prmrisvend02mveh1], SCH[schrisgeencheckopsg])) MK[fc02] |= BIT10;
-        if (ris_verlengen(fc02, SYSTEM_ITF1, PRM[prmrislaneid02_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm002mveh1], PRM[prmrisvendsrm002mveh1], !SCH[schrisgeencheckopsg])) MK[fc02] |= BIT13;
-        if (ris_verlengen(fc02, SYSTEM_ITF1, PRM[prmrislaneid02_2], RIS_MOTORVEHICLES, PRM[prmrisvstart02mveh2], PRM[prmrisvend02mveh2], SCH[schrisgeencheckopsg])) MK[fc02] |= BIT10;
-        if (ris_verlengen(fc02, SYSTEM_ITF1, PRM[prmrislaneid02_2], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm002mveh2], PRM[prmrisvendsrm002mveh2], !SCH[schrisgeencheckopsg])) MK[fc02] |= BIT13;
-        if (ris_verlengen(fc03, SYSTEM_ITF1, PRM[prmrislaneid03_1], RIS_MOTORVEHICLES, PRM[prmrisvstart03mveh1], PRM[prmrisvend03mveh1], SCH[schrisgeencheckopsg])) MK[fc03] |= BIT10;
-        if (ris_verlengen(fc03, SYSTEM_ITF1, PRM[prmrislaneid03_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm003mveh1], PRM[prmrisvendsrm003mveh1], !SCH[schrisgeencheckopsg])) MK[fc03] |= BIT13;
-        if (ris_verlengen(fc05, SYSTEM_ITF1, PRM[prmrislaneid05_1], RIS_MOTORVEHICLES, PRM[prmrisvstart05mveh1], PRM[prmrisvend05mveh1], SCH[schrisgeencheckopsg])) MK[fc05] |= BIT10;
-        if (ris_verlengen(fc05, SYSTEM_ITF1, PRM[prmrislaneid05_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm005mveh1], PRM[prmrisvendsrm005mveh1], !SCH[schrisgeencheckopsg])) MK[fc05] |= BIT13;
-        if (ris_verlengen(fc08, SYSTEM_ITF1, PRM[prmrislaneid08_1], RIS_MOTORVEHICLES, PRM[prmrisvstart08mveh1], PRM[prmrisvend08mveh1], SCH[schrisgeencheckopsg])) MK[fc08] |= BIT10;
-        if (ris_verlengen(fc08, SYSTEM_ITF1, PRM[prmrislaneid08_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm008mveh1], PRM[prmrisvendsrm008mveh1], !SCH[schrisgeencheckopsg])) MK[fc08] |= BIT13;
-        if (ris_verlengen(fc08, SYSTEM_ITF1, PRM[prmrislaneid08_2], RIS_MOTORVEHICLES, PRM[prmrisvstart08mveh2], PRM[prmrisvend08mveh2], SCH[schrisgeencheckopsg])) MK[fc08] |= BIT10;
-        if (ris_verlengen(fc08, SYSTEM_ITF1, PRM[prmrislaneid08_2], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm008mveh2], PRM[prmrisvendsrm008mveh2], !SCH[schrisgeencheckopsg])) MK[fc08] |= BIT13;
-        if (ris_verlengen(fc09, SYSTEM_ITF1, PRM[prmrislaneid09_1], RIS_MOTORVEHICLES, PRM[prmrisvstart09mveh1], PRM[prmrisvend09mveh1], SCH[schrisgeencheckopsg])) MK[fc09] |= BIT10;
-        if (ris_verlengen(fc09, SYSTEM_ITF1, PRM[prmrislaneid09_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm009mveh1], PRM[prmrisvendsrm009mveh1], !SCH[schrisgeencheckopsg])) MK[fc09] |= BIT13;
-        if (ris_verlengen(fc11, SYSTEM_ITF1, PRM[prmrislaneid11_1], RIS_MOTORVEHICLES, PRM[prmrisvstart11mveh1], PRM[prmrisvend11mveh1], SCH[schrisgeencheckopsg])) MK[fc11] |= BIT10;
-        if (ris_verlengen(fc11, SYSTEM_ITF1, PRM[prmrislaneid11_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm011mveh1], PRM[prmrisvendsrm011mveh1], !SCH[schrisgeencheckopsg])) MK[fc11] |= BIT13;
-        if (ris_verlengen_heading(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisvstart21fts1], PRM[prmrisvend21fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading21_1], PRM[prmrislaneheadingmarge21_1])) MK[fc21] |= BIT10;
-        if (ris_verlengen(fc21, SYSTEM_ITF1, PRM[prmrislaneid21_1], RIS_CYCLIST, PRM[prmrisvstartsrm021fts1], PRM[prmrisvendsrm021fts1], !SCH[schrisgeencheckopsg])) MK[fc21] |= BIT13;
-        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstart22fts1], PRM[prmrisvend22fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_1], PRM[prmrislaneheadingmarge22_1])) MK[fc22] |= BIT10;
-        if (ris_verlengen(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_1], RIS_CYCLIST, PRM[prmrisvstartsrm022fts1], PRM[prmrisvendsrm022fts1], !SCH[schrisgeencheckopsg])) MK[fc22] |= BIT13;
-        if (ris_verlengen_heading(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstart22fts2], PRM[prmrisvend22fts2], SCH[schrisgeencheckopsg], PRM[prmrislaneheading22_2], PRM[prmrislaneheadingmarge22_2])) MK[fc22] |= BIT10;
-        if (ris_verlengen(fc22, SYSTEM_ITF1, PRM[prmrislaneid22_2], RIS_CYCLIST, PRM[prmrisvstartsrm022fts2], PRM[prmrisvendsrm022fts2], !SCH[schrisgeencheckopsg])) MK[fc22] |= BIT13;
-        if (ris_verlengen_heading(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisvstart24fts1], PRM[prmrisvend24fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading24_1], PRM[prmrislaneheadingmarge24_1])) MK[fc24] |= BIT10;
-        if (ris_verlengen(fc24, SYSTEM_ITF1, PRM[prmrislaneid24_1], RIS_CYCLIST, PRM[prmrisvstartsrm024fts1], PRM[prmrisvendsrm024fts1], !SCH[schrisgeencheckopsg])) MK[fc24] |= BIT13;
-        if (ris_verlengen_heading(fc26, SYSTEM_ITF1, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisvstart26fts1], PRM[prmrisvend26fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading26_1], PRM[prmrislaneheadingmarge26_1])) MK[fc26] |= BIT10;
-        if (ris_verlengen(fc26, SYSTEM_ITF1, PRM[prmrislaneid26_1], RIS_CYCLIST, PRM[prmrisvstartsrm026fts1], PRM[prmrisvendsrm026fts1], !SCH[schrisgeencheckopsg])) MK[fc26] |= BIT13;
-        if (ris_verlengen_heading(fc28, SYSTEM_ITF1, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisvstart28fts1], PRM[prmrisvend28fts1], SCH[schrisgeencheckopsg], PRM[prmrislaneheading28_1], PRM[prmrislaneheadingmarge28_1])) MK[fc28] |= BIT10;
-        if (ris_verlengen(fc28, SYSTEM_ITF1, PRM[prmrislaneid28_1], RIS_CYCLIST, PRM[prmrisvstartsrm028fts1], PRM[prmrisvendsrm028fts1], !SCH[schrisgeencheckopsg])) MK[fc28] |= BIT13;
-        if (ris_verlengen(fc31, SYSTEM_ITF1, PRM[prmrislaneid31_1], RIS_PEDESTRIAN, PRM[prmrisvstart31vtg1], PRM[prmrisvend31vtg1], SCH[schrisgeencheckopsg])) MK[fc31] |= BIT10;
-        if (ris_verlengen(fc31, SYSTEM_ITF1, PRM[prmrislaneid31_1], RIS_PEDESTRIAN, PRM[prmrisvstartsrm031vtg1], PRM[prmrisvendsrm031vtg1], !SCH[schrisgeencheckopsg])) MK[fc31] |= BIT13;
-        if (ris_verlengen(fc31, SYSTEM_ITF1, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisvstart31vtg2], PRM[prmrisvend31vtg2], SCH[schrisgeencheckopsg])) MK[fc31] |= BIT10;
-        if (ris_verlengen(fc31, SYSTEM_ITF1, PRM[prmrislaneid31_2], RIS_PEDESTRIAN, PRM[prmrisvstartsrm031vtg2], PRM[prmrisvendsrm031vtg2], !SCH[schrisgeencheckopsg])) MK[fc31] |= BIT13;
-        if (ris_verlengen(fc32, SYSTEM_ITF1, PRM[prmrislaneid32_1], RIS_PEDESTRIAN, PRM[prmrisvstart32vtg1], PRM[prmrisvend32vtg1], SCH[schrisgeencheckopsg])) MK[fc32] |= BIT10;
-        if (ris_verlengen(fc32, SYSTEM_ITF1, PRM[prmrislaneid32_1], RIS_PEDESTRIAN, PRM[prmrisvstartsrm032vtg1], PRM[prmrisvendsrm032vtg1], !SCH[schrisgeencheckopsg])) MK[fc32] |= BIT13;
-        if (ris_verlengen(fc32, SYSTEM_ITF1, PRM[prmrislaneid32_2], RIS_PEDESTRIAN, PRM[prmrisvstart32vtg2], PRM[prmrisvend32vtg2], SCH[schrisgeencheckopsg])) MK[fc32] |= BIT10;
-        if (ris_verlengen(fc32, SYSTEM_ITF1, PRM[prmrislaneid32_2], RIS_PEDESTRIAN, PRM[prmrisvstartsrm032vtg2], PRM[prmrisvendsrm032vtg2], !SCH[schrisgeencheckopsg])) MK[fc32] |= BIT13;
-        if (ris_verlengen(fc33, SYSTEM_ITF1, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisvstart33vtg1], PRM[prmrisvend33vtg1], SCH[schrisgeencheckopsg])) MK[fc33] |= BIT10;
-        if (ris_verlengen(fc33, SYSTEM_ITF1, PRM[prmrislaneid33_1], RIS_PEDESTRIAN, PRM[prmrisvstartsrm033vtg1], PRM[prmrisvendsrm033vtg1], !SCH[schrisgeencheckopsg])) MK[fc33] |= BIT13;
-        if (ris_verlengen(fc33, SYSTEM_ITF1, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisvstart33vtg2], PRM[prmrisvend33vtg2], SCH[schrisgeencheckopsg])) MK[fc33] |= BIT10;
-        if (ris_verlengen(fc33, SYSTEM_ITF1, PRM[prmrislaneid33_2], RIS_PEDESTRIAN, PRM[prmrisvstartsrm033vtg2], PRM[prmrisvendsrm033vtg2], !SCH[schrisgeencheckopsg])) MK[fc33] |= BIT13;
-        if (ris_verlengen(fc34, SYSTEM_ITF1, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisvstart34vtg1], PRM[prmrisvend34vtg1], SCH[schrisgeencheckopsg])) MK[fc34] |= BIT10;
-        if (ris_verlengen(fc34, SYSTEM_ITF1, PRM[prmrislaneid34_1], RIS_PEDESTRIAN, PRM[prmrisvstartsrm034vtg1], PRM[prmrisvendsrm034vtg1], !SCH[schrisgeencheckopsg])) MK[fc34] |= BIT13;
-        if (ris_verlengen(fc34, SYSTEM_ITF1, PRM[prmrislaneid34_2], RIS_PEDESTRIAN, PRM[prmrisvstart34vtg2], PRM[prmrisvend34vtg2], SCH[schrisgeencheckopsg])) MK[fc34] |= BIT10;
-        if (ris_verlengen(fc34, SYSTEM_ITF1, PRM[prmrislaneid34_2], RIS_PEDESTRIAN, PRM[prmrisvstartsrm034vtg2], PRM[prmrisvendsrm034vtg2], !SCH[schrisgeencheckopsg])) MK[fc34] |= BIT13;
-        if (ris_verlengen(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg1], PRM[prmrisvend38vtg1], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
-        if (ris_verlengen(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_1], RIS_PEDESTRIAN, PRM[prmrisvstartsrm038vtg1], PRM[prmrisvendsrm038vtg1], !SCH[schrisgeencheckopsg])) MK[fc38] |= BIT13;
-        if (ris_verlengen(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstart38vtg2], PRM[prmrisvend38vtg2], SCH[schrisgeencheckopsg])) MK[fc38] |= BIT10;
-        if (ris_verlengen(fc38, SYSTEM_ITF1, PRM[prmrislaneid38_2], RIS_PEDESTRIAN, PRM[prmrisvstartsrm038vtg2], PRM[prmrisvendsrm038vtg2], !SCH[schrisgeencheckopsg])) MK[fc38] |= BIT13;
-        if (ris_verlengen(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisvstart61mveh1], PRM[prmrisvend61mveh1], SCH[schrisgeencheckopsg])) MK[fc61] |= BIT10;
-        if (ris_verlengen(fc61, SYSTEM_ITF1, PRM[prmrislaneid61_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm061mveh1], PRM[prmrisvendsrm061mveh1], !SCH[schrisgeencheckopsg])) MK[fc61] |= BIT13;
-        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh1], PRM[prmrisvend62mveh1], SCH[schrisgeencheckopsg])) MK[fc62] |= BIT10;
-        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm062mveh1], PRM[prmrisvendsrm062mveh1], !SCH[schrisgeencheckopsg])) MK[fc62] |= BIT13;
-        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisvstart62mveh2], PRM[prmrisvend62mveh2], SCH[schrisgeencheckopsg])) MK[fc62] |= BIT10;
-        if (ris_verlengen(fc62, SYSTEM_ITF1, PRM[prmrislaneid62_2], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm062mveh2], PRM[prmrisvendsrm062mveh2], !SCH[schrisgeencheckopsg])) MK[fc62] |= BIT13;
-        if (ris_verlengen(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisvstart67mveh1], PRM[prmrisvend67mveh1], SCH[schrisgeencheckopsg])) MK[fc67] |= BIT10;
-        if (ris_verlengen(fc67, SYSTEM_ITF1, PRM[prmrislaneid67_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm067mveh1], PRM[prmrisvendsrm067mveh1], !SCH[schrisgeencheckopsg])) MK[fc67] |= BIT13;
-        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh1], PRM[prmrisvend68mveh1], SCH[schrisgeencheckopsg])) MK[fc68] |= BIT10;
-        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_1], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm068mveh1], PRM[prmrisvendsrm068mveh1], !SCH[schrisgeencheckopsg])) MK[fc68] |= BIT13;
-        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisvstart68mveh2], PRM[prmrisvend68mveh2], SCH[schrisgeencheckopsg])) MK[fc68] |= BIT10;
-        if (ris_verlengen(fc68, SYSTEM_ITF1, PRM[prmrislaneid68_2], RIS_MOTORVEHICLES, PRM[prmrisvstartsrm068mveh2], PRM[prmrisvendsrm068mveh2], !SCH[schrisgeencheckopsg])) MK[fc68] |= BIT13;
-        if (ris_verlengen(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisvstart81fts1], PRM[prmrisvend81fts1], SCH[schrisgeencheckopsg])) MK[fc81] |= BIT10;
-        if (ris_verlengen(fc81, SYSTEM_ITF1, PRM[prmrislaneid81_1], RIS_CYCLIST, PRM[prmrisvstartsrm081fts1], PRM[prmrisvendsrm081fts1], !SCH[schrisgeencheckopsg])) MK[fc81] |= BIT13;
-        if (ris_verlengen(fc82, SYSTEM_ITF1, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisvstart82fts1], PRM[prmrisvend82fts1], SCH[schrisgeencheckopsg])) MK[fc82] |= BIT10;
-        if (ris_verlengen(fc82, SYSTEM_ITF1, PRM[prmrislaneid82_1], RIS_CYCLIST, PRM[prmrisvstartsrm082fts1], PRM[prmrisvendsrm082fts1], !SCH[schrisgeencheckopsg])) MK[fc82] |= BIT13;
-        if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstart84fts1], PRM[prmrisvend84fts1], SCH[schrisgeencheckopsg])) MK[fc84] |= BIT10;
-        if (ris_verlengen(fc84, SYSTEM_ITF1, PRM[prmrislaneid84_1], RIS_CYCLIST, PRM[prmrisvstartsrm084fts1], PRM[prmrisvendsrm084fts1], !SCH[schrisgeencheckopsg])) MK[fc84] |= BIT13;
-    #endif
-
-    /* verlengen RIS schakelbaar, 1 schakelaar voor het schakelen van alle verlengfuncties */
-    if (!SCH[schrisverlengen])
-    {
-        for (fc = 0; fc < FCMAX; ++fc)
-        {
-            MK[fc] &= ~(BIT10|BIT13);
-        }
-    }
-
     hiaattijden_verlenging(IH[hgeendynhiaat08], SCH[schedkop_08], FALSE, mmk08, IH[hopdrempelen08], fc08, 
         1, d08_1a, t08_1a_1, t08_1a_2, ttdh_08_1a_1, ttdh_08_1a_2, tmax_08_1a, prmspringverleng_08_1a, hverleng_08_1a, 
         1, d08_1b, t08_1b_1, t08_1b_2, ttdh_08_1b_1, ttdh_08_1b_2, tmax_08_1b, prmspringverleng_08_1b, hverleng_08_1b, 
@@ -2487,7 +2234,11 @@ void RealisatieAfhandeling(void)
     afsluiten_aanvraaggebied_prISG(PRML, ML);
 
     if (EG[fc22] && PR[fc22] && !A[fc05] && (PRML[ML][fc05] & PRIMAIR_VERSNELD)) PG[fc05] |= PRIMAIR_OVERSLAG;
+    if (EG[fc22] && PR[fc22] && !A[fc32] && (PRML[ML][fc32] & PRIMAIR_VERSNELD)) PG[fc32] |= PRIMAIR_OVERSLAG;
+    if (EG[fc24] && PR[fc24] && !A[fc34] && (PRML[ML][fc34] & PRIMAIR_VERSNELD)) PG[fc34] |= PRIMAIR_OVERSLAG;
+    if (EG[fc28] && PR[fc28] && !A[fc38] && (PRML[ML][fc38] & PRIMAIR_VERSNELD)) PG[fc38] |= PRIMAIR_OVERSLAG;
     if (EG[fc32] && PR[fc32] && !A[fc05] && (PRML[ML][fc05] & PRIMAIR_VERSNELD)) PG[fc05] |= PRIMAIR_OVERSLAG;
+    if (EG[fc84] && PR[fc84] && !A[fc33] && (PRML[ML][fc33] & PRIMAIR_VERSNELD)) PG[fc33] |= PRIMAIR_OVERSLAG;
     if (EG[fc26] && PR[fc26] && !A[fc11] && (PRML[ML][fc11] & PRIMAIR_VERSNELD)) PG[fc11] |= PRIMAIR_OVERSLAG;
 
     for (fc=0; fc<FCMAX; fc++)
@@ -2495,21 +2246,6 @@ void RealisatieAfhandeling(void)
         RR[fc] &= ~BIT5;
         FM[fc] &= ~BIT5;
     }
-
-    /* Correctie gelijkstart */
-    if (!(RR[fc22] & BIT5)) RR[fc32] &= ~BIT5;
-    if (!(RR[fc32] & BIT5)) RR[fc22] &= ~BIT5;
-    if (!(RR[fc24] & BIT5)) RR[fc34] &= ~BIT5;
-    if (!(RR[fc34] & BIT5)) RR[fc24] &= ~BIT5;
-    if (!(RR[fc24] & BIT5)) RR[fc84] &= ~BIT5;
-    if (!(RR[fc84] & BIT5)) RR[fc24] &= ~BIT5;
-    if (!(RR[fc28] & BIT5)) RR[fc38] &= ~BIT5;
-    if (!(RR[fc38] & BIT5)) RR[fc28] &= ~BIT5;
-    if (!(RR[fc33] & BIT5)) RR[fc84] &= ~BIT5;
-    if (!(RR[fc84] & BIT5)) RR[fc33] &= ~BIT5;
-
-    /* Correctie Late Release */
-    if (!((RR[fc11] & BIT5) || G[fc11])) RR[fc26] &= ~BIT5;
 
 
     /* Niet intrekken alternatief nalooprichting tijdens inlopen voedende richting */
@@ -2545,32 +2281,6 @@ void RealisatieAfhandeling(void)
     {
         RR[fc81] &= ~BIT5;
     }
-#ifndef NO_TIMETOX
-    if (P[fc02]) { RR[fc02] &= ~BIT5; }
-    if (P[fc03]) { RR[fc03] &= ~BIT5; }
-    if (P[fc05]) { RR[fc05] &= ~BIT5; }
-    if (P[fc08]) { RR[fc08] &= ~BIT5; }
-    if (P[fc09]) { RR[fc09] &= ~BIT5; }
-    if (P[fc11]) { RR[fc11] &= ~BIT5; }
-    if (P[fc21]) { RR[fc21] &= ~BIT5; }
-    if (P[fc22]) { RR[fc22] &= ~BIT5; }
-    if (P[fc24]) { RR[fc24] &= ~BIT5; }
-    if (P[fc26]) { RR[fc26] &= ~BIT5; }
-    if (P[fc28]) { RR[fc28] &= ~BIT5; }
-    if (P[fc31]) { RR[fc31] &= ~BIT5; }
-    if (P[fc32]) { RR[fc32] &= ~BIT5; }
-    if (P[fc33]) { RR[fc33] &= ~BIT5; }
-    if (P[fc34]) { RR[fc34] &= ~BIT5; }
-    if (P[fc38]) { RR[fc38] &= ~BIT5; }
-    if (P[fc61]) { RR[fc61] &= ~BIT5; }
-    if (P[fc62]) { RR[fc62] &= ~BIT5; }
-    if (P[fc67]) { RR[fc67] &= ~BIT5; }
-    if (P[fc68]) { RR[fc68] &= ~BIT5; }
-    if (P[fc81]) { RR[fc81] &= ~BIT5; }
-    if (P[fc82]) { RR[fc82] &= ~BIT5; }
-    if (P[fc84]) { RR[fc84] &= ~BIT5; }
-#endif // NO_TIMETOX
-
     FM[fc02] |= (fm_ar_kpr(fc02, PRM[prmaltg02])) ? BIT5 : 0;
     FM[fc03] |= (fm_ar_kpr(fc03, PRM[prmaltg03])) ? BIT5 : 0;
     FM[fc05] |= (fm_ar_kpr(fc05, PRM[prmaltg05])) ? BIT5 : 0;
@@ -2613,22 +2323,22 @@ void RealisatieAfhandeling(void)
     PAR[fc09] = max_par(fc09, PRML, ML) && SCH[schaltg09];
     PAR[fc11] = max_par(fc11, PRML, ML) && SCH[schaltg11];
     PAR[fc21] = max_par(fc21, PRML, ML) && SCH[schaltg21];
-    PAR[fc22] = max_par(fc22, PRML, ML) && SCH[schaltg2232];
-    PAR[fc24] = max_par(fc24, PRML, ML) && SCH[schaltg243484];
+    PAR[fc22] = max_par(fc22, PRML, ML) && SCH[schaltg22];
+    PAR[fc24] = max_par(fc24, PRML, ML) && SCH[schaltg24];
     PAR[fc26] = max_par(fc26, PRML, ML) && SCH[schaltg26];
-    PAR[fc28] = max_par(fc28, PRML, ML) && SCH[schaltg2838];
+    PAR[fc28] = max_par(fc28, PRML, ML) && SCH[schaltg28];
     PAR[fc31] = max_par(fc31, PRML, ML) && SCH[schaltg31];
-    PAR[fc32] = max_par(fc32, PRML, ML) && SCH[schaltg2232];
-    PAR[fc33] = max_par(fc33, PRML, ML) && SCH[schaltg3384];
-    PAR[fc34] = max_par(fc34, PRML, ML) && SCH[schaltg2434];
-    PAR[fc38] = max_par(fc38, PRML, ML) && SCH[schaltg2838];
+    PAR[fc32] = max_par(fc32, PRML, ML) && SCH[schaltg32];
+    PAR[fc33] = max_par(fc33, PRML, ML) && SCH[schaltg33];
+    PAR[fc34] = max_par(fc34, PRML, ML) && SCH[schaltg34];
+    PAR[fc38] = max_par(fc38, PRML, ML) && SCH[schaltg38];
     PAR[fc61] = max_par(fc61, PRML, ML) && SCH[schaltg61];
     PAR[fc62] = max_par(fc62, PRML, ML) && SCH[schaltg62];
     PAR[fc67] = max_par(fc67, PRML, ML) && SCH[schaltg67];
     PAR[fc68] = max_par(fc68, PRML, ML) && SCH[schaltg68];
     PAR[fc81] = max_par(fc81, PRML, ML) && SCH[schaltg81];
     PAR[fc82] = max_par(fc82, PRML, ML) && SCH[schaltg82];
-    PAR[fc84] = max_par(fc84, PRML, ML) && SCH[schaltg243384];
+    PAR[fc84] = max_par(fc84, PRML, ML) && SCH[schaltg84];
 
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
@@ -2645,33 +2355,12 @@ void RealisatieAfhandeling(void)
     /* set meerealisatie voor gelijk- of voorstartende richtingen */
     /* ---------------------------------------------------------- */
     set_MRLW(fc22, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    set_MRLW(fc22, fc32, (boolv) (RA[fc32] && (PR[fc32] || AR[fc32] || BR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    set_MRLW(fc24, fc34, (boolv) (RA[fc34] && (PR[fc34] || AR[fc34] || BR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
+    set_MRLW(fc28, fc38, (boolv) (RA[fc38] && (PR[fc38] || AR[fc38] || BR[fc38] || (AA[fc38] & BIT11)) && A[fc28] && R[fc28] && !TRG[fc28] && !kcv(fc28)));
     set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
-    if (SCH[schgs2232]) set_MRLW(fc22, fc32, (boolv) ((RA[fc32] || SG[fc32]) && (PR[fc32] || AR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    if (SCH[schgs2232]) set_MRLW(fc32, fc22, (boolv) ((RA[fc22] || SG[fc22]) && (PR[fc22] || AR[fc22] || (AA[fc32] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
-    if (SCH[schgs2434]) set_MRLW(fc24, fc34, (boolv) ((RA[fc34] || SG[fc34]) && (PR[fc34] || AR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
-    if (SCH[schgs2434]) set_MRLW(fc34, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc34] & BIT11)) && A[fc34] && R[fc34] && !TRG[fc34] && !kcv(fc34)));
-    if (SCH[schgs2484]) set_MRLW(fc24, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
-    if (SCH[schgs2484]) set_MRLW(fc84, fc24, (boolv) ((RA[fc24] || SG[fc24]) && (PR[fc24] || AR[fc24] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
-    set_MRLW(fc28, fc38, (boolv) ((RA[fc38] || SG[fc38]) && (PR[fc38] || AR[fc38] || (AA[fc38] & BIT11)) && A[fc28] && R[fc28] && !TRG[fc28] && !kcv(fc28)));
-    set_MRLW(fc38, fc28, (boolv) ((RA[fc28] || SG[fc28]) && (PR[fc28] || AR[fc28] || (AA[fc38] & BIT11)) && A[fc38] && R[fc38] && !TRG[fc38] && !kcv(fc38)));
-    if (SCH[schgs3384]) set_MRLW(fc33, fc84, (boolv) ((RA[fc84] || SG[fc84]) && (PR[fc84] || AR[fc84] || (AA[fc84] & BIT11)) && A[fc33] && R[fc33] && !TRG[fc33] && !kcv(fc33)));
-    if (SCH[schgs3384]) set_MRLW(fc84, fc33, (boolv) ((RA[fc33] || SG[fc33]) && (PR[fc33] || AR[fc33] || (AA[fc84] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
+    set_MRLW(fc84, fc33, (boolv) (RA[fc33] && (PR[fc33] || AR[fc33] || BR[fc33] || (AA[fc33] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
-    #ifndef NO_TIMETOX
-    if (SCH[schgs2232] && (P[fc22] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
-    if (SCH[schgs2232] && (P[fc32] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
-    if (SCH[schgs2434] && (P[fc24] & BIT11) && R[fc34] && !kp(fc34) && A[fc34]) { PAR[fc34] |= BIT11; P[fc34] |= BIT11; }
-    if (SCH[schgs2434] && (P[fc34] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
-    if (SCH[schgs2484] && (P[fc24] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
-    if (SCH[schgs2484] && (P[fc84] & BIT11) && R[fc24] && !kp(fc24) && A[fc24]) { PAR[fc24] |= BIT11; P[fc24] |= BIT11; }
-    if ((P[fc28] & BIT11) && R[fc38] && !kp(fc38) && A[fc38]) { PAR[fc38] |= BIT11; P[fc38] |= BIT11; }
-    if ((P[fc38] & BIT11) && R[fc28] && !kp(fc28) && A[fc28]) { PAR[fc28] |= BIT11; P[fc28] |= BIT11; }
-    if (SCH[schgs3384] && (P[fc33] & BIT11) && R[fc84] && !kp(fc84) && A[fc84]) { PAR[fc84] |= BIT11; P[fc84] |= BIT11; }
-    if (SCH[schgs3384] && (P[fc84] & BIT11) && R[fc33] && !kp(fc33) && A[fc33]) { PAR[fc33] |= BIT11; P[fc33] |= BIT11; }
-    if ((P[fc05] & BIT11) && R[fc22] && !kp(fc22) && A[fc22]) { PAR[fc22] |= BIT11; P[fc22] |= BIT11; }
-    if ((P[fc05] & BIT11) && R[fc32] && !kp(fc32) && A[fc32]) { PAR[fc32] |= BIT11; P[fc32] |= BIT11; }
-    if ((P[fc11] & BIT11) && R[fc26] && !kp(fc26) && A[fc26]) { PAR[fc26] |= BIT11; P[fc26] |= BIT11; }
-    #endif
 
 
     /* Niet alternatief komen tijdens file */
@@ -2748,172 +2437,6 @@ void RealisatieAfhandeling(void)
     HT[tnlsgd3231] = T[tschoolingreepmaxg32] && CV[fc32] && G[fc32] && IH[hschoolingreepdk32a];
     HT[tnlsgd3334] = T[tschoolingreepmaxg33] && CV[fc33] && G[fc33] && IH[hschoolingreepdk33a];
     HT[tnlsgd3433] = T[tschoolingreepmaxg34] && CV[fc34] && G[fc34] && IH[hschoolingreepdk34a];
-
-    #ifndef NO_TIMETOX
-    if (SCH[schconfidence15fix])
-    {
-        reset_rr_fc(BIT11);
-        if (R[fc02] && (P[fc02] & BIT11)) set_rr_gk(fc02, BIT11);
-        if (R[fc03] && (P[fc03] & BIT11)) set_rr_gk(fc03, BIT11);
-        if (R[fc05] && (P[fc05] & BIT11)) set_rr_gk(fc05, BIT11);
-        if (R[fc08] && (P[fc08] & BIT11)) set_rr_gk(fc08, BIT11);
-        if (R[fc09] && (P[fc09] & BIT11)) set_rr_gk(fc09, BIT11);
-        if (R[fc11] && (P[fc11] & BIT11)) set_rr_gk(fc11, BIT11);
-        if (R[fc21] && (P[fc21] & BIT11)) set_rr_gk(fc21, BIT11);
-        if (R[fc22] && (P[fc22] & BIT11)) set_rr_gk(fc22, BIT11);
-        if (R[fc24] && (P[fc24] & BIT11)) set_rr_gk(fc24, BIT11);
-        if (R[fc26] && (P[fc26] & BIT11)) set_rr_gk(fc26, BIT11);
-        if (R[fc28] && (P[fc28] & BIT11)) set_rr_gk(fc28, BIT11);
-        if (R[fc31] && (P[fc31] & BIT11)) set_rr_gk(fc31, BIT11);
-        if (R[fc32] && (P[fc32] & BIT11)) set_rr_gk(fc32, BIT11);
-        if (R[fc33] && (P[fc33] & BIT11)) set_rr_gk(fc33, BIT11);
-        if (R[fc34] && (P[fc34] & BIT11)) set_rr_gk(fc34, BIT11);
-        if (R[fc38] && (P[fc38] & BIT11)) set_rr_gk(fc38, BIT11);
-        if (R[fc61] && (P[fc61] & BIT11)) set_rr_gk(fc61, BIT11);
-        if (R[fc62] && (P[fc62] & BIT11)) set_rr_gk(fc62, BIT11);
-        if (R[fc67] && (P[fc67] & BIT11)) set_rr_gk(fc67, BIT11);
-        if (R[fc68] && (P[fc68] & BIT11)) set_rr_gk(fc68, BIT11);
-        if (R[fc81] && (P[fc81] & BIT11)) set_rr_gk(fc81, BIT11);
-        if (R[fc82] && (P[fc82] & BIT11)) set_rr_gk(fc82, BIT11);
-        if (R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc84, BIT11);
-        if (SCH[schgs2232] && R[fc22] && (P[fc22] & BIT11)) set_rr_gk(fc32, BIT11);
-        if (SCH[schgs2232] && R[fc32] && (P[fc32] & BIT11)) set_rr_gk(fc22, BIT11);
-        if (SCH[schgs2434] && R[fc24] && (P[fc24] & BIT11)) set_rr_gk(fc34, BIT11);
-        if (SCH[schgs2434] && R[fc34] && (P[fc34] & BIT11)) set_rr_gk(fc24, BIT11);
-        if (SCH[schgs2484] && R[fc24] && (P[fc24] & BIT11)) set_rr_gk(fc84, BIT11);
-        if (SCH[schgs2484] && R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc24, BIT11);
-        if (R[fc28] && (P[fc28] & BIT11)) set_rr_gk(fc38, BIT11);
-        if (R[fc38] && (P[fc38] & BIT11)) set_rr_gk(fc28, BIT11);
-        if (SCH[schgs3384] && R[fc33] && (P[fc33] & BIT11)) set_rr_gk(fc84, BIT11);
-        if (SCH[schgs3384] && R[fc84] && (P[fc84] & BIT11)) set_rr_gk(fc33, BIT11);
-        if (R[fc05] && (P[fc05] & BIT11)) set_rr_gk(fc22, BIT11);
-        if (R[fc05] && (P[fc05] & BIT11)) set_rr_gk(fc32, BIT11);
-        if (R[fc11] && (P[fc11] & BIT11)) set_rr_gk(fc26, BIT11);
-        if (R[fc02] && (P[fc02] & BIT11)) A[fc02] |= BIT11;
-        if (R[fc03] && (P[fc03] & BIT11)) A[fc03] |= BIT11;
-        if (R[fc05] && (P[fc05] & BIT11)) A[fc05] |= BIT11;
-        if (R[fc08] && (P[fc08] & BIT11)) A[fc08] |= BIT11;
-        if (R[fc09] && (P[fc09] & BIT11)) A[fc09] |= BIT11;
-        if (R[fc11] && (P[fc11] & BIT11)) A[fc11] |= BIT11;
-        if (R[fc21] && (P[fc21] & BIT11)) A[fc21] |= BIT11;
-        if (R[fc22] && (P[fc22] & BIT11)) A[fc22] |= BIT11;
-        if (R[fc24] && (P[fc24] & BIT11)) A[fc24] |= BIT11;
-        if (R[fc26] && (P[fc26] & BIT11)) A[fc26] |= BIT11;
-        if (R[fc28] && (P[fc28] & BIT11)) A[fc28] |= BIT11;
-        if (R[fc31] && (P[fc31] & BIT11)) A[fc31] |= BIT11;
-        if (R[fc32] && (P[fc32] & BIT11)) A[fc32] |= BIT11;
-        if (R[fc33] && (P[fc33] & BIT11)) A[fc33] |= BIT11;
-        if (R[fc34] && (P[fc34] & BIT11)) A[fc34] |= BIT11;
-        if (R[fc38] && (P[fc38] & BIT11)) A[fc38] |= BIT11;
-        if (R[fc61] && (P[fc61] & BIT11)) A[fc61] |= BIT11;
-        if (R[fc62] && (P[fc62] & BIT11)) A[fc62] |= BIT11;
-        if (R[fc67] && (P[fc67] & BIT11)) A[fc67] |= BIT11;
-        if (R[fc68] && (P[fc68] & BIT11)) A[fc68] |= BIT11;
-        if (R[fc81] && (P[fc81] & BIT11)) A[fc81] |= BIT11;
-        if (R[fc82] && (P[fc82] & BIT11)) A[fc82] |= BIT11;
-        if (R[fc84] && (P[fc84] & BIT11)) A[fc84] |= BIT11;
-        if (R[fc02] && (P[fc02] & BIT11) && !RA[fc02] && !kaa(fc02)) AA[fc02] |= BIT11;
-        if (R[fc03] && (P[fc03] & BIT11) && !RA[fc03] && !kaa(fc03)) AA[fc03] |= BIT11;
-        if (R[fc05] && (P[fc05] & BIT11) && !RA[fc05] && !kaa(fc05)) AA[fc05] |= BIT11;
-        if (R[fc08] && (P[fc08] & BIT11) && !RA[fc08] && !kaa(fc08)) AA[fc08] |= BIT11;
-        if (R[fc09] && (P[fc09] & BIT11) && !RA[fc09] && !kaa(fc09)) AA[fc09] |= BIT11;
-        if (R[fc11] && (P[fc11] & BIT11) && !RA[fc11] && !kaa(fc11)) AA[fc11] |= BIT11;
-        if (R[fc21] && (P[fc21] & BIT11) && !RA[fc21] && !kaa(fc21)) AA[fc21] |= BIT11;
-        if (R[fc22] && (P[fc22] & BIT11) && !RA[fc22] && !kaa(fc22)) AA[fc22] |= BIT11;
-        if (R[fc24] && (P[fc24] & BIT11) && !RA[fc24] && !kaa(fc24)) AA[fc24] |= BIT11;
-        if (R[fc26] && (P[fc26] & BIT11) && !RA[fc26] && !kaa(fc26)) AA[fc26] |= BIT11;
-        if (R[fc28] && (P[fc28] & BIT11) && !RA[fc28] && !kaa(fc28)) AA[fc28] |= BIT11;
-        if (R[fc31] && (P[fc31] & BIT11) && !RA[fc31] && !kaa(fc31)) AA[fc31] |= BIT11;
-        if (R[fc32] && (P[fc32] & BIT11) && !RA[fc32] && !kaa(fc32)) AA[fc32] |= BIT11;
-        if (R[fc33] && (P[fc33] & BIT11) && !RA[fc33] && !kaa(fc33)) AA[fc33] |= BIT11;
-        if (R[fc34] && (P[fc34] & BIT11) && !RA[fc34] && !kaa(fc34)) AA[fc34] |= BIT11;
-        if (R[fc38] && (P[fc38] & BIT11) && !RA[fc38] && !kaa(fc38)) AA[fc38] |= BIT11;
-        if (R[fc61] && (P[fc61] & BIT11) && !RA[fc61] && !kaa(fc61)) AA[fc61] |= BIT11;
-        if (R[fc62] && (P[fc62] & BIT11) && !RA[fc62] && !kaa(fc62)) AA[fc62] |= BIT11;
-        if (R[fc67] && (P[fc67] & BIT11) && !RA[fc67] && !kaa(fc67)) AA[fc67] |= BIT11;
-        if (R[fc68] && (P[fc68] & BIT11) && !RA[fc68] && !kaa(fc68)) AA[fc68] |= BIT11;
-        if (R[fc81] && (P[fc81] & BIT11) && !RA[fc81] && !kaa(fc81)) AA[fc81] |= BIT11;
-        if (R[fc82] && (P[fc82] & BIT11) && !RA[fc82] && !kaa(fc82)) AA[fc82] |= BIT11;
-        if (R[fc84] && (P[fc84] & BIT11) && !RA[fc84] && !kaa(fc84)) AA[fc84] |= BIT11;
-
-        for (fc = 0; fc < FCMAX; ++fc) YM[fc] &= ~BIT11;
-
-        if (SCH[schgs2232] && RA[fc22] && (P[fc22] & BIT11) && !kaa(fc32) && A[fc32] && !RR[fc32]) AA[fc32] |= BIT11;
-        if (SCH[schgs2232] && RA[fc32] && (P[fc32] & BIT11) && !kaa(fc22) && A[fc22] && !RR[fc22]) AA[fc22] |= BIT11;
-        if (SCH[schgs2232] && R[fc22] && !PG[fc22] && R[fc32] && PG[fc32]) PG[fc32] = 0;
-        if (SCH[schgs2232] && R[fc32] && !PG[fc32] && R[fc22] && PG[fc22]) PG[fc22] = 0;
-        if (SCH[schgs2232] && G[fc22] && R[fc32] && (P[fc32] & BIT11)) YM[fc22] |= BIT11;
-        if (SCH[schgs2232] && G[fc32] && R[fc22] && (P[fc22] & BIT11)) YM[fc32] |= BIT11;
-        if (SCH[schgs2434] && RA[fc24] && (P[fc24] & BIT11) && !kaa(fc34) && A[fc34] && !RR[fc34]) AA[fc34] |= BIT11;
-        if (SCH[schgs2434] && RA[fc34] && (P[fc34] & BIT11) && !kaa(fc24) && A[fc24] && !RR[fc24]) AA[fc24] |= BIT11;
-        if (SCH[schgs2434] && R[fc24] && !PG[fc24] && R[fc34] && PG[fc34]) PG[fc34] = 0;
-        if (SCH[schgs2434] && R[fc34] && !PG[fc34] && R[fc24] && PG[fc24]) PG[fc24] = 0;
-        if (SCH[schgs2434] && G[fc24] && R[fc34] && (P[fc34] & BIT11)) YM[fc24] |= BIT11;
-        if (SCH[schgs2434] && G[fc34] && R[fc24] && (P[fc24] & BIT11)) YM[fc34] |= BIT11;
-        if (SCH[schgs2484] && RA[fc24] && (P[fc24] & BIT11) && !kaa(fc84) && A[fc84] && !RR[fc84]) AA[fc84] |= BIT11;
-        if (SCH[schgs2484] && RA[fc84] && (P[fc84] & BIT11) && !kaa(fc24) && A[fc24] && !RR[fc24]) AA[fc24] |= BIT11;
-        if (SCH[schgs2484] && R[fc24] && !PG[fc24] && R[fc84] && PG[fc84]) PG[fc84] = 0;
-        if (SCH[schgs2484] && R[fc84] && !PG[fc84] && R[fc24] && PG[fc24]) PG[fc24] = 0;
-        if (SCH[schgs2484] && G[fc24] && R[fc84] && (P[fc84] & BIT11)) YM[fc24] |= BIT11;
-        if (SCH[schgs2484] && G[fc84] && R[fc24] && (P[fc24] & BIT11)) YM[fc84] |= BIT11;
-        if (RA[fc28] && (P[fc28] & BIT11) && !kaa(fc38) && A[fc38] && !RR[fc38]) AA[fc38] |= BIT11;
-        if (RA[fc38] && (P[fc38] & BIT11) && !kaa(fc28) && A[fc28] && !RR[fc28]) AA[fc28] |= BIT11;
-        if (R[fc28] && !PG[fc28] && R[fc38] && PG[fc38]) PG[fc38] = 0;
-        if (R[fc38] && !PG[fc38] && R[fc28] && PG[fc28]) PG[fc28] = 0;
-        if (G[fc28] && R[fc38] && (P[fc38] & BIT11)) YM[fc28] |= BIT11;
-        if (G[fc38] && R[fc28] && (P[fc28] & BIT11)) YM[fc38] |= BIT11;
-        if (SCH[schgs3384] && RA[fc33] && (P[fc33] & BIT11) && !kaa(fc84) && A[fc84] && !RR[fc84]) AA[fc84] |= BIT11;
-        if (SCH[schgs3384] && RA[fc84] && (P[fc84] & BIT11) && !kaa(fc33) && A[fc33] && !RR[fc33]) AA[fc33] |= BIT11;
-        if (SCH[schgs3384] && R[fc33] && !PG[fc33] && R[fc84] && PG[fc84]) PG[fc84] = 0;
-        if (SCH[schgs3384] && R[fc84] && !PG[fc84] && R[fc33] && PG[fc33]) PG[fc33] = 0;
-        if (SCH[schgs3384] && G[fc33] && R[fc84] && (P[fc84] & BIT11)) YM[fc33] |= BIT11;
-        if (SCH[schgs3384] && G[fc84] && R[fc33] && (P[fc33] & BIT11)) YM[fc84] |= BIT11;
-        if (R[fc05] && !PG[fc05] && R[fc22] && PG[fc22]) PG[fc22] = 0;
-        if (G[fc22] && R[fc05] && (P[fc05] & BIT11)) YM[fc22] |= BIT11;
-        if (R[fc05] && !PG[fc05] && R[fc32] && PG[fc32]) PG[fc32] = 0;
-        if (G[fc32] && R[fc05] && (P[fc05] & BIT11)) YM[fc32] |= BIT11;
-        if (G[fc26] && R[fc11] && (P[fc11] & BIT11)) YM[fc26] |= BIT11;
-        /* Correctie gelijkstart <> gelijkstart of naloop
-         * Bij een gelijkstart die een fase deelt met een andere gelijsktart of naloop
-         * kan de max-end tijd worden verhoogd op start-geel, daarom wordt
-         * start geel uitgesteld.
-         */
-        if (SCH[schgs2232] && G[fc32] && R[fc21] && (P[fc21] & BIT11)) YM[fc32] |= BIT11;
-        if (SCH[schgs2232] && G[fc21] && R[fc32] && (P[fc32] & BIT11)) YM[fc21] |= BIT11;
-        if (SCH[schgs2232] && G[fc22] && R[fc31] && (P[fc31] & BIT11)) YM[fc22] |= BIT11;
-        if (SCH[schgs2232] && G[fc31] && R[fc22] && (P[fc22] & BIT11)) YM[fc31] |= BIT11;
-        if (SCH[schgs2232] && G[fc22] && R[fc31] && (P[fc31] & BIT11)) YM[fc22] |= BIT11;
-        if (SCH[schgs2232] && G[fc31] && R[fc22] && (P[fc22] & BIT11)) YM[fc31] |= BIT11;
-        if (SCH[schgs2434] && SCH[schgs2484] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) YM[fc34] |= BIT11;
-        if (SCH[schgs2434] && SCH[schgs2484] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) YM[fc84] |= BIT11;
-        if (SCH[schgs2434] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
-        if (SCH[schgs2434] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
-        if (SCH[schgs2434] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
-        if (SCH[schgs2434] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
-        if (SCH[schgs2484] && SCH[schgs2434] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) YM[fc84] |= BIT11;
-        if (SCH[schgs2484] && SCH[schgs2434] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) YM[fc34] |= BIT11;
-        if (SCH[schgs2484] && SCH[schgs3384] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
-        if (SCH[schgs2484] && SCH[schgs3384] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
-        if (SCH[schgs3384] && SCH[schgs2484] && G[fc33] && R[fc24] && (P[fc24] & BIT11)) YM[fc33] |= BIT11;
-        if (SCH[schgs3384] && SCH[schgs2484] && G[fc24] && R[fc33] && (P[fc33] & BIT11)) YM[fc24] |= BIT11;
-        if (SCH[schgs3384] && G[fc84] && R[fc34] && (P[fc34] & BIT11)) YM[fc84] |= BIT11;
-        if (SCH[schgs3384] && G[fc34] && R[fc84] && (P[fc84] & BIT11)) YM[fc34] |= BIT11;
-         /* YM nalopen P */
-        if (G[fc62] && R[fc02] && (P[fc02] & BIT11)) YM[fc62] |= BIT11;
-        if (G[fc68] && R[fc08] && (P[fc08] & BIT11)) YM[fc68] |= BIT11;
-        if (G[fc68] && R[fc11] && (P[fc11] & BIT11)) YM[fc68] |= BIT11;
-        if (G[fc21] && R[fc22] && (P[fc22] & BIT11)) YM[fc21] |= BIT11;
-        if (G[fc31] && R[fc32] && (P[fc32] & BIT11)) YM[fc31] |= BIT11;
-        if (G[fc32] && R[fc31] && (P[fc31] & BIT11)) YM[fc32] |= BIT11;
-        if (G[fc32] && R[fc31] && (P[fc31] & BIT11)) YM[fc32] |= BIT11;
-        if (G[fc31] && R[fc32] && (P[fc32] & BIT11)) YM[fc31] |= BIT11;
-        if (G[fc33] && R[fc34] && (P[fc34] & BIT11)) YM[fc33] |= BIT11;
-        if (G[fc34] && R[fc33] && (P[fc33] & BIT11)) YM[fc34] |= BIT11;
-        if (G[fc34] && R[fc33] && (P[fc33] & BIT11)) YM[fc34] |= BIT11;
-        if (G[fc33] && R[fc34] && (P[fc34] & BIT11)) YM[fc33] |= BIT11;
-        if (G[fc81] && R[fc82] && (P[fc82] & BIT11)) YM[fc81] |= BIT11;
-    }
-    #endif
 
     RealisatieAfhandeling_Add();
 }
@@ -3108,14 +2631,6 @@ void init_application(void)
     {
         ModuleStructuurPRM(prmprml02, 0, FCMAX, ML_MAX, PRML, YML, &ML, &SML);
     }
-
-    #ifndef NO_RIS
-        #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST)
-            /* zet display van RIS-berichten aan in de testomgeving */
-            /* ---------------------------------------------------- */
-            RIS_DIPRM[RIS_DIPRM_ALL] = 1;
-        #endif
-    #endif
 
     #if (CCOL_V >= 110 && !defined TDHAMAX) || (CCOL_V < 110)
         init_tdhdyn();
@@ -3353,47 +2868,17 @@ void system_application(void)
     /* PRIO verklikking */
     /* ---------------- */
     CIF_GUS[usovinm02karbus] = C[cvc02karbus];
-    CIF_GUS[usovinm02risov] = C[cvc02risov];
-    CIF_GUS[usovinm02risvrw] = C[cvc02risvrw];
-    CIF_GUS[usovinm02risalg] = C[cvc02risalg];
     CIF_GUS[usovinm03karbus] = C[cvc03karbus];
-    CIF_GUS[usovinm03risov] = C[cvc03risov];
-    CIF_GUS[usovinm03risvrw] = C[cvc03risvrw];
-    CIF_GUS[usovinm03risalg] = C[cvc03risalg];
     CIF_GUS[usovinm05karbus] = C[cvc05karbus];
-    CIF_GUS[usovinm05risov] = C[cvc05risov];
-    CIF_GUS[usovinm05risvrw] = C[cvc05risvrw];
-    CIF_GUS[usovinm05risalg] = C[cvc05risalg];
     CIF_GUS[usovinm08karbus] = C[cvc08karbus];
-    CIF_GUS[usovinm08risov] = C[cvc08risov];
-    CIF_GUS[usovinm08risvrw] = C[cvc08risvrw];
-    CIF_GUS[usovinm08risalg] = C[cvc08risalg];
     CIF_GUS[usovinm09karbus] = C[cvc09karbus];
-    CIF_GUS[usovinm09risov] = C[cvc09risov];
-    CIF_GUS[usovinm09risvrw] = C[cvc09risvrw];
-    CIF_GUS[usovinm09risalg] = C[cvc09risalg];
     CIF_GUS[usovinm11karbus] = C[cvc11karbus];
-    CIF_GUS[usovinm11risov] = C[cvc11risov];
-    CIF_GUS[usovinm11risvrw] = C[cvc11risvrw];
-    CIF_GUS[usovinm11risalg] = C[cvc11risalg];
     CIF_GUS[usovinm22fiets] = C[cvc22fiets];
     CIF_GUS[usovinm28fiets] = C[cvc28fiets];
     CIF_GUS[usovinm61karbus] = C[cvc61karbus];
-    CIF_GUS[usovinm61risov] = C[cvc61risov];
-    CIF_GUS[usovinm61risvrw] = C[cvc61risvrw];
-    CIF_GUS[usovinm61risalg] = C[cvc61risalg];
     CIF_GUS[usovinm62karbus] = C[cvc62karbus];
-    CIF_GUS[usovinm62risov] = C[cvc62risov];
-    CIF_GUS[usovinm62risvrw] = C[cvc62risvrw];
-    CIF_GUS[usovinm62risalg] = C[cvc62risalg];
     CIF_GUS[usovinm67karbus] = C[cvc67karbus];
-    CIF_GUS[usovinm67risov] = C[cvc67risov];
-    CIF_GUS[usovinm67risvrw] = C[cvc67risvrw];
-    CIF_GUS[usovinm67risalg] = C[cvc67risalg];
     CIF_GUS[usovinm68karbus] = C[cvc68karbus];
-    CIF_GUS[usovinm68risov] = C[cvc68risov];
-    CIF_GUS[usovinm68risvrw] = C[cvc68risvrw];
-    CIF_GUS[usovinm68risalg] = C[cvc68risalg];
     CIF_GUS[ushdinm02] = C[cvchd02];
     CIF_GUS[ushdinm03] = C[cvchd03];
     CIF_GUS[ushdinm05] = C[cvchd05];
@@ -3656,47 +3141,17 @@ void system_application(void)
 
     /* Verklikken wijzigingen OV-teller */
     PRIO_teller(cvc02karbus, schcovuber);
-    PRIO_teller(cvc02risov, schcovuber);
-    PRIO_teller(cvc02risvrw, schcovuber);
-    PRIO_teller(cvc02risalg, schcovuber);
     PRIO_teller(cvc03karbus, schcovuber);
-    PRIO_teller(cvc03risov, schcovuber);
-    PRIO_teller(cvc03risvrw, schcovuber);
-    PRIO_teller(cvc03risalg, schcovuber);
     PRIO_teller(cvc05karbus, schcovuber);
-    PRIO_teller(cvc05risov, schcovuber);
-    PRIO_teller(cvc05risvrw, schcovuber);
-    PRIO_teller(cvc05risalg, schcovuber);
     PRIO_teller(cvc08karbus, schcovuber);
-    PRIO_teller(cvc08risov, schcovuber);
-    PRIO_teller(cvc08risvrw, schcovuber);
-    PRIO_teller(cvc08risalg, schcovuber);
     PRIO_teller(cvc09karbus, schcovuber);
-    PRIO_teller(cvc09risov, schcovuber);
-    PRIO_teller(cvc09risvrw, schcovuber);
-    PRIO_teller(cvc09risalg, schcovuber);
     PRIO_teller(cvc11karbus, schcovuber);
-    PRIO_teller(cvc11risov, schcovuber);
-    PRIO_teller(cvc11risvrw, schcovuber);
-    PRIO_teller(cvc11risalg, schcovuber);
     PRIO_teller(cvc22fiets, schcovuber);
     PRIO_teller(cvc28fiets, schcovuber);
     PRIO_teller(cvc61karbus, schcovuber);
-    PRIO_teller(cvc61risov, schcovuber);
-    PRIO_teller(cvc61risvrw, schcovuber);
-    PRIO_teller(cvc61risalg, schcovuber);
     PRIO_teller(cvc62karbus, schcovuber);
-    PRIO_teller(cvc62risov, schcovuber);
-    PRIO_teller(cvc62risvrw, schcovuber);
-    PRIO_teller(cvc62risalg, schcovuber);
     PRIO_teller(cvc67karbus, schcovuber);
-    PRIO_teller(cvc67risov, schcovuber);
-    PRIO_teller(cvc67risvrw, schcovuber);
-    PRIO_teller(cvc67risalg, schcovuber);
     PRIO_teller(cvc68karbus, schcovuber);
-    PRIO_teller(cvc68risov, schcovuber);
-    PRIO_teller(cvc68risvrw, schcovuber);
-    PRIO_teller(cvc68risalg, schcovuber);
     PRIO_teller(cvchd02, schcovuber);
     PRIO_teller(cvchd03, schcovuber);
     PRIO_teller(cvchd05, schcovuber);
@@ -3718,30 +3173,12 @@ void system_application(void)
     if (SCH[schschoolingreep34]) CIF_GUS[uswtk34a] = CIF_GUS[uswtk34a] && !(IH[hschoolingreepdk34a] && Knipper_1Hz) || G[fc34] && D[dk34a] && IH[hschoolingreepdk34a] && Knipper_1Hz;
     if (SCH[schschoolingreep34]) CIF_GUS[uswtk34b] = CIF_GUS[uswtk34b] && !(IH[hschoolingreepdk34b] && Knipper_1Hz) || G[fc34] && D[dk34b] && IH[hschoolingreepdk34b] && Knipper_1Hz;
 
-    #ifndef NO_RIS
-        #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST)
-            /* simulatie van RIS berichten */
-            /* --------------------------- */
-            ris_simulation(SAPPLPROG);
-        #endif
-            /* RIS-Controller */
-            /* -------------- */
-            ris_controller(SAPPLPROG, TRUE);
-    #endif
-
     post_system_application();
     post_system_application_halfstar();
 }
 
 void system_application2(void)
 {
-#if (!defined NO_TIMETOX)
-    int i;
-#endif
-#if (!defined NO_TIMETOX)
-    int fc;
-#endif
-
 #ifndef NO_VLOG
     mon3_mon4_buffers(SAPPLPROG, PRM[prmmaxtvgvlog], PRM[prmmaxtfbvlog]);
     #if !defined NO_VLOG_200 && !defined NO_PRIO
@@ -3751,157 +3188,6 @@ void system_application2(void)
         file_uber_to_file_hour(LOGFILE_NUMBER_MAX, LOGFILE_LENGTH_MAX);
     #endif
 #endif
-
-    #ifdef AUTOMAAT
-        #ifndef NO_RIS
-            /* Weggeschreven SSM (ACTIVEPRIO)-berichten ‘laten negeren’ voor de Applicatiecontainer */
-            if (CIF_WPS[CIF_PROG_CONTROL] != CIF_CONTROL_INCONTROL)
-            {
-                /* zijn er SSM (ACTIVEPRIO)-berichten weggeschreven? */
-                if (RIF_ACTIVEPRIO_AP_WRITE != RIF_ACTIVEPRIO_AP_READ)
-                {
-                    /* zet de schrijfpointer terug */
-                    RIF_ACTIVEPRIO_AP_WRITE = RIF_ACTIVEPRIO_AP_READ;
-                }
-            }
-        #endif
-    #endif
-
-    #ifndef NO_TIMETOX
-        /* UC4 */
-        /* eigenlijk nog per richting een schakelaar of er altijd NG moet worden gestuurd (nu is het een algemene schakelaar) */
-        for (i = 0; i < FCMAX; ++i)
-        {
-            timings_uc4(fc02 + i, mrealtijd02 + i, mrealtijdmin02 + i, mrealtijdmax02 + i, prmttxconfidence15, schtxconfidence15ar, schtimings02 + i);
-        }
-        if (!SCH[schconfidence15fix])
-        {
-            for (i = 0; i < FCMAX; ++i)
-            {
-                P[fc02 + i] &= ~BIT11;
-            }
-        }
-
-        if (RT[tfo0522] || T[tfo0522]) { P[fc22] &= ~BIT11; P[fc05] &= ~BIT11; }
-        if (RT[tfo0532] || T[tfo0532]) { P[fc32] &= ~BIT11; P[fc05] &= ~BIT11; }
-        if (RT[tfo1126] || T[tfo1126]) { P[fc26] &= ~BIT11; P[fc11] &= ~BIT11; }
-
-        pre_msg_fctiming();
-
-        msg_fctiming();
-
-        /* Voedende richting fc02 alleen P als naloop een P heeft of al groen is */
-        if (!((P[fc62] & BIT11) || G[fc02]) && (P[fc02] & BIT11)) P[fc02] &= ~BIT11;
-        /* P doorzetten */
-        if ((P[fc02] & BIT11) && R[fc02]) P[fc62] |= BIT11;
-
-        /* Voedende richting fc08 alleen P als naloop een P heeft of al groen is */
-        if (!((P[fc68] & BIT11) || G[fc08]) && (P[fc08] & BIT11)) P[fc08] &= ~BIT11;
-        /* P doorzetten */
-        if ((P[fc08] & BIT11) && R[fc08]) P[fc68] |= BIT11;
-
-        /* Voedende richting fc11 alleen P als naloop een P heeft of al groen is */
-        if (!((P[fc68] & BIT11) || G[fc11]) && (P[fc11] & BIT11)) P[fc11] &= ~BIT11;
-        /* P doorzetten */
-        if ((P[fc11] & BIT11) && R[fc11]) P[fc68] |= BIT11;
-
-        /* Voedende richting fc22 alleen P als naloop een P heeft of al groen is */
-        if (!((P[fc21] & BIT11) || G[fc22]) && (P[fc22] & BIT11)) P[fc22] &= ~BIT11;
-        /* P doorzetten */
-        if ((P[fc22] & BIT11) && R[fc22]) P[fc21] |= BIT11;
-
-        /* Voedende richting fc82 alleen P als naloop een P heeft of al groen is */
-        if (!((P[fc81] & BIT11) || G[fc82]) && (P[fc82] & BIT11)) P[fc82] &= ~BIT11;
-        /* P doorzetten */
-        if ((P[fc82] & BIT11) && R[fc82]) P[fc81] |= BIT11;
-
-    #endif
-
-#if !(defined NO_TIMETOX) && !defined NO_TIMINGS_PRINT && (!defined (AUTOMAAT) || defined (VISSIM)) && !defined AUTOMAAT_TEST
-    if (display) {
-        xyprintf( 92, 8 + FC_MAX,"-----");
-        xyprintf( 98, 8 + FC_MAX,"STATE");
-        xyprintf(104, 8 + FC_MAX,"MINEND");
-        xyprintf(111, 8 + FC_MAX,"MAXEND");
-        xyprintf(118, 8 + FC_MAX,"LIKELY");
-        xyprintf(125, 8 + FC_MAX,"CONF");
-        xyprintf(130, 8 + FC_MAX,"MASK");
-        xyprintf(135, 8 + FC_MAX,"START");
-        for (i = 0; i < FC_MAX; i++) {
-            xyprintf( 92, 9 + FC_MAX + i, "fc%3s", FC_code[i]);
-            xyprintf( 98, 9 + FC_MAX + i, "%5d", CIF_FC_TIMING[i][0][CIF_TIMING_EVENTSTATE]);
-            xyprintf(104, 9 + FC_MAX + i, "%6d", CIF_FC_TIMING[i][0][CIF_TIMING_MINENDTIME]);
-            xyprintf(111, 9 + FC_MAX + i, "%6d", CIF_FC_TIMING[i][0][CIF_TIMING_MAXENDTIME]);
-            xyprintf(118, 9 + FC_MAX + i, "%6d", CIF_FC_TIMING[i][0][CIF_TIMING_LIKELYTIME]);
-            xyprintf(125, 9 + FC_MAX + i, "%4d", CIF_FC_TIMING[i][0][CIF_TIMING_CONFIDENCE]);
-            xyprintf(130, 9 + FC_MAX + i, "%4d", CIF_FC_TIMING[i][0][CIF_TIMING_MASK]);
-            xyprintf(135, 9 + FC_MAX + i, "%5d", CIF_FC_TIMING[i][0][CIF_TIMING_STARTTIME]);
-        }
-    }
-#endif
-
-#if !(defined NO_TIMETOX)
-#if !(defined NO_RIS)
-#if !(defined NO_PRIO)
-    for (fc = 0; fc < FCMAX; ++fc)
-    {
-        if (C[cvc02karbus] && R[fc] && TIG[fc02][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc02risov] && R[fc] && TIG[fc02][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc02risvrw] && R[fc] && TIG[fc02][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc02risalg] && R[fc] && TIG[fc02][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_ONBEKEND;
-        if (C[cvc03karbus] && R[fc] && TIG[fc03][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc03risov] && R[fc] && TIG[fc03][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc03risvrw] && R[fc] && TIG[fc03][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc03risalg] && R[fc] && TIG[fc03][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc05karbus] && R[fc] && TIG[fc05][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc05risov] && R[fc] && TIG[fc05][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc05risvrw] && R[fc] && TIG[fc05][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc05risalg] && R[fc] && TIG[fc05][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc08karbus] && R[fc] && TIG[fc08][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc08risov] && R[fc] && TIG[fc08][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc08risvrw] && R[fc] && TIG[fc08][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc08risalg] && R[fc] && TIG[fc08][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc09karbus] && R[fc] && TIG[fc09][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc09risov] && R[fc] && TIG[fc09][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc09risvrw] && R[fc] && TIG[fc09][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc09risalg] && R[fc] && TIG[fc09][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc11karbus] && R[fc] && TIG[fc11][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc11risov] && R[fc] && TIG[fc11][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc11risvrw] && R[fc] && TIG[fc11][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc11risalg] && R[fc] && TIG[fc11][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc22fiets] && R[fc] && TIG[fc22][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_FIETS_PELOTON_INGREEP;
-        if (C[cvc28fiets] && R[fc] && TIG[fc28][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_FIETS_PELOTON_INGREEP;
-        if (C[cvc61karbus] && R[fc] && TIG[fc61][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc61risov] && R[fc] && TIG[fc61][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc61risvrw] && R[fc] && TIG[fc61][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc61risalg] && R[fc] && TIG[fc61][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc62karbus] && R[fc] && TIG[fc62][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc62risov] && R[fc] && TIG[fc62][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc62risvrw] && R[fc] && TIG[fc62][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc62risalg] && R[fc] && TIG[fc62][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc67karbus] && R[fc] && TIG[fc67][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc67risov] && R[fc] && TIG[fc67][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc67risvrw] && R[fc] && TIG[fc67][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc67risalg] && R[fc] && TIG[fc67][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc68karbus] && R[fc] && TIG[fc68][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc68risov] && R[fc] && TIG[fc68][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvc68risvrw] && R[fc] && TIG[fc68][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_VRACHTVERKEER_INGREEP;
-        if (C[cvc68risalg] && R[fc] && TIG[fc68][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_OV_INGREEP;
-        if (C[cvchd02] && R[fc] && TIG[fc02][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (C[cvchd03] && R[fc] && TIG[fc03][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (C[cvchd05] && R[fc] && TIG[fc05][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (C[cvchd08] && R[fc] && TIG[fc08][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (C[cvchd09] && R[fc] && TIG[fc09][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (C[cvchd11] && R[fc] && TIG[fc11][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (C[cvchd61] && R[fc] && TIG[fc61][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (C[cvchd62] && R[fc] && TIG[fc62][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (C[cvchd67] && R[fc] && TIG[fc67][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (C[cvchd68] && R[fc] && TIG[fc68][fc]) CIF_FC_RWT[fc] |= CIF_FC_RWT_HULPDIENST_INGREEP;
-        if (SG[fc]) CIF_FC_RWT[fc] = 0;
-    }
-#endif /* NO_PRIO */
-#endif /* NO_RIS */
-#endif /* NO_TIMETOX */
 
 
     post_system_application2();

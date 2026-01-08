@@ -71,13 +71,12 @@ void BepaalInterStartGroenTijden_rgv(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-        if (SCH[schgs2232]) wijziging |= Correctie_TISG_Gelijkstart_rgv(fc22, fc32);
-        if (SCH[schgs2434]) wijziging |= Correctie_TISG_Gelijkstart_rgv(fc24, fc34);
-        if (SCH[schgs2484]) wijziging |= Correctie_TISG_Gelijkstart_rgv(fc24, fc84);
-        wijziging |= Correctie_TISG_Gelijkstart_rgv(fc28, fc38);
-        if (SCH[schgs3384]) wijziging |= Correctie_TISG_Gelijkstart_rgv(fc33, fc84);
         wijziging |= Correctie_TISG_Voorstart_rgv(fc22, fc05, tvs2205);
+        wijziging |= Correctie_TISG_Voorstart_rgv(fc22, fc32, tvs2232);
+        wijziging |= Correctie_TISG_Voorstart_rgv(fc24, fc34, tvs2434);
+        wijziging |= Correctie_TISG_Voorstart_rgv(fc28, fc38, tvs2838);
         wijziging |= Correctie_TISG_Voorstart_rgv(fc32, fc05, tvs3205);
+        wijziging |= Correctie_TISG_Voorstart_rgv(fc84, fc33, tvs8433);
         wijziging |= Correctie_TISG_LateRelease_rgv(fc26, fc11, tlr2611);
         wijziging |= Correctie_TISG_LateRelease_rgv(fc02, fc62, txnl0262);
         wijziging |= Correctie_TISG_LateRelease_rgv(fc08, fc68, txnl0868);

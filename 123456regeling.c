@@ -19,7 +19,7 @@
  ************************************************************************************/
 
 /* Functionaliteiten regeling:
-    RIS: ja
+    RIS: nee
     PTP: ja
     Intergroen: ja
 */
@@ -38,12 +38,6 @@
         #pragma comment(lib, "plefunc.lib")
         #pragma comment(lib, "tx_synch.lib")
         #pragma comment(lib, "trigfunc.lib")
-        #pragma comment(lib, "risfunc.lib")
-        #pragma comment(lib, "rissimfunc.lib")
-        #pragma comment(lib, "comctl32.lib")
-        #pragma comment(lib, "htmlhelp.lib")
-        /* Voor Visual 2017 en hoger: haal onderstaande regel uit het commentaar */
-        /* #pragma comment(lib, "legacy_stdio_definitions.lib") */
     #pragma endregion
 #endif
 
@@ -61,5 +55,4 @@
 #ifndef AUTOMAAT
     #include "123456dpl.c"
     #include "123456sim.c"
-    #include "123456rissim.c"
 #endif
