@@ -58,9 +58,9 @@ void post_init_application()
         fprintf(fpt, " uswtv24,");
         fprintf(fpt, "\n");
     }
-       stuffkey(F2KEY);
-       stuffkey(CTRLALTF3KEY);
-       stuffkey(F4KEY);
+       //stuffkey(F2KEY);
+       //stuffkey(CTRLALTF3KEY);
+       //stuffkey(F4KEY);
 
 #endif
 }
@@ -118,7 +118,7 @@ void Meetkriterium_Add(void)
 
 void Meeverlengen_Add(void)
 {
-
+   if (!CV[fc32] && !CV[fc22]) YM[fc05] &= ~BIT4;
 }
 
 void Synchronisaties_Add(void)
@@ -209,7 +209,7 @@ void PostApplication_Add(void)
 #endif
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
     if (TS &&
-        (CIF_KLOK[CIF_JAAR] == 2001) &&
+        (CIF_KLOK[CIF_JAAR] == 2099) &&
         (CIF_KLOK[CIF_MAAND] == 1) &&
         (CIF_KLOK[CIF_DAG] == 1) &&
         (CIF_KLOK[CIF_UUR] == 12) &&

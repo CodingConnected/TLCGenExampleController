@@ -27,7 +27,6 @@
 SCH[schprioin22fietsfiets] = 0;
 SCH[schprioin28fietsfiets] = 0;
 
-SCH[schgs2232] = 0;
-SCH[schgs2434] = 0;
-SCH[schgs2484] = 0;
-SCH[schgs3384] = 0;
+SCH[schhardmv2205] = 1;
+SCH[schhardmv2611] = 1;
+SCH[schhardmv3205] = 1;

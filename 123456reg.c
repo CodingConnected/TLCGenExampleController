@@ -2386,6 +2386,8 @@ void RealisatieAfhandeling(void)
     IH[hnlsg3433] = PR[fc34] || PAR[fc34];
     IH[hnleg8281] = TRUE;
 
+    AlternatiefOngecoordineerd_Add();
+
     /* set meerealisatie voor richtingen met nalopen */
     /* --------------------------------------------- */
     set_MRLW_nl(fc62, fc02, (boolv)(G[fc02] && !G[fc62] && A[fc62] && IH[hnleg0262]));
@@ -2895,7 +2897,7 @@ void application(void)
 //            MK[fc] &= ~PRIO_MK_BIT;
 //            PP[fc] &= ~PRIO_PP_BIT;
 //        }
-    }
+ //   }
 #endif /* NO_PRIO */
     if (SCH[schisgdebug]) IsgDebug();
 
