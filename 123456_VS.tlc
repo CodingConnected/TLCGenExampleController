@@ -1347,159 +1347,9 @@
           <RangeerIndex2>-1</RangeerIndex2>
         </IOElementRangeerDataModel>
         <IOElementRangeerDataModel>
-          <Naam>plact</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>114</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>kpact</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>115</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>mlact</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>116</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>mlpl</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>117</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>txtimer</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>118</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>klok</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>119</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>hand</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>120</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>PL1</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>121</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>PL2</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>122</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>PL3</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>123</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>master</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>124</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>slave</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>125</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>in654321leven</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>126</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>in654321kpuls</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>127</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>in654321pervar</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>128</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>in654321perarh</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>129</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>in654321PL1</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>130</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>in654321PL2</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>131</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>in654321PL3</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>132</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>uit654321leven</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>133</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>uit654321syncok</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>134</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>uit654321txsok</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>135</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
           <Naam>pelinKOP02</Naam>
           <HasManualNaam>false</HasManualNaam>
           <RangeerIndex>137</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>perDaluren_werkdag</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>138</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>perDaluren_weekend</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>139</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>perOerdag_werkdag</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>140</RangeerIndex>
           <RangeerIndex2>-1</RangeerIndex2>
         </IOElementRangeerDataModel>
         <IOElementRangeerDataModel>
@@ -1512,24 +1362,6 @@
           <Naam>ptp_ptp123456err</Naam>
           <HasManualNaam>false</HasManualNaam>
           <RangeerIndex>142</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>starprogwissel</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>143</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>star01</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>144</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>star02</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>145</RangeerIndex>
           <RangeerIndex2>-1</RangeerIndex2>
         </IOElementRangeerDataModel>
       </RangeerUitgangen>
@@ -1634,9 +1466,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
+            <Q1>100</Q1>
+            <Q2>200</Q2>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>02</FCNr>
@@ -1677,9 +1509,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
+            <Q1>100</Q1>
+            <Q2>200</Q2>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>02</FCNr>
@@ -1720,9 +1552,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
+            <Q1>100</Q1>
+            <Q2>200</Q2>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>02</FCNr>
@@ -1763,9 +1595,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
+            <Q1>100</Q1>
+            <Q2>200</Q2>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>02</FCNr>
@@ -1806,9 +1638,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
+            <Q1>100</Q1>
+            <Q2>200</Q2>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>02</FCNr>
@@ -1849,9 +1681,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
+            <Q1>100</Q1>
+            <Q2>200</Q2>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>02</FCNr>
@@ -1892,9 +1724,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
+            <Q1>100</Q1>
+            <Q2>200</Q2>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>02</FCNr>
@@ -1935,9 +1767,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
+            <Q1>100</Q1>
+            <Q2>200</Q2>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>02</FCNr>
@@ -2114,8 +1946,8 @@
           <Rijstrook>1</Rijstrook>
           <Simulatie>
             <Q1>50</Q1>
-            <Q2>200</Q2>
-            <Q3>100</Q3>
+            <Q2>100</Q2>
+            <Q3>200</Q3>
             <Q4>2</Q4>
             <Stopline>1800</Stopline>
             <FCNr>03</FCNr>
@@ -2157,8 +1989,8 @@
           <Rijstrook>1</Rijstrook>
           <Simulatie>
             <Q1>50</Q1>
-            <Q2>200</Q2>
-            <Q3>100</Q3>
+            <Q2>100</Q2>
+            <Q3>200</Q3>
             <Q4>2</Q4>
             <Stopline>1800</Stopline>
             <FCNr>03</FCNr>
@@ -2334,10 +2166,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>100</Q2>
-            <Q3>50</Q3>
-            <Q4>4</Q4>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
+            <Q3>100</Q3>
+            <Q4>2</Q4>
             <Stopline>1800</Stopline>
             <FCNr>05</FCNr>
           </Simulatie>
@@ -2377,10 +2209,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>100</Q2>
-            <Q3>50</Q3>
-            <Q4>4</Q4>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
+            <Q3>100</Q3>
+            <Q4>2</Q4>
             <Stopline>1800</Stopline>
             <FCNr>05</FCNr>
           </Simulatie>
@@ -2555,8 +2387,8 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
             <Q3>100</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
@@ -2598,8 +2430,8 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
             <Q3>100</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
@@ -2641,8 +2473,8 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
             <Q3>100</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
@@ -2684,8 +2516,8 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
             <Q3>100</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
@@ -2727,8 +2559,8 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
             <Q3>100</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
@@ -2770,8 +2602,8 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
             <Q3>100</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
@@ -2813,8 +2645,8 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
             <Q3>100</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
@@ -2856,8 +2688,8 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
-            <Q2>50</Q2>
+            <Q1>50</Q1>
+            <Q2>200</Q2>
             <Q3>100</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
@@ -3033,11 +2865,11 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>0</Q1>
-            <Q2>0</Q2>
-            <Q3>0</Q3>
-            <Q4>0</Q4>
-            <Stopline>0</Stopline>
+            <Q1>100</Q1>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
+            <Q4>2</Q4>
+            <Stopline>1800</Stopline>
             <FCNr>09</FCNr>
           </Simulatie>
           <Type>Kop</Type>
@@ -3075,11 +2907,11 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>0</Q1>
-            <Q2>0</Q2>
-            <Q3>0</Q3>
-            <Q4>0</Q4>
-            <Stopline>0</Stopline>
+            <Q1>100</Q1>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
+            <Q4>2</Q4>
+            <Stopline>1800</Stopline>
             <FCNr>09</FCNr>
           </Simulatie>
           <Type>Lang</Type>
@@ -3117,11 +2949,11 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>0</Q1>
-            <Q2>0</Q2>
-            <Q3>0</Q3>
-            <Q4>0</Q4>
-            <Stopline>0</Stopline>
+            <Q1>100</Q1>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
+            <Q4>2</Q4>
+            <Stopline>1800</Stopline>
             <FCNr>09</FCNr>
           </Simulatie>
           <Type>Verweg</Type>
@@ -3295,9 +3127,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>100</Q1>
             <Q2>200</Q2>
-            <Q3>100</Q3>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>11</FCNr>
@@ -3338,9 +3170,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>100</Q1>
             <Q2>200</Q2>
-            <Q3>100</Q3>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>11</FCNr>
@@ -3381,9 +3213,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>100</Q1>
             <Q2>200</Q2>
-            <Q3>100</Q3>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>11</FCNr>
@@ -3424,9 +3256,9 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>100</Q1>
             <Q2>200</Q2>
-            <Q3>100</Q3>
+            <Q3>50</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>11</FCNr>
@@ -3567,7 +3399,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>false</WachttijdVoorspeller>
+      <WachttijdVoorspeller>true</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -3601,10 +3433,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>100</Q1>
-            <Q2>200</Q2>
+            <Q1>200</Q1>
+            <Q2>100</Q2>
             <Q3>50</Q3>
-            <Q4>2</Q4>
+            <Q4>4</Q4>
             <Stopline>5000</Stopline>
             <FCNr>21</FCNr>
           </Simulatie>
@@ -3655,10 +3487,10 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>100</Q1>
-            <Q2>200</Q2>
+            <Q1>200</Q1>
+            <Q2>100</Q2>
             <Q3>50</Q3>
-            <Q4>2</Q4>
+            <Q4>4</Q4>
             <Stopline>5000</Stopline>
             <FCNr>21</FCNr>
           </Simulatie>
@@ -3705,8 +3537,9 @@
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
+        <Naam>wtv21</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
+        <ElementType>Output</ElementType>
         <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
@@ -3794,7 +3627,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>false</WachttijdVoorspeller>
+      <WachttijdVoorspeller>true</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -3830,8 +3663,8 @@
           <Rijstrook>1</Rijstrook>
           <Simulatie>
             <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
             <Q4>4</Q4>
             <Stopline>5000</Stopline>
             <FCNr>22</FCNr>
@@ -3885,8 +3718,8 @@
           </WachtlichtBitmapData>
           <Simulatie>
             <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
             <Q4>4</Q4>
             <Stopline>5000</Stopline>
             <FCNr>22</FCNr>
@@ -3986,7 +3819,7 @@
         <HardMeeverlengFaseCyclus>
           <FaseCyclus>05</FaseCyclus>
           <Type>Groen</Type>
-          <AanUit>false</AanUit>
+          <AanUit>true</AanUit>
         </HardMeeverlengFaseCyclus>
       </HardMeeverlengenFaseCycli>
     </FaseCyclus>
@@ -4071,10 +3904,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>200</Q1>
             <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>4</Q4>
+            <Q3>50</Q3>
+            <Q4>2</Q4>
             <Stopline>5000</Stopline>
             <FCNr>24</FCNr>
           </Simulatie>
@@ -4114,10 +3947,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>200</Q1>
             <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>4</Q4>
+            <Q3>50</Q3>
+            <Q4>2</Q4>
             <Stopline>5000</Stopline>
             <FCNr>24</FCNr>
           </Simulatie>
@@ -4157,10 +3990,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>200</Q1>
             <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>4</Q4>
+            <Q3>50</Q3>
+            <Q4>2</Q4>
             <Stopline>5000</Stopline>
             <FCNr>24</FCNr>
           </Simulatie>
@@ -4212,10 +4045,10 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>200</Q1>
             <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>4</Q4>
+            <Q3>50</Q3>
+            <Q4>2</Q4>
             <Stopline>5000</Stopline>
             <FCNr>24</FCNr>
           </Simulatie>
@@ -4357,7 +4190,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>false</WachttijdVoorspeller>
+      <WachttijdVoorspeller>true</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -4391,10 +4224,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>200</Q2>
-            <Q3>100</Q3>
-            <Q4>2</Q4>
+            <Q1>100</Q1>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
+            <Q4>4</Q4>
             <Stopline>5000</Stopline>
             <FCNr>26</FCNr>
           </Simulatie>
@@ -4445,10 +4278,10 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>200</Q2>
-            <Q3>100</Q3>
-            <Q4>2</Q4>
+            <Q1>100</Q1>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
+            <Q4>4</Q4>
             <Stopline>5000</Stopline>
             <FCNr>26</FCNr>
           </Simulatie>
@@ -4541,7 +4374,7 @@
         <HardMeeverlengFaseCyclus>
           <FaseCyclus>11</FaseCyclus>
           <Type>Groen</Type>
-          <AanUit>false</AanUit>
+          <AanUit>true</AanUit>
         </HardMeeverlengFaseCyclus>
       </HardMeeverlengenFaseCycli>
     </FaseCyclus>
@@ -4591,7 +4424,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>false</WachttijdVoorspeller>
+      <WachttijdVoorspeller>true</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -4626,10 +4459,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>200</Q1>
             <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>2</Q4>
+            <Q3>50</Q3>
+            <Q4>4</Q4>
             <Stopline>5000</Stopline>
             <FCNr>28</FCNr>
           </Simulatie>
@@ -4669,10 +4502,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>200</Q1>
             <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>2</Q4>
+            <Q3>50</Q3>
+            <Q4>4</Q4>
             <Stopline>5000</Stopline>
             <FCNr>28</FCNr>
           </Simulatie>
@@ -4724,10 +4557,10 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>200</Q1>
             <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>2</Q4>
+            <Q3>50</Q3>
+            <Q4>4</Q4>
             <Stopline>5000</Stopline>
             <FCNr>28</FCNr>
           </Simulatie>
@@ -4871,10 +4704,10 @@
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
       <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
-      <SchoolIngreep>SchAan</SchoolIngreep>
+      <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>500</SchoolIngreepMaximumGroen>
       <SchoolIngreepBezetTijd>60</SchoolIngreepBezetTijd>
-      <SeniorenIngreep>SchAan</SeniorenIngreep>
+      <SeniorenIngreep>Nooit</SeniorenIngreep>
       <SeniorenIngreepBezetTijd>30</SeniorenIngreepBezetTijd>
       <SeniorenIngreepExtraGroenPercentage>50</SeniorenIngreepExtraGroenPercentage>
       <Detectoren>
@@ -5112,10 +4945,10 @@
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
       <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
-      <SchoolIngreep>SchAan</SchoolIngreep>
+      <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>500</SchoolIngreepMaximumGroen>
       <SchoolIngreepBezetTijd>60</SchoolIngreepBezetTijd>
-      <SeniorenIngreep>SchAan</SeniorenIngreep>
+      <SeniorenIngreep>Nooit</SeniorenIngreep>
       <SeniorenIngreepBezetTijd>30</SeniorenIngreepBezetTijd>
       <SeniorenIngreepExtraGroenPercentage>50</SeniorenIngreepExtraGroenPercentage>
       <Detectoren>
@@ -5160,7 +4993,7 @@
             <Q1>200</Q1>
             <Q2>50</Q2>
             <Q3>100</Q3>
-            <Q4>4</Q4>
+            <Q4>2</Q4>
             <Stopline>10000</Stopline>
             <FCNr>32</FCNr>
           </Simulatie>
@@ -5215,7 +5048,7 @@
             <Q1>200</Q1>
             <Q2>50</Q2>
             <Q3>100</Q3>
-            <Q4>4</Q4>
+            <Q4>2</Q4>
             <Stopline>10000</Stopline>
             <FCNr>32</FCNr>
           </Simulatie>
@@ -5307,7 +5140,7 @@
         <HardMeeverlengFaseCyclus>
           <FaseCyclus>05</FaseCyclus>
           <Type>Groen</Type>
-          <AanUit>false</AanUit>
+          <AanUit>true</AanUit>
         </HardMeeverlengFaseCyclus>
       </HardMeeverlengenFaseCycli>
     </FaseCyclus>
@@ -5359,10 +5192,10 @@
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
       <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
-      <SchoolIngreep>SchUit</SchoolIngreep>
+      <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>500</SchoolIngreepMaximumGroen>
       <SchoolIngreepBezetTijd>60</SchoolIngreepBezetTijd>
-      <SeniorenIngreep>SchUit</SeniorenIngreep>
+      <SeniorenIngreep>Nooit</SeniorenIngreep>
       <SeniorenIngreepBezetTijd>30</SeniorenIngreepBezetTijd>
       <SeniorenIngreepExtraGroenPercentage>50</SeniorenIngreepExtraGroenPercentage>
       <Detectoren>
@@ -5404,10 +5237,10 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>100</Q1>
+            <Q1>200</Q1>
             <Q2>50</Q2>
-            <Q3>200</Q3>
-            <Q4>4</Q4>
+            <Q3>100</Q3>
+            <Q4>2</Q4>
             <Stopline>10000</Stopline>
             <FCNr>33</FCNr>
           </Simulatie>
@@ -5459,10 +5292,10 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>100</Q1>
+            <Q1>200</Q1>
             <Q2>50</Q2>
-            <Q3>200</Q3>
-            <Q4>4</Q4>
+            <Q3>100</Q3>
+            <Q4>2</Q4>
             <Stopline>10000</Stopline>
             <FCNr>33</FCNr>
           </Simulatie>
@@ -5600,10 +5433,10 @@
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
       <WachttijdVoorspeller>false</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
-      <SchoolIngreep>SchUit</SchoolIngreep>
+      <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>500</SchoolIngreepMaximumGroen>
       <SchoolIngreepBezetTijd>60</SchoolIngreepBezetTijd>
-      <SeniorenIngreep>SchUit</SeniorenIngreep>
+      <SeniorenIngreep>Nooit</SeniorenIngreep>
       <SeniorenIngreepBezetTijd>30</SeniorenIngreepBezetTijd>
       <SeniorenIngreepExtraGroenPercentage>50</SeniorenIngreepExtraGroenPercentage>
       <Detectoren>
@@ -5645,9 +5478,9 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>200</Q1>
             <Q2>100</Q2>
-            <Q3>200</Q3>
+            <Q3>50</Q3>
             <Q4>2</Q4>
             <Stopline>10000</Stopline>
             <FCNr>34</FCNr>
@@ -5700,9 +5533,9 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>50</Q1>
+            <Q1>200</Q1>
             <Q2>100</Q2>
-            <Q3>200</Q3>
+            <Q3>50</Q3>
             <Q4>2</Q4>
             <Stopline>10000</Stopline>
             <FCNr>34</FCNr>
@@ -5887,9 +5720,9 @@
           </WachtlichtBitmapData>
           <Simulatie>
             <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
-            <Q4>2</Q4>
+            <Q2>100</Q2>
+            <Q3>50</Q3>
+            <Q4>4</Q4>
             <Stopline>10000</Stopline>
             <FCNr>38</FCNr>
           </Simulatie>
@@ -5942,9 +5775,9 @@
           </WachtlichtBitmapData>
           <Simulatie>
             <Q1>200</Q1>
-            <Q2>50</Q2>
-            <Q3>100</Q3>
-            <Q4>2</Q4>
+            <Q2>100</Q2>
+            <Q3>50</Q3>
+            <Q4>4</Q4>
             <Stopline>10000</Stopline>
             <FCNr>38</FCNr>
           </Simulatie>
@@ -6116,8 +5949,8 @@
           <Rijstrook>1</Rijstrook>
           <Simulatie>
             <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>61</FCNr>
@@ -6159,8 +5992,8 @@
           <Rijstrook>1</Rijstrook>
           <Simulatie>
             <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
             <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>61</FCNr>
@@ -6336,10 +6169,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>62</FCNr>
           </Simulatie>
@@ -6379,10 +6212,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>62</FCNr>
           </Simulatie>
@@ -6422,10 +6255,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>62</FCNr>
           </Simulatie>
@@ -6465,10 +6298,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>62</FCNr>
           </Simulatie>
@@ -6646,7 +6479,7 @@
             <Q1>100</Q1>
             <Q2>50</Q2>
             <Q3>200</Q3>
-            <Q4>4</Q4>
+            <Q4>2</Q4>
             <Stopline>1800</Stopline>
             <FCNr>67</FCNr>
           </Simulatie>
@@ -6689,7 +6522,7 @@
             <Q1>100</Q1>
             <Q2>50</Q2>
             <Q3>200</Q3>
-            <Q4>4</Q4>
+            <Q4>2</Q4>
             <Stopline>1800</Stopline>
             <FCNr>67</FCNr>
           </Simulatie>
@@ -6864,10 +6697,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>68</FCNr>
           </Simulatie>
@@ -6907,10 +6740,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>68</FCNr>
           </Simulatie>
@@ -6950,10 +6783,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>68</FCNr>
           </Simulatie>
@@ -6993,10 +6826,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>68</FCNr>
           </Simulatie>
@@ -7035,10 +6868,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>68</FCNr>
           </Simulatie>
@@ -7077,10 +6910,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>2</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>100</Q2>
-            <Q3>200</Q3>
-            <Q4>2</Q4>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
+            <Q3>100</Q3>
+            <Q4>4</Q4>
             <Stopline>1800</Stopline>
             <FCNr>68</FCNr>
           </Simulatie>
@@ -7220,7 +7053,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>false</WachttijdVoorspeller>
+      <WachttijdVoorspeller>true</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -7254,10 +7087,10 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>200</Q1>
+            <Q1>100</Q1>
             <Q2>50</Q2>
-            <Q3>100</Q3>
-            <Q4>4</Q4>
+            <Q3>200</Q3>
+            <Q4>2</Q4>
             <Stopline>5000</Stopline>
             <FCNr>81</FCNr>
           </Simulatie>
@@ -7308,10 +7141,10 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>200</Q1>
+            <Q1>100</Q1>
             <Q2>50</Q2>
-            <Q3>100</Q3>
-            <Q4>4</Q4>
+            <Q3>200</Q3>
+            <Q4>2</Q4>
             <Stopline>5000</Stopline>
             <FCNr>81</FCNr>
           </Simulatie>
@@ -7358,8 +7191,9 @@
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
+        <Naam>wtv81</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
+        <ElementType>Output</ElementType>
         <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
@@ -7447,7 +7281,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>false</WachttijdVoorspeller>
+      <WachttijdVoorspeller>true</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -7481,8 +7315,8 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>200</Q2>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
             <Q3>100</Q3>
             <Q4>2</Q4>
             <Stopline>5000</Stopline>
@@ -7535,8 +7369,8 @@
             </BitmapCoordinaten>
           </WachtlichtBitmapData>
           <Simulatie>
-            <Q1>50</Q1>
-            <Q2>200</Q2>
+            <Q1>200</Q1>
+            <Q2>50</Q2>
             <Q3>100</Q3>
             <Q4>2</Q4>
             <Stopline>5000</Stopline>
@@ -7585,8 +7419,9 @@
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
+        <Naam>wtv82</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
+        <ElementType>Output</ElementType>
         <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
@@ -7674,7 +7509,7 @@
       <PercentageGroenBijDetectieStoring>false</PercentageGroenBijDetectieStoring>
       <PercentageGroen xsi:nil="true" />
       <VeiligheidsGroenMaximaal>0</VeiligheidsGroenMaximaal>
-      <WachttijdVoorspeller>false</WachttijdVoorspeller>
+      <WachttijdVoorspeller>true</WachttijdVoorspeller>
       <ToepassenMK2>false</ToepassenMK2>
       <SchoolIngreep>Nooit</SchoolIngreep>
       <SchoolIngreepMaximumGroen>0</SchoolIngreepMaximumGroen>
@@ -7710,9 +7545,9 @@
           <Rijstrook>1</Rijstrook>
           <Simulatie>
             <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
-            <Q4>4</Q4>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
+            <Q4>2</Q4>
             <Stopline>5000</Stopline>
             <FCNr>84</FCNr>
           </Simulatie>
@@ -7765,9 +7600,9 @@
           </WachtlichtBitmapData>
           <Simulatie>
             <Q1>100</Q1>
-            <Q2>200</Q2>
-            <Q3>50</Q3>
-            <Q4>4</Q4>
+            <Q2>50</Q2>
+            <Q3>200</Q3>
+            <Q4>2</Q4>
             <Stopline>5000</Stopline>
             <FCNr>84</FCNr>
           </Simulatie>
@@ -7819,8 +7654,9 @@
         <BitmapCoordinaten />
       </GeconditioneerdePrioTeLaatBitmapData>
       <WachttijdVoorspellerBitmapData>
+        <Naam>wtv84</Naam>
         <Dummy>false</Dummy>
-        <ElementType>FaseCyclus</ElementType>
+        <ElementType>Output</ElementType>
         <Multivalent>false</Multivalent>
         <BitmapCoordinaten />
       </WachttijdVoorspellerBitmapData>
@@ -7888,11 +7724,12 @@
       <Wachtlicht>false</Wachtlicht>
       <Rijstrook>1</Rijstrook>
       <Simulatie>
-        <Q1>0</Q1>
+        <Q1>1</Q1>
         <Q2>0</Q2>
         <Q3>0</Q3>
         <Q4>0</Q4>
-        <Stopline>0</Stopline>
+        <Stopline>1800</Stopline>
+        <FCNr>02</FCNr>
       </Simulatie>
       <Type>OpticomIngang</Type>
       <Aanvraag>Geen</Aanvraag>
@@ -7929,10 +7766,11 @@
       <Rijstrook>1</Rijstrook>
       <Simulatie>
         <Q1>0</Q1>
-        <Q2>0</Q2>
+        <Q2>1</Q2>
         <Q3>0</Q3>
         <Q4>0</Q4>
-        <Stopline>0</Stopline>
+        <Stopline>1800</Stopline>
+        <FCNr>05</FCNr>
       </Simulatie>
       <Type>OpticomIngang</Type>
       <Aanvraag>Geen</Aanvraag>
@@ -7971,8 +7809,9 @@
         <Q1>0</Q1>
         <Q2>0</Q2>
         <Q3>0</Q3>
-        <Q4>0</Q4>
-        <Stopline>0</Stopline>
+        <Q4>1</Q4>
+        <Stopline>1800</Stopline>
+        <FCNr>08</FCNr>
       </Simulatie>
       <Type>OpticomIngang</Type>
       <Aanvraag>Geen</Aanvraag>
@@ -8010,9 +7849,10 @@
       <Simulatie>
         <Q1>0</Q1>
         <Q2>0</Q2>
-        <Q3>0</Q3>
+        <Q3>1</Q3>
         <Q4>0</Q4>
-        <Stopline>0</Stopline>
+        <Stopline>1800</Stopline>
+        <FCNr>11</FCNr>
       </Simulatie>
       <Type>OpticomIngang</Type>
       <Aanvraag>Geen</Aanvraag>
@@ -8980,7 +8820,7 @@
         <Type>RoodVoorAanvraag</Type>
         <AanUit>SchAan</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
-        <DetectieAfhankelijk>true</DetectieAfhankelijk>
+        <DetectieAfhankelijk>false</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
         <UitgesteldTijdsduur>0</UitgesteldTijdsduur>
         <Detectoren>
@@ -9040,7 +8880,7 @@
         <Type>RoodVoorAanvraag</Type>
         <AanUit>SchAan</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
-        <DetectieAfhankelijk>true</DetectieAfhankelijk>
+        <DetectieAfhankelijk>false</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
         <UitgesteldTijdsduur>0</UitgesteldTijdsduur>
         <Detectoren>
@@ -9055,7 +8895,7 @@
         <Type>RoodVoorAanvraag</Type>
         <AanUit>SchAan</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
-        <DetectieAfhankelijk>true</DetectieAfhankelijk>
+        <DetectieAfhankelijk>false</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
         <UitgesteldTijdsduur>0</UitgesteldTijdsduur>
         <Detectoren>
@@ -9960,37 +9800,7 @@
       </TeDoserenSignaalGroepen>
     </FileIngreep>
   </FileIngrepen>
-  <VAOntruimenFasen>
-    <VAOntruimenFase>
-      <FaseCyclus>62</FaseCyclus>
-      <VAOntrMax>100</VAOntrMax>
-      <KijkNaarWisselstand>false</KijkNaarWisselstand>
-      <Wissel1Type>Ingang</Wissel1Type>
-      <Wissel2>false</Wissel2>
-      <Wissel2Type>Ingang</Wissel2Type>
-      <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
-      <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
-      <VADetectoren>
-        <VADetector>
-          <ConflicterendeFasen>
-            <ConflictendeFase>
-              <FaseCyclus>09</FaseCyclus>
-              <VAOntruimingsTijd>0</VAOntruimingsTijd>
-            </ConflictendeFase>
-            <ConflictendeFase>
-              <FaseCyclus>11</FaseCyclus>
-              <VAOntruimingsTijd>10</VAOntruimingsTijd>
-            </ConflictendeFase>
-            <ConflictendeFase>
-              <FaseCyclus>26</FaseCyclus>
-              <VAOntruimingsTijd>20</VAOntruimingsTijd>
-            </ConflictendeFase>
-          </ConflicterendeFasen>
-          <Detector>62_1a</Detector>
-        </VADetector>
-      </VADetectoren>
-    </VAOntruimenFase>
-  </VAOntruimenFasen>
+  <VAOntruimenFasen />
   <PelotonKoppelingenData>
     <PelotonKoppelingen>
       <PelotonKoppeling>
@@ -10258,7 +10068,7 @@
         <DagCode>10</DagCode>
         <GeenUitgangPerOverig>false</GeenUitgangPerOverig>
         <StartTijd>00:00</StartTijd>
-        <EindTijd>24:00</EindTijd>
+        <EindTijd>00:00</EindTijd>
       </Periode>
       <Periode>
         <Naam>Fietsprio2</Naam>
@@ -10267,30 +10077,6 @@
         <GeenUitgangPerOverig>false</GeenUitgangPerOverig>
         <StartTijd>00:00</StartTijd>
         <EindTijd>00:00</EindTijd>
-      </Periode>
-      <Periode>
-        <Naam>Daluren_werkdag</Naam>
-        <Type>StarRegelen</Type>
-        <DagCode>8</DagCode>
-        <GeenUitgangPerOverig>false</GeenUitgangPerOverig>
-        <StartTijd>19:00</StartTijd>
-        <EindTijd>07:00</EindTijd>
-      </Periode>
-      <Periode>
-        <Naam>Daluren_weekend</Naam>
-        <Type>StarRegelen</Type>
-        <DagCode>9</DagCode>
-        <GeenUitgangPerOverig>false</GeenUitgangPerOverig>
-        <StartTijd>00:00</StartTijd>
-        <EindTijd>00:00</EindTijd>
-      </Periode>
-      <Periode>
-        <Naam>Oerdag_werkdag</Naam>
-        <Type>StarRegelen</Type>
-        <DagCode>8</DagCode>
-        <GeenUitgangPerOverig>false</GeenUitgangPerOverig>
-        <StartTijd>07:00</StartTijd>
-        <EindTijd>19:00</EindTijd>
       </Periode>
       <Periode>
         <Naam>dag</Naam>
@@ -10649,11 +10435,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
+                  <Q1>3</Q1>
                   <Q2>0</Q2>
                   <Q3>0</Q3>
                   <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -10721,11 +10508,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -10878,10 +10666,11 @@
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
                   <Q1>0</Q1>
-                  <Q2>0</Q2>
+                  <Q2>2</Q2>
                   <Q3>0</Q3>
                   <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -10949,11 +10738,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -11107,9 +10897,10 @@
                 <Simulatie>
                   <Q1>0</Q1>
                   <Q2>0</Q2>
-                  <Q3>0</Q3>
+                  <Q3>1</Q3>
                   <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -11177,11 +10968,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -11336,8 +11128,9 @@
                   <Q1>0</Q1>
                   <Q2>0</Q2>
                   <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q4>3</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -11405,11 +11198,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -11564,8 +11358,9 @@
                   <Q1>0</Q1>
                   <Q2>0</Q2>
                   <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q4>1</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -11633,11 +11428,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -11790,10 +11586,11 @@
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
                   <Q1>0</Q1>
-                  <Q2>0</Q2>
+                  <Q2>2</Q2>
                   <Q3>0</Q3>
                   <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -11861,11 +11658,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -11958,7 +11756,14 @@
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
-        <GerelateerdePerioden />
+        <GerelateerdePerioden>
+          <Periode>
+            <Periode>Fietsprio1</Periode>
+          </Periode>
+          <Periode>
+            <Periode>Fietsprio2</Periode>
+          </Periode>
+        </GerelateerdePerioden>
         <MeldingenData>
           <Inmeldingen>
             <Inmelding>
@@ -12103,7 +11908,14 @@
           <BitmapCoordinaten />
         </GeconditioneerdePrioTeLaatBitmapData>
         <LijnNummers />
-        <GerelateerdePerioden />
+        <GerelateerdePerioden>
+          <Periode>
+            <Periode>Fietsprio1</Periode>
+          </Periode>
+          <Periode>
+            <Periode>Fietsprio2</Periode>
+          </Periode>
+        </GerelateerdePerioden>
         <MeldingenData>
           <Inmeldingen>
             <Inmelding>
@@ -12311,7 +12123,8 @@
                   <Q2>0</Q2>
                   <Q3>0</Q3>
                   <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -12379,11 +12192,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -12539,7 +12353,8 @@
                   <Q2>0</Q2>
                   <Q3>0</Q3>
                   <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -12607,11 +12422,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -12767,7 +12583,8 @@
                   <Q2>0</Q2>
                   <Q3>0</Q3>
                   <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -12835,11 +12652,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -12995,7 +12813,8 @@
                   <Q2>0</Q2>
                   <Q3>0</Q3>
                   <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -13063,11 +12882,12 @@
                 <Wachtlicht>false</Wachtlicht>
                 <Rijstrook>1</Rijstrook>
                 <Simulatie>
-                  <Q1>0</Q1>
-                  <Q2>0</Q2>
-                  <Q3>0</Q3>
-                  <Q4>0</Q4>
-                  <Stopline>0</Stopline>
+                  <Q1>300</Q1>
+                  <Q2>300</Q2>
+                  <Q3>300</Q3>
+                  <Q4>300</Q4>
+                  <Stopline>1800</Stopline>
+                  <FCNr>NG</FCNr>
                 </Simulatie>
                 <Type>Kop</Type>
                 <Aanvraag>Geen</Aanvraag>
@@ -13103,7 +12923,7 @@
         <RisEnd>0</RisEnd>
         <RisEta>9000</RisEta>
         <RisImportance>I14</RisImportance>
-        <Opticom>false</Opticom>
+        <Opticom>true</Opticom>
         <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -13156,11 +12976,12 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>1</Q1>
-            <Q2>2</Q2>
-            <Q3>1</Q3>
-            <Q4>2</Q4>
+            <Q1>0</Q1>
+            <Q2>1</Q2>
+            <Q3>0</Q3>
+            <Q4>0</Q4>
             <Stopline>1800</Stopline>
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13201,6 +13022,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13278,11 +13100,11 @@
           <Rijstrook>1</Rijstrook>
           <Simulatie>
             <Q1>1</Q1>
-            <Q2>1</Q2>
-            <Q3>2</Q3>
-            <Q4>1</Q4>
+            <Q2>0</Q2>
+            <Q3>0</Q3>
+            <Q4>0</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13324,7 +13146,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13348,7 +13170,7 @@
         <RisEnd>0</RisEnd>
         <RisEta>9000</RisEta>
         <RisImportance>I14</RisImportance>
-        <Opticom>false</Opticom>
+        <Opticom>true</Opticom>
         <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -13402,12 +13224,12 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>1</Q1>
-            <Q2>1</Q2>
-            <Q3>2</Q3>
+            <Q1>0</Q1>
+            <Q2>0</Q2>
+            <Q3>0</Q3>
             <Q4>1</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13449,7 +13271,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13471,7 +13293,7 @@
         <RisEnd>0</RisEnd>
         <RisEta>9000</RisEta>
         <RisImportance>I14</RisImportance>
-        <Opticom>false</Opticom>
+        <Opticom>true</Opticom>
         <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -13525,12 +13347,12 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>1</Q1>
+            <Q1>0</Q1>
             <Q2>1</Q2>
-            <Q3>2</Q3>
-            <Q4>1</Q4>
+            <Q3>0</Q3>
+            <Q4>0</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13572,7 +13394,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13649,12 +13471,12 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>1</Q1>
-            <Q2>1</Q2>
-            <Q3>2</Q3>
-            <Q4>1</Q4>
+            <Q1>0</Q1>
+            <Q2>0</Q2>
+            <Q3>1</Q3>
+            <Q4>0</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13696,7 +13518,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13720,7 +13542,7 @@
         <RisEnd>0</RisEnd>
         <RisEta>9000</RisEta>
         <RisImportance>I14</RisImportance>
-        <Opticom>false</Opticom>
+        <Opticom>true</Opticom>
         <KARToepassenFilterTijden>true</KARToepassenFilterTijden>
         <KARInmeldingFilterTijd xsi:nil="true" />
         <KARUitmeldingFilterTijd xsi:nil="true" />
@@ -13775,11 +13597,11 @@
           <Rijstrook>1</Rijstrook>
           <Simulatie>
             <Q1>1</Q1>
-            <Q2>1</Q2>
-            <Q3>2</Q3>
-            <Q4>1</Q4>
+            <Q2>0</Q2>
+            <Q3>0</Q3>
+            <Q4>0</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13821,7 +13643,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13896,12 +13718,12 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>1</Q1>
+            <Q1>0</Q1>
             <Q2>1</Q2>
-            <Q3>2</Q3>
-            <Q4>1</Q4>
+            <Q3>0</Q3>
+            <Q4>0</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -13943,7 +13765,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -14018,12 +13840,12 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>1</Q1>
-            <Q2>1</Q2>
-            <Q3>2</Q3>
-            <Q4>1</Q4>
+            <Q1>0</Q1>
+            <Q2>0</Q2>
+            <Q3>0</Q3>
+            <Q4>0</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -14065,7 +13887,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -14140,12 +13962,12 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>1</Q1>
-            <Q2>1</Q2>
-            <Q3>2</Q3>
+            <Q1>0</Q1>
+            <Q2>0</Q2>
+            <Q3>0</Q3>
             <Q4>1</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -14187,7 +14009,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -14262,12 +14084,12 @@
           <Wachtlicht>false</Wachtlicht>
           <Rijstrook>1</Rijstrook>
           <Simulatie>
-            <Q1>1</Q1>
-            <Q2>1</Q2>
-            <Q3>2</Q3>
-            <Q4>1</Q4>
+            <Q1>0</Q1>
+            <Q2>0</Q2>
+            <Q3>0</Q3>
+            <Q4>0</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -14309,7 +14131,7 @@
             <Q3>300</Q3>
             <Q4>300</Q4>
             <Stopline>1800</Stopline>
-            <FCNr />
+            <FCNr>NG</FCNr>
           </Simulatie>
           <Type>Kop</Type>
           <Aanvraag>Geen</Aanvraag>
@@ -16247,20 +16069,7 @@
       </Fase>
     </Programma>
     <DefaultProgramma>star01</DefaultProgramma>
-    <PeriodenData>
-      <StarPeriodeDataModel>
-        <Periode>Daluren_weekend</Periode>
-        <StarProgramma>star02</StarProgramma>
-      </StarPeriodeDataModel>
-      <StarPeriodeDataModel>
-        <Periode>Daluren_werkdag</Periode>
-        <StarProgramma>star02</StarProgramma>
-      </StarPeriodeDataModel>
-      <StarPeriodeDataModel>
-        <Periode>Oerdag_werkdag</Periode>
-        <StarProgramma>star01</StarProgramma>
-      </StarPeriodeDataModel>
-    </PeriodenData>
+    <PeriodenData />
   </StarData>
   <TimingsData>
     <TimingsToepassen>false</TimingsToepassen>
@@ -17288,6 +17097,25 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>68_2a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>68_2a</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>68_2b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>68_2b</SumoNaam1>
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>68_9a</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>681</SumoNaam1>
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -17724,25 +17552,6 @@
         <Naam>68_9b</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>682</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>68_9a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>681</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>68_2b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>68_2b</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>68_2a</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>68_2a</SumoNaam1>
-        <SumoNaam2 />
-        <SumoNaam3 />
       </Detector>
     </Detectoren>
   </SumoKoppeling>

@@ -8356,34 +8356,10 @@
         <VoorstartOntruimingstijd>40</VoorstartOntruimingstijd>
       </Voorstart>
       <Voorstart>
-        <FaseVan>22</FaseVan>
-        <FaseNaar>32</FaseNaar>
-        <VoorstartTijd>0</VoorstartTijd>
-        <VoorstartOntruimingstijd>0</VoorstartOntruimingstijd>
-      </Voorstart>
-      <Voorstart>
-        <FaseVan>24</FaseVan>
-        <FaseNaar>34</FaseNaar>
-        <VoorstartTijd>0</VoorstartTijd>
-        <VoorstartOntruimingstijd>0</VoorstartOntruimingstijd>
-      </Voorstart>
-      <Voorstart>
-        <FaseVan>28</FaseVan>
-        <FaseNaar>38</FaseNaar>
-        <VoorstartTijd>0</VoorstartTijd>
-        <VoorstartOntruimingstijd>0</VoorstartOntruimingstijd>
-      </Voorstart>
-      <Voorstart>
         <FaseVan>32</FaseVan>
         <FaseNaar>05</FaseNaar>
         <VoorstartTijd>20</VoorstartTijd>
         <VoorstartOntruimingstijd>50</VoorstartOntruimingstijd>
-      </Voorstart>
-      <Voorstart>
-        <FaseVan>84</FaseVan>
-        <FaseNaar>33</FaseNaar>
-        <VoorstartTijd>0</VoorstartTijd>
-        <VoorstartOntruimingstijd>0</VoorstartOntruimingstijd>
       </Voorstart>
     </Voorstarten>
     <Gelijkstarten />
@@ -8820,7 +8796,7 @@
         <Type>RoodVoorAanvraag</Type>
         <AanUit>SchAan</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
-        <DetectieAfhankelijk>false</DetectieAfhankelijk>
+        <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
         <UitgesteldTijdsduur>0</UitgesteldTijdsduur>
         <Detectoren>
@@ -8880,7 +8856,7 @@
         <Type>RoodVoorAanvraag</Type>
         <AanUit>SchAan</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
-        <DetectieAfhankelijk>false</DetectieAfhankelijk>
+        <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
         <UitgesteldTijdsduur>0</UitgesteldTijdsduur>
         <Detectoren>
@@ -8895,7 +8871,7 @@
         <Type>RoodVoorAanvraag</Type>
         <AanUit>SchAan</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
-        <DetectieAfhankelijk>false</DetectieAfhankelijk>
+        <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
         <UitgesteldTijdsduur>0</UitgesteldTijdsduur>
         <Detectoren>
@@ -8940,10 +8916,14 @@
         <Type>RoodVoorAanvraag</Type>
         <AanUit>SchAan</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
-        <DetectieAfhankelijk>false</DetectieAfhankelijk>
+        <DetectieAfhankelijk>true</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
         <UitgesteldTijdsduur>0</UitgesteldTijdsduur>
-        <Detectoren />
+        <Detectoren>
+          <MeeaanvraagDetector>
+            <MeeaanvraagDetector>k38a</MeeaanvraagDetector>
+          </MeeaanvraagDetector>
+        </Detectoren>
       </Meeaanvraag>
       <Meeaanvraag>
         <FaseVan>82</FaseVan>

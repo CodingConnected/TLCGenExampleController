@@ -33,7 +33,8 @@ void SpecialSignals_Add(void)
 void post_init_application()
 {
 #ifndef AUTOMAAT
-    int i;
+
+int i;
 //    fpt = fopen("MyFile.csv", "w");
 //    if (fpt)
 //    {
@@ -58,18 +59,16 @@ void post_init_application()
 //        fprintf(fpt, " uswtv24,");
 //        fprintf(fpt, "\n");
 //    }
+   #ifndef DUURTEST
        stuffkey(F2KEY);
-       stuffkey(CTRLALTF3KEY);
-       stuffkey(F4KEY);
+      stuffkey(CTRLALTF3KEY);
+   #endif
 
 #endif
 }
 
 void PreApplication_Add(void)
 {
-    SCH[schhardmv2205] = 1;
-    SCH[schhardmv2611] = 1;
-    SCH[schhardmv3205] = 1;
 }
 
 void KlokPerioden_Add(void)
@@ -79,11 +78,6 @@ void KlokPerioden_Add(void)
 
 void Aanvragen_Add(void)
 {
-    mee_aanvraag(fc22, RA[fc32]);
-    mee_aanvraag(fc24, RA[fc34]);
-    mee_aanvraag(fc28, RA[fc38]);
-    mee_aanvraag(fc84, RA[fc33]);
-
 }
 
 void Maxgroen_Add(void)

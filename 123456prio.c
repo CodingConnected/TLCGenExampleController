@@ -989,7 +989,7 @@ void InUitMelden(void)
     {
         IH[hprioin22fietsfiets] = !C[cvc22fiets] && fietsprio_inmelding(fc22, NG, NG, cftscyc22fietsfiets, prmftsblok22fietsfiets, prmftsmaxpercyc22fietsfiets, NG, prmftsminwt22fietsfiets, ML, NG, NG);
     }
-    IH[hprioin22fiets] = IH[hprioin22fietsfiets];
+    IH[hprioin22fiets] = (IH[hperiodFietsprio1] || IH[hperiodFietsprio2]) && (IH[hprioin22fietsfiets]);
 
     /* Uitmelding fc22 type Fiets */
     IH[hpriouit22fiets] = IH[hpriouit22fietsfiets] = FALSE;
@@ -1006,7 +1006,7 @@ void InUitMelden(void)
     {
         IH[hprioin28fietsfiets] = !C[cvc28fiets] && fietsprio_inmelding(fc28, NG, NG, cftscyc28fietsfiets, prmftsblok28fietsfiets, prmftsmaxpercyc28fietsfiets, NG, prmftsminwt28fietsfiets, ML, NG, NG);
     }
-    IH[hprioin28fiets] = IH[hprioin28fietsfiets];
+    IH[hprioin28fiets] = (IH[hperiodFietsprio1] || IH[hperiodFietsprio2]) && (IH[hprioin28fietsfiets]);
 
     /* Uitmelding fc28 type Fiets */
     IH[hpriouit28fiets] = IH[hpriouit28fietsfiets] = FALSE;
@@ -1082,7 +1082,9 @@ void InUitMelden(void)
 
     /* Inmelding HD fc02 */
     IH[hhdin02kar] = RT[thdin02kar] = !T[thdin02kar] && SCH[schhdin02kar] && (DSIMelding_HD_V1(PRM[prmkarsghd02], CIF_DSIN, SCH[schchecksirene02]));
-    IH[hhdin02] = IH[hhdin02kar];
+    IH[hhdin02opt] = !T[thdin02opt] && SCH[schhdinuit02opt] && !C[cvchd02] && DB[dopt02];
+    RT[thdin02opt] = G[fc02] && C[cvchd02];
+    IH[hhdin02] = IH[hhdin02kar] || IH[hhdin02opt];
 
     /* Inmelding HD fc03 */
     IH[hhdin03kar] = RT[thdin03kar] = !T[thdin03kar] && SCH[schhdin03kar] && (DSIMelding_HD_V1(PRM[prmkarsghd03], CIF_DSIN, SCH[schchecksirene03]));
@@ -1090,11 +1092,15 @@ void InUitMelden(void)
 
     /* Inmelding HD fc05 */
     IH[hhdin05kar] = RT[thdin05kar] = !T[thdin05kar] && SCH[schhdin05kar] && (DSIMelding_HD_V1(PRM[prmkarsghd05], CIF_DSIN, SCH[schchecksirene05]));
-    IH[hhdin05] = IH[hhdin05kar];
+    IH[hhdin05opt] = !T[thdin05opt] && SCH[schhdinuit05opt] && !C[cvchd05] && DB[dopt05];
+    RT[thdin05opt] = G[fc05] && C[cvchd05];
+    IH[hhdin05] = IH[hhdin05kar] || IH[hhdin05opt];
 
     /* Inmelding HD fc08 */
     IH[hhdin08kar] = RT[thdin08kar] = !T[thdin08kar] && SCH[schhdin08kar] && (DSIMelding_HD_V1(PRM[prmkarsghd08], CIF_DSIN, SCH[schchecksirene08]));
-    IH[hhdin08] = IH[hhdin08kar];
+    IH[hhdin08opt] = !T[thdin08opt] && SCH[schhdinuit08opt] && !C[cvchd08] && DB[dopt08];
+    RT[thdin08opt] = G[fc08] && C[cvchd08];
+    IH[hhdin08] = IH[hhdin08kar] || IH[hhdin08opt];
 
     /* Inmelding HD fc09 */
     IH[hhdin09kar] = RT[thdin09kar] = !T[thdin09kar] && SCH[schhdin09kar] && (DSIMelding_HD_V1(PRM[prmkarsghd09], CIF_DSIN, SCH[schchecksirene09]));
@@ -1102,7 +1108,9 @@ void InUitMelden(void)
 
     /* Inmelding HD fc11 */
     IH[hhdin11kar] = RT[thdin11kar] = !T[thdin11kar] && SCH[schhdin11kar] && (DSIMelding_HD_V1(PRM[prmkarsghd11], CIF_DSIN, SCH[schchecksirene11]));
-    IH[hhdin11] = IH[hhdin11kar];
+    IH[hhdin11opt] = !T[thdin11opt] && SCH[schhdinuit11opt] && !C[cvchd11] && DB[dopt11];
+    RT[thdin11opt] = G[fc11] && C[cvchd11];
+    IH[hhdin11] = IH[hhdin11kar] || IH[hhdin11opt];
 
     /* Inmelding HD fc61 */
     IH[hhdin61kar] = RT[thdin61kar] = !T[thdin61kar] && SCH[schhdin61kar] && (DSIMelding_HD_V1(PRM[prmkarsghd61], CIF_DSIN, SCH[schchecksirene61]));
@@ -1122,7 +1130,8 @@ void InUitMelden(void)
 
     /* Uitmelding HD fc02 */
     IH[hhduit02kar] = RT[thduit02kar] = !T[thduit02kar] && SCH[schhduit02kar] && (DSIMelding_HD_V1(PRM[prmkarsghd02], CIF_DSUIT, FALSE));
-    IH[hhduit02] = IH[hhduit02kar];
+    IH[hhduit02opt] = SCH[schhdinuit02opt] && !TDH[dopt02] && TDH_old[dopt02];
+    IH[hhduit02] = IH[hhduit02kar] || IH[hhduit02opt];
 
     /* Uitmelding HD fc03 */
     IH[hhduit03kar] = RT[thduit03kar] = !T[thduit03kar] && SCH[schhduit03kar] && (DSIMelding_HD_V1(PRM[prmkarsghd03], CIF_DSUIT, FALSE));
@@ -1130,11 +1139,13 @@ void InUitMelden(void)
 
     /* Uitmelding HD fc05 */
     IH[hhduit05kar] = RT[thduit05kar] = !T[thduit05kar] && SCH[schhduit05kar] && (DSIMelding_HD_V1(PRM[prmkarsghd05], CIF_DSUIT, FALSE));
-    IH[hhduit05] = IH[hhduit05kar];
+    IH[hhduit05opt] = SCH[schhdinuit05opt] && !TDH[dopt05] && TDH_old[dopt05];
+    IH[hhduit05] = IH[hhduit05kar] || IH[hhduit05opt];
 
     /* Uitmelding HD fc08 */
     IH[hhduit08kar] = RT[thduit08kar] = !T[thduit08kar] && SCH[schhduit08kar] && (DSIMelding_HD_V1(PRM[prmkarsghd08], CIF_DSUIT, FALSE));
-    IH[hhduit08] = IH[hhduit08kar];
+    IH[hhduit08opt] = SCH[schhdinuit08opt] && !TDH[dopt08] && TDH_old[dopt08];
+    IH[hhduit08] = IH[hhduit08kar] || IH[hhduit08opt];
 
     /* Uitmelding HD fc09 */
     IH[hhduit09kar] = RT[thduit09kar] = !T[thduit09kar] && SCH[schhduit09kar] && (DSIMelding_HD_V1(PRM[prmkarsghd09], CIF_DSUIT, FALSE));
@@ -1142,7 +1153,8 @@ void InUitMelden(void)
 
     /* Uitmelding HD fc11 */
     IH[hhduit11kar] = RT[thduit11kar] = !T[thduit11kar] && SCH[schhduit11kar] && (DSIMelding_HD_V1(PRM[prmkarsghd11], CIF_DSUIT, FALSE));
-    IH[hhduit11] = IH[hhduit11kar];
+    IH[hhduit11opt] = SCH[schhdinuit11opt] && !TDH[dopt11] && TDH_old[dopt11];
+    IH[hhduit11] = IH[hhduit11kar] || IH[hhduit11opt];
 
     /* Uitmelding HD fc61 */
     IH[hhduit61kar] = RT[thduit61kar] = !T[thduit61kar] && SCH[schhduit61kar] && (DSIMelding_HD_V1(PRM[prmkarsghd61], CIF_DSUIT, FALSE));
@@ -1335,9 +1347,39 @@ void PrioriteitsToekenningExtra(void)
    ------------------------------------ */
 void TegenhoudenConflictenExtra(void)
 {
+    if (MM[mwtvm21] && MM[mwtvm21] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc21] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm22] && MM[mwtvm22] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc22] &= ~PRIO_RR_BIT;
+        RR[fc21] &= ~PRIO_RR_BIT;
+    }
     if (MM[mwtvm24] && MM[mwtvm24] <= PRM[prmwtvnhaltmin])
     {
         RR[fc24] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm26] && MM[mwtvm26] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc26] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm28] && MM[mwtvm28] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc28] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm81] && MM[mwtvm81] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc81] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm82] && MM[mwtvm82] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc82] &= ~PRIO_RR_BIT;
+        RR[fc81] &= ~PRIO_RR_BIT;
+    }
+    if (MM[mwtvm84] && MM[mwtvm84] <= PRM[prmwtvnhaltmin])
+    {
+        RR[fc84] &= ~PRIO_RR_BIT;
     }
 }
 
@@ -1355,7 +1397,14 @@ void PostAfhandelingPrio(void)
 
     /* Blokkeren alle langzaam verkeer (tevens niet-conflicten) */
     /* Blokkeren uitstellen indien een wachttijdvoorspeller onder het minimum is */
+    isWTV |= (MM[mwtvm21] && MM[mwtvm21] <= PRM[prmwtvnhaltmin]);
+    isWTV |= (MM[mwtvm22] && MM[mwtvm22] <= PRM[prmwtvnhaltmin]);
     isWTV |= (MM[mwtvm24] && MM[mwtvm24] <= PRM[prmwtvnhaltmin]);
+    isWTV |= (MM[mwtvm26] && MM[mwtvm26] <= PRM[prmwtvnhaltmin]);
+    isWTV |= (MM[mwtvm28] && MM[mwtvm28] <= PRM[prmwtvnhaltmin]);
+    isWTV |= (MM[mwtvm81] && MM[mwtvm81] <= PRM[prmwtvnhaltmin]);
+    isWTV |= (MM[mwtvm82] && MM[mwtvm82] <= PRM[prmwtvnhaltmin]);
+    isWTV |= (MM[mwtvm84] && MM[mwtvm84] <= PRM[prmwtvnhaltmin]);
     if (isHD && !isWTV)
     {
         RR[fc21] |= BIT6; Z[fc21] |= BIT6;

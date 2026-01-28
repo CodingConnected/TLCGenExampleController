@@ -137,6 +137,8 @@ boolv init_tvg;
 
 void PreApplication(void)
 {
+    int fc;
+
     TFB_max = PRM[prmfb];
 
     /* Soms is het wenselijk om een fixatie ingreep te kunnen uitstellen, */
@@ -159,9 +161,29 @@ void PreApplication(void)
     /* Robuuste Groenverdeler */
     IH[hrgvact] = SCH[schrgv];
 
-    /* tegenhouden aansturing RW voor pelotonkoppelingen bij minimaal aantal leds */
-        if (MM[mwtvm21] && MM[mwtvm21] <= PRM[prmwtvnhaltmin]) IH[hpeltegenhKOP02] = TRUE;
-        if (MM[mwtvm82] && MM[mwtvm82] <= PRM[prmwtvnhaltmin]) IH[hpeltegenhKOP02] = TRUE;
+    /* School ingreep */
+    RT[tdbsidk31a] = !D[dk31a];
+    RT[tdbsidk31b] = !D[dk31b];
+    RT[tdbsidk32a] = !D[dk32a];
+    RT[tdbsidk32b] = !D[dk32b];
+    RT[tdbsidk33a] = !D[dk33a];
+    RT[tdbsidk33b] = !D[dk33b];
+    RT[tdbsidk34a] = !D[dk34a];
+    RT[tdbsidk34b] = !D[dk34b];
+    IH[hschoolingreepdk31a] = D[dk31a] && !(RT[tdbsidk31a] || T[tdbsidk31a]) && !(CIF_IS[dk31a] >= CIF_DET_STORING) && (R[fc31] || G[fc31] || H[hschoolingreepdk31a]) || TDH[dk31a] && !(CIF_IS[dk31a] >= CIF_DET_STORING) && H[hschoolingreepdk31a];
+    IH[hschoolingreepdk31b] = D[dk31b] && !(RT[tdbsidk31b] || T[tdbsidk31b]) && !(CIF_IS[dk31b] >= CIF_DET_STORING) && (R[fc31] || G[fc31] || H[hschoolingreepdk31b]) || TDH[dk31b] && !(CIF_IS[dk31b] >= CIF_DET_STORING) && H[hschoolingreepdk31b];
+    IH[hschoolingreepdk32a] = D[dk32a] && !(RT[tdbsidk32a] || T[tdbsidk32a]) && !(CIF_IS[dk32a] >= CIF_DET_STORING) && (R[fc32] || G[fc32] || H[hschoolingreepdk32a]) || TDH[dk32a] && !(CIF_IS[dk32a] >= CIF_DET_STORING) && H[hschoolingreepdk32a];
+    IH[hschoolingreepdk32b] = D[dk32b] && !(RT[tdbsidk32b] || T[tdbsidk32b]) && !(CIF_IS[dk32b] >= CIF_DET_STORING) && (R[fc32] || G[fc32] || H[hschoolingreepdk32b]) || TDH[dk32b] && !(CIF_IS[dk32b] >= CIF_DET_STORING) && H[hschoolingreepdk32b];
+    IH[hschoolingreepdk33a] = D[dk33a] && !(RT[tdbsidk33a] || T[tdbsidk33a]) && !(CIF_IS[dk33a] >= CIF_DET_STORING) && (R[fc33] || G[fc33] || H[hschoolingreepdk33a]) || TDH[dk33a] && !(CIF_IS[dk33a] >= CIF_DET_STORING) && H[hschoolingreepdk33a];
+    IH[hschoolingreepdk33b] = D[dk33b] && !(RT[tdbsidk33b] || T[tdbsidk33b]) && !(CIF_IS[dk33b] >= CIF_DET_STORING) && (R[fc33] || G[fc33] || H[hschoolingreepdk33b]) || TDH[dk33b] && !(CIF_IS[dk33b] >= CIF_DET_STORING) && H[hschoolingreepdk33b];
+    IH[hschoolingreepdk34a] = D[dk34a] && !(RT[tdbsidk34a] || T[tdbsidk34a]) && !(CIF_IS[dk34a] >= CIF_DET_STORING) && (R[fc34] || G[fc34] || H[hschoolingreepdk34a]) || TDH[dk34a] && !(CIF_IS[dk34a] >= CIF_DET_STORING) && H[hschoolingreepdk34a];
+    IH[hschoolingreepdk34b] = D[dk34b] && !(RT[tdbsidk34b] || T[tdbsidk34b]) && !(CIF_IS[dk34b] >= CIF_DET_STORING) && (R[fc34] || G[fc34] || H[hschoolingreepdk34b]) || TDH[dk34b] && !(CIF_IS[dk34b] >= CIF_DET_STORING) && H[hschoolingreepdk34b];
+
+    /* Reset BITs senioren ingreep */
+    for (fc = 0; fc < FCMAX; ++fc)
+    {
+        if (US_type[fc] & VTG_type) RW[fc] &= ~BIT7;
+    }
 
     /* Instellen basis waarde hulpelementen 'geen dynamisch hiaat gebruiken'.
        Dit hulpelement kan in gebruikers code worden gebruikt voor eigen aansturing. */
@@ -1521,6 +1543,12 @@ void Verlenggroen(void)
     if (EVG[fc08]) MM[mfilemem08] = FALSE;
     if (EVG[fc11]) MM[mfilemem11] = FALSE;
 
+    /* Seniorengroen (percentage van TFG extra als WG) */
+    if (SCH[schsi31]) SeniorenGroen(fc31, dk31a, tdbsiexgrdk31a, dk31b, tdbsiexgrdk31b, prmsiexgrperc31, hsiexgr31, tsiexgr31, tnlsgd3132, END);
+    if (SCH[schsi32]) SeniorenGroen(fc32, dk32a, tdbsiexgrdk32a, dk32b, tdbsiexgrdk32b, prmsiexgrperc32, hsiexgr32, tsiexgr32, tnlsgd3231, END);
+    if (SCH[schsi33]) SeniorenGroen(fc33, dk33a, tdbsiexgrdk33a, dk33b, tdbsiexgrdk33b, prmsiexgrperc33, hsiexgr33, tsiexgr33, tnlsgd3334, END);
+    if (SCH[schsi34]) SeniorenGroen(fc34, dk34a, tdbsiexgrdk34a, dk34b, tdbsiexgrdk34b, prmsiexgrperc34, hsiexgr34, tsiexgr34, tnlsgd3433, END);
+
     /* TVG_max alleen aanpassen op EVG van de primaire richting of tijdens initialisatie */
     IsgCorrectieTvgPrTvgMax();
     init_tvg = FALSE;
@@ -1842,6 +1870,22 @@ void Meetkriterium(void)
         RW[fc02] &= ~BIT12;
     }
 
+    /* School ingreep: reset BITs */
+    RW[fc31] &= ~BIT8;
+    RW[fc32] &= ~BIT8;
+    RW[fc33] &= ~BIT8;
+    RW[fc34] &= ~BIT8;
+
+    /* School ingreep: set RW BIT8 */
+    if (SCH[schschoolingreep31] && H[hschoolingreepdk31a] && T[tschoolingreepmaxg31]) RW[fc31] |= BIT8;
+    if (SCH[schschoolingreep31] && H[hschoolingreepdk31b] && T[tschoolingreepmaxg31]) RW[fc31] |= BIT8;
+    if (SCH[schschoolingreep32] && H[hschoolingreepdk32a] && T[tschoolingreepmaxg32]) RW[fc32] |= BIT8;
+    if (SCH[schschoolingreep32] && H[hschoolingreepdk32b] && T[tschoolingreepmaxg32]) RW[fc32] |= BIT8;
+    if (SCH[schschoolingreep33] && H[hschoolingreepdk33a] && T[tschoolingreepmaxg33]) RW[fc33] |= BIT8;
+    if (SCH[schschoolingreep33] && H[hschoolingreepdk33b] && T[tschoolingreepmaxg33]) RW[fc33] |= BIT8;
+    if (SCH[schschoolingreep34] && H[hschoolingreepdk34a] && T[tschoolingreepmaxg34]) RW[fc34] |= BIT8;
+    if (SCH[schschoolingreep34] && H[hschoolingreepdk34b] && T[tschoolingreepmaxg34]) RW[fc34] |= BIT8;
+
     hiaattijden_verlenging(IH[hgeendynhiaat08], SCH[schedkop_08], FALSE, mmk08, IH[hopdrempelen08], fc08, 
         1, d08_1a, t08_1a_1, t08_1a_2, ttdh_08_1a_1, ttdh_08_1a_2, tmax_08_1a, prmspringverleng_08_1a, hverleng_08_1a, 
         1, d08_1b, t08_1b_1, t08_1b_2, ttdh_08_1b_1, ttdh_08_1b_2, tmax_08_1b, prmspringverleng_08_1b, hverleng_08_1b, 
@@ -1897,6 +1941,9 @@ void Meeverlengen(void)
         YM[fc] &= ~BIT4;  /* reset BIT-sturing */
     }
 
+    /* Richtingen mogen meeverlengen op basis van de maxmiale realisatietijden. De realisatietijd kan 
+     * middels een instelbaere waarde (verschil$$) worden beperkt zodat richtingen minder vaak maatgevend zijn. 
+     */ 
     YM[fc02] |= SCH[schmv02] && ym_max_tig_Realisatietijd(fc02, NG) && hf_wsg_nlISG() ? BIT4 : 0;
     YM[fc03] |= SCH[schmv03] && ym_max_tig_Realisatietijd(fc03, NG) && hf_wsg_nlISG() ? BIT4 : 0;
     YM[fc05] |= SCH[schmv05] && ym_max_tig_Realisatietijd(fc05, NG) && hf_wsg_nlISG() ? BIT4 : 0;
@@ -2209,6 +2256,49 @@ void RealisatieAfhandeling(void)
         YM[fc] |= SML && PG[fc] ? BIT5 : FALSE;
     }
 
+    /* VA ontruimen */
+    /* ============ */
+
+    /* herstarten maxima */
+    RT[tvamax62] = !R[fc62];
+
+    /* Fase 62 */
+    if (!(CIF_IS[d62_1a] >= CIF_DET_STORING))
+    {
+        RT[tva6209_d62_1a] = D[d62_1a] && T[tvamax62] && T_max[tva6209_d62_1a];
+        RT[tva6211_d62_1a] = D[d62_1a] && T[tvamax62] && T_max[tva6211_d62_1a];
+        RT[tva6226_d62_1a] = D[d62_1a] && T[tvamax62] && T_max[tva6226_d62_1a];
+    }
+    else
+    {
+        RT[tva6209_d62_1a] = FALSE;
+        RT[tva6211_d62_1a] = FALSE;
+        RT[tva6226_d62_1a] = FALSE;
+    }
+
+    /* afzetten X voor alle relevante fasen */
+    X[fc09] &= ~BIT9;
+    X[fc11] &= ~BIT9;
+    X[fc26] &= ~BIT9;
+    X[fc11] &= ~BIT9;
+
+    /* opzetten X voor conflicten van fase 62 */
+    if(T[tva6209_d62_1a]) X[fc09] |= BIT9;
+    if(T[tva6211_d62_1a]) X[fc11] |= BIT9;
+    if(T[tva6226_d62_1a]) X[fc26] |= BIT9;
+    /* opzetten X voor synchronisaties */
+    if (X[fc26] & BIT9) X[fc11] |= BIT9;
+
+    /* School ingreep: bijhouden max groen & vasthouden naloop tijd */
+    RT[tschoolingreepmaxg31] = SG[fc31];
+    RT[tschoolingreepmaxg32] = SG[fc32];
+    RT[tschoolingreepmaxg33] = SG[fc33];
+    RT[tschoolingreepmaxg34] = SG[fc34];
+    HT[tnlsgd3132] = T[tschoolingreepmaxg31] && CV[fc31] && G[fc31] && IH[hschoolingreepdk31a];
+    HT[tnlsgd3231] = T[tschoolingreepmaxg32] && CV[fc32] && G[fc32] && IH[hschoolingreepdk32a];
+    HT[tnlsgd3334] = T[tschoolingreepmaxg33] && CV[fc33] && G[fc33] && IH[hschoolingreepdk33a];
+    HT[tnlsgd3433] = T[tschoolingreepmaxg34] && CV[fc34] && G[fc34] && IH[hschoolingreepdk34a];
+
     RealisatieAfhandeling_Add();
 }
 
@@ -2341,14 +2431,7 @@ void init_application(void)
 #endif
 
     /* Aansturing hulpelement aansturing wachttijdvoorspellers */
-    IH[hwtv21] = SCH[schwtv21];
-    IH[hwtv22] = SCH[schwtv22];
     IH[hwtv24] = SCH[schwtv24];
-    IH[hwtv26] = SCH[schwtv26];
-    IH[hwtv28] = SCH[schwtv28];
-    IH[hwtv81] = SCH[schwtv81];
-    IH[hwtv82] = SCH[schwtv82];
-    IH[hwtv84] = SCH[schwtv84];
 
     /* TESTOMGEVING */
     /* ============ */
@@ -2504,6 +2587,10 @@ void PostApplication(void)
     }
 
     PrioCcol();
+
+    /* De ISG-tijd wordt naar een uitgangssignaal geschreven als de richting een aanvraag heeft of als er een openbaar vervoer ingreep is. 
+    Het wegschrijven wordt eenmaal per seconde gedaan op straat om de VLOG-files niet te groot te laten worden. */
+#ifndef AUTOMAAT
     CIF_GUS[usisgtijd02] = ((twacht[fc02] * (A[fc02] || PRIOFC[fc02]) * R[fc02]) >= 0) ? (twacht[fc02] * (A[fc02] || PRIOFC[fc02]) * R[fc02]) : 0;
     CIF_GUS[usisgtijd03] = ((twacht[fc03] * (A[fc03] || PRIOFC[fc03]) * R[fc03]) >= 0) ? (twacht[fc03] * (A[fc03] || PRIOFC[fc03]) * R[fc03]) : 0;
     CIF_GUS[usisgtijd05] = ((twacht[fc05] * (A[fc05] || PRIOFC[fc05]) * R[fc05]) >= 0) ? (twacht[fc05] * (A[fc05] || PRIOFC[fc05]) * R[fc05]) : 0;
@@ -2527,6 +2614,34 @@ void PostApplication(void)
     CIF_GUS[usisgtijd81] = ((twacht[fc81] * (A[fc81] || PRIOFC[fc81]) * R[fc81]) >= 0) ? (twacht[fc81] * (A[fc81] || PRIOFC[fc81]) * R[fc81]) : 0;
     CIF_GUS[usisgtijd82] = ((twacht[fc82] * (A[fc82] || PRIOFC[fc82]) * R[fc82]) >= 0) ? (twacht[fc82] * (A[fc82] || PRIOFC[fc82]) * R[fc82]) : 0;
     CIF_GUS[usisgtijd84] = ((twacht[fc84] * (A[fc84] || PRIOFC[fc84]) * R[fc84]) >= 0) ? (twacht[fc84] * (A[fc84] || PRIOFC[fc84]) * R[fc84]) : 0;
+#else
+    if (TS)
+    {
+       CIF_GUS[usisgtijd02] = ((twacht[fc02] * (A[fc02] || PRIOFC[fc02]) * R[fc02]) >= 0) ? (twacht[fc02] * (A[fc02] || PRIOFC[fc02]) * R[fc02]) : 0;
+       CIF_GUS[usisgtijd03] = ((twacht[fc03] * (A[fc03] || PRIOFC[fc03]) * R[fc03]) >= 0) ? (twacht[fc03] * (A[fc03] || PRIOFC[fc03]) * R[fc03]) : 0;
+       CIF_GUS[usisgtijd05] = ((twacht[fc05] * (A[fc05] || PRIOFC[fc05]) * R[fc05]) >= 0) ? (twacht[fc05] * (A[fc05] || PRIOFC[fc05]) * R[fc05]) : 0;
+       CIF_GUS[usisgtijd08] = ((twacht[fc08] * (A[fc08] || PRIOFC[fc08]) * R[fc08]) >= 0) ? (twacht[fc08] * (A[fc08] || PRIOFC[fc08]) * R[fc08]) : 0;
+       CIF_GUS[usisgtijd09] = ((twacht[fc09] * (A[fc09] || PRIOFC[fc09]) * R[fc09]) >= 0) ? (twacht[fc09] * (A[fc09] || PRIOFC[fc09]) * R[fc09]) : 0;
+       CIF_GUS[usisgtijd11] = ((twacht[fc11] * (A[fc11] || PRIOFC[fc11]) * R[fc11]) >= 0) ? (twacht[fc11] * (A[fc11] || PRIOFC[fc11]) * R[fc11]) : 0;
+       CIF_GUS[usisgtijd21] = ((twacht[fc21] * (A[fc21] || PRIOFC[fc21]) * R[fc21]) >= 0) ? (twacht[fc21] * (A[fc21] || PRIOFC[fc21]) * R[fc21]) : 0;
+       CIF_GUS[usisgtijd22] = ((twacht[fc22] * (A[fc22] || PRIOFC[fc22]) * R[fc22]) >= 0) ? (twacht[fc22] * (A[fc22] || PRIOFC[fc22]) * R[fc22]) : 0;
+       CIF_GUS[usisgtijd24] = ((twacht[fc24] * (A[fc24] || PRIOFC[fc24]) * R[fc24]) >= 0) ? (twacht[fc24] * (A[fc24] || PRIOFC[fc24]) * R[fc24]) : 0;
+       CIF_GUS[usisgtijd26] = ((twacht[fc26] * (A[fc26] || PRIOFC[fc26]) * R[fc26]) >= 0) ? (twacht[fc26] * (A[fc26] || PRIOFC[fc26]) * R[fc26]) : 0;
+       CIF_GUS[usisgtijd28] = ((twacht[fc28] * (A[fc28] || PRIOFC[fc28]) * R[fc28]) >= 0) ? (twacht[fc28] * (A[fc28] || PRIOFC[fc28]) * R[fc28]) : 0;
+       CIF_GUS[usisgtijd31] = ((twacht[fc31] * (A[fc31] || PRIOFC[fc31]) * R[fc31]) >= 0) ? (twacht[fc31] * (A[fc31] || PRIOFC[fc31]) * R[fc31]) : 0;
+       CIF_GUS[usisgtijd32] = ((twacht[fc32] * (A[fc32] || PRIOFC[fc32]) * R[fc32]) >= 0) ? (twacht[fc32] * (A[fc32] || PRIOFC[fc32]) * R[fc32]) : 0;
+       CIF_GUS[usisgtijd33] = ((twacht[fc33] * (A[fc33] || PRIOFC[fc33]) * R[fc33]) >= 0) ? (twacht[fc33] * (A[fc33] || PRIOFC[fc33]) * R[fc33]) : 0;
+       CIF_GUS[usisgtijd34] = ((twacht[fc34] * (A[fc34] || PRIOFC[fc34]) * R[fc34]) >= 0) ? (twacht[fc34] * (A[fc34] || PRIOFC[fc34]) * R[fc34]) : 0;
+       CIF_GUS[usisgtijd38] = ((twacht[fc38] * (A[fc38] || PRIOFC[fc38]) * R[fc38]) >= 0) ? (twacht[fc38] * (A[fc38] || PRIOFC[fc38]) * R[fc38]) : 0;
+       CIF_GUS[usisgtijd61] = ((twacht[fc61] * (A[fc61] || PRIOFC[fc61]) * R[fc61]) >= 0) ? (twacht[fc61] * (A[fc61] || PRIOFC[fc61]) * R[fc61]) : 0;
+       CIF_GUS[usisgtijd62] = ((twacht[fc62] * (A[fc62] || PRIOFC[fc62]) * R[fc62]) >= 0) ? (twacht[fc62] * (A[fc62] || PRIOFC[fc62]) * R[fc62]) : 0;
+       CIF_GUS[usisgtijd67] = ((twacht[fc67] * (A[fc67] || PRIOFC[fc67]) * R[fc67]) >= 0) ? (twacht[fc67] * (A[fc67] || PRIOFC[fc67]) * R[fc67]) : 0;
+       CIF_GUS[usisgtijd68] = ((twacht[fc68] * (A[fc68] || PRIOFC[fc68]) * R[fc68]) >= 0) ? (twacht[fc68] * (A[fc68] || PRIOFC[fc68]) * R[fc68]) : 0;
+       CIF_GUS[usisgtijd81] = ((twacht[fc81] * (A[fc81] || PRIOFC[fc81]) * R[fc81]) >= 0) ? (twacht[fc81] * (A[fc81] || PRIOFC[fc81]) * R[fc81]) : 0;
+       CIF_GUS[usisgtijd82] = ((twacht[fc82] * (A[fc82] || PRIOFC[fc82]) * R[fc82]) >= 0) ? (twacht[fc82] * (A[fc82] || PRIOFC[fc82]) * R[fc82]) : 0;
+       CIF_GUS[usisgtijd84] = ((twacht[fc84] * (A[fc84] || PRIOFC[fc84]) * R[fc84]) >= 0) ? (twacht[fc84] * (A[fc84] || PRIOFC[fc84]) * R[fc84]) : 0;
+    }
+#endif
 
     #ifdef SUMO
         for (isumo = 0; isumo < 44; ++isumo)
@@ -2779,52 +2894,6 @@ void system_application(void)
     WachttijdvoorspellersWachttijd_Add();
 
     /* aansturing wachttijd lantaarns (niet tijdens fixatie of prio ingreep) */
-    t_wacht_old[fc21] = t_wacht[fc21];
-    t_wacht[fc21] = (AR[fc21] && (twacht_AR[fc21] < twacht[fc21]) || (twacht[fc21] < 0)) ? twacht_AR[fc21] : twacht[fc21];
-    if ((t_wacht_old[fc21] < t_wacht[fc21]) && CIF_GUS[uswtv21] && (t_wacht_old[fc21] > 0))
-    {
-        t_wacht_halt[fc21] = t_wacht_old[fc21];
-        rr_twacht[fc21] = TRUE;
-    }
-    else
-    {
-        if (t_wacht[fc21] <= t_wacht_halt[fc21])
-        {
-            rr_twacht[fc21] = FALSE;
-        }
-    }
-    if (rr_twacht[fc21])
-    {
-        wachttijd_leds_mm(fc21, mwtv21, twtv21, t_wacht_halt[fc21], PRM[prmminwtv]);
-        RT[twtv21] = TRUE;
-    }
-    else
-    {
-        wachttijd_leds_mm(fc21, mwtv21, twtv21, t_wacht[fc21], PRM[prmminwtv]);
-    }
-    t_wacht_old[fc22] = t_wacht[fc22];
-    t_wacht[fc22] = (AR[fc22] && (twacht_AR[fc22] < twacht[fc22]) || (twacht[fc22] < 0)) ? twacht_AR[fc22] : twacht[fc22];
-    if ((t_wacht_old[fc22] < t_wacht[fc22]) && CIF_GUS[uswtv22] && (t_wacht_old[fc22] > 0))
-    {
-        t_wacht_halt[fc22] = t_wacht_old[fc22];
-        rr_twacht[fc22] = TRUE;
-    }
-    else
-    {
-        if (t_wacht[fc22] <= t_wacht_halt[fc22])
-        {
-            rr_twacht[fc22] = FALSE;
-        }
-    }
-    if (rr_twacht[fc22])
-    {
-        wachttijd_leds_mm(fc22, mwtv22, twtv22, t_wacht_halt[fc22], PRM[prmminwtv]);
-        RT[twtv22] = TRUE;
-    }
-    else
-    {
-        wachttijd_leds_mm(fc22, mwtv22, twtv22, t_wacht[fc22], PRM[prmminwtv]);
-    }
     t_wacht_old[fc24] = t_wacht[fc24];
     t_wacht[fc24] = (AR[fc24] && (twacht_AR[fc24] < twacht[fc24]) || (twacht[fc24] < 0)) ? twacht_AR[fc24] : twacht[fc24];
     if ((t_wacht_old[fc24] < t_wacht[fc24]) && CIF_GUS[uswtv24] && (t_wacht_old[fc24] > 0))
@@ -2848,171 +2917,12 @@ void system_application(void)
     {
         wachttijd_leds_mm(fc24, mwtv24, twtv24, t_wacht[fc24], PRM[prmminwtv]);
     }
-    t_wacht_old[fc26] = t_wacht[fc26];
-    t_wacht[fc26] = (AR[fc26] && (twacht_AR[fc26] < twacht[fc26]) || (twacht[fc26] < 0)) ? twacht_AR[fc26] : twacht[fc26];
-    if ((t_wacht_old[fc26] < t_wacht[fc26]) && CIF_GUS[uswtv26] && (t_wacht_old[fc26] > 0))
-    {
-        t_wacht_halt[fc26] = t_wacht_old[fc26];
-        rr_twacht[fc26] = TRUE;
-    }
-    else
-    {
-        if (t_wacht[fc26] <= t_wacht_halt[fc26])
-        {
-            rr_twacht[fc26] = FALSE;
-        }
-    }
-    if (rr_twacht[fc26])
-    {
-        wachttijd_leds_mm(fc26, mwtv26, twtv26, t_wacht_halt[fc26], PRM[prmminwtv]);
-        RT[twtv26] = TRUE;
-    }
-    else
-    {
-        wachttijd_leds_mm(fc26, mwtv26, twtv26, t_wacht[fc26], PRM[prmminwtv]);
-    }
-    t_wacht_old[fc28] = t_wacht[fc28];
-    t_wacht[fc28] = (AR[fc28] && (twacht_AR[fc28] < twacht[fc28]) || (twacht[fc28] < 0)) ? twacht_AR[fc28] : twacht[fc28];
-    if ((t_wacht_old[fc28] < t_wacht[fc28]) && CIF_GUS[uswtv28] && (t_wacht_old[fc28] > 0))
-    {
-        t_wacht_halt[fc28] = t_wacht_old[fc28];
-        rr_twacht[fc28] = TRUE;
-    }
-    else
-    {
-        if (t_wacht[fc28] <= t_wacht_halt[fc28])
-        {
-            rr_twacht[fc28] = FALSE;
-        }
-    }
-    if (rr_twacht[fc28])
-    {
-        wachttijd_leds_mm(fc28, mwtv28, twtv28, t_wacht_halt[fc28], PRM[prmminwtv]);
-        RT[twtv28] = TRUE;
-    }
-    else
-    {
-        wachttijd_leds_mm(fc28, mwtv28, twtv28, t_wacht[fc28], PRM[prmminwtv]);
-    }
-    t_wacht_old[fc81] = t_wacht[fc81];
-    t_wacht[fc81] = (AR[fc81] && (twacht_AR[fc81] < twacht[fc81]) || (twacht[fc81] < 0)) ? twacht_AR[fc81] : twacht[fc81];
-    if ((t_wacht_old[fc81] < t_wacht[fc81]) && CIF_GUS[uswtv81] && (t_wacht_old[fc81] > 0))
-    {
-        t_wacht_halt[fc81] = t_wacht_old[fc81];
-        rr_twacht[fc81] = TRUE;
-    }
-    else
-    {
-        if (t_wacht[fc81] <= t_wacht_halt[fc81])
-        {
-            rr_twacht[fc81] = FALSE;
-        }
-    }
-    if (rr_twacht[fc81])
-    {
-        wachttijd_leds_mm(fc81, mwtv81, twtv81, t_wacht_halt[fc81], PRM[prmminwtv]);
-        RT[twtv81] = TRUE;
-    }
-    else
-    {
-        wachttijd_leds_mm(fc81, mwtv81, twtv81, t_wacht[fc81], PRM[prmminwtv]);
-    }
-    t_wacht_old[fc82] = t_wacht[fc82];
-    t_wacht[fc82] = (AR[fc82] && (twacht_AR[fc82] < twacht[fc82]) || (twacht[fc82] < 0)) ? twacht_AR[fc82] : twacht[fc82];
-    if ((t_wacht_old[fc82] < t_wacht[fc82]) && CIF_GUS[uswtv82] && (t_wacht_old[fc82] > 0))
-    {
-        t_wacht_halt[fc82] = t_wacht_old[fc82];
-        rr_twacht[fc82] = TRUE;
-    }
-    else
-    {
-        if (t_wacht[fc82] <= t_wacht_halt[fc82])
-        {
-            rr_twacht[fc82] = FALSE;
-        }
-    }
-    if (rr_twacht[fc82])
-    {
-        wachttijd_leds_mm(fc82, mwtv82, twtv82, t_wacht_halt[fc82], PRM[prmminwtv]);
-        RT[twtv82] = TRUE;
-    }
-    else
-    {
-        wachttijd_leds_mm(fc82, mwtv82, twtv82, t_wacht[fc82], PRM[prmminwtv]);
-    }
-    t_wacht_old[fc84] = t_wacht[fc84];
-    t_wacht[fc84] = (AR[fc84] && (twacht_AR[fc84] < twacht[fc84]) || (twacht[fc84] < 0)) ? twacht_AR[fc84] : twacht[fc84];
-    if ((t_wacht_old[fc84] < t_wacht[fc84]) && CIF_GUS[uswtv84] && (t_wacht_old[fc84] > 0))
-    {
-        t_wacht_halt[fc84] = t_wacht_old[fc84];
-        rr_twacht[fc84] = TRUE;
-    }
-    else
-    {
-        if (t_wacht[fc84] <= t_wacht_halt[fc84])
-        {
-            rr_twacht[fc84] = FALSE;
-        }
-    }
-    if (rr_twacht[fc84])
-    {
-        wachttijd_leds_mm(fc84, mwtv84, twtv84, t_wacht_halt[fc84], PRM[prmminwtv]);
-        RT[twtv84] = TRUE;
-    }
-    else
-    {
-        wachttijd_leds_mm(fc84, mwtv84, twtv84, t_wacht[fc84], PRM[prmminwtv]);
-    }
 
     /* laatste ledje laten knipperen bij ov/hd-ingreep of fixatie */
-    wachttijd_leds_knip(mwtv21, mwtvm21, rr_twacht[fc21], isfix);
-    wachttijd_leds_knip(mwtv22, mwtvm22, rr_twacht[fc22], isfix);
     wachttijd_leds_knip(mwtv24, mwtvm24, rr_twacht[fc24], isfix);
-    wachttijd_leds_knip(mwtv26, mwtvm26, rr_twacht[fc26], isfix);
-    wachttijd_leds_knip(mwtv28, mwtvm28, rr_twacht[fc28], isfix);
-    wachttijd_leds_knip(mwtv81, mwtvm81, rr_twacht[fc81], isfix);
-    wachttijd_leds_knip(mwtv82, mwtvm82, rr_twacht[fc82], isfix);
-    wachttijd_leds_knip(mwtv84, mwtvm84, rr_twacht[fc84], isfix);
 
     /* beveiliging op afzetten tijdens bedrijf */
-    if (G[fc21])  IH[hwtv21] = SCH[schwtv21];
-    if (G[fc22])  IH[hwtv22] = SCH[schwtv22];
     if (G[fc24])  IH[hwtv24] = SCH[schwtv24];
-    if (G[fc26])  IH[hwtv26] = SCH[schwtv26];
-    if (G[fc28])  IH[hwtv28] = SCH[schwtv28];
-    if (G[fc81])  IH[hwtv81] = SCH[schwtv81];
-    if (G[fc82])  IH[hwtv82] = SCH[schwtv82];
-    if (G[fc84])  IH[hwtv84] = SCH[schwtv84];
-
-    /* Aansturen wachttijdlantaarn fase 21 */
-    if (IH[hwtv21] && R[fc21])
-    {
-        CIF_GUS[uswtv21] = MM[mwtvm21];
-    }
-    else
-    {
-        CIF_GUS[uswtv21] = 0;
-    }
-    CIF_GUS[uswtv21] &= ~BIT8;
-    if (CIF_GUS[uswtv21] && rr_twacht[fc21] && IH[hwtv21] && (SCH[schwtvbusbijhd] || !(bHDAanwezig)))
-    {
-        CIF_GUS[uswtv21] |= BIT8;
-    }
-
-    /* Aansturen wachttijdlantaarn fase 22 */
-    if (IH[hwtv22] && R[fc22])
-    {
-        CIF_GUS[uswtv22] = MM[mwtvm22];
-    }
-    else
-    {
-        CIF_GUS[uswtv22] = 0;
-    }
-    CIF_GUS[uswtv22] &= ~BIT8;
-    if (CIF_GUS[uswtv22] && rr_twacht[fc22] && IH[hwtv22] && (SCH[schwtvbusbijhd] || !(bHDAanwezig)))
-    {
-        CIF_GUS[uswtv22] |= BIT8;
-    }
 
     /* Aansturen wachttijdlantaarn fase 24 */
     if (IH[hwtv24] && R[fc24])
@@ -3027,81 +2937,6 @@ void system_application(void)
     if (CIF_GUS[uswtv24] && rr_twacht[fc24] && IH[hwtv24] && (SCH[schwtvbusbijhd] || !(bHDAanwezig)))
     {
         CIF_GUS[uswtv24] |= BIT8;
-    }
-
-    /* Aansturen wachttijdlantaarn fase 26 */
-    if (IH[hwtv26] && R[fc26])
-    {
-        CIF_GUS[uswtv26] = MM[mwtvm26];
-    }
-    else
-    {
-        CIF_GUS[uswtv26] = 0;
-    }
-    CIF_GUS[uswtv26] &= ~BIT8;
-    if (CIF_GUS[uswtv26] && rr_twacht[fc26] && IH[hwtv26] && (SCH[schwtvbusbijhd] || !(bHDAanwezig)))
-    {
-        CIF_GUS[uswtv26] |= BIT8;
-    }
-
-    /* Aansturen wachttijdlantaarn fase 28 */
-    if (IH[hwtv28] && R[fc28])
-    {
-        CIF_GUS[uswtv28] = MM[mwtvm28];
-    }
-    else
-    {
-        CIF_GUS[uswtv28] = 0;
-    }
-    CIF_GUS[uswtv28] &= ~BIT8;
-    if (CIF_GUS[uswtv28] && rr_twacht[fc28] && IH[hwtv28] && (SCH[schwtvbusbijhd] || !(bHDAanwezig)))
-    {
-        CIF_GUS[uswtv28] |= BIT8;
-    }
-
-    /* Aansturen wachttijdlantaarn fase 81 */
-    if (IH[hwtv81] && R[fc81])
-    {
-        CIF_GUS[uswtv81] = MM[mwtvm81];
-    }
-    else
-    {
-        CIF_GUS[uswtv81] = 0;
-    }
-    CIF_GUS[uswtv81] &= ~BIT8;
-    if (CIF_GUS[uswtv81] && rr_twacht[fc81] && IH[hwtv81] && (SCH[schwtvbusbijhd] || !(bHDAanwezig)))
-    {
-        CIF_GUS[uswtv81] |= BIT8;
-    }
-
-    /* Aansturen wachttijdlantaarn fase 82 */
-    if (IH[hwtv82] && R[fc82])
-    {
-        CIF_GUS[uswtv82] = MM[mwtvm82];
-    }
-    else
-    {
-        CIF_GUS[uswtv82] = 0;
-    }
-    CIF_GUS[uswtv82] &= ~BIT8;
-    if (CIF_GUS[uswtv82] && rr_twacht[fc82] && IH[hwtv82] && (SCH[schwtvbusbijhd] || !(bHDAanwezig)))
-    {
-        CIF_GUS[uswtv82] |= BIT8;
-    }
-
-    /* Aansturen wachttijdlantaarn fase 84 */
-    if (IH[hwtv84] && R[fc84])
-    {
-        CIF_GUS[uswtv84] = MM[mwtvm84];
-    }
-    else
-    {
-        CIF_GUS[uswtv84] = 0;
-    }
-    CIF_GUS[uswtv84] &= ~BIT8;
-    if (CIF_GUS[uswtv84] && rr_twacht[fc84] && IH[hwtv84] && (SCH[schwtvbusbijhd] || !(bHDAanwezig)))
-    {
-        CIF_GUS[uswtv84] |= BIT8;
     }
 
 
@@ -3156,6 +2991,16 @@ void system_application(void)
     PRIO_teller(cvchd62, schcovuber);
     PRIO_teller(cvchd67, schcovuber);
     PRIO_teller(cvchd68, schcovuber);
+
+    /* School ingreep: knipperen wachtlicht */
+    if (SCH[schschoolingreep31]) CIF_GUS[uswtk31a] = CIF_GUS[uswtk31a] && !(IH[hschoolingreepdk31a] && Knipper_1Hz) || G[fc31] && D[dk31a] && IH[hschoolingreepdk31a] && Knipper_1Hz;
+    if (SCH[schschoolingreep31]) CIF_GUS[uswtk31b] = CIF_GUS[uswtk31b] && !(IH[hschoolingreepdk31b] && Knipper_1Hz) || G[fc31] && D[dk31b] && IH[hschoolingreepdk31b] && Knipper_1Hz;
+    if (SCH[schschoolingreep32]) CIF_GUS[uswtk32a] = CIF_GUS[uswtk32a] && !(IH[hschoolingreepdk32a] && Knipper_1Hz) || G[fc32] && D[dk32a] && IH[hschoolingreepdk32a] && Knipper_1Hz;
+    if (SCH[schschoolingreep32]) CIF_GUS[uswtk32b] = CIF_GUS[uswtk32b] && !(IH[hschoolingreepdk32b] && Knipper_1Hz) || G[fc32] && D[dk32b] && IH[hschoolingreepdk32b] && Knipper_1Hz;
+    if (SCH[schschoolingreep33]) CIF_GUS[uswtk33a] = CIF_GUS[uswtk33a] && !(IH[hschoolingreepdk33a] && Knipper_1Hz) || G[fc33] && D[dk33a] && IH[hschoolingreepdk33a] && Knipper_1Hz;
+    if (SCH[schschoolingreep33]) CIF_GUS[uswtk33b] = CIF_GUS[uswtk33b] && !(IH[hschoolingreepdk33b] && Knipper_1Hz) || G[fc33] && D[dk33b] && IH[hschoolingreepdk33b] && Knipper_1Hz;
+    if (SCH[schschoolingreep34]) CIF_GUS[uswtk34a] = CIF_GUS[uswtk34a] && !(IH[hschoolingreepdk34a] && Knipper_1Hz) || G[fc34] && D[dk34a] && IH[hschoolingreepdk34a] && Knipper_1Hz;
+    if (SCH[schschoolingreep34]) CIF_GUS[uswtk34b] = CIF_GUS[uswtk34b] && !(IH[hschoolingreepdk34b] && Knipper_1Hz) || G[fc34] && D[dk34b] && IH[hschoolingreepdk34b] && Knipper_1Hz;
 
     post_system_application();
 }
