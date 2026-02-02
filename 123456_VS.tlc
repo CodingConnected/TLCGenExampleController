@@ -17116,6 +17116,11 @@
         <SumoNaam1>681</SumoNaam1>
       </Detector>
       <Detector>
+        <Naam>68_9b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>682</SumoNaam1>
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -17547,11 +17552,6 @@
         <Naam>81_1</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>811</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>68_9b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>682</SumoNaam1>
       </Detector>
     </Detectoren>
   </SumoKoppeling>
