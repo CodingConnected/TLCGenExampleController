@@ -1897,6 +1897,9 @@ void Meeverlengen(void)
         YM[fc] &= ~BIT4;  /* reset BIT-sturing */
     }
 
+    /* Richtingen mogen bij ISG meeverlengen op basis van de maxmiale realisatietijden. De realisatietijd kan
+     * middels een instelbaere waarde (verschil$$) worden beperkt zodat richtingen minder vaak maatgevend zijn.
+     */
     YM[fc02] |= SCH[schmv02] && ym_max_tig_Realisatietijd(fc02, NG) && hf_wsg_nlISG() ? BIT4 : 0;
     YM[fc03] |= SCH[schmv03] && ym_max_tig_Realisatietijd(fc03, NG) && hf_wsg_nlISG() ? BIT4 : 0;
     YM[fc05] |= SCH[schmv05] && ym_max_tig_Realisatietijd(fc05, NG) && hf_wsg_nlISG() ? BIT4 : 0;
@@ -2130,10 +2133,14 @@ void RealisatieAfhandeling(void)
         PAR[fc33] = PAR[fc33] && PAR[fc84];
 
         /* PAR-ongecoordineerd */
+        /* PAR_los bepaalt of een gecoordineerde richting (schakelbaar) los mag realiseren.
+         * Bij eventuele parallelle deelconflicten mag de riching alleen komen als zijn meerealiserende richting ook alternatief mag komen. 
+         * Als bepaald is dat een richting moet komen mag hij niet meer worden teruggenomen.
+         */
         PAR_los[fc31] = max_par_los(fc31) && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schlosgeennla3132_2]) || RA[fc31] && PAR_los[fc31];
-        PAR_los[fc32] = max_par_los(fc32) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2]) || RA[fc32] && PAR_los[fc32];
-        PAR_los[fc33] = max_par_los(fc33) && SCH[schlos3334] && (!IH[hmadk33a] || SCH[schlosgeennla3334_2]) || RA[fc33] && PAR_los[fc33];
-        PAR_los[fc34] = max_par_los(fc34) && SCH[schlos3433] && (!IH[hmadk34a] || SCH[schlosgeennla3433_2]) || RA[fc34] && PAR_los[fc34];
+        PAR_los[fc32] = max_par_los(fc32) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2] && PAR[fc22]) || RA[fc32] && PAR_los[fc32];
+        PAR_los[fc33] = max_par_los(fc33) && SCH[schlos3334] && (!IH[hmadk33a] || SCH[schlosgeennla3334_2] && PAR[fc84]) || RA[fc33] && PAR_los[fc33];
+        PAR_los[fc34] = max_par_los(fc34) && SCH[schlos3433] && (!IH[hmadk34a] || SCH[schlosgeennla3433_2] && PAR[fc24]) || RA[fc34] && PAR_los[fc34];
 
         for (fc = 0; fc < FCMAX && !wijziging; fc++)
         {
@@ -2141,7 +2148,7 @@ void RealisatieAfhandeling(void)
         }
     } while (wijziging);
 
-    /* Bepaal naloop wel/niet toegestaan */
+    /* Bepaal naloop wel/niet toegestaan op basis van primair+alternatief gecoordineerd */
     IH[hnleg0262] = TRUE;
     IH[hnleg0868] = TRUE;
     IH[hnleg1168] = TRUE;
@@ -2151,6 +2158,12 @@ void RealisatieAfhandeling(void)
     IH[hnlsg3334] = PR[fc33] || PAR[fc33];
     IH[hnlsg3433] = PR[fc34] || PAR[fc34];
     IH[hnleg8281] = TRUE;
+
+    /* Alternatief realiseren primair+alteratief gecoordineerd of alternatief los */
+    PAR[fc31] = PAR[fc31] || PAR_los[fc31];
+    PAR[fc32] = PAR[fc32] || PAR_los[fc32];
+    PAR[fc33] = PAR[fc33] || PAR_los[fc33];
+    PAR[fc34] = PAR[fc34] || PAR_los[fc34];
 
     AlternatiefOngecoordineerd_Add();
 
