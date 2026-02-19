@@ -8,8 +8,8 @@
 
    BESTAND:   123456tab.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.18
-   CCOLGEN:   12.4.0.18
+    TLCGEN:   12.4.0.19
+   CCOLGEN:   12.4.0.19
 */
 
 /****************************** Versie commentaar ***********************************
@@ -1917,7 +1917,7 @@ void control_parameters(void)
     PRM_code[prmfb]                       = "fb";                       PRM[prmfb]                       = 300;  PRM_type[prmfb]                       = TS_type; /* Instelling fasebewaking                                                                                                        */
     PRM_code[prmxx]                       = "xx";                       PRM[prmxx]                       = 4;                                                     /* Versiebeheer xx                                                                                                                */
     PRM_code[prmyy]                       = "yy";                       PRM[prmyy]                       = 0;                                                     /* Versiebeheer yy                                                                                                                */
-    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 18;                                                    /* Versiebeheer zz                                                                                                                */
+    PRM_code[prmzz]                       = "zz";                       PRM[prmzz]                       = 19;                                                    /* Versiebeheer zz                                                                                                                */
     PRM_code[prmovmextragroen_02]         = "ovmextragroen_02";         PRM[prmovmextragroen_02]         = 0;    PRM_type[prmovmextragroen_02]         = TE_type;
     PRM_code[prmovmmindergroen_02]        = "ovmmindergroen_02";        PRM[prmovmmindergroen_02]        = 0;    PRM_type[prmovmmindergroen_02]        = TE_type;
     PRM_code[prmovmextragroen_03]         = "ovmextragroen_03";         PRM[prmovmextragroen_03]         = 0;    PRM_type[prmovmextragroen_03]         = TE_type;

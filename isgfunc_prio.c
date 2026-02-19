@@ -1,4 +1,4 @@
-/* isgfunc_prio.c - gegenereerd met TLCGen 12.4.0.18 */
+/* isgfunc_prio.c - gegenereerd met TLCGen 12.4.0.19 */
 
 /* merk op: deze file heeft _geen_ bijbehorende header */
 

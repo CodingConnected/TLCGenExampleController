@@ -1,4 +1,4 @@
-/* nalopen.h - gegenereerd met TLCGen 12.4.0.18 */
+/* nalopen.h - gegenereerd met TLCGen 12.4.0.19 */
 
 #ifndef __NALOPENFUNC__
 #define __NALOPENFUNC__

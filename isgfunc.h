@@ -1,4 +1,4 @@
-/* isgfunc.h - gegenereerd met TLCGen 12.4.0.18 */
+/* isgfunc.h - gegenereerd met TLCGen 12.4.0.19 */
 
 #ifndef ISGFUNC_H
 #define ISGFUNC_H

@@ -8,8 +8,8 @@
 
    BESTAND:   123456reg.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.18
-   CCOLGEN:   12.4.0.18
+    TLCGEN:   12.4.0.19
+   CCOLGEN:   12.4.0.19
 */
 
 /****************************** Versie commentaar ***********************************
@@ -1067,28 +1067,28 @@ void BepaalRealisatieTijden(void)
         wijziging = FALSE;
 
         /* Gelijkstart / voorstart / late release */
-    wijziging |= Realisatietijd_Voorstart_Correctie(fc22, fc05, tvs2205);
-    wijziging |= Realisatietijd_Voorstart_Correctie(fc22, fc32, tvs2232);
-    wijziging |= Realisatietijd_Voorstart_Correctie(fc24, fc34, tvs2434);
-    wijziging |= Realisatietijd_Voorstart_Correctie(fc28, fc38, tvs2838);
-    wijziging |= Realisatietijd_Voorstart_Correctie(fc32, fc05, tvs3205);
-    wijziging |= Realisatietijd_Voorstart_Correctie(fc84, fc33, tvs8433);
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc26, fc11, tlr2611);
+        wijziging |= Realisatietijd_Voorstart_Correctie(fc22, fc05, tvs2205);
+        wijziging |= Realisatietijd_Voorstart_Correctie(fc22, fc32, tvs2232);
+        wijziging |= Realisatietijd_Voorstart_Correctie(fc24, fc34, tvs2434);
+        wijziging |= Realisatietijd_Voorstart_Correctie(fc28, fc38, tvs2838);
+        wijziging |= Realisatietijd_Voorstart_Correctie(fc32, fc05, tvs3205);
+        wijziging |= Realisatietijd_Voorstart_Correctie(fc84, fc33, tvs8433);
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc26, fc11, tlr2611);
 
-    /* Inlopen / inrijden nalopen */
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc62, fc02, txnl0262);
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc08, txnl0868);
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc11, txnl1168);
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc21, fc22, txnl2221);
-    IH[hlos31] = RA[fc31] && (!H[hmadk31a] || SCH[schlos3132] && H[hmadk31b]) || H[hlos31] && !SG[fc31];
-    wijziging |= (!IH[hlos31]) ? Realisatietijd_LateRelease_Correctie(fc32, fc31, txnl3132) : 0;
-    IH[hlos32] = RA[fc32] && (!H[hmadk32a] || SCH[schlos3231] && H[hmadk32b]) || H[hlos32] && !SG[fc32];
-    wijziging |= (!IH[hlos32]) ? Realisatietijd_LateRelease_Correctie(fc31, fc32, txnl3231) : 0;
-    IH[hlos33] = RA[fc33] && (!H[hmadk33a] || SCH[schlos3334] && H[hmadk33b]) || H[hlos33] && !SG[fc33];
-    wijziging |= (!IH[hlos33]) ? Realisatietijd_LateRelease_Correctie(fc34, fc33, txnl3334) : 0;
-    IH[hlos34] = RA[fc34] && (!H[hmadk34a] || SCH[schlos3433] && H[hmadk34b]) || H[hlos34] && !SG[fc34];
-    wijziging |= (!IH[hlos34]) ? Realisatietijd_LateRelease_Correctie(fc33, fc34, txnl3433) : 0;
-    wijziging |= Realisatietijd_LateRelease_Correctie(fc81, fc82, txnl8281);
+        /* Inlopen / inrijden nalopen */
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc62, fc02, txnl0262);
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc08, txnl0868);
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc11, txnl1168);
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc21, fc22, txnl2221);
+        IH[hlos31] = RA[fc31] && (!H[hmadk31a] || SCH[schlos3132] && H[hmadk31b]) || H[hlos31] && !SG[fc31];
+        wijziging |= (!IH[hlos31]) ? Realisatietijd_LateRelease_Correctie(fc32, fc31, txnl3132) : 0;
+        IH[hlos32] = RA[fc32] && (!H[hmadk32a] || SCH[schlos3231] && H[hmadk32b]) || H[hlos32] && !SG[fc32];
+        wijziging |= (!IH[hlos32]) ? Realisatietijd_LateRelease_Correctie(fc31, fc32, txnl3231) : 0;
+        IH[hlos33] = RA[fc33] && (!H[hmadk33a] || SCH[schlos3334] && H[hmadk33b]) || H[hlos33] && !SG[fc33];
+        wijziging |= (!IH[hlos33]) ? Realisatietijd_LateRelease_Correctie(fc34, fc33, txnl3334) : 0;
+        IH[hlos34] = RA[fc34] && (!H[hmadk34a] || SCH[schlos3433] && H[hmadk34b]) || H[hlos34] && !SG[fc34];
+        wijziging |= (!IH[hlos34]) ? Realisatietijd_LateRelease_Correctie(fc33, fc34, txnl3433) : 0;
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc81, fc82, txnl8281);
 
         wijziging |= CorrectieRealisatieTijd_Add();
     } while (wijziging);
@@ -2181,12 +2181,12 @@ void RealisatieAfhandeling(void)
 
     /* set meerealisatie voor gelijk- of voorstartende richtingen */
     /* ---------------------------------------------------------- */
-    set_MRLW(fc22, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    set_MRLW(fc22, fc32, (boolv) (RA[fc32] && (PR[fc32] || AR[fc32] || BR[fc32] || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
-    set_MRLW(fc24, fc34, (boolv) (RA[fc34] && (PR[fc34] || AR[fc34] || BR[fc34] || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
-    set_MRLW(fc28, fc38, (boolv) (RA[fc38] && (PR[fc38] || AR[fc38] || BR[fc38] || (AA[fc38] & BIT11)) && A[fc28] && R[fc28] && !TRG[fc28] && !kcv(fc28)));
-    set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
-    set_MRLW(fc84, fc33, (boolv) (RA[fc33] && (PR[fc33] || AR[fc33] || BR[fc33] || (AA[fc33] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
+    set_MRLW(fc22, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT6) || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    set_MRLW(fc22, fc32, (boolv) (RA[fc32] && (PR[fc32] || AR[fc32] || BR[fc32] || (AA[fc32] & BIT6) || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    set_MRLW(fc24, fc34, (boolv) (RA[fc34] && (PR[fc34] || AR[fc34] || BR[fc34] || (AA[fc34] & BIT6) || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
+    set_MRLW(fc28, fc38, (boolv) (RA[fc38] && (PR[fc38] || AR[fc38] || BR[fc38] || (AA[fc38] & BIT6) || (AA[fc38] & BIT11)) && A[fc28] && R[fc28] && !TRG[fc28] && !kcv(fc28)));
+    set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT6) || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
+    set_MRLW(fc84, fc33, (boolv) (RA[fc33] && (PR[fc33] || AR[fc33] || BR[fc33] || (AA[fc33] & BIT6) || (AA[fc33] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
 
 

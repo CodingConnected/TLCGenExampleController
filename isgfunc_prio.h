@@ -1,4 +1,4 @@
-/* isgfunc_prio.h - gegenereerd met TLCGen 12.4.0.18 */
+/* isgfunc_prio.h - gegenereerd met TLCGen 12.4.0.19 */
 
 #ifndef ISGFUNC_PRIO_H
 #define ISGFUNC_PRIO_H

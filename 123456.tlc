@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>18</HuidigeVersieRevision>
+    <HuidigeVersieRevision>19</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -80,7 +80,7 @@
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.18</TLCGenVersie>
+    <TLCGenVersie>12.4.0.19</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -17116,6 +17116,11 @@
         <SumoNaam1>681</SumoNaam1>
       </Detector>
       <Detector>
+        <Naam>68_9b</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>682</SumoNaam1>
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -17547,11 +17552,6 @@
         <Naam>81_1</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>811</SumoNaam1>
-      </Detector>
-      <Detector>
-        <Naam>68_9b</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>682</SumoNaam1>
       </Detector>
     </Detectoren>
   </SumoKoppeling>
