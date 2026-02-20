@@ -25,7 +25,7 @@ extern boolv NietGroentijdOphogen[FCMAX];
 extern mulv twacht[FCMAX];
 extern mulv twacht_AR[FCMAX];
 extern mulv twacht_afkap[FCMAX];
-extern count REALISATIETIJD[FCMAX][FCMAX];
+extern mulv REALISATIETIJD[FCMAX][FCMAX];
 
 extern boolv Volgrichting[FCMAX];
 extern boolv AfslaandDeelconflict[FCMAX];
@@ -71,7 +71,7 @@ void Realisatietijd_Ontruiming_LateRelease(count fcvs, count fclr, count tlr, co
 boolv Realisatietijd_Voorstart_Correctie(count fcvs, count fcns, count tvs);
 boolv Realisatietijd_Gelijkstart_Correctie(count fc1, count fc2);
 boolv Realisatietijd_LateRelease_Correctie(count fclr, count fcvs, count tlr);
-void Bepaal_Realisatietijd_per_richting(void);
+void Bepaal_Realisatietijd_per_richting(count i);
 boolv ym_max_tig_Realisatietijd(count i, count prmomx);
 void TegenhoudenDoorRealisatietijden(void);
 void InitInterStartGroenTijden(void);

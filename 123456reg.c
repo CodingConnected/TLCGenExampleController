@@ -1019,6 +1019,7 @@ void BepaalRealisatieTijden(void)
 {
     count i;
     count j;
+    count fc; 
     boolv wijziging = TRUE;
 
     /* TIGR */
@@ -1037,6 +1038,13 @@ void BepaalRealisatieTijden(void)
     RealisatieTijden_VulHardeConflictenIn();
     RealisatieTijden_VulGroenGroenConflictenIn(); /* @@ in principe zijn er geen groen groen conflicten @@*/
     CorrigeerRealisatieTijdenObvGarantieTijden(); /* een richting mag na groen niet direct weer realiseren (eerst GL en TRG) */
+    Realisatietijd_wtv_correctie(fc22, mwtv22, prmwtvnhaltmin);
+    Realisatietijd_wtv_correctie(fc24, mwtv24, prmwtvnhaltmin);
+    Realisatietijd_wtv_correctie(fc26, mwtv26, prmwtvnhaltmin);
+    Realisatietijd_wtv_correctie(fc28, mwtv28, prmwtvnhaltmin);
+    Realisatietijd_wtv_correctie(fc81, mwtv81, prmwtvnhaltmin);
+    Realisatietijd_wtv_correctie(fc82, mwtv82, prmwtvnhaltmin);
+    Realisatietijd_wtv_correctie(fc84, mwtv84, prmwtvnhaltmin);
 
     /* Pas realisatietijden aan a.g.v. nalopen */
     Realisatietijd_NLEG(fc02, fc62, tnlfg0262, tnlfgd0262, tnleg0262, tnlegd0262, tvgnaloop0262);
@@ -1093,7 +1101,7 @@ void BepaalRealisatieTijden(void)
         wijziging |= CorrectieRealisatieTijd_Add();
     } while (wijziging);
 
-    Bepaal_Realisatietijd_per_richting(); /* bepaal de maximale realisatietijd voor een richting */
+    for (fc = 0; fc < FCMAX; ++fc) Bepaal_Realisatietijd_per_richting(fc); /* bepaal de maximale realisatietijd */
 
     BepaalRealisatieTijden_Add();
 }
@@ -1593,9 +1601,9 @@ void Verlenggroen(void)
     BepaalInterStartGroenTijden_PRIO();
     PrioTegenhoudenISG(); /* Houdt richtingen die conflicterend zijn met priorealisatie als er niet meer genoeg ruimte voor realisatie is  */
     PasRealisatieTijdenAanVanwegeRRPrio(); /* Pas realisatietijden aan voor richtingen conflicterend met prioriteitsrealisatie*/
-    Bepaal_Realisatietijd_per_richting();
+    for (fc = 0; fc < FCMAX; ++fc) Bepaal_Realisatietijd_per_richting(fc); /* bepaal de maximale realisatietijd voor alle richtingen */
     PasRealisatieTijdenAanVanwegeBRLateRelease(fc26);
-    Bepaal_Realisatietijd_per_richting();
+    for (fc = 0; fc < FCMAX; ++fc) Bepaal_Realisatietijd_per_richting(fc); /* bepaal de maximale realisatietijd voor alle richtingen */
 
 
     Maxgroen_Add();
