@@ -1634,6 +1634,7 @@ void NaloopEVG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, co
 
 void NaloopVtg_TVG_Correctie(count fc1, count fc2, count hnlsg, count tnlsg, count tnlsgd)
 {
+    fc1 = 0; // fc1 wordt niet gebruikt in deze functie. door deze toevoeging wordt een compileer warming voorkomen 
     if (!(tnlsg == NG) && H[hnlsg]) TVG_max[fc2] = max(TVG_max[fc2], T_max[tnlsg] - T_timer[tnlsg] + TVG_timer[fc2]);
     if (!(tnlsgd == NG) && H[hnlsg]) TVG_max[fc2] = max(TVG_max[fc2], -TFG_max[fc2] + TFG_timer[fc2] + T_max[tnlsgd] - T_timer[tnlsgd] + TVG_timer[fc2]);
 }

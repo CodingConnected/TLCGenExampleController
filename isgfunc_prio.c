@@ -1004,3 +1004,25 @@ void VerhoogGroentijdNietTijdensInrijden(count fc1, count fc2, count txnlfc1fc2)
       }
    }
 }
+
+
+
+/* Commentaar @PSN
+ *
+ */
+void no_prio_door_wtv(count fc, count mwtv)
+{
+   count n, k, prio;
+
+   if ((MM[mwtv] > 0) && (MM[mwtv] <= PRM[prmwtvnhaltmin]))
+   {
+      for (n = 0; n < FKFC_MAX[fc]; n++)
+      {
+         k = KF_pointer[fc][n];
+         for (prio = 0; prio < prioFCMAX; prio++)
+         {
+            if (k == iFC_PRIOix[prio]) iOnderMaximumVerstreken[prio] = TRUE;
+         }
+      }
+   }
+}

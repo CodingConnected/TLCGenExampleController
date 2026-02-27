@@ -1227,7 +1227,17 @@ void InUitMelden(void)
 
 void OnderMaximumExtra(void)
 {
+   /* geen prioritiet als de leds van de wachttijd een lage waarde hebben */
+   no_prio_door_wtv(fc21, mwtv21);
+   no_prio_door_wtv(fc22, mwtv22);
+   no_prio_door_wtv(fc24, mwtv24);
+   no_prio_door_wtv(fc26, mwtv26);
+   no_prio_door_wtv(fc28, mwtv28);
+   no_prio_door_wtv(fc81, mwtv81);
+   no_prio_door_wtv(fc82, mwtv82);
+   no_prio_door_wtv(fc84, mwtv84);
 }
+
 void AfkapGroenExtra(void)
 {
 }
