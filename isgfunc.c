@@ -724,7 +724,7 @@ boolv Realisatietijd_Voorstart_Correctie(count fcvs, count fcns, count tvs)
     {
         for (n = 0; n < FCMAX; ++n)
         {
-            if ((REALISATIETIJD[n][fcns] < REALISATIETIJD[n][fcvs] + T_max[tvs]) && REALISATIETIJD[n][fcvs] > 0)  /* @PSN extra haakjes plaatsen om (REALISATIETIJD[n][fcvs] + T_max[tvs])?? */
+            if ((REALISATIETIJD[n][fcns] < (REALISATIETIJD[n][fcvs] + T_max[tvs])) && REALISATIETIJD[n][fcvs] > 0)  
             {                                                                                                     /* @PSN is testen op REALISATIETIJD[n][fcvs] > 0 wel goed? >=0??  extra haakjes (REALISATIETIJD[n][fcvs] > 0) */
                REALISATIETIJD[n][fcns] = REALISATIETIJD[n][fcvs] + T_max[tvs];                                    /* @PSN bij REALISATIETIJD[n][fcvs] == 0 moet toch worden verhoogd met T_max[tvs]; */
                 result = TRUE;
@@ -981,7 +981,7 @@ void TegenhoudenDoorRealisatietijden()
         for (j = 0; j < FCMAX; ++j)
         {
             if (REALISATIETIJD[i][j] > 0) X[j] |= BIT1; /* Als er een realisatietijd loopt van (fictief) conflict i, wordt richting j nog tegengehouden */
-            if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1; /*  150 tijdelijk moet afhankleijk gemaakt wordt van de tijd de een richting eerder mag starten dan de volgrichting */
+            if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1; /* @PSN 150 tijdelijk moet afhankelijk gemaakt worden van de tijd die een richting eerder mag starten dan de volgrichting */
         }
     }
 }
@@ -1003,14 +1003,11 @@ void InitInterStartGroenTijden(void)
     {
         for (j = 0; j < FC_MAX; j++)
         {
-            if (TIG_max[i][j] < FK) TIG_max[i][j] = FK;  /* zet alle GK en GKL conflicten om in FK */
             TISG_PR[i][j] = NG;
             TISG_AR[i][j] = NG;
             TISG_AR_los[i][j] = NG;
         }
     }
-    pointer_conflicts();                  //@PSN onnodig om in iedere systeemronde een nieuwe pointertabel aan te maken, alleen als een conflict is gewijzigd.
-                                          //of een keer bij het opstarten van de regeling.
 }
 
 /* INTERSTARTGROENTIJDEN VUL HARDE CONFLICTEN IN */
@@ -1100,7 +1097,7 @@ void InterStartGroenTijden_VulGroenGroenConflictenIn(void)
  *                                 rijtijd tot de detectie van de volgrichting; NG indien niet gebruikt.
  * tnlegd    - index tijdelement    - Detectie afhankelijke nalooptijd voor voertuig(en) tijdens groen of geel (G[fc1] || GL[fc1]) van de voedende richting;
  *                                 rijtijd tot de detectie van de volgrichting; NG indien niet gebruikt.
- * tvgnaloop - index T_max[] - Maximale verlengtijd op eigen detectie na aflopen nalooptijden voor de naloop richting.
+ * tvgnaloop - index T_max[]        - Maximale verlengtijd op eigen detectie na aflopen nalooptijden voor de nalooprichting.
  *
  * void InterStartGroenTijd_NLEG() wordt aangeroepen vanuit de applicatiefunctie void BepaalInterStartGroenTijden(void) na de initialisatie van TISG_PR[][] en TISG_AR[][].
  * BepaalInterStartGroenTijden(void) wordt aangeroepen vanuit de applicatiefunctie Verlenggroentijden(), die wordt aangeroepen door application().
@@ -1634,9 +1631,9 @@ void NaloopEVG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, co
 
 void NaloopVtg_TVG_Correctie(count fc1, count fc2, count hnlsg, count tnlsg, count tnlsgd)
 {
-    fc1 = 0; // fc1 wordt niet gebruikt in deze functie. door deze toevoeging wordt een compileer warming voorkomen 
-    if (!(tnlsg == NG) && H[hnlsg]) TVG_max[fc2] = max(TVG_max[fc2], T_max[tnlsg] - T_timer[tnlsg] + TVG_timer[fc2]);
-    if (!(tnlsgd == NG) && H[hnlsg]) TVG_max[fc2] = max(TVG_max[fc2], -TFG_max[fc2] + TFG_timer[fc2] + T_max[tnlsgd] - T_timer[tnlsgd] + TVG_timer[fc2]);
+   fc1 = 0; // fc1 wordt niet gebruikt in deze functie. door deze toevoeging wordt een compileer warming voorkomen 
+   if (!(tnlsg == NG) && H[hnlsg]) TVG_max[fc2] = max(TVG_max[fc2], T_max[tnlsg] - T_timer[tnlsg] + TVG_timer[fc2]);
+   if (!(tnlsgd == NG) && H[hnlsg]) TVG_max[fc2] = max(TVG_max[fc2], -TFG_max[fc2] + TFG_timer[fc2] + T_max[tnlsgd] - T_timer[tnlsgd] + TVG_timer[fc2]);
 }
 
 /* VASTHOUDEN NALOOP START GROEN/VOETGANGER (NLSG/NLVTG) */ 
@@ -1856,14 +1853,14 @@ void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, co
  */
 
 
-boolv max_par(count fc, boolv* prml[], count ml)   //@PSN twacht[] als argument meegeven aan de functie, wordt op de andere plaatsen ook gedaan
+boolv max_par(count fc, mulv t_wacht[])   
 {
     int k, n;
     if (kcv(fc)) return FALSE;
     for (n = 0; n < FKFC_MAX[fc]; ++n)
     {
         k = KF_pointer[fc][n];
-        if ((twacht[k] > 0) && ((twacht[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR[fc][k]))
+        if ((t_wacht[k] > 0) && ((t_wacht[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR[fc][k]))
         {
             return FALSE;
         }
@@ -1887,18 +1884,18 @@ boolv max_par(count fc, boolv* prml[], count ml)   //@PSN twacht[] als argument 
  *
  * De functie max_par_los() wordt aangeroepen vanuit de applicatiefunctie RealisatieAfhandeling().
  *
- * voorbeelden: PAR_los[fc31] = max_par_los(fc31) && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schlosgeennla3132_2])              || RA[fc31] && PAR_los[fc31];
- *              PAR_los[fc32] = max_par_los(fc32) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2] && PAR[fc22]) || RA[fc32] && PAR_los[fc32]; // voorstart 
+ * voorbeelden: PAR_los[fc31] = max_par_los(fc31, twacht) && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schlosgeennla3132_2])              || RA[fc31] && PAR_los[fc31];
+ *              PAR_los[fc32] = max_par_los(fc32, twacht) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2] && PAR[fc22]) || RA[fc32] && PAR_los[fc32]; // voorstart 
  */
 
-boolv max_par_los(count fc)
+boolv max_par_los(count fc, mulv t_wacht[])
 {
     int k, n;
     if (kcv(fc)) return FALSE;
     for (n = 0; n < FKFC_MAX[fc]; ++n)
     {
         k = KF_pointer[fc][n];
-        if ((twacht[k] > 0) && !((TIG_max[fc][k] == FK) && (FK_type[fc][k] == FK_SG)) && ((REALISATIETIJD_max[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR_los[fc][k])) return FALSE;
+        if ((t_wacht[k] > 0) && !((TIG_max[fc][k] == FK) && (FK_type[fc][k] == FK_SG)) && ((REALISATIETIJD_max[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR_los[fc][k])) return FALSE;
     }
     return TRUE;
 }
@@ -2091,7 +2088,7 @@ boolv yml_cv_pr_nl_ISG(boolv* prml[], count ml, count ml_max)
 
 /* SET PG[] DEELCONFLICT VOORSTART */
 /* ------------------------------- */
-/* @PSN wordt deze functie gebruikt in TLCGen? 
+/* @PSN Deze functie wordt nu nog niet gebruikt in de hudige release
  * void set_PG_Deelconflict_Voorstart(mulv fc1, mulv fc2)
  * set_PG_Deelconflict_Voorstart() wordt gebruikt bij deelconflciten voor het overslaan en tegenhouden een fasecyclus bij een voorstart.
  *
@@ -2261,20 +2258,18 @@ boolv hf_wsg_nlISG(void)
  * afsluiten_aanvraaggebied_prISG(PRML, ML);*
  *
  *
- * @PSN Ik vraag mij af of de werking van deze functie wel correct is.  zie ook boolv afsluiten_aanvraaggebied_pr(boolv *prml[], count ml) in lwmlfunc.c
- * @PSN functie geeft altijd TRUE terug en nooit FALSE. Kan niet goed zijn!!!!
  *
  */
 
 
-boolv afsluiten_aanvraaggebied_prISG(boolv* prml[], count ml)
+void afsluiten_aanvraaggebied_prISG(boolv* prml[], count ml)
 {
     register count i;
     for (i = 0; i < FC_MAX; i++) {
         if ((prml[ml][i] & PRIMAIR) && !PG[i] && !A[i] && fka(i)) /* was && fkaa(i) */
             PG[i] |= PRIMAIR_OVERSLAG;
     }
-    return (TRUE);
+
 }
 
 /* BEPAAL VOLGRICHTINGEN */
@@ -2337,11 +2332,13 @@ void PrioAanwezig(void)
  *
  * voorbeeld:  InitInterfunc();
  *             TNL_type[fc02][fc62] = TNL_EG;
- *             TNL_type[fc08][fc68] = TNL_EG;
+ *             TNL_type[fc22][fc21] = TNL_EVG;
+ *             TNL_type[fc31][fc32] = TNL_SG;
  *
- *             FK_type[fc02][fc09] =  FK_EG;   
- *             FK_type[fc02][fc11] =  FK_EG;   
- *             FK_type[fc02][fc26] =  FK_EG;
+ *             FK_type[fc02][fc09] =  FK_EG; Het eindegroenmoment van richting 2 bepaalt het startgroenmoment van richting 9  
+ *             FK_type[fc22][fc02] =  FK_EVG; Het eindeverlenggroenmoment van richting 22 bepaalt het startgroenmoment van richting 2. 
+ *                                            Dit is als we 22 wel willen laten meeverlengen tijdens 2 bij bijv. een lange middenberm 
+ *             FK_type[fc32][fc02] =  FK_SG; Het startgroenmoment van richting 32 bepaalt het startgroenmoment van richtng 2  
  */
 
 
@@ -2407,13 +2404,15 @@ void IsgDebug()
     for (y = 0; y < FCMAX; ++y)
     {
         xyprintf(46 + 8 * FCMAX, y + 4, "%2s", FC_code[y]);
-        xyprintf(50 + 8 * FCMAX, y + 4, "%4d", max_par(y, PRML, ML));
+        xyprintf(50 + 8 * FCMAX, y + 4, "%4d", max_par(y, twacht));
     }
 #endif
 }
 
-/* Commentaar @PSN
- *  
+/* OPHOGING TVG_max */
+/* ---------------- */
+/* Deze functie zorgt er voor dat de TVG_max van een richting aleen wordt aangepast op einde verlenggroen van de primaire realisatie en bij het starten van de regeling. 
+ * Op deze manier wordt de maximale wachttijd van een conflicterende richting niet tussentijds verhoogd bij een wijziging van de primaire verlenggroentijd.     
  */
 
 void IsgCorrectieTvgPrTvgMax()
@@ -2434,15 +2433,14 @@ void IsgCorrectieTvgPrTvgMax()
     }
 }
 
-/* Commentaar @PSN
- *
+/* CORRIGEER TVG_max */
+/* ----------------- */
+/* Corrigeer TVG_timer[] i.r.t. TVG_max[] 
  */
 
 void IsgCorrectieTvgTimerTvgMax()
 {
     count fc;
-
-    /* Corrigeer TVG_timer[] i.r.t. TVG_max[] */
     for (fc = 0; fc < FCMAX; ++fc)
     {
         if (MG[fc])  TVG_timer[fc] = TVG_max[fc];
@@ -2450,14 +2448,19 @@ void IsgCorrectieTvgTimerTvgMax()
     }
 }
 
-/* Commentaar @PSN
+/* INITIALISATIE INTERSTARTGROENTIJDEN t.b.v. de Robuuste Groentijdverdeler */
+/* ------------------------------------------------------------------------ */
+/* void InitInterStartGroenTijden_rgv(void) bepaalt de initiele waarden van de InterStartGroenTijden matrix TISG_rgv en zet alle waarden op NG (niet gebruikt).
+ * de TISG_rgv dienen in de regelapplicatie te worden bepaald en gecorrigeerd voor o.a naloop richtingen, gelijkstarts, etc.
  *
+ * In een TLCGen-regelapplicatie wordt InitInterStartGroenTijden_rgv(void) aangeroepen vanuit de applicatiefunctie void BepaalInterStartGroenTijden_rgv(void).
+ * BepaalInterStartGroenTijden_rgv() wordt aangeroepen vanuit de applicatiefunctie Verlenggroentijden(), die wordt aangeroepen door application().
  */
 
 void InitInterStartGroenTijden_rgv()
 {
     count i, j;
-    for (i = 0; i < FC_MAX; i++)  /* zet alle GK en GKL conflicten om in FK */
+    for (i = 0; i < FC_MAX; i++) 
     {
         for (j = 0; j < FC_MAX; j++)
         {
@@ -2467,11 +2470,22 @@ void InitInterStartGroenTijden_rgv()
     }
 }
 
-/* Commentaar @PSN
+/*INTERSTARTGROENTIJDEN VUL HARDE CONFLICTEN IN t.b.v. de Robuuste Groentijdverdeler */
+/* --------------------------------------------------------------------------------- */
+/* void InterStartGroenTijden_VulHardeConflictenIn(void) vult de TISG_rgv[fc1][fc2] in voor alle harde conflicten met de vastgroentijden, verlengroentijden
+ *
+ * InterStartGroenTijden_VulHardeConflictenIn_rgv(void) wordt aangeroepen vanuit de applicatiefunctie void BepaalInterStartGroenTijden_rgv(void).
+ * na de initialisatie van TISG_rgv.
+ * BepaalInterStartGroenTijden_rgv(void) wordt aangeroepen vanuit de applicatiefunctie Verlenggroentijden(), die wordt aangeroepen door application().
+ *
+ * // Bepaal InterStartGroenTijden
+ * InitInterStartGroenTijden_rgv();
+ * InterStartGroenTijden_VulHardeConflictenIn_rgv();
+ * InterStartGroenTijden_VulGroenGroenConflictenIn_rgv();
  *
  */
 
-void InterStartGroenTijden_VulHaldeConflictenIn_rgv(void)
+void InterStartGroenTijden_VulHardeConflictenIn_rgv(void)
 {
     count fc1, fc2, n;
     for (fc1 = 0; fc1 < FCMAX; ++fc1)
@@ -2485,9 +2499,21 @@ void InterStartGroenTijden_VulHaldeConflictenIn_rgv(void)
     }
 }
 
-/* Commentaar @PSN
+/* INTERSTARTGROENTIJDEN VUL GROEN-GROEN CONFLICTEN IN t.b.v. de Robuuste Groentijdverdeler */
+/* ---------------------------------------------------------------------------------------- */
+/* void InterStartGroenTijden_VulGroenGroenConflictenIn_rgv(void) vult de TISG_rgc[fc1][fc2] en TISG_AR[fc1][fc2] in voor alle Groen-Groen conflicten met de vastgroentijden
+ * en verlengroentijden.
  *
+ * InterStartGroenTijden_VulGroenGroenConflictenIn(void) wordt aangeroepen vanuit de applicatiefunctie void BepaalInterStartGroenTijden(void) na
+ * de initialisatie van TISG_rgv[][] ie
+ * BepaalInterStartGroenTijden(void) wordt aangeroepen vanuit de applicatiefunctie Verlenggroentijden(), die wordt aangeroepen door application().
+ *
+ * //Bepaal InterStartGroenTijden
+ * InitInterStartGroenTijden();
+ * InterStartGroenTijden_VulHardeConflictenIn();
+ * InterStartGroenTijden_VulGroenGroenConflictenIn();
  */
+
 
 void InterStartGroenTijden_VulGroenGroenConflictenIn_rgv(void)
 {
@@ -2503,8 +2529,7 @@ void InterStartGroenTijden_VulGroenGroenConflictenIn_rgv(void)
     }
 }
 
-/* Commentaar @PSN
- *
+/* Zie InterStartGroenTijd_NLEG() maar dan als correcte t.b.v. TISG_rgv -matrix
  */
 
 void InterStartGroenTijd_NLEG_rgv(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop)
@@ -2536,8 +2561,7 @@ void InterStartGroenTijd_NLEG_rgv(count i, count j, count tnlfg, count tnlfgd, c
     }
 }
 
-/* Commentaar @PSN
- *
+/* Zie InterStartGroenTijd_NLEVG() maar dan als correcte t.b.v. TISG_rgv-matrix
  */
 
 void InterStartGroenTijd_NLEVG_rgv(count i, count j, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop)
@@ -2569,8 +2593,7 @@ void InterStartGroenTijd_NLEVG_rgv(count i, count j, count tnlfg, count tnlfgd, 
     }
 }
 
-/* Commentaar @PSN
- *
+/* Zie InterStartGroenTijd_NLSG() maar dan als correcte t.b.v. TISG_rgv-matrix
  */
 
 void InterStartGroenTijd_NLSG_rgv(count i, count j, count tnlsg, count tnlsgd)
@@ -2586,8 +2609,7 @@ void InterStartGroenTijd_NLSG_rgv(count i, count j, count tnlsg, count tnlsgd)
     }
 }
 
-/* Commentaar @PSN
- *
+/* Zie InterStartGroentijd_MeeverlengenDeelconflict() maar dan als correcte t.b.v. TISG_rgv-matrix
  */
 
 void InterStartGroentijd_MeeverlengenDeelconflict_rgv(mulv fc1, mulv fc2)
@@ -2603,8 +2625,7 @@ void InterStartGroentijd_MeeverlengenDeelconflict_rgv(mulv fc1, mulv fc2)
     }
 }
 
-/* Commentaar @PSN
- *
+/* Zie Correctie_TISG_Voorstart() maar dan als correcte t.b.v. TISG_rgv-matrix
  */
 
 boolv Correctie_TISG_Voorstart_rgv(count fcvs, count fcns, count tvs)
@@ -2627,8 +2648,7 @@ boolv Correctie_TISG_Voorstart_rgv(count fcvs, count fcns, count tvs)
     return result;
 }
 
-/* Commentaar @PSN
- *
+/* Zie Correctie_TISG_Gelijkstart() maar dan als correcte t.b.v. TISG_rgv-matrix
  */
 
 boolv Correctie_TISG_Gelijkstart_rgv(count fc1, count fc2)
@@ -2667,8 +2687,7 @@ boolv Correctie_TISG_Gelijkstart_rgv(count fc1, count fc2)
     return result;
 }
 
-/* Commentaar @PSN
- *
+/* Zie Correctie_TISG_LateReleas() maar dan als correcte t.b.v. TISG_rgv-matrix
  */
 
 boolv Correctie_TISG_LateRelease_rgv(count fclr, count fcvs, count txnl)
@@ -2691,14 +2710,12 @@ boolv Correctie_TISG_LateRelease_rgv(count fclr, count fcvs, count txnl)
     return result;
 }
 
-/* Commentaar @PSN
- *
+/* Resetten van de naloopbits
  */
 
 void ResetNaloopBits() 
 {
     int fc;
-    /* Zet naloopbits af */
     for (fc = 0; fc < FCMAX; ++fc)
     {
         RW[fc] &= ~BIT2;
@@ -2709,8 +2726,8 @@ void ResetNaloopBits()
 
 
 
-/* Commentaar @PSN
- *
+/* Realisatie fasecyclus mag niet meer worden tegengehouden doordat het aantal uitgestuurde ledjes een minimaal aantal bereikt heeft.
+ * Daardoor mag de tijd tot conflictende groen van de conlflictrictingen (fc) al opgehoogd wroden met de tijd tot groen van deze richting i 
  */
 
 void Realisatietijd_wtv_correctie(count i, count mwtv, count prmwtvhaltmin)

@@ -53,7 +53,7 @@ void BepaalInterStartGroenTijden_rgv(void)
     boolv wijziging = TRUE;
 
     InitInterStartGroenTijden_rgv();
-    InterStartGroenTijden_VulHaldeConflictenIn_rgv();
+    InterStartGroenTijden_VulHardeConflictenIn_rgv();
     InterStartGroenTijden_VulGroenGroenConflictenIn_rgv();
 
     /* Pas interstartgroentijden aan a.g.v. nalopen */

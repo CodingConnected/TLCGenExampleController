@@ -2105,29 +2105,29 @@ void RealisatieAfhandeling(void)
     if (RT[tnlsgd3433] || T[tnlsgd3433]) { RR[fc33] &= ~BIT5; FM[fc33] &= ~BIT5; }
     if (RT[tvgnaloop8281] || T[tvgnaloop8281]) { RR[fc81] &= ~BIT5; FM[fc81] &= ~BIT5; }
 
-    PAR[fc02] = max_par(fc02, PRML, ML) && SCH[schaltg02];
-    PAR[fc03] = max_par(fc03, PRML, ML) && SCH[schaltg03];
-    PAR[fc05] = max_par(fc05, PRML, ML) && SCH[schaltg05];
-    PAR[fc08] = max_par(fc08, PRML, ML) && SCH[schaltg08];
-    PAR[fc09] = max_par(fc09, PRML, ML) && SCH[schaltg09];
-    PAR[fc11] = max_par(fc11, PRML, ML) && SCH[schaltg11];
-    PAR[fc21] = max_par(fc21, PRML, ML) && SCH[schaltg21];
-    PAR[fc22] = max_par(fc22, PRML, ML) && SCH[schaltg22];
-    PAR[fc24] = max_par(fc24, PRML, ML) && SCH[schaltg24];
-    PAR[fc26] = max_par(fc26, PRML, ML) && SCH[schaltg26];
-    PAR[fc28] = max_par(fc28, PRML, ML) && SCH[schaltg28];
-    PAR[fc31] = max_par(fc31, PRML, ML) && SCH[schaltg31];
-    PAR[fc32] = max_par(fc32, PRML, ML) && SCH[schaltg32];
-    PAR[fc33] = max_par(fc33, PRML, ML) && SCH[schaltg33];
-    PAR[fc34] = max_par(fc34, PRML, ML) && SCH[schaltg34];
-    PAR[fc38] = max_par(fc38, PRML, ML) && SCH[schaltg38];
-    PAR[fc61] = max_par(fc61, PRML, ML) && SCH[schaltg61];
-    PAR[fc62] = max_par(fc62, PRML, ML) && SCH[schaltg62];
-    PAR[fc67] = max_par(fc67, PRML, ML) && SCH[schaltg67];
-    PAR[fc68] = max_par(fc68, PRML, ML) && SCH[schaltg68];
-    PAR[fc81] = max_par(fc81, PRML, ML) && SCH[schaltg81];
-    PAR[fc82] = max_par(fc82, PRML, ML) && SCH[schaltg82];
-    PAR[fc84] = max_par(fc84, PRML, ML) && SCH[schaltg84];
+    PAR[fc02] = max_par(fc02, twacht) && SCH[schaltg02];
+    PAR[fc03] = max_par(fc03, twacht) && SCH[schaltg03];
+    PAR[fc05] = max_par(fc05, twacht) && SCH[schaltg05];
+    PAR[fc08] = max_par(fc08, twacht) && SCH[schaltg08];
+    PAR[fc09] = max_par(fc09, twacht) && SCH[schaltg09];
+    PAR[fc11] = max_par(fc11, twacht) && SCH[schaltg11];
+    PAR[fc21] = max_par(fc21, twacht) && SCH[schaltg21];
+    PAR[fc22] = max_par(fc22, twacht) && SCH[schaltg22];
+    PAR[fc24] = max_par(fc24, twacht) && SCH[schaltg24];
+    PAR[fc26] = max_par(fc26, twacht) && SCH[schaltg26];
+    PAR[fc28] = max_par(fc28, twacht) && SCH[schaltg28];
+    PAR[fc31] = max_par(fc31, twacht) && SCH[schaltg31];
+    PAR[fc32] = max_par(fc32, twacht) && SCH[schaltg32];
+    PAR[fc33] = max_par(fc33, twacht) && SCH[schaltg33];
+    PAR[fc34] = max_par(fc34, twacht) && SCH[schaltg34];
+    PAR[fc38] = max_par(fc38, twacht) && SCH[schaltg38];
+    PAR[fc61] = max_par(fc61, twacht) && SCH[schaltg61];
+    PAR[fc62] = max_par(fc62, twacht) && SCH[schaltg62];
+    PAR[fc67] = max_par(fc67, twacht) && SCH[schaltg67];
+    PAR[fc68] = max_par(fc68, twacht) && SCH[schaltg68];
+    PAR[fc81] = max_par(fc81, twacht) && SCH[schaltg81];
+    PAR[fc82] = max_par(fc82, twacht) && SCH[schaltg82];
+    PAR[fc84] = max_par(fc84, twacht) && SCH[schaltg84];
 
     /* PAR correcties */
     do
@@ -2157,10 +2157,10 @@ void RealisatieAfhandeling(void)
          * Bij eventuele parallelle deelconflicten mag de riching alleen komen als zijn meerealiserende richting ook alternatief mag komen. 
          * Als bepaald is dat een richting moet komen mag hij niet meer worden teruggenomen.
          */
-        PAR_los[fc31] = max_par_los(fc31) && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schlosgeennla3132_2]) || RA[fc31] && PAR_los[fc31];
-        PAR_los[fc32] = max_par_los(fc32) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2] && PAR[fc22]) || RA[fc32] && PAR_los[fc32];
-        PAR_los[fc33] = max_par_los(fc33) && SCH[schlos3334] && (!IH[hmadk33a] || SCH[schlosgeennla3334_2] && PAR[fc84]) || RA[fc33] && PAR_los[fc33];
-        PAR_los[fc34] = max_par_los(fc34) && SCH[schlos3433] && (!IH[hmadk34a] || SCH[schlosgeennla3433_2] && PAR[fc24]) || RA[fc34] && PAR_los[fc34];
+        PAR_los[fc31] = max_par_los(fc31, twacht) && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schlosgeennla3132_2]) || RA[fc31] && PAR_los[fc31];
+        PAR_los[fc32] = max_par_los(fc32, twacht) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2] && PAR[fc22]) || RA[fc32] && PAR_los[fc32];
+        PAR_los[fc33] = max_par_los(fc33, twacht) && SCH[schlos3334] && (!IH[hmadk33a] || SCH[schlosgeennla3334_2] && PAR[fc84]) || RA[fc33] && PAR_los[fc33];
+        PAR_los[fc34] = max_par_los(fc34, twacht) && SCH[schlos3433] && (!IH[hmadk34a] || SCH[schlosgeennla3433_2] && PAR[fc24]) || RA[fc34] && PAR_los[fc34];
 
         for (fc = 0; fc < FCMAX && !wijziging; fc++)
         {
