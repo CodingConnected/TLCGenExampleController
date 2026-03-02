@@ -296,7 +296,8 @@ boolv TISG_LateRelease_PRIO_Correctie(count fclr, count fcvs, count tlr)
 
 void VerhoogTVG_maxDoorPrio(void)
 {
-    count prio, fc, RestGroen, TVG_max_voor_OV[FCMAX], TVG_AR_voor_OV[FCMAX];
+    count prio, fc, TVG_max_voor_OV[FCMAX], TVG_AR_voor_OV[FCMAX];
+    mulv RestGroen;
     for (fc = 0; fc < FCMAX; ++fc)
     {
         TVG_max_voor_OV[fc] = TVG_max[fc];
@@ -311,7 +312,7 @@ void VerhoogTVG_maxDoorPrio(void)
             fc = iFC_PRIOix[prio];
             if (!NietGroentijdOphogen[fc] && (iGroenBewakingsTimer[prio] < iGroenBewakingsTijd[prio]))
             {
-                RestGroen = iGroenBewakingsTijd[prio] - iGroenBewakingsTimer[prio];
+                RestGroen = (mulv) iGroenBewakingsTijd[prio] - (mulv) iGroenBewakingsTimer[prio];
                 if (VS[fc])
                 {
                     TVG_max[fc] = (RestGroen > (TFG_max[fc] + TVG_max[fc])) ? TVG_max[fc] = RestGroen - TFG_max[fc] : TVG_max[fc];
@@ -420,6 +421,8 @@ int StartGroenFCISG(int fc, int iGewenstStartGroen, int iPrioriteitsOptiesFC)
 {
     count iStartGroenFC;
 
+    iPrioriteitsOptiesFC = 0; //@PSN nog niet gebruikt
+
     if (REALISATIETIJD_max[fc] < iGewenstStartGroen)
     {
         iStartGroenFC = iGewenstStartGroen;
@@ -465,7 +468,9 @@ void BepaalStartGroenMomentenPrioIngrepen(void)
 }
 void PasTVG_maxAanStartGroenMomentenPrioIngrepen(void)
 {
-    mulv prio, fc, n, k;
+    mulv prio, n, k;
+    int fc; 
+
     for (prio = 0; prio < prioFCMAX; ++prio)
     {
         fc = iFC_PRIOix[prio];
@@ -475,7 +480,7 @@ void PasTVG_maxAanStartGroenMomentenPrioIngrepen(void)
             {
                 k = KF_pointer[fc][n];
                 if (!NietGroentijdOphogen[k] && G[k] && !MG[k] && !(FK_type[k][fc] == FK_SG) && !AfslaandDeelconflict[k]
-                     && (TVG_max[k] < (TVG_afkap[k] + iStartGroen[prio] - REALISATIETIJD[k][fc]))) TVG_max[k] = min((TVG_afkap[k] + iStartGroen[prio] - REALISATIETIJD[k][fc]), TVG_max_voor_afkap[k]);
+                     && (TVG_max[k] < (TVG_afkap[k] + iStartGroen[prio] - REALISATIETIJD[k][fc]))) TVG_max[k] = min((TVG_afkap[k] + (mulv) iStartGroen[prio] - REALISATIETIJD[k][fc]), TVG_max_voor_afkap[k]);
             }
         }
 
@@ -483,7 +488,9 @@ void PasTVG_maxAanStartGroenMomentenPrioIngrepen(void)
 }
 void BepaalTVG_BR(void)
 {
-    mulv prio, fc;
+    mulv prio;
+    int fc;
+
     for (fc = 0; fc < FCMAX; ++fc)
     {
         TVG_BR[fc] = 0;
@@ -493,7 +500,7 @@ void BepaalTVG_BR(void)
         fc = iFC_PRIOix[prio];
         if (iPrioriteit[prio] && ((iPrioriteitsOpties[prio] & poNoodDienst) || (iPrioriteitsOpties[prio] & poGroenVastHouden)))
         {
-            if (iGroenBewakingsTijd[prio] > (TVG_BR[fc] + TFG_max[fc])) TVG_BR[fc] = iGroenBewakingsTijd[prio] - TFG_max[fc];
+            if (iGroenBewakingsTijd[prio] > (TVG_BR[fc] + TFG_max[fc])) TVG_BR[fc] = (mulv) iGroenBewakingsTijd[prio] - TFG_max[fc];
         }
     }
     for (fc = 0; fc < FCMAX; ++fc)
@@ -625,7 +632,7 @@ void PasRealisatieTijdenAanVanwegeRRPrio(void)
                 k = KF_pointer[fc][n];
                 if ((RR[k] & PRIO_RR_BIT) && AAPR[k] && R[k] && R[fc])
                 {
-                    if (REALISATIETIJD[fc][k] < (iStartGroen[prio] + TISG_BR[fc][k])) REALISATIETIJD[fc][k] = iStartGroen[prio] + TISG_BR[fc][k];
+                    if (REALISATIETIJD[fc][k] < (iStartGroen[prio] + TISG_BR[fc][k])) REALISATIETIJD[fc][k] = (mulv) iStartGroen[prio] + TISG_BR[fc][k];
                 }
             }
         }
@@ -881,6 +888,7 @@ void PrioMeerealisatieDeelconflictVoorstart(mulv fc1, mulv fc2, mulv tvs)
 void PrioMeerealisatieDeelconflictLateRelease(mulv fc1, mulv fc2, mulv tlr)
 {
     count prio;
+    tlr = 0; //momenteel niet gebruikt; ivm compileer warnings hier op 0 gezet. 
     for (prio = 0; prio < prioFCMAX; ++prio)
     {
         if (iPrioriteit[prio] && (iPrioriteitsOpties[prio] & poBijzonderRealiseren))

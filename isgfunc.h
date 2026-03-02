@@ -91,7 +91,6 @@ void NaloopVtg(count fc1, count fc2, count dk, count hdk, boolv hnlsg, count tnl
 void NaloopEG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop, ...);
 void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop, ...);
 boolv max_par_los(count fc, mulv t_wacht[]);
-boolv max_par_los(count fc);
 void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mulv twacht[]);
 boolv yml_cv_pr_nl_ISG(boolv* prml[], count ml, count ml_max);
 void set_PG_Deelconflict_Voorstart(mulv fc1, mulv fc2);

@@ -35,7 +35,7 @@ void post_init_application()
 {
 #ifndef AUTOMAAT
 
-int i;
+//int i;
 //    fpt = fopen("MyFile.csv", "w");
 //    if (fpt)
 //    {
@@ -167,8 +167,8 @@ void DetectieStoring_VerlengGroen_Add(void)
 void PostApplication_Add(void)
 {
 #ifndef AUTOMAAT
-    count x;
-    count prio;
+//  count x;
+//  count prio;
 //    if (TS)
 //    {
 //        //fpt = fopen("MyFile.csv", "a");    
