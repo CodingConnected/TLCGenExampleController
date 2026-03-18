@@ -14,8 +14,10 @@ mulv TVG_PR[FCMAX];
 mulv TVG_old[FCMAX];
 mulv TVG_AR_old[FCMAX];
 mulv REALISATIETIJD_max[FCMAX];
-mulv TIGR[FCMAX][FCMAX];         
+mulv REALISATIETIJD_los_max[FCMAX];
+mulv TIGR[FCMAX][FCMAX];
 mulv PRIOFC[FCMAX]; /* aanwezigheid prioriteitsaanvragen */
+mulv REALISATIETIJD_los[FCMAX][FCMAX];
 
 boolv NietGroentijdOphogen[FCMAX];
 mulv twacht[FCMAX];
@@ -26,9 +28,9 @@ mulv REALISATIETIJD[FCMAX][FCMAX];
 boolv Volgrichting[FCMAX];
 boolv AfslaandDeelconflict[FCMAX] = { 0 };
 
-extern mulv TISG_rgv[FCMAX][FCMAX];
-extern mulv TISG_basis[FCMAX][FCMAX];
-extern mulv TVG_rgv[FCMAX];
+mulv TISG_rgv[FCMAX][FCMAX];
+mulv TISG_basis[FCMAX][FCMAX];
+mulv TVG_rgv[FCMAX];
 extern mulv init_tvg;
 extern mulv TISG_afkap[FCMAX][FCMAX];
 
@@ -876,10 +878,12 @@ boolv Realisatietijd_LateRelease_Correctie(count fclr, count fcvs, count tlr)
 void Bepaal_Realisatietijd_voor_richting(count i)
 {
    int j;
-   REALISATIETIJD_max[i] = 0;/* @PSN moet de intiele waarde niet NG zijn? */
+   REALISATIETIJD_max[i] = 0;
+   REALISATIETIJD_los_max[i] = 0;
    for (j = 0; j < FCMAX; ++j) /* zoek de hoogste waarde voor de realisatietijd */
    {
       if (REALISATIETIJD_max[i] < REALISATIETIJD[j][i]) REALISATIETIJD_max[i] = REALISATIETIJD[j][i];
+      if (REALISATIETIJD_los_max[i] < REALISATIETIJD_los[j][i]) REALISATIETIJD_los_max[i] = REALISATIETIJD_los[j][i];
    }
 }
 
@@ -1000,7 +1004,7 @@ void TegenhoudenDoorRealisatietijden()
         for (j = 0; j < FCMAX; ++j)
         {
             if (REALISATIETIJD[i][j] > 0) X[j] |= BIT1; /* Als er een realisatietijd loopt van (fictief) conflict i, wordt richting j nog tegengehouden */
-            if (REALISATIETIJD[i][j] > 150) RR[j] |= BIT1; /* @PSN 150 tijdelijk moet afhankelijk gemaakt worden van de tijd die een richting eerder mag starten dan de volgrichting */
+            if ((REALISATIETIJD[i][j] > 150) && !PAR[j]) RR[j] |= BIT1; /* @PSN 150 tijdelijk moet afhankelijk gemaakt worden van de tijd die een richting eerder mag starten dan de volgrichting */
         }
     }
 }
@@ -1853,6 +1857,24 @@ void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, co
     if (EVG[fc2]) AT[tvgnaloop] = TRUE;
 }
 
+/* FKCV */
+/* === */
+
+/* fkcv() tests "CV[]" for the conflicting phasecycles.
+ * fkcv() returns TRUE if a "CV[]" is detected, otherwise FALSE.
+ */
+
+boolv fkcv(count i)
+{
+   register count n, j;
+
+   for (n = 0; n < FKFC_MAX[i]; n++) {
+      j = KF_pointer[i][n];
+      if (((R[j] || GL[j]) && AA[j]) || CV[j] || (G[j] && (RS[j] || RW[j])))
+         return (TRUE);
+   }
+   return (FALSE);
+}
 
 /* MAX PAR */
 /* ------- */
@@ -1875,7 +1897,7 @@ void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, co
 boolv max_par(count fc, mulv t_wacht[])   
 {
     int k, n;
-    if (kcv(fc)) return FALSE;
+    if (fkcv(fc)) return FALSE;
     for (n = 0; n < FKFC_MAX[fc]; ++n)
     {
         k = KF_pointer[fc][n];
@@ -1914,7 +1936,7 @@ boolv max_par_los(count fc, mulv t_wacht[])
     for (n = 0; n < FKFC_MAX[fc]; ++n)
     {
         k = KF_pointer[fc][n];
-        if ((t_wacht[k] > 0) && !((TIG_max[fc][k] == FK) && (FK_type[fc][k] == FK_SG)) && ((REALISATIETIJD_max[k] - REALISATIETIJD_max[fc] + offsetAR) < TISG_AR_los[fc][k])) return FALSE;
+        if ((t_wacht[k] > 0) && !((TIG_max[fc][k] == FK) && (FK_type[fc][k] == FK_SG)) && ((t_wacht[k] - REALISATIETIJD_los_max[fc] + offsetAR) < TISG_AR_los[fc][k])) return FALSE;
     }
     return TRUE;
 }
