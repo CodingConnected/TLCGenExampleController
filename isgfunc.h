@@ -71,7 +71,8 @@ void Realisatietijd_Ontruiming_LateRelease(count fcvs, count fclr, count tlr, co
 boolv Realisatietijd_Voorstart_Correctie(count fcvs, count fcns, count tvs);
 boolv Realisatietijd_Gelijkstart_Correctie(count fc1, count fc2);
 boolv Realisatietijd_LateRelease_Correctie(count fclr, count fcvs, count tlr);
-void Bepaal_Realisatietijd_per_richting(count i);
+void Bepaal_Realisatietijd_voor_richting(count i);
+void Bepaal_Realisatietijd_alle_richtingen();
 boolv ym_max_tig_Realisatietijd(count i, count prmomx);
 void TegenhoudenDoorRealisatietijden(void);
 void InitInterStartGroenTijden(void);
@@ -90,6 +91,7 @@ void NaloopVtg_TVG_Correctie(count fc1, count fc2, count hnlsg, count tnlsg, cou
 void NaloopVtg(count fc1, count fc2, count dk, count hdk, boolv hnlsg, count tnlsg, count tnlsgd);
 void NaloopEG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop, ...);
 void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop, ...);
+boolv max_par(count fc, mulv t_wacht[]);
 boolv max_par_los(count fc, mulv t_wacht[]);
 void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mulv twacht[]);
 boolv yml_cv_pr_nl_ISG(boolv* prml[], count ml, count ml_max);
@@ -116,7 +118,7 @@ void InterStartGroenTijd_NLSG_rgv(count i, count j, count tnlsg, count tnlsgd);
 void InterStartGroentijd_MeeverlengenDeelconflict_rgv(mulv fc1, mulv fc2);
 boolv Correctie_TISG_Voorstart_rgv(count fcvs, count fcns, count tvs);
 boolv Correctie_TISG_Gelijkstart_rgv(count fc1, count fc2);
-boolv Correctie_TISG_LateRelease_rgv(count fclr, count fcvs, count prmlr);
+boolv Correctie_TISG_LateRelease_rgv(count fclr, count fcvs, count tlr);
 void ResetNaloopBits();
 
 #endif /* ISGFUNC_H */

@@ -1017,9 +1017,6 @@ void Aanvragen(void)
 
 void BepaalRealisatieTijden(void)
 {
-    count i;
-    count j;
-    count fc; 
     boolv wijziging = TRUE;
 
     /* TIGR */
@@ -1038,6 +1035,7 @@ void BepaalRealisatieTijden(void)
     RealisatieTijden_VulHardeConflictenIn();
     RealisatieTijden_VulGroenGroenConflictenIn(); /* @@ in principe zijn er geen groen groen conflicten @@*/
     CorrigeerRealisatieTijdenObvGarantieTijden(); /* een richting mag na groen niet direct weer realiseren (eerst GL en TRG) */
+    Realisatietijd_wtv_correctie(fc21, mwtv21, prmwtvnhaltmin);
     Realisatietijd_wtv_correctie(fc22, mwtv22, prmwtvnhaltmin);
     Realisatietijd_wtv_correctie(fc24, mwtv24, prmwtvnhaltmin);
     Realisatietijd_wtv_correctie(fc26, mwtv26, prmwtvnhaltmin);
@@ -1101,7 +1099,7 @@ void BepaalRealisatieTijden(void)
         wijziging |= CorrectieRealisatieTijd_Add();
     } while (wijziging);
 
-    for (fc = 0; fc < FCMAX; ++fc) Bepaal_Realisatietijd_per_richting(fc); /* bepaal de maximale realisatietijd */
+    Bepaal_Realisatietijd_alle_richtingen(); /* bepaal de maximale realisatietijd */
 
     BepaalRealisatieTijden_Add();
 }
@@ -1554,7 +1552,7 @@ void Verlenggroen(void)
 
     for (fc = 0; fc < FCMAX; ++fc)
     {
-        TVG_afkap[fc] = ((iAfkapGroenTijd[fc] - TFG_max[fc]) > 0) ? (mulv) iAfkapGroenTijd[fc] - TFG_max[fc] : 0; /* Vullen groentijd die gemaakt mag worden als er een prioriteitsingreep is */
+        TVG_afkap[fc] = (mulv)(((iAfkapGroenTijd[fc] - TFG_max[fc]) > 0) ? iAfkapGroenTijd[fc] - TFG_max[fc] : 0); /* Vullen groentijd die gemaakt mag worden als er een prioriteitsingreep is */
     }
     BepaalTVG_BR(); /* Maximale verlenggroentijd bijzondere realisatie als deze nog niet groen is */
     VerhoogTVG_maxDoorPrio(); /* Voldoende verlenggroentijd om prioriteitsrealisatie te faciliteren */
@@ -1601,9 +1599,9 @@ void Verlenggroen(void)
     BepaalInterStartGroenTijden_PRIO();
     PrioTegenhoudenISG(); /* Houdt richtingen die conflicterend zijn met priorealisatie als er niet meer genoeg ruimte voor realisatie is  */
     PasRealisatieTijdenAanVanwegeRRPrio(); /* Pas realisatietijden aan voor richtingen conflicterend met prioriteitsrealisatie*/
-    for (fc = 0; fc < FCMAX; ++fc) Bepaal_Realisatietijd_per_richting(fc); /* bepaal de maximale realisatietijd voor alle richtingen */
+    Bepaal_Realisatietijd_alle_richtingen();
     PasRealisatieTijdenAanVanwegeBRLateRelease(fc26);
-    for (fc = 0; fc < FCMAX; ++fc) Bepaal_Realisatietijd_per_richting(fc); /* bepaal de maximale realisatietijd voor alle richtingen */
+    Bepaal_Realisatietijd_alle_richtingen();
 
 
     Maxgroen_Add();
@@ -2000,15 +1998,15 @@ void RealisatieAfhandeling(void)
 
     /* De berekening voor startgroen gaat uit van primaire en alternatieve realisaties.
      * Als de wachttijedvoorspeller actief is en de richting groen moet worden,
-     * wordt toegestaan om de richting versneld te laten realiseren zodat net voor groen het aantal ledjes goed aftelt. */
-    if ((MM[mwtv21] < PRM[prmwtvnhaltmin]) && (MM[mwtv21] > 0))    PFPR[fc21] = ml_fpr(fc21, MLMAX - 1, PRML, ML, MLMAX);
-    if ((MM[mwtv22] < PRM[prmwtvnhaltmin]) && (MM[mwtv22] > 0))    PFPR[fc22] = ml_fpr(fc22, MLMAX - 1, PRML, ML, MLMAX);
-    if ((MM[mwtv24] < PRM[prmwtvnhaltmin]) && (MM[mwtv24] > 0))    PFPR[fc24] = ml_fpr(fc24, MLMAX - 1, PRML, ML, MLMAX);
-    if ((MM[mwtv26] < PRM[prmwtvnhaltmin]) && (MM[mwtv26] > 0))    PFPR[fc26] = ml_fpr(fc26, MLMAX - 1, PRML, ML, MLMAX);
-    if ((MM[mwtv28] < PRM[prmwtvnhaltmin]) && (MM[mwtv28] > 0))    PFPR[fc28] = ml_fpr(fc28, MLMAX - 1, PRML, ML, MLMAX);
-    if ((MM[mwtv81] < PRM[prmwtvnhaltmin]) && (MM[mwtv81] > 0))    PFPR[fc81] = ml_fpr(fc81, MLMAX - 1, PRML, ML, MLMAX);
-    if ((MM[mwtv82] < PRM[prmwtvnhaltmin]) && (MM[mwtv82] > 0))    PFPR[fc82] = ml_fpr(fc82, MLMAX - 1, PRML, ML, MLMAX);
-    if ((MM[mwtv84] < PRM[prmwtvnhaltmin]) && (MM[mwtv84] > 0))    PFPR[fc84] = ml_fpr(fc84, MLMAX - 1, PRML, ML, MLMAX);
+    `* wordt toegestaan om de richting versneld te laten realiseren zodat net voor groen het aantal ledjes goed aftelt. */
+    if ((MM[mwtv21] < PRM[prmwtvnhaltmin]) && (MM[mwtv21] > 0)) PFPR[fc21] = ml_fpr(21, MLMAX - 1, PRML, ML, MLMAX);
+    if ((MM[mwtv22] < PRM[prmwtvnhaltmin]) && (MM[mwtv22] > 0)) PFPR[fc22] = ml_fpr(22, MLMAX - 1, PRML, ML, MLMAX);
+    if ((MM[mwtv24] < PRM[prmwtvnhaltmin]) && (MM[mwtv24] > 0)) PFPR[fc24] = ml_fpr(24, MLMAX - 1, PRML, ML, MLMAX);
+    if ((MM[mwtv26] < PRM[prmwtvnhaltmin]) && (MM[mwtv26] > 0)) PFPR[fc26] = ml_fpr(26, MLMAX - 1, PRML, ML, MLMAX);
+    if ((MM[mwtv28] < PRM[prmwtvnhaltmin]) && (MM[mwtv28] > 0)) PFPR[fc28] = ml_fpr(28, MLMAX - 1, PRML, ML, MLMAX);
+    if ((MM[mwtv81] < PRM[prmwtvnhaltmin]) && (MM[mwtv81] > 0)) PFPR[fc81] = ml_fpr(81, MLMAX - 1, PRML, ML, MLMAX);
+    if ((MM[mwtv82] < PRM[prmwtvnhaltmin]) && (MM[mwtv82] > 0)) PFPR[fc82] = ml_fpr(82, MLMAX - 1, PRML, ML, MLMAX);
+    if ((MM[mwtv84] < PRM[prmwtvnhaltmin]) && (MM[mwtv84] > 0)) PFPR[fc84] = ml_fpr(84, MLMAX - 1, PRML, ML, MLMAX);
 
     VersneldPrimair_Add();
 

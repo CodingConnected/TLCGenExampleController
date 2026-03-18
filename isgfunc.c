@@ -863,24 +863,43 @@ boolv Realisatietijd_LateRelease_Correctie(count fclr, count fcvs, count tlr)
    return result;
 }
 
-/* BEPAAL REALISATIETIJD PER RICHTING */
-/* ---------------------------------- */
-/* void Bepaal_Realisatietijd_per_richting(count i) bepaalt de waarde van REALISATIETIJD_max[], de grootste Realisatietijd in REALISATIETIJD[][] is bepalend.
+/* BEPAAL REALISATIETIJD VOOR RICHTING */
+/* ----------------------------------- */
+/* void Bepaal_Realisatietijd_voor_richting(count i) bepaalt de waarde van REALISATIETIJD_max[], de grootste Realisatietijd in REALISATIETIJD[][] is bepalend.
  *
- * void Bepaal_Realisatietijd_per_richting(i) wordt aangeroepen vanuit de applicatiefunctie void BepaalRealisatieTijden(void) na de initialisatie en correctie
+ * void Bepaal_Realisatietijd_voor_richting(i) wordt aangeroepen vanuit de applicatiefunctie void BepaalRealisatieTijden(void) na de initialisatie en correctie
  * van de de REALISATIETIJD[][]-en.
  * 
  * BepaalRealisatieTijden() wordt aangeroepen vanuit de applicatiefunctie Verlenggroentijden().
  */
 
-
-void Bepaal_Realisatietijd_per_richting(count i)
+void Bepaal_Realisatietijd_voor_richting(count i)
 {
    int j;
    REALISATIETIJD_max[i] = 0;/* @PSN moet de intiele waarde niet NG zijn? */
    for (j = 0; j < FCMAX; ++j) /* zoek de hoogste waarde voor de realisatietijd */
    {
       if (REALISATIETIJD_max[i] < REALISATIETIJD[j][i]) REALISATIETIJD_max[i] = REALISATIETIJD[j][i];
+   }
+}
+
+/* BEPAAL REALISATIETIJD VOOR ALLE RICHTINGEN */
+/* ------------------------------------------ */
+/* void Bepaal_Realisatietijd_alle_richtingen() bepaalt de waarde van REALISATIETIJD_max[] voor alle richtingen.
+ *
+ * void Bepaal_Realisatietijd_alle_richtingen() wordt aangeroepen vanuit de applicatiefunctie void BepaalRealisatieTijden(void) na de initialisatie en correctie
+ * van de de REALISATIETIJD[][]-en.
+ * 
+ * BepaalRealisatieTijden() wordt aangeroepen vanuit de applicatiefunctie Verlenggroentijden().
+ *
+ */
+
+void Bepaal_Realisatietijd_alle_richtingen()
+{
+   count i;
+   for (i = 0; i < FCMAX; ++i)
+   {
+      Bepaal_Realisatietijd_voor_richting(i);
    }
 }
 
@@ -1837,7 +1856,7 @@ void NaloopEVG(count fc1, count fc2, count tnlfg, count tnlfgd, count tnlevg, co
 
 /* MAX PAR */
 /* ------- */
-/* boolv max_par(count fc, boolv* prml[], count ml)
+/* boolv max_par(count fc, mulv t_wacht[])
  * wordt gebruikt bij het bepalen van de status van de Periode Alternatieve Realisatie (PAR[fc##]) van een fasecylus.
  * max_par() maakt gebruik van de maximale waarde van de realisatietijd REALISATIETIJD_max[fc] en de Interstartgroentijd Alternatief (TISG_AR[fc][k]).
  * TISG_AR[fc][k] is de minimale benodigde tijd voor de alternatieve realisatie van de fasecyclus.
@@ -1871,7 +1890,7 @@ boolv max_par(count fc, mulv t_wacht[])
 
 /* MAX PAR_LOS */
 /* ----------- */
-/* boolv max_par_los(count fc)
+/* boolv max_par_los(count fc, mulv t_wacht[])
  * wordt gebruikt bij het bepalen van de status van de Periode Alternatieve Realisatie (PAR[fc##]) van een fasecylus.
  * max_par_los() maakt gebruik van de maximale waarde van de realisatietijd REALISATIETIJD_max[fc] en de Interstartgroentijd Alternatief (TISG_AR[fc][k]).
  * TISG_AR[fc][k] is de minimale benodigde tijd voor de alternatieve realisatie van de fasecyclus.
@@ -1903,7 +1922,7 @@ boolv max_par_los(count fc, mulv t_wacht[])
 /* MAXIMALE WACHTTIJD VAN ALLE PRIMAIRE FASECYCLI */
 /* ============================================== */
 
-/* void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mulv twacht[])
+/* void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mulv t_wacht[])
  * berekent de wachttijden van de primaire fasecycli van de modulenreeks. eerst worden de wachttijden berekent van de primaire
  * fasecycli van de actieve module. daarna van de primaire fasecycli van de daarna volgende modulen.
  * de functie max_wachttijd_modulen_primair_ISG() berekent de wachttijden in een systeemronde.
@@ -1923,7 +1942,7 @@ boolv max_par_los(count fc, mulv t_wacht[])
  */
 
 
-void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mulv twacht[])
+void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mulv t_wacht[])
 {
     register count i, j, m, n, hml;
     mulv twacht_tmp = NG;
@@ -1933,7 +1952,7 @@ void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mu
     /* ------------------------------------ */
     for (i = 0; i < FC_MAX; i++)
     {
-        twacht[i] = NG;
+        t_wacht[i] = NG;
         twacht_AR[i] = NG;
     }
     /* bereken wachttijden van de primaire fasecycli van de actieve module */
@@ -1941,7 +1960,7 @@ void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mu
     for (i = 0; i < FC_MAX; i++) {
         if ((prml[ml][i] & PRIMAIR_VERSNELD) && !PG[i] && R[i])
         {
-            twacht[i] = REALISATIETIJD_max[i];
+            t_wacht[i] = REALISATIETIJD_max[i];
             for (j = 0; j < FC_MAX; j++)
             {
                 if (RA[j] && AR[j])
@@ -1951,14 +1970,14 @@ void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mu
                     {
                         if (TISG_AR_los[j][i] >= 0)
                         {
-                            twacht[i] = max(twacht[i], REALISATIETIJD_max[j] + TISG_AR_los[j][i]);
+                            t_wacht[i] = max(t_wacht[i], REALISATIETIJD_max[j] + TISG_AR_los[j][i]);
                         }
                     }
                     else
                     {
                         if (TISG_AR[j][i] >= 0)
                         {
-                            twacht[i] = max(twacht[i], REALISATIETIJD_max[j] + TISG_AR[j][i]);
+                            t_wacht[i] = max(t_wacht[i], REALISATIETIJD_max[j] + TISG_AR[j][i]);
                         }
                     }
 
@@ -1984,7 +2003,7 @@ void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max, mu
                 {
 
                     if (RA[j] && AR[j])
-                        /*                    if ((RA[j] && prml[ml][j] & ALTERNATIEF_VERSNELD)) */
+                        /* @PSN                   if ((RA[j] && prml[ml][j] & ALTERNATIEF_VERSNELD)) */
                     {
                         if (PAR_los[j])
                         {
@@ -2735,7 +2754,7 @@ void Realisatietijd_wtv_correctie(count i, count mwtv, count prmwtvhaltmin)
    count fc, prio, n;
    if ((MM[mwtv] < PRM[prmwtvhaltmin]) && (MM[mwtv] > 0))
    {
-      Bepaal_Realisatietijd_per_richting(i); /* bepaal de maximale realisatietijd voor deze richting */
+      Bepaal_Realisatietijd_voor_richting(i); /* bepaal de maximale realisatietijd voor deze richting */
       for (n = 0; n < FKFC_MAX[i]; ++n)
       {
          fc = KF_pointer[i][n];
