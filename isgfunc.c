@@ -26,9 +26,9 @@ mulv REALISATIETIJD[FCMAX][FCMAX];
 boolv Volgrichting[FCMAX];
 boolv AfslaandDeelconflict[FCMAX] = { 0 };
 
-extern mulv TISG_rgv[FCMAX][FCMAX];
-extern mulv TISG_basis[FCMAX][FCMAX];
-extern mulv TVG_rgv[FCMAX];
+mulv TISG_rgv[FCMAX][FCMAX];
+mulv TISG_basis[FCMAX][FCMAX];
+mulv TVG_rgv[FCMAX];
 extern mulv init_tvg;
 extern mulv TISG_afkap[FCMAX][FCMAX];
 
