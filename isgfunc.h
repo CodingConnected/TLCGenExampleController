@@ -47,6 +47,9 @@ extern boolv PAR_los[FCMAX];
 #define offsetAR    5
 
 /* Externs from other modules */
+extern mulv TISG_rgv[FCMAX][FCMAX];
+extern mulv TISG_basis[FCMAX][FCMAX];
+extern mulv TVG_rgv[FCMAX];
 extern mulv init_tvg;
 extern mulv TISG_afkap[FCMAX][FCMAX];
 extern boolv PAR_los[FCMAX];

@@ -1018,7 +1018,6 @@ void Aanvragen(void)
 void BepaalRealisatieTijden(void)
 {
     boolv wijziging = TRUE;
-    count i, j;
 
     /* TIGR */
     /* Correctie tijdens omdat bv fc22 hard meeverlengt met fc05 en dus bij naloop fc22-->fc21 deze maatgevend kan worden. */
@@ -1059,16 +1058,6 @@ void BepaalRealisatieTijden(void)
     Realisatietijd_HardMeeverlengenDeelconflict(fc11, fc26);
     Realisatietijd_HardMeeverlengenDeelconflict(fc05, fc32);
 
-    /* Pas realisatietijden aan a.g.v. losse realisaties */
-
-    for (i = 0; i < FCMAX; i++)
-    {
-       for (j = 0; j < FCMAX; j++)
-       {
-          REALISATIETIJD_los[i][j] = REALISATIETIJD[i][j];
-       }
-    }
-
     /* Pas realisatietijden aan a.g.v ontruimende deelconflicten */
     Realisatietijd_Ontruiming_Voorstart(fc05, fc22, tfo0522);
     Realisatietijd_Ontruiming_Voorstart(fc32, fc22, tfo3222);
@@ -1097,14 +1086,13 @@ void BepaalRealisatieTijden(void)
         wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc08, txnl0868);
         wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc11, txnl1168);
         wijziging |= Realisatietijd_LateRelease_Correctie(fc21, fc22, txnl2221);
-                                                    //buiten                                    //binnen
-        IH[hlos31] = RA[fc31] && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schlosgeennla3132_2] && IH[hmadk31b]) || IH[hlos31] && !SG[fc31];
+        IH[hlos31] = RA[fc31] && (!H[hmadk31a] || SCH[schlos3132] && H[hmadk31b]) || H[hlos31] && !SG[fc31];
         wijziging |= (!IH[hlos31]) ? Realisatietijd_LateRelease_Correctie(fc32, fc31, txnl3132) : 0;
-        IH[hlos32] = RA[fc32] && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2] && IH[hmadk32b]) || IH[hlos32] && !SG[fc32];
+        IH[hlos32] = RA[fc32] && (!H[hmadk32a] || SCH[schlos3231] && H[hmadk32b]) || H[hlos32] && !SG[fc32];
         wijziging |= (!IH[hlos32]) ? Realisatietijd_LateRelease_Correctie(fc31, fc32, txnl3231) : 0;
-        IH[hlos33] = RA[fc33] && SCH[schlos3334] && (!IH[hmadk33a] || SCH[schlosgeennla3334_2] && IH[hmadk33b]) || IH[hlos33] && !SG[fc33];
+        IH[hlos33] = RA[fc33] && (!H[hmadk33a] || SCH[schlos3334] && H[hmadk33b]) || H[hlos33] && !SG[fc33];
         wijziging |= (!IH[hlos33]) ? Realisatietijd_LateRelease_Correctie(fc34, fc33, txnl3334) : 0;
-        IH[hlos34] = RA[fc34] && SCH[schlos3433] && (!IH[hmadk34a] || SCH[schlosgeennla3433_2] && IH[hmadk34b]) || IH[hlos34] && !SG[fc34];
+        IH[hlos34] = RA[fc34] && (!H[hmadk34a] || SCH[schlos3433] && H[hmadk34b]) || H[hlos34] && !SG[fc34];
         wijziging |= (!IH[hlos34]) ? Realisatietijd_LateRelease_Correctie(fc33, fc34, txnl3433) : 0;
         wijziging |= Realisatietijd_LateRelease_Correctie(fc81, fc82, txnl8281);
 
@@ -1958,10 +1946,10 @@ void Meeverlengen(void)
     veiligheidsgroen_V1(fc11, tvgmax11, d11_4, tvgvolg11_4, schvg11_4, tvghiaat11_4, END);
 
     MeeverlengenUitDoorPrio();
-    if (IH[hlos31]) MeeverlengenUitDoorVoetgangerLos(fc31, hmadk31b);
-    if (IH[hlos32]) MeeverlengenUitDoorVoetgangerLos(fc32, hmadk32b);
-    if (IH[hlos33]) MeeverlengenUitDoorVoetgangerLos(fc33, hmadk33b);
-    if (IH[hlos34]) MeeverlengenUitDoorVoetgangerLos(fc34, hmadk34b);
+    MeeverlengenUitDoorVoetgangerLos(fc31, hmadk31b);
+    MeeverlengenUitDoorVoetgangerLos(fc32, hmadk32b);
+    MeeverlengenUitDoorVoetgangerLos(fc33, hmadk33b);
+    MeeverlengenUitDoorVoetgangerLos(fc34, hmadk34b);
 
     Meeverlengen_Add();
 }
@@ -2167,10 +2155,10 @@ void RealisatieAfhandeling(void)
          * Bij eventuele parallelle deelconflicten mag de riching alleen komen als zijn meerealiserende richting ook alternatief mag komen. 
          * Als bepaald is dat een richting moet komen mag hij niet meer worden teruggenomen.
          */
-        PAR_los[fc31] = max_par_los(fc31, twacht) && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schlosgeennla3132_2] && IH[hmadk31b]             ) || RA[fc31] && PAR_los[fc31];
-        PAR_los[fc32] = max_par_los(fc32, twacht) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2] && IH[hmadk32b] && PAR[fc22]) || RA[fc32] && PAR_los[fc32];
-        PAR_los[fc33] = max_par_los(fc33, twacht) && SCH[schlos3334] && (!IH[hmadk33a] || SCH[schlosgeennla3334_2] && IH[hmadk33b] && PAR[fc84]) || RA[fc33] && PAR_los[fc33];
-        PAR_los[fc34] = max_par_los(fc34, twacht) && SCH[schlos3433] && (!IH[hmadk34a] || SCH[schlosgeennla3433_2] && IH[hmadk34b] && PAR[fc24]) || RA[fc34] && PAR_los[fc34];
+        PAR_los[fc31] = max_par_los(fc31, twacht) && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schlosgeennla3132_2]) || RA[fc31] && PAR_los[fc31];
+        PAR_los[fc32] = max_par_los(fc32, twacht) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2] && PAR[fc22]) || RA[fc32] && PAR_los[fc32];
+        PAR_los[fc33] = max_par_los(fc33, twacht) && SCH[schlos3334] && (!IH[hmadk33a] || SCH[schlosgeennla3334_2] && PAR[fc84]) || RA[fc33] && PAR_los[fc33];
+        PAR_los[fc34] = max_par_los(fc34, twacht) && SCH[schlos3433] && (!IH[hmadk34a] || SCH[schlosgeennla3433_2] && PAR[fc24]) || RA[fc34] && PAR_los[fc34];
 
         for (fc = 0; fc < FCMAX && !wijziging; fc++)
         {
