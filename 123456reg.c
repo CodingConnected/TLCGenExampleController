@@ -1018,7 +1018,6 @@ void Aanvragen(void)
 void BepaalRealisatieTijden(void)
 {
     boolv wijziging = TRUE;
-    count i, j; 
 
     /* TIGR */
     /* Correctie tijdens omdat bv fc22 hard meeverlengt met fc05 en dus bij naloop fc22-->fc21 deze maatgevend kan worden. */
@@ -1068,14 +1067,7 @@ void BepaalRealisatieTijden(void)
     Realisatietijd_Ontruiming_Voorstart(fc33, fc84, tfo3384);
     Realisatietijd_Ontruiming_LateRelease(fc11, fc26, tlr2611, tfo2611);
 
-    /* Kopieer de realisatijd in een nieuwe matrix */ 
-    for (i = 0; i < FCMAX; ++i)
-    {
-       for (j = 0; j < FCMAX; ++j)
-       {
-          REALISATIETIJD_wtv[i][j] = REALISATIETIJD[i][j];
-       }
-    }
+    InitRealisatieTijdenWtv();
 
     /* Pas realisatietijden aan a.g.v. deelconflicten/voorstarts die nog groen moeten worden */
     do
@@ -1160,10 +1152,15 @@ void BepaalInterStartGroenTijden(void)
         wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc33, fc34, txnl3433);
         wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc81, fc82, txnl8281);
 
+        wijziging |= TISG_Lokgroen_Correctie(fc02, fc62);
+        wijziging |= TISG_Lokgroen_Correctie(fc08, fc68);
+        wijziging |= TISG_Lokgroen_Correctie(fc11, fc68);
+        wijziging |= TISG_Lokgroen_Correctie(fc22, fc21);
         wijziging |= TISG_Lokgroen_Correctie(fc31, fc32);
         wijziging |= TISG_Lokgroen_Correctie(fc32, fc31);
         wijziging |= TISG_Lokgroen_Correctie(fc33, fc34);
         wijziging |= TISG_Lokgroen_Correctie(fc34, fc33);
+        wijziging |= TISG_Lokgroen_Correctie(fc82, fc81);
 
         wijziging |= Correctie_TISG_add();
     } while (wijziging);
@@ -2050,11 +2047,15 @@ void RealisatieAfhandeling(void)
     }
 
     /* als de PAR niet meer waar is, kan je hem naar RR sturen voor gekoppelde realisaties */
+    if (!PAR[fc02] && RA[fc02] && AR[fc02]) RR[fc02] |= BIT5;
+    if (!PAR[fc08] && RA[fc08] && AR[fc08]) RR[fc08] |= BIT5;
+    if (!PAR[fc11] && RA[fc11] && AR[fc11]) RR[fc11] |= BIT5;
+    if (!PAR[fc22] && RA[fc22] && AR[fc22]) RR[fc22] |= BIT5;
     if (!PAR[fc31] && RA[fc31] && AR[fc31]) RR[fc31] |= BIT5;
     if (!PAR[fc32] && RA[fc32] && AR[fc32]) RR[fc32] |= BIT5;
     if (!PAR[fc33] && RA[fc33] && AR[fc33]) RR[fc33] |= BIT5;
     if (!PAR[fc34] && RA[fc34] && AR[fc34]) RR[fc34] |= BIT5;
-
+    if (!PAR[fc82] && RA[fc82] && AR[fc82]) RR[fc82] |= BIT5;
 
     /* Niet intrekken alternatief nalooprichting tijdens inlopen voedende richting */
     if (RT[tvgnaloop2221] || T[tvgnaloop2221])
@@ -2180,7 +2181,6 @@ void RealisatieAfhandeling(void)
         PAR_los[fc32] = max_par_los(fc32, twacht) && !PAR[fc32] && SCH[schlos3231] && (!IH[hmadk32a] || IH[hmadk32b] && !SCH[schgeennla3231]) && (!IH[hmadk31a] || !SCH[schgeenlokgroen3231]);
         PAR_los[fc33] = max_par_los(fc33, twacht) && !PAR[fc33] && SCH[schlos3334] && (!IH[hmadk33a] || IH[hmadk33b] && !SCH[schgeennla3334]) && (!IH[hmadk34a] || !SCH[schgeenlokgroen3334]);
         PAR_los[fc34] = max_par_los(fc34, twacht) && !PAR[fc34] && SCH[schlos3433] && (!IH[hmadk34a] || IH[hmadk34b] && !SCH[schgeennla3433]) && (!IH[hmadk33a] || !SCH[schgeenlokgroen3433]);
-
 
         for (fc = 0; fc < FCMAX && !wijziging; fc++)
         {

@@ -29,14 +29,7 @@
 #define MEMAX  (MEMAX1 + 0)  /* Totaal aantal gebruikte mem.elementen  */
 #define TMMAX  (TMMAX1 + 0)  /* Totaal aantal gebruikte timers         */
 #define CTMAX  (CTMAX1 + 0)  /* Totaal aantal gebruikte tellers        */
-
-
-#define schgeenlokgroen3132   (SCHMAX1 + 1) /* Totaal aantal gebruikte schakelaars    */
-#define schgeenlokgroen3231   (SCHMAX1 + 2) /* Totaal aantal gebruikte schakelaars    */
-#define schgeenlokgroen3334   (SCHMAX1 + 3) /* Totaal aantal gebruikte schakelaars    */
-#define schgeenlokgroen3433   (SCHMAX1 + 4) /* Totaal aantal gebruikte schakelaars    */
-#define SCHMAX                (SCHMAX1 + 5) /* Totaal aantal gebruikte schakelaars    */
-
+#define SCHMAX (SCHMAX1 + 0) /* Totaal aantal gebruikte schakelaars    */
 #define PRMMAX (PRMMAX1 + 0) /* Totaal aantal gebruikte parameters     */
 #define MLMAX  (MLMAX1 + 0)  /* Totaal aantal gebruikte modulen        */
 #if !defined AUTOMAAT

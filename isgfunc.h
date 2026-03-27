@@ -80,6 +80,7 @@ void Bepaal_Realisatietijd_alle_richtingen();
 boolv ym_max_tig_Realisatietijd(count i, count prmomx);
 void TegenhoudenDoorRealisatietijden(void);
 void InitInterStartGroenTijden(void);
+void InitRealisatieTijdenWtv(void);
 void InterStartGroenTijden_VulHardeConflictenIn(void);
 void InterStartGroenTijden_VulGroenGroenConflictenIn(void);
 void InterStartGroenTijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop);

@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>19</HuidigeVersieRevision>
+    <HuidigeVersieRevision>20</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -8398,6 +8398,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8438,6 +8439,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8478,6 +8480,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8514,6 +8517,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8550,6 +8554,7 @@
         <MaximaleVoorstart>31</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8574,6 +8579,7 @@
         <MaximaleVoorstart>32</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8598,6 +8604,7 @@
         <MaximaleVoorstart>33</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8622,6 +8629,7 @@
         <MaximaleVoorstart>34</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8646,6 +8654,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
+        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -17126,6 +17135,11 @@
         <SumoNaam1>811</SumoNaam1>
       </Detector>
       <Detector>
+        <Naam>82_1</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1>821</SumoNaam1>
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -17547,11 +17561,6 @@
         <SumoNaam1>84_1</SumoNaam1>
         <SumoNaam2 />
         <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>82_1</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1>821</SumoNaam1>
       </Detector>
     </Detectoren>
   </SumoKoppeling>

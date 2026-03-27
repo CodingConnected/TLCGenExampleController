@@ -1934,8 +1934,8 @@ boolv max_par(count fc, mulv t_wacht[])
  *
  * De functie max_par_los() wordt aangeroepen vanuit de applicatiefunctie RealisatieAfhandeling().
  *
- * voorbeelden: PAR_los[fc31] = max_par_los(fc31, twacht) && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schlosgeennla3132_2])              || RA[fc31] && PAR_los[fc31];
- *              PAR_los[fc32] = max_par_los(fc32, twacht) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schlosgeennla3231_2] && PAR[fc22]) || RA[fc32] && PAR_los[fc32]; // voorstart 
+ * voorbeelden: PAR_los[fc31] = max_par_los(fc31, twacht) && SCH[schlos3132] && (!IH[hmadk31a] || SCH[schgeennla3132])              || RA[fc31] && PAR_los[fc31];
+ *              PAR_los[fc32] = max_par_los(fc32, twacht) && SCH[schlos3231] && (!IH[hmadk32a] || SCH[schgeennla3231] && PAR[fc22]) || RA[fc32] && PAR_los[fc32]; // voorstart 
  */
 
 boolv max_par_los(count fc, mulv t_wacht[])
@@ -2900,4 +2900,16 @@ boolv TISG_Lokgroen_Correctie_rgv(count fc1, count fc2)
         }
     }
     return result;
+}
+
+/* Kopieer de realisatijd in een nieuwe matrix */
+void InitRealisatieTijdenWtv(void) {
+    count i, j;
+    for (i = 0; i < FCMAX; ++i)
+    {
+        for (j = 0; j < FCMAX; ++j)
+        {
+            REALISATIETIJD_wtv[i][j] = REALISATIETIJD[i][j];
+        }
+    }
 }
