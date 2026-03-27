@@ -1322,23 +1322,23 @@
     #define schwtvbusbijhd           231 /* Aansturing wachttijdvoorspeller BUS licht bij HD ingreep             */
     #define schisgdebug              232 /* Debug aan/uit voor ISG func (testomgeving)                           */
     #define schlos0262               233 /* Wel/niet toestaan losse realisatie 02                                */
-    #define schlosgeennla0262_2      234 /* Wel/niet toestaan losse realisatie 02                                */
+    #define schgeennla0262           234 /* Wel/niet toestaan losse realisatie 02                                */
     #define schlos0868               235 /* Wel/niet toestaan losse realisatie 08                                */
-    #define schlosgeennla0868_2      236 /* Wel/niet toestaan losse realisatie 08                                */
+    #define schgeennla0868           236 /* Wel/niet toestaan losse realisatie 08                                */
     #define schlos1168               237 /* Wel/niet toestaan losse realisatie 11                                */
-    #define schlosgeennla1168_2      238 /* Wel/niet toestaan losse realisatie 11                                */
+    #define schgeennla1168           238 /* Wel/niet toestaan losse realisatie 11                                */
     #define schlos2221               239 /* Wel/niet toestaan losse realisatie 22                                */
-    #define schlosgeennla2221_2      240 /* Wel/niet toestaan losse realisatie 22                                */
+    #define schgeennla2221           240 /* Wel/niet toestaan losse realisatie 22                                */
     #define schlos3132               241 /* Wel/niet toestaan losse realisatie 31                                */
-    #define schlosgeennla3132_2      242 /* Wel/niet toestaan losse realisatie 31                                */
+    #define schgeennla3132           242 /* Wel/niet toestaan losse realisatie 31                                */
     #define schlos3231               243 /* Wel/niet toestaan losse realisatie 32                                */
-    #define schlosgeennla3231_2      244 /* Wel/niet toestaan losse realisatie 32                                */
+    #define schgeennla3231           244 /* Wel/niet toestaan losse realisatie 32                                */
     #define schlos3334               245 /* Wel/niet toestaan losse realisatie 33                                */
-    #define schlosgeennla3334_2      246 /* Wel/niet toestaan losse realisatie 33                                */
+    #define schgeennla3334           246 /* Wel/niet toestaan losse realisatie 33                                */
     #define schlos3433               247 /* Wel/niet toestaan losse realisatie 34                                */
-    #define schlosgeennla3433_2      248 /* Wel/niet toestaan losse realisatie 34                                */
+    #define schgeennla3433           248 /* Wel/niet toestaan losse realisatie 34                                */
     #define schlos8281               249 /* Wel/niet toestaan losse realisatie 82                                */
-    #define schlosgeennla8281_2      250 /* Wel/niet toestaan losse realisatie 82                                */
+    #define schgeennla8281           250 /* Wel/niet toestaan losse realisatie 82                                */
     #define schsneld02_1a            251 /* Aanvraag snel voor detector 02_1a aan of uit                         */
     #define schsneld02_1b            252 /* Aanvraag snel voor detector 02_1b aan of uit                         */
     #define schsneld03_1             253 /* Aanvraag snel voor detector 03_1 aan of uit                          */

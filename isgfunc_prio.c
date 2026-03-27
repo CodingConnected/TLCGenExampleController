@@ -1011,9 +1011,35 @@ void VerhoogGroentijdNietTijdensInrijden(count fc1, count fc2, count txnlfc1fc2)
    }
 }
 
-/* Aan nieuwe inmeldingen wordt het OnderMaximumVerstreken toegekend als de wachttijdvoorspeller <5 leds staat.
+/* Deze functie corrigeert de interstartgroentijd zodat de voedende richting nog niet groen mag worden als de naloop ook is aangevraagd
  *
  */
+boolv TISG_Lokgroen_PRIO_Correctie(count fc1, count fc2)
+{
+   count n;
+   boolv result = FALSE;
+   for (n = 0; n < FCMAX; ++n)
+   {
+      if (TISG_afkap[n][fc1] < TISG_afkap[n][fc2])
+      {
+         TISG_afkap[n][fc1] = TISG_afkap[n][fc2];
+         result = TRUE;
+      }
+   }
+   for (n = 0; n < FCMAX; ++n)
+   {
+      if (TISG_BR[n][fc1] < TISG_BR[n][fc2])
+      {
+         TISG_BR[n][fc1] = TISG_BR[n][fc2];
+         result = TRUE;
+      }
+   }
+   return result;
+}
+
+ /* Aan nieuwe inmeldingen wordt het OnderMaximumVerstreken toegekend als de wachttijdvoorspeller <5 leds staat.
+  * @PSN: Nog kijken of we de prio weer terug moeten zetten ? 
+  */
 void no_prio_door_wtv(count fc, count mwtv, mulv mwtvnhaltmin)
 {
    count n, k, prio;

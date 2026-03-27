@@ -23,3 +23,8 @@
 
 /* dit is een placeholder */
 /* ---------------------- */
+
+SCH_code[schgeenlokgroen3132] = "GEENLOKGROEN3132";    SCH[schgeenlokgroen3132] = 1;                                      /* Wel/niet toestaan losse realisatie 32                             */
+SCH_code[schgeenlokgroen3231] = "GEENLOKGROEN3231";    SCH[schgeenlokgroen3231] = 1;                                      /* Wel/niet toestaan losse realisatie 32                             */
+SCH_code[schgeenlokgroen3334] = "GEENLOKGROEN3334";    SCH[schgeenlokgroen3334] = 1;                                      /* Wel/niet toestaan losse realisatie 34                             */
+SCH_code[schgeenlokgroen3433] = "GEENLOKGROEN3433";    SCH[schgeenlokgroen3433] = 1;                                      /* Wel/niet toestaan losse realisatie 34                             */
