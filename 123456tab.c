@@ -1342,7 +1342,7 @@ void control_parameters(void)
     T_code[tvgnaloop2221]              = "vgnaloop2221";              T_max[tvgnaloop2221]              = 0;    T_type[tvgnaloop2221]              = TE_type; /* Timer naloop EG van 22 naar 21                                                           */
     T_code[tnlsgd3132]                 = "nlsgd3132";                 T_max[tnlsgd3132]                 = 125;  T_type[tnlsgd3132]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 31 naar 32                                */
     T_code[tnlsgd3231]                 = "nlsgd3231";                 T_max[tnlsgd3231]                 = 115;  T_type[tnlsgd3231]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 32 naar 31                                */
-    T_code[tnlsgd3334]                 = "nlsgd3334";                 T_max[tnlsgd3334]                 = 80;   T_type[tnlsgd3334]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 33 naar 34                                */
+    T_code[tnlsgd3334]                 = "nlsgd3334";                 T_max[tnlsgd3334]                 = 0;    T_type[tnlsgd3334]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 33 naar 34                                */
     T_code[tnlsgd3433]                 = "nlsgd3433";                 T_max[tnlsgd3433]                 = 95;   T_type[tnlsgd3433]                 = TE_type; /* Detectieafhankelijke naloop op start groen van 34 naar 33                                */
     T_code[tnlfg8281]                  = "nlfg8281";                  T_max[tnlfg8281]                  = 50;   T_type[tnlfg8281]                  = TE_type; /* Naloop tijdens vastgroen van 82 naar 81                                                  */
     T_code[tnlfgd8281]                 = "nlfgd8281";                 T_max[tnlfgd8281]                 = 50;   T_type[tnlfgd8281]                 = TE_type; /* Detectieafhankelijke naloop tijdens vastgroen van 82 naar 81                             */
@@ -1874,12 +1874,12 @@ void control_parameters(void)
     SCH_code[schgeenlokgroen3231]      = "geenlokgroen3231";      SCH[schgeenlokgroen3231]      = 0;                                        /* Tegenhouden lokgroen (tegenhouden naloop bij aanvraag voedende richting) */
     SCH_code[schlos3231]               = "los3231";               SCH[schlos3231]               = 0;                                        /* Wel/niet toestaan losse realisatie 32                                    */
     SCH_code[schgeennla3231]           = "geennla3231";           SCH[schgeennla3231]           = 0;                                        /* Toestaan realiseren fase 32 (naloop naar) mits geen aanvraag naloop      */
-    SCH_code[schgeenlokgroen3334]      = "geenlokgroen3334";      SCH[schgeenlokgroen3334]      = 0;                                        /* Tegenhouden lokgroen (tegenhouden naloop bij aanvraag voedende richting) */
-    SCH_code[schlos3334]               = "los3334";               SCH[schlos3334]               = 0;                                        /* Wel/niet toestaan losse realisatie 33                                    */
-    SCH_code[schgeennla3334]           = "geennla3334";           SCH[schgeennla3334]           = 0;                                        /* Toestaan realiseren fase 33 (naloop naar) mits geen aanvraag naloop      */
-    SCH_code[schgeenlokgroen3433]      = "geenlokgroen3433";      SCH[schgeenlokgroen3433]      = 0;                                        /* Tegenhouden lokgroen (tegenhouden naloop bij aanvraag voedende richting) */
-    SCH_code[schlos3433]               = "los3433";               SCH[schlos3433]               = 0;                                        /* Wel/niet toestaan losse realisatie 34                                    */
-    SCH_code[schgeennla3433]           = "geennla3433";           SCH[schgeennla3433]           = 0;                                        /* Toestaan realiseren fase 34 (naloop naar) mits geen aanvraag naloop      */
+    SCH_code[schgeenlokgroen3334]      = "geenlokgroen3334";      SCH[schgeenlokgroen3334]      = 1;                                        /* Tegenhouden lokgroen (tegenhouden naloop bij aanvraag voedende richting) */
+    SCH_code[schlos3334]               = "los3334";               SCH[schlos3334]               = 1;                                        /* Wel/niet toestaan losse realisatie 33                                    */
+    SCH_code[schgeennla3334]           = "geennla3334";           SCH[schgeennla3334]           = 1;                                        /* Toestaan realiseren fase 33 (naloop naar) mits geen aanvraag naloop      */
+    SCH_code[schgeenlokgroen3433]      = "geenlokgroen3433";      SCH[schgeenlokgroen3433]      = 1;                                        /* Tegenhouden lokgroen (tegenhouden naloop bij aanvraag voedende richting) */
+    SCH_code[schlos3433]               = "los3433";               SCH[schlos3433]               = 1;                                        /* Wel/niet toestaan losse realisatie 34                                    */
+    SCH_code[schgeennla3433]           = "geennla3433";           SCH[schgeennla3433]           = 1;                                        /* Toestaan realiseren fase 34 (naloop naar) mits geen aanvraag naloop      */
     SCH_code[schgeenlokgroen8281]      = "geenlokgroen8281";      SCH[schgeenlokgroen8281]      = 0;                                        /* Tegenhouden lokgroen (tegenhouden naloop bij aanvraag voedende richting) */
     SCH_code[schlos8281]               = "los8281";               SCH[schlos8281]               = 0;                                        /* Wel/niet toestaan losse realisatie 82                                    */
     SCH_code[schgeennla8281]           = "geennla8281";           SCH[schgeennla8281]           = 0;                                        /* Toestaan realiseren fase 82 (naloop naar) mits geen aanvraag naloop      */
@@ -4758,6 +4758,8 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[d68_9b].SumoNamen[0], 32, "%s", "682");
     sprintf_s(SUMODetectors[d81_1].SumoNamen[0], 32, "%s", "811");
     sprintf_s(SUMODetectors[d82_1].SumoNamen[0], 32, "%s", "821");
+    sprintf_s(SUMODetectors[d84_1].SumoNamen[0], 32, "%s", "84_1");
+    sprintf_s(SUMODetectors[ddummyhdkarin02].SumoNamen[0], 32, "%s", "dummyhdkarin02");
     sprintf_s(SUMODetectors[dopt11].SumoNamen[0], 32, "%s", "004");
     sprintf_s(SUMODetectors[dopt08].SumoNamen[0], 32, "%s", "003");
     sprintf_s(SUMODetectors[dopt05].SumoNamen[0], 32, "%s", "001");
@@ -4797,8 +4799,6 @@ void control_parameters(void)
     sprintf_s(SUMODetectors[ddummykarin03karbus].SumoNamen[0], 32, "%s", "dummykarin03karbus");
     sprintf_s(SUMODetectors[ddummykarin02karbus].SumoNamen[0], 32, "%s", "dummykarin02karbus");
     sprintf_s(SUMODetectors[ddummyhdkaruit02].SumoNamen[0], 32, "%s", "dummyhdkaruit02");
-    sprintf_s(SUMODetectors[ddummyhdkarin02].SumoNamen[0], 32, "%s", "dummyhdkarin02");
-    sprintf_s(SUMODetectors[d84_1].SumoNamen[0], 32, "%s", "84_1");
     for (isumo = 0; isumo < 44; ++isumo)
     {
         SUMOIds[isumo] = NG;

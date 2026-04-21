@@ -205,14 +205,18 @@ void PostApplication_Add(void)
 //    }
 
 #endif
+
+//   ###ERROR - GUARD_PHASECYCLES(ZA 13 - 01 - 2001 / 07:13 : 40)
+
+
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
     if (TS &&
-        (CIF_KLOK[CIF_JAAR] == 2099) &&
+        (CIF_KLOK[CIF_JAAR] == 2001) &&
         (CIF_KLOK[CIF_MAAND] == 1) &&
-        (CIF_KLOK[CIF_DAG] == 1) &&
-        (CIF_KLOK[CIF_UUR] == 15) &&
-        (CIF_KLOK[CIF_MINUUT] == 14) &&
-        (CIF_KLOK[CIF_SECONDE] == 23))
+        (CIF_KLOK[CIF_DAG] == 13) &&
+        (CIF_KLOK[CIF_UUR] == 7) &&
+        (CIF_KLOK[CIF_MINUUT] == 13) &&
+        (CIF_KLOK[CIF_SECONDE] == 1))
     {
         //stuffkey(F2KEY);
         stuffkey(F5KEY);
