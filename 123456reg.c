@@ -2230,6 +2230,7 @@ void RealisatieAfhandeling(void)
     /* set meerealisatie voor gelijk- of voorstartende richtingen */
     /* ---------------------------------------------------------- */
     set_MRLW(fc22, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT6) || (AA[fc05] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
+    set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT6) || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32))); //@Menno dit is het tweede deelconflict daar wordt de code niet voor aangemaakt
     set_MRLW(fc22, fc32, (boolv) (RA[fc32] && (PR[fc32] || AR[fc32] || BR[fc32] || (AA[fc32] & BIT6) || (AA[fc32] & BIT11)) && A[fc22] && R[fc22] && !TRG[fc22] && !kcv(fc22)));
     set_MRLW(fc24, fc34, (boolv) (RA[fc34] && (PR[fc34] || AR[fc34] || BR[fc34] || (AA[fc34] & BIT6) || (AA[fc34] & BIT11)) && A[fc24] && R[fc24] && !TRG[fc24] && !kcv(fc24)));
     set_MRLW(fc28, fc38, (boolv) (RA[fc38] && (PR[fc38] || AR[fc38] || BR[fc38] || (AA[fc38] & BIT6) || (AA[fc38] & BIT11)) && A[fc28] && R[fc28] && !TRG[fc28] && !kcv(fc28)));
