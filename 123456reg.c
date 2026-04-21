@@ -1081,22 +1081,31 @@ void BepaalRealisatieTijden(void)
         wijziging |= Realisatietijd_Voorstart_Correctie(fc28, fc38, tvs2838);
         wijziging |= Realisatietijd_Voorstart_Correctie(fc32, fc05, tvs3205);
         wijziging |= Realisatietijd_Voorstart_Correctie(fc84, fc33, tvs8433);
-        wijziging |= Realisatietijd_LateRelease_Correctie(fc26, fc11, tlr2611);
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc11, fc26, tlr2611);
 
         /* Inlopen / inrijden nalopen */
-        wijziging |= Realisatietijd_LateRelease_Correctie(fc62, fc02, txnl0262);
-        wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc08, txnl0868);
-        wijziging |= Realisatietijd_LateRelease_Correctie(fc68, fc11, txnl1168);
-        wijziging |= Realisatietijd_LateRelease_Correctie(fc21, fc22, txnl2221);
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc02, fc62, txnl0262);
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc08, fc68, txnl0868);
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc11, fc68, txnl1168);
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc22, fc21, txnl2221);
         wijziging |= (IH[hmadk31a] && (!H[hmadk31b] || SCH[schgeennla3132]) || !SCH[schlos3132]) ? Realisatietijd_LateRelease_Correctie(fc31, fc32, txnl3132) : 0;
         wijziging |= Realisatietijd_LateRelease_Correctie_wtv(fc31, fc32, txnl3132);
+        wijziging |= (IH[hmadk32a] && SCH[schgeenlokgroen3132] || !SCH[schlos3132]) ? Realisatietijd_Lokgroen_Correctie(fc31, fc32) : 0;
+        wijziging |= Realisatietijd_Lokgroen_Correctie_wtv(fc31, fc32);
         wijziging |= (IH[hmadk32a] && (!H[hmadk32b] || SCH[schgeennla3231]) || !SCH[schlos3231]) ? Realisatietijd_LateRelease_Correctie(fc32, fc31, txnl3231) : 0;
         wijziging |= Realisatietijd_LateRelease_Correctie_wtv(fc32, fc31, txnl3231);
+        wijziging |= (IH[hmadk31a] && SCH[schgeenlokgroen3231] || !SCH[schlos3231]) ? Realisatietijd_Lokgroen_Correctie(fc32, fc31) : 0;
+        wijziging |= Realisatietijd_Lokgroen_Correctie_wtv(fc32, fc31);
         wijziging |= (IH[hmadk33a] && (!H[hmadk33b] || SCH[schgeennla3334]) || !SCH[schlos3334]) ? Realisatietijd_LateRelease_Correctie(fc33, fc34, txnl3334) : 0;
         wijziging |= Realisatietijd_LateRelease_Correctie_wtv(fc33, fc34, txnl3334);
+        wijziging |= (IH[hmadk34a] && SCH[schgeenlokgroen3334] || !SCH[schlos3334]) ? Realisatietijd_Lokgroen_Correctie(fc33, fc34) : 0;
+        wijziging |= Realisatietijd_Lokgroen_Correctie_wtv(fc33, fc34);
         wijziging |= (IH[hmadk34a] && (!H[hmadk34b] || SCH[schgeennla3433]) || !SCH[schlos3433]) ? Realisatietijd_LateRelease_Correctie(fc34, fc33, txnl3433) : 0;
         wijziging |= Realisatietijd_LateRelease_Correctie_wtv(fc34, fc33, txnl3433);
-        wijziging |= Realisatietijd_LateRelease_Correctie(fc81, fc82, txnl8281);
+        wijziging |= (IH[hmadk33a] && SCH[schgeenlokgroen3433] || !SCH[schlos3433]) ? Realisatietijd_Lokgroen_Correctie(fc34, fc33) : 0;
+        wijziging |= Realisatietijd_Lokgroen_Correctie_wtv(fc34, fc33);
+
+        wijziging |= Realisatietijd_LateRelease_Correctie(fc82, fc81, txnl8281);
 
         wijziging |= CorrectieRealisatieTijd_Add();
     } while (wijziging);
@@ -1152,15 +1161,11 @@ void BepaalInterStartGroenTijden(void)
         wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc33, fc34, txnl3433);
         wijziging |= InterStartGroenTijd_LateRelease_Correctie(fc81, fc82, txnl8281);
 
-        wijziging |= TISG_Lokgroen_Correctie(fc02, fc62);
-        wijziging |= TISG_Lokgroen_Correctie(fc08, fc68);
-        wijziging |= TISG_Lokgroen_Correctie(fc11, fc68);
-        wijziging |= TISG_Lokgroen_Correctie(fc22, fc21);
+/*@Menno: alleen lokgroen-koppelingen */
         wijziging |= TISG_Lokgroen_Correctie(fc31, fc32);
         wijziging |= TISG_Lokgroen_Correctie(fc32, fc31);
         wijziging |= TISG_Lokgroen_Correctie(fc33, fc34);
         wijziging |= TISG_Lokgroen_Correctie(fc34, fc33);
-        wijziging |= TISG_Lokgroen_Correctie(fc82, fc81);
 
         wijziging |= Correctie_TISG_add();
     } while (wijziging);
@@ -2047,15 +2052,17 @@ void RealisatieAfhandeling(void)
     }
 
     /* als de PAR niet meer waar is, kan je hem naar RR sturen voor gekoppelde realisaties */
-    if (!PAR[fc02] && RA[fc02] && AR[fc02]) RR[fc02] |= BIT5;
-    if (!PAR[fc08] && RA[fc08] && AR[fc08]) RR[fc08] |= BIT5;
-    if (!PAR[fc11] && RA[fc11] && AR[fc11]) RR[fc11] |= BIT5;
-    if (!PAR[fc22] && RA[fc22] && AR[fc22]) RR[fc22] |= BIT5;
+/*@Menno: alleen lokgroen-koppelingen */
     if (!PAR[fc31] && RA[fc31] && AR[fc31]) RR[fc31] |= BIT5;
     if (!PAR[fc32] && RA[fc32] && AR[fc32]) RR[fc32] |= BIT5;
     if (!PAR[fc33] && RA[fc33] && AR[fc33]) RR[fc33] |= BIT5;
     if (!PAR[fc34] && RA[fc34] && AR[fc34]) RR[fc34] |= BIT5;
-    if (!PAR[fc82] && RA[fc82] && AR[fc82]) RR[fc82] |= BIT5;
+/*@Menno: alleen lokgroen-koppelingen */
+
+    /* Niet intrekken alternatief tijden RA nastartrichting bij voorstart of voorstartrichting bij laterealease */
+    if (RA[fc05]) RR[fc22] &= ~BIT5;
+    if (RA[fc05]) RR[fc32] &= ~BIT5;
+    if (RA[fc11]) RR[fc26] &= ~BIT5;
 
     /* Niet intrekken alternatief nalooprichting tijdens inlopen voedende richting */
     if (RT[tvgnaloop2221] || T[tvgnaloop2221])
@@ -2182,6 +2189,7 @@ void RealisatieAfhandeling(void)
         PAR_los[fc33] = max_par_los(fc33, twacht) && !PAR[fc33] && SCH[schlos3334] && (!IH[hmadk33a] || IH[hmadk33b] && !SCH[schgeennla3334]) && (!IH[hmadk34a] || !SCH[schgeenlokgroen3334]);
         PAR_los[fc34] = max_par_los(fc34, twacht) && !PAR[fc34] && SCH[schlos3433] && (!IH[hmadk34a] || IH[hmadk34b] && !SCH[schgeennla3433]) && (!IH[hmadk33a] || !SCH[schgeenlokgroen3433]);
 
+
         for (fc = 0; fc < FCMAX && !wijziging; fc++)
         {
             if ((PAR_old[fc] != PAR[fc]) || (PAR_los_old[fc] != PAR_los[fc])) wijziging = TRUE;
@@ -2228,7 +2236,12 @@ void RealisatieAfhandeling(void)
     set_MRLW(fc32, fc05, (boolv) (RA[fc05] && (PR[fc05] || AR[fc05] || BR[fc05] || (AA[fc05] & BIT6) || (AA[fc05] & BIT11)) && A[fc32] && R[fc32] && !TRG[fc32] && !kcv(fc32)));
     set_MRLW(fc84, fc33, (boolv) (RA[fc33] && (PR[fc33] || AR[fc33] || BR[fc33] || (AA[fc33] & BIT6) || (AA[fc33] & BIT11)) && A[fc84] && R[fc84] && !TRG[fc84] && !kcv(fc84)));
 
-
+    /* Set meerealsiatie om tegenhouden voedende richting vanwege lokgroen te voorkomen */
+    /* -------------------------------------------------------------------------------- */
+    set_MRLW(fc31, fc32, (boolv)(RA[fc32] && !K[fc32] && (SCH[schlos3231] && SCH[schgeenlokgroen3231] && IH[hnlak31a] || !SCH[schlos3231])));
+    set_MRLW(fc32, fc31, (boolv)(RA[fc31] && !K[fc31] && (SCH[schlos3132] && SCH[schgeenlokgroen3132] && IH[hnlak32a] || !SCH[schlos3132])));
+    set_MRLW(fc33, fc34, (boolv)(RA[fc34] && !K[fc34] && (SCH[schlos3433] && SCH[schgeenlokgroen3433] && IH[hnlak33a] || !SCH[schlos3433])));
+    set_MRLW(fc34, fc33, (boolv)(RA[fc33] && !K[fc33] && (SCH[schlos3334] && SCH[schgeenlokgroen3334] && IH[hnlak34a] || !SCH[schlos3334])));
 
     /* Niet alternatief komen tijdens file */
     if (IH[hfileFile68af]) PAR[fc08] = FALSE;
