@@ -1,4 +1,4 @@
-/* halfstar_wtv.c - gegenereerd met TLCGen 12.4.0.18 */
+/* halfstar_wtv.c - gegenereerd met TLCGen 12.4.0.19 */
 
 #include "halfstar_wtv.h"
 

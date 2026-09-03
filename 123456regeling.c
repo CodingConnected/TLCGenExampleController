@@ -34,6 +34,10 @@
         #pragma comment(lib, "dsifunc.lib")
         #pragma comment(lib, "ccolks.lib")
         #pragma comment(lib, "ccolmain.lib")
+        #pragma comment(lib, "plfunc.lib")
+        #pragma comment(lib, "plefunc.lib")
+        #pragma comment(lib, "tx_synch.lib")
+        #pragma comment(lib, "trigfunc.lib")
     #pragma endregion
 #endif
 

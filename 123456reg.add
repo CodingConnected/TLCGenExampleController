@@ -19,10 +19,29 @@
  *
  ************************************************************************************/
 /* EINDE GEGENEREERDE HEADER */
-
 #ifndef AUTOMAAT
-   FILE* fpt;
+FILE* fpt;
 #endif
+void modulessatus1(boolv* prml[])
+{
+    register int hml;
+
+    for (hml = 0; hml < MLMAX; hml++)
+    {
+        xyprintf(hml * 30, 0, "prml[%1d][fc22] = %3d", hml, prml[hml][fc22]);
+        xyprintf(hml * 30, 1, "prml[%1d][fc32] = %3d", hml, prml[hml][fc32]);
+    }
+}
+void modulessatus2(boolv* prml[])
+{
+    register int hml;
+
+    for (hml = 0; hml < MLMAX; hml++)
+    {
+        xyprintf(hml * 30, 2, "prml[%1d][fc22] = %3d", hml, prml[hml][fc22]);
+        xyprintf(hml * 30, 3, "prml[%1d][fc32] = %3d", hml, prml[hml][fc32]);
+    }
+}
 
 #ifdef CCOL_IS_SPECIAL
 void SpecialSignals_Add(void)
@@ -35,41 +54,43 @@ void post_init_application()
 {
 #ifndef AUTOMAAT
 
-//int i;
-//    fpt = fopen("MyFile.csv", "w");
-//    if (fpt)
-//    {
-//        for (i = 0; i < FCMAX; ++i)
-//        {
-//            fprintf(fpt, "%4s,", FC_code[i]);
-//        }
-//        fprintf(fpt, " prio02,");
-//        fprintf(fpt, " prio03,");
-//        fprintf(fpt, " prio05,");
-//        fprintf(fpt, " prio08,");
-//        fprintf(fpt, " prio09,");
-//        fprintf(fpt, " prio11,");
-//        fprintf(fpt, " hd02,");
-//        fprintf(fpt, " hd03,");
-//        fprintf(fpt, " hd05,");
-//        fprintf(fpt, " hd08,");
-//        fprintf(fpt, " hd09,");
-//        fprintf(fpt, " hd11,");
-//        fprintf(fpt, " fietsprio22,");
-//        fprintf(fpt, " fietsprio28,");
-//        fprintf(fpt, " uswtv24,");
-//        fprintf(fpt, "\n");
-//    }
-   #ifndef DUURTEST
-       stuffkey(F2KEY);
-      stuffkey(CTRLALTF3KEY);
-   #endif
-
+    int i;
+    fpt = fopen("MyFile.csv", "w");
+    if (fpt)
+    {
+        for (i = 0; i < FCMAX; ++i)
+        {
+            fprintf(fpt, "%4s,", FC_code[i]);
+        }
+        fprintf(fpt, " prio02,");
+        fprintf(fpt, " prio03,");
+        fprintf(fpt, " prio05,");
+        fprintf(fpt, " prio08,");
+        fprintf(fpt, " prio09,");
+        fprintf(fpt, " prio11,");
+        fprintf(fpt, " hd02,");
+        fprintf(fpt, " hd03,");
+        fprintf(fpt, " hd05,");
+        fprintf(fpt, " hd08,");
+        fprintf(fpt, " hd09,");
+        fprintf(fpt, " hd11,");
+        fprintf(fpt, " fietsprio22,");
+        fprintf(fpt, " fietsprio28,");
+        fprintf(fpt, " uswtv24,");
+        fprintf(fpt, "\n");
+    }
+#ifndef DUURTEST
+    stuffkey(F2KEY);
+    stuffkey(CTRLALTF3KEY);
+    stuffkey(F4KEY);
+#endif
+    SCH[schisgdebug] = 0;
 #endif
 }
 
 void PreApplication_Add(void)
 {
+
 }
 
 void KlokPerioden_Add(void)
@@ -114,16 +135,64 @@ void Meetkriterium_Add(void)
 
 }
 
+void MeeverlengenUitDoorPrio_bit7(void)
+{
+    count prio, fc, n, k;
+    for (prio = 0; prio < prioFCMAX; ++prio)
+    {
+        if (iPrioriteit[prio])
+        {
+            fc = iFC_PRIOix[prio];
+            for (n = 0; n < FKFC_MAX[fc]; ++n)
+            {
+                k = KF_pointer[fc][n];
+                if ((REALISATIETIJD[k][fc] >= iStartGroen[prio])) YM[k] &= ~BIT7;
+            }
+        }
+
+    }
+}
+
 void Meeverlengen_Add(void)
 {
-
-}
+    if (!PG[fc05] && ym_max_tig_Realisatietijd(fc22, NG))
+    {
+        YM[fc22] |= BIT7;
+    }
+    else
+    {
+        YM[fc22] &= ~BIT7;
+    }
+    if (!PG[fc05] && ym_max_tig_Realisatietijd(fc32, NG))
+    {
+        YM[fc32] |= BIT7;
+    }
+    else
+    {
+        YM[fc32] &= ~BIT7;
+    }
+    if (!PG[fc11] && ym_max_tig_Realisatietijd(fc26, NG))
+    {
+        YM[fc26] |= BIT7;
+    }
+    else
+    {
+        YM[fc26] &= ~BIT7;
+    }
+    MeeverlengenUitDoorPrio_bit7();
+ }
 
 void Synchronisaties_Add(void)
 {
+    if (((REALISATIETIJD_max[fc05] <= T_max[tvs2205] + 5) || (REALISATIETIJD_max[fc05] <= T_max[tvs3205] + 5)) && ((!A[fc22]||PG[fc22]) && (!A[fc31] || PG[fc31]) && (!A[fc32] || PG[fc32])) && RA[fc05] && PR[fc05])
+    {
+        PG[fc22] |= PRIMAIR_OVERSLAG;
+        PG[fc31] |= PRIMAIR_OVERSLAG;
+        PG[fc32] |= PRIMAIR_OVERSLAG;
+    }
 
 }
-
+     
 void VersneldPrimair_Add(void)
 {
 
@@ -167,56 +236,51 @@ void DetectieStoring_VerlengGroen_Add(void)
 void PostApplication_Add(void)
 {
 #ifndef AUTOMAAT
-//  count x;
-//  count prio;
-//    if (TS)
-//    {
-//        //fpt = fopen("MyFile.csv", "a");    
-//        for (prio = 0; prio < prioFCMAX; ++prio)
-//        {
-//            x = iFC_PRIOix[prio];
-//            if (iPrioriteit[prio] && (iStartGroen[prio] < twacht[x])) twacht[x] = iStartGroen[prio];
-//        }
-//
-//        if (fpt)
-//        {
-//            for (x = 0; x < FCMAX; ++x)
-//            {
-//                fprintf(fpt, "%4d,", ((twacht_AR[x] >= 0) && (twacht_AR[x] < twacht[x])) ? twacht_AR[x] : twacht[x] * (A[x] != 0 || PRIOFC[x]) * R[x]);
-//            }
-//            fprintf(fpt, "%7d,", (H[hprio02karbus]) * 50);
-//            fprintf(fpt, "%7d,", (H[hprio03karbus]) * 50);
-//            fprintf(fpt, "%7d,", (H[hprio05karbus]) * 50);
-//            fprintf(fpt, "%7d,", (H[hprio08karbus]) * 50);
-//            fprintf(fpt, "%7d,", (H[hprio09karbus]) * 50);
-//            fprintf(fpt, "%7d,", (H[hprio11karbus]) * 50);
-//            fprintf(fpt, "%7d,", (H[hhd02]) * 50);
-//            fprintf(fpt, "%7d,", (H[hhd03]) * 50);
-//            fprintf(fpt, "%7d,", (H[hhd05]) * 50);
-//            fprintf(fpt, "%7d,", (H[hhd08]) * 50);
-//            fprintf(fpt, "%7d,", (H[hhd09]) * 50);
-//            fprintf(fpt, "%7d,", (H[hhd11]) * 50);
-//            fprintf(fpt, "%7d,", (H[hprio22fiets]) * 50);
-//            fprintf(fpt, "%7d,", (H[hprio28fiets]) * 50);
-//            fprintf(fpt, "%7d,", CIF_GUS[uswtv24] & ~BIT8);
-//            fprintf(fpt, "\n");
-//        }
-//        //fclose(fpt);
-//    }
+    count x;
+    count prio;
+    for (prio = 0; prio < prioFCMAX; ++prio)
+    {
+        x = iFC_PRIOix[prio];
+        if (iPrioriteit[prio] && (iStartGroen[prio] < twacht[x])) twacht[x] = (mulv) iStartGroen[prio];
+        if (iPrioriteit[prio] && (iStartGroen[prio] < twacht_wtv[x])) twacht_wtv[x] = (mulv) iStartGroen[prio];
+    }
+    xyprintf(0, 0, "iPrioriteit[hdFC02] = %3d", iPrioriteit[hdFC02]);
+    if (TS)
+    {
+        if (fpt)
+        {
+            for (x = 0; x < FCMAX; ++x)
+            {
+                fprintf(fpt, "%4d,", ((twacht_AR_wtv[x] >= 0) && (twacht_AR_wtv[x] < twacht_wtv[x])) ? twacht_AR_wtv[x] : twacht_wtv[x] * (A[x] != 0 || PRIOFC[x]) * R[x]);
+            }
+            fprintf(fpt, "%7d,", (H[hprio02karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio03karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio05karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio08karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio09karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio11karbus]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd02]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd03]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd05]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd08]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd09]) * 50);
+            fprintf(fpt, "%7d,", (H[hhd11]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio22fiets]) * 50);
+            fprintf(fpt, "%7d,", (H[hprio28fiets]) * 50);
+            fprintf(fpt, "%7d,", CIF_GUS[uswtv24] & ~BIT8);
+            fprintf(fpt, "\n");
+        }
+    }
 
 #endif
-
-//   ###ERROR - GUARD_PHASECYCLES(ZA 13 - 01 - 2001 / 07:13 : 40)
-
-
 #if (!defined AUTOMAAT && !defined AUTOMAAT_TEST && !defined VISSIM)
     if (TS &&
         (CIF_KLOK[CIF_JAAR] == 2001) &&
         (CIF_KLOK[CIF_MAAND] == 1) &&
-        (CIF_KLOK[CIF_DAG] == 13) &&
-        (CIF_KLOK[CIF_UUR] == 7) &&
-        (CIF_KLOK[CIF_MINUUT] == 13) &&
-        (CIF_KLOK[CIF_SECONDE] == 1))
+        (CIF_KLOK[CIF_DAG] == 1) &&
+        (CIF_KLOK[CIF_UUR] == 16) &&
+        (CIF_KLOK[CIF_MINUUT] == 0) &&
+        (CIF_KLOK[CIF_SECONDE] == 0))
     {
         //stuffkey(F2KEY);
         stuffkey(F5KEY);
@@ -225,6 +289,9 @@ void PostApplication_Add(void)
         //stuffkey(F10KEY); 
     }
 #endif
+
+    if (SCH[schisgdebug]) IsgDebug();
+    PrioDebug_Add();
 }
 
 void WachttijdvoorspellersWachttijd_Add(void)
@@ -280,5 +347,3 @@ void AlternatiefOngecoordineerd_Add(void)
 {
 
 }
-
-

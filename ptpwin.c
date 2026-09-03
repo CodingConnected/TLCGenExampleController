@@ -2,12 +2,12 @@
 /* =================================================== */
 
 
-/* (C) Copyright 1998-2020 by A.C.M. van Grinsven. All rights reserved.	*/
+/* (C) Copyright 1998-2023 by A.C.M. van Grinsven. All rights reserved.	*/
 
 
-/* CCOL :  versie 11.0	*/
-/* FILE :  ptpwin.c     */
-/* DATUM:  30-04-2020   */
+/* CCOL :  versie 12.0.0   */
+/* FILE :  ptpwin.c        */
+/* DATUM:  20-02-2023      */
 
 
 

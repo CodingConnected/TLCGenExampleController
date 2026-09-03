@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>20</HuidigeVersieRevision>
+    <HuidigeVersieRevision>21</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -248,21 +248,6 @@
           </BitmapCoordinaten>
         </BitmapData>
         <Naam>ML4</Naam>
-      </ModuleDisplayElementModel>
-      <ModuleDisplayElementModel>
-        <BitmapData>
-          <Naam>ML5</Naam>
-          <Dummy>false</Dummy>
-          <ElementType>Output</ElementType>
-          <Multivalent>false</Multivalent>
-          <BitmapCoordinaten>
-            <Coordinaat>
-              <X>573</X>
-              <Y>197</Y>
-            </Coordinaat>
-          </BitmapCoordinaten>
-        </BitmapData>
-        <Naam>ML5</Naam>
       </ModuleDisplayElementModel>
     </ModulenDisplayBitmapData>
     <SegmentDisplayType>EnkelDisplay</SegmentDisplayType>
@@ -1074,12 +1059,6 @@
           <Naam>ML4</Naam>
           <HasManualNaam>false</HasManualNaam>
           <RangeerIndex>14</RangeerIndex>
-          <RangeerIndex2>-1</RangeerIndex2>
-        </IOElementRangeerDataModel>
-        <IOElementRangeerDataModel>
-          <Naam>ML5</Naam>
-          <HasManualNaam>false</HasManualNaam>
-          <RangeerIndex>15</RangeerIndex>
           <RangeerIndex2>-1</RangeerIndex2>
         </IOElementRangeerDataModel>
         <IOElementRangeerDataModel>
@@ -8398,7 +8377,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
-        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
+        <TegenhoudenLokgroen>Nooit</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8439,7 +8418,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
-        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
+        <TegenhoudenLokgroen>Nooit</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8480,7 +8459,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
-        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
+        <TegenhoudenLokgroen>Nooit</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8517,7 +8496,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
-        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
+        <TegenhoudenLokgroen>Nooit</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8554,7 +8533,7 @@
         <MaximaleVoorstart>31</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
-        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
+        <TegenhoudenLokgroen>SchAan</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8579,7 +8558,7 @@
         <MaximaleVoorstart>32</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
-        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
+        <TegenhoudenLokgroen>SchAan</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8604,7 +8583,7 @@
         <MaximaleVoorstart>33</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>true</LosseRealisatieVoedendeRichting>
-        <TegenhoudenLokgroen>true</TegenhoudenLokgroen>
+        <TegenhoudenLokgroen>SchAan</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>true</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8629,7 +8608,7 @@
         <MaximaleVoorstart>34</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>true</LosseRealisatieVoedendeRichting>
-        <TegenhoudenLokgroen>true</TegenhoudenLokgroen>
+        <TegenhoudenLokgroen>SchAan</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>true</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -8654,7 +8633,7 @@
         <MaximaleVoorstart>30</MaximaleVoorstart>
         <MaxUitverlengenVolgrichting>0</MaxUitverlengenVolgrichting>
         <LosseRealisatieVoedendeRichting>false</LosseRealisatieVoedendeRichting>
-        <TegenhoudenLokgroen>false</TegenhoudenLokgroen>
+        <TegenhoudenLokgroen>Nooit</TegenhoudenLokgroen>
         <LosseRealisatieVoorwaardeGeenAanvraagNaloop>false</LosseRealisatieVoorwaardeGeenAanvraagNaloop>
         <Detectoren>
           <NaloopDetector>
@@ -9945,95 +9924,95 @@
     <AlternatievenPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>02</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>03</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>05</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>08</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>09</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>11</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>21</FaseCyclus>
-        <BitWiseBlokAlternatief>1023</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>1007</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>22</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>24</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>26</FaseCyclus>
-        <BitWiseBlokAlternatief>1023</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>1007</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>28</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>31</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>32</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>33</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>34</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>38</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>61</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>62</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>67</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>68</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>81</FaseCyclus>
-        <BitWiseBlokAlternatief>1023</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>1007</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>82</FaseCyclus>
-        <BitWiseBlokAlternatief>1023</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>1007</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
       <FaseCyclusAlternatiefPerBlok>
         <FaseCyclus>84</FaseCyclus>
-        <BitWiseBlokAlternatief>31</BitWiseBlokAlternatief>
+        <BitWiseBlokAlternatief>15</BitWiseBlokAlternatief>
       </FaseCyclusAlternatiefPerBlok>
     </AlternatievenPerBlok>
   </AlternatievenPerBlokData>
@@ -14964,169 +14943,165 @@
           </FaseCyclus>
         </Fasen>
       </Module>
-      <Module>
-        <Naam>ML5</Naam>
-        <Fasen />
-      </Module>
     </Modules>
     <FasenModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>02</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>03</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>05</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>08</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>09</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>11</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>21</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>22</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>24</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>26</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>28</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>31</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>32</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>33</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>34</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>38</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>61</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>62</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>67</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>68</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>81</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>82</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
       </FaseCyclusModuleData>
       <FaseCyclusModuleData>
         <FaseCyclus>84</FaseCyclus>
-        <ModulenVooruit>3</ModulenVooruit>
+        <ModulenVooruit>4</ModulenVooruit>
         <AlternatiefToestaan>true</AlternatiefToestaan>
         <AlternatieveRuimte>60</AlternatieveRuimte>
         <AlternatieveGroenTijd>60</AlternatieveGroenTijd>
@@ -15415,8 +15390,8 @@
     </PeriodeBellenDimmenBitmapData>
   </Signalen>
   <HalfstarData>
-    <IsHalfstar>false</IsHalfstar>
-    <Type>Slave</Type>
+    <IsHalfstar>true</IsHalfstar>
+    <Type>Master</Type>
     <DefaultPeriodeSignaalplan>PL1</DefaultPeriodeSignaalplan>
     <TypeVARegelen>ML</TypeVARegelen>
     <DefaultPeriodeVARegelen>true</DefaultPeriodeVARegelen>
@@ -15424,7 +15399,7 @@
     <OVPrioriteitPL>false</OVPrioriteitPL>
     <VARegelen>false</VARegelen>
     <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
-    <PlantijdenInParameters>false</PlantijdenInParameters>
+    <PlantijdenInParameters>true</PlantijdenInParameters>
     <HalfstarPeriodenData>
       <HalfstarPeriodeDataModel>
         <Periode>nacht</Periode>
@@ -15438,12 +15413,12 @@
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>ochtend</Periode>
-        <VARegelen>true</VARegelen>
+        <VARegelen>false</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
         <Periode>avond</Periode>
-        <VARegelen>true</VARegelen>
+        <VARegelen>false</VARegelen>
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
       <HalfstarPeriodeDataModel>
@@ -15462,9 +15437,959 @@
         <AlternatievenVoorHoofdrichtingen>false</AlternatievenVoorHoofdrichtingen>
       </HalfstarPeriodeDataModel>
     </HalfstarPeriodenData>
-    <SignaalPlannen />
+    <SignaalPlannen>
+      <SignaalPlanModel>
+        <Naam>PL1</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+        <Commentaar>dal</Commentaar>
+        <Cyclustijd>70</Cyclustijd>
+        <StartMoment>1</StartMoment>
+        <SwitchMoment>17</SwitchMoment>
+        <Fasen>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>02</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>3</B1>
+            <C1 xsi:nil="true" />
+            <D1>12</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>03</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>25</B1>
+            <C1 xsi:nil="true" />
+            <D1>31</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>05</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>47</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>08</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>4</B1>
+            <C1 xsi:nil="true" />
+            <D1>13</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>09</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>47</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>11</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>59</B1>
+            <C1 xsi:nil="true" />
+            <D1>65</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>21</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>44</B1>
+            <C1 xsi:nil="true" />
+            <D1>56</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>22</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>51</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>24</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>60</B1>
+            <C1 xsi:nil="true" />
+            <D1>3</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>26</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>53</B1>
+            <C1 xsi:nil="true" />
+            <D1>65</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>28</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>19</B1>
+            <C1 xsi:nil="true" />
+            <D1>25</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>31</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>39</B1>
+            <C1 xsi:nil="true" />
+            <D1>52</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>32</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>39</B1>
+            <C1 xsi:nil="true" />
+            <D1>52</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>33</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>62</B1>
+            <C1 xsi:nil="true" />
+            <D1>2</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>34</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>62</B1>
+            <C1 xsi:nil="true" />
+            <D1>2</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>38</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>19</B1>
+            <C1 xsi:nil="true" />
+            <D1>27</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>61</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>56</B1>
+            <C1 xsi:nil="true" />
+            <D1>10</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>62</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>6</B1>
+            <C1 xsi:nil="true" />
+            <D1>10</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>67</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>11</B1>
+            <C1 xsi:nil="true" />
+            <D1>19</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>68</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>12</B1>
+            <C1 xsi:nil="true" />
+            <D1>17</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>81</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>22</B1>
+            <C1 xsi:nil="true" />
+            <D1>38</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>82</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>22</B1>
+            <C1 xsi:nil="true" />
+            <D1>21</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>84</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>56</B1>
+            <C1 xsi:nil="true" />
+            <D1>2</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+        </Fasen>
+      </SignaalPlanModel>
+      <SignaalPlanModel>
+        <Naam>PL2</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+        <Commentaar>ochtend</Commentaar>
+        <Cyclustijd>70</Cyclustijd>
+        <StartMoment>1</StartMoment>
+        <SwitchMoment>17</SwitchMoment>
+        <Fasen>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>02</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>3</B1>
+            <C1 xsi:nil="true" />
+            <D1>12</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>03</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>25</B1>
+            <C1 xsi:nil="true" />
+            <D1>31</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>05</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>47</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>08</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>4</B1>
+            <C1 xsi:nil="true" />
+            <D1>13</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>09</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>47</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>11</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>59</B1>
+            <C1 xsi:nil="true" />
+            <D1>65</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>21</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>44</B1>
+            <C1 xsi:nil="true" />
+            <D1>56</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>22</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>51</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>24</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>60</B1>
+            <C1 xsi:nil="true" />
+            <D1>3</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>26</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>53</B1>
+            <C1 xsi:nil="true" />
+            <D1>65</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>28</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>19</B1>
+            <C1 xsi:nil="true" />
+            <D1>25</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>31</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>39</B1>
+            <C1 xsi:nil="true" />
+            <D1>52</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>32</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>39</B1>
+            <C1 xsi:nil="true" />
+            <D1>52</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>33</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>62</B1>
+            <C1 xsi:nil="true" />
+            <D1>2</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>34</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>62</B1>
+            <C1 xsi:nil="true" />
+            <D1>2</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>38</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>19</B1>
+            <C1 xsi:nil="true" />
+            <D1>27</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>61</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>56</B1>
+            <C1 xsi:nil="true" />
+            <D1>10</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>62</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>6</B1>
+            <C1 xsi:nil="true" />
+            <D1>10</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>67</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>11</B1>
+            <C1 xsi:nil="true" />
+            <D1>19</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>68</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>12</B1>
+            <C1 xsi:nil="true" />
+            <D1>17</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>81</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>22</B1>
+            <C1 xsi:nil="true" />
+            <D1>38</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>82</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>22</B1>
+            <C1 xsi:nil="true" />
+            <D1>21</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>84</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>56</B1>
+            <C1 xsi:nil="true" />
+            <D1>2</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2 xsi:nil="true" />
+            <C2 xsi:nil="true" />
+            <D2 xsi:nil="true" />
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+        </Fasen>
+      </SignaalPlanModel>
+      <SignaalPlanModel>
+        <Naam>PL3</Naam>
+        <Dummy>false</Dummy>
+        <ElementType>Output</ElementType>
+        <Multivalent>false</Multivalent>
+        <BitmapCoordinaten />
+        <Commentaar>avond</Commentaar>
+        <Cyclustijd>70</Cyclustijd>
+        <StartMoment>1</StartMoment>
+        <SwitchMoment>17</SwitchMoment>
+        <Fasen>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>02</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>3</B1>
+            <C1 xsi:nil="true" />
+            <D1>12</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>03</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>25</B1>
+            <C1 xsi:nil="true" />
+            <D1>31</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>05</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>47</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>08</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>4</B1>
+            <C1 xsi:nil="true" />
+            <D1>13</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>09</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>47</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>11</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>59</B1>
+            <C1 xsi:nil="true" />
+            <D1>65</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>21</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>44</B1>
+            <C1 xsi:nil="true" />
+            <D1>56</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>22</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>41</B1>
+            <C1 xsi:nil="true" />
+            <D1>51</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>24</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>60</B1>
+            <C1 xsi:nil="true" />
+            <D1>3</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>26</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>53</B1>
+            <C1 xsi:nil="true" />
+            <D1>65</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>28</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>19</B1>
+            <C1 xsi:nil="true" />
+            <D1>25</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>31</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>39</B1>
+            <C1 xsi:nil="true" />
+            <D1>52</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>32</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>39</B1>
+            <C1 xsi:nil="true" />
+            <D1>52</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>33</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>62</B1>
+            <C1 xsi:nil="true" />
+            <D1>2</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>34</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>62</B1>
+            <C1 xsi:nil="true" />
+            <D1>2</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>38</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>19</B1>
+            <C1 xsi:nil="true" />
+            <D1>27</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>61</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>56</B1>
+            <C1 xsi:nil="true" />
+            <D1>10</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>62</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>6</B1>
+            <C1 xsi:nil="true" />
+            <D1>10</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>67</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>11</B1>
+            <C1 xsi:nil="true" />
+            <D1>19</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>68</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>12</B1>
+            <C1 xsi:nil="true" />
+            <D1>17</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>81</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>22</B1>
+            <C1 xsi:nil="true" />
+            <D1>38</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>82</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>22</B1>
+            <C1 xsi:nil="true" />
+            <D1>21</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+          <SignaalPlanFaseModel>
+            <FaseCyclus>84</FaseCyclus>
+            <A1 xsi:nil="true" />
+            <B1>56</B1>
+            <C1 xsi:nil="true" />
+            <D1>2</D1>
+            <E1 xsi:nil="true" />
+            <A2 xsi:nil="true" />
+            <B2>0</B2>
+            <C2 xsi:nil="true" />
+            <D2>0</D2>
+            <E2 xsi:nil="true" />
+          </SignaalPlanFaseModel>
+        </Fasen>
+      </SignaalPlanModel>
+    </SignaalPlannen>
     <GekoppeldeKruisingen />
-    <Hoofdrichtingen />
+    <Hoofdrichtingen>
+      <HalfstarHoofdrichtingModel>
+        <FaseCyclus>02</FaseCyclus>
+        <Tegenhouden>false</Tegenhouden>
+        <AfkappenWG>false</AfkappenWG>
+        <AfkappenVG>false</AfkappenVG>
+      </HalfstarHoofdrichtingModel>
+      <HalfstarHoofdrichtingModel>
+        <FaseCyclus>08</FaseCyclus>
+        <Tegenhouden>false</Tegenhouden>
+        <AfkappenWG>false</AfkappenWG>
+        <AfkappenVG>false</AfkappenVG>
+      </HalfstarHoofdrichtingModel>
+    </Hoofdrichtingen>
     <FaseCyclusInstellingen>
       <HalfstarFaseCyclusInstellingenModel>
         <FaseCyclus>02</FaseCyclus>
@@ -15710,7 +16635,7 @@
     </SlaveUitgang>
   </HalfstarData>
   <StarData>
-    <ToepassenStar>false</ToepassenStar>
+    <ToepassenStar>true</ToepassenStar>
     <ProgrammaSturingViaParameter>true</ProgrammaSturingViaParameter>
     <ProgrammaSturingViaKlok>false</ProgrammaSturingViaKlok>
     <IngangAlsVoorwaarde>false</IngangAlsVoorwaarde>
@@ -17154,6 +18079,27 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin03</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin05</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
+        <Naam>dummyhdkarin08</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -17536,27 +18482,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkarin09</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin08</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin05</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin03</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />
