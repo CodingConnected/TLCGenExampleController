@@ -1,5 +1,4 @@
 /* isgfunc.c - gegenereerd met TLCGen 12.4.0.19 */
-
 #include "isgfunc.h"
 
 mulv TNL_type[FCMAX][FCMAX]; /* type naloop */
@@ -37,7 +36,7 @@ mulv init_tvg;
 mulv TISG_afkap[FCMAX][FCMAX];
 
 boolv PAR_los[FCMAX];
-
+#define ALTERNATIEF_LOS     16
 /* BEPAAL RESULTERENDE INTERGROENTIJDEN - TIGR[][] */
 /* ----------------------------------------------- */
 /* void BepaalIntergroenTijden(void) bepaalt de initiele waarden van de resulterende intergroentijden matrix TIGR[][] en
@@ -621,12 +620,16 @@ void Realisatietijd_HardMeeverlengenDeelconflict(mulv fc1, mulv fc2)
  */
 
 
-void Realisatietijd_Ontruiming_Voorstart(count fcns, count fcvs, count tfo)
+void Realisatietijd_Ontruiming_Voorstart(count fcns, count fcvs, count tfo, count tvs)
 {
     RT[tfo] = G[fcns]; /* hertart de fictieve ontruimingstijd */
     if (T[tfo] && !G[fcvs])
     {
         REALISATIETIJD[fcns][fcvs] = TFG_max[fcns] - TFG_timer[fcns] + (((TVG_max[fcns] - TVG_timer[fcns]) > 0) ? (TVG_max[fcns] - TVG_timer[fcns]) : 0) + T_max[tfo] - T_timer[tfo];
+    }
+    if (RA[fcns] && PR[fc05] && R[fcvs] && (PG[fcvs] & PRIMAIR_OVERSLAG) && (REALISATIETIJD_max[fcns] < T_max[tvs]))
+    {
+        REALISATIETIJD[fcns][fcvs] = REALISATIETIJD_max[fcns] + TFG_max[fcns] + TVG_max[fcns] + T_max[tfo];
     }
 }
 
@@ -720,7 +723,43 @@ void Realisatietijd_Ontruiming_LateRelease(count fcvs, count fclr, count tlr, co
  *   } while (wijziging);  //@PSN Let op! functie zou in theorie oneindig kunnen doorgaan!!
  */
 
-boolv Realisatietijd_Voorstart_Correctie(count fcvs, count fcns, count tvs)
+boolv Realisatietijd_Voorstart_Correctie(mulv realisatietijd[FCMAX][FCMAX], mulv realisatietijd_max[FCMAX], count fcvs, count fcns, count tvs)
+{
+    count n;
+    boolv result = FALSE;
+    if ((A[fcvs] || !(PG[fcvs] & PRIMAIR_OVERSLAG)) && !G[fcvs])  //@PSN || TRUE is altijd waar; //@@## warning C4127: conditional expression is constant
+    {
+        for (n = 0; n < FCMAX; ++n)
+        {
+            if ((realisatietijd[n][fcns] < (realisatietijd[n][fcvs] + T_max[tvs])) && realisatietijd[n][fcvs] > 0)
+            {                                                                                                     /* @PSN is testen op REALISATIETIJD[n][fcvs] > 0 wel goed? >=0??  extra haakjes (REALISATIETIJD[n][fcvs] > 0) */
+                realisatietijd[n][fcns] = realisatietijd[n][fcvs] + T_max[tvs];                                    /* @PSN bij REALISATIETIJD[n][fcvs] == 0 moet toch worden verhoogd met T_max[tvs]; */
+                result = TRUE;
+            }
+        }
+    }
+    if (G[fcvs] || RA[fcvs] && (realisatietijd_max[fcvs] <= 1)) //@PSN G[fcvs] er wordt toch ook tijdens groen aangepast!
+    {
+        if (TG[fcvs])
+        {
+            if (realisatietijd[fcvs][fcns] < (T_max[tvs] - TG_timer[fcvs]))
+            {
+                realisatietijd[fcvs][fcns] = T_max[tvs] - TG_timer[fcvs];
+                result = TRUE;
+            }
+        }
+        else
+        {
+            if (realisatietijd[fcvs][fcns] < T_max[tvs])
+            {
+                realisatietijd[fcvs][fcns] = T_max[tvs];
+                result = TRUE;
+            }
+        }
+    }
+    return result;
+}
+boolv Realisatietijd_Voorstart_Correctie_wtv(count fcvs, count fcns, count tvs)
 {
     count n;
     boolv result = FALSE;
@@ -728,9 +767,9 @@ boolv Realisatietijd_Voorstart_Correctie(count fcvs, count fcns, count tvs)
     {
         for (n = 0; n < FCMAX; ++n)
         {
-            if ((REALISATIETIJD[n][fcns] < (REALISATIETIJD[n][fcvs] + T_max[tvs])) && REALISATIETIJD[n][fcvs] > 0)  
+            if ((REALISATIETIJD_wtv[n][fcns] < (REALISATIETIJD_wtv[n][fcvs] + T_max[tvs])) && REALISATIETIJD_wtv[n][fcvs] > 0)
             {                                                                                                     /* @PSN is testen op REALISATIETIJD[n][fcvs] > 0 wel goed? >=0??  extra haakjes (REALISATIETIJD[n][fcvs] > 0) */
-               REALISATIETIJD[n][fcns] = REALISATIETIJD[n][fcvs] + T_max[tvs];                                    /* @PSN bij REALISATIETIJD[n][fcvs] == 0 moet toch worden verhoogd met T_max[tvs]; */
+                REALISATIETIJD_wtv[n][fcns] = REALISATIETIJD_wtv[n][fcvs] + T_max[tvs];                                    /* @PSN bij REALISATIETIJD[n][fcvs] == 0 moet toch worden verhoogd met T_max[tvs]; */
                 result = TRUE;
             }
         }
@@ -739,17 +778,17 @@ boolv Realisatietijd_Voorstart_Correctie(count fcvs, count fcns, count tvs)
     {
         if (TG[fcvs])
         {
-            if (REALISATIETIJD[fcvs][fcns] < (T_max[tvs] - TG_timer[fcvs]))
+            if (REALISATIETIJD_wtv[fcvs][fcns] < (T_max[tvs] - TG_timer[fcvs]))
             {
-                REALISATIETIJD[fcvs][fcns] = T_max[tvs] - TG_timer[fcvs];
+                REALISATIETIJD_wtv[fcvs][fcns] = T_max[tvs] - TG_timer[fcvs];
                 result = TRUE;
             }
         }
         else
         {
-            if (REALISATIETIJD[fcvs][fcns] < T_max[tvs])
+            if (REALISATIETIJD_wtv[fcvs][fcns] < T_max[tvs])
             {
-                REALISATIETIJD[fcvs][fcns] = T_max[tvs];
+                REALISATIETIJD_wtv[fcvs][fcns] = T_max[tvs];
                 result = TRUE;
             }
         }
@@ -783,25 +822,50 @@ boolv Realisatietijd_Voorstart_Correctie(count fcvs, count fcns, count tvs)
  */
 
 
-boolv Realisatietijd_Gelijkstart_Correctie(count fc1, count fc2)
+boolv Realisatietijd_Gelijkstart_Correctie(mulv realisatietijd[FCMAX][FCMAX], count fc1, count fc2)
 {
     count n;
     boolv result = FALSE;
     // @PSN TODO vergt uitwerking indien een van de twee gelijkstartende richtingen niet komt
     // if ((A[fc1] || !(PG[fc1] & PRIMAIR_OVERSLAG)) && (A[fc2] || !(PG[fc2] & PRIMAIR_OVERSLAG)) && !G[fc1] && !G[fc2])
     // {
-    for (n = 0; n < FCMAX; ++n) 
+    for (n = 0; n < FCMAX; ++n)
     {
-        if (REALISATIETIJD[n][fc1] < REALISATIETIJD[n][fc2])
+        if (realisatietijd[n][fc1] < realisatietijd[n][fc2])
         {
-            REALISATIETIJD[n][fc1] = REALISATIETIJD[n][fc2];
+            realisatietijd[n][fc1] = realisatietijd[n][fc2];
             result = TRUE;
         }
         else
         {
-            if (REALISATIETIJD[n][fc1] != REALISATIETIJD[n][fc2])   /* @PSN REALISATIETIJD[n][fc1] > REALISATIETIJD[n][fc2] */
+            if (realisatietijd[n][fc1] > realisatietijd[n][fc2]) 
             {
-                REALISATIETIJD[n][fc2] = REALISATIETIJD[n][fc1];
+                realisatietijd[n][fc2] = realisatietijd[n][fc1];
+                result = TRUE;
+            }
+        }
+    }
+    return result;
+}
+boolv Realisatietijd_Gelijkstart_Correctie_wtv(count fc1, count fc2)
+{
+    count n;
+    boolv result = FALSE;
+    // @PSN TODO vergt uitwerking indien een van de twee gelijkstartende richtingen niet komt
+    // if ((A[fc1] || !(PG[fc1] & PRIMAIR_OVERSLAG)) && (A[fc2] || !(PG[fc2] & PRIMAIR_OVERSLAG)) && !G[fc1] && !G[fc2])
+    // {
+    for (n = 0; n < FCMAX; ++n)
+    {
+        if (REALISATIETIJD_wtv[n][fc1] < REALISATIETIJD_wtv[n][fc2])
+        {
+            REALISATIETIJD_wtv[n][fc1] = REALISATIETIJD_wtv[n][fc2];
+            result = TRUE;
+        }
+        else
+        {
+            if (REALISATIETIJD_wtv[n][fc1] != REALISATIETIJD_wtv[n][fc2])   /* @PSN REALISATIETIJD[n][fc1] > REALISATIETIJD[n][fc2] */
+            {
+                REALISATIETIJD_wtv[n][fc2] = REALISATIETIJD_wtv[n][fc1];
                 result = TRUE;
             }
             // }
@@ -845,7 +909,7 @@ boolv Realisatietijd_Gelijkstart_Correctie(count fc1, count fc2)
  *   } while (wijziging);  //@PSN Let op! functie zou in theorie oneindig kunnen doorgaan!!
  */
 
-boolv Realisatietijd_LateRelease_Correctie(count fcvs, count fclr, count tlr)
+boolv Realisatietijd_LateRelease_Correctie(mulv realisatietijd[FCMAX][FCMAX], count fcvs, count fclr, count tlr)
 {
     count n;
     boolv result = FALSE;
@@ -855,10 +919,10 @@ boolv Realisatietijd_LateRelease_Correctie(count fcvs, count fclr, count tlr)
         {
             for (n = 0; n < FCMAX; ++n)
             {
-                if (REALISATIETIJD[n][fcvs] < REALISATIETIJD[n][fclr] - T_max[tlr])
+                if (realisatietijd[n][fcvs] < realisatietijd[n][fclr] - T_max[tlr])
                 {
-                    REALISATIETIJD[n][fcvs] = REALISATIETIJD[n][fclr] - T_max[tlr];
-                    if (REALISATIETIJD[n][fcvs] < 0) REALISATIETIJD[n][fcvs] = 0;
+                    realisatietijd[n][fcvs] = realisatietijd[n][fclr] - T_max[tlr];
+                    if (realisatietijd[n][fcvs] < 0) realisatietijd[n][fcvs] = 0;
                     result = TRUE;
                 }
             }
@@ -870,27 +934,27 @@ boolv Realisatietijd_LateRelease_Correctie(count fcvs, count fclr, count tlr)
 /* Deze functie is gelijk aan Realisatietijd_LateRelease_Correctie (zie hierboven) maar kijkt naar de maximale tijd.
  */
 
-boolv Realisatietijd_LateRelease_Correctie_wtv(count fcvs, count fclr, count tlr)
-{
-    count n;
-    boolv result = FALSE;
-    if (A[fclr] || !PG[fclr] || TRUE)   //@PSN || TRUE is altijd waar; warning C4127: conditional expression is constant
-    {
-        if (!G[fcvs])
-        {
-            for (n = 0; n < FCMAX; ++n)
-            {
-                if (REALISATIETIJD_wtv[n][fcvs] < REALISATIETIJD_wtv[n][fclr] - T_max[tlr])
-                {
-                    REALISATIETIJD_wtv[n][fcvs] = REALISATIETIJD_wtv[n][fclr] - T_max[tlr];
-                    if (REALISATIETIJD_wtv[n][fcvs] < 0) REALISATIETIJD_wtv[n][fcvs] = 0;
-                    result = TRUE;
-                }
-            }
-        }
-    }
-    return result;
-}
+//boolv Realisatietijd_LateRelease_Correctie_wtv(count fcvs, count fclr, count tlr)
+//{
+//    count n;
+//    boolv result = FALSE;
+//    if (A[fclr] || !PG[fclr] || TRUE)   //@PSN || TRUE is altijd waar; warning C4127: conditional expression is constant
+//    {
+//        if (!G[fcvs])
+//        {
+//            for (n = 0; n < FCMAX; ++n)
+//            {
+//                if (REALISATIETIJD_wtv[n][fcvs] < REALISATIETIJD_wtv[n][fclr] - T_max[tlr])
+//                {
+//                    REALISATIETIJD_wtv[n][fcvs] = REALISATIETIJD_wtv[n][fclr] - T_max[tlr];
+//                    if (REALISATIETIJD_wtv[n][fcvs] < 0) REALISATIETIJD_wtv[n][fcvs] = 0;
+//                    result = TRUE;
+//                }
+//            }
+//        }
+//    }
+//    return result;
+//}
 
 /* BEPAAL REALISATIETIJD VOOR RICHTING */
 /* ----------------------------------- */
@@ -1046,16 +1110,13 @@ void TegenhoudenDoorRealisatietijden()
  * BepaalInterStartGroenTijden() wordt aangeroepen vanuit de applicatiefunctie Verlenggroentijden(), die wordt aangeroepen door application().
  */
 
-void InitInterStartGroenTijden(void)
+void InitInterStartGroenTijden(mulv tisg[FCMAX][FCMAX])
 {
-    count i, j;
-    for (i = 0; i < FC_MAX; i++)  /* zet alle GK en GKL conflicten om in FK */
+    for (count i = 0; i < FC_MAX; i++)  /* zet alle GK en GKL conflicten om in FK */
     {
-        for (j = 0; j < FC_MAX; j++)
+        for (count j = 0; j < FC_MAX; j++)
         {
-            TISG_PR[i][j] = NG;
-            TISG_AR[i][j] = NG;
-            TISG_AR_los[i][j] = NG;
+            tisg[i][j] = NG;
         }
     }
 }
@@ -1077,20 +1138,32 @@ void InitInterStartGroenTijden(void)
  */
 
 
-void InterStartGroenTijden_VulHardeConflictenIn(void)
-{
-    count fc1, fc2, n;
-    for (fc1 = 0; fc1 < FCMAX; ++fc1)
-    {
-        for (n = 0; n < KFC_MAX[fc1]; ++n)
-        {
-            fc2 = KF_pointer[fc1][n]; /* bepaal de index van de conflicterende fasecyclus */
-            TISG_PR[fc1][fc2] = TFG_max[fc1] + TVG_PR[fc1] + TIG_max[fc1][fc2];
-            TISG_AR[fc1][fc2] = TFG_max[fc1] + TVG_AR[fc1] + TIG_max[fc1][fc2];
-            TISG_AR_los[fc1][fc2] = TFG_max[fc1] + TVG_AR[fc1] + TIG_max[fc1][fc2];
-        }
-    }
-}
+//void InterStartGroenTijden_VulHardeConflictenIn(void)
+//{
+//    count fc1, fc2, n;
+//    for (fc1 = 0; fc1 < FCMAX; ++fc1)
+//    {
+//        for (n = 0; n < KFC_MAX[fc1]; ++n)
+//        {
+//            fc2 = KF_pointer[fc1][n]; /* bepaal de index van de conflicterende fasecyclus */
+//            TISG_PR[fc1][fc2] = TFG_max[fc1] + TVG_PR[fc1] + TIG_max[fc1][fc2];
+//            TISG_AR[fc1][fc2] = TFG_max[fc1] + TVG_AR[fc1] + TIG_max[fc1][fc2];
+//            TISG_AR_los[fc1][fc2] = TFG_max[fc1] + TVG_AR[fc1] + TIG_max[fc1][fc2];
+//        }
+//    }
+//}
+//void InterStartGroenTijden_VulHardeConflictenIn(mulv tisg_tmp[FCMAX][FCMAX],mulv tvg_tmp_max[])
+//{
+//    count fc1, fc2, n;
+//    for (fc1 = 0; fc1 < FCMAX; ++fc1)
+//    {
+//        for (n = 0; n < KFC_MAX[fc1]; ++n)
+//        {
+//            fc2 = KF_pointer[fc1][n]; /* bepaal de index van de conflicterende fasecyclus */
+//            tisg_tmp[fc1][fc2] = TFG_max[fc1] + tvg_tmp_max[fc1] + TIG_max[fc1][fc2];
+//        }
+//    }
+//}
 
 /* INTERSTARTGROENTIJDEN VUL GROEN-GROEN CONFLICTEN IN */
 /* --------------------------------------------------- */
@@ -1115,20 +1188,20 @@ void InterStartGroenTijden_VulHardeConflictenIn(void)
  */
 
 
-void InterStartGroenTijden_VulGroenGroenConflictenIn(void)
-{
-    count fc1, fc2, n;
-    for (fc1 = 0; fc1 < FCMAX; ++fc1)
-    {
-        for (n = KFC_MAX[fc1]; n < GKFC_MAX[fc1]; ++n)
-        {
-            fc2 = KF_pointer[fc1][n]; /* bepaal de index van de conflicterende fasecyclus */
-            TISG_PR[fc1][fc2] = TFG_max[fc1] + TVG_PR[fc1];
-            TISG_AR[fc1][fc2] = TFG_max[fc1] + TVG_AR[fc1];
-            TISG_AR_los[fc1][fc2] = TFG_max[fc1] + TVG_AR[fc1];
-        }
-    }
-}
+//void InterStartGroenTijden_VulGroenGroenConflictenIn(void)
+//{
+//    count fc1, fc2, n;
+//    for (fc1 = 0; fc1 < FCMAX; ++fc1)
+//    {
+//        for (n = KFC_MAX[fc1]; n < GKFC_MAX[fc1]; ++n)
+//        {
+//            fc2 = KF_pointer[fc1][n]; /* bepaal de index van de conflicterende fasecyclus */
+//            TISG_PR[fc1][fc2] = TFG_max[fc1] + TVG_PR[fc1];
+//            TISG_AR[fc1][fc2] = TFG_max[fc1] + TVG_AR[fc1];
+//            TISG_AR_los[fc1][fc2] = TFG_max[fc1] + TVG_AR[fc1];
+//        }
+//    }
+//}
 
 /* INTERSTARTGROENTIJD NALOOP OP EINDE GROEN (NLEG) */
 /* ------------------------------------------------ */
@@ -1166,33 +1239,25 @@ void InterStartGroenTijden_VulGroenGroenConflictenIn(void)
  *
  */
 
-void InterStartGroenTijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop)
+void InterStartGroenTijd_NLEG(mulv tisg[FCMAX][FCMAX], mulv tvg_max[FCMAX], count i, count j, count tnlfg, count tnlfgd, count tnleg, count tnlegd, count tvgnaloop)
 {
-    int k, n;
-    for (n = 0; n < KFC_MAX[j]; n++)
-    {
-        k = KF_pointer[j][n];
-        if (!(tnlfg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnleg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlegd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnleg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlegd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
-    }
-    for (n = KFC_MAX[j]; n < GKFC_MAX[j]; n++)
-    {
-        k = KF_pointer[j][n];
-        if (!(tnlfg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop]);
-        if (!(tnlfgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnleg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlegd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnleg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlegd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
-    }
+    count k;
+        for (count n = 0; n < KFC_MAX[j]; n++)
+        {
+            k = KF_pointer[j][n];
+            if (!(tnlfg == NG))  tisg[i][k] = max(tisg[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlfgd == NG)) tisg[i][k] = max(tisg[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnleg == NG)) tisg[i][k] = max(tisg[i][k], TFG_max[i] + tvg_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlegd == NG)) tisg[i][k] = max(tisg[i][k], TFG_max[i] + tvg_max[i] + TGL_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+        }
+        for (count n = KFC_MAX[j]; n < GKFC_MAX[j]; n++)
+        {
+            k = KF_pointer[j][n];
+            if (!(tnlfg == NG)) tisg[i][k] = max(tisg[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop]);
+            if (!(tnlfgd == NG)) tisg[i][k] = max(tisg[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnleg == NG)) tisg[i][k] = max(tisg[i][k], TFG_max[i] + tvg_max[i] + T_max[tnleg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlegd == NG)) tisg[i][k] = max(tisg[i][k], TFG_max[i] + tvg_max[i] + T_max[tnlegd] + T_max[tvgnaloop] + TIG_max[j][k]);
+        }
 }
 
 /* INTERSTARTGROENTIJD NALOOP OP EINDE VERLENGGROEN (NLEVG) */
@@ -1233,31 +1298,31 @@ void InterStartGroenTijd_NLEG(count i, count j, count tnlfg, count tnlfgd, count
 
 void InterStartGroenTijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, count tnlevg, count tnlevgd, count tvgnaloop)
 {
-    int k, n;
-    for (n = 0; n < KFC_MAX[j]; n++)
-    {
-        k = KF_pointer[j][n];  /* bepaal de index van de conflicterende fasecyclus */
-        if (!(tnlfg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlevg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlevgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlevg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlevgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-    }
-    for (n = KFC_MAX[j]; n < GKFC_MAX[j]; n++)
-    {
-        k = KF_pointer[j][n]; /* bepaal de index van de conflicterende fasecyclus */
-        if (!(tnlfg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlevg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlevgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlfgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlevg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
-        if (!(tnlevgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
-    }
+    count k;
+        for (count n = 0; n < KFC_MAX[j]; n++)
+        {
+            k = KF_pointer[j][n];  /* bepaal de index van de conflicterende fasecyclus */
+            if (!(tnlfg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlfgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlevg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlevgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlfg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlfgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlevg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlevgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+        }
+        for (count n = KFC_MAX[j]; n < GKFC_MAX[j]; n++)
+        {
+            k = KF_pointer[j][n]; /* bepaal de index van de conflicterende fasecyclus */
+            if (!(tnlfg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlfgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlevg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlevgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], TFG_max[i] + TVG_PR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlfg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlfgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + T_max[tnlfgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlevg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnlevg] + T_max[tvgnaloop] + TIG_max[j][k]);
+            if (!(tnlevgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], TFG_max[i] + TVG_AR[i] + T_max[tnlevgd] + T_max[tvgnaloop] + TIG_max[j][k]);
+        }
 }
 
 /* INTERSTARTGROENTIJD NALOOP OP STARTGROEN (NLSG) */
@@ -1294,17 +1359,15 @@ void InterStartGroenTijd_NLEVG(count i, count j, count tnlfg, count tnlfgd, coun
  * InterStartGroenTijd_NLSG(fc34, fc33, NG, tnlsgd3433);
  */
 
-void InterStartGroenTijd_NLSG(count i, count j, count tnlsg, count tnlsgd)
+void InterStartGroenTijd_NLSG(mulv tisg[FCMAX][FCMAX], count i, count j, count tnlsg, count tnlsgd)
 {
-    int k, n;
-    for (n = 0; n < KFC_MAX[j]; n++)
-    {
-        k = KF_pointer[j][n]; /* bepaal de index van de conflicterende fasecyclus */
-        if (!(tnlsg == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], T_max[tnlsg] + TIG_max[j][k]);
-        if (!(tnlsgd == NG)) TISG_PR[i][k] = max(TISG_PR[i][k], T_max[tnlsgd] + TIG_max[j][k]);
-        if (!(tnlsg == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], T_max[tnlsg] + TIG_max[j][k]);
-        if (!(tnlsgd == NG)) TISG_AR[i][k] = max(TISG_AR[i][k], T_max[tnlsgd] + TIG_max[j][k]);
-    }
+    count k;
+        for (count n = 0; n < KFC_MAX[j]; n++)
+        {
+            k = KF_pointer[j][n]; /* bepaal de index van de conflicterende fasecyclus */
+            if (!(tnlsg == NG)) tisg[i][k] = max(tisg[i][k], T_max[tnlsg] + TIG_max[j][k]);
+            if (!(tnlsgd == NG)) tisg[i][k] = max(tisg[i][k], T_max[tnlsgd] + TIG_max[j][k]);
+        }
 }
 
 /* INTERSTARTGROENTIJD HARD MEEVERLENGEN MET DEELCONFLICT */
@@ -1327,16 +1390,14 @@ void InterStartGroenTijd_NLSG(count i, count j, count tnlsg, count tnlsgd)
  */
 
 
-void InterStartGroentijd_HardMeeverlengenDeelconflict(mulv fc1, mulv fc2)
+void InterStartGroentijd_HardMeeverlengenDeelconflict(mulv tisg[FCMAX][FCMAX], mulv tvg_max[FCMAX], count fc1, count fc2)
 {
-    count fc;
-    for (fc = 0; fc < FCMAX; fc++)
+
+    for (count fc = 0; fc < FCMAX; fc++)
     {
-        if (TIGR[fc2][fc] >= 0)
+        if (tisg[fc2][fc] >= 0)
         {
-            TISG_PR[fc1][fc] = max(TISG_PR[fc1][fc], TFG_max[fc1] + TVG_PR[fc1] + TIGR[fc2][fc]);
-            TISG_AR[fc1][fc] = max(TISG_AR[fc1][fc], TFG_max[fc1] + TVG_AR[fc1] + TIGR[fc2][fc]);
-            TISG_AR_los[fc1][fc] = max(TISG_AR_los[fc1][fc], TFG_max[fc1] + TVG_AR[fc1] + TIGR[fc2][fc]);
+            tisg[fc1][fc] = max(tisg[fc1][fc], TFG_max[fc1] + tvg_max[fc1] + TIGR[fc2][fc]);
         }
     }
 }
@@ -1369,26 +1430,14 @@ void InterStartGroentijd_HardMeeverlengenDeelconflict(mulv fc1, mulv fc2)
  */
 
 
-boolv InterStartGroenTijd_Voorstart_Correctie(count fcvs, count fcns, count tvs)
+boolv InterStartGroenTijd_Voorstart_Correctie(mulv tisg[FCMAX][FCMAX], count fcvs, count fcns, count tvs)
 {
-    count n;
-    boolv result;
-    result = FALSE;
-    for (n = 0; n < FCMAX; ++n)
+    boolv result = FALSE;
+    for (count n = 0; n < FCMAX; ++n)
     {
-        if ((TISG_PR[n][fcns] < TISG_PR[n][fcvs] + T_max[tvs]) && (TISG_PR[n][fcvs] > 0))
+        if ((tisg[n][fcns] <tisg[n][fcvs] + T_max[tvs]) && (tisg[n][fcvs] > 0))
         {
-            TISG_PR[n][fcns] = TISG_PR[n][fcvs] + T_max[tvs];
-            result = TRUE;
-        }
-        if ((TISG_AR[n][fcns] < TISG_AR[n][fcvs] + T_max[tvs]) && (TISG_AR[n][fcvs] > 0))
-        {
-            TISG_AR[n][fcns] = TISG_AR[n][fcvs] + T_max[tvs];
-            result = TRUE;
-        }
-        if ((TISG_AR_los[n][fcns] < TISG_AR_los[n][fcvs] + T_max[tvs]) && (TISG_AR_los[n][fcvs] > 0))
-        {
-            TISG_AR_los[n][fcns] = TISG_AR_los[n][fcvs] + T_max[tvs];
+            tisg[n][fcns] = tisg[n][fcvs] + T_max[tvs];
             result = TRUE;
         }
     }
@@ -1423,49 +1472,21 @@ boolv InterStartGroenTijd_Voorstart_Correctie(count fcvs, count fcns, count tvs)
  *   } while (wijziging);
  */
 
-boolv InterStartGroenTijd_Gelijkstart_Correctie(count fc1, count fc2)
+boolv InterStartGroenTijd_Gelijkstart_Correctie(mulv tisg[FCMAX][FCMAX], count fc1, count fc2)
 {
-    count n;
-    boolv result;
-    result = FALSE;
-    for (n = 0; n < FCMAX; ++n)
+    boolv result = FALSE;
+    for (count n = 0; n < FCMAX; ++n)
     {
-        if (TISG_PR[n][fc1] < TISG_PR[n][fc2])
+        if (tisg[n][fc1] < tisg[n][fc2])
         {
-            TISG_PR[n][fc1] = TISG_PR[n][fc2];
+            tisg[n][fc1] = tisg[n][fc2];
             result = TRUE;
         }
         else
         {
-            if (TISG_PR[n][fc1] != TISG_PR[n][fc2])
+            if (tisg[n][fc1] != tisg[n][fc2])
             {
-                TISG_PR[n][fc2] = TISG_PR[n][fc1];
-                result = TRUE;
-            }
-        }
-        if (TISG_AR[n][fc1] < TISG_AR[n][fc2])
-        {
-            TISG_AR[n][fc1] = TISG_AR[n][fc2];
-            result = TRUE;
-        }
-        else
-        {
-            if (TISG_AR[n][fc1] != TISG_AR[n][fc2])
-            {
-                TISG_AR[n][fc2] = TISG_AR[n][fc1];
-                result = TRUE;
-            }
-        }
-        if (TISG_AR_los[n][fc1] < TISG_AR_los[n][fc2])
-        {
-            TISG_AR_los[n][fc1] = TISG_AR_los[n][fc2];
-            result = TRUE;
-        }
-        else
-        {
-            if (TISG_AR_los[n][fc1] != TISG_AR_los[n][fc2])
-            {
-                TISG_AR_los[n][fc2] = TISG_AR_los[n][fc1];
+                tisg[n][fc2] = tisg[n][fc1];
                 result = TRUE;
             }
         }
@@ -1513,20 +1534,14 @@ boolv InterStartGroenTijd_Gelijkstart_Correctie(count fc1, count fc2)
  *   } while (wijziging);  //@PSN Let op! functie zou in theorie oneindig kunnen doorgaan!!
  */
 
-boolv InterStartGroenTijd_LateRelease_Correctie(count fclr, count fcvs, count tlr)
+boolv InterStartGroenTijd_LateRelease_Correctie(mulv tisg[FCMAX][FCMAX],count fclr, count fcvs, count tlr)
 {
-    count n;
     boolv result = FALSE;
-    for (n = 0; n < FCMAX; ++n)
+    for (count n = 0; n < FCMAX; ++n)
     {
-        if (TISG_PR[n][fcvs] < TISG_PR[n][fclr] - T_max[tlr])
+        if (tisg[n][fcvs] < tisg[n][fclr] - T_max[tlr])
         {
-            TISG_PR[n][fcvs] = TISG_PR[n][fclr] - T_max[tlr];
-            result = TRUE;
-        }
-        if (TISG_AR[n][fcvs] < TISG_AR[n][fclr] - T_max[tlr])
-        {
-            TISG_AR[n][fcvs] = TISG_AR[n][fclr] - T_max[tlr];
+            tisg[n][fcvs] = tisg[n][fclr] - T_max[tlr];
             result = TRUE;
         }
     }
@@ -1682,8 +1697,9 @@ void NaloopEVG_TVG_Correctie(count fc1, count fc2, count tnlfg, count tnlfgd, co
 void NaloopVtg_TVG_Correctie(count fc1, count fc2, count hnlsg, count tnlsg, count tnlsgd)
 {
    fc1 = 0; // fc1 wordt niet gebruikt in deze functie. door deze toevoeging wordt een compileer warming voorkomen 
-   if (!(tnlsg == NG) && H[hnlsg]) TVG_max[fc2] = max(TVG_max[fc2], T_max[tnlsg] - T_timer[tnlsg] + TVG_timer[fc2]);
-   if (!(tnlsgd == NG) && H[hnlsg]) TVG_max[fc2] = max(TVG_max[fc2], -TFG_max[fc2] + TFG_timer[fc2] + T_max[tnlsgd] - T_timer[tnlsgd] + TVG_timer[fc2]);
+   hnlsg = 0; // hnlsg wordt niet gebruikt in deze functie. door deze toevoeging wordt een compileer warming voorkomen 
+   if (!(tnlsg == NG) && T[tnlsg]) TVG_max[fc2] = max(TVG_max[fc2], T_max[tnlsg] - T_timer[tnlsg] + TVG_timer[fc2]);
+   if (!(tnlsgd == NG) && T[tnlsgd]) TVG_max[fc2] = max(TVG_max[fc2], -TFG_max[fc2] + TFG_timer[fc2] + T_max[tnlsgd] - T_timer[tnlsgd] + TVG_timer[fc2]);
 }
 
 /* VASTHOUDEN NALOOP START GROEN/VOETGANGER (NLSG/NLVTG) */ 
@@ -2107,6 +2123,8 @@ void max_wachttijd_modulen_primair_ISG(boolv* prml[], count ml, count ml_max)
     for (i = 0; i < FC_MAX; i++) {
         if (RA[i] && AR[i]) {
             twacht_AR[i] = REALISATIETIJD_max[i];
+        }
+        if (RA[i] && AR[i] && !(AR[i] & ALTERNATIEF_LOS)) {
             twacht_AR_wtv[i] = REALISATIETIJD_max_wtv[i];
         }
 
@@ -2326,9 +2344,22 @@ boolv hf_wsg_nlISG(void)
 void afsluiten_aanvraaggebied_prISG(boolv* prml[], count ml)
 {
     register count i;
+    boolv aanvraagvoedende_richting;
     for (i = 0; i < FC_MAX; i++) {
-        if ((prml[ml][i] & PRIMAIR) && !PG[i] && !A[i] && fka(i)) /* was && fkaa(i) */
-            PG[i] |= PRIMAIR_OVERSLAG;
+        if ((prml[ml][i] & PRIMAIR) && !PG[i] && !A[i] && fka(i))
+        {
+            for (count j = 0; j < FCMAX; j++)
+            {
+                aanvraagvoedende_richting = FALSE;
+
+                if ((TNL_type[j][i] != TNL_NG) && A[j])
+                {
+                    aanvraagvoedende_richting = TRUE;
+                    break;
+                }
+            }
+            if (!aanvraagvoedende_richting) PG[i] |= PRIMAIR_OVERSLAG;
+        }
     }
 
 }
@@ -2416,7 +2447,7 @@ void InitInterfunc()
     }
 }
 
-/* ISGDEBUG */
+/*  */
 /* -------- */
 /* void IsgDebug (void)
  * schrijf in de testomgeving debug informatie over Realisatietijd, InterStartGroentijd en PAR naar het XY-Printf scherm.
@@ -2434,7 +2465,7 @@ void IsgDebug()
         xyprintf(30, y + 4, "%2s", FC_code[y]);
         for (x = 0; x < FCMAX; ++x)
         {
-            xyprintf(34 + 4 * x, y + 4, "%4d", REALISATIETIJD[y][x]);
+            xyprintf(34 + 4 * x, y + 4, "%4d", REALISATIETIJD_wtv[y][x]);
         }
     }
     for (x = 0; x < FCMAX; ++x)
@@ -2444,6 +2475,10 @@ void IsgDebug()
     for (x = 0; x < FCMAX; ++x)
     {
         xyprintf(34 + 4 * x, 4 + FCMAX, "%4d", REALISATIETIJD_max[x]);
+    }
+    for (x = 0; x < FCMAX; ++x)
+    {
+        xyprintf(34 + 4 * x, 5 + FCMAX, "%4d", REALISATIETIJD_max_wtv[x]);
     }
     for (x = 0; x < FCMAX; ++x)
     {
@@ -2459,11 +2494,11 @@ void IsgDebug()
     }
     for (x = 0; x < FCMAX; ++x)
     {
-        xyprintf(34 + 4 * x, 5 + FCMAX, "%4d", twacht[x]);
+        xyprintf(34 + 4 * x, 6 + FCMAX, "%4d", twacht[x]);
     }
     for (x = 0; x < FCMAX; ++x)
     {
-        xyprintf(34 + 4 * x, 6 + FCMAX, "%4d", twacht_wtv[x]);
+        xyprintf(34 + 4 * x, 7 + FCMAX, "%4d", twacht_wtv[x]);
     }
     xyprintf(36 + 4 * FCMAX, 4 + FCMAX, "twacht");
     for (y = 0; y < FCMAX; ++y)
@@ -2820,15 +2855,15 @@ void Realisatietijd_wtv_correctie(count i, count mwtv, count prmwtvhaltmin)
 
 /* @PSN Commentaar
  */
-boolv Realisatietijd_Lokgroen_Correctie(count fc1, count fc2)
+boolv Realisatietijd_Lokgroen_Correctie(mulv realisatietijd[FCMAX][FCMAX], count fc1, count fc2)
 {
     count n;
     boolv result = FALSE;
     for (n = 0; n < FCMAX; ++n)
     {
-        if (REALISATIETIJD[n][fc1] < REALISATIETIJD[n][fc2])
+        if (realisatietijd[n][fc1] < realisatietijd[n][fc2])
         {
-            REALISATIETIJD[n][fc1] = REALISATIETIJD[n][fc2];
+            realisatietijd[n][fc1] = realisatietijd[n][fc2];
             result = TRUE;
         }
     }
@@ -2854,23 +2889,14 @@ boolv Realisatietijd_Lokgroen_Correctie_wtv(count fc1, count fc2)
 
 /* @PSN Commentaar
  */
-boolv TISG_Lokgroen_Correctie(count fc1, count fc2)
+boolv TISG_Lokgroen_Correctie(mulv tisg[FCMAX][FCMAX], count fc1, count fc2)
 {
-    count n;
     boolv result = FALSE;
-    for (n = 0; n < FCMAX; ++n)
+    for (count n = 0; n < FCMAX; ++n)
     {
-        if (TISG_PR[n][fc1] < TISG_PR[n][fc2])
+        if (tisg[n][fc1] < tisg[n][fc2])
         {
-            TISG_PR[n][fc1] = TISG_PR[n][fc2];
-            result = TRUE;
-        }
-    }
-    for (n = 0; n < FCMAX; ++n)
-    {
-        if (TISG_AR[n][fc1] < TISG_AR[n][fc2])
-        {
-            TISG_AR[n][fc1] = TISG_AR[n][fc2];
+            tisg[n][fc1] = tisg[n][fc2];
             result = TRUE;
         }
     }
@@ -2911,5 +2937,25 @@ void InitRealisatieTijdenWtv(void) {
         {
             REALISATIETIJD_wtv[i][j] = REALISATIETIJD[i][j];
         }
+    }
+}
+boolv set_ARLW_los(count i)
+{
+    if (PAR_los[i] && A[i] && RV[i] && !TRG[i] && !AA[i] && (!RR[i] || P[i])
+        && !BL[i] && !kcv(i) && !fkaa(i) && testar_fk_calw(i)) {
+        AA[i] = TRUE;		/* set actuation		*/
+        AR[i] = ALTERNATIEF_LOS;
+        return (TRUE);
+    }
+    return (FALSE);
+}
+
+
+void langstwachtende_alternatief_los(void)
+{
+    register count i;
+
+    for (i = 0; i < FC_MAX; i++) {
+        set_ARLW_los(i);
     }
 }

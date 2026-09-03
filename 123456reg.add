@@ -21,7 +21,6 @@
 /* EINDE GEGENEREERDE HEADER */
 #ifndef AUTOMAAT
 FILE* fpt;
-#endif
 void modulessatus1(boolv* prml[])
 {
     register int hml;
@@ -42,6 +41,7 @@ void modulessatus2(boolv* prml[])
         xyprintf(hml * 30, 3, "prml[%1d][fc32] = %3d", hml, prml[hml][fc32]);
     }
 }
+#endif
 
 #ifdef CCOL_IS_SPECIAL
 void SpecialSignals_Add(void)
@@ -135,62 +135,13 @@ void Meetkriterium_Add(void)
 
 }
 
-void MeeverlengenUitDoorPrio_bit7(void)
-{
-    count prio, fc, n, k;
-    for (prio = 0; prio < prioFCMAX; ++prio)
-    {
-        if (iPrioriteit[prio])
-        {
-            fc = iFC_PRIOix[prio];
-            for (n = 0; n < FKFC_MAX[fc]; ++n)
-            {
-                k = KF_pointer[fc][n];
-                if ((REALISATIETIJD[k][fc] >= iStartGroen[prio])) YM[k] &= ~BIT7;
-            }
-        }
-
-    }
-}
-
 void Meeverlengen_Add(void)
 {
-    if (!PG[fc05] && ym_max_tig_Realisatietijd(fc22, NG))
-    {
-        YM[fc22] |= BIT7;
-    }
-    else
-    {
-        YM[fc22] &= ~BIT7;
-    }
-    if (!PG[fc05] && ym_max_tig_Realisatietijd(fc32, NG))
-    {
-        YM[fc32] |= BIT7;
-    }
-    else
-    {
-        YM[fc32] &= ~BIT7;
-    }
-    if (!PG[fc11] && ym_max_tig_Realisatietijd(fc26, NG))
-    {
-        YM[fc26] |= BIT7;
-    }
-    else
-    {
-        YM[fc26] &= ~BIT7;
-    }
-    MeeverlengenUitDoorPrio_bit7();
- }
+
+}
 
 void Synchronisaties_Add(void)
 {
-    if (((REALISATIETIJD_max[fc05] <= T_max[tvs2205] + 5) || (REALISATIETIJD_max[fc05] <= T_max[tvs3205] + 5)) && ((!A[fc22]||PG[fc22]) && (!A[fc31] || PG[fc31]) && (!A[fc32] || PG[fc32])) && RA[fc05] && PR[fc05])
-    {
-        PG[fc22] |= PRIMAIR_OVERSLAG;
-        PG[fc31] |= PRIMAIR_OVERSLAG;
-        PG[fc32] |= PRIMAIR_OVERSLAG;
-    }
-
 }
      
 void VersneldPrimair_Add(void)

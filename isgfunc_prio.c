@@ -1056,3 +1056,23 @@ void no_prio_door_wtv(count fc, count mwtv, mulv mwtvnhaltmin)
         }
     }
 }
+
+/* @PSN commmentaar ? */
+
+void MeeverlengenUitDoorPrio_bit7(void)
+{
+   count prio, fc, n, k;
+   for (prio = 0; prio < prioFCMAX; ++prio)
+   {
+      if (iPrioriteit[prio])
+      {
+         fc = iFC_PRIOix[prio];
+         for (n = 0; n < FKFC_MAX[fc]; ++n)
+         {
+            k = KF_pointer[fc][n];
+            if ((REALISATIETIJD[k][fc] >= iStartGroen[prio])) YM[k] &= ~BIT7;
+         }
+      }
+
+   }
+}

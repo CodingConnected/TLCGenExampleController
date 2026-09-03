@@ -3591,7 +3591,7 @@
       <MeeverlengenType>Default2</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
-      <MeeverlengenVerschil>0</MeeverlengenVerschil>
+      <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
       <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
@@ -7245,7 +7245,7 @@
       <MeeverlengenType>Default2</MeeverlengenType>
       <AlternatieveRuimteType>MaxTarToTig</AlternatieveRuimteType>
       <MeeverlengenTypeInstelbaarOpStraat>true</MeeverlengenTypeInstelbaarOpStraat>
-      <MeeverlengenVerschil>0</MeeverlengenVerschil>
+      <MeeverlengenVerschil xsi:nil="true" />
       <UitgesteldeVasteAanvraag>true</UitgesteldeVasteAanvraag>
       <UitgesteldeVasteAanvraagTijdsduur>100</UitgesteldeVasteAanvraagTijdsduur>
       <AlternatiefBinnenDrukknop>false</AlternatiefBinnenDrukknop>
@@ -8699,7 +8699,7 @@
         <FaseVan>05</FaseVan>
         <FaseNaar>22</FaseNaar>
         <Type>Aanvraag</Type>
-        <AanUit>SchAan</AanUit>
+        <AanUit>SchUit</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
         <DetectieAfhankelijk>false</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
@@ -8710,7 +8710,7 @@
         <FaseVan>05</FaseVan>
         <FaseNaar>32</FaseNaar>
         <Type>Aanvraag</Type>
-        <AanUit>SchAan</AanUit>
+        <AanUit>SchUit</AanUit>
         <TypeInstelbaarOpStraat>true</TypeInstelbaarOpStraat>
         <DetectieAfhankelijk>false</DetectieAfhankelijk>
         <Uitgesteld>false</Uitgesteld>
