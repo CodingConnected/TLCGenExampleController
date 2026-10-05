@@ -9,8 +9,8 @@
 
    BESTAND:   123456reg.add
       CCOL:   12.0
-    TLCGEN:   12.4.0.19
-   CCOLGEN:   12.4.0.19
+    TLCGEN:   12.4.0.20
+   CCOLGEN:   12.4.0.20
 */
 
 /****************************** Versie commentaar ***********************************
@@ -80,9 +80,9 @@ void post_init_application()
         fprintf(fpt, "\n");
     }
 #ifndef DUURTEST
-    stuffkey(F2KEY);
-    stuffkey(CTRLALTF3KEY);
-    stuffkey(F4KEY);
+ //   stuffkey(F2KEY);
+ //   stuffkey(CTRLALTF3KEY);
+ //   stuffkey(F4KEY);
 #endif
     SCH[schisgdebug] = 0;
 #endif

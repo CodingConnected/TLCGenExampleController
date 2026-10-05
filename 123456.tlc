@@ -72,7 +72,7 @@
     <CCOLMultiSlave>0</CCOLMultiSlave>
     <HuidigeVersieMajor>4</HuidigeVersieMajor>
     <HuidigeVersieMinor>0</HuidigeVersieMinor>
-    <HuidigeVersieRevision>21</HuidigeVersieRevision>
+    <HuidigeVersieRevision>22</HuidigeVersieRevision>
     <AanmakenVerionSysh>true</AanmakenVerionSysh>
     <AanmakenVersionBakSysh>false</AanmakenVersionBakSysh>
     <StoreCurrentController>false</StoreCurrentController>
@@ -80,7 +80,7 @@
     <PrmLoggingTfbMax>false</PrmLoggingTfbMax>
     <GenererenCyclustijdMeting>true</GenererenCyclustijdMeting>
     <TVGAMaxAlsDefaultGroentijdSet>true</TVGAMaxAlsDefaultGroentijdSet>
-    <TLCGenVersie>12.4.0.19</TLCGenVersie>
+    <TLCGenVersie>12.4.0.20</TLCGenVersie>
     <SegmentenDisplayBitmapData>
       <SegmentDisplayElementModel>
         <BitmapData>
@@ -10324,6 +10324,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -10554,6 +10558,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -10784,6 +10792,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -11014,6 +11026,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -11244,6 +11260,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -11474,6 +11494,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -11704,6 +11728,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>true</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -11856,6 +11884,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>true</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -12008,6 +12040,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -12238,6 +12274,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -12468,6 +12508,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -12698,6 +12742,10 @@
         <AlleLijnen>false</AlleLijnen>
         <AlleRitCategorien>false</AlleRitCategorien>
         <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>false</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
         <GeenEigenVerklikking>false</GeenEigenVerklikking>
         <GeconditioneerdePrioriteit>SchUit</GeconditioneerdePrioriteit>
         <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
@@ -12899,6 +12947,1694 @@
           <AntiJutterTijdVoorAlleInmeldingen>15</AntiJutterTijdVoorAlleInmeldingen>
           <AntiJutterVoorAlleUitmeldingen>true</AntiJutterVoorAlleUitmeldingen>
           <AntiJutterTijdVoorAlleUitmeldingen>15</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>02</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm02hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+            <Inmelding>
+              <Naam>Opticom</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>Opticom</Type>
+              <RelatedInput1>opt02</RelatedInput1>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>true</AntiJutterTijdToepassen>
+              <AntiJutterTijd>10</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+            <Uitmelding>
+              <Naam>Opticom</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>Opticom</Type>
+              <RelatedInput1>opt02</RelatedInput1>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>03</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm03hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>05</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm05hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+            <Inmelding>
+              <Naam>Opticom</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>Opticom</Type>
+              <RelatedInput1>opt05</RelatedInput1>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>true</AntiJutterTijdToepassen>
+              <AntiJutterTijd>10</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+            <Uitmelding>
+              <Naam>Opticom</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>Opticom</Type>
+              <RelatedInput1>opt05</RelatedInput1>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>08</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm08hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+            <Inmelding>
+              <Naam>Opticom</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>Opticom</Type>
+              <RelatedInput1>opt08</RelatedInput1>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>true</AntiJutterTijdToepassen>
+              <AntiJutterTijd>10</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+            <Uitmelding>
+              <Naam>Opticom</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>Opticom</Type>
+              <RelatedInput1>opt08</RelatedInput1>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>09</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm09hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>11</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm11hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+            <Inmelding>
+              <Naam>Opticom</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>Opticom</Type>
+              <RelatedInput1>opt11</RelatedInput1>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>true</AntiJutterTijdToepassen>
+              <AntiJutterTijd>10</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+            <Uitmelding>
+              <Naam>Opticom</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>Opticom</Type>
+              <RelatedInput1>opt11</RelatedInput1>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>61</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm61hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>62</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm62hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>67</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm67hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
+        </MeldingenData>
+      </PrioIngreep>
+      <PrioIngreep>
+        <Naam>hpd</Naam>
+        <FaseCyclus>68</FaseCyclus>
+        <Type>Hulpdienst</Type>
+        <VersneldeInmeldingKoplus>Nooit</VersneldeInmeldingKoplus>
+        <NoodaanvraagKoplus>false</NoodaanvraagKoplus>
+        <KoplusKijkNaarWisselstand>false</KoplusKijkNaarWisselstand>
+        <Koplus>NG</Koplus>
+        <RijTijdOngehinderd>0</RijTijdOngehinderd>
+        <RijTijdBeperktgehinderd>0</RijTijdBeperktgehinderd>
+        <RijTijdGehinderd>0</RijTijdGehinderd>
+        <OnderMaximum>0</OnderMaximum>
+        <GroenBewaking>900</GroenBewaking>
+        <BlokkeertijdNaPrioIngreep>0</BlokkeertijdNaPrioIngreep>
+        <BezettijdPrioGehinderd>0</BezettijdPrioGehinderd>
+        <MinimaleRoodtijd>70</MinimaleRoodtijd>
+        <AfkappenConflicten>true</AfkappenConflicten>
+        <AfkappenConflictenPrio>false</AfkappenConflictenPrio>
+        <VasthoudenGroen>true</VasthoudenGroen>
+        <TussendoorRealiseren>true</TussendoorRealiseren>
+        <PrioriteitsNiveau>0</PrioriteitsNiveau>
+        <CheckLijnNummer>false</CheckLijnNummer>
+        <CheckWagenNummer>false</CheckWagenNummer>
+        <CheckRitCategorie>false</CheckRitCategorie>
+        <AlleLijnen>false</AlleLijnen>
+        <AlleRitCategorien>false</AlleRitCategorien>
+        <CheckPeriode>false</CheckPeriode>
+        <CheckOpSirene>true</CheckOpSirene>
+        <InmeldingOokDoorToepassen>false</InmeldingOokDoorToepassen>
+        <InmeldingOokDoorFase>0</InmeldingOokDoorFase>
+        <MeerealiserendeIngrepen />
+        <GeenEigenVerklikking>false</GeenEigenVerklikking>
+        <GeconditioneerdePrioriteit>Nooit</GeconditioneerdePrioriteit>
+        <GeconditioneerdePrioTeVroeg>2</GeconditioneerdePrioTeVroeg>
+        <GeconditioneerdePrioOpTijd>23</GeconditioneerdePrioOpTijd>
+        <GeconditioneerdePrioTeLaat>123</GeconditioneerdePrioTeLaat>
+        <HalfstarIngreepData>
+          <Prioriteit>0</Prioriteit>
+          <GroenNaTXDTijd>0</GroenNaTXDTijd>
+        </HalfstarIngreepData>
+        <PrioInmeldingBitmapData>
+          <Naam>ovinm68hpd</Naam>
+          <Dummy>false</Dummy>
+          <ElementType>Output</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </PrioInmeldingBitmapData>
+        <GeconditioneerdePrioTeVroegBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeVroegBitmapData>
+        <GeconditioneerdePrioOpTijdBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioOpTijdBitmapData>
+        <GeconditioneerdePrioTeLaatBitmapData>
+          <Dummy>false</Dummy>
+          <ElementType>FaseCyclus</ElementType>
+          <Multivalent>false</Multivalent>
+          <BitmapCoordinaten />
+        </GeconditioneerdePrioTeLaatBitmapData>
+        <LijnNummers />
+        <GerelateerdePerioden />
+        <MeldingenData>
+          <Inmeldingen>
+            <Inmelding>
+              <Naam>KAR</Naam>
+              <InUit>Inmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Inmelding>
+          </Inmeldingen>
+          <Uitmeldingen>
+            <Uitmelding>
+              <Naam>KAR</Naam>
+              <InUit>Uitmelding</InUit>
+              <Type>KARMelding</Type>
+              <RelatedInput1Type>StartDetectie</RelatedInput1Type>
+              <TweedeInput>false</TweedeInput>
+              <RelatedInput2Type>StartDetectie</RelatedInput2Type>
+              <KijkNaarWisselStand>false</KijkNaarWisselStand>
+              <AlleenIndienGeenInmelding>false</AlleenIndienGeenInmelding>
+              <AlleenIndienRood>false</AlleenIndienRood>
+              <AntiJutterTijdToepassen>false</AntiJutterTijdToepassen>
+              <AntiJutterTijd>0</AntiJutterTijd>
+              <CheckAltijdOpDsinBijVecom>false</CheckAltijdOpDsinBijVecom>
+              <OpvangStoring>false</OpvangStoring>
+              <RisStart>0</RisStart>
+              <RisEnd>0</RisEnd>
+              <RisEta>0</RisEta>
+              <RisRole />
+              <RisSubrole />
+              <RisImportance />
+              <RisPeloton>false</RisPeloton>
+              <RisPelotonGrenswaarde>0</RisPelotonGrenswaarde>
+              <FietsPrioriteitGebruikLus>false</FietsPrioriteitGebruikLus>
+              <FietsPrioriteitBlok>0</FietsPrioriteitBlok>
+              <FietsPrioriteitAantalKeerPerCyclus>0</FietsPrioriteitAantalKeerPerCyclus>
+              <FietsPrioriteitMinimumAantalVoertuigen>0</FietsPrioriteitMinimumAantalVoertuigen>
+              <FietsPrioriteitMinimumWachttijdVoorPrioriteit>0</FietsPrioriteitMinimumWachttijdVoorPrioriteit>
+              <FietsPrioriteitGebruikRIS>false</FietsPrioriteitGebruikRIS>
+              <FietsPrioriteitMinimumAantalVoertuigenRIS>0</FietsPrioriteitMinimumAantalVoertuigenRIS>
+            </Uitmelding>
+          </Uitmeldingen>
+          <Wissel1>false</Wissel1>
+          <Wissel1Type>Ingang</Wissel1Type>
+          <Wissel1InputVoorwaarde>false</Wissel1InputVoorwaarde>
+          <Wissel2>false</Wissel2>
+          <Wissel2Type>Ingang</Wissel2Type>
+          <Wissel2InputVoorwaarde>false</Wissel2InputVoorwaarde>
+          <AntiJutterVoorAlleInmeldingen>false</AntiJutterVoorAlleInmeldingen>
+          <AntiJutterTijdVoorAlleInmeldingen>0</AntiJutterTijdVoorAlleInmeldingen>
+          <AntiJutterVoorAlleUitmeldingen>false</AntiJutterVoorAlleUitmeldingen>
+          <AntiJutterTijdVoorAlleUitmeldingen>0</AntiJutterTijdVoorAlleUitmeldingen>
         </MeldingenData>
       </PrioIngreep>
     </PrioIngrepen>
@@ -18100,6 +19836,13 @@
         <SumoNaam3 />
       </Detector>
       <Detector>
+        <Naam>dummyhdkarin09</Naam>
+        <Selectief>false</Selectief>
+        <SumoNaam1 />
+        <SumoNaam2 />
+        <SumoNaam3 />
+      </Detector>
+      <Detector>
         <Naam>opt11</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1>004</SumoNaam1>
@@ -18475,13 +20218,6 @@
       </Detector>
       <Detector>
         <Naam>dummyhdkarin11</Naam>
-        <Selectief>false</Selectief>
-        <SumoNaam1 />
-        <SumoNaam2 />
-        <SumoNaam3 />
-      </Detector>
-      <Detector>
-        <Naam>dummyhdkarin09</Naam>
         <Selectief>false</Selectief>
         <SumoNaam1 />
         <SumoNaam2 />

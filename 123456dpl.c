@@ -8,8 +8,8 @@
 
    BESTAND:   123456dpl.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.19
-   CCOLGEN:   12.4.0.19
+    TLCGEN:   12.4.0.20
+   CCOLGEN:   12.4.0.20
 */
 
 /****************************** Versie commentaar ***********************************
@@ -263,6 +263,16 @@ void display_parameters(void)
     X_us[usovinm62karbus] = 151; Y_us[usovinm62karbus] = 124;
     X_us[usovinm67karbus] = 151; Y_us[usovinm67karbus] = 135;
     X_us[usovinm68karbus] = 150; Y_us[usovinm68karbus] = 150;
+    X_us[usovinm02hpd] = NG; Y_us[usovinm02hpd] = NG;
+    X_us[usovinm03hpd] = NG; Y_us[usovinm03hpd] = NG;
+    X_us[usovinm05hpd] = NG; Y_us[usovinm05hpd] = NG;
+    X_us[usovinm08hpd] = NG; Y_us[usovinm08hpd] = NG;
+    X_us[usovinm09hpd] = NG; Y_us[usovinm09hpd] = NG;
+    X_us[usovinm11hpd] = NG; Y_us[usovinm11hpd] = NG;
+    X_us[usovinm61hpd] = NG; Y_us[usovinm61hpd] = NG;
+    X_us[usovinm62hpd] = NG; Y_us[usovinm62hpd] = NG;
+    X_us[usovinm67hpd] = NG; Y_us[usovinm67hpd] = NG;
+    X_us[usovinm68hpd] = NG; Y_us[usovinm68hpd] = NG;
     X_us[ushdinm02] = 57; Y_us[ushdinm02] = 32;
     X_us[ushdinm02_1] = 167; Y_us[ushdinm02_1] = 31; NR_us[ushdinm02_1] = ushdinm02;
     X_us[ushdinm03] = 58; Y_us[ushdinm03] = 42;

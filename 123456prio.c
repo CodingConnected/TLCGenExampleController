@@ -8,8 +8,8 @@
 
    BESTAND:   123456prio.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.19
-   CCOLGEN:   12.4.0.19
+    TLCGEN:   12.4.0.20
+   CCOLGEN:   12.4.0.20
 */
 
 /****************************** Versie commentaar ***********************************
@@ -200,6 +200,16 @@ void PrioInstellingen(void)
     iFC_PRIOix[prioFC62karbus] = fc62;
     iFC_PRIOix[prioFC67karbus] = fc67;
     iFC_PRIOix[prioFC68karbus] = fc68;
+    iFC_PRIOix[prioFC02hpd] = fc02;
+    iFC_PRIOix[prioFC03hpd] = fc03;
+    iFC_PRIOix[prioFC05hpd] = fc05;
+    iFC_PRIOix[prioFC08hpd] = fc08;
+    iFC_PRIOix[prioFC09hpd] = fc09;
+    iFC_PRIOix[prioFC11hpd] = fc11;
+    iFC_PRIOix[prioFC61hpd] = fc61;
+    iFC_PRIOix[prioFC62hpd] = fc62;
+    iFC_PRIOix[prioFC67hpd] = fc67;
+    iFC_PRIOix[prioFC68hpd] = fc68;
     iFC_PRIOix[hdFC02] = fc02;
     iFC_PRIOix[hdFC03] = fc03;
     iFC_PRIOix[hdFC05] = fc05;
@@ -224,6 +234,16 @@ void PrioInstellingen(void)
     iT_GBix[prioFC62karbus] = tgb62karbus;
     iT_GBix[prioFC67karbus] = tgb67karbus;
     iT_GBix[prioFC68karbus] = tgb68karbus;
+    iT_GBix[prioFC02hpd] = tgb02hpd;
+    iT_GBix[prioFC03hpd] = tgb03hpd;
+    iT_GBix[prioFC05hpd] = tgb05hpd;
+    iT_GBix[prioFC08hpd] = tgb08hpd;
+    iT_GBix[prioFC09hpd] = tgb09hpd;
+    iT_GBix[prioFC11hpd] = tgb11hpd;
+    iT_GBix[prioFC61hpd] = tgb61hpd;
+    iT_GBix[prioFC62hpd] = tgb62hpd;
+    iT_GBix[prioFC67hpd] = tgb67hpd;
+    iT_GBix[prioFC68hpd] = tgb68hpd;
     iT_GBix[hdFC02] = tgbhd02;
     iT_GBix[hdFC03] = tgbhd03;
     iT_GBix[hdFC05] = tgbhd05;
@@ -248,6 +268,16 @@ void PrioInstellingen(void)
     iH_PRIOix[prioFC62karbus] = hprio62karbus;
     iH_PRIOix[prioFC67karbus] = hprio67karbus;
     iH_PRIOix[prioFC68karbus] = hprio68karbus;
+    iH_PRIOix[prioFC02hpd] = hprio02hpd;
+    iH_PRIOix[prioFC03hpd] = hprio03hpd;
+    iH_PRIOix[prioFC05hpd] = hprio05hpd;
+    iH_PRIOix[prioFC08hpd] = hprio08hpd;
+    iH_PRIOix[prioFC09hpd] = hprio09hpd;
+    iH_PRIOix[prioFC11hpd] = hprio11hpd;
+    iH_PRIOix[prioFC61hpd] = hprio61hpd;
+    iH_PRIOix[prioFC62hpd] = hprio62hpd;
+    iH_PRIOix[prioFC67hpd] = hprio67hpd;
+    iH_PRIOix[prioFC68hpd] = hprio68hpd;
     iH_PRIOix[hdFC02] = hhd02;
     iH_PRIOix[hdFC03] = hhd03;
     iH_PRIOix[hdFC05] = hhd05;
@@ -272,6 +302,16 @@ void PrioInstellingen(void)
     iInstPrioriteitsNiveau[prioFC62karbus] = PRM[prmprio62karbus]/1000L;
     iInstPrioriteitsNiveau[prioFC67karbus] = PRM[prmprio67karbus]/1000L;
     iInstPrioriteitsNiveau[prioFC68karbus] = PRM[prmprio68karbus]/1000L;
+    iInstPrioriteitsNiveau[prioFC02hpd] = PRM[prmprio02hpd]/1000L;
+    iInstPrioriteitsNiveau[prioFC03hpd] = PRM[prmprio03hpd]/1000L;
+    iInstPrioriteitsNiveau[prioFC05hpd] = PRM[prmprio05hpd]/1000L;
+    iInstPrioriteitsNiveau[prioFC08hpd] = PRM[prmprio08hpd]/1000L;
+    iInstPrioriteitsNiveau[prioFC09hpd] = PRM[prmprio09hpd]/1000L;
+    iInstPrioriteitsNiveau[prioFC11hpd] = PRM[prmprio11hpd]/1000L;
+    iInstPrioriteitsNiveau[prioFC61hpd] = PRM[prmprio61hpd]/1000L;
+    iInstPrioriteitsNiveau[prioFC62hpd] = PRM[prmprio62hpd]/1000L;
+    iInstPrioriteitsNiveau[prioFC67hpd] = PRM[prmprio67hpd]/1000L;
+    iInstPrioriteitsNiveau[prioFC68hpd] = PRM[prmprio68hpd]/1000L;
     iInstPrioriteitsNiveau[hdFC02] = PRM[prmpriohd02]/1000L;
     iInstPrioriteitsNiveau[hdFC03] = PRM[prmpriohd03]/1000L;
     iInstPrioriteitsNiveau[hdFC05] = PRM[prmpriohd05]/1000L;
@@ -296,6 +336,16 @@ void PrioInstellingen(void)
     iInstPrioriteitsOpties[prioFC62karbus] = BepaalPrioriteitsOpties(prmprio62karbus);
     iInstPrioriteitsOpties[prioFC67karbus] = BepaalPrioriteitsOpties(prmprio67karbus);
     iInstPrioriteitsOpties[prioFC68karbus] = BepaalPrioriteitsOpties(prmprio68karbus);
+    iInstPrioriteitsOpties[prioFC02hpd] = BepaalPrioriteitsOpties(prmprio02hpd);
+    iInstPrioriteitsOpties[prioFC03hpd] = BepaalPrioriteitsOpties(prmprio03hpd);
+    iInstPrioriteitsOpties[prioFC05hpd] = BepaalPrioriteitsOpties(prmprio05hpd);
+    iInstPrioriteitsOpties[prioFC08hpd] = BepaalPrioriteitsOpties(prmprio08hpd);
+    iInstPrioriteitsOpties[prioFC09hpd] = BepaalPrioriteitsOpties(prmprio09hpd);
+    iInstPrioriteitsOpties[prioFC11hpd] = BepaalPrioriteitsOpties(prmprio11hpd);
+    iInstPrioriteitsOpties[prioFC61hpd] = BepaalPrioriteitsOpties(prmprio61hpd);
+    iInstPrioriteitsOpties[prioFC62hpd] = BepaalPrioriteitsOpties(prmprio62hpd);
+    iInstPrioriteitsOpties[prioFC67hpd] = BepaalPrioriteitsOpties(prmprio67hpd);
+    iInstPrioriteitsOpties[prioFC68hpd] = BepaalPrioriteitsOpties(prmprio68hpd);
     iInstPrioriteitsOpties[hdFC02] = BepaalPrioriteitsOpties(prmpriohd02);
     iInstPrioriteitsOpties[hdFC03] = BepaalPrioriteitsOpties(prmpriohd03);
     iInstPrioriteitsOpties[hdFC05] = BepaalPrioriteitsOpties(prmpriohd05);
@@ -320,6 +370,16 @@ void PrioInstellingen(void)
     iGroenBewakingsTijd[prioFC62karbus] = T_max[tgb62karbus];
     iGroenBewakingsTijd[prioFC67karbus] = T_max[tgb67karbus];
     iGroenBewakingsTijd[prioFC68karbus] = T_max[tgb68karbus];
+    iGroenBewakingsTijd[prioFC02hpd] = T_max[tgb02hpd];
+    iGroenBewakingsTijd[prioFC03hpd] = T_max[tgb03hpd];
+    iGroenBewakingsTijd[prioFC05hpd] = T_max[tgb05hpd];
+    iGroenBewakingsTijd[prioFC08hpd] = T_max[tgb08hpd];
+    iGroenBewakingsTijd[prioFC09hpd] = T_max[tgb09hpd];
+    iGroenBewakingsTijd[prioFC11hpd] = T_max[tgb11hpd];
+    iGroenBewakingsTijd[prioFC61hpd] = T_max[tgb61hpd];
+    iGroenBewakingsTijd[prioFC62hpd] = T_max[tgb62hpd];
+    iGroenBewakingsTijd[prioFC67hpd] = T_max[tgb67hpd];
+    iGroenBewakingsTijd[prioFC68hpd] = T_max[tgb68hpd];
     iGroenBewakingsTijd[hdFC02] = T_max[tgbhd02];
     iGroenBewakingsTijd[hdFC03] = T_max[tgbhd03];
     iGroenBewakingsTijd[hdFC05] = T_max[tgbhd05];
@@ -344,6 +404,16 @@ void PrioInstellingen(void)
     iRTSOngehinderd[prioFC62karbus] = PRM[prmrto62karbus];
     iRTSOngehinderd[prioFC67karbus] = PRM[prmrto67karbus];
     iRTSOngehinderd[prioFC68karbus] = PRM[prmrto68karbus];
+    iRTSOngehinderd[prioFC02hpd] = PRM[prmrto02hpd];
+    iRTSOngehinderd[prioFC03hpd] = PRM[prmrto03hpd];
+    iRTSOngehinderd[prioFC05hpd] = PRM[prmrto05hpd];
+    iRTSOngehinderd[prioFC08hpd] = PRM[prmrto08hpd];
+    iRTSOngehinderd[prioFC09hpd] = PRM[prmrto09hpd];
+    iRTSOngehinderd[prioFC11hpd] = PRM[prmrto11hpd];
+    iRTSOngehinderd[prioFC61hpd] = PRM[prmrto61hpd];
+    iRTSOngehinderd[prioFC62hpd] = PRM[prmrto62hpd];
+    iRTSOngehinderd[prioFC67hpd] = PRM[prmrto67hpd];
+    iRTSOngehinderd[prioFC68hpd] = PRM[prmrto68hpd];
     iRTSOngehinderd[hdFC02] = PRM[prmrtohd02];
     iRTSOngehinderd[hdFC03] = PRM[prmrtohd03];
     iRTSOngehinderd[hdFC05] = PRM[prmrtohd05];
@@ -368,6 +438,16 @@ void PrioInstellingen(void)
     iRTSBeperktGehinderd[prioFC62karbus] = PRM[prmrtbg62karbus];
     iRTSBeperktGehinderd[prioFC67karbus] = PRM[prmrtbg67karbus];
     iRTSBeperktGehinderd[prioFC68karbus] = PRM[prmrtbg68karbus];
+    iRTSBeperktGehinderd[prioFC02hpd] = PRM[prmrtbg02hpd];
+    iRTSBeperktGehinderd[prioFC03hpd] = PRM[prmrtbg03hpd];
+    iRTSBeperktGehinderd[prioFC05hpd] = PRM[prmrtbg05hpd];
+    iRTSBeperktGehinderd[prioFC08hpd] = PRM[prmrtbg08hpd];
+    iRTSBeperktGehinderd[prioFC09hpd] = PRM[prmrtbg09hpd];
+    iRTSBeperktGehinderd[prioFC11hpd] = PRM[prmrtbg11hpd];
+    iRTSBeperktGehinderd[prioFC61hpd] = PRM[prmrtbg61hpd];
+    iRTSBeperktGehinderd[prioFC62hpd] = PRM[prmrtbg62hpd];
+    iRTSBeperktGehinderd[prioFC67hpd] = PRM[prmrtbg67hpd];
+    iRTSBeperktGehinderd[prioFC68hpd] = PRM[prmrtbg68hpd];
     iRTSBeperktGehinderd[hdFC02] = PRM[prmrtbghd02];
     iRTSBeperktGehinderd[hdFC03] = PRM[prmrtbghd03];
     iRTSBeperktGehinderd[hdFC05] = PRM[prmrtbghd05];
@@ -392,6 +472,16 @@ void PrioInstellingen(void)
     iRTSGehinderd[prioFC62karbus] = PRM[prmrtg62karbus];
     iRTSGehinderd[prioFC67karbus] = PRM[prmrtg67karbus];
     iRTSGehinderd[prioFC68karbus] = PRM[prmrtg68karbus];
+    iRTSGehinderd[prioFC02hpd] = PRM[prmrtg02hpd];
+    iRTSGehinderd[prioFC03hpd] = PRM[prmrtg03hpd];
+    iRTSGehinderd[prioFC05hpd] = PRM[prmrtg05hpd];
+    iRTSGehinderd[prioFC08hpd] = PRM[prmrtg08hpd];
+    iRTSGehinderd[prioFC09hpd] = PRM[prmrtg09hpd];
+    iRTSGehinderd[prioFC11hpd] = PRM[prmrtg11hpd];
+    iRTSGehinderd[prioFC61hpd] = PRM[prmrtg61hpd];
+    iRTSGehinderd[prioFC62hpd] = PRM[prmrtg62hpd];
+    iRTSGehinderd[prioFC67hpd] = PRM[prmrtg67hpd];
+    iRTSGehinderd[prioFC68hpd] = PRM[prmrtg68hpd];
     iRTSGehinderd[hdFC02] = PRM[prmrtghd02];
     iRTSGehinderd[hdFC03] = PRM[prmrtghd03];
     iRTSGehinderd[hdFC05] = PRM[prmrtghd05];
@@ -416,6 +506,16 @@ void PrioInstellingen(void)
     iOnderMaximum[prioFC62karbus] = PRM[prmomx62karbus];
     iOnderMaximum[prioFC67karbus] = PRM[prmomx67karbus];
     iOnderMaximum[prioFC68karbus] = PRM[prmomx68karbus];
+    iOnderMaximum[prioFC02hpd] = PRM[prmomx02hpd];
+    iOnderMaximum[prioFC03hpd] = PRM[prmomx03hpd];
+    iOnderMaximum[prioFC05hpd] = PRM[prmomx05hpd];
+    iOnderMaximum[prioFC08hpd] = PRM[prmomx08hpd];
+    iOnderMaximum[prioFC09hpd] = PRM[prmomx09hpd];
+    iOnderMaximum[prioFC11hpd] = PRM[prmomx11hpd];
+    iOnderMaximum[prioFC61hpd] = PRM[prmomx61hpd];
+    iOnderMaximum[prioFC62hpd] = PRM[prmomx62hpd];
+    iOnderMaximum[prioFC67hpd] = PRM[prmomx67hpd];
+    iOnderMaximum[prioFC68hpd] = PRM[prmomx68hpd];
     iOnderMaximum[hdFC02] = 0;
     iOnderMaximum[hdFC03] = 0;
     iOnderMaximum[hdFC05] = 0;
@@ -440,6 +540,16 @@ void PrioInstellingen(void)
     iBlokkeringsTijd[prioFC62karbus] = T_max[tblk62karbus];
     iBlokkeringsTijd[prioFC67karbus] = T_max[tblk67karbus];
     iBlokkeringsTijd[prioFC68karbus] = T_max[tblk68karbus];
+    iBlokkeringsTijd[prioFC02hpd] = T_max[tblk02hpd];
+    iBlokkeringsTijd[prioFC03hpd] = T_max[tblk03hpd];
+    iBlokkeringsTijd[prioFC05hpd] = T_max[tblk05hpd];
+    iBlokkeringsTijd[prioFC08hpd] = T_max[tblk08hpd];
+    iBlokkeringsTijd[prioFC09hpd] = T_max[tblk09hpd];
+    iBlokkeringsTijd[prioFC11hpd] = T_max[tblk11hpd];
+    iBlokkeringsTijd[prioFC61hpd] = T_max[tblk61hpd];
+    iBlokkeringsTijd[prioFC62hpd] = T_max[tblk62hpd];
+    iBlokkeringsTijd[prioFC67hpd] = T_max[tblk67hpd];
+    iBlokkeringsTijd[prioFC68hpd] = T_max[tblk68hpd];
     iBlokkeringsTijd[hdFC02] = 0;
     iBlokkeringsTijd[hdFC03] = 0;
     iBlokkeringsTijd[hdFC05] = 0;
@@ -465,6 +575,16 @@ void PrioInstellingen(void)
     iSelDetFoutNaGB[prioFC62karbus] = PRM[prmupinagb62karbus];
     iSelDetFoutNaGB[prioFC67karbus] = PRM[prmupinagb67karbus];
     iSelDetFoutNaGB[prioFC68karbus] = PRM[prmupinagb68karbus];
+    iSelDetFoutNaGB[prioFC02hpd] = PRM[prmupinagb02hpd];
+    iSelDetFoutNaGB[prioFC03hpd] = PRM[prmupinagb03hpd];
+    iSelDetFoutNaGB[prioFC05hpd] = PRM[prmupinagb05hpd];
+    iSelDetFoutNaGB[prioFC08hpd] = PRM[prmupinagb08hpd];
+    iSelDetFoutNaGB[prioFC09hpd] = PRM[prmupinagb09hpd];
+    iSelDetFoutNaGB[prioFC11hpd] = PRM[prmupinagb11hpd];
+    iSelDetFoutNaGB[prioFC61hpd] = PRM[prmupinagb61hpd];
+    iSelDetFoutNaGB[prioFC62hpd] = PRM[prmupinagb62hpd];
+    iSelDetFoutNaGB[prioFC67hpd] = PRM[prmupinagb67hpd];
+    iSelDetFoutNaGB[prioFC68hpd] = PRM[prmupinagb68hpd];
     iSelDetFoutNaGB[hdFC02] = PRM[prmupinagbhd02];
     iSelDetFoutNaGB[hdFC03] = PRM[prmupinagbhd03];
     iSelDetFoutNaGB[hdFC05] = PRM[prmupinagbhd05];
@@ -820,6 +940,35 @@ void RijTijdScenario(void)
     PrioRijTijdScenario(prioFC68karbus, d68_1a, d68_2a, tbtovg68karbus);
     PrioRijTijdScenario(prioFC68karbus, d68_1b, d68_2b, tbtovg68karbus);
 
+    PrioRijTijdScenario(prioFC02hpd, d02_1a, d02_2a, tbtovg02hpd);
+    PrioRijTijdScenario(prioFC02hpd, d02_1b, d02_2b, tbtovg02hpd);
+    PrioRijTijdScenario(prioFC02hpd, NG, d02_3a, NG);
+    PrioRijTijdScenario(prioFC02hpd, NG, d02_3b, NG);
+
+    PrioRijTijdScenario(prioFC03hpd, d03_1, d03_2, tbtovg03hpd);
+
+    PrioRijTijdScenario(prioFC05hpd, d05_1, d05_2, tbtovg05hpd);
+
+    PrioRijTijdScenario(prioFC08hpd, d08_1a, d08_2a, tbtovg08hpd);
+    PrioRijTijdScenario(prioFC08hpd, d08_1b, d08_2b, tbtovg08hpd);
+    PrioRijTijdScenario(prioFC08hpd, NG, d08_3a, NG);
+    PrioRijTijdScenario(prioFC08hpd, NG, d08_3b, NG);
+
+    PrioRijTijdScenario(prioFC09hpd, d09_1, d09_2, tbtovg09hpd);
+
+    PrioRijTijdScenario(prioFC11hpd, d11_1, d11_2, tbtovg11hpd);
+    PrioRijTijdScenario(prioFC11hpd, NG, d11_3, NG);
+
+    PrioRijTijdScenario(prioFC61hpd, d61_1, d61_2, tbtovg61hpd);
+
+    PrioRijTijdScenario(prioFC62hpd, d62_1a, d62_2a, tbtovg62hpd);
+    PrioRijTijdScenario(prioFC62hpd, d62_1b, d62_2b, tbtovg62hpd);
+
+    PrioRijTijdScenario(prioFC67hpd, d67_1, d67_2, tbtovg67hpd);
+
+    PrioRijTijdScenario(prioFC68hpd, d68_1a, d68_2a, tbtovg68hpd);
+    PrioRijTijdScenario(prioFC68hpd, d68_1b, d68_2b, tbtovg68hpd);
+
     PrioRijTijdScenario(hdFC02, d02_1a, d02_2a, tbtovg02hd);
     PrioRijTijdScenario(hdFC02, d02_1b, d02_2b, tbtovg02hd);
     PrioRijTijdScenario(hdFC02, NG, d02_3a, NG);
@@ -870,6 +1019,16 @@ void InUitMelden(void)
     PrioInmelden(prioFC62karbus, SH[hprioin62karbus], iInstPrioriteitsNiveau[prioFC62karbus], iInstPrioriteitsOpties[prioFC62karbus], 0, 0);
     PrioInmelden(prioFC67karbus, SH[hprioin67karbus], iInstPrioriteitsNiveau[prioFC67karbus], iInstPrioriteitsOpties[prioFC67karbus], 0, 0);
     PrioInmelden(prioFC68karbus, SH[hprioin68karbus], iInstPrioriteitsNiveau[prioFC68karbus], iInstPrioriteitsOpties[prioFC68karbus], 0, 0);
+    PrioInmelden(prioFC02hpd, SH[hprioin02hpd], iInstPrioriteitsNiveau[prioFC02hpd], iInstPrioriteitsOpties[prioFC02hpd], 0, 0);
+    PrioInmelden(prioFC03hpd, SH[hprioin03hpd], iInstPrioriteitsNiveau[prioFC03hpd], iInstPrioriteitsOpties[prioFC03hpd], 0, 0);
+    PrioInmelden(prioFC05hpd, SH[hprioin05hpd], iInstPrioriteitsNiveau[prioFC05hpd], iInstPrioriteitsOpties[prioFC05hpd], 0, 0);
+    PrioInmelden(prioFC08hpd, SH[hprioin08hpd], iInstPrioriteitsNiveau[prioFC08hpd], iInstPrioriteitsOpties[prioFC08hpd], 0, 0);
+    PrioInmelden(prioFC09hpd, SH[hprioin09hpd], iInstPrioriteitsNiveau[prioFC09hpd], iInstPrioriteitsOpties[prioFC09hpd], 0, 0);
+    PrioInmelden(prioFC11hpd, SH[hprioin11hpd], iInstPrioriteitsNiveau[prioFC11hpd], iInstPrioriteitsOpties[prioFC11hpd], 0, 0);
+    PrioInmelden(prioFC61hpd, SH[hprioin61hpd], iInstPrioriteitsNiveau[prioFC61hpd], iInstPrioriteitsOpties[prioFC61hpd], 0, 0);
+    PrioInmelden(prioFC62hpd, SH[hprioin62hpd], iInstPrioriteitsNiveau[prioFC62hpd], iInstPrioriteitsOpties[prioFC62hpd], 0, 0);
+    PrioInmelden(prioFC67hpd, SH[hprioin67hpd], iInstPrioriteitsNiveau[prioFC67hpd], iInstPrioriteitsOpties[prioFC67hpd], 0, 0);
+    PrioInmelden(prioFC68hpd, SH[hprioin68hpd], iInstPrioriteitsNiveau[prioFC68hpd], iInstPrioriteitsOpties[prioFC68hpd], 0, 0);
 
     /* Prioriteit-uitmeldingen */
     PrioUitmelden(prioFC02karbus, SH[hpriouit02karbus]);
@@ -884,6 +1043,16 @@ void InUitMelden(void)
     PrioUitmelden(prioFC62karbus, SH[hpriouit62karbus]);
     PrioUitmelden(prioFC67karbus, SH[hpriouit67karbus]);
     PrioUitmelden(prioFC68karbus, SH[hpriouit68karbus]);
+    PrioUitmelden(prioFC02hpd, SH[hpriouit02hpd]);
+    PrioUitmelden(prioFC03hpd, SH[hpriouit03hpd]);
+    PrioUitmelden(prioFC05hpd, SH[hpriouit05hpd]);
+    PrioUitmelden(prioFC08hpd, SH[hpriouit08hpd]);
+    PrioUitmelden(prioFC09hpd, SH[hpriouit09hpd]);
+    PrioUitmelden(prioFC11hpd, SH[hpriouit11hpd]);
+    PrioUitmelden(prioFC61hpd, SH[hpriouit61hpd]);
+    PrioUitmelden(prioFC62hpd, SH[hpriouit62hpd]);
+    PrioUitmelden(prioFC67hpd, SH[hpriouit67hpd]);
+    PrioUitmelden(prioFC68hpd, SH[hpriouit68hpd]);
 
     /* HD-inmeldingen */
     PrioInmelden(hdFC02, SH[hhdin02], iInstPrioriteitsNiveau[hdFC02], iInstPrioriteitsOpties[hdFC02], 0, 0);
@@ -925,7 +1094,8 @@ void InUitMelden(void)
     IH[hprioin02karbus] = IH[hprioin02karbuskar] = FALSE;
     if (SCH[schprioin02karbuskar])
     {
-        IH[hprioin02karbuskar] = RT[tprioin02karbuskar] = !T[tprioin02karbus] && !T[tprioin02karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat02karbus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin02karbuskar] = RT[tprioin02karbuskar] = !T[tprioin02karbus] && !T[tprioin02karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat02karbus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin02karbus] = RT[tprioin02karbus] = IH[hprioin02karbuskar];
 
@@ -933,7 +1103,8 @@ void InUitMelden(void)
     IH[hpriouit02karbus] = IH[hpriouit02karbuskar] = FALSE;
     if (SCH[schpriouit02karbuskar])
     {
-        IH[hpriouit02karbuskar] = RT[tpriouit02karbuskar] = !T[tpriouit02karbus] && !T[tpriouit02karbuskar] && DSIMeldingPRIO_V2(fc02, prioFC02karbus, 0, PRM[prmvtgcat02karbus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit02karbuskar] = RT[tpriouit02karbuskar] = !T[tpriouit02karbus] && !T[tpriouit02karbuskar] && 
+            DSIMeldingPRIO_V2(fc02, prioFC02karbus, 0, PRM[prmvtgcat02karbus], TRUE, PRM[prmkarsg02],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit02karbus] = RT[tpriouit02karbus] = IH[hpriouit02karbuskar];
 
@@ -941,7 +1112,8 @@ void InUitMelden(void)
     IH[hprioin03karbus] = IH[hprioin03karbuskar] = FALSE;
     if (SCH[schprioin03karbuskar])
     {
-        IH[hprioin03karbuskar] = RT[tprioin03karbuskar] = !T[tprioin03karbus] && !T[tprioin03karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat03karbus], TRUE, PRM[prmkarsg03],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin03karbuskar] = RT[tprioin03karbuskar] = !T[tprioin03karbus] && !T[tprioin03karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat03karbus], TRUE, PRM[prmkarsg03],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin03karbus] = RT[tprioin03karbus] = IH[hprioin03karbuskar];
 
@@ -949,7 +1121,8 @@ void InUitMelden(void)
     IH[hpriouit03karbus] = IH[hpriouit03karbuskar] = FALSE;
     if (SCH[schpriouit03karbuskar])
     {
-        IH[hpriouit03karbuskar] = RT[tpriouit03karbuskar] = !T[tpriouit03karbus] && !T[tpriouit03karbuskar] && DSIMeldingPRIO_V2(fc03, prioFC03karbus, 0, PRM[prmvtgcat03karbus], TRUE, PRM[prmkarsg03],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit03karbuskar] = RT[tpriouit03karbuskar] = !T[tpriouit03karbus] && !T[tpriouit03karbuskar] && 
+            DSIMeldingPRIO_V2(fc03, prioFC03karbus, 0, PRM[prmvtgcat03karbus], TRUE, PRM[prmkarsg03],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit03karbus] = RT[tpriouit03karbus] = IH[hpriouit03karbuskar];
 
@@ -957,7 +1130,8 @@ void InUitMelden(void)
     IH[hprioin05karbus] = IH[hprioin05karbuskar] = FALSE;
     if (SCH[schprioin05karbuskar])
     {
-        IH[hprioin05karbuskar] = RT[tprioin05karbuskar] = !T[tprioin05karbus] && !T[tprioin05karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat05karbus], TRUE, PRM[prmkarsg05],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin05karbuskar] = RT[tprioin05karbuskar] = !T[tprioin05karbus] && !T[tprioin05karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat05karbus], TRUE, PRM[prmkarsg05],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin05karbus] = RT[tprioin05karbus] = IH[hprioin05karbuskar];
 
@@ -965,7 +1139,8 @@ void InUitMelden(void)
     IH[hpriouit05karbus] = IH[hpriouit05karbuskar] = FALSE;
     if (SCH[schpriouit05karbuskar])
     {
-        IH[hpriouit05karbuskar] = RT[tpriouit05karbuskar] = !T[tpriouit05karbus] && !T[tpriouit05karbuskar] && DSIMeldingPRIO_V2(fc05, prioFC05karbus, 0, PRM[prmvtgcat05karbus], TRUE, PRM[prmkarsg05],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit05karbuskar] = RT[tpriouit05karbuskar] = !T[tpriouit05karbus] && !T[tpriouit05karbuskar] && 
+            DSIMeldingPRIO_V2(fc05, prioFC05karbus, 0, PRM[prmvtgcat05karbus], TRUE, PRM[prmkarsg05],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit05karbus] = RT[tpriouit05karbus] = IH[hpriouit05karbuskar];
 
@@ -973,7 +1148,8 @@ void InUitMelden(void)
     IH[hprioin08karbus] = IH[hprioin08karbuskar] = FALSE;
     if (SCH[schprioin08karbuskar])
     {
-        IH[hprioin08karbuskar] = RT[tprioin08karbuskar] = !T[tprioin08karbus] && !T[tprioin08karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat08karbus], TRUE, PRM[prmkarsg08],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin08karbuskar] = RT[tprioin08karbuskar] = !T[tprioin08karbus] && !T[tprioin08karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat08karbus], TRUE, PRM[prmkarsg08],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin08karbus] = RT[tprioin08karbus] = IH[hprioin08karbuskar];
 
@@ -981,7 +1157,8 @@ void InUitMelden(void)
     IH[hpriouit08karbus] = IH[hpriouit08karbuskar] = FALSE;
     if (SCH[schpriouit08karbuskar])
     {
-        IH[hpriouit08karbuskar] = RT[tpriouit08karbuskar] = !T[tpriouit08karbus] && !T[tpriouit08karbuskar] && DSIMeldingPRIO_V2(fc08, prioFC08karbus, 0, PRM[prmvtgcat08karbus], TRUE, PRM[prmkarsg08],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit08karbuskar] = RT[tpriouit08karbuskar] = !T[tpriouit08karbus] && !T[tpriouit08karbuskar] && 
+            DSIMeldingPRIO_V2(fc08, prioFC08karbus, 0, PRM[prmvtgcat08karbus], TRUE, PRM[prmkarsg08],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit08karbus] = RT[tpriouit08karbus] = IH[hpriouit08karbuskar];
 
@@ -989,7 +1166,8 @@ void InUitMelden(void)
     IH[hprioin09karbus] = IH[hprioin09karbuskar] = FALSE;
     if (SCH[schprioin09karbuskar])
     {
-        IH[hprioin09karbuskar] = RT[tprioin09karbuskar] = !T[tprioin09karbus] && !T[tprioin09karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat09karbus], TRUE, PRM[prmkarsg09],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin09karbuskar] = RT[tprioin09karbuskar] = !T[tprioin09karbus] && !T[tprioin09karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat09karbus], TRUE, PRM[prmkarsg09],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin09karbus] = RT[tprioin09karbus] = IH[hprioin09karbuskar];
 
@@ -997,7 +1175,8 @@ void InUitMelden(void)
     IH[hpriouit09karbus] = IH[hpriouit09karbuskar] = FALSE;
     if (SCH[schpriouit09karbuskar])
     {
-        IH[hpriouit09karbuskar] = RT[tpriouit09karbuskar] = !T[tpriouit09karbus] && !T[tpriouit09karbuskar] && DSIMeldingPRIO_V2(fc09, prioFC09karbus, 0, PRM[prmvtgcat09karbus], TRUE, PRM[prmkarsg09],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit09karbuskar] = RT[tpriouit09karbuskar] = !T[tpriouit09karbus] && !T[tpriouit09karbuskar] && 
+            DSIMeldingPRIO_V2(fc09, prioFC09karbus, 0, PRM[prmvtgcat09karbus], TRUE, PRM[prmkarsg09],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit09karbus] = RT[tpriouit09karbus] = IH[hpriouit09karbuskar];
 
@@ -1005,7 +1184,8 @@ void InUitMelden(void)
     IH[hprioin11karbus] = IH[hprioin11karbuskar] = FALSE;
     if (SCH[schprioin11karbuskar])
     {
-        IH[hprioin11karbuskar] = RT[tprioin11karbuskar] = !T[tprioin11karbus] && !T[tprioin11karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat11karbus], TRUE, PRM[prmkarsg11],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin11karbuskar] = RT[tprioin11karbuskar] = !T[tprioin11karbus] && !T[tprioin11karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat11karbus], TRUE, PRM[prmkarsg11],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin11karbus] = RT[tprioin11karbus] = IH[hprioin11karbuskar];
 
@@ -1013,7 +1193,8 @@ void InUitMelden(void)
     IH[hpriouit11karbus] = IH[hpriouit11karbuskar] = FALSE;
     if (SCH[schpriouit11karbuskar])
     {
-        IH[hpriouit11karbuskar] = RT[tpriouit11karbuskar] = !T[tpriouit11karbus] && !T[tpriouit11karbuskar] && DSIMeldingPRIO_V2(fc11, prioFC11karbus, 0, PRM[prmvtgcat11karbus], TRUE, PRM[prmkarsg11],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit11karbuskar] = RT[tpriouit11karbuskar] = !T[tpriouit11karbus] && !T[tpriouit11karbuskar] && 
+            DSIMeldingPRIO_V2(fc11, prioFC11karbus, 0, PRM[prmvtgcat11karbus], TRUE, PRM[prmkarsg11],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit11karbus] = RT[tpriouit11karbus] = IH[hpriouit11karbuskar];
 
@@ -1022,7 +1203,8 @@ void InUitMelden(void)
     IH[hprioin22fiets] = IH[hprioin22fietsfiets] = FALSE;
     if (SCH[schprioin22fietsfiets])
     {
-        IH[hprioin22fietsfiets] = !C[cvc22fiets] && fietsprio_inmelding(fc22, NG, NG, cftscyc22fietsfiets, prmftsblok22fietsfiets, prmftsmaxpercyc22fietsfiets, NG, prmftsminwt22fietsfiets, ML, NG, NG);
+        IH[hprioin22fietsfiets] = !C[cvc22fiets] && 
+            fietsprio_inmelding(fc22, NG, NG, cftscyc22fietsfiets, prmftsblok22fietsfiets, prmftsmaxpercyc22fietsfiets, NG, prmftsminwt22fietsfiets, ML, NG, NG);
     }
     IH[hprioin22fiets] = (IH[hperiodFietsprio1] || IH[hperiodFietsprio2]) && (IH[hprioin22fietsfiets]);
 
@@ -1039,7 +1221,8 @@ void InUitMelden(void)
     IH[hprioin28fiets] = IH[hprioin28fietsfiets] = FALSE;
     if (SCH[schprioin28fietsfiets])
     {
-        IH[hprioin28fietsfiets] = !C[cvc28fiets] && fietsprio_inmelding(fc28, NG, NG, cftscyc28fietsfiets, prmftsblok28fietsfiets, prmftsmaxpercyc28fietsfiets, NG, prmftsminwt28fietsfiets, ML, NG, NG);
+        IH[hprioin28fietsfiets] = !C[cvc28fiets] && 
+            fietsprio_inmelding(fc28, NG, NG, cftscyc28fietsfiets, prmftsblok28fietsfiets, prmftsmaxpercyc28fietsfiets, NG, prmftsminwt28fietsfiets, ML, NG, NG);
     }
     IH[hprioin28fiets] = (IH[hperiodFietsprio1] || IH[hperiodFietsprio2]) && (IH[hprioin28fietsfiets]);
 
@@ -1055,7 +1238,8 @@ void InUitMelden(void)
     IH[hprioin61karbus] = IH[hprioin61karbuskar] = FALSE;
     if (SCH[schprioin61karbuskar])
     {
-        IH[hprioin61karbuskar] = RT[tprioin61karbuskar] = !T[tprioin61karbus] && !T[tprioin61karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat61karbus], TRUE, PRM[prmkarsg61],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin61karbuskar] = RT[tprioin61karbuskar] = !T[tprioin61karbus] && !T[tprioin61karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat61karbus], TRUE, PRM[prmkarsg61],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin61karbus] = RT[tprioin61karbus] = IH[hprioin61karbuskar];
 
@@ -1063,7 +1247,8 @@ void InUitMelden(void)
     IH[hpriouit61karbus] = IH[hpriouit61karbuskar] = FALSE;
     if (SCH[schpriouit61karbuskar])
     {
-        IH[hpriouit61karbuskar] = RT[tpriouit61karbuskar] = !T[tpriouit61karbus] && !T[tpriouit61karbuskar] && DSIMeldingPRIO_V2(fc61, prioFC61karbus, 0, PRM[prmvtgcat61karbus], TRUE, PRM[prmkarsg61],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit61karbuskar] = RT[tpriouit61karbuskar] = !T[tpriouit61karbus] && !T[tpriouit61karbuskar] && 
+            DSIMeldingPRIO_V2(fc61, prioFC61karbus, 0, PRM[prmvtgcat61karbus], TRUE, PRM[prmkarsg61],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit61karbus] = RT[tpriouit61karbus] = IH[hpriouit61karbuskar];
 
@@ -1071,7 +1256,8 @@ void InUitMelden(void)
     IH[hprioin62karbus] = IH[hprioin62karbuskar] = FALSE;
     if (SCH[schprioin62karbuskar])
     {
-        IH[hprioin62karbuskar] = RT[tprioin62karbuskar] = !T[tprioin62karbus] && !T[tprioin62karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat62karbus], TRUE, PRM[prmkarsg62],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin62karbuskar] = RT[tprioin62karbuskar] = !T[tprioin62karbus] && !T[tprioin62karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat62karbus], TRUE, PRM[prmkarsg62],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin62karbus] = RT[tprioin62karbus] = IH[hprioin62karbuskar];
 
@@ -1079,7 +1265,8 @@ void InUitMelden(void)
     IH[hpriouit62karbus] = IH[hpriouit62karbuskar] = FALSE;
     if (SCH[schpriouit62karbuskar])
     {
-        IH[hpriouit62karbuskar] = RT[tpriouit62karbuskar] = !T[tpriouit62karbus] && !T[tpriouit62karbuskar] && DSIMeldingPRIO_V2(fc62, prioFC62karbus, 0, PRM[prmvtgcat62karbus], TRUE, PRM[prmkarsg62],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit62karbuskar] = RT[tpriouit62karbuskar] = !T[tpriouit62karbus] && !T[tpriouit62karbuskar] && 
+            DSIMeldingPRIO_V2(fc62, prioFC62karbus, 0, PRM[prmvtgcat62karbus], TRUE, PRM[prmkarsg62],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit62karbus] = RT[tpriouit62karbus] = IH[hpriouit62karbuskar];
 
@@ -1087,7 +1274,8 @@ void InUitMelden(void)
     IH[hprioin67karbus] = IH[hprioin67karbuskar] = FALSE;
     if (SCH[schprioin67karbuskar])
     {
-        IH[hprioin67karbuskar] = RT[tprioin67karbuskar] = !T[tprioin67karbus] && !T[tprioin67karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat67karbus], TRUE, PRM[prmkarsg67],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin67karbuskar] = RT[tprioin67karbuskar] = !T[tprioin67karbus] && !T[tprioin67karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat67karbus], TRUE, PRM[prmkarsg67],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin67karbus] = RT[tprioin67karbus] = IH[hprioin67karbuskar];
 
@@ -1095,7 +1283,8 @@ void InUitMelden(void)
     IH[hpriouit67karbus] = IH[hpriouit67karbuskar] = FALSE;
     if (SCH[schpriouit67karbuskar])
     {
-        IH[hpriouit67karbuskar] = RT[tpriouit67karbuskar] = !T[tpriouit67karbus] && !T[tpriouit67karbuskar] && DSIMeldingPRIO_V2(fc67, prioFC67karbus, 0, PRM[prmvtgcat67karbus], TRUE, PRM[prmkarsg67],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit67karbuskar] = RT[tpriouit67karbuskar] = !T[tpriouit67karbus] && !T[tpriouit67karbuskar] && 
+            DSIMeldingPRIO_V2(fc67, prioFC67karbus, 0, PRM[prmvtgcat67karbus], TRUE, PRM[prmkarsg67],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit67karbus] = RT[tpriouit67karbus] = IH[hpriouit67karbuskar];
 
@@ -1103,7 +1292,8 @@ void InUitMelden(void)
     IH[hprioin68karbus] = IH[hprioin68karbuskar] = FALSE;
     if (SCH[schprioin68karbuskar])
     {
-        IH[hprioin68karbuskar] = RT[tprioin68karbuskar] = !T[tprioin68karbus] && !T[tprioin68karbuskar] && DSIMeldingPRIO_V1(0, PRM[prmvtgcat68karbus], TRUE, PRM[prmkarsg68],TRUE, CIF_DSIN, TRUE);
+        IH[hprioin68karbuskar] = RT[tprioin68karbuskar] = !T[tprioin68karbus] && !T[tprioin68karbuskar] && 
+            DSIMeldingPRIO_V1(0, PRM[prmvtgcat68karbus], TRUE, PRM[prmkarsg68],TRUE, CIF_DSIN, TRUE);
     }
     IH[hprioin68karbus] = RT[tprioin68karbus] = IH[hprioin68karbuskar];
 
@@ -1111,9 +1301,226 @@ void InUitMelden(void)
     IH[hpriouit68karbus] = IH[hpriouit68karbuskar] = FALSE;
     if (SCH[schpriouit68karbuskar])
     {
-        IH[hpriouit68karbuskar] = RT[tpriouit68karbuskar] = !T[tpriouit68karbus] && !T[tpriouit68karbuskar] && DSIMeldingPRIO_V2(fc68, prioFC68karbus, 0, PRM[prmvtgcat68karbus], TRUE, PRM[prmkarsg68],TRUE, CIF_DSUIT, TRUE);
+        IH[hpriouit68karbuskar] = RT[tpriouit68karbuskar] = !T[tpriouit68karbus] && !T[tpriouit68karbuskar] && 
+            DSIMeldingPRIO_V2(fc68, prioFC68karbus, 0, PRM[prmvtgcat68karbus], TRUE, PRM[prmkarsg68],TRUE, CIF_DSUIT, TRUE);
     }
     IH[hpriouit68karbus] = RT[tpriouit68karbus] = IH[hpriouit68karbuskar];
+
+    /* Inmelding fc02 type Nood- en hulpdienst */
+    IH[hprioin02hpd] = IH[hprioin02hpdkar] = IH[hprioin02hpdoptiopt02] = FALSE;
+    if (SCH[schprioin02hpdkar])
+    {
+        IH[hprioin02hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg02], CIF_DSIN, (!SCH[schchecksirene02hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    if (SCH[schprioin02hpdoptiopt02SD])
+    {
+        IH[hprioin02hpdoptiopt02] = !T[tprioin02hpdoptiopt02] && SCH[schprioin02hpdopti] && !C[cvc02hpd] && DB[dopt02];
+        RT[tprioin02hpdoptiopt02] = G[fc02] && C[cvc02hpd];
+    }
+    IH[hprioin02hpd] = IH[hprioin02hpdkar] || IH[hprioin02hpdoptiopt02];
+
+    /* Uitmelding fc02 type Nood- en hulpdienst */
+    IH[hpriouit02hpd] = IH[hpriouit02hpdkar] = IH[hpriouit02hpdoptiopt02] = FALSE;
+    if (SCH[schpriouit02hpdkar])
+    {
+        IH[hpriouit02hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg02], CIF_DSUIT, (!SCH[schchecksirene02hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    if (SCH[schpriouit02hpdoptiopt02SD])
+    {
+        IH[hpriouit02hpdoptiopt02] = SCH[schprioin02hpdopti] && !TDH[dopt02] && TDH_old[dopt02];
+    }
+    IH[hpriouit02hpd] = IH[hpriouit02hpdkar] || IH[hpriouit02hpdoptiopt02];
+
+    /* Inmelding fc03 type Nood- en hulpdienst */
+    IH[hprioin03hpd] = IH[hprioin03hpdkar] = FALSE;
+    if (SCH[schprioin03hpdkar])
+    {
+        IH[hprioin03hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg03], CIF_DSIN, (!SCH[schchecksirene03hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hprioin03hpd] = IH[hprioin03hpdkar];
+
+    /* Uitmelding fc03 type Nood- en hulpdienst */
+    IH[hpriouit03hpd] = IH[hpriouit03hpdkar] = FALSE;
+    if (SCH[schpriouit03hpdkar])
+    {
+        IH[hpriouit03hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg03], CIF_DSUIT, (!SCH[schchecksirene03hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hpriouit03hpd] = IH[hpriouit03hpdkar];
+
+    /* Inmelding fc05 type Nood- en hulpdienst */
+    IH[hprioin05hpd] = IH[hprioin05hpdkar] = IH[hprioin05hpdoptiopt05] = FALSE;
+    if (SCH[schprioin05hpdkar])
+    {
+        IH[hprioin05hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg05], CIF_DSIN, (!SCH[schchecksirene05hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    if (SCH[schprioin05hpdoptiopt05SD])
+    {
+        IH[hprioin05hpdoptiopt05] = !T[tprioin05hpdoptiopt05] && SCH[schprioin05hpdopti] && !C[cvc05hpd] && DB[dopt05];
+        RT[tprioin05hpdoptiopt05] = G[fc05] && C[cvc05hpd];
+    }
+    IH[hprioin05hpd] = IH[hprioin05hpdkar] || IH[hprioin05hpdoptiopt05];
+
+    /* Uitmelding fc05 type Nood- en hulpdienst */
+    IH[hpriouit05hpd] = IH[hpriouit05hpdkar] = IH[hpriouit05hpdoptiopt05] = FALSE;
+    if (SCH[schpriouit05hpdkar])
+    {
+        IH[hpriouit05hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg05], CIF_DSUIT, (!SCH[schchecksirene05hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    if (SCH[schpriouit05hpdoptiopt05SD])
+    {
+        IH[hpriouit05hpdoptiopt05] = SCH[schprioin05hpdopti] && !TDH[dopt05] && TDH_old[dopt05];
+    }
+    IH[hpriouit05hpd] = IH[hpriouit05hpdkar] || IH[hpriouit05hpdoptiopt05];
+
+    /* Inmelding fc08 type Nood- en hulpdienst */
+    IH[hprioin08hpd] = IH[hprioin08hpdkar] = IH[hprioin08hpdoptiopt08] = FALSE;
+    if (SCH[schprioin08hpdkar])
+    {
+        IH[hprioin08hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg08], CIF_DSIN, (!SCH[schchecksirene08hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    if (SCH[schprioin08hpdoptiopt08SD])
+    {
+        IH[hprioin08hpdoptiopt08] = !T[tprioin08hpdoptiopt08] && SCH[schprioin08hpdopti] && !C[cvc08hpd] && DB[dopt08];
+        RT[tprioin08hpdoptiopt08] = G[fc08] && C[cvc08hpd];
+    }
+    IH[hprioin08hpd] = IH[hprioin08hpdkar] || IH[hprioin08hpdoptiopt08];
+
+    /* Uitmelding fc08 type Nood- en hulpdienst */
+    IH[hpriouit08hpd] = IH[hpriouit08hpdkar] = IH[hpriouit08hpdoptiopt08] = FALSE;
+    if (SCH[schpriouit08hpdkar])
+    {
+        IH[hpriouit08hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg08], CIF_DSUIT, (!SCH[schchecksirene08hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    if (SCH[schpriouit08hpdoptiopt08SD])
+    {
+        IH[hpriouit08hpdoptiopt08] = SCH[schprioin08hpdopti] && !TDH[dopt08] && TDH_old[dopt08];
+    }
+    IH[hpriouit08hpd] = IH[hpriouit08hpdkar] || IH[hpriouit08hpdoptiopt08];
+
+    /* Inmelding fc09 type Nood- en hulpdienst */
+    IH[hprioin09hpd] = IH[hprioin09hpdkar] = FALSE;
+    if (SCH[schprioin09hpdkar])
+    {
+        IH[hprioin09hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg09], CIF_DSIN, (!SCH[schchecksirene09hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hprioin09hpd] = IH[hprioin09hpdkar];
+
+    /* Uitmelding fc09 type Nood- en hulpdienst */
+    IH[hpriouit09hpd] = IH[hpriouit09hpdkar] = FALSE;
+    if (SCH[schpriouit09hpdkar])
+    {
+        IH[hpriouit09hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg09], CIF_DSUIT, (!SCH[schchecksirene09hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hpriouit09hpd] = IH[hpriouit09hpdkar];
+
+    /* Inmelding fc11 type Nood- en hulpdienst */
+    IH[hprioin11hpd] = IH[hprioin11hpdkar] = IH[hprioin11hpdoptiopt11] = FALSE;
+    if (SCH[schprioin11hpdkar])
+    {
+        IH[hprioin11hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg11], CIF_DSIN, (!SCH[schchecksirene11hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    if (SCH[schprioin11hpdoptiopt11SD])
+    {
+        IH[hprioin11hpdoptiopt11] = !T[tprioin11hpdoptiopt11] && SCH[schprioin11hpdopti] && !C[cvc11hpd] && DB[dopt11];
+        RT[tprioin11hpdoptiopt11] = G[fc11] && C[cvc11hpd];
+    }
+    IH[hprioin11hpd] = IH[hprioin11hpdkar] || IH[hprioin11hpdoptiopt11];
+
+    /* Uitmelding fc11 type Nood- en hulpdienst */
+    IH[hpriouit11hpd] = IH[hpriouit11hpdkar] = IH[hpriouit11hpdoptiopt11] = FALSE;
+    if (SCH[schpriouit11hpdkar])
+    {
+        IH[hpriouit11hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg11], CIF_DSUIT, (!SCH[schchecksirene11hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    if (SCH[schpriouit11hpdoptiopt11SD])
+    {
+        IH[hpriouit11hpdoptiopt11] = SCH[schprioin11hpdopti] && !TDH[dopt11] && TDH_old[dopt11];
+    }
+    IH[hpriouit11hpd] = IH[hpriouit11hpdkar] || IH[hpriouit11hpdoptiopt11];
+
+    /* Inmelding fc61 type Nood- en hulpdienst */
+    IH[hprioin61hpd] = IH[hprioin61hpdkar] = FALSE;
+    if (SCH[schprioin61hpdkar])
+    {
+        IH[hprioin61hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg61], CIF_DSIN, (!SCH[schchecksirene61hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hprioin61hpd] = IH[hprioin61hpdkar];
+
+    /* Uitmelding fc61 type Nood- en hulpdienst */
+    IH[hpriouit61hpd] = IH[hpriouit61hpdkar] = FALSE;
+    if (SCH[schpriouit61hpdkar])
+    {
+        IH[hpriouit61hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg61], CIF_DSUIT, (!SCH[schchecksirene61hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hpriouit61hpd] = IH[hpriouit61hpdkar];
+
+    /* Inmelding fc62 type Nood- en hulpdienst */
+    IH[hprioin62hpd] = IH[hprioin62hpdkar] = FALSE;
+    if (SCH[schprioin62hpdkar])
+    {
+        IH[hprioin62hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg62], CIF_DSIN, (!SCH[schchecksirene62hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hprioin62hpd] = IH[hprioin62hpdkar];
+
+    /* Uitmelding fc62 type Nood- en hulpdienst */
+    IH[hpriouit62hpd] = IH[hpriouit62hpdkar] = FALSE;
+    if (SCH[schpriouit62hpdkar])
+    {
+        IH[hpriouit62hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg62], CIF_DSUIT, (!SCH[schchecksirene62hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hpriouit62hpd] = IH[hpriouit62hpdkar];
+
+    /* Inmelding fc67 type Nood- en hulpdienst */
+    IH[hprioin67hpd] = IH[hprioin67hpdkar] = FALSE;
+    if (SCH[schprioin67hpdkar])
+    {
+        IH[hprioin67hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg67], CIF_DSIN, (!SCH[schchecksirene67hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hprioin67hpd] = IH[hprioin67hpdkar];
+
+    /* Uitmelding fc67 type Nood- en hulpdienst */
+    IH[hpriouit67hpd] = IH[hpriouit67hpdkar] = FALSE;
+    if (SCH[schpriouit67hpdkar])
+    {
+        IH[hpriouit67hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg67], CIF_DSUIT, (!SCH[schchecksirene67hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hpriouit67hpd] = IH[hpriouit67hpdkar];
+
+    /* Inmelding fc68 type Nood- en hulpdienst */
+    IH[hprioin68hpd] = IH[hprioin68hpdkar] = FALSE;
+    if (SCH[schprioin68hpdkar])
+    {
+        IH[hprioin68hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg68], CIF_DSIN, (!SCH[schchecksirene68hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hprioin68hpd] = IH[hprioin68hpdkar];
+
+    /* Uitmelding fc68 type Nood- en hulpdienst */
+    IH[hpriouit68hpd] = IH[hpriouit68hpdkar] = FALSE;
+    if (SCH[schpriouit68hpdkar])
+    {
+        IH[hpriouit68hpdkar] = 
+            DSIMelding_HD_V1(PRM[prmkarsg68], CIF_DSUIT, (!SCH[schchecksirene68hpd] || CIF_DSI[CIF_DSI_PRI] == CIF_SIR));
+    }
+    IH[hpriouit68hpd] = IH[hpriouit68hpdkar];
 
     /* Inmelding HD fc02 */
     IH[hhdin02kar] = RT[thdin02kar] = !T[thdin02kar] && SCH[schhdin02kar] && (DSIMelding_HD_V1(PRM[prmkarsghd02], CIF_DSIN, SCH[schchecksirene02]));
@@ -1241,7 +1648,17 @@ void InUitMelden(void)
         IH[hhdin61]|| IH[hhduit61] || EH[hhd61] ||
         IH[hhdin62]|| IH[hhduit62] || EH[hhd62] ||
         IH[hhdin67]|| IH[hhduit67] || EH[hhd67] ||
-        IH[hhdin68]|| IH[hhduit68] || EH[hhd68])
+        IH[hhdin68]|| IH[hhduit68] || EH[hhd68] ||
+        IH[hprioin02hpd]|| IH[hpriouit02hpd] || EH[hprio02hpd] ||
+        IH[hprioin03hpd]|| IH[hpriouit03hpd] || EH[hprio03hpd] ||
+        IH[hprioin05hpd]|| IH[hpriouit05hpd] || EH[hprio05hpd] ||
+        IH[hprioin08hpd]|| IH[hpriouit08hpd] || EH[hprio08hpd] ||
+        IH[hprioin09hpd]|| IH[hpriouit09hpd] || EH[hprio09hpd] ||
+        IH[hprioin11hpd]|| IH[hpriouit11hpd] || EH[hprio11hpd] ||
+        IH[hprioin61hpd]|| IH[hpriouit61hpd] || EH[hprio61hpd] ||
+        IH[hprioin62hpd]|| IH[hpriouit62hpd] || EH[hprio62hpd] ||
+        IH[hprioin67hpd]|| IH[hpriouit67hpd] || EH[hprio67hpd] ||
+        IH[hprioin68hpd]|| IH[hpriouit68hpd] || EH[hprio68hpd])
     {
         RTFB |= PRIO_RTFB_BIT;
     }
@@ -1338,16 +1755,16 @@ void PrioriteitsOpties(void)
     /* Geconditioneerde prioriteit werkt nog niet in combinatie met prioriteit tijdens PL regelen */
     if (!IH[hplact])
     {
-        IH[hstp02karbus] = !C[cvchd02] && !C[cvchd03] && SCH[schovstipt02karbus];
-        IH[hstp03karbus] = !C[cvchd03] && !C[cvchd02] && SCH[schovstipt03karbus];
-        IH[hstp05karbus] = !C[cvchd05] && SCH[schovstipt05karbus];
-        IH[hstp08karbus] = !C[cvchd08] && !C[cvchd09] && SCH[schovstipt08karbus];
-        IH[hstp09karbus] = !C[cvchd09] && !C[cvchd08] && SCH[schovstipt09karbus];
-        IH[hstp11karbus] = !C[cvchd11] && SCH[schovstipt11karbus];
-        IH[hstp61karbus] = !C[cvchd61] && SCH[schovstipt61karbus];
-        IH[hstp62karbus] = !C[cvchd62] && SCH[schovstipt62karbus];
-        IH[hstp67karbus] = !C[cvchd67] && SCH[schovstipt67karbus];
-        IH[hstp68karbus] = !C[cvchd68] && SCH[schovstipt68karbus];
+        IH[hstp02karbus] = !C[cvchd02] && !C[cvchd03] && !C[cvc02hpd] && SCH[schovstipt02karbus];
+        IH[hstp03karbus] = !C[cvchd03] && !C[cvchd02] && !C[cvc03hpd] && SCH[schovstipt03karbus];
+        IH[hstp05karbus] = !C[cvchd05] && !C[cvc05hpd] && SCH[schovstipt05karbus];
+        IH[hstp08karbus] = !C[cvchd08] && !C[cvchd09] && !C[cvc08hpd] && SCH[schovstipt08karbus];
+        IH[hstp09karbus] = !C[cvchd09] && !C[cvchd08] && !C[cvc09hpd] && SCH[schovstipt09karbus];
+        IH[hstp11karbus] = !C[cvchd11] && !C[cvc11hpd] && SCH[schovstipt11karbus];
+        IH[hstp61karbus] = !C[cvchd61] && !C[cvc61hpd] && SCH[schovstipt61karbus];
+        IH[hstp62karbus] = !C[cvchd62] && !C[cvc62hpd] && SCH[schovstipt62karbus];
+        IH[hstp67karbus] = !C[cvchd67] && !C[cvc67hpd] && SCH[schovstipt67karbus];
+        IH[hstp68karbus] = !C[cvchd68] && !C[cvc68hpd] && SCH[schovstipt68karbus];
         if (IH[hstp02karbus] && (MM[mstp02karbus] == CIF_TE_VROEG || !MM[mstp02karbus])) iPrioriteitsOpties[prioFC02karbus] = BepaalPrioriteitsOpties(prmovstipttevroeg02karbus);
         if (IH[hstp03karbus] && (MM[mstp03karbus] == CIF_TE_VROEG || !MM[mstp03karbus])) iPrioriteitsOpties[prioFC03karbus] = BepaalPrioriteitsOpties(prmovstipttevroeg03karbus);
         if (IH[hstp05karbus] && (MM[mstp05karbus] == CIF_TE_VROEG || !MM[mstp05karbus])) iPrioriteitsOpties[prioFC05karbus] = BepaalPrioriteitsOpties(prmovstipttevroeg05karbus);
@@ -1403,6 +1820,16 @@ void PrioriteitsOpties(void)
         iPrioriteitsOpties[prioFC62karbus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst62karbus);
         iPrioriteitsOpties[prioFC67karbus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst67karbus);
         iPrioriteitsOpties[prioFC68karbus] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst68karbus);
+        iPrioriteitsOpties[prioFC02hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst02hpd);
+        iPrioriteitsOpties[prioFC03hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst03hpd);
+        iPrioriteitsOpties[prioFC05hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst05hpd);
+        iPrioriteitsOpties[prioFC08hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst08hpd);
+        iPrioriteitsOpties[prioFC09hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst09hpd);
+        iPrioriteitsOpties[prioFC11hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst11hpd);
+        iPrioriteitsOpties[prioFC61hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst61hpd);
+        iPrioriteitsOpties[prioFC62hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst62hpd);
+        iPrioriteitsOpties[prioFC67hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst67hpd);
+        iPrioriteitsOpties[prioFC68hpd] |= PrioHalfstarBepaalPrioriteitsOpties(prmpriohst68hpd);
     }
 
 
@@ -1423,7 +1850,9 @@ void PrioriteitsOpties(void)
     if (IH[hfileFile68af])
     {
         iPrioriteitsOpties[prioFC08karbus] = poAanvraag;
+        iPrioriteitsOpties[prioFC08hpd] = poAanvraag;
         iPrioriteitsOpties[prioFC11karbus] = poAanvraag;
+        iPrioriteitsOpties[prioFC11hpd] = poAanvraag;
     }
 
     #ifdef PRIO_ADDFILE
@@ -1443,7 +1872,9 @@ void PrioriteitsToekenningExtra(void)
     if (IH[hfileFile68af])
     {
         iPrioriteit[prioFC08karbus] = 0;
+        iPrioriteit[prioFC08hpd] = 0;
         iPrioriteit[prioFC11karbus] = 0;
+        iPrioriteit[prioFC11hpd] = 0;
     }
 }
 /* ------------------------------------
@@ -1498,7 +1929,7 @@ void PostAfhandelingPrio(void)
     int fc;
 
     /* Bepalen of een HD ingreep actief is */
-    isHD = C[cvchd02] && !BL[fc02] || C[cvchd03] && !BL[fc03] || C[cvchd05] && !BL[fc05] || C[cvchd08] && !BL[fc08] || C[cvchd09] && !BL[fc09] || C[cvchd11] && !BL[fc11] || C[cvchd61] && !BL[fc61] || C[cvchd62] && !BL[fc62] || C[cvchd67] && !BL[fc67] || C[cvchd68] && !BL[fc68];
+    isHD = C[cvchd02] && !BL[fc02] || C[cvchd03] && !BL[fc03] || C[cvchd05] && !BL[fc05] || C[cvchd08] && !BL[fc08] || C[cvchd09] && !BL[fc09] || C[cvchd11] && !BL[fc11] || C[cvchd61] && !BL[fc61] || C[cvchd62] && !BL[fc62] || C[cvchd67] && !BL[fc67] || C[cvchd68] && !BL[fc68] || C[cvc02hpd] && !BL[fc02] || C[cvc03hpd] && !BL[fc03] || C[cvc05hpd] && !BL[fc05] || C[cvc08hpd] && !BL[fc08] || C[cvc09hpd] && !BL[fc09] || C[cvc11hpd] && !BL[fc11] || C[cvc61hpd] && !BL[fc61] || C[cvc62hpd] && !BL[fc62] || C[cvc67hpd] && !BL[fc67] || C[cvc68hpd] && !BL[fc68];
 
     /* Blokkeren alle langzaam verkeer (tevens niet-conflicten) */
     /* Blokkeren uitstellen indien een wachttijdvoorspeller onder het minimum is */
@@ -1633,6 +2064,16 @@ void PrioCcol(void) {
     PrioCcolElementen(prioFC62karbus, tgb62karbus, trt62karbus, hprio62karbus, cvc62karbus, tblk62karbus);
     PrioCcolElementen(prioFC67karbus, tgb67karbus, trt67karbus, hprio67karbus, cvc67karbus, tblk67karbus);
     PrioCcolElementen(prioFC68karbus, tgb68karbus, trt68karbus, hprio68karbus, cvc68karbus, tblk68karbus);
+    PrioCcolElementen(prioFC02hpd, tgb02hpd, trt02hpd, hprio02hpd, cvc02hpd, tblk02hpd);
+    PrioCcolElementen(prioFC03hpd, tgb03hpd, trt03hpd, hprio03hpd, cvc03hpd, tblk03hpd);
+    PrioCcolElementen(prioFC05hpd, tgb05hpd, trt05hpd, hprio05hpd, cvc05hpd, tblk05hpd);
+    PrioCcolElementen(prioFC08hpd, tgb08hpd, trt08hpd, hprio08hpd, cvc08hpd, tblk08hpd);
+    PrioCcolElementen(prioFC09hpd, tgb09hpd, trt09hpd, hprio09hpd, cvc09hpd, tblk09hpd);
+    PrioCcolElementen(prioFC11hpd, tgb11hpd, trt11hpd, hprio11hpd, cvc11hpd, tblk11hpd);
+    PrioCcolElementen(prioFC61hpd, tgb61hpd, trt61hpd, hprio61hpd, cvc61hpd, tblk61hpd);
+    PrioCcolElementen(prioFC62hpd, tgb62hpd, trt62hpd, hprio62hpd, cvc62hpd, tblk62hpd);
+    PrioCcolElementen(prioFC67hpd, tgb67hpd, trt67hpd, hprio67hpd, cvc67hpd, tblk67hpd);
+    PrioCcolElementen(prioFC68hpd, tgb68hpd, trt68hpd, hprio68hpd, cvc68hpd, tblk68hpd);
     PrioCcolElementen(hdFC02, tgbhd02, trthd02, hhd02, cvchd02, -1);
     PrioCcolElementen(hdFC03, tgbhd03, trthd03, hhd03, cvchd03, -1);
     PrioCcolElementen(hdFC05, tgbhd05, trthd05, hhd05, cvchd05, -1);

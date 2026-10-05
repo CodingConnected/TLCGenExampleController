@@ -1,4 +1,4 @@
-/* starfunc.c - gegenereerd met TLCGen 12.4.0.19 */
+/* starfunc.c - gegenereerd met TLCGen 12.4.0.20 */
 
 #include "starfunc.h"
 

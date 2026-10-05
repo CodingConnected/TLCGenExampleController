@@ -8,8 +8,8 @@
 
    BESTAND:   123456hst.c
       CCOL:   12.0
-    TLCGEN:   12.4.0.19
-   CCOLGEN:   12.4.0.19
+    TLCGEN:   12.4.0.20
+   CCOLGEN:   12.4.0.20
 */
 
 /****************************** Versie commentaar ***********************************
@@ -293,6 +293,16 @@ void Meetkriterium_halfstar(void)
         yv_PRIO_pl_halfstar(fc62, BIT7, C[cvc62karbus]);
         yv_PRIO_pl_halfstar(fc67, BIT7, C[cvc67karbus]);
         yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68karbus]);
+        yv_PRIO_pl_halfstar(fc02, BIT7, C[cvc02hpd]);
+        yv_PRIO_pl_halfstar(fc03, BIT7, C[cvc03hpd]);
+        yv_PRIO_pl_halfstar(fc05, BIT7, C[cvc05hpd]);
+        yv_PRIO_pl_halfstar(fc08, BIT7, C[cvc08hpd]);
+        yv_PRIO_pl_halfstar(fc09, BIT7, C[cvc09hpd]);
+        yv_PRIO_pl_halfstar(fc11, BIT7, C[cvc11hpd]);
+        yv_PRIO_pl_halfstar(fc61, BIT7, C[cvc61hpd]);
+        yv_PRIO_pl_halfstar(fc62, BIT7, C[cvc62hpd]);
+        yv_PRIO_pl_halfstar(fc67, BIT7, C[cvc67hpd]);
+        yv_PRIO_pl_halfstar(fc68, BIT7, C[cvc68hpd]);
     }
 
     Meetkriterium_halfstar_Add();
@@ -666,6 +676,16 @@ void PrioHalfstarSettings(void)
     iExtraGroenNaTXD[prioFC62karbus] = PRM[prmnatxdhst62karbus];
     iExtraGroenNaTXD[prioFC67karbus] = PRM[prmnatxdhst67karbus];
     iExtraGroenNaTXD[prioFC68karbus] = PRM[prmnatxdhst68karbus];
+    iExtraGroenNaTXD[prioFC02hpd] = PRM[prmnatxdhst02hpd];
+    iExtraGroenNaTXD[prioFC03hpd] = PRM[prmnatxdhst03hpd];
+    iExtraGroenNaTXD[prioFC05hpd] = PRM[prmnatxdhst05hpd];
+    iExtraGroenNaTXD[prioFC08hpd] = PRM[prmnatxdhst08hpd];
+    iExtraGroenNaTXD[prioFC09hpd] = PRM[prmnatxdhst09hpd];
+    iExtraGroenNaTXD[prioFC11hpd] = PRM[prmnatxdhst11hpd];
+    iExtraGroenNaTXD[prioFC61hpd] = PRM[prmnatxdhst61hpd];
+    iExtraGroenNaTXD[prioFC62hpd] = PRM[prmnatxdhst62hpd];
+    iExtraGroenNaTXD[prioFC67hpd] = PRM[prmnatxdhst67hpd];
+    iExtraGroenNaTXD[prioFC68hpd] = PRM[prmnatxdhst68hpd];
 
     /* PRIO opties hoofdrichtingen */
     PrioHalfstarBepaalHoofdrichtingOpties(NG, (va_count)fc02, (va_mulv)SCH[schtegenov02], (va_mulv)SCH[schafkwgov02], (va_mulv)SCH[schafkvgov02], TFG_max[fc02],
