@@ -24,3 +24,6 @@
 /* dit is een placeholder */
 /* ---------------------- */
 
+SCH[schma0522] = 1; /* @Menno: Peter moet dit nog vervolmaken; doet hij dinsdag */
+SCH[schma0532] = 1; /* @Menno: Peter moet dit nog vervolmaken; doet hij dinsdag */
+SCH[schma1126] = 1; /* @Menno: Peter moet dit nog vervolmaken; doet hij dinsdag */
