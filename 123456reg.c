@@ -55,8 +55,19 @@
 #ifndef NO_PRIO
     #include "prio.h"       /* prio-afhandeling                  */
 #endif /* NO_PRIO */
-    #include "prsvar.c"   /* parameters parser                 */
-    #include "control.c"  /* controller interface              */
+
+#ifdef INTERFUNC
+   #ifdef NO_TIGMAX
+//@Menno: deze twee files mogen worden opgenomen om meegekopieerd te worden (toestemming van Ton gekregen per email)
+      #include "kffunc_to_tig.c"  /* TIG variabelen eb functie   */           
+      #include "prsvar_to_tig.c"  /* parameterparser met TIG_max */
+   #else
+      #include "prsvar.c"   /* parameters parser                 */
+   #endif
+#else
+   #include "prsvar.c"   /* parameters parser                 */
+#endif
+#include "control.c"  /* controller interface              */
     #include "rtappl.h"   /* applicatie routines               */
 #ifndef NO_PRIO
     #include "extra_func_prio.c" /* extra standaard functies OV     */
